@@ -43,6 +43,7 @@
 - (void).cxx_destruct;
 - (void)_invokeVisibleItemsInvalidationHandlerIfNeeded;
 - (id)_containerFromCollectionView;
+- (id)_supplementaryElementKindsAssociatedWithItemIndexPath:(id)arg1;
 - (BOOL)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
 - (struct CGRect)_orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(id)arg1 frame:(struct CGRect)arg2;
 - (BOOL)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;

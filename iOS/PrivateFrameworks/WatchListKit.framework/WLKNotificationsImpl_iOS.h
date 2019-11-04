@@ -27,6 +27,7 @@
 - (void)userNotificationCenter:(id)arg1 didOpenApplicationForResponse:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)_storeFrontChangedNotification:(id)arg1;
 - (void)_networkReachabilityDidChangeNotification:(id)arg1;
 - (id)_topicIdentifierForCategory:(long long)arg1;
 - (id)_displayNameForSubsectionID:(id)arg1;

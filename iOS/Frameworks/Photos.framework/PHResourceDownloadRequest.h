@@ -30,14 +30,13 @@
 + (id)indexesForAssetsRequiringDownload:(id)arg1 requestType:(long long)arg2;
 + (id)_resourceInfoForAsset:(id)arg1 resourcesToShare:(id)arg2 includeAllAssetResources:(_Bool)arg3 fulfillOnDemandResources:(_Bool)arg4 error:(id *)arg5;
 + (id)utiKeysForURLKeys;
-+ (id)resourceInfoKeysForCPLResourceTypesForVideos;
-+ (id)resourceInfoKeysForCPLResourceTypesForPhotos;
++ (id)resourceInfoKeysForResourceTypesForVideos;
++ (id)resourceInfoKeysForResourceTypesForPhotos;
 + (id)singularResourcesToShareForAsset:(id)arg1 fromAvailableResources:(id)arg2 options:(id)arg3 useOriginalResources:(_Bool)arg4 knownUnsupported:(_Bool)arg5 error:(id *)arg6;
 + (id)originalsAndFullSizeResourcesToShareForAsset:(id)arg1 fromAvailableResources:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (_Bool)setValuesInDictionary:(id)arg1 fromDictionary:(id)arg2 keysToCopy:(id)arg3;
 + (id)_resourcesToShareForAsset:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)_resourcesToShareForAsset:(id)arg1 error:(id *)arg2;
-+ (id)_fetchableResourcesForAsset:(id)arg1 includeDerivatives:(_Bool)arg2;
 + (id)fetchResourcesToShareForAsset:(id)arg1 requestOptions:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSMutableArray *_activeAssetResourcesRequest; // @synthesize _activeAssetResourcesRequest=__activeAssetResourcesRequest;
 @property(retain, nonatomic, setter=_setAssetResources:) NSArray *_assetResources; // @synthesize _assetResources=__assetResources;
@@ -58,7 +57,6 @@
 - (void)_fetchResourcesForDuplicatingAsset:(id)arg1 options:(id)arg2 networkAccessAllowed:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_fetchResourcesForSharingAsset:(id)arg1 options:(id)arg2 networkAccessAllowed:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_fetchResourcesForPickerAsset:(id)arg1 options:(id)arg2 networkAccessAllowed:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)_fetchResourcesForEditingAsset:(id)arg1 options:(id)arg2 networkAccessAllowed:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_fetchResourcesWithOptions:(id)arg1 networkAccessAllowed:(_Bool)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)downloadRequiredResourcesWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchIsDownloadRequiredWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

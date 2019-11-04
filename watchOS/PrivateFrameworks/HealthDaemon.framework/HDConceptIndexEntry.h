@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSUUID;
+@class NSNumber, NSString, NSUUID;
 
 @interface HDConceptIndexEntry : NSObject
 {
     NSUUID *_sampleUUID;
     NSString *_keyPath;
     unsigned int _type;
+    NSNumber *_ontologyVersion;
     long long _conceptIdentifier;
     long long _conceptVersion;
     unsigned long long _compoundIndex;
 }
 
+@property(readonly, copy, nonatomic) NSNumber *ontologyVersion; // @synthesize ontologyVersion=_ontologyVersion;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long compoundIndex; // @synthesize compoundIndex=_compoundIndex;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
@@ -28,7 +30,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
-- (id)initWithSampleUUID:(id)arg1 conceptIdentifier:(long long)arg2 conceptVersion:(long long)arg3 keyPath:(id)arg4 compoundIndex:(unsigned long long)arg5 type:(unsigned int)arg6;
+- (id)initWithSampleUUID:(id)arg1 conceptIdentifier:(long long)arg2 conceptVersion:(long long)arg3 keyPath:(id)arg4 compoundIndex:(unsigned long long)arg5 type:(unsigned int)arg6 ontologyVersion:(id)arg7;
 - (id)init;
 
 @end

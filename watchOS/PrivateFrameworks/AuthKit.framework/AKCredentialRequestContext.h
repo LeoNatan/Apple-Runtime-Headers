@@ -31,8 +31,10 @@
     NSString *_proxiedClientAppID;
     NSString *_proxiedClientTeamID;
     NSArray *_proxiedAssociatedDomains;
+    NSString *_callerBundleID;
     NSString *_proxiedDeviceName;
     NSString *_proxiedDeviceClass;
+    NSString *_proxiedClientServiceID;
     NSUUID *_requestIdentifier;
     AKAuthorizationRequest *_authorizationRequest;
     AKPasswordRequest *_passwordRequest;
@@ -42,12 +44,13 @@
 @property(retain, nonatomic) AKPasswordRequest *passwordRequest; // @synthesize passwordRequest=_passwordRequest;
 @property(retain, nonatomic) AKAuthorizationRequest *authorizationRequest; // @synthesize authorizationRequest=_authorizationRequest;
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
+@property(retain, nonatomic) NSString *_proxiedClientServiceID; // @synthesize _proxiedClientServiceID;
 @property(retain, nonatomic) NSString *_proxiedDeviceClass; // @synthesize _proxiedDeviceClass;
 @property(retain, nonatomic) NSString *_proxiedDeviceName; // @synthesize _proxiedDeviceName;
+@property(retain, nonatomic) NSString *_callerBundleID; // @synthesize _callerBundleID;
 @property(nonatomic) _Bool _isRapportLogin; // @synthesize _isRapportLogin;
 @property(nonatomic) _Bool _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
 @property(nonatomic) _Bool _isWebLogin; // @synthesize _isWebLogin;
-@property(nonatomic) _Bool _requirePassword; // @synthesize _requirePassword;
 @property(retain, nonatomic) NSArray *_proxiedAssociatedDomains; // @synthesize _proxiedAssociatedDomains;
 @property(retain, nonatomic) NSString *_proxiedClientTeamID; // @synthesize _proxiedClientTeamID;
 @property(retain, nonatomic) NSString *_proxiedClientAppID; // @synthesize _proxiedClientAppID;
@@ -65,6 +68,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) _Bool _requirePassword; // @synthesize _requirePassword;
 @property(retain, nonatomic) NSArray *credentialRequests;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

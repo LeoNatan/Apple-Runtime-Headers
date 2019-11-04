@@ -52,6 +52,7 @@
 - (void)_setIdle:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_controlTapped:(id)arg1;
 - (void)_setViewState:(unsigned int)arg1 animated:(_Bool)arg2;
+- (void)_updateEUVolumeLimitWarningLayerWithNormalizedVolumeValue:(float)arg1;
 - (void)_updateGaugeColors;
 - (struct CGSize)_largestIconSize;
 - (void)_updateIconImage;

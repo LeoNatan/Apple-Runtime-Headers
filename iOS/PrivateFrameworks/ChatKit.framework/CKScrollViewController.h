@@ -54,6 +54,7 @@
 - (double)visibleHeightAboveKeyboard;
 - (struct UIEdgeInsets)navigationBarInsetsWithoutPalette;
 - (struct UIEdgeInsets)navigationBarInsets;
+@property(readonly, nonatomic) struct CGRect keyboardFrameInViewCoordinates;
 @property(readonly, nonatomic) struct CGRect keyboardFrame;
 - (void)updateScrollGeometry;
 - (void)keyboardDidChangeFrame:(id)arg1;

@@ -13,11 +13,13 @@
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _eventDate;
     NSString *_eventName;
     NSString *_loiIdentifierString;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _loiType;
     BOOL _isEventAllDay;
     struct {
@@ -64,6 +66,8 @@
 - (id)loiTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasLoiType;
 @property(nonatomic) int loiType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(retain, nonatomic) NSUUID *loiIdentifier;
 
 @end

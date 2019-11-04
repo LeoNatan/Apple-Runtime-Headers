@@ -13,8 +13,10 @@
     SBAppLayout *_fromAppLayout;
     SBAppLayout *_toAppLayout;
     long long _floatingConfiguration;
+    _Bool _blursFromAppLayout;
 }
 
+@property(nonatomic) _Bool blursFromAppLayout; // @synthesize blursFromAppLayout=_blursFromAppLayout;
 - (void).cxx_destruct;
 - (_Bool)_isIndexToAppLayout:(unsigned long long)arg1;
 - (_Bool)_isIndexFromAppLayout:(unsigned long long)arg1;
@@ -26,7 +28,6 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
-- (long long)layoutUpdateMode;
 - (id)transitionDidEnd;
 - (id)transitionWillUpdate;
 - (id)transitionWillBegin;

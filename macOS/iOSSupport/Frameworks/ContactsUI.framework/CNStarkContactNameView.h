@@ -6,20 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UILabel;
+@class CNAvatarViewController, CNContact, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface CNStarkContactNameView : UIView
 {
+    CNContact *_contact;
     UILabel *_nameLabel;
-    UIImageView *_photoImageView;
+    CNAvatarViewController *_avatarViewController;
 }
 
-@property(retain, nonatomic) UIImageView *photoImageView; // @synthesize photoImageView=_photoImageView;
-@property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
+@property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
+@property(readonly, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
+@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)setupConstraints;
+- (void)setupAvatar;
+- (void)setupNameLabel;
 - (id)initWithName:(id)arg1;
 
 @end

@@ -9,6 +9,7 @@
 @class HMDResidentDevice, HMDResidentDeviceManager;
 
 @protocol HMDResidentDeviceManagerDelegate <NSObject>
+- (void)residentDeviceManagerDidUpdateResidents:(HMDResidentDeviceManager *)arg1;
 - (void)residentDeviceManager:(HMDResidentDeviceManager *)arg1 didUpdatePrimaryResident:(HMDResidentDevice *)arg2;
 - (void)residentDeviceManager:(HMDResidentDeviceManager *)arg1 didUpdateResidentAvailable:(_Bool)arg2;
 @end

@@ -8,6 +8,7 @@
 
 @interface NSMutableDictionary (MSASServerSideModel)
 + (id)MSASDictionaryWithCopyOfDictionary:(id)arg1;
+- (id)MSASAddIsForceUpdate;
 - (id)MSASAddIsErrorRecovery;
 - (id)MSASAddNotInterestingKey;
 - (id)MSASAddEventIsDueToAssetCollectionDeletionAssetCollectionGUID:(id)arg1;

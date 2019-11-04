@@ -24,6 +24,7 @@
 - (id)verifyPropertiesAreSet:(id)arg1;
 - (id)verifyPropertyIsSet:(id)arg1;
 - (id)commitItemBuilderSetDiff:(id)arg1 addBlock:(CDUnknownBlockType)arg2 deleteBlock:(CDUnknownBlockType)arg3;
+- (id)_commitSetDiff:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)commitSetDiff:(id)arg1 addBlock:(CDUnknownBlockType)arg2 updateBlock:(CDUnknownBlockType)arg3 deleteBlock:(CDUnknownBlockType)arg4;
 - (void)setHome:(id)arg1;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;

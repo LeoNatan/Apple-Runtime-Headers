@@ -6,9 +6,12 @@
 
 #import <MapsSupport/NSObject-Protocol.h>
 
-@class MSPCloudContainer;
+@class MSPCloudContainer, MSPCloudContainerChangeSet;
 
 @protocol MSPCloudContainerObserver <NSObject>
 - (void)cloudContainerDidChange:(MSPCloudContainer *)arg1;
+
+@optional
+- (void)cloudContainer:(MSPCloudContainer *)arg1 didFetchChanges:(MSPCloudContainerChangeSet *)arg2;
 @end
 

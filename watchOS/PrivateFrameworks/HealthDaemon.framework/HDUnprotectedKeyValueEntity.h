@@ -10,6 +10,7 @@
 {
 }
 
++ (id)_insertOrReplaceSQL;
 + (int)protectionClass;
 + (id)databaseTable;
 + (id)keyForNotificationDomain:(int)arg1 error:(out id *)arg2;

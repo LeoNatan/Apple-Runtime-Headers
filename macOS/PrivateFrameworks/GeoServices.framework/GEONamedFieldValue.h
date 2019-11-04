@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEONamedFieldValue : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _doubleValue;
     long long _intValue;
     GEONamedField *_mapValue;
     NSString *_stringValue;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _boolValue;
     struct {
         unsigned int has_doubleValue:1;
@@ -63,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)_readStringValue;
 @property(nonatomic) BOOL hasDoubleValue;
 @property(nonatomic) double doubleValue;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

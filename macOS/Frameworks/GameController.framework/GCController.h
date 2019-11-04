@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GCExtendedGamepad, GCGamepad, GCMicroGamepad, GCMotion, NSMutableArray, NSString;
+@class GCExtendedGamepad, GCGamepad, GCMicroGamepad, GCMotion, GCStereoAR, NSMutableArray, NSString;
 @protocol GCNamedProfile, OS_dispatch_queue;
 
 @interface GCController : NSObject
@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)controllerWithStereoAR;
 + (id)controllerWithExtendedGamepad;
 + (id)controllerWithMicroGamepad;
 + (void)stopWirelessControllerDiscovery;
@@ -72,6 +73,7 @@
 - (id)capture;
 - (id)description;
 @property(readonly, retain, nonatomic) GCMotion *motion;
+@property(readonly, retain, nonatomic) GCStereoAR *stereoAR;
 @property(readonly, retain, nonatomic) GCExtendedGamepad *extendedGamepad;
 @property(readonly, retain, nonatomic) GCMicroGamepad *microGamepad;
 @property(readonly, retain, nonatomic) GCGamepad *gamepad;

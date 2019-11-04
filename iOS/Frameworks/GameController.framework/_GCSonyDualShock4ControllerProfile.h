@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (_Bool)isBluetoothAndUSBMirrored;
+- (void)setEnableTimeForHaptics:(_Bool)arg1;
 - (void)triggerHapticsForDuration:(float)arg1;
 - (void)triggerHaptics;
 - (void)setHapticMotor:(int)arg1 frequency:(float)arg2;

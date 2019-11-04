@@ -12,12 +12,13 @@
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 #import <NewsUI/SXScrollViewControllerDelegate-Protocol.h>
 
-@class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, SXScrollViewController, UIScrollView;
+@class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, SXScrollViewController, UIResponder, UIScrollView;
 @protocol NUANFDebugSettingsProvider, NUArticleDataProvider, NUArticleKeyCommandManager, NUDocumentSectionBlueprintProvider, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
 
 @interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUANFDebugSettingsObserver, NULoadable, NUBarCompressible>
 {
     _Bool _articleIsPresentingFullscreen;
+    _Bool _isShowingDeferredHardPayall;
     id <NULoadingDelegate> _loadingDelegate;
     NSString *_contentSizeCategory;
     long long _contentScale;
@@ -39,6 +40,7 @@
 }
 
 + (id)_parentOrPresentingViewControllerFor:(id)arg1;
+@property(nonatomic) _Bool isShowingDeferredHardPayall; // @synthesize isShowingDeferredHardPayall=_isShowingDeferredHardPayall;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(nonatomic) _Bool articleIsPresentingFullscreen; // @synthesize articleIsPresentingFullscreen=_articleIsPresentingFullscreen;
 @property(readonly, nonatomic) id <NUANFDebugSettingsProvider> debugSettingsProvider; // @synthesize debugSettingsProvider=_debugSettingsProvider;
@@ -58,6 +60,8 @@
 @property(nonatomic) long long contentScale; // @synthesize contentScale=_contentScale;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 - (void).cxx_destruct;
+- (void)updateTextSelectionForPaywallPresentation;
+- (_Bool)isPreviewingOrShowingHardPaywall;
 - (_Bool)accessibilityShouldScrollForScrollViewController:(id)arg1 defaultValue:(_Bool)arg2;
 - (_Bool)scrollViewController:(id)arg1 shouldOccludeAccessibilityElement:(id)arg2;
 - (id)currentPresentationAttributes;
@@ -81,7 +85,10 @@
 - (long long)preferredStatusBarStyle;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
+@property(readonly, nonatomic) UIResponder *responder;
+- (_Bool)resignFirstResponder;
 - (_Bool)canBecomeFirstResponder;
+- (_Bool)becomeFirstResponder;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewSafeAreaInsetsDidChange;

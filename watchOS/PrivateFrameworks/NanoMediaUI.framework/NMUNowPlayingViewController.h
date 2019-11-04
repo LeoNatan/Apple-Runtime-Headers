@@ -62,10 +62,13 @@
 - (void)_setShouldObserveVolumeChanges:(_Bool)arg1;
 - (void)_updateVolumeController;
 - (void)_togglePlaybackRate;
+- (unsigned int)_tracklistTypeForCurrentNowPlayingState;
 - (void)feedbackActionSheetController:(id)arg1 willDismissForTappedAction:(int)arg2;
 - (void)_sendMediaRemoteCommandForToggledFeedbackAction:(int)arg1;
 - (void)_sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3;
 - (void)_updateAirPlayButtonSelectedState;
+- (void)_handleApplicationWillResignActiveNotification:(id)arg1;
+- (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
 - (void)_handleOriginConnectionStateDidChangeNotification:(id)arg1;
 - (void)_handleVirtualAudioRoutesDidChangeNotification:(id)arg1;
 - (void)volumeIndicatorDidEndAdjustingVolume:(id)arg1;
@@ -92,6 +95,7 @@
 - (void)_updateNowPlayingFeedbackController;
 - (void)_updateAvailableAndHighlightedControls;
 - (void)_updateTrackTitleMarqueeForAppearanceAndPlaybackState;
+- (void)_pauseAnimationsUntilNextUpdate;
 - (void)_pauseMarquee;
 - (void)_setViewAppearanceState:(int)arg1;
 - (void)_refreshArtworkRelatedViewsForArtworkImageUpdate;
@@ -111,7 +115,6 @@
 - (void)_handleOptimisticPlaybackStateExpiryTimer;
 - (void)_invalidateOptimisticPlaybackStateExpiryTimer;
 - (void)setOptimisticPlaybackState:(id)arg1;
-- (void)_applicationWillResignActiveNotification:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldVolumeAutomaticallyBecomeFirstResponder;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

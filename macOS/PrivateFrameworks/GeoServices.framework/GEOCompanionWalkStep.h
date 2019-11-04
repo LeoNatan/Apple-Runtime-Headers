@@ -14,12 +14,14 @@
 @interface GEOCompanionWalkStep : PBCodable <GEOCompanionManeuverStep, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     struct GEOJunctionElement *_junctionElements;
     unsigned long long _junctionElementsCount;
     unsigned long long _junctionElementsSpace;
     NSMutableArray *_maneuverNames;
     NSMutableArray *_signposts;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _junctionType;
     int _maneuverType;
     CDStruct_6da46726 _flags;
@@ -70,6 +72,8 @@
 @property(nonatomic) BOOL hasManeuverType;
 @property(nonatomic) int maneuverType;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) int transportType;
 
 // Remaining properties

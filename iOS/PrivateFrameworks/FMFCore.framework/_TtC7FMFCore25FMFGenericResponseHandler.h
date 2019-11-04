@@ -10,10 +10,8 @@ __attribute__((visibility("hidden")))
 @interface _TtC7FMFCore25FMFGenericResponseHandler : NSObject
 {
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: fmfSession
     // Error parsing type: , name: locationShifter
     // Error parsing type: , name: updateQueue
-    // Error parsing type: , name: fences
     // Error parsing type: , name: locationAlertsOnMeByMe
     // Error parsing type: , name: locationAlertsOnMeByFriends
     // Error parsing type: , name: locationAlertsOnFriendsByMe

@@ -7,7 +7,6 @@
 #import <UIKit/UIViewController.h>
 
 @interface UIViewController (PKUIUtilities)
-- (void)pkui_setNeedsNavigationBarUpdate;
 - (_Bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (id)pkui_frontMostViewController;
 - (void)_pk_presentViewController:(id)arg1 animated:(_Bool)arg2 transition:(int)arg3 popToViewControllerAfterPresentation:(id)arg4 completion:(CDUnknownBlockType)arg5;

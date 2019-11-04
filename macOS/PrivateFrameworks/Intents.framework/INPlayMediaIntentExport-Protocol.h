@@ -11,6 +11,8 @@
 
 @protocol INPlayMediaIntentExport <NSObject, JSExport>
 @property(copy) NSString *proxiedBundleIdentifier;
+@property(copy) NSArray *alternativeResults;
+@property(copy) NSArray *audioSearchResults;
 @property(copy) NSArray *hashedRouteUIDs;
 @property(copy) INMediaSearch *mediaSearch;
 @property(copy) NSNumber *playbackSpeed;

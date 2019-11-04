@@ -43,6 +43,7 @@
 @property(nonatomic) BOOL shouldPerformLightweightValidation; // @synthesize shouldPerformLightweightValidation=_shouldPerformLightweightValidation;
 - (void).cxx_destruct;
 - (void)runPeriodicMaintenanceTasks:(unsigned long long)arg1 withTransaction:(id)arg2;
+- (void)fetchLocationsOfInterestIfNeeded;
 - (BOOL)cameraIsActive;
 - (id)locationsOfInterest;
 - (BOOL)routineIsAvailable;

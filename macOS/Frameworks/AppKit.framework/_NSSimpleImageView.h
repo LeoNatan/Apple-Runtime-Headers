@@ -12,6 +12,7 @@
 __attribute__((visibility("hidden")))
 @interface _NSSimpleImageView : NSView
 {
+    struct CGRect _alignmentRectFrame;
 }
 
 @property(readonly, copy, nonatomic) id <NSContentStyle> imageContentStyle;
@@ -19,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (void)performBlockWithLayerContents:(CDUnknownBlockType)arg1;
 - (BOOL)wantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;
+@property(nonatomic) struct CGRect alignmentRectFrame;
+- (void)positionFromAlignmentRectFrame;
 
 // Remaining properties
 @property(readonly, nonatomic) NSImage *image; // @dynamic image;

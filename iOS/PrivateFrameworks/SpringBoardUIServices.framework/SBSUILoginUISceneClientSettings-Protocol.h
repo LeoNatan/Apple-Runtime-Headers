@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol SBSUILoginUISceneClientSettings <NSObject>
+@property(readonly, nonatomic) unsigned long long wallpaperMode;
 @property(readonly, nonatomic) long long rotationMode;
 @property(readonly, copy, nonatomic) NSString *statusBarUserNameOverride;
 @property(readonly, nonatomic) long long idleTimerMode;

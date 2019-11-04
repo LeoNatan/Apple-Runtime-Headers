@@ -14,6 +14,7 @@
 {
 }
 
++ (void)load;
 - (void)handleVolumeDecrease;
 - (void)handleVolumeIncrease;
 - (id)title;

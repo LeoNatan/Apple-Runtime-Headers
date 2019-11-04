@@ -39,6 +39,7 @@
         float maximum;
     } _interactiveScrollNavBarIntrinsicHeightRange;
     int _updateTopViewFramesToMatchScrollOffsetDisabledCount;
+    struct CGSize _externallySetNavControllerPreferredContentSize;
     unsigned long _pushSoundID;
     unsigned long _popSoundID;
     struct {
@@ -348,7 +349,7 @@
 - (float)_widthForLayout;
 - (id)_independentContainedScrollViewIntermediateToDescendantViewController:(id)arg1;
 - (void)_calculateTopViewFramesForExpandedLayoutWithViewController:(id)arg1 contentScrollView:(id)arg2 gettingNavBarFrame:(struct CGRect *)arg3 topPaletteFrame:(struct CGRect *)arg4;
-- (void)_calculateTopViewFramesForPushPopIncomingLayoutWithViewController:(id)arg1 contentScrollView:(id)arg2 gettingNavBarFrame:(struct CGRect *)arg3 topPaletteFrame:(struct CGRect *)arg4;
+- (void)_calculateTopViewFramesFromLayoutHeightsWithViewController:(id)arg1 contentScrollView:(id)arg2 preservingContentInset:(_Bool)arg3 respectFullExtension:(_Bool)arg4 gettingNavBarFrame:(struct CGRect *)arg5 topPaletteFrame:(struct CGRect *)arg6;
 - (float)_topPalettePreferredLayoutHeightForVisibilityStateIfDisplayedForViewController:(id)arg1;
 - (void)_calculateTopViewFramesForLayoutWithViewController:(id)arg1 contentScrollView:(id)arg2 navBarFrame:(struct CGRect *)arg3 topPaletteFrame:(struct CGRect *)arg4 topLayoutType:(int)arg5;
 - (CDStruct_cb93a237)_calculateTopLayoutInfoForViewController:(id)arg1;
@@ -357,9 +358,13 @@
 - (_Bool)_canUpdateTopViewFramesToMatchScrollView;
 - (void)_performWhileIgnoringUpdateTopViewFramesToMatchScrollOffset:(CDUnknownBlockType)arg1;
 - (int)_topLayoutTypeForViewController:(id)arg1;
+- (_Bool)_isPopping;
+- (_Bool)_isPushing;
 - (_Bool)_isPushingOrPopping;
+- (void)_updateTopViewFramesForViewController:(id)arg1 isCancelledTransition:(_Bool)arg2 isOrientationChange:(_Bool)arg3;
 - (void)_updateTopViewFramesForViewController:(id)arg1;
 - (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
+- (_Bool)_navigationBar:(id)arg1 getContentOffsetOfObservedScrollViewIfApplicable:(struct CGPoint *)arg2;
 - (void)_updateAndObserveScrollView:(id)arg1 viewController:(id)arg2;
 - (void)_updateScrollViewObservationFlagsForScrollView:(id)arg1 navigationItem:(id)arg2;
 - (_Bool)_navigationControllerShouldObserveScrollView;
@@ -377,6 +382,7 @@
 - (void)_layoutTopViewController;
 @property(readonly, nonatomic) _Bool _isLayingOutTopViewController;
 - (void)_updateChildContentMargins;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)_updatePaletteConstraints;
 - (void)_updatePalettesWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;

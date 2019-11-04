@@ -15,7 +15,6 @@
     UICollectionReusableView<SiriUIReusableView> *_footerView;
     UICollectionReusableView<SiriUIReusableView> *_transparentHeaderView;
     UICollectionReusableView<SiriUIReusableView> *_transparentFooterView;
-    _Bool _topKeylineHidden;
     _Bool _wantsConfirmationInsets;
     _Bool _isFullPadWidth;
     _Bool _isTransparent;
@@ -62,12 +61,12 @@
 @property(retain, nonatomic) SAUIAppPunchOut *headerPunchOut; // @synthesize headerPunchOut=_headerPunchOut;
 @property(copy, nonatomic) NSArray *requestContext; // @synthesize requestContext=_requestContext;
 @property(copy, nonatomic) NSString *navigationTitle; // @synthesize navigationTitle=_navigationTitle;
-@property(nonatomic) _Bool topKeylineHidden; // @synthesize topKeylineHidden=_topKeylineHidden;
 @property(copy, nonatomic) NSAttributedString *attributedSubtitle; // @synthesize attributedSubtitle=_attributedSubtitle;
 @property(copy, nonatomic) UIColor *titleBackgroundColor; // @synthesize titleBackgroundColor=_titleBackgroundColor;
 @property(copy, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic) NSUUID *instrumentationTurnIdentifier; // @synthesize instrumentationTurnIdentifier=_instrumentationTurnIdentifier;
 - (void).cxx_destruct;
+- (void)setTopKeylineHidden:(_Bool)arg1;
 - (void)confirmSnippet;
 - (void)confirmButtonTapped:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;

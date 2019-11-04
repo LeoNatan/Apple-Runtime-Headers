@@ -9,7 +9,7 @@
 #import <HomeKit/HMFMessageReceiver-Protocol.h>
 #import <HomeKit/HMObjectMerge-Protocol.h>
 
-@class HMFUnfairLock, NSString, NSUUID, _HMContext;
+@class HMAudioControl, HMFUnfairLock, NSString, NSUUID, _HMContext;
 @protocol OS_dispatch_queue, _HMMediaSessionDelegate;
 
 __attribute__((visibility("hidden")))
@@ -19,13 +19,18 @@ __attribute__((visibility("hidden")))
     NSUUID *_uuid;
     NSString *_routeUID;
     long long _playbackState;
+    long long _shuffleState;
+    long long _repeatState;
+    NSString *_mediaUniqueIdentifier;
     _HMContext *_context;
     NSUUID *_uniqueIdentifier;
     NSUUID *_messageTargetUUID;
+    HMAudioControl *_audioControl;
     id <_HMMediaSessionDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <_HMMediaSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly) HMAudioControl *audioControl; // @synthesize audioControl=_audioControl;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
@@ -34,8 +39,9 @@ __attribute__((visibility("hidden")))
 - (void)_handleSessionRouteUIDUpdated:(id)arg1;
 - (void)_notifyDelegateOfUpdatedRouteUID:(id)arg1;
 - (void)updatePlaybackState:(id)arg1;
-- (void)_updatePlaybackState:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateMediaState:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleSessionPlaybackUpdated:(id)arg1;
+- (void)_notifyDelegateOfUpdatedMediaState:(id)arg1;
 - (void)_notifyDelegateOfUpdatedPlaybackState:(long long)arg1;
 - (void)refreshPlaybackStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setPlaybackState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -45,12 +51,18 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void)setRouteUID:(id)arg1;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
+- (void)setMediaUniqueIdentifier:(id)arg1;
+@property(readonly, copy) NSString *mediaUniqueIdentifier; // @synthesize mediaUniqueIdentifier=_mediaUniqueIdentifier;
+- (void)setRepeatState:(long long)arg1;
+@property(readonly) long long repeatState; // @synthesize repeatState=_repeatState;
+- (void)setShuffleState:(long long)arg1;
+@property(readonly) long long shuffleState; // @synthesize shuffleState=_shuffleState;
 - (void)setPlaybackState:(long long)arg1;
 @property(readonly) long long playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void)setUuid:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(long long)arg3;
+- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(long long)arg3 audioControl:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

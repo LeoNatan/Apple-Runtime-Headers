@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <MailCore/EFLoggable-Protocol.h>
 #import <MailCore/MCConnectionLogging-Protocol.h>
 
 @class ECSASLClient, MCSocket, NSArray, NSData, NSDate, NSFileHandle, NSString;
 @protocol MCAccount;
 
-@interface MCConnection : NSObject <MCConnectionLogging>
+@interface MCConnection : NSObject <EFLoggable, MCConnectionLogging>
 {
     id _accountLock;
     id <MCAccount> _account;
@@ -43,6 +44,7 @@
 + (id)loggingDelegate;
 + (BOOL)_defaultsToBackground;
 + (void)initialize;
++ (id)log;
 @property(retain) NSFileHandle *logFile; // @synthesize logFile=_logFile;
 @property(retain, nonatomic) ECSASLClient *saslClient; // @synthesize saslClient=_saslClient;
 @property(retain, nonatomic) NSData *logHeader; // @synthesize logHeader=_logHeader;
@@ -87,6 +89,7 @@
 - (BOOL)_authenticateWithSASLClient:(id)arg1;
 - (BOOL)_authenticateWithAuthenticationMechanisms:(id)arg1 allowPlainText:(BOOL)arg2;
 - (BOOL)_shouldKeepTryingAfterProcessingAuthenticationFailureAllowingReconnect:(BOOL)arg1 bestError:(id *)arg2;
+- (id)renewCredentialsIfNeededForAccount:(id)arg1;
 - (BOOL)authenticate;
 - (BOOL)_completeConnectionWithResult:(BOOL)arg1;
 - (void)_setupConnection;

@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIFocusEnginePanGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIFocusFastScrollingRecognizerDelegate-Protocol.h>
 
-@class CADisplayLink, CARInputDeviceTouchpad, CARSessionStatus, NSArray, NSString, NSTimer, UIMoveEvent, UIScrollView, UITapGestureRecognizer, UIView, _UIFocusEngineJoystickGestureRecognizer, _UIFocusEnginePanGestureRecognizer, _UIFocusFastScrollingRecognizer, _UIFocusMotionEffectsController, _UIFocusMovementInfo, _UIFocusPressGestureRecognizer;
+@class CADisplayLink, CARInputDeviceTouchpad, CARSessionStatus, NSArray, NSObservation, NSString, NSTimer, NSUserDefaults, UIMoveEvent, UIScrollView, UITapGestureRecognizer, UIView, _UIFocusEngineJoystickGestureRecognizer, _UIFocusEnginePanGestureRecognizer, _UIFocusFastScrollingRecognizer, _UIFocusMotionEffectsController, _UIFocusMovementInfo, _UIFocusPressGestureRecognizer;
 @protocol _UIFocusEventRecognizerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     _UIFocusPressGestureRecognizer *_selectGestureRecognizer;
     struct CGPoint _touchBeganPoint;
     struct CGPoint _lastKnownTouchPoint;
+    struct CGPoint _previousPoints[5];
+    int _numFrames;
     struct CGVector _progressAccumulator;
     _UIFocusFastScrollingRecognizer *_fastScrollingRecognizer;
     struct CGPoint _firstMomentumTouchPoint;
@@ -42,6 +44,9 @@ __attribute__((visibility("hidden")))
     UIScrollView *_lastScrolledScroll;
     double _lastEdgeScrollEdgeValue;
     unsigned long long _inputType;
+    _Bool _isShippingSettings;
+    NSUserDefaults *_trackingUserDefaults;
+    NSObservation *_trackingModeObserveration;
     CARSessionStatus *_sessionStatus;
     CARInputDeviceTouchpad *_currentCarTouchpad;
     struct {
@@ -132,6 +137,7 @@ __attribute__((visibility("hidden")))
 - (void)_addGestureRecognizers;
 - (void)reset;
 - (void)dealloc;
+- (void)_updateTrackingMode;
 - (id)initWithOwningView:(id)arg1;
 - (id)init;
 

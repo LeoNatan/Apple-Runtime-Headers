@@ -9,7 +9,7 @@
 @protocol AVPictureInPictureControllerMacHelper;
 
 @protocol AVPictureInPictureControllerMacHelperDelegate <NSObject>
-- (void)pipControllerMuteButtonTapped:(id <AVPictureInPictureControllerMacHelper>)arg1;
+- (void)pipControllerMicrophoneMuteButtonTapped:(id <AVPictureInPictureControllerMacHelper>)arg1;
 - (void)pipControllerActionButtonTapped:(id <AVPictureInPictureControllerMacHelper>)arg1;
 - (void)pipControllerDidStop:(id <AVPictureInPictureControllerMacHelper>)arg1;
 - (void)pipController:(id <AVPictureInPictureControllerMacHelper>)arg1 restoreUserInterface:(void (^)(BOOL))arg2;

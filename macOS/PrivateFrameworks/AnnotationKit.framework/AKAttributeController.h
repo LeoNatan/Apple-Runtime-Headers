@@ -66,9 +66,9 @@
 - (void)updateAttributeSenderState:(id)arg1 segment:(long long)arg2 enabled:(BOOL)arg3;
 - (BOOL)isAttributeSenderEnabled:(id)arg1 segment:(long long)arg2;
 - (void)performAttributeActionForSender:(id)arg1 segment:(long long)arg2;
-- (void)annotationEditingDidEnd;
-- (void)forceHideRuler;
+- (void)annotationEditingDidEndWithCompletion:(CDUnknownBlockType)arg1;
 - (void)toggleRuler;
+- (void)forceHideRuler;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithController:(id)arg1;
 

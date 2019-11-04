@@ -18,6 +18,7 @@
 }
 
 + (Class)cellClass;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (double)baselineOffsetFromBottom;
 - (struct NSEdgeInsets)alignmentRectInsets;
 @property(retain) NSMenu *menu;

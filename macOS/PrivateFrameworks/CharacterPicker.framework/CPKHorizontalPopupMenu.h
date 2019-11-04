@@ -6,24 +6,26 @@
 
 #import <AppKit/NSPanel.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface CPKHorizontalPopupMenu : NSPanel
 {
     BOOL _doubleClicked;
-    long long _selectedIndex;
+    NSString *_selectedCharacter;
     CDUnknownBlockType _drawingBlock;
 }
 
-+ (id)menuWithHorizontalItems:(id)arg1 cellSize:(struct CGSize)arg2 drawingBlock:(CDUnknownBlockType)arg3;
++ (id)menuForCharacter:(id)arg1 fontSize:(double)arg2 cellSize:(struct CGSize)arg3 drawingBlock:(CDUnknownBlockType)arg4;
 @property CDUnknownBlockType drawingBlock; // @synthesize drawingBlock=_drawingBlock;
 @property(readonly) BOOL doubleClicked; // @synthesize doubleClicked=_doubleClicked;
-@property(readonly) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(copy) NSString *selectedCharacter; // @synthesize selectedCharacter=_selectedCharacter;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)_withinDoubleClickTimeSinceOpened;
 - (id)_popoverFrameView;
 - (id)_menuView;
 - (void)closeMenu;
-- (BOOL)popUpMenuPositioningItem:(id)arg1 atRect:(struct CGRect)arg2 inView:(id)arg3 pinRectInWindow:(struct CGRect)arg4;
+- (BOOL)popUpMenuPositioningAtRect:(struct CGRect)arg1 inView:(id)arg2 byMouse:(BOOL)arg3 pinRectInWindow:(struct CGRect)arg4;
 - (void)dealloc;
 
 @end

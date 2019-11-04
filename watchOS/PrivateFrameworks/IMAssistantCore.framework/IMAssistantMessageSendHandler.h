@@ -20,13 +20,12 @@
 @property(retain, nonatomic) id <IMAssistantMessageSendHandlerDelegate> messageSendHandlerDelegate; // @synthesize messageSendHandlerDelegate=_messageSendHandlerDelegate;
 - (void).cxx_destruct;
 - (id)recipientsResolutionFailureResultWithResult:(id)arg1 forRecipient:(id)arg2 amongRecipients:(id)arg3;
-- (id)handleResolutionResultForContact:(id)arg1 recipient:(id)arg2;
+- (id)handleResolutionResultForHandles:(id)arg1 resolvedContactForAlternatives:(id)arg2 recipient:(id)arg3;
 - (id)contactResolutionResultForContacts:(id)arg1 matchingRecipient:(id)arg2;
 - (id)findValidMappingOfRequestedRecipientToChatParticipantAmongMatches:(id)arg1;
 - (_Bool)shouldContinueToExamineRelevantChatsWithMatches:(id)arg1 nextChat:(id)arg2;
-- (id)resolveRecipientsByFindingExistingRelevantChatsForRecipients:(id)arg1 withContacts:(id)arg2 fromChats:(id)arg3;
+- (id)resolveRecipientsByFindingExistingRelevantChatsForRecipients:(id)arg1 withMatchingHandlesByRecipient:(id)arg2 fromChats:(id)arg3;
 - (id)contactsWithDuplicateNamesAmongContacts:(id)arg1;
-- (id)imHandleForAnonymousContact:(id)arg1 recipient:(id)arg2;
 - (id)resolvedRecipientsFromChat:(id)arg1;
 - (void)resolveRecipients:(id)arg1 forIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recipientDisambiguationResultsFromMultipleRelevantChats:(id)arg1;

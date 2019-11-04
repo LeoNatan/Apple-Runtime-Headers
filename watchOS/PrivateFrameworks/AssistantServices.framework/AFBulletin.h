@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <AssistantServices/NSCopying-Protocol.h>
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
 @class BBBulletin, NSArray, NSDate, NSString;
 
-@interface AFBulletin : NSObject <NSSecureCoding>
+@interface AFBulletin : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _availableOnLockScreen;
     _Bool _supportsSpokenNotification;
@@ -63,11 +64,11 @@
 @property(nonatomic) _Bool availableOnLockScreen; // @synthesize availableOnLockScreen=_availableOnLockScreen;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setNotification:(id)arg1 fromSourceApp:(id)arg2;
 - (void)setBulletin:(id)arg1;
-- (id)_displayNameForBulletin:(id)arg1;
 
 @end
 

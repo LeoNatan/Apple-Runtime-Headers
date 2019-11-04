@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)_coerceImageIntoData:(id)arg1;
 - (id)applyMaterialRecipe:(id)arg1 recipeName:(id)arg2 weighting:(double)arg3 downsampleFactor:(double)arg4;
-- (id)treatWallpaperImage:(id)arg1 needsLuminanceTreatment:(_Bool)arg2 needsDimmingTreatment:(_Bool)arg3 downsampleFactor:(double)arg4;
+- (id)treatWallpaperImage:(id)arg1 needsLuminanceTreatment:(_Bool)arg2 needsDimmingTreatment:(_Bool)arg3 downsampleFactor:(double)arg4 averageColor:(id)arg5;
 - (id)_remoteObjectProxy;
 - (void)_createConnection;
 

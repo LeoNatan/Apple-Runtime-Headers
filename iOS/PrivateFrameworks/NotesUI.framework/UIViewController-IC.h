@@ -6,10 +6,11 @@
 
 #import <UIKit/UIViewController.h>
 
-@class ICViewControllerManager, UINavigationController;
+@class ICViewControllerManager, UINavigationController, UIWindowScene;
 
 @interface UIViewController (IC)
 + (void)ic_enableUIViewAnimations:(_Bool)arg1 forBlock:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) UIWindowScene *ic_windowScene;
 @property(readonly, nonatomic) UINavigationController *ic_rootNavigationController;
 - (id)ic_embedInNavigationControllerForModalPresentation;
 - (id)ic_topViewController;

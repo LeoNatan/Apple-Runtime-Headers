@@ -185,6 +185,7 @@ __attribute__((visibility("hidden")))
 - (void)_addHeaderContentViewControllerToViewHierarchy;
 @property BOOL alignsToKeyboard;
 @property BOOL shouldHaveBackdropView;
+- (void)_updateMacBackdropView:(BOOL)arg1;
 @property BOOL cancelActionIsDiscrete;
 - (void)_updateCancelActionBeingDiscrete;
 - (id)__cancelActionView;

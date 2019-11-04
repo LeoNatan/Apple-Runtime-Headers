@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _TVImageView *_logo;
 }
 
++ (id)_tintColorForDataSource:(id)arg1 interfaceStyle:(long long)arg2;
 + (id)airingLogoWithImageDictionary:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)airingTextWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)configureViewWithElement:(id)arg1 existingView:(id)arg2;

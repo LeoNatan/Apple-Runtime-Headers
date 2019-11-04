@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
+#import <AuthenticationServices/AKAuthorizationNotificationHandler-Protocol.h>
 #import <AuthenticationServices/ASAuthorizationProvider-Protocol.h>
 
 @class NSString;
 
-@interface ASAuthorizationAppleIDProvider : NSObject <ASAuthorizationProvider>
+@interface ASAuthorizationAppleIDProvider : NSObject <AKAuthorizationNotificationHandler, ASAuthorizationProvider>
 {
 }
 
++ (void)initialize;
+- (void)credentialStateDidChange:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getCredentialStateForUserID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)createRequest;
 

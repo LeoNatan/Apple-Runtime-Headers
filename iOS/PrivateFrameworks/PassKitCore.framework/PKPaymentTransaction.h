@@ -9,7 +9,7 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKAccountEvent, PKCurrencyAmount, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
+@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKAccountEvent, PKCurrencyAmount, PKInstallmentPlan, PKInstallmentPlanPayment, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
 
 @interface PKPaymentTransaction : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
@@ -26,6 +26,7 @@
     _Bool _hasAssociatedPaymentApplication;
     _Bool _hasNotificationServiceData;
     _Bool _originatedByDevice;
+    _Bool _fuzzyMatched;
     NSString *_identifier;
     NSString *_serviceIdentifier;
     NSString *_paymentHash;
@@ -95,6 +96,8 @@
     NSOrderedSet *_servicingEvents;
     NSArray *_payments;
     PKAccountEvent *_redemptionEvent;
+    PKInstallmentPlanPayment *_installmentPayment;
+    PKInstallmentPlan *_installmentPlan;
     NSDictionary *_metadata;
     NSDate *_lastMerchantReprocessingDate;
     NSString *_issueReportIdentifier;
@@ -118,6 +121,7 @@
 @property(nonatomic) long long transactionType; // @synthesize transactionType=_transactionType;
 @property(nonatomic) long long transactionStatus; // @synthesize transactionStatus=_transactionStatus;
 @property(copy, nonatomic) NSString *issueReportIdentifier; // @synthesize issueReportIdentifier=_issueReportIdentifier;
+@property(nonatomic, getter=isFuzzyMatched) _Bool fuzzyMatched; // @synthesize fuzzyMatched=_fuzzyMatched;
 @property(nonatomic) _Bool originatedByDevice; // @synthesize originatedByDevice=_originatedByDevice;
 @property(nonatomic) _Bool hasNotificationServiceData; // @synthesize hasNotificationServiceData=_hasNotificationServiceData;
 @property(nonatomic) _Bool hasAssociatedPaymentApplication; // @synthesize hasAssociatedPaymentApplication=_hasAssociatedPaymentApplication;
@@ -128,6 +132,8 @@
 @property(nonatomic) _Bool processedForLocation; // @synthesize processedForLocation=_processedForLocation;
 @property(nonatomic) _Bool isCloudKitArchived; // @synthesize isCloudKitArchived=_isCloudKitArchived;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) PKInstallmentPlan *installmentPlan; // @synthesize installmentPlan=_installmentPlan;
+@property(retain, nonatomic) PKInstallmentPlanPayment *installmentPayment; // @synthesize installmentPayment=_installmentPayment;
 @property(retain, nonatomic) PKAccountEvent *redemptionEvent; // @synthesize redemptionEvent=_redemptionEvent;
 @property(retain, nonatomic) NSArray *payments; // @synthesize payments=_payments;
 @property(retain, nonatomic) NSOrderedSet *servicingEvents; // @synthesize servicingEvents=_servicingEvents;

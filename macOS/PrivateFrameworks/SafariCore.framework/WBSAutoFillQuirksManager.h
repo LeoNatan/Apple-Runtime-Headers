@@ -24,6 +24,7 @@
 - (BOOL)isStreamlinedLoginDisallowedOnURL:(id)arg1;
 - (BOOL)isAutomaticLoginDisallowedOnURL:(id)arg1;
 - (id)_domainsIneligibleForPasswordAuditingFromCurrentSnapshot;
+- (id)_domainsToConsiderIdenticalFromCurrentSnapshot;
 - (id)_domainsWithAssociatedCredentialsFromCurrentSnapshot;
 - (id)_passwordRequirementsByDomainFromCurrentSnapshot;
 - (void)didDownloadPlistForRemotePlistController:(id)arg1;

@@ -16,8 +16,6 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)recordCallibrationCurveMetrics:(id)arg1 forInteraction:(id)arg2;
-- (void)recordPredictionMetrics:(id)arg1 forInteraction:(id)arg2;
 - (void)recordTrainingMetrics:(id)arg1 forInteraction:(id)arg2;
 
 @end

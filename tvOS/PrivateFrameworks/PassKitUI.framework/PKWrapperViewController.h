@@ -22,6 +22,7 @@
 - (_Bool)extendedLayoutIncludesOpaqueBars;
 - (unsigned long long)edgesForExtendedLayout;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)_updatePreferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (id)initWithWrappedViewController:(id)arg1 type:(long long)arg2;

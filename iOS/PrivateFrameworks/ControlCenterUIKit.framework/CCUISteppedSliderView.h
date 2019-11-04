@@ -48,9 +48,6 @@
 - (float)_valueFromStep:(unsigned long long)arg1;
 - (unsigned long long)_stepFromValue:(float)arg1 avoidCurrentStep:(_Bool)arg2;
 - (unsigned long long)_stepFromValue:(float)arg1;
-- (double)_sliderHeight;
-- (double)_fullStepHeight;
-- (double)_heightForStep:(unsigned long long)arg1;
 - (id)_createSeparatorView;
 - (id)_createBackgroundViewForStep:(unsigned long long)arg1;
 - (void)_createSeparatorViewsForNumberOfSteps:(unsigned long long)arg1;

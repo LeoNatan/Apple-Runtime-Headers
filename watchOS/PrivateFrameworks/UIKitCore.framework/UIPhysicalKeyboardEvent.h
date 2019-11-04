@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface UIPhysicalKeyboardEvent : UIPressesEvent
 {
-    _Bool _canPrivatizeInput;
+    _Bool _canPrivatize;
     _Bool __externalEvent;
     NSString *_modifiedInput;
     NSString *_unmodifiedInput;
@@ -39,11 +39,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *_modifiedInput; // @synthesize _modifiedInput;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int _gsModifierFlags;
-- (void)_privatizeInput;
+- (void)_privatize;
 - (id)_cloneEvent;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_matchesKeyCommand:(id)arg1;
 - (void)_setHIDEvent:(struct __IOHIDEvent *)arg1 keyboard:(struct __GSKeyboard *)arg2;
+@property(readonly, nonatomic) _Bool _isARepeat;
+@property(readonly, nonatomic) _Bool _isModifierKey;
 @property(readonly, nonatomic) long _keyCode;
 @property(readonly, nonatomic) _Bool _isGlobeKey;
 @property(readonly, nonatomic) _Bool _isKeyDown;

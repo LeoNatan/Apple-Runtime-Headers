@@ -24,6 +24,7 @@
 - (id)powerObservable;
 - (void)deleteMailboxWithURL:(id)arg1 databaseID:(long long)arg2;
 - (BOOL)canIndexAttachments;
+- (void)_attachmentBecameAvailable:(id)arg1;
 - (void)_messageFlagsChanged:(id)arg1;
 - (void)_indexMessages:(id)arg1 includeBody:(BOOL)arg2 indexingType:(long long)arg3;
 - (void)dealloc;

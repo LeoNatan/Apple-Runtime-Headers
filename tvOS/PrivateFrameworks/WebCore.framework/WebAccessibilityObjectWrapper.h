@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)frameForTextMarkers:(id)arg1;
 - (id)previousMarkerForMarker:(id)arg1;
 - (id)nextMarkerForMarker:(id)arg1;
+- (id)misspellingTextMarkerRange:(id)arg1 forward:(_Bool)arg2;
 - (id)lineStartMarkerForMarker:(id)arg1;
 - (id)lineEndMarkerForMarker:(id)arg1;
 - (id)selectedTextMarker;

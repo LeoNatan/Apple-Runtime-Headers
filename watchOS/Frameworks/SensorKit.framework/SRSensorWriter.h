@@ -23,6 +23,7 @@
     _Bool _authorized;
     _Bool _connectionDidInterrupt;
     _Bool _connectionDidInvalidate;
+    _Bool _retryGetMonitoring;
     NSString *_sensorIdentifier;
     NSDictionary *_nextDatastoreFiles;
     id <SRAuthorizationStore> _authorizationStore;
@@ -34,6 +35,7 @@
 + (id)remoteInterface;
 + (id)clientInterface;
 + (void)initialize;
+@property _Bool retryGetMonitoring; // @synthesize retryGetMonitoring=_retryGetMonitoring;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSDictionary *sensorInfo; // @synthesize sensorInfo=_sensorInfo;
 @property _Bool connectionDidInvalidate; // @synthesize connectionDidInvalidate=_connectionDidInvalidate;

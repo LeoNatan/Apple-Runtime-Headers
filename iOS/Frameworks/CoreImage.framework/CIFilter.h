@@ -235,6 +235,7 @@
 @property(copy, nonatomic) NSString *name;
 - (id)apply:(id)arg1;
 - (id)apply:(id)arg1 arguments:(id)arg2 options:(id)arg3;
+- (id)debugDescription;
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -248,7 +249,7 @@
 @property(readonly, nonatomic) NSArray *inputKeys;
 - (void)finalize;
 - (void)dealloc;
-- (void)_crashed_when_dealloc_called_setValue_nil_forKey_probably_because_the_subclass_already_released_it:(id)arg1 overridesDealloc:(_Bool)arg2;
+- (void)_crashed_when_dealloc_called_setValue_nil_forKey_probably_because_the_subclass_already_released_it:(id)arg1 className:(const char *)arg2 overridesDealloc:(_Bool)arg3;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (unsigned long long)hash;

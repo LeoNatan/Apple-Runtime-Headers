@@ -16,6 +16,7 @@
     AVConferenceXPCClient *_connection;
 }
 
+- (void)setEmulatedRxPLR:(double)arg1;
 - (void)setEnableLoopbackInterface:(_Bool)arg1;
 - (void)forceNetworkCellular:(_Bool)arg1;
 - (void)updateAudioInjectConfig:(id)arg1;

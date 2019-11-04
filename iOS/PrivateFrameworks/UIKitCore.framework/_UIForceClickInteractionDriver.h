@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelInteraction;
 @property(readonly, nonatomic) _Bool isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
+@property(readonly, nonatomic) _Bool hasExceededAllowableMovement;
 @property(readonly, nonatomic) double touchDuration;
 @property(readonly, nonatomic) double maximumEffectProgress;
 - (void)_prepareStateMachine;

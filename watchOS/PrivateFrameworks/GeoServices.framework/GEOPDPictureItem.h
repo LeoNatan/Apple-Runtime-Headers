@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPictureItem : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDPhoto *_photo;
     NSString *_primaryText;
     NSString *_secondaryText;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _photoItemType;
     struct {
         unsigned int has_photoItemType:1;
@@ -61,6 +63,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDPhoto *photo;
 @property(readonly, nonatomic) _Bool hasPhoto;
 - (void)_readPhoto;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

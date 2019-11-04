@@ -10,7 +10,7 @@
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
 #import <NanoTimeKit/NTKTritiumBaseAnimator-Protocol.h>
 
-@class CLKDevice, CLLocation, NSDate, NSString, NTKAstronomyLocationDot, NTKAstronomyVistaView, NTKDelayedBlock;
+@class CLKDevice, CLKUIQuadView, CLLocation, NSDate, NSString, NTKAstronomyLocationDot, NTKAstronomyVistaView, NTKDelayedBlock;
 
 @interface NTKAstronomyRichComplicationContentView : UIView <NTKAstronomyVistaViewObserver, NTKTimeTravel, NTKTritiumBaseAnimator>
 {
@@ -31,6 +31,7 @@
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+@property(readonly, nonatomic) CLKUIQuadView *quadView;
 - (void)handleWristRaiseScreenWake;
 - (void)handleOrdinaryScreenWake;
 - (void)prepareWristRaiseAnimation;

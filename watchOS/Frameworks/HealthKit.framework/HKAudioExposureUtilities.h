@@ -14,6 +14,7 @@
 + (id)_classificationValueWithLEQ:(double)arg1 duration:(double)arg2 days:(int)arg3;
 + (id)computeLEQFromAudioExposureValues:(id)arg1;
 + (unsigned int)classifyLEQ:(id)arg1 forDuration:(double)arg2 overDays:(int)arg3;
++ (id)localizedDisplayNameForClassification:(unsigned int)arg1 isEmbedded:(_Bool)arg2;
 + (id)localizedDisplayNameForClassification:(unsigned int)arg1;
 
 @end

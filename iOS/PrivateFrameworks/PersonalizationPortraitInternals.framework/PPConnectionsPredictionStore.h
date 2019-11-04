@@ -33,6 +33,7 @@
 - (id)pasteboardSource;
 - (id)parameters;
 - (id)recentLocationsForConsumer:(unsigned long long)arg1 criteria:(id)arg2 limit:(unsigned long long)arg3 explanationSet:(id)arg4 timeout:(unsigned long long)arg5 error:(id *)arg6;
+- (id)initWithIdentifier:(id)arg1 parameters:(id)arg2 pasteboardSource:(id)arg3 calendarSource:(id)arg4 duetSource:(id)arg5 namedEntitySource:(id)arg6 fiaSource:(id)arg7 metricsTracker:(id)arg8;
 - (id)init;
 
 @end

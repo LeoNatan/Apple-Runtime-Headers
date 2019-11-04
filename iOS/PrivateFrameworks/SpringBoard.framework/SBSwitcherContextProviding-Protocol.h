@@ -34,6 +34,7 @@
 - (SBMedusaSettings *)medusaSettings;
 - (SBHomeGestureSettings *)homeGestureSettings;
 - (SBAppSwitcherSettings *)switcherSettings;
+- (_Bool)isAppLayoutVisibleInSwitcherBounds:(SBAppLayout *)arg1;
 - (_Bool)isHomeScreenSidebarVisible;
 - (_Bool)isShowingSpotlightOrTodayView;
 - (_Bool)homeScreenHasOpenFolderInLocation:(NSString *)arg1;

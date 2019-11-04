@@ -16,7 +16,7 @@
 #import <NanoTimeKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSMutableArray, NSMutableSet, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICClientSideAnimation, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UICollectionViewDiffableDataSource, UIImage, UITapGestureRecognizer, UIView;
+@class NSArray, NSDate, NSMutableArray, NSMutableSet, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUpNextRenderer, NTKUtilityComplicationFactory, PUICClientSideAnimation, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UICollectionViewDiffableDataSource, UIImage, UITapGestureRecognizer, UIView;
 
 @interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
 {
@@ -42,14 +42,14 @@
     UIImage *_cellContentBackground;
     UIView *_timeLabelPlatter;
     UIView *_scalableView;
-    _Bool _needsUpdatesWhileSuppressed;
+    _Bool _needsReloadedContent;
     _Bool _isInflightScroll;
     _Bool _cancelInflightScroll;
     _Bool _isProgramaticScrollEvent;
     _Bool _crownInverted;
-    _Bool _suppressBatchUpdates;
     _Bool _suppressCrownEvents;
-    _Bool _inBatchUpdate;
+    _Bool _inUpdate;
+    _Bool _inReload;
     _Bool _isBacklightOn;
     NSMutableSet *_batchReloadIdentifiers;
     NSOrderedSet *_currentApplicationIdentifiers;
@@ -72,6 +72,9 @@
     NSArray *_tritium_toContents;
     NSDate *_tritium_overrideFromDate;
     NSDate *_tritium_overrideToDate;
+    float _tritium_fromContentsDimming;
+    float _tritium_toContentsDimming;
+    NTKUpNextRenderer *_tritium_renderer;
     _Bool _tritium_performingBurnInStudy;
     CDUnknownBlockType _tritium_transitionCleanupCompletion;
     float _tritium_contentsDimming;
@@ -84,6 +87,7 @@
 + (id)_reuseIdentifierForContent:(id)arg1;
 + (float)suggestedCellHeightForDevice:(id)arg1;
 - (void).cxx_destruct;
+- (void)tritium_setupForBurnInStudy;
 - (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
 - (id)tritium_createFaceAnimator;
 - (void)_overrideDateDidChange;
@@ -94,7 +98,7 @@
 - (void)tritium_willTransitionToTritiumOn;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;
-- (void)_tritium_updateContentsDimming;
+- (float)_tritium_computeContentsDimming;
 - (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_tritium_setupInitialContentsForTritium;
 - (id)_tritium_contentsFromContents:(id)arg1;
@@ -192,8 +196,10 @@
 - (int)_numberOfSectionsInCollectionView;
 - (void)_configureVisibleCell:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
-- (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2;
+- (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2 inCollectionView:(id)arg3;
+- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2 inCollectionView:(id)arg3;
+- (void)_logContent:(id)arg1 withIdentifier:(id)arg2;
+- (void)_logDataSourceSnapshot:(id)arg1 withName:(id)arg2;
 - (void)_removeUnmanagedCollectionViewCells;
 - (void)_loadCollectionViewDataAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_reloadCollectionViewData;

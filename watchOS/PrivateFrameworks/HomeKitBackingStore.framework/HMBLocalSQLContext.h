@@ -6,6 +6,8 @@
 
 #import <HomeKitBackingStore/HMBSQLContext.h>
 
+@class HMBSQLQueryStatement, NSDictionary, NSMapTable, NSMutableDictionary;
+
 @interface HMBLocalSQLContext : HMBSQLContext
 {
     struct sqlite3_stmt *insertStore;
@@ -38,12 +40,13 @@
     struct sqlite3_stmt *insertRecord;
     struct sqlite3_stmt *updateRecord;
     struct sqlite3_stmt *updateRecordExternal;
-    struct sqlite3_stmt *updateRecordExternalPush;
     struct sqlite3_stmt *updateRecordExternalExternal;
     struct sqlite3_stmt *updateRecordExternalUUID;
     struct sqlite3_stmt *updateRecordPush;
     struct sqlite3_stmt *updateRecordPushUUID;
+    struct sqlite3_stmt *updateRecordClearPushExpected;
     struct sqlite3_stmt *updateRecordsClearPush;
+    struct sqlite3_stmt *updateRecordType;
     struct sqlite3_stmt *deleteRecord;
     struct sqlite3_stmt *deleteRecordBlock;
     struct sqlite3_stmt *deleteRecordUUID;
@@ -58,50 +61,30 @@
     struct sqlite3_stmt *selectRecordsParentUUID;
     struct sqlite3_stmt *selectRecordsParentUUIDType;
     struct sqlite3_stmt *selectRecordsOfType;
-    struct sqlite3_stmt *selectRecordsOfTypeOrderedByID;
     struct sqlite3_stmt *selectRecords;
-    struct sqlite3_stmt *deleteQueryableStore;
-    struct sqlite3_stmt *deleteQueryableRecord;
-    struct sqlite3_stmt *updateQueryable;
-    struct sqlite3_stmt *selectQueryable;
+    struct sqlite3_stmt *insertIndexSentinel;
+    struct sqlite3_stmt *deleteIndexSentinels;
+    struct sqlite3_stmt *selectIndexSentinel;
+    NSDictionary *_queryTables;
+    NSMapTable *_queryContextsByClass;
+    NSMutableDictionary *_queryContextsByModelType;
+    HMBSQLQueryStatement *_selectAllRecordRows;
+    HMBSQLQueryStatement *_selectAllRecordTypeRows;
 }
 
 + (id)logCategory;
 + (id)openWithURL:(id)arg1 readOnly:(_Bool)arg2 error:(id *)arg3;
 + (void)unlinkDatastoreAt:(id)arg1 everything:(_Bool)arg2;
-- (id)logIdentifier;
+@property(retain, nonatomic) HMBSQLQueryStatement *selectAllRecordTypeRows; // @synthesize selectAllRecordTypeRows=_selectAllRecordTypeRows;
+@property(retain, nonatomic) HMBSQLQueryStatement *selectAllRecordRows; // @synthesize selectAllRecordRows=_selectAllRecordRows;
+@property(retain) NSMutableDictionary *queryContextsByModelType; // @synthesize queryContextsByModelType=_queryContextsByModelType;
+@property(retain) NSMapTable *queryContextsByClass; // @synthesize queryContextsByClass=_queryContextsByClass;
+@property(retain) NSDictionary *queryTables; // @synthesize queryTables=_queryTables;
+- (void).cxx_destruct;
 - (id)flush:(_Bool)arg1;
-- (id)_selectQueryableWithZoneRow:(unsigned int)arg1 type:(id)arg2 desired:(id)arg3 limit:(unsigned int)arg4 after:(unsigned int)arg5 error:(id *)arg6;
-- (_Bool)_updateQueryableWithZoneRow:(unsigned int)arg1 recordRow:(unsigned int)arg2 type:(id)arg3 fields:(id)arg4 error:(id *)arg5;
-- (_Bool)_deleteQueryableWithRecordRow:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)_deleteQueryableWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
-- (id)_selectRecordsWithBlockRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
-- (id)_selectRecordsWithZoneRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
-- (_Bool)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 limit:(unsigned int)arg3 returning:(unsigned int)arg4 error:(id *)arg5 handler:(CDUnknownBlockType)arg6;
-- (id)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 limit:(unsigned int)arg3 returning:(unsigned int)arg4 error:(id *)arg5;
-- (_Bool)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
-- (id)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
-- (id)_selectRecordWithZoneRow:(unsigned int)arg1 parentModelID:(id)arg2 modelType:(id)arg3 returning:(unsigned int)arg4 error:(id *)arg5;
-- (id)_selectRecordWithZoneRow:(unsigned int)arg1 parentModelID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
-- (id)_selectRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
-- (id)_selectRecordWithRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
-- (id)_selectRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
-- (id)_selectRecordModelIDWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 error:(id *)arg3;
-- (_Bool)_deleteZombieRecordsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)_deleteRecordsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)_deleteRecordWithRow:(unsigned int)arg1 expectedOutputBlockRow:(unsigned int)arg2 error:(id *)arg3;
-- (_Bool)_deleteRecordWithRow:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)_deleteRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 error:(id *)arg3;
-- (_Bool)_deleteRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 error:(id *)arg3;
-- (_Bool)_updateRecordWithRow:(unsigned int)arg1 pushBlockRow:(unsigned int)arg2 pushData:(id)arg3 pushEncoding:(unsigned int)arg4 error:(id *)arg5;
-- (_Bool)_updateRecordWithRow:(unsigned int)arg1 modelEncoding:(unsigned int)arg2 modelData:(id)arg3 modelSchema:(id)arg4 error:(id *)arg5;
-- (_Bool)_updateRecordsClearPushWithPushBlockRow:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)_updateRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 pushEncoding:(unsigned int)arg3 pushData:(id)arg4 pushBlockRow:(unsigned int)arg5 error:(id *)arg6;
-- (_Bool)_updateRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 externalData:(id)arg3 error:(id *)arg4;
-- (_Bool)_updateRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 error:(id *)arg4;
-- (_Bool)_updateRecordWithRow:(unsigned int)arg1 expectedOutputBlockRow:(unsigned int)arg2 externalID:(id)arg3 externalData:(id)arg4 error:(id *)arg5;
-- (_Bool)_updateRecordWithRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 error:(id *)arg4;
-- (unsigned int)_insertRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 modelID:(id)arg4 parentModelID:(id)arg5 modelType:(id)arg6 modelEncoding:(unsigned int)arg7 modelData:(id)arg8 modelSchema:(id)arg9 pushEncoding:(unsigned int)arg10 pushData:(id)arg11 pushBlockRow:(unsigned int)arg12 error:(id *)arg13;
+- (_Bool)_deleteIndexSentinelsWithModelType:(id)arg1 error:(id *)arg2;
+- (id)_selectIndexSentinelForZoneRow:(unsigned int)arg1 modelType:(id)arg2 error:(id *)arg3;
+- (_Bool)_insertIndexSentinelWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 error:(id *)arg3;
 - (_Bool)_deleteNullItemsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
 - (_Bool)_deleteNullItemsWithZoneRow:(unsigned int)arg1 type:(unsigned int)arg2 error:(id *)arg3;
 - (id)_selectItemsWithBlockRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
@@ -132,13 +115,45 @@
 - (_Bool)_deleteZoneWithRow:(unsigned int)arg1 error:(id *)arg2;
 - (unsigned int)_insertZoneWithIdentification:(id)arg1 name:(id)arg2 error:(id *)arg3;
 - (int)migrateFromSchemaVersion:(int)arg1 error:(id *)arg2;
-- (id)close;
+- (void)finalize;
 - (id)initialize;
 - (id)prepare;
 - (_Bool)sqlTransactionWithActivity:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)sqlBlockWithActivity:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)sqlTransactionWithActivity:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)sqlBlockWithActivity:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (id)initWithURL:(id)arg1 readOnly:(_Bool)arg2;
+- (void)prepareTables;
+- (int)verifyTables;
+- (void)reloadSQLQueryMetadata;
+- (_Bool)_resetOutputForRecordsWithBlockRow:(unsigned int)arg1 error:(id *)arg2;
+- (id)selectAllRecordsWithZoneRow:(unsigned int)arg1 returning:(unsigned int)arg2;
+- (id)_selectRecordsWithBlockRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
+- (id)_selectRecordsWithZoneRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
+- (_Bool)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
+- (id)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
+- (id)_selectRecordWithZoneRow:(unsigned int)arg1 parentModelID:(id)arg2 modelType:(id)arg3 returning:(unsigned int)arg4 error:(id *)arg5;
+- (id)_selectRecordWithZoneRow:(unsigned int)arg1 parentModelID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
+- (id)_selectRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
+- (id)_selectRecordWithRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
+- (id)_selectRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
+- (id)_selectRecordModelIDWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 error:(id *)arg3;
+- (_Bool)_deleteZombieRecordsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
+- (_Bool)_deleteRecordsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
+- (unsigned int)_clearPushForRecordRow:(unsigned int)arg1 expectedOutputBlockRow:(unsigned int)arg2 error:(id *)arg3;
+- (unsigned int)_deleteRecordWithRow:(unsigned int)arg1 expectedOutputBlockRow:(unsigned int)arg2 error:(id *)arg3;
+- (_Bool)_deleteRecordWithRow:(unsigned int)arg1 error:(id *)arg2;
+- (_Bool)_deleteRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 error:(id *)arg3;
+- (_Bool)_deleteRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 error:(id *)arg3;
+- (_Bool)_updateRecordWithRow:(unsigned int)arg1 modelType:(id)arg2 modelSchema:(id)arg3 error:(id *)arg4;
+- (_Bool)_updateRecordWithRow:(unsigned int)arg1 pushBlockRow:(unsigned int)arg2 pushData:(id)arg3 pushEncoding:(unsigned int)arg4 error:(id *)arg5;
+- (_Bool)_updateRecordWithRow:(unsigned int)arg1 modelEncoding:(unsigned int)arg2 modelData:(id)arg3 modelSchema:(id)arg4 error:(id *)arg5;
+- (_Bool)_updateRecordsClearPushWithPushBlockRow:(unsigned int)arg1 error:(id *)arg2;
+- (_Bool)_updateRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 pushEncoding:(unsigned int)arg3 pushData:(id)arg4 pushBlockRow:(unsigned int)arg5 error:(id *)arg6;
+- (_Bool)_updateRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 externalData:(id)arg3 error:(id *)arg4;
+- (_Bool)_updateRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 error:(id *)arg4;
+- (_Bool)_updateRecordWithRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 error:(id *)arg4;
+- (unsigned int)_insertRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 externalData:(id)arg3 modelID:(id)arg4 parentModelID:(id)arg5 modelType:(id)arg6 modelEncoding:(unsigned int)arg7 modelData:(id)arg8 modelSchema:(id)arg9 pushEncoding:(unsigned int)arg10 pushData:(id)arg11 pushBlockRow:(unsigned int)arg12 error:(id *)arg13;
 - (int)migrateToSchema01WithError:(id *)arg1;
 
 @end

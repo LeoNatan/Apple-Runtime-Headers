@@ -64,9 +64,16 @@
 - (id)_frameDescription;
 - (id)_animationStatsDescription;
 - (id)_statsStringForTimeIntervals:(id)arg1 label:(id)arg2;
+@property(readonly, nonatomic) double nonFirstFrameGlitchTimeRatio;
+@property(readonly, nonatomic) NSArray *contributedNonFirstFrameGlitches;
+@property(readonly, nonatomic) NSArray *nonFirstFrameGlitches;
+@property(readonly, nonatomic) double firstFrameGlitchTimeRatio;
+@property(readonly, nonatomic) NSArray *contributedFirstFrameGlitches;
+@property(readonly, nonatomic) NSArray *firstFrameGlitches;
 @property(readonly, nonatomic) double glitchTimeRatio;
 @property(readonly, nonatomic) NSArray *contributedGlitches;
 @property(readonly, nonatomic) NSArray *glitches;
+- (double)_timeRatioForTimeIntervalArray:(id)arg1;
 - (id)_poorPerfFrameDescription;
 - (id)_detailedFrameDescription;
 - (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2 asBegin:(BOOL)arg3;

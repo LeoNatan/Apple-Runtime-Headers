@@ -10,7 +10,6 @@
 {
 }
 
-- (void)shutdownWithReason:(id)arg1;
 - (void)close;
 - (id)newBoundAssetsdServicesTable;
 - (id)newLibraryServicesManager;

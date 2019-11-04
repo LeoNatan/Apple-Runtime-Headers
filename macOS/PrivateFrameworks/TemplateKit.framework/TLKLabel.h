@@ -52,6 +52,7 @@
 - (void)tlk_updateForAppearance:(id)arg1;
 @property(retain, nonatomic) TLKFormattedText *formattedText;
 @property(retain, nonatomic) TLKMultilineText *multilineText;
+- (void)setAlignment:(long long)arg1;
 - (void)setFont:(id)arg1 keepOriginal:(BOOL)arg2;
 - (void)setFont:(id)arg1;
 - (void)viewDidMoveToWindow;

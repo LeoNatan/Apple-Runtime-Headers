@@ -27,7 +27,10 @@
     BOOL panelCompleted;
     BOOL retained;
     BOOL panelIsNowUseless;
-    BOOL _enteredThroughSavePanelAPI;
+    BOOL nsAppObservers;
+    BOOL didPrepareToRun;
+    BOOL becameAppModalWindow;
+    BOOL runningAppModalExplicitly;
     NSCFRunLoopSemaphore *advanceToRunPhaseIfNeededSemaphore;
     CDUnknownBlockType completionHandler;
     id <NSOpenSavePanelDelegate> openSaveDelegate;
@@ -56,7 +59,10 @@
 + (BOOL)_defaultSettingForUbiquitousBehaviors;
 + (void)_storeRootDirectoryURL:(id)arg1 forSaveMode:(BOOL)arg2;
 + (id)_lastSavedRootDirectoryForSaveMode:(BOOL)arg1;
-@property BOOL _enteredThroughSavePanelAPI; // @synthesize _enteredThroughSavePanelAPI;
+@property BOOL runningAppModalExplicitly; // @synthesize runningAppModalExplicitly;
+@property BOOL becameAppModalWindow; // @synthesize becameAppModalWindow;
+@property BOOL didPrepareToRun; // @synthesize didPrepareToRun;
+@property BOOL nsAppObservers; // @synthesize nsAppObservers;
 @property(copy) NSArray *customActions; // @synthesize customActions;
 @property BOOL panelIsNowUseless; // @synthesize panelIsNowUseless;
 @property BOOL retained; // @synthesize retained;
@@ -95,7 +101,6 @@
 - (id)_URLsWithSecurityScoped:(BOOL)arg1;
 - (void)beginSheetForDirectory:(id)arg1 file:(id)arg2 modalForWindow:(id)arg3 modalDelegate:(id)arg4 didEndSelector:(SEL)arg5 contextInfo:(void *)arg6;
 - (void)beginSheetForDirectory:(id)arg1 file:(id)arg2 types:(id)arg3 modalForWindow:(id)arg4 modalDelegate:(id)arg5 didEndSelector:(SEL)arg6 contextInfo:(void *)arg7;
-- (void)_beginSheetModalForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
 - (long long)runModalForDirectory:(id)arg1 file:(id)arg2;
 - (long long)runModalForTypes:(id)arg1;
 - (long long)runModalForDirectory:(id)arg1 file:(id)arg2 types:(id)arg3;
@@ -107,13 +112,14 @@
 - (long long)runModal;
 - (void)beginWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)commonPrep:(CDUnknownBlockType)arg1 runningAsASheet:(BOOL)arg2 hostWindow_runningAsASheet:(BOOL)arg3;
+- (BOOL)commonPrep:(CDUnknownBlockType)arg1 runningAsASheet:(BOOL)arg2 hostWindow_runningAsASheet:(BOOL)arg3;
 - (void)_setAccessoryViewDisclosedVBKVO:(BOOL)arg1;
 - (void)_resetPrivateState;
-- (void)advanceToRunPhaseIfNeededLayerCentric;
+- (BOOL)beginServicePanel;
 - (void)viewDidAdvanceToRunPhase:(id)arg1;
 - (void)didEndSheet:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_becameAppModalWindow;
 - (void)observeAsynchronousIBActionKeyPath:(id)arg1 paramDict:(id)arg2;
 - (void)observeAsynchronousDelegateMethodCallKeyPath:(id)arg1 paramDict:(id)arg2;
 - (void)observeAsynchronousRemoteMethodCallKeyPath:(id)arg1 paramDict:(id)arg2;
@@ -162,7 +168,7 @@
 - (void)viewDidInvalidate:(id)arg1;
 - (void)viewWillInvalidate:(id)arg1;
 - (void)_setDefaultBridgeValues;
-- (void)_addObservers:(BOOL)arg1 onBridge:(id)arg2;
+- (void)_maintainObservers:(BOOL)arg1 onBridge:(id)arg2;
 - (void)dealloc;
 - (void)_invalidateRemoteView;
 - (id)remoteView;
@@ -176,6 +182,7 @@
 - (void)configureContentView:(id)arg1;
 - (id)panel;
 - (id)_initBridgeAndStuff;
+- (void)_maintainAppObservers:(BOOL)arg1;
 - (id)_createVBSemaphore;
 - (id)serviceViewControllerInterface;
 - (id)exportedInterface;

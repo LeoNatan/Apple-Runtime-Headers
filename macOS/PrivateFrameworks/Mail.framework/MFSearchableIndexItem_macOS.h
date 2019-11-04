@@ -21,6 +21,7 @@
 - (void)addStaticAttributesToAttributeSet:(id)arg1;
 - (void)addFlagsAttributesToAttributeSet:(id)arg1;
 - (void)addUpdatableAttributesToAttributeSet:(id)arg1;
+- (void)setNeedsAllAttributesIndexingType;
 - (id)searchableItem;
 - (id)initWithIdentifier:(id)arg1 message:(id)arg2 bodyData:(id)arg3 fetchBody:(BOOL)arg4 loadSecondaryMetadata:(BOOL)arg5;
 - (id)initWithIdentifier:(id)arg1 message:(id)arg2 bodyData:(id)arg3 fetchBody:(BOOL)arg4;

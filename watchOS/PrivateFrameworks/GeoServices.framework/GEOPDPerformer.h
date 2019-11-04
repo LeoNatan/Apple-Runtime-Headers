@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPerformer : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_itunesId;
     NSString *_itunesUrl;
     GEOLocalizedString *_name;
     NSString *_performerId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_itunesId:1;
@@ -60,6 +62,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOLocalizedString *name;
 @property(readonly, nonatomic) _Bool hasName;
 - (void)_readName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

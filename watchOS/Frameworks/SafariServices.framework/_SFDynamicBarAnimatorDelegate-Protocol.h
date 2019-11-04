@@ -9,6 +9,7 @@
 @class _SFDynamicBarAnimator;
 
 @protocol _SFDynamicBarAnimatorDelegate <NSObject>
+- (void)dynamicBarAnimatorStateDidChange:(_SFDynamicBarAnimator *)arg1;
 - (void)dynamicBarAnimatorOutputsDidChange:(_SFDynamicBarAnimator *)arg1;
 - (void)dynamicBarAnimatorWillLeaveSteadyState:(_SFDynamicBarAnimator *)arg1;
 - (void)dynamicBarAnimatorWillEnterSteadyState:(_SFDynamicBarAnimator *)arg1;

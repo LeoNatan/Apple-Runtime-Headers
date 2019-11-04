@@ -9,6 +9,7 @@
 @class NSData, NSString;
 
 @protocol CRKKeyedDataStoreProtocol <NSObject>
+- (_Bool)removeAllDataWithError:(id *)arg1;
 - (_Bool)removeDataForKey:(NSString *)arg1 error:(id *)arg2;
 - (NSData *)dataForKey:(NSString *)arg1 error:(id *)arg2;
 - (_Bool)setData:(NSData *)arg1 forKey:(NSString *)arg2 error:(id *)arg3;

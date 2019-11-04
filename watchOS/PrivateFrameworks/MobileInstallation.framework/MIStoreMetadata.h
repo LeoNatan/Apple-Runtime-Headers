@@ -21,6 +21,7 @@
     _Bool _isAutoDownload;
     _Bool _sideLoadedDeviceBasedVPP;
     _Bool _deviceBasedVPP;
+    _Bool _factoryInstall;
     NSString *_iAdAttribution;
     NSString *_iAdConversionDate;
     NSString *_iAdImpressionDate;
@@ -57,12 +58,15 @@
     NSString *_enterpriseInstallURL;
     NSString *_redownloadParams;
     NSDictionary *_nameTranscriptions;
+    NSString *_md5;
 }
 
 + (id)metadataFromDictionary:(id)arg1;
 + (id)metadataFromPlistAtURL:(id)arg1 error:(id *)arg2;
 + (id)metadataFromPlistData:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *md5; // @synthesize md5=_md5;
+@property(nonatomic, getter=isFactoryInstall) _Bool factoryInstall; // @synthesize factoryInstall=_factoryInstall;
 @property(copy, nonatomic) NSDictionary *nameTranscriptions; // @synthesize nameTranscriptions=_nameTranscriptions;
 @property(copy, nonatomic) NSString *redownloadParams; // @synthesize redownloadParams=_redownloadParams;
 @property(copy, nonatomic) NSString *enterpriseInstallURL; // @synthesize enterpriseInstallURL=_enterpriseInstallURL;

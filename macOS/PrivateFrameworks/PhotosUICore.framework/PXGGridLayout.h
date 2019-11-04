@@ -32,6 +32,7 @@
     long long _contentMode;
     long long _numberOfColumns;
     double _interItemSpacing;
+    double _itemCaptionSpacing;
     double _itemAspectRatio;
     double _aspectRatioLimit;
     long long _visualItemShift;
@@ -59,6 +60,7 @@
 @property(nonatomic) double aspectRatioLimit; // @synthesize aspectRatioLimit=_aspectRatioLimit;
 @property(nonatomic) BOOL enableBestCropRect; // @synthesize enableBestCropRect=_enableBestCropRect;
 @property(nonatomic) double itemAspectRatio; // @synthesize itemAspectRatio=_itemAspectRatio;
+@property(nonatomic) double itemCaptionSpacing; // @synthesize itemCaptionSpacing=_itemCaptionSpacing;
 @property(nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
@@ -110,6 +112,7 @@
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (BOOL)shiftItem:(long long)arg1 toColumn:(long long)arg2 hideIncompleteRows:(BOOL)arg3;
+@property(readonly, nonatomic) BOOL itemCaptionsVisible;
 @property(readonly, nonatomic) BOOL supportsContentMode;
 
 // Remaining properties

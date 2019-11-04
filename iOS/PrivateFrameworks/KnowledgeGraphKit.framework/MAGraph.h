@@ -213,6 +213,7 @@
 - (void)unloadEdge:(id)arg1;
 - (void)loadDomains:(id)arg1;
 - (id)databaseURL;
+- (id)initWithPersistentStoreURL:(id)arg1 options:(long long)arg2 cacheMode:(long long)arg3 progressBlock:(CDUnknownBlockType)arg4;
 - (id)initWithPersistentStoreURL:(id)arg1 options:(long long)arg2 cacheMode:(long long)arg3;
 - (id)edgeFromFetchedRowWithIdentifier:(int)arg1 domain:(short)arg2 label:(id)arg3 weight:(float)arg4 sourceNodeIdentifier:(int)arg5 targetNodeIdentifier:(int)arg6;
 - (id)nodeFromFetchedRowWithIdentifier:(int)arg1 domain:(short)arg2 label:(id)arg3 weight:(float)arg4;

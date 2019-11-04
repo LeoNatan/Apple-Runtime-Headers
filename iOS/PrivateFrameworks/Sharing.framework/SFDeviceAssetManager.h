@@ -55,6 +55,8 @@
 - (void)onqueue_getAssetBundleForDeviceQuery:(id)arg1 withRequestConfiguration:(id)arg2;
 - (void)onqueue_getCachedAssetBundleForTask:(id)arg1;
 - (void)getAssetBundleForDeviceQuery:(id)arg1 withRequestConfiguration:(id)arg2;
+- (void)onqueue_variantsMatchingQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)variantsMatchingQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)onqueue_invalidate;
 - (void)invalidate;
 - (void)onqueue_updateSharingManagementAssetIfNecessary;

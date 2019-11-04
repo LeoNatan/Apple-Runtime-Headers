@@ -8,20 +8,24 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class GEOLatLng;
+
 @interface GEOLogMsgEventPredExTrainingData : PBCodable <NSCopying>
 {
     double _chanceOfPrecipitation;
     double _chanceOfRain;
     double _chanceOfSnow;
+    double _dayOfWeek;
     double _endTime;
+    double _isTourist;
     double _secondsUntilEnd;
     double _secondsUntilStart;
     double _startTime;
     double _temperature;
     double _timeOfDay;
     double _timeSinceBackgrounded;
+    GEOLatLng *_userLocation;
     int _actualTransportMode;
-    unsigned int _dayOfWeek;
     int _distanceFromHereToHome;
     int _distanceFromHereToOrigin;
     int _distanceFromHereToParkedCar;
@@ -33,14 +37,15 @@
     int _predictedTransportMode;
     int _preferredTransportMode;
     _Bool _isInBasemode;
-    _Bool _isTourist;
     _Bool _isTransitPossible;
     _Bool _routePlanningScreenPresented;
     struct {
         unsigned int has_chanceOfPrecipitation:1;
         unsigned int has_chanceOfRain:1;
         unsigned int has_chanceOfSnow:1;
+        unsigned int has_dayOfWeek:1;
         unsigned int has_endTime:1;
+        unsigned int has_isTourist:1;
         unsigned int has_secondsUntilEnd:1;
         unsigned int has_secondsUntilStart:1;
         unsigned int has_startTime:1;
@@ -48,7 +53,6 @@
         unsigned int has_timeOfDay:1;
         unsigned int has_timeSinceBackgrounded:1;
         unsigned int has_actualTransportMode:1;
-        unsigned int has_dayOfWeek:1;
         unsigned int has_distanceFromHereToHome:1;
         unsigned int has_distanceFromHereToOrigin:1;
         unsigned int has_distanceFromHereToParkedCar:1;
@@ -60,13 +64,13 @@
         unsigned int has_predictedTransportMode:1;
         unsigned int has_preferredTransportMode:1;
         unsigned int has_isInBasemode:1;
-        unsigned int has_isTourist:1;
         unsigned int has_isTransitPossible:1;
         unsigned int has_routePlanningScreenPresented:1;
     } _flags;
 }
 
 + (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -77,6 +81,8 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLng *userLocation;
+@property(readonly, nonatomic) _Bool hasUserLocation;
 - (int)StringAsDistanceFromHereToParkedCar:(id)arg1;
 - (id)distanceFromHereToParkedCarAsString:(int)arg1;
 @property(nonatomic) _Bool hasDistanceFromHereToParkedCar;
@@ -126,9 +132,9 @@
 @property(nonatomic) _Bool hasPreferredTransportMode;
 @property(nonatomic) int preferredTransportMode;
 @property(nonatomic) _Bool hasIsTourist;
-@property(nonatomic) _Bool isTourist;
+@property(nonatomic) double isTourist;
 @property(nonatomic) _Bool hasDayOfWeek;
-@property(nonatomic) unsigned int dayOfWeek;
+@property(nonatomic) double dayOfWeek;
 @property(nonatomic) _Bool hasTimeOfDay;
 @property(nonatomic) double timeOfDay;
 @property(nonatomic) _Bool hasChanceOfSnow;

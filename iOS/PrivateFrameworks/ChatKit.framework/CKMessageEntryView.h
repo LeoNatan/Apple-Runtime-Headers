@@ -28,7 +28,6 @@
     _Bool _shouldShowCharacterCount;
     _Bool _shouldKnockoutCoverView;
     _Bool _keyboardVisible;
-    _Bool _useWindowBottomSafeAreaInsetOverride;
     _Bool _entryFieldCollapsed;
     _Bool _extendAppStripBlurToKeyplaneTop;
     _Bool _disablePluginButtons;
@@ -42,6 +41,7 @@
     _Bool _shouldConfigureForFullscreenAppView;
     _Bool _performingActionMenuSend;
     _Bool _animatingLayoutChange;
+    _Bool _isTransitioningForBrowserSwitcher;
     _Bool _entryFieldUpdaterCollapsedValue;
     _Bool _entryFieldUpdaterAnimatedValue;
     NSArray *_keyCommands;
@@ -108,6 +108,7 @@
 @property(retain, nonatomic) UIView *appStripBackgroundBlurContainerView; // @synthesize appStripBackgroundBlurContainerView=_appStripBackgroundBlurContainerView;
 @property(retain, nonatomic) CKBrowserSwitcherFooterView *appStrip; // @synthesize appStrip=_appStrip;
 @property(retain, nonatomic) UILabel *collpasedPlaceholderLabel; // @synthesize collpasedPlaceholderLabel=_collpasedPlaceholderLabel;
+@property(nonatomic) _Bool isTransitioningForBrowserSwitcher; // @synthesize isTransitioningForBrowserSwitcher=_isTransitioningForBrowserSwitcher;
 @property(nonatomic) _Bool animatingLayoutChange; // @synthesize animatingLayoutChange=_animatingLayoutChange;
 @property(retain, nonatomic) UIInputContextHistory *inputContextHistory; // @synthesize inputContextHistory=_inputContextHistory;
 @property(nonatomic, getter=isPerformingActionMenuSend) _Bool performingActionMenuSend; // @synthesize performingActionMenuSend=_performingActionMenuSend;
@@ -147,7 +148,6 @@
 @property(nonatomic) _Bool extendAppStripBlurToKeyplaneTop; // @synthesize extendAppStripBlurToKeyplaneTop=_extendAppStripBlurToKeyplaneTop;
 @property(nonatomic) _Bool entryFieldCollapsed; // @synthesize entryFieldCollapsed=_entryFieldCollapsed;
 @property(retain, nonatomic) UITraitCollection *entryViewTraitCollection; // @synthesize entryViewTraitCollection=_entryViewTraitCollection;
-@property(nonatomic) _Bool useWindowBottomSafeAreaInsetOverride; // @synthesize useWindowBottomSafeAreaInsetOverride=_useWindowBottomSafeAreaInsetOverride;
 @property(nonatomic, getter=isKeyboardVisible) _Bool keyboardVisible; // @synthesize keyboardVisible=_keyboardVisible;
 @property(nonatomic) _Bool shouldKnockoutCoverView; // @synthesize shouldKnockoutCoverView=_shouldKnockoutCoverView;
 @property(retain, nonatomic) CKEntryViewButton *sendButton; // @synthesize sendButton=_sendButton;
@@ -170,6 +170,7 @@
 - (void).cxx_destruct;
 - (void)_setBehaviorsForCurrentTransparencySetting;
 - (void)sendCurrentLocationMessage;
+- (void)textEffectsWindowOffsetDidChange:(id)arg1;
 - (void)_swipeDownGestureRecognized:(id)arg1;
 - (void)loadRecordedAudioViewsIfNeeded;
 - (_Bool)_isRunningInMVS;
@@ -273,6 +274,8 @@
 - (void)_overrideUserInterfaceStyleForEntryViewStyleIfNeeded:(long long)arg1;
 @property(nonatomic) _Bool shouldOpaqueBackgroundView;
 @property(nonatomic) _Bool shouldHideBackgroundView; // @dynamic shouldHideBackgroundView;
+- (void)updateBackgroundBlurVisualEffect;
+- (void)setupKnockoutVisualEffect;
 - (id)initWithFrame:(struct CGRect)arg1 marginInsets:(struct UIEdgeInsets)arg2 shouldAllowImpact:(_Bool)arg3 shouldShowSendButton:(_Bool)arg4 shouldShowSubject:(_Bool)arg5 shouldShowPluginButtons:(_Bool)arg6 shouldShowCharacterCount:(_Bool)arg7 traitCollection:(id)arg8;
 - (id)initWithFrame:(struct CGRect)arg1 marginInsets:(struct UIEdgeInsets)arg2 shouldShowSendButton:(_Bool)arg3 shouldShowSubject:(_Bool)arg4 shouldShowPluginButtons:(_Bool)arg5 shouldShowCharacterCount:(_Bool)arg6 traitCollection:(id)arg7;
 - (struct CGRect)activeKeyboardHeight;
@@ -281,8 +284,8 @@
 - (struct CGRect)sendButtonFrameInScreenCoordinates;
 @property(readonly) double coverViewWidth;
 - (double)placeholderHeight;
-- (void)finishSmallBrowserSwitcherTransition;
-- (void)prepareForSmallBrowserSwitcherTransition;
+- (void)finishBrowserSwitcherCompactTransition;
+- (void)prepareForBrowserSwitcherCompactTransitionIsSnapshotting:(_Bool)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGRect)coverFrameThatFitsInSize:(struct CGSize)arg1;
@@ -292,6 +295,7 @@
 - (void)switcherView:(id)arg1 didMagnify:(_Bool)arg2;
 - (void)switcherView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
 - (void)_dynamicUserInterfaceTraitDidChange;
+- (_Bool)isRunningInNotificationExtension;
 - (double)bottomInsetForAppStrip;
 - (void)updateAppStripFrame;
 - (void)layoutSubviews;

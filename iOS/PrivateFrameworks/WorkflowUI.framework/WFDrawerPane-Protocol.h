@@ -7,11 +7,13 @@
 #import <WorkflowUI/NSObject-Protocol.h>
 
 @class NSString, UISearchBar, UIView, UIViewController, WFDrawerPaneContainer;
+@protocol WFDrawerPaneHeaderView;
 
 @protocol WFDrawerPane <NSObject>
 @property(retain, nonatomic) UISearchBar *searchBar;
 @property(retain, nonatomic) UIView *titleView;
 @property(copy, nonatomic) NSString *title;
+@property(nonatomic) __weak UIView<WFDrawerPaneHeaderView> *activeHeaderView;
 @property(nonatomic) double topCornerRadius;
 @property(nonatomic) double bottomContentInset;
 @property(readonly, nonatomic) struct CGRect grabberAreaBounds;

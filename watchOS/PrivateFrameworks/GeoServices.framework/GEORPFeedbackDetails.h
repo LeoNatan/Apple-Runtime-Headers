@@ -13,7 +13,6 @@
 @interface GEORPFeedbackDetails : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPAddressFeedback *_addressPointFeedback;
     GEORPDirectionsFeedback *_directionsFeedback;
@@ -22,6 +21,9 @@
     GEORPSearchFeedback *_searchFeedback;
     GEORPTileFeedback *_tileFeedback;
     GEORPTransitPoiFeedback *_transitPoiFeedback;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_addressPointFeedback:1;
@@ -77,6 +79,8 @@
 @property(retain, nonatomic) GEORPPoiFeedback *poiFeedback;
 @property(readonly, nonatomic) _Bool hasPoiFeedback;
 - (void)_readPoiFeedback;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_axNeedsToDismissHomeScreenTodayView;
 - (_Bool)_axIsSidebarPinned;
 - (_Bool)_axIsShowingHomeScreenTodayView;
 - (_Bool)_axHideTodayView;

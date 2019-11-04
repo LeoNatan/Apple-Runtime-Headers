@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)savePrefs;
 - (void)dealloc;
 - (void)messageFromClient:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)requestDeviceCancelOperation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestScannerDeviceDownloadObjectWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestScannerStatus:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestScannerDeviceChangeScanAreaSelection:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -61,8 +62,9 @@ __attribute__((visibility("hidden")))
 - (id)commandName:(id)arg1;
 - (void)copyDeviceObjectPropertyData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)copyDeviceObjectPropertyDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)processResult:(id)arg1 onQueue:(id)arg2 sync:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)processDirectResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)processResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (BOOL)messageFromClientDirect:(id)arg1;
 - (void)messageFromICDD:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)messageFromDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

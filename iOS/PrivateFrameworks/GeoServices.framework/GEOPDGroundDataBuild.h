@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOPDGroundDataBuild : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _capabilitys;
     CDStruct_9f2792e4 _lodWithTextures;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _bucketId;
     unsigned int _buildId;
     unsigned int _dataFormatVersion;
@@ -100,6 +102,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasIndex;
 @property(nonatomic) unsigned int index;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

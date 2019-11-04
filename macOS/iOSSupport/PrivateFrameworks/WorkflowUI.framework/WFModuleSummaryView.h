@@ -10,7 +10,7 @@
 #import <WorkflowUI/WFSlotTemplateViewDelegate-Protocol.h>
 #import <WorkflowUI/WFVariableDelegate-Protocol.h>
 
-@class NSDictionary, NSHashTable, NSMutableDictionary, NSSet, NSString, UIFont, WFModuleSummaryEditor, WFModuleSummaryTemplateBuilder, WFSlotIdentifier, WFSlotTemplateView, WFVariable;
+@class NSDictionary, NSHashTable, NSMutableDictionary, NSSet, NSString, UIColor, UIFont, WFModuleSummaryEditor, WFModuleSummaryTemplateBuilder, WFSlotIdentifier, WFSlotTemplateView, WFVariable;
 @protocol WFModuleSummaryViewDelegate, WFVariableProvider, WFVariableUIDelegate;
 
 @interface WFModuleSummaryView : UIView <WFSlotTemplateViewDelegate, WFModuleSummaryEditorDelegate, WFVariableDelegate>
@@ -61,7 +61,7 @@
 - (id)transformParameterStateForSerialization:(id)arg1 inEditor:(id)arg2;
 - (void)summaryEditor:(id)arg1 didCommitParameterState:(id)arg2;
 - (void)summaryEditor:(id)arg1 didStageParameterState:(id)arg2;
-- (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(BOOL)arg2;
+- (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(BOOL)arg2 withTextAttachmentToEdit:(id)arg3;
 - (void)summaryEditorDidRequestTextEntry:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startEditingForParameterKey:(id)arg1;
@@ -76,6 +76,9 @@
 - (void)slotTemplateViewDidInvalidateSize:(id)arg1;
 - (void)slotTemplateView:(id)arg1 deletePressedOnUnpopulatedSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didEndTypingInSlotWithIdentifier:(id)arg2;
+- (void)slotTemplateView:(id)arg1 typingDidPasteWithOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateView:(id)arg1 typingDidCopyWithOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateView:(id)arg1 typingDidCutWithOriginalBlock:(CDUnknownBlockType)arg2;
 - (void)slotTemplateView:(id)arg1 didChangeText:(id)arg2 forSlotWithIdentifier:(id)arg3;
 - (BOOL)slotTemplateView:(id)arg1 shouldChangeText:(id)arg2 forSlotWithIdentifier:(id)arg3;
 - (void)slotTemplateView:(id)arg1 willBeginTypingInSlotWithIdentifier:(id)arg2 usingTextEntry:(id)arg3 allowMultipleLines:(char *)arg4;
@@ -86,6 +89,9 @@
 - (void)slotTemplateView:(id)arg1 didDeselectSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didSelectSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;
 - (void)tintColorDidChange;
+- (void)setDisabledSlotTitleColor:(id)arg1 backgroundColor:(id)arg2 animated:(BOOL)arg3;
+@property(readonly, nonatomic) UIColor *disabledSlotBackgroundColor;
+@property(readonly, nonatomic) UIColor *disabledSlotTitleColor;
 @property(nonatomic) BOOL extendSlotBackgroundOffEdges;
 @property(nonatomic) long long textAlignment;
 @property(nonatomic) double horizontalPadding;

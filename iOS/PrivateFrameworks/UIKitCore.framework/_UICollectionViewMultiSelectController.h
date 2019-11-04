@@ -29,9 +29,10 @@ __attribute__((visibility("hidden")))
 - (void)multiSelectInteraction:(id)arg1 toggleSelectionStateUpToPoint:(struct CGPoint)arg2;
 - (_Bool)shouldAllowSelectionExtensionAtPoint:(struct CGPoint)arg1;
 - (void)didEndMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
-- (_Bool)shouldBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
+- (_Bool)shouldBeginMultiSelectInteraction:(id)arg1 ofType:(long long)arg2 atPoint:(struct CGPoint)arg3 withVelocity:(struct CGPoint)arg4;
 - (void)willBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (_Bool)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
+- (_Bool)_shouldBeginInteractionAtPoint:(struct CGPoint)arg1;
 - (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(_Bool)arg1;
 - (_Bool)isInMultiSelectMode;
 - (_Bool)supportsMultiSelectInteraction:(id)arg1;
@@ -39,12 +40,15 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isUsingTableViewLayout;
 - (id)_collectionViewDelegate;
 - (void)selectedIndexPathsChanged:(id)arg1;
-- (void)_updateSelectedIndexPaths:(id)arg1;
+- (void)updateSelectedIndexPaths:(id)arg1;
 - (void)_deselectIndexPaths:(id)arg1;
 - (void)_selectIndexPaths:(id)arg1;
 - (void)_extendSelectionToPoint:(struct CGPoint)arg1;
+- (id)indexPathsBetweenIndexPath:(id)arg1 andIndexPath:(id)arg2;
 - (_Bool)_point:(struct CGPoint)arg1 liesBeyondFrame:(struct CGRect)arg2 inDirection:(double)arg3;
 - (id)_antecedentIndexPathsForLayoutAttributes:(id)arg1 inDirection:(double)arg2;
+- (id)selectionEndIndexPath;
+- (id)selectionStartIndexPath;
 - (unsigned long long)axisConstraint;
 - (void)uninstallFromCollectionView;
 - (void)dealloc;

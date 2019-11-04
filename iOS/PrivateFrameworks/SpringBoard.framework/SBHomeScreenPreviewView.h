@@ -6,23 +6,31 @@
 
 #import <UIKit/UIView.h>
 
-@class SBFloatingDockViewController, SBRootFolderController, SBWallpaperController;
+#import <SpringBoard/SBIconViewProviding-Protocol.h>
 
-@interface SBHomeScreenPreviewView : UIView
+@class SBFloatingDockViewController, SBIconController, SBRootFolderController, SBWallpaperController, _SBHomeScreenFolderDelegate;
+
+@interface SBHomeScreenPreviewView : UIView <SBIconViewProviding>
 {
     UIView *_folderContent;
     UIView *_floatingDock;
     UIView *_statusBar;
     SBRootFolderController *_rootFolderController;
+    _SBHomeScreenFolderDelegate *_folderDelegate;
+    SBIconController *_iconController;
     SBWallpaperController *_wallpaperController;
     SBFloatingDockViewController *_floatingDockViewController;
 }
 
 @property(readonly, nonatomic) SBFloatingDockViewController *floatingDockViewController; // @synthesize floatingDockViewController=_floatingDockViewController;
 @property(readonly, nonatomic) SBWallpaperController *wallpaperController; // @synthesize wallpaperController=_wallpaperController;
+@property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
 - (void).cxx_destruct;
+- (void)configureIconView:(id)arg1 forIcon:(id)arg2;
+- (_Bool)isIconViewRecycled:(id)arg1;
+- (void)recycleIconView:(id)arg1;
+- (id)dequeueReusableIconViewOfClass:(Class)arg1;
 - (void)layoutSubviews;
-- (void)cleanUpIconsInListView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 iconController:(id)arg2 wallpaperController:(id)arg3 options:(unsigned long long)arg4 wallpaperImage:(id)arg5;
 
 @end

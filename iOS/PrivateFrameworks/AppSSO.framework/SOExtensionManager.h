@@ -16,6 +16,7 @@
     SOExtensionFinder *_extensionFinder;
 }
 
++ (_Bool)isTiburonExtensionBundleIdentifier:(id)arg1;
 + (_Bool)isAppleConnectExtensionBundleIdentifier:(id)arg1;
 + (_Bool)isInternalExtensionBundleIdentifier:(id)arg1;
 + (id)internalExtensionsBundleIdentifiers;

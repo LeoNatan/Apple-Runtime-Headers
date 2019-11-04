@@ -150,6 +150,8 @@ struct CGXConnection {
     int _field74;
     struct CGXConnectionLayerKitState *_field75;
     struct __CGXConnectionBox *_field76;
+    _Bool _field77;
+    double _field78;
 };
 
 struct CGXConnectionLayerKitState;

@@ -26,6 +26,7 @@
 - (void)_startLoadingMLModelSignpost;
 - (id)processEspressoTensor:(id)arg1;
 - (void)changeEspressoConfig:(id)arg1;
+- (double)requiredTimeInterval;
 - (unsigned long long)requiredSensorDataTypes;
 - (id)init;
 

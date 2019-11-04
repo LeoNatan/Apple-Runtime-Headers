@@ -13,10 +13,12 @@
 @interface GEOTransitDepartureSequenceUsage : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_direction;
     NSString *_headsign;
     unsigned long long _lineId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_lineId:1;
         unsigned int read_direction:1;
@@ -47,6 +49,8 @@
 - (void)_readDirection;
 @property(nonatomic) _Bool hasLineId;
 @property(nonatomic) unsigned long long lineId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -7,13 +7,14 @@
 #import <CommunicationsSetupUI/CNFRegListController.h>
 
 #import <CommunicationsSetupUI/AKAppleIDAuthenticationDelegate-Protocol.h>
+#import <CommunicationsSetupUI/CKOnboardingControllerDelegate-Protocol.h>
 #import <CommunicationsSetupUI/CNFRegWizardControllerDelegate-Protocol.h>
 #import <CommunicationsSetupUI/CNMeCardSharingSettingsViewControllerDelegate-Protocol.h>
 #import <CommunicationsSetupUI/IMCloudKitEventHandler-Protocol.h>
 
-@class CKFilteringListController, CKMultipleCTSubscriptionsController, CKNSExtension, IMCTXPCServiceSubscriptionInfo, NSString;
+@class CKFilteringListController, CKMultipleCTSubscriptionsController, CKNSExtension, CKOnboardingController, IMCTXPCServiceSubscriptionInfo, NSString;
 
-@interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate, AKAppleIDAuthenticationDelegate, IMCloudKitEventHandler, CNMeCardSharingSettingsViewControllerDelegate>
+@interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate, AKAppleIDAuthenticationDelegate, IMCloudKitEventHandler, CNMeCardSharingSettingsViewControllerDelegate, CKOnboardingControllerDelegate>
 {
     _Bool _showingChildViewController;
     int _profileToken;
@@ -22,6 +23,7 @@
     CKMultipleCTSubscriptionsController *_mmsMessagingController;
     CKMultipleCTSubscriptionsController *_mmsAllowsGroupMessagingController;
     IMCTXPCServiceSubscriptionInfo *_ctSubscriptionInfo;
+    CKOnboardingController *_onboardingController;
     CKNSExtension *_ckExtension;
 }
 
@@ -30,6 +32,7 @@
 + (int)currentMessageAutoKeepOptionForType:(int)arg1;
 + (_Bool)currentMessageAutoKeepForType:(int)arg1;
 @property(retain, nonatomic) CKNSExtension *ckExtension; // @synthesize ckExtension=_ckExtension;
+@property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(retain, nonatomic) IMCTXPCServiceSubscriptionInfo *ctSubscriptionInfo; // @synthesize ctSubscriptionInfo=_ctSubscriptionInfo;
 @property(retain, nonatomic) CKMultipleCTSubscriptionsController *mmsAllowsGroupMessagingController; // @synthesize mmsAllowsGroupMessagingController=_mmsAllowsGroupMessagingController;
 @property(retain, nonatomic) CKMultipleCTSubscriptionsController *mmsMessagingController; // @synthesize mmsMessagingController=_mmsMessagingController;
@@ -71,6 +74,7 @@
 - (_Bool)shouldShowReadReceipts;
 - (id)smsRelaySettingsSpecifierIdentifiers;
 - (_Bool)shouldShowSMSRelaySettings;
+- (void)_setUpBusinessChatGroupSpecifiers:(id)arg1;
 - (void)sharingSettingsViewController:(id)arg1 didUpdateWithSharingResult:(id)arg2;
 - (void)sharingSettingsViewController:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
 - (void)sharingSettingsViewController:(id)arg1 didUpdateSharingState:(_Bool)arg2;
@@ -79,8 +83,12 @@
 - (unsigned long long)_meCardSharingAudience;
 - (_Bool)_meCardSharingEnabled;
 - (void)_showSetupMeCardAlert;
+- (id)getNameAndPhotoSharingFooterText;
 - (id)getNameAndPhotoSharingSpecifierSummary:(id)arg1;
 - (void)showMeCardViewControllerWithNickname:(id)arg1;
+- (void)onboardingControllerDidFinish:(id)arg1;
+- (id)presentingViewControllerForOnboardingController:(id)arg1;
+- (void)showNicknameOnboardingController;
 - (void)nameAndPhotoSharingForSpecifier:(id)arg1;
 - (void)showMultiplePhoneNumbersAlerForNicknames;
 - (void)showAccountsMismatchedAlertForNicknames;
@@ -95,8 +103,10 @@
 - (id)siriSettingsIdentifiers;
 - (_Bool)isPersonalCompanionEnabled;
 - (_Bool)shouldShowSiriSettings;
+- (_Bool)shouldShowJunkConversationsRow;
 - (void)setConversationListFilteringEnabled:(id)arg1 specifier:(id)arg2;
 - (id)isConversationListFilteringEnabled:(id)arg1;
+- (id)junkConversationsRowIdentifier;
 - (id)spamFilteringSpecifierIdentifiers;
 - (id)iMessageFilteringSpecifierIdentifiers;
 - (_Bool)shouldShowiMessageFilteringSettings:(id)arg1;
@@ -140,7 +150,8 @@
 - (void)_setupMultipleSubscriptionsMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(_Bool)arg2;
 - (void)_setupMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(_Bool)arg2;
 - (id)specifiers;
-- (void)_showPrivacySheet:(id)arg1;
+- (void)_showPrivacySheetForBusinessChat:(id)arg1;
+- (void)_showPrivacySheetForiMessageFaceTime:(id)arg1;
 - (void)newCarrierNotification;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (void)systemApplicationDidEnterBackground;

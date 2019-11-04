@@ -67,13 +67,13 @@
 + (id)_departureLabelFont;
 + (id)defaultSecondaryFont;
 + (id)strongSecondaryFont;
-+ (void)useCompressedGutter:(out _Bool *)arg1 compressedLeading:(out _Bool *)arg2 forImageWidth:(double)arg3 inWidth:(double)arg4 compressed:(_Bool)arg5;
-+ (double)_minTextWidth:(_Bool)arg1;
++ (void)useCompressedGutter:(out _Bool *)arg1 compressedLeading:(out _Bool *)arg2 forImageWidth:(double)arg3 inWidth:(double)arg4;
++ (double)_minTextWidth;
 + (double)_maxExpectedDepartureLabelWidth;
 + (void)_calculateMaxLabelWidths;
 + (_Bool)_needsUpdateMaxLabelWidths;
 + (double)labelMarginWithLineImageViewWidth:(double)arg1;
-+ (double)maxLineImageWidthforWidth:(double)arg1 compressed:(_Bool)arg2;
++ (double)maxLineImageWidthforWidth:(double)arg1;
 + (void)_addEmDashAttributes:(id)arg1;
 + (void)_enumerateMinutesUntilDepartureDates:(id)arg1 withReferenceDate:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (id)_nowString;
@@ -139,7 +139,7 @@
 - (void)configureCellForRowIndex:(long long)arg1 withMapItem:(id)arg2 sectionController:(id)arg3 outNextLineIsSame:(_Bool *)arg4;
 - (id)_operatingHoursDescriptionForSequence:(id)arg1 mapItem:(id)arg2;
 - (id)_startEndDatesForSequence:(id)arg1 date:(id)arg2 mapItem:(id)arg3;
-- (void)configureLeadingWithTableViewContentMargin:(double)arg1 width:(double)arg2 compressed:(_Bool)arg3;
+- (void)configureLeadingWithTableViewContentMargin:(double)arg1 width:(double)arg2;
 - (id)multipartStringSeparator;
 
 @end

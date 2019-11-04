@@ -17,7 +17,8 @@
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
 - (void).cxx_destruct;
-@property(nonatomic, getter=isEnabled) BOOL enabled;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)layoutSubviews;
 - (id)initWithType:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

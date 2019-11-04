@@ -139,6 +139,7 @@
 - (id)init;
 - (void)_drawAnnotationsWithBox:(long long)arg1 inContext:(struct CGContext *)arg2;
 - (void)purgeAll;
+- (struct CGPDFPage *)createPageRefFromImage;
 - (void)setDocument:(id)arg1;
 - (BOOL)setPageRef:(struct CGPDFPage *)arg1;
 - (void)setAKDidSetupRealPageModelController:(_Bool)arg1;

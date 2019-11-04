@@ -44,6 +44,7 @@
 @property(nonatomic) BOOL shouldShowLoadingIndicatorForClipPlayback; // @synthesize shouldShowLoadingIndicatorForClipPlayback=_shouldShowLoadingIndicatorForClipPlayback;
 @property(nonatomic) BOOL canShowOverlayContent; // @synthesize canShowOverlayContent=_canShowOverlayContent;
 - (void).cxx_destruct;
+- (BOOL)_shouldShortCircuitBlurEffect;
 - (BOOL)_shouldShortCircuitLoadingIndicator;
 - (id)_errorStringDetailsForError:(id)arg1;
 - (void)_updateStateAnimated:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;

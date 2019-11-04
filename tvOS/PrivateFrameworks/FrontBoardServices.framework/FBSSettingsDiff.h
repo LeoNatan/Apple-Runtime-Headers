@@ -29,6 +29,7 @@
 - (id)succinctDescription;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
+- (id)settingsByApplyingToMutableCopyOfSettings:(id)arg1;
 - (void)inspectOtherChangesWithBlock:(CDUnknownBlockType)arg1;
 - (void)inspectChangesWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;

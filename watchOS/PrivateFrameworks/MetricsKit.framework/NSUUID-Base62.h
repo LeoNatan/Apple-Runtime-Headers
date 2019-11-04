@@ -7,6 +7,6 @@
 #import <Foundation/NSUUID.h>
 
 @interface NSUUID (Base62)
-- (id)base62String;
+- (id)mt_base62String;
 @end
 

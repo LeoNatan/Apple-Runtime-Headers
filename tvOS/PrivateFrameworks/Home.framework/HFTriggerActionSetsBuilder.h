@@ -21,9 +21,11 @@
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFTriggerAnonymousActionSetBuilder *anonymousActionSetBuilder; // @synthesize anonymousActionSetBuilder=_anonymousActionSetBuilder;
 - (void).cxx_destruct;
+- (void)defaultActionsForShortcut;
 - (void)_removeAllNamedActionsSets;
 - (void)convertToHomeWorkflowActionSetIfNeeded;
 - (void)convertToHomeWorkflowActionSet:(id)arg1;
+@property(readonly, nonatomic) NSArray *allActionBuilders;
 @property(readonly, nonatomic) NSArray *allActionSets;
 - (void)removeActionSetIfPresent:(id)arg1;
 - (void)addActionSetIfNotPresent:(id)arg1;

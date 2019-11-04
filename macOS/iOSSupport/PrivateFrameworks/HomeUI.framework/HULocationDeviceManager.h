@@ -18,6 +18,7 @@
     NSHashTable *_observers;
 }
 
++ (id)sharedInstance;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NAFuture *availableFMFDevicesFuture; // @synthesize availableFMFDevicesFuture=_availableFMFDevicesFuture;
 @property(retain, nonatomic) NAFuture *activeFMFDeviceFuture; // @synthesize activeFMFDeviceFuture=_activeFMFDeviceFuture;

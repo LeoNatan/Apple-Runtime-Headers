@@ -4,10 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AKAuthorizationCredentialStateRequest, AKAuthorizationUserResponse, AKCredentialRequestContext;
+@class AKAuthorizationCredentialStateRequest, AKAuthorizationUserResponse, AKCredentialRequestContext, NSXPCListenerEndpoint;
 
 @protocol AKAuthorizationDaemonProtocol
 - (void)startDiscoveryWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)establishConnectionWithNotificationHandlerEndpoint:(NSXPCListenerEndpoint *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)continueFetchingIconForRequestContext:(AKCredentialRequestContext *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
 - (void)fetchAppleIDAuthorizeHTMLResponseTemplateWithCompletion:(void (^)(NSString *, NSError *))arg1;
 - (void)fetchAppleOwnedDomainSetWithCompletion:(void (^)(NSSet *, NSError *))arg1;

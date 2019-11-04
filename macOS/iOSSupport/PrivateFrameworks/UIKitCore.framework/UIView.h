@@ -50,6 +50,7 @@
     NSArray *_subviewCache;
     UIViewController *_viewDelegate;
     double _cachedScreenScale;
+    double _layoutEngineWidth;
     struct {
         unsigned int userInteractionDisabled:1;
         unsigned int implementsDrawRect:1;
@@ -142,6 +143,7 @@
         unsigned int needsTraitCollectionDidChangePropagation:1;
         unsigned int isRootOfTraitCollectionDidChangePropagation:1;
         unsigned int implementsTraitCollectionForChildEnvironment:1;
+        unsigned int implementsBaselineOffsetsAtSize:1;
         unsigned int coloredViewBounds:1;
         unsigned int coloredAlignmentRects:1;
         unsigned int preservesSuperviewMargins:4;
@@ -748,8 +750,10 @@
 @property(nonatomic, setter=_setShouldArchiveUIAppearanceTags:) BOOL _shouldArchiveUIAppearanceTags; // @dynamic _shouldArchiveUIAppearanceTags;
 - (void)_receiveVisitor:(id)arg1;
 - (id)_alignmentRectOriginCacheCreateIfNecessary:(BOOL)arg1;
-- (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;
+- (double)_firstBaselineOffsetFromTop;
+- (void)_invalidateBaselineConstraints;
+- (BOOL)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (BOOL)_isHasBaselinePropertyChangeable;
 - (BOOL)_hasBaseline;
 - (id)_constraintsArray;
@@ -840,6 +844,12 @@
 - (struct CGRect)_compatibleBounds;
 - (void)reduceWidth:(double)arg1;
 - (BOOL)_isKnownUISearchBarComponentContainer;
+@property(readonly, nonatomic) BOOL _wantsConstraintBasedLayout;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
+@property(readonly, nonatomic) unsigned long long _axesForDerivingIntrinsicContentSizeFromLayoutSize;
+@property(readonly, nonatomic) BOOL _layoutHeightDependsOnWidth;
+- (struct CGSize)_layoutSizeThatFits:(struct CGSize)arg1 fixedAxes:(unsigned long long)arg2;
+- (void)_measureViewWithSize:(struct CGSize)arg1 temporaryConstraints:(id)arg2 suspendingSystemConstraints:(BOOL)arg3 withOptimizedEngineBlock:(CDUnknownBlockType)arg4;
 - (id)textInputView;
 - (BOOL)_canBeReusedInPickerView;
 - (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
@@ -1128,7 +1138,9 @@
 - (BOOL)_hasLayoutEngine;
 - (struct CGPoint)_nsis_origin;
 - (struct CGRect)_nsis_bounds;
+- (struct CGRect)_nsis_layoutRectFromHostingViewInEngine:(id)arg1;
 - (struct CGRect)_nsis_compatibleBoundsInEngine:(id)arg1;
+- (struct CGSize)_nsis_layoutSizeInEngine:(id)arg1;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3 forLayoutGuide:(id)arg4;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3;
 - (BOOL)_forceLayoutEngineSolutionInRationalEdges;
@@ -1156,6 +1168,7 @@
 - (void)_configureAutolayoutFlagsNeedingLayout:(BOOL)arg1;
 - (void)_setSubviewWantsAutolayoutTripWantsAutolayout:(BOOL)arg1;
 - (void)setNeedsUpdateConstraints;
+- (void)_scheduleUpdateConstraintsPassAsEngineHostNeedingLayout:(BOOL)arg1;
 - (void)_setNeedsUpdateConstraints;
 - (void)_setNeedsUpdateConstraintsNeedingLayout:(BOOL)arg1;
 - (void)_informContainerThatSubviewsNeedUpdateConstraints;
@@ -1225,6 +1238,7 @@
 - (void)setExclusiveTouch:(BOOL)arg1;
 - (BOOL)isMultipleTouchEnabled;
 - (void)setMultipleTouchEnabled:(BOOL)arg1;
+- (void)_setFrameWithAlignmentRect:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (BOOL)_needsLayoutOnAnimatedFrameChangeForNewFrame:(struct CGRect)arg1;
 - (struct CGRect)extent;
@@ -1527,6 +1541,7 @@
 - (void)restoreUserActivityState:(id)arg1;
 - (void)updateUserActivityState:(id)arg1;
 @property(readonly, nonatomic) BOOL _shouldReverseLayoutDirection;
+- (BOOL)_subviewsNeedAxisFlipping;
 - (id)_layoutRect;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *lastBaselineAnchor;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *firstBaselineAnchor;

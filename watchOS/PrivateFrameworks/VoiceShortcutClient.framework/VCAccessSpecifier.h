@@ -31,6 +31,7 @@
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
 - (void).cxx_destruct;
+- (_Bool)isRemovalService;
 - (_Bool)isSettingsApp;
 - (_Bool)allowHomeResidentShortcutRunning;
 - (_Bool)allowBackgroundShortcutRunning;

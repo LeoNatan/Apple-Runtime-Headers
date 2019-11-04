@@ -47,6 +47,7 @@
 - (void)rebuildMomentsDeletingExistingMoments:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)momentGenerationStatusWithReply:(CDUnknownBlockType)arg1;
 - (void)recoverAssetsInInconsistentCloudState;
+- (void)identifyAssetsWithInconsistentCloudState;
 - (void)asynchronousUnloadImageFilesForAssetWithObjectURI:(id)arg1 minimumFormat:(unsigned short)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)statusWithReply:(CDUnknownBlockType)arg1;
 - (id)initWithLibraryServicesManager:(id)arg1 resourceDownloader:(id)arg2 bundleController:(id)arg3;

@@ -20,11 +20,11 @@
 - (long long)_computeOpenGLVirtualScreen;
 - (long long)_openGLVirtualScreen;
 - (id)_newSoftwareRenderer;
-- (id)_newOpenGLRendererWithOptions:(id)arg1;
-- (id)_newMetalRendererWithOptions:(id)arg1;
-- (id)_newRendererWithOptions:(id)arg1;
-- (id)_newLowPriorityRenderer;
-- (id)_newRenderer;
+- (id)_newOpenGLRendererWithOptions:(id)arg1 error:(out id *)arg2;
+- (id)_newMetalRendererWithOptions:(id)arg1 error:(out id *)arg2;
+- (id)_newRendererWithOptions:(id)arg1 error:(out id *)arg2;
+- (id)_newLowPriorityRenderer:(out id *)arg1;
+- (id)_newRenderer:(out id *)arg1;
 @property(readonly, nonatomic, getter=isDiscrete) BOOL discrete;
 @property(readonly, nonatomic, getter=isIntegrated) BOOL integrated;
 - (BOOL)hasOpenGLSupport;

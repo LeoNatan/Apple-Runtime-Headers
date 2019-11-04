@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class AXCarouselServiceProvider, AXIPCServer;
+#import <AXCarouselServerInstance/AXHeardServerDelegate-Protocol.h>
+#import <AXCarouselServerInstance/PSYSyncStateObserver-Protocol.h>
 
-@interface AXCarouselServerInstance : NSObject
+@class AXCarouselServiceProvider, AXIPCServer, NSString;
+
+@interface AXCarouselServerInstance : NSObject <PSYSyncStateObserver, AXHeardServerDelegate>
 {
     _Bool _systemAppServerRunning;
     _Bool _voiceOverIsEnabled;
@@ -25,6 +28,7 @@
 @property(retain, nonatomic) AXCarouselServiceProvider *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
 - (void).cxx_destruct;
 - (void)_handleTripleClickRequest:(int)arg1 show:(_Bool)arg2;
+- (id)_currentFaceClass:(id)arg1;
 - (id)_showControlCenter:(id)arg1;
 - (id)_canShowControlCenter:(id)arg1;
 - (id)_isControlCenterVisible:(id)arg1;
@@ -37,9 +41,24 @@
 - (void)_startSystemAppServerIfNeeded;
 - (_Bool)_shouldStartupSystemServer;
 - (void)_updateAccessibilityProductStatus;
+- (void)_initializeSpeechAssetMonitorHelper;
 - (_Bool)_supportsSiriSpeaks;
+- (_Bool)_isDoneSyncingForSyncClientState:(id)arg1;
+- (_Bool)_pairedSyncIsComplete;
+- (void)syncClientStateDidChange:(id)arg1;
+- (void)hearingServerDidDie:(id)arg1;
+- (void)restartHearingServer;
+- (_Bool)_shouldStartHearingServer;
+- (_Bool)setupFeaturesIfPossible:(_Bool *)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)_initServer;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

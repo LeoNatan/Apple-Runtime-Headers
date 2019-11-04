@@ -17,7 +17,7 @@
     id <MFSearchableIndexQueryResultProcessorDelegate> _delegate;
 }
 
-@property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
+@property(getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) __weak id <MFSearchableIndexQueryResultProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)cancel;

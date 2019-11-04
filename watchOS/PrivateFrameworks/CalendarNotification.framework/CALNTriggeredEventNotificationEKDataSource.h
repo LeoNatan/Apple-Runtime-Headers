@@ -34,6 +34,7 @@
 
 + (id)_sourceClientIdentifierForAlertInfo:(id)arg1;
 + (id)_alarmForEvent:(id)arg1 withAlarmID:(id)arg2;
++ (id)_alarmDateForAlarm:(id)arg1 eventStartDate:(id)arg2;
 + (double)snoozeInterval;
 @property(readonly, nonatomic) CALNTriggeredEventNotificationMailtoURLProvider *mailtoURLProvider; // @synthesize mailtoURLProvider=_mailtoURLProvider;
 @property(readonly, nonatomic) id <CALNDebugPreferences> debugPreferences; // @synthesize debugPreferences=_debugPreferences;

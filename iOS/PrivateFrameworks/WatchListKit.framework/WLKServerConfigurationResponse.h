@@ -32,6 +32,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)utsc;
+- (_Bool)isValidIgnoringExpiration;
 - (_Bool)isValid;
 - (id)dictionaryRepresentation;
 @property(readonly, copy, nonatomic) NSNumber *vppaSessionDurationInMillis;

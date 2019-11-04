@@ -102,6 +102,7 @@
 - (id)_subjectForSharingService:(id)arg1;
 - (id)_placeholderItems;
 - (id)_itemsForSharingService:(id)arg1;
+- (id)_resolveItemSource:(id)arg1 forSharingServiceName:(id)arg2;
 - (id)_shareServicesWithMask:(unsigned long long)arg1;
 - (id)pickerServicesForServices:(id)arg1 withMask:(unsigned long long)arg2 enforceOnMainQueue:(BOOL)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -19,8 +19,8 @@
 - (id)getLocalizedOrCustomString:(id)arg1;
 - (id)getLocalizedString:(id)arg1;
 - (void)_updateLocalizedStrings;
+- (void)handleLocaleDidChange:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
-- (void)dealloc;
 - (id)init;
 
 @end

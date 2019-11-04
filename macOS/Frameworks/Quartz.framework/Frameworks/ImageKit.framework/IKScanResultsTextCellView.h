@@ -11,20 +11,20 @@
 __attribute__((visibility("hidden")))
 @interface IKScanResultsTextCellView : NSTableCellView
 {
-    NSButton *findButton;
-    NSProgressIndicator *spinner;
-    NSImageView *documentIcon;
-    NSTextField *documentName;
-    NSButton *documentPageCount;
-    id representedObject;
+    NSButton *_findButton;
+    NSProgressIndicator *_spinner;
+    NSImageView *_documentIcon;
+    NSTextField *_documentName;
+    NSButton *_documentPageCount;
+    id _representedObject;
 }
 
-@property(retain) id representedObject; // @synthesize representedObject;
-@property NSButton *documentPageCount; // @synthesize documentPageCount;
-@property NSTextField *documentName; // @synthesize documentName;
-@property NSImageView *documentIcon; // @synthesize documentIcon;
-@property NSProgressIndicator *spinner; // @synthesize spinner;
-@property NSButton *findButton; // @synthesize findButton;
+@property(retain) id representedObject; // @synthesize representedObject=_representedObject;
+@property NSButton *documentPageCount; // @synthesize documentPageCount=_documentPageCount;
+@property NSTextField *documentName; // @synthesize documentName=_documentName;
+@property NSImageView *documentIcon; // @synthesize documentIcon=_documentIcon;
+@property NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
+@property NSButton *findButton; // @synthesize findButton=_findButton;
 - (void)showInFinder:(id)arg1;
 @property(retain, nonatomic) IKScanInfo *scanInfo;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -17,6 +17,7 @@
 + (id)multiUserInfoWithDictionary:(id)arg1 context:(id)arg2;
 + (id)multiUserInfo;
 - (BOOL)requiresResponse;
+@property(nonatomic) BOOL voiceProfilesAreInFlight;
 @property(copy, nonatomic) NSArray *multiUserPitchComposition;
 @property(copy, nonatomic) NSArray *homeMembers;
 - (id)encodedClassName;

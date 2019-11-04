@@ -8,7 +8,7 @@
 
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class MPPlaybackArchiveConfiguration, NSArray, NSString;
 
 @interface MPMediaPickerConfiguration : NSObject <NSSecureCoding>
 {
@@ -17,16 +17,20 @@
     BOOL _showsItemsWithProtectedAssets;
     BOOL _picksSingleCollectionEntity;
     BOOL _showsCatalogContent;
+    BOOL _showsLibraryContent;
     BOOL _pickingForExternalPlayer;
     unsigned int _watchCompatibilityVersion;
     unsigned long long _mediaTypes;
     NSString *_prompt;
     NSArray *_typeIdentifiers;
     long long _selectionMode;
+    MPPlaybackArchiveConfiguration *_playbackArchiveConfiguration;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) MPPlaybackArchiveConfiguration *playbackArchiveConfiguration; // @synthesize playbackArchiveConfiguration=_playbackArchiveConfiguration;
 @property(nonatomic) BOOL pickingForExternalPlayer; // @synthesize pickingForExternalPlayer=_pickingForExternalPlayer;
+@property(nonatomic) BOOL showsLibraryContent; // @synthesize showsLibraryContent=_showsLibraryContent;
 @property(nonatomic) BOOL showsCatalogContent; // @synthesize showsCatalogContent=_showsCatalogContent;
 @property(nonatomic) long long selectionMode; // @synthesize selectionMode=_selectionMode;
 @property(copy, nonatomic) NSArray *typeIdentifiers; // @synthesize typeIdentifiers=_typeIdentifiers;

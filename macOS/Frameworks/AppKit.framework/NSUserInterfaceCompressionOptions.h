@@ -35,6 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
+- (id)initWithCompressionOptionsArray:(id)arg1;
 - (id)initWithCompressionOptions:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;

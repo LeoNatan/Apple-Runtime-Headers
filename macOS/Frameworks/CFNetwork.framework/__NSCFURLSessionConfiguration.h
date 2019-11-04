@@ -365,6 +365,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)hash;
+- (BOOL)_isEqual2:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

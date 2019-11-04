@@ -7,6 +7,7 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (SafariServicesExtras)
++ (id)_sf_colorNamed:(id)arg1;
 + (id)_sf_folderTouchIconBackgroundColor;
 + (id)_sf_touchIconBackgroundColor;
 + (id)_sf_defaultWebAppStatusBarBackgroundColor;

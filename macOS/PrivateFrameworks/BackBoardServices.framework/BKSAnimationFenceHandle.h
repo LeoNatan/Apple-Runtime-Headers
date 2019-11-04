@@ -15,13 +15,18 @@
 
 @interface BKSAnimationFenceHandle : NSObject <BSXPCCoding, NSSecureCoding, NSCopying, BSInvalidatable>
 {
+    unsigned long long _fenceName;
     BSMachPortSendRight *_caFence;
-    int _valid;
+    BSMachPortSendRight *_preFence;
     BSMachPortSendRight *_preFenceTrigger;
+    unsigned long long _handleName;
+    int _valid;
+    BOOL _shouldTrace;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)newFenceHandleForContext:(id)arg1;
++ (id)newSystemFenceHandle;
 @property(readonly, nonatomic) BSMachPortSendRight *trigger; // @synthesize trigger=_preFenceTrigger;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -30,12 +35,14 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSString *_trace;
 - (unsigned int)CAPort;
 - (void)invalidate;
 @property(readonly, nonatomic, getter=isUsable) BOOL usable;
+@property(readonly, nonatomic) unsigned long long fenceName;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithFence:(id)arg1;
+- (id)_initWithFenceName:(unsigned long long)arg1 fence:(id)arg2 preFence:(id)arg3 preFenceTrigger:(id)arg4 shouldTrace:(BOOL)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

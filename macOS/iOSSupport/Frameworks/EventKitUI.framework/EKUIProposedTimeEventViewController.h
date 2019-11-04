@@ -22,7 +22,7 @@
 @property(retain) EKCalendarEventInvitationNotificationAttendee *proposedTimeAttendee; // @synthesize proposedTimeAttendee=_proposedTimeAttendee;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
-- (void)invokeAction:(long long)arg1;
+- (void)invokeAction:(long long)arg1 eventStatusButtonsView:(id)arg2;
 - (id)_statusButtons;
 - (id)items;
 - (id)viewTitle;

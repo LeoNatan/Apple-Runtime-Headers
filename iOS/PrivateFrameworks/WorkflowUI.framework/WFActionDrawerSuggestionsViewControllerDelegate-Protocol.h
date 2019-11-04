@@ -9,7 +9,7 @@
 @class NSString, UIView, WFAction, WFActionDrawerSiriSuggestionsViewController;
 
 @protocol WFActionDrawerSuggestionsViewControllerDelegate <NSObject>
-- (void)suggestionsViewController:(WFActionDrawerSiriSuggestionsViewController *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
+- (void)suggestionsViewController:(WFActionDrawerSiriSuggestionsViewController *)arg1 didSelectCategoryForContentType:(NSString *)arg2 title:(NSString *)arg3;
 - (void)suggestionsViewControllerViewControllerDidSelectCategoryScripting:(WFActionDrawerSiriSuggestionsViewController *)arg1 title:(NSString *)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryFavorites:(WFActionDrawerSiriSuggestionsViewController *)arg1 title:(NSString *)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryApps:(WFActionDrawerSiriSuggestionsViewController *)arg1 title:(NSString *)arg2;

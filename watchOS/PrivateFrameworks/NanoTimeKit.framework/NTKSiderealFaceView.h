@@ -12,7 +12,7 @@
 #import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CALayer, CAShapeLayer, CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKSiderealWaypointsView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
+@class CALayer, CAShapeLayer, CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
 
 @interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider, PUICCrownInputSequencerDelegate, NTKTritiumMetalContentView>
 {
@@ -31,9 +31,6 @@
     float _interactionProgress;
     float _lastTestedWaypointProgress;
     NTKSiderealDialBackgroundView *_dialBackgroundView;
-    NTKSiderealSolarContainerView *_solarContainerView;
-    NTKSiderealSolarOrbitView *_solarOrbitView;
-    NTKSiderealWaypointsView *_waypointsView;
     NTKSiderealAuxiliaryDialLabels *_auxiliaryDialLabels;
     NTKSiderealTimeView *_siderealTimeView;
     UILabel *_offsetLabel;
@@ -51,11 +48,14 @@
     float _breathScaleModifier;
     float _rubberBandScaleModifier;
     float _tritium_dimming;
+    _Bool _disableRendering;
 }
 
 + (Class)tritium_frameSpecifierClass;
 + (int)uiSensitivity;
 - (void).cxx_destruct;
+- (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_didTransitionToTritiumOn;
 - (void)tritium_willTransitionToTritiumOn;
@@ -77,9 +77,22 @@
 - (float)_idealizedSolarDayProgress;
 - (float)_solarDayProgressForCurrentTime;
 - (struct CGAffineTransform)_timeViewScaleTransform;
+- (float)_distanceBetweenAngleA:(float)arg1 angleB:(float)arg2;
+- (id)waypointBetweenPreviousOffset:(float)arg1 currentOffset:(float)arg2;
+- (id)closestWaypointForSolarDayProgress:(float)arg1 range:(float)arg2;
 - (struct CGImage *)newImageRefFromView:(id)arg1;
-- (struct CGImage *)_waypointViewImageRef;
-- (struct CGImage *)_dialViewImageRef;
+- (struct CGImage *)newImageRefFromSolarContainerView:(id)arg1 withHeight:(float)arg2;
+- (id)_nightRingImageFromSolarContainerView:(id)arg1;
+- (id)_nightDiscImageFromSolarContainerView:(id)arg1;
+- (id)_nightGnomonImageFromSolarContainerView:(id)arg1;
+- (id)_dayDiscImageFromSolarContainerView:(id)arg1;
+- (id)_tritium_dayDiskBloomImageFromSolarContainerView:(id)arg1;
+- (id)_dayDiskBloomImageFromSolarContainerView:(id)arg1;
+- (id)_dayGnomonImageFromSolarContainerView:(id)arg1;
+- (id)_gnomonImage;
+- (id)_newGnomonLayer;
+- (id)_waypointViewImageRef;
+- (id)_dialViewImageRef;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
 - (id)_pickerMaskForSlot:(id)arg1;
 - (int)_complicationPickerStyleForSlot:(id)arg1;
@@ -118,6 +131,7 @@
 - (void)_updateTimeLabelsWithReferenceDate:(id)arg1 overrideDate:(id)arg2;
 - (void)_updateWaypointLabel;
 - (void)_updateSolarOrbitGlowPath:(float)arg1;
+- (void)_refreshGlowPathState;
 - (void)_updateStatusBarVisibility;
 - (void)_cleanupAfterSettingViewMode:(unsigned int)arg1;
 - (void)_interpolateFromViewMode:(unsigned int)arg1 toViewMode:(unsigned int)arg2 progress:(float)arg3;
@@ -131,7 +145,6 @@
 - (void)_animateSolarDayFromProgress:(float)arg1 toProgress:(float)arg2 minDuration:(float)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_forceSolarDayUpdate;
 - (void)_setSolarDayProgress:(float)arg1;
-- (void)_updateSolarDayMask;
 - (void)dataSourceDidUpdateSolarData;
 - (void)_updateLocale;
 - (void)_asyncUpdateLocale;
@@ -166,6 +179,7 @@
 - (void)_applyDataMode;
 - (void)setDataMode:(int)arg1;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsTimeScrubbing;
 - (_Bool)_wantsMinorDetents;
 - (void)handleScreenBlanked;
@@ -176,10 +190,6 @@
 - (void)_loadSnapshotContentViews;
 - (void)_unloadTimeView;
 - (void)_loadTimeView;
-- (void)_unloadSolarViews;
-- (void)_loadSolarViews;
-- (void)_unloadSolarOrbit;
-- (void)_loadSolarOrbit;
 - (void)_unloadDial;
 - (void)_loadDial;
 - (void)_unloadUI;

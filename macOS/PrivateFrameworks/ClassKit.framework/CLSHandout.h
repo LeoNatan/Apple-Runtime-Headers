@@ -16,7 +16,6 @@
     NSString *_instructions;
     NSDate *_dueDate;
     BOOL _reviewed;
-    NSDate *_lastReviewedDate;
     NSDate *_dateOfPublication;
     long long _state;
     long long _publishingState;

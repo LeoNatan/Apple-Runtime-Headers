@@ -15,6 +15,7 @@
 }
 
 + (_Bool)fileExistsAtURL:(id)arg1;
++ (_Bool)writeData:(id)arg1 toURL:(id)arg2 atomically:(_Bool)arg3 error:(id *)arg4;
 + (_Bool)moveURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (_Bool)createEmptyURL:(id)arg1 error:(id *)arg2;
 + (_Bool)removeURL:(id)arg1 error:(id *)arg2;

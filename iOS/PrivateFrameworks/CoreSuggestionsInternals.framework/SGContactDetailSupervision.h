@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSString;
+@class NSArray, NSDate, NSString;
 
 @interface SGContactDetailSupervision : NSObject
 {
@@ -15,6 +15,7 @@
     _Bool _isFirstPerson;
     _Bool _isThirdPerson;
     _Bool _isUnlikelyPhone;
+    NSArray *_matchingContacts;
     unsigned long long _ignoreAfter;
     NSDate *_matchDate;
     NSString *_senderDisplayName;
@@ -24,6 +25,7 @@
 @property(nonatomic) __weak NSDate *matchDate; // @synthesize matchDate=_matchDate;
 @property(nonatomic) unsigned long long ignoreAfter; // @synthesize ignoreAfter=_ignoreAfter;
 @property(nonatomic) _Bool isUnlikelyPhone; // @synthesize isUnlikelyPhone=_isUnlikelyPhone;
+@property(nonatomic) __weak NSArray *matchingContacts; // @synthesize matchingContacts=_matchingContacts;
 @property(nonatomic) _Bool isThirdPerson; // @synthesize isThirdPerson=_isThirdPerson;
 @property(nonatomic) _Bool isFirstPerson; // @synthesize isFirstPerson=_isFirstPerson;
 @property(nonatomic) _Bool regexDoesNotBelongToSender; // @synthesize regexDoesNotBelongToSender=_regexDoesNotBelongToSender;

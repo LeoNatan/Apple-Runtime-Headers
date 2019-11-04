@@ -44,6 +44,7 @@
     NSString *_threadIdentifier;
     NSString *_title;
     NSSet *_topicIdentifiers;
+    unsigned int _realertCount;
     NSString *_summaryArgument;
     unsigned int _summaryArgumentCount;
     NSString *_targetContentIdentifier;
@@ -74,6 +75,7 @@
 - (id)_descriptionForDebug:(_Bool)arg1;
 - (id)debugDescription;
 - (id)description;
+@property(readonly, nonatomic) unsigned int realertCount; // @synthesize realertCount=_realertCount;
 @property(readonly, copy, nonatomic) NSSet *topicIdentifiers; // @synthesize topicIdentifiers=_topicIdentifiers;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) _Bool shouldPreemptSTAR; // @synthesize shouldPreemptSTAR=_shouldPreemptSTAR;
@@ -100,7 +102,7 @@
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)_initWithAccessoryImageName:(id)arg1 attachments:(id)arg2 badge:(id)arg3 body:(id)arg4 categoryIdentifier:(id)arg5 date:(id)arg6 icon:(id)arg7 defaultActionTitle:(id)arg8 defaultActionURL:(id)arg9 expirationDate:(id)arg10 header:(id)arg11 launchImageName:(id)arg12 peopleIdentifiers:(id)arg13 shouldHideDate:(_Bool)arg14 shouldHideTime:(_Bool)arg15 shouldIgnoreDoNotDisturb:(_Bool)arg16 shouldIgnoreDowntime:(_Bool)arg17 shouldSuppressScreenLightUp:(_Bool)arg18 shouldAuthenticateDefaultAction:(_Bool)arg19 shouldBackgroundDefaultAction:(_Bool)arg20 shouldPreventNotificationDismissalAfterDefaultAction:(_Bool)arg21 shouldSuppressDefaultAction:(_Bool)arg22 shouldSuppressSyncDismissalWhenRemoved:(_Bool)arg23 shouldUseRequestIdentifierForDismissalSync:(_Bool)arg24 shouldPreemptPresentedNotification:(_Bool)arg25 shouldPreemptSTAR:(_Bool)arg26 sound:(id)arg27 subtitle:(id)arg28 threadIdentifier:(id)arg29 title:(id)arg30 topicIdentifiers:(id)arg31 summaryArgument:(id)arg32 summaryArgumentCount:(unsigned int)arg33 targetContentIdentifier:(id)arg34 userInfo:(id)arg35;
+- (id)_initWithAccessoryImageName:(id)arg1 attachments:(id)arg2 badge:(id)arg3 body:(id)arg4 categoryIdentifier:(id)arg5 date:(id)arg6 icon:(id)arg7 defaultActionTitle:(id)arg8 defaultActionURL:(id)arg9 expirationDate:(id)arg10 header:(id)arg11 launchImageName:(id)arg12 peopleIdentifiers:(id)arg13 shouldHideDate:(_Bool)arg14 shouldHideTime:(_Bool)arg15 shouldIgnoreDoNotDisturb:(_Bool)arg16 shouldIgnoreDowntime:(_Bool)arg17 shouldSuppressScreenLightUp:(_Bool)arg18 shouldAuthenticateDefaultAction:(_Bool)arg19 shouldBackgroundDefaultAction:(_Bool)arg20 shouldPreventNotificationDismissalAfterDefaultAction:(_Bool)arg21 shouldSuppressDefaultAction:(_Bool)arg22 shouldSuppressSyncDismissalWhenRemoved:(_Bool)arg23 shouldUseRequestIdentifierForDismissalSync:(_Bool)arg24 shouldPreemptPresentedNotification:(_Bool)arg25 shouldPreemptSTAR:(_Bool)arg26 sound:(id)arg27 subtitle:(id)arg28 threadIdentifier:(id)arg29 title:(id)arg30 topicIdentifiers:(id)arg31 realertCount:(unsigned int)arg32 summaryArgument:(id)arg33 summaryArgumentCount:(unsigned int)arg34 targetContentIdentifier:(id)arg35 userInfo:(id)arg36;
 
 @end
 

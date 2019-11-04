@@ -16,6 +16,7 @@
 
 + (_Bool)supportsRowModel:(id)arg1;
 - (unsigned long long)type;
+- (id)contactsForPreviewInteractionForAvatarView:(id)arg1 suggestedKeysToFetch:(id)arg2;
 - (void)willBeginPreviewInteractionForAvatarView:(id)arg1;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)updateWithContacts:(id)arg1;

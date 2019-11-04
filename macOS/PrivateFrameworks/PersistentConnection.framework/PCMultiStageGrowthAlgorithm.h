@@ -35,11 +35,13 @@
     double _serverStatsMinKeepAliveInterval;
     double _serverStatsMaxKeepAliveInterval;
     double _serverStatsExpectedKeepAliveInterval;
+    double _minimumIntervalFallbackStateTimeout;
     BOOL _usingServerStatsAggressively;
 }
 
 + (void)_loadDefaultValue:(double *)arg1 forKey:(struct __CFString *)arg2;
 + (void)_loadDefaults;
+@property(nonatomic) double minimumIntervalFallbackStateTimeout; // @synthesize minimumIntervalFallbackStateTimeout=_minimumIntervalFallbackStateTimeout;
 @property(nonatomic) BOOL usingServerStatsAggressively; // @synthesize usingServerStatsAggressively=_usingServerStatsAggressively;
 @property(nonatomic) double serverStatsMaxKeepAliveInterval; // @synthesize serverStatsMaxKeepAliveInterval=_serverStatsMaxKeepAliveInterval;
 @property(nonatomic) double serverStatsExpectedKeepAliveInterval; // @synthesize serverStatsExpectedKeepAliveInterval=_serverStatsExpectedKeepAliveInterval;

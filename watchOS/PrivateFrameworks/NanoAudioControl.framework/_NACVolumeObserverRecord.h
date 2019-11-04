@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class MPAVRoutingController, MPVolumeController, NACEventThrottler;
+@protocol NACVolumeController;
 
 __attribute__((visibility("hidden")))
 @interface _NACVolumeObserverRecord : NSObject
@@ -19,8 +20,10 @@ __attribute__((visibility("hidden")))
     NACEventThrottler *_throttler;
     MPVolumeController *_volumeController;
     MPAVRoutingController *_routingController;
+    id <NACVolumeController> _nacVolumeController;
 }
 
+@property(retain, nonatomic) id <NACVolumeController> nacVolumeController; // @synthesize nacVolumeController=_nacVolumeController;
 @property(retain, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) NACEventThrottler *throttler; // @synthesize throttler=_throttler;

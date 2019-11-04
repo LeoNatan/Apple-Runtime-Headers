@@ -6,10 +6,10 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class UIView, WFAction, WFActionDrawerSearchResultsViewController, WFActionDrawerSection;
+@class NSString, UIView, WFAction, WFActionDrawerSearchResultsViewController;
 
 @protocol WFActionDrawerSearchResultsViewControllerDelegate <NSObject>
-- (void)searchResultsViewController:(WFActionDrawerSearchResultsViewController *)arg1 didSelectSection:(WFActionDrawerSection *)arg2;
+- (void)searchResultsViewController:(WFActionDrawerSearchResultsViewController *)arg1 didSelectAppWithBundleIdentifier:(NSString *)arg2;
 - (void)searchResultsViewController:(WFActionDrawerSearchResultsViewController *)arg1 didSelectDocumentationForAction:(WFAction *)arg2 fromView:(UIView *)arg3;
 - (void)searchResultsViewController:(WFActionDrawerSearchResultsViewController *)arg1 didSelectAction:(WFAction *)arg2;
 @end

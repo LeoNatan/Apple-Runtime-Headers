@@ -19,7 +19,7 @@
 #import <SpringBoard/_UISettingsKeyObserver-Protocol.h>
 
 @class NSHashTable, NSMapTable, NSMutableSet, NSString, PTSingleTestRecipe, SBFWallpaperConfigurationManager, SBFWallpaperView, SBRootSettings, SBWallpaperAggdLogger, SBWallpaperStyleInfo, UIGestureRecognizer, UIScreen, UITraitCollection, UIView, UIWindow;
-@protocol SBFIrisWallpaperView, SBUIWallpaperOverlay;
+@protocol BSInvalidatable, SBFIrisWallpaperView, SBUIWallpaperOverlay;
 
 @interface SBWallpaperController : NSObject <SBFLegibilitySettingsProviderDelegate, SBFWallpaperViewInternalObserver, SBUIActiveOrientationObserver, _UISettingsKeyObserver, SBFWallpaperConfigurationManagerDelegate, BSDescriptionProviding, SBWallpaperServerDelegate, SBFWallpaperViewDelegate, SBWallpaperWindowDelegate, UIWindowDelegate, CSWallpaperOverlayHosting>
 {
@@ -32,9 +32,9 @@
     SBFWallpaperView *_sharedWallpaperView;
     NSHashTable *_lockscreenObservers;
     NSHashTable *_homescreenObservers;
-    NSMutableSet *_suspendColorSamplingReasons;
-    NSMutableSet *_suspendWallpaperAnimationReasons;
-    NSMutableSet *_requireWallpaperReasons;
+    NSHashTable *_suspendColorSamplingAssertions;
+    NSHashTable *_suspendWallpaperAnimationAssertions;
+    NSHashTable *_requireWallpaperAssertions;
     NSMutableSet *_hideHomescreenWallpaperReasons;
     NSMutableSet *_hideLockscreenWallpaperReasons;
     long long _displayedVariant;
@@ -44,7 +44,6 @@
     long long _disallowRasterizationBlockCount;
     NSMutableSet *_disallowRasterizationReasonsHomeVariant;
     NSMutableSet *_disallowRasterizationReasonsLockVariant;
-    _Bool _isSuspendingMotionEffectsForStyle;
     NSMutableSet *_homescreenStyleChangeDelayReasons;
     SBFWallpaperConfigurationManager *_wallpaperConfigurationManager;
     UIView<SBUIWallpaperOverlay> *_wallpaperOverlay;
@@ -61,11 +60,15 @@
     SBWallpaperAggdLogger *_wallpaperAggdLogger;
     SBRootSettings *_rootSettings;
     UITraitCollection *_fakeBlurViewOverrideTraitCollection;
+    id <BSInvalidatable> _batterySaverAnimationAssertion;
+    id <BSInvalidatable> _wallpaperStyleAnimationAssertion;
 }
 
 + (id)substitutionFlatColorForWallpaperName:(id)arg1;
 + (id)accessAuthenticator;
 + (id)sharedInstance;
+@property(retain, nonatomic) id <BSInvalidatable> wallpaperStyleAnimationAssertion; // @synthesize wallpaperStyleAnimationAssertion=_wallpaperStyleAnimationAssertion;
+@property(retain, nonatomic) id <BSInvalidatable> batterySaverAnimationAssertion; // @synthesize batterySaverAnimationAssertion=_batterySaverAnimationAssertion;
 @property(retain, nonatomic) UITraitCollection *fakeBlurViewOverrideTraitCollection; // @synthesize fakeBlurViewOverrideTraitCollection=_fakeBlurViewOverrideTraitCollection;
 @property(retain, nonatomic) SBRootSettings *rootSettings; // @synthesize rootSettings=_rootSettings;
 @property(retain, nonatomic) SBWallpaperAggdLogger *wallpaperAggdLogger; // @synthesize wallpaperAggdLogger=_wallpaperAggdLogger;
@@ -189,17 +192,18 @@
 - (id)legibilitySettingsForVariant:(long long)arg1;
 @property(readonly, nonatomic) UIGestureRecognizer *wallpaperGestureRecognizer;
 @property(readonly, nonatomic) id <SBFIrisWallpaperView> irisWallpaperView;
-- (void)resumeWallpaperAnimationForReason:(id)arg1;
-- (void)suspendWallpaperAnimationForReason:(id)arg1;
-- (void)resumeColorSamplingForReason:(id)arg1;
-- (void)suspendColorSamplingForReason:(id)arg1;
+- (void)invalidateWallpaperAssertion:(id)arg1;
+- (void)removeWallpaperAnimationAssertion:(id)arg1;
+- (id)suspendWallpaperAnimationForReason:(id)arg1;
+- (void)removeColorSamplingAssertion:(id)arg1;
+- (id)suspendColorSamplingForReason:(id)arg1;
 - (void)removeObserver:(id)arg1 forVariant:(long long)arg2;
 - (void)addObserver:(id)arg1 forVariant:(long long)arg2;
 - (_Bool)shouldDelayHomescreenStyleUpdates;
 - (void)endDelayingHomescreenStyleChangesForReason:(id)arg1 animationFactory:(id)arg2;
 - (void)beginDelayingHomescreenStyleChangesForReason:(id)arg1;
-- (void)endRequiringWithReason:(id)arg1;
-- (void)beginRequiringWithReason:(id)arg1;
+- (void)removeWallpaperRequiredAssertion:(id)arg1;
+- (id)beginRequiringWithReason:(id)arg1;
 - (_Bool)removeWallpaperStyleForPriority:(long long)arg1 forVariant:(long long)arg2 withAnimationFactory:(id)arg3;
 - (_Bool)setWallpaperStyleTransitionState:(CDStruct_059c2b36)arg1 forPriority:(long long)arg2 forVariant:(long long)arg3 withAnimationFactory:(id)arg4;
 - (_Bool)setWallpaperStyle:(long long)arg1 forPriority:(long long)arg2 forVariant:(long long)arg3 withAnimationFactory:(id)arg4;

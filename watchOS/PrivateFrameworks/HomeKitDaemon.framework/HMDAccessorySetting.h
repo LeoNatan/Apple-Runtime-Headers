@@ -70,6 +70,7 @@
 @property(nonatomic) unsigned int configurationVersion; // @synthesize configurationVersion=_configurationVersion;
 - (id)valueUpdateNotificationWithMessage:(id)arg1;
 - (void)settingUpdate:(id)arg1 didCompleteWithError:(id)arg2;
+- (_Bool)_shouldTurnOffPersonalRequestsOnLanguageChangeFrom:(id)arg1 toValue:(id)arg2;
 - (_Bool)_shouldBlockSettingUpdateMessage:(id)arg1;
 - (void)_handleUpdateValue:(id)arg1;
 - (void)handleUpdateValue:(id)arg1;

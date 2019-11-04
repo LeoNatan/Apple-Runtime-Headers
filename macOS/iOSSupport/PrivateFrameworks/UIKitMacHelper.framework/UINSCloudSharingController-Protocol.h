@@ -7,11 +7,12 @@
 #import <UIKitMacHelper/NSObject-Protocol.h>
 
 @class CKShare;
-@protocol UINSCloudSharingControllerDelegate;
+@protocol UINSCloudSharingControllerDelegate, UINSWindow;
 
 @protocol UINSCloudSharingController <NSObject>
 @property(nonatomic) unsigned long long availablePermissions;
 @property(readonly, nonatomic) CKShare *share;
+@property(nonatomic) __weak id <UINSWindow> window;
 @property(nonatomic) __weak id <UINSCloudSharingControllerDelegate> delegate;
 - (void)present;
 @end

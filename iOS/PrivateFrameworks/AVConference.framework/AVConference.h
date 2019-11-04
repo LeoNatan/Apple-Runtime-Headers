@@ -160,6 +160,7 @@
 @property(getter=isUsingViceroyBlobFormat) _Bool useViceroyBlobFormat;
 - (void)dealloc;
 - (void)warmupForCall;
+- (long long)initializeNewCallWithDeviceRole:(int)arg1 reportingHierarchyToken:(id)arg2;
 - (long long)initializeNewCallWithDeviceRole:(int)arg1;
 - (long long)initializeNewCall;
 @property(nonatomic) NSObject<AVConferenceDelegate> *delegate;

@@ -43,8 +43,8 @@
 - (void)adjunctListModel:(id)arg1 didAddItem:(id)arg2;
 @property(nonatomic) __weak id <SBFActionProviding> contentActionProvider;
 - (_Bool)handleEvent:(id)arg1;
-@property(readonly, nonatomic) double listViewContentAnimationFriction;
-@property(readonly, nonatomic) double listViewContentAnimationTension;
+@property(readonly, nonatomic) double listViewContentAnimationDampingRatio;
+@property(readonly, nonatomic) double listViewContentAnimationDuration;
 @property(readonly, nonatomic) struct CGSize sizeToMimic;
 @property(readonly, nonatomic, getter=isPresentingContent) _Bool presentingContent;
 @property(readonly, nonatomic, getter=isShowingMediaControls) _Bool showingMediaControls;

@@ -302,7 +302,6 @@
 - (id)_underTitlebarView;
 - (void)_addUnderTitlebarNotifications;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (BOOL)scrollRectToVisible:(const struct CGRect *)arg1 fromView:(id)arg2;
 - (void)viewWillDraw;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)_unregisterForWindowWillClose;

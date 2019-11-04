@@ -18,6 +18,9 @@
 @property(nonatomic) _Bool preventStoreItemMetadataCaching; // @synthesize preventStoreItemMetadataCaching=_preventStoreItemMetadataCaching;
 @property(readonly, nonatomic) MPPropertySet *requestedPropertySet; // @synthesize requestedPropertySet=_requestedPropertySet;
 - (void).cxx_destruct;
+- (id)modelObjectWithStorePlatformDictionary:(id)arg1 userIdentity:(id)arg2;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2 userIdentity:(id)arg3;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 userIdentity:(id)arg2;
 - (id)modelObjectWithStorePlatformDictionary:(id)arg1;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1;

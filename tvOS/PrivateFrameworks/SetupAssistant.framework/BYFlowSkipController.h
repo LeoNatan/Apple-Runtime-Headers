@@ -15,7 +15,7 @@
 + (id)sharedInstance;
 - (void)registerActivities;
 - (void)observeFinishSetupTriggers;
-- (void)revisePendingFollowUps;
+- (void)revisePendingFollowUpsForcingRepost:(_Bool)arg1;
 - (void)passcodeDidChange;
 - (void)cancelPendingFlows;
 - (void)didCompleteFlow:(id)arg1;

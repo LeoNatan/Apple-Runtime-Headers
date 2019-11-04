@@ -13,10 +13,12 @@
 @interface GEOComposedWaypoint : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_latLng;
     GEOMapItemStorage *_mapItemStorage;
     GEOWaypointTyped *_waypoint;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_latLng:1;
         unsigned int read_mapItemStorage:1;
@@ -65,6 +67,8 @@
 @property(retain, nonatomic) GEOWaypointTyped *waypoint;
 @property(readonly, nonatomic) BOOL hasWaypoint;
 - (void)_readWaypoint;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)_regionCandidatesForContainment;
 - (id)_addressCandidatesForComparison;
 - (id)_locationCandidatesForComparison;

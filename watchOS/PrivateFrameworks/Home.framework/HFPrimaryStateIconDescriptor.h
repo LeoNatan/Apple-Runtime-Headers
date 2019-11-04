@@ -14,19 +14,16 @@
 {
     _Bool _shouldForceLTR;
     NSString *_identifier;
-    NSString *_imageIdentifier;
     int _primaryState;
 }
 
 @property(readonly, nonatomic) int primaryState; // @synthesize primaryState=_primaryState;
 @property(readonly, nonatomic) _Bool shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
-@property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 imageIdentifier:(id)arg2 primaryState:(int)arg3;
 - (id)initWithIdentifier:(id)arg1 primaryState:(int)arg2;
 
 // Remaining properties

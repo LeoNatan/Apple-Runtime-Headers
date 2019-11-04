@@ -25,10 +25,12 @@
     PXMonthsLayoutMetrics *_monthsLayoutMetrics;
     double _spacingBetweenSafeAreaTopAndFirstYearCard;
     double _spacingBetweenSafeAreaTopAndFirstMonthTitle;
+    double _spacingBetweenHeaderLastBaselineAndAllPhotosTop;
 }
 
 @property(readonly, nonatomic) _Bool allowsSlideshowInYears; // @synthesize allowsSlideshowInYears=_allowsSlideshowInYears;
 @property(readonly, nonatomic) _Bool allowsPaginatedScrollingInYearsAndMonths; // @synthesize allowsPaginatedScrollingInYearsAndMonths=_allowsPaginatedScrollingInYearsAndMonths;
+@property(readonly, nonatomic) double spacingBetweenHeaderLastBaselineAndAllPhotosTop; // @synthesize spacingBetweenHeaderLastBaselineAndAllPhotosTop=_spacingBetweenHeaderLastBaselineAndAllPhotosTop;
 @property(readonly, nonatomic) double spacingBetweenSafeAreaTopAndFirstMonthTitle; // @synthesize spacingBetweenSafeAreaTopAndFirstMonthTitle=_spacingBetweenSafeAreaTopAndFirstMonthTitle;
 @property(readonly, nonatomic) double spacingBetweenSafeAreaTopAndFirstYearCard; // @synthesize spacingBetweenSafeAreaTopAndFirstYearCard=_spacingBetweenSafeAreaTopAndFirstYearCard;
 @property(readonly, nonatomic) PXMonthsLayoutMetrics *monthsLayoutMetrics; // @synthesize monthsLayoutMetrics=_monthsLayoutMetrics;

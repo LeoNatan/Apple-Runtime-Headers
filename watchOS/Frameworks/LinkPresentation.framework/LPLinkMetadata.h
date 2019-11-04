@@ -82,6 +82,7 @@
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSURL *originalURL; // @synthesize originalURL=_originalURL;
 - (void).cxx_destruct;
+- (void)_decodeAllImagesWithMaximumSize:(struct CGSize)arg1;
 - (void)_populateMetadataForBackwardCompatibility;
 - (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;
 - (_Bool)_loadAsynchronousFieldsWithLoadGroup:(id)arg1;

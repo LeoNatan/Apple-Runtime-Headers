@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPlaceRefinementParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOStructuredAddress *_addressHint;
     NSData *_addressObjectHint;
@@ -23,6 +22,9 @@ __attribute__((visibility("hidden")))
     GEOPDMapsIdentifier *_mapsId;
     unsigned long long _muid;
     NSString *_placeNameHint;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _addressGeocodeAccuracyHint;
     int _placeTypeHint;
     int _resultProviderId;
@@ -106,6 +108,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasResultProviderId;
 @property(nonatomic) int resultProviderId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (_Bool)_routeHypothesisPlaceRefinementParametersIsEqual:(id)arg1;
 - (unsigned int)_routeHypothesisPlaceRefinementParametersHash;
 - (_Bool)_hasRequiredFields;

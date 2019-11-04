@@ -106,6 +106,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)setDisplayLayoutElementActive:(_Bool)arg1 immediately:(_Bool)arg2;
 - (void)setDisplayLayoutElementActive:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

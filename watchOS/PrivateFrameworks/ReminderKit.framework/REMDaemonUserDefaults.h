@@ -14,6 +14,7 @@
 
 + (id)storageNumberForTodayNotificationTime:(id)arg1;
 + (id)todayNotificationFireTimeFromStorageNumber:(id)arg1;
+@property(nonatomic) _Bool disableAlarmEngineDataSourcePrefetching;
 - (id)streamTodayNotificationFireTime:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSDateComponents *todayNotificationFireTime;
 @property(nonatomic) _Bool forceShowWelcomeScreen;
@@ -22,11 +23,15 @@
 @property(nonatomic) _Bool showRemindersAsOverdue;
 @property(nonatomic) _Bool simulateMAIDAccount;
 @property(copy, nonatomic) NSData *userInteractionsData;
+@property(copy, nonatomic) NSDate *lastSyncPoll;
 @property(copy, nonatomic) NSDate *lastPresentAlarmDate;
 @property(copy, nonatomic) NSDate *nextScheduledAlarmDate;
 @property(copy, nonatomic) NSNumber *spotlightIndexVersion;
 @property(retain, nonatomic) NSString *acAccountIdentifierToMergeLocalDataIntoSyncData;
+- (id)observePreferredDefaultListIDWithBlock:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) REMObjectID *preferredDefaultListID;
+@property(nonatomic) _Bool cloudKitMigrationDisableCleanUp;
+@property(retain, nonatomic) NSNumber *cloudKitResultsLimitPerSyncOperation;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationSimulatedError;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationObserverPollingInterval;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationDelayAfterError;

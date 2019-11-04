@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: blueprintViewController
     // Error parsing type: , name: headlineModelFactory
+    // Error parsing type: , name: sharingActivityProviderFactory
     // Error parsing type: , name: gradientView
     // Error parsing type: , name: config
     // Error parsing type: , name: routableDelegate

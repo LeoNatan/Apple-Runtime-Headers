@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)buttonLayoutSubviews:(id)arg1 baseImplementation:(CDUnknownBlockType)arg2;
+- (void)button:(id)arg1 traitCollectionDidChange:(id)arg2;
 - (void)updateButton:(id)arg1 appearance:(id)arg2;
 - (void)configureButton:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)_setupAlternateTitlesFromBarButtonItem:(id)arg1;
@@ -87,7 +88,6 @@ __attribute__((visibility("hidden")))
 - (id)backButtonBackgroundImageForState:(unsigned long long)arg1 compact:(BOOL)arg2;
 - (id)backgroundImageForState:(unsigned long long)arg1 compact:(BOOL)arg2;
 - (id)symbolConfigurationCompact:(BOOL)arg1;
-- (id)titleTextAttributesForState:(unsigned long long)arg1;
 - (id)backgroundImageView;
 - (id)imageButton;
 - (id)textButton;

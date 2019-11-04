@@ -8,13 +8,16 @@
 
 #import <XCTAutomationSupport/XCTAutomationTarget-Protocol.h>
 #import <XCTAutomationSupport/XCTConnectionAccepting-Protocol.h>
+#import <XCTAutomationSupport/XCTElementSnapshotAttributeDataSource-Protocol.h>
+#import <XCTAutomationSupport/XCTElementSnapshotProvider-Protocol.h>
 #import <XCTAutomationSupport/XCTRemoteApplicationAutomationTarget-Protocol.h>
 
 @class DTXConnection, DTXProxyChannel, NSMutableArray, NSString, XCTAnimationsIdleNotifier, XCTCapabilities, XCTElementQueryProcessor, XCTMainRunLoopIdleNotifier;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, XCTElementSnapshotProvider><XCTElementSnapshotAttributeDataSource;
 
-@interface XCTAutomationSession : NSObject <XCTRemoteApplicationAutomationTarget, XCTConnectionAccepting, XCTAutomationTarget>
+@interface XCTAutomationSession : NSObject <XCTRemoteApplicationAutomationTarget, XCTElementSnapshotProvider, XCTElementSnapshotAttributeDataSource, XCTConnectionAccepting, XCTAutomationTarget>
 {
+    id <XCTElementSnapshotProvider><XCTElementSnapshotAttributeDataSource> _dataSource;
     NSMutableArray *_connections;
     XCTElementQueryProcessor *_queryProcessor;
     NSObject<OS_dispatch_queue> *_queue;
@@ -34,7 +37,14 @@
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) XCTElementQueryProcessor *queryProcessor; // @synthesize queryProcessor=_queryProcessor;
 @property(readonly) NSMutableArray *connections; // @synthesize connections=_connections;
+@property(readonly) __weak id <XCTElementSnapshotProvider><XCTElementSnapshotAttributeDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly) _Bool usePointTransformationsForFrameConversions;
+@property(readonly) _Bool supportsHostedViewCoordinateTransformations;
+- (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
+- (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
+@property(readonly) _Bool allowsRemoteAccess;
+- (id)snapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 timeoutControls:(id)arg4 error:(id *)arg5;
 - (id)_XCT_notifyWhenAnimationsAreIdle;
 - (id)_XCT_notifyWhenMainRunLoopIsIdle;
 - (id)_XCT_attributesForElement:(id)arg1 attributes:(id)arg2;
@@ -49,6 +59,7 @@
 - (void)requestHostAppExecutableNameWithReply:(CDUnknownBlockType)arg1;
 - (_Bool)acceptNewConnection:(id)arg1;
 - (id)init;
+- (id)initWithDataSource:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,17 +15,22 @@
     _Bool _siriEnabled;
     _Bool _offeredEnableAssistant;
     _Bool _offeredEnableDictation;
+    unsigned long long _dataSharingOptInStatus;
     NSString *_language;
 }
 
++ (long long)_afDataSharingEnabledForOptInStatus:(unsigned long long)arg1;
++ (unsigned long long)_dataSharingOptInStatusForAFDataSharingOptInStatus:(long long)arg1;
 + (id)sharedInstance;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
+@property(nonatomic) unsigned long long dataSharingOptInStatus; // @synthesize dataSharingOptInStatus=_dataSharingOptInStatus;
 @property(nonatomic) _Bool offeredEnableDictation; // @synthesize offeredEnableDictation=_offeredEnableDictation;
 @property(nonatomic) _Bool offeredEnableAssistant; // @synthesize offeredEnableAssistant=_offeredEnableAssistant;
 @property(nonatomic, getter=isSiriEnabled) _Bool siriEnabled; // @synthesize siriEnabled=_siriEnabled;
 - (void).cxx_destruct;
 - (void)_reloadSettings;
 - (void)prefsChanged:(id)arg1;
+- (void)deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isDictationSupportedForSystemLanguage:(id)arg1;
 - (_Bool)isSirisupportedForStoreFrontID:(id)arg1;
 - (_Bool)isSiriSupportedForSystemLanguage:(id)arg1;

@@ -43,7 +43,6 @@
     _Bool _showsSkimmingSlideshow;
     _Bool _showsSkimmingInteraction;
     _Bool _allowsPositionDependentHeaderContentOpacity;
-    _Bool _viewBasedDecorationsEnabled;
     _Bool _presentedSkimming;
     PXCuratedLibraryOverlayButtonConfiguration *_showAllButtonConfiguration;
     PXCuratedLibraryOverlayButtonConfiguration *_selectAllButtonConfiguration;
@@ -76,7 +75,6 @@
 @property(readonly, nonatomic) _Bool presentedSkimming; // @synthesize presentedSkimming=_presentedSkimming;
 @property(readonly, nonatomic) struct PXSimpleIndexPath presentedSectionIndexPath; // @synthesize presentedSectionIndexPath=_presentedSectionIndexPath;
 @property(nonatomic) struct CGRect showAllButtonFrame; // @synthesize showAllButtonFrame=_showAllButtonFrame;
-@property(readonly, nonatomic) _Bool viewBasedDecorationsEnabled; // @synthesize viewBasedDecorationsEnabled=_viewBasedDecorationsEnabled;
 @property(nonatomic) double distanceBetweenHeaderTopAndNextBodyTop; // @synthesize distanceBetweenHeaderTopAndNextBodyTop=_distanceBetweenHeaderTopAndNextBodyTop;
 @property(nonatomic) double distanceBetweenTitleTopAndBodyBottom; // @synthesize distanceBetweenTitleTopAndBodyBottom=_distanceBetweenTitleTopAndBodyBottom;
 @property(nonatomic) _Bool allowsPositionDependentHeaderContentOpacity; // @synthesize allowsPositionDependentHeaderContentOpacity=_allowsPositionDependentHeaderContentOpacity;
@@ -123,6 +121,7 @@
 - (id)_displayAssetForBodyItem:(long long)arg1;
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
@@ -175,7 +174,7 @@
 @property(copy, nonatomic) NSSet *draggedAssetReferences;
 @property(retain, nonatomic) PXSelectionSnapshot *selectionSnapshot;
 - (void)setDataSource:(id)arg1 section:(long long)arg2;
-- (id)initWithSection:(long long)arg1 dataSource:(id)arg2 actionManager:(id)arg3 zoomLevel:(long long)arg4 viewBasedDecorationsEnabled:(_Bool)arg5 spec:(id)arg6;
+- (id)initWithSection:(long long)arg1 dataSource:(id)arg2 actionManager:(id)arg3 zoomLevel:(long long)arg4 spec:(id)arg5;
 - (id)init;
 
 // Remaining properties

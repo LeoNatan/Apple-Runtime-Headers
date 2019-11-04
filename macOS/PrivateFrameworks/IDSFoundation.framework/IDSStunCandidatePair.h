@@ -81,6 +81,8 @@
     unsigned int _testOptions;
     BOOL _isDisconnecting;
     double _triggeredCheckTime;
+    BOOL _isRealloc;
+    NSObject<OS_dispatch_source> *_allocbindFailoverTimer;
 }
 
 + (id)candidatePairWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3 delegate:(id)arg4 sendMsgBlock:(CDUnknownBlockType)arg5;
@@ -89,6 +91,7 @@
 @property(readonly) NSData *hmacKey; // @synthesize hmacKey=_hmacKey;
 @property(readonly) NSData *decKey; // @synthesize decKey=_decKey;
 @property(readonly) NSData *encKey; // @synthesize encKey=_encKey;
+@property(nonatomic) BOOL isRealloc; // @synthesize isRealloc=_isRealloc;
 @property(nonatomic) BOOL sentSKEData; // @synthesize sentSKEData=_sentSKEData;
 @property(nonatomic) BOOL recvSKEData; // @synthesize recvSKEData=_recvSKEData;
 @property(readonly, nonatomic) unsigned int sessionInfoReqCount; // @synthesize sessionInfoReqCount=_sessionInfoReqCount;
@@ -105,6 +108,7 @@
 @property(nonatomic) unsigned short channelNumber; // @synthesize channelNumber=_channelNumber;
 @property(readonly) NSDictionary *sessionInfoDict; // @synthesize sessionInfoDict=_sessionInfoDict;
 @property(readonly) IDSQuickRelaySessionInfo *relaySessionInfo; // @synthesize relaySessionInfo=_relaySessionInfo;
+@property(retain) NSObject<OS_dispatch_source> *allocbindFailoverTimer; // @synthesize allocbindFailoverTimer=_allocbindFailoverTimer;
 @property(copy) NSUUID *linkUUID; // @synthesize linkUUID=_linkUUID;
 @property(readonly, nonatomic) unsigned char statsIntervalInSeconds; // @synthesize statsIntervalInSeconds=_statsIntervalInSeconds;
 @property(nonatomic) unsigned int totalPacketsReceivedOnLink; // @synthesize totalPacketsReceivedOnLink=_totalPacketsReceivedOnLink;

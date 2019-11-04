@@ -14,8 +14,7 @@
 - (void)saveOffer:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)prewarm;
 - (void)ping;
-- (void)writeLocation:(NSDictionary *)arg1 replyHandler:(void (^)(_Bool))arg2;
-- (void)readLocation:(void (^)(NSDictionary *))arg1;
+- (void)fetchLocationAuthorizationStatus:(void (^)(long long))arg1;
 - (void)fetchSettings:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)postSettings:(NSDictionary *)arg1 replyHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)writeSettingsStore:(NSDictionary *)arg1 replyHandler:(void (^)(_Bool))arg2;

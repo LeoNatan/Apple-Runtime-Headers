@@ -6,7 +6,7 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDNetworkRouterFirewallRuleAccessoryIdentifier, HMDNetworkRouterFirewallRuleCloudNetworkDeclarations, HMDNetworkRouterFirewallRuleConfiguration, HMFVersion, NSDictionary, NSSet, NSString;
+@class HMDNetworkRouterFirewallRuleAccessoryIdentifier, HMDNetworkRouterFirewallRuleCloudNetworkDeclarations, HMDNetworkRouterFirewallRuleConfiguration, HMFVersion, NSCountedSet, NSDictionary, NSSet, NSString;
 @protocol HMDNetworkRouterFirewallRuleManager;
 
 @protocol HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator <NSObject>
@@ -19,9 +19,9 @@
 - (NSString *)dumpLocalRulesForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 firmwareVersion:(HMFVersion *)arg3 ignoreOverrides:(_Bool)arg4 rawOutput:(_Bool)arg5 error:(id *)arg6;
 - (void)dumpCloudRecordsForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 rawOutput:(_Bool)arg3 listOnly:(_Bool)arg4 completion:(void (^)(NSString *, NSError *))arg5;
 - (NSSet *)fetchRulesForAccessories:(NSSet *)arg1 qualityOfService:(int)arg2 ignoreOverrides:(_Bool)arg3 error:(id *)arg4;
-- (void)fetchCloudChangesWithQualityOfService:(int)arg1 forceChangeNotifications:(_Bool)arg2 completion:(void (^)(NSSet *, NSError *))arg3;
-- (void)stopWatchingAccessories:(NSSet *)arg1;
-- (void)startWatchingAccessories:(NSSet *)arg1;
+- (void)fetchCloudChangesWithQualityOfService:(int)arg1 ignoreLastFetchedAccessories:(_Bool)arg2 forceChangeNotifications:(_Bool)arg3 completion:(void (^)(NSSet *, NSError *))arg4;
+- (void)removeInterestedAccessories:(NSCountedSet *)arg1;
+- (void)addInterestedAccessories:(NSCountedSet *)arg1;
 - (void)shutdownWithCompletion:(void (^)(NSError *))arg1;
 - (void)startupWithCompletion:(void (^)(NSError *))arg1;
 @end

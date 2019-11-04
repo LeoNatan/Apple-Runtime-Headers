@@ -4,37 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WorkflowKit/WFAccessResource.h>
+#import <WorkflowKit/WFGranularAccessResource.h>
 
-@class NSArray, NSSet, WFRemoteServerPermissionState;
+@class NSArray;
 
-@interface WFRemoteServerAccessResource : WFAccessResource
+@interface WFRemoteServerAccessResource : WFGranularAccessResource
 {
     NSArray *_requestedURLs;
-    WFRemoteServerPermissionState *_stateForRequestedURLs;
-    WFRemoteServerPermissionState *_combinedState;
 }
 
-+ (Class)permissionStateClass;
++ (Class)perWorkflowStateClass;
 + (_Bool)isSystemResource;
-@property(retain, nonatomic) WFRemoteServerPermissionState *combinedState; // @synthesize combinedState=_combinedState;
-@property(retain, nonatomic) WFRemoteServerPermissionState *stateForRequestedURLs; // @synthesize stateForRequestedURLs=_stateForRequestedURLs;
 @property(copy, nonatomic) NSArray *requestedURLs; // @synthesize requestedURLs=_requestedURLs;
 - (void).cxx_destruct;
 - (id)localizedWorkflowLevelDeniedStatusMessage;
 - (id)localizedWorkflowLevelNotDeterminedStatusMessage;
 - (id)localizedWorkflowLevelMessageTemplate;
 - (id)localizedWorkflowLevelPromptTemplate;
-- (id)updatedPermissionStateForPermissionGranted:(_Bool)arg1 overridingPreviouslyDeterminedAuthorizations:(_Bool)arg2;
-- (unsigned long long)workflowLevelStatus;
-- (void)setCurrentPermissionState:(id)arg1;
+- (id)requestedEntries;
 - (unsigned long long)globalLevelStatus;
 - (id)icon;
 - (id)name;
-- (id)domainsWithDeniedAccess;
-@property(readonly, nonatomic) NSSet *domainsWithNotDeterminedAccess;
-- (void)updateInternalStates;
-@property(readonly, nonatomic) WFRemoteServerPermissionState *currentState;
 
 @end
 

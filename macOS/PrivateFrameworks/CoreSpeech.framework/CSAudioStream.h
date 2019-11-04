@@ -8,7 +8,7 @@
 
 #import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
 
-@class CSAudioStreamRequest, NSString, NSUUID;
+@class CSAudioStartStreamOption, CSAudioStreamRequest, NSString, NSUUID;
 @protocol CSAudioStreamProviding, CSAudioStreamProvidingDelegate;
 
 @interface CSAudioStream : NSObject <CSAudioStreamProvidingDelegate>
@@ -20,6 +20,7 @@
     NSString *_name;
     CSAudioStreamRequest *_streamRequest;
     NSString *_UUID;
+    CSAudioStartStreamOption *_startStreamOption;
     id <CSAudioStreamProviding> _streamProvider;
     NSUUID *_streamingUUID;
 }
@@ -27,6 +28,7 @@
 @property(retain) NSUUID *streamingUUID; // @synthesize streamingUUID=_streamingUUID;
 @property BOOL streaming; // @synthesize streaming=_streaming;
 @property(nonatomic) __weak id <CSAudioStreamProviding> streamProvider; // @synthesize streamProvider=_streamProvider;
+@property(retain, nonatomic) CSAudioStartStreamOption *startStreamOption; // @synthesize startStreamOption=_startStreamOption;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) CSAudioStreamRequest *streamRequest; // @synthesize streamRequest=_streamRequest;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

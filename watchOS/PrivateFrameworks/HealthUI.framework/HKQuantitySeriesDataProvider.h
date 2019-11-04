@@ -41,7 +41,6 @@
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)textForQuantity:(id)arg1;
 - (id)initWithSample:(id)arg1 healthStore:(id)arg2;

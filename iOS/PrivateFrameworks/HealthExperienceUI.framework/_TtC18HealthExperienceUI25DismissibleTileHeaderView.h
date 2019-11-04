@@ -16,6 +16,8 @@
     // Error parsing type: , name: accessoryLabel
     // Error parsing type: , name: detailContainerView
     // Error parsing type: , name: accessorySeparator
+    // Error parsing type: , name: $__lazy_storage_$_accessoryImage
+    // Error parsing type: , name: title
     // Error parsing type: , name: minimumViewHeight
     // Error parsing type: , name: titleToTop
     // Error parsing type: , name: titleToBottom
@@ -36,6 +38,8 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)didReceiveSignificantTimeChangeNotification:(id)arg1;
 
 @end
 

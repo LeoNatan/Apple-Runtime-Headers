@@ -8,23 +8,24 @@
 
 #import <UIKitCore/UIActivityItemsConfigurationReading-Protocol.h>
 
-@class NSArray, NSPointerArray, NSString;
+@class NSArray, NSString, UIActivityViewController;
 
 @interface UIActivityItemsConfiguration : NSObject <UIActivityItemsConfigurationReading>
 {
     NSArray *_itemProviders;
+    NSArray *_activityItems;
+    UIActivityViewController *_vc;
     id _localObject;
     NSArray *_supportedInteractions;
     CDUnknownBlockType _metadataProvider;
     CDUnknownBlockType _perItemMetadataProvider;
     CDUnknownBlockType _previewProvider;
     CDUnknownBlockType _applicationActivitiesProvider;
-    NSPointerArray *__changeObservers;
 }
 
++ (id)_itemsForSystemSharingFromActivityItemsConfiguration:(id)arg1 wrapperBlock:(CDUnknownBlockType)arg2;
 + (id)activityItemsConfigurationWithItemProviders:(id)arg1;
 + (id)activityItemsConfigurationWithObjects:(id)arg1;
-@property(retain, nonatomic) NSPointerArray *_changeObservers; // @synthesize _changeObservers=__changeObservers;
 @property(copy, nonatomic) CDUnknownBlockType applicationActivitiesProvider; // @synthesize applicationActivitiesProvider=_applicationActivitiesProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) CDUnknownBlockType perItemMetadataProvider; // @synthesize perItemMetadataProvider=_perItemMetadataProvider;
@@ -32,13 +33,18 @@
 @property(copy, nonatomic) NSArray *supportedInteractions; // @synthesize supportedInteractions=_supportedInteractions;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *_activityItems;
+@property(readonly, nonatomic) _Bool _hasItemsForActivityItemsConfiguration;
 @property(readonly, copy, nonatomic) NSArray *itemProvidersForActivityItemsConfiguration;
 @property(readonly, copy, nonatomic) NSArray *applicationActivitiesForActivityItemsConfiguration;
 - (id)activityItemsForSharing;
 - (id)activityItemsConfigurationPreviewForItemAtIndex:(int)arg1 intent:(id)arg2 suggestedSize:(struct CGSize)arg3;
+- (id)activityItemsConfigurationMetadataForItemAtIndex:(int)arg1 key:(id)arg2;
 - (id)activityItemsConfigurationMetadataForKey:(id)arg1;
 - (_Bool)activityItemsConfigurationSupportsInteraction:(id)arg1;
 - (id)itemProviders;
+- (id)_initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
+- (id)_initWithActivityItemSources:(id)arg1;
 - (id)initWithItemProviders:(id)arg1;
 - (id)initWithObjects:(id)arg1;
 - (void)_commonInit;

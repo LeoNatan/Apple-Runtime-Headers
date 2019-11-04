@@ -17,9 +17,7 @@
 - (id <AVTUIViewSnapshotProvider>)snapshotProviderFocusedOnRecordWithIdentifier:(NSString *)arg1 size:(struct CGSize)arg2;
 - (void)presentActionsForAvatar:(id <AVTAvatarRecord>)arg1;
 - (void)presentEditorForCreatingAvatar:(id)arg1;
-- (void)unlockFromFocusedViewAnimated:(_Bool)arg1;
-- (void)lockOnFocusedViewAnimated:(_Bool)arg1;
-- (void)setSingleAvatarMode:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSingleAvatarMode:(_Bool)arg1 fillContainer:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)setAllowsCreate:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)displayAvatarRecordWithIdentifier:(NSString *)arg1 animated:(_Bool)arg2;
 - (void)reloadData;

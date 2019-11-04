@@ -21,7 +21,6 @@
 @property(retain, nonatomic) CSVoiceIdXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(nonatomic) unsigned long long currentDeviceCategory; // @synthesize currentDeviceCategory=_currentDeviceCategory;
 - (void).cxx_destruct;
-- (id)cleanupInvalidCloudProfilesForLocale:(id)arg1 dryRun:(BOOL)arg2;
 - (void)_createAndSendImplicitUtterenceXPCMessage:(id)arg1 withRecordDeviceInfo:(id)arg2 withRecordCtxt:(id)arg3 withVoiceTriggerCtxt:(id)arg4 withOtherCtxt:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (id)_CSSATUploadStagingPathForSiriProfileId:(id)arg1;
 - (id)_CSSATUploadPathForSiriProfileId:(id)arg1;

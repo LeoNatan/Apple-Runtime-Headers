@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSIPHandleValid:(struct tagHANDLE *)arg1;
 - (void)startSIPWithPacketMultiplexMode:(int)arg1 transportType:(unsigned int)arg2;
 - (void)createSIPWithPacketMultiplexMode:(int)arg1;
+- (void)setupVTPCallback;
 - (struct tagHANDLE *)SIPHandle;
 - (void)videoConference:(id)arg1 remoteCallingModeChanged:(unsigned int)arg2 forCallID:(unsigned int)arg3;
 - (void)videoConference:(id)arg1 closeConnectionForCallID:(unsigned int)arg2;

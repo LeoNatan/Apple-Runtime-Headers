@@ -13,12 +13,14 @@
 @interface GEOLocalizedName : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_languageCode;
     NSString *_nameType;
     NSString *_name;
     NSString *_phoneticName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _nameRank;
     _Bool _isDefault;
     struct {
@@ -69,6 +71,8 @@
 - (void)_readLanguageCode;
 @property(nonatomic) _Bool hasIsDefault;
 @property(nonatomic) _Bool isDefault;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithPlaceDataLocalizedString:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@
 - (void)prefetchIndexPaths:(id)arg1;
 - (_Bool)couldObjectReferenceAppear:(id)arg1;
 - (id)indexPathSetFromIndexPath:(struct PXSimpleIndexPath)arg1 toIndexPath:(struct PXSimpleIndexPath)arg2;
+- (id)itemIndexPathsForSections:(id)arg1;
 - (id)indexPathSetForItemsInIndexPath:(struct PXSimpleIndexPath)arg1;
 @property(readonly, nonatomic) PXIndexPathSet *allItemIndexPaths;
 @property(readonly, nonatomic) struct PXSimpleIndexPath lastItemIndexPath;

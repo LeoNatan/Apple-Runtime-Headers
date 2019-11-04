@@ -6,27 +6,30 @@
 
 #import <ComponentKit/CKStatefulViewComponentController.h>
 
+#import <WorkflowUI/WFActionEventObserver-Protocol.h>
 #import <WorkflowUI/WFComponentEditingSession-Protocol.h>
 #import <WorkflowUI/WFModuleSummaryViewDelegate-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface WFModuleSummaryComponentController : CKStatefulViewComponentController <WFModuleSummaryViewDelegate, WFComponentEditingSession>
+@interface WFModuleSummaryComponentController : CKStatefulViewComponentController <WFModuleSummaryViewDelegate, WFComponentEditingSession, WFActionEventObserver>
 {
     _Bool _summaryIsEditing;
     _Bool _shouldReflowWhenComponentRemounted;
+    _Bool _actionRunning;
     NSDictionary *_stagedParameterStates;
 }
 
 + (void)configureStatefulView:(id)arg1 forComponent:(id)arg2;
 + (double)heightForComponent:(id)arg1 withWidth:(double)arg2;
-+ (id)summaryUnpopulatedFont;
-+ (id)summaryFont;
 + (id)newStatefulView:(id)arg1;
+@property(nonatomic) _Bool actionRunning; // @synthesize actionRunning=_actionRunning;
 @property(retain, nonatomic) NSDictionary *stagedParameterStates; // @synthesize stagedParameterStates=_stagedParameterStates;
 @property(nonatomic) _Bool shouldReflowWhenComponentRemounted; // @synthesize shouldReflowWhenComponentRemounted=_shouldReflowWhenComponentRemounted;
 @property(nonatomic) _Bool summaryIsEditing; // @synthesize summaryIsEditing=_summaryIsEditing;
 - (void).cxx_destruct;
+- (void)actionRunningStateDidChange:(id)arg1;
+- (void)updateColorsForRunningStateAnimated:(_Bool)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)summaryViewDidInvalidateSize:(id)arg1;
 - (void)summaryViewDidEndEditing:(id)arg1;

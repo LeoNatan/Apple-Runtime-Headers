@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/HDSQLiteQueryDescriptor.h>
 
-@class HDDatabaseTransactionContext, HDProfile, HKObjectType, NSArray, NSMutableDictionary, NSNumber, NSSet, NSString, _HKFilter;
+@class HDDatabaseTransactionContext, HDProfile, NSArray, NSMutableDictionary, NSNumber, NSSet, NSString, _HKFilter;
 
 @interface HDDataEntityEnumerator : HDSQLiteQueryDescriptor
 {
@@ -15,7 +15,7 @@
     _Bool _useLeftJoin;
     _Bool _ignoreEntityClassAdditionalPredicateForEnumeration;
     _Bool _improveJoinOrderingForStartDateIndexSelection;
-    HKObjectType *_objectType;
+    NSSet *_objectTypes;
     _HKFilter *_filter;
     NSSet *_restrictedSourceEntities;
     CDUnknownBlockType _authorizationFilter;
@@ -36,7 +36,7 @@
 @property(copy, nonatomic) CDUnknownBlockType authorizationFilter; // @synthesize authorizationFilter=_authorizationFilter;
 @property(retain, nonatomic) NSSet *restrictedSourceEntities; // @synthesize restrictedSourceEntities=_restrictedSourceEntities;
 @property(retain, nonatomic) _HKFilter *filter; // @synthesize filter=_filter;
-@property(readonly, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
+@property(readonly, nonatomic) NSSet *objectTypes; // @synthesize objectTypes=_objectTypes;
 - (void).cxx_destruct;
 - (id)_joinClauseForProperties:(id)arg1;
 - (_Bool)_enumerateObjectsOnDatabase:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
@@ -49,6 +49,7 @@
 - (void)setEncodingOption:(id)arg1 forKey:(id)arg2;
 - (void)addEncodingOptionsFromDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_initWithObjectTypes:(id)arg1 entityClass:(Class)arg2 profile:(id)arg3;
 - (id)_initWithObjectType:(id)arg1 entityClass:(Class)arg2 profile:(id)arg3;
 - (id)_initWithEntityClass:(Class)arg1 profile:(id)arg2;
 

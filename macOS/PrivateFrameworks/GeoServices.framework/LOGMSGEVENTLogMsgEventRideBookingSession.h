@@ -13,7 +13,6 @@
 @interface LOGMSGEVENTLogMsgEventRideBookingSession : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_destinationBlurred;
     double _distanceToPickupInMeters;
     double _durationOfSessionInSeconds;
@@ -25,6 +24,9 @@
     NSString *_rideBookingSessionId;
     NSString *_rideType;
     long long _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _endState;
     int _endView;
     unsigned int _numberOfAvailableExtensions;
@@ -169,6 +171,8 @@
 @property(retain, nonatomic) NSString *rideBookingSessionId;
 @property(readonly, nonatomic) BOOL hasRideBookingSessionId;
 - (void)_readRideBookingSessionId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

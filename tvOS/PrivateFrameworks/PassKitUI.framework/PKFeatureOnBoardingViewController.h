@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 #import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
-@class NSString, PKApplyController, PKDynamicProvisioningPageContent, PKPaymentProvisioningController, PKPaymentSetupProduct, UIImage;
+@class NSString, PKApplyController, PKDynamicProvisioningPageContent, PKPaymentInstallmentConfiguration, PKPaymentProvisioningController, PKPaymentSetupProduct, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate, PKSetupFlowControllerProtocol;
 
 @interface PKFeatureOnBoardingViewController : PKExplanationViewController <PKPaymentSetupPresentationProtocol, PKExplanationViewControllerDelegate, PKViewControllerPreflightable>
@@ -24,8 +24,11 @@
     UIImage *_heroImage;
     PKDynamicProvisioningPageContent *_currentPage;
     _Bool _isMainFeatureOnboardingPage;
+    _Bool _useCompactLayout;
+    PKPaymentInstallmentConfiguration *_installmentConfiguration;
 }
 
+@property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 - (void).cxx_destruct;
 - (id)paymentSetupMarker;
 - (void)_handleNotifyRequested;

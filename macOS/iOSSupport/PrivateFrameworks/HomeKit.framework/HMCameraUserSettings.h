@@ -22,15 +22,15 @@
 }
 
 + (id)logCategory;
-@property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
+@property(nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <HMCameraUserSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_mergeNewSettings:(id)arg1 operations:(id)arg2;
 - (void)_callSettingsDidUpdateDelegate;
+@property(readonly, getter=isCameraManuallyDisabled) BOOL cameraManuallyDisabled;
 @property(readonly, getter=isAccessModeChangeNotificationEnabled) BOOL accessModeChangeNotificationEnabled;
 @property(readonly, getter=isRecordingAudioEnabled) BOOL recordingAudioEnabled;
-@property(readonly, getter=isCameraDisabledByThirdParty) BOOL cameraDisabledByThirdParty;
 @property(readonly) HMCameraBulletinBoardSmartNotification *smartNotificationBulletin;
 @property(readonly, getter=isNightVisionModeEnabled) BOOL nightVisionModeEnabled;
 @property(readonly, getter=areSnapshotsAllowed) BOOL snapshotsAllowed;

@@ -32,6 +32,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property __weak id <HMDUserCloudShareControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)invalidateXpcClient:(id)arg1;
+- (void)_invalidateXpcClient:(id)arg1;
 - (void)deregisterXpcClient:(id)arg1;
 - (void)_deregisterXpcClient:(id)arg1;
 - (void)registerWithXpcClient:(id)arg1 containerIDs:(id)arg2;

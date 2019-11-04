@@ -11,7 +11,7 @@
 #import <IDSFoundation/IDSLinkDelegate-Protocol.h>
 #import <IDSFoundation/IDSStunCandidatePairDelegate-Protocol.h>
 
-@class IDSCommnatManager, IDSGLSessionManager, IDSGlobalLinkBlocks, IDSTCPLink, IDSUDPLink, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
+@class IDSCommnatManager, IDSGLSessionManager, IDSGlobalLinkBlocks, IDSTCPLink, IDSUDPLink, NSData, NSMutableArray, NSMutableDictionary, NSString;
 @protocol IDSLinkDelegate, OS_dispatch_source;
 
 @interface IDSGlobalLink : NSObject <IDSLink, IDSLinkDelegate, IDSStunCandidatePairDelegate, IDSGLSessionManagerDelegate>
@@ -54,8 +54,7 @@
     NSMutableDictionary *_tokenToReallocBlocks;
     NSObject<OS_dispatch_source> *_disconnectTimer;
     NSObject<OS_dispatch_source> *_activityTimer;
-    NSObject<OS_dispatch_source> *_allocbindFailoverTimer;
-    NSDictionary *_connectingCandidatePairSessionInfo;
+    NSMutableDictionary *_connectingCandidatePairSessionInfo;
     NSMutableArray *_interfaceAddressArray;
     _Bool _isInitiator;
     int _nominateCount;
@@ -180,9 +179,10 @@
 - (void)_handleSelfAllocationTimeout:(id)arg1;
 - (_Bool)_isExtIPDiscoveryDone;
 - (void)_handleCommnatResult:(long long)arg1 reflextiveCandidate:(id)arg2;
-- (void)_handleAllocbindFailoverTimer:(id)arg1 onInterface:(int)arg2;
-- (void)_stopAllocbindFailoverTimer;
-- (void)_startAllocbindFailoverTimer:(id)arg1 onInterface:(int)arg2;
+- (void)_handleAllocbindFailoverTimer:(id)arg1 failoverTimerOnCandidatePair:(id)arg2 onInterface:(int)arg3;
+- (void)_stopAllocbindFailoverTimer:(id)arg1;
+- (void)_startAllocbindFailoverTimerOnCandidatePair:(id)arg1;
+- (_Bool)_hasActiveAllocbindFailoverTimerForSessionID:(id)arg1;
 - (_Bool)_addCandidate:(id)arg1 isRemoteCandidate:(_Bool)arg2;
 - (void)_addStunCheckPair:(id)arg1 isRemoteCandidate:(_Bool)arg2;
 - (void)_stopActivityTimer;

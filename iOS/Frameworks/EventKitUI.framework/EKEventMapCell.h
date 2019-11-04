@@ -19,6 +19,7 @@
 @property(nonatomic) _Bool currentlyLoading; // @synthesize currentlyLoading=_currentlyLoading;
 @property(nonatomic) __weak EKEventMapDetailItem *detailItem; // @synthesize detailItem=_detailItem;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)_drawSeparatorInRect:(struct CGRect)arg1;
 - (void)_drawContentInRect:(struct CGRect)arg1 selected:(_Bool)arg2;

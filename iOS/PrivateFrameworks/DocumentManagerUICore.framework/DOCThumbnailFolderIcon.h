@@ -24,8 +24,8 @@
     UIImage *_sharedBadge;
     UIImage *_downloadsBadge;
     UIImage *_genericSharepointBadge;
-    UIImage *_plainFolderImage;
     NSString *_imageName;
+    UIImage *_plainFolderImage;
     double _imageDimension;
 }
 
@@ -35,8 +35,8 @@
 + (id)folderIcons;
 + (id)_folderIconsForImageNamePattern:(id)arg1 documentsBadgeNamePattern:(id)arg2 desktopBadgeNamePattern:(id)arg3 sharedBadgeNamePattern:(id)arg4 downloadsBadgeNamePattern:(id)arg5 genericSharepointBadgeNamePattern:(id)arg6;
 @property(readonly, nonatomic) double imageDimension; // @synthesize imageDimension=_imageDimension;
-@property(readonly, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(readonly, nonatomic) UIImage *plainFolderImage; // @synthesize plainFolderImage=_plainFolderImage;
+@property(readonly, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 - (void).cxx_destruct;
 - (double)bottomInsetForFolderType:(unsigned long long)arg1;
 @property(readonly, nonatomic) double bottomInset;
@@ -46,6 +46,7 @@
 - (id)_badgedFolderIconForBadge:(id)arg1 badgeSize:(struct CGSize)arg2 bottomInset:(double)arg3 style:(unsigned long long)arg4;
 - (id)badgedFolderIconForBadge:(id)arg1 style:(unsigned long long)arg2;
 - (id)badgedFolderIconForFolderType:(unsigned long long)arg1 style:(unsigned long long)arg2;
+- (id)plainFolderImageWithStyle:(unsigned long long)arg1;
 - (void)resolveImage;
 - (id)image;
 @property(readonly, nonatomic) UIImage *genericSharepointBadge; // @synthesize genericSharepointBadge=_genericSharepointBadge;

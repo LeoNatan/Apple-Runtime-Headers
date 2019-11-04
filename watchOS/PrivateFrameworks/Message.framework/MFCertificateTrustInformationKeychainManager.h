@@ -12,6 +12,7 @@
 
 @interface MFCertificateTrustInformationKeychainManager : NSObject <EFLoggable>
 {
+    NSString *_addressForSaving;
     EMCertificateTrustInformation *_trustInformation;
     CertUITrustManager *_keychainManager;
 }
@@ -19,6 +20,7 @@
 + (id)log;
 @property(readonly, nonatomic) CertUITrustManager *keychainManager; // @synthesize keychainManager=_keychainManager;
 @property(readonly, nonatomic) EMCertificateTrustInformation *trustInformation; // @synthesize trustInformation=_trustInformation;
+@property(readonly, copy, nonatomic) NSString *addressForSaving; // @synthesize addressForSaving=_addressForSaving;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int keychainStatus;
 - (void)removeCertificateFromKeychain;
@@ -27,6 +29,7 @@
 - (void)addTrustException;
 @property(readonly, nonatomic) _Bool hasTrustException;
 @property(readonly, nonatomic) int action;
+@property(readonly, nonatomic) _Bool canSaveCertificateToKeychain;
 - (id)initWithTrustInformation:(id)arg1;
 
 // Remaining properties

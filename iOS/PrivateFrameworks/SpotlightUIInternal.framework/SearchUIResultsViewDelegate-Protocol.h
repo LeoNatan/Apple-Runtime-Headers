@@ -12,6 +12,7 @@
 @protocol SearchUIResultsViewDelegate <NSObject>
 
 @optional
+- (void)dismissIfNecessaryForIconDrag;
 - (void)getUserActivityForResult:(SFSearchResult *)arg1 completionHandler:(void (^)(NSUserActivity *))arg2;
 - (UIViewController<SearchUIResultShortLook> *)shortLookViewControllerForResult:(SFSearchResult *)arg1;
 - (_Bool)hasShortLookViewControllerForResult:(SFSearchResult *)arg1;

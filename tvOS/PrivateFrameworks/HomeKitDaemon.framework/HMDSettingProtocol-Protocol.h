@@ -6,13 +6,14 @@
 
 #import <HomeKitDaemon/HMDSettingBaseProtocol-Protocol.h>
 
-@class HMSettingValue, NSNumber;
+@class HMSettingValue, NSNumber, NSString;
 
 @protocol HMDSettingProtocol <HMDSettingBaseProtocol>
 @property(readonly, copy) id value;
 @property(readonly, copy) NSNumber *properties;
 @property(readonly, copy) NSNumber *type;
 @property(readonly, getter=isReadOnly) _Bool readOnly;
+@property(readonly, copy) NSString *keyPath;
 - (_Bool)wouldValueUpdate:(HMSettingValue *)arg1;
 - (_Bool)isValidValue:(HMSettingValue *)arg1;
 @end

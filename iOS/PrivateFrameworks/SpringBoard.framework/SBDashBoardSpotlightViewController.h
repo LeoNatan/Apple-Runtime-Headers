@@ -10,12 +10,13 @@
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/SBViewControllerTransitionContextDelegate-Protocol.h>
 
-@class FBDisplayLayoutTransition, NSString, SBHomeGesturePanGestureRecognizer, SBHomeGestureParticipant, SBSearchBackdropView, UIViewController, _SBDashBoardSpotlightViewController;
+@class FBDisplayLayoutTransition, NSString, SBHomeGesturePanGestureRecognizer, SBHomeGestureParticipant, SBSearchBackdropView, UIViewController, _SBDashBoardSpotlightViewController, _UILegibilitySettings;
 @protocol SBUISpotlightInitiating, SPUIRemoteSearchViewDelegate;
 
 @interface SBDashBoardSpotlightViewController : CSCoverSheetViewControllerBase <SBHomeGestureParticipantDelegate, SBSystemGestureRecognizerDelegate, SBViewControllerTransitionContextDelegate>
 {
     SBSearchBackdropView *_backdropView;
+    _UILegibilitySettings *_spotlightLegibilitySettings;
     UIViewController<SBUISpotlightInitiating> *_initiatingViewController;
     _SBDashBoardSpotlightViewController *_spotlightViewController;
     SBHomeGesturePanGestureRecognizer *_bottomEdgeRecognizer;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) SBHomeGesturePanGestureRecognizer *bottomEdgeRecognizer; // @synthesize bottomEdgeRecognizer=_bottomEdgeRecognizer;
 @property(retain, nonatomic) _SBDashBoardSpotlightViewController *spotlightViewController; // @synthesize spotlightViewController=_spotlightViewController;
 @property(retain, nonatomic) UIViewController<SBUISpotlightInitiating> *initiatingViewController; // @synthesize initiatingViewController=_initiatingViewController;
+@property(retain, nonatomic) _UILegibilitySettings *spotlightLegibilitySettings; // @synthesize spotlightLegibilitySettings=_spotlightLegibilitySettings;
 - (void).cxx_destruct;
 - (_Bool)_shouldCancelInteractiveDismissGesture:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -64,6 +66,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)init;
 

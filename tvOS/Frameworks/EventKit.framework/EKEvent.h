@@ -140,11 +140,13 @@
 @property(readonly, nonatomic) _Bool eligibleForTravelAdvisories;
 @property(readonly, nonatomic) _Bool automaticLocationGeocodingAllowed;
 - (_Bool)changingAllDayPropertyIsAllowed;
+@property(readonly, nonatomic) _Bool hasAttachmentChanges;
 @property(readonly, nonatomic) _Bool canDetachSingleOccurrence;
 - (_Bool)requiresDetach;
 @property(readonly, nonatomic) _Bool responseMustApplyToAll;
 - (_Bool)allowsCalendarModifications;
 - (_Bool)allowsRecurrenceModifications;
+@property(readonly, nonatomic) _Bool isPrivateEventSharedToMe;
 @property(readonly, nonatomic) _Bool isEditable;
 @property(readonly, nonatomic) _Bool isDetached;
 - (long long)compareStartDateIncludingTravelWithEvent:(id)arg1;

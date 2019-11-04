@@ -8,25 +8,26 @@
 
 #import <PassKitUI/PKObservableContentContainer-Protocol.h>
 
-@class NSHashTable, NSLock, NSString, UIVisualEffectView;
+@class NSHashTable, NSString, PKCompactNavigationContainerController, UIVisualEffectView;
 
 @interface PKCompactNavigationContainedNavigationController : UINavigationController <PKObservableContentContainer>
 {
     UIVisualEffectView *_backdropView;
-    NSLock *_observersLock;
+    struct os_unfair_lock_s _observersLock;
     NSHashTable *_observers;
-    _Bool _overridesContentOverlayInsets;
+    _Bool _propagateParentNCCBottomSafeAreaInset;
     unsigned long long _style;
+    PKCompactNavigationContainerController *_parentNavigationContainerController;
 }
 
-@property(nonatomic) _Bool overridesContentOverlayInsets; // @synthesize overridesContentOverlayInsets=_overridesContentOverlayInsets;
+@property(nonatomic) _Bool propagateParentNCCBottomSafeAreaInset; // @synthesize propagateParentNCCBottomSafeAreaInset=_propagateParentNCCBottomSafeAreaInset;
+@property(nonatomic) __weak PKCompactNavigationContainerController *parentNavigationContainerController; // @synthesize parentNavigationContainerController=_parentNavigationContainerController;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (id)_observers;
 - (void)removeContentContainerObserver:(id)arg1;
 - (void)addContentContainerObserver:(id)arg1;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (_Bool)_canShowWhileLocked;

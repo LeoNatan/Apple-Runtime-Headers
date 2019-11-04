@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPlaceCollection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDMapsIdentifier *_collectionId;
     GEOPDCaptionedPhoto *_photo;
     GEOPDTextBlock *_title;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _placeCount;
     struct {
         unsigned int has_placeCount:1;
@@ -60,6 +62,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDTextBlock *title;
 @property(readonly, nonatomic) _Bool hasTitle;
 - (void)_readTitle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

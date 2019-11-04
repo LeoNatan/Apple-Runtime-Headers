@@ -12,17 +12,17 @@ __attribute__((visibility("hidden")))
 @interface CKStarkConversationListCell : UITableViewCell
 {
     UIImage *_monogramImage;
+    UIImageView *_chevronImageView;
     UIImageView *_unreadImageView;
     UILabel *_recipientsLabel;
     UIDateLabel *_dateLabel;
-    UIImageView *_chevronImageView;
 }
 
 + (double)starkCellMarginWidth;
-@property(retain, nonatomic) UIImageView *chevronImageView; // @synthesize chevronImageView=_chevronImageView;
 @property(retain, nonatomic) UIDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UILabel *recipientsLabel; // @synthesize recipientsLabel=_recipientsLabel;
 @property(retain, nonatomic) UIImageView *unreadImageView; // @synthesize unreadImageView=_unreadImageView;
+@property(retain, nonatomic) UIImageView *chevronImageView; // @synthesize chevronImageView=_chevronImageView;
 @property(nonatomic) UIImage *monogramImage; // @synthesize monogramImage=_monogramImage;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;

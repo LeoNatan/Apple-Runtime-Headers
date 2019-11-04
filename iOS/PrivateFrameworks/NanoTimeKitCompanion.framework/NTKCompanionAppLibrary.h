@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_updateProcessingQueue;
     NSObject<OS_dispatch_queue> *_observerCallbackQueue;
+    NSObject<OS_dispatch_queue> *_appProcessingQueue;
     struct os_unfair_lock_s *_prewarmLock;
     NSMutableArray *_prewarmCallbacks;
     CLKDevice *_device;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) NSMutableArray *prewarmCallbacks; // @synthesize prewarmCallbacks=_prewarmCallbacks;
 @property(readonly, nonatomic) struct os_unfair_lock_s *prewarmLock; // @synthesize prewarmLock=_prewarmLock;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *appProcessingQueue; // @synthesize appProcessingQueue=_appProcessingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerCallbackQueue; // @synthesize observerCallbackQueue=_observerCallbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *updateProcessingQueue; // @synthesize updateProcessingQueue=_updateProcessingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;

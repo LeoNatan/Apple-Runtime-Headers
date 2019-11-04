@@ -81,6 +81,7 @@
 - (id)_generateOpenFreeTimesFromTimeSpans:(id)arg1;
 - (id)_mergeAdjacentSpansWithSameConflictedParticipants:(id)arg1;
 - (id)_spliceLeftTimeSpans:(id)arg1 andNewTimeSpans:(id)arg2;
+- (void)_haltSearchWithError:(BOOL)arg1;
 - (void)_processResults:(id)arg1 betweenStartDate:(id)arg2 endDate:(id)arg3;
 - (id)_participantforParticipantAddress:(id)arg1;
 - (void)_transitionToConflictFoundStateAndSearch;

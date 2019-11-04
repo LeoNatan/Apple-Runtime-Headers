@@ -17,6 +17,7 @@
     _Bool _handlesBGTasks;
     _Bool _appIsSuspendedUnderLock;
     _Bool _extensionLaunchedForRemoteExtensionConnection;
+    _Bool _afterWillResignActive;
     id <SPRemoteInterfaceDataDelegateProtocol> _dataDelegate;
     NSMutableArray *_activeComplicationsConnections;
     id _runLoopObserver;
@@ -57,12 +58,14 @@
     double _timingTest_ExtensionSendTime;
 }
 
++ (void)controller:(id)arg1 removeDynamicWKInterfaceObject:(id)arg2;
 + (void)controller:(id)arg1 setupDynamicWKInterfaceObject:(id)arg2;
 + (id)controller:(id)arg1 setupProperties:(id)arg2 viewControllerID:(id)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5 classForType:(CDUnknownFunctionPointerType)arg6;
 + (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
 + (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 + (void)finishedExtendedLaunchTest;
 + (void)startedTest:(id)arg1;
++ (_Bool)isSessionScheduleOrStartAllowedBasedOnWillResignActive;
 + (void)scheduledSessonInvalidatedWhileRunning;
 + (void)showSystemAlertForBARDisabledWithReply:(CDUnknownBlockType)arg1;
 + (void)playHapticForScheduledSession:(int)arg1;
@@ -107,7 +110,7 @@
 + (void)reloadRootPageControllersWithNames:(id)arg1 contexts:(id)arg2 orientation:(int)arg3 pageIndex:(int)arg4;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (void)scrollToObject:(id)arg1 atScrollPosition:(int)arg2 animated:(_Bool)arg3;
-+ (void)controllerPopToRoot:(id)arg1;
++ (void)controllerPopToRoot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)controllerPop:(id)arg1;
 + (void)controller:(id)arg1 pushPagingScrollTableRow:(int)arg2 seguesByRowName:(id)arg3 rowNamesAndContexts:(id)arg4;
 + (void)controller:(id)arg1 pushInterfaceControllerClass:(Class)arg2 willPush:(CDUnknownBlockType)arg3;
@@ -130,6 +133,7 @@
 + (id)startRemoteInterface;
 + (id)sharedRemoteInterface;
 @property(copy, nonatomic) CDUnknownBlockType addPassesCompletion; // @synthesize addPassesCompletion=_addPassesCompletion;
+@property(nonatomic) _Bool afterWillResignActive; // @synthesize afterWillResignActive=_afterWillResignActive;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *appActiveTransaction; // @synthesize appActiveTransaction=_appActiveTransaction;
 @property(retain, nonatomic) NSMutableDictionary *activeViewControllerTransactions; // @synthesize activeViewControllerTransactions=_activeViewControllerTransactions;
 @property(nonatomic) unsigned int hostAccessibilityServerPort; // @synthesize hostAccessibilityServerPort=_hostAccessibilityServerPort;
@@ -282,6 +286,7 @@
 - (void)handleProtoPlist:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveDataFromApplication:(id)arg1 fromIdentifier:(id)arg2;
+- (void)controller:(id)arg1 removeDynamicWKInterfaceObject:(id)arg2;
 - (void)controller:(id)arg1 setupDynamicWKInterfaceObject:(id)arg2;
 - (void)removeInterfaceControllersForClient:(id)arg1;
 - (void)_dumpInterfaceDictionary;
@@ -321,7 +326,7 @@
 - (void)insertPageControllerAtIndexes:(id)arg1 withNames:(id)arg2 initializationContextIDs:(id)arg3;
 - (void)reloadRootControllersWithNames:(id)arg1 initializationContextIDs:(id)arg2 pageIndex:(int)arg3 verticalPaging:(_Bool)arg4;
 - (void)scrollToObject:(id)arg1 atScrollPosition:(int)arg2 animated:(_Bool)arg3;
-- (void)controllerPopToRoot:(id)arg1;
+- (void)controllerPopToRoot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)controllerPop:(id)arg1;
 - (void)controller:(id)arg1 pushPagingScrollTableRow:(int)arg2 seguesByRowName:(id)arg3 rowNamesAndContextIDs:(id)arg4;
 - (void)controller:(id)arg1 pushInterfaceControllerClass:(Class)arg2 willPush:(CDUnknownBlockType)arg3;

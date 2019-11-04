@@ -41,7 +41,6 @@
 @property(readonly, copy) NSString *description;
 - (id)initWithClipManager:(id)arg1 clip:(id)arg2 posterFrame:(id)arg3 dataSource:(id)arg4;
 - (id)initWithClipManager:(id)arg1 clip:(id)arg2 posterFrame:(id)arg3;
-- (id)initWithClip:(id)arg1 posterFrame:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

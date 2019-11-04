@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)remoteIntrinsicContentSizeForInputViewInSet:(id)arg1 includingIAV:(BOOL)arg2;
 - (BOOL)accessoryViewWillAppear;
 - (BOOL)inputViewWillAppear;
-- (unsigned long long)notificationsForTransitionToPlacement:(id)arg1;
 - (id)widthConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (BOOL)isInteractive;
 - (BOOL)showsKeyboard;
 - (BOOL)showsInputViews;
+- (BOOL)isInvisible;
 - (BOOL)isUndocked;
 - (BOOL)isEqual:(id)arg1;
 - (void)setDirty;

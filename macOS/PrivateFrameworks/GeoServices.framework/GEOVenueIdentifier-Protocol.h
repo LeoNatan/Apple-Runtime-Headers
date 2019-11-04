@@ -12,6 +12,8 @@
 @property(readonly, nonatomic) NSArray *componentIdentifiers;
 @property(readonly, nonatomic) unsigned long long businessID;
 @property(readonly, nonatomic, getter=_hasBusinessID) BOOL hasBusinessID;
+@property(readonly, nonatomic) unsigned long long featureID;
+@property(readonly, nonatomic, getter=_hasFeatureID) BOOL hasFeatureID;
 @property(readonly, nonatomic) unsigned long long venueID;
 @property(readonly, nonatomic, getter=_hasVenueID) BOOL hasVenueID;
 - (GEOPDVenueIdentifier *)placeDataVenueIdentifierForVenue;

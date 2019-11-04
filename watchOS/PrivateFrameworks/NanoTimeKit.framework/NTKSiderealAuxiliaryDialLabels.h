@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAShapeLayer, CLKDevice, NSString, NTKCurvedColoringLabel;
+@class CAShapeLayer, CLKDevice, NSMutableDictionary, NSString, NTKCurvedColoringLabel;
 
 @interface NTKSiderealAuxiliaryDialLabels : UIView
 {
@@ -17,6 +17,7 @@
     UIView *_bottomLabelContainerView;
     CAShapeLayer *_bottomLabelMask;
     NTKCurvedColoringLabel *_bottomLabel;
+    NSMutableDictionary *_fontSizeCache;
     NSString *_topText;
     NSString *_bottomText;
 }
@@ -28,7 +29,8 @@
 - (void)didFinishTransition;
 - (void)applyTransitionFraction:(float)arg1;
 - (void)willStartTransition;
-- (void)_layoutLabel:(id)arg1 text:(id)arg2 monospaced:(_Bool)arg3 offset:(struct CGPoint)arg4 adjustsFontSize:(_Bool)arg5;
+- (void)_setFontSize:(float)arg1 monospaced:(_Bool)arg2 offset:(struct CGPoint)arg3 onLabel:(id)arg4;
+- (void)_layoutLabel:(id)arg1 text:(id)arg2 monospaced:(_Bool)arg3 offset:(struct CGPoint)arg4 useCache:(_Bool)arg5;
 - (void)setup;
 - (id)initWithFrame:(struct CGRect)arg1 device:(id)arg2;
 

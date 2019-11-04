@@ -18,7 +18,12 @@
 - (void)legacySupportMemoryTransferWithURL:(id)arg1;
 - (void)virtualScanStateMachine:(int)arg1 functionalUnit:(unsigned int)arg2 andError:(unsigned int)arg3;
 - (void)saveAsVirtualScanner;
-- (void)handleImageCaptureEventNotification:(id)arg1;
+- (void)handleScanEnded:(id)arg1;
+- (void)handleOverviewScanEnded:(id)arg1;
+- (void)handleTransfer:(id)arg1;
+- (void)handlePageDone:(id)arg1;
+- (void)handleObjectAdded:(id)arg1;
+- (void)handleImageCaptureEventNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unregisterForImageCaptureEventNotifications:(id)arg1;
 - (void)registerForImageCaptureEventNotifications:(id)arg1;
 - (void)requestChangeVendorFeature:(id)arg1;

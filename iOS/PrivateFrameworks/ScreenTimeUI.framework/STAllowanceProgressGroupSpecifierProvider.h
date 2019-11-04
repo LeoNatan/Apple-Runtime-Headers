@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) STUsageItem *usageItem; // @synthesize usageItem=_usageItem;
 @property(readonly, copy, nonatomic) NSSet *budgetedIdentifiers; // @synthesize budgetedIdentifiers=_budgetedIdentifiers;
 - (void).cxx_destruct;
+- (void)_didFetchAppInfo:(id)arg1;
 - (void)allowanceDetailControllerDidCancel:(id)arg1;
 - (void)allowanceDetailController:(id)arg1 didDeleteAllowance:(id)arg2;
 - (void)allowanceDetailController:(id)arg1 didSaveAllowance:(id)arg2;

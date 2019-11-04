@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSProgress;
+@class NSProgress, PLPhotoLibrary, PLPhotoLibraryBundle;
 @protocol OS_dispatch_queue;
 
 @interface PLReframeService : NSObject
@@ -14,13 +14,16 @@
     struct os_unfair_lock_s _lock;
     // Error parsing type: Aq, name: _cancellationGenerationCounter
     NSProgress *_currentProgress;
+    PLPhotoLibraryBundle *_libraryBundle;
+    PLPhotoLibrary *_photoLibrary;
     NSObject<OS_dispatch_queue> *_serializationQueue;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 - (void).cxx_destruct;
-- (id)enqueueReframeRequestForAsset:(id)arg1 imageConversionClient:(id)arg2 videoConversionClient:(id)arg3 isOnDemand:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (id)init;
+- (id)enqueueReframeRequestForAssetUUID:(id)arg1 imageConversionClient:(id)arg2 videoConversionClient:(id)arg3 isOnDemand:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)photoLibrary;
+- (id)initWithLibraryBundle:(id)arg1;
 
 @end
 

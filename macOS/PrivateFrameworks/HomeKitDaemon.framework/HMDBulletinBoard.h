@@ -38,7 +38,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
 - (void)insertCameraAccessModeChangedBulletin:(id)arg1;
-- (void)fetchNotificationUUIDsForClipBulletinWithIdentifier:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)notificationUUIDsForClipBulletinWithIdentifier:(id)arg1;
 - (void)insertCameraSignificantEventBulletin:(id)arg1;
 - (BOOL)isTargetCharacteristic:(id)arg1 matchCurrentCharacteristic:(id)arg2;
 - (BOOL)_shouldPostBulletinOnCurrentValueChangeForCharacteristic:(id)arg1;

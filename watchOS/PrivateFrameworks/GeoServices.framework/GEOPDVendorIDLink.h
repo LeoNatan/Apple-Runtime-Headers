@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDVendorIDLink : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _reservationTypes;
     NSString *_externalItemId;
     NSString *_vendorId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_reservationTypes:1;
@@ -62,6 +64,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasVendorId;
 - (void)_readVendorId;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

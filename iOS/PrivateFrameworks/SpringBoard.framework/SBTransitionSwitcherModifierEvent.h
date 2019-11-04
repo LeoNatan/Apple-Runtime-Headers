@@ -17,8 +17,12 @@
     long long _fromEnvironmentMode;
     SBAppLayout *_toAppLayout;
     long long _toEnvironmentMode;
+    long long _fromInterfaceOrientation;
+    long long _toInterfaceOrientation;
 }
 
+@property(nonatomic) long long toInterfaceOrientation; // @synthesize toInterfaceOrientation=_toInterfaceOrientation;
+@property(nonatomic) long long fromInterfaceOrientation; // @synthesize fromInterfaceOrientation=_fromInterfaceOrientation;
 @property(nonatomic) long long toEnvironmentMode; // @synthesize toEnvironmentMode=_toEnvironmentMode;
 @property(retain, nonatomic) SBAppLayout *toAppLayout; // @synthesize toAppLayout=_toAppLayout;
 @property(nonatomic) long long fromEnvironmentMode; // @synthesize fromEnvironmentMode=_fromEnvironmentMode;

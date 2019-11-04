@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (ICAccessibility)
+- (id)icaxValueForKeyPath:(id)arg1;
 - (id)icaxValueForKey:(id)arg1;
 - (_Bool)icaxRespondsToSelector:(SEL)arg1 fromExtrasProtocol:(id)arg2;
 @end

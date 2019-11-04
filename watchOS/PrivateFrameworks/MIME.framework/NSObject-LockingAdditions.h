@@ -23,6 +23,5 @@
 - (void)_mf_checkToAllowOrderingWithLock:(id)arg1;
 - (void)_mf_dumpLockCallStacks:(unsigned int)arg1 ordering:(id)arg2;
 - (id)_mf_lockOrderingForType:(int)arg1;
-- (id)mf_observeKeyPath:(id)arg1 options:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
 @end
 

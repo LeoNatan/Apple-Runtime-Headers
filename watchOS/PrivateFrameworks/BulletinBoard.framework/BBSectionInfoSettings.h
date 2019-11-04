@@ -9,6 +9,8 @@
 #import <BulletinBoard/NSCopying-Protocol.h>
 #import <BulletinBoard/NSSecureCoding-Protocol.h>
 
+@class NSDictionary;
+
 @interface BBSectionInfoSettings : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _showsOnExternalDevices;
@@ -50,6 +52,7 @@
 - (id)_alertTypeDescription;
 - (id)_authorizationStatusDescription;
 - (id)description;
+@property(readonly, copy, nonatomic) NSDictionary *stateCapture;
 - (id)initWithDefaultsForSectionType:(int)arg1;
 @property(nonatomic) _Bool showsInLockScreen;
 @property(nonatomic) _Bool showsInNotificationCenter;

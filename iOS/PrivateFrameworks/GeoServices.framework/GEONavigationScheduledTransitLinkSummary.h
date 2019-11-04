@@ -13,12 +13,14 @@
 @interface GEONavigationScheduledTransitLinkSummary : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     unsigned long long _lineID;
     double _scheduledArrival;
     double _scheduledDeparture;
     GEONavigationTransitStopSummary *_stopFrom;
     GEONavigationTransitStopSummary *_stopTo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_lineID:1;
         unsigned int has_scheduledArrival:1;
@@ -57,6 +59,8 @@
 @property(nonatomic) double scheduledDeparture;
 @property(nonatomic) _Bool hasLineID;
 @property(nonatomic) unsigned long long lineID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithTransitTripRouteStep:(id)arg1 originSummary:(id)arg2 destinationSummary:(id)arg3;
 
 @end

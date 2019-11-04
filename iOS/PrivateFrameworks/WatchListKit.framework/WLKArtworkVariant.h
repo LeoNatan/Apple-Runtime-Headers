@@ -19,6 +19,7 @@
     struct CGSize _artworkSize;
 }
 
++ (id)artworkURLFromTemplate:(id)arg1 forSize:(struct CGSize)arg2 cropCode:(id)arg3 format:(id)arg4;
 + (id)artworkURLFromTemplate:(id)arg1 forSize:(struct CGSize)arg2 format:(id)arg3;
 @property(nonatomic, getter=hasAlpha) _Bool alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) _Bool supportsLayeredImage; // @synthesize supportsLayeredImage=_supportsLayeredImage;
@@ -30,6 +31,7 @@
 - (id)_sizeDescription:(struct CGSize)arg1;
 - (id)description;
 - (id)artworkSizeTemplateURL;
+- (id)artworkURLForSize:(struct CGSize)arg1 cropCode:(id)arg2 format:(id)arg3;
 - (id)artworkURLForSize:(struct CGSize)arg1 format:(id)arg2;
 - (id)artworkURLForSize:(struct CGSize)arg1;
 @property(readonly, copy, nonatomic) NSURL *artworkURL;

@@ -18,7 +18,8 @@
     NSArray *_daysOfWeek;
 }
 
-+ (id)descriptionForTriggerEvent:(unsigned long long)arg1 timeOffset:(unsigned long long)arg2;
++ (id)localizedRecurrenceDescriptionForDaysOfWeek:(id)arg1;
++ (id)localizedSunriseSunsetDescriptionForTriggerEvent:(unsigned long long)arg1 timeOffset:(unsigned long long)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)dateFormatter;
 + (id)localizedDisplayExplanation;
@@ -31,7 +32,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)localizedTitleWithConfigurationSummary;
+- (id)localizedPastTenseDescription;
+- (id)localizedDescriptionWithConfigurationSummary;
 - (_Bool)hasValidConfiguration;
 - (id)init;
 

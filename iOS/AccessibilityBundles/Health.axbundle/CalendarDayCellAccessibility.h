@@ -18,7 +18,6 @@
 - (id)_axDayLocalizedText;
 - (_Bool)_axDayShowsDayIndicator;
 - (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
 @property(retain, nonatomic) NSDate *accessibilityDate;

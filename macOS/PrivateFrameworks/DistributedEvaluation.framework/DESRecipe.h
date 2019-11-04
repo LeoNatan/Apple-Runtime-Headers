@@ -28,8 +28,8 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithRecipeResponse:(id)arg1 recipeId:(id)arg2 recipeType:(id)arg3 error:(id *)arg4;
-- (id)_initWithRecipeUserInfo:(id)arg1;
-- (id)_inithWithContentsOfFile:(id)arg1 error:(id *)arg2;
+- (id)_initWithRecipeUserInfo:(id)arg1 recipeId:(id)arg2 recipeType:(id)arg3;
+- (id)_inithWithContentsOfFile:(id)arg1 recipeId:(id)arg2 recipeType:(id)arg3 error:(id *)arg4;
 
 @end
 

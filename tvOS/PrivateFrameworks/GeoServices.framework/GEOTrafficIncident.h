@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficIncident : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_9f2792e4 _alertCCodes;
     CDStruct_95bda58d _types;
     NSString *_area;
@@ -29,6 +28,9 @@ __attribute__((visibility("hidden")))
     NSString *_primaryStreetName;
     unsigned long long _startTime;
     unsigned long long _updateTime;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _advisoryType;
     int _color;
     unsigned int _delaySeconds;
@@ -213,6 +215,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *paths;
 - (void)_readPaths;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

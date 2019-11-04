@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 @interface AMSBagNetworkDataSource : NSObject <AMSBagDataSourceProtocol>
 {
     CDUnknownBlockType _dataSourceChangedHandler;
+    CDUnknownBlockType _dataSourceDataInvalidatedHandler;
     NSString *_profile;
     NSString *_profileVersion;
     NSDictionary *_cachedData;
@@ -50,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDictionary *cachedData; // @synthesize cachedData=_cachedData;
 @property(readonly, copy, nonatomic) NSString *profileVersion; // @synthesize profileVersion=_profileVersion;
 @property(readonly, copy, nonatomic) NSString *profile; // @synthesize profile=_profile;
+@property(copy, nonatomic) CDUnknownBlockType dataSourceDataInvalidatedHandler; // @synthesize dataSourceDataInvalidatedHandler=_dataSourceDataInvalidatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType dataSourceChangedHandler; // @synthesize dataSourceChangedHandler=_dataSourceChangedHandler;
 - (void).cxx_destruct;
 - (id)_createURLWithCookieNames:(id)arg1 storefront:(id)arg2;
@@ -62,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (id)_createRequestWithCookieNames:(id)arg1 storefront:(id)arg2;
 - (id)_baseURLString;
 - (void)_accountStoreDidChange:(id)arg1;
-- (id)valueForURLVariable:(id)arg1;
+- (id)valueForURLVariable:(id)arg1 account:(id)arg2;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (id)bagKeyInfoForKey:(id)arg1;
 @property(readonly, copy) NSString *description;

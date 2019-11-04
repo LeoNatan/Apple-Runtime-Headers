@@ -14,8 +14,11 @@
 __attribute__((visibility("hidden")))
 @interface UIDictationConnection : NSObject <AFDictationDelegate>
 {
+    _Bool _receivedMultilingualResultsCommand;
     _Bool _offlineOnly;
     _Bool _lowConfidenceAboutLanguageDetection;
+    unsigned int _charBeforeInsertionPointOnDictationStart;
+    unsigned int _charAfterInsertionPointOnDictationStart;
     id <UIDictationConnectionDelegate> _delegate;
     id <UIDictationConnectionTokenFilterProtocol> _tokenFilter;
     AFDictationOptions *_dictationOptions;
@@ -34,6 +37,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)dictationIsSupportedForLanguageCode:(id)arg1 error:(id *)arg2;
 + (_Bool)isDictationAvailable;
 + (id)analytics;
+@property(nonatomic) unsigned int charAfterInsertionPointOnDictationStart; // @synthesize charAfterInsertionPointOnDictationStart=_charAfterInsertionPointOnDictationStart;
+@property(nonatomic) unsigned int charBeforeInsertionPointOnDictationStart; // @synthesize charBeforeInsertionPointOnDictationStart=_charBeforeInsertionPointOnDictationStart;
 @property(nonatomic) _Bool lowConfidenceAboutLanguageDetection; // @synthesize lowConfidenceAboutLanguageDetection=_lowConfidenceAboutLanguageDetection;
 @property(retain, nonatomic) NSMutableArray *lastUsedTopLanguages; // @synthesize lastUsedTopLanguages=_lastUsedTopLanguages;
 @property(copy, nonatomic) NSString *lastUsedDetectedLanguage; // @synthesize lastUsedDetectedLanguage=_lastUsedDetectedLanguage;
@@ -42,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool offlineOnly; // @synthesize offlineOnly=_offlineOnly;
 @property(retain, nonatomic) AFDictationConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) AFDictationOptions *dictationOptions; // @synthesize dictationOptions=_dictationOptions;
+@property(nonatomic) _Bool receivedMultilingualResultsCommand; // @synthesize receivedMultilingualResultsCommand=_receivedMultilingualResultsCommand;
 @property(nonatomic) __weak id <UIDictationConnectionTokenFilterProtocol> tokenFilter; // @synthesize tokenFilter=_tokenFilter;
 @property(nonatomic) __weak id <UIDictationConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -75,7 +81,6 @@ __attribute__((visibility("hidden")))
 - (id)_speechOptions:(id)arg1;
 - (long long)speechEventTypeForDictationActivationType:(unsigned long long)arg1;
 - (id)_dictationOptions:(id)arg1;
-- (id)userContextLanguageCodeForKeyboardLanguage:(id)arg1;
 - (id)languageDetectionUserContext;
 - (void)endSession;
 - (float)averagePower;

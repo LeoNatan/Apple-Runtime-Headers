@@ -12,15 +12,15 @@
 
 @interface HMBProcessingOptions : HMFObject <NSSecureCoding>
 {
-    BOOL _enqueueExternalOutput;
-    BOOL _performDelegateCallbacks;
-    BOOL _rollbackIfUnpushedForMirror;
+    BOOL _shouldPerformDelegateCallbacks;
+    BOOL _shouldEnqueueMirrorOutput;
+    BOOL _shouldRollBackIfMirrorOutputFails;
+    BOOL _disallowsCellularAccessForMirrorOutput;
     NSString *_label;
     NSDictionary *_messagePayload;
     NSString *_messageName;
     CDUnknownBlockType _messageResponseHandler;
     NSUUID *_messageTransactionIdentifier;
-    unsigned long long _changeSource;
     long long _qualityOfService;
     HMFActivity *_activity;
 }
@@ -30,15 +30,15 @@
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
-@property(readonly, nonatomic) unsigned long long changeSource; // @synthesize changeSource=_changeSource;
-@property(nonatomic) BOOL rollbackIfUnpushedForMirror; // @synthesize rollbackIfUnpushedForMirror=_rollbackIfUnpushedForMirror;
-@property(nonatomic) BOOL performDelegateCallbacks; // @synthesize performDelegateCallbacks=_performDelegateCallbacks;
-@property(nonatomic) BOOL enqueueExternalOutput; // @synthesize enqueueExternalOutput=_enqueueExternalOutput;
+@property(nonatomic) BOOL disallowsCellularAccessForMirrorOutput; // @synthesize disallowsCellularAccessForMirrorOutput=_disallowsCellularAccessForMirrorOutput;
+@property(nonatomic) BOOL shouldRollBackIfMirrorOutputFails; // @synthesize shouldRollBackIfMirrorOutputFails=_shouldRollBackIfMirrorOutputFails;
+@property(nonatomic) BOOL shouldEnqueueMirrorOutput; // @synthesize shouldEnqueueMirrorOutput=_shouldEnqueueMirrorOutput;
+@property(nonatomic) BOOL shouldPerformDelegateCallbacks; // @synthesize shouldPerformDelegateCallbacks=_shouldPerformDelegateCallbacks;
 @property(retain, nonatomic) NSUUID *messageTransactionIdentifier; // @synthesize messageTransactionIdentifier=_messageTransactionIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType messageResponseHandler; // @synthesize messageResponseHandler=_messageResponseHandler;
 @property(retain, nonatomic) NSString *messageName; // @synthesize messageName=_messageName;
 @property(retain, nonatomic) NSDictionary *messagePayload; // @synthesize messagePayload=_messagePayload;
-@property(retain, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

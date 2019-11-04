@@ -120,6 +120,7 @@
 - (double)timeRemainingAfter:(id)arg1;
 - (void)stopProgressTimer;
 - (id)getPreviousShutdownCause;
+- (void)reportInstallFailed:(id)arg1;
 - (void)reportMutableProductFailedWithError:(id)arg1;
 - (void)reportCPIOExtractionRetry:(id)arg1;
 - (void)_cleanupVirtualMemoryFolder;
@@ -145,7 +146,7 @@
 - (id)localizedProductName;
 - (id)licenseAgreement;
 - (BOOL)isRestartRequiredByBootTimeInstallPackagesOnTarget:(id)arg1;
-- (void)prepareForReboot;
+- (BOOL)prepareForReboot;
 - (BOOL)_setupInstallWithError:(id *)arg1;
 - (BOOL)_setupLegacyConversionInstallWithError:(id *)arg1;
 - (void)installFinishedWithFatalError:(id)arg1 withFailedQueueElement:(id)arg2;

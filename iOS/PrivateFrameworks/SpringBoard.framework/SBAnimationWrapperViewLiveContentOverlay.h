@@ -19,9 +19,10 @@
 @property(readonly, nonatomic) SBSceneLayoutAnimationWrapperView *animationWrapperView; // @synthesize animationWrapperView=_animationWrapperView;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 - (void).cxx_destruct;
-- (_Bool)rendersAsynchronously;
+- (void)disableAsynchronousRenderingForNextCommit;
+- (long long)rasterizationStyle;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
-- (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
+- (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 animator:(CDUnknownBlockType)arg3;

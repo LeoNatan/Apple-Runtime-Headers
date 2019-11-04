@@ -8,10 +8,11 @@
 
 @protocol UserFontManagerProtocol
 - (void)_removeAllUserFonts;
+- (void)reset;
 - (void)suspendedFontProviders:(void (^)(NSArray *))arg1;
 - (void)suspendFontProvider:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
 - (void)resumeSuspendedFontFiles:(void (^)(NSDictionary *))arg1;
-- (void)fontProvidersSubscriptionSupportInfo:(void (^)(NSDictionary *))arg1;
+- (void)fontProvidersSubscriptionSupportInfo:(void (^)(NSDictionary *, unsigned long long, unsigned long long, unsigned long long))arg1;
 - (void)secondsSinceLastAccessed:(NSString *)arg1 completionHandler:(void (^)(double))arg2;
 - (void)synchronizeFontProviders:(void (^)(_Bool))arg1;
 - (void)directoryNameFromIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;

@@ -52,6 +52,7 @@
 - (void)setDescription:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+- (void)dropProvider;
 - (id)initWithProvider:(id)arg1;
 - (id)initWithConnection:(id)arg1;
 

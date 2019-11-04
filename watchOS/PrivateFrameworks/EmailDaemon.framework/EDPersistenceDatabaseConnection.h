@@ -55,8 +55,11 @@
 - (void)handleError:(id)arg1 message:(id)arg2;
 - (_Bool)checkForConnectionErrorWithMessage:(id)arg1;
 - (int)transactionTypeForWriting;
+@property(readonly, nonatomic) long long transactionGeneration;
+- (_Bool)_storeTransactionWriteGenerationWithSQLConnection:(id)arg1 newGeneration:(long long)arg2;
+- (_Bool)_fetchTransactionWriteGenerationWithSQLConnection:(id)arg1 newGeneration:(long long *)arg2;
 - (_Bool)_finishTransactionWithSQLConnection:(id)arg1 afterSuccess:(_Bool)arg2 transactionError:(id *)arg3;
-- (_Bool)_startTransactionWithSQLConnection:(id)arg1 forWriting:(_Bool)arg2;
+- (_Bool)_startTransactionWithSQLConnection:(id)arg1 forWriting:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)performUsingTransaction:(_Bool)arg1 isWriter:(_Bool)arg2 transactionError:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (int)configureSQLConnection;
 @property(readonly, nonatomic) _Bool isWriter;
@@ -65,6 +68,7 @@
 - (void)close;
 - (void)open;
 @property(readonly, nonatomic) struct sqlite3 *sqlDB;
+- (void)clearLastInsertedDatabaseID;
 @property(readonly, nonatomic) long long lastInsertedDatabaseID;
 - (_Bool)executeStatementString:(id)arg1 errorMessage:(id)arg2;
 - (_Bool)executeDeleteStatement:(id)arg1 rowsChanged:(unsigned int *)arg2;

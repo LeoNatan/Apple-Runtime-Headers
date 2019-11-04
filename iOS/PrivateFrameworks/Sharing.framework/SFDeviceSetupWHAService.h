@@ -6,20 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class SFService, SFSession;
+@class SFDeviceOperationHandlerCDPSetup, SFService, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceSetupWHAService : NSObject
 {
     _Bool _activateCalled;
     _Bool _invalidateCalled;
+    _Bool _prefCDPEnabled;
     SFService *_sfService;
     SFSession *_sfSession;
+    SFDeviceOperationHandlerCDPSetup *_cdpSetupHandler;
+    _Bool _needsCDPRepair;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _progressHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
+@property(nonatomic) _Bool needsCDPRepair; // @synthesize needsCDPRepair=_needsCDPRepair;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (void)_handleRequest:(id)arg1 flags:(unsigned int)arg2 session:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;

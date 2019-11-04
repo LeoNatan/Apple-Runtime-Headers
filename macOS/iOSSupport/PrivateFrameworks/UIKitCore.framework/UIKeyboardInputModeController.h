@@ -50,6 +50,7 @@
 
 + (id)ASCIICapableInputModeIdentifierForPreferredLanguages;
 + (id)inputModeIdentifierForPreferredLanguages:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
++ (id)disallowedDictationLanguagesForDeviceLanguage;
 + (id)hardwareInputModeAutomaticHardwareLayout;
 + (id)sharedInputModeController;
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;

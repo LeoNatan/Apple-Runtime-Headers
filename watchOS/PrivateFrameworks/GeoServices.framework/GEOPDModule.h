@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDModule : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_debugDescription;
     GEOPDModuleOptions *_options;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _type;
     struct {
         unsigned int has_type:1;
@@ -55,6 +57,8 @@ __attribute__((visibility("hidden")))
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

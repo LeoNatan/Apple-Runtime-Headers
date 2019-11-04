@@ -8,10 +8,13 @@
 
 #import <Mail/EDAccountsProvider-Protocol.h>
 
+@class NSArray;
+
 @interface MFAccountProvider : NSObject <EDAccountsProvider>
 {
 }
 
+@property(readonly, copy, nonatomic) NSArray *receivingAddresses;
 - (id)mailAccounts;
 
 @end

@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_sendChunkMessage:(id)arg1 to:(id)arg2 packet:(id)arg3;
 - (void)_sharingEndedWithError:(id)arg1;
 - (void)_sharingEnded;
-- (_Bool)removeSharingWith:(id)arg1;
+- (_Bool)sessionIsAliveAfterRemovingSharingIdentifiers:(id)arg1;
 - (void)addSharingWith:(id)arg1;
 @property(readonly, nonatomic) _Bool inLiveMode;
 - (void)_leaveLivemode;

@@ -10,8 +10,8 @@
 
 @interface WFWeatherConditions (NWMLocalizedWind)
 + (int)_preferredWindSpeedUnitForLocale:(id)arg1;
-+ (id)_localizedStringForWindspeed:(double)arg1 withUnit:(int)arg2 forLocale:(id)arg3;
-+ (id)_localizedArrayForWindspeed:(double)arg1 withUnit:(int)arg2 forLocale:(id)arg3;
++ (id)_localizedWindspeed:(double)arg1 withUnit:(int)arg2 forLocale:(id)arg3;
++ (id)_defaultWindSpeedWithUnit:(double)arg1;
 + (id)nwm_localizedWindpeedUnit;
 + (id)_nwc_prefixForFamily:(long long)arg1;
 + (id)nwc_noDataImageForComplicationFamily:(long long)arg1;

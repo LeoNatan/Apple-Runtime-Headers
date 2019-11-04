@@ -65,6 +65,7 @@
 + (id)stringFromPHPhotoLibraryType:(unsigned short)arg1;
 + (void)assertTransaction;
 + (_Bool)isSystemPhotoLibraryURL:(id)arg1;
++ (const char *)systemPhotoLibraryAvailableNotificationName;
 + (const char *)systemPhotoLibraryURLChangeNotificationName;
 + (_Bool)setSystemPhotoLibraryURL:(id)arg1 error:(id *)arg2;
 + (id)systemPhotoLibraryURL;

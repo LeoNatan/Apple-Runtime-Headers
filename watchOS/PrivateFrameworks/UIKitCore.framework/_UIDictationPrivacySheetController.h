@@ -12,11 +12,14 @@ __attribute__((visibility("hidden")))
 @interface _UIDictationPrivacySheetController : UINavigationController
 {
     id <_UIDictationPrivacySheetControllerDelegate> _privacyDelegate;
+    int _sheetType;
 }
 
+@property(nonatomic) int sheetType; // @synthesize sheetType=_sheetType;
 @property(nonatomic) id <_UIDictationPrivacySheetControllerDelegate> privacyDelegate; // @synthesize privacyDelegate=_privacyDelegate;
 - (void)dismiss;
-- (id)init;
+- (void)dealloc;
+- (id)initWithType:(int)arg1;
 
 @end
 

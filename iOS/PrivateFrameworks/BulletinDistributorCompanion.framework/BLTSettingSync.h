@@ -62,7 +62,7 @@
 - (void)_sendSpooledSyncWithCompletion:(CDUnknownBlockType)arg1 withProgress:(CDUnknownBlockType)arg2;
 - (void)_logNotificationSettings;
 - (void)_spoolInitialSync;
-- (void)performSyncIfNeededForSectionID:(id)arg1 gizmoSectionInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (unsigned long long)performSyncIfNeededForSectionID:(id)arg1 gizmoSectionInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)performInitialSyncWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setupSectionInfoListWithCompletion:(CDUnknownBlockType)arg1;
 - (id)universalSectionIDForSectionID:(id)arg1;

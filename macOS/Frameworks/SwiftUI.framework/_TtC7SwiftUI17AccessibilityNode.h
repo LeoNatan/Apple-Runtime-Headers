@@ -6,10 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <SwiftUI/NSAccessibilityElement-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface _TtC7SwiftUI17AccessibilityNode : NSObject <NSAccessibilityElement>
+@interface _TtC7SwiftUI17AccessibilityNode : NSObject
 {
     // Error parsing type: , name: children
     // Error parsing type: , name: parent
@@ -24,39 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
-- (id)accessibilityServesAsTitleForUIElements;
-- (id)accessibilityTitleUIElement;
-- (BOOL)isAccessibilityFocused;
-- (void)setAccessibilityFocused:(BOOL)arg1;
-- (id)accessibilityCustomActions;
-- (BOOL)accessibilityPerformDecrement;
-- (BOOL)accessibilityPerformIncrement;
-- (BOOL)accessibilityPerformDelete;
-- (BOOL)accessibilityPerformShowMenu;
-- (BOOL)accessibilityPerformCancel;
-- (BOOL)accessibilityPerformPress;
-- (BOOL)isAccessibilitySelected;
-- (id)accessibilityIdentifier;
-- (id)accessibilityHitTest:(struct CGPoint)arg1;
-- (id)accessibilityChildren;
-- (struct CGPoint)accessibilityActivationPoint;
-- (struct CGRect)accessibilityFrame;
-- (id)accessibilityWindow;
-- (id)accessibilityHelp;
-- (id)accessibilityValueDescription;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (id)accessibilityTitle;
-- (id)accessibilityRoleDescription;
-- (id)accessibilitySubrole;
-- (id)accessibilityRole;
-- (BOOL)isAccessibilityElement;
-- (BOOL)accessibilityShouldUseUniqueId;
-- (id)accessibilityParent;
-- (BOOL)isAccessibilitySelectorAllowed:(SEL)arg1;
-- (BOOL)isAccessibilityEnabled;
-- (BOOL)_internal_handleCustomActionWithUiAction:(id)arg1;
-- (id)accessibilityOverriddenAttributes;
 
 @end
 

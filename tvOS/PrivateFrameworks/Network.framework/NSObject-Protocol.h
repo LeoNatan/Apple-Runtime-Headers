@@ -15,17 +15,17 @@
 - (id)autorelease;
 - (oneway void)release;
 - (id)retain;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (BOOL)conformsToProtocol:(Protocol *)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isProxy;
+- (_Bool)respondsToSelector:(SEL)arg1;
+- (_Bool)conformsToProtocol:(Protocol *)arg1;
+- (_Bool)isMemberOfClass:(Class)arg1;
+- (_Bool)isKindOfClass:(Class)arg1;
+- (_Bool)isProxy;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)performSelector:(SEL)arg1;
 - (id)self;
 - (Class)class;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 
 @optional
 @property(readonly, copy) NSString *debugDescription;

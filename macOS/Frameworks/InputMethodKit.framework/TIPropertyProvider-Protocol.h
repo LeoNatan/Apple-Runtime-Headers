@@ -8,6 +8,9 @@
 @protocol NSSecureCoding;
 
 @protocol TIPropertyProvider
+- (double)touchBarTotalWidth;
+- (struct CGRect)touchBarAvailableFrame;
+- (BOOL)shouldSuppressCandidates;
 - (BOOL)isSecureMode;
 - (long long)spellCheckerDocumentTag;
 - (int)processIdentifier;

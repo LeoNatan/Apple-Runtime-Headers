@@ -17,7 +17,7 @@
 }
 
 + (id)descriptorWithProtocolBufferData:(id)arg1;
-+ (BOOL)supportsBrowseCallback;
++ (_Bool)supportsBrowseCallback;
 + (id)descriptorWithInternalDescriptor:(id)arg1;
 + (Class)copyClassForDescriptorType:(int)arg1;
 + (unsigned int)descriptorType;
@@ -29,7 +29,7 @@
 - (void)browseWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSString *privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDescriptor:(id)arg1;
 @property(readonly, nonatomic) NSString *bonjourServiceType;

@@ -27,7 +27,7 @@
 - (id)getGeometryBuffer;
 - (id)getPipelineForShaderType:(unsigned int)arg1 blending:(_Bool)arg2;
 - (void)_queue_loadPrograms;
-- (void)_queue_setupPipelineForType:(unsigned int)arg1 vertexFunction:(id)arg2 fragmentName:(id)arg3 inLibrary:(id)arg4;
+- (void)_queue_setupPipelineForType:(unsigned int)arg1 vertexFunction:(id)arg2 fragmentName:(id)arg3 inLibrary:(id)arg4 librarySPI:(id)arg5;
 - (void)_queue_loadMTLBufferData;
 - (void)removeClient;
 - (void)addClient;

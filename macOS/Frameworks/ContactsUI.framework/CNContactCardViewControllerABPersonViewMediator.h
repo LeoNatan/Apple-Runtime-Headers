@@ -22,7 +22,6 @@
 - (BOOL)editing;
 - (void)setEditing:(BOOL)arg1;
 - (void)dataSourceChangesShouldPersistOnABPerson:(BOOL)arg1;
-- (void)setCustomNameView:(id)arg1;
 - (id)initWithCardViewController:(id)arg1 contactNameViewController:(id)arg2 dataSourceDelegate:(id)arg3;
 
 @end

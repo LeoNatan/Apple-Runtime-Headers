@@ -36,7 +36,7 @@
 - (void)loadView;
 - (id)hu_preloadContent;
 - (void)_continue;
-- (id)initWithHomeAssistantDevicesHavingLanguageMismatch:(id)arg1;
+- (id)initWithHomeAssistantDevicesHavingLanguageMismatch:(id)arg1 home:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

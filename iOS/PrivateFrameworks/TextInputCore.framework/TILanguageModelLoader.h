@@ -58,6 +58,7 @@
 - (void)findRecordsMatchingRecipient:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setLanguageModelClientIdentifier:(id)arg1;
 - (shared_ptr_e9f752ce)newLanguageModel;
+- (_Bool)hasLanguageModelBundle;
 - (void)performLearningIfNecessaryForClient:(id)arg1 withModel:(shared_ptr_e9f752ce)arg2;
 - (void)flushDynamicLearningCaches;
 - (void)clearDynamicLearningCaches;

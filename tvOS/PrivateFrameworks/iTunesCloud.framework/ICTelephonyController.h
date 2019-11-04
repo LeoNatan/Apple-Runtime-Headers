@@ -23,9 +23,10 @@
 
 + (id)sharedController;
 - (void).cxx_destruct;
-- (void)_invalidatePhoneNumber;
+- (void)_updatePhoneNumberAllowingDidChangeNotification:(_Bool)arg1;
 - (id)_telephonySubscriptionContext;
 - (id)_telephonyClient;
+- (void)_handleActiveSubscriptionsDidChange;
 - (_Bool)_ensureTelephonyHandlesAreReady;
 - (void)phoneNumberChanged:(id)arg1;
 - (void)phoneNumberAvailable:(id)arg1;

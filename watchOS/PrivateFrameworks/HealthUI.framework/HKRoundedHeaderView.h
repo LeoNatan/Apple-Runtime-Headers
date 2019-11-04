@@ -10,12 +10,12 @@
 
 @interface HKRoundedHeaderView : UIView
 {
-    _Bool _textLabelTruncated;
     HKGradient *_gradient;
     UIColor *_color;
     UIImage *_image;
     NSString *_text;
     UIColor *_textColor;
+    UIColor *_chevronColor;
     UIColor *_detailTextColor;
     NSString *_detailTextCompositingFilter;
     HKGradientView *_gradientView;
@@ -43,7 +43,6 @@
 + (id)_textFont;
 + (id)_accessibilityContentSizeCategory;
 + (float)estimatedHeight;
-@property(nonatomic) _Bool textLabelTruncated; // @synthesize textLabelTruncated=_textLabelTruncated;
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *largeTextChevronCenterYConstraint; // @synthesize largeTextChevronCenterYConstraint=_largeTextChevronCenterYConstraint;
@@ -62,6 +61,7 @@
 @property(retain, nonatomic) HKGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(nonatomic) NSString *detailTextCompositingFilter; // @synthesize detailTextCompositingFilter=_detailTextCompositingFilter;
 @property(retain, nonatomic) UIColor *detailTextColor; // @synthesize detailTextColor=_detailTextColor;
+@property(retain, nonatomic) UIColor *chevronColor; // @synthesize chevronColor=_chevronColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
@@ -76,7 +76,6 @@
 - (void)_setupConstraints;
 - (void)_setupUI;
 - (_Bool)_isTextLabelTruncated;
-- (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) float textHorizontalInset;
 @property(copy, nonatomic) NSString *detailText;

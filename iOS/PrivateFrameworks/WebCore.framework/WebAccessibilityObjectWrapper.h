@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)frameForTextMarkers:(id)arg1;
 - (id)previousMarkerForMarker:(id)arg1;
 - (id)nextMarkerForMarker:(id)arg1;
+- (id)misspellingTextMarkerRange:(id)arg1 forward:(_Bool)arg2;
 - (id)lineStartMarkerForMarker:(id)arg1;
 - (id)lineEndMarkerForMarker:(id)arg1;
 - (id)selectedTextMarker;
@@ -182,6 +183,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_accessibilityTraitsFromAncestors;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityFrameAncestor;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityFieldsetAncestor;
+- (_Bool)_accessibilityIsInTableCell;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityTableAncestor;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityLandmarkAncestor;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityArticleAncestor;

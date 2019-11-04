@@ -10,7 +10,7 @@
 #import <EventKitUI/EKDayOccurrenceViewDelegate-Protocol.h>
 #import <EventKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UITraitCollection;
+@class EKCalendarDate, EKDayGridView, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UITraitCollection;
 @protocol EKDayViewContentDelegate;
 
 @interface EKDayViewContent : UIView <CUIKSingleDayTimelineLayoutScreenUtils, EKDayOccurrenceViewDelegate, UIGestureRecognizerDelegate>
@@ -32,7 +32,7 @@
     struct CGRect _latestVisibleRect;
     double *_visiblePinnedStackHeightAbove;
     double *_visiblePinnedStackHeightBelow;
-    EKDayViewContentGeometryDelegate *_geometryDelegate;
+    NSMutableArray *_geometryDelegates;
     NSMutableArray *_reusableViews;
     _Bool _dataLoaded;
     long long _sizeClass;

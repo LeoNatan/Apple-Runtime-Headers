@@ -13,6 +13,8 @@
     NSDictionary *_settings;
 }
 
++ (id)deviceUserAgent;
++ (double)defaultQueryCacheTimeout;
 + (double)defaultNetworkTimeout;
 + (_Bool)allowsInternalSecurityPolicies;
 + (_Bool)getBool:(id)arg1;

@@ -13,6 +13,7 @@
     // Error parsing type: , name: issueReadingHistory
     // Error parsing type: , name: isiCloudPrivateDataSyncingEnabled
     // Error parsing type: , name: store
+    // Error parsing type: , name: bundleSubscriptionManager
 }
 
 @end

@@ -6,18 +6,19 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSDictionary, NSString, SiriUIBuddyChooseLanguageController, SiriUIBuddyEnableSiriController, SiriUIBuddyVoiceTriggerController, SiriUIBuddyVoiceTriggerIntroController, SiriUIBuddyVoiceTriggerOutroController;
-@protocol MBSecondPartyHost, SiriUIBuddyDelegate;
+@class NSDictionary, NSString, SiriUIBuddyChooseLanguageController, SiriUIBuddyEnableSiriController, SiriUIBuddyImproveSiriController, SiriUIBuddyVoiceTriggerController, SiriUIBuddyVoiceTriggerIntroController, SiriUIBuddyVoiceTriggerOutroController;
+@protocol MBSecondPartyHost, SiriUIBuddyDelegate, SiriUIBuddySubviewController;
 
 @interface SiriUIBuddyController : NSViewController
 {
     long long _state;
-    NSViewController *_currentPanelController;
+    NSViewController<SiriUIBuddySubviewController> *_currentPanelController;
     SiriUIBuddyEnableSiriController *_enableSiriController;
     SiriUIBuddyChooseLanguageController *_chooseLanguageController;
     SiriUIBuddyVoiceTriggerController *_voiceTriggerController;
     SiriUIBuddyVoiceTriggerIntroController *_voiceTriggerIntroController;
     SiriUIBuddyVoiceTriggerOutroController *_voiceTriggerOutroController;
+    SiriUIBuddyImproveSiriController *_improveSiriController;
     BOOL _enableSiri;
     BOOL _skippedVoiceTrigger;
     BOOL _shouldOfferTraining;
@@ -37,10 +38,13 @@
 - (void).cxx_destruct;
 - (void)didCloseLid:(id)arg1;
 - (void)didOpenLid:(id)arg1;
+@property(readonly) BOOL shouldShowEnableSiriPane;
 - (void)moveToNextPanel;
 - (void)setState:(long long)arg1;
 - (void)checkShouldOfferTraining;
+- (void)currentPaneWillExit;
 - (void)setCurrentPanelController:(id)arg1;
+- (id)improveSiriController;
 - (id)voiceTriggerOutroController;
 - (id)voiceTriggerController;
 - (id)voiceTriggerIntroController;

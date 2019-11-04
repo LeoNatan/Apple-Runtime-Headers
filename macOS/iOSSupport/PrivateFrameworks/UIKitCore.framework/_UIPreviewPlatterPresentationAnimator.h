@@ -31,9 +31,11 @@ __attribute__((visibility("hidden")))
     UIViewFloatAnimatableProperty *_animationProgress;
     CDUnknownBlockType _reparentingAnimationBlock;
     CDUnknownBlockType _backgroundAnimationBlock;
+    CDUnknownBlockType _accessoryAnimationBlock;
     struct UIEdgeInsets _preferredBackgroundInsets;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType accessoryAnimationBlock; // @synthesize accessoryAnimationBlock=_accessoryAnimationBlock;
 @property(copy, nonatomic) CDUnknownBlockType backgroundAnimationBlock; // @synthesize backgroundAnimationBlock=_backgroundAnimationBlock;
 @property(copy, nonatomic) CDUnknownBlockType reparentingAnimationBlock; // @synthesize reparentingAnimationBlock=_reparentingAnimationBlock;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *animationProgress; // @synthesize animationProgress=_animationProgress;
@@ -57,14 +59,18 @@ __attribute__((visibility("hidden")))
 - (id)_platterTransitionView;
 - (id)_containerView;
 - (BOOL)_isDismissingToDrag;
+- (void)_updateAccessoryAttachment:(id)arg1;
+- (void)_installAccessories;
 - (void)_prepareReparentingAnimationWithDismissalTarget:(id)arg1;
 - (void)_prepareAnimatablePropertyBasedAnimations;
 - (void)animateForDragSetDown;
 - (void)transitionDidEnd:(BOOL)arg1;
 - (void)dealloc;
 - (id)_targetedPreviewForDismissalAnimation;
-- (void)_actuallyPerformTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
+- (void)_performReduceMotionDisappearanceTransition;
+- (void)_performReduceMotionAppearanceTransition;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
+- (void)_actuallyPerformTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (void)_anchorTransitionViewToTargetedPreview:(id)arg1;
 - (void)prepareTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (id)initWithPresentationController:(id)arg1 asDismissal:(BOOL)arg2;

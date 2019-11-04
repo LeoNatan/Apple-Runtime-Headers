@@ -23,6 +23,8 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)fetchCNContactForSuggestedHandle:(id)arg1;
+- (id)_contactForSGContactMatch:(id)arg1;
 - (void)scheduleFetchIfNecessaryForHandle:(id)arg1;
 - (void)_startRequestForDisplayNameCallbackWithSuggestedName:(id)arg1 displayName:(id)arg2 queue:(id)arg3;
 - (void)_startRequestForDisplayName:(id)arg1 messageUID:(id)arg2 queue:(id)arg3;
@@ -33,6 +35,7 @@
 - (BOOL)isBusiness:(id)arg1;
 - (BOOL)_maybeEmailAddress:(id)arg1;
 - (BOOL)_maybePhoneNumber:(id)arg1;
+- (id)serviceConnection;
 - (void)dealloc;
 - (id)init;
 

@@ -24,6 +24,7 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)wallpaperDidChangeForVariant:(long long)arg1;
+- (long long)_orientationForOptions:(unsigned long long)arg1;
 - (id)_snapshotProviderForVariant:(long long)arg1 options:(unsigned long long)arg2 wallpaperImage:(id)arg3;
 - (id)_lockScreenSnapshotProviderWithOptions:(unsigned long long)arg1 wallpaperImage:(id)arg2;
 - (id)_homeScreenSnapshotProviderWithOptions:(unsigned long long)arg1 wallpaperImage:(id)arg2;

@@ -41,6 +41,7 @@
 - (void)_setShowsBadge:(BOOL)arg1 forSegment:(long long)arg2;
 - (void)_updateLayerMasksToBoundsFromView;
 - (id)_highlightColorForCell:(id)arg1;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (double)baselineOffsetFromBottom;
 - (BOOL)_hasExtra10_11BordersInToolbars;
 - (struct NSEdgeInsets)alignmentRectInsets;

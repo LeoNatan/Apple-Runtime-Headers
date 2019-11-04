@@ -24,6 +24,7 @@
     _Bool _wifiAssociated;
     _Bool _networkConstrained;
     _Bool _ethernetWired;
+    _Bool _remoteServerReachable;
     NSString *_telephonyOperatorName;
     NSString *_telephonyRegistrationStatus;
     NSString *_telephonyStatusIndicator;
@@ -35,6 +36,7 @@
 
 + (id)sharedMonitor;
 @property(readonly, nonatomic) unsigned long long currentThermalLevel; // @synthesize currentThermalLevel=_currentThermalLevel;
+@property(readonly, nonatomic, getter=isRemoteServerReachable) _Bool remoteServerReachable; // @synthesize remoteServerReachable=_remoteServerReachable;
 @property(readonly, nonatomic) long long lastKnownNetworkType; // @synthesize lastKnownNetworkType=_lastKnownNetworkType;
 @property(readonly, nonatomic) long long networkType; // @synthesize networkType=_networkType;
 @property(readonly, nonatomic) double currentBatteryLevel; // @synthesize currentBatteryLevel=_currentBatteryLevel;

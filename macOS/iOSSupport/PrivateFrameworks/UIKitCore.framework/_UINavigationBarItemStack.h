@@ -51,6 +51,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UINavigationBarItemStackEntry *previousTopEntry;
 @property(readonly, nonatomic) _UINavigationBarItemStackEntry *backEntry;
 @property(readonly, nonatomic) _UINavigationBarItemStackEntry *topEntry;
+@property(readonly, nonatomic, getter=isPopping) BOOL popping;
+@property(readonly, nonatomic, getter=isPushing) BOOL pushing;
 @property(readonly, nonatomic, getter=isPushingOrPopping) BOOL pushingOrPopping;
 @property(readonly, nonatomic) long long itemCount;
 @property(readonly, copy, nonatomic) NSArray *items;

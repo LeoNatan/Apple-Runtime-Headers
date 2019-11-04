@@ -10,19 +10,22 @@
 #import <PassKitUI/PKNewDevicePasscodeViewControllerDelegate-Protocol.h>
 
 @class NSString, PKPaymentProvisioningController, UINavigationController;
-@protocol PKPaymentSetupViewControllerDelegate;
+@protocol PKPaymentSetupViewControllerDelegate, PKPaymentWebServiceTargetDeviceProtocol;
 
 @interface PKPasscodeUpgradeFlowController : NSObject <DevicePINControllerDelegate, PKNewDevicePasscodeViewControllerDelegate>
 {
     long long _context;
     PKPaymentProvisioningController *_provisioningController;
     UINavigationController *_navigationController;
-    id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     CDUnknownBlockType _completionHandler;
+    long long _presentedViewControllerCount;
     _Bool _upgradeRequiredToAddNewPass;
+    id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
 }
 
 @property(nonatomic) _Bool upgradeRequiredToAddNewPass; // @synthesize upgradeRequiredToAddNewPass=_upgradeRequiredToAddNewPass;
+@property(readonly, nonatomic) long long context; // @synthesize context=_context;
+@property(readonly, nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 - (void).cxx_destruct;
 - (_Bool)_isWatchTarget;
 - (void)_showNewDevicePasscodeViewControllerWithCurrentPasscode:(id)arg1;
@@ -32,6 +35,9 @@
 - (void)_completeWithShouldContinue:(_Bool)arg1 error:(id)arg2;
 - (void)newDevicePasscodeViewController:(id)arg1 didFinishSettingPasscode:(_Bool)arg2 withError:(id)arg3;
 - (void)didAcceptEnteredPIN:(id)arg1;
+@property(readonly, nonatomic) id <PKPaymentWebServiceTargetDeviceProtocol> targetDevice;
+- (void)endedShowingViewController;
+- (void)beginShowingViewController;
 - (void)dismissPasscodeUpgradeFlow;
 - (void)showPasscodeUpgradeFlow;
 - (void)dealloc;

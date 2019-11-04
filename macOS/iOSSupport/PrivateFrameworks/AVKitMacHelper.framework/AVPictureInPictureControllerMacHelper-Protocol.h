@@ -13,7 +13,7 @@
 @property(nonatomic) BOOL showsMuteUnmuteControls;
 @property(nonatomic) struct CGRect normalizedSourceRectInWindow;
 @property(nonatomic) struct CGSize contentAspectRatio;
-@property(nonatomic, getter=isMuted) BOOL muted;
+@property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled;
 @property(nonatomic, getter=isPlaying) BOOL playing;
 @property(readonly, nonatomic, getter=isActive) BOOL active;
 @property(nonatomic) __weak id <AVPictureInPictureControllerMacHelperDelegate> delegate;

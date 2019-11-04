@@ -54,9 +54,11 @@
 @property(nonatomic) unsigned long long appearState; // @synthesize appearState=_appearState;
 @property(nonatomic) _Bool wantsPreferredContentSize; // @synthesize wantsPreferredContentSize=_wantsPreferredContentSize;
 - (void).cxx_destruct;
+- (void)reloadCellForItems:(id)arg1;
 - (id)presentingViewControllerForModuleController:(id)arg1;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;
 - (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
+- (void)_transformViewControllerForRequest:(id)arg1;
 - (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;
 - (void)recursivelyDisableItemUpdates:(_Bool)arg1 withReason:(id)arg2;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
@@ -70,6 +72,7 @@
 - (void)scrollToItem:(id)arg1 animated:(_Bool)arg2;
 - (void)highlightItemAnimated:(id)arg1 duration:(double)arg2;
 - (void)highlightItemAnimated:(id)arg1;
+- (void)itemManagerDidFinishUpdate:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateItemModules:(id)arg2;
 - (void)itemManager:(id)arg1 didChangeSourceItem:(id)arg2;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;

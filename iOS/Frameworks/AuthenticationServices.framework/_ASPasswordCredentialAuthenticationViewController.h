@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)prepareToCompleteRequestWithHostContext:(id)arg1 credential:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_requestDidFailWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_finishWithCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_finishWithCredential:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_nonUIRequestDidRequireUserInteraction;
 - (id)initWithExtension:(id)arg1 credentialIdentity:(id)arg2;
 

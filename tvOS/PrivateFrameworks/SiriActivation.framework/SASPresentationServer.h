@@ -34,9 +34,12 @@
 - (id)bulletinForIdentifier:(id)arg1;
 - (id)bulletinsOnLockScreen;
 - (id)allBulletins;
+- (oneway void)speechRequestCancelledFromSiriOrb;
+- (oneway void)speechRequestStartedFromSiriOrb;
 - (oneway void)failedToPresentSiriWithError:(id)arg1;
 - (oneway void)didPresentSiri;
 - (oneway void)didDismiss;
+- (oneway void)willDismiss;
 - (oneway void)unregisterPresentationIdentifier:(id)arg1;
 - (oneway void)registerPresentationIdentifier:(id)arg1;
 - (void)_setConnection:(id)arg1;

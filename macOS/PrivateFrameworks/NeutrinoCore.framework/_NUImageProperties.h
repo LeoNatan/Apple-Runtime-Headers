@@ -13,6 +13,7 @@
 
 @interface _NUImageProperties : NSObject <NUImageProperties>
 {
+    BOOL _isFusedOvercapture;
     NSURL *_url;
     NSDictionary *_metadata;
     struct CGColorSpace *_colorSpace;
@@ -27,6 +28,7 @@
 
 @property(retain) id <NURAWImageProperties> rawProperties; // @synthesize rawProperties=_rawProperties;
 @property(retain) NSDictionary *auxiliaryImagesProperties; // @synthesize auxiliaryImagesProperties=_auxiliaryImagesProperties;
+@property BOOL isFusedOvercapture; // @synthesize isFusedOvercapture=_isFusedOvercapture;
 @property long long componentInfo; // @synthesize componentInfo=_componentInfo;
 @property long long alphaInfo; // @synthesize alphaInfo=_alphaInfo;
 @property(retain) NSString *fileUTI; // @synthesize fileUTI=_fileUTI;

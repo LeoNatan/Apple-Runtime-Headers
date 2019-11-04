@@ -6,13 +6,14 @@
 
 #import <MediaPlayer/MPModelResponse.h>
 
+#import <MediaPlaybackCore/MPCModelPlaybackResponse-Protocol.h>
 #import <MediaPlaybackCore/MPModelResponseDetailedKeepLocalStatusRequesting-Protocol.h>
 #import <MediaPlaybackCore/MPModelStoreEquivalencyMapping-Protocol.h>
 
 @class MPStoreLibraryPersonalizationResponse, NSDate, NSDictionary, NSObject, NSString;
 @protocol OS_dispatch_source;
 
-@interface MPCModelStorePlaybackItemsResponse : MPModelResponse <MPModelStoreEquivalencyMapping, MPModelResponseDetailedKeepLocalStatusRequesting>
+@interface MPCModelStorePlaybackItemsResponse : MPModelResponse <MPModelStoreEquivalencyMapping, MPModelResponseDetailedKeepLocalStatusRequesting, MPCModelPlaybackResponse>
 {
     NSObject<OS_dispatch_source> *_invalidationTimer;
     BOOL _finalResponse;

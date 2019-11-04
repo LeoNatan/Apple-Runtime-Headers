@@ -25,7 +25,7 @@
     UIImage *_iconImage;
 }
 
-+ (void)openApplicationWithBundleID:(id)arg1 launchURL:(id)arg2;
++ (id)_openOptionsWithURL:(id)arg1;
 @property(readonly, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) _Bool useSmallIcon; // @synthesize useSmallIcon=_useSmallIcon;
 @property(copy, nonatomic) NSURL *defaultLaunchURL; // @synthesize defaultLaunchURL=_defaultLaunchURL;

@@ -100,6 +100,7 @@
 - (void)setUnscaledCanvasRect:(struct CGRect)arg1;
 - (void)updateCanvasSize:(struct CGSize)arg1 forComponentViews:(id)arg2;
 - (void)clearSelection;
+@property(nonatomic) _Bool selectionEnabled;
 - (void)didStopPresentingTextView:(id)arg1;
 - (void)didStartPresentingTextView:(id)arg1;
 - (void)dealloc;

@@ -34,7 +34,8 @@
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
-- (id)keyPrefix;
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)localizedPronunciationHintForLanguage:(id)arg1;
 @property(readonly, copy) NSString *localizedPronunciationHint;
 - (id)localizedSynonymForLanguage:(id)arg1;

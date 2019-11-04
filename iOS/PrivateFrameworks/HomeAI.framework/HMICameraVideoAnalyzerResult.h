@@ -12,6 +12,7 @@
 
 @interface HMICameraVideoAnalyzerResult : NSObject <NSSecureCoding>
 {
+    float _analysisFPS;
     long long _events;
     NSDictionary *_annotationScores;
     NSArray *_posterFrames;
@@ -27,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly) unsigned long long lastSequenceNumber; // @synthesize lastSequenceNumber=_lastSequenceNumber;
+@property float analysisFPS; // @synthesize analysisFPS=_analysisFPS;
 @property(retain) HMICameraVideoFragment *videoFragment; // @synthesize videoFragment=_videoFragment;
 @property double timeSinceFragmentWasSubmitted; // @synthesize timeSinceFragmentWasSubmitted=_timeSinceFragmentWasSubmitted;
 @property double timeToAnalyzeFragment; // @synthesize timeToAnalyzeFragment=_timeToAnalyzeFragment;

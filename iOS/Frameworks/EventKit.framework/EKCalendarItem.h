@@ -163,6 +163,7 @@
 @property(retain, nonatomic) EKCalendar *calendar;
 - (void)_updateDefaultAlarms;
 - (void)_addDefaultAlarms;
+- (id)defaultAlarms;
 - (void)_removeDefaultAlarms;
 @property(copy, nonatomic) NSURL *URL;
 - (void)setAppLink:(id)arg1;

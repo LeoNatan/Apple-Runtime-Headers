@@ -13,11 +13,13 @@
 @interface LOGMSGEVENTLogMsgEventRideBookedSession : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_intentResponseFailures;
     NSString *_rideAppId;
     NSString *_rideAppVersion;
     NSString *_rideBookedSessionId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _statusIssue;
     _Bool _bookedUsingMaps;
     _Bool _cancelled;
@@ -106,6 +108,8 @@
 @property(nonatomic) _Bool cancelled;
 @property(nonatomic) _Bool hasBookedUsingMaps;
 @property(nonatomic) _Bool bookedUsingMaps;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

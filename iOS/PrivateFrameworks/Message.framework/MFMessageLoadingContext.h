@@ -9,15 +9,12 @@
 #import <Message/EFCancelable-Protocol.h>
 
 @class EFCancelationToken, EFObservable, MFAttachmentManager, MFMailMessage, MFMimeBody, MFMimePart, NSString;
-@protocol EFObserver, EFScheduler;
+@protocol EFObserver;
 
 @interface MFMessageLoadingContext : NSObject <EFCancelable>
 {
     EFCancelationToken *_cancelable;
     EFObservable<EFObserver> *_inputObservable;
-    id <EFScheduler> _trustReevaluationScheduler;
-    EFObservable<EFObserver> *_trustReevaluationObservable;
-    EFObservable *_smimeObservable;
     NSString *_eventUniqueID;
     NSString *_meetingName;
     NSString *_meetingStorePersistentID;
@@ -54,11 +51,9 @@
 - (void)assignAttachmentManagerToContent:(id)arg1;
 - (id)_reallyLoad:(long long)arg1 shouldDownload:(_Bool)arg2;
 - (void)_load:(long long)arg1 shouldDownload:(_Bool)arg2;
-- (void)reevaluateSMIMETrustWithNetworkAccessAllowed;
 - (void)load:(long long)arg1 scheduler:(id)arg2 shouldDownload:(_Bool)arg3;
 - (void)load:(long long)arg1 scheduler:(id)arg2;
 - (void)load:(long long)arg1;
-- (id)addSMIMEObserver:(CDUnknownBlockType)arg1;
 - (id)addLoadObserver:(CDUnknownBlockType)arg1;
 - (id)onScheduler:(id)arg1 addLoadObserver:(CDUnknownBlockType)arg2;
 - (void)cancel;

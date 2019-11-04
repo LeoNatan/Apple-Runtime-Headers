@@ -13,16 +13,19 @@
 @interface GEOActiveTileSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_availableTiles;
     unsigned int _availableTilesCount;
     unsigned int _availableTilesSpace;
     NSString *_baseURL;
     NSMutableArray *_countryRegionWhitelists;
+    NSMutableArray *_deviceSKUWhitelists;
     NSString *_localizationURL;
     NSMutableArray *_sentinelTiles;
     NSMutableArray *_supportedLanguages;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _checksumType;
     int _requestStyle;
     int _scale;
@@ -42,6 +45,7 @@
         unsigned int read_availableTiles:1;
         unsigned int read_baseURL:1;
         unsigned int read_countryRegionWhitelists:1;
+        unsigned int read_deviceSKUWhitelists:1;
         unsigned int read_localizationURL:1;
         unsigned int read_sentinelTiles:1;
         unsigned int read_supportedLanguages:1;
@@ -49,6 +53,7 @@
         unsigned int wrote_availableTiles:1;
         unsigned int wrote_baseURL:1;
         unsigned int wrote_countryRegionWhitelists:1;
+        unsigned int wrote_deviceSKUWhitelists:1;
         unsigned int wrote_localizationURL:1;
         unsigned int wrote_sentinelTiles:1;
         unsigned int wrote_supportedLanguages:1;
@@ -65,6 +70,7 @@
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)deviceSKUWhitelistType;
 + (Class)countryRegionWhitelistType;
 + (Class)supportedLanguageType;
 + (Class)sentinelTileType;
@@ -82,6 +88,13 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)deviceSKUWhitelistAtIndex:(unsigned int)arg1;
+- (unsigned int)deviceSKUWhitelistsCount;
+- (void)_addNoFlagsDeviceSKUWhitelist:(id)arg1;
+- (void)addDeviceSKUWhitelist:(id)arg1;
+- (void)clearDeviceSKUWhitelists;
+@property(retain, nonatomic) NSMutableArray *deviceSKUWhitelists;
+- (void)_readDeviceSKUWhitelists;
 @property(nonatomic) _Bool hasUseAuthProxy;
 @property(nonatomic) _Bool useAuthProxy;
 - (int)StringAsRequestStyle:(id)arg1;
@@ -144,6 +157,8 @@
 @property(readonly, nonatomic) _Bool hasBaseURL;
 - (void)_readBaseURL;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)_resetBestLanguage;
 - (_Bool)isEquivalentTileSet:(id)arg1;
 - (id)disputedBordersQueryItemsForCountry:(id)arg1 region:(id)arg2;

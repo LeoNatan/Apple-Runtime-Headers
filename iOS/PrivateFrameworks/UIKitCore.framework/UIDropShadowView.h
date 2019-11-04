@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, _UIGrabber;
+@class NSArray, _UICutoutShadowView, _UIGrabber;
 
 __attribute__((visibility("hidden")))
 @interface UIDropShadowView : UIView
@@ -19,9 +19,11 @@ __attribute__((visibility("hidden")))
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
     _UIGrabber *_grabber;
+    _UICutoutShadowView *_magicShadowView;
     struct UIRectCornerRadii _environmentMatchingCornerRadii;
 }
 
+@property(readonly, nonatomic) _UICutoutShadowView *magicShadowView; // @synthesize magicShadowView=_magicShadowView;
 @property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
 @property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)didFinishRotation;
 - (void)willBeginRotationWithOriginalBounds:(struct CGRect)arg1 newBounds:(struct CGRect)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setMagicShadowAlpha:(double)arg1;
 - (void)setGrabberAlpha:(double)arg1;
 @property(readonly, nonatomic) UIView *deepestClippingView;
 - (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(_Bool)arg3 stylesSheetsAsCards:(_Bool)arg4;

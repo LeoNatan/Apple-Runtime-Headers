@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (struct CGPoint)_swipeVelocityWithError:(id *)arg1;
 - (void)_wasDeliveredToGestureRecognizers;
+- (void)_gestureRecognizerNoLongerNeedsSendEvent:(id)arg1;
 - (_Bool)_sendEventToGestureRecognizer:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (void)_removeEventObserver:(id)arg1;

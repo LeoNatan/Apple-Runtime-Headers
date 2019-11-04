@@ -16,9 +16,11 @@
     unsigned int _loadingOptions;
     int _version;
     int _resizeMode;
+    float _minimumTableThumbnailLongSide;
 }
 
 + (unsigned int)loadingOptionsFromLoadingMode:(int)arg1;
+@property(nonatomic) float minimumTableThumbnailLongSide; // @synthesize minimumTableThumbnailLongSide=_minimumTableThumbnailLongSide;
 @property(nonatomic) _Bool onlyUseFetchedAssetPropertiesDuringChoosing; // @synthesize onlyUseFetchedAssetPropertiesDuringChoosing=_onlyUseFetchedAssetPropertiesDuringChoosing;
 @property(nonatomic) _Bool allowPlaceholder; // @synthesize allowPlaceholder=_allowPlaceholder;
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;

@@ -21,8 +21,10 @@ __attribute__((visibility("hidden")))
     long long _scrollStyle;
     CASpringAnimation *_scrollAnimation;
     UIView *_snapshotViewForWindow;
+    struct CGPoint _targetOffset;
 }
 
+@property(nonatomic) struct CGPoint targetOffset; // @synthesize targetOffset=_targetOffset;
 @property(nonatomic) _Bool useCustomMaskForScrolling; // @synthesize useCustomMaskForScrolling=_useCustomMaskForScrolling;
 @property(retain, nonatomic) UIView *snapshotViewForWindow; // @synthesize snapshotViewForWindow=_snapshotViewForWindow;
 @property(retain, nonatomic) CASpringAnimation *scrollAnimation; // @synthesize scrollAnimation=_scrollAnimation;

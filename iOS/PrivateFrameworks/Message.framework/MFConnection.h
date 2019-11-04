@@ -30,6 +30,7 @@
     unsigned int _isFetching:1;
     unsigned int _allowFallbacks:1;
     unsigned int _compressionEnabled:1;
+    NSString *_accountLogString;
 }
 
 + (_Bool)shouldTryFallbacksAfterError:(id)arg1;
@@ -45,6 +46,7 @@
 + (void)logConnection:(id)arg1 type:(long long)arg2 data:(id)arg3;
 + (void)initialize;
 + (void)readLoggingDefaults;
+@property(readonly, nonatomic) NSString *accountLogString; // @synthesize accountLogString=_accountLogString;
 - (void).cxx_destruct;
 - (id)copyDiagnosticInformation;
 - (_Bool)_evaluateTrust:(struct __SecTrust *)arg1 errorPtr:(id *)arg2;

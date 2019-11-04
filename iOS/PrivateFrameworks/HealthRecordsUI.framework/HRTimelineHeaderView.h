@@ -6,8 +6,11 @@
 
 #import <UIKit/UITableViewHeaderFooterView.h>
 
+@protocol HRTimelineHeaderViewDelegate;
+
 @interface HRTimelineHeaderView : UITableViewHeaderFooterView
 {
+    // Error parsing type: , name: delegate
     // Error parsing type: , name: $__lazy_storage_$_titleLabel
     // Error parsing type: , name: $__lazy_storage_$_subtitleLabel
     // Error parsing type: , name: $__lazy_storage_$_backgroundEffectView
@@ -20,10 +23,12 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 @property(nonatomic) _Bool floating;
+- (void)prepareForReuse;
 - (void)applyStyleFromNavigationBar:(id)arg1;
 - (void)applyTitle:(id)arg1 subtitle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
+@property(nonatomic) __weak id <HRTimelineHeaderViewDelegate> delegate; // @synthesize delegate;
 
 @end
 

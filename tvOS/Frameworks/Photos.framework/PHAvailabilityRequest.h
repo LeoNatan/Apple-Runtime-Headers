@@ -20,7 +20,7 @@
 
 @property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
-@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
+@property(readonly, copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(readonly, nonatomic) NSManagedObjectID *assetObjectID; // @synthesize assetObjectID=_assetObjectID;
 - (void).cxx_destruct;
 - (_Bool)isCancelled;
@@ -31,7 +31,7 @@
 - (id)plistDictionary;
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
-- (id)initWithAssetObjectID:(id)arg1;
+- (id)initWithTaskIdentifier:(id)arg1 assetObjectID:(id)arg2;
 
 @end
 

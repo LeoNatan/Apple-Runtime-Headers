@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)characterPickerTouchBarItem;
+- (void)handleCloseButton;
 - (void)showPopover:(id)arg1;
 @property(retain) NSViewController *popoverViewController; // @dynamic popoverViewController;
 - (id)initWithIdentifier:(id)arg1;

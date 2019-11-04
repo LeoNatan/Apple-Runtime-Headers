@@ -13,12 +13,14 @@
 @interface GEORegionalResourceTile : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributions;
     NSMutableArray *_childrens;
     NSMutableArray *_iconChecksums;
     NSMutableArray *_icons;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _x;
     unsigned int _y;
     unsigned int _z;
@@ -88,6 +90,8 @@
 @property(nonatomic) unsigned int z;
 @property(nonatomic) unsigned int y;
 @property(nonatomic) unsigned int x;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (BOOL)containsTileKey:(const struct _GEOTileKey *)arg1;
 
 @end

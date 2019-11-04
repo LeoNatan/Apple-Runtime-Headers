@@ -29,7 +29,9 @@
 - (void).cxx_destruct;
 - (double)modelTimeoutPreference;
 - (id)getConfidenceThresholdPreferenceForKey:(id)arg1 defaultConfidenceThreshold:(double)arg2;
-- (id)analyze:(id)arg1 error:(id *)arg2;
+- (id)analyze:(id)arg1 targetEventTypes:(long long)arg2 error:(id *)arg3;
+- (void)preAnalyze:(id)arg1;
+- (_Bool)ensureFrameAnalyzerWithError:(id *)arg1;
 - (void)warmStartModel;
 - (id)init;
 - (void)timerDidFire:(id)arg1;

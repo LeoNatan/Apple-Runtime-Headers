@@ -13,9 +13,11 @@
 @interface GEOAddressCorrectionAddress : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_addressID;
     GEOLocation *_addressLocation;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_addressID:1;
         unsigned int read_addressLocation:1;
@@ -43,6 +45,8 @@
 @property(retain, nonatomic) GEOLocation *addressLocation;
 @property(readonly, nonatomic) BOOL hasAddressLocation;
 - (void)_readAddressLocation;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -13,8 +13,8 @@
 
 @interface NWTCPConnection : NSObject <NWPrettyDescription>
 {
-    BOOL _viable;
-    BOOL _hasBetterPath;
+    _Bool _viable;
+    _Bool _hasBetterPath;
     long long _state;
     NWEndpoint *_endpoint;
     NSError *_internalError;
@@ -24,14 +24,14 @@
 }
 
 + (id)stringFromNWTCPConnectionState:(long long)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(readonly, nonatomic) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property __weak id <NWTCPConnectionAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSObject<OS_nw_connection> *internalConnection; // @synthesize internalConnection=_internalConnection;
 @property(retain) NSError *internalError; // @synthesize internalError=_internalError;
 @property(retain, nonatomic) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-@property(nonatomic) BOOL hasBetterPath; // @synthesize hasBetterPath=_hasBetterPath;
-@property(nonatomic, getter=isViable) BOOL viable; // @synthesize viable=_viable;
+@property(nonatomic) _Bool hasBetterPath; // @synthesize hasBetterPath=_hasBetterPath;
+@property(nonatomic, getter=isViable) _Bool viable; // @synthesize viable=_viable;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *metadata;
@@ -40,10 +40,10 @@
 @property(readonly, nonatomic) int multipathPrimarySubflowInterfaceIndex;
 @property(readonly, nonatomic) unsigned long long multipathConnectedSubflowCount;
 @property(readonly, nonatomic) unsigned long long multipathSubflowCount;
-@property(readonly, nonatomic) BOOL isMultipath;
-@property(readonly, nonatomic) BOOL TFOSucceeded;
-- (BOOL)fillOutTCPConnectionInfo:(struct tcp_connection_info *)arg1;
-- (BOOL)startInternal;
+@property(readonly, nonatomic) _Bool isMultipath;
+@property(readonly, nonatomic) _Bool TFOSucceeded;
+- (_Bool)fillOutTCPConnectionInfo:(struct tcp_connection_info *)arg1;
+- (_Bool)startInternal;
 - (void)setupEventHandler;
 - (void)handleIdentityRequestWithMetadata:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handlePeerCertificateTrustEvaluationWithMetadata:(id)arg1 trust:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -59,7 +59,7 @@
 @property(readonly, nonatomic) NWPath *connectedPath;
 @property(readonly, copy, nonatomic) NSString *privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (void)dealloc;
 - (id)initWithUpgradeForConnection:(id)arg1;
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;

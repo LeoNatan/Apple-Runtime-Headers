@@ -20,7 +20,6 @@
 + (id)__biography_KEY;
 + (id)__handle_KEY;
 + (id)__uncensoredName_KEY;
-+ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (id)artworkCatalog;
 
 // Remaining properties

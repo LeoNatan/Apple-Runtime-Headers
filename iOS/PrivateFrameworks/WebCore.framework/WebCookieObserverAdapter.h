@@ -9,11 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface WebCookieObserverAdapter : NSObject
 {
-    // Error parsing type: ^{CookieStorageObserver={atomic<unsigned int>=AI}{RetainPtr<NSHTTPCookieStorage>=^v}B{RetainPtr<WebCookieObserverAdapter>=^v}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}, name: observer
+    struct CookieStorageObserver *observer;
 }
 
 - (void)cookiesChangedNotificationHandler:(id)arg1;
--     // Error parsing type: @24@0:8^{CookieStorageObserver={atomic<unsigned int>=AI}{RetainPtr<NSHTTPCookieStorage>=^v}B{RetainPtr<WebCookieObserverAdapter>=^v}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}16, name: initWithObserver:
+- (id)initWithObserver:(struct CookieStorageObserver *)arg1;
 
 @end
 

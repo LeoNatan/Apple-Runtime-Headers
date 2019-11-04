@@ -7,17 +7,19 @@
 #import <AppKit/NSMenu.h>
 
 #import <UIKitMacHelper/NSMenuDelegate-Protocol.h>
+#import <UIKitMacHelper/NSSharingServicePickerDelegate-Protocol.h>
 
 @class NSSharingServicePicker, NSString;
 
 __attribute__((visibility("hidden")))
-@interface UINSSharingMenu : NSMenu <NSMenuDelegate>
+@interface UINSSharingMenu : NSMenu <NSMenuDelegate, NSSharingServicePickerDelegate>
 {
     NSSharingServicePicker *_picker;
 }
 
 @property(retain) NSSharingServicePicker *picker; // @synthesize picker=_picker;
 - (void).cxx_destruct;
+- (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (void)menuNeedsUpdate:(id)arg1;
 - (id)initWithTitle:(id)arg1;
 

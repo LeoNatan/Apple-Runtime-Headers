@@ -22,7 +22,6 @@
     _Bool _shouldFadeOutWhenReachingTop;
     _Bool _shouldAccomdateAccessibilityButtonLayout;
     _Bool _gradientRespectsSafeArea;
-    _Bool _gradientAlwaysSticksToTop;
     double _buttonHeight;
     double _buttonSpacing;
     double _buttonHorizontalPadding;
@@ -49,7 +48,6 @@
 @property(readonly, nonatomic) PXCuratedLibraryStyleGuide *styleGuide; // @synthesize styleGuide=_styleGuide;
 @property(readonly, nonatomic) double minimumSpacingBetweenTopSafeAreaAndTitleTop; // @synthesize minimumSpacingBetweenTopSafeAreaAndTitleTop=_minimumSpacingBetweenTopSafeAreaAndTitleTop;
 @property(readonly, nonatomic) double minimumSpacingBetweenTopSafeAreaAndContentTop; // @synthesize minimumSpacingBetweenTopSafeAreaAndContentTop=_minimumSpacingBetweenTopSafeAreaAndContentTop;
-@property(nonatomic) _Bool gradientAlwaysSticksToTop; // @synthesize gradientAlwaysSticksToTop=_gradientAlwaysSticksToTop;
 @property(nonatomic) _Bool gradientRespectsSafeArea; // @synthesize gradientRespectsSafeArea=_gradientRespectsSafeArea;
 @property(nonatomic) double gradientHeight; // @synthesize gradientHeight=_gradientHeight;
 @property(nonatomic) double gradientAlpha; // @synthesize gradientAlpha=_gradientAlpha;

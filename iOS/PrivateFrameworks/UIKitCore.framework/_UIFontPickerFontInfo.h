@@ -12,6 +12,8 @@
 {
     NSString *_familyName;
     NSString *_styleName;
+    NSString *_localizedFamilyName;
+    NSString *_localizedStyleName;
     double _lineHeight;
     UIFontDescriptor *_fontDescriptor;
     NSAttributedString *_attributedString;
@@ -43,6 +45,8 @@
 - (id)_fontStringForTraitCollection:(id)arg1;
 @property(readonly) NSString *localizedFamilyName;
 @property(readonly) NSString *localizedName;
+- (void)_populateLocalizedNamesIfNecessary;
+@property(readonly, getter=isFontFamilyAvailable) _Bool fontFamilyAvailable;
 @property(readonly) UIFontDescriptor *fontDescriptor;
 @property(readonly) NSArray *faces;
 - (id)_sortedFacesByWeight;

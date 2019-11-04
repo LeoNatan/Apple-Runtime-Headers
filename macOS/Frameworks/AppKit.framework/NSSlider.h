@@ -109,6 +109,7 @@
 @property double maxValue;
 @property double minValue;
 @property unsigned long long sliderType;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (double)baselineOffsetFromBottom;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;

@@ -12,6 +12,7 @@
 @protocol _UINavigationBarDelegatePrivate <UINavigationBarDelegate>
 
 @optional
+- (BOOL)_navigationBar:(UINavigationBar *)arg1 getContentOffsetOfObservedScrollViewIfApplicable:(struct CGPoint *)arg2;
 - (BOOL)_navigationBarLayoutIsInInteractiveScroll;
 - (BOOL)_navigationBarShouldUpdateProgress;
 - (struct CGRect)_incomingNavigationBarFrame;

@@ -52,7 +52,7 @@
 - (void)_stopMonitoringAndSaveAgents;
 - (void)unregisterForBuddy;
 - (void)registerForBuddy;
-- (void)_loadAndStartMonitoringAgents;
+- (void)_loadAndStartMonitoringAgents:(BOOL)arg1;
 - (void)_handleCellularDataUsageChangedNotification;
 - (void)_registerForCTDataUsageNotificaiton;
 - (void)_resetMonitoringRequestsAndLoadAgents;
@@ -67,7 +67,7 @@
 - (void)_deviceDidWake;
 - (void)_deviceWillSleep;
 - (void)saveAndReleaseAgents;
-- (void)loadAgents;
+- (void)loadAgents:(BOOL)arg1;
 - (id)_accountInfoPath;
 - (id)_configFileForAgent:(id)arg1;
 - (id)accountWithAccountID:(id)arg1 andClassName:(id)arg2;
@@ -77,6 +77,7 @@
 - (void)dealloc;
 - (id)init;
 @property(retain, nonatomic) DADREMLocalDBWatcher *rem_localDBWatcher;
+@property(copy, nonatomic) CDUnknownBlockType rem_xpcEventHandler;
 @property(retain, nonatomic) id <DADREMUserNotificationPresentingProvider> rem_userNotificationPresentingProvider;
 @property(retain, nonatomic) id <DADREMStoreProvider> rem_storeProvider;
 

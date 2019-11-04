@@ -60,6 +60,11 @@ struct os_unfair_lock_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+} CDStruct_4bcfbbae;
+
+typedef struct {
     struct UIEdgeInsets _field1;
     struct UIEdgeInsets _field2;
     struct UIEdgeInsets _field3;

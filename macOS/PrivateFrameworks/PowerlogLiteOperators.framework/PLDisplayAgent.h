@@ -169,6 +169,7 @@
 - (void)handleBrightnessClientNotification:(id)arg1 withValue:(id)arg2;
 - (void)logEventBackwardUserTouch:(BOOL)arg1;
 - (void)logEventBackwardTouch;
+- (void)logEventForwardDisplayWithInactiveScreenHistoryArray:(id)arg1;
 - (void)logEventForwardLinearBrightness:(id)arg1;
 - (void)logEventForwardALSUserPreferencesWithCurrLux;
 - (void)logEventForwardALSEnabled;

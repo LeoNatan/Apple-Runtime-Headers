@@ -48,6 +48,7 @@
 - (id)apfsSnapshotNames:(id *)arg1;
 - (id)apfsSnapshots:(id *)arg1;
 - (id)apfsSnapshotsByName:(id *)arg1;
+- (BOOL)configureNetworkVolumeOptionsAndDisablePrimaryReconnect:(BOOL)arg1;
 - (BOOL)configureReconnectTimeoutsAndQOSForBackup;
 - (BOOL)_supportsBackupDiskImages;
 @property(readonly) BOOL supportsBackupDiskImages;

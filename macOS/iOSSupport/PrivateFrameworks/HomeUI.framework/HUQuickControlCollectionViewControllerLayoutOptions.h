@@ -18,7 +18,7 @@
     double _minimumSectionSpacing;
     double _minimumNavBarToControlsSpacing;
     double _minimumSectionToSensorSectionSpacing;
-    double _thermostatModeSectionSpacingOverride;
+    double _thermostatSectionSpacingOverride;
     unsigned long long _preferredLayoutStyle;
     unsigned long long _titlePosition;
     NSNumber *_overrideSizeSubclass;
@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(nonatomic) unsigned long long preferredLayoutStyle; // @synthesize preferredLayoutStyle=_preferredLayoutStyle;
-@property(nonatomic) double thermostatModeSectionSpacingOverride; // @synthesize thermostatModeSectionSpacingOverride=_thermostatModeSectionSpacingOverride;
+@property(nonatomic) double thermostatSectionSpacingOverride; // @synthesize thermostatSectionSpacingOverride=_thermostatSectionSpacingOverride;
 @property(nonatomic) double minimumSectionToSensorSectionSpacing; // @synthesize minimumSectionToSensorSectionSpacing=_minimumSectionToSensorSectionSpacing;
 @property(nonatomic) double minimumNavBarToControlsSpacing; // @synthesize minimumNavBarToControlsSpacing=_minimumNavBarToControlsSpacing;
 @property(nonatomic) double minimumSectionSpacing; // @synthesize minimumSectionSpacing=_minimumSectionSpacing;

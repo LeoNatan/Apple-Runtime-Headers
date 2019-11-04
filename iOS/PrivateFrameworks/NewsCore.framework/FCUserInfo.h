@@ -66,6 +66,8 @@
 - (void)updateOnboardingVersion;
 - (void)refreshOnboardingVersion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool mightNeedToUpdateOnboardingVersion;
+@property(copy, nonatomic) NSString *lastAppLaunchUpsellInstanceID;
+@property(copy, nonatomic) NSNumber *upsellAppLaunchCount;
 @property(copy, nonatomic) NSDate *bundleSubscriptionMeteredCountLastResetDate;
 @property(copy, nonatomic) NSNumber *monthlyBundleSubscriptionMeteredCount;
 @property(copy, nonatomic) NSDate *aLaCarteSubscriptionMeteredCountLastResetDate;

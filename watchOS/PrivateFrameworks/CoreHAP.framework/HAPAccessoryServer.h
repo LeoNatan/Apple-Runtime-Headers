@@ -33,6 +33,7 @@
     NSHashTable *_internalDelegates;
     NSObject<OS_dispatch_queue> *_internalDelegateQueue;
     NSObject<OS_dispatch_queue> *_clientQueue;
+    unsigned int _stateNumber;
     id <HAPKeyStore> _keyStore;
     unsigned int _pairSetupType;
 }
@@ -41,6 +42,7 @@
 @property(nonatomic) unsigned int pairSetupType; // @synthesize pairSetupType=_pairSetupType;
 @property(readonly, nonatomic) __weak id <HAPKeyStore> keyStore; // @synthesize keyStore=_keyStore;
 @property(nonatomic, getter=isIncompatibleUpdate) _Bool incompatibleUpdate; // @synthesize incompatibleUpdate=_incompatibleUpdate;
+@property(nonatomic) unsigned int stateNumber; // @synthesize stateNumber=_stateNumber;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalDelegateQueue; // @synthesize internalDelegateQueue=_internalDelegateQueue;
 @property(readonly, nonatomic) NSHashTable *internalDelegates; // @synthesize internalDelegates=_internalDelegates;
@@ -75,7 +77,7 @@
 - (_Bool)matchesSetupID:(id)arg1;
 - (id)productData;
 @property(readonly, nonatomic, getter=isPaired) _Bool paired;
-- (void)tearDownSessionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)tearDownAndRestablishSession;
 - (void)reconfirm;
 @property(copy, nonatomic) NSNumber *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;

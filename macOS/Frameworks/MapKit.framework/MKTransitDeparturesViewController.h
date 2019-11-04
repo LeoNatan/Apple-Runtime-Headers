@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 @interface MKTransitDeparturesViewController : _MKClickableTableViewController <MKTransitDeparturesDataSourceHosting, MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate>
 {
     BOOL _allowTransitLineSelection;
-    struct CGRect _lastMaxWidthBounds;
     BOOL _isInSiri;
     MKMapItem *_mapItem;
     id <MKTransitDepaturesViewControllerDelegate> _delegate;
@@ -44,8 +43,6 @@ __attribute__((visibility("hidden")))
 - (id)separatorColorForTransitDeparturesDataSource:(id)arg1;
 - (struct NSEdgeInsets)separatorInsetsForTransitDeparturesDataSource:(id)arg1;
 - (id)traitsForTransitDeparturesDataSource:(id)arg1;
-- (void)infoCardThemeChanged;
-- (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

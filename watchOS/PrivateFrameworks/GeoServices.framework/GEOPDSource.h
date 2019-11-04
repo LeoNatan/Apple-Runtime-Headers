@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSource : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_sourceId;
     NSString *_version;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _resultProviderId;
     struct {
         unsigned int has_resultProviderId:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (void)_readSourceId;
 @property(nonatomic) _Bool hasResultProviderId;
 @property(nonatomic) int resultProviderId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

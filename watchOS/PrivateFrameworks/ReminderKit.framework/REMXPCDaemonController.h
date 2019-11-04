@@ -7,12 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <ReminderKit/REMDaemonController-Protocol.h>
+#import <ReminderKit/REMXPCClient-Protocol.h>
 
 @class NSMutableDictionary, NSString, NSXPCConnection, REMStoreContainerToken;
+@protocol REMXPCDaemonControllerCloudKitNetworkActivityDelegate;
 
-@interface REMXPCDaemonController : NSObject <REMDaemonController>
+@interface REMXPCDaemonController : NSObject <REMDaemonController, REMXPCClient>
 {
     struct os_unfair_lock_s _ivarLock;
+    id <REMXPCDaemonControllerCloudKitNetworkActivityDelegate> _cloudKitNetworkActivityDelegate;
     NSMutableDictionary *_l_performersByName;
     NSString *_serviceName;
     NSXPCConnection *_xpcConnection;
@@ -26,23 +29,28 @@
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSMutableDictionary *l_performersByName; // @synthesize l_performersByName=_l_performersByName;
 @property(nonatomic) struct os_unfair_lock_s ivarLock; // @synthesize ivarLock=_ivarLock;
+@property(nonatomic) __weak id <REMXPCDaemonControllerCloudKitNetworkActivityDelegate> cloudKitNetworkActivityDelegate; // @synthesize cloudKitNetworkActivityDelegate=_cloudKitNetworkActivityDelegate;
 - (void).cxx_destruct;
+- (void)cloudKitNetworkActivityDidUpdate:(id)arg1;
+- (void)_xpcConnectionDidInvalidate;
+- (void)_xpcConnectionDidInterrupt;
 - (id)_xpcConnectionReconnectingIfNecessary;
-- (id)_resolvePerformerWithResolver:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (void)_asyncResolvePerformerWithResolver:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_asyncResolveAndCachePerformerWithResolver:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_resolveAndCachePerformerWithResolver:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (void)_asyncPerformerWithResolver:(id)arg1 loadHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
-- (id)_syncPerformerWithResolver:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (id)_resolvePerformerWithResolver:(id)arg1 reason:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;
+- (void)_asyncResolvePerformerWithResolver:(id)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_asyncResolveAndCachePerformerWithResolver:(id)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_resolveAndCachePerformerWithResolver:(id)arg1 reason:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;
+- (void)_asyncPerformerWithResolver:(id)arg1 reason:(id)arg2 loadHandler:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4;
+- (id)_syncPerformerWithResolver:(id)arg1 reason:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)invalidate;
-- (void)asyncIndexingPerformerWithLoadHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (id)syncIndexingPerformerWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)asyncSyncInterfacePerformerWithLoadHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (id)syncSyncInterfacePerformerWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)asyncStorePerformerWithLoadHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (id)syncStorePerformerWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)asyncIndexingPerformerWithReason:(id)arg1 loadHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
+- (id)syncIndexingPerformerWithReason:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void)asyncSyncInterfacePerformerWithReason:(id)arg1 loadHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
+- (id)syncSyncInterfacePerformerWithReason:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void)asyncStorePerformerWithReason:(id)arg1 loadHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
+- (id)syncStorePerformerWithReason:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)syncDebugPerformerWithErrorHandler:(CDUnknownBlockType)arg1;
-- (id)syncChangeTrackingPerformerWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)syncDebugPerformerWithReason:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (id)syncChangeTrackingPerformerWithReason:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;

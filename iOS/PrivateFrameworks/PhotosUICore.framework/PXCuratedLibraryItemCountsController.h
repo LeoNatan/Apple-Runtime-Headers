@@ -20,13 +20,13 @@
     _Bool _waitingToPrepare;
     PXCuratedLibraryAssetsDataSourceManager *_assetsDataSourceManager;
     id <PXCuratedLibraryEventLogger> _eventLogger;
-    CDStruct_9bad6f47 _counts;
+    CDStruct_aa0b146f _counts;
 }
 
 @property(nonatomic) _Bool waitingToPrepare; // @synthesize waitingToPrepare=_waitingToPrepare;
 @property(nonatomic) _Bool hasUsableCounts; // @synthesize hasUsableCounts=_hasUsableCounts;
 @property(nonatomic) _Bool isCountingAssetTypes; // @synthesize isCountingAssetTypes=_isCountingAssetTypes;
-@property(readonly, nonatomic) CDStruct_9bad6f47 counts; // @synthesize counts=_counts;
+@property(readonly, nonatomic) CDStruct_aa0b146f counts; // @synthesize counts=_counts;
 @property(retain, nonatomic) id <PXCuratedLibraryEventLogger> eventLogger; // @synthesize eventLogger=_eventLogger;
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *assetsDataSourceManager; // @synthesize assetsDataSourceManager=_assetsDataSourceManager;
 - (void).cxx_destruct;
@@ -36,7 +36,7 @@
 - (void)_handlePreparationCompletion;
 - (_Bool)_prepareCounts;
 - (void)prepareCountsIfNeeded;
-- (void)setCounts:(CDStruct_9bad6f47)arg1;
+- (void)setCounts:(CDStruct_aa0b146f)arg1;
 - (id)initWithAssetsDataSourceManager:(id)arg1;
 - (id)init;
 

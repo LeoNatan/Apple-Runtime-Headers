@@ -59,9 +59,10 @@
 - (BOOL)shouldRequestAdditionalItemsWhenReachingTailOfSection:(id)arg1;
 - (id)itemForItem:(id)arg1 inSection:(id)arg2;
 - (void)loadPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) BOOL containsTransportableContent;
 @property(readonly, nonatomic) BOOL containsLiveStream;
 - (void)didSignificantlyChangeItem:(id)arg1;
-- (id)supplementalPlaybackContext;
+- (id)supplementalPlaybackContextWithReason:(long long)arg1;
 - (long long)supplementalPlaybackContextBehavior;
 - (BOOL)canSkipItem:(id)arg1;
 - (void)itemDidBeginPlayback:(id)arg1;

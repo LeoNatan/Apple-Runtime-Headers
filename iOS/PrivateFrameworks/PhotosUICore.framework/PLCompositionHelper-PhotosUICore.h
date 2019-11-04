@@ -7,6 +7,7 @@
 #import <PhotoLibraryServices/PLCompositionHelper.h>
 
 @interface PLCompositionHelper (PhotosUICore)
++ (id)compositionControllerImageSourceURL:(id)arg1;
 + (void)compositionController:(id)arg1 setInputOrientation:(long long)arg2;
 + (void)compositionController:(id)arg1 setVideoPosterFrameTime:(CDStruct_1b6d18a9)arg2;
 + (id)livePhotoMuteStateForCompositionController:(id)arg1;

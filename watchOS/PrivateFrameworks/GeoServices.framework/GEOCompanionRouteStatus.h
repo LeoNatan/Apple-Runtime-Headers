@@ -13,12 +13,14 @@
 @interface GEOCompanionRouteStatus : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_084d6ede _selectedRideIndexs;
     GEOLocation *_location;
     NSData *_routeID;
     GEOLatLng *_routeMatchCoordinate;
     double _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distanceRemainingOnRoute;
     unsigned int _distanceToManeuver;
     unsigned int _distanceToRoute;
@@ -129,6 +131,8 @@
 @property(nonatomic) _Bool hasFeedbackType;
 @property(nonatomic) int feedbackType;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSArray *selectedRideIndices;
 @property(readonly, nonatomic) unsigned int effectiveDistanceToManeuver;
 @property(readonly, nonatomic) _Bool hasEffectiveDistanceToManeuver;

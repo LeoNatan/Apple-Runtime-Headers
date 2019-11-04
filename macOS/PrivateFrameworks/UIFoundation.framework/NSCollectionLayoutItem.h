@@ -13,6 +13,7 @@
 @interface NSCollectionLayoutItem : NSObject <NSCopying>
 {
     BOOL _containsEstimatedSizeItem;
+    struct NSDirectionalEdgeInsets _contentInsets;
     BOOL _hasComputedContainsEstimatedItem;
     NSCollectionLayoutEdgeSpacing *_edgeSpacing;
     NSArray *_supplementaryItems;
@@ -20,7 +21,6 @@
     NSUUID *_identifier;
     NSString *_name;
     NSArray *_decorationItems;
-    struct NSDirectionalEdgeInsets _contentInsets;
 }
 
 + (id)itemWithSize:(id)arg1 decorationItems:(id)arg2;
@@ -33,26 +33,29 @@
 @property(copy, nonatomic) NSCollectionLayoutSize *size; // @synthesize size=_size;
 @property(copy, nonatomic) NSArray *supplementaryItems; // @synthesize supplementaryItems=_supplementaryItems;
 @property(copy) NSCollectionLayoutEdgeSpacing *edgeSpacing; // @synthesize edgeSpacing=_edgeSpacing;
-@property struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 - (void).cxx_destruct;
 - (BOOL)hasCustomGroupItemProvider;
 - (BOOL)ignoresRTL;
 - (id)auxiliaryItems;
+- (id)auxillaryItems;
+- (struct NSDirectionalEdgeInsets)_effectiveContentInsets;
 - (BOOL)isDecoration;
 - (BOOL)isSupplementary;
 - (BOOL)isAuxiliary;
+- (BOOL)isAuxillary;
 - (BOOL)isCustomGroup;
 - (BOOL)isGroup;
 - (struct CGSize)_insetSizeForContainer:(id)arg1;
 - (void)_enumerateItemsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_enumerateSupplementaryItemsWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)containsEstimatedSizeItem;
+@property struct NSDirectionalEdgeInsets contentInsets;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSCollectionLayoutSize *layoutSize;
 - (id)description;
 - (id)initWithSize:(id)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2 edgeSpacing:(id)arg3 supplementaryItems:(id)arg4 decorationItems:(id)arg5 name:(id)arg6 identifier:(id)arg7;
-- (id)_renderedDescription;
+- (id)_visualDescription;
 
 @end
 

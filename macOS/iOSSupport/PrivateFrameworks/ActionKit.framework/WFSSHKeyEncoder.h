@@ -22,6 +22,7 @@
 - (void)encodeInteger:(unsigned int)arg1;
 - (void)encodeChar:(BOOL)arg1;
 @property(readonly, nonatomic) NSData *encodedData;
+@property(readonly, nonatomic) unsigned long long encodedLength;
 - (id)init;
 
 @end

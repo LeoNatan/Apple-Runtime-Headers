@@ -51,7 +51,6 @@
 @property BOOL _isRapportLogin; // @synthesize _isRapportLogin;
 @property BOOL _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
 @property BOOL _isWebLogin; // @synthesize _isWebLogin;
-@property BOOL _requirePassword; // @synthesize _requirePassword;
 @property(retain) NSArray *_proxiedAssociatedDomains; // @synthesize _proxiedAssociatedDomains;
 @property(retain) NSString *_proxiedClientTeamID; // @synthesize _proxiedClientTeamID;
 @property(retain) NSString *_proxiedClientAppID; // @synthesize _proxiedClientAppID;
@@ -69,6 +68,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property BOOL _requirePassword; // @synthesize _requirePassword;
 @property(retain, nonatomic) NSArray *credentialRequests;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

@@ -21,6 +21,7 @@
 - (void)_loadDictionariesIfNeeded;
 - (id)emailAddressForKey:(id)arg1;
 - (id)keyForEmailAddress:(id)arg1;
+- (void)removePersistedInfo;
 - (id)plistPath;
 - (id)assetsdClient;
 - (id)initWithPathManager:(id)arg1 lazyAssetsdClient:(id)arg2;

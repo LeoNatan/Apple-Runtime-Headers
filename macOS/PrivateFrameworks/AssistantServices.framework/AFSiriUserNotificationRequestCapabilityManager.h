@@ -19,7 +19,9 @@
     BOOL _routeAvailableForSpokenMessages;
     BOOL _lastKnownEligibilityState;
     AFSettingsConnection *_settingsConnection;
+    AFNotifyObserver *_pairedInfoChangeObserver;
     AFNotifyObserver *_wirelessSplitterSessionObserver;
+    AFNotifyObserver *_wirelessGuestConnectionObserver;
     AFNotifyObserver *_forcedUpdateObserver;
     NSHashTable *_observers;
     NSObject<OS_dispatch_queue> *_queue;

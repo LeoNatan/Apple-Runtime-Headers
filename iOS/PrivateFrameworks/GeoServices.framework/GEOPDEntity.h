@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDEntity : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _placeLookupCategorys;
     NSMutableArray *_altFaxs;
@@ -32,6 +31,9 @@ __attribute__((visibility("hidden")))
     NSString *_telephone;
     NSString *_url;
     NSString *_walletCategoryId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _capacity;
     int _displayStyle;
     int _placeDisplayType;
@@ -233,6 +235,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)bestLocalizedName;
 
 @end

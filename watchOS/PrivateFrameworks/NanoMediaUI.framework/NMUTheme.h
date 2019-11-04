@@ -48,12 +48,14 @@
 + (id)routingTypeGenericSpeakerImage;
 + (id)routingTypeBeatsXImage;
 + (id)routingTypeBeatsStudioImage;
++ (id)routingTypeBeats419Image;
 + (id)routingTypeBeatsSoloImage;
 + (id)routingTypePowerbeatsProImage;
 + (id)routingTypePowerbeatsImage;
 + (id)routingTypeHomePodPairImage;
 + (id)routingTypeHomePodImage;
 + (id)routingTypeAppleTVImage;
++ (id)routingTypeB298Image;
 + (id)routingTypeAirPodsImage;
 + (id)routingTypeHeadphonesImage;
 + (id)routingTypeCompanionImage;
@@ -75,6 +77,9 @@
 + (id)volumeControlsUpImage;
 + (id)secondaryTransportControlsAirPlayImage;
 + (id)secondaryTransportControlsTVRemoteImage;
++ (id)secondaryTransportControlsTrackListShuffleImage;
++ (id)secondaryTransportControlsTrackListRepeatOneImage;
++ (id)secondaryTransportControlsTrackListRepeatImage;
 + (id)secondaryTransportControlsTrackListImage;
 + (id)secondaryTransportControlsMoreActionsImage;
 + (id)transportControlsPlaybackRateImageWithRate:(float)arg1;

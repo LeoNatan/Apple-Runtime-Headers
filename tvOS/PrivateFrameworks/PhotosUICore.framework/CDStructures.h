@@ -51,6 +51,15 @@ struct NSString {
     Class _field1;
 };
 
+struct PHAssetResourceTableDataSpecification {
+    int width;
+    int height;
+    int bytesPerRow;
+    int dataWidth;
+    int dataHeight;
+    int imageDataOffset;
+};
+
 struct PXAlphaLayer {
     long long columnIndex;
     long long columns;
@@ -448,6 +457,12 @@ typedef struct {
 } CDStruct_e4f06a70;
 
 typedef struct {
+    unsigned long long photosCount;
+    unsigned long long videosCount;
+    unsigned long long othersCount;
+} CDStruct_aa0b146f;
+
+typedef struct {
     unsigned long long pixelFormat;
     unsigned short width;
     unsigned short height;
@@ -459,6 +474,11 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned long long count;
+    long long type;
+} CDStruct_15189878;
 
 typedef struct {
     double _field1[6];
@@ -583,12 +603,6 @@ typedef struct {
     long long _field3;
     double _field4;
 } CDStruct_68723fc0;
-
-typedef struct {
-    long long photosCount;
-    long long videosCount;
-    long long othersCount;
-} CDStruct_9bad6f47;
 
 typedef struct CDStruct_183601bc;
 

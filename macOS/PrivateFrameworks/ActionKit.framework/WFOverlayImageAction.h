@@ -12,7 +12,7 @@
 
 - (void)getImageInputs:(CDUnknownBlockType)arg1 withInput:(id)arg2;
 - (void)runWithNoUserInterface:(id)arg1;
-- (void)runWithAppKitWidgetUserInterface:(id)arg1 input:(id)arg2;
+- (void)runWithAppKitUserInterface:(id)arg1 input:(id)arg2;
 
 @end
 

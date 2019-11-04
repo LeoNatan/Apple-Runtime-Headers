@@ -15,6 +15,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)badgeInfoPromiseWithAdjustedBadges:(unsigned long long)arg1;
 @property(readonly, nonatomic) struct PXAssetBadgeInfo badgeInfo; // @synthesize badgeInfo=_badgeInfo;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

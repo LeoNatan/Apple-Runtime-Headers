@@ -9,6 +9,7 @@
 @class HMDCloudShareTrustManager, HMDHome, HMDUser, NSString;
 
 @protocol HMDCloudShareTrustManagerDataSource <NSObject>
+- (_Bool)isOwnerCapableForTrustManager:(HMDCloudShareTrustManager *)arg1;
 - (HMDHome *)homeForCloudShareTrustManager:(HMDCloudShareTrustManager *)arg1;
 - (HMDUser *)ownerForCloudShareTrustManager:(HMDCloudShareTrustManager *)arg1;
 - (NSString *)zoneNameForCloudShareTrustManager:(HMDCloudShareTrustManager *)arg1;

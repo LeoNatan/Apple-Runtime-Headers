@@ -23,8 +23,8 @@
 @property(readonly, copy, nonatomic) MPMediaPredicate *thenPredicate; // @synthesize thenPredicate=_thenPredicate;
 @property(readonly, copy, nonatomic) MPMediaPredicate *conditionPredicate; // @synthesize conditionPredicate=_conditionPredicate;
 - (void).cxx_destruct;
-- (id)protobufferEncodableObject;
-- (id)initWithProtobufferDecodableObject:(id)arg1;
+- (id)protobufferEncodableObjectFromLibrary:(id)arg1;
+- (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;

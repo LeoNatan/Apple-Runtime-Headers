@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     VCMomentsHistoryBuffer *_localAudioBuffer;
     VCMomentsHistoryBuffer *_remoteAudioBuffer;
     NSMutableDictionary *_completionHandlers;
+    NSMutableDictionary *_stillImageURLs;
     VideoAttributes *_remoteScreenAttributes;
     struct __CVPixelBufferPool *_bufferPool;
     struct __CVPixelBufferPool *_copyPool;

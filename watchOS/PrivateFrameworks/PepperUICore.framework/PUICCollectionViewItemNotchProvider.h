@@ -12,7 +12,7 @@
 @interface PUICCollectionViewItemNotchProvider : NSObject
 {
     NSIndexPath *_indexPath;
-    UICollectionViewLayoutAttributes *_cellAttributes;
+    UICollectionViewLayoutAttributes *_itemAttributes;
     CDUnknownBlockType _restingPositionBlock;
     float _restingPosition;
     id <PUICCollectionViewItemNotchProviderDelegate> _delegate;
@@ -23,18 +23,23 @@
 @property(nonatomic) struct UIEdgeInsets effectiveInsets; // @synthesize effectiveInsets=_effectiveInsets;
 @property(nonatomic) float restingPosition; // @synthesize restingPosition=_restingPosition;
 @property(copy, nonatomic) CDUnknownBlockType restingPositionBlock; // @synthesize restingPositionBlock=_restingPositionBlock;
-@property(retain, nonatomic) UICollectionViewLayoutAttributes *cellAttributes; // @synthesize cellAttributes=_cellAttributes;
+@property(retain, nonatomic) UICollectionViewLayoutAttributes *itemAttributes; // @synthesize itemAttributes=_itemAttributes;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 - (void).cxx_destruct;
 - (int)_notchOffsetCalculationMethod;
 - (float)_calculateRestingPositionForPosition:(float)arg1;
 - (float)_calculateRestingPosition;
 - (float)_availableHeightForContent;
-- (_Bool)_viewIsTooTall;
+- (id)_createEndNotch;
+- (id)_createStartNotch;
 - (id)notches;
-- (float)restingPositionFromAttributes;
-- (float)viewHeight;
-- (float)viewMaxY;
+- (float)_itemMaxYFromAttributes;
+- (float)_itemMinYFromAttributes;
+- (float)_itemCenterFromAttributes;
+- (struct CGRect)itemFrame;
+- (float)itemHeight;
+- (float)itemMaxY;
+- (_Bool)isItemTooTall;
 - (id)initWithCellAttributes:(id)arg1 indexPath:(id)arg2 effectiveInsets:(struct UIEdgeInsets)arg3 restingPositionBlock:(CDUnknownBlockType)arg4;
 
 @end

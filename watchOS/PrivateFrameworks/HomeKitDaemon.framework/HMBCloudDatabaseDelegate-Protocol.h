@@ -6,13 +6,15 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMBCloudDatabase, HMBCloudZoneID, NSDictionary;
+@class HMBCloudDatabase, HMBCloudZoneID, NAFuture, NSDictionary;
 
 @protocol HMBCloudDatabaseDelegate <NSObject>
 
 @optional
+- (void)cloudDatabase:(HMBCloudDatabase *)arg1 didChangeManateeKeysForZoneWithID:(HMBCloudZoneID *)arg2;
 - (void)cloudDatabase:(HMBCloudDatabase *)arg1 didReceiveMessageWithUserInfo:(NSDictionary *)arg2;
 - (void)cloudDatabase:(HMBCloudDatabase *)arg1 didRemoveZoneWithID:(HMBCloudZoneID *)arg2;
+- (NAFuture *)cloudDatabase:(HMBCloudDatabase *)arg1 willRemoveZoneWithID:(HMBCloudZoneID *)arg2;
 - (void)cloudDatabase:(HMBCloudDatabase *)arg1 didCreateZoneWithID:(HMBCloudZoneID *)arg2;
 @end
 

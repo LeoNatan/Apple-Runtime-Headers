@@ -6,6 +6,9 @@
 
 #import <AppKit/NSTouchBarCustomizationPreviewSectionLayoutDelegate-Protocol.h>
 
+@class NSTouchBarCustomizationPreviewMiniControlStripSectionLayout;
+
 @protocol NSTouchBarCustomizationPreviewMiniControlStripSectionLayoutDelegate <NSTouchBarCustomizationPreviewSectionLayoutDelegate>
+- (BOOL)requiresCompressedMiniControlStripForLayout:(NSTouchBarCustomizationPreviewMiniControlStripSectionLayout *)arg1;
 @end
 

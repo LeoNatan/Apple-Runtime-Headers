@@ -35,6 +35,7 @@
 @property(copy) NSCalendar *calendar;
 @property unsigned long long datePickerElements;
 @property unsigned long long datePickerMode;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (double)baselineOffsetFromBottom;
 - (struct NSEdgeInsets)alignmentRectInsets;
 @property(copy) NSColor *textColor;

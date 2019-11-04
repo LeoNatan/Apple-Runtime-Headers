@@ -17,6 +17,7 @@
 + (id)sharedInstance;
 - (_Bool)travelStateIndicatesTravelingTowardDestination:(long long)arg1;
 - (_Bool)doesHypothesisSatisfyMinimumAllowableTravelTime:(id)arg1;
+@property(readonly, nonatomic) double maximumAllowableTravelTime;
 @property(readonly, nonatomic) double minimumAllowableTravelTime;
 
 // Remaining properties

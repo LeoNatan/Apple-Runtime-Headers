@@ -13,7 +13,6 @@
 @interface GEOETARoute : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _incidentEndOffsetsInETARoutes;
     CDStruct_084d6ede _trafficColorOffsets;
@@ -28,6 +27,9 @@
     NSMutableArray *_steps;
     GEOTrafficBannerText *_trafficBannerText;
     NSData *_zilchPoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _historicTravelTime;
     unsigned int _staticTravelTime;
     unsigned int _travelTimeAggressiveEstimate;
@@ -194,6 +196,8 @@
 @property(readonly, nonatomic) _Bool hasRouteID;
 - (void)_readRouteID;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)setDebugBannerTitle:(id)arg1 bannerDescription:(id)arg2 bannerSpoken:(id)arg3;
 - (void)_addDebugArguments:(id)arg1;
 - (id)bannerSpoken;

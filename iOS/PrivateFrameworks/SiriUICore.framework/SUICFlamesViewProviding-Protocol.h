@@ -12,7 +12,7 @@
 @protocol SUICFlamesViewProviding <NSObject>
 @property(nonatomic) _Bool accelerateTransitions;
 @property(nonatomic) double horizontalScaleFactor;
-@property(nonatomic) _Bool paused;
+@property(nonatomic) _Bool flamesPaused;
 @property(nonatomic) _Bool renderInBackground;
 @property(retain, nonatomic) UIColor *dictationColor;
 @property(retain, nonatomic) UIImage *overlayImage;

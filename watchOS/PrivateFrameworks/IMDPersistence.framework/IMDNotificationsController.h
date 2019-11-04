@@ -29,6 +29,8 @@
 + (id)_uncanonicalizedAddressForHandle:(struct _IMDHandleRecordStruct *)arg1;
 + (id)_addressBookNameForAddress:(id)arg1 orContact:(id)arg2;
 + (id)_truncateNameIfNeeded:(id)arg1;
++ (int)reminderAlertCount;
++ (int)validateAlertCount:(int)arg1;
 + (id)_contactKeysForMe;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSArray *meTokens; // @synthesize meTokens=_meTokens;
@@ -40,10 +42,11 @@
 - (id)_groupHashForHandles:(id)arg1 lastAddressedHandle:(id)arg2;
 - (void)_setContactInMessageDictionary:(struct _IMDHandleRecordStruct *)arg1 messageDictionary:(id)arg2;
 - (_Bool)_chatHasDNDSetBasedOnDNDIdentifier:(id)arg1;
+- (_Bool)_messageShouldBeSilentlyDeliveredForBusinessChat:(id)arg1;
 -     // Error parsing type: @12@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8, name: _chatDictionaryForMessageRecord:
 -     // Error parsing type: @12@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8, name: _messageDictionaryForMessageRecord:
--     // Error parsing type: @16@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8B12, name: _generateNotificationRequestForFailedDelivery:isCarouselUITriggered:
--     // Error parsing type: @28@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8B12B16B20B24, name: _generateNotificationRequestForMessageRecord:isUrgentMessage:downTimeEnabled:isCarouselUITriggered:isMostActive:
+-     // Error parsing type: @16@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8B12, name: _generateNotificationRequestForDeliveryError:isCarouselUITriggered:
+-     // Error parsing type: @32@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8B12B16B20B24^B28, name: _generateNotificationRequestForMessageRecord:isUrgentMessage:downTimeEnabled:isCarouselUITriggered:isMostActive:shouldAdvanceLastAlertedMessageDate:
 - (_Bool)_shouldPostNotificationRequest:(id)arg1;
 - (_Bool)_haveMigrated;
 - (_Bool)_shouldOverrideChatSilencingBecauseImMentioned:(id)arg1;
@@ -63,15 +66,21 @@
 - (void)_setUpSuggestionService;
 - (id)_displayNameForHandle:(struct _IMDHandleRecordStruct *)arg1 andContact:(id)arg2;
 - (_Bool)_handleIsWhitelisted:(struct _IMDHandleRecordStruct *)arg1;
-- (unsigned int)_getMessagesSpokenWhitelistLevel;
+- (void)_setMessagesSpokenWhitelistLevelInPreferences:(unsigned int)arg1;
+- (unsigned int)_getMessagesSpokenWhitelistLevel:(_Bool *)arg1;
 - (_Bool)_messageIsFromFavorite:(id)arg1;
+- (id)_lastTwoMessagesForChat:(struct _IMDChatRecordStruct **)arg1;
 - (id)_lastMessageTimeForChat:(struct _IMDChatRecordStruct **)arg1;
+- (void)_setSpokenMessageWhitelistLevelVersion:(unsigned int)arg1;
+- (unsigned int)_getSpokenMessageWhitelistLevelVersion;
 - (_Bool)_handleIsSpokenMessageWhitelisted:(struct _IMDHandleRecordStruct *)arg1 chat:(id)arg2 message:(id)arg3;
 - (id)_previewFileURLForTransferURL:(id)arg1 utiType:(id)arg2;
 - (_Bool)_shouldUseOriginalURLForUTIType:(id)arg1;
 - (id)_previewFileURLForTransferURL:(id)arg1;
+- (void)_proceedMostActiveDevice:(_Bool)arg1 isBlockCalled:(_Bool *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_isMostActiveDeviceWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_messageShouldBeSpoken:(id)arg1 chatDictionary:(id)arg2 isMostActive:(_Bool)arg3;
+- (void)_populateRealertCountForNotificationContent:(id)arg1;
 -     // Error parsing type: v20@0:4@8@12^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _populateAttachmentsForNotificationContent:messageDictionary:messageRecord:
 - (void)_populateNotificationCategoryContent:(id)arg1 messageDictionary:(id)arg2;
 - (void)_populateUserInfoForMessageContent:(id)arg1 messageDictionary:(id)arg2 messageIsAddressedToMe:(_Bool)arg3;
@@ -80,6 +89,7 @@
 - (void)_populateSoundAndDisplayActivationForNotificationContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3 isMostActive:(_Bool)arg4;
 - (void)_populateTitleForNotificationContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3;
 - (void)_populateBodyAndTitleForSendFailedNotificationContent:(id)arg1 messageDictionary:(id)arg2;
+- (void)_populateBodyAndTitleForSendReceivedAsJunkNotificationContent:(id)arg1 messageDictionary:(id)arg2;
 - (void)_populateSubtitleForNotificationContent:(id)arg1 chatDictionary:(id)arg2 messageDictionary:(id)arg3;
 - (void)_populateBodyForNotificationContent:(id)arg1 messageDictionary:(id)arg2 onlyPopulateWasMentionedString:(_Bool)arg3;
 - (void)_populateBodyForNotificationContent:(id)arg1 messageDictionary:(id)arg2;

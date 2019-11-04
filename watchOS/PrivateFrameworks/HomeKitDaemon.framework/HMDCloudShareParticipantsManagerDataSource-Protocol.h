@@ -12,6 +12,8 @@
 - (_Bool)manager:(HMDCloudShareParticipantsManager *)arg1 shouldShareWithUser:(HMDUser *)arg2;
 
 @optional
+- (_Bool)areShareModificationsEnabledForManager:(HMDCloudShareParticipantsManager *)arg1;
+- (_Bool)canUseUntrustedAccountHandlesForParticipantManager:(HMDCloudShareParticipantsManager *)arg1;
 - (_Bool)manager:(HMDCloudShareParticipantsManager *)arg1 shouldGrantWriteAccessToUser:(HMDUser *)arg2;
 @end
 

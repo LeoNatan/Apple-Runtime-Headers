@@ -21,6 +21,7 @@
 - (id)transformByRotateZ:(double)arg1;
 - (id)transformByTranslateX:(double)arg1 translateY:(double)arg2;
 - (id)transformByScaleX:(double)arg1 scaleY:(double)arg2;
+-     // Error parsing type: {?=[4]}144@0:8{?=[4]}16, name: transformMatrix:
 - (struct CGPoint)transformPoint:(struct CGPoint)arg1;
 - (id)inverseTransform;
 - (id)init;

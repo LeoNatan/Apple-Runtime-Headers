@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOVectorTileRequest : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_accessKey;
     NSString *_countryCode;
     NSString *_languageCode;
     unsigned long long _lineId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     float _latitudeHint;
     float _longitudeHint;
     unsigned int _scale;
@@ -114,6 +116,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int y;
 @property(nonatomic) BOOL hasX;
 @property(nonatomic) unsigned int x;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

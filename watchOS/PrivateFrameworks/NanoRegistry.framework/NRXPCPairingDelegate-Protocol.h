@@ -9,6 +9,7 @@
 @protocol NRXPCPairingDelegate
 - (void)xpcIsAssertionActive:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)xpcIsPhoneReadyToMigrateDevice:(NSUUID *)arg1 withCompletion:(void (^)(unsigned int, NSError *))arg2;
+- (void)xpcGetInitialSyncCompletedForPairingID:(NSUUID *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)xpcGetMigrationCountForPairingID:(NSUUID *)arg1 completion:(void (^)(unsigned int, NSError *))arg2;
 - (void)xpcGetLastSwitchIndex:(void (^)(unsigned int, NSError *))arg1;
 - (void)xpcFakePairedSyncIsCompleteWithCompletion:(void (^)(NSError *))arg1;

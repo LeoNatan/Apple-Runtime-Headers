@@ -23,6 +23,7 @@
 + (BOOL)isiPhone;
 + (BOOL)isiPad;
 + (BOOL)isiPod;
++ (BOOL)hasAOT;
 + (BOOL)hasBaseband;
 + (BOOL)hasOrb;
 + (BOOL)hasNFC;

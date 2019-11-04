@@ -32,7 +32,8 @@
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
-- (id)keyPrefix;
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)localizedDialogWithIntent:(id)arg1 tokens:(id)arg2 forLanguage:(id)arg3;
 - (id)localizedDialogWithIntent:(id)arg1 tokens:(id)arg2;
 - (_Bool)isEqual:(id)arg1;

@@ -6,11 +6,11 @@
 
 #import <VideosUI/JSExport-Protocol.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @protocol VUIJSVideosNativeInterface <JSExport>
 - (void)setLocDictionary:(NSDictionary *)arg1;
-- (NSString *)locStringForKeyWithCount:(NSString *)arg1:(NSNumber *)arg2;
+- (NSString *)locStringForKeyWithCounts:(NSString *)arg1:(NSArray *)arg2;
 - (NSString *)locStringForKey:(NSString *)arg1;
 @end
 

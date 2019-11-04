@@ -14,6 +14,8 @@
 @property(nonatomic) int type;
 @property(readonly, nonatomic) BOOL hasSpeakableGroupName;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName;
+@property(readonly, nonatomic) BOOL hasServiceName;
+@property(copy, nonatomic) NSString *serviceName;
 @property(readonly, nonatomic) BOOL hasSender;
 @property(retain, nonatomic) _INPBContact *sender;
 @property(readonly, nonatomic) BOOL hasReferencedMessage;

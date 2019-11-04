@@ -13,7 +13,6 @@
 @interface GEOPlaceSearchRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _additionalPlaceTypes;
     CDStruct_cb16bb10 _businessIDs;
@@ -51,7 +50,11 @@
     double _timestamp;
     NSString *_viewportCenterCountryCode;
     NSData *_zilchPoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _businessSortOrder;
+    int _businessSortDirection;
     int _knownAccuracy;
     int _localSearchProviderID;
     int _mapMode;
@@ -93,6 +96,7 @@
         unsigned int has_timeSinceMapViewportChanged:1;
         unsigned int has_timestamp:1;
         unsigned int has_businessSortOrder:1;
+        unsigned int has_businessSortDirection:1;
         unsigned int has_knownAccuracy:1;
         unsigned int has_localSearchProviderID:1;
         unsigned int has_mapMode:1;
@@ -195,6 +199,7 @@
         unsigned int wrote_viewportCenterCountryCode:1;
         unsigned int wrote_zilchPoints:1;
         unsigned int wrote_businessSortOrder:1;
+        unsigned int wrote_businessSortDirection:1;
         unsigned int wrote_knownAccuracy:1;
         unsigned int wrote_localSearchProviderID:1;
         unsigned int wrote_mapMode:1;
@@ -252,6 +257,10 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsBusinessSortDirection:(id)arg1;
+- (id)businessSortDirectionAsString:(int)arg1;
+@property(nonatomic) _Bool hasBusinessSortDirection;
+@property(nonatomic) int businessSortDirection;
 @property(retain, nonatomic) NSString *viewportCenterCountryCode;
 @property(readonly, nonatomic) _Bool hasViewportCenterCountryCode;
 - (void)_readViewportCenterCountryCode;
@@ -470,6 +479,8 @@
 @property(readonly, nonatomic) unsigned int businessIDsCount;
 - (void)_readBusinessIDs;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithTraits:(id)arg1;
 
 @end

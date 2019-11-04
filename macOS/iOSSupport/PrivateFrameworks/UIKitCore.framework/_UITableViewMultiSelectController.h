@@ -29,11 +29,12 @@ __attribute__((visibility("hidden")))
 - (void)toggleSelectionStateUpToIndexPath:(id)arg1;
 - (BOOL)shouldAllowSelectionExtensionAtPoint:(struct CGPoint)arg1;
 - (void)didEndMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
-- (BOOL)shouldBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
+- (BOOL)shouldBeginMultiSelectInteraction:(id)arg1 ofType:(long long)arg2 atPoint:(struct CGPoint)arg3 withVelocity:(struct CGPoint)arg4;
 - (BOOL)supportsMultiSelectInteraction:(id)arg1;
 - (void)willBeginExtendingSelectionAtIndexPath:(id)arg1;
 - (void)willBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
+- (BOOL)_shouldBeginInteractionAtPoint:(struct CGPoint)arg1;
 - (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(BOOL)arg1;
 - (BOOL)isInMultiSelectMode;
 - (id)_tableViewDelegate;

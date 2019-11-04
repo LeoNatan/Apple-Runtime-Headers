@@ -28,6 +28,7 @@
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 imageDataForNeuralNetwork:(id)arg3 inputImageData:(id)arg4 rotationNeeded:(long long)arg5 regionOfInterest:(struct CGSize)arg6;
 - (int)defaultEngine;
 - (CDStruct_b527887c)networkInputParams;
+- (double)requiredTimeInterval;
 - (void)changeEspressoConfig:(id)arg1;
 - (id)init;
 

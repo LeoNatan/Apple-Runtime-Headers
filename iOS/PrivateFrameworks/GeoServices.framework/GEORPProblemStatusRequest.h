@@ -13,7 +13,6 @@
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOABSecondPartyPlaceRequestClientMetaData *_abAssignmentMetadata;
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEORPClientCapabilities *_clientCapabilities;
@@ -21,6 +20,9 @@
     GEOServicesState *_servicesState;
     NSString *_statusNotificationId;
     GEORPUserCredentials *_userCredentials;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_abAssignmentMetadata:1;
         unsigned int read_analyticMetadata:1;
@@ -79,6 +81,8 @@
 @property(retain, nonatomic) GEORPUserCredentials *userCredentials;
 @property(readonly, nonatomic) _Bool hasUserCredentials;
 - (void)_readUserCredentials;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)populateAnalyticsMetadata;
 
 @end

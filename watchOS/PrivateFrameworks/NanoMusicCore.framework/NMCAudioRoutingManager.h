@@ -67,7 +67,7 @@
 - (id)_existingVirtualAudioRouteForMPAVRoute:(id)arg1;
 - (void)_cancelPickRouteTimeout;
 - (void)_beginPickRouteTimeoutWithRoute:(id)arg1;
-- (void)_performBlockAfterFetchingAvailableRoutesIgnoringCache:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_performBlockAfterFetchingAvailableRoutesIgnoringCache:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_hasAvailableW1Route;
 - (_Bool)_hasPickedVirtualAudioRoute;
 - (id)_systemAudioRoutes;
@@ -77,13 +77,7 @@
 @property(copy, nonatomic) NSString *audioCategory; // @dynamic audioCategory;
 - (void)pickVirtualAudioRoute:(id)arg1;
 - (id)w1Route;
-- (void)fetchAudioRoutesInfoIgnoringCache:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAudioRoutesInfoWithCompletion:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NMCVirtualAudioRoute *pickedVirtualAudioRoute;
-@property(readonly, nonatomic) _Bool hasAvailableW1Route;
-@property(readonly, nonatomic) _Bool hasPickedVirtualAudioRoute;
-@property(readonly, copy, nonatomic) NSArray *virtualAudioRoutes;
-@property(readonly, copy, nonatomic) NSArray *systemAudioRoutes;
 @property(readonly, copy, nonatomic) NSArray *pairedBluetoothAudioDevices;
 - (void)beginObservingAudioRoutes;
 - (void)dealloc;

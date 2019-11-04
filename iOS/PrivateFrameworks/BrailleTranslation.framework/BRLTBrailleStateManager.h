@@ -67,13 +67,13 @@
 - (_Bool)_deleteBrailleCharSilently:(_Bool)arg1;
 - (_Bool)deleteBrailleCharSilently;
 - (_Bool)deleteBrailleChar;
-- (void)_generateBrailleBuffer:(_Bool)arg1;
+- (_Bool)_generateBrailleBuffer:(_Bool)arg1;
 - (_Bool)_selectionIsValidForInsert;
 - (_Bool)_selectionIsValidForDelete;
 - (struct _NSRange)deleteMergeAtomForScriptString:(id)arg1;
 - (struct _NSRange)backwardEditingAtomForScriptString:(id)arg1;
 - (struct _NSRange)forwardEditingAtomForScriptString:(id)arg1;
-- (void)_generateBrailleBufferForDelete;
+- (_Bool)_generateBrailleBufferForDelete;
 - (void)_generateBrailleBufferForInsert;
 - (void)insertBrailleChar:(id)arg1 silently:(_Bool)arg2;
 - (void)insertBrailleChar:(id)arg1;

@@ -13,6 +13,7 @@
 {
     UIImageView *_errorImageView;
     UIActivityIndicatorView *_activityIndicatorView;
+    _Bool _supportsDarkMode;
     id <HLPHelpLoadingViewDelegate> _delegate;
     UILabel *_errorTitleLabel;
     UILabel *_errorMessageLabel;
@@ -21,6 +22,7 @@
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) UILabel *errorMessageLabel; // @synthesize errorMessageLabel=_errorMessageLabel;
 @property(retain, nonatomic) UILabel *errorTitleLabel; // @synthesize errorTitleLabel=_errorTitleLabel;
+@property(nonatomic) _Bool supportsDarkMode; // @synthesize supportsDarkMode=_supportsDarkMode;
 @property(nonatomic) __weak id <HLPHelpLoadingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)showHelpBookInfo;
@@ -29,6 +31,7 @@
 - (void)showNoConnectionErrorMessage;
 - (void)removeErrorView;
 - (void)showActivityIndicator:(_Bool)arg1;
+- (void)updateBackgroundColor;
 - (id)init;
 
 @end

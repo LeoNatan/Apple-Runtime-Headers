@@ -8,7 +8,7 @@
 
 #import <WorkflowUI/WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate-Protocol.h>
 
-@class INIntent, NSLayoutConstraint, UIButton, UICollectionView, UIImage, UIImageView, UILabel, UIViewController, WFActionDrawerSection, WFActionDrawerSiriSuggestionsCollectionViewManager;
+@class INIntent, NSLayoutConstraint, UIButton, UICollectionView, UIImage, UIViewController, WFActionDrawerSection, WFActionDrawerSiriSuggestionsCollectionViewManager, WFModuleTitleView;
 @protocol WFActionDrawerSiriSuggestionsTableViewCellDelegate;
 
 @interface WFActionDrawerSiriSuggestionsTableViewCell : UITableViewCell <WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate>
@@ -17,8 +17,7 @@
     WFActionDrawerSection *_section;
     id <WFActionDrawerSiriSuggestionsTableViewCellDelegate> _delegate;
     UIViewController *_containingViewController;
-    UIImageView *_iconImageView;
-    UILabel *_titleLabel;
+    WFModuleTitleView *_titleView;
     UIButton *_infoButton;
     UICollectionView *_donationsCollectionView;
     INIntent *_intent;
@@ -33,8 +32,7 @@
 @property(retain, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 @property(nonatomic) __weak UICollectionView *donationsCollectionView; // @synthesize donationsCollectionView=_donationsCollectionView;
 @property(nonatomic) __weak UIButton *infoButton; // @synthesize infoButton=_infoButton;
-@property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
+@property(nonatomic) __weak WFModuleTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) BOOL configuredForDailyRoutines; // @synthesize configuredForDailyRoutines=_configuredForDailyRoutines;
 @property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
 @property(nonatomic) __weak id <WFActionDrawerSiriSuggestionsTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;

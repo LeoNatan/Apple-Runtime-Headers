@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 @property struct CGRect selectedIndicatorBounds; // @synthesize selectedIndicatorBounds=_selectedIndicatorBounds;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)_selectedIndicatorBounds;
 
 @end

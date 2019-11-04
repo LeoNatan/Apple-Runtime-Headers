@@ -60,6 +60,8 @@
 - (void)traverseHierarchyForSecondaryTextField;
 - (_Bool)supportsAutofillSignInSuggestions;
 - (void)setHighlighted:(_Bool)arg1;
+- (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

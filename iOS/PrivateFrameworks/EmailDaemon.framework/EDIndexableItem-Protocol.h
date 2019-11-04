@@ -21,6 +21,7 @@
 @property(nonatomic) long long indexingType;
 @property(readonly, copy, nonatomic) NSString *domainIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier;
+- (void)setNeedsAllAttributesIndexingType;
 - (long long)compare:(id <EDIndexableItem>)arg1;
 - (EFFuture *)fetchIndexableAttachments;
 - (CSSearchableItem *)searchableItem;

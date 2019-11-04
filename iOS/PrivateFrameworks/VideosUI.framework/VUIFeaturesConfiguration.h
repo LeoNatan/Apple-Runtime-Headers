@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class VUINowPlayingConfig, VUIPostPlayConfig;
+@class VUIAutoPlayConfig, VUINowPlayingConfig, VUIPostPlayConfig;
 
 __attribute__((visibility("hidden")))
 @interface VUIFeaturesConfiguration : NSObject
 {
     VUIPostPlayConfig *_postPlayConfig;
     VUINowPlayingConfig *_nowPlayingConfig;
+    VUIAutoPlayConfig *_autoPlayConfig;
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) VUIAutoPlayConfig *autoPlayConfig; // @synthesize autoPlayConfig=_autoPlayConfig;
 @property(readonly, nonatomic) VUINowPlayingConfig *nowPlayingConfig; // @synthesize nowPlayingConfig=_nowPlayingConfig;
 @property(readonly, nonatomic) VUIPostPlayConfig *postPlayConfig; // @synthesize postPlayConfig=_postPlayConfig;
 - (void).cxx_destruct;

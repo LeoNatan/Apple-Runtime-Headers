@@ -64,6 +64,7 @@
 @property(retain, nonatomic) id <MapsSuggestionsStrategy> strategy; // @synthesize strategy=_strategy;
 - (void).cxx_destruct;
 - (id)withManagerStyle:(int)arg1;
+- (id)buildWithoutStoring;
 - (id)build;
 - (id)withTitleFormatter:(id)arg1 forType:(int)arg2;
 - (id)withSourceClasses:(id)arg1;
@@ -77,6 +78,7 @@
 - (id)withoutTracker;
 - (id)withLocationUpdater:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

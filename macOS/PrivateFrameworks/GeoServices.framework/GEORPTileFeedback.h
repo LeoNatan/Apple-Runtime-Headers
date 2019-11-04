@@ -13,10 +13,12 @@
 @interface GEORPTileFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPCorrectedCoordinate *_coordinate;
     GEORPCorrectedLabel *_label;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _type;
     struct {
         unsigned int has_type:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) GEORPCorrectedLabel *label;
 @property(readonly, nonatomic) BOOL hasLabel;
 - (void)_readLabel;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

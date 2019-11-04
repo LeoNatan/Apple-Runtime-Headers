@@ -392,7 +392,7 @@
 - (BOOL)_delegateValidation:(id)arg1 object:(id)arg2 uiHandled:(char *)arg3;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (void)_getFirstBaselineOffsetFromTop:(double *)arg1 lastBaselineOffsetFromBottom:(double *)arg2 flipped:(BOOL)arg3;
+- (CDStruct_6b6ad735)_baselinePairWithFrame:(struct CGRect)arg1 flipped:(BOOL)arg2;
 @property(readonly) struct CGSize cellSize;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;

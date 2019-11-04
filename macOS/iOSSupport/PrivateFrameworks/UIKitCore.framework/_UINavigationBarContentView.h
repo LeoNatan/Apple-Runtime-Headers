@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_currentCompletions;
     BOOL _backButtonHidden;
     BOOL _leadingItemsSupplementBackItem;
+    NSDictionary *_effectiveTitleAttributes;
     id <_UINavigationBarContentViewDelegate> _delegate;
     UIBarButtonItem *_backButtonItem;
     NSArray *_leadingBarButtonItems;
@@ -107,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateAugmentedTitleViewNavigationBarTraitsTo:(id)arg1 from:(id)arg2;
 - (void)tintColorDidChange;
+- (void)adoptNewLayout;
 - (void)adoptLayout:(id)arg1;
 - (void)clearTransitionContext;
 - (void)finalizeStateFromTransition:(id)arg1;
@@ -135,6 +137,7 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_setupTitleViewAnimated:(BOOL)arg1;
 - (void)_applyTitleAttributesToLabel:(id)arg1 withString:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *effectiveTitleAttributes; // @synthesize effectiveTitleAttributes=_effectiveTitleAttributes;
 - (void)_setupTrailingButtonBarAnimated:(BOOL)arg1;
 - (void)_setupLeadingButtonBarAnimated:(BOOL)arg1;
 - (void)setNeedsBackButtonUpdate;

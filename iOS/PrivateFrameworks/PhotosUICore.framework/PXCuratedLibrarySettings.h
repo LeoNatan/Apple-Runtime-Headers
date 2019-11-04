@@ -14,6 +14,7 @@
     _Bool _enablePlayMovieInYears;
     _Bool _enableSlideshowInYears;
     _Bool _launchToSavedAllPhotosScrollPosition;
+    _Bool _emulateEmptyLibrary;
     _Bool _showStatusBar;
     _Bool _alwaysShowSecondaryToolbarAtBottom;
     _Bool _enableTapOnTitleToScroll;
@@ -35,6 +36,7 @@
     _Bool _allPhotosTapsZoomsToLastIndividualDensity;
     _Bool _allPhotosDebugLayers;
     _Bool _enableAllPhotosHeaderBlur;
+    _Bool _preheatThumbnailsWhenIdle;
     _Bool _forceFloatingHeaderVisible;
     _Bool _showDebugInformationInFloatingHeader;
     _Bool _enableShowAllButtons;
@@ -97,6 +99,7 @@
     double _allPhotosDecadesDensityScale;
     double _allPhotosDenseLevelMinimumScreensOfContent;
     double _allPhotosIndividualLevelMinimumScreensOfContent;
+    double _allPhotosHeaderSpaceMinimumScreensOfContent;
     double _allPhotosShiftingRequiredScreensTopDistance;
     double _allPhotosZoomingHeaderTintOpacity;
     long long _allPhotosColumnsChoiceIndex;
@@ -118,6 +121,7 @@
     long long _maxColumnsForIndividualItems;
     long long _maxColumnsForSaliency;
     long long _maxColumnsForSingleDate;
+    long long _allPhotosPreheatDenserZoomLevels;
     double _allPhotosAlphaMaxAcceptableScale;
     double _allPhotosAlphaMinAcceptableCoverage;
     double _allPhotosAlphaMinTransitionDistance;
@@ -236,6 +240,8 @@
 @property(nonatomic) double allPhotosAlphaMinTransitionDistance; // @synthesize allPhotosAlphaMinTransitionDistance=_allPhotosAlphaMinTransitionDistance;
 @property(nonatomic) double allPhotosAlphaMinAcceptableCoverage; // @synthesize allPhotosAlphaMinAcceptableCoverage=_allPhotosAlphaMinAcceptableCoverage;
 @property(nonatomic) double allPhotosAlphaMaxAcceptableScale; // @synthesize allPhotosAlphaMaxAcceptableScale=_allPhotosAlphaMaxAcceptableScale;
+@property(nonatomic) _Bool preheatThumbnailsWhenIdle; // @synthesize preheatThumbnailsWhenIdle=_preheatThumbnailsWhenIdle;
+@property(nonatomic) long long allPhotosPreheatDenserZoomLevels; // @synthesize allPhotosPreheatDenserZoomLevels=_allPhotosPreheatDenserZoomLevels;
 @property(nonatomic) long long maxColumnsForSingleDate; // @synthesize maxColumnsForSingleDate=_maxColumnsForSingleDate;
 @property(nonatomic) long long maxColumnsForSaliency; // @synthesize maxColumnsForSaliency=_maxColumnsForSaliency;
 @property(nonatomic) long long maxColumnsForIndividualItems; // @synthesize maxColumnsForIndividualItems=_maxColumnsForIndividualItems;
@@ -257,6 +263,7 @@
 @property(nonatomic) long long allPhotosColumnsChoiceIndex; // @synthesize allPhotosColumnsChoiceIndex=_allPhotosColumnsChoiceIndex;
 @property(nonatomic) double allPhotosZoomingHeaderTintOpacity; // @synthesize allPhotosZoomingHeaderTintOpacity=_allPhotosZoomingHeaderTintOpacity;
 @property(nonatomic) double allPhotosShiftingRequiredScreensTopDistance; // @synthesize allPhotosShiftingRequiredScreensTopDistance=_allPhotosShiftingRequiredScreensTopDistance;
+@property(nonatomic) double allPhotosHeaderSpaceMinimumScreensOfContent; // @synthesize allPhotosHeaderSpaceMinimumScreensOfContent=_allPhotosHeaderSpaceMinimumScreensOfContent;
 @property(nonatomic) double allPhotosIndividualLevelMinimumScreensOfContent; // @synthesize allPhotosIndividualLevelMinimumScreensOfContent=_allPhotosIndividualLevelMinimumScreensOfContent;
 @property(nonatomic) double allPhotosDenseLevelMinimumScreensOfContent; // @synthesize allPhotosDenseLevelMinimumScreensOfContent=_allPhotosDenseLevelMinimumScreensOfContent;
 @property(nonatomic) double allPhotosDecadesDensityScale; // @synthesize allPhotosDecadesDensityScale=_allPhotosDecadesDensityScale;
@@ -318,6 +325,7 @@
 @property(nonatomic) double bottomCenterSecondaryToolbarWidth; // @synthesize bottomCenterSecondaryToolbarWidth=_bottomCenterSecondaryToolbarWidth;
 @property(nonatomic) _Bool alwaysShowSecondaryToolbarAtBottom; // @synthesize alwaysShowSecondaryToolbarAtBottom=_alwaysShowSecondaryToolbarAtBottom;
 @property(nonatomic) _Bool showStatusBar; // @synthesize showStatusBar=_showStatusBar;
+@property(nonatomic) _Bool emulateEmptyLibrary; // @synthesize emulateEmptyLibrary=_emulateEmptyLibrary;
 @property(copy, nonatomic) NSString *savedAllPhotosScrollPositionAnchorAssetIdentifier; // @synthesize savedAllPhotosScrollPositionAnchorAssetIdentifier=_savedAllPhotosScrollPositionAnchorAssetIdentifier;
 @property(nonatomic) _Bool launchToSavedAllPhotosScrollPosition; // @synthesize launchToSavedAllPhotosScrollPosition=_launchToSavedAllPhotosScrollPosition;
 @property(nonatomic) _Bool enableSlideshowInYears; // @synthesize enableSlideshowInYears=_enableSlideshowInYears;

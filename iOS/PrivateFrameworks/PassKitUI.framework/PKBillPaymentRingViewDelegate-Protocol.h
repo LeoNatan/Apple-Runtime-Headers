@@ -9,6 +9,6 @@
 @class PKBillPaymentRingView, PKBillPaymentSuggestedAmount;
 
 @protocol PKBillPaymentRingViewDelegate <NSObject>
-- (void)billPaymentRingView:(PKBillPaymentRingView *)arg1 selectedSuggestedAmount:(PKBillPaymentSuggestedAmount *)arg2 selectedSuggestedAmountIsTarget:(_Bool)arg3;
+- (void)billPaymentRingView:(PKBillPaymentRingView *)arg1 selectedSuggestedAmount:(PKBillPaymentSuggestedAmount *)arg2 selectedSuggestedAmountIsTarget:(_Bool)arg3 userInitiatedChange:(_Bool)arg4;
 @end
 

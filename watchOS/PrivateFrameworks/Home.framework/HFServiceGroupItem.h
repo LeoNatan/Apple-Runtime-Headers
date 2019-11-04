@@ -11,7 +11,7 @@
 #import <Home/HFServiceLikeBuilderCreating-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 
-@class HMServiceGroup, NSSet, NSString;
+@class HMHome, HMServiceGroup, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject;
 
 @interface HFServiceGroupItem : HFItem <HFServiceLikeItem, HFActionBuilderFactory, HFServiceLikeBuilderCreating, HFGroupableItemProtocol>
@@ -37,6 +37,7 @@
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)accessories;
 @property(readonly, nonatomic) NSSet *services;
+@property(readonly, nonatomic) HMHome *home;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (_Bool)actionsMayRequireDeviceUnlock;
 - (_Bool)containsActions;

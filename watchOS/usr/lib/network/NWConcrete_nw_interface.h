@@ -13,7 +13,6 @@
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_interface : NSObject <OS_nw_interface>
 {
-    unsigned long long update_time;
     unsigned int index;
     struct nw_interface_details details;
     unsigned int delegate_index;

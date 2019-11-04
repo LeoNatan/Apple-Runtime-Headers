@@ -32,6 +32,7 @@
 - (id)webPageURL;
 - (id)initWithTypeIdentifier:(id)arg1;
 - (id)typeIdentifier;
+@property(copy) NSString *targetContentIdentifier;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(copy) NSString *persistentIdentifier; // @dynamic persistentIdentifier;

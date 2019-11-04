@@ -69,6 +69,7 @@
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_webView:(id)arg1 contextMenuDidEndForElement:(id)arg2;
 - (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (_Bool)_webView:(id)arg1 performDataInteractionOperationWithItemProviders:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
@@ -89,6 +90,7 @@
 - (void)insertBulletedList:(id)arg1;
 - (void)insertImage:(id)arg1;
 - (void)updateContent;
+- (void)stopEditingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopEditing;
 - (void)startEditing;
 - (void)adoptEditableState;
@@ -100,7 +102,7 @@
 - (void)replaceSelectionWithAttachmentPresentation:(id)arg1;
 - (id)jsonStringFromDictionaryOrArray:(id)arg1;
 - (id)attachmentInfoDictionaryForAttachmentPresentation:(id)arg1;
-- (id)contentAsPasteboardItems;
+- (void)copyNoteHTMLToPasteboard;
 - (void)insertLinksWithURLs:(id)arg1 titles:(id)arg2;
 - (void)insertLinkWithURL:(id)arg1 title:(id)arg2;
 - (void)insertHTMLString:(id)arg1;

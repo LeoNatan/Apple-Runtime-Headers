@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (id)actionGroup;
 - (void)action:(id)arg1 actionTarget:(id)arg2;
+- (void)removeDynamicInterfaceObject:(id)arg1;
 - (void)setupDynamicInterfaceObject:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (_Bool)canBecomeFirstResponder;

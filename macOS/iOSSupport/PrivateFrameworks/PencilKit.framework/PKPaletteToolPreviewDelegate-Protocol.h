@@ -9,6 +9,7 @@
 @class PKPaletteToolPreview;
 
 @protocol PKPaletteToolPreviewDelegate <NSObject>
+- (long long)palettePosition;
 - (void)toolPreviewDidChangeToolColor:(PKPaletteToolPreview *)arg1;
 @end
 

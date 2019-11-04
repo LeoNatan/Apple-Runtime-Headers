@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOMapLayerDataServiceVersionUpdate : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOMapLayerDataServiceLayerIndex *_index;
     GEOMapLayerDataServiceLayer *_layer;
     GEOMapLayerDataServiceVersion *_sourceVersion;
     GEOMapLayerDataServiceVersion *_targetVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     CDStruct_2c11db96 _flags;
 }
 
@@ -46,6 +48,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOMapLayerDataServiceLayer *layer;
 @property(readonly, nonatomic) _Bool hasLayer;
 - (void)_readLayer;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

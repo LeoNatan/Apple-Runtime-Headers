@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isLocalSwitchEnabled:(unsigned int)arg1;
 - (_Bool)isSwitchEnabled:(unsigned int)arg1;
 - (void)negotiateSwitches;
+- (void)updateDuplicationEnhancementSwitches;
 - (void)setupLocalDuplicationTestGroupSwitches;
 - (void)setupLocalRateControlTestGroupSwitches;
 - (void)setupLocalNetworkTestGroupSwitches;

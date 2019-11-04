@@ -197,6 +197,7 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canBecomeFirstResponder;
 @property(nonatomic) BOOL rulerEnabled;
+- (void)_updateAllowedTouchesForDrawingGestureRecognizer;
 - (long long)_totalVisibleStrokes;
 @property(retain, nonatomic) UIImage *paperTexture; // @dynamic paperTexture;
 @property(copy, nonatomic) PKInk *ink;

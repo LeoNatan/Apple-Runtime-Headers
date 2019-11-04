@@ -7,14 +7,17 @@
 #import <HealthUI/HKTableViewController.h>
 
 #import <HealthRecordsUI/HKHealthRecordsStoreAccountStateChangeListener-Protocol.h>
+#import <HealthRecordsUI/HKSourceListDataSourceObserver-Protocol.h>
 
-@interface _TtC15HealthRecordsUI22SettingsViewController : HKTableViewController <HKHealthRecordsStoreAccountStateChangeListener>
+@interface _TtC15HealthRecordsUI22SettingsViewController : HKTableViewController <HKHealthRecordsStoreAccountStateChangeListener, HKSourceListDataSourceObserver>
 {
     // Error parsing type: , name: accounts
     // Error parsing type: , name: appSourceModels
+    // Error parsing type: , name: researchStudySourceModels
     // Error parsing type: , name: sourceLoadingToken
     // Error parsing type: , name: accountLoadingToken
     // Error parsing type: , name: factory
+    // Error parsing type: , name: sourceListDataSource
 }
 
 - (void).cxx_destruct;
@@ -28,16 +31,6 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)init;
-- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)closeButtonTapped;
-- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
 
 @end
 

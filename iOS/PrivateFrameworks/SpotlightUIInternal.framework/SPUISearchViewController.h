@@ -91,6 +91,7 @@
 - (void)searchViewDidPresentFromSource:(unsigned long long)arg1;
 @property(readonly, nonatomic) double distanceToTopOfAppIcons;
 - (void)dismissCancelButtonAnimated;
+- (void)showVerticalScrollIndicators:(_Bool)arg1;
 - (void)purgeMemory;
 - (void)searchViewDidUpdatePresentationProgress:(double)arg1;
 - (void)searchViewWillPresentFromSource:(unsigned long long)arg1;
@@ -109,12 +110,13 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)launchSiriWithUtteranceText:(id)arg1 source:(long long)arg2;
 - (void)didEngageResult:(id)arg1;
+- (void)dismissIfNecessaryForIconDrag;
 - (void)searchThroughPunchoutForResult:(id)arg1 forQuery:(id)arg2;
 - (void)updateHeaderViewsWithBlock:(CDUnknownBlockType)arg1;
 - (id)createAdditionalHeaderView;
 @property(readonly, nonatomic) SPUISearchHeader *headerView;
-- (void)loadView;
 - (void)dealloc;
+- (void)checkClearTimer;
 - (id)init;
 
 // Remaining properties

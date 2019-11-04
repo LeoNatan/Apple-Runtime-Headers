@@ -26,6 +26,7 @@
 @property(copy, nonatomic) NSData *linkedSessionValidationData;
 @property(copy, nonatomic) NSString *linkedAssistantId;
 @property(copy, nonatomic) NSString *language;
+@property(copy, nonatomic) NSString *dataSharingOptInStatus;
 @property(copy, nonatomic) NSString *connectionType;
 @property(copy, nonatomic) NSString *connectionMode;
 @property(copy, nonatomic) NSString *assistantId;

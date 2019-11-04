@@ -6,13 +6,20 @@
 
 #import <objc/NSObject.h>
 
+@class NSSet;
+
 @interface RESiriActionsDonationsWhitelist : NSObject
 {
     struct NSDictionary *_whitelist;
+    struct os_unfair_lock_s _lock;
+    NSSet *_intentWhitelistBundleIDs;
+    NSSet *_userActivityWhitelistBundleIDs;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *userActivityWhitelistBundleIDs; // @synthesize userActivityWhitelistBundleIDs=_userActivityWhitelistBundleIDs;
+@property(readonly, nonatomic) NSSet *intentWhitelistBundleIDs; // @synthesize intentWhitelistBundleIDs=_intentWhitelistBundleIDs;
 - (_Bool)intentIsWhitelistedForBundleID:(id)arg1 andTypeName:(id)arg2;
 - (id)intentWhitelistedRelevanceThresholdForBundleID:(id)arg1 andTypeName:(id)arg2;
 - (_Bool)userActivityIsWhitelistedForBundleID:(id)arg1 andActivityType:(id)arg2;

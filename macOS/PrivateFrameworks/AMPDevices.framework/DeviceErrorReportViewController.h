@@ -9,7 +9,7 @@
 #import <AMPDevices/NSTableViewDataSource-Protocol.h>
 #import <AMPDevices/NSTableViewDelegate-Protocol.h>
 
-@class NSArray, NSButton, NSString, NSTableView, NSTextField;
+@class NSArray, NSButton, NSScrollView, NSString, NSTableView, NSTextField;
 
 @interface DeviceErrorReportViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
@@ -17,9 +17,12 @@
     NSTextField *_messageTextField;
     NSTextField *_explanationTextField;
     NSTableView *_tableView;
+    NSScrollView *_scrollView;
     NSButton *_saveButton;
     NSButton *_cancelButton;
     NSButton *_okButton;
+    NSButton *_disclosureTriangleButton;
+    NSTextField *_numberOfErrorsTextField;
     NSString *_okButtonTitle;
     NSString *_cancelButtonTitle;
     NSString *_windowTitle;
@@ -35,13 +38,17 @@
 @property(retain, nonatomic) NSString *windowTitle; // @synthesize windowTitle=_windowTitle;
 @property(retain, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
 @property(retain, nonatomic) NSString *okButtonTitle; // @synthesize okButtonTitle=_okButtonTitle;
+@property(nonatomic) __weak NSTextField *numberOfErrorsTextField; // @synthesize numberOfErrorsTextField=_numberOfErrorsTextField;
+@property(nonatomic) __weak NSButton *disclosureTriangleButton; // @synthesize disclosureTriangleButton=_disclosureTriangleButton;
 @property(nonatomic) __weak NSButton *okButton; // @synthesize okButton=_okButton;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak NSButton *saveButton; // @synthesize saveButton=_saveButton;
+@property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak NSTextField *explanationTextField; // @synthesize explanationTextField=_explanationTextField;
 @property(nonatomic) __weak NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
 - (void).cxx_destruct;
+- (void)clickDisclosureTriangle:(id)arg1;
 - (void)clickSaveButton:(id)arg1;
 - (void)clickCancelButton:(id)arg1;
 - (void)clickOKButton:(id)arg1;

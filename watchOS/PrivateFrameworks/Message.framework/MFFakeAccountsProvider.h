@@ -24,6 +24,7 @@
 @property(copy, nonatomic) NSArray *orderedAccounts; // @synthesize orderedAccounts=_orderedAccounts;
 @property(copy, nonatomic) NSArray *mailAccounts; // @synthesize mailAccounts=_mailAccounts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *receivingAddresses;
 @property(readonly, nonatomic, getter=isDisplayingMultipleAccounts) _Bool displayingMultipleAccounts;
 
 // Remaining properties

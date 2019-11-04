@@ -11,7 +11,7 @@
 #import <WorkflowUI/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <WorkflowUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class CKComponentHostingView, NSArray, NSString, UIScrollView, WFAction, WFComponentNavigationContextImpl, WFModuleModel;
+@class CKComponentHostingView, NSArray, NSLayoutConstraint, NSString, UIResponder, UIScrollView, UIView, WFAction, WFComponentNavigationContextImpl, WFModuleModel;
 @protocol WFParameterInputViewControllerDelegate;
 
 @interface WFParameterInputViewController : UIViewController <CKComponentProvider, CKComponentHostingViewDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
@@ -23,9 +23,15 @@
     UIScrollView *_scrollView;
     CKComponentHostingView *_moduleView;
     WFComponentNavigationContextImpl *_navigationContext;
+    UIResponder *_wf_firstResponder;
+    UIView *_firstResponderHintView;
+    NSLayoutConstraint *_hintBottomConstraint;
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
+@property(retain, nonatomic) NSLayoutConstraint *hintBottomConstraint; // @synthesize hintBottomConstraint=_hintBottomConstraint;
+@property(nonatomic) __weak UIView *firstResponderHintView; // @synthesize firstResponderHintView=_firstResponderHintView;
+@property(nonatomic) __weak UIResponder *wf_firstResponder; // @synthesize wf_firstResponder=_wf_firstResponder;
 @property(retain, nonatomic) WFComponentNavigationContextImpl *navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(nonatomic) __weak CKComponentHostingView *moduleView; // @synthesize moduleView=_moduleView;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -34,6 +40,10 @@
 @property(readonly, nonatomic) WFModuleModel *moduleModel; // @synthesize moduleModel=_moduleModel;
 @property(nonatomic) __weak id <WFParameterInputViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)positionFirstResponderHintViewAnimated:(BOOL)arg1;
+- (void)responderDidEndEditing:(id)arg1;
+- (void)responderDidBeginEditing:(id)arg1;
+- (void)keyboardWillChangeFrame:(id)arg1;
 - (id)keyCommands;
 - (void)moduleComponentDidFinish;
 - (void)moduleComponentDidCancel;
@@ -47,7 +57,6 @@
 - (void)viewWillLayoutSubviews;
 - (long long)preferredStatusBarStyle;
 - (void)layoutHostingViewAnimated:(BOOL)arg1;
-- (void)keyboardFrameChanged;
 - (void)updateScrollViewWithModuleSize:(struct CGSize)arg1;
 - (void)loadView;
 - (void)dealloc;

@@ -27,6 +27,7 @@
 
 @property(retain, nonatomic) PKPass *frontmostPass; // @synthesize frontmostPass=_frontmostPass;
 - (void).cxx_destruct;
+- (void)showStatement:(id)arg1 account:(id)arg2;
 - (int)visibilityBackdropView:(id)arg1 preferredStyleForTraitCollection:(id)arg2;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)_passcodeTapped:(id)arg1;

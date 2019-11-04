@@ -8,7 +8,7 @@
 
 #import <CharacterPicker/NSGestureRecognizerDelegate-Protocol.h>
 
-@class EMIMDFREmojiListSkinToneView, NSMutableArray, NSString;
+@class EMIMDFREmojiListCoupleSkinToneView, EMIMDFREmojiListSkinToneView, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface EMIMDFREmojiListDocumentView : NSView <NSGestureRecognizerDelegate>
@@ -23,8 +23,10 @@ __attribute__((visibility("hidden")))
     long long _highlightedCategoryIndex;
     long long _highlightedCharacterIndex;
     EMIMDFREmojiListSkinToneView *_skinToneView;
+    EMIMDFREmojiListCoupleSkinToneView *_coupleSkinToneView;
 }
 
+@property(retain) EMIMDFREmojiListCoupleSkinToneView *coupleSkinToneView; // @synthesize coupleSkinToneView=_coupleSkinToneView;
 @property(retain) EMIMDFREmojiListSkinToneView *skinToneView; // @synthesize skinToneView=_skinToneView;
 @property BOOL scrollingStartAtCollapsedEdge; // @synthesize scrollingStartAtCollapsedEdge=_scrollingStartAtCollapsedEdge;
 @property BOOL scrollingByExternalTrigger; // @synthesize scrollingByExternalTrigger=_scrollingByExternalTrigger;

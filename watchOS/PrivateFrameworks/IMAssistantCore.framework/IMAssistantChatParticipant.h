@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class CNContact, IMHandle;
+@class IMAssistantHandleFromContact, IMHandle;
 
 @interface IMAssistantChatParticipant : NSObject
 {
     IMHandle *_imHandle;
-    CNContact *_contact;
+    IMAssistantHandleFromContact *_handleFromContact;
 }
 
-@property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-@property(retain, nonatomic) IMHandle *imHandle; // @synthesize imHandle=_imHandle;
+@property(readonly, nonatomic) IMAssistantHandleFromContact *handleFromContact; // @synthesize handleFromContact=_handleFromContact;
+@property(readonly, nonatomic) IMHandle *imHandle; // @synthesize imHandle=_imHandle;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithIMHandle:(id)arg1 contact:(id)arg2;
+- (id)initWithIMHandle:(id)arg1 handleFromContact:(id)arg2;
 
 @end
 

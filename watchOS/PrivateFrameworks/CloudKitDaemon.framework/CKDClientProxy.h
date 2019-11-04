@@ -112,7 +112,7 @@
 - (void)_finishClientSetupWithClientContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_startClientSetupWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_locked_eligiblePendingContextForSetupInfo:(id)arg1;
-- (void)cancelOperationWithIdentifier:(id)arg1;
+- (void)cancelOperationWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelAllOperations;
 - (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performFetchWhitelistedBundleIDsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

@@ -8,7 +8,8 @@
 
 #import <AppKit/_NSTouchBarItemLayoutWrapper-Protocol.h>
 
-@class NSGroupTouchBarItem, NSString, NSTouchBarItem;
+@class NSGroupTouchBarItem, NSObject, NSString, NSTouchBarItem;
+@protocol NSTouchBarItemLayoutDelegate;
 
 @interface NSTouchBarItemContainerView : NSView <_NSTouchBarItemLayoutWrapper>
 {
@@ -16,13 +17,15 @@
     struct CGSize _minSize;
     struct CGSize _maxSize;
     struct CGSize _preferredSize;
+    struct CGSize _reducedMetricsThreshold;
     BOOL _isSpace;
     BOOL _isInCustomizationPalette;
     BOOL _disabled;
     BOOL _isEncapsulatingLayoutEngine;
     BOOL _isMeasuringView;
+    BOOL _forcesReducedMetricsCompression;
     long long _priorityIndex;
-    NSGroupTouchBarItem *_groupItemContainingItem;
+    NSObject<NSTouchBarItemLayoutDelegate> *_layoutDelegate;
 }
 
 @property BOOL disabled; // @synthesize disabled=_disabled;
@@ -31,9 +34,10 @@
 - (void)constraintsDidChangeInEngine:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_deferringLayoutNotifications:(CDUnknownBlockType)arg1;
+- (void)layout;
 @property(readonly) double preferredZOrder;
 @property(readonly) unsigned long long itemPosition;
-@property(retain) NSGroupTouchBarItem *groupItemContainingItem;
+@property(retain) NSObject<NSTouchBarItemLayoutDelegate> *layoutDelegate;
 @property(retain) NSGroupTouchBarItem *compressionItemContainingItem;
 - (struct CGSize)sizeThatFitsProposedLayoutSize:(struct CGSize)arg1;
 @property long long priorityIndex;

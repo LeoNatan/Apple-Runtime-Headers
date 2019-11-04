@@ -35,6 +35,7 @@
     SBIcon *_rootFolderIcon;
 }
 
++ (id)migratedIdentifierForLeafIdentifier:(id)arg1;
 @property(retain, nonatomic) SBIcon *rootFolderIcon; // @synthesize rootFolderIcon=_rootFolderIcon;
 @property(copy, nonatomic) NSOrderedSet *desiredIconStateFlattened; // @synthesize desiredIconStateFlattened=_desiredIconStateFlattened;
 @property(copy, nonatomic) NSSet *archivedLeafIdentifiers; // @synthesize archivedLeafIdentifiers=_archivedLeafIdentifiers;
@@ -55,10 +56,12 @@
 - (void)folder:(id)arg1 didRemoveLists:(id)arg2 atIndexes:(id)arg3;
 - (void)folder:(id)arg1 didAddList:(id)arg2;
 - (void)icon:(id)arg1 launchFromLocation:(id)arg2 context:(id)arg3;
+- (void)enumerateDownloadingIconsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)downloadingIconForBundleIdentifier:(id)arg1;
 - (id)addDownloadingIconForBundleID:(id)arg1 withIdentifier:(id)arg2;
 - (id)addDownloadingIconWithDataSource:(id)arg1;
 - (_Bool)_canAddDownloadingIconForBundleID:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *unlocalizedDefaultFolderName;
 @property(readonly, copy, nonatomic) NSString *localizedDefaultFolderName;
 - (id)localizedFolderNameForDefaultDisplayName:(id)arg1;
 - (void)didUnarchiveMetadata:(id)arg1;

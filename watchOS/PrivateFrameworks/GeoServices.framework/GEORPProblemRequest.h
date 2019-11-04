@@ -13,7 +13,6 @@
 @interface GEORPProblemRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEORPClientCapabilities *_clientCapabilities;
     GEOPDClientMetadata *_clientMetadata;
@@ -23,6 +22,9 @@
     GEORPProblem *_problem;
     GEORPUserCredentials *_userCredentials;
     NSString *_userEmail;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _debugUserType;
     struct {
         unsigned int has_debugUserType:1;
@@ -93,6 +95,8 @@
 @property(retain, nonatomic) GEORPProblem *problem;
 @property(readonly, nonatomic) _Bool hasProblem;
 - (void)_readProblem;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithProblem:(id)arg1 userCredentials:(id)arg2 pushToken:(id)arg3 allowContactBackAtEmailAddress:(id)arg4 traits:(id)arg5;
 
 @end

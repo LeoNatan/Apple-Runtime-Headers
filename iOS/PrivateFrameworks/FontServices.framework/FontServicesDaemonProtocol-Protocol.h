@@ -7,6 +7,7 @@
 @class NSArray, NSDictionary, NSString, NSXPCListenerEndpoint;
 
 @protocol FontServicesDaemonProtocol
+- (void)updatingUserFonts:(void (^)(void))arg1;
 - (void)resumeAndShowAlertForSuspendedFontProviders:(void (^)(void))arg1;
 - (void)fontChanged:(NSDictionary *)arg1 reply:(void (^)(void))arg2;
 - (void)requestFonts:(NSString *)arg1 forClient:(NSXPCListenerEndpoint *)arg2 reply:(void (^)(_Bool))arg3;

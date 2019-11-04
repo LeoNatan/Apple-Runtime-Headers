@@ -44,6 +44,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+@property(nonatomic, getter=_forPickingDownloadsFolder, setter=_setForPickingDownloadsFolder:) _Bool forPickingDownloadsFolder;
 @property(nonatomic, getter=_sourceIsManaged, setter=_setSourceIsManaged:) _Bool sourceIsManaged; // @dynamic sourceIsManaged;
 - (void)_commonInitWithDocumentTypes:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

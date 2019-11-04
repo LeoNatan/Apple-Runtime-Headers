@@ -6,12 +6,12 @@
 
 #import <UIKit/UIControl.h>
 
-@class CCUIMenuModuleItem, MTVisualStylingProvider, UILabel, UIView;
+@class BSUIEmojiLabelView, CCUIMenuModuleItem, MTVisualStylingProvider, UIView;
 
 @interface CCUIMenuModuleItemView : UIControl
 {
-    UILabel *_titleLabel;
-    UILabel *_subtitleLabel;
+    BSUIEmojiLabelView *_titleLabel;
+    BSUIEmojiLabelView *_subtitleLabel;
     UIView *_separatorView;
     UIView *_highlightedBackgroundView;
     UIView *_leadingView;
@@ -55,7 +55,7 @@
 - (double)_titleBaselineToBottom;
 - (double)_titleBaselineToTop;
 - (_Bool)_shouldHorizontallyCenterText;
-- (double)_textHeightForLabel:(id)arg1 width:(double)arg2;
+- (double)_textHeightForEmojiLabel:(id)arg1 width:(double)arg2;
 - (id)_subtitleFont;
 - (id)_titleFont;
 - (double)_separatorHeight;

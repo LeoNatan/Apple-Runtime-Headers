@@ -85,6 +85,9 @@
     double _siriSwipeDismissHapticDelay;
     double _siriSwipeDismissZoomOutDelay;
     double _siriSwipeDismissClientAnimationsDelay;
+    SBFFluidBehaviorSettings *_reopenButtonScaleSettings;
+    double _reopenButtonInitialScale;
+    double _reopenButtonFadeInDelay;
     double _disableAsyncRenderingTransitionPercentage;
     double _disallowAcceleratedHomeButtonPressTransitionPercentage;
     double _centerZoomScale;
@@ -126,6 +129,9 @@
 @property(nonatomic) double centerZoomScale; // @synthesize centerZoomScale=_centerZoomScale;
 @property(nonatomic) double disallowAcceleratedHomeButtonPressTransitionPercentage; // @synthesize disallowAcceleratedHomeButtonPressTransitionPercentage=_disallowAcceleratedHomeButtonPressTransitionPercentage;
 @property(nonatomic) double disableAsyncRenderingTransitionPercentage; // @synthesize disableAsyncRenderingTransitionPercentage=_disableAsyncRenderingTransitionPercentage;
+@property(nonatomic) double reopenButtonFadeInDelay; // @synthesize reopenButtonFadeInDelay=_reopenButtonFadeInDelay;
+@property(nonatomic) double reopenButtonInitialScale; // @synthesize reopenButtonInitialScale=_reopenButtonInitialScale;
+@property(retain, nonatomic) SBFFluidBehaviorSettings *reopenButtonScaleSettings; // @synthesize reopenButtonScaleSettings=_reopenButtonScaleSettings;
 @property(nonatomic) double siriSwipeDismissClientAnimationsDelay; // @synthesize siriSwipeDismissClientAnimationsDelay=_siriSwipeDismissClientAnimationsDelay;
 @property(nonatomic) double siriSwipeDismissZoomOutDelay; // @synthesize siriSwipeDismissZoomOutDelay=_siriSwipeDismissZoomOutDelay;
 @property(nonatomic) double siriSwipeDismissHapticDelay; // @synthesize siriSwipeDismissHapticDelay=_siriSwipeDismissHapticDelay;

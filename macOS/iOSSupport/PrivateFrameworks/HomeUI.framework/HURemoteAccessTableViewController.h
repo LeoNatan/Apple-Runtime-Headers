@@ -20,6 +20,8 @@
 @property(readonly, copy, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
 - (void).cxx_destruct;
 - (void)switchCell:(id)arg1 didTurnOn:(BOOL)arg2;
+- (BOOL)shouldHideFooterBelowSection:(long long)arg1;
+- (BOOL)shouldHideHeaderAboveSection:(long long)arg1;
 - (BOOL)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;

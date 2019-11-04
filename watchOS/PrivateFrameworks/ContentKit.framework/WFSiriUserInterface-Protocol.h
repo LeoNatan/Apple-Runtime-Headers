@@ -6,13 +6,14 @@
 
 #import <ContentKit/WFUserInterface-Protocol.h>
 
-@class INIntent, INInteraction, NSArray, NSString, NSURL;
+@class INIntent, INInteraction, NSArray, NSString, NSURL, NSUserActivity;
 
 @protocol WFSiriUserInterface <WFUserInterface>
 @property(readonly, nonatomic) int executionContext;
 @property(readonly, copy, nonatomic) NSArray *airPlayRouteIDs;
 - (void)configureIntent:(INIntent *)arg1;
 - (_Bool)executeIntent:(INIntent *)arg1 completionHandler:(void (^)(INInteraction *, NSError *))arg2;
+- (void)openUserActivity:(NSUserActivity *)arg1 bundleIdentifier:(NSString *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
 - (void)openURL:(NSURL *)arg1 completionHandler:(void (^)(_Bool))arg2;
 - (void)openInteractionInApp:(INInteraction *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)showInteractionIfNeeded:(INInteraction *)arg1 requiringConfirmation:(_Bool)arg2 requiringAuthentication:(_Bool)arg3 executionStage:(int)arg4 completionHandler:(void (^)(_Bool, NSError *))arg5;

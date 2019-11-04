@@ -27,6 +27,8 @@
 @property(readonly, nonatomic) struct CGSize size;
 - (BOOL)px_isRecommendationSeenForVariationType:(long long)arg1;
 - (BOOL)px_isVariationTypeRecommended:(long long)arg1;
+- (id)_imageProccessingFlagsWithMainFileURL:(id)arg1;
+- (id)_deferredProcessingStringWithEnum:(unsigned short)arg1;
 - (id)_junkClassificationStringWithClassifications:(id)arg1;
 - (id)_sceneClassificationStringWithClassifications:(id)arg1;
 - (id)stringMinutesTimeRangeFromTimeRange:(CDStruct_e83c9415)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MiroMemory, MovieController, NSDate, NSOperationQueue, Project;
+@class MiroMemory, MovieController, NSDate, NSOperationQueue, Project, VEKProgressWatcher;
 @protocol MiroSequence;
 
 __attribute__((visibility("hidden")))
@@ -31,11 +31,13 @@ __attribute__((visibility("hidden")))
     double _uiDidLoadTimePPT;
     double _uiDidAppearTimePPT;
     double _playbackStartedTimePPT;
+    VEKProgressWatcher *_watcherProperty;
     NSOperationQueue *_operationQueue;
 }
 
 + (id)sharedInstanceForPregenerate;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
+@property(retain) VEKProgressWatcher *watcherProperty; // @synthesize watcherProperty=_watcherProperty;
 @property double playbackStartedTimePPT; // @synthesize playbackStartedTimePPT=_playbackStartedTimePPT;
 @property double uiDidAppearTimePPT; // @synthesize uiDidAppearTimePPT=_uiDidAppearTimePPT;
 @property double uiDidLoadTimePPT; // @synthesize uiDidLoadTimePPT=_uiDidLoadTimePPT;
@@ -72,7 +74,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAutoEditing;
 - (BOOL)isBusy;
 - (void)cancelAutoEdit;
-- (void)performPersist;
+- (void)performPersistWithPersistableThing:(id)arg1;
 - (void)performAutoEditWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performAutoEdit;
 @property(retain) id <MiroSequence> sequence;

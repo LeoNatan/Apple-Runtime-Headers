@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
 - (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)_updateBadge;
+- (void)toggleOverCaptureBadgeAppearance;
 - (void)assetBadgeView:(id)arg1 userDidSelectBadges:(unsigned long long)arg2;
 - (void)_updateBadgeViewIfNeeded;
 - (void)_invalidateBadgeView;

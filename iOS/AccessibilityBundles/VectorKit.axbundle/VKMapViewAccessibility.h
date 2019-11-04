@@ -17,9 +17,11 @@
 + (id)safeCategoryTargetClassName;
 - (void)setCurrentLocationText:(id)arg1;
 - (void)setMapType:(int)arg1;
+- (void)_axHandleLabelsDidLayout;
+- (void)labelManagerDidLayout;
 - (void)mapLabelsDidLayout:(id)arg1;
 - (void)didUpdateSceneStatus:(unsigned char)arg1;
-- (id)initShouldRasterize:(_Bool)arg1 inBackground:(_Bool)arg2 contentScale:(double)arg3;
+- (id)initShouldRasterize:(_Bool)arg1 inBackground:(_Bool)arg2 contentScale:(double)arg3 auditToken:(id)arg4;
 - (void)_axSetMapLabelLayoutTimer:(id)arg1;
 - (id)_axMapLabelLayoutTimer;
 - (void)_axMapVisibleRegionDidChange;

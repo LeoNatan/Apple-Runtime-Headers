@@ -145,10 +145,11 @@
 - (BOOL)_shouldHandleAnnotationAtLocation:(struct CGPoint)arg1 forGestureType:(unsigned long long)arg2;
 - (id)hitTestForSubviewsOfView:(id)arg1 atLocation:(struct CGPoint)arg2 withEvent:(id)arg3;
 - (unsigned long long)typeForGestureRecognizer:(id)arg1;
-- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)addGestureRecognizer:(id)arg1;
 - (void)gestureInit;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canBecomeFirstResponder;

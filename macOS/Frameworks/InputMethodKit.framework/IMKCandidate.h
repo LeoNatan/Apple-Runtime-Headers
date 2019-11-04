@@ -12,12 +12,14 @@
 
 @interface IMKCandidate : NSObject <IMKCandidate>
 {
+    NSString *_displayText;
     NSString *_annotation;
     NSString *_text;
     IMKDocumentContent *_documentContentToReplace;
     unsigned long long _type;
 }
 
++ (id)candidateWithText:(id)arg1 displayText:(id)arg2 annotation:(id)arg3 replacing:(id)arg4 type:(unsigned long long)arg5;
 + (id)candidateWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3 type:(unsigned long long)arg4;
 + (id)candidateWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3;
 + (id)candidateWithText:(id)arg1 annotation:(id)arg2 type:(unsigned long long)arg3;
@@ -29,10 +31,12 @@
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *displayText;
 @property(readonly, nonatomic) NSString *axHelpString;
 @property(readonly, nonatomic) NSString *axValueString;
 - (BOOL)isEqual:(id)arg1;
 - (id)stringIdentifier;
+- (id)initWithText:(id)arg1 displayText:(id)arg2 annotation:(id)arg3 replacing:(id)arg4 type:(unsigned long long)arg5;
 - (id)initWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3 type:(unsigned long long)arg4;
 - (id)initWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3;
 - (id)initWithText:(id)arg1 annotation:(id)arg2 type:(unsigned long long)arg3;

@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface HFServiceGroupItem (HUServiceGroupItemServiceContainer) <HUServiceContainerItem>
+- (id)hu_containedAccessories;
 - (id)hu_containedServices;
 
 // Remaining properties

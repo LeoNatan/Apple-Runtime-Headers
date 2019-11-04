@@ -11,11 +11,12 @@
 #import <MediaPlayer/MPAVRoutingTableViewCellDelegate-Protocol.h>
 #import <MediaPlayer/UITableViewDataSource-Protocol.h>
 #import <MediaPlayer/UITableViewDelegate-Protocol.h>
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
 
 @class CARSessionStatus, MPAVClippingTableView, MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingViewControllerUpdate, MPSectionedCollection, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, NSString, UIColor, UITableView;
 @protocol MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate;
 
-@interface MPAVRoutingViewController : UIViewController <CARSessionObserving, UITableViewDataSource, UITableViewDelegate, MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate>
+@interface MPAVRoutingViewController : UIViewController <CARSessionObserving, UITableViewDataSource, UITableViewDelegate, MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, _MPStateDumpPropertyListTransformable>
 {
     MPAVClippingTableView *_tableView;
     MPAVRoutingViewControllerUpdate *_pendingUpdate;
@@ -69,6 +70,7 @@
 @property(nonatomic) __weak id <MPAVRoutingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (id)_createSectionedCollection:(id)arg1 withPickedRoutes:(id)arg2;
 - (void)_endUpdates;
 - (id)_createVolumeSlider;
@@ -125,6 +127,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (struct CGSize)preferredContentSize;
+- (_Bool)shouldOverrideContentSizeCategory:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
@@ -133,6 +136,8 @@
 - (void)viewDidLoad;
 - (void)resetScrollPosition;
 - (void)resetDisplayedRoutes;
+- (_Bool)isInVehicle;
+- (_Bool)hasCarKitRoute;
 @property(readonly, nonatomic, getter=isInCarPlay) _Bool inCarPlay;
 @property(nonatomic) _Bool allowMirroring;
 - (void)dealloc;

@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)_usesNonVibrantAppearance;
+- (void)updateAttributedString;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)urlify;
 - (void)didMoveToWindow;

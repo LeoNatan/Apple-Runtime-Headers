@@ -33,6 +33,7 @@
 - (void)suspendMonitoring;
 - (void)resumeMonitoring;
 - (void)timerDidFire:(id)arg1;
+- (void)setControlEffort:(long long)arg1;
 - (void)updateControlEffortFromValue:(float)arg1;
 - (id)initWithConfiguration:(id)arg1;
 

@@ -43,6 +43,7 @@
 - (_Bool)isVehicleAlarm;
 - (void)setTriggerIsNotRelativeToTravelTime:(_Bool)arg1;
 - (_Bool)triggerIsNotRelativeToTravelTime;
+- (_Bool)_reset;
 - (_Bool)isTopographicallyEqualToAlarm:(id)arg1;
 - (int)compare:(id)arg1;
 - (_Bool)validateWithOwner:(id)arg1 error:(id *)arg2;

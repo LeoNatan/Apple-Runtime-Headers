@@ -14,7 +14,6 @@
     _Bool _canInitializeContainer;
 }
 
-+ (void)invalidateServerChangeTokens;
 - (void).cxx_destruct;
 - (id)_ubiquitousCatalogOfRecord;
 - (id)_catalogOfRecord;
@@ -23,10 +22,11 @@
 - (_Bool)_isPassItemFromRecordType:(id)arg1;
 - (_Bool)_canInitializeContainer;
 - (void)cloudStoreAccountChanged:(id)arg1;
+- (void)invalidateServerChangeTokens;
 - (void)readCachedContainerValues;
 - (void)saveCachedContainerValues;
-- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 shouldUpdateLocalDatabase:(_Bool)arg5 userInfo:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 groupName:(id)arg3 groupNameSuffix:(id)arg4 qualityOfService:(int)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 request:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setContainerState:(unsigned int)arg1 operationGroupNameSuffix:(id)arg2 retryCount:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)recordTypeForRecordID:(id)arg1;
 - (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;

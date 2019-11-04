@@ -77,13 +77,11 @@
 - (void)loadUpdateProgressForConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(NSError *, float))arg2;
 - (void)loadIsUpdateInProgressForConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(_Bool, _Bool))arg2;
 - (void)isMediaKindDisabledForJaliscoLibrary:(long long)arg1 configuration:(ICConnectionConfiguration *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)updateJaliscoLibraryByAddingMediaKind:(long long)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
-- (void)updateJaliscoLibraryByRemovingMediaKind:(long long)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)removeJaliscoLibraryForConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setCloudAddToPlaylistBehavior:(long long)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)deauthenticateAndDisableActiveLockerAccountWithCompletion:(void (^)(NSError *))arg1;
 - (void)deauthenticateForConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)authenticateForConfiguration:(ICConnectionConfiguration *)arg1 startInitialImport:(_Bool)arg2 mergeWithCloudLibrary:(_Bool)arg3 isExplicitUserAction:(_Bool)arg4 completion:(void (^)(NSError *))arg5;
+- (void)authenticateForConfiguration:(ICConnectionConfiguration *)arg1 startInitialImport:(_Bool)arg2 enableCloudLibraryPolicy:(long long)arg3 isExplicitUserAction:(_Bool)arg4 completion:(void (^)(NSError *))arg5;
 - (void)updateSagaLibraryWithReason:(long long)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 forConfiguration:(ICConnectionConfiguration *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)isSagaAuthenticatedForConfiguration:(ICConnectionConfiguration *)arg1 completion:(void (^)(NSError *, _Bool))arg2;

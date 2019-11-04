@@ -142,6 +142,7 @@
 - (void)shrink:(unsigned long long)arg1;
 - (void)coolDown;
 - (void)issueConsistencyCheck:(id)arg1;
+- (void)issueDefrag:(id)arg1 group:(id)arg2;
 - (void)issueCleanup:(id)arg1 flags:(int)arg2;
 - (void)issueRepair:(id)arg1;
 - (void)cleanupStringsWithProtectionClasses:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

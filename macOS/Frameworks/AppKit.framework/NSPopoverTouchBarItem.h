@@ -20,9 +20,11 @@
     NSView *_collapsedRepresentation;
     NSImage *_collapsedRepresentationImage;
     NSString *_collapsedRepresentationLabel;
+    CDUnknownBlockType _closeButtonHandler;
     unsigned int _showsCloseButton:1;
     unsigned int _showsControlStrip:1;
     unsigned int _collapsedRepresentationChevronBehavior:2;
+    unsigned int _preventUserDismissal:1;
 }
 
 + (id)keyPathsForValuesAffectingPresented;
@@ -44,6 +46,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)setShowsControlStripForOverlay:(BOOL)arg1;
 - (BOOL)showsControlStripForOverlay;
+- (void)setCloseButtonHandler:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)closeButtonHandler;
+- (void)setPreventUserDismissal:(BOOL)arg1;
+- (BOOL)preventUserDismissal;
 @property BOOL showsCloseButton;
 @property(copy) NSString *customizationLabel;
 @property(retain) NSTouchBar *pressAndHoldTouchBar;

@@ -22,6 +22,7 @@
 + (id)twoFingerGestures;
 + (id)oneFingerGestures;
 + (id)_gesturesForFingerCount:(int)arg1;
++ (id)rtlGestureForGesture:(id)arg1;
 + (id)horizontalMirrorGestureForGesture:(id)arg1;
 + (id)gestureWithStringValue:(id)arg1;
 + (id)allGestures;
@@ -80,6 +81,7 @@
 @property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *rawValue;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

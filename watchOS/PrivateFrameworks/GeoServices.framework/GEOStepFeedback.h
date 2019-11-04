@@ -13,10 +13,12 @@
 @interface GEOStepFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     double _completionTimeStamp;
     NSData *_routeID;
     NSData *_tripID;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _routeIndex;
     unsigned int _stepID;
     _Bool _completedStep;
@@ -67,6 +69,8 @@
 @property(nonatomic) double completionTimeStamp;
 @property(nonatomic) _Bool hasStepID;
 @property(nonatomic) unsigned int stepID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)setMinScaleFactor:(double)arg1 withMaxScaleFactor:(double)arg2;
 - (void)enforceAutoScaleFactor;
 - (void)setAutoScales:(BOOL)arg1;
+- (id)textInputView;
 - (id)scrollView;
 - (id)pageView;
 - (id)PDFPage;

@@ -41,6 +41,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldExcludeFromIndex;
 @property(readonly, nonatomic) BOOL alwaysMarkAsIndexed;
+- (void)setNeedsAllAttributesIndexingType;
 @property(nonatomic) long long indexingType; // @synthesize indexingType=_indexingType;
 @property(readonly, nonatomic) BOOL hasCompleteData;
 @property(readonly, nonatomic) unsigned long long estimatedSizeInBytes;

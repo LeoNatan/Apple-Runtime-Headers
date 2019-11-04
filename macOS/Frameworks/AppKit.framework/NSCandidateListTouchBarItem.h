@@ -57,6 +57,8 @@
 - (id)initWithIdentifier:(id)arg1;
 - (void)_commonInit;
 - (void)_automaticTextCompletionChanged:(id)arg1;
+- (void)setLimitsNumberOfCandidates:(BOOL)arg1;
+- (BOOL)limitsNumberOfCandidates;
 @property(readonly) NSCandidateListViewController *candidateListViewController;
 
 // Remaining properties

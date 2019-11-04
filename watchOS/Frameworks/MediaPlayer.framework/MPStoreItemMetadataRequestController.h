@@ -13,6 +13,8 @@
     NSOperationQueue *_operationQueue;
     unsigned long long _lastExpiredMetadataPurgeMachTime;
     NSMutableDictionary *_itemCaches;
+    struct os_unfair_lock_s _transactionLock;
+    int _transactionCount;
     int _cacheSize;
 }
 
@@ -24,6 +26,8 @@
 - (id)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)requestStoreItemMetadataForReason:(unsigned int)arg1 withItemIdentifiers:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)addStoreItemMetadata:(id)arg1;
+- (void)endTransaction;
+- (void)beginTransaction;
 - (id)init;
 
 @end

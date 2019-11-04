@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (id)scopedSearchQuery;
 @property(copy, nonatomic) NSFileProviderSearchQuery *searchQuery;
-- (void)stopObserving;
 - (BOOL)isCollectionValidForItem:(id)arg1;
 - (id)_enumerationSettingsPredicate;
 - (id)_createDescriptorWithSortDescriptors:(id)arg1;

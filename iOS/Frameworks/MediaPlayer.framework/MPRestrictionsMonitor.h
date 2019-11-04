@@ -19,6 +19,7 @@
     _Bool _allowsAccountModification;
     _Bool _allowsDeletion;
     _Bool _allowsExplicitContent;
+    _Bool _allowsMusicSubscription;
     _Bool _allowsStorePurchases;
     _Bool _allowsRadioPurchases;
     long long _maximumTVShowRatingForAgeGate;
@@ -30,6 +31,7 @@
 @property(nonatomic) long long maximumTVShowRatingForAgeGate; // @synthesize maximumTVShowRatingForAgeGate=_maximumTVShowRatingForAgeGate;
 @property(readonly, nonatomic) _Bool allowsRadioPurchases; // @synthesize allowsRadioPurchases=_allowsRadioPurchases;
 @property(readonly, nonatomic) _Bool allowsStorePurchases; // @synthesize allowsStorePurchases=_allowsStorePurchases;
+@property(readonly, nonatomic) _Bool allowsMusicSubscription; // @synthesize allowsMusicSubscription=_allowsMusicSubscription;
 @property(readonly, nonatomic) _Bool allowsExplicitContent; // @synthesize allowsExplicitContent=_allowsExplicitContent;
 @property(readonly, nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
 @property(readonly, nonatomic) _Bool allowsAccountModification; // @synthesize allowsAccountModification=_allowsAccountModification;

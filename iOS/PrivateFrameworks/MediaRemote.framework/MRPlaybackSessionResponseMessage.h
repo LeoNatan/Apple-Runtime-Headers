@@ -14,7 +14,7 @@
 
 - (unsigned long long)type;
 @property(readonly, nonatomic) _MRPlaybackSessionProtobuf *playbackSession;
-- (id)initWithPlaybackSession:(struct _MRPlaybackSessionProtobuf *)arg1;
+- (id)initWithPlaybackSession:(id)arg1;
 
 @end
 

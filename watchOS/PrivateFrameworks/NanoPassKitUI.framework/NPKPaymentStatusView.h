@@ -48,6 +48,8 @@
 - (_Bool)_buttonPillShouldBeHidden;
 - (void)resetWithPrimaryPaymentApplicationState:(int)arg1 contactlessPaymentApplicationState:(int)arg2 loyalty:(_Bool)arg3;
 - (void)resetWithPrimaryPaymentApplicationState:(int)arg1 loyalty:(_Bool)arg2;
+- (void)_handleDeviceOrientationChanged:(id)arg1;
+- (void)_createDoubleClickToApproveView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

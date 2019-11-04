@@ -16,6 +16,7 @@
 + (id)logCategory;
 @property(readonly, nonatomic) NSNumber *configurationVersion; // @synthesize configurationVersion=_configurationVersion;
 - (void).cxx_destruct;
+- (void)updateWithAdditionalModel:(id)arg1;
 - (void)update;
 - (id)description;
 - (id)initWithSessionID:(id)arg1 setting:(id)arg2 clientQueue:(id)arg3 delegate:(id)arg4 message:(id)arg5 configurationVersion:(id)arg6 outError:(id *)arg7;

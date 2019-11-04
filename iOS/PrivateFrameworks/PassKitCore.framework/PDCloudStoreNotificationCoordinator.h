@@ -11,7 +11,7 @@
 #import <PassKitCore/PDScheduledActivityClient-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoordinatorDelegate-Protocol.h>
 
-@class NSHashTable, NSMutableArray, NSMutableDictionary, NSSet, NSString, PDApplePayCloudStoreContainer, PDPassCloudStoreContainer, PDPushNotificationManager;
+@class NSHashTable, NSMutableArray, NSSet, NSString, PDApplePayCloudStoreContainer, PDPassCloudStoreContainer, PDPushNotificationManager;
 @protocol OS_dispatch_queue;
 
 @interface PDCloudStoreNotificationCoordinator : NSObject <PDPushNotificationConsumer, PDCloudStoreContainerDelegate, PDScheduledActivityClient, PKCloudStoreCoordinatorDelegate>
@@ -21,13 +21,10 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     NSSet *_pushTopics;
     NSMutableArray *_containers;
-    NSMutableDictionary *_containersCurrentlyProcessingPushNotifications;
-    NSMutableDictionary *_containersThatShouldProcessPushNotifications;
     PDApplePayCloudStoreContainer *_applePayContainer;
     PDPassCloudStoreContainer *_passContainer;
 }
 
-+ (void)invalidateServerChangeTokens;
 @property(retain, nonatomic) PDPassCloudStoreContainer *passContainer; // @synthesize passContainer=_passContainer;
 @property(retain, nonatomic) PDApplePayCloudStoreContainer *applePayContainer; // @synthesize applePayContainer=_applePayContainer;
 - (void).cxx_destruct;
@@ -61,7 +58,9 @@
 - (void)cloudStoreContainerShouldUnscheduleAllBackgroundActivities:(id)arg1;
 - (void)cloudStoreContainer:(id)arg1 didChangeContainerState:(unsigned long long)arg2;
 - (void)cloudStoreContainer:(id)arg1 createdZoneWithName:(id)arg2;
-- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)recreateZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)invalidateServerChangeTokens;
 - (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

@@ -31,7 +31,8 @@
 @property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
 @property(readonly, nonatomic) NSArray *axDelegateAccessibilityChildren;
-- (void)updateAccessibilitySelectedChildren;
+- (void)postContentRootAccessibilityNotification:(id)arg1 userInfo:(id)arg2;
+- (void)postContentRootAccessibilityNotification:(id)arg1;
 - (id)contentCoordinateSpace;
 - (void)didEndScrollInScrollView:(id)arg1;
 - (void)scrollViewBeganMomentum:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

@@ -149,6 +149,11 @@ struct PXSimpleIndexPath {
     long long subitem;
 };
 
+struct TransformMetadataItemPair {
+    id _field1;
+    id _field2;
+};
+
 struct UICollectionViewCell {
     Class _field1;
 };
@@ -225,10 +230,6 @@ typedef struct {
     struct CGPoint _field2;
     struct CGAffineTransform _field3;
 } CDStruct_d54ccef3;
-
-typedef struct {
-    struct CGRect startCropRect;
-} CDStruct_0de14bd3;
 
 // Ambiguous groups
 typedef struct {

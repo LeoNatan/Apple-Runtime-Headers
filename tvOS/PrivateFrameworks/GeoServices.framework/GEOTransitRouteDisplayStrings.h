@@ -15,7 +15,6 @@
 @interface GEOTransitRouteDisplayStrings : PBCodable <GEOComposedRouteTransitDisplayStrings, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_advisorys;
     GEOFormattedString *_badge;
@@ -23,6 +22,9 @@
     GEOFormattedString *_duration;
     GEOFormattedString *_planningDescription;
     GEOFormattedString *_travelDescription;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_advisorys:1;
@@ -78,6 +80,8 @@
 @property(retain, nonatomic) GEOFormattedString *planningDescription;
 @property(readonly, nonatomic) _Bool hasPlanningDescription;
 - (void)_readPlanningDescription;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) id <GEOServerFormattedString> transitRouteBadge;
 @property(readonly, nonatomic) NSArray *transitAdvisories;
 @property(readonly, nonatomic) id <GEOServerFormattedString> transitDescriptionFormatString;

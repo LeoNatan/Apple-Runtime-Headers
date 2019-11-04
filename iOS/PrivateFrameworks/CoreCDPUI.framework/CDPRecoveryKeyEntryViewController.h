@@ -29,6 +29,7 @@
 - (void)cancelFlow:(id)arg1;
 - (id)placeholderText;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (_Bool)hidesNextButton;
 - (id)specifiers;
 - (void)viewWillAppear:(_Bool)arg1;

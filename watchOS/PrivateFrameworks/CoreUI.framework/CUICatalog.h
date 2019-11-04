@@ -28,6 +28,7 @@
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 displayGamut:(unsigned int)arg4 deviceSubtype:(unsigned int)arg5 sizeClassHorizontal:(int)arg6 sizeClassVertical:(int)arg7;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 sizeClassHorizontal:(int)arg5 sizeClassVertical:(int)arg6;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4;
++ (id)bestMatchUsingObjects:(id)arg1 getAttributeValueUsing:(CDUnknownBlockType)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 displayGamut:(int)arg6 deploymentTarget:(int)arg7 layoutDirection:(int)arg8 sizeClassHorizontal:(int)arg9 sizeClassVertical:(int)arg10 memoryClass:(int)arg11 graphicsFeatureSetClass:(int)arg12 graphicsFallBackOrder:(id)arg13 deviceSubtypeFallBackOrder:(id)arg14 platform:(int)arg15;
 + (id)bestMatchUsingObjects:(id)arg1 getAttributeValueUsing:(CDUnknownBlockType)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 displayGamut:(int)arg6 deploymentTarget:(int)arg7 layoutDirection:(int)arg8 sizeClassHorizontal:(int)arg9 sizeClassVertical:(int)arg10 memoryClass:(int)arg11 graphicsFeatureSetClass:(int)arg12 graphicsFallBackOrder:(id)arg13 deviceSubtypeFallBackOrder:(id)arg14;
 + (id)defaultUICatalogForBundle:(id)arg1;
 + (_Bool)isValidAssetStorageWithURL:(id)arg1;

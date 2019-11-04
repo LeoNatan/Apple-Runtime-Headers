@@ -126,8 +126,12 @@
         unsigned int delegateContextMenuConfigurationForItemAtIndexPath:1;
         unsigned int delegateContextMenuPreviewForHighlighting:1;
         unsigned int delegateContextMenuPreviewForDismissing:1;
-        unsigned int delegateContextMenuwillPerformPreviewActionForMenuWithConfiguration:1;
+        unsigned int delegateContextMenuwillPerformPreviewAction:1;
         unsigned int delegateContextMenuWillCommitMenuWithAnimator:1;
+        unsigned int delegateWillDisplayContextMenu:1;
+        unsigned int delegateWillEndContextMenuInteraction:1;
+        unsigned int delegateStyleForContextMenu:1;
+        unsigned int delegateAccessoriesForContextMenu:1;
         unsigned int dataSourceNumberOfSections:1;
         unsigned int dataSourceViewForSupplementaryElement:1;
         unsigned int dataSourceCanMoveItemAtIndexPathSPI:1;
@@ -623,7 +627,9 @@
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 notifyDelegate:(_Bool)arg3;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned long long)arg3;
+- (void)_selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned long long)arg3 notifyDelegate:(_Bool)arg4 deselectPrevious:(_Bool)arg5;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned long long)arg3 notifyDelegate:(_Bool)arg4;
+- (_Bool)_delegateAllowsSelectingItemAtIndexPath:(id)arg1;
 - (void)_deselectAllAnimated:(_Bool)arg1 notifyDelegate:(_Bool)arg2;
 - (id)_managedViews;
 - (_Bool)_removeCellFromVisibleCells:(id)arg1;

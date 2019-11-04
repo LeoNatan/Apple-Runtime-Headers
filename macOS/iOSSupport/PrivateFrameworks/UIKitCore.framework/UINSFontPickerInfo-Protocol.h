@@ -12,6 +12,7 @@
 @protocol UINSFontPickerInfo <NSObject>
 + (id)infoWithFamilyName:(NSString *)arg1;
 @property(readonly) NSArray *faces;
+@property(readonly) BOOL fontFamilyAvailable;
 @property(readonly) const struct __CTFontDescriptor *ctFontDescriptor;
 @property(readonly) NSString *localizedName;
 @property(readonly) NSAttributedString *attributedString;

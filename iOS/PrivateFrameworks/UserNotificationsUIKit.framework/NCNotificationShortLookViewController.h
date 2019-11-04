@@ -106,7 +106,6 @@
 @property(readonly, nonatomic, getter=_presentedLongLookViewController) NCNotificationViewController *presentedLongLookViewController;
 - (id)_newClickPresentationInteractionManager;
 - (_Bool)_setNotificationRequest:(id)arg1;
-- (_Bool)_setDelegate:(id)arg1;
 - (void)setInteractionEnabled:(_Bool)arg1;
 - (_Bool)shouldRestorePresentingShortLookOnDismiss;
 - (void)expandAndPlayMedia;
@@ -121,6 +120,7 @@
 - (_Bool)isContentExtensionVisible:(id)arg1;
 - (_Bool)dismissPresentedViewControllerAndClearNotification:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)didReceiveNotificationRequest:(id)arg1;
+- (_Bool)isNotPresentingOrHasCommittedToDismissingCustomContentProvidingViewController;
 - (_Bool)hasCommittedToPresentingCustomContentProvidingViewController;
 - (void)setMaterialGroupNameBase:(id)arg1;
 - (_Bool)isShortLook;

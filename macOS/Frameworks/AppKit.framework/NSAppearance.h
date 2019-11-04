@@ -70,8 +70,11 @@
 - (BOOL)_allowsCustomControlTintColors;
 - (BOOL)_allowsSystemControlTintColors;
 - (BOOL)_isTintedWithLightColor;
+@property(readonly) struct CGSize _minimumSizeForCompressedSegment;
+@property(readonly) struct CGSize _minimumSizeForStandardSegment;
 @property(readonly) struct CGSize _minimumSizeForSmallToolbarButton;
 @property(readonly) struct CGSize _minimumSizeForToolbarButton;
+@property(readonly) struct CGSize _minimumSizeForCompressedButton;
 @property(readonly) struct CGSize _minimumSizeForStandardButton;
 @property(readonly) BOOL _prefersSliderAccessoryStepBehavior;
 @property(readonly) BOOL _prefersButtonTitleNaturalBaseline;

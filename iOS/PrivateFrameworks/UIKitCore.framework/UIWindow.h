@@ -279,6 +279,7 @@
 - (id)undoManager;
 - (_Bool)_needsShakesWhenInactive;
 - (id)_deepestUnambiguousResponder;
+- (id)_responderForKeyEventsInWindow;
 - (_Bool)_supportsBecomeFirstResponderWhenPossible;
 - (_Bool)_becomeFirstResponderWhenPossible;
 - (_Bool)becomeFirstResponder;
@@ -391,6 +392,7 @@
 - (_Bool)_shouldAdjustSizeClassesAndResizeWindow;
 - (void)_rotateToBounds:(struct CGRect)arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
 - (_Bool)_guardSizeTransitionFromAnimations;
+- (void)_executeDeferredLaunchBlock;
 - (void)_handleStatusBarOrientationChange:(id)arg1;
 - (void)_setWindowControlsStatusBarOrientation:(_Bool)arg1;
 - (_Bool)_windowControlsStatusBarOrientation;
@@ -459,8 +461,7 @@
 - (_Bool)_areOverlayInsetsValid:(struct UIEdgeInsets)arg1;
 - (void)_noteOverlayInsetsDidChange;
 - (struct UIEdgeInsets)_overlayInsets;
-- (void)_removeAllViewControllersFromWindowHierarchy;
-- (void)_removeAllPresentationsFromWindowHierarchy;
+- (void)_removeAllViewControllersFromWindowHierarchyFromDealloc:(_Bool)arg1;
 - (void)makeKey:(id)arg1;
 - (void)orderOut:(id)arg1;
 - (void)_orderFrontWithoutMakingKey;

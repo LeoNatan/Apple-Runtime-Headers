@@ -43,6 +43,7 @@
 - (void)_registerForMyriadEvents;
 - (id)_myriadStateToString:(long long)arg1;
 - (void)dealloc;
+- (_Bool)didWin;
 - (void)stopMonitoring;
 - (void)dequeueBlocksWaitingForMyriadDecision;
 - (void)ignoreMyriadEvents:(_Bool)arg1;

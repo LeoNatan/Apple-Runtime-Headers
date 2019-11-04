@@ -48,6 +48,7 @@
 - (unsigned long long)estimatedResourceSize;
 - (_Bool)isTrackedForUpload;
 - (id)bestFileNameForResource;
+- (id)redactedDescription;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

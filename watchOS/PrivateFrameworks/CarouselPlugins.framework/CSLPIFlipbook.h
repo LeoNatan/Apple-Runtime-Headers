@@ -10,8 +10,8 @@
 #import <CarouselPlugins/CSLPISystemSleepObserverDelegate-Protocol.h>
 #import <CarouselPlugins/CSLSFlipbookFrameCoordinator-Protocol.h>
 
-@class CADisplayFlipBook, CSLPIFlipbookFrameStore, CSLPIFlipbookUpdate, CSLPISystemSleepObserver, CSLPITimer, NSString, NSUserDefaults, UIViewController, _UIWatchFlipbookRootWindow;
-@protocol CSLSAOTViewController, OS_dispatch_queue;
+@class CADisplayFlipBook, CALayer, CATextLayer, CSLPIFlipbookFrameStore, CSLPIFlipbookUpdate, CSLPISystemSleepObserver, CSLPITimer, NSString, NSUserDefaults, UIViewController, _UIWatchFlipbookRootWindow;
+@protocol CSLFlipbookTelemetryDelegate, CSLSAOTViewController, OS_dispatch_queue;
 
 @interface CSLPIFlipbook : NSObject <CSLPISystemSleepObserverDelegate, CSLPIFlipbookUpdateDelegate, CSLSFlipbookFrameCoordinator>
 {
@@ -25,14 +25,20 @@
     CSLPIFlipbookUpdate *_update;
     NSUserDefaults *_observedDefaults;
     unsigned int _frameCapacity;
-    _Bool _isStealthed;
     _Bool _flipbookWillBeActive;
     _Bool _willSleep;
+    _Bool _showDebugColorOverlay;
+    unsigned int _debugOverlayColorVarient;
+    CALayer *_debugColorOverlayLayer;
+    _Bool _showDebugLabelOverlay;
+    CATextLayer *_debugLabelOverlayLayer;
     _UIWatchFlipbookRootWindow *_offscreenWindow;
     CSLPISystemSleepObserver *_systemSleepObserver;
+    id <CSLFlipbookTelemetryDelegate> _telemetryDelegate;
 }
 
 - (void).cxx_destruct;
+- (void)systemSleepObserverAbortSleepTasks:(id)arg1;
 - (void)systemSleepObserverWillPowerOn:(id)arg1;
 - (void)systemSleepObserver:(id)arg1 willSleepWithCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)withLock_updateShouldAdvanceToNextMinute:(id)arg1;
@@ -43,14 +49,17 @@
 - (void)updateDidAdvanceToNextMinute:(id)arg1 wasInitialFrame:(_Bool)arg2;
 - (void)didEndUpdate:(id)arg1 wasActive:(_Bool)arg2 didCompleteAnimationFrames:(_Bool)arg3 notifyObserversBlock:(CDUnknownBlockType)arg4;
 - (void)didStartUpdate:(id)arg1;
-- (void)_withLock_invalidateFramesOnOrAfterPresentationTime:(id)arg1 forReason:(int)arg2 reasonStr:(id)arg3;
+- (void)_withLock_invalidateAllFramesforReason:(int)arg1 reasonStr:(id)arg2;
 - (void)invalidateFramesOnOrAfterPresentationTime:(id)arg1 forReason:(id)arg2;
+- (void)invalidateAllFramesForReason:(id)arg1;
+- (id)frameSpecifierOnScreenNow;
 - (id)frameSpecifierOnScreenAtPresentationTime:(id)arg1;
 - (_Bool)onWorkQueue_hasRoomForAnotherMinute;
 - (void)onWorkQueue_flipbookTimerFired;
 - (void)generateFrameForUpdate:(id)arg1 frameSpecifiers:(id)arg2 index:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)generateNextAnimationFramesForUpdate:(id)arg1 frameSpecifiers:(id)arg2;
 - (void)generateNextAnimationFramesForUpdate:(id)arg1;
+- (void)withLock_generationCompleteForUpdate:(id)arg1 didCompleteAnimationFrames:(_Bool)arg2;
 - (void)generationCompleteForUpdate:(id)arg1 didCompleteAnimationFrames:(_Bool)arg2;
 - (_Bool)isCurrentUpdate:(id)arg1;
 - (void)updateOffscreenWindowRotation;
@@ -60,8 +69,11 @@
 - (void)beginPresentationForReason:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginPresentationWithCompletion:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) UIViewController<CSLSAOTViewController> *AOTViewController;
+- (void)updateDebugOverlayForFrame:(id)arg1;
+- (void)setShowDebugLabelOverlay:(_Bool)arg1;
+- (void)setShowDebugColorOverlay:(_Bool)arg1;
 - (void)dealloc;
-- (id)initWithFrameCapacity:(unsigned int)arg1 aotViewController:(id)arg2 invalidationDelegate:(id)arg3;
+- (id)initWithFrameCapacity:(unsigned int)arg1 aotViewController:(id)arg2 telemetryDelegate:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

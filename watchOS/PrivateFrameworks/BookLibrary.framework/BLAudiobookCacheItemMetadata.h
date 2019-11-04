@@ -6,18 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class BLHLSPlaylist, MPMediaItem, NSMutableDictionary;
+@class BLHLSPlaylist, MPMediaItem, NSHashTable, NSMutableDictionary;
+@protocol OS_dispatch_source;
 
 @interface BLAudiobookCacheItemMetadata : NSObject
 {
+    struct os_unfair_lock_s _observerLock;
+    struct os_unfair_lock_s _metadataLock;
     MPMediaItem *_mediaItem;
     NSMutableDictionary *_metaDataDictionary;
     unsigned int _startingIndex;
     unsigned int _count;
     BLHLSPlaylist *_mediaPlaylist;
+    NSHashTable *_observers;
+    NSObject<OS_dispatch_source> *_monitorSource;
 }
 
 + (id)metaDataForMediaItem:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *monitorSource; // @synthesize monitorSource=_monitorSource;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) BLHLSPlaylist *mediaPlaylist; // @synthesize mediaPlaylist=_mediaPlaylist;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(nonatomic) unsigned int startingIndex; // @synthesize startingIndex=_startingIndex;
@@ -25,12 +32,20 @@
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 - (void).cxx_destruct;
 - (void)_load;
+- (void)_notifyObservers;
+- (void)_stopMonitoringFileChanges;
+- (void)_startMonitoringFileChanges;
 - (void)remove;
 - (void)save;
+- (void)stopMonitoringChanges;
+- (void)startMonitoringChanges;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 @property(readonly, nonatomic) double cachedDuration;
 @property(readonly, nonatomic) double cachedStartTime;
 - (void)setCachedDuration:(double)arg1;
 - (void)setCachedStartTime:(double)arg1;
+- (void)dealloc;
 - (id)initWithMediaItem:(id)arg1;
 
 @end

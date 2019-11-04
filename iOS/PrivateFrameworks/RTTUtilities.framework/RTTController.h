@@ -19,15 +19,18 @@
     NSObject<OS_dispatch_queue> *_workerQueue;
     NSMutableDictionary *_localSettingsCache;
     AXDispatchTimer *_preferredRelayCoalescer;
+    AXDispatchTimer *_callUpdateCoalescer;
     _Bool _shouldSuppressIncomingNotification;
     NSMutableArray *_rttCalls;
     id <HCHeardControllerProtocol> _delegate;
+    CDUnknownBlockType _serverInvalidateCallback;
     CDUnknownBlockType _actionCompletionBlock;
 }
 
 + (id)sharedController;
 @property(nonatomic) _Bool shouldSuppressIncomingNotification; // @synthesize shouldSuppressIncomingNotification=_shouldSuppressIncomingNotification;
 @property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
+@property(copy, nonatomic) CDUnknownBlockType serverInvalidateCallback; // @synthesize serverInvalidateCallback=_serverInvalidateCallback;
 @property(nonatomic) __weak id <HCHeardControllerProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *rttCalls; // @synthesize rttCalls=_rttCalls;
 - (void).cxx_destruct;
@@ -39,6 +42,7 @@
 - (id)handleSettingsRequest:(id)arg1;
 - (id)handleDictionaryRequest:(id)arg1;
 - (id)handleDatabaseRequest:(id)arg1;
+- (id)handleMediaAction:(id)arg1;
 - (id)userInterfaceClient:(id)arg1 processMessageFromServer:(id)arg2 withIdentifier:(unsigned long long)arg3 error:(id *)arg4;
 - (id)actionClient;
 - (void)dealloc;
@@ -51,7 +55,7 @@
 - (void)_refreshCurrentCallList;
 - (void)callDidConnect:(id)arg1;
 - (void)didChangeTelephonyCallingSupport;
-- (void)invalidateServerCaches:(id)arg1;
+- (_Bool)invalidateServerCaches:(id)arg1;
 - (void)_handlePreferredRelayNumberUpdate;
 - (id)init;
 

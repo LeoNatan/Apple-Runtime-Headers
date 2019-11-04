@@ -98,8 +98,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableDictionary *routeLookup;
 @property(readonly, nonatomic) NSMapTable *routeIDLookup;
 - (void)_updateRouteIDLookup;
-- (id)removeTrafficIncidentAlertWithDetails:(id)arg1;
-- (id)updateWithTrafficIncidentAlertDetails:(id)arg1;
+- (id)removeTrafficIncidentAlert:(id)arg1;
+- (id)updateWithTrafficIncidentAlert:(id)arg1;
 - (id)routeLookupIDs;
 - (id)routeInfoForRoute:(id)arg1;
 - (id)routeInfoForID:(id)arg1;

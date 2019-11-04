@@ -10,5 +10,6 @@
 
 @interface UIResponder (WFDragCoordinator)
 @property(readonly, nonatomic) id <WFDragCoordinator> wf_dragCoordinator;
+- (void)wf_handleBlockKeyCommand:(id)arg1;
 @end
 

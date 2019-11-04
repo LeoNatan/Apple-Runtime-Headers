@@ -119,7 +119,6 @@
 @property(retain, nonatomic) NSDictionary *footerViewAttributes;
 @property(readonly, nonatomic) NSDictionary *headerViewAttributes;
 - (void)setHeaderViewAttributes:(id)arg1;
-- (float)_cellHeight:(id)arg1;
 - (void)setEditing:(_Bool)arg1;
 - (void)removeRowAtIndexPath:(id)arg1;
 - (void)insertRow:(id)arg1 atIndexPath:(id)arg2;

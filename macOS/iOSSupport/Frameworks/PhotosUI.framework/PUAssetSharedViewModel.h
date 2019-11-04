@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     PUOperationStatus *_loadingStatus;
     NSProgress *_saveProgress;
     long long _saveState;
+    long long _flippingFullSizeRenderState;
 }
 
+@property(nonatomic) long long flippingFullSizeRenderState; // @synthesize flippingFullSizeRenderState=_flippingFullSizeRenderState;
 @property(nonatomic) long long saveState; // @synthesize saveState=_saveState;
 @property(retain, nonatomic) NSProgress *saveProgress; // @synthesize saveProgress=_saveProgress;
 @property(retain, nonatomic) PUOperationStatus *loadingStatus; // @synthesize loadingStatus=_loadingStatus;

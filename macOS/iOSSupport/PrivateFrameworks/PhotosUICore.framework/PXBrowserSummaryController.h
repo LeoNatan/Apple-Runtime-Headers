@@ -41,6 +41,7 @@
     BOOL _shouldUseNavigationTitle;
     BOOL _shouldUseAbbreviatedDates;
     BOOL _shouldShowLocationNames;
+    BOOL _ready;
     BOOL _filteringContainerContent;
     NSDictionary *_defaultAttributes;
     NSDictionary *_emphasizedAttributes;
@@ -81,6 +82,7 @@
 @property(readonly, nonatomic) PXInfoUpdater *titlesInfoUpdater; // @synthesize titlesInfoUpdater=_titlesInfoUpdater;
 @property(readonly, nonatomic) PXInfoUpdater *selectionInfoUpdater; // @synthesize selectionInfoUpdater=_selectionInfoUpdater;
 @property(readonly, nonatomic) PXInfoUpdater *visibleMetadataInfoUpdater; // @synthesize visibleMetadataInfoUpdater=_visibleMetadataInfoUpdater;
+@property(nonatomic, getter=isReady) BOOL ready; // @synthesize ready=_ready;
 @property(copy, nonatomic) NSArray *stackedAssets; // @synthesize stackedAssets=_stackedAssets;
 @property(copy, nonatomic) NSAttributedString *attributedSelectionTitle; // @synthesize attributedSelectionTitle=_attributedSelectionTitle;
 @property(copy, nonatomic) NSString *navigationTitle; // @synthesize navigationTitle=_navigationTitle;

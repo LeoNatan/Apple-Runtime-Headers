@@ -13,7 +13,6 @@
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_arrivalParameters;
     NSMutableArray *_cameras;
@@ -26,6 +25,9 @@
     NSMutableArray *_routes;
     NSData *_sessionState;
     NSMutableArray *_trafficSignals;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _status;
     struct {
         unsigned int has_debugServerLatencyMs:1;
@@ -127,6 +129,8 @@
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
 @property(nonatomic) int status;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

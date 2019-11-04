@@ -6,18 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/UIPopoverControllerDelegate-Protocol.h>
+#import <UIKitCore/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSString, UIPopoverController, UIView, UIViewController;
+@class NSString, UIResponder, UIView, UIViewController;
 
 __attribute__((visibility("hidden")))
-@interface _UITextServiceSession : NSObject <UIPopoverControllerDelegate>
+@interface _UITextServiceSession : NSObject <UIPopoverPresentationControllerDelegate>
 {
     long long _type;
     UIViewController *_modalViewController;
-    UIPopoverController *_popoverController;
     UIView *_contextView;
-    _Bool _isTextEffectsWindow;
+    UIResponder *_pinnedResponder;
     _Bool _dismissed;
     CDUnknownBlockType _dismissedHandler;
 }
@@ -26,12 +25,12 @@ __attribute__((visibility("hidden")))
 + (id)showServiceForText:(id)arg1 type:(long long)arg2 fromRect:(struct CGRect)arg3 inView:(id)arg4;
 + (id)showServiceForType:(long long)arg1 withContext:(id)arg2;
 + (id)showServiceForText:(id)arg1 selectedTextRange:(struct _NSRange)arg2 type:(long long)arg3 fromRect:(struct CGRect)arg4 inView:(id)arg5;
-+ (_Bool)shouldPresentAsPopoverForServiceOfType:(long long)arg1 inView:(id)arg2;
++ (_Bool)shouldPresentServiceInSameWindowAsView:(id)arg1;
 + (_Bool)canShowTextServices;
 @property(copy, nonatomic) CDUnknownBlockType dismissedHandler; // @synthesize dismissedHandler=_dismissedHandler;
 - (void).cxx_destruct;
 - (void)_endSession;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)dismissTextServiceAnimated:(_Bool)arg1;
 - (long long)type;
 - (_Bool)isDisplaying;

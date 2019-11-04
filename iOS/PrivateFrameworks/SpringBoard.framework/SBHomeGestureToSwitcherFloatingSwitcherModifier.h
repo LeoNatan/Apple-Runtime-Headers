@@ -20,6 +20,8 @@
 @property(retain, nonatomic) SBSwitcherModifier *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
 - (void).cxx_destruct;
 - (id)layoutSettings;
+- (_Bool)wantsMinificationFilter;
+- (long long)liveContentRasterizationStyle;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (id)transitionWillBegin;
 - (id)initWithTransitionID:(id)arg1 multitaskingModifier:(id)arg2 selectedAppLayout:(id)arg3;

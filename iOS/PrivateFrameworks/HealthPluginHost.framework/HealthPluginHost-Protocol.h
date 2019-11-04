@@ -9,6 +9,7 @@
 @class NSArray, NSDateInterval, NSDictionary, NSProgress, NSString;
 
 @protocol HealthPluginHost <HKHealthAppPluginHost>
+- (void)deleteFeedWithFeedKinds:(NSArray *)arg1 completion:(void (^)(void))arg2;
 - (void)submitFeedPersonalizationAnalyticsWithFeedsToPopulateWhenFinished:(NSArray *)arg1 completion:(void (^)(void))arg2;
 - (void)submitHighlightsAnalyticsWithCompletion:(void (^)(void))arg1;
 - (void)collectFeedPopulationDiagnosticLogsWithCompletion:(void (^)(NSArray *))arg1;

@@ -11,11 +11,12 @@
 #import <MobileTimer/MTSleepCoordinatorStateMachineDelegate-Protocol.h>
 #import <MobileTimer/MTSleepCoordinatorStateMachineInfoProvider-Protocol.h>
 #import <MobileTimer/MTSource-Protocol.h>
+#import <MobileTimer/MTTimeObserver-Protocol.h>
 
 @class MTAlarm, MTBedtimeDNDMonitor, MTObserverStore, MTSleepCoordinatorStateMachine, MTXPCScheduler, NAFuture, NSDate, NSString;
 @protocol MTAlarmStorage, NAScheduler;
 
-@interface MTSleepCoordinator : NSObject <MTSource, MTSleepCoordinatorStateMachineDelegate, MTSleepCoordinatorStateMachineInfoProvider, MTAlarmObserver, MTAgentDiagnosticDelegate>
+@interface MTSleepCoordinator : NSObject <MTSource, MTSleepCoordinatorStateMachineDelegate, MTSleepCoordinatorStateMachineInfoProvider, MTAlarmObserver, MTTimeObserver, MTAgentDiagnosticDelegate>
 {
     MTSleepCoordinatorStateMachine *_stateMachine;
     MTAlarm *_cachedSleepAlarm;
@@ -44,6 +45,7 @@
 - (void)pairedDevicePreferencesChanged:(id)arg1;
 - (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
+- (void)timeListener:(id)arg1 didDetectSignificantTimeChangeWithCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)handleBedtimeSessionEndedForAlarm:(id)arg1 date:(id)arg2 reason:(unsigned long long)arg3;
 - (void)handleDismissForAlarm:(id)arg1 dismissAction:(unsigned long long)arg2 date:(id)arg3;
 - (void)handleSnoozeForAlarm:(id)arg1 date:(id)arg2;

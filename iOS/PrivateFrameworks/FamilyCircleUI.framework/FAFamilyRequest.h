@@ -15,6 +15,12 @@
 
 @property(retain, nonatomic) ACAccount *appleAccount; // @synthesize appleAccount=_appleAccount;
 - (void).cxx_destruct;
+- (id)urlRequest;
+- (void)URLRequestWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_decoratedURLWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_baseURLForEndpoint:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)_queryString;
+- (id)_endpoint;
 - (void)_configureRequest:(id)arg1 includePayload:(_Bool)arg2;
 - (id)initWithGrandSlamSigner:(id)arg1;
 

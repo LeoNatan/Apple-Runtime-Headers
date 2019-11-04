@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) unsigned long long actionSetItemStyle; // @synthesize actionSetItemStyle=_actionSetItemStyle;
 @property(readonly, nonatomic) HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 - (void).cxx_destruct;
+- (id)actionSetOperation:(id)arg1 errorFromError:(id)arg2;
 - (id)turnOffActionSet;
 - (id)executeActionSet;
 - (id)rooms;

@@ -11,6 +11,7 @@
 
 @interface XCTElementSnapshotRequest : NSObject
 {
+    _Bool _preserveRemoteElementPlaceholders;
     _Bool _loadResult;
     _Bool _hasLoaded;
     XCAccessibilityElement *_element;
@@ -28,6 +29,7 @@
 @property _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property _Bool loadResult; // @synthesize loadResult=_loadResult;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property _Bool preserveRemoteElementPlaceholders; // @synthesize preserveRemoteElementPlaceholders=_preserveRemoteElementPlaceholders;
 @property(retain) XCAXCycleDetector *cycleDetector; // @synthesize cycleDetector=_cycleDetector;
 @property(readonly) XCTTimeoutControls *timeoutControls; // @synthesize timeoutControls=_timeoutControls;
 @property(copy) id <NSCopying> accessibilitySnapshot; // @synthesize accessibilitySnapshot=_accessibilitySnapshot;

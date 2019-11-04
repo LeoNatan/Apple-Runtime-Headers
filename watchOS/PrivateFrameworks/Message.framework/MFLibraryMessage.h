@@ -104,6 +104,7 @@
 @property(readonly, copy, nonatomic) NSArray *from;
 @property(readonly, nonatomic) MFMessageHeaders *headers; // @dynamic headers;
 @property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly, nonatomic) _Bool isServerSearchResult;
 @property(readonly) NSSet *labels;
 @property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
 @property(readonly, copy, nonatomic) NSArray *listUnsubscribe;

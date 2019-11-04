@@ -163,6 +163,7 @@
 - (void)setPaymentStatusViewVisible:(_Bool)arg1 tableViewVisible:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)performWorkWhenPassesHaveReloaded:(CDUnknownBlockType)arg1;
 - (void)performWorkWhenPassesHaveLoaded:(CDUnknownBlockType)arg1;
+- (void)loadPassIfNecessaryWithUniqueID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadContentWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_isPassAvailableAtIndexPath:(id)arg1;
 - (id)_passForIndexPath:(id)arg1;

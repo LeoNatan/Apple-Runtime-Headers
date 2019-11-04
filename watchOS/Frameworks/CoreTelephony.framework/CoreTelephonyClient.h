@@ -391,6 +391,7 @@
 - (void)deleteZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteTransferPlansForEid:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getCurrentIMessageIccidsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)cancelPlanTransfer:(id)arg1 fromDevice:(id)arg2;
 - (void)transferPlans:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)transferPlan:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getTransferPlansWithCompletion:(CDUnknownBlockType)arg1;

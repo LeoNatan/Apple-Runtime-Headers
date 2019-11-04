@@ -8,7 +8,7 @@
 
 #import <Email/EFLoggable-Protocol.h>
 
-@class EMAccountRepository, EMActivityRegistry, EMClientState, EMDonationController, EMFetchController, EMInteractionLogger, EMMailboxRepository, EMMessageRepository, EMOutgoingMessageRepository, EMSearchableIndex, NSHashTable, NSString;
+@class EMAccountRepository, EMActivityRegistry, EMBlockedSenderManager, EMClientState, EMDonationController, EMFetchController, EMInteractionLogger, EMMailboxRepository, EMMessageRepository, EMOutgoingMessageRepository, EMSearchableIndex, NSHashTable, NSString;
 @protocol EFCancelable, EMVIPManager, NSXPCProxyCreating, OS_dispatch_queue;
 
 @interface EMDaemonInterface : NSObject <EFLoggable>
@@ -28,6 +28,7 @@
     EMDonationController *_donationController;
     EMActivityRegistry *_activityRegistry;
     id <EMVIPManager> _vipManager;
+    EMBlockedSenderManager *_blockedSenderManager;
     EMSearchableIndex *_searchableIndex;
     id <NSXPCProxyCreating> _proxyCreator;
 }
@@ -40,6 +41,7 @@
 + (id)log;
 @property(readonly) id <NSXPCProxyCreating> proxyCreator; // @synthesize proxyCreator=_proxyCreator;
 @property(readonly) EMSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
+@property(readonly) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 @property(readonly) EMActivityRegistry *activityRegistry; // @synthesize activityRegistry=_activityRegistry;
 @property(readonly) EMDonationController *donationController; // @synthesize donationController=_donationController;
@@ -55,6 +57,7 @@
 - (void)resetProtocolConnections;
 - (id)connectionForProtocol:(id)arg1;
 - (id)_connectionForProtocol:(id)arg1 error:(id *)arg2;
+- (void)tearDown;
 - (void)dealloc;
 - (id)initForTesting;
 - (id)initWithProxyCreator:(id)arg1;

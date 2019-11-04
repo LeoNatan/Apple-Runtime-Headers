@@ -21,16 +21,14 @@ __attribute__((visibility("hidden")))
     double _endTimeOffset;
     double _minimumVisibilityFactor;
     double _maximumDelayBeforePlayback;
-    double _minimumDurationForColorMismatch;
+    double _maxVitalityDelay;
     double _minimumPhotoTransitionDuration;
-    double _minimumColorAdjustedPhotoTransitionDuration;
 }
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
-@property(nonatomic) double minimumColorAdjustedPhotoTransitionDuration; // @synthesize minimumColorAdjustedPhotoTransitionDuration=_minimumColorAdjustedPhotoTransitionDuration;
 @property(nonatomic) double minimumPhotoTransitionDuration; // @synthesize minimumPhotoTransitionDuration=_minimumPhotoTransitionDuration;
-@property(nonatomic) double minimumDurationForColorMismatch; // @synthesize minimumDurationForColorMismatch=_minimumDurationForColorMismatch;
+@property(nonatomic) double maxVitalityDelay; // @synthesize maxVitalityDelay=_maxVitalityDelay;
 @property(nonatomic) double maximumDelayBeforePlayback; // @synthesize maximumDelayBeforePlayback=_maximumDelayBeforePlayback;
 @property(nonatomic) double minimumVisibilityFactor; // @synthesize minimumVisibilityFactor=_minimumVisibilityFactor;
 @property(nonatomic) double endTimeOffset; // @synthesize endTimeOffset=_endTimeOffset;

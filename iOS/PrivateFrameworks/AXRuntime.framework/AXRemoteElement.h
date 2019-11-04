@@ -44,6 +44,7 @@
 - (id)accessibilityElements;
 - (unsigned long long)_accessibilityAutomationType;
 - (id)_accessibilitySortedElementsWithin;
+- (_Bool)_accessibilityIsGroupedParent;
 - (id)_accessibilityLastElement;
 - (id)_accessibilityFirstElement;
 - (id)_accessibilityResponderElement;
@@ -53,6 +54,7 @@
 - (void)_getRemoteValuesOffMainThread:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long uuidHash;
 - (void)dealloc;
+- (id)_accessibilityHandwritingElement;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityTextOperations;
 - (void)platformCleanup;

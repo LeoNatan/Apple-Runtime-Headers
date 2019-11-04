@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)installDarkeningView;
 - (BOOL)shouldApplyBackground;
 - (void)layoutComponentView;
+- (void)updateShadowPath;
 - (void)setCornerRadius:(double)arg1 continuous:(BOOL)arg2;
 - (void)componentViewDidMoveToWindow;
 - (long long)_filter;

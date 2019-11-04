@@ -22,17 +22,20 @@
     NSMutableArray *_onRollbackBlocks;
     _Bool _writer;
     _Bool _checkpointRequired;
+    _Bool _hasEncounteredCorruptionError;
+    int _corruptionResultCode;
     id <HDSQLiteDatabaseDelegate> _delegate;
     NSURL *_fileURL;
     long long _cacheScope;
     HDSQLiteStatementCache *_statementCache;
 }
 
-+ (_Bool)_stepStatement:(struct sqlite3_stmt *)arg1 hasRow:(_Bool *)arg2 resultCode:(int *)arg3 error:(id *)arg4;
 + (id)virtualFilesystemModule;
 + (id)highFrequencyDatabaseURLWithProfileDirectoryPath:(id)arg1;
 + (id)protectedDatabaseURLWithProfileDirectoryPath:(id)arg1;
 + (id)mainDatabaseURLWithProfileDirectoryPath:(id)arg1;
+@property(readonly, nonatomic) int corruptionResultCode; // @synthesize corruptionResultCode=_corruptionResultCode;
+@property(readonly, nonatomic) _Bool hasEncounteredCorruptionError; // @synthesize hasEncounteredCorruptionError=_hasEncounteredCorruptionError;
 @property(readonly, nonatomic) HDSQLiteStatementCache *statementCache; // @synthesize statementCache=_statementCache;
 @property(nonatomic) long long cacheScope; // @synthesize cacheScope=_cacheScope;
 @property(nonatomic) _Bool checkpointRequired; // @synthesize checkpointRequired=_checkpointRequired;
@@ -41,6 +44,7 @@
 @property(nonatomic) __weak id <HDSQLiteDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_statementCache;
+- (_Bool)_stepStatement:(struct sqlite3_stmt *)arg1 hasRow:(_Bool *)arg2 error:(id *)arg3;
 - (id)dumpSchemaWithError:(id *)arg1;
 - (id)_tableNamesForDatabaseWithName:(id)arg1 error:(id *)arg2;
 - (id)_schemaForDatabaseWithName:(id)arg1 error:(id *)arg2;
@@ -82,9 +86,10 @@
 @property(readonly, nonatomic) long long statementCacheScope;
 @property(readonly, nonatomic, getter=isOpen) _Bool open;
 - (void)close;
+- (int)openWithFileProtectionCompleteUnlessOpenWithError:(id *)arg1;
 - (int)openForReadingWithError:(id *)arg1;
 - (int)openWithError:(id *)arg1;
-- (int)_openForWriting:(_Bool)arg1 error:(id *)arg2;
+- (int)_openForWriting:(_Bool)arg1 additionalFlags:(int)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (id)initWithDatabaseURL:(id)arg1 copyingDatabase:(id)arg2 delegate:(id)arg3;
 - (id)initMemoryDatabaseFromURL:(id)arg1 delegate:(id)arg2;

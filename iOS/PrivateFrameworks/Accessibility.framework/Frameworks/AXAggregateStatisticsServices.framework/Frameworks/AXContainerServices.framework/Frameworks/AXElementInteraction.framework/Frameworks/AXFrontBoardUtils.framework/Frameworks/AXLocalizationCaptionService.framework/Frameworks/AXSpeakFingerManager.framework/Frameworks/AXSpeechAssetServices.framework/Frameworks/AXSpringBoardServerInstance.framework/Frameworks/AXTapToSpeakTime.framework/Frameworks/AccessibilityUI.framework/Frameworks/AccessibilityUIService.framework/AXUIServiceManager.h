@@ -9,12 +9,10 @@
 #import <AccessibilityUIService/AXUIMessageSenderDelegate-Protocol.h>
 
 @class AXAccessQueue, AXUIDisplayManager, AXUIMessageSender, BSProcessDeathWatcher, NSMutableArray, NSMutableDictionary, NSString;
-@protocol OS_os_transaction;
 
 @interface AXUIServiceManager : NSObject <AXUIMessageSenderDelegate>
 {
     BSProcessDeathWatcher *_springBoardReaper;
-    _Bool _didEncounterError;
     _Bool _shouldAllowServicesToProcessMessages;
     AXUIDisplayManager *_displayManager;
     AXAccessQueue *_resumingConnectionsQueue;
@@ -25,18 +23,17 @@
     NSMutableArray *_serviceContexts;
     AXAccessQueue *_servicesAccessQueue;
     unsigned long long _lastUsedServiceIdentifier;
-    NSObject<OS_os_transaction> *_transaction;
+    NSMutableDictionary *_transactions;
 }
 
 + (void)_releaseSharedServiceManager;
 + (id)sharedServiceManager;
-@property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
+@property(retain, nonatomic) NSMutableDictionary *transactions; // @synthesize transactions=_transactions;
 @property(nonatomic) _Bool shouldAllowServicesToProcessMessages; // @synthesize shouldAllowServicesToProcessMessages=_shouldAllowServicesToProcessMessages;
 @property(nonatomic) unsigned long long lastUsedServiceIdentifier; // @synthesize lastUsedServiceIdentifier=_lastUsedServiceIdentifier;
 @property(retain, nonatomic) AXAccessQueue *servicesAccessQueue; // @synthesize servicesAccessQueue=_servicesAccessQueue;
 @property(retain, nonatomic) NSMutableArray *serviceContexts; // @synthesize serviceContexts=_serviceContexts;
 @property(retain, nonatomic) AXUIMessageSender *messageSender; // @synthesize messageSender=_messageSender;
-@property(nonatomic) _Bool didEncounterError; // @synthesize didEncounterError=_didEncounterError;
 @property(retain, nonatomic) NSMutableDictionary *entitlementsCheckers; // @synthesize entitlementsCheckers=_entitlementsCheckers;
 @property(retain, nonatomic) AXAccessQueue *entitlementsCheckersAccessQueue; // @synthesize entitlementsCheckersAccessQueue=_entitlementsCheckersAccessQueue;
 @property(retain, nonatomic) NSMutableArray *pausedConnections; // @synthesize pausedConnections=_pausedConnections;

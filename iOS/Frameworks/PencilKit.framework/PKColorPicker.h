@@ -27,6 +27,7 @@
 - (void)_setInitialColorForSpringLoading:(id)arg1;
 - (void)_setSelectedColorForPoint:(struct CGPoint)arg1;
 - (struct CGSize)preferredContentSize;
+@property(nonatomic) long long colorUserInterfaceStyle;
 @property(retain, nonatomic) UIColor *selectedColor;
 - (void)viewWillLayoutSubviews;
 - (_Bool)_canShowWhileLocked;

@@ -13,6 +13,7 @@
 @property(readonly, copy, nonatomic) NSString *sectionIdentifier;
 - (void)applyChanges:(MPChangeDetails *)arg1 itemLookupBlock:(NSString * (^)(int))arg2;
 - (void)updateItem:(NSString *)arg1;
+- (void)updateSection;
 - (void)removeItem:(NSString *)arg1;
 - (void)moveItemToTail:(NSString *)arg1;
 - (void)moveItem:(NSString *)arg1 afterItem:(NSString *)arg2;

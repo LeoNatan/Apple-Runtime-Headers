@@ -44,6 +44,7 @@
 - (id)accessibilityElements;
 - (unsigned long long)_accessibilityAutomationType;
 - (id)_accessibilitySortedElementsWithin;
+- (_Bool)_accessibilityIsGroupedParent;
 - (id)_accessibilityLastElement;
 - (id)_accessibilityFirstElement;
 - (id)_accessibilityResponderElement;

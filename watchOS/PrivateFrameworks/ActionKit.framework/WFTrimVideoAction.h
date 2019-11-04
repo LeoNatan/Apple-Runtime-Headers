@@ -6,30 +6,9 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/UINavigationControllerDelegate-Protocol.h>
-#import <ActionKit/UIPopoverPresentationControllerDelegate-Protocol.h>
-#import <ActionKit/UIVideoEditorControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFTrimVideoAction : WFAction <UIVideoEditorControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
+@interface WFTrimVideoAction : WFAction
 {
-    _Bool _hasSaved;
 }
-
-@property(nonatomic) _Bool hasSaved; // @synthesize hasSaved=_hasSaved;
-- (void)presentationControllerDidDismiss:(id)arg1;
-- (void)videoEditorControllerDidCancel:(id)arg1;
-- (void)videoEditorController:(id)arg1 didFailWithError:(id)arg2;
-- (void)videoEditorController:(id)arg1 didSaveEditedVideoToPath:(id)arg2;
-- (void)dismissEditor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

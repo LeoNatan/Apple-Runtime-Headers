@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDContainedPlace : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_childPlaces;
     unsigned long long _featureId;
     GEOPDLinkedPlace *_parentPlace;
     NSMutableArray *_siblingPlaces;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_featureId:1;
         unsigned int read_unknownFields:1;
@@ -69,6 +71,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDLinkedPlace *parentPlace;
 @property(readonly, nonatomic) _Bool hasParentPlace;
 - (void)_readParentPlace;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

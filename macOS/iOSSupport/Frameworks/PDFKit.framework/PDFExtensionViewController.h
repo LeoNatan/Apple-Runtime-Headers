@@ -21,6 +21,7 @@
 - (void)_textSelectionDidCopyDataNotification:(id)arg1;
 - (void)_textSelectionDidCopyStringNotification:(id)arg1;
 - (void)_textSelectionShowTextSelectionMenu:(id)arg1;
+- (void)_selectionPointsChangedNotification:(id)arg1;
 - (void)_selectionChangedNotification:(id)arg1;
 - (void)_pdfViewZoomToRect:(id)arg1;
 - (void)_goToDestination:(id)arg1;
@@ -28,6 +29,7 @@
 - (void)_pageChangedNotification:(id)arg1;
 - (void)documentDidEndDocumentFind:(id)arg1;
 - (void)didMatchString:(id)arg1;
+- (void)_updateTextSelectionPoints;
 - (void)_updatePageCount;
 - (void)_zoomToRect:(struct CGRect)arg1;
 - (void)_updateDocumentIsLocked;
@@ -36,7 +38,7 @@
 - (void)selectAll;
 - (void)copy;
 - (void)snapshotViewRect:(struct CGRect)arg1 forWidth:(double)arg2 afterScreenUpdates:(BOOL)arg3;
-- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)setMaximumZoomScale:(double)arg1;
 - (void)setMinimumZoomScale:(double)arg1;
 - (void)updatePDFViewLayout:(struct CGRect)arg1 scrollViewFrame:(struct CGRect)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3 zoomScale:(double)arg4;

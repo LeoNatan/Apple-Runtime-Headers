@@ -219,6 +219,7 @@ __attribute__((visibility("hidden")))
 - (void)swipeDetected:(id)arg1;
 - (void)uninstallGestureRecognizers;
 - (void)installGestureRecognizers;
+- (void)_gestureRecognizerFailed:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)touchChanged:(id)arg1 executionContext:(id)arg2;
@@ -322,6 +323,7 @@ __attribute__((visibility("hidden")))
 - (void)setHideKeysUnderIndicator:(_Bool)arg1;
 - (_Bool)shouldShowIndicator;
 - (void)showPopupVariantsForKey:(id)arg1;
+- (id)_variantsOfCurrencyKey:(id)arg1 language:(id)arg2;
 - (id)_variantsByAppendingDualStringKey:(id)arg1 toVariants:(id)arg2;
 - (id)_appendingSecondaryStringToVariantsTop:(id)arg1 secondaryString:(id)arg2 withDirection:(id)arg3;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;

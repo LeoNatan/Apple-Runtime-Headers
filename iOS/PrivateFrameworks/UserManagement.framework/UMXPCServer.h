@@ -98,10 +98,13 @@ __attribute__((visibility("hidden")))
 - (void)setMultiPersonaBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchBundleIdentifierForPersona:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setBundlesIdentifiers:(id)arg1 forUniquePersona:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchAsidMapwithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchPersonaSynchronous:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchPersona:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchListOfPersonasSynchronousWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchListOfAllUsersPersonasWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchListOfPersonasWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)disableUserPersona:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

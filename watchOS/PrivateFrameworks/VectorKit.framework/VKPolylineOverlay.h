@@ -41,6 +41,7 @@
 - (void)composedRoute:(id)arg1 changedSelectedRideInClusteredLeg:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
 - (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
 - (void)composedRouteUpdatedSnappedPaths:(id)arg1;
+- (struct DebugTreeNode)createDebugNode;
 - (_Bool)isSnappingForSceneTiles;
 - (id)getPathsForRenderRegion:(id)arg1 shouldSnapToRoads:(_Bool)arg2 verifySnapping:(_Bool)arg3 observer:(id)arg4;
 - (void)clearSnappedPathsForObserver:(id)arg1;

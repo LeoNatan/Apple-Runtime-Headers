@@ -19,16 +19,16 @@
 }
 
 + (id)endpointWithProtocolBufferData:(id)arg1;
-+ (BOOL)supportsResolverCallback;
++ (_Bool)supportsResolverCallback;
 + (id)endpointWithCEndpoint:(id)arg1;
 + (id)endpointWithInternalEndpoint:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (_Bool)supportsSecureCoding;
 + (Class)copyClassForEndpointType:(int)arg1;
 + (unsigned int)endpointType;
 @property(retain, nonatomic) NSObject<OS_nw_endpoint> *internalEndpoint; // @synthesize internalEndpoint=_internalEndpoint;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)createProtocolBufferObject;
 @property(nonatomic) unsigned short alternatePort;
 @property(readonly, nonatomic) NSString *parentEndpointDomain;
@@ -36,7 +36,7 @@
 @property(retain, nonatomic) NWInterface *interface;
 @property(readonly, copy, nonatomic) NSString *privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (id)copyCEndpoint;
 - (id)encodedData;
 - (id)initWithEncodedData:(id)arg1;

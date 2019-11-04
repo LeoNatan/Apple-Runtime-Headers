@@ -10,6 +10,7 @@
 
 @interface EMAccount : EMObject
 {
+    BOOL _primaryiCloudAccount;
     NSString *_name;
     NSString *_username;
     NSString *_hostname;
@@ -19,6 +20,7 @@
 + (id)sortDescriptorForNameAscending:(BOOL)arg1;
 + (id)predicateForDeliveryAccounts;
 + (id)predicateForReceivingAccounts;
+@property(readonly, getter=isPrimaryiCloudAccount) BOOL primaryiCloudAccount; // @synthesize primaryiCloudAccount=_primaryiCloudAccount;
 @property(readonly, copy) NSString *hostname; // @synthesize hostname=_hostname;
 @property(readonly, copy) NSString *username; // @synthesize username=_username;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;

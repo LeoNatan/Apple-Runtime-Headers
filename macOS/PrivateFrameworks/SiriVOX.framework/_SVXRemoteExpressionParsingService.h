@@ -18,7 +18,7 @@
 
 @property(retain, nonatomic) id <SVXAceCommandHandling> aceHandler; // @synthesize aceHandler=_aceHandler;
 - (void).cxx_destruct;
-- (void)parseExpressions:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)parseExpressions:(id)arg1 targetDevice:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)initWithAceHandler:(id)arg1;
 
 // Remaining properties

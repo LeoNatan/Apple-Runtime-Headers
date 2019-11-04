@@ -24,6 +24,7 @@
 - (id)calculateUsageSizes;
 - (id)retrieveUsageBundles;
 - (id)retrieveMedia;
+- (id)_calculateMusicUsage;
 - (id)retrieveUsageApps;
 
 @end

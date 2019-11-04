@@ -53,6 +53,7 @@
 - (void)scrubberValueChanged:(id)arg1;
 - (void)beginScrubbing:(id)arg1;
 - (void)playPauseButtonPressed:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

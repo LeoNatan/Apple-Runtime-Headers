@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) NSSet *allLocationsOfInterest;
 @property(readonly, nonatomic) NSSet *workLocations;
 @property(readonly, nonatomic) NSSet *homeLocations;
+- (void)fetchLocationsOfInterestIfNeeded;
 - (_Bool)hasLocationsOfInterestInformation;
 - (void)postProcessLocationsOfInterest;
 - (void)invalidateLocationsOfInterest;

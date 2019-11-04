@@ -14,20 +14,25 @@ __attribute__((visibility("hidden")))
 @interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _additionalPlaceTypes;
     NSString *_deviceCountryCode;
+    NSString *_deviceSku;
     NSString *_displayRegion;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_additionalPlaceTypes:1;
         unsigned int read_deviceCountryCode:1;
+        unsigned int read_deviceSku:1;
         unsigned int read_displayRegion:1;
         unsigned int read_locations:1;
         unsigned int read_serviceTags:1;
         unsigned int wrote_additionalPlaceTypes:1;
         unsigned int wrote_deviceCountryCode:1;
+        unsigned int wrote_deviceSku:1;
         unsigned int wrote_displayRegion:1;
         unsigned int wrote_locations:1;
         unsigned int wrote_serviceTags:1;
@@ -58,6 +63,9 @@ __attribute__((visibility("hidden")))
 - (void)clearServiceTags;
 @property(retain, nonatomic) NSMutableArray *serviceTags;
 - (void)_readServiceTags;
+@property(retain, nonatomic) NSString *deviceSku;
+@property(readonly, nonatomic) _Bool hasDeviceSku;
+- (void)_readDeviceSku;
 @property(retain, nonatomic) NSString *displayRegion;
 @property(readonly, nonatomic) _Bool hasDisplayRegion;
 - (void)_readDisplayRegion;
@@ -82,6 +90,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *locations;
 - (void)_readLocations;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -10,6 +10,8 @@
 {
     // Error parsing type: , name: offlineIssueManager
     // Error parsing type: , name: offlineIssueList
+    // Error parsing type: , name: tracker
+    // Error parsing type: , name: channelDataFactory
 }
 
 @end

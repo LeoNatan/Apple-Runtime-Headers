@@ -51,7 +51,6 @@ __attribute__((visibility("hidden")))
     AVAssetTrack *_currentAudioTrack;
 }
 
-+ (id)keyPathsForValuesAffectingCurrentAudioTrack;
 + (id)keyPathsForValuesAffectingHasEnabledVideo;
 + (BOOL)automaticallyNotifiesObserversOfHasEnabledVideo;
 + (id)keyPathsForValuesAffectingHasEnabledAudio;

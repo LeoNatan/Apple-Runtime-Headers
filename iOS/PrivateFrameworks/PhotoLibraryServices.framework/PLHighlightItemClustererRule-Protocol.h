@@ -6,13 +6,13 @@
 
 #import <PhotoLibraryServices/NSObject-Protocol.h>
 
-@class PLHighlightItemList;
+@class PLDateRangeTitleGenerator, PLHighlightItemList;
 @protocol PLHighlightItem;
 
 @protocol PLHighlightItemClustererRule <NSObject>
 - (_Bool)highlightItemList:(PLHighlightItemList *)arg1 canBeMergedWithOtherHighlightItemList:(PLHighlightItemList *)arg2;
 - (_Bool)highlightItem:(id <PLHighlightItem>)arg1 belongsToHighlightItemList:(PLHighlightItemList *)arg2;
-- (void)titlesForHighlightItemList:(PLHighlightItemList *)arg1 forceUpdateLocale:(_Bool)arg2 resultBlock:(void (^)(NSString *, NSString *))arg3;
-- (void)titlesForHighlightItemList:(PLHighlightItemList *)arg1 resultBlock:(void (^)(NSString *, NSString *))arg2;
+- (void)titlesForHighlightItemList:(PLHighlightItemList *)arg1 dateRangeTitleGenerator:(PLDateRangeTitleGenerator *)arg2 forceUpdateLocale:(_Bool)arg3 resultBlock:(void (^)(NSString *, NSString *))arg4;
+- (void)titlesForHighlightItemList:(PLHighlightItemList *)arg1 dateRangeTitleGenerator:(PLDateRangeTitleGenerator *)arg2 resultBlock:(void (^)(NSString *, NSString *))arg3;
 @end
 

@@ -14,6 +14,7 @@
 
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(readonly, nonatomic) unsigned long long tag; // @synthesize tag=_tag;
+- (id)description;
 - (id)init;
 - (id)initWithRect:(struct CGRect)arg1 tag:(unsigned long long)arg2;
 

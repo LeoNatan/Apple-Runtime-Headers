@@ -21,6 +21,7 @@
 - (void)scrubToTime:(double)arg1;
 - (void)endScrubbingWithTargetTime:(double)arg1;
 - (void)beginScrubbing;
+- (void)playbackControlsDidChangePlayerVolume:(float)arg1;
 - (void)pictureInPictureActionButtonTapped;
 - (void)playbackControlsDidUpdateVisibilityOfLoadingIndicator:(_Bool)arg1;
 - (void)playbackControlsDidToggleMuted:(_Bool)arg1;

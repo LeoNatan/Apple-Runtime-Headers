@@ -11,7 +11,7 @@
 @protocol EDThreadChangeHookResponder <NSObject>
 
 @optional
-- (void)persistenceCanResetThreadScope:(EMThreadScope *)arg1 replyBlock:(void (^)(_Bool))arg2;
+- (void)persistenceWillResetThreadScope:(EMThreadScope *)arg1 denyBlock:(void (^)(_Bool))arg2;
 - (void)persistenceDidFinishThreadUpdates;
 - (void)persistenceIsDeletingThreadWithObjectID:(EMThreadObjectID *)arg1 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg2;
 - (void)persistenceIsChangingThreadWithObjectID:(EMThreadObjectID *)arg1 changedKeyPaths:(NSArray *)arg2 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg3;

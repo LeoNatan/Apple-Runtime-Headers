@@ -9,6 +9,8 @@
 @class BSCornerRadiusConfiguration, NSNumber, NSString;
 
 @protocol UIApplicationSceneSettings <NSObject>
+@property(readonly, nonatomic) unsigned long long scenePresenterRenderIdentifierForSnapshotting;
+@property(readonly, nonatomic) unsigned int hostContextIdentifierForSnapshotting;
 @property(readonly, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property(readonly, nonatomic) unsigned long long artworkSubtype;
 @property(readonly, nonatomic) long long deviceOrientation;

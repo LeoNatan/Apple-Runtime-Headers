@@ -14,7 +14,7 @@
 #import <SocialUI/NSTextFieldDelegate-Protocol.h>
 #import <SocialUI/NSTouchBarDelegate-Protocol.h>
 
-@class CNAutocompleteResult, CNAutocompleteStore, CNExtendedAutocompleteResultWindow, IDSBatchIDQueryController, IMAccount, IMHandle, NSCandidateListTouchBarItem, NSDate, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSProgressIndicator, NSString, NSTextField, NSTimer;
+@class CNAutocompleteResult, CNAutocompleteStore, CNExtendedAutocompleteResultWindow, IDSBatchIDQueryController, IMAccount, IMHandle, NSCandidateListTouchBarItem, NSColor, NSDate, NSImageView, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSProgressIndicator, NSString, NSTextField, NSTimer;
 @protocol CNCancelable;
 
 @interface SOAddRecipientFieldViewController : SOChatViewController <NSCandidateListTouchBarItemDelegate, NSTouchBarDelegate, CNAutocompleteFetchDelegate, IDSBatchIDQueryControllerDelegate, NSTextFieldDelegate, NSControlTextEditingDelegate, CNAutocompleteResultWindowDelegate>
@@ -27,6 +27,8 @@
     BOOL _skipCompletionRebuilding;
     BOOL _userIsDeleting;
     BOOL _completionWindowVisible;
+    BOOL _isBlockedForDowntime;
+    BOOL _shouldShowDowntimeErrorAppearance;
     CDUnknownBlockType _autocompleteResultComparator;
     NSString *_searchString;
     CNExtendedAutocompleteResultWindow *_completionWindow;
@@ -40,7 +42,11 @@
     NSMutableOrderedSet *_searchResults;
     id <CNCancelable> _currentFetchRequest;
     id _showingMenuForRepresentedObject;
+    NSImageView *_screenTimeGlyphView;
     NSMutableDictionary *_lastMessageDateCache;
+    NSTextField *_blockedForDowntimeTextField;
+    NSImageView *_blockedForDowntimeImageView;
+    NSColor *_textFieldNormalColor;
 }
 
 + (id)_stringForAutocompleteResultSourceType:(unsigned long long)arg1;
@@ -49,7 +55,13 @@
 + (void)_presentUnregisteredErrorForHandle:(id)arg1;
 + (id)activeLegacyIMAccountsForABProperty:(id)arg1;
 + (void)initialize;
+@property(nonatomic) BOOL shouldShowDowntimeErrorAppearance; // @synthesize shouldShowDowntimeErrorAppearance=_shouldShowDowntimeErrorAppearance;
+@property(retain, nonatomic) NSColor *textFieldNormalColor; // @synthesize textFieldNormalColor=_textFieldNormalColor;
+@property(nonatomic) BOOL isBlockedForDowntime; // @synthesize isBlockedForDowntime=_isBlockedForDowntime;
+@property(retain, nonatomic) NSImageView *blockedForDowntimeImageView; // @synthesize blockedForDowntimeImageView=_blockedForDowntimeImageView;
+@property(retain, nonatomic) NSTextField *blockedForDowntimeTextField; // @synthesize blockedForDowntimeTextField=_blockedForDowntimeTextField;
 @property(retain) NSMutableDictionary *lastMessageDateCache; // @synthesize lastMessageDateCache=_lastMessageDateCache;
+@property(retain, nonatomic) NSImageView *screenTimeGlyphView; // @synthesize screenTimeGlyphView=_screenTimeGlyphView;
 @property(retain) id showingMenuForRepresentedObject; // @synthesize showingMenuForRepresentedObject=_showingMenuForRepresentedObject;
 @property(retain, nonatomic) id <CNCancelable> currentFetchRequest; // @synthesize currentFetchRequest=_currentFetchRequest;
 @property(retain, nonatomic) NSMutableOrderedSet *searchResults; // @synthesize searchResults=_searchResults;
@@ -120,6 +132,7 @@
 - (void)dismissCompletionUI;
 - (struct _NSRange)rangeForUserCompletionInFieldEditor:(id)arg1;
 - (id)autocompleteStringForFieldEditor:(id)arg1;
+- (BOOL)isHandleIDAllowedToJoinConversation:(id)arg1;
 - (void)didSelectResult:(id)arg1;
 - (void)selectedResult:(id)arg1;
 @property(readonly) CDUnknownBlockType autocompleteResultComparator; // @synthesize autocompleteResultComparator=_autocompleteResultComparator;

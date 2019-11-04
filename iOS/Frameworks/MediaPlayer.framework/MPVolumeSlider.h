@@ -76,6 +76,7 @@
 - (void)volumeController:(id)arg1 volumeControlLabelDidChange:(id)arg2;
 - (void)volumeController:(id)arg1 volumeControlCapabilitiesDidChange:(unsigned int)arg2;
 - (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(_Bool)arg2;
+- (void)updateVolume;
 @property(readonly, nonatomic) NSString *volumeAudioCategory;
 @property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
 @property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;

@@ -85,6 +85,7 @@
 - (void)resolveSimLabel:(CTDanglingPlanItem *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)carrierItemsShouldUpdate:(_Bool)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)deletePlanPendingTransfer:(CTCellularPlanPendingTransfer *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)cancelPlanActivation:(CTCellularPlanPendingTransfer *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)activatePlanPendingTransfer:(CTCellularPlanPendingTransfer *)arg1 completion:(void (^)(_Bool, NSString *, NSDictionary *, NSError *))arg2;
 - (void)getPlansPendingTransferWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)danglingPlanItemsShouldUpdate:(_Bool)arg1 completion:(void (^)(NSArray *, NSError *))arg2;

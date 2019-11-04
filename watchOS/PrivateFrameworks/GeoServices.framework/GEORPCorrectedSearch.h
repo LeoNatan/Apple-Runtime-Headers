@@ -13,12 +13,14 @@
 @interface GEORPCorrectedSearch : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOPDPlaceRequest *_placeRequest;
     GEOPDPlaceResponse *_placeResponse;
     GEOPlaceSearchRequest *_placeSearchRequest;
     GEOPlaceSearchResponse *_placeSearchResponse;
     NSString *_preferredSearchDisplayLocation;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _correctedSearchResultIndex;
     unsigned int _originalSearchResultIndex;
     struct {
@@ -70,6 +72,8 @@
 @property(retain, nonatomic) GEOPlaceSearchRequest *placeSearchRequest;
 @property(readonly, nonatomic) _Bool hasPlaceSearchRequest;
 - (void)_readPlaceSearchRequest;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (_Bool)containsReportableData;
 
 @end

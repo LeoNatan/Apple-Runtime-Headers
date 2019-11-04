@@ -29,15 +29,15 @@
 - (void).cxx_destruct;
 - (id)_timeAnimationForFaceView:(id)arg1 fromFrame:(id)arg2;
 - (id)_createTritiumAnimationWithViewProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_startAnimationWithTritiumVisible:(_Bool)arg1 animation:(unsigned int)arg2 viewProvider:(id)arg3 hideSensitiveUI:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_startAnimationWithTritiumVisible:(_Bool)arg1 animation:(unsigned int)arg2 viewProvider:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)currentAnimationStateDescription;
 - (float)_calculateReversibleDisplayAnimationProgressForAnimationProgress:(float)arg1 initialState:(float)arg2;
-- (void)processStateMachineWithTritiumVisible:(_Bool)arg1 viewProvider:(id)arg2 fromFrame:(id)arg3 animation:(unsigned int)arg4 brightnessRamp:(CDUnknownBlockType)arg5 hideSensitiveUI:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)processStateMachineWithTritiumVisible:(_Bool)arg1 viewProvider:(id)arg2 fromFrame:(id)arg3 animation:(unsigned int)arg4 brightnessRamp:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 @property(readonly, nonatomic) unsigned int targetState;
 - (void)finishPausedAnimationImmediately;
-- (double)continueTapAnimationFromFrame:(id)arg1 viewProvider:(id)arg2 clockContentView:(id)arg3 sensitiveUIShieldView:(id)arg4 animation:(unsigned int)arg5 brightnessRamp:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)setTritiumVisibleImmediately:(_Bool)arg1 viewProvider:(id)arg2 clockContentView:(id)arg3 sensitiveUIShieldView:(id)arg4;
-- (double)setTritiumVisible:(_Bool)arg1 fromFrame:(id)arg2 viewProvider:(id)arg3 clockContentView:(id)arg4 sensitiveUIShieldView:(id)arg5 animation:(unsigned int)arg6 brightnessRamp:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
+- (double)continueTapAnimationFromFrame:(id)arg1 viewProvider:(id)arg2 clockContentView:(id)arg3 animation:(unsigned int)arg4 brightnessRamp:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)setTritiumVisibleImmediately:(_Bool)arg1 viewProvider:(id)arg2 clockContentView:(id)arg3;
+- (double)setTritiumVisible:(_Bool)arg1 fromFrame:(id)arg2 viewProvider:(id)arg3 clockContentView:(id)arg4 animation:(unsigned int)arg5 brightnessRamp:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
 
 @end
 

@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)dataTransferSessionFinished;
 - (id)fileNameForItemIndex:(unsigned long long)arg1 type:(id)arg2;
 - (id)pasteboardObjectForItemIndex:(unsigned long long)arg1 type:(id)arg2 class:(Class)arg3;
+- (BOOL)loadFileRepresentationForItemIndex:(unsigned long long)arg1 type:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)dataForItemIndex:(unsigned long long)arg1 type:(id)arg2;
 - (void)dragFailed;
 - (void)dragEndedWithOperation:(unsigned long long)arg1;

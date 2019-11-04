@@ -19,7 +19,7 @@
 - (BOOL)composedWaypointForLocation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)composedWaypointForMapItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)resolveMapItemHandleData:(struct NSData *)arg1 completion:(CDUnknownBlockType)arg2;
-- (BOOL)searchString:(id)arg1 ofPOICategory:(id)arg2 withinVenue:(id)arg3 maxResults:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;
+- (BOOL)searchPOIWithName:(id)arg1 ofPOICategory:(id)arg2 withinVenue:(id)arg3 maxResults:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)searchString:(id)arg1 maxResults:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)reverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)forwardGeocodeAddressString:(id)arg1 completion:(CDUnknownBlockType)arg2;

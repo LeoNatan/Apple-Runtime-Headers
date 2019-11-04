@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/WFParameterState-Protocol.h>
 
-@class NSNumber, NSString, NSUnit;
+@class NSNumber, NSString;
 
 @interface WFConditionalSubjectParameterState : NSObject <WFParameterState>
 {
@@ -22,7 +22,7 @@
     unsigned long long _tense;
     unsigned long long _displayableTimeUnits;
     unsigned long long _comparableTimeUnits;
-    NSUnit *_unit;
+    NSString *_unitType;
     NSString *_homeIdentifier;
 }
 
@@ -31,7 +31,7 @@
 + (id)subjectClasses;
 @property(copy, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 @property(readonly, nonatomic, getter=isEnumeration) BOOL enumeration; // @synthesize enumeration=_enumeration;
-@property(readonly, nonatomic) NSUnit *unit; // @synthesize unit=_unit;
+@property(readonly, nonatomic) NSString *unitType; // @synthesize unitType=_unitType;
 @property(readonly, nonatomic) unsigned long long comparableTimeUnits; // @synthesize comparableTimeUnits=_comparableTimeUnits;
 @property(readonly, nonatomic) unsigned long long displayableTimeUnits; // @synthesize displayableTimeUnits=_displayableTimeUnits;
 @property(readonly, nonatomic) unsigned long long tense; // @synthesize tense=_tense;

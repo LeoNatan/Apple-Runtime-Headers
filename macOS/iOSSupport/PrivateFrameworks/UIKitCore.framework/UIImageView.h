@@ -112,16 +112,17 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 @property(retain, nonatomic) UIImageSymbolConfiguration *symbolConfiguration;
-- (void)_setOverridingSymbolConfiguration:(id)arg1;
+@property(retain, nonatomic, setter=_setOverridingSymbolConfiguration:) UIImageSymbolConfiguration *_overridingSymbolConfiguration;
 @property(retain, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
-- (id)_overridingSymbolConfiguration;
 - (id)_symbolConfigurationForImage:(id)arg1;
 - (id)midlineGuide;
 - (id)_imageContentGuideAllowingCreation:(BOOL)arg1;
 @property(readonly) UILayoutGuide *imageContentGuide;
 - (void)_imageContentParametersDidChange;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (void)_baselineOffsetParametersDidChangeHasBaselinePropertyChanged:(BOOL)arg1;
 - (BOOL)_isHasBaselinePropertyChangeable;
+- (BOOL)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (BOOL)_hasBaseline;
 - (double)_baselineOffsetFromBottom;
 - (double)_firstBaselineOffsetFromTop;
@@ -151,7 +152,8 @@
 - (void)_updateContentsMultiplyColorAndSwizzleFromLayout:(id)arg1;
 - (BOOL)_setImageViewContents:(id)arg1;
 - (void)_invalidateImageLayouts;
-- (id)_layoutForImage:(id)arg1;
+- (id)_layoutForImage:(id)arg1 inSize:(struct CGSize)arg2 cachePerSize:(BOOL)arg3 forBaselineOffset:(BOOL)arg4;
+- (id)_layoutForImage:(id)arg1 inSize:(struct CGSize)arg2;
 - (BOOL)_canDrawContent;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (unsigned long long)defaultAccessibilityTraits;
@@ -170,7 +172,6 @@
 - (BOOL)_recomputePretilingState;
 
 // Remaining properties
-@property(readonly, nonatomic) struct CGRect bounds;
 @property(readonly, nonatomic) long long contentMode; // @dynamic contentMode;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

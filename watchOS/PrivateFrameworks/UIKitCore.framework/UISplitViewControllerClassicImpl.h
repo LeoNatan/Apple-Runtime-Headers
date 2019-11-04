@@ -108,7 +108,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <UISplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(nonatomic) int primaryBackgroundStyle;
-- (int)primaryIsSidebar;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (id)_additionalViewControllersToCheckForUserActivity;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

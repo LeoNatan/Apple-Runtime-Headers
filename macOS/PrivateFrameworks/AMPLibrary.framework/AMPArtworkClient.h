@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 - (void).cxx_destruct;
 - (void)purgeAllItemsforDatabase:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)removeArtworkWithArray:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)removeArtwork:(unsigned long long)arg1 forUUID:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)setRemoteArtworkForInfo:(id)arg1 forDatabase:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)setArtwork:(id)arg1 forInfo:(id)arg2 forDatabase:(unsigned long long)arg3 withReply:(CDUnknownBlockType)arg4;

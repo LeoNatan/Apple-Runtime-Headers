@@ -2352,6 +2352,12 @@ struct unique_ptr<FIAmbiguousMenuItems, std::__1::default_delete<FIAmbiguousMenu
     } __ptr_;
 };
 
+struct unique_ptr<FI_TBestFitStringSelector, std::__1::default_delete<FI_TBestFitStringSelector>> {
+    struct __compressed_pair<FI_TBestFitStringSelector *, std::__1::default_delete<FI_TBestFitStringSelector>> {
+        struct FI_TBestFitStringSelector *__value_;
+    } __ptr_;
+};
+
 struct unique_ptr<TAirDropSenderOperationController, std::__1::default_delete<TAirDropSenderOperationController>>;
 
 struct unique_ptr<TBlockingQueue, std::__1::default_delete<TBlockingQueue>> {
@@ -3740,6 +3746,12 @@ typedef struct shared_ptr<std::__1::vector<std::__1::pair<TFENode, NodeNotificat
 typedef struct unique_function<void ()> {
     struct unique_ptr<fstd::finder_callable_details::callable_holder_base<void>, std::__1::default_delete<fstd::finder_callable_details::callable_holder_base<void>>> fLambdaHolder;
 } unique_function_63952f55;
+
+typedef struct unique_ptr<FI_TBestFitStringSelector, std::__1::default_delete<FI_TBestFitStringSelector>> {
+    struct __compressed_pair<FI_TBestFitStringSelector *, std::__1::default_delete<FI_TBestFitStringSelector>> {
+        struct FI_TBestFitStringSelector *__value_;
+    } __ptr_;
+} unique_ptr_c12ab926;
 
 typedef struct unique_ptr<TBrowserImmediateActionGestureRecognizerHandlerBase, std::__1::default_delete<TBrowserImmediateActionGestureRecognizerHandlerBase>> {
     struct __compressed_pair<TBrowserImmediateActionGestureRecognizerHandlerBase *, std::__1::default_delete<TBrowserImmediateActionGestureRecognizerHandlerBase>> {

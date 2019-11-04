@@ -38,7 +38,6 @@
 @property(retain, nonatomic) NSString *referencedItemsDescription; // @synthesize referencedItemsDescription=_referencedItemsDescription;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (BOOL)_isEqualToCPLServiceUIStatus:(id)arg1 onlyProgressIsNotEqual:(char *)arg2;
 - (id)init;
 
 // Remaining properties

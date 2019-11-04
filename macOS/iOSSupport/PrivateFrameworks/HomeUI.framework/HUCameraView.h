@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class HMCameraSource, HMCameraView, HUCameraBadgeView, HUCameraErrorContent, HUCameraErrorView, HURemoteContextHostingView, NADecayingTimer, NSArray, NSLayoutConstraint, NSLayoutYAxisAnchor, UIActivityIndicatorView, UIImageView, UIVisualEffectView;
+@class HMCameraSource, HMCameraView, HUCameraBadgeView, HUCameraErrorContent, HUCameraErrorView, HURemoteContextHostingView, NADecayingTimer, NSArray, NSLayoutConstraint, NSLayoutYAxisAnchor, UIActivityIndicatorView, UIImageView;
 
 @interface HUCameraView : UIView
 {
@@ -18,7 +18,7 @@
     HURemoteContextHostingView *_cameraContainerView;
     HUCameraBadgeView *_badgeView;
     UIView *_cameraOverlayView;
-    UIVisualEffectView *_cameraDimmingView;
+    UIView *_cameraDimmingView;
     UIView *_backgroundView;
     HUCameraErrorView *_errorView;
     UIActivityIndicatorView *_activityIndicatorView;
@@ -39,7 +39,7 @@
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) HUCameraErrorView *errorView; // @synthesize errorView=_errorView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain, nonatomic) UIVisualEffectView *cameraDimmingView; // @synthesize cameraDimmingView=_cameraDimmingView;
+@property(retain, nonatomic) UIView *cameraDimmingView; // @synthesize cameraDimmingView=_cameraDimmingView;
 @property(readonly, nonatomic) UIView *cameraOverlayView; // @synthesize cameraOverlayView=_cameraOverlayView;
 @property(readonly, nonatomic) HUCameraBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(readonly, nonatomic) HURemoteContextHostingView *cameraContainerView; // @synthesize cameraContainerView=_cameraContainerView;
@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) HMCameraView *cameraView;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
+- (void)setContentMode:(long long)arg1;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (double)_continuousCornerRadius;
 - (void)dealloc;

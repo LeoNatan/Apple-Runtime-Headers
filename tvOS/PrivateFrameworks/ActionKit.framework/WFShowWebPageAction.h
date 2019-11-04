@@ -6,22 +6,9 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/WFWebViewControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFShowWebPageAction : WFAction <WFWebViewControllerDelegate>
+@interface WFShowWebPageAction : WFAction
 {
 }
-
-- (void)webViewControllerDidFinish:(id)arg1;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

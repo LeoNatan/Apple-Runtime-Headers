@@ -22,13 +22,15 @@
 }
 
 + (id)logCategory;
-@property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
+@property(nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <HMCameraUserSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_mergeNewSettings:(id)arg1 operations:(id)arg2;
 - (void)_callSettingsDidUpdateDelegate;
-@property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty;
+@property(readonly, getter=isCameraManuallyDisabled) _Bool cameraManuallyDisabled;
+@property(readonly, getter=isAccessModeChangeNotificationEnabled) _Bool accessModeChangeNotificationEnabled;
+@property(readonly, getter=isRecordingAudioEnabled) _Bool recordingAudioEnabled;
 @property(readonly) HMCameraBulletinBoardSmartNotification *smartNotificationBulletin;
 @property(readonly, getter=isNightVisionModeEnabled) _Bool nightVisionModeEnabled;
 @property(readonly, getter=areSnapshotsAllowed) _Bool snapshotsAllowed;
@@ -47,6 +49,8 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, copy) NSString *description;
+- (void)updateAccessModeChangeNotificationEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)updateRecordingAudioEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateNightVisionModeEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateSnapshotsAllowed:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAccessModeIndicatorEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

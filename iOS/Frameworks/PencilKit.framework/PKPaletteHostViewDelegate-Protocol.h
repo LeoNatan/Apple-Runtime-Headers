@@ -9,11 +9,7 @@
 @class UIView;
 
 @protocol PKPaletteHostViewDelegate <NSObject>
-
-@optional
-- (void)hostView:(UIView *)arg1 didDockPaletteToCorner:(unsigned long long)arg2;
-- (void)hostView:(UIView *)arg1 willDockPaletteToCorner:(unsigned long long)arg2;
-- (void)hostView:(UIView *)arg1 didDockPaletteToEdge:(unsigned long long)arg2;
-- (void)hostView:(UIView *)arg1 willDockPaletteToEdge:(unsigned long long)arg2;
+- (void)hostView:(UIView *)arg1 didDockPaletteToPosition:(long long)arg2;
+- (void)hostView:(UIView *)arg1 willDockPaletteToPosition:(long long)arg2 prepareForExpansion:(_Bool)arg3;
 @end
 

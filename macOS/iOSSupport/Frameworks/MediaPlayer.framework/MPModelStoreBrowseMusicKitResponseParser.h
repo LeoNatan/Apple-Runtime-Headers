@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPModelStoreBrowseContentItemBuilder, MPModelStoreBrowseSectionBuilder, MPSectionedCollection, NSIndexSet;
+@class ICUserIdentity, MPModelStoreBrowseContentItemBuilder, MPModelStoreBrowseSectionBuilder, MPSectionedCollection, NSIndexSet;
 
 @interface MPModelStoreBrowseMusicKitResponseParser : NSObject
 {
@@ -16,6 +16,7 @@
     MPModelStoreBrowseContentItemBuilder *_contentItemBuilder;
     NSIndexSet *_filteredFCKinds;
     MPSectionedCollection *_results;
+    ICUserIdentity *_userIdentity;
 }
 
 - (void).cxx_destruct;
@@ -25,7 +26,7 @@
 - (id)_parsedEditorialElements:(id)arg1;
 - (id)_parsedSectionedCollection;
 @property(readonly, nonatomic) MPSectionedCollection *results;
-- (id)initWithRawResponseOutput:(id)arg1 sectionBuilder:(id)arg2 contentItemBuilder:(id)arg3 filteredFCKinds:(id)arg4;
+- (id)initWithRawResponseOutput:(id)arg1 sectionBuilder:(id)arg2 contentItemBuilder:(id)arg3 filteredFCKinds:(id)arg4 userIdentity:(id)arg5;
 
 @end
 

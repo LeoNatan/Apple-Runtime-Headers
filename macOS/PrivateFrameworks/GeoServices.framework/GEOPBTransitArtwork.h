@@ -15,12 +15,14 @@
 @interface GEOPBTransitArtwork : PBCodable <GEOTransitArtworkDataSource, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_accessibilityString;
     GEOPBTransitShield *_iconFallbackShield;
     GEOPBTransitIcon *_icon;
     GEOPBTransitShield *_shield;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _artworkType;
     int _artworkUse;
     int _badge;
@@ -82,6 +84,8 @@
 - (id)artworkTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasArtworkType;
 @property(nonatomic) int artworkType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) NSString *accessibilityText;
 @property(readonly, nonatomic) BOOL hasRoutingIncidentBadge;

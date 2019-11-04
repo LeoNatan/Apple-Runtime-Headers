@@ -6,7 +6,7 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, NSString, _INPBActivity, _INPBActivityList, _INPBAppIdentifier, _INPBArchivedObject, _INPBBillDetailsValue, _INPBBillPayeeValue, _INPBContactEventTrigger, _INPBContactList, _INPBContactValue, _INPBCurrencyAmount, _INPBCustomObject, _INPBDataString, _INPBDataStringList, _INPBDateTime, _INPBDateTimeRangeList, _INPBDateTimeRangeValue, _INPBDialingContact, _INPBDistanceList, _INPBDistanceValue, _INPBDoubleList, _INPBDoubleValue, _INPBEnergyValue, _INPBEvent, _INPBEventList, _INPBFile, _INPBFileProperty, _INPBFilePropertyValue, _INPBFinancialAccountValue, _INPBGeographicalFeature, _INPBGeographicalFeatureList, _INPBHomeAttribute, _INPBHomeAttributeValue, _INPBHomeEntity, _INPBHomeFilter, _INPBHomeUserTask, _INPBIntegerList, _INPBIntegerValue, _INPBIntent, _INPBIntentExecutionResult, _INPBLocationList, _INPBLocationValue, _INPBLongList, _INPBLongValue, _INPBMassValue, _INPBMediaDestination, _INPBMediaItemValue, _INPBMediaSearch, _INPBNote, _INPBNoteContent, _INPBPaymentAmountValue, _INPBPaymentMethodList, _INPBPaymentMethodValue, _INPBPlace, _INPBPlaceList, _INPBSendMessageAttachment, _INPBShareDestination, _INPBSpatialEventTrigger, _INPBSpeedValue, _INPBStringList, _INPBStringValue, _INPBTask, _INPBTaskList, _INPBTemperatureList, _INPBTemperatureValue, _INPBTemporalEventTrigger, _INPBTimer, _INPBURLValue, _INPBVoiceCommandDeviceInformation, _INPBVolumeValue, _INPBWellnessMetadataPair, _INPBWellnessObjectResultValue, _INPBWellnessUnitType, _INPBWellnessValue;
+@class NSArray, NSString, _INPBActivity, _INPBActivityList, _INPBAppIdentifier, _INPBArchivedObject, _INPBBillDetailsValue, _INPBBillPayeeValue, _INPBContactEventTrigger, _INPBContactList, _INPBContactValue, _INPBCurrencyAmount, _INPBCustomObject, _INPBDataString, _INPBDataStringList, _INPBDateTime, _INPBDateTimeRangeList, _INPBDateTimeRangeValue, _INPBDialingContact, _INPBDistanceList, _INPBDistanceValue, _INPBDoubleList, _INPBDoubleValue, _INPBEnergyValue, _INPBEvent, _INPBEventList, _INPBFile, _INPBFileProperty, _INPBFilePropertyValue, _INPBFinancialAccountValue, _INPBGeographicalFeature, _INPBGeographicalFeatureList, _INPBHomeAttribute, _INPBHomeAttributeValue, _INPBHomeEntity, _INPBHomeFilter, _INPBHomeUserTask, _INPBIntegerList, _INPBIntegerValue, _INPBIntent, _INPBIntentExecutionResult, _INPBLocationList, _INPBLocationValue, _INPBLongList, _INPBLongValue, _INPBMassValue, _INPBMediaDestination, _INPBMediaItemGroup, _INPBMediaItemValue, _INPBMediaSearch, _INPBNote, _INPBNoteContent, _INPBPaymentAmountValue, _INPBPaymentMethodList, _INPBPaymentMethodValue, _INPBPlace, _INPBPlaceList, _INPBSendMessageAttachment, _INPBShareDestination, _INPBSpatialEventTrigger, _INPBSpeedValue, _INPBStringList, _INPBStringValue, _INPBTask, _INPBTaskList, _INPBTemperatureList, _INPBTemperatureValue, _INPBTemporalEventTrigger, _INPBTimer, _INPBURLValue, _INPBVoiceCommandDeviceInformation, _INPBVolumeValue, _INPBWellnessMetadataPair, _INPBWellnessObjectResultValue, _INPBWellnessUnitType, _INPBWellnessValue;
 
 @protocol _INPBIntentSlotValue <NSObject>
 + (Class)payloadWellnessValueType;
@@ -37,6 +37,7 @@
 + (Class)payloadNoteType;
 + (Class)payloadMediaSearchType;
 + (Class)payloadMediaItemValueType;
++ (Class)payloadMediaItemGroupType;
 + (Class)payloadMediaDestinationType;
 + (Class)payloadMassValueType;
 + (Class)payloadLongValueType;
@@ -200,6 +201,8 @@
 @property(copy, nonatomic) NSArray *payloadMediaSearchs;
 @property(readonly, nonatomic) unsigned int payloadMediaItemValuesCount;
 @property(copy, nonatomic) NSArray *payloadMediaItemValues;
+@property(readonly, nonatomic) unsigned int payloadMediaItemGroupsCount;
+@property(copy, nonatomic) NSArray *payloadMediaItemGroups;
 @property(readonly, nonatomic) unsigned int payloadMediaDestinationsCount;
 @property(copy, nonatomic) NSArray *payloadMediaDestinations;
 @property(readonly, nonatomic) unsigned int payloadMediaAffinityTypesCount;
@@ -595,6 +598,9 @@
 - (_INPBMediaItemValue *)payloadMediaItemValueAtIndex:(unsigned int)arg1;
 - (void)addPayloadMediaItemValue:(_INPBMediaItemValue *)arg1;
 - (void)clearPayloadMediaItemValues;
+- (_INPBMediaItemGroup *)payloadMediaItemGroupAtIndex:(unsigned int)arg1;
+- (void)addPayloadMediaItemGroup:(_INPBMediaItemGroup *)arg1;
+- (void)clearPayloadMediaItemGroups;
 - (_INPBMediaDestination *)payloadMediaDestinationAtIndex:(unsigned int)arg1;
 - (void)addPayloadMediaDestination:(_INPBMediaDestination *)arg1;
 - (void)clearPayloadMediaDestinations;

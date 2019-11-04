@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class SBAppExposeSwitcherModifierEvent, SBGestureSwitcherModifierEvent, SBInlineTransitionSwitcherModifierEvent, SBInsertionSwitcherModifierEvent, SBMainTransitionSwitcherModifierEvent, SBReduceMotionChangedSwitcherModifierEvent, SBSwitcherModifier, SBSwitcherModifierEvent, SBTransitionSwitcherModifierEvent;
+@class SBAppExposeSwitcherModifierEvent, SBGestureSwitcherModifierEvent, SBInlineTransitionSwitcherModifierEvent, SBInsertionSwitcherModifierEvent, SBMainTransitionSwitcherModifierEvent, SBReduceMotionChangedSwitcherModifierEvent, SBSwitcherModifier, SBSwitcherModifierEvent, SBTetheredInsertionSwitcherModifierEvent, SBTetheredRemovalSwitcherModifierEvent, SBTransitionSwitcherModifierEvent;
 @protocol SBFluidSwitcherScrollProviding;
 
 @protocol SBFluidSwitcherModifierProviding
 - (SBSwitcherModifier<SBFluidSwitcherScrollProviding> *)newMultitaskingModifierFromMultitaskingModifier:(SBSwitcherModifier<SBFluidSwitcherScrollProviding> *)arg1;
 - (SBSwitcherModifier *)lowEndHardwareModifier;
+- (SBSwitcherModifier *)tetheredInsertionModifierFortetheredInsertionEvent:(SBTetheredInsertionSwitcherModifierEvent *)arg1;
+- (SBSwitcherModifier *)tetheredRemovalModifierForTetheredRemovalEvent:(SBTetheredRemovalSwitcherModifierEvent *)arg1;
 - (SBSwitcherModifier *)insertionModifierForInsertionEvent:(SBInsertionSwitcherModifierEvent *)arg1;
 - (SBSwitcherModifier *)appExposeModifierForAppExposeEvent:(SBAppExposeSwitcherModifierEvent *)arg1;
 - (SBSwitcherModifier *)reduceMotionModifierForReduceMotionChangedEvent:(SBReduceMotionChangedSwitcherModifierEvent *)arg1;

@@ -21,6 +21,7 @@
 @property(nonatomic) float endAngle; // @synthesize endAngle=_endAngle;
 @property(nonatomic) float beginAngle; // @synthesize beginAngle=_beginAngle;
 - (_Bool)_shouldReverseGradient;
+- (void)_updatePath;
 - (const struct CGPath *)_generatePath;
 - (id)_normalizeGradientLocations:(id)arg1;
 - (struct CGPoint)_pointAtProgress:(float)arg1;

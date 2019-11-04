@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class VKInternalIconManager, VKResourceManager;
+#import <VectorKit/GEOResourceManifestTileGroupObserver-Protocol.h>
+
+@class NSString, VKInternalIconManager, VKResourceManager;
 
 __attribute__((visibility("hidden")))
-@interface VKSharedResources : NSObject
+@interface VKSharedResources : NSObject <GEOResourceManifestTileGroupObserver>
 {
     struct _retain_ptr<VKInternalIconManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
         CDUnknownFunctionPointerType *_vptr$_retain_ptr;
@@ -37,6 +39,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) shared_ptr_dd2d1f5e stylesheetVendor; // @synthesize stylesheetVendor=_stylesheetVendor;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)purgeDecompressSessionCachedBuffers;
 - (void)purge;
 - (_Bool)_hasResourceUsers;
@@ -58,6 +62,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) shared_ptr_f2399894 textureManager;
 @property(readonly, nonatomic) VKInternalIconManager *iconManager;
 - (const shared_ptr_887a193f *)dataOverrideManager;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

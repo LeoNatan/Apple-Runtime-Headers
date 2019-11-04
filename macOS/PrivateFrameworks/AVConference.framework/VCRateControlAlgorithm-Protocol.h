@@ -9,6 +9,7 @@
 @class VCRateControlMediaController;
 
 @protocol VCRateControlAlgorithm <NSObject>
+@property(nonatomic) BOOL didMBLRampDown;
 @property(readonly, nonatomic) unsigned int actualBitrate;
 @property(nonatomic, getter=isPaused) BOOL paused;
 @property(nonatomic) unsigned int localBandwidthEstimation;

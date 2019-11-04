@@ -43,7 +43,6 @@
 - (void)onPersistenceManagerNotification:(id)arg1;
 - (void)_onPersistenceManagerNotification:(id)arg1;
 - (void)_setupContextsHandler:(CDUnknownBlockType)arg1;
-- (void)_setup;
 - (id)initWithPersistenceManager:(id)arg1;
 - (id)init;
 

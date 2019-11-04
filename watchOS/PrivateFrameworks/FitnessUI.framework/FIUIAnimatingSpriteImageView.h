@@ -17,6 +17,8 @@
     unsigned int _framesPerSecond;
 }
 
++ (id)_createNewSpriteArray:(id)arg1 currentFrame:(unsigned int)arg2 arraySize:(unsigned int)arg3 interrupted:(_Bool)arg4;
++ (unsigned int)_findSpriteIndex:(struct CGPoint)arg1 centerPoints:(id)arg2;
 @property(nonatomic) unsigned int framesPerSecond; // @synthesize framesPerSecond=_framesPerSecond;
 @property(nonatomic) int spriteColumnCount; // @synthesize spriteColumnCount=_spriteColumnCount;
 @property(nonatomic) int spriteFrameCount; // @synthesize spriteFrameCount=_spriteFrameCount;
@@ -24,7 +26,7 @@
 - (void).cxx_destruct;
 - (void)animateOnce;
 - (_Bool)isAnimating;
-- (void)stopAnimating;
+- (void)stopAnimatingFinishingCycle:(_Bool)arg1;
 - (void)startAnimating;
 - (id)_centerPointValues;
 - (struct CGSize)_spriteFrameSize;

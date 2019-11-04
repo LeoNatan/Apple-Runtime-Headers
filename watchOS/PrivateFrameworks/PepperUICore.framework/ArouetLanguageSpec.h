@@ -13,13 +13,14 @@
     _Bool __isPasswordEntry;
     _Bool __isNaturalLanguageEntry;
     NSString *_language;
+    NSString *_displayLocalizationLanguage;
     NSLocale *_locale;
     NSString *_textContentType;
     int __currentLanguage;
     NSString *__lowercaseScriptCode;
 }
 
-+ (id)forcedLanguageForContentType:(id)arg1;
++ (id)forcedLanguageForLanguage:(id)arg1 textContentType:(id)arg2;
 + (_Bool)supportsLanguage:(id)arg1 textContentType:(id)arg2;
 @property(readonly, nonatomic) _Bool _isNaturalLanguageEntry; // @synthesize _isNaturalLanguageEntry=__isNaturalLanguageEntry;
 @property(readonly, nonatomic) _Bool _isPasswordEntry; // @synthesize _isPasswordEntry=__isPasswordEntry;
@@ -27,6 +28,7 @@
 @property(readonly, nonatomic) int _currentLanguage; // @synthesize _currentLanguage=__currentLanguage;
 @property(readonly, copy) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(readonly) NSLocale *locale; // @synthesize locale=_locale;
+@property(readonly) NSString *displayLocalizationLanguage; // @synthesize displayLocalizationLanguage=_displayLocalizationLanguage;
 @property(readonly) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsFullWordReplacementRange;

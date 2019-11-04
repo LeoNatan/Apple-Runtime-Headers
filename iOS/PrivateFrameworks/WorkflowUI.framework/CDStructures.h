@@ -124,13 +124,6 @@ struct CKTypedComponentAction<WFAction *, WFParameter *> {
     SEL _selector;
 };
 
-struct CKTypedComponentAction<WFAction *> {
-    unsigned long long _variant;
-    id _target;
-    CKComponentScopeHandle *_scopeHandle;
-    SEL _selector;
-};
-
 struct CKTypedComponentAction<WFListEditorDeletionConfirmation *> {
     unsigned long long _variant;
     id _target;
@@ -259,11 +252,13 @@ struct WFDragVelocitySample {
 struct WFMaskedShadowComponentOptions {
     double _field1;
     id _field2;
-    struct CGSize _field3;
-    double _field4;
+    id _field3;
+    struct CGSize _field4;
     double _field5;
-    id _field6;
-    double _field7;
+    double _field6;
+    id _field7;
+    double _field8;
+    id _field9;
 };
 
 struct WFNumberFieldAttributes {
@@ -299,8 +294,7 @@ struct WFParameterComponentOptions {
     _Bool _field3;
     id _field4;
     id _field5;
-    id _field6;
-    _Bool _field7;
+    _Bool _field6;
 };
 
 struct WFParameterLayoutComponentAccessibility {
@@ -316,12 +310,6 @@ struct WFParameterLayoutComponentStyle {
     UIColor *highlightedBackgroundColor;
     UIFont *labelFont;
     UIColor *labelColor;
-};
-
-struct WFRowTemplateItemComponentOptions {
-    _Bool _field1;
-    id _field2;
-    id _field3;
 };
 
 struct WFRowTemplateItemDateFieldOptions {
@@ -345,6 +333,12 @@ struct WFRowTemplateItemEnumerationComponentOptions {
     id _field4;
     id _field5;
     _Bool _field6;
+};
+
+struct WFRowTemplateItemLabelComponentOptions {
+    _Bool _field1;
+    id _field2;
+    id _field3;
 };
 
 struct WFRowTemplateItemNumberFieldOptions {
@@ -379,11 +373,10 @@ struct WFRowTemplateParameterComponentOptions {
     _Bool _field1;
     _Bool _field2;
     _Bool _field3;
-    id _field4;
+    _Bool _field4;
     _Bool _field5;
-    _Bool _field6;
+    id _field6;
     id _field7;
-    id _field8;
 };
 
 struct WFTagFieldAttributes {
@@ -753,13 +746,6 @@ typedef struct CKTypedComponentAction<WFAction *, WFParameter *> {
     CKComponentScopeHandle *_scopeHandle;
     SEL _selector;
 } CKTypedComponentAction_92b97a4d;
-
-typedef struct CKTypedComponentAction<WFAction *> {
-    unsigned long long _variant;
-    id _target;
-    CKComponentScopeHandle *_scopeHandle;
-    SEL _selector;
-} CKTypedComponentAction_aa963706;
 
 typedef struct CKTypedComponentAction<WFListEditorDeletionConfirmation *> {
     unsigned long long _variant;

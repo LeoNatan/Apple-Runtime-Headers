@@ -91,7 +91,7 @@
 - (void)_kill:(int)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(CDUnknownBlockType)arg2;
 - (void)_safelyEndUsing:(CDUnknownBlockType)arg1;
-- (id)newAssertionToBeginUsingPluginWithOptions:(unsigned long long)arg1 error:(id *)arg2;
+- (BOOL)_beginUsingAndCreateExtensionAssertion:(id *)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (void)_safelyBeginUsingWithOptions:(unsigned long long)arg1 withAssertion_onSafeQueue:(CDUnknownBlockType)arg2;
 - (void)_safelyBeginUsingSynchronously:(BOOL)arg1 options:(unsigned long long)arg2 withAssertion_onSafeQueue:(CDUnknownBlockType)arg3;
 - (void)_safelyBeginUsing:(CDUnknownBlockType)arg1;

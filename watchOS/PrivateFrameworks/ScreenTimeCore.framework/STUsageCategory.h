@@ -12,8 +12,8 @@
 {
 }
 
-+ (id)appDetailItemsForUsageCategories:(id)arg1;
-+ (id)categoryDetailItemsForUsageCategories:(id)arg1;
++ (id)applicationAndWebItemsExcludingSystemHiddenApplications:(id)arg1;
++ (id)categoryItemsExcludingSystemCategories:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) STUsageBlock *block; // @dynamic block;

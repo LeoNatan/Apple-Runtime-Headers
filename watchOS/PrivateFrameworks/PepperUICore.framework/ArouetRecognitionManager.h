@@ -7,23 +7,21 @@
 #import <objc/NSObject.h>
 
 @class ArouetLanguageSpec, CHRecognizer, NSIndexSet, NSMutableIndexSet;
-@protocol OS_dispatch_queue;
 
 @interface ArouetRecognitionManager : NSObject
 {
     ArouetLanguageSpec *_languageSpec;
     CHRecognizer *__recognizer;
-    NSObject<OS_dispatch_queue> *__recognitionQueue;
     int __highestRequestID;
     NSMutableIndexSet *__activeRequestIDs;
     NSIndexSet *__canceledRequestIDs;
     double _minRecognitionDuration;
 }
 
++ (id)_recognitionQueue;
 @property(copy) NSIndexSet *_canceledRequestIDs; // @synthesize _canceledRequestIDs=__canceledRequestIDs;
 @property(retain, nonatomic) NSMutableIndexSet *_activeRequestIDs; // @synthesize _activeRequestIDs=__activeRequestIDs;
 @property(nonatomic) int _highestRequestID; // @synthesize _highestRequestID=__highestRequestID;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_recognitionQueue; // @synthesize _recognitionQueue=__recognitionQueue;
 @property(retain, nonatomic) CHRecognizer *_recognizer; // @synthesize _recognizer=__recognizer;
 @property(nonatomic) double minRecognitionDuration; // @synthesize minRecognitionDuration=_minRecognitionDuration;
 @property(readonly) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;

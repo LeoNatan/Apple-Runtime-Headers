@@ -211,6 +211,7 @@
 - (void)extensionConnection:(id)arg1 openSystemURL:(id)arg2;
 - (void)extensionConnection:(id)arg1 didReceiveUserActivity:(id)arg2;
 - (void)extensionConnection:(id)arg1 didReceiveUserActivityDict:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 removeDynamicInterfaceObject:(id)arg3;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setupDynamicInterfaceObject:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)extensionConnection:(id)arg1 interfaceViewControllerDismissViewController:(id)arg2;
 - (void)cleanupTextInputController;
@@ -225,7 +226,7 @@
 - (void)extensionConnection:(id)arg1 reloadRootInterfaceViewControllersWithNames:(id)arg2 initializationContextIDs:(id)arg3 pageIndex:(id)arg4 verticalPaging:(id)arg5;
 - (void)extensionConnection:(id)arg1 interfaceViewControllerBecomeCurrentPageViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 scrollToObject:(id)arg3 atScrollPosition:(id)arg4 animated:(id)arg5;
-- (void)extensionConnection:(id)arg1 interfaceViewControllerPopToRootViewController:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewControllerPopToRootViewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)extensionConnection:(id)arg1 interfaceViewControllerPopViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(id)arg4 rowNamesAndContextIDs:(id)arg5;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setUnderlyingUIHostingController:(id)arg3;

@@ -10,7 +10,8 @@
 
 @protocol HMICameraVideoFrameAnalyzer <NSObject>
 + (NSDictionary *)classHierarchyMap;
-- (HMICameraVideoFrameResult *)classify:(HMICameraVideoFrame *)arg1 targetEventTypes:(long long)arg2 error:(id *)arg3;
+- (HMICameraVideoFrameResult *)analyze:(HMICameraVideoFrame *)arg1 targetEventTypes:(long long)arg2 error:(id *)arg3;
+- (void)preAnalyze:(HMICameraVideoFrame *)arg1;
 - (id)initWithConfidenceThresholds:(struct NSDictionary *)arg1 nmsThreshold:(double)arg2 error:(id *)arg3;
 - (id)init;
 @end

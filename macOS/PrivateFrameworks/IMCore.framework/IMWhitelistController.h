@@ -15,23 +15,34 @@
 {
     TUCallProviderManager *_callProviderManager;
     NSObject<OS_dispatch_queue> *_screenTimeDispatchQueue;
-    NSMutableDictionary *_conversationContextCache;
     NSSet *_emergencyNumbersSet;
+    NSMutableDictionary *_participantIDsHashToConversationContext;
+    NSMutableDictionary *_conversationContextToParticipantIDsHash;
+    NSMutableDictionary *_participantIDsHashToChat;
 }
 
 + (id)STConversation;
 + (id)sharedInstance;
-+ (void)__setSingleton__im:(id)arg1;
-+ (id)__singleton__im;
++ (BOOL)isContactLimitsFeatureEnabled;
+@property(retain, nonatomic) NSMutableDictionary *participantIDsHashToChat; // @synthesize participantIDsHashToChat=_participantIDsHashToChat;
+@property(retain, nonatomic) NSMutableDictionary *conversationContextToParticipantIDsHash; // @synthesize conversationContextToParticipantIDsHash=_conversationContextToParticipantIDsHash;
+@property(retain, nonatomic) NSMutableDictionary *participantIDsHashToConversationContext; // @synthesize participantIDsHashToConversationContext=_participantIDsHashToConversationContext;
 @property(retain, nonatomic) NSSet *emergencyNumbersSet; // @synthesize emergencyNumbersSet=_emergencyNumbersSet;
-@property(retain, nonatomic) NSMutableDictionary *conversationContextCache; // @synthesize conversationContextCache=_conversationContextCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *screenTimeDispatchQueue; // @synthesize screenTimeDispatchQueue=_screenTimeDispatchQueue;
 @property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 - (void).cxx_destruct;
+- (id)conversationContextForChat:(id)arg1;
 - (void)providersChangedForProviderManager:(id)arg1;
 - (void)registerForScreenTimeNotifications;
-- (BOOL)allowedToShowConversationWithHandles:(id)arg1;
-- (BOOL)allowedToShowConversationWithHandleIDs:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)refetchScreenTimePolicyForChat:(id)arg1;
+- (void)_participantStateForChatChanged:(id)arg1;
+- (void)_participantsForChatChanged:(id)arg1;
+- (BOOL)isFetchingScreenTimeContextForParticipantIDsHash:(id)arg1;
+- (void)_addObserversToChat:(id)arg1;
+- (BOOL)allowedToShowConversationForChat:(id)arg1 sync:(BOOL)arg2;
+- (BOOL)allowedToShowConversationWithHandleIDs:(id)arg1 sync:(BOOL)arg2 context:(id *)arg3;
+- (void)initializeContext:(id)arg1 participantIDsHash:(id)arg2;
 - (void)reloadEmergencyNumbersSet;
 - (id)init;
 

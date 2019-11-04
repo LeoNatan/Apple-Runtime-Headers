@@ -6,13 +6,16 @@
 
 #import <Transparency/GPBMessage.h>
 
-@class InclusionProof, NSData, NSMutableArray, VRFWitness;
+@class InclusionProof, NSData, NSDictionary, NSMutableArray, VRFWitness;
 
 @interface QueryResponse : GPBMessage
 {
 }
 
 + (id)descriptor;
+- (void)setMetadataValue:(id)arg1 key:(id)arg2;
+- (void)setMetadata:(id)arg1;
+@property(readonly) NSDictionary *metadata;
 
 // Remaining properties
 @property(copy, nonatomic) NSData *accountId; // @dynamic accountId;

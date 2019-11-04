@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSPanGestureRecognizer *_panRecognizer;
     CDUnknownBlockType _pressHandler;
     CDUnknownBlockType _panHandler;
+    struct CGSize _reducedMetricsThreshold;
     BOOL _isInteractable;
     BOOL _isSpace;
     BOOL _leadingJiggle;

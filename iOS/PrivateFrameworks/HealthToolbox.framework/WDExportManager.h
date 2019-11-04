@@ -69,6 +69,9 @@ __attribute__((visibility("hidden")))
 - (void)_writeXMLWorkoutEnd;
 - (void)_writeXMLWorkoutEventWithEventType:(id)arg1 date:(id)arg2 duration:(double)arg3 durationUnit:(id)arg4;
 - (void)_writeXMLWorkoutStartWithActivityType:(id)arg1 duration:(id)arg2 durationUnit:(id)arg3 totalDistance:(id)arg4 totalDistanceUnit:(id)arg5 totalEnergyBurned:(id)arg6 totalEnergyBurnedUnit:(id)arg7 sourceName:(id)arg8 sourceVersion:(id)arg9 device:(id)arg10 metadata:(id)arg11 creationDate:(id)arg12 startDate:(id)arg13 endDate:(id)arg14;
+- (void)_writeXMLAudiogramEnd;
+- (void)_writeXMLAudiogramSensitivityPoint:(id)arg1;
+- (void)_writeXMLAudiogramStartWithAudiogram:(id)arg1;
 - (void)_writeXMLCorrelationEnd;
 - (void)_writeXMLCorrelationStartWithType:(id)arg1 sourceName:(id)arg2 sourceVersion:(id)arg3 device:(id)arg4 metadata:(id)arg5 creationDate:(id)arg6 startDate:(id)arg7 endDate:(id)arg8;
 - (void)_writeXMLRecordWithType:(id)arg1 sourceName:(id)arg2 sourceVersion:(id)arg3 device:(id)arg4 unit:(id)arg5 metadata:(id)arg6 hrvMetadataList:(id)arg7 creationDate:(id)arg8 startDate:(id)arg9 endDate:(id)arg10 value:(id)arg11;
@@ -77,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)_writeDataForActivitySummaries;
 - (void)_writeDataForWorkoutRoutes:(id)arg1 semaphore:(id)arg2;
 - (void)_writeDataForWorkoutType;
+- (void)_writeDataForAudiogramType;
 - (void)_writeDataForCorrelationType:(id)arg1;
 - (void)_writeDataForCategoryType:(id)arg1;
 - (void)_outputSerialQueue_finishWritingQuantityType:(id)arg1 count:(unsigned long long)arg2;
@@ -87,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (void)_writeActivitySummaries;
 - (void)_writeWorkoutRouteForWorkout:(id)arg1 semaphore:(id)arg2;
 - (void)_writeWorkoutType;
+- (void)_writeAudiogramType;
 - (void)_writeCorrelationType:(id)arg1;
 - (void)_writeCategoryType:(id)arg1;
 - (void)_writeQuantityType:(id)arg1;

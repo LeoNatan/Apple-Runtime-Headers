@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)wantsUpdateLayer;
 - (long long)layerContentsRedrawPolicy;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 @property(readonly) double baselineOffsetFromBottom;
 @property(readonly) struct NSEdgeInsets contentInsets;
 @property(readonly) NSDictionary *baseWidgetKeys;

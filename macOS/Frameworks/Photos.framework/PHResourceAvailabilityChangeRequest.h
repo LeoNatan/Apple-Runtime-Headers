@@ -6,13 +6,11 @@
 
 #import <Photos/PHResourceAvailabilityRequest.h>
 
-@class NSError, PHResourceAvailabilityDataStoreManager;
+@class PHResourceAvailabilityDataStoreManager;
 @protocol PHResourceAvailabilityChangeRequestDelegate;
 
 @interface PHResourceAvailabilityChangeRequest : PHResourceAvailabilityRequest
 {
-    BOOL _success;
-    NSError *_error;
     struct os_unfair_lock_s _lock;
     PHResourceAvailabilityDataStoreManager *_dataStoreManager;
     BOOL _wantsProgress;

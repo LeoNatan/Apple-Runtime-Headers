@@ -13,12 +13,14 @@
 @interface GEONameInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_locale;
     NSString *_name;
     NSString *_phoneticName;
     NSString *_shield;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _phoneticType;
     int _shieldType;
     int _signType;
@@ -78,6 +80,8 @@
 @property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) BOOL hasName;
 - (void)_readName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

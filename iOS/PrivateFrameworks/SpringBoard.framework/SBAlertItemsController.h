@@ -16,6 +16,7 @@
     SBUserSessionController *_userSessionController;
     SBAlertItemsObjectQueue *_alertItemsQueue;
     SBAlertItemsObjectQueue *_superModalItemsQueue;
+    NSMutableSet *_pendedAlertsToReenqueuePostDismissal;
     NSMutableOrderedSet *_alertItemPresentations;
     NSMutableOrderedSet *_superModalAlertItemPresentations;
     NSMutableSet *_activePresenters;

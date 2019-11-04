@@ -129,7 +129,9 @@
 - (void)_callClientNameCallback;
 - (void)_callClientPairingCallback:(CDUnknownBlockType)arg1;
 - (void)_callClientConnectionStateCallback:(unsigned int)arg1 previousConnectionState:(unsigned int)arg2 error:(id)arg3;
-- (void)_handlePlaybackSessionMigrateRequest:(struct _MRPlaybackSessionProtobuf *)arg1 request:(id)arg2 forPlayerPath:(struct _MRNowPlayingPlayerPathProtobuf *)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_handlePlaybackSessionMigrateEndRequest:(id)arg1 error:(id)arg2 forPlayerPath:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_handlePlaybackSessionMigrateBeginRequest:(id)arg1 forPlayerPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_handlePlaybackSessionMigrateRequest:(id)arg1 request:(id)arg2 forPlayerPath:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handlePlaybackSessionRequest:(void *)arg1 forPlayerPath:(void *)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleLegacyPlaybackQueueRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handlePlaybackQueueResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -139,6 +141,7 @@
 - (void)_cleanUpStreamsWithReason:(long long)arg1;
 - (id)_onWorkerQueue_syncClientState;
 - (id)_onWorkerQueue_openSecuritySession;
+- (id)_onWorkerQueue_reRegisterCustomOrigin;
 - (id)_onWorkerQueue_setupCustomOrigin;
 - (id)_onWorkerQueue_loadDeviceInfo;
 - (id)_onWorkerQueue_initializeConnectionWithOptions:(unsigned int)arg1;

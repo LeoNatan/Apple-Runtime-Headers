@@ -15,9 +15,14 @@ __attribute__((visibility("hidden")))
 {
     WebAppViewController *_webApp;
     UIWindow *_window;
+    _Bool _wasSuspendedUnderLock;
+    _Bool _sceneHasEverEnteredForeground;
 }
 
 - (void).cxx_destruct;
+- (void)sceneWillEnterForeground:(id)arg1;
+- (void)sceneDidEnterBackground:(id)arg1;
+- (_Bool)_shouldReloadWebAppOnLaunch;
 - (void)sceneDidBecomeActive:(id)arg1;
 - (void)sceneDidDisconnect:(id)arg1;
 - (void)scene:(id)arg1 willConnectToSession:(id)arg2 options:(id)arg3;

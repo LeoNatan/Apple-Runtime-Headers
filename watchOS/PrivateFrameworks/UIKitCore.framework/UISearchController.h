@@ -38,6 +38,7 @@
     } _controllerFlags;
     _Bool _obscuresBackgroundDuringPresentation;
     _Bool _hidesNavigationBarDuringPresentation;
+    _Bool __tabBarHidden;
     _Bool __showResultsForEmptySearch;
     _Bool __shouldRespectPreferredContentSize;
     UIView *_resultsControllerViewContainer;
@@ -58,6 +59,7 @@
 @property(nonatomic, setter=_setShowResultsForEmptySearch:) _Bool _showResultsForEmptySearch; // @synthesize _showResultsForEmptySearch=__showResultsForEmptySearch;
 @property(nonatomic) __weak UINavigationItem *_navigationItemCurrentlyDisplayingSearchController; // @synthesize _navigationItemCurrentlyDisplayingSearchController=__navigationItemCurrentlyDisplayingSearchController;
 @property(retain, nonatomic) UIView *_systemInputMarginView; // @synthesize _systemInputMarginView=__systemInputMarginView;
+@property(nonatomic) _Bool _tabBarHidden; // @synthesize _tabBarHidden=__tabBarHidden;
 @property(nonatomic) float _resultsContentScrollViewPresentationOffset; // @synthesize _resultsContentScrollViewPresentationOffset=__resultsContentScrollViewPresentationOffset;
 @property(nonatomic) int _previousSearchBarPosition; // @synthesize _previousSearchBarPosition=__previousSearchBarPosition;
 @property(readonly, nonatomic) UIViewController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
@@ -118,6 +120,7 @@
 - (void)_dismissFromBackButton:(id)arg1;
 - (void)_uninstallBackGestureRecognizer;
 - (void)_installBackGestureRecognizer;
+- (void)_setupForCurrentTraitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateVisibilityOfSearchResultsForSearchBar:(id)arg1;
 - (void)_dismissPresentation:(_Bool)arg1;
@@ -162,6 +165,7 @@
 - (_Bool)_resultsControllerWillLayoutVisibleUnderContainerView;
 - (void)_resizeResultsControllerWithDelta:(struct CGSize)arg1;
 - (id)_createAnimationCoordinator;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

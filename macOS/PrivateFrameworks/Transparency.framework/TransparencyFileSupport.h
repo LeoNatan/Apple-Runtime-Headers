@@ -10,6 +10,10 @@
 {
 }
 
++ (BOOL)deleteFile:(id)arg1 error:(id *)arg2;
++ (BOOL)writeDictionaryToFile:(id)arg1 fileName:(id)arg2 error:(id *)arg3;
++ (id)readDataFromFile:(id)arg1 error:(id *)arg2;
++ (id)readDictionaryFromFile:(id)arg1 error:(id *)arg2;
 + (long long)directorySizeInKB:(id *)arg1;
 + (id)appSupportPath:(id *)arg1;
 + (BOOL)setProtectionToClassDForURL:(id)arg1 error:(id *)arg2;

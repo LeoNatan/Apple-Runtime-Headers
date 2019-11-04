@@ -13,10 +13,12 @@
 @interface GEOWiFiQualityNetworkSearch : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_ess;
     GEOLocation *_location;
     unsigned long long _radius;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_radius:1;
         unsigned int read_ess:1;
@@ -52,6 +54,8 @@
 - (void)clearEss;
 @property(retain, nonatomic) NSMutableArray *ess;
 - (void)_readEss;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

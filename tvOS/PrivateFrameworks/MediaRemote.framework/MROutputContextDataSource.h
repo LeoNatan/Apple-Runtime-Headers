@@ -7,13 +7,11 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSString;
-@protocol MROutputContextDataSourceDelegate;
 
 @interface MROutputContextDataSource : NSObject
 {
     float _volume;
     unsigned int _volumeControlCapabilities;
-    id <MROutputContextDataSourceDelegate> _delegate;
     NSArray *_outputDevices;
     NSString *_uniqueIdentifier;
 }
@@ -22,7 +20,6 @@
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
 @property(readonly, nonatomic) unsigned int volumeControlCapabilities; // @synthesize volumeControlCapabilities=_volumeControlCapabilities;
 @property(readonly, nonatomic) float volume; // @synthesize volume=_volume;
-@property(nonatomic) __weak id <MROutputContextDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)notifyVolumeCapabilitiesDidChange:(unsigned int)arg1 outputDevice:(id)arg2;
 - (void)notifyVolumeDidChange:(float)arg1 outputDevice:(id)arg2;

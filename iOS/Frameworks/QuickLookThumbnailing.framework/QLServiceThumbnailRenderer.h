@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)_thumbnailDataDestructionConcurrenQueue;
 - (_Bool)_canCreateContextOfSize:(struct CGSize)arg1 forRequest:(id)arg2;
 - (void)_executeCompletionHandlerWithThumbnailData:(id)arg1 thumbnailURL:(id)arg2 ioSurface:(id)arg3 drawingContextSize:(struct CGSize)arg4 didGenerateThumbnail:(_Bool)arg5 error:(id)arg6;
-- (void)_didReceiveIOSurface;
+- (void)_drawInIOSurface;
 - (void)_didReceiveThumbnailURL:(id)arg1;
 - (void)_didGenerateThumbnailWithData:(id)arg1 drawingContextSize:(struct CGSize)arg2;
 - (void)_thumbnailGenerationDidFailWithError:(id)arg1;

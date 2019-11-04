@@ -60,12 +60,12 @@
 + (id)_departureLabelFont;
 + (id)defaultSecondaryFont;
 + (id)strongSecondaryFont;
-+ (double)_minTextWidth:(BOOL)arg1;
++ (double)_minTextWidth;
 + (double)_maxExpectedDepartureLabelWidth;
 + (void)_calculateMaxLabelWidths;
 + (BOOL)_needsUpdateMaxLabelWidths;
 + (double)labelMarginWithLineImageViewWidth:(double)arg1;
-+ (double)maxLineImageWidthforWidth:(double)arg1 compressed:(BOOL)arg2;
++ (double)maxLineImageWidthforWidth:(double)arg1;
 + (void)_addEmDashAttributes:(id)arg1;
 + (void)_enumerateMinutesUntilDepartureDates:(id)arg1 withReferenceDate:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (id)_nowString;
@@ -124,7 +124,7 @@
 - (void)configureCellForRowIndex:(long long)arg1 withMapItem:(id)arg2 sectionController:(id)arg3 outNextLineIsSame:(char *)arg4;
 - (id)_operatingHoursDescriptionForSequence:(id)arg1 mapItem:(id)arg2;
 - (id)_startEndDatesForSequence:(id)arg1 date:(id)arg2 mapItem:(id)arg3;
-- (void)configureLeadingWithTableViewContentMargin:(double)arg1 width:(double)arg2 compressed:(BOOL)arg3;
+- (void)configureLeadingWithTableViewContentMargin:(double)arg1 width:(double)arg2;
 - (id)multipartStringSeparator;
 
 // Remaining properties

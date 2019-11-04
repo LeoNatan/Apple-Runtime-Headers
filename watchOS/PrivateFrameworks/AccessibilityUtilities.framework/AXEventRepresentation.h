@@ -19,7 +19,6 @@
     _Bool _isGeneratedEvent;
     _Bool _useOriginalHIDTime;
     _Bool _redirectEvent;
-    _Bool _setTouchFlagOnSubevents;
     _Bool _systemDrag;
     unsigned int _type;
     unsigned int _originalType;
@@ -81,7 +80,6 @@
 @property(nonatomic) void *window; // @synthesize window=_window;
 @property(retain, nonatomic) AXEventData *accessibilityData; // @synthesize accessibilityData=_accessibilityData;
 @property(nonatomic, getter=isSystemDrag) _Bool systemDrag; // @synthesize systemDrag=_systemDrag;
-@property(nonatomic) _Bool setTouchFlagOnSubevents; // @synthesize setTouchFlagOnSubevents=_setTouchFlagOnSubevents;
 @property(nonatomic, getter=isRedirectEvent) _Bool redirectEvent; // @synthesize redirectEvent=_redirectEvent;
 @property(retain, nonatomic) struct __IOHIDServiceClient *creatorHIDServiceClient; // @synthesize creatorHIDServiceClient=_creatorHIDServiceClient;
 @property(retain, nonatomic) struct __IOHIDEvent *creatorHIDEvent; // @synthesize creatorHIDEvent=_creatorHIDEvent;

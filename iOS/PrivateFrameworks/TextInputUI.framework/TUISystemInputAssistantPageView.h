@@ -21,10 +21,12 @@
     TUIPredictionCellButton *_expandButton;
     id <TUISystemInputAssistantPageViewDelegate> _pageViewDelegate;
     UIView *_clipView;
+    UIView *_primaryContainerView;
     UIScrollView *_scrollView;
 }
 
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) UIView *primaryContainerView; // @synthesize primaryContainerView=_primaryContainerView;
 @property(retain, nonatomic) UIView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) _Bool secondaryViewVisible; // @synthesize secondaryViewVisible=_secondaryViewVisible;
 @property(nonatomic) __weak id <TUISystemInputAssistantPageViewDelegate> pageViewDelegate; // @synthesize pageViewDelegate=_pageViewDelegate;
@@ -36,6 +38,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)_contentSize;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_checkOldBounds:(struct CGRect)arg1 forContentOffsetChangeWithNewBounds:(struct CGRect)arg2;
 - (void)setSecondaryViewVisible:(_Bool)arg1 withAnimationType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOABExperimentAssignment : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOABDebugPanelExperimentBranch *_debugExperimentBranch;
     NSString *_offlineAbJson;
     NSString *_querySubstring;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _placeRequestType;
     int _serviceType;
     struct {
@@ -68,6 +70,8 @@ __attribute__((visibility("hidden")))
 - (id)serviceTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasServiceType;
 @property(nonatomic) int serviceType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

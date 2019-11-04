@@ -36,8 +36,8 @@
 - (void)clearTombstonesAndSyncState;
 - (void)deleteAllAccessResourceStateDataForReference:(id)arg1;
 - (id)accessResourceStatesForReference:(id)arg1;
-- (void)setStateData:(id)arg1 forAccessResourceWithIdentifier:(id)arg2 forReference:(id)arg3;
-- (id)currentStateDataForAccessResourceWithIdentifier:(id)arg1 forReference:(id)arg2;
+- (void)setPerWorkflowStateData:(id)arg1 forAccessResourceWithIdentifier:(id)arg2 forReference:(id)arg3;
+- (id)currentPerWorkflowStateDataForAccessResourceWithIdentifier:(id)arg1 forReference:(id)arg2;
 - (_Bool)isReference:(id)arg1 allowedToRunOnDomain:(id)arg2;
 - (void)setTrustedToRunScripts:(_Bool)arg1 forReference:(id)arg2 onDomain:(id)arg3;
 - (void)setOutcome:(int)arg1 forRunEvent:(id)arg2;
@@ -52,6 +52,7 @@
 - (id)sortedVisibleWorkflowsByName;
 - (id)sortedVisibleWorkflowsWithType:(id)arg1;
 - (id)sortedVisibleWorkflows;
+- (id)sortedWorkflowsIncludingTombstonesAndConflicts;
 - (_Bool)startObservingChangesForResult:(id)arg1;
 - (id)descriptorsForResult:(id)arg1 error:(id *)arg2;
 - (id)collectionForResult:(id)arg1 inRealm:(id)arg2;

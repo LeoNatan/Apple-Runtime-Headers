@@ -35,11 +35,14 @@
 @property(readonly, nonatomic) ACAccount *aa_fmipAccount;
 @property(readonly, nonatomic) ACAccount *aa_fmfAccount;
 @property(readonly, nonatomic) _Bool aa_isFamilyEligible;
+- (_Bool)_hasMailDataclassProperties;
 @property(readonly, nonatomic) _Bool aa_needsEmailConfiguration;
 @property(nonatomic, setter=aa_setRepairState:) NSNumber *aa_repairState;
 @property(copy, nonatomic, setter=aa_setLastKnownQuota:) NSNumber *aa_lastKnownQuota;
 @property(readonly, nonatomic) _Bool aa_hasOptionalTerms;
+@property(readonly, nonatomic) _Bool aa_isAuthKitAccount;
 @property(readonly, nonatomic) _Bool aa_isSandboxAccount;
+@property(readonly, nonatomic) _Bool aa_isRemindersMigrated;
 @property(readonly, nonatomic) _Bool aa_isNotesMigrated;
 @property(readonly, nonatomic) _Bool aa_isManagedAppleID;
 @property(readonly, nonatomic) _Bool aa_isUsingiCloud;

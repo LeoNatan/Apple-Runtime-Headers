@@ -9,7 +9,7 @@
 #import <PassKitUI/PKDashboardDataSource-Protocol.h>
 #import <PassKitUI/PKDashboardTransactionFetcherDelegate-Protocol.h>
 
-@class CNContact, NSArray, NSCalendar, NSDateFormatter, NSString, PKAccount, PKCurrencyAmount, PKDashboardTransactionFetcher, PKMerchant, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionGroup, PKPeerPaymentContactResolver;
+@class CNContact, NSArray, NSCalendar, NSDateFormatter, NSString, PKAccount, PKCurrencyAmount, PKDashboardTransactionFetcher, PKInstallmentPlan, PKMerchant, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionGroup, PKPeerPaymentContactResolver;
 @protocol PKDashboardDataSourceDelegate;
 
 @interface PKTransactionHistoryDataSource : NSObject <PKDashboardTransactionFetcherDelegate, PKDashboardDataSource>
@@ -20,6 +20,8 @@
     id <PKDashboardDataSourceDelegate> _delegate;
     PKPaymentTransaction *_featuredTransaction;
     PKPaymentTransactionGroup *_selectedTransactions;
+    PKInstallmentPlan *_associatedInstallmentPlan;
+    NSArray *_actionItems;
     _Bool _contentIsLoaded;
     _Bool _contactLoaded;
     _Bool _transactionHistoryLoaded;

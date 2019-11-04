@@ -13,7 +13,6 @@
 @interface GEOTrafficBannerText : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_bannerLargeText;
     GEOFormattedString *_bannerSmallText;
@@ -21,6 +20,9 @@
     NSMutableArray *_localizedIncidentSpokenTexts;
     NSMutableArray *_localizedIncidentSubBanners;
     GEOFormattedString *_spokenPrompt;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _bannerStyle;
     unsigned int _hideAtDistance;
     unsigned int _incidentDistance;
@@ -130,6 +132,8 @@
 - (void)clearLocalizedIncidentBanners;
 @property(retain, nonatomic) NSMutableArray *localizedIncidentBanners;
 - (void)_readLocalizedIncidentBanners;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -14,12 +14,14 @@
     _Bool _useFallback;
     id <WFSettings> _settings;
     NSObject<OS_dispatch_queue> *_requestSerialQueue;
+    struct os_unfair_lock_s _useFallbackLock;
+    struct os_unfair_lock_s _settingsLock;
 }
 
 + (id)userId;
+@property(nonatomic) struct os_unfair_lock_s settingsLock; // @synthesize settingsLock=_settingsLock;
+@property(nonatomic) struct os_unfair_lock_s useFallbackLock; // @synthesize useFallbackLock=_useFallbackLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestSerialQueue; // @synthesize requestSerialQueue=_requestSerialQueue;
-@property(nonatomic) _Bool useFallback; // @synthesize useFallback=_useFallback;
-@property(retain, nonatomic) id <WFSettings> settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
 - (id)_URLSafeBase64EncodedStringWithData:(id)arg1 options:(unsigned int)arg2;
 - (id)containerIdentifier;
@@ -27,6 +29,10 @@
 - (id)_permanentURLForRecordID:(id)arg1 containerIdentifier:(id)arg2;
 - (void)completeOnQueue:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSString *APIVersion;
+- (void)setSettings:(id)arg1;
+@property(readonly, nonatomic) id <WFSettings> settings; // @synthesize settings=_settings;
+- (void)setUseFallback:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool useFallback; // @synthesize useFallback=_useFallback;
 - (id)init;
 
 @end

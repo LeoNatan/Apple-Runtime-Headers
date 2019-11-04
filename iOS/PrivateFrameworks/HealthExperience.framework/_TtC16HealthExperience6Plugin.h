@@ -6,17 +6,11 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSData, NSString;
-
 @interface _TtC16HealthExperience6Plugin : NSManagedObject
 {
 }
 
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
-
-// Remaining properties
-@property(nonatomic, copy) NSData *data; // @dynamic data;
-@property(nonatomic, copy) NSString *package; // @dynamic package;
 
 @end
 

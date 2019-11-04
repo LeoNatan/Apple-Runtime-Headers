@@ -6,12 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <SpringBoard/SBHUDViewControlling-Protocol.h>
 #import <SpringBoard/UIViewControllerTransitioningDelegate-Protocol.h>
 
 @class NSString, NSTimer, SBRingerPillView, UIViewFloatAnimatableProperty;
 @protocol SBRingerHUDViewControllerDelegate;
 
-@interface SBRingerHUDViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@interface SBRingerHUDViewController : UIViewController <UIViewControllerTransitioningDelegate, SBHUDViewControlling>
 {
     _Bool _ringerSilent;
     _Bool _lastEventIsAVolumeChange;
@@ -35,6 +36,8 @@
 @property(nonatomic) _Bool ringerSilent; // @synthesize ringerSilent=_ringerSilent;
 - (void).cxx_destruct;
 - (void)_extendDismissalTimer;
+- (void)dismissAnimatedWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)definesAnimatedDismissal;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 - (void)_dismiss;
 - (void)presentForMuteSwitch:(_Bool)arg1;

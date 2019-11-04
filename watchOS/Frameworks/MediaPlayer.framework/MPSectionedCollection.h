@@ -9,10 +9,11 @@
 #import <MediaPlayer/NSCopying-Protocol.h>
 #import <MediaPlayer/NSMutableCopying-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
-@interface MPSectionedCollection : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface MPSectionedCollection : NSObject <_MPStateDumpPropertyListTransformable, NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSArray *_sectionedItems;
     NSArray *_sections;
@@ -21,6 +22,7 @@
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)_initializeAsEmptySectionedCollection;
+- (id)_stateDumpObject;
 - (id)changeDetailsToSectionedCollection:(id)arg1 isEqualBlock:(CDUnknownBlockType)arg2 isUpdatedBlock:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) int totalItemCount;
 @property(readonly, nonatomic) id lastSection;
@@ -42,8 +44,8 @@
 @property(readonly, nonatomic) id firstItem;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
@@ -53,6 +55,10 @@
 - (void)enumerateItemIdentifiersInSectionAtIndex:(int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSectionIdentifiersUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateItemIdentifiersUsingBlock:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

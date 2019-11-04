@@ -39,6 +39,7 @@
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (id)colorWithWhite:(unsigned long long)arg1 highContrastWhite:(unsigned long long)arg2;
 - (id)colorWithWhite:(unsigned long long)arg1;
 - (id)textColorForColor:(long long)arg1;
 - (void)overrideAppearanceForView:(id)arg1;

@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) NSString *domain;
 @property(readonly, nonatomic) NSString *type;
 @property(readonly, nonatomic) NSString *name;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 
 @end
 

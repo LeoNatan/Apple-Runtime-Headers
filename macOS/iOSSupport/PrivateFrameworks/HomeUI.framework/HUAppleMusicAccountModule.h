@@ -33,7 +33,8 @@
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 - (void).cxx_destruct;
 - (void)dispatcher:(id)arg1 appleMusicAccountsDidUpdate:(id)arg2;
-@property(readonly, nonatomic) NSString *signInMessage;
+@property(readonly, nonatomic) NSString *explicitAccountSignedInMessage;
+- (id)signInMessage:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfKnownAccounts;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;

@@ -12,7 +12,7 @@
 }
 
 - (BOOL)renderVideoFrames:(id)arg1 intoPixelBuffer:(struct __CVBuffer *)arg2 time:(CDStruct_1b6d18a9)arg3 colorSpace:(id)arg4 error:(out id *)arg5;
-- (BOOL)writeVideoFrom:(id)arg1 toWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 error:(out id *)arg4;
+- (BOOL)writeVideoFrom:(id)arg1 toWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 createCustomMetadata:(BOOL)arg4 geometryTransform:(id)arg5 error:(out id *)arg6;
 - (BOOL)render:(out id *)arg1;
 - (id)generateVideoComposition:(out id *)arg1;
 - (BOOL)requiresVideoComposition;

@@ -15,6 +15,7 @@
 @interface MLMediaLibraryResourcesServiceClient : NSObject <MLMediaLibraryAccountChangeObserver, MLMediaLibraryResourcesServiceProtocol>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
+    NSObject<OS_dispatch_queue> *_calloutQueue;
     NSXPCConnection *_xpcClientConnection;
     id <MLMediaLibraryAccountChangeObserver> _accountChangeObserver;
     NSOperationQueue *_accountChangeOperationQueue;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSOperationQueue *accountChangeOperationQueue; // @synthesize accountChangeOperationQueue=_accountChangeOperationQueue;
 @property(retain, nonatomic) id <MLMediaLibraryAccountChangeObserver> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(retain, nonatomic) NSXPCConnection *xpcClientConnection; // @synthesize xpcClientConnection=_xpcClientConnection;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (void).cxx_destruct;
 - (id)connectionWithListenerEndpoint:(id)arg1;

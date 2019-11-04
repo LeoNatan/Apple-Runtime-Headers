@@ -18,6 +18,7 @@
 + (id)statusValueFromICSString:(id)arg1;
 @property(retain) NSString *statusString; // @synthesize statusString=_statusString;
 - (void).cxx_destruct;
+- (Class)classForCoder;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 
 @end

@@ -52,6 +52,7 @@
 @property(nonatomic, readonly) NSArray *onboardingFeedIDs;
 
 @optional
+@property(nonatomic, readonly) long long emailSignupRequiredAppLaunchCount;
 @property(nonatomic, readonly) unsigned long long bestOfBundleFeedGroupKind;
 @property(nonatomic, readonly) unsigned long long likeDislikeBehavior;
 @property(nonatomic, readonly) long long maximumTrendingGroupSizeiPhone;

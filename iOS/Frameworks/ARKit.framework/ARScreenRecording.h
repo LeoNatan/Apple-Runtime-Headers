@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class UIViewController;
+@class RPScreenRecorder, UIViewController;
 
 @interface ARScreenRecording : NSObject
 {
     _Bool _saveInPhotosLibrary;
     UIViewController *_parentViewController;
+    RPScreenRecorder *_recorder;
 }
 
+@property(retain, nonatomic) RPScreenRecorder *recorder; // @synthesize recorder=_recorder;
 @property(retain, nonatomic) UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) _Bool saveInPhotosLibrary; // @synthesize saveInPhotosLibrary=_saveInPhotosLibrary;
 - (void).cxx_destruct;

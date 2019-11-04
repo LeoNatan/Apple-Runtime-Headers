@@ -68,7 +68,7 @@
 - (void)_presentMediaSelection;
 - (void)_removeActionsInServiceActionItem:(id)arg1;
 - (void)_setTriggerEnabled:(BOOL)arg1;
-- (void)_deleteTrigger:(id)arg1;
+- (void)_deleteTrigger:(id)arg1 indexPath:(id)arg2;
 - (void)_addAction:(id)arg1;
 - (void)_preloadShortcutHomeManager;
 - (void)_testTrigger;
@@ -81,7 +81,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *serviceActionsGridViewController; // @synthesize serviceActionsGridViewController=_serviceActionsGridViewController;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *actionSetsGridViewController; // @synthesize actionSetsGridViewController=_actionSetsGridViewController;
-- (void)viewDidLayoutSubviews;
 - (id)initWithTriggerBuilder:(id)arg1 flow:(id)arg2 delegate:(id)arg3;
 - (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 isPresentedModally:(BOOL)arg3 delegate:(id)arg4;
 

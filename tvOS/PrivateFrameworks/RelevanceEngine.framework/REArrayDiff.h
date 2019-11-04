@@ -10,8 +10,6 @@
 
 @interface REArrayDiff : NSObject
 {
-    NSArray *_fromElements;
-    NSArray *_toElements;
     NSArray *_allOperations;
 }
 
@@ -20,8 +18,6 @@
 + (id)diffFromElements:(id)arg1 toElements:(id)arg2 equalComparator:(CDUnknownBlockType)arg3 hashGenerator:(CDUnknownBlockType)arg4 changeComparator:(CDUnknownBlockType)arg5;
 + (id)diffFromElements:(id)arg1 toElements:(id)arg2;
 @property(readonly, nonatomic) NSArray *allOperations; // @synthesize allOperations=_allOperations;
-@property(readonly, nonatomic) NSArray *toElements; // @synthesize toElements=_toElements;
-@property(readonly, nonatomic) NSArray *fromElements; // @synthesize fromElements=_fromElements;
 - (void).cxx_destruct;
 - (void)enumerateOperationsUsingBlock:(CDUnknownBlockType)arg1;
 

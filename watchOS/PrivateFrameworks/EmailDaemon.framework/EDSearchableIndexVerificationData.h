@@ -15,7 +15,7 @@
     NSString *_subject;
     NSArray *_toEmailAddresses;
     NSString *_deleted;
-    NSNumber *_contentIndexTransactionId;
+    NSNumber *_transactionID;
     NSNumber *_flags;
     NSNumber *_indexedAsEmptySubject;
     NSDate *_dateReceived;
@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(retain, nonatomic) NSNumber *indexedAsEmptySubject; // @synthesize indexedAsEmptySubject=_indexedAsEmptySubject;
 @property(retain, nonatomic) NSNumber *flags; // @synthesize flags=_flags;
-@property(retain, nonatomic) NSNumber *contentIndexTransactionId; // @synthesize contentIndexTransactionId=_contentIndexTransactionId;
+@property(retain, nonatomic) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 @property(copy, nonatomic) NSString *deleted; // @synthesize deleted=_deleted;
 @property(copy, nonatomic) NSArray *toEmailAddresses; // @synthesize toEmailAddresses=_toEmailAddresses;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;

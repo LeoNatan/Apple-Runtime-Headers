@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct OpaqueFigSimpleMutex *isReadyForDisplayMutex;
     NSObject<OS_dispatch_queue> *configurationQueue;
     AVKeyPathDependencyManager *dependencyManager;
+    id playerItemHasEnqueuedVideoFrameListener;
     AVPlayer *player;
     NSString *videoGravity;
     NSDictionary *pixelBufferAttributes;

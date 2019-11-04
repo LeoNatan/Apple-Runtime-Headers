@@ -14,13 +14,15 @@
 @interface GEOCountdownData : PBCodable <GEOServerFormatTokenCountdownValue, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _alternateCountdownTypes;
     CDStruct_084d6ede _timestampValues;
     NSMutableArray *_alternateFormatStrings;
     NSString *_separator;
     NSString *_timezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_alternateCountdownTypes:1;
@@ -84,6 +86,8 @@
 @property(readonly, nonatomic) unsigned int timestampValuesCount;
 - (void)_readTimestampValues;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (int)_convertFrom:(int)arg1;
 @property(readonly, nonatomic) NSDictionary *alternativeFormatStringsByType;
 @property(readonly, nonatomic) int countdownType;

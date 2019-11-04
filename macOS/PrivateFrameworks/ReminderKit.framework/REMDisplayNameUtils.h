@@ -10,6 +10,7 @@
 {
 }
 
++ (id)displayNameFromAccountName:(id)arg1;
 + (id)displayNameFromListName:(id)arg1 isPlaceholder:(BOOL)arg2;
 
 @end

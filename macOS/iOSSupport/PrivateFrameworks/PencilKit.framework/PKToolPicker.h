@@ -38,7 +38,6 @@
 @property(nonatomic, getter=_isBackgroundMaterialUpdatingPaused, setter=_setBackgroundMaterialUpdatingPaused:) BOOL _backgroundMaterialUpdatingPaused;
 - (BOOL)_wantsPaletteToStayVisibleForPopovers;
 - (void)inputResponderController:(id)arg1 inputViewSetVisibilityDidChange:(BOOL)arg2 includedReset:(BOOL)arg3;
-- (void)visibilityDidChange:(BOOL)arg1;
 - (id)paletteViewColorPickerPopoverPresentationSourceView:(id)arg1;
 - (struct CGRect)paletteViewColorPickerPopoverPresentationSourceRect:(id)arg1;
 - (void)paletteView:(id)arg1 didChangeColor:(id)arg2;
@@ -58,7 +57,6 @@
 - (void)_updateVisibilityForFirstResponder:(id)arg1;
 - (void)setVisible:(BOOL)arg1 forFirstResponder:(id)arg2;
 - (void)_saveStateIfNecessary;
-- (void)_forceSetVisible:(BOOL)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (BOOL)_currentFirstResponderWantsToolPickerVisible;

@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUISportsOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
 @property(retain, nonatomic) UIImage *backgroundImageForMaterialRendering; // @synthesize backgroundImageForMaterialRendering=_backgroundImageForMaterialRendering;
 - (void).cxx_destruct;
+- (void)_cancelPendingOperation;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sampleWithImage:(id)arg1;
 - (void)_toggleLayoutSubviewsSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;

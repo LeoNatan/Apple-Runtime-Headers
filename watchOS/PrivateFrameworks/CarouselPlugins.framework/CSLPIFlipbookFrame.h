@@ -17,13 +17,18 @@
     NSDate *_animationEndDate;
     unsigned int _index;
     id <CSLSFrameSpecifier> _frameSpecifier;
+    unsigned long long _machContinuousTimeStamp;
     double _caMediaTimeStamp;
 }
 
 + (id)frameWithAnimationStartDate:(id)arg1 animationEndDate:(id)arg2 index:(unsigned int)arg3 frameSpecifier:(id)arg4;
++ (id)loggingStringForMachContinuousTime:(unsigned long long)arg1;
++ (id)loggingStringForCAMediaTime:(double)arg1;
++ (id)shortLoggingStringForAnimationMinute:(id)arg1;
 + (id)loggingStringForAnimationMinute:(id)arg1;
 + (id)loggingStringForPresentationTime:(id)arg1;
 @property(nonatomic) double caMediaTimeStamp; // @synthesize caMediaTimeStamp=_caMediaTimeStamp;
+@property(nonatomic) unsigned long long machContinuousTimeStamp; // @synthesize machContinuousTimeStamp=_machContinuousTimeStamp;
 @property(readonly, nonatomic) id <CSLSFrameSpecifier> frameSpecifier; // @synthesize frameSpecifier=_frameSpecifier;
 @property(readonly, nonatomic) unsigned int index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSDate *animationEndDate; // @synthesize animationEndDate=_animationEndDate;
@@ -35,6 +40,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) float fraction;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

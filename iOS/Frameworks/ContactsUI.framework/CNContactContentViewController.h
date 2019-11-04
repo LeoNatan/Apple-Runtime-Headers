@@ -426,7 +426,10 @@
 - (void)_didCompleteWithContact:(id)arg1;
 - (id)_removeUnauthorizedKeysFromContact:(id)arg1;
 - (id)_updateContact:(id)arg1 withMissingKeysFromRequiredKeys:(id)arg2;
-- (void)_updateItemsInGroup:(id)arg1 forTableView:(id)arg2;
+- (void)focusOnLastEditingItemInGroup:(id)arg1;
+- (void)reloadRowsAndRestoreFirstResponderAtIndexPaths:(id)arg1 ofTableView:(id)arg2;
+- (id)indexPathsOfEditingItemsInGroup:(id)arg1 withSectionIndex:(unsigned long long)arg2;
+- (void)_updateItemsInGroup:(id)arg1 forTableView:(id)arg2 deletedIndexPath:(id)arg3;
 - (void)removeEditingItem:(id)arg1 atIndexPath:(id)arg2 forTableView:(id)arg3;
 - (void)addEditingItemAtIndexPath:(id)arg1 forTableView:(id)arg2;
 - (void)_updateLabelWidthsForAllVisibleCells;
@@ -466,6 +469,7 @@
 - (void)contactGroupPickerDidFinish:(id)arg1 withGroup:(id)arg2;
 - (void)contactGroupPickerDidCancel:(id)arg1;
 - (id)alreadyPickedGroups;
+- (_Bool)propertyItemCanIgnoreGuardianRestrictions;
 - (id)_phoneticNameForValue:(id)arg1 currentPhoneticName:(id)arg2 property:(id)arg3;
 - (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
 - (id)sharedActionsDataSource;
@@ -489,7 +493,7 @@
 - (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (long long)_modalPresentationStyleForViewController:(id)arg1;
-- (void)performConfirmedCancel:(id)arg1;
+- (void)performConfirmedCancel;
 - (_Bool)isModalInPresentation;
 - (void)presentationControllerWillDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
@@ -552,6 +556,7 @@
 - (_Bool)editRequiresAuthorization;
 - (_Bool)editingChangeRequiresAuthorization;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
+- (_Bool)shouldIgnoreGuardianRestrictions;
 - (void)resetAuthorizationState;
 - (void)finishEditing:(id)arg1;
 - (void)toggleEditing:(id)arg1;
@@ -562,8 +567,6 @@
 - (void)saveModelChangesToContact;
 - (_Bool)saveChanges;
 - (void)clearMapsDataIfEdited;
-- (id)confirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
-- (void)presentConfirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
 - (void)presentConfirmCancelAlertController;
 - (void)editCancel:(id)arg1;
 - (void)cancelAsyncLookups;

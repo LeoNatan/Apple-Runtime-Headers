@@ -17,6 +17,7 @@
     _Bool _shouldUseStandardSectionInsets;
     _Bool _useShorterHeaders;
     _Bool _usesInsetRoundedSections;
+    _Bool _isExpanded;
     id <SearchUITableHeaderViewDelegate> _delegate;
     id <SFFeedbackListener> _feedbackListener;
     unsigned long long _headerType;
@@ -28,6 +29,7 @@
 }
 
 + (id)reuseIdentifier;
+@property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(nonatomic) _Bool usesInsetRoundedSections; // @synthesize usesInsetRoundedSections=_usesInsetRoundedSections;
 @property(retain, nonatomic) TLKStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) TLKTextButton *headerOptionButton; // @synthesize headerOptionButton=_headerOptionButton;

@@ -9,10 +9,12 @@
 @class NSArray, NSData, NSDate, NSDictionary, NSError, NSNumber, NSString, NSUUID, NSUserActivity, UIViewController;
 
 @protocol SPApplicationRemoteXPCProtocol <NSObject>
+- (void)interfaceViewController:(NSString *)arg1 removeDynamicInterfaceObject:(NSDictionary *)arg2;
 - (void)interfaceViewController:(NSString *)arg1 setupDynamicInterfaceObject:(NSDictionary *)arg2 completion:(void (^)(UIView *))arg3;
 - (void)interfaceViewController:(NSString *)arg1 setUnderlyingUIHostingController:(UIViewController *)arg2;
 - (void)interfaceViewController:(NSString *)arg1 receivePushInterfaceControllerClass:(Class)arg2 willPush:(void (^)(NSString *))arg3;
 - (void)interfaceViewController:(NSString *)arg1 receivePushInterfaceController:(NSString *)arg2 initializationContextID:(NSNumber *)arg3 willPush:(void (^)(NSString *))arg4;
+- (void)interfaceViewController:(NSString *)arg1 popToRootWithCompletion:(void (^)(void))arg2;
 - (void)setupInProcessNotificationExtensionConnectionWithHostClientIdentifier:(NSString *)arg1 completion:(void (^)(id <SPApplicationRemoteProtocol>))arg2;
 - (void)extensionDelegate:(NSString *)arg1 handlesBGTasksDidChange:(_Bool)arg2;
 - (void)extensionDidEndNotificationUICreation:(NSString *)arg1;

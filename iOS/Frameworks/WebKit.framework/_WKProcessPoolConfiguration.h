@@ -9,13 +9,15 @@
 #import <WebKit/NSCopying-Protocol.h>
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSArray, NSString, NSURL;
+@class NSArray, NSSet, NSString, NSURL;
 
 @interface _WKProcessPoolConfiguration : NSObject <WKObject, NSCopying>
 {
     struct ObjectStorage<API::ProcessPoolConfiguration> _processPoolConfiguration;
+    _Bool _configureJSCForTesting;
 }
 
+@property(nonatomic) _Bool configureJSCForTesting; // @synthesize configureJSCForTesting=_configureJSCForTesting;
 @property(readonly) struct Object *_apiObject;
 @property(copy, nonatomic) NSString *customWebContentServiceBundleIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -46,6 +48,7 @@
 @property(nonatomic) _Bool diskCacheSpeculativeValidationEnabled;
 @property(nonatomic) long long diskCacheSizeOverride;
 @property(nonatomic) unsigned long long maximumProcessCount;
+@property(copy, nonatomic) NSSet *customClassesForParameterCoder;
 @property(copy, nonatomic) NSURL *injectedBundleURL;
 - (void)dealloc;
 - (id)init;

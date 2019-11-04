@@ -328,6 +328,7 @@
 @property(nonatomic) int smartQuotesType;
 @property(nonatomic) int spellCheckingType;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsImagePaste;
 @property(nonatomic) _Bool suppressReturnKeyStyling;
 @property(copy, nonatomic) NSString *textContentType;
 @property(nonatomic) int textScriptType;

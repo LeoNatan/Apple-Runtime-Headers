@@ -13,7 +13,6 @@
 @interface GEOClientACSuggestionEntry : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     double _contactRelevanceScore;
     double _fractionOfMatch;
     double _mapsSuggestionsContactRevelanceScore;
@@ -21,6 +20,9 @@
     double _mapsSuggestionsPoiRevelanceScore;
     GEOSubactionMetaData *_subactionMetaData;
     NSString *_suggestionSectionType;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _age;
     int _autocompleteResultCellType;
     int _distanceToSuggestion;
@@ -172,6 +174,8 @@
 - (id)suggestionTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasSuggestionType;
 @property(nonatomic) int suggestionType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

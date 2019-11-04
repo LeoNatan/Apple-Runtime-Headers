@@ -44,7 +44,9 @@
     struct PXGItemsLayout *_decadesItemLayout;
     NSMutableSet *_itemLayoutsAllowedToLoad;
     NSDateInterval *_lastReturnedDateInterval;
+    unsigned long long _lastReturnedDateIntervalDataSourceIdentifier;
     NSArray *_lastReturnedLocationNames;
+    unsigned long long _lastReturnedLocationNamesDataSourceIdentifier;
     BOOL _scrolledWhileAnimatingZoom;
     BOOL _performedInitialVisualShift;
     long long _visuallyStableAnchorItem;
@@ -52,6 +54,7 @@
     BOOL _visuallyStableAnchorAllowedCloseToTop;
     unsigned long long _dataSourceIdentifierOfCachedRangeForSelectedItems;
     struct _NSRange _cachedRangeForSelectedItems;
+    BOOL _didChangeFiltering;
     BOOL _shouldAnimateTowardsAnchor;
     BOOL _wasTracking;
     PXCuratedLibraryLayoutSpec *_spec;
@@ -65,8 +68,11 @@
     PXGOneColumnLayout *_oneColLayout;
     struct CGPoint _anchorTargetViewportCenter;
     struct CGPoint _normalizedScaleCenterInAnchorSprite;
+    struct NSEdgeInsets _overlayInsets;
+    struct NSEdgeInsets _effectiveOverlayInsets;
 }
 
+@property(nonatomic) struct NSEdgeInsets effectiveOverlayInsets; // @synthesize effectiveOverlayInsets=_effectiveOverlayInsets;
 @property(readonly, nonatomic) PXGOneColumnLayout *oneColLayout; // @synthesize oneColLayout=_oneColLayout;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *didAnimateTowardsAnchorInItemsLayout; // @synthesize didAnimateTowardsAnchorInItemsLayout=_didAnimateTowardsAnchorInItemsLayout;
 @property(readonly, nonatomic) BOOL wasTracking; // @synthesize wasTracking=_wasTracking;
@@ -76,6 +82,7 @@
 @property(readonly, nonatomic) struct CGPoint anchorTargetViewportCenter; // @synthesize anchorTargetViewportCenter=_anchorTargetViewportCenter;
 @property(readonly, nonatomic) PXPointAnimator *anchorViewportScaleCenterAnimator; // @synthesize anchorViewportScaleCenterAnimator=_anchorViewportScaleCenterAnimator;
 @property(readonly, nonatomic) PXGAnchor *anchor; // @synthesize anchor=_anchor;
+@property(nonatomic) struct NSEdgeInsets overlayInsets; // @synthesize overlayInsets=_overlayInsets;
 @property(readonly, nonatomic) PXAssetsDataSource *presentedDataSource; // @synthesize presentedDataSource=_presentedDataSource;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) PXAssetReference *anchorAssetReference; // @synthesize anchorAssetReference=__anchorAssetReference;
@@ -116,11 +123,13 @@
 - (void)_updateVisualShifting;
 - (void)_updateZoom;
 - (void)_updateLayers;
+- (void)_updateEffectiveOverlayInsets;
 - (void)update;
 - (void)invalidateItemsLayout;
 - (id)presentedItemsGeometryForDataSource:(id)arg1;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *primaryItemsLayout;
 - (BOOL)_wantsDecorationForNumberOfColumns:(long long)arg1;
+- (double)_itemCaptionSpacingForLayout:(struct PXGItemsLayout *)arg1;
 - (double)_interItemSpacingForLayout:(struct PXGItemsLayout *)arg1;
 - (BOOL)_layoutHasIndividualItems:(struct PXGItemsLayout *)arg1;
 - (BOOL)_layoutIsAspectFit:(struct PXGItemsLayout *)arg1;

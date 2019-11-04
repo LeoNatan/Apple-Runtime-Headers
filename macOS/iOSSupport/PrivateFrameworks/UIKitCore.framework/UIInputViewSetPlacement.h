@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isInteractive;
 @property(readonly, nonatomic) BOOL showsKeyboard;
 @property(readonly, nonatomic) BOOL showsInputViews;
+@property(readonly, nonatomic) BOOL isInvisible;
 @property(readonly, nonatomic) BOOL isFloating;
 @property(readonly, nonatomic) BOOL isUndocked;
 - (BOOL)isEqual:(id)arg1;

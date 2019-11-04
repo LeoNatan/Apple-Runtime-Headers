@@ -60,6 +60,7 @@
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isBlackBackground;
 - (_Bool)isEqual:(id)arg1;
 - (id)circularDialFillColor;
 - (id)circularDialTickColor;

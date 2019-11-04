@@ -31,6 +31,7 @@
     BOOL _supportsOpacityEditing;
     BOOL _wantsClearBackgroundColorInCompactSize;
     BOOL _toolPreviewMinimized;
+    BOOL _settingSelectedColor;
     unsigned long long _autoHideCorner;
     double _scalingFactor;
     UIViewController *_presentationController;
@@ -66,6 +67,7 @@
 }
 
 + (id)makeBackgroundView;
+@property(nonatomic, getter=isSettingSelectedColor) BOOL settingSelectedColor; // @synthesize settingSelectedColor=_settingSelectedColor;
 @property(retain, nonatomic) UIViewController *popoverPresentingController; // @synthesize popoverPresentingController=_popoverPresentingController;
 @property(nonatomic, getter=isToolPreviewMinimized) BOOL toolPreviewMinimized; // @synthesize toolPreviewMinimized=_toolPreviewMinimized;
 @property(nonatomic) struct UIEdgeInsets palettePopoverLayoutSceneMargins; // @synthesize palettePopoverLayoutSceneMargins=_palettePopoverLayoutSceneMargins;
@@ -136,11 +138,11 @@
 - (void)additionalOptionsView:(id)arg1 didToggleAutoHideOption:(BOOL)arg2;
 - (void)additionalOptionsViewDidSelectPlusButton:(id)arg1;
 - (void)toolPreviewDidChangeToolColor:(id)arg1;
-- (void)hostView:(id)arg1 didDockPaletteToCorner:(unsigned long long)arg2;
-- (void)hostView:(id)arg1 willDockPaletteToCorner:(unsigned long long)arg2;
-- (void)hostView:(id)arg1 didDockPaletteToEdge:(unsigned long long)arg2;
+- (void)hostView:(id)arg1 didDockPaletteToPosition:(long long)arg2;
+- (void)hostView:(id)arg1 willDockPaletteToPosition:(long long)arg2 prepareForExpansion:(BOOL)arg3;
 - (void)_centerPaletteContainerSubviewToCurrentlySelectedToolForEdge:(unsigned long long)arg1;
-- (void)hostView:(id)arg1 willDockPaletteToEdge:(unsigned long long)arg2 prepareForExpansion:(BOOL)arg3;
+- (void)_willDockPaletteToCorner:(unsigned long long)arg1;
+- (void)_willDockPaletteToEdge:(unsigned long long)arg1 prepareForExpansion:(BOOL)arg2;
 - (BOOL)colorPickerShouldDisplayColorSelection:(id)arg1;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
 - (void)toolPickerDidToggleRulerTool:(id)arg1;

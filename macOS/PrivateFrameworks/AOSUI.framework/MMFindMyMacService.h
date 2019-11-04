@@ -24,7 +24,7 @@
 @property(retain) NSImage *warningIcon; // @synthesize warningIcon=_warningIcon;
 @property(retain) NSError *fmmError; // @synthesize fmmError=_fmmError;
 - (void).cxx_destruct;
-- (BOOL)preflightForSignout:(id *)arg1 withWindow:(id)arg2 andDataclassActions:(id)arg3;
+- (BOOL)preflightForSignoutWithWindow:(id)arg1;
 - (BOOL)hasPreflightAction;
 - (BOOL)deviceHasBridgeOS;
 - (id)acquireAuthRights:(unsigned long long)arg1;

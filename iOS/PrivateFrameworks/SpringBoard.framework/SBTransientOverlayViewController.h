@@ -12,7 +12,7 @@
 #import <SpringBoard/SBHomeGrabberDelegate-Protocol.h>
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 
-@class FBDisplayLayoutElement, NSNumber, NSString, SBDisplayItem, SBFHomeGrabberSettings, SBHomeGrabberView, SBUIKeyboardHomeAffordanceAssertion, UIStatusBar, UIStatusBarStyleRequest, UIView, UIWindow, _UILegibilitySettings;
+@class FBDisplayLayoutElement, NSNumber, NSString, SBDisplayItem, SBFHomeGrabberSettings, SBHomeGrabberView, SBKeyboardHomeAffordanceAssertion, UIStatusBar, UIStatusBarStyleRequest, UIView, UIWindow, _UILegibilitySettings;
 @protocol SBIdleTimerCoordinating, SBTransientOverlayViewControllerDelegate;
 
 @interface SBTransientOverlayViewController : UIViewController <SBHomeGrabberDelegate, BSDescriptionProviding, SBButtonEventsHandler, SBFIdleTimerBehaviorProviding, SBIdleTimerProviding>
@@ -24,7 +24,7 @@
     SBFHomeGrabberSettings *_grabberSettings;
     _Bool _hasPreservedInputViews;
     _Bool _isDisplayLayoutElementActive;
-    SBUIKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
+    SBKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
     UIWindow *_keyboardHomeAffordanceAssertionWindow;
     UIView *_presentationBackgroundView;
     long long _presentationPrefersHomeGrabberHidden;
@@ -122,6 +122,7 @@
 - (void)beginIgnoringContentOverlayInsetUpdates;
 - (void)endIgnoringAppearanceUpdates;
 - (void)beginIgnoringAppearanceUpdates;
+@property(readonly, copy, nonatomic) CDUnknownBlockType sceneDeactivationPredicate;
 @property(readonly, copy, nonatomic) NSNumber *preferredSceneDeactivationReasonValue;
 @property(readonly, copy, nonatomic) NSString *preferredDisplayLayoutElementIdentifier;
 @property(readonly, nonatomic) _Bool isIgnoringContentOverlayInsetUpdates;

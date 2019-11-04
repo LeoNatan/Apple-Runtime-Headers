@@ -12,6 +12,7 @@
 
 @interface NNMKNanoMailServiceHolder : NSObject <NNMKNanoMailServiceDelegate>
 {
+    struct os_unfair_lock_s _delegatesAccessLock;
     NNMKNanoMailService *_nanomailService;
     NSHashTable *_delegates;
     NSString *_serviceName;
@@ -27,6 +28,10 @@
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (void)_setupOrTeardownNanoMailServiceInstance;
+- (id)_delegatesCopy;
+- (int)_delegatesCount;
+- (void)_removeDelegate:(id)arg1;
+- (void)_addDelegate:(id)arg1;
 - (void)unregisterDelegate:(id)arg1;
 - (void)registerDelegate:(id)arg1;
 - (id)initWithServiceName:(id)arg1 interface:(id)arg2;

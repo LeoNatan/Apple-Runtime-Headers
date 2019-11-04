@@ -15,7 +15,6 @@
 @interface GEOPBTransitVehiclePosition : PBCodable <GEOTransitVehiclePosition, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPBTransitArtwork *_artwork;
     NSString *_color;
@@ -26,6 +25,9 @@
     GEOStyleAttributes *_styleAttributes;
     unsigned long long _time;
     unsigned long long _tripId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     float _bearing;
     float _speed;
     struct {
@@ -100,6 +102,8 @@
 - (void)_readLatLng;
 @property(nonatomic) BOOL hasTripId;
 @property(nonatomic) unsigned long long tripId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artworkDataSource;
 @property(readonly, copy, nonatomic) NSString *colorHexString;
 @property(readonly, nonatomic) NSDate *timestamp;

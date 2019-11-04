@@ -12,13 +12,17 @@
 
 @interface PMLSeparatedDPNoiseStrategy : NSObject <PMLNoiseStrategy>
 {
+    const char *_pflIdentifier;
 }
 
++ (id)getPFLIdentifier:(id)arg1;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (_Bool)scaleAndAddNoiseToDenseVector:(id)arg1 usingNorm:(_Bool)arg2 scaleFactor:(float *)arg3;
 - (void)addNoiseToSparseVector:(id)arg1;
 - (void)addNoiseToSparseMatrix:(id)arg1;
+- (id)initWithPFLIdentifier:(const char *)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

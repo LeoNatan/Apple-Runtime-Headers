@@ -35,6 +35,7 @@
 - (void)scheduleDeferredDataReload;
 - (void)showNoDataStatus;
 - (void)updateCurrentValueTextWithAttributedString:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)reloadData;
 - (void)_setupSubviews;
 - (id)initWithCoder:(id)arg1;

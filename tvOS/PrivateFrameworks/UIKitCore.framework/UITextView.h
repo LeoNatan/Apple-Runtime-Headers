@@ -22,7 +22,7 @@
 #import <UIKitCore/_UITextViewContentPaddingDelegate-Protocol.h>
 #import <UIKitCore/_UIViewBaselineSpacing-Protocol.h>
 
-@class CUICatalog, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UIInputContextHistory, UILabel, UITextInputController, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UITextContainerView, _UITextItemDiscoverer, _UITextSizeCache, _UITextViewContentPadding, _UITextViewRestorableScrollPosition, _UITextViewVisualStyle;
+@class CUICatalog, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UIInputContextHistory, UILabel, UITextInputController, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UITextContainerView, _UITextItemDiscoverer, _UITextLayoutView, _UITextSizeCache, _UITextViewContentPadding, _UITextViewRestorableScrollPosition, _UITextViewVisualStyle;
 @protocol UICoordinateSpace, UITextInputDelegate, UITextInputTokenizer, UITextViewDelegate;
 
 @interface UITextView : UIScrollView <_UIViewBaselineSpacing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UIViewGhostedRangeSupporting, _UITextItemInteracting, _UITextContent, _UITextItemDiscoverable, UITextInput, UIContentSizeCategoryAdjusting>
@@ -31,6 +31,7 @@
     NSTextContainer *_textContainer;
     NSLayoutManager *_layoutManager;
     _UITextContainerView *_containerView;
+    _UITextLayoutView *_layoutView;
     id _inputDelegate;
     id <UITextInputTokenizer> _tokenizer;
     UITextInputController *_inputController;
@@ -102,7 +103,6 @@
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)startInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
-- (_Bool)_presentActionsForTextInteractableItem:(id)arg1;
 - (_Bool)_mightHaveInteractableItems;
 - (_Bool)_allowInteraction:(long long)arg1 forTextInteractableItem:(id)arg2;
 - (void)_updateSelectionGestures;
@@ -370,13 +370,14 @@
 - (double)_currentPreferredMaxLayoutWidth;
 - (id)_layoutDebuggingTitle;
 - (struct CGSize)intrinsicContentSize;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (struct CGSize)_containerSizeForBoundsSize:(struct CGSize)arg1 allowingOverflow:(_Bool)arg2;
 - (void)_performLayoutCalculation:(CDUnknownBlockType)arg1 inSize:(struct CGSize)arg2;
 - (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
-- (void)_baselineOffsetDidChange;
+- (_Bool)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (_Bool)_hasBaseline;
 - (double)_baselineOffsetFromBottom;
 - (double)_firstBaselineOffsetFromTop;
@@ -394,7 +395,9 @@
 - (void)_scrollToSelectionIfNeeded;
 - (void)_scrollToCaretIfNeeded;
 - (void)_invalidateContainerViewSize;
-- (void)layoutSubviews;
+- (void)_layoutText;
+- (void)_setNeedsTextLayout;
+- (void)setNeedsLayout;
 - (void)adjustedContentInsetDidChange;
 - (void)_resyncContainerFrameForNonAutolayoutDeferringSizeToFit:(_Bool)arg1;
 - (void)_resyncContainerFrameForNonAutolayout;

@@ -4,44 +4,55 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <EmailDaemon/EDThreadQueryHandler.h>
+#import <EmailDaemon/EDMessageRepositoryQueryHandler.h>
 
 #import <EmailDaemon/EDMessageQueryHelperDelegate-Protocol.h>
 #import <EmailDaemon/EFContentProtectionObserver-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessageQueryHelper, EDUpdateThrottler, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
-@protocol EMMessageListItemQueryResultsObserver, OS_dispatch_queue;
+@class EDMessageQueryHelper, EDThreadReloadSummaryHelper, EDUpdateThrottler, EDVIPManager, EMMailboxScope, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
+@protocol EDRemoteSearchProvider, EFScheduler, EMMessageListItemQueryResultsObserver, OS_dispatch_queue;
 
-@interface EDInMemoryThreadQueryHandler : EDThreadQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
+@interface EDInMemoryThreadQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
     NSMutableOrderedSet *_conversationIDs;
     NSMutableDictionary *_threadsByConversationID;
     NSMutableDictionary *_changesWhilePaused;
     NSMutableDictionary *_oldestThreadsByMailboxObjectIDs;
+    struct os_unfair_lock_s _threadsLock;
     _Bool _didCancel;
     _Bool _isInitialized;
     _Bool _isPaused;
     _Bool _hasChangesWhilePaused;
+    EDVIPManager *_vipManager;
+    id <EDRemoteSearchProvider> _remoteSearchProvider;
     EDMessageQueryHelper *_messageQueryHelper;
     NSArray *_messageSortDescriptors;
     CDUnknownBlockType _comparator;
     EDUpdateThrottler *_updateThrottler;
+    EDThreadReloadSummaryHelper *_reloadSummaryHelper;
+    id <EFScheduler> _scheduler;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     NSObject<OS_dispatch_queue> *_resultQueue;
+    EMMailboxScope *_mailboxScope;
 }
 
 + (id)log;
+@property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 @property(nonatomic) _Bool hasChangesWhilePaused; // @synthesize hasChangesWhilePaused=_hasChangesWhilePaused;
 @property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
 @property(nonatomic) _Bool didCancel; // @synthesize didCancel=_didCancel;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resultQueue; // @synthesize resultQueue=_resultQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
+@property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(readonly, nonatomic) EDThreadReloadSummaryHelper *reloadSummaryHelper; // @synthesize reloadSummaryHelper=_reloadSummaryHelper;
 @property(readonly, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
 @property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, copy, nonatomic) NSArray *messageSortDescriptors; // @synthesize messageSortDescriptors=_messageSortDescriptors;
 @property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
+@property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
+@property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
 - (void).cxx_destruct;
 - (_Bool)_messageListItemChangeAffectsSorting:(id)arg1;
 - (id)_inMemoryThreadSortDescriptorsForThreadSortDescriptors:(id)arg1;
@@ -56,7 +67,7 @@
 - (void)queryHelperDidFinishRemoteSearch:(id)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
-- (_Bool)_removeThreadsForInMemoryThreads:(id)arg1;
+- (_Bool)_removeThreadsForInMemoryThreads:(id)arg1 forMove:(_Bool)arg2;
 - (_Bool)_reportDeletes:(id)arg1;
 - (_Bool)_reportChanges:(id)arg1;
 - (_Bool)_mergeInThreads:(id)arg1 forMove:(_Bool)arg2;
@@ -65,7 +76,7 @@
 - (void)queryHelper:(id)arg1 conversationNotificationLevelDidChangeForConversation:(long long)arg2 conversationID:(long long)arg3;
 - (void)queryHelper:(id)arg1 conversationIDDidChangeForMessages:(id)arg2 fromConversationID:(long long)arg3;
 - (void)queryHelper:(id)arg1 didDeleteMessages:(id)arg2;
-- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3;
+- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3 oldConversationID:(long long)arg4;
 - (void)queryHelper:(id)arg1 didUpdateMessages:(id)arg2 forKeyPaths:(id)arg3;
 - (void)queryHelper:(id)arg1 messageFlagsDidChangeForMessages:(id)arg2;
 - (void)_messagesWereAdded:(id)arg1;
@@ -78,7 +89,7 @@
 - (void)_contentProtectionChangedToLocked;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (_Bool)_queryHelperIsCurrent:(id)arg1;
-- (void)_createHelper;
+- (void)_createHelperAndReconcileJournal:(_Bool)arg1;
 - (void)_restartHelper;
 - (void)_refreshObserver;
 - (void)_didSendUpdates;
@@ -87,7 +98,8 @@
 @property(readonly, nonatomic) id <EMMessageListItemQueryResultsObserver> resultsObserverIfNotPaused;
 - (void)cancel;
 - (void)start;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
+- (void)tearDown;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

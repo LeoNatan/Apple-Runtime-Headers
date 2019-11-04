@@ -56,6 +56,7 @@
 - (void)didCollectReaderContentForMail:(id)arg1;
 - (void)didCollectReadingListItemInfo:(id)arg1 bookmarkID:(id)arg2;
 - (void)didSetReaderConfiguration:(id)arg1;
+- (void)_sendReaderAvailabilityNotificationForReason:(int)arg1;
 - (void)didDetermineReaderAvailability:(_Bool)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
 - (void)_updateJavaScriptEnabled;
 - (id)configurationManager;

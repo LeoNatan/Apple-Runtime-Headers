@@ -8,11 +8,13 @@
 
 @interface AVTAvatarAttributeEditorTransitionFromActionsStartingPortraitLayout : AVTAvatarAttributeEditorLayout
 {
+    double _avatarContainerAlpha;
     double _attributesContentViewExtraHeight;
     struct CGRect _avatarContainerFrame;
 }
 
 @property(readonly, nonatomic) double attributesContentViewExtraHeight; // @synthesize attributesContentViewExtraHeight=_attributesContentViewExtraHeight;
+- (double)avatarContainerAlpha;
 - (struct CGRect)avatarContainerFrame;
 - (id)backgroundColor;
 - (struct UIEdgeInsets)attributesContentViewScrollIndicatorInsets;
@@ -25,7 +27,7 @@
 - (struct CGRect)attributesContentViewFrame;
 - (struct CGRect)groupDialContainerFrame;
 - (unsigned long long)supportedLayoutOrientation;
-- (id)initWithContainerSize:(struct CGSize)arg1 insets:(struct UIEdgeInsets)arg2 screenScale:(double)arg3 avatarViewContainerFrame:(struct CGRect)arg4 attributesContentViewFrameExtraHeight:(double)arg5;
+- (id)initWithContainerSize:(struct CGSize)arg1 insets:(struct UIEdgeInsets)arg2 screenScale:(double)arg3 avatarViewContainerFrame:(struct CGRect)arg4 attributesContentViewFrameExtraHeight:(double)arg5 avatarViewAlpha:(double)arg6;
 
 @end
 

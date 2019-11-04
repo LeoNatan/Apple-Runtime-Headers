@@ -13,7 +13,14 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)centerCellFromCollectionView:(id)arg1;
+- (void)adjustCycleTimelineCollectionViewIncrement:(_Bool)arg1;
 - (_Bool)accessibilityCollectionViewBehavesLikeUIViewAccessibility;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
+- (_Bool)isAccessibilityElement;
 
 @end
 

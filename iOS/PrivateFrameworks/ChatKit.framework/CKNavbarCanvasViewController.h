@@ -17,6 +17,7 @@
 {
     _Bool _canShowBackButtonView;
     _Bool _shouldShowDoneButton;
+    _Bool _isInEditingMode;
     _Bool _editing;
     id <CKNavbarCanvasViewControllerDelegate> _delegate;
     UIButton *_callButton;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) CKAvatarPickerViewController *avatarPickerViewController; // @synthesize avatarPickerViewController=_avatarPickerViewController;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) NSString *navbarTitle; // @synthesize navbarTitle=_navbarTitle;
+@property(nonatomic) _Bool isInEditingMode; // @synthesize isInEditingMode=_isInEditingMode;
 @property(nonatomic) _Bool shouldShowDoneButton; // @synthesize shouldShowDoneButton=_shouldShowDoneButton;
 @property(nonatomic) _Bool canShowBackButtonView; // @synthesize canShowBackButtonView=_canShowBackButtonView;
 @property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;

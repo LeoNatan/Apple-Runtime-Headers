@@ -34,6 +34,7 @@
 - (void).cxx_destruct;
 - (void)_performSyncBlock:(CDUnknownBlockType)arg1;
 - (void)_performAsyncBarrierBlock:(CDUnknownBlockType)arg1;
+- (id)_requestForCatalog:(id)arg1 size:(struct CGSize)arg2;
 - (id)_existingRepresentativeObjectForArtworkCatalog:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)_isRepresentationSize:(struct CGSize)arg1 validForCatalog:(id)arg2;
 - (id)_existingRepresentationFromURLCacheForArtworkCatalog:(id)arg1 immediateImageDecompressionAllowed:(BOOL)arg2;

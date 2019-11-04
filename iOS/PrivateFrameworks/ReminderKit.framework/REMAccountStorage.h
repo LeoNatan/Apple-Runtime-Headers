@@ -17,6 +17,7 @@
 {
     unsigned long long _storeGeneration;
     unsigned long long _copyGeneration;
+    struct os_unfair_lock_s _lock;
     _Bool _markedForRemoval;
     _Bool _listsDADisplayOrderChanged;
     _Bool _inactive;
@@ -65,6 +66,7 @@
 - (void).cxx_destruct;
 - (id)listIDsMergeableOrderingReplicaIDSource;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
+@property(readonly, nonatomic) NSString *displayName;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

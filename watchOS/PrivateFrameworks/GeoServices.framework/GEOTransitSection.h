@@ -13,13 +13,15 @@
 @interface GEOTransitSection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _actionSheetArtworkIndexs;
     CDStruct_084d6ede _routeDetailsArtworkIndexs;
     CDStruct_084d6ede _stepIndexs;
     NSString *_actionSheetName;
     NSMutableArray *_ticketingSegments;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _nextOptionsIndex;
     _Bool _disableAlightNotifications;
     struct {
@@ -96,6 +98,8 @@
 @property(readonly, nonatomic) unsigned int stepIndexsCount;
 - (void)_readStepIndexs;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

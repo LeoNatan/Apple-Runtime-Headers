@@ -13,9 +13,9 @@
 
 @interface CSAssetController : NSObject <CSEventMonitorDelegate>
 {
-    NSDictionary *_csAssetsDictionary;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_assetsMigrationQueue;
+    NSDictionary *_csAssetsDictionary;
     NSMutableDictionary *_observers;
 }
 
@@ -29,6 +29,10 @@
 + (void)addKeyValuePairForQuery:(id *)arg1 assetType:(unsigned int)arg2;
 + (id)filteredAssetsForAssets:(id)arg1 assetType:(unsigned int)arg2 language:(id)arg3;
 + (id)filteredAssetsForFetchRemoteMetaDataForAssets:(id)arg1 assetType:(unsigned int)arg2;
+@property(retain, nonatomic) NSMutableDictionary *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) NSDictionary *csAssetsDictionary; // @synthesize csAssetsDictionary=_csAssetsDictionary;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetsMigrationQueue; // @synthesize assetsMigrationQueue=_assetsMigrationQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)CSEventMonitorDidReceiveEvent:(id)arg1;
 - (void)removeObserver:(id)arg1 forAssetType:(unsigned int)arg2;
@@ -44,8 +48,6 @@
 - (void)_runAssetQuery:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_assetQueryForAssetType:(unsigned int)arg1;
 - (id)_findLatestInstalledAsset:(id)arg1;
-- (id)_installedAssetWithoutMetaDataForType:(unsigned int)arg1 withLanguage:(id)arg2;
-- (void)_installedAssetWithoutMetaDataForType:(unsigned int)arg1 withLanguage:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_installedAssetOfType:(unsigned int)arg1 withLanguage:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_installedAssetOfType:(unsigned int)arg1 withLanguage:(id)arg2;
 - (void)installedAssetOfType:(unsigned int)arg1 withLanguage:(id)arg2 completion:(CDUnknownBlockType)arg3;

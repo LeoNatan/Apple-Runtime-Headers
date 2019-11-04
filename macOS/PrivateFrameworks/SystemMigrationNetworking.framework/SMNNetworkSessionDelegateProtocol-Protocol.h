@@ -25,5 +25,8 @@
 - (void)session:(SMNNetworkSession *)arg1 discoveredPeerNamed:(NSString *)arg2;
 - (BOOL)session:(SMNNetworkSession *)arg1 shouldAcceptPeerWithAddress:(NSString *)arg2;
 - (void)session:(SMNNetworkSession *)arg1 peerNamed:(NSString *)arg2 updatedTxtRecord:(NSDictionary *)arg3;
+
+@optional
+- (void)session:(SMNNetworkSession *)arg1 shouldSuspendFurtherActions:(BOOL)arg2;
 @end
 

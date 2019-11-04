@@ -40,7 +40,9 @@
 - (id)daemonController;
 - (void)_updatePersonalNicknameWithMeCardIfNecessary;
 - (void)_meCardDidChange:(id)arg1;
+- (id)truncateNameIfNeeded:(id)arg1;
 - (void)updatePersonalNicknameIfNecessaryWithMeCardSharingResult:(id)arg1;
+- (void)setPersonalNicknameFromOnboardingResult:(id)arg1;
 - (id)_handleIDsForHandle:(id)arg1;
 - (void)handleSharingListsDidChange;
 - (void)nicknameStoreDidChange;

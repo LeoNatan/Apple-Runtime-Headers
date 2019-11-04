@@ -95,6 +95,7 @@
     NSNumber *_temporarySubtitleOverrideType;
     NSArray *_playbackEndTimeBoundaryObserverTokens;
     TVPAudioOption *_cachedSelectedAudioOption;
+    AVQueuePlayer *_earlyAVQueuePlayer;
     NSArray *_cachedLoadedTimeRanges;
     NSArray *_cachedSeekableTimeRanges;
     AVQueuePlayer *_AVQueuePlayer;
@@ -147,6 +148,7 @@
 @property(retain, nonatomic) NSArray *cachedLoadedTimeRanges; // @synthesize cachedLoadedTimeRanges=_cachedLoadedTimeRanges;
 @property(nonatomic) CDStruct_1b6d18a9 cachedDuration; // @synthesize cachedDuration=_cachedDuration;
 @property(nonatomic) float cachedAVPlayerRate; // @synthesize cachedAVPlayerRate=_cachedAVPlayerRate;
+@property(retain, nonatomic) AVQueuePlayer *earlyAVQueuePlayer; // @synthesize earlyAVQueuePlayer=_earlyAVQueuePlayer;
 @property(retain, nonatomic) TVPAudioOption *cachedSelectedAudioOption; // @synthesize cachedSelectedAudioOption=_cachedSelectedAudioOption;
 @property(retain, nonatomic) NSArray *playbackEndTimeBoundaryObserverTokens; // @synthesize playbackEndTimeBoundaryObserverTokens=_playbackEndTimeBoundaryObserverTokens;
 @property(retain, nonatomic) NSNumber *temporarySubtitleOverrideType; // @synthesize temporarySubtitleOverrideType=_temporarySubtitleOverrideType;
@@ -322,6 +324,7 @@
 - (id)accessLog;
 @property(readonly, nonatomic) AVPlayer *avPlayer;
 - (void)_selectMediaArray:(id)arg1 withItem:(id)arg2;
+- (id)AVQueuePlayerCreateIfNecessary:(_Bool)arg1;
 - (void)selectMediaArray:(id)arg1;
 - (long long)currentScanMode;
 - (void)removeWeakReferenceToVideoView:(id)arg1;

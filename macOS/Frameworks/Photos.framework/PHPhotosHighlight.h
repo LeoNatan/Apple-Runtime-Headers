@@ -55,6 +55,7 @@
 + (id)fetchChildHighlightsForHighlight:(id)arg1 options:(id)arg2;
 + (id)fetchParentHighlightsForHighlights:(id)arg1 options:(id)arg2;
 + (id)fetchParentHighlightForHighlight:(id)arg1 options:(id)arg2;
++ (id)dateRangeTitleGenerator;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyMap;

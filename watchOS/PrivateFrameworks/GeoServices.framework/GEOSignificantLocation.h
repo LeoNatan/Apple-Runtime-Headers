@@ -13,10 +13,12 @@
 @interface GEOSignificantLocation : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     double _confidence;
     NSString *_identifier;
     GEOLocation *_location;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _locationIndex;
     unsigned int _numberOfVisitsBucket;
     struct {
@@ -58,6 +60,8 @@
 @property(retain, nonatomic) GEOLocation *location;
 @property(readonly, nonatomic) _Bool hasLocation;
 - (void)_readLocation;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

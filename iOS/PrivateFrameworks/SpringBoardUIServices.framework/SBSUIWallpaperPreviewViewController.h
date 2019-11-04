@@ -10,7 +10,7 @@
 #import <SpringBoardUIServices/SBFLegibilitySettingsProviderDelegate-Protocol.h>
 #import <SpringBoardUIServices/SBSUIWallpaperPreviewViewDelegate-Protocol.h>
 
-@class AVURLAsset, NSDictionary, NSString, NSTimer, SBFWallpaperConfiguration, SBFWallpaperConfigurationManager, SBFWallpaperOptions, SBSUIProgressHUD, UIImage, _UILegibilitySettings;
+@class AVURLAsset, NSDictionary, NSString, NSTimer, SBFWallpaperConfiguration, SBFWallpaperConfigurationManager, SBFWallpaperOptions, SBSUIProgressHUD, UIImage, _SBSUIOrientedImageView, _UILegibilitySettings;
 @protocol SBFLegibilitySettingsProviderDelegate, SBSUIWallpaperPreviewViewControllerDelegate;
 
 @interface SBSUIWallpaperPreviewViewController : UIViewController <SBFLegibilitySettingsProviderDelegate, SBSUIWallpaperPreviewViewDelegate, SBFLegibilitySettingsProvider>
@@ -31,11 +31,10 @@
     double _stillTimeInVideo;
     SBFWallpaperOptions *_options;
     NSDictionary *_optionsDict;
-    _Bool _disableSegmentedControl;
     _Bool _enableButtons;
     _Bool _disableContents;
-    _Bool _disableDimming;
     SBSUIProgressHUD *_hud;
+    _SBSUIOrientedImageView *_homeScreenPreviewView;
     _Bool _motionEnabled;
     _Bool _irisEnabled;
     id <SBFLegibilitySettingsProviderDelegate> _delegate;
@@ -78,6 +77,7 @@
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 @property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings;
 - (void)setMotionEnabled:(_Bool)arg1 updateParallaxOnWallpaperView:(_Bool)arg2;
+- (void)_applyHomeScreenPreview;
 - (void)_setProceduralWallpaperForLocationsOnMainThread:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setImageWallpaperForLocationsOnMainThread:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setImageWallpaperForLocations:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

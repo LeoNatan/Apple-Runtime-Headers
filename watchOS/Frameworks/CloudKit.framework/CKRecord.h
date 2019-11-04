@@ -120,6 +120,7 @@
 - (void)claimPackagesWithSuccessBlock:(CDUnknownBlockType)arg1 failureBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)removePackages;
 - (void)releasePackages;
+- (void)setStreamingAssetRequestOptions:(id)arg1;
 @property(readonly, nonatomic) unsigned int assetDiskSize;
 @property(readonly, nonatomic) unsigned int assetCount;
 - (id)initWithCoder:(id)arg1;

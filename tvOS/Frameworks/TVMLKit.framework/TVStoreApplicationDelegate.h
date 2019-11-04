@@ -40,6 +40,7 @@
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)_launchApp;
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (_Bool)shouldBeForcedLeftToRight;
 - (void)updateIdleModeVisualEffectsStatus:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool supportsIdleModeVisualEffects;
 - (void)reload;

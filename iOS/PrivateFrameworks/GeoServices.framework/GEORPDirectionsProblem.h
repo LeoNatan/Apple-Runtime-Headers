@@ -13,7 +13,6 @@
 @interface GEORPDirectionsProblem : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_clientSuggestedRoutes;
     NSData *_directionsResponseId;
     GEORPUserSearchInput *_endWaypoint;
@@ -21,6 +20,9 @@
     NSData *_overviewScreenshotImageData;
     NSMutableArray *_problematicRouteIndexs;
     GEORPUserSearchInput *_startWaypoint;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _problematicLineIndex;
     unsigned int _problematicStepIndex;
     struct {
@@ -97,6 +99,8 @@
 @property(retain, nonatomic) NSData *directionsResponseId;
 @property(readonly, nonatomic) _Bool hasDirectionsResponseId;
 - (void)_readDirectionsResponseId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

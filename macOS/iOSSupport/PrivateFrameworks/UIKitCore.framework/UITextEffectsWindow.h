@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UICanvasBasedObject-Protocol.h>
 
-@class NSDictionary, NSString, UIEditingOverlayViewController, UIWindowScene;
+@class NSDictionary, NSLayoutConstraint, NSString, UIEditingOverlayViewController, UIWindowScene;
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow <_UICanvasBasedObject>
 {
@@ -25,6 +25,7 @@
     struct CGSize _hostedSceneSize;
     BOOL _manualHostingOverride;
     UIEditingOverlayViewController *_editingOverlayViewController;
+    NSLayoutConstraint *_bottomConstraint;
     struct UIEdgeInsets _hostedSafeInsets;
 }
 
@@ -101,6 +102,7 @@
 - (struct CGRect)_forHostedProcessConvertRect:(struct CGRect)arg1 forWindow:(id)arg2 wasFromWindow:(BOOL)arg3;
 - (struct CGPoint)_forHostedProcessConvertPoint:(struct CGPoint)arg1 forWindow:(id)arg2 wasFromWindow:(BOOL)arg3;
 @property(readonly, nonatomic) struct CGRect hostedFrame;
+- (void)addBottomPadding:(double)arg1;
 - (void)_configureContextOptions:(id)arg1;
 - (void)_restoreWindowLevel;
 - (void)_setWindowLevel:(double)arg1;

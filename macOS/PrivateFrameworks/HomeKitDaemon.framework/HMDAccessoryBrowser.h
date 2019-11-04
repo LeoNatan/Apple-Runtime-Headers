@@ -190,7 +190,7 @@
 - (id)unpairedAccessoryForServer:(id)arg1;
 - (id)unpairedAccessoryWithServerIdentifier:(id)arg1;
 - (void)_setBTLEPowerChangeCompletionHandler;
-- (void)_handleXPCConnectionInvalidated:(id)arg1;
+- (void)handleXPCConnectionInvalidated:(id)arg1;
 - (void)_handleRequestSearchForNewAccessories:(id)arg1;
 - (void)_handleRequestFetchNewAccessories:(id)arg1;
 - (void)handleHomeUIServiceTermination:(id)arg1;
@@ -199,7 +199,6 @@
 - (void)_registerForMessages;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (void)tearDownSessionForAccesoryServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resurrectAccessoryServer:(id)arg1;
 - (void)tombstoneAccessoryServer:(id)arg1;
 - (void)discoverAccessories:(id)arg1;
@@ -232,6 +231,7 @@
 - (void)registerPairedAccessory:(id)arg1 btleTransport:(BOOL)arg2 airPlay:(BOOL)arg3;
 - (unsigned long long)numPairedIPAccessories;
 - (void)_addUnpairedAccessoryForServer:(id)arg1;
+- (void)_handleWACAccessoryFound;
 - (void)_removePairingInformationForUnpairedAccessory:(id)arg1;
 - (void)_handleRemovedUnpairedHAPAccessory:(id)arg1;
 - (void)removeUnpairedHAPAccessory:(id)arg1;

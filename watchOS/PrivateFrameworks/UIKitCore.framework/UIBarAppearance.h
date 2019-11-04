@@ -9,7 +9,7 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, UIBlurEffect, UIColor, UIImage, _UIBarBackgroundAppearanceData;
+@class NSArray, UIBlurEffect, UIColor, UIImage, UIVibrancyEffect, _UIBarBackgroundAppearanceData;
 @protocol _UIBarAppearanceChangeObserver;
 
 @interface UIBarAppearance : NSObject <NSCopying, NSSecureCoding>
@@ -23,8 +23,11 @@
 @property(readonly, nonatomic) int idiom; // @synthesize idiom=_idiom;
 @property(nonatomic, setter=_setChangeObserver:) __weak id <_UIBarAppearanceChangeObserver> _changeObserver; // @synthesize _changeObserver;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIVibrancyEffect *shadowEffect;
 @property(copy, nonatomic) UIColor *shadowColor;
 @property(retain, nonatomic) UIImage *shadowImage;
+- (void)configureWithoutShadow;
+- (void)configureWithDefaultShadow;
 @property(nonatomic) int backgroundImageContentMode;
 @property(retain, nonatomic) UIImage *backgroundImage;
 @property(copy, nonatomic) UIColor *backgroundColor;

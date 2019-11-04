@@ -9,7 +9,6 @@
 @class NSString;
 
 @interface SidecarService (SidecarUI)
-- (void)foo;
 @property(readonly, nonatomic) NSString *localizedDevicesTitle;
 @end
 

@@ -8,7 +8,6 @@
 
 @interface INCodableURLAttributeMetadata (Workflow)
 - (id)wf_parameterStateForIntentValue:(id)arg1 parameterDefinition:(id)arg2;
-- (void)wf_updateParameterDictionary:(id)arg1 forCodableAttribute:(id)arg2;
 - (Class)wf_parameterClass;
 - (Class)wf_objectClass;
 @end

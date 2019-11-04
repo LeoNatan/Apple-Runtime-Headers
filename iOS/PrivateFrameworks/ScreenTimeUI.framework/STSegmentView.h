@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithItem:(id)arg1 useVibrancy:(_Bool)arg2 truncateLabels:(_Bool)arg3;
 

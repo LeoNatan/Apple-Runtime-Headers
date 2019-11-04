@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAttribution : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_actionUrlComponent;
     NSMutableArray *_attributionUrls;
     NSString *_externalComponentId;
     NSString *_externalItemId;
     NSString *_vendorId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_actionUrlComponent:1;
@@ -77,6 +79,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *vendorId;
 @property(readonly, nonatomic) _Bool hasVendorId;
 - (void)_readVendorId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (_Bool)_isYelp;
 
 @end

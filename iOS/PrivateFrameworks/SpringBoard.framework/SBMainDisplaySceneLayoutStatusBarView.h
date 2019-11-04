@@ -102,7 +102,6 @@
 @property(readonly, nonatomic, getter=isRequiringStatusBar) _Bool requiringStatusBar;
 - (void)_tearDownStatusBar;
 - (void)_layoutStatusBarForOrientation:(long long)arg1;
-- (_Bool)_statusBarNeedsLayoutForRotationToDifferentOrientation;
 - (struct CGRect)_statusBarFrameForOrientation:(long long)arg1;
 - (_Bool)_statusBarNeedsSpecialLayoutForClassic;
 - (void)updateStatusBarOrientationForLegacyApp;

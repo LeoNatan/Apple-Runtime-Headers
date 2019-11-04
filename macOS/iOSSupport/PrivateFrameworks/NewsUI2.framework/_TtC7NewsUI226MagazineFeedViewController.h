@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: barCompressionManager
     // Error parsing type: , name: alertPresenter
     // Error parsing type: , name: offlineAlertControllerFactory
+    // Error parsing type: , name: sharingActivityProviderFactory
     // Error parsing type: , name: heightChangeRelayoutThreshold
     // Error parsing type: , name: viewportFromLastRelayout
     // Error parsing type: , name: isBeingUsedAsPlugin

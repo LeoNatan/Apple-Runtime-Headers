@@ -44,6 +44,7 @@
 - (void)navigationSession:(MNNavigationSession *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(MNActiveRouteInfo *)arg3;
 - (void)navigationSession:(MNNavigationSession *)arg1 didReroute:(MNActiveRouteInfo *)arg2 withLocation:(MNLocation *)arg3 withAlternateRoutes:(NSArray *)arg4;
 - (void)navigationSessionDidCancelReroute:(MNNavigationSession *)arg1;
+- (void)navigationSession:(MNNavigationSession *)arg1 didSuppressReroute:(NSError *)arg2;
 - (void)navigationSessionWillReroute:(MNNavigationSession *)arg1;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateMotionType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
 - (void)navigationSession:(MNNavigationSession *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;

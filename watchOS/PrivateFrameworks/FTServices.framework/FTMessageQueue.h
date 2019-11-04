@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IDSBaseMessage, NSArray, NSMutableArray;
+@class CUTDeferredTaskQueue, IDSBaseMessage, NSArray, NSMutableArray;
 @protocol FTMessageQueueDelegate;
 
 @interface FTMessageQueue : NSObject
@@ -14,6 +14,7 @@
     NSMutableArray *_queue;
     NSMutableArray *_addDates;
     id <FTMessageQueueDelegate> _delegate;
+    CUTDeferredTaskQueue *_timeoutTask;
 }
 
 @property __weak id <FTMessageQueueDelegate> delegate; // @synthesize delegate=_delegate;

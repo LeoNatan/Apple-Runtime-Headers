@@ -21,8 +21,9 @@
 @property(nonatomic) __weak id <VCUserNotificationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)showNotificationWithTitle:(id)arg1 body:(id)arg2 category:(id)arg3 triggerID:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)postNotificationOfType:(unsigned long long)arg1 forTrigger:(id)arg2 workflowReference:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)removeNotificationsWithTriggerIdentifier:(id)arg1;
+- (void)postNotificationThatTrigger:(id)arg1 failedWithError:(id)arg2;
+- (void)postNotificationOfType:(unsigned long long)arg1 forTrigger:(id)arg2 workflowReference:(id)arg3 actionIcons:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)init;
 
 // Remaining properties

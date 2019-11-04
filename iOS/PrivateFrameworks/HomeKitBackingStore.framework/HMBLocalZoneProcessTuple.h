@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMBModel, NSData, NSDictionary, NSUUID;
+@class HMBLocalSQLQueryTable, HMBModel, NSArray, NSData, NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface HMBLocalZoneProcessTuple : HMFObject
@@ -18,10 +18,14 @@ __attribute__((visibility("hidden")))
     NSData *_externalID;
     NSData *_externalData;
     NSUUID *_modelSchema;
-    NSDictionary *_encodedQueryableProperties;
+    NSString *_modelType;
+    HMBLocalSQLQueryTable *_queryTable;
+    NSArray *_encodedQueryableColumns;
 }
 
-@property(readonly, nonatomic) NSDictionary *encodedQueryableProperties; // @synthesize encodedQueryableProperties=_encodedQueryableProperties;
+@property(readonly, nonatomic) NSArray *encodedQueryableColumns; // @synthesize encodedQueryableColumns=_encodedQueryableColumns;
+@property(readonly, nonatomic) HMBLocalSQLQueryTable *queryTable; // @synthesize queryTable=_queryTable;
+@property(readonly, nonatomic) NSString *modelType; // @synthesize modelType=_modelType;
 @property(readonly, nonatomic) NSUUID *modelSchema; // @synthesize modelSchema=_modelSchema;
 @property(readonly, nonatomic) NSData *externalData; // @synthesize externalData=_externalData;
 @property(readonly, nonatomic) NSData *externalID; // @synthesize externalID=_externalID;
@@ -30,7 +34,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) HMBModel *update; // @synthesize update=_update;
 @property(readonly, nonatomic) HMBModel *previous; // @synthesize previous=_previous;
 - (void).cxx_destruct;
-- (id)initWithPrevious:(id)arg1 update:(id)arg2 recordRow:(unsigned long long)arg3 itemRow:(unsigned long long)arg4 modelSchema:(id)arg5 externalID:(id)arg6 externalData:(id)arg7;
+- (id)initWithPrevious:(id)arg1 update:(id)arg2 recordRow:(unsigned long long)arg3 itemRow:(unsigned long long)arg4 modelSchema:(id)arg5 modelType:(id)arg6 externalID:(id)arg7 externalData:(id)arg8 queryTable:(id)arg9;
 
 @end
 

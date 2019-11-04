@@ -26,6 +26,9 @@ __attribute__((visibility("hidden")))
 - (int)reportSymptomWithDictionary:(id)arg1;
 - (int)reportSymptomWithIDSDestination:(id)arg1 sessionID:(id)arg2 type:(id)arg3 subType:(id)arg4 context:(id)arg5;
 - (int)reportSymptomWithType:(id)arg1 subType:(id)arg2 context:(id)arg3 actions:(id)arg4;
+- (int)reportInactiveSlotsInChannelSequence;
+- (int)reportInvalidTransportType;
+- (int)reportUnexpectedHighRTT;
 - (int)reportHighTargetQueueSize;
 - (int)reportHighConsecutiveAudioErasures;
 - (int)reportMediaQueueFlushingTooFrequent;

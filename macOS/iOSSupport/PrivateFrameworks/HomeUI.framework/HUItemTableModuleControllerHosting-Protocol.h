@@ -6,7 +6,7 @@
 
 #import <HomeUI/NSObject-Protocol.h>
 
-@class HFItem, HUItemTableModuleController, HUViewControllerDismissalRequest, HUViewControllerPresentationRequest, NAFuture, UITextField, UIViewController;
+@class HFItem, HUItemTableModuleController, HUViewControllerDismissalRequest, HUViewControllerPresentationRequest, NAFuture, NSArray, UITextField, UIViewController;
 
 @protocol HUItemTableModuleControllerHosting <NSObject>
 - (UITextField *)moduleController:(HUItemTableModuleController *)arg1 textFieldForVisibleItem:(HFItem *)arg2;
@@ -14,6 +14,7 @@
 - (NAFuture *)moduleController:(HUItemTableModuleController *)arg1 presentViewControllerForRequest:(HUViewControllerPresentationRequest *)arg2;
 
 @optional
+- (void)reloadCellForItems:(NSArray *)arg1;
 - (UIViewController *)presentingViewControllerForModuleController:(HUItemTableModuleController *)arg1;
 @end
 

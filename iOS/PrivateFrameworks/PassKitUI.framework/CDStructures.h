@@ -94,6 +94,11 @@ typedef struct {
 } CDStruct_973bafd3;
 
 typedef struct {
+    _Bool _field1;
+    long long _field2;
+} CDStruct_8f3a66c8;
+
+typedef struct {
     unsigned long long numberOfSections;
     unsigned long long *indexToSection;
     unsigned long long *sectionToIndex;

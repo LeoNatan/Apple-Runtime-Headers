@@ -197,12 +197,12 @@
 + (void)markAssetAsRecentlyUsed:(id)arg1;
 + (id)persistedRecentlyUsedGUIDSWithPathManager:(id)arg1;
 + (id)recentlyUsedGUIDsPathWithPathManager:(id)arg1;
-+ (id)sortedCloudSharedAssetsWithPlaceholderKinds:(id)arg1 ascending:(_Bool)arg2 inLibrary:(id)arg3;
-+ (id)fetchRequestForSortedCloudSharedAssetsWithPlaceholderKinds:(id)arg1 ascending:(_Bool)arg2;
++ (id)fetchRequestForSortedCloudSharedAssetsWithPlaceholderKinds:(id)arg1 additionalPredicate:(id)arg2 ascending:(_Bool)arg3;
 + (id)cloudSharedAssetsWithGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)allCloudSharedAssetsInLibrary:(id)arg1;
 + (void)rm_cplResourceWasUploaded:(id)arg1 photoLibrary:(id)arg2;
 + (void)_rm_copyResourceFileFrom:(id)arg1 to:(id)arg2 forCloudMaster:(id)arg3 andAsset:(id)arg4;
++ (id)fetchResourcesForAssetWithObjectID:(id)arg1 inContext:(id)arg2 versions:(id)arg3 includeVirtualResources:(_Bool)arg4 allowDerivatives:(_Bool)arg5 additionalPredicate:(id)arg6 error:(id *)arg7;
 + (void)enumerateImageRequestHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 libraryID:(id)arg4 startingOffset:(long long)arg5 block:(CDUnknownBlockType)arg6;
 + (id)calculateImageRequestHintsFromSortedResources:(id)arg1 asset:(id)arg2;
 + (id)debugDescriptionForHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 assetID:(id)arg4;
@@ -273,12 +273,11 @@
 - (unsigned short)expectedDeferredProcessingNeededOnAssetCreation;
 - (void)generateDeferredAdjustmentWithImageConversionClient:(id)arg1 videoConversionClient:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_generateDeferredAdjustmentWithImageConversionClient:(id)arg1 videoConversionClient:(id)arg2 retryNumber:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_setupMediaConversionSourceURLCollection:(id)arg1 destinationURLCollection:(id)arg2 forDeferredAdjustmentOnAsset:(id)arg3 baseVersion:(long long)arg4;
+- (void)_setupMediaConversionSourceURLCollection:(id)arg1 destinationURLCollection:(id)arg2 baseVersion:(long long)arg3;
 - (unsigned long long)deferredProcessingHash;
 - (_Bool)_shouldSetupVideoComplementForAsyncEditWithBaseVersion:(long long)arg1;
-- (id)_sourcePathForAsyncEditWithBaseVersion:(long long)arg1;
+- (id)_sourceURLForAsyncEditWithBaseVersion:(long long)arg1;
 - (id)attemptReframeWithImageConversionClient:(id)arg1 videoConversionClient:(id)arg2 isOnDemand:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)_setupMediaConversionSourceURLCollection:(id)arg1 destinationURLCollection:(id)arg2 conversionOptions:(id)arg3;
 - (void)synchronouslyGenerateFullsizeRenderImageIfNecessaryAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(long long)arg6 renderedImageFilePath:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)generateLargeThumbnailFileIfNecessary;
@@ -474,7 +473,7 @@
 - (id)cameraMake;
 - (id)avAssetAllowReadFromFile:(_Bool)arg1;
 - (id)imageProperties;
-- (_Bool)setAttributesFromMainFileURL:(id)arg1 savedAssetType:(short)arg2 isPlaceholder:(_Bool)arg3 imageSource:(struct CGImageSource **)arg4 imageData:(id *)arg5;
+- (_Bool)setAttributesFromMainFileURL:(id)arg1 savedAssetType:(short)arg2 isPlaceholder:(_Bool)arg3 placeholderFileURL:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6;
 - (_Bool)updateAttributesFromMainFileURL:(id)arg1 fullSizeRenderURL:(id)arg2;
 - (void)refreshFaces;
 - (id)mutableDetectedFaces;
@@ -482,6 +481,7 @@
 - (id)legacyFaceWithIdentifier:(short)arg1;
 - (void)setLocationFromPersistedAttributes:(id)arg1;
 - (void)synchronizeWithPersistedFileSystemAttributes;
+- (void)persistMetadataToFileURL:(id)arg1;
 - (void)persistMetadataToFilesystem;
 - (id)_mediaGroupUUIDFromPersistence:(id)arg1;
 - (id)_mediaGroupUUIDForPersistence;
@@ -743,11 +743,7 @@
 - (id)_calculateCloudAdjustmentFingerprintFromAdjustmentPListAndCPLResources;
 - (void)synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)createResourcesForAssetInPhotoLibrary:(id)arg1 shouldGenerateDerivatives:(_Bool)arg2;
-- (_Bool)_hasAllOriginalResourcesLocallyAvailable;
-- (_Bool)_hasAllAdjustedResourcesLocallyAvailable;
-- (_Bool)_checkResource:(unsigned long long)arg1 onPath:(id)arg2 onMaster:(_Bool)arg3;
 - (_Bool)shouldIncludeInCPLCounts;
-- (_Bool)hasAllRequiredResourcesLocallyAvailable;
 - (id)bestAvaliableAdjustedResource;
 - (void)_applyFaceChangeToCPLAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)_applyPropertiesChangeToCPLAssetChange:(id)arg1 withMasterScopedIdentifier:(id)arg2 inLibrary:(id)arg3;
@@ -776,7 +772,7 @@
 - (unsigned long long)originalResourceChoice;
 - (void)removeSidecar:(id)arg1;
 - (id)fileURLForHypotheticalSidecarFileWithFilename:(id)arg1;
-- (id)pathForSideCarImageFile;
+- (id)urlForSideCarImageFile;
 - (_Bool)addSidecarFileAtIndex:(unsigned long long)arg1 sidecarURL:(id)arg2 withFilename:(id)arg3 compressedSize:(id)arg4 captureDate:(id)arg5 modificationDate:(id)arg6 uniformTypeIdentifier:(id)arg7 pathManager:(id)arg8;
 - (_Bool)addSidecarFileInfo:(id)arg1 pathManager:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)sidecarFileMatchingUTI:(struct __CFString *)arg1 requireExactMatch:(_Bool)arg2 requireSort:(_Bool)arg3;
@@ -813,6 +809,7 @@
 @property(readonly, nonatomic) NSString *cloudOwnerLastName;
 @property(readonly, nonatomic) NSString *cloudOwnerFirstName;
 @property(readonly, nonatomic) NSString *cloudOwnerEmail;
+- (id)_missingCloudOwnerDisplayName;
 - (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
 - (id)payloadForChangedKeys:(id)arg1;
 - (id)payloadIDForTombstone:(id)arg1;
@@ -826,6 +823,7 @@
 - (_Bool)placeholder_shouldCopySnowplowResources;
 - (_Bool)placeholder_shouldFlattenLivePhoto;
 - (_Bool)placeholder_shouldBakeInAdjustments;
+- (_Bool)checkAllResourcesRequiredForCPLDisableWithReachableBlock:(CDUnknownBlockType)arg1;
 - (id)rm_applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)rm_createAssetResourcesForCPLResources:(id)arg1 inLibrary:(id)arg2;
 - (id)rm_cplExpungeableMasterResourceStates;

@@ -16,7 +16,6 @@
 {
     HMFUnfairLock *_lock;
     NSObject<OS_os_activity> *_internal;
-    struct os_activity_scope_state_s *_state;
     NSObject<OS_voucher> *_voucher;
     NSMutableSet *_threadContexts;
     BOOL _valid;
@@ -46,6 +45,8 @@
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)performBlock:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)blockWithQualityOfService:(long long)arg1 block:(CDUnknownBlockType)arg2;
+- (CDUnknownBlockType)blockWithBlock:(CDUnknownBlockType)arg1;
 - (void)markWithReason:(id)arg1;
 - (void)markWithFormat:(id)arg1;
 - (void)mark;

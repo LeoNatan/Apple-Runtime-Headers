@@ -10,5 +10,8 @@
 
 @protocol CSLSFrameSpecifier <NSObject>
 @property(readonly, nonatomic) NSDate *presentationTime;
+
+@optional
+@property(readonly, nonatomic) float fraction;
 @end
 

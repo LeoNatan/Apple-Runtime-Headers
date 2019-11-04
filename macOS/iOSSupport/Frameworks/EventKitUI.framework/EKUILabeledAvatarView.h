@@ -23,6 +23,7 @@
 + (id)contactForPhoneNumber:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 + (id)contactForEmailAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 + (id)_createAvatarView;
++ (id)contactKeysToFetch;
 @property unsigned long long options; // @synthesize options=_options;
 @property unsigned long long labelPlacement; // @synthesize labelPlacement=_labelPlacement;
 @property(retain) CNAvatarView *avatar; // @synthesize avatar=_avatar;

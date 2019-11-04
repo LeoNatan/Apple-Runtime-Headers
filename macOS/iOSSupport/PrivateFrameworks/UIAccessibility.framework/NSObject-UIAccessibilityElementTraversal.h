@@ -161,7 +161,7 @@
 - (id)_accessibilityTextHandlingAncestorMatchingBlock:(CDUnknownBlockType)arg1;
 - (id)_accessibilityHandwritingElement;
 - (BOOL)_accessibilityCanAppearInContextMenuPreview;
-- (id)_accessibilityContextMenuActionForElement:(id)arg1;
+- (BOOL)_accessibilityShowContextMenuForElement:(id)arg1 targetPointValue:(id)arg2;
 - (BOOL)_accessibilityDelegateCanShowContextMenuForInteraction:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (BOOL)_accessibilityCanShowContextMenuForInteraction:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (id)_accessibilityElementForTextInsertionAndDeletion;
@@ -437,6 +437,7 @@
 - (long long)_accessibilityDataSeriesType;
 - (id)_accessibilityDataSeriesValuesForAxis:(long long)arg1;
 - (id)_accessibilityDataSeriesName;
+- (id)_accessibilityElementToFocusForAppearanceScreenChange;
 - (void)_fkaMoveRight;
 - (void)_fkaMoveLeft;
 - (void)_fkaMoveDown;
@@ -766,7 +767,7 @@
 - (BOOL)_accessibilityViewControllerShouldPreventScrollToVisibleForElement:(id)arg1;
 - (BOOL)_accessibilityScrollToVisible;
 - (BOOL)_accessibilityScrollToVisibleForNextElementRetrieval:(long long)arg1;
-- (BOOL)_accessibilityShowContextMenu;
+- (BOOL)_accessibilityShowContextMenuWithTargetPointValue:(id)arg1;
 - (struct CGPoint)_accessibilityContentOffset;
 - (BOOL)_accessibilityCanScrollInAtLeastOneDirection;
 - (id)_accessibilityTabBarAncestor;

@@ -13,7 +13,7 @@
 
 @optional
 - (void)persistenceWillTransferMessages:(NSArray *)arg1 transferType:(long long)arg2 destinationMailboxURL:(NSURL *)arg3 userInitiated:(_Bool)arg4;
-- (void)persistenceDidChangeMessageIDHeaderHash:(ECAngleBracketIDHash *)arg1 message:(id <ECMessage>)arg2 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg3;
+- (void)persistenceDidChangeMessageIDHeaderHash:(ECAngleBracketIDHash *)arg1 oldConversationID:(long long)arg2 message:(id <ECMessage>)arg3 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg4;
 - (void)persistenceIsChangingConversationID:(long long)arg1 messages:(NSArray *)arg2 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg3;
 - (void)persistenceWillChangeConversationID:(long long)arg1 messages:(NSArray *)arg2;
 - (void)persistenceDidAddLabels:(NSSet *)arg1 removeLabels:(NSSet *)arg2 messages:(NSArray *)arg3 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg4;

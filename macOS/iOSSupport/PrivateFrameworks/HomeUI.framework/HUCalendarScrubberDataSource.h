@@ -32,6 +32,7 @@
 - (id)indexPathForDate:(id)arg1;
 - (BOOL)eventExistsForItemAtIndexPath:(id)arg1;
 - (void)reloadWithDates:(id)arg1;
+- (void)_updateDateBoundariesIfNeeded;
 - (id)init;
 - (id)initWithDates:(id)arg1;
 

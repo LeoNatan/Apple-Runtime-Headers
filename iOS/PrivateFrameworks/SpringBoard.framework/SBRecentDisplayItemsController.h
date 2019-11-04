@@ -55,6 +55,7 @@
 - (void)eventSource:(id)arg1 userRemovedSuggestions:(id)arg2;
 - (void)dealloc;
 - (void)reset;
+- (void)removeDisplayItem:(id)arg1;
 @property(copy, nonatomic) NSOrderedSet *recentDisplayItems;
 - (id)init;
 - (id)initWithRemovalPersonality:(long long)arg1 movePersonality:(long long)arg2 transitionFromSources:(id)arg3 maxDisplayItems:(unsigned long long)arg4 eventSource:(id)arg5 applicationController:(id)arg6;

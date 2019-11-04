@@ -52,7 +52,7 @@
 - (void)_updateButtonFontsWithSize:(double)arg1;
 - (_Bool)_shouldCenterButton;
 @property(readonly, nonatomic) UIButton *centerButton;
-- (id)_buttonForAction:(long long)arg1;
+- (id)buttonForAction:(long long)arg1;
 - (long long)_buttonIndexForAction:(long long)arg1;
 - (long long)_actionForButton:(id)arg1;
 - (void)_updateSelectionToButton:(id)arg1;

@@ -196,6 +196,7 @@
 - (void)_performAlertSizingForAlert:(id)arg1 animated:(_Bool)arg2;
 - (void)dismissNavigationAlertAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showNavigationAlert:(id)arg1 animated:(_Bool)arg2;
+- (void)_updatePanGestureForHiFiTouch;
 - (void)_reloadPreviewsView;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

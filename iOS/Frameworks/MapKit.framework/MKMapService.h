@@ -13,14 +13,10 @@
 @interface MKMapService : NSObject <GEOLogContextDelegate>
 {
     int _deviceOrientation;
-    CDUnknownBlockType _getLogContextForEventBlock;
 }
 
 + (id)sharedService;
 @property int deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;
-@property(copy, nonatomic) CDUnknownBlockType getLogContextForEventBlock; // @synthesize getLogContextForEventBlock=_getLogContextForEventBlock;
-- (void).cxx_destruct;
-- (id)logContextForLogMsgEvent:(id)arg1;
 - (id)ticketForNearestTransitStation:(id)arg1 coordinate:(struct CLLocationCoordinate2D)arg2 traits:(id)arg3;
 - (id)ticketForTransitLines:(id)arg1 traits:(id)arg2;
 - (id)ticketForChildPlace:(id)arg1 traits:(id)arg2;
@@ -94,21 +90,6 @@
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 queryString:(id)arg3;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3;
 - (void)siriAnalyticsDonation:(int)arg1 target:(int)arg2 resultIndex:(int)arg3 mapItem:(id)arg4 searchCategory:(id)arg5 searchQueryString:(id)arg6;
-- (void)captureExtensionStateWithIsTableBookingAppsInstalled:(_Bool)arg1 isTableBookingAppsEnabled:(_Bool)arg2;
-- (void)captureExtensionStateWithIsRideBookingAppsInstalled:(_Bool)arg1 isRideBookingAppsEnabled:(_Bool)arg2;
-- (void)capturePairedDeviceStateWithDeviceType:(int)arg1 isConnected:(_Bool)arg2 deviceOSVersion:(id)arg3 deviceHwIdentifier:(id)arg4;
-- (void)captureMapSettingsWithLabelEnabled:(_Bool)arg1;
-- (void)captureMapSettingsWithTrafficEnabled:(_Bool)arg1;
-- (void)captureMapSettingsWithFindMyCarEnabled:(_Bool)arg1;
-- (void)captureMapSettingsWithPauseSpokenAudioEnabled:(_Bool)arg1;
-- (void)captureMapSettingsWithNavVoiceVolume:(int)arg1;
-- (void)captureMapSettingsWithAvoidHighways:(_Bool)arg1;
-- (void)captureMapSettingsWithAvoidTolls:(_Bool)arg1;
-- (void)captureMapSettingsWithPreferredTransportMode:(int)arg1;
-- (void)captureMapsSettingsWithPreferredTransportMode:(int)arg1 avoidTolls:(_Bool)arg2 avoidHighways:(_Bool)arg3 navVoiceVolume:(int)arg4 pauseSpokenAudioEnabled:(_Bool)arg5 findMyCarEnabled:(_Bool)arg6 trafficEnabled:(_Bool)arg7 labelEnabled:(_Bool)arg8;
-- (void)captureMapUIStateWithIsAirQualityShown:(_Bool)arg1 isWeatherShown:(_Bool)arg2;
-- (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
-- (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2;
 - (id)problemTicketForWalletRAPReport:(id)arg1;
 - (id)feedbackTicketForWalletRAPReport:(id)arg1;
 - (id)stylingForWalletCategory:(id)arg1;

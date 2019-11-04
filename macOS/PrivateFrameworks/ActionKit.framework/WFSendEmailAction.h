@@ -11,10 +11,7 @@
 }
 
 - (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(BOOL)arg2;
-- (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
-- (void)generateBodyFromCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateEmailFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)generateEmailHeaderFromParameters:(CDUnknownBlockType)arg1;
 - (void)generateFilesFromCollection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)generateContentForIntents:(CDUnknownBlockType)arg1;
 - (void)getRecipientsFromParameterKey:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -26,11 +26,11 @@
     _Bool _preserveEffectFilter;
     _Bool _preserveCaptureMode;
     _Bool _preserveLivePhoto;
-    _Bool _shouldDisableCameraSwitchingDuringVideoRecording;
     _Bool _lockAsShutterEnabled;
     _Bool _shouldDelayRemotePersistence;
     _Bool _burstFollowsEncoderSettings;
     _Bool __preferHEVCWhenAvailable;
+    _Bool __shouldDisableCameraSwitchingDuringVideoRecording;
     CAMCaptureConfiguration *_captureConfiguration;
     CAMConflictingControlConfiguration *_conflictingControlConfiguration;
     long long _videoConfiguration;
@@ -52,6 +52,7 @@
 + (id)_defaultCaptureConfiguration;
 + (id)preferences;
 + (_Bool)_fallBackToCameraDefaultsForBundleIdentifier:(id)arg1;
+@property(readonly, nonatomic) _Bool _shouldDisableCameraSwitchingDuringVideoRecording; // @synthesize _shouldDisableCameraSwitchingDuringVideoRecording=__shouldDisableCameraSwitchingDuringVideoRecording;
 @property(readonly, nonatomic) double _resetTimeoutOverride; // @synthesize _resetTimeoutOverride=__resetTimeoutOverride;
 @property(readonly, nonatomic) _Bool _preferHEVCWhenAvailable; // @synthesize _preferHEVCWhenAvailable=__preferHEVCWhenAvailable;
 @property(retain, nonatomic, getter=_underlyingUserDefaults, setter=_setUnderlyingUserDefaults:) NSUserDefaults *_underlyingUserDefaults; // @synthesize _underlyingUserDefaults=__underlyingUserDefaults;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) _Bool burstFollowsEncoderSettings; // @synthesize burstFollowsEncoderSettings=_burstFollowsEncoderSettings;
 @property(readonly, nonatomic) _Bool shouldDelayRemotePersistence; // @synthesize shouldDelayRemotePersistence=_shouldDelayRemotePersistence;
 @property(readonly, nonatomic, getter=isLockAsShutterEnabled) _Bool lockAsShutterEnabled; // @synthesize lockAsShutterEnabled=_lockAsShutterEnabled;
-@property(readonly, nonatomic) _Bool shouldDisableCameraSwitchingDuringVideoRecording; // @synthesize shouldDisableCameraSwitchingDuringVideoRecording=_shouldDisableCameraSwitchingDuringVideoRecording;
 @property(readonly, nonatomic) _Bool preserveLivePhoto; // @synthesize preserveLivePhoto=_preserveLivePhoto;
 @property(readonly, nonatomic) _Bool preserveCaptureMode; // @synthesize preserveCaptureMode=_preserveCaptureMode;
 @property(readonly, nonatomic) _Bool preserveEffectFilter; // @synthesize preserveEffectFilter=_preserveEffectFilter;
@@ -89,6 +89,11 @@
 @property(nonatomic, setter=_setDidResetTorchMode:) _Bool didResetTorchMode; // @synthesize didResetTorchMode=_didResetTorchMode;
 - (void).cxx_destruct;
 - (_Bool)isOverCaptureEnabledForCTMCaptureType:(long long)arg1;
+@property(readonly, nonatomic) _Bool didConfirmSlomo1080p240MostCompatible;
+@property(readonly, nonatomic) _Bool didConfirmVideo4k60MostCompatible;
+@property(readonly, nonatomic) _Bool usingMostCompatibleEncoding;
+- (long long)maxSupportedPhotoQualityPrioritizationForMode:(long long)arg1;
+- (_Bool)shouldDisableCameraSwitchingDuringVideoRecordingForMode:(long long)arg1;
 @property(readonly, nonatomic) long long photoEncodingBehavior;
 - (long long)videoEncodingBehaviorForConfiguration:(long long)arg1;
 @property(readonly, nonatomic) _Bool shouldShowQRBanners;

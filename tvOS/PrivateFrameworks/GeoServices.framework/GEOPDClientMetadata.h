@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDClientMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _knownClientResolvedTypeDeprecateds;
     CDStruct_95bda58d _knownClientResolvedTypes;
@@ -27,8 +26,12 @@ __attribute__((visibility("hidden")))
     GEOLocation *_deviceExtendedLocation;
     NSMutableArray *_deviceHistoricalLocations;
     NSString *_deviceKeyboardLanguage;
+    NSString *_deviceSku;
     NSString *_deviceSpokenLanguage;
     GEOLocalizationCapabilities *_localizationCapabilities;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _clientRevision;
     unsigned int _dayOfWeek;
     unsigned int _hourOfDay;
@@ -56,6 +59,7 @@ __attribute__((visibility("hidden")))
         unsigned int read_deviceExtendedLocation:1;
         unsigned int read_deviceHistoricalLocations:1;
         unsigned int read_deviceKeyboardLanguage:1;
+        unsigned int read_deviceSku:1;
         unsigned int read_deviceSpokenLanguage:1;
         unsigned int read_localizationCapabilities:1;
         unsigned int wrote_unknownFields:1;
@@ -70,6 +74,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_deviceExtendedLocation:1;
         unsigned int wrote_deviceHistoricalLocations:1;
         unsigned int wrote_deviceKeyboardLanguage:1;
+        unsigned int wrote_deviceSku:1;
         unsigned int wrote_deviceSpokenLanguage:1;
         unsigned int wrote_localizationCapabilities:1;
         unsigned int wrote_clientRevision:1;
@@ -102,6 +107,9 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *deviceSku;
+@property(readonly, nonatomic) _Bool hasDeviceSku;
+- (void)_readDeviceSku;
 @property(retain, nonatomic) GEOLocalizationCapabilities *localizationCapabilities;
 @property(readonly, nonatomic) _Bool hasLocalizationCapabilities;
 - (void)_readLocalizationCapabilities;
@@ -181,6 +189,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasDeviceCountryCode;
 - (void)_readDeviceCountryCode;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithTraits:(id)arg1;
 - (void)clearLocations;
 

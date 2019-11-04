@@ -149,6 +149,7 @@
 - (id)addClassifierInformationToOutput:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)convertPredictionToClassifierResult:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (int)sequenceNamed:(id)arg1;
+- (_Bool)sequenceConcatConsumesOptionalInputNamed:(id)arg1;
 - (_Bool)usingEspressoConfigurations;
 
 // Remaining properties

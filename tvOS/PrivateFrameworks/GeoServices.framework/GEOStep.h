@@ -13,7 +13,6 @@
 @interface GEOStep : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOJunctionElement *_junctionElements;
     unsigned long long _junctionElementsCount;
@@ -26,6 +25,9 @@
     NSString *_notice;
     NSMutableArray *_signposts;
     GEOTimeCheckpoints *_timeCheckpoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distance;
     unsigned int _expectedTime;
     int _hintFirstAnnouncementZilchIndex;
@@ -210,6 +212,8 @@
 @property(nonatomic) _Bool hasStepID;
 @property(nonatomic) unsigned int stepID;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)executionInstructionsForSpoken;
 - (id)prepareInstructionForSpoken;
 - (id)initialInstructionForSpoken;

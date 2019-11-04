@@ -8,16 +8,18 @@
 
 #import <PhotosUICore/PXBrowserVisibleContentSnapshot-Protocol.h>
 
-@class NSArray, NSDateInterval, NSString, PXCuratedLibraryLayout;
+@class NSArray, NSDateInterval, NSString;
 
 @interface PXCuratedLibraryVisibleContentSnapshot : NSObject <PXBrowserVisibleContentSnapshot>
 {
     CDUnknownBlockType _dateIntervalFuture;
     CDUnknownBlockType _locationNamesFuture;
-    PXCuratedLibraryLayout *_libraryLayout;
+    unsigned long long _dataSourceIdentifier;
+    BOOL _isFiltering;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *localizedPlaceholderText;
 @property(readonly, nonatomic) unsigned long long dateIntervalGranularity;
 @property(readonly, nonatomic) NSArray *locationNames;
 @property(readonly, nonatomic) NSDateInterval *dateInterval;

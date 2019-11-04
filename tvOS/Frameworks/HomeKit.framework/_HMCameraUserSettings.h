@@ -15,10 +15,10 @@
 {
     _Bool _snapshotsAllowed;
     _Bool _accessModeIndicatorEnabled;
-    _Bool _cameraDisabledByThirdParty;
     _Bool _nightVisionModeEnabled;
     _Bool _recordingAudioEnabled;
     _Bool _accessModeChangeNotificationEnabled;
+    _Bool _cameraManuallyDisabled;
     NSUUID *_uniqueIdentifier;
     unsigned long long _supportedFeatures;
     unsigned long long _accessModeAtHome;
@@ -31,10 +31,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 @property(readonly) HMCameraBulletinBoardSmartNotification *smartNotificationBulletin; // @synthesize smartNotificationBulletin=_smartNotificationBulletin;
+@property(readonly, getter=isCameraManuallyDisabled) _Bool cameraManuallyDisabled; // @synthesize cameraManuallyDisabled=_cameraManuallyDisabled;
 @property(readonly, getter=isAccessModeChangeNotificationEnabled) _Bool accessModeChangeNotificationEnabled; // @synthesize accessModeChangeNotificationEnabled=_accessModeChangeNotificationEnabled;
 @property(readonly, getter=isRecordingAudioEnabled) _Bool recordingAudioEnabled; // @synthesize recordingAudioEnabled=_recordingAudioEnabled;
 @property(readonly, getter=isNightVisionModeEnabled) _Bool nightVisionModeEnabled; // @synthesize nightVisionModeEnabled=_nightVisionModeEnabled;
-@property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty; // @synthesize cameraDisabledByThirdParty=_cameraDisabledByThirdParty;
 @property(readonly, getter=isAccessModeIndicatorEnabled) _Bool accessModeIndicatorEnabled; // @synthesize accessModeIndicatorEnabled=_accessModeIndicatorEnabled;
 @property(readonly, getter=areSnapshotsAllowed) _Bool snapshotsAllowed; // @synthesize snapshotsAllowed=_snapshotsAllowed;
 @property(readonly) unsigned long long recordingEventTriggers; // @synthesize recordingEventTriggers=_recordingEventTriggers;
@@ -48,7 +48,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;
 @property(readonly, copy) NSString *description;
-- (id)initWithUUID:(id)arg1 supportedFeatures:(unsigned long long)arg2 accessModeAtHome:(unsigned long long)arg3 accessModeNotAtHome:(unsigned long long)arg4 currentAccessMode:(unsigned long long)arg5 recordingEventTriggers:(unsigned long long)arg6 snapshotsAllowed:(_Bool)arg7 accessModeIndicatorEnabled:(_Bool)arg8 nightVisionModeEnabled:(_Bool)arg9 cameraDisabledByThirdParty:(_Bool)arg10 recordingAudioEnabled:(_Bool)arg11 accessModeChangeNotificationEnabled:(_Bool)arg12 smartNotification:(id)arg13;
+- (id)initWithUUID:(id)arg1 supportedFeatures:(unsigned long long)arg2 accessModeAtHome:(unsigned long long)arg3 accessModeNotAtHome:(unsigned long long)arg4 currentAccessMode:(unsigned long long)arg5 recordingEventTriggers:(unsigned long long)arg6 snapshotsAllowed:(_Bool)arg7 accessModeIndicatorEnabled:(_Bool)arg8 nightVisionModeEnabled:(_Bool)arg9 recordingAudioEnabled:(_Bool)arg10 accessModeChangeNotificationEnabled:(_Bool)arg11 cameraManuallyDisabled:(_Bool)arg12 smartNotification:(id)arg13;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

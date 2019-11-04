@@ -54,6 +54,7 @@
 @property(nonatomic) long long contentKind; // @synthesize contentKind=_contentKind;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 - (void).cxx_destruct;
+- (void)px_accessibilityRemoveAllChildren;
 - (void)px_accessibilityAddChildElement:(id)arg1;
 - (void)prepareForReuse;
 - (void)becomeReusable;

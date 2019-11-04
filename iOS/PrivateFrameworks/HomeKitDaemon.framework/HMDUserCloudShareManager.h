@@ -31,12 +31,14 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
-- (void)_handleXPCConnectionInvalidated:(id)arg1;
+- (void)handleXPCConnectionInvalidated:(id)arg1;
 - (void)_handleDeregisterRequest:(id)arg1;
 - (void)handleRemoteUserClientCloudShareRequest:(id)arg1;
 - (void)_handleRegisterRequest:(id)arg1;
+- (void)_handleLocalHomeDataRemovedNotification:(id *)arg1;
 - (void)_handleUserSettingsUpdatedNotification:(id)arg1;
 - (void)_handleEnableMultiUserChangedNotification:(id)arg1;
+- (void)_postMultiUserStatusChangedNotification;
 - (void)_handleAccessoryAdded:(id)arg1;
 - (void)handleHomeChangedNotification:(id)arg1;
 - (id)currentDateForUserCloudShareController:(id)arg1;

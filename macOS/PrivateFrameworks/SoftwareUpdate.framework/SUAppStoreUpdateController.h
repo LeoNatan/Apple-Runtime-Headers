@@ -104,6 +104,8 @@
 @property(readonly) BOOL canStartUpdate;
 - (BOOL)setAuthorization:(struct AuthorizationOpaqueRef *)arg1;
 - (void)_softwareUpdateDaemonStarted:(id)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_connection;
 - (void)dealloc;
 - (id)init;

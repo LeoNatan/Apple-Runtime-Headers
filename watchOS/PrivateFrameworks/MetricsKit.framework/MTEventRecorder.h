@@ -30,6 +30,10 @@
 - (id)flushUnreportedEvents;
 - (void)removeEventListener:(id)arg1;
 - (void)addEventListener:(id)arg1;
+- (void)dealloc;
+- (void)maybeSubscribeToFlushNotification;
+- (id)initWithMetricsKit:(id)arg1;
+- (id)init;
 - (id)_amsDelegate;
 @property(nonatomic) _Bool monitorsLifecycleEvents;
 

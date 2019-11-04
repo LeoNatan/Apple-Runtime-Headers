@@ -6,7 +6,7 @@
 
 #import <SpotlightDaemon/NSObject-Protocol.h>
 
-@class CSIndexJob, CSSearchContext, CSSearchableItem, CSUserAction, INInteraction, NSArray, NSData, NSDate, NSNumber, NSString;
+@class CSIndexJob, CSSearchContext, CSSearchableItem, CSUserAction, INInteraction, NSArray, NSData, NSDate, NSNumber, NSObject, NSString;
 
 @protocol CSSearchableIndexInterface <NSObject>
 - (void)indexFromBundle:(NSString *)arg1 protectionClass:(NSString *)arg2 personaID:(NSString *)arg3 options:(long long)arg4 items:(NSData *)arg5 itemsText:(NSData *)arg6 itemsHTML:(NSData *)arg7 clientState:(NSData *)arg8 clientStateName:(NSString *)arg9 deletes:(NSData *)arg10 completionHandler:(void (^)(NSError *))arg11;
@@ -22,7 +22,7 @@
 - (void)willModifySearchableItemsWithIdentifiers:(NSArray *)arg1 protectionClass:(NSString *)arg2 forBundleID:(NSString *)arg3 options:(long long)arg4 completionHandler:(void (^)(NSError *))arg5;
 
 @optional
-- (void)fetchAttributes:(NSArray *)arg1 protectionClass:(NSString *)arg2 bundleID:(NSString *)arg3 identifiers:(NSArray *)arg4 completionHandler:(void (^)(id, NSError *))arg5;
+- (void)fetchAttributes:(NSArray *)arg1 protectionClass:(NSString *)arg2 bundleID:(NSString *)arg3 identifiers:(NSObject *)arg4 includeParents:(_Bool)arg5 completionHandler:(void (^)(id, NSError *))arg6;
 - (void)deleteAllInteractionsWithBundleID:(NSString *)arg1 protectionClass:(NSString *)arg2 options:(long long)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)deleteInteractionsWithGroupIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2 protectionClass:(NSString *)arg3 options:(long long)arg4 completionHandler:(void (^)(NSError *))arg5;
 - (void)deleteInteractionsWithIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2 protectionClass:(NSString *)arg3 options:(long long)arg4 completionHandler:(void (^)(NSError *))arg5;

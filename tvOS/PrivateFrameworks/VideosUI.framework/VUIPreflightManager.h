@@ -43,9 +43,10 @@ __attribute__((visibility("hidden")))
 - (void)_showMediaNotAllowedBySettingsAlert;
 - (void)_validateRestrictionsForPurchase:(CDUnknownBlockType)arg1;
 - (void)_validateRestrictionsForPlayback:(CDUnknownBlockType)arg1;
+- (_Bool)_shouldValidateRestrictionsForRatingDomain:(id)arg1 ratingValue:(id)arg2;
 - (id)_pbrestrictedValueToString:(unsigned long long)arg1;
 - (void)_performRestrictionsCheckWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_contentRatingValue;
+- (id)_ratingValue;
 - (_Bool)_isTrailer;
 - (id)_ratingDomain;
 - (void)_preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;

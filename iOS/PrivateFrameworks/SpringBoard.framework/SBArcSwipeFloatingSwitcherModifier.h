@@ -18,9 +18,10 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (id)layoutSettings;
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
@@ -28,11 +29,10 @@
 - (id)topMostAppLayouts;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
-- (long long)layoutUpdateMode;
 - (id)handleTimerEvent:(id)arg1;
 - (id)transitionWillUpdate;
 - (id)transitionWillBegin;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3 floatingConfiguration:(long long)arg4 direction:(unsigned long long)arg5 needsOvershoot:(_Bool)arg6;
 
 @end

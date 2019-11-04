@@ -12,6 +12,7 @@
 {
     NSXPCListenerEndpoint *_serverEndpoint;
     NSXPCConnection *_serverConnection;
+    _Bool _namedConnection;
     NSNumber *_targetUID;
     long long _connectionIdentifier;
     NSString *_tokenID;

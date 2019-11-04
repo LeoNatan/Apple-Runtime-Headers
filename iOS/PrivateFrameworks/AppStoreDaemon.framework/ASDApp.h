@@ -77,6 +77,7 @@
 @property(readonly, getter=isLaunchProhibited) _Bool launchProhibited;
 @property(readonly, getter=isInstalled) _Bool installed;
 @property(readonly, getter=isBetaApp) _Bool betaApp;
+@property(readonly, getter=isArcadeOpenable) _Bool arcadeOpenable;
 @property(readonly, getter=hasMessagesExtension) _Bool messasgesExtension;
 - (id)initWithBundleID:(id)arg1;
 

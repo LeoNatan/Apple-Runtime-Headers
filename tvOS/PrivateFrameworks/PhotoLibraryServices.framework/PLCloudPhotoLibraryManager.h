@@ -14,7 +14,7 @@
 #import <PhotoLibraryServices/PLCloudUserSessionHandling-Protocol.h>
 #import <PhotoLibraryServices/PLForegroundMonitorDelegate-Protocol.h>
 
-@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLCacheDeleteSupport, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLLibraryServicesManager, PLPhotoLibrary, PLPhotoLibraryPathManager;
+@class CPLLibraryManager, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLCacheDeleteSupport, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLLibraryServicesManager, PLPhotoLibrary, PLPhotoLibraryPathManager;
 @protocol OS_dispatch_queue, OS_dispatch_source, PLCloudChangeTracker;
 
 @interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundMonitorDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
@@ -32,6 +32,7 @@
     _Bool _pushOnIdle;
     _Bool _pullOnIdle;
     _Bool _modeChangePending;
+    _Bool _hasSettledInitialBatch;
     CPLLibraryManager *_cplLibrary;
     int _pauseRequest;
     short _pauseReason;
@@ -39,7 +40,7 @@
     PLCloudResourceManager *_resourceManager;
     NSObject<OS_dispatch_source> *_unpauseDispatchTimer;
     NSObject<OS_dispatch_source> *_userUnpauseDispatchTimer;
-    NSDate *_pendingResetSyncDate;
+    long long _pendingResetSyncType;
     _Bool _initializedMaster;
     PFCoalescer *_coalescer;
     NSObject<OS_dispatch_queue> *_uploadDownloadCountQueue;
@@ -89,7 +90,7 @@
 - (void)_stopWorkInProgressTimer;
 - (void)_startWorkInProgressTimer;
 - (void)endUserSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) _Bool inResetSync;
+@property(readonly, nonatomic) long long currentResetSyncType;
 @property(readonly, nonatomic) unsigned long long totalUploadedOriginalSize;
 @property(readonly, nonatomic) unsigned long long totalSizeOfUnpushedOriginals;
 @property(readonly, nonatomic) unsigned long long totalNumberOfUploadedMasters;
@@ -181,6 +182,7 @@
 - (void)_checkAndMarkPurgeableResourcesIfSafe:(id)arg1 checkServerIfNecessary:(_Bool)arg2 urgency:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_markPurgeableResourcesMatchingPredicate:(id)arg1 urgency:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_clearPurgeableResourcesMatchingPredicate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_repushMasterWithMissingMediaMetadata;
 - (void)_repushVideoAssetsMetadata;
 - (void)_handleOptimizeSettingChangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_handleOptimizeSettingChange;

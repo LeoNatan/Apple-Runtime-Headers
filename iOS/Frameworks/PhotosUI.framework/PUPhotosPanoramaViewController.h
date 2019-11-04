@@ -23,6 +23,7 @@
 - (void)rotatePhotoViewToHorizontalIfNeeded:(id)arg1 withAsset:(id)arg2;
 - (void)updatePhotoViewContent:(id)arg1 withThumbnailImage:(id)arg2;
 - (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (struct CGSize)maximumThumbnailRequestSize;
 - (_Bool)canBeginStackCollapseTransition;
 - (long long)cellFillMode;
 - (id)imageRequestOptionsForAsset:(id)arg1 pixelSize:(inout struct CGSize *)arg2;

@@ -11,12 +11,14 @@
 #import <NetworkExtension/NEFilterPluginDriver-Protocol.h>
 
 @class NEFilterControlExtensionProviderHostContext, NEFilterExtensionProviderHostContext, NEFilterProviderConfiguration, NSArray, NSExtension, NSString, NSUUID, NSXPCInterface, NSXPCListenerEndpoint;
-@protocol NEPluginManagerObjectFactory, OS_dispatch_queue;
+@protocol NEPluginManagerObjectFactory, OS_dispatch_queue, OS_dispatch_source;
 
 @interface NEAgentFilterExtension : NSObject <NEFilterExtensionProviderHostDelegate, NEAgentSessionDelegate, NEFilterPluginDriver>
 {
     _Bool _dataExtensionInitialized;
     _Bool _controlExtensionInitialized;
+    _Bool _appsUpdateStarted;
+    _Bool _appsUpdateEnding;
     id <NEPluginManagerObjectFactory> _managerObjectFactory;
     NSString *_pluginType;
     NSExtension *_dataExtension;
@@ -31,6 +33,7 @@
     NSXPCListenerEndpoint *_clientListenerEndpoint;
     NEFilterProviderConfiguration *_configuration;
     NSArray *_extensionUUIDs;
+    NSObject<OS_dispatch_source> *_sendFailedTimer;
     struct cfil_crypto_state *_crypto_state;
     int _crypto_kernel_salt;
 }
@@ -38,6 +41,9 @@
 + (_Bool)authenticateFlowWithState:(struct cfil_crypto_state *)arg1 crypto_key:(id)arg2 flow:(id)arg3 salt:(unsigned int)arg4 isKernelSocket:(_Bool)arg5;
 @property int crypto_kernel_salt; // @synthesize crypto_kernel_salt=_crypto_kernel_salt;
 @property struct cfil_crypto_state *crypto_state; // @synthesize crypto_state=_crypto_state;
+@property(retain) NSObject<OS_dispatch_source> *sendFailedTimer; // @synthesize sendFailedTimer=_sendFailedTimer;
+@property _Bool appsUpdateEnding; // @synthesize appsUpdateEnding=_appsUpdateEnding;
+@property _Bool appsUpdateStarted; // @synthesize appsUpdateStarted=_appsUpdateStarted;
 @property(readonly, nonatomic) NSArray *extensionUUIDs; // @synthesize extensionUUIDs=_extensionUUIDs;
 @property(retain) NEFilterProviderConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) NSXPCListenerEndpoint *clientListenerEndpoint; // @synthesize clientListenerEndpoint=_clientListenerEndpoint;
@@ -90,13 +96,15 @@
 - (void)startWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handleControlExtensionInitWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)handleDataExtensionInitWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)handleExtensionExit:(id)arg1;
 - (void)cleanupControlExtensionWithRequestIdentifier:(id)arg1;
 - (void)cleanupDataExtensionWithRequestIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSXPCInterface *driverInterface;
 @property(readonly, nonatomic) NSXPCInterface *managerInterface;
 @property(readonly, nonatomic) NSArray *uuids;
-- (void)handlePluginUpdateEnds:(id)arg1;
-- (void)handlePluginUpdateBegins:(id)arg1;
+- (void)handleAppsUpdateEnds:(id)arg1;
+- (void)handleAppsUpdateEnding:(id)arg1;
+- (void)handleAppsUpdateBegins:(id)arg1;
 - (void)handleAppsUninstalled:(id)arg1;
 - (void)handleCancel;
 - (void)handleDisposeWithCompletionHandler:(CDUnknownBlockType)arg1;

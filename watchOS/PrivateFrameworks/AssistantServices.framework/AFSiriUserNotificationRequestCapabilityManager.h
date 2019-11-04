@@ -17,8 +17,12 @@
     _Bool _inWirelessSplitterSession;
     _Bool _inWirelessSplitterSessionStateValid;
     _Bool _routeAvailableForSpokenMessages;
+    _Bool _lastKnownEligibilityState;
     AFSettingsConnection *_settingsConnection;
+    AFNotifyObserver *_pairedInfoChangeObserver;
     AFNotifyObserver *_wirelessSplitterSessionObserver;
+    AFNotifyObserver *_wirelessGuestConnectionObserver;
+    AFNotifyObserver *_forcedUpdateObserver;
     NSHashTable *_observers;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_group> *_group;
@@ -30,6 +34,7 @@
 - (void)pairedDevicesChanged:(id)arg1;
 - (void)_settingsConnectionDidDisconnect;
 - (id)_settingsConnection;
+- (void)notifyObserver:(id)arg1 didReceiveNotificationWithToken:(int)arg2;
 - (void)notifyObserver:(id)arg1 didChangeStateFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
 - (void)_fetchWirelessSplitterSessionInfoAndStartObservingFromSourceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fetchPairedBluetoothDevicesFromSourceWithCompletion:(CDUnknownBlockType)arg1;

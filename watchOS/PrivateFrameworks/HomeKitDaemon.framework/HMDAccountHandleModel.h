@@ -13,6 +13,7 @@
 }
 
 + (id)properties;
++ (id)schemaHashRoot;
 
 // Remaining properties
 @property(retain, nonatomic) IDSURI *idsURI; // @dynamic idsURI;

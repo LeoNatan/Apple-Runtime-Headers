@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class IDSMPFullLegacyIdentity, IDSNGMFullDeviceIdentity, NSNumber;
+@class IDSMPFullLegacyIdentity, IDSNGMFullDeviceIdentity, NSData, NSNumber;
 
 @interface IDSMPFullDeviceIdentityContainer : NSObject
 {
     IDSMPFullLegacyIdentity *_legacyFullIdentity;
     IDSNGMFullDeviceIdentity *_ngmFullDeviceIdentity;
     NSNumber *_ngmVersion;
+    NSData *_cachedLegacySerializedData;
 }
 
++ (id)_identityWithLegacyFullIdentity:(id)arg1 ngmFullDeviceIdentity:(id)arg2 ngmVersion:(id)arg3 legacyFullIdentitySerializedData:(id)arg4 error:(id *)arg5;
 + (id)identityWithDataRepresentation:(id)arg1 error:(id *)arg2;
 + (id)identityWithLegacyFullIdentity:(id)arg1 ngmFullDeviceIdentity:(id)arg2 ngmVersion:(id)arg3 error:(id *)arg4;
+@property(retain, nonatomic) NSData *cachedLegacySerializedData; // @synthesize cachedLegacySerializedData=_cachedLegacySerializedData;
 @property(readonly, nonatomic) NSNumber *ngmVersion; // @synthesize ngmVersion=_ngmVersion;
 @property(readonly, nonatomic) IDSNGMFullDeviceIdentity *ngmFullDeviceIdentity; // @synthesize ngmFullDeviceIdentity=_ngmFullDeviceIdentity;
 @property(readonly, nonatomic) IDSMPFullLegacyIdentity *legacyFullIdentity; // @synthesize legacyFullIdentity=_legacyFullIdentity;
@@ -33,7 +36,7 @@
 - (id)publicIdentityWithError:(id *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithFullLegacyIdentity:(id)arg1 ngmFullDeviceidentity:(id)arg2 ngmVersion:(id)arg3;
+- (id)initWithFullLegacyIdentity:(id)arg1 ngmFullDeviceidentity:(id)arg2 ngmVersion:(id)arg3 legacyFullIdentitySerializedData:(id)arg4;
 
 @end
 

@@ -26,6 +26,7 @@
 + (_Bool)_insertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(int)arg5 provenance:(long long)arg6 updatePolicy:(int)arg7 profile:(id)arg8 error:(id *)arg9;
 + (int)_validateModificationDatePolicyWithKey:(id)arg1 domain:(id)arg2 category:(int)arg3 modificationDate:(double)arg4 database:(id)arg5 error:(id *)arg6;
 + (int)_shouldUpdateWithPolicy:(int)arg1 key:(id)arg2 domain:(id)arg3 category:(int)arg4 modificationDate:(double)arg5 database:(id)arg6 error:(id *)arg7;
++ (id)_insertOrReplaceSQL;
 + (_Bool)_doInsertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(int)arg5 provenance:(long long)arg6 updatePolicy:(int)arg7 database:(id)arg8 error:(id *)arg9;
 + (_Bool)_insertCodableTimestampedKeyValuePairs:(id)arg1 domain:(id)arg2 category:(int)arg3 provenance:(long long)arg4 updatePolicy:(int)arg5 profile:(id)arg6 error:(id *)arg7;
 + (_Bool)_insertCodableTimestampedKeyValuePairs:(id)arg1 domain:(id)arg2 category:(int)arg3 provenance:(long long)arg4 profile:(id)arg5 error:(id *)arg6;

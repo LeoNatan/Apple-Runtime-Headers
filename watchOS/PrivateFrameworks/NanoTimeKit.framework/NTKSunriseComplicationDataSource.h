@@ -6,12 +6,12 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
+#import <NanoTimeKit/CLKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 #import <NanoTimeKit/NTKTimelineEntryModelCacheDataSource-Protocol.h>
-#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
 @class CLLocation, NSString, NSTimer, NTKTimelineEntryModelCache;
 
-@interface NTKSunriseComplicationDataSource : NTKComplicationDataSource <NTKTimelineEntryModelCacheDataSource, NTKTritiumRandomizedComplicationEntryProvider>
+@interface NTKSunriseComplicationDataSource : NTKComplicationDataSource <NTKTimelineEntryModelCacheDataSource, CLKTritiumRandomizedComplicationEntryProvider>
 {
     NTKTimelineEntryModelCache *_entryModelCache;
     _Bool _isWaitingForGeocodeRequest;

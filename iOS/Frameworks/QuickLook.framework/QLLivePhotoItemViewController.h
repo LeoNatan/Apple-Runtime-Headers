@@ -9,7 +9,7 @@
 #import <QuickLook/PHLivePhotoViewDelegate-Protocol.h>
 #import <QuickLook/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, PHLivePhotoView, UIImageView;
+@class NSDate, NSLayoutConstraint, NSString, PHLivePhotoView, UIImageView;
 
 __attribute__((visibility("hidden")))
 @interface QLLivePhotoItemViewController : QLScrollableContentItemViewController <PHLivePhotoViewDelegate, UIGestureRecognizerDelegate>
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_livePhotoBadge;
     NSLayoutConstraint *_livePhotoBadgeLeftConstraint;
     NSLayoutConstraint *_livePhotoBadgeTopConstraint;
+    NSDate *_didEndPlayingTimestamp;
     _Bool _isPlaying;
     _Bool _livePhotoBadgeVisible;
     _Bool _isFullScreen;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;
 - (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(long long)arg2;
 - (long long)preferredWhitePointAdaptivityStyle;
+- (_Bool)canToggleFullScreen;
 - (_Bool)canEnterFullScreen;
 - (struct CGSize)imageSize;
 - (void)willBeginZooming;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)previewWillFinishAppearing;
 - (void)previewWillAppear:(_Bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (_Bool)_wasJustPlaying;
 - (void)_updateLivePhotoBadgeAnimated:(_Bool)arg1;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

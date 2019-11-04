@@ -17,16 +17,16 @@ __attribute__((visibility("hidden")))
 {
     _Bool _shouldShowBackButton;
     id <VUICategoryMenuViewControllerDelegate> _delegate;
+    VUIMenuDataSource *_categories;
     VUICollectionView *_menuCollectionView;
     VUILibraryMenuItemViewCell *_sizingCell;
     VUIMenuSectionHeaderCollectionViewCell *_sectionHeaderSizingCell;
-    VUIMenuDataSource *_categories;
 }
 
-@property(retain, nonatomic) VUIMenuDataSource *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) VUIMenuSectionHeaderCollectionViewCell *sectionHeaderSizingCell; // @synthesize sectionHeaderSizingCell=_sectionHeaderSizingCell;
 @property(retain, nonatomic) VUILibraryMenuItemViewCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 @property(retain, nonatomic) VUICollectionView *menuCollectionView; // @synthesize menuCollectionView=_menuCollectionView;
+@property(retain, nonatomic) VUIMenuDataSource *categories; // @synthesize categories=_categories;
 @property(nonatomic) _Bool shouldShowBackButton; // @synthesize shouldShowBackButton=_shouldShowBackButton;
 @property(nonatomic) __weak id <VUICategoryMenuViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

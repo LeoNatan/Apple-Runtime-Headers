@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool _supportsBLE;
     id <HMFSystemInfoNameDataSourceDelegate> _delegate;
     NSString *_name;
+    NSString *_modelIdentifier;
     NSString *_model;
     NSString *_regionInfo;
     NSString *_serialNumber;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, copy, nonatomic) NSString *regionInfo; // @synthesize regionInfo=_regionInfo;
 @property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
+@property(readonly, copy, nonatomic) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property __weak id <HMFSystemInfoNameDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;

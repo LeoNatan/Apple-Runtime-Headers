@@ -95,8 +95,6 @@
     UITableViewCell *_swipeToDeleteCell;
     _UIIndexPathIdentityTracker *_identityTracker;
     int _updateCount;
-    int _shadowUpdateCount;
-    int _revertingShadowUpdateCount;
     NSIndexPath *_displayingCellContentStringIndexPath;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UILongPressGestureRecognizer *_upArrowLongPressGestureRecognizer;
@@ -251,6 +249,7 @@
         unsigned int reloadSkippedDuringSuspension:1;
         unsigned int displaySkippedDuringSuspension:1;
         unsigned int needsReload:1;
+        unsigned int needsRebuildGeometry:1;
         unsigned int scheduledUpdateVisibleCells:1;
         unsigned int scheduledUpdateVisibleCellsFrames:1;
         unsigned int displayTopSeparator:1;
@@ -331,12 +330,16 @@
         unsigned int dragInteractionEnabled:1;
         unsigned int insetsContentViewsToSafeArea:1;
         unsigned int generatingDescriptionWithDataSource:1;
+        unsigned int isPerformingShadowUpdates:1;
+        unsigned int isPerformingRevertingShadowUpdates:1;
         unsigned int dataSourceIsDiffableDataSource:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isUpdatingVisibleCells:1;
         unsigned int scrollFirstResponderCellVisibleAfterVisibleCellsUpdate:1;
         unsigned int ignoreCopyFilterForTableAnimations:1;
         unsigned int disableReuseQueuePurgeOnTextSizeChanges:1;
+        unsigned int doFirstResponderUpdatesAfterVisibleCellsUpdate:1;
+        unsigned int useUnifiedSelectionBehavior:1;
     } _tableFlags;
     _Bool _dragInteractionEnabled;
     _Bool _hasActiveDrag;
@@ -724,7 +727,9 @@
 - (void)_setSectionContentInset:(struct UIEdgeInsets)arg1;
 - (void)_updateMarginWidthForVisibleViewsForceLayout:(_Bool)arg1;
 - (void)_rebuildGeometryForcingRowDataUpdate:(_Bool)arg1 skipContentOffsetAdjustment:(_Bool)arg2 updateImmediatelyIfPossible:(_Bool)arg3;
+- (void)_setNeedsRebuildGeometry;
 - (void)_rebuildGeometry;
+- (void)_rebuildGeometryWithCompatibility;
 @property(nonatomic) _Bool allowsMultipleSelectionDuringEditing;
 @property(nonatomic) _Bool allowsMultipleSelection;
 - (float)_contentWidthForCell:(id)arg1 forRowAtIndexPath:(id)arg2 usingPresentationValues:(_Bool)arg3;
@@ -765,6 +770,7 @@
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (struct CGSize)_contentSize;
 - (void)_rectChangedWithNewSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
+- (void)_storeStateForRestoringContentOffsetIfNeeded;
 - (void)_getGradientMaskBounds:(out struct CGRect *)arg1 startInsets:(out struct UIEdgeInsets *)arg2 endInsets:(out struct UIEdgeInsets *)arg3 intensities:(out struct UIEdgeInsets *)arg4;
 - (void)accessoryInsetsDidChange:(struct UIEdgeInsets)arg1;
 - (void)_safeAreaInsetsDidChangeFromOldInsets:(struct UIEdgeInsets)arg1;
@@ -791,6 +797,9 @@
 - (void)_updateTableHeaderViewForAutoHideWithVelocity:(float)arg1 targetOffset:(struct CGPoint *)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (_Bool)_shouldDeselectRowsOnTouchesBegan;
+- (_Bool)_useUnifiedSelectionBehavior;
+- (void)_setUseUnifiedSelectionBehavior:(_Bool)arg1;
 - (_Bool)_beginTrackingWithEvent:(id)arg1;
 - (void)_resetDragSwipeAndTouchSelectFlags;
 - (_Bool)_canSelectRowContainingHitView:(id)arg1;
@@ -953,6 +962,7 @@
 - (id)_generateDeletedOrMovedRowsIndexSetFromUpdateItems:(id)arg1 updateSupport:(id)arg2 preReloadFirstVisibleRowIndexPath:(id)arg3 outReloadedRowNewIndexPath:(out id *)arg4;
 - (void)_storePreReloadStateForRestoringContentOffsetWithFirstVisibleIndexPath:(id)arg1;
 - (_Bool)_shouldRestorePreReloadScrollPositionWithFirstVisibleIndexPath:(id)arg1 scrolledToTop:(_Bool)arg2;
+- (_Bool)_isScrolledToTopAtContentOffsetY:(float)arg1;
 - (_Bool)_isScrolledToTop;
 - (struct CGPoint)_validContentOffsetForProposedOffset:(struct CGPoint)arg1;
 - (void)reloadData;

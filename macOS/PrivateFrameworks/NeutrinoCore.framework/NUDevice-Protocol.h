@@ -11,13 +11,13 @@
 
 @protocol NUDevice <NSObject>
 @property(readonly, nonatomic) long long defaultSampleMode;
-@property(readonly, nonatomic) id <NURenderer> lowPriorityRenderer;
-@property(readonly, nonatomic) id <NURenderer> renderer;
 @property(readonly, nonatomic) long long openGLVirtualScreen;
 @property(readonly, nonatomic) BOOL hasOpenGLSupport;
 @property(readonly, nonatomic) BOOL hasMetalSupport;
 @property(readonly, nonatomic) unsigned long long family;
 @property(readonly, nonatomic) NSString *model;
 @property(readonly, nonatomic) NSString *name;
+- (id <NURenderer>)lowPriorityRenderer:(out id *)arg1;
+- (id <NURenderer>)renderer:(out id *)arg1;
 @end
 

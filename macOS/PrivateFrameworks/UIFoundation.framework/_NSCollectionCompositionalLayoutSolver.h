@@ -8,7 +8,7 @@
 
 #import <UIFoundation/_NSCollectionLayoutAuxiliaryHosting-Protocol.h>
 
-@class NSArray, NSIndexSet, NSMutableDictionary, NSString, _NSCollectionLayoutAuxiliaryItemSolver, _NSCollectionLayoutSectionGeometryTranslator, _NSCollectionPreferredSizes, _NSDataSourceSnapshotter, _NSRTree, _UICollectionCompositionalLayoutSolverOptions;
+@class NSArray, NSIndexSet, NSMutableDictionary, NSString, _NSCollectionCompositionalLayoutSolverOptions, _NSCollectionLayoutAuxiliaryItemSolver, _NSCollectionLayoutSectionGeometryTranslator, _NSCollectionPreferredSizes, _NSDataSourceSnapshotter, _NSRTree;
 @protocol NSCollectionLayoutContainer;
 
 @interface _NSCollectionCompositionalLayoutSolver : NSObject <_NSCollectionLayoutAuxiliaryHosting>
@@ -25,7 +25,7 @@
     _NSDataSourceSnapshotter *_dataSourceSnapshot;
     double _interSectionSpacing;
     NSIndexSet *_orthogonalScrollingSectionIndexes;
-    _UICollectionCompositionalLayoutSolverOptions *_options;
+    _NSCollectionCompositionalLayoutSolverOptions *_options;
     Class _layoutAttributeClass;
     Class _invalidationContextClass;
     CDUnknownBlockType _invalidationHandler;
@@ -65,7 +65,7 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) Class invalidationContextClass; // @synthesize invalidationContextClass=_invalidationContextClass;
 @property(retain, nonatomic) Class layoutAttributeClass; // @synthesize layoutAttributeClass=_layoutAttributeClass;
-@property(retain, nonatomic) _UICollectionCompositionalLayoutSolverOptions *options; // @synthesize options=_options;
+@property(retain, nonatomic) _NSCollectionCompositionalLayoutSolverOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSIndexSet *orthogonalScrollingSectionIndexes; // @synthesize orthogonalScrollingSectionIndexes=_orthogonalScrollingSectionIndexes;
 @property(nonatomic) BOOL hasOrthogonalSrollingSections; // @synthesize hasOrthogonalSrollingSections=_hasOrthogonalSrollingSections;
 @property(nonatomic) BOOL layoutCannotBeSolved; // @synthesize layoutCannotBeSolved=_layoutCannotBeSolved;
@@ -87,6 +87,7 @@
 - (id)auxiliaryHostContainer;
 - (struct CGSize)auxiliaryHostPinningContentSize;
 - (struct CGSize)auxiliaryHostContentSize;
+- (BOOL)_canResolveWithoutQueryingSectionDefintionsForContainerChange;
 - (id)_queryClientForSectionDefintionForSectionIndex:(long long)arg1;
 - (id)_resolveOptionallyQueryingForSectionDefintions:(BOOL)arg1;
 - (struct CGPoint)_firstBookmarkOffset;
@@ -121,6 +122,7 @@
 - (void)_solve;
 - (id)_attributesQueryRectsForQueryRect:(struct CGRect)arg1;
 - (BOOL)elementShouldAppearAbove:(id)arg1;
+- (id)supplementaryElementKindsAssociatedWithItemIndexPath:(id)arg1;
 - (struct CGRect)orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(id)arg1 frame:(struct CGRect)arg2;
 - (BOOL)orthogonalScrollingSectionDecorationShouldScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
 - (BOOL)orthogonalScrollingSectionSupplementaryShouldScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;

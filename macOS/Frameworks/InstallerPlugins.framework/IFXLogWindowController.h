@@ -28,9 +28,6 @@
     IFXLogDataSource *_logDataSource;
 }
 
-+ (void)autoSendLogIfEnabled;
-+ (id)_autoSendHostIfEnabled;
-+ (void)_sendLogViaHost:(id)arg1;
 - (void)windowWillClose:(id)arg1;
 - (void)dealloc;
 - (id)initWithCloseObserver:(id)arg1 selector:(SEL)arg2;
@@ -38,9 +35,7 @@
 - (void)savePanelDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)saveDocument:(id)arg1;
 - (BOOL)writeLogToFile:(id)arg1;
-- (void)sendLogToApple:(id)arg1;
 - (void)_sendLogViaCrashReporter;
-- (void)cancelSendLogToApple:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)showLogCommentSheet:(id)arg1;
 - (void)printOperationDidRun:(id)arg1 success:(BOOL)arg2 contextInfo:(void *)arg3;

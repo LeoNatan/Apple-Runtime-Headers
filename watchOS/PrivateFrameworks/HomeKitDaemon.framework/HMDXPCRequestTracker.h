@@ -15,13 +15,12 @@
 {
     id <HMFLocking> _lock;
     NSObject<OS_dispatch_queue> *_queue;
+    HMFTimer *_timer;
     NSString *_clientName;
     NSObject<OS_dispatch_group> *_activeMessageTracker;
     NSMutableDictionary *_pendingRequests;
-    HMFTimer *_watchdogTimer;
 }
 
-@property(readonly, nonatomic) HMFTimer *watchdogTimer; // @synthesize watchdogTimer=_watchdogTimer;
 @property(readonly, nonatomic) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *activeMessageTracker; // @synthesize activeMessageTracker=_activeMessageTracker;
 - (void).cxx_destruct;

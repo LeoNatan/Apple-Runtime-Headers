@@ -12,9 +12,10 @@
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
+- (id)deprecatedDecompressData:(id)arg1 algorithm:(int)arg2;
 - (id)decompressData:(id)arg1 algorithm:(int)arg2;
-- (BOOL)dataCompressed:(id)arg1;
-- (id)compressData:(id)arg1 algorithm:(int)arg2 didCompress:(char *)arg3 compressedLength:(unsigned long long *)arg4;
+- (BOOL)dataCompressedWithOriginalSize:(unsigned long long)arg1 compressedSize:(unsigned long long)arg2;
+- (id)compressData:(id)arg1 algorithm:(int)arg2;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 

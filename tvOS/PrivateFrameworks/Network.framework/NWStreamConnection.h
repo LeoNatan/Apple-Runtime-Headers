@@ -11,9 +11,9 @@
 }
 
 + (id)connectionWithConnectedSocket:(int)arg1;
-- (BOOL)writeCloseWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (BOOL)writeData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)readDataWithMinimumLength:(unsigned long long)arg1 maximumLength:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)writeCloseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)writeData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)readDataWithMinimumLength:(unsigned long long)arg1 maximumLength:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
 

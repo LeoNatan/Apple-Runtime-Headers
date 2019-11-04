@@ -6,6 +6,7 @@
 
 #import <PhotosUICore/PXGSplitLayout.h>
 
+#import <PhotosUICore/PXAssetsDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryViewModelPresenter-Protocol.h>
 #import <PhotosUICore/PXGAnchorDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @class NSMutableDictionary, NSString, PXAssetCollectionReference, PXCuratedLibraryAllPhotosLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibrarySectionHeaderLayout, PXCuratedLibrarySectionedLayout, PXCuratedLibrarySummaryHelper, PXCuratedLibraryViewModel, PXGDiagnosticsSpriteProbe, PXGSpriteReference, PXNumberAnimator;
 @protocol PXBrowserVisibleContentSnapshot, PXDisplayAssetCollection;
 
-@interface PXCuratedLibraryLayout : PXGSplitLayout <PXLibrarySummaryDataSource, PXChangeObserver, PXCuratedLibraryViewModelPresenter, PXGNamedImageSource, PXGAnchorDelegate>
+@interface PXCuratedLibraryLayout : PXGSplitLayout <PXLibrarySummaryDataSource, PXChangeObserver, PXAssetsDataSourceManagerObserver, PXCuratedLibraryViewModelPresenter, PXGNamedImageSource, PXGAnchorDelegate>
 {
     PXCuratedLibrarySectionHeaderLayout *_floatingHeaderLayout;
     PXCuratedLibrarySummaryHelper *_summaryHelper;
@@ -37,17 +38,19 @@
     long long _presentedZoomLevel;
     PXCuratedLibraryViewModel *_viewModel;
     PXGSpriteReference *_lastHitSpriteReference;
-    PXCuratedLibraryLayoutSpec *_spec;
+    double _lateralMargin;
     id _lastVisibleDominantObjectReference;
     PXAssetCollectionReference *_lastPresentedDayAssetCollectionReference;
     id _dominantHeroPreferencesBeforeTransition;
+    PXCuratedLibraryLayoutSpec *_spec;
     struct CGRect _presentedVisibleRect;
 }
 
+@property(readonly, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) id dominantHeroPreferencesBeforeTransition; // @synthesize dominantHeroPreferencesBeforeTransition=_dominantHeroPreferencesBeforeTransition;
 @property(retain, nonatomic) PXAssetCollectionReference *lastPresentedDayAssetCollectionReference; // @synthesize lastPresentedDayAssetCollectionReference=_lastPresentedDayAssetCollectionReference;
 @property(retain, nonatomic) id lastVisibleDominantObjectReference; // @synthesize lastVisibleDominantObjectReference=_lastVisibleDominantObjectReference;
-@property(retain, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
+@property(nonatomic) double lateralMargin; // @synthesize lateralMargin=_lateralMargin;
 @property(retain, nonatomic) PXGSpriteReference *lastHitSpriteReference; // @synthesize lastHitSpriteReference=_lastHitSpriteReference;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) struct CGRect presentedVisibleRect; // @synthesize presentedVisibleRect=_presentedVisibleRect;
@@ -69,6 +72,8 @@
 - (id)imageNameAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (void)_updateFloatingHeaderLayoutSpec;
 - (id)_currentFloatingHeaderSpec;
+- (void)setSpec:(id)arg1;
+- (void)_updateLibraryBodyLayoutLateralMargin;
 - (void)_updateLibraryBodyLayoutLastVisibleDominantObjectReference;
 - (struct CGRect)sectionBoundariesForAssetCollectionReference:(id)arg1;
 - (void)enumerateVisibleAssetReferencesUsingBlock:(CDUnknownBlockType)arg1;
@@ -103,6 +108,7 @@
 - (void)visibleRectDidChange;
 - (void)safeAreaInsetsDidChange;
 - (void)screenScaleDidChange;
+- (void)_updateFloatingHeaderSelectionTitle;
 - (void)_updateFloatingHeaderButtons;
 - (void)_updateStatusBarGradientAlphaValue;
 - (void)_updateStatusBarGradientVisibility;
@@ -111,6 +117,9 @@
 - (long long)_statusBarVisibility;
 - (void)_updateFloatingHeaderTitleOpacity;
 - (void)_updateFloatingHeaderVisibility;
+- (void)sublayoutDidChangeLastBaseline:(id)arg1;
+- (void)_updateOverlayInsets;
+- (void)_updateLateralMargin;
 - (void)_updateZoomLevel;
 - (void)update;
 - (void)dealloc;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSString *_text;
     NSAttributedString *_attributedText;
     NSArray *_contentConstraints;
+    NSArray *_componentsArrangement;
     NSString *_textStyle;
     UIImage *_image;
     UIImageView *_imageView;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)_arrangedSubviews;
 - (void)updateConstraints;
 @property(readonly, nonatomic) UIView *trailingView;
+@property(copy, nonatomic) NSArray *componentsArrangement;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *text;

@@ -22,6 +22,7 @@
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> _delegate;
+    long long _colorUserInterfaceStyle;
     id <PKPaletteViewStateObservable> _paletteViewState;
     UIScrollView *_scrollView;
     UIStackView *_stackView;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <PKPaletteViewStateObservable> paletteViewState; // @synthesize paletteViewState=_paletteViewState;
 @property(nonatomic, getter=isUsingShortestToolSpacing) _Bool usingShortestToolSpacing; // @synthesize usingShortestToolSpacing=_usingShortestToolSpacing;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(nonatomic) _Bool isRulerActive; // @synthesize isRulerActive=_isRulerActive;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;

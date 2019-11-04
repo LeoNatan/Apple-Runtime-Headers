@@ -6,13 +6,15 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSArray, NSButton, NSTimer, NSTouchBarItem, NSView;
+@class NSArray, NSButton, NSLayoutConstraint, NSTimer, NSTouchBarItem, NSView;
 @protocol NSTextInputClient;
 
 __attribute__((visibility("hidden")))
 @interface NSCandidateListViewController : NSViewController
 {
     NSButton *_button;
+    NSLayoutConstraint *_minWidthConstraint;
+    NSLayoutConstraint *_maxWidthConstraint;
     id _leftCandidate;
     id _middleCandidate;
     id _rightCandidate;
@@ -42,7 +44,8 @@ __attribute__((visibility("hidden")))
         unsigned int _processingUserCollapse:1;
         unsigned int _processingCollapse:1;
         unsigned int _hasEmoji:1;
-        unsigned int _reserved:22;
+        unsigned int _limitsNumberOfCandidates:1;
+        unsigned int _reserved:21;
     } _flags;
 }
 
@@ -51,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)stopTrackingInSegmentType:(long long)arg1 index:(unsigned long long)arg2;
 - (void)continueTrackingInSegmentType:(long long)arg1 index:(unsigned long long)arg2;
 - (void)startTrackingInSegmentType:(long long)arg1 index:(unsigned long long)arg2;
+@property BOOL limitsNumberOfCandidates;
 @property BOOL allowsCollapsing;
 @property(getter=isCollapsed) BOOL collapsed;
 - (void)spellCheckerDidChangeCompletionCollapsed:(id)arg1;

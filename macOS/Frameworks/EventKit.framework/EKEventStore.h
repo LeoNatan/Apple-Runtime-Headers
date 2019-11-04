@@ -11,6 +11,7 @@
 
 @interface EKEventStore : NSObject
 {
+    struct os_unfair_lock_s _reminderSourceMapLock;
     BOOL _onlyNotifyForAccountedChanges;
     BOOL _shouldSanitizeVehicleAlarms;
     int backingStoreType;
@@ -25,7 +26,6 @@
     EKReminderStore *_reminderStore;
     NSDictionary *_reminderSourceIDToEventSourceIDMapping;
     NSDictionary *_eventSourceIDToReminderSourceIDMapping;
-    NSObject<OS_dispatch_queue> *_reminderSourceMapLock;
 }
 
 + (id)dateFromDateString:(id)arg1;
@@ -44,7 +44,6 @@
 + (CDUnknownBlockType)reminderStoreContainerTokenProvider;
 @property(nonatomic) BOOL shouldSanitizeVehicleAlarms; // @synthesize shouldSanitizeVehicleAlarms=_shouldSanitizeVehicleAlarms;
 @property BOOL onlyNotifyForAccountedChanges; // @synthesize onlyNotifyForAccountedChanges=_onlyNotifyForAccountedChanges;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *reminderSourceMapLock; // @synthesize reminderSourceMapLock=_reminderSourceMapLock;
 @property(retain, nonatomic) NSDictionary *eventSourceIDToReminderSourceIDMapping; // @synthesize eventSourceIDToReminderSourceIDMapping=_eventSourceIDToReminderSourceIDMapping;
 @property(retain, nonatomic) NSDictionary *reminderSourceIDToEventSourceIDMapping; // @synthesize reminderSourceIDToEventSourceIDMapping=_reminderSourceIDToEventSourceIDMapping;
 @property(readonly, nonatomic) EKReminderStore *reminderStore; // @synthesize reminderStore=_reminderStore;
@@ -129,6 +128,7 @@
 - (BOOL)_eventsExistWithGeoCodedLocation;
 - (id)_nextEventWithFetchBlock:(CDUnknownBlockType)arg1 searchBackwards:(BOOL)arg2 steps:(id)arg3;
 - (id)nextEventWithCalendarIdentifiers:(id)arg1 exclusionOptions:(long long)arg2;
+@property(readonly, nonatomic) struct os_unfair_lock_s *reminderSourceMapLock;
 - (void)reminderStoreChanged;
 - (BOOL)shouldSaveCalendarAsReminderCalendar:(id)arg1;
 - (BOOL)shouldSaveCalendarAsEventCalendar:(id)arg1;
@@ -291,6 +291,7 @@
 - (unsigned long long)addressValidationStatus:(id)arg1;
 - (void)cacheValidationStatusForAddress:(id)arg1 status:(unsigned long long)arg2;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
+- (void)performHoldingReminderSourceMapLock:(CDUnknownBlockType)arg1;
 - (void)invalidateReminderSourceMaps;
 - (id)eventSourceMap;
 - (id)reminderSourceMap;

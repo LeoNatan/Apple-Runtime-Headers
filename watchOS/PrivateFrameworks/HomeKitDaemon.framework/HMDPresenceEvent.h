@@ -56,6 +56,7 @@
 - (void)_evaluatePresenceEventForHomePresenceUpdate:(id)arg1;
 - (void)_handleHomePresenceUpdate:(id)arg1;
 - (_Bool)_activate:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)isActive;
 - (void)_registerForMessages;
 @property(readonly, nonatomic) unsigned int activationGranularity;
 - (id)thisUser;

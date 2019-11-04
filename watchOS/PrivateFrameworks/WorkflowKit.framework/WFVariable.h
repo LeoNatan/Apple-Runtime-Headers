@@ -9,7 +9,7 @@
 #import <WorkflowKit/WFVariableSerialization-Protocol.h>
 #import <WorkflowKit/WFVariableStringContent-Protocol.h>
 
-@class NSArray, NSDictionary, NSHashTable, NSString, UIImage;
+@class NSArray, NSDictionary, NSHashTable, NSString, WFImage;
 @protocol WFVariableProvider;
 
 @interface WFVariable : NSObject <WFVariableStringContent, WFVariableSerialization>
@@ -48,7 +48,7 @@
 @property(readonly, nonatomic, getter=isAvailable) _Bool available;
 @property(readonly, nonatomic) NSString *UUID;
 @property(readonly, nonatomic) NSString *name;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) WFImage *icon;
 @property(readonly, nonatomic) NSString *type;
 - (id)initWithDictionary:(id)arg1 variableProvider:(id)arg2;
 - (id)init;

@@ -6,13 +6,14 @@
 
 #import <Foundation/NSNumber.h>
 
-#import <HomeKitBackingStore/HMBModelQueryableParameterCoder-Protocol.h>
+#import <HomeKitBackingStore/HMBQueryableModelFieldCoder-Protocol.h>
 
 @class NSString;
 
-@interface NSNumber (HMB) <HMBModelQueryableParameterCoder>
-+ (id)hmbDecodeQueryableParameterFromData:(id)arg1;
-- (id)hmbEncodeQueryableParameter;
+@interface NSNumber (HMB) <HMBQueryableModelFieldCoder>
++ (id)hmbDescriptionForEncodedQueryableVariable:(id)arg1;
++ (id)hmbDecodeQueryableParameter:(id)arg1;
++ (id)hmbEncodeQueryableParameter:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

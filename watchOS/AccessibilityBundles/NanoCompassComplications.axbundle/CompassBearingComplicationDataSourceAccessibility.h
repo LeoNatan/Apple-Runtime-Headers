@@ -13,7 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)_template:(_Bool)arg1;
+- (id)_templateNoData:(_Bool)arg1 calibrated:(_Bool)arg2 heading:(id)arg3 bearing:(id)arg4;
 
 @end
 

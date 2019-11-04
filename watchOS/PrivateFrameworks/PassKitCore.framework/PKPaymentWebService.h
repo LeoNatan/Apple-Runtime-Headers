@@ -186,6 +186,9 @@
 - (void)handleResponse:(id)arg1 withError:(id)arg2 data:(id)arg3 task:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (unsigned int)discoveryBundleForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned int)discoveryManifestWithCompletion:(CDUnknownBlockType)arg1;
+- (unsigned int)exportTransactionDataWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (unsigned int)performInstallmentAuthorizationWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (unsigned int)performInstallmentBindWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned int)applePayTrustSignatureRequestWithRequest:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned int)applePayTrustSignatureRequestWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned int)accountTransactionAnswerWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

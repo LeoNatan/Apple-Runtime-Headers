@@ -95,6 +95,7 @@
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)setLibraryCollection:(id)arg1;
 - (void)performUpdateForComplicationController:(id)arg1;
 - (void)remoteComplicationControllerShouldExtendSession:(id)arg1;
 - (void)unregisterRemoteComplicationController:(id)arg1;

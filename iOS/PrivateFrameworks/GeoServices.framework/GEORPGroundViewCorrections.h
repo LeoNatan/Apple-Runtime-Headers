@@ -15,9 +15,7 @@
     PBUnknownFields *_unknownFields;
     GEORPFeedbackAddressFields *_addressToCensor;
     int _correctionType;
-    struct {
-        unsigned int has_correctionType:1;
-    } _flags;
+    CDStruct_ef3e2236 _flags;
 }
 
 + (_Bool)isValid:(id)arg1;

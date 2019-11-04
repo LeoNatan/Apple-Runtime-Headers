@@ -325,6 +325,7 @@
 - (_Bool)_hasFloatingFieldEditor;
 - (id)_currentTextColor;
 - (_Bool)_textShouldUseVibrancy;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)didMoveToWindow;
 - (void)removeFromSuperview;
 - (struct CGPoint)_originForTextFieldLabel:(id)arg1;
@@ -625,6 +626,7 @@
 - (int)_currentTextAlignment;
 - (void)__resumeBecomeFirstResponder;
 - (void)_initialScrollDidFinish:(id)arg1;
+- (_Bool)_shouldSuppressSelectionHandles;
 - (void)_activateSelectionView;
 - (void)_stopObservingFieldEditorScroll;
 - (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
@@ -652,6 +654,7 @@
 - (_Bool)canBecomeFirstResponder;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (CDStruct_b2fbf00d)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (struct CGSize)_textSize;
 - (struct CGSize)_textSizeUsingFullFontSize:(_Bool)arg1;

@@ -10,12 +10,13 @@
 #import <UIKitMacHelper/UINSCloudSharingController-Protocol.h>
 
 @class CKContainer, CKShare, NSArray, NSSharingService, NSString;
-@protocol UINSCloudSharingControllerDelegate;
+@protocol UINSCloudSharingControllerDelegate, UINSWindow;
 
 __attribute__((visibility("hidden")))
 @interface UINSCloudSharingController : NSObject <UINSCloudSharingController, NSCloudSharingServiceDelegate>
 {
     id <UINSCloudSharingControllerDelegate> _delegate;
+    id <UINSWindow> _window;
     unsigned long long _availablePermissions;
     CDUnknownBlockType _preparationHandler;
     CKShare *_share;
@@ -30,12 +31,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 @property(copy, nonatomic) CDUnknownBlockType preparationHandler; // @synthesize preparationHandler=_preparationHandler;
 @property(nonatomic) unsigned long long availablePermissions; // @synthesize availablePermissions=_availablePermissions;
+@property(nonatomic) __weak id <UINSWindow> window; // @synthesize window=_window;
 @property(nonatomic) __weak id <UINSCloudSharingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)sharingService:(id)arg1 didStopSharing:(id)arg2;
 - (void)sharingService:(id)arg1 didSaveShare:(id)arg2;
 - (unsigned long long)optionsForSharingService:(id)arg1 shareProvider:(id)arg2;
 - (void)sharingService:(id)arg1 didCompleteForItems:(id)arg2 error:(id)arg3;
+- (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (void)present;
 - (BOOL)_commonInit;
 - (id)initWithShare:(id)arg1 container:(id)arg2;

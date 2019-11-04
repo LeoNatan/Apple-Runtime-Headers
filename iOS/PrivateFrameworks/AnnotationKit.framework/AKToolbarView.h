@@ -14,7 +14,7 @@
 #import <AnnotationKit/PKPaletteViewPrivateDelegate-Protocol.h>
 #import <AnnotationKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class AKAttributePickerViewController, AKController, AKSignatureCreationViewController_iOS, AKSignaturesViewController_iOS, AKTextAttributesViewController, AKToolbarBackgroundView, AKToolsListViewController, NSLayoutConstraint, NSString, PKPaletteHostView, PKPaletteView, PKToolPicker, UIAlertController, UIBarButtonItem, UIButton, UIToolbar;
+@class AKAttributePickerViewController, AKAttributesPickerButton, AKController, AKSignatureCreationViewController_iOS, AKSignaturesViewController_iOS, AKTextAttributesViewController, AKToolbarBackgroundView, AKToolsListViewController, NSLayoutConstraint, NSString, PKPaletteHostView, PKPaletteView, PKToolPicker, UIAlertController, UIBarButtonItem, UIToolbar;
 @protocol AKToolbarViewOpacityEditingDelegate;
 
 @interface AKToolbarView : UIView <AKToolsListViewControllerDelegate, AKAttributePickerViewControllerDelegate, AKSignaturesViewControllerDelegate, AKSignatureCreationControllerDelegate, UIPopoverPresentationControllerDelegate, PKPaletteViewAnnotationDelegate, PKPaletteViewPrivateDelegate>
@@ -42,7 +42,7 @@
     _Bool _showAttributePicker;
     _Bool _shouldUseCachedSafeAreaInsets;
     struct UIEdgeInsets _cachedSafeAreaInsets;
-    UIButton *_attributesPickerButton;
+    AKAttributesPickerButton *_attributesPickerButton;
     NSLayoutConstraint *_attributesPickerButtonWidthConstraint;
     NSLayoutConstraint *_attributesPickerButtonHeigthConstraint;
     PKToolPicker *_toolPicker;
@@ -149,12 +149,15 @@
 - (struct CGSize)intrinsicContentSize;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)_keyWindowDidBecomeActive:(id)arg1;
 - (void)_updatePalette;
+- (void)forceHideRuler;
 - (_Bool)shouldHide;
 - (void)_updateAttributeControllerInk:(id)arg1;
 - (void)setAlpha:(double)arg1;
 - (void)setHidden:(_Bool)arg1;
 - (_Bool)_setToolPickerVisible:(_Bool)arg1 forResponder:(id)arg2;
+- (_Bool)canBecomeFirstResponder;
 - (void)_forceToolPickerVisible:(_Bool)arg1;
 - (_Bool)setToolPickerVisible:(_Bool)arg1 forFirstResponder:(id)arg2;
 - (void)_setupPaletteViewIfNecessary;

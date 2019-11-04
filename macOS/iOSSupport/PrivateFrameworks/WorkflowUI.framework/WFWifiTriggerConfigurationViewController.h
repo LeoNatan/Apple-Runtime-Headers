@@ -10,20 +10,20 @@
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 #import <WorkflowUI/WFTriggerTableViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSOrderedSet, NSString, UITableView;
+@class NSArray, NSString, UITableView;
 
 @interface WFWifiTriggerConfigurationViewController : WFTriggerConfigurationViewController <WFTriggerTableViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
-    NSOrderedSet *_allNetworks;
+    NSArray *_allNetworks;
     UITableView *_tableView;
     NSArray *_sections;
 }
 
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(retain, nonatomic) NSOrderedSet *allNetworks; // @synthesize allNetworks=_allNetworks;
+@property(retain, nonatomic) NSArray *allNetworks; // @synthesize allNetworks=_allNetworks;
 - (void).cxx_destruct;
-- (void)triggerTableViewController:(id)arg1 didSelectOptions:(id)arg2;
+- (void)triggerTableViewController:(id)arg1 didFinishWithAnySelected:(BOOL)arg2 orSelectedOptions:(id)arg3;
 - (void)triggerTableViewControllerDidCancel:(id)arg1;
 - (void)presentNavControllerWithRootViewController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

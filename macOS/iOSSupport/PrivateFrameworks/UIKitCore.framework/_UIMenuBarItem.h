@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIValidatedUserInterfaceItem-Protocol.h>
 
-@class NSString, RVItem, UICommand, UICommandAlternate, _UIMenuBarMenu;
+@class NSString, RVItem, UICommand, UICommandAlternate, UIImage, _UIMenuBarMenu;
 @protocol UIRVPresenterHighlightDelegate;
 
 @interface _UIMenuBarItem : NSObject <_UIValidatedUserInterfaceItem>
@@ -33,9 +33,11 @@
     NSString *_actionName;
     UICommand *_command;
     UICommandAlternate *_altCmd;
+    UIImage *_image;
 }
 
 + (id)separatorItem;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) BOOL remainsVisibleWhenDisabled; // @synthesize remainsVisibleWhenDisabled=_remainsVisibleWhenDisabled;
 @property(retain, nonatomic) UICommandAlternate *altCmd; // @synthesize altCmd=_altCmd;
 @property(retain, nonatomic) UICommand *command; // @synthesize command=_command;

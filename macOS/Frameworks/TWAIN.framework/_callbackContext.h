@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _callbackContext : NSObject
 {
     CDUnknownFunctionPointerType _callbackProc;

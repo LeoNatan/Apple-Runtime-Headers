@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (const CDStruct_90be15af *)keyCallbacks;
 - (void).cxx_destruct;
-- (void)removeFromParent;
+- (void)removeFromParent:(unsigned long long)arg1;
 - (void)setParent:(id)arg1;
 @property(readonly) __weak _CFXNotificationRegistrationContainer *parent;
 @property(readonly) void *key;

@@ -53,7 +53,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)_reportCurrentMessageToDiscoveryService;
+- (void)_reportCurrentMessageViewed;
 - (id)_messageForTableView:(id)arg1;
 - (void)updateWithMessages:(id)arg1 currentIndex:(unsigned int)arg2;
 - (float)_maxHeightForSize:(struct CGSize)arg1;

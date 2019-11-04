@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLIndicatorFileCoordinator, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
+#import <PhotoLibraryServices/PLFileSystemVolumeUnmountObserver-Protocol.h>
 
-@interface PLPhotoLibraryBundle : NSObject
+@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLFileSystemVolumeUnmountMonitor, PLIndicatorFileCoordinator, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
+
+@interface PLPhotoLibraryBundle : NSObject <PLFileSystemVolumeUnmountObserver>
 {
     NSURL *_libraryURL;
     struct os_unfair_lock_s _lock;
@@ -29,6 +31,7 @@
     PLLazyObject *_lazyConstraintsDirector;
     NSNumber *_sqliteErrorIndicatorFileExists;
     struct os_unfair_lock_s _sqliteErrorIndicatorLock;
+    PLFileSystemVolumeUnmountMonitor *_volumeUnmountMonitor;
     PLPhotoLibraryPathManager *_pathManager;
     PLPhotoLibraryBundleController *_bundleController;
 }
@@ -44,6 +47,7 @@
 - (id)newLibraryServicesManager;
 - (id)newChangePublisher;
 - (id)newAssetsdClient;
+- (void)volumeWillUnmount:(id)arg1;
 @property(readonly) PLConstraintsDirector *constraintsDirector;
 @property(readonly) PLPhotoAnalysisServiceClient *photoAnalysisServiceClient;
 - (id)boundAssetsdServicesTable;
@@ -51,6 +55,7 @@
 - (_Bool)sqliteErrorIndicatorFileExists;
 - (void)shutdownWithReason:(id)arg1;
 - (void)close;
+- (void)_invalidatePersistentContainer;
 - (void)_invalidateChangeHandlingContainer;
 - (void)initializeChangeHandling;
 - (id)newChangeHandlingContainer;
@@ -63,6 +68,7 @@
 @property(readonly) PLManagedObjectLookupItemCache *uniformTypeIdentiferCache;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
 @property(readonly) PLPersistentContainer *persistentContainer;
+@property(readonly, copy) NSError *shutdownReason;
 - (id)description;
 - (id)initWithLibraryURL:(id)arg1 bundleController:(id)arg2;
 - (_Bool)registerPLPhotoLibrary:(id)arg1;

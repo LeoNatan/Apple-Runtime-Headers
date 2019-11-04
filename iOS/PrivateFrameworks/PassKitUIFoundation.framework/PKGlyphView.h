@@ -40,6 +40,7 @@
     CALayer *_customImageLayer;
     struct UIColor *_secondaryColor;
     struct UIColor *_primaryHighlightColor;
+    struct UIColor *_intentPrimaryHighlightColor;
     struct UIColor *_secondaryHighlightColor;
     unsigned int _userIntentEdge;
     long long _colorMode;

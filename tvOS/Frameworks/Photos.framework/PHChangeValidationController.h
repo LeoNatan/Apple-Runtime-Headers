@@ -42,6 +42,10 @@
 @property(readonly, nonatomic) NSOrderedSet *updateRequests; // @synthesize updateRequests=_updateRequests;
 @property(readonly, nonatomic) NSOrderedSet *insertRequests; // @synthesize insertRequests=_insertRequests;
 - (void).cxx_destruct;
+- (_Bool)_promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 additionalAlertParameters:(id)arg5;
+- (_Bool)promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 previewAssetLocalIdentifiers:(id)arg5;
+- (_Bool)promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 renderedContentURLs:(id)arg5;
+- (_Bool)promptForUserConfirmationWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4;
 - (_Bool)validateWithError:(id *)arg1;
 - (_Bool)_validateSimpleDeletionsWithValidators:(id)arg1 requestsByObjectID:(id)arg2 error:(id *)arg3;
 - (_Bool)_recordObjectID:(id)arg1 withSimpleDeleteValidators:(id)arg2;

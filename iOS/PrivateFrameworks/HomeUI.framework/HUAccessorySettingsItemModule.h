@@ -42,6 +42,7 @@
 - (void)_resetIfNeeded;
 - (id)_itemSectionForGroup:(id)arg1 entity:(id)arg2 settingItems:(id)arg3 groupItems:(id)arg4;
 - (id)_itemSectionsForGroupKeyPaths:(id)arg1;
+- (id)_itemSectionsForShowInSeperateSectionItems:(id)arg1;
 - (id)_itemSectionsForParentGroupWithItems;
 - (id)_itemSectionWithEntity:(id)arg1 items:(id)arg2;
 - (void)_unregisterForAccessorySettingsUpdates;

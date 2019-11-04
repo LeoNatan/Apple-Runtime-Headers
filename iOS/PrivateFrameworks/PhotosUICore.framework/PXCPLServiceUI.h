@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotosUICore/PXObservable.h>
 
 @class PXCPLServiceStatus;
 @protocol PXCPLService, PXCPLServiceUIDelegate, PXCPLServiceUIStatus;
 
-@interface PXCPLServiceUI : NSObject
+@interface PXCPLServiceUI : PXObservable
 {
     id <PXCPLService> _cplService;
     struct {
@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) PXCPLServiceStatus *serviceStatus; // @synthesize serviceStatus=_serviceStatus;
 - (void).cxx_destruct;
 - (void)_handleUpdatedServiceStatus:(id)arg1;
-- (void)_serviceUIStatusDidChange:(id)arg1 onlyProgressDidChange:(_Bool)arg2;
+- (void)_serviceUIStatusDidChange:(id)arg1 nonProgressPropertiesDidChange:(_Bool)arg2 progressDidChange:(_Bool)arg3;
 - (void)_performAction:(long long)arg1;
 - (id)initWithCPLService:(id)arg1;
 - (id)init;

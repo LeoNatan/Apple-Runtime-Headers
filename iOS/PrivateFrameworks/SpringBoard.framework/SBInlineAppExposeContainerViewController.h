@@ -11,7 +11,7 @@
 #import <SpringBoard/SBSwitcherContentViewControllerDataSource-Protocol.h>
 #import <SpringBoard/SBSwitcherContentViewControllerDelegate-Protocol.h>
 
-@class BSCornerRadiusConfiguration, MTMaterialView, NSArray, NSString, SBAsymmetricalCornerRadiusWrapperView, SBDeviceApplicationSceneViewController, SBFluidSwitcherViewController, SBInlineAppExposeLiveContentOverlayCoordinator, SBInlineAppExposeRootSwitcherModifier, SBWallpaperEffectView, UIView;
+@class BSCornerRadiusConfiguration, NSArray, NSString, SBAsymmetricalCornerRadiusWrapperView, SBDeviceApplicationSceneViewController, SBFluidSwitcherViewController, SBHomeScreenBackdropViewBase, SBInlineAppExposeLiveContentOverlayCoordinator, SBInlineAppExposeRootSwitcherModifier, SBWallpaperEffectView, UIView;
 @protocol SBInlineAppExposeContainerViewControllerDelegate;
 
 @interface SBInlineAppExposeContainerViewController : UIViewController <SBSwitcherContentViewControllerDelegate, SBSwitcherContentViewControllerDataSource, SBLayoutStateTransitionObserver, SBAppPlatterDragSourceViewProviding>
@@ -24,20 +24,25 @@
     SBInlineAppExposeLiveContentOverlayCoordinator *_liveContentCoordinator;
     SBInlineAppExposeRootSwitcherModifier *_rootModifier;
     SBWallpaperEffectView *_wallpaperEffectView;
-    MTMaterialView *_backdropView;
+    SBHomeScreenBackdropViewBase *_backdropView;
     UIView *_dimmingView;
     struct CGSize _contentReferenceSize;
     long long _contentInterfaceOrientation;
     _Bool _didPerformInitialSetup;
+    _Bool _isRotating;
     _Bool _dragging;
     _Bool _overlay;
+    _Bool _clipsToBounds;
     id <SBInlineAppExposeContainerViewControllerDelegate> _delegate;
     long long _layoutRole;
     BSCornerRadiusConfiguration *_cornerRadiusConfiguration;
+    unsigned long long _maskedCorners;
     SBDeviceApplicationSceneViewController *_deviceApplicationSceneViewController;
 }
 
 @property(retain, nonatomic) SBDeviceApplicationSceneViewController *deviceApplicationSceneViewController; // @synthesize deviceApplicationSceneViewController=_deviceApplicationSceneViewController;
+@property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
+@property(nonatomic) unsigned long long maskedCorners; // @synthesize maskedCorners=_maskedCorners;
 @property(retain, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration; // @synthesize cornerRadiusConfiguration=_cornerRadiusConfiguration;
 @property(nonatomic, getter=isOverlay) _Bool overlay; // @synthesize overlay=_overlay;
 @property(nonatomic) long long layoutRole; // @synthesize layoutRole=_layoutRole;
@@ -51,6 +56,8 @@
 - (id)_unfilteredAppLayoutsForBundleID:(id)arg1;
 - (id)_inlineDisplayItemInLayoutState:(id)arg1;
 - (id)_newInlineDisplayItemFromSceneHandle:(id)arg1;
+- (void)_insertAppLayout:(id)arg1 atIndex:(unsigned long long)arg2 animated:(_Bool)arg3 modelMutation:(CDUnknownBlockType)arg4;
+- (void)_updateContentViewControllerFrame;
 - (id)containerViewForBlurContentView;
 - (id)initialRimShadowFilters;
 - (id)initialDiffuseShadowFilters;
@@ -58,6 +65,7 @@
 - (struct SBDragPreviewShadowParameters)initialDiffuseShadowParameters;
 - (id)initialCornerRadiusConfiguration;
 - (id)sourceView;
+- (_Bool)switcherContentControllerReloadsSnapshotsForActiveInterfaceOrientationChange:(id)arg1;
 - (_Bool)switcherContentController:(id)arg1 shouldMorphToPiPForTransitionContext:(id)arg2;
 - (id)switcherContentController:(id)arg1 transitionEventForContext:(id)arg2 identifier:(id)arg3 phase:(unsigned long long)arg4 animated:(_Bool)arg5;
 - (id)switcherContentController:(id)arg1 transitionEventForLayoutState:(id)arg2 identifier:(id)arg3 phase:(unsigned long long)arg4 animated:(_Bool)arg5;
@@ -69,6 +77,7 @@
 - (long long)backdropInterfaceStyleForContentController:(id)arg1;
 - (void)switcherContentController:(id)arg1 setContainerStatusBarHidden:(_Bool)arg2 animationDuration:(double)arg3;
 - (void)switcherContentController:(id)arg1 setDimmingAlpha:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)switcherContentController:(id)arg1 setBackdropBlurProgress:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)switcherContentController:(id)arg1 setBackdropBlurType:(long long)arg2;
 - (void)switcherContentController:(id)arg1 handlePlusButtonActionForBundleIdentifier:(id)arg2;
 - (void)switcherContentController:(id)arg1 deletedAppLayout:(id)arg2 forReason:(long long)arg3;
@@ -77,6 +86,7 @@
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
+- (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (id)animationControllerForTransitionRequest:(id)arg1;
 - (void)setContentReferenceSize:(struct CGSize)arg1 withInterfaceOrientation:(long long)arg2;

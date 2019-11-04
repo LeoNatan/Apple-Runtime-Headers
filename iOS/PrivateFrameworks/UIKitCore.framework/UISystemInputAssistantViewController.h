@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_beginObservingInputAssistantItemForRelevantItemChanges:(id)arg1;
 - (void)_didReceiveTextEffectsRotationNotification:(id)arg1;
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_registerForAssistantViewNotifications;
 - (_Bool)_shouldShowExpandableButtonBarItemsForResponder:(id)arg1;
@@ -57,11 +58,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TUISystemInputAssistantView *systemInputAssistantView;
 - (void)updateCenterViewVisibilityStateForInputDelegate:(id)arg1;
 - (void)automaticallySetCenterViewControllerBasedOnInputDelegate:(id)arg1;
+- (void)_collapseBarItems;
 - (void)_expandBarItems;
 - (void)_showCandidates;
+- (_Bool)layoutHasBuiltinAssistantView;
 - (_Bool)shouldBeShownForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (_Bool)_centerPredictionViewVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (_Bool)_assistantItemsVisibleForResponder:(id)arg1;
+- (_Bool)_isAssistantPreferenceEnabled;
 - (id)_currentInputDelegate;
 - (id)_inputDelegateAsResponder:(id)arg1;
 - (void)viewDidLoad;

@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)_adjustForKeyboardInfo:(id)arg1;
 - (void)_stopObservingKeyboardNotifications;
 - (void)_observeKeyboardNotificationsOnScreen:(id)arg1;
+@property(readonly, nonatomic) NSArray *uncachedPossibleStates;
 - (void)animateToRequest:(id)arg1;
 - (_Bool)isTrailingViewControllerVisibleAfterAnimation;
 - (_Bool)isLeadingViewControllerVisibleAfterAnimation;
@@ -122,6 +123,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *leadingViewController;
 - (void)setMainViewController:(id)arg1 changingParentage:(_Bool)arg2;
 @property(retain, nonatomic) UIViewController *mainViewController;
+- (_Bool)shouldRunOurRotationAlongSideAnimationBeforeClientAlongSideAnimation;
 - (void)dealloc;
 - (id)initWithOwningViewController:(id)arg1;
 

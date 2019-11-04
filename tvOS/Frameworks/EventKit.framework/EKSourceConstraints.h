@@ -9,10 +9,8 @@
 @interface EKSourceConstraints : NSObject
 {
     CDStruct_6a9d2bb3 _flags;
-    _Bool _eventAvalabilityLimited;
 }
 
-@property(nonatomic) _Bool eventAvalabilityLimited; // @synthesize eventAvalabilityLimited=_eventAvalabilityLimited;
 @property(nonatomic) _Bool supportsRecurrenceSplit;
 @property(nonatomic) _Bool supportsDelegateEnumeration;
 @property(nonatomic) _Bool supportsDelegation;
@@ -58,7 +56,7 @@
 @property(nonatomic) _Bool shouldDeclineDeletedInvitations;
 @property(nonatomic) _Bool shouldCancelDeletedEvents;
 @property(nonatomic) _Bool requiresMSFormattedUID;
-- (_Bool)eventAvailabilityLimited;
+@property(nonatomic) _Bool eventAvailabilityLimited;
 @property(nonatomic) _Bool canSetAvailability;
 @property(nonatomic) _Bool mustAcknowledgeMasterEvent;
 @property(nonatomic) _Bool requiresAttendeeSearchInSingleAccount;

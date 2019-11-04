@@ -41,6 +41,14 @@
 - (_Bool)isAccessory;
 - (_Bool)magicPairedDeviceNameUpdated;
 - (int)accessorySettingFeatureBitMask;
+- (_Bool)setClickHoldMode:(int)arg1 rightMode:(int)arg2;
+- (unsigned int)clickHoldMode:(int *)arg1 rightAction:(int *)arg2;
+- (_Bool)setDoubleClickMode:(int)arg1;
+- (int)doubleClickMode;
+- (_Bool)setSingleClickMode:(int)arg1;
+- (int)singleClickMode;
+- (_Bool)setListeningModeConfigs:(unsigned int)arg1;
+- (unsigned int)listeningModeConfigs;
 - (_Bool)setListeningMode:(unsigned int)arg1;
 - (unsigned int)listeningMode;
 - (_Bool)setDoubleTapActionEx:(unsigned int)arg1 rightAction:(unsigned int)arg2;
@@ -51,6 +59,8 @@
 - (unsigned int)doubleTapAction;
 - (_Bool)setMicMode:(unsigned int)arg1;
 - (unsigned int)micMode;
+- (unsigned int)SendSetupCommand:(unsigned char)arg1;
+- (_Bool)inEarStatusPrimary:(int *)arg1 secondary:(int *)arg2;
 - (_Bool)setInEarDetectEnabled:(_Bool)arg1;
 - (_Bool)inEarDetectEnabled;
 - (int)batteryLevel;

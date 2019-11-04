@@ -11,7 +11,9 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (id)performValidation;
 - (_Bool)isAffectedByEndEvents;
+- (id)createNewAction;
 - (id)commitItem;
 
 @end

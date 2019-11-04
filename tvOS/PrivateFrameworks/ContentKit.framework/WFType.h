@@ -21,10 +21,12 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *typeDescription;
-@property(readonly, nonatomic) NSString *string;
+@property(readonly, copy, nonatomic) NSString *string;
 - (_Bool)isEqualToClass:(Class)arg1;
 - (_Bool)isEqualToUTType:(const struct __CFString *)arg1;
 - (_Bool)isEqualToType:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (_Bool)conformsToClass:(Class)arg1;
 - (_Bool)conformsToUTType:(const struct __CFString *)arg1;
 - (_Bool)conformsToTypes:(id)arg1;

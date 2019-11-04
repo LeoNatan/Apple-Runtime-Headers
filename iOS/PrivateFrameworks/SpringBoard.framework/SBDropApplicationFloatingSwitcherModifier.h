@@ -15,9 +15,10 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (double)opacityForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (id)transitionWillBegin;

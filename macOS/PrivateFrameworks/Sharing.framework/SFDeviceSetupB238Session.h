@@ -93,6 +93,7 @@
     int _personalRequestsChoice;
     BOOL _siriForEveryoneAnswered;
     int _siriForEveryoneState;
+    int _siriDataSharing;
     int _termsState;
     BOOL _termsAgreed;
     int _shareSettingsState;
@@ -106,6 +107,8 @@
     SFDeviceOperationWiFiSetup *_wifiSetupOperation;
     int _wifiSetupState;
     double _wifiSetupSecs;
+    double _wifiSetupStepSecs;
+    double _wifiBonjourTestSecs;
     BOOL _cdpEnabled;
     SFDeviceOperationCDPSetup *_cdpSetupOperation;
     double _cdpSetupSecs;
@@ -189,6 +192,7 @@
 - (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)_setupAudio;
 - (void)_reportError:(id)arg1 label:(id)arg2;
+- (BOOL)_recognizeVoiceAlreadyEnabled;
 - (void)_promptForPINWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
 - (void)_playLocalSoundID:(int)arg1 remoteSoundID:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_playLocalSoundID:(int)arg1 remoteSoundID:(int)arg2;
@@ -225,6 +229,11 @@
 - (int)_runTerms;
 - (int)_runSiriForEveryone;
 - (int)_runPersonalRequests;
+- (void)_runRecognizeVoiceCheckVoiceProfileResponse:(BOOL)arg1 error:(id)arg2;
+- (void)_runRecognizeVoiceCheckVoiceProfileStart;
+- (void)_runRecognizeVoiceCheckLanguageResponse:(id)arg1 error:(id)arg2;
+- (void)_runRecognizeVoiceCheckLanguageStart;
+- (int)_runRecognizeVoice;
 - (int)_runSiriLanguage;
 - (int)_runCheckAccount;
 - (void)_runPreAuthResponse:(id)arg1 error:(id)arg2;
@@ -248,6 +257,7 @@
 - (void)skipAudioPasscode;
 - (void)siriLanguagePicked:(long long)arg1;
 - (void)siriForEveryoneAnswered;
+@property(readonly, nonatomic) BOOL siriDataSharingEnabled;
 - (void)siriEnable;
 - (void)shareSettingsAgreed;
 @property(readonly, nonatomic) NSString *selectedSiriLanguage;

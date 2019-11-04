@@ -16,6 +16,7 @@
 - (void)invalidate;
 - (void)registerWithCompletionHandler:(void (^)(void))arg1;
 - (void)updateConversationWithUUID:(NSUUID *)arg1 participantPresentationContexts:(NSArray *)arg2;
+- (void)setDownlinkMuted:(_Bool)arg1 forRemoteParticipantsInConversation:(TUConversation *)arg2;
 - (void)buzzMember:(TUConversationMember *)arg1 conversation:(TUConversation *)arg2;
 - (void)addRemoteMembers:(NSSet *)arg1 toConversation:(TUConversation *)arg2;
 @end

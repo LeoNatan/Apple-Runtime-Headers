@@ -11,6 +11,7 @@
 - (void)notifyAutenticationDialogCompleteForPurchaseID:(NSNumber *)arg1 result:(int)arg2 checkboxChecked:(_Bool)arg3 withResultHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)startPurchase:(ASDPurchase *)arg1 withReplyHandler:(void (^)(ASDPurchaseResult *, NSError *))arg2;
 - (void)processPurchase:(ASDPurchase *)arg1 withReplyHandler:(void (^)(ASDPurchaseResponse *, NSError *))arg2;
+- (void)checkStoreQueue:(int)arg1;
 - (void)adoptableBundleIdentifiersWithReplyHandler:(void (^)(NSArray *))arg1;
 - (void)adopt:(NSArray *)arg1 withReplyHandler:(void (^)(NSError *))arg2;
 @end

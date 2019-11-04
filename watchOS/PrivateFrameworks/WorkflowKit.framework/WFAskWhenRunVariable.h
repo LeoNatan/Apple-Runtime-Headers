@@ -14,6 +14,7 @@
 - (_Bool)supportsAggrandizements;
 - (_Bool)isAvailable;
 - (id)name;
+- (id)icon;
 - (void)retrieveContentCollectionWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 

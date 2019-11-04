@@ -12,14 +12,16 @@
 
 @interface ICInlineDrawingTextAttachment : ICBaseTextAttachment <PKTextAttachment>
 {
+    _Bool _isHandlingDrawingDidChange;
     ICInlineDrawingChangeCoalescer *_changeCoalescer;
     NSHashTable *_inlineDrawingViews;
 }
 
+@property(nonatomic) _Bool isHandlingDrawingDidChange; // @synthesize isHandlingDrawingDidChange=_isHandlingDrawingDidChange;
 @property(retain, nonatomic) NSHashTable *inlineDrawingViews; // @synthesize inlineDrawingViews=_inlineDrawingViews;
 @property(retain, nonatomic) ICInlineDrawingChangeCoalescer *changeCoalescer; // @synthesize changeCoalescer=_changeCoalescer;
 - (void).cxx_destruct;
-- (void)drawingDataDidChange:(id)arg1;
+- (void)drawingDataDidChange:(id)arg1 view:(id)arg2;
 - (void)resetZoom;
 - (struct UIImage *)_image;
 - (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;

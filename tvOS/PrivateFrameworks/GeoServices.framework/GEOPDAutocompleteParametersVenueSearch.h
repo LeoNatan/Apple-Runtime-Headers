@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersVenueSearch : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     unsigned long long _buildingId;
     NSMutableArray *_categorys;
@@ -23,6 +22,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _sectionId;
     unsigned long long _venueId;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxResults;
     _Bool _highlightDiff;
     struct {
@@ -89,6 +91,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
 - (void)_readQuery;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

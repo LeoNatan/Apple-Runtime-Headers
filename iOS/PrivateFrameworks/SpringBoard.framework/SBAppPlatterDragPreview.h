@@ -10,7 +10,6 @@
 #import <SpringBoard/SBIconDragPreview-Protocol.h>
 
 @class BSCornerRadiusConfiguration, NSArray, NSString, SBApplicationBlurContentView, SBFView, SBIcon, SBIconView, SBPortalView;
-@protocol SBAppPlatterDragSourceViewProviding;
 
 @interface SBAppPlatterDragPreview : UIView <SBIconDragPreview, BSDescriptionProviding>
 {
@@ -19,14 +18,12 @@
     unsigned long long _platterViewAlphaAnimationCount;
     _Bool _flocked;
     _Bool _iconAllowsLabelArea;
-    _Bool _ignoresSourceViewForPlatter;
     _Bool _iconCanShowCloseBox;
     _Bool _iconIsHighlighted;
     unsigned long long _dragState;
     double _iconContentScale;
     unsigned long long _mode;
     CDUnknownBlockType _cleanUpHandler;
-    id <SBAppPlatterDragSourceViewProviding> _sourceViewProvider;
     UIView *_sourceView;
     SBApplicationBlurContentView *_platterView;
     CDUnknownBlockType _platterViewAlphaAnimationCompletionBlock;
@@ -40,6 +37,7 @@
     UIView *_iconContainerView;
     UIView *_cornerMaskingView;
     SBPortalView *_sourcePortalView;
+    UIView *_unclippedSourceContainerView;
     SBFView *_diffuseShadowView;
     SBFView *_rimShadowView;
     struct CGSize _platterSize;
@@ -50,6 +48,7 @@
 
 @property(retain, nonatomic) SBFView *rimShadowView; // @synthesize rimShadowView=_rimShadowView;
 @property(retain, nonatomic) SBFView *diffuseShadowView; // @synthesize diffuseShadowView=_diffuseShadowView;
+@property(retain, nonatomic) UIView *unclippedSourceContainerView; // @synthesize unclippedSourceContainerView=_unclippedSourceContainerView;
 @property(retain, nonatomic) SBPortalView *sourcePortalView; // @synthesize sourcePortalView=_sourcePortalView;
 @property(retain, nonatomic) UIView *cornerMaskingView; // @synthesize cornerMaskingView=_cornerMaskingView;
 @property(retain, nonatomic) UIView *iconContainerView; // @synthesize iconContainerView=_iconContainerView;
@@ -69,9 +68,7 @@
 @property(copy, nonatomic) CDUnknownBlockType platterViewAlphaAnimationCompletionBlock; // @synthesize platterViewAlphaAnimationCompletionBlock=_platterViewAlphaAnimationCompletionBlock;
 @property(retain, nonatomic) SBApplicationBlurContentView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
-@property(retain, nonatomic) id <SBAppPlatterDragSourceViewProviding> sourceViewProvider; // @synthesize sourceViewProvider=_sourceViewProvider;
 @property(copy, nonatomic) CDUnknownBlockType cleanUpHandler; // @synthesize cleanUpHandler=_cleanUpHandler;
-@property(nonatomic) _Bool ignoresSourceViewForPlatter; // @synthesize ignoresSourceViewForPlatter=_ignoresSourceViewForPlatter;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) double iconContentScale; // @synthesize iconContentScale=_iconContentScale;
 @property(nonatomic) _Bool iconAllowsLabelArea; // @synthesize iconAllowsLabelArea=_iconAllowsLabelArea;
@@ -110,8 +107,9 @@
 - (void)configurePlatterForSceneHandle:(id)arg1 withTargetView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic, getter=isAnimatingPlatterViewAlpha) _Bool animatingPlatterViewAlpha;
 - (void)invalidateSourceView;
-- (void)updateSourceViewProvider:(id)arg1;
-- (id)initWithReferenceIconView:(id)arg1 sourceViewProvider:(id)arg2;
+- (void)updateSourceView:(id)arg1;
+- (void)_matchMoveView:(id)arg1 toContainerView:(id)arg2;
+- (id)initWithReferenceIconView:(id)arg1 sourceView:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

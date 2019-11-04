@@ -60,6 +60,7 @@
 - (void).cxx_destruct;
 - (id)_graphBackgroundColor;
 - (id)_cardBackgroundColor;
+- (id)_chevronColor;
 - (id)_cardHeaderColor;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;
 - (_Bool)_isLayingOutForAccessibility;

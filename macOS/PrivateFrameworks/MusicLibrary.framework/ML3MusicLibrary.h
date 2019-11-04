@@ -53,8 +53,6 @@
 + (id)localizedSectionIndexTitleForSectionHeader:(id)arg1;
 + (id)localizedSectionHeaderForSectionHeader:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (void)setCompanionDeviceActiveStoreAccountSubscriber:(BOOL)arg1;
-+ (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
 + (BOOL)deviceSupportsMultipleLibraries;
 + (void)enableAutomaticDatabaseValidation;
 + (void)disableAutomaticDatabaseValidation;

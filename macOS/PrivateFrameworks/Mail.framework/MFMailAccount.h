@@ -12,7 +12,7 @@
 #import <Mail/MFMessageDelivererDelegate-Protocol.h>
 #import <Mail/NSFileManagerDelegate-Protocol.h>
 
-@class ACAccount, ECAuthScheme, MCTaskManager, MFDeliveryAccount, MFMailbox, NSArray, NSError, NSNumber, NSObject, NSOperationQueue, NSString, NSURL;
+@class ACAccount, ECAuthScheme, MCTaskManager, MFDeliveryAccount, MFMailbox, NSArray, NSDate, NSError, NSNumber, NSObject, NSOperationQueue, NSString, NSURL;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface MFMailAccount : MFAccount <EDReceivingAccount, MCActivityTarget, MCMailAccount, MFMessageDelivererDelegate, NSFileManagerDelegate>
@@ -338,6 +338,7 @@
 @property BOOL configureDynamically;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSDate *expiryDate;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *identifier;
@@ -349,6 +350,7 @@
 @property(readonly, copy) NSString *oneTimePassword;
 @property(copy) NSString *password;
 @property(retain) ECAuthScheme *preferredAuthScheme;
+@property(readonly) BOOL primaryiCloudAccount;
 @property(readonly, nonatomic) BOOL requiresAuthentication;
 @property(readonly, copy, nonatomic) NSString *saslProfileName;
 @property long long securityLayerType;

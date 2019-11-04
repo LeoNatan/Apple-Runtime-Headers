@@ -6,37 +6,38 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, NSMutableOrderedSet, NSOrderedSet, NSString;
+@class NSArray, NSString;
 @protocol WFTriggerTableViewControllerDelegate;
 
 @interface WFTriggerTableViewController : UITableViewController
 {
-    _Bool _anyOption;
+    _Bool _anyOptionSelected;
     id <WFTriggerTableViewControllerDelegate> _delegate;
-    NSOrderedSet *_allOptions;
-    NSMutableOrderedSet *_selectedOptions;
     NSArray *_sections;
+    NSArray *_options;
     NSString *_nameOfAnyOption;
+    NSString *_mainSectionTitle;
 }
 
+@property(readonly, copy, nonatomic) NSString *mainSectionTitle; // @synthesize mainSectionTitle=_mainSectionTitle;
 @property(readonly, copy, nonatomic) NSString *nameOfAnyOption; // @synthesize nameOfAnyOption=_nameOfAnyOption;
-@property(nonatomic) _Bool anyOption; // @synthesize anyOption=_anyOption;
+@property(nonatomic) _Bool anyOptionSelected; // @synthesize anyOptionSelected=_anyOptionSelected;
+@property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-@property(retain, nonatomic) NSMutableOrderedSet *selectedOptions; // @synthesize selectedOptions=_selectedOptions;
-@property(retain, nonatomic) NSOrderedSet *allOptions; // @synthesize allOptions=_allOptions;
 @property(nonatomic) __weak id <WFTriggerTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)updateDoneButtonEnabledState;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)infoForSection:(long long)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithOptions:(id)arg1 selectedOptions:(id)arg2 nameOfAnyOption:(id)arg3;
+- (id)initWithOptions:(id)arg1 anySelected:(_Bool)arg2 nameOfAnyOption:(id)arg3 mainSectionTitle:(id)arg4;
 
 @end
 

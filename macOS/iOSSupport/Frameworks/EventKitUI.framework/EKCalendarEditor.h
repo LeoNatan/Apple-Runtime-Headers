@@ -52,6 +52,7 @@
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)_presentValidationAlert:(id)arg1;
+- (BOOL)isModalInPresentation;
 - (id)_editItems;
 - (void)setupForCalendar;
 - (void)traitCollectionDidChange:(id)arg1;

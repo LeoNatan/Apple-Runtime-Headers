@@ -14,7 +14,9 @@
 {
 }
 
-- (void)handleContactChangeEvent:(id)arg1 forAKnownContact:(_Bool)arg2;
+- (void)postNotificationForCNContact:(id)arg1 eventType:(unsigned int)arg2 handleIDsToProcess:(id)arg3;
+- (void)processChangeEventForContact:(id)arg1 contactFromCache:(id)arg2 eventType:(unsigned int)arg3 handleID:(id)arg4;
+- (void)processContactChangeEventForContact:(id)arg1 ofEventType:(unsigned int)arg2;
 - (void)visitUpdateContactEvent:(id)arg1;
 - (void)visitDeleteContactEvent:(id)arg1;
 - (void)visitAddContactEvent:(id)arg1;

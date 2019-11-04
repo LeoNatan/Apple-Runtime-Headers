@@ -35,6 +35,7 @@
 - (void)_drawRangeBackgroundInContext:(struct CGContext *)arg1 coordinate:(id)arg2 width:(float)arg3 symbolType:(int)arg4 symbolColor:(id)arg5 fillColor:(id)arg6;
 - (void)_drawRangeDotsInContext:(struct CGContext *)arg1 coordinate:(id)arg2 width:(float)arg3 symbolType:(int)arg4 symbolColor:(id)arg5 fillColor:(id)arg6;
 - (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect)arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform)arg4 renderContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
+- (void)clearCaches;
 
 @end
 

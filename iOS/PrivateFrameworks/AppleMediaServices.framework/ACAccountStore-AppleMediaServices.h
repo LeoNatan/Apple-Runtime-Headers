@@ -18,6 +18,7 @@
 - (id)ams_iTunesAccountWithHomeUserID:(id)arg1;
 - (id)ams_iTunesAccountWithHomeID:(id)arg1;
 - (id)ams_iTunesAccountsWithHomeUserID;
+- (id)ams_iTunesAccountForHomeWithIdentifier:(id)arg1;
 - (id)_storeClientIdentifier;
 - (id)_saveAccount:(id)arg1 verifyCredentials:(_Bool)arg2;
 - (_Bool)_isAccountNew:(id)arg1;
@@ -42,7 +43,7 @@
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1;
-- (id)ams_iTunesAccountForHomeWithIdentifier:(id)arg1;
+- (id)ams_iTunesAccountForHomeWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)ams_iTunesAccountForAccount:(id)arg1;
 - (id)ams_IDSAccountForAccount:(id)arg1;
 - (id)ams_IDMSAccountForAccount:(id)arg1;

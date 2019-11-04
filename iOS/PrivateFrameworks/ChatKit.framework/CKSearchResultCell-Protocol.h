@@ -10,6 +10,7 @@
 
 @protocol CKSearchResultCell <NSObject>
 + (NSString *)reuseIdentifier;
+@property(nonatomic, getter=isEditing) _Bool editing;
 @property(nonatomic) struct UIEdgeInsets marginInsets;
 - (void)refreshForSearchTextIfNeeded:(NSString *)arg1;
 - (void)configureWithQueryResult:(CKSpotlightQueryResult *)arg1 searchText:(NSString *)arg2 mode:(unsigned long long)arg3;

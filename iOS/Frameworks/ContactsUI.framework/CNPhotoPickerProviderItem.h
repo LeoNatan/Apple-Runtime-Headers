@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)contactImageForMetadataStore;
+@property(readonly, nonatomic) unsigned long long imageType;
 - (id)rotateImageDataIfNeeded:(id)arg1;
 - (id)generatePhotoFilterVariants;
 - (id)createVariantsItemsWithVariantsManager:(id)arg1;
@@ -64,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (id)generateThumbnailImageDataIfNeeded;
 - (void)generateAllImageDatasIfNeeded;
 @property(readonly, nonatomic) NSData *originalImageData;
+@property(readonly, nonatomic) NSString *variantIdentifier;
 @property(readonly, nonatomic) NSString *localizedVariantsTitle;
 @property(readonly, nonatomic) _Bool allowsEditing;
 @property(readonly, nonatomic) _Bool shouldShowCaption;

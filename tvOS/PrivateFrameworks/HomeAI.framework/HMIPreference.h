@@ -7,22 +7,29 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeAI/HMFLogging-Protocol.h>
+#import <HomeAI/HMFTimerDelegate-Protocol.h>
 
-@class HMFUnfairLock, NSDictionary, NSMutableDictionary, NSString;
+@class HMFTimer, HMFUnfairLock, NSDictionary, NSMutableDictionary, NSString;
 
-@interface HMIPreference : HMFObject <HMFLogging>
+@interface HMIPreference : HMFObject <HMFTimerDelegate, HMFLogging>
 {
     HMFUnfairLock *_lock;
+    HMFTimer *_preferenceCacheFlushTimer;
+    NSMutableDictionary *_preferenceCache;
     NSMutableDictionary *_preferenceLoggedValues;
     NSMutableDictionary *_preferenceOverridesInternal;
 }
 
 + (id)logCategory;
-+ (_Bool)isProductTypeJ105A;
++ (_Bool)isProductTypeB238;
++ (_Bool)isProductTypeJ105;
++ (_Bool)isProductTypeJ42;
 + (id)qosMap;
 + (id)sharedInstance;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceOverridesInternal; // @synthesize preferenceOverridesInternal=_preferenceOverridesInternal;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceLoggedValues; // @synthesize preferenceLoggedValues=_preferenceLoggedValues;
+@property(readonly, nonatomic) NSMutableDictionary *preferenceCache; // @synthesize preferenceCache=_preferenceCache;
+@property(readonly) HMFTimer *preferenceCacheFlushTimer; // @synthesize preferenceCacheFlushTimer=_preferenceCacheFlushTimer;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
 - (id)stringPreferenceForKey:(id)arg1 defaultValue:(id)arg2;
@@ -36,8 +43,10 @@
 - (id)systemPreferenceValueForKey:(id)arg1;
 - (void)logPreferenceForKey:(id)arg1 value:(id)arg2;
 - (void)removeAllPreferenceOverrides;
+- (void)setPreferenceOverrideFromDictionary:(id)arg1;
 - (void)addPreferenceOverrideFromDictionary:(id)arg1;
 @property(readonly) NSDictionary *preferenceOverrides;
+- (void)timerDidFire:(id)arg1;
 - (id)init;
 @property(readonly) _Bool usesCPUOnly;
 

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface AVBackdropView : AVView
 {
     NSArray *_temporaryArrangedSubviews;
+    _Bool _prefersLowQualityEffects;
     _Bool _disablesAutoLayout;
     long long _axis;
     unsigned long long _shapeStyle;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *secondaryMaterialOverlayViewConstraints; // @synthesize secondaryMaterialOverlayViewConstraints=_secondaryMaterialOverlayViewConstraints;
 @property(retain, nonatomic) UIVisualEffectView *secondaryMaterialOverlayView; // @synthesize secondaryMaterialOverlayView=_secondaryMaterialOverlayView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
+@property(nonatomic) _Bool prefersLowQualityEffects; // @synthesize prefersLowQualityEffects=_prefersLowQualityEffects;
 @property(retain, nonatomic) UIView *targetViewForSecondaryMaterialOverlay; // @synthesize targetViewForSecondaryMaterialOverlay=_targetViewForSecondaryMaterialOverlay;
 @property(nonatomic) unsigned long long shapeStyle; // @synthesize shapeStyle=_shapeStyle;
 @property(readonly, nonatomic) long long axis; // @synthesize axis=_axis;

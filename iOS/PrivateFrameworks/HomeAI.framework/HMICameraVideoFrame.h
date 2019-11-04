@@ -9,25 +9,23 @@
 #import <HomeAI/HMFLogging-Protocol.h>
 #import <HomeAI/NSSecureCoding-Protocol.h>
 
-@class HMICameraVideoFrameMotionAnalysisResult, NSData, NSString;
+@class NSArray, NSData, NSString;
 
 @interface HMICameraVideoFrame : HMFObject <NSSecureCoding, HMFLogging>
 {
     unsigned long long _frameId;
     unsigned long long _fragmentSequenceNumber;
     struct __CVBuffer *_pixelBuffer;
-    struct __CVBuffer *_regionOfInterestPixelBuffer;
     NSData *_jpegData;
-    HMICameraVideoFrameMotionAnalysisResult *_motionResult;
+    NSArray *_motionDetections;
     struct CGSize _size;
     CDStruct_1b6d18a9 _presentationTime;
 }
 
 + (id)logCategory;
 + (_Bool)supportsSecureCoding;
-@property(retain) HMICameraVideoFrameMotionAnalysisResult *motionResult; // @synthesize motionResult=_motionResult;
+@property(retain) NSArray *motionDetections; // @synthesize motionDetections=_motionDetections;
 @property(readonly) NSData *jpegData; // @synthesize jpegData=_jpegData;
-@property(readonly) struct __CVBuffer *regionOfInterestPixelBuffer; // @synthesize regionOfInterestPixelBuffer=_regionOfInterestPixelBuffer;
 @property(readonly) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
 @property(readonly) unsigned long long fragmentSequenceNumber; // @synthesize fragmentSequenceNumber=_fragmentSequenceNumber;
 @property(readonly) unsigned long long frameId; // @synthesize frameId=_frameId;
@@ -36,7 +34,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (_Bool)convertToJPEGAndGenerateRegionOfInterestWithSize:(struct CGSize)arg1 error:(id *)arg2;
+- (_Bool)convertToJPEGWithError:(id *)arg1;
 - (id)JPEGRepresentationWithDownscaleFactor:(float)arg1 outSize:(struct CGSize *)arg2;
 - (id)initWithJPEGData:(id)arg1 presentationTime:(CDStruct_1b6d18a9)arg2 frameId:(unsigned long long)arg3 fragmentSequenceNumber:(unsigned long long)arg4 size:(struct CGSize)arg5;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 presentationTime:(CDStruct_1b6d18a9)arg2 frameId:(unsigned long long)arg3 fragmentSequenceNumber:(unsigned long long)arg4;

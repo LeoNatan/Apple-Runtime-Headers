@@ -11,6 +11,7 @@
 @protocol HMHomeDelegate <NSObject>
 
 @optional
+- (void)homeDidUpdateSupportedFeatures:(HMHome *)arg1;
 - (void)home:(HMHome *)arg1 didUpdateHomeHubState:(unsigned long long)arg2;
 - (void)home:(HMHome *)arg1 didEncounterError:(NSError *)arg2 forAccessory:(HMAccessory *)arg3;
 - (void)home:(HMHome *)arg1 didUnblockAccessory:(HMAccessory *)arg2;

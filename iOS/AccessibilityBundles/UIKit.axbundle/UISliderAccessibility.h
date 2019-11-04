@@ -22,6 +22,7 @@
 - (void)accessibilityIncrement;
 - (double)_accessibilityMaxValue;
 - (double)_accessibilityMinValue;
+- (double)_accessibilityNumberValue;
 - (void)_accessibilityBumpValue:(_Bool)arg1;
 - (void)_accessibilityAnnounceNewValue;
 - (double)_accessibilityIncreaseAmount:(_Bool)arg1;

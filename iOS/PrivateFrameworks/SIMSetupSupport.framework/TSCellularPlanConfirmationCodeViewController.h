@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OnBoardingKit/OBBaseWelcomeController.h>
+#import <UIKitCore/UIViewController.h>
 
 #import <SIMSetupSupport/TSSetupFlowItem-Protocol.h>
 #import <SIMSetupSupport/UITextFieldDelegate-Protocol.h>
@@ -12,7 +12,7 @@
 @class NSLayoutConstraint, NSString, TSCellularPlanTableViewCell, UIBarButtonItem, UILabel, UITableView;
 @protocol TSSIMSetupFlowDelegate;
 
-@interface TSCellularPlanConfirmationCodeViewController : OBBaseWelcomeController <UITextFieldDelegate, TSSetupFlowItem>
+@interface TSCellularPlanConfirmationCodeViewController : UIViewController <UITextFieldDelegate, TSSetupFlowItem>
 {
     TSCellularPlanTableViewCell *_confirmationCodeCell;
     NSString *_fauxCardData;

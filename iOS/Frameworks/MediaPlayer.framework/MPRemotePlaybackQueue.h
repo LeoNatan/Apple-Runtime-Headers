@@ -29,6 +29,7 @@
 @property(nonatomic) _Bool shouldOverrideManuallyCuratedQueue;
 @property(copy, nonatomic) NSString *siriRecommendationIdentifier;
 @property(readonly, copy, nonatomic) NSDictionary *siriWHAMetricsInfo;
+@property(readonly, copy, nonatomic) NSString *featureName;
 @property(readonly, copy, nonatomic) NSString *siriAssetInfo;
 @property(nonatomic, getter=isRequestingImmediatePlayback) _Bool requestingImmediatePlayback;
 - (void)encodeWithCoder:(id)arg1;

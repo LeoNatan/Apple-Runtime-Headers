@@ -19,6 +19,7 @@
     REMChangedKeysObserver *_changedKeysObserver;
 }
 
++ (id)_deduplicateAlarms:(id)arg1;
 + (void)initialize;
 + (int)hourForNextThirdsFromHour:(int)arg1;
 @property(retain, nonatomic) REMChangedKeysObserver *changedKeysObserver; // @synthesize changedKeysObserver=_changedKeysObserver;
@@ -68,7 +69,7 @@
 - (id)shallowCopyWithSaveRequest:(id)arg1;
 - (void)_copyAlarmsInto:(id)arg1;
 - (void)copyInto:(id)arg1;
-- (id)duplicateForRecurrence;
+- (id)duplicateForRecurrenceUsingReminderID:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) REMAccountCapabilities *accountCapabilities; // @dynamic accountCapabilities;
 - (id)initWithReminderChangeItem:(id)arg1 insertIntoParentReminderSubtaskContextChangeItem:(id)arg2;
@@ -108,11 +109,13 @@
 @property(readonly) unsigned int hash;
 @property(retain, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
 @property(readonly, nonatomic) _Bool isOverdue; // @dynamic isOverdue;
+@property(readonly, nonatomic) _Bool isRecurrent; // @dynamic isRecurrent;
 @property(copy, nonatomic) NSDate *lastBannerPresentationDate; // @dynamic lastBannerPresentationDate;
 @property(copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;
 @property(retain, nonatomic) REMObjectID *listID; // @dynamic listID;
 @property(retain, nonatomic) REMCRMergeableStringDocument *notesDocument; // @dynamic notesDocument;
+@property(retain, nonatomic) NSData *notesDocumentData; // @dynamic notesDocumentData;
 @property(retain, nonatomic) REMObjectID *objectID; // @dynamic objectID;
 @property(retain, nonatomic) REMObjectID *parentReminderID; // @dynamic parentReminderID;
 @property(nonatomic) unsigned int priority; // @dynamic priority;
@@ -126,6 +129,7 @@
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSString *timeZone; // @dynamic timeZone;
 @property(retain, nonatomic) REMCRMergeableStringDocument *titleDocument; // @dynamic titleDocument;
+@property(retain, nonatomic) NSData *titleDocumentData; // @dynamic titleDocumentData;
 @property(copy, nonatomic) REMUserActivity *userActivity; // @dynamic userActivity;
 
 @end

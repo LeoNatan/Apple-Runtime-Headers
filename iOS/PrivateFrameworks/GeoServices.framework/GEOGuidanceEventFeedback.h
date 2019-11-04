@@ -13,11 +13,13 @@
 @interface GEOGuidanceEventFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOJunctionViewGuidanceFeedback *_junctionViewGuidanceFeedback;
     NSData *_routeID;
     GEOSignGuidanceFeedback *_signGuidanceFeedback;
     GEOSpokenGuidanceFeedback *_spokenGuidanceFeedback;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     float _distanceToManeuver;
     float _duration;
     unsigned int _enrouteNoticeIndex;
@@ -96,6 +98,8 @@
 @property(retain, nonatomic) NSData *routeID;
 @property(readonly, nonatomic) _Bool hasRouteID;
 - (void)_readRouteID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

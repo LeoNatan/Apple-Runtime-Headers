@@ -11,8 +11,8 @@
 }
 
 - (void)cancelAllTasks;
-- (void)cancelTaskForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)scheduleTask:(CDUnknownBlockType)arg1;
+- (void)cancelTaskForToken:(struct NSString *)arg1;
+- (struct NSString *)scheduleTask:(CDUnknownBlockType)arg1 identifier:(id)arg2;
 
 @end
 

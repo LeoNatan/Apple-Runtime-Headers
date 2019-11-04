@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidateDisplayLinkIfNeeded;
 - (void)createDisplayLinkIfNeeded;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_updateDisplayLinkPause;
 - (void)_updateTimeControl;
@@ -83,6 +84,7 @@ __attribute__((visibility("hidden")))
 - (void)updateLabelAvoidance;
 - (void)_updateLabels:(double)arg1 withRemainingDuration:(double)arg2;
 - (void)_updateLabels:(CDStruct_fce57115)arg1 withTargetTimestamp:(double)arg2;
+- (void)updateSliderConstraint;
 - (void)_updateSliderPosition;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;

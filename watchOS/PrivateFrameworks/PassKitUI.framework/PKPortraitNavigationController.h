@@ -12,6 +12,7 @@
 
 - (unsigned int)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

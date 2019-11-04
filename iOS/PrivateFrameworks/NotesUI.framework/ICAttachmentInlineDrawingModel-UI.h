@@ -20,6 +20,7 @@
 - (void)setTitleQuery:(id)arg1;
 - (id)titleQuery;
 @property(nonatomic, getter=isTitleQueryEnabled) _Bool titleQueryEnabled;
+- (void)setHandwritingRecognitionDrawingQueue:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *handwritingRecognitionDrawingQueue;
 - (void)setHandwritingRecognitionDrawing:(id)arg1;
 @property(readonly, nonatomic) PKDrawing *handwritingRecognitionDrawing;

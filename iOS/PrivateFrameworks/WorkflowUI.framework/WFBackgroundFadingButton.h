@@ -10,15 +10,20 @@
 
 @interface WFBackgroundFadingButton : UIButton
 {
+    _Bool _derivesTitleColorFromTintColor;
+    _Bool _derivesBackgroundColorFromTintColor;
     NSMutableDictionary *_backgroundColorsByState;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
+@property(nonatomic) _Bool derivesBackgroundColorFromTintColor; // @synthesize derivesBackgroundColorFromTintColor=_derivesBackgroundColorFromTintColor;
+@property(nonatomic) _Bool derivesTitleColorFromTintColor; // @synthesize derivesTitleColorFromTintColor=_derivesTitleColorFromTintColor;
 - (void).cxx_destruct;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
-- (void)updateBackgroundColor;
+- (void)updateBackgroundColorAnimated:(_Bool)arg1;
+- (void)tintColorDidChange;
 - (void)setBackgroundColor:(id)arg1 forState:(unsigned long long)arg2;
 
 @end

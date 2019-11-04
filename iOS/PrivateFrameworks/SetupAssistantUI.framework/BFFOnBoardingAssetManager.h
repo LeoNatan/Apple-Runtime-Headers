@@ -27,6 +27,8 @@
 - (void)purgeFeatureMoviesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)movieURLForAsset:(id)arg1;
 - (void)downloadAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)retriveAssetForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)assetQueryForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(_Bool)arg3 useCatalog:(_Bool)arg4;
 - (id)assetTypeForCurrentDevice;
 - (id)assetFeatureValueForFeature:(long long)arg1;
 - (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

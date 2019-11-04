@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)updateImmediateSelectionWithExtentAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
 - (void)updateSelectionWithExtentAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
 - (void)updateSelectionWithExtentPoint:(struct CGPoint)arg1 executionContext:(id)arg2;
+- (void)updateSelectionWithExtentPoint:(struct CGPoint)arg1 andExtentPosition:(id)arg2 executionContext:(id)arg3;
 - (void)updateSelectionWithExtentPosition:(id)arg1 executionContext:(id)arg2;
 - (void)beginSelectionWithBasePositionAtBoundary:(int)arg1 inDirection:(int)arg2 withInitialExtentPoint:(struct CGPoint)arg3 executionContext:(id)arg4;
 - (void)beginSelectionWithBaseAtSelectionBoundaryInDirection:(int)arg1 initialExtentPoint:(struct CGPoint)arg2 executionContext:(id)arg3;
@@ -76,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasRangedSelection;
 @property(readonly, nonatomic) _Bool hasCaretSelection;
 @property(readonly, nonatomic) UIView *textInputView;
+- (struct CGRect)selectedRectInLineWithPoint:(struct CGPoint)arg1;
 - (_Bool)cursorPositionIsContainedByRange:(id)arg1;
 - (void)setSelectedTextRange:(id)arg1;
 - (void)resetCursorPosition;

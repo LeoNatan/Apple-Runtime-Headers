@@ -13,28 +13,29 @@
 + (id)checkVoiceProfileAvailabiltyForLanguage:(id)arg1;
 + (id)processLanguageAndMediaProfileInfo:(id)arg1;
 + (id)createPersonalIdentityDeviceLanguageMismatchList:(id)arg1;
-+ (id)createMultiUserLanguageToHomePodsMapping:(id)arg1;
-+ (id)analyzeHomeAssistantDevicesForSupportedMultiUserLanguages:(id)arg1;
++ (id)home:(id)arg1 createMultiUserLanguageToHomePodsMapping:(id)arg2;
++ (id)analyzeHomeAssistantDevicesForSupportedMultiUserLanguages:(id)arg1 home:(id)arg2;
 + (id)groupedFeaturesForOnboardingFlowKeyPaths:(id)arg1;
-+ (unsigned long long)checkForMultiUserDeviceUpgradeRequirements:(id)arg1;
-+ (unsigned long long)checkForOwnerUpgradeRequirementsFromResults:(id)arg1;
-+ (BOOL)userHasSaidYesToVoiceIdentificationIn:(id)arg1;
++ (unsigned long long)home:(id)arg1 checkForMultiUserDeviceUpgradeRequirements:(id)arg2;
++ (unsigned long long)home:(id)arg1 checkForOwnerUpgradeRequirementsFromResults:(id)arg2;
++ (BOOL)hasUserSaidYesToVoiceIdentificationInResults:(id)arg1;
 + (BOOL)isDeviceUsingASupportedMultiUserSiriLanguage:(id)arg1;
 + (BOOL)_userHasSaidYesToShowTVViewingProfilesIn:(id)arg1;
-+ (id)_checkIdentifyVoicePrerequisites;
-+ (BOOL)_checkIdentifyVoicePrerequisitesSimple;
-+ (id)processHomeFeatureOnboarderResults:(id)arg1;
-+ (BOOL)canShowIdentifyVoiceOnboardingWithUsageOptions:(id)arg1;
-+ (BOOL)currentUserHasUnfinishedFeatureOnboarding;
-+ (BOOL)voiceRecognitionIsSupportedForCurrentUserOnHomePod:(id)arg1;
++ (id)_checkIdentifyVoicePrerequisitesForHome:(id)arg1;
++ (BOOL)_checkIdentifyVoicePrerequisitesSimpleForHome:(id)arg1;
++ (id)home:(id)arg1 processHomeFeatureOnboarderResults:(id)arg2;
++ (BOOL)home:(id)arg1 canShowIdentifyVoiceOnboardingWithUsageOptions:(id)arg2;
++ (BOOL)currentUserHasUnfinishedFeatureOnboardingForHome:(id)arg1;
++ (BOOL)home:(id)arg1 voiceRecognitionIsSupportedForCurrentUserOnHomePod:(id)arg2;
 + (void)presentAlertConfirmingTurningOffPersonalRequestsFrom:(id)arg1;
 + (void)presentAlertConfirmingTurningOfVoiceRecognitionFrom:(id)arg1;
++ (void)fetchSupportedMultiUserLanguagesWithCompletion:(CDUnknownBlockType)arg1;
 + (id)fetchSupportedMultiUserLanguages:(id *)arg1;
-+ (BOOL)homeHasSomeHomePodsOnSupportedMultiUserLanguages:(id)arg1;
-+ (BOOL)atLeastOneHomePodHasLanguageSettings;
-+ (id)onboardFeaturesForKeyPaths:(id)arg1 presentingViewController:(id)arg2 usageOptions:(id)arg3;
-+ (id)onboardAllFeaturesFromPresentingViewController:(id)arg1 usageOptions:(id)arg2;
-+ (id)onboardIdentifyVoiceFromPresentingViewController:(id)arg1 usageOptions:(id)arg2;
++ (BOOL)home:(id)arg1 hasSomeHomePodsOnSupportedMultiUserLanguages:(id)arg2;
++ (BOOL)atLeastOneHomePodHasLanguageSettingsForHome:(id)arg1;
++ (id)home:(id)arg1 onboardFeaturesForKeyPaths:(id)arg2 presentingViewController:(id)arg3 usageOptions:(id)arg4;
++ (id)home:(id)arg1 onboardAllFeaturesFromPresentingViewController:(id)arg2 usageOptions:(id)arg3;
++ (id)home:(id)arg1 onboardIdentifyVoiceFromPresentingViewController:(id)arg2 usageOptions:(id)arg3;
 
 @end
 

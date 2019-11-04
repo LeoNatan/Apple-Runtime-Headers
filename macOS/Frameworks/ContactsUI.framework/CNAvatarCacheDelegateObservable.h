@@ -9,10 +9,12 @@
 #import <ContactsUI/CNAvatarCacheDelegate-Protocol.h>
 
 @class NSMutableArray, NSString;
+@protocol CNUIPRLikenessProvider;
 
 @interface CNAvatarCacheDelegateObservable : CNObservable <CNAvatarCacheDelegate>
 {
     NSMutableArray *_observers;
+    id <CNUIPRLikenessProvider> _latestLikeness;
 }
 
 - (void).cxx_destruct;

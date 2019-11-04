@@ -21,7 +21,6 @@
 - (void)interfaceViewControllerPurgeAndRecreate:(SPInterfaceViewController *)arg1;
 - (void)interfaceDidEndScrollingAnimation:(SPInterfaceViewController *)arg1;
 - (Class)rootGroupClass;
-- (void)appWithRootInterfaceViewController:(SPInterfaceViewController *)arg1 performActionWithItemID:(NSString *)arg2 forNotificationID:(NSString *)arg3 userInfo:(NSDictionary *)arg4 completionHandler:(void (^)(void))arg5;
 - (void)interfaceViewControllerDidUpdateInterfaceValues:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidHideDisconnectedView:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidShowDisconnectedView:(SPInterfaceViewController *)arg1;

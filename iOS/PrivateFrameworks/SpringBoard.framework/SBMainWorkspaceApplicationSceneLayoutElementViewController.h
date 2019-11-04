@@ -7,38 +7,43 @@
 #import <SpringBoard/SBAppContainerViewController.h>
 
 #import <SpringBoard/SBDeviceApplicationSceneHandleObserver-Protocol.h>
+#import <SpringBoard/SBInlineAppExposeContainerViewControllerDelegate-Protocol.h>
+#import <SpringBoard/SBMainDisplaySceneLayoutElementViewControlling-Protocol.h>
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling-Protocol.h>
 #import <SpringBoard/SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSMutableSet, NSString, SBHomeGrabberView, SBInlineAppExposeContainerViewController, SBSceneHandle, UIDropInteraction, UIView;
+@class BSCornerRadiusConfiguration, NSMutableSet, NSString, SBHomeGrabberView, SBInlineAppExposeContainerViewController, SBSceneHandle, SBSceneViewStatusBarAssertion, UIDropInteraction, UIView;
 @protocol SBApplicationSceneViewControllingStatusBarDelegate, SBScenePlaceholderContentContext;
 
-@interface SBMainWorkspaceApplicationSceneLayoutElementViewController : SBAppContainerViewController <SBDeviceApplicationSceneHandleObserver, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
+@interface SBMainWorkspaceApplicationSceneLayoutElementViewController : SBAppContainerViewController <SBDeviceApplicationSceneHandleObserver, SBInlineAppExposeContainerViewControllerDelegate, SBMedusaDecoratedDeviceApplicationSceneViewControlling_Internal, SBMainDisplaySceneLayoutElementViewControlling, SBMedusaDecoratedDeviceApplicationSceneViewControlling>
 {
     _Bool _nubViewHidden;
     _Bool _nubViewHighlighted;
     NSMutableSet *_maskDisplayCornersReasons;
     _Bool _clipsToBounds;
-    double _shadowOpacity;
-    double _shadowOffset;
-    BSCornerRadiusConfiguration *_cornerRadiusConfiguration;
     double _darkenViewAlpha;
     UIDropInteraction *_dropInteraction;
+    BSCornerRadiusConfiguration *_cornerRadiusConfiguration;
+    double _shadowOpacity;
+    double _shadowOffset;
+    SBSceneViewStatusBarAssertion *_inlineAppExposeContainerStatusBarAssertion;
     SBInlineAppExposeContainerViewController *_inlineAppExposeContainerOverlayViewController;
 }
 
 @property(readonly, nonatomic) SBInlineAppExposeContainerViewController *inlineAppExposeContainerOverlayViewController; // @synthesize inlineAppExposeContainerOverlayViewController=_inlineAppExposeContainerOverlayViewController;
+@property(retain, nonatomic) SBSceneViewStatusBarAssertion *inlineAppExposeContainerStatusBarAssertion; // @synthesize inlineAppExposeContainerStatusBarAssertion=_inlineAppExposeContainerStatusBarAssertion;
+@property(nonatomic) double shadowOffset; // @synthesize shadowOffset=_shadowOffset;
+@property(nonatomic) double shadowOpacity; // @synthesize shadowOpacity=_shadowOpacity;
+@property(retain, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration; // @synthesize cornerRadiusConfiguration=_cornerRadiusConfiguration;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) double darkenViewAlpha; // @synthesize darkenViewAlpha=_darkenViewAlpha;
 @property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
-@property(retain, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration; // @synthesize cornerRadiusConfiguration=_cornerRadiusConfiguration;
-@property(nonatomic) double shadowOffset; // @synthesize shadowOffset=_shadowOffset;
-@property(nonatomic) double shadowOpacity; // @synthesize shadowOpacity=_shadowOpacity;
 - (void).cxx_destruct;
 - (id)_deviceApplicationSceneViewController:(id)arg1;
 - (id)_deviceApplicationSceneViewController;
 - (id)_medusaDecoratedVC:(id)arg1;
 - (id)_medusaDecoratedVC;
+- (void)inlineContainerViewController:(id)arg1 setStatusBarHidden:(_Bool)arg2;
 - (id)containerViewForBlurContentView;
 - (id)initialCornerRadiusConfiguration;
 - (id)mainWorkspaceApplicationSceneLayoutElementViewController;
@@ -52,6 +57,7 @@
 @property(nonatomic, getter=isNubViewHidden) _Bool nubViewHidden;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 atLevel:(unsigned long long)arg2;
+- (_Bool)SB_conformsToMedusaDecoratedDeviceApplicationSceneViewControlling;
 - (void)sceneHandle:(id)arg1 didChangeEffectiveForegroundness:(_Bool)arg2;
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
 - (void)_configureViewController:(id)arg1;
@@ -63,10 +69,11 @@
 - (unsigned long long)supportedContentInterfaceOrientations;
 - (void)prepareForReuse;
 - (id)_relinquishInlineAppExposeContainerViewController;
-- (long long)_overrideStatusBarOrientation;
+- (long long)_overrideStatusBarOrientationGivenFallbackOrientation:(long long)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-@property(nonatomic) long long homeGrabberDisplayMode;
 - (void)setMaskDisplayCorners:(_Bool)arg1 forReason:(id)arg2;
+- (_Bool)SB_conformsToMainDisplaySceneLayoutElementViewControlling;
+@property(nonatomic) long long homeGrabberDisplayMode;
 @property(readonly, copy) NSString *description;
 - (void)_endRequiringSceneViewMatchMoveAnimationForReason:(id)arg1;
 - (void)_beginRequiringSceneViewMatchMoveAnimationForReason:(id)arg1;

@@ -13,7 +13,12 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
+- (void)_axHandleNumberLabels:(id)arg1;
+- (void)_axLabelLogoButton:(id)arg1;
+- (void)_createMediumNumberLayersIfNeededAndAttachToViewIfNeeded;
+- (void)_createLargeHourMarkerLabelsAndAttachToViewIfNeeded;
+- (void)addSmallLogoButtonIfNeeded;
+- (void)addLogoButtonIfNeeded;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

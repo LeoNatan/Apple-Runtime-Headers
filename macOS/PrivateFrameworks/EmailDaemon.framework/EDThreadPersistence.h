@@ -15,13 +15,15 @@
 #import <EmailDaemon/EDThreadScopeManagerDataSource-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessagePersistence, EDPersistenceDatabase, EDPersistenceHookRegistry, EDThreadScopeManager, EFDebouncer, EMBlockedSenderManager, NSMutableSet, NSString;
+@class EDMessagePersistence, EDPersistenceDatabase, EDPersistenceHookRegistry, EDThreadScopeManager, EFDebouncer, EMBlockedSenderManager, NSMutableArray, NSMutableSet, NSString;
 @protocol EFScheduler, EMVIPManager;
 
 @interface EDThreadPersistence : NSObject <EDDatabaseChangeHookResponder, EDAccountChangeHookResponder, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EDThreadScopeManagerDataSource, EDPersistenceDatabaseSchemaProvider, EFLoggable>
 {
     NSMutableSet *_threadObjectIDsToRecompute;
     struct os_unfair_lock_s _threadRecomputationLock;
+    NSMutableArray *_migratingThreadScopes;
+    struct os_unfair_lock_s _migratingThreadScopesLock;
     EDMessagePersistence *_messagePersistence;
     EDPersistenceDatabase *_database;
     EDPersistenceHookRegistry *_hookRegistry;
@@ -93,7 +95,7 @@
 - (void)persistenceWillReplaceDatabaseID:(long long)arg1 with:(long long)arg2 forTable:(id)arg3 column:(id)arg4;
 - (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
 - (BOOL)_messagesAreJournaledForThreadWithObjectID:(id)arg1;
-- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 oldConversationID:(long long)arg2 message:(id)arg3 generationWindow:(id)arg4;
 - (void)persistenceIsChangingConversationID:(long long)arg1 messages:(id)arg2 generationWindow:(id)arg3;
 - (void)persistenceDidDeleteAllMessagesInMailboxesWithURLs:(id)arg1 generationWindow:(id)arg2;
 - (void)_updateAllThreadsAfterDeleteInThreadScope:(id)arg1 withDatabaseID:(id)arg2 generationWindow:(id)arg3;
@@ -152,7 +154,8 @@
 - (void)threadObjectIDsForThreadScope:(id)arg1 sortDescriptors:(id)arg2 initialBatchSize:(unsigned long long)arg3 journaledObjectIDs:(id)arg4 batchBlock:(CDUnknownBlockType)arg5;
 - (void)resetThreadScopesForMailboxScope:(id)arg1;
 - (void)updateLastViewedDateForThreadScope:(id)arg1;
-- (BOOL)isThreadScopePrecomputed:(id)arg1 shouldMigrate:(char *)arg2;
+- (BOOL)_isThreadScopePrecomputed:(id)arg1 shouldMigrate:(char *)arg2;
+- (unsigned long long)persistenceStateForThreadScope:(id)arg1;
 - (id)initWithMessagePersistence:(id)arg1 database:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 blockedSenderManager:(id)arg5;
 
 // Remaining properties

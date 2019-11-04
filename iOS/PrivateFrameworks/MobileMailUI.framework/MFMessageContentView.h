@@ -173,7 +173,8 @@
 - (id)_contentItemForElement:(id)arg1;
 - (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_contextMenuConfigurationForAttachment:(id)arg1;
-- (_Bool)_isAllowedToSaveAttachmentsToPhotos;
+- (_Bool)_allAttachmentsArePhotosOrVideos;
+- (_Bool)_mayShareToUnmanaged;
 - (void)_updateFileWrapperForAttachment:(id)arg1 contentID:(id)arg2;
 - (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
@@ -196,7 +197,6 @@
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webProcessDidCreateBrowserContextControllerLoadDelegate;
 - (void)_configureTrustEvaluationsForSignersInSecurityInformation:(id)arg1;
-- (void)_updateSMIMEInfo:(id)arg1 error:(id)arg2;
 - (void)webProcessDidBlockLoadingResourceWithURL:(id)arg1;
 - (void)webProcessDidFinishLoadForURL:(id)arg1;
 - (void)webProcessDidFinishDocumentLoadForURL:(id)arg1;
@@ -247,6 +247,7 @@
 - (void)layoutMarginsDidChange;
 - (void)_updateMinimumFontSize;
 @property(readonly, nonatomic) MFConversationItemFooterView *footerView;
+- (void)setAutomaticallyCollapseQuotedContent:(_Bool)arg1 reloadIfNeeded:(_Bool)arg2;
 - (void)selectAll:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)_firstResponderIsInWebView;

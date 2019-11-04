@@ -44,7 +44,6 @@
 + (_Bool)forceAccessibilityEnabled;
 + (void)setForceAccessibilityEnabled:(_Bool)arg1;
 + (_Bool)isAvailable;
-+ (_Bool)hasExtendedColorDisplay;
 + (long long)screenPixelCount;
 @property(readonly, nonatomic) PXGEngine *engine; // @synthesize engine=_engine;
 @property(nonatomic) _Bool ignoreBoundsChanges; // @synthesize ignoreBoundsChanges=_ignoreBoundsChanges;
@@ -128,6 +127,7 @@
 - (void)_forceAccessibilityEnabledChanged:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) _Bool hasExtendedColorDisplay;
 - (id)curatedLibraryHitTestResultsInRect:(struct CGRect)arg1 withControl:(long long)arg2;
 - (void)enumerateCuratedLibraryHitTestResultsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateCuratedLibraryHitTestResultsInDirection:(unsigned long long)arg1 fromSpriteReference:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

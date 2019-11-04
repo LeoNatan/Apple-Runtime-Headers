@@ -68,7 +68,7 @@
 - (struct CGSize)previewImageSize;
 - (void)setSquareCropEnabled:(_Bool)arg1;
 - (_Bool)squareCropEnabled;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 @property(readonly, nonatomic) NSArray *availableImageDataCodecTypes;

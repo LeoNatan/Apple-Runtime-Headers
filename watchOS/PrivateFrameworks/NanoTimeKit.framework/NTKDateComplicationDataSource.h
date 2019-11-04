@@ -6,11 +6,11 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
+#import <NanoTimeKit/CLKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
 @class NSString;
 
-@interface NTKDateComplicationDataSource : NTKComplicationDataSource <NTKTritiumRandomizedComplicationEntryProvider>
+@interface NTKDateComplicationDataSource : NTKComplicationDataSource <CLKTritiumRandomizedComplicationEntryProvider>
 {
 }
 

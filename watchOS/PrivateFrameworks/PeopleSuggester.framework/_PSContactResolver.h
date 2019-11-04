@@ -17,9 +17,11 @@
 @property(readonly, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+- (id)resolveContactIfPossibleFromContactIdentifierString:(id)arg1 pickFirstOfMultiple:(_Bool)arg2;
 - (id)resolveContactIfPossibleFromContactIdentifierString:(id)arg1;
 - (id)resolveContact:(id)arg1;
 - (id)resolveContactIdentifier:(id)arg1;
+- (id)allEmailAndPhoneNumberHandlesForContact:(id)arg1;
 - (id)resolveContactFromINPerson:(id)arg1;
 - (id)contactWithIdentifier:(id)arg1;
 - (id)initWithContactStore:(id)arg1 keysToFetch:(id)arg2;

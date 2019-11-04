@@ -44,6 +44,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)stringGUID;
 + (Class)classForMessageItemDictionary:(id)arg1;
 + (Class)classForIMItemType:(long long)arg1;
 @property(copy, nonatomic) NSString *srCloudKitRecordChangeTag; // @synthesize srCloudKitRecordChangeTag=_srCloudKitRecordChangeTag;

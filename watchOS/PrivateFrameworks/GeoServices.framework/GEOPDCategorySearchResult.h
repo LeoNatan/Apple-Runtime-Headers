@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDCategorySearchResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_browseCategorys;
     GEOPDCategorySearchResultSection *_categorySearchResultSection;
@@ -23,6 +22,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_relatedSearchSuggestions;
     NSMutableArray *_resultDetourInfos;
     GEOPDSearchClientBehavior *_searchClientBehavior;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _enablePartialClientization;
     _Bool _isChainResultSet;
     struct {
@@ -103,6 +105,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOMapRegion *displayMapRegion;
 @property(readonly, nonatomic) _Bool hasDisplayMapRegion;
 - (void)_readDisplayMapRegion;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

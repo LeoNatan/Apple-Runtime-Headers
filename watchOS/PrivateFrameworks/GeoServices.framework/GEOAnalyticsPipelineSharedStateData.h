@@ -15,6 +15,7 @@
 
 + (id)sharedData;
 - (void).cxx_destruct;
+- (_Bool)hasMapRestoreData;
 - (void)clearSuggestionsData;
 - (_Bool)hasSuggestionsData;
 - (_Bool)hasMapsServerData;

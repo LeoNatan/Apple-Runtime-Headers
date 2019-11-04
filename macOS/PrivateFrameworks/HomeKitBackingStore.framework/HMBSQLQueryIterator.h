@@ -6,30 +6,35 @@
 
 #import <Foundation/NSEnumerator.h>
 
-@class HMBSQLContext, NSError, NSMutableArray, NSNumber;
+@class HMBSQLQueryStatement, NSError, NSMutableArray, NSNumber;
 
-__attribute__((visibility("hidden")))
 @interface HMBSQLQueryIterator : NSEnumerator
 {
+    int _sequenceBindOffset;
     NSError *_error;
+    HMBSQLQueryStatement *_statement;
+    unsigned long long _maximumRowsPerQuery;
     NSMutableArray *_cachedResults;
     NSNumber *_currentSequence;
-    HMBSQLContext *_context;
-    struct sqlite3_stmt *_statement;
 }
 
-+ (unsigned long long)maximumRowsPerQuery;
-@property(nonatomic) struct sqlite3_stmt *statement; // @synthesize statement=_statement;
-@property(readonly, nonatomic) __weak HMBSQLContext *context; // @synthesize context=_context;
++ (void)setMaximumRowsPerSelect:(unsigned long long)arg1;
++ (unsigned long long)maximumRowsPerSelect;
+@property(nonatomic) int sequenceBindOffset; // @synthesize sequenceBindOffset=_sequenceBindOffset;
 @property(retain, nonatomic) NSNumber *currentSequence; // @synthesize currentSequence=_currentSequence;
-@property(readonly, nonatomic) NSMutableArray *cachedResults; // @synthesize cachedResults=_cachedResults;
+@property(retain, nonatomic) NSMutableArray *cachedResults; // @synthesize cachedResults=_cachedResults;
+@property(readonly, nonatomic) unsigned long long maximumRowsPerQuery; // @synthesize maximumRowsPerQuery=_maximumRowsPerQuery;
+@property(readonly, nonatomic) HMBSQLQueryStatement *statement; // @synthesize statement=_statement;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
 - (BOOL)bindPropertiesToStatement:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)nextObject;
-- (id)fetchRowFromStatement:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
-- (id)initWithSQLContext:(id)arg1 statement:(struct sqlite3_stmt *)arg2 initialSequence:(unsigned long long)arg3;
+- (id)fetchRow:(id)arg1 error:(id *)arg2;
+- (id)fetchRowFromStatement:(struct sqlite3_stmt *)arg1 skip:(char *)arg2 updatedSequence:(unsigned long long *)arg3 error:(id *)arg4;
+- (id)initWithStatement:(id)arg1 initialSequence:(id)arg2 maximumRowsPerSelect:(unsigned long long)arg3 error:(id)arg4;
+- (id)initWithStatement:(id)arg1 initialSequence:(id)arg2 maximumRowsPerSelect:(unsigned long long)arg3;
+- (id)initWithError:(id)arg1;
 
 @end
 

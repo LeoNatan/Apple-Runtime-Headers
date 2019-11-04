@@ -16,10 +16,10 @@
     _Bool _isUpdating;
     _Bool _didAlreadyUpdateLoadedItems;
     _Bool _enableBestCropRect;
-    _Bool _fillSafeAreaTopInset;
     int _mediaKind;
     int _presentationType;
     double _interItemSpacing;
+    double _itemCaptionSpacing;
     double _overrideAspectRatio;
     double _overrideAspectRatioAmount;
     double _aspectRatioLimit;
@@ -34,11 +34,11 @@
 @property(nonatomic) long long anchorItem; // @synthesize anchorItem=_anchorItem;
 @property(nonatomic) struct CGPoint anchorViewportCenter; // @synthesize anchorViewportCenter=_anchorViewportCenter;
 @property(retain, nonatomic) id anchorObjectReference; // @synthesize anchorObjectReference=_anchorObjectReference;
-@property(nonatomic) _Bool fillSafeAreaTopInset; // @synthesize fillSafeAreaTopInset=_fillSafeAreaTopInset;
 @property(nonatomic) double aspectRatioLimit; // @synthesize aspectRatioLimit=_aspectRatioLimit;
 @property(nonatomic) double overrideAspectRatioAmount; // @synthesize overrideAspectRatioAmount=_overrideAspectRatioAmount;
 @property(nonatomic) double overrideAspectRatio; // @synthesize overrideAspectRatio=_overrideAspectRatio;
 @property(nonatomic) _Bool enableBestCropRect; // @synthesize enableBestCropRect=_enableBestCropRect;
+@property(nonatomic) double itemCaptionSpacing; // @synthesize itemCaptionSpacing=_itemCaptionSpacing;
 @property(nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) int presentationType; // @synthesize presentationType=_presentationType;
 @property(nonatomic) int mediaKind; // @synthesize mediaKind=_mediaKind;
@@ -78,6 +78,7 @@
 - (long long)columnForItem:(long long)arg1;
 @property(nonatomic) long long numberOfColumns;
 @property(readonly, nonatomic) double rowHeight;
+@property(readonly, nonatomic) _Bool itemCaptionsVisible;
 @property(readonly, nonatomic) _Bool supportsContentMode;
 @property(nonatomic) unsigned char mediaFlags;
 

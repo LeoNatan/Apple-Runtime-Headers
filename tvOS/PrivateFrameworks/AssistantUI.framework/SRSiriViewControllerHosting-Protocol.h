@@ -46,7 +46,6 @@
 - (void)setStatusViewDisabled:(_Bool)arg1;
 - (void)setStatusViewUserInteractionEnabled:(_Bool)arg1;
 - (void)setCarDisplaySnippetMode:(long long)arg1;
-- (void)setCarDisplaySnippetVisible:(_Bool)arg1;
 - (void)setStatusViewHidden:(_Bool)arg1;
 - (void)siriIdleAndQuietStatusDidChange:(_Bool)arg1;
 - (void)serviceLaunchApplicationWithBundleIdentifier:(NSString *)arg1 withURL:(NSURL *)arg2 launchOptions:(long long)arg3 replyHandler:(void (^)(_Bool))arg4;

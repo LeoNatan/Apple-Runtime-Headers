@@ -9,7 +9,7 @@
 #import <UIKitCore/UIResponderStandardEditActions-Protocol.h>
 #import <UIKitCore/UITextInteraction_AssistantDelegate-Protocol.h>
 
-@class NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView;
+@class NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView, UITouch;
 @protocol UITextInput;
 
 @interface UITextInteractionAssistant : NSObject <UITextInteraction_AssistantDelegate, UIResponderStandardEditActions>
@@ -36,6 +36,7 @@
     UITextInteraction *_interactions;
     int _textInteractionMode;
     UITextInteraction *_externalInteractions;
+    UITouch *_synthesizedTouchForLollipopForwarding;
 }
 
 + (int)_nextGranularityInCycle:(int)arg1;
@@ -44,8 +45,8 @@
 - (void)clearGestureRecognizers;
 - (id)initWithResponder:(id)arg1;
 - (_Bool)shouldEnqueueObserverUpdates;
-- (void)didEndScrollingOverflow;
-- (void)willStartScrollingOverflow;
+- (void)didEndScrollingOrZooming;
+- (void)willStartScrollingOrZooming;
 - (void)layoutChangedByScrolling:(_Bool)arg1;
 - (_Bool)swallowsDoubleTapWithScale:(float)arg1 atPoint:(struct CGPoint)arg2;
 - (_Bool)hasReplacements;
@@ -95,6 +96,7 @@
 - (void)extendSelectionToLoupeOrSetToPoint:(struct CGPoint)arg1;
 - (void)extendSelectionToPoint:(struct CGPoint)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint)arg1;
+- (void)lollipopGestureWithState:(int)arg1 location:(struct CGPoint)arg2 locationOfFirstTouch:(struct CGPoint)arg3;
 - (void)rangedMagnifierWithState:(int)arg1 atPoint:(struct CGPoint)arg2;
 - (void)loupeMagnifierWithState:(int)arg1 atPoint:(struct CGPoint)arg2;
 - (void)loupeGestureWithState:(int)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(int)arg5 shouldCancel:(_Bool *)arg6;
@@ -103,6 +105,7 @@
 - (void)setWillHandoffLoupeMagnifier;
 - (void)scrollSelectionToVisible:(_Bool)arg1;
 - (void)scrollSelectionToVisible;
+- (void)setFirstResponderIfNecessaryActivatingSelection:(_Bool)arg1;
 - (void)setFirstResponderIfNecessary;
 - (void)addGestureRecognizersToView:(id)arg1;
 - (Class)loupeInteractionClass;

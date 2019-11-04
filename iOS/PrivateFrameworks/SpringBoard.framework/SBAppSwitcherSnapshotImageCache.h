@@ -35,6 +35,7 @@
     SBApplicationController *_applicationController;
     SBOrientationLockManager *_orientationLockManager;
     _Bool _cachingEnabled;
+    _Bool _reloadsSnapshotsForActiveInterfaceOrientationChange;
     id <SBAppSwitcherSnapshotImageCacheDelegate> _delegate;
     NSString *_debugName;
     unsigned long long _atomicNumberOfAppLayoutsToCache;
@@ -42,6 +43,7 @@
 
 @property unsigned long long atomicNumberOfAppLayoutsToCache; // @synthesize atomicNumberOfAppLayoutsToCache=_atomicNumberOfAppLayoutsToCache;
 @property(copy, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
+@property(nonatomic) _Bool reloadsSnapshotsForActiveInterfaceOrientationChange; // @synthesize reloadsSnapshotsForActiveInterfaceOrientationChange=_reloadsSnapshotsForActiveInterfaceOrientationChange;
 @property(readonly, nonatomic) _Bool cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
 @property(nonatomic) __weak id <SBAppSwitcherSnapshotImageCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -80,6 +82,7 @@
 - (id)_allAppLayouts;
 - (void)activeInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithDuration:(double)arg2 fromOrientation:(long long)arg3;
 - (void)activeInterfaceOrientationWillChangeToOrientation:(long long)arg1;
+- (void)_updateActiveOrientationObservingIfNeeded;
 - (void)_createDownscaledVariantForRequest:(id)arg1 snapshot:(id)arg2 displayItem:(id)arg3 sceneHandle:(id)arg4 application:(id)arg5;
 - (void)_loadSnapshotForRequest:(id)arg1 withDisplayItem:(id)arg2 inAppLayout:(id)arg3;
 - (void)_cacheSnapshotForRequest:(id)arg1 withDisplayItem:(id)arg2 inAppLayout:(id)arg3;

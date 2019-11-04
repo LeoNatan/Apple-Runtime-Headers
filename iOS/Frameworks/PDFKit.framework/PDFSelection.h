@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (struct _NSRange)previewRangeAtIndex:(unsigned long long)arg1 onPage:(id)arg2;
 - (id)description;
+- (_Bool)isStandaloneGraphic;
 - (void)normalize;
 - (void)drawForPage:(id)arg1 withBox:(int)arg2 active:(_Bool)arg3 inContext:(struct CGContext *)arg4;
 - (void)setForceBreaks:(_Bool)arg1;

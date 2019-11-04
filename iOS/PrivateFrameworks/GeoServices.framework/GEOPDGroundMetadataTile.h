@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDGroundMetadataTile : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_buildTables;
     NSMutableArray *_cameraMetadataTables;
     GEOTileCoordinate *_coord;
     NSMutableArray *_photoPositions;
     NSMutableArray *_storefronts;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _tileBuildId;
     struct {
         unsigned int has_tileBuildId:1;
@@ -86,6 +88,8 @@ __attribute__((visibility("hidden")))
 - (void)clearPhotoPositions;
 @property(retain, nonatomic) NSMutableArray *photoPositions;
 - (void)_readPhotoPositions;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

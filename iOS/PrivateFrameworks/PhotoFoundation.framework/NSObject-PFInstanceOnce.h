@@ -19,7 +19,6 @@
 - (void)handleInvalidExecutionContextForSelector:(SEL)arg1 requirement:(int)arg2;
 - (_Bool)currentContextCanExecuteSelector:(SEL)arg1;
 - (id)multicaster:(id)arg1 queueForSelector:(SEL)arg2;
-- (void)PF_mainThreadReleaseWrapper:(CDUnknownFunctionPointerType)arg1;
 - (id)associatedObjectForKey:(id)arg1;
 - (void)setAssociatedObject:(id)arg1 forKey:(id)arg2;
 @end

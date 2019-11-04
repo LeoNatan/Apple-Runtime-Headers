@@ -8,9 +8,11 @@
 
 @interface HFPlaceholderTriggerBuilder : HFTriggerBuilder
 {
+    BOOL _isEditing;
 }
 
 + (id)createPlaceholderTriggerForHome:(id)arg1 withTriggerActionSetBuilder:(id)arg2 context:(id)arg3;
+@property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
 - (id)commitItem;
 - (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 

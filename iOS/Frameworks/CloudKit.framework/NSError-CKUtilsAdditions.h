@@ -12,6 +12,7 @@
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (_Bool)CKIsPOSIXErrorCode:(long long)arg1;
 @property(readonly, nonatomic, getter=isComparisonError) _Bool comparisonError;
+- (_Bool)CKHasTopLevelUnderlyingError;
 - (_Bool)CKHasCKErrorInChildChain;
 - (_Bool)CKIsCKError;
 - (_Bool)CKIsNotFoundError;

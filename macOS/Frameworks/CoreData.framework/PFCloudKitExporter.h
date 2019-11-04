@@ -6,30 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class NSCloudKitMirroringRequest, PFCloudKitExportContext, PFCloudKitExporterOptions, PFCloudKitStoreMonitor;
+@class NSCloudKitMirroringRequest, NSDictionary, NSMutableDictionary, PFCloudKitExportContext, PFCloudKitExporterOptions, PFCloudKitStoreMonitor;
 @protocol OS_dispatch_queue, PFCloudKitExporterDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitExporter : NSObject
 {
+    NSMutableDictionary *_operationIDToResult;
+    CDUnknownBlockType _exportCompletionBlock;
     PFCloudKitExporterOptions *_options;
-    PFCloudKitStoreMonitor *_monitor;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSCloudKitMirroringRequest *_request;
     NSObject<PFCloudKitExporterDelegate> *_delegate;
     PFCloudKitExportContext *_exportContext;
+    PFCloudKitStoreMonitor *_monitor;
 }
 
+@property(readonly, nonatomic) NSDictionary *operationIDToResult; // @synthesize operationIDToResult=_operationIDToResult;
+@property(readonly, nonatomic) PFCloudKitStoreMonitor *monitor; // @synthesize monitor=_monitor;
 @property(readonly, nonatomic) PFCloudKitExportContext *exportContext; // @synthesize exportContext=_exportContext;
 @property(nonatomic) __weak NSObject<PFCloudKitExporterDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSCloudKitMirroringRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) PFCloudKitExporterOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+- (void)finishExportWithResult:(id)arg1;
 - (void)updateMetadataForSavedRecords:(id)arg1 deletedRecordIDs:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4;
-- (void)exportOperationFinished:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)executeOperationsInContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)exportOperationFinished:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4;
+- (void)executeOperation:(id)arg1;
 - (BOOL)analyzeHistoryInStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
+- (void)exportIfNecessary;
 - (void)exportIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1 request:(id)arg2 monitor:(id)arg3 workQueue:(id)arg4;

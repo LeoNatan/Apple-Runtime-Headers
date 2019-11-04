@@ -22,6 +22,7 @@
     BCBatteryDevice *_batteryDevice;
 }
 
++ (id)_backgroundUpdateQueue;
 @property(retain, nonatomic) BCBatteryDevice *batteryDevice; // @synthesize batteryDevice=_batteryDevice;
 @property(retain, nonatomic) HACCBatteryGroupView *batteryView; // @synthesize batteryView=_batteryView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;

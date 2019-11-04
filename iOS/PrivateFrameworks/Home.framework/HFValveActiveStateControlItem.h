@@ -11,8 +11,7 @@
 }
 
 - (id)_iconDescriptorForServiceSubtype:(id)arg1 inUse:(_Bool)arg2 active:(_Bool)arg3 hasFaucetAsParentService:(_Bool)arg4;
-- (id)_faucetValveSubtypeToInactiveIconIdentifierMap;
-- (id)_faucetValveSubtypeToActiveIconIdentifierMap;
+- (id)_faucetValveSubtypeToIconIdentifierMap;
 - (id)resultsForBatchReadResponse:(id)arg1;
 - (id)writeValue:(id)arg1;
 - (id)servicePredicateForCharacteristicType:(id)arg1 withUsage:(unsigned long long)arg2;

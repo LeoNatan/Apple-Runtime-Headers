@@ -19,12 +19,13 @@
     id <IMKUICandidateControllerDelegate> _delegate;
     IMKCandidate *_selectedCandidate;
     BOOL _showsChevron;
+    double _surfaceWidth;
     NSViewController *_viewController;
     NSView *_view;
     IMKUICandidateLayout *_layout;
 }
 
-+ (struct CGRect)standardFrame;
+@property(nonatomic) double surfaceWidth; // @synthesize surfaceWidth=_surfaceWidth;
 @property(retain, nonatomic) IMKCandidate *selectedCandidate; // @synthesize selectedCandidate=_selectedCandidate;
 @property(nonatomic) BOOL showsChevron; // @synthesize showsChevron=_showsChevron;
 @property(nonatomic) __weak id <IMKUICandidateControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -52,6 +53,7 @@
 - (id)functionRowCandidateForCandidateArray:(id)arg1 index:(unsigned long long)arg2;
 - (id)attributes;
 @property(readonly, nonatomic) BOOL isUsingDebugColoring;
+- (struct CGRect)standardFrame;
 
 @end
 

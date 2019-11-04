@@ -10,5 +10,8 @@
 {
 }
 
+- (_Bool)wantsMinificationFilter;
+- (long long)liveContentRasterizationStyle;
+
 @end
 

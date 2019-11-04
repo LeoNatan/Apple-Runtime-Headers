@@ -19,7 +19,9 @@
 - (void).cxx_destruct;
 - (id)unsafeSessionEntityString;
 - (id)unsafeSections;
+- (void)startAtUIPriority:(_Bool)arg1;
 - (void)start;
+- (void)startAtUIPriority;
 - (void)addApplicationResultsFromPredictionResponse:(id)arg1 toSection:(id)arg2 queryIdent:(unsigned long long)arg3;
 
 @end

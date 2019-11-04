@@ -25,6 +25,7 @@
 }
 
 + (Class)downloadingIconClass;
++ (_Bool)hasIconImage;
 + (_Bool)forcesBackgroundIconGeneration;
 + (_Bool)canGenerateIconsInBackground;
 + (id)iconImageFromUnmaskedImage:(id)arg1 info:(struct SBIconImageInfo)arg2;

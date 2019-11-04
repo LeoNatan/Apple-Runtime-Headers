@@ -24,8 +24,13 @@
 - (void)setSystemMuted:(_Bool)arg1;
 - (void)hapticState:(void (^)(int))arg1;
 - (void)systemMutedState:(void (^)(_Bool))arg1;
-- (void)setMuted:(_Bool)arg1 target:(NACProxyVolumeControlTarget *)arg2;
-- (void)setVolumeValue:(float)arg1 target:(NACProxyVolumeControlTarget *)arg2;
+- (void)setCurrentListeningMode:(NSString *)arg1 forTarget:(NACProxyVolumeControlTarget *)arg2;
+- (void)currentListeningModeForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(NSString *))arg2;
+- (void)availableListeningModesForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(NSOrderedSet *))arg2;
+- (void)endObservingListeningModesForTarget:(NACProxyVolumeControlTarget *)arg1;
+- (void)beginObservingListeningModesForTarget:(NACProxyVolumeControlTarget *)arg1;
+- (void)setMuted:(_Bool)arg1 forTarget:(NACProxyVolumeControlTarget *)arg2;
+- (void)setVolumeValue:(float)arg1 forTarget:(NACProxyVolumeControlTarget *)arg2;
 - (void)volumeWarningForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(_Bool, int))arg2;
 - (void)EULimitForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(float))arg2;
 - (void)mutedStateForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(_Bool))arg2;

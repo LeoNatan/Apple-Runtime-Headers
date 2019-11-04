@@ -6,11 +6,11 @@
 
 #import <Email/EMMailbox.h>
 
-@class EMMailboxScope, NSPredicate;
+@class EMMailboxScope;
 
 @interface EMSmartMailbox : EMMailbox
 {
-    NSPredicate *_predicate;
+    CDUnknownBlockType _predicateGenerator;
     EMMailboxScope *_mailboxScope;
     long long _smartMailboxType;
 }
@@ -27,12 +27,13 @@
 + (id)vipMailboxWithMailboxScope:(id)arg1;
 @property(readonly, nonatomic) long long smartMailboxType; // @synthesize smartMailboxType=_smartMailboxType;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
-@property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)makePredicate;
 - (_Bool)supportsSelectAll;
 - (_Bool)isSmartMailbox;
-- (id)initWithType:(long long)arg1 mailboxType:(long long)arg2 name:(id)arg3 predicate:(id)arg4 mailboxScope:(id)arg5;
+- (id)initWithType:(long long)arg1 mailboxType:(long long)arg2 name:(id)arg3 mailboxScope:(id)arg4 predicateGenerator:(CDUnknownBlockType)arg5;
 
 @end
 

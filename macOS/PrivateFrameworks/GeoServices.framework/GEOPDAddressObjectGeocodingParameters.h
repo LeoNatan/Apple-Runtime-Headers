@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAddressObjectGeocodingParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSData *_addressObject;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _maxResults;
     struct {
         unsigned int has_maxResults:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *addressObject;
 @property(readonly, nonatomic) BOOL hasAddressObject;
 - (void)_readAddressObject;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

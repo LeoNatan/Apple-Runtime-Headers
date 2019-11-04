@@ -6,13 +6,14 @@
 
 #import <Spotlight/SPKQuery.h>
 
-@class NSArray, NSString, SPMetadataPattern;
+@class NSArray, NSString, PRSRankingItemRanker, SPMetadataPattern;
 
 @interface SPApplicationQuery : SPKQuery
 {
     struct __MDAppRankEvaluator *_appRankEvaluator;
     NSString *_filterQuery;
     NSArray *_rankingPatterns;
+    PRSRankingItemRanker *_ranker;
     BOOL _isFuzzy;
     NSString *_queryString;
     SPMetadataPattern *_queryPattern;
@@ -58,6 +59,7 @@
 - (void)startWithFuzzyValue:(BOOL)arg1;
 - (void)start;
 - (void)prepareQuery:(BOOL)arg1;
+- (id)ranker;
 
 @end
 

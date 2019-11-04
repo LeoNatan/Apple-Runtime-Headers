@@ -15,8 +15,8 @@
     unsigned int _systemSoundID;
 }
 
-- (void)stopSound;
-- (void)playSound;
+- (void)_reallyStopSound;
+- (void)_reallyPlaySound;
 - (id)initForSystemSoundID:(unsigned int)arg1 duration:(double)arg2;
 
 // Remaining properties

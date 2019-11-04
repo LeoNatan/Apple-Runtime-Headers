@@ -8,6 +8,8 @@
 
 @interface NSIndexSet (ContactsFoundation)
 - (id)_cn_map:(CDUnknownBlockType)arg1;
+- (id)_cn_flatMap:(CDUnknownBlockType)arg1;
+- (id)_cn_filter:(CDUnknownBlockType)arg1;
 - (void)_cn_each:(CDUnknownBlockType)arg1;
 - (BOOL)_cn_any:(CDUnknownBlockType)arg1;
 - (BOOL)_cn_all:(CDUnknownBlockType)arg1;

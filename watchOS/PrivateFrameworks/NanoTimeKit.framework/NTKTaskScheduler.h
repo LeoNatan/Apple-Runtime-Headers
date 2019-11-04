@@ -6,16 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <NanoTimeKit/CSLSBacklightObserver-Protocol.h>
-
 @class NSMutableArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NTKTaskScheduler : NSObject <CSLSBacklightObserver>
+@interface NTKTaskScheduler : NSObject
 {
     NSMutableArray *_queuedTokens;
     NSMutableDictionary *_tasksByToken;
-    unsigned int _nextToken;
+    unsigned int _nextTokenCounter;
     int _backlightStatus;
     _Bool _backlightIsOrWillBeOnAccordingToCSLPI;
     _Bool _havePowerAssertion;
@@ -36,19 +34,13 @@
 - (_Bool)_haveRemainingTasks;
 - (void)_tryToPerformNextTask;
 - (void)_handleCSLPIBacklightDidTurnOff;
+- (void)_handleCSLPIBacklightDidTurnOn;
 - (void)_handleCSLPIBacklightWillTurnOn;
-- (void)backlightDidChange:(id)arg1 from:(int)arg2 to:(int)arg3;
 - (void)cancelAllTasks;
-- (void)cancelTaskForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)scheduleTask:(CDUnknownBlockType)arg1;
+- (void)cancelTaskForToken:(struct NSString *)arg1;
+- (struct NSString *)scheduleTask:(CDUnknownBlockType)arg1 identifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

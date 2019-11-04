@@ -17,6 +17,7 @@
 
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+- (void)layoutSubviews;
 - (id)initWithURL:(id)arg1;
 
 @end

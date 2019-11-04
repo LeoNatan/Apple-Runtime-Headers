@@ -6,14 +6,9 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSArray, NSString, UIAction, UIAlertController;
+@class UIAction;
 
 @protocol _UITextItemInteractionHandler <NSObject>
 - (UIAction *)defaultAction;
-
-@optional
-- (NSArray *)actionSheetActionsForAlertController:(UIAlertController *)arg1;
-- (NSString *)actionSheetTitle;
-- (_Bool)shouldShowActionSheet;
 @end
 

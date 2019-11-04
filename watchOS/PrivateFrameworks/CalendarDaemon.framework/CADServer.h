@@ -41,12 +41,11 @@
 - (void)_dumpState;
 - (void)_exitWithStatus:(int)arg1;
 - (void)_deactivateAndExitWithStatus:(int)arg1;
--     // Error parsing type: v12@0:4^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}8, name: idleChangeTrackingClientCleanupDatabase:
+-     // Error parsing type: v12@0:4^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}8, name: _cleanupChangeTablesInDatabase:
 -     // Error parsing type: v12@0:4^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}8, name: cleanupDatabase:
 - (void)_registerForChangeTableCleanup;
 - (void)_registerForAttachmentCleanup;
 - (void)_registerForAnalyticsCollection;
-- (void)_registerForIdleChangeTrackingClientCleanup;
 - (void)_registerForDatabaseCleanup;
 - (void)_registerActivityWithIdentifier:(const char *)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_registerMaintenanceActivities;

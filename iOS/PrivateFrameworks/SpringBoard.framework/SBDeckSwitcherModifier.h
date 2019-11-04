@@ -15,8 +15,10 @@
 {
     long long _grabbedDraggingIndex;
     double _outputContentOffsetAdjustmentForIndexChange;
+    double _inputContentOffsetAdjustmentForIndexChange;
     struct CGPoint _start;
     struct CGPoint _originalLocationInView;
+    double _initialTranslationAdjustment;
     _Bool _useTitleOpacityPrototypeSettings;
     unsigned long long _ongoingAppLayoutRemovals;
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
@@ -61,12 +63,14 @@
 - (struct CGPoint)adjustedOffsetForOffset:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 startPoint:(struct CGPoint)arg3 locationInView:(struct CGPoint)arg4 horizontalVelocity:(inout double *)arg5 verticalVelocity:(inout double *)arg6;
 - (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreenWithVisibleIndexToStartSearch:(unsigned long long)arg1;
 - (struct CGPoint)restingOffsetForScrollOffset:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
-- (struct CGPoint)contentOffsetForIndex:(unsigned long long)arg1;
+- (struct CGPoint)contentOffsetForIndex:(unsigned long long)arg1 centered:(_Bool)arg2;
 - (unsigned long long)scrollAxis;
 - (struct CGSize)fittedContentSize;
 - (struct CGSize)contentSize;
 - (double)cardCornerRadiusInSwitcher;
 - (double)centerYOffsetWhenPresented;
+- (_Bool)interpolatesDuringSwipeToKill;
+- (double)minimumTranslationToKillIndex:(unsigned long long)arg1;
 - (struct CGPoint)pagingOrigin;
 - (struct CGSize)interpageSpacingForPaging;
 - (_Bool)scrollViewPagingEnabled;
@@ -75,7 +79,7 @@
 - (double)snapshotScale;
 - (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
 - (_Bool)wantsMinificationFilter;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;
@@ -92,12 +96,15 @@
 - (unsigned long long)indexToScrollToAfterInsertingAtIndex:(unsigned long long)arg1;
 - (_Bool)shouldBringCardToFrontDuringInsertionOrRemoval;
 - (_Bool)shouldAnimateInsertionOrRemovalAtIndex:(unsigned long long)arg1;
+- (_Bool)shouldTetherTransitionCompletion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (_Bool)shouldPerformRotationAnimationForOrientationChange;
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
 - (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
+- (id)appLayoutToScrollToBeforeReopeningClosedWindows;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)topMostAppLayouts;
 - (id)cornerRadiusSettingsForIndex:(unsigned long long)arg1;
@@ -119,8 +126,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)containerStatusBarAnimationDuration;
 - (_Bool)isContainerStatusBarVisible;
-- (unsigned long long)insertionStyle;
-- (double)baseHysteresisForStartingKillGesture;
+- (unsigned long long)insertionStyleForInsertingAppLayout:(id)arg1;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;
 - (_Bool)itemContainersAllowContentViewTouches;
@@ -148,6 +154,9 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
+- (long long)plusButtonStyle;
+- (long long)appExposeAccessoryButtonsOverrideUserInterfaceStyle;
+- (double)reopenClosedWindowsButtonScale;
 - (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
 - (id)appExposeAccessoryButtonsBundleIdentifier;

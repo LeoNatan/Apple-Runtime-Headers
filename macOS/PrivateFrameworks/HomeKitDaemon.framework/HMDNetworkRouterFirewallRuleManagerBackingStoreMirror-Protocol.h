@@ -10,6 +10,7 @@
 @protocol OS_xpc_object;
 
 @protocol HMDNetworkRouterFirewallRuleManagerBackingStoreMirror <NSObject>
+@property(retain, nonatomic) NSSet *watchedRecordIDs;
 @property(readonly, nonatomic) NAFuture *shutdownFuture;
 @property(readonly, nonatomic) NAFuture *startupFuture;
 - (BOOL)removeOverridesForZoneName:(NSString *)arg1 recordName:(NSString *)arg2 options:(HMBProcessingOptions *)arg3 error:(id *)arg4;
@@ -25,8 +26,6 @@
 - (struct NSDictionary *)fetchNetworkDeclarationDataForRecordIDs:(NSSet *)arg1 options:(HMBProcessingOptions *)arg2 error:(id *)arg3;
 - (void)fetchCloudRecordsForZoneID:(CKRecordZoneID *)arg1 recordID:(CKRecordID *)arg2 options:(HMBProcessingOptions *)arg3 completion:(void (^)(NSSet *, NSError *))arg4;
 - (void)fetchCloudRecordIDsForZoneID:(CKRecordZoneID *)arg1 options:(HMBProcessingOptions *)arg2 completion:(void (^)(NSSet *, NSError *))arg3;
-- (void)fetchCloudChangesWithOptions:(HMBProcessingOptions *)arg1 xpcActivity:(NSObject<OS_xpc_object> *)arg2 completion:(void (^)(NSSet *, NSError *))arg3;
-- (void)stopWatchingRecordsWithIDs:(NSSet *)arg1;
-- (void)startWatchingRecordsWithIDs:(NSSet *)arg1;
+- (void)fetchCloudChangesWithOptions:(HMBProcessingOptions *)arg1 ignoreLastFetchedAccessories:(BOOL)arg2 xpcActivity:(NSObject<OS_xpc_object> *)arg3 completion:(void (^)(NSSet *, NSError *))arg4;
 @end
 

@@ -13,11 +13,13 @@
 @interface GEORPPlaceInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOPDPlaceRequest *_placeRequest;
     GEOPDPlaceResponse *_placeResponse;
     NSString *_sourceApplication;
     NSString *_sourceUrl;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_placeRequest:1;
         unsigned int read_placeResponse:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) GEOPDPlaceRequest *placeRequest;
 @property(readonly, nonatomic) _Bool hasPlaceRequest;
 - (void)_readPlaceRequest;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)clearLocations;
 - (void)_clearLocationsFromPlaceResponse;
 - (void)_clearLocationsFromPlaceRequest;

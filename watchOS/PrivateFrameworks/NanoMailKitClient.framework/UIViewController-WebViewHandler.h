@@ -8,6 +8,7 @@
 
 @interface UIViewController (WebViewHandler)
 + (void)softLinkSafariServicesIfNecessary;
+- (_Bool)isHTTPSApplicationURL:(id)arg1;
 - (id)presentBrowserViewControllerForURL:(id)arg1 inViewController:(id)arg2;
 @end
 

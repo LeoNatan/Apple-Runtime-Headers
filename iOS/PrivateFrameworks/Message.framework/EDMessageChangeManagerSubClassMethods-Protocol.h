@@ -6,7 +6,7 @@
 
 #import <Message/NSObject-Protocol.h>
 
-@class ECLocalMessageAction, ECMessageFlagChange, ECTransferMessageAction, ECTransferMessageActionResults, NSArray, NSData, NSMutableDictionary, NSSet, NSString, NSURL;
+@class ECLocalMessageAction, ECMessageFlagChange, ECTransferMessageAction, ECTransferMessageActionResults, NSArray, NSData, NSDictionary, NSMutableDictionary, NSSet, NSString, NSURL;
 @protocol ECMessage, EDReceivingAccount;
 
 @protocol EDMessageChangeManagerSubClassMethods <NSObject>
@@ -24,7 +24,7 @@
 - (_Bool)haveCompleteMIMEForMessage:(id <ECMessage>)arg1;
 - (void)deletePersistedMessages:(NSArray *)arg1;
 - (_Bool)persistNewMessages:(NSArray *)arg1 mailboxURL:(NSURL *)arg2 oldMessagesByNewMessage:(NSMutableDictionary *)arg3 fromSyncing:(_Bool)arg4;
-- (NSString *)iterateMessagesInMailboxURL:(NSURL *)arg1 excludingMessages:(NSArray *)arg2 batchSize:(unsigned long long)arg3 handler:(void (^)(NSArray *))arg4;
+- (NSDictionary *)iterateMessagesInMailboxURLs:(NSArray *)arg1 excludingMessages:(NSArray *)arg2 batchSize:(unsigned long long)arg3 returnMessagesForFlagChange:(ECMessageFlagChange *)arg4 handler:(void (^)(NSArray *))arg5;
 - (NSArray *)messagesForRemoteIDs:(NSArray *)arg1 mailboxURL:(NSURL *)arg2;
 - (id <ECMessage>)messageForDatabaseID:(long long)arg1;
 - (id <EDReceivingAccount>)accountForMailboxURL:(NSURL *)arg1;

@@ -32,6 +32,7 @@
 @property(copy, nonatomic) NSString *deviceIdentifier;
 @property(nonatomic) int codec;
 @property(copy, nonatomic) NSString *audioSource;
+@property(copy, nonatomic) NSString *audioDestination;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

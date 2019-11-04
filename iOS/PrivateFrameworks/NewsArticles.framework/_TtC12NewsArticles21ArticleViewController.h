@@ -27,6 +27,7 @@
     // Error parsing type: , name: deferredHardPaywallIsVisible
     // Error parsing type: , name: deferredHardPaywallHeightProvider
     // Error parsing type: , name: destinationViewSize
+    // Error parsing type: , name: headline
 }
 
 - (void).cxx_destruct;

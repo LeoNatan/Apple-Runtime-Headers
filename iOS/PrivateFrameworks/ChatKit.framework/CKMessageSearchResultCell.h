@@ -13,12 +13,13 @@
 
 @interface CKMessageSearchResultCell : UICollectionViewCell <CKSearchResultCell>
 {
+    _Bool editing;
     NSString *_searchText;
     CALayer *_topHairline;
     CALayer *_bottomHairline;
     UITableViewCell<CKConversationSearchCellProtocol> *_searchCell;
     CKSpotlightQueryResult *_result;
-    struct UIEdgeInsets marginInsets;
+    struct UIEdgeInsets _marginInsets;
 }
 
 + (id)reuseIdentifier;
@@ -27,7 +28,8 @@
 @property(retain, nonatomic) CALayer *bottomHairline; // @synthesize bottomHairline=_bottomHairline;
 @property(retain, nonatomic) CALayer *topHairline; // @synthesize topHairline=_topHairline;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-@property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
+@property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing;
+@property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets=_marginInsets;
 - (void).cxx_destruct;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)layoutSubviews;

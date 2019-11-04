@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)implementationReplacingTintColor:(id)arg1;
 - (id)initWithCompositingMode:(int)arg1 compositingColor:(id)arg2;
 
 @end

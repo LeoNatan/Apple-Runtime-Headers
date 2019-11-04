@@ -19,6 +19,7 @@
 
 @property(nonatomic) __weak id <CSSpeakerDetectorNDAPIDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (float)getRejectLoggingThreshold;
 - (unsigned int)getMaxSpeakerVectorsToPersist;
 - (unsigned int)getSATVectorCount;
 - (_Bool)addLastTriggerToProfileWithSuperVector:(id)arg1;

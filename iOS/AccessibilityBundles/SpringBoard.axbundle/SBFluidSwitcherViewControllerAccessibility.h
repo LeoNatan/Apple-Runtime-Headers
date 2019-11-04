@@ -18,9 +18,16 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (_Bool)appElementIsAccessibilityElement:(id)arg1;
+- (_Bool)_axShouldReverseElements;
 - (void)_axDidQuitApp:(id)arg1;
 - (id)_accessibilityAppLayoutAtCurrentContentOffset;
 - (id)_axSortedElementArray:(id)arg1;
+- (void)_accessibilityUnregisterAppQuitNotifications;
+- (void)_accessibilityRegisterAppQuitNotifications;
+- (void)_accessibilitySetAppQuitNotificationsRegistered:(_Bool)arg1;
+- (_Bool)_accessibilityAppQuitNotificationsRegistered;
+- (void)dealloc;
+- (void)_axUpdateElementOrderingIfNecessary;
 - (void)_axCreateAppElementsForLayouts:(id)arg1 visibleItemContainers:(id)arg2;
 - (void)_axCreateAppElements;
 - (void)_axCreateInitialAppElements;
@@ -32,17 +39,23 @@
 - (id)_axScrollStatusForIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool _axIsVisible;
 - (_Bool)_axIsInSwitcher;
+- (_Bool)_axHasInlineSwitcherElements;
+- (_Bool)_axHasInlineSwitcherLayoutClass;
 - (_Bool)_axIsInlineSwitcherVisible;
 - (_Bool)_axIsFloatingSwitcherVisible;
 - (_Bool)_axIsMainSwitcherVisible;
 - (long long)_axEnvironmentMode;
 - (id)_axVisibleAppLayouts;
+- (id)_axCollectedVisibleItemContainers;
+- (id)_axCollectedAppLayouts;
 - (id)_axAppLayouts;
 - (id)_axContentView;
 - (id)_axAppLayoutForAppIdentifier:(id)arg1;
 - (id)_axIdentifierOfAppInLayoutState:(id)arg1;
+- (void)endTetheringWithViewController:(id)arg1;
+- (void)beginTetheringWithViewController:(id)arg1 asTetheree:(_Bool)arg2;
 - (void)_updatePlusButtonPresence;
-- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 alongsideAnimationController:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 alongsideAnimationHandler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_addVisibleItemContainerForAppLayout:(id)arg1;
 - (_Bool)_removeVisibleItemContainerForAppLayout:(id)arg1;
 - (void)_setupContentAndTransientViews;
@@ -54,6 +67,8 @@
 - (_Bool)_accessibilityOnlyComparesByXAxis;
 - (void)_accessibilityLoadAccessibilityInformation;
 @property(nonatomic, getter=_axSwitcherType, setter=_setAXSwitcherType:) unsigned long long _axSwitcherType;
+- (void)_axSetTetheredViewController:(id)arg1;
+- (id)_axTetheredViewController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

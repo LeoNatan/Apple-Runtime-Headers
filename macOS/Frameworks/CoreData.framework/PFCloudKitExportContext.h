@@ -6,35 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSMutableSet, NSString, PFCloudKitExporterOptions, PFCloudKitMetadataCache, PFCloudKitSerializer;
+@class NSArray, NSMutableArray, PFCloudKitExporterOptions;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitExportContext : NSObject
 {
     PFCloudKitExporterOptions *_options;
-    NSMutableArray *_currentRecords;
-    NSMutableSet *_currentRecordIDs;
-    PFCloudKitSerializer *_currentSerializer;
-    unsigned long long _currentBytes;
     unsigned long long _totalBytes;
-    NSMutableArray *_operations;
-    NSArray *_writtenAssetURLs;
-    NSMutableSet *_allDeletedRecordIDs;
-    PFCloudKitMetadataCache *_metadataCache;
-    NSString *_exportMetadataIdentifier;
+    unsigned long long _totalRecords;
+    unsigned long long _totalRecordIDs;
+    NSMutableArray *_writtenAssetURLs;
 }
 
+@property(readonly, nonatomic) unsigned long long totalRecordIDs; // @synthesize totalRecordIDs=_totalRecordIDs;
+@property(readonly, nonatomic) unsigned long long totalRecords; // @synthesize totalRecords=_totalRecords;
 @property(readonly, nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
-@property(readonly, nonatomic) NSString *exportMetadataIdentifier; // @synthesize exportMetadataIdentifier=_exportMetadataIdentifier;
 @property(readonly, nonatomic) NSArray *writtenAssetURLs; // @synthesize writtenAssetURLs=_writtenAssetURLs;
-@property(readonly, nonatomic) NSArray *operations; // @synthesize operations=_operations;
-- (BOOL)modifyRecordsOperationWithID:(id)arg1 finishedForStore:(id)arg2 withSavedRecord:(id)arg3 deletedRecordIDs:(id)arg4 operationError:(id)arg5 managedObjectContext:(id)arg6 error:(id *)arg7;
-- (BOOL)persistMetadataChangesIfNecessary:(id)arg1 error:(id *)arg2;
-- (BOOL)serializeDirtyObjectsInToOperationsWithStore:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
-- (void)addDeletedRecordIDToCurrentOperation:(id)arg1 inContext:(id)arg2;
+- (BOOL)currentBatchExceedsThresholds:(id)arg1;
+- (BOOL)modifyRecordsOperationFinishedForStore:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4 managedObjectContext:(id)arg5 error:(id *)arg6;
+- (BOOL)checkForObjectsNeedingExportInStore:(id)arg1 andReturnCount:(unsigned long long *)arg2 withManagedObjectContext:(id)arg3 error:(id *)arg4;
+- (id)newOperationBySerializingDirtyObjectsInStore:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
 - (BOOL)processAnalyzedHistoryInStore:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
-- (void)addOperationForCurrentState:(id)arg1;
-- (void)resetCurrentState;
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1;
 

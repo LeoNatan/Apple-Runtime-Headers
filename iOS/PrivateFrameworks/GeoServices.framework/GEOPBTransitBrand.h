@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPBTransitBrand : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     unsigned long long _muid;
     NSString *_nameDisplayString;
     GEOStyleAttributes *_styleAttributes;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _brandIndex;
     struct {
         unsigned int has_muid:1;
@@ -58,6 +60,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasBrandIndex;
 @property(nonatomic) unsigned int brandIndex;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

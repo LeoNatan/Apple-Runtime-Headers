@@ -15,6 +15,7 @@
     struct tagPLImageTableMemoryPool *_pool;
     struct os_unfair_lock_s _expansionLock;
     BOOL _isReadOnly;
+    BOOL _flushAfterWrite;
     BOOL _formatIsCropped;
     BOOL _readOnly;
     int _formatSideLen;
@@ -32,8 +33,10 @@
 @property(nonatomic) BOOL formatIsCropped; // @synthesize formatIsCropped=_formatIsCropped;
 @property(nonatomic) int formatSideLen; // @synthesize formatSideLen=_formatSideLen;
 @property(nonatomic) unsigned long long entryLength; // @synthesize entryLength=_entryLength;
+@property(nonatomic) BOOL flushAfterWrite; // @synthesize flushAfterWrite=_flushAfterWrite;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+- (void)flush;
 - (void)endThumbnailSafePropertyUpdatesOnAssetThumbnailIdentifier:(id)arg1 withToken:(id)arg2;
 - (id)beginThumbnailSafePropertyUpdatesOnAssetThumbnailIdentifier:(id)arg1;
 - (void)deleteEntryWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 uuid:(id)arg3;

@@ -31,6 +31,7 @@
     NSString *_directoryLabel;
     long long _sortOrder;
     BOOL _isMainAccount;
+    BOOL _isChildDelegateAccount;
     BOOL _groupsCanRemoveMembers;
     BOOL _canBecomeDefaultAccount;
     BOOL _canReimportFromMetadata;
@@ -53,6 +54,7 @@
 @property BOOL showAllContactsIfOnlyOneGroup; // @synthesize showAllContactsIfOnlyOneGroup=_showAllContactsIfOnlyOneGroup;
 @property BOOL canReimportFromMetadata; // @synthesize canReimportFromMetadata=_canReimportFromMetadata;
 @property BOOL canBecomeDefaultAccount; // @synthesize canBecomeDefaultAccount=_canBecomeDefaultAccount;
+@property(readonly) BOOL isChildDelegateAccount; // @synthesize isChildDelegateAccount=_isChildDelegateAccount;
 @property(readonly) BOOL isMainAccount; // @synthesize isMainAccount=_isMainAccount;
 @property(readonly) Class sourceClass; // @synthesize sourceClass=_sourceClass;
 @property(readonly) long long sortOrder; // @synthesize sortOrder=_sortOrder;

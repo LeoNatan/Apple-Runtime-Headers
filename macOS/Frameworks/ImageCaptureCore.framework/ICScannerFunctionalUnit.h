@@ -34,6 +34,9 @@
 - (void)addScanAreaToDictionary:(id)arg1;
 - (void)setScanProgressPercentDone:(double)arg1;
 @property unsigned long long overviewResolution;
+- (BOOL)scanningInProgress;
+- (void)setScanInProgress:(BOOL)arg1;
+- (void)setOverviewScanInProgress:(BOOL)arg1;
 - (void)setState:(unsigned long long)arg1;
 - (void)setVendorFeatures:(id)arg1;
 @property unsigned long long scaleFactor;

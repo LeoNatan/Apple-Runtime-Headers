@@ -11,11 +11,9 @@
 @interface TKLabelContainerView : UIView
 {
     UILabel *_label;
-    float _labelDefaultLastBaselineOffsetFromBottom;
     struct UIEdgeInsets _labelPaddingInsets;
 }
 
-@property(nonatomic) float labelDefaultLastBaselineOffsetFromBottom; // @synthesize labelDefaultLastBaselineOffsetFromBottom=_labelDefaultLastBaselineOffsetFromBottom;
 @property(nonatomic) struct UIEdgeInsets labelPaddingInsets; // @synthesize labelPaddingInsets=_labelPaddingInsets;
 - (void).cxx_destruct;
 - (void)layoutSubviews;

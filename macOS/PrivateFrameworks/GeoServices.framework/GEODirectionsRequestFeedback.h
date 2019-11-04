@@ -13,10 +13,12 @@
 @interface GEODirectionsRequestFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_appIdentifier;
     NSString *_requestingAppId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _purpose;
     int _source;
     struct {
@@ -61,6 +63,8 @@
 - (id)purposeAsString:(int)arg1;
 @property(nonatomic) BOOL hasPurpose;
 @property(nonatomic) int purpose;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithPurpose:(int)arg1 andSource:(int)arg2 andIdentifier:(id)arg3;
 - (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
 - (id)initWithPurpose:(int)arg1;

@@ -11,12 +11,12 @@
 }
 
 + (id)sharedInstance;
+- (void)processSingleUserImplicitTrainingUtterance:(id)arg1 audioDeviceType:(id)arg2 audioRecordType:(id)arg3 withVoiceTriggerCtxt:(id)arg4 withOtherCtxt:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (void)recordingStoppedForReason:(int)arg1;
-- (void)startRecordingImplicitTrainingUtteranceWithVoiceTriggerEventInfo:(id)arg1;
+- (void)processImplicitTrainingUtteranceWithVoiceTriggerEventInfo:(id)arg1;
 - (void)processAudioChunk:(id)arg1;
-- (void)setRecordingContext:(id)arg1;
-- (void)processImplicitTrainingUtterance:(id)arg1 forVoiceProfileId:(id)arg2 withMetaInfo:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)processImplicitTrainingUtterance:(id)arg1 forVoiceProfileId:(id)arg2 withRecordDeviceInfo:(id)arg3 withRecordCtxt:(id)arg4 withVoiceTriggerCtxt:(id)arg5 withOtherCtxt:(id)arg6 withCompletion:(CDUnknownBlockType)arg7;
+- (void)setRecordingContext:(id)arg1;
 
 @end
 

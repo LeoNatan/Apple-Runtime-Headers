@@ -31,7 +31,6 @@
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 willLoadRequest:(id)arg2;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(_Bool)arg3;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)_showErrorAlert;
 - (void)confirmIdentityViewController:(id)arg1 didCompleteWithSuccess:(_Bool)arg2;
 - (void)_cancelButtonWasTapped:(id)arg1;

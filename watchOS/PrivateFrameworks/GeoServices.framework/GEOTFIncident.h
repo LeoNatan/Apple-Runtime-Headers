@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOTFIncident : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_815f15fd _geoids;
     NSString *_crossStreet;
     unsigned long long _durationMin;
@@ -29,6 +28,9 @@ __attribute__((visibility("hidden")))
     NSString *_street;
     long long _updateTime;
     NSData *_zilch;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _alertCCode;
     int _color;
     float _delay;
@@ -209,6 +211,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

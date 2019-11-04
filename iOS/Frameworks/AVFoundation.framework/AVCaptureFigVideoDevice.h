@@ -127,6 +127,7 @@ __attribute__((visibility("hidden")))
     _Bool _nonDestructiveCropEnabled;
     long long _nonDestructiveCropAspectRatio;
     _Bool _geometricDistortionCorrectionEnabled;
+    _Bool _globalToneMappingEnabled;
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -316,6 +317,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isWhiteBalanceModeSupported:(long long)arg1;
 - (void)_setAdjustingWhiteBalance:(_Bool)arg1;
 - (_Bool)isAdjustingWhiteBalance;
+- (void)_setGlobalToneMappingEnabledInternal:(_Bool)arg1;
 - (void)setGlobalToneMappingEnabled:(_Bool)arg1;
 - (_Bool)isGlobalToneMappingEnabled;
 - (void)setActiveMaxExposureDuration:(CDStruct_1b6d18a9)arg1;

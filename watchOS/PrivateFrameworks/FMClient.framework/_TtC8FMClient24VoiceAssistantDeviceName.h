@@ -13,6 +13,7 @@
     // Error parsing type: , name: deviceName
     // Error parsing type: , name: ownerFirstName
     // Error parsing type: , name: ownerLastName
+    // Error parsing type: , name: $__lazy_storage_$_syncAnchor
 }
 
 + (_Bool)supportsSecureCoding;
@@ -21,6 +22,7 @@
 @property(nonatomic, readonly) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(nonatomic, readonly) int hash;
+@property(nonatomic, copy) NSString *syncAnchor;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDeviceName:(id)arg1 ownerFirstName:(id)arg2 ownerLastName:(id)arg3;

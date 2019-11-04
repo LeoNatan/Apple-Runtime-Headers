@@ -15,7 +15,7 @@
 }
 
 + (id)delegate;
-- (id)circleGetInitialSyncViews:(id *)arg1;
+- (id)circleGetInitialSyncViews:(unsigned int)arg1 error:(id *)arg2;
 - (id)circleJoinDataFor:(struct __OpaqueSOSPeerInfo *)arg1 error:(id *)arg2;
 
 // Remaining properties

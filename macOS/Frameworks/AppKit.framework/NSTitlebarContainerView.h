@@ -13,12 +13,14 @@ __attribute__((visibility("hidden")))
 {
     NSThemeFrame *_associatedThemeFrame;
     BOOL _transparent;
+    BOOL _transparencyAllowedInFullScreen;
     BOOL _shouldRoundCorners;
     BOOL _maskSet;
     _NSTitlebarDecorationView *_decorationView;
     NSView *_nonRootLayerBackedWindowChromeBackstopRenderingView;
 }
 
+@property BOOL transparencyAllowedInFullScreen; // @synthesize transparencyAllowedInFullScreen=_transparencyAllowedInFullScreen;
 @property(retain) _NSTitlebarDecorationView *decorationView; // @synthesize decorationView=_decorationView;
 @property double buttonRevealAmount; // @dynamic buttonRevealAmount;
 @property(readonly) double titleHeightToHideInFullScreen; // @dynamic titleHeightToHideInFullScreen;
@@ -39,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 @property BOOL transparent;
+- (void)_refreshLayerHitTesting;
 @property BOOL drawsBottomSeparator;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

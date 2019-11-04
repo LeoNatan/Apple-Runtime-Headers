@@ -78,6 +78,7 @@
 @property(readonly, nonatomic, getter=_titleLabelFont) UIFont *titleLabelFont;
 - (id)_titleLabelPreferredFont;
 @property(copy, nonatomic) NSArray *icons;
+- (void)_configureIconButtonsForIcons:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)_layoutManager;
 @property(readonly, nonatomic, getter=_dateLabel) UILabel *dateLabel;
@@ -96,7 +97,7 @@
 - (void)_configureDateLabel;
 - (void)_configureTitleLabel:(id)arg1;
 - (void)_updateStylingForTitleLabel:(id)arg1;
-- (void)_configureIconButtonsForIcons:(id)arg1;
+- (void)_configureIconButton:(id)arg1 withIcon:(id)arg2;
 - (double)_headerHeightForWidth:(double)arg1;
 @property(readonly, nonatomic, getter=_iconTrailingPadding) double iconTrailingPadding;
 @property(readonly, nonatomic, getter=_iconLeadingPadding) double iconLeadingPadding;

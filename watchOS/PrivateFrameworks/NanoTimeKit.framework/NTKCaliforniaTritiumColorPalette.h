@@ -15,6 +15,10 @@
 }
 
 - (void).cxx_destruct;
+- (id)worldClockDaytimeHandsDotColors;
+- (id)worldClockDaytimeHandsColors;
+- (id)worldClockDaytimeBackgrounColor;
+- (_Bool)isBlackBackground;
 - (id)circularDialSubtickColor;
 - (id)circularDialTickColor;
 - (id)cornerComplicationOuterTextColor;

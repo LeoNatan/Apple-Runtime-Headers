@@ -34,6 +34,7 @@
 + (id)overrideDataSourceImage;
 + (id)applicationBundleIdentifier;
 + (id)bundleIdentifier;
++ (_Bool)drivenByUserInteraction;
 + (_Bool)wantsPrivateQueue;
 + (id)contentAttributes;
 @property(readonly, nonatomic, getter=hasUnlockedSinceBoot) _Bool unlockedSinceBoot; // @synthesize unlockedSinceBoot=_unlockedSinceBoot;

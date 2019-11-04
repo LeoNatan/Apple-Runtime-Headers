@@ -32,12 +32,14 @@
     NSURL *_renderedPreviewContentURL;
     NSNumber *_playbackVariation;
     NSNumber *_videoDuration;
+    NSNumber *_reframeVariation;
 }
 
 + (BOOL)supportsSecureCoding;
 + (unsigned long long)maximumAdjustmentDataLength;
 + (id)renderURLWithExtensionForMediaType:(long long)arg1;
 + (id)outputForFlippingFullSizeRenderWithContentEditingInput:(id)arg1 error:(id *)arg2;
+@property(retain, nonatomic) NSNumber *reframeVariation; // @synthesize reframeVariation=_reframeVariation;
 @property(nonatomic) BOOL isSwappingFullSizeRenderWithAlternateRender; // @synthesize isSwappingFullSizeRenderWithAlternateRender=_isSwappingFullSizeRenderWithAlternateRender;
 @property(retain, nonatomic) NSNumber *videoDuration; // @synthesize videoDuration=_videoDuration;
 @property(retain, nonatomic) NSNumber *playbackVariation; // @synthesize playbackVariation=_playbackVariation;

@@ -41,6 +41,7 @@
 + (double)itemsPerRowForWidth:(double)arg1;
 + (id)photoPickerForGameCenterWithContact:(id)arg1;
 + (id)navigationControllerForPicker:(id)arg1;
++ (struct CGSize)defaultContentSize;
 + (_Bool)canShowPhotoPickerForView:(id)arg1 withTraitCollection:(id)arg2;
 + (id)descriptorForRequiredKeys;
 + (id)log;
@@ -49,8 +50,8 @@
 @property(retain, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
 @property(retain, nonatomic) CNPhotoPickerActionsViewController *actionsViewController; // @synthesize actionsViewController=_actionsViewController;
 @property(retain, nonatomic) CNAvatarEditingManager *posePickerController; // @synthesize posePickerController=_posePickerController;
-@property(nonatomic) CNPhotoPickerProviderItem *duplicatingProviderItem; // @synthesize duplicatingProviderItem=_duplicatingProviderItem;
-@property(nonatomic) CNPhotoPickerProviderItem *editingProviderItem; // @synthesize editingProviderItem=_editingProviderItem;
+@property(retain, nonatomic) CNPhotoPickerProviderItem *duplicatingProviderItem; // @synthesize duplicatingProviderItem=_duplicatingProviderItem;
+@property(retain, nonatomic) CNPhotoPickerProviderItem *editingProviderItem; // @synthesize editingProviderItem=_editingProviderItem;
 @property(readonly, nonatomic) CNPhotoPickerHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) CNPhotoPickerDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CNMutableContact *pendingEditContact; // @synthesize pendingEditContact=_pendingEditContact;

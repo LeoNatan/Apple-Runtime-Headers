@@ -15,9 +15,12 @@
     _Bool _policyDisabled;
     _Bool _isCancelled;
     _Bool _isCJK;
+    _Bool _hasPolicyPhraseMatch;
+    _Bool _exact;
     float _lastIsSpaceFeature;
     NSString *_keyboardLanguage;
     NSString *_searchString;
+    NSString *_userQueryString;
     unsigned long long _queryTermCount;
     NSMapTable *_bundleFeatures;
     double _experimentalWeight1;
@@ -26,36 +29,14 @@
     double _currentTime;
 }
 
++ (id)phoneFavoritesCopy;
 + (id)importantAttributesForBundle:(id)arg1;
-+ (id)calendarContentType;
-+ (id)remindersContentType;
-+ (id)messagesContentType;
-+ (id)mailContentType;
-+ (id)contactContentType;
-+ (id)documentsAppBundle;
-+ (id)filesBundle;
-+ (id)searchBundle;
-+ (id)relatedSearchesBundle;
-+ (id)dictionaryBundle;
-+ (id)conversionBundle;
-+ (id)calculatorBundle;
-+ (id)safariBundle;
-+ (id)remindersBundle;
-+ (id)contactsBundle;
-+ (id)settingsBundle;
-+ (id)appsBundle;
-+ (id)musicBundle;
-+ (id)calendarBundle;
-+ (id)messagesBundle;
-+ (id)notesBundle;
-+ (id)mailBundle;
 + (void)setDockApps:(id)arg1;
-+ (CDUnknownBlockType)shouldUpdateFuncForSnippetFeature:(long long)arg1;
 + (_Bool)isCJK;
 + (void)clearState;
 + (id)sortedUniqueBundleFeatureValuesFromBundleFeatures:(id)arg1;
-+ (id)requiredAttributes;
-+ (void)initialize;
+@property(nonatomic) _Bool exact; // @synthesize exact=_exact;
+@property(nonatomic) _Bool hasPolicyPhraseMatch; // @synthesize hasPolicyPhraseMatch=_hasPolicyPhraseMatch;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property _Bool isCJK; // @synthesize isCJK=_isCJK;
 @property _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
@@ -67,6 +48,7 @@
 @property(retain, nonatomic) NSMapTable *bundleFeatures; // @synthesize bundleFeatures=_bundleFeatures;
 @property _Bool isInternalDevice; // @synthesize isInternalDevice=_isInternalDevice;
 @property unsigned long long queryTermCount; // @synthesize queryTermCount=_queryTermCount;
+@property(retain, nonatomic) NSString *userQueryString; // @synthesize userQueryString=_userQueryString;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 - (void).cxx_destruct;
@@ -92,11 +74,14 @@
 - (void)updateResultSetContext:(struct _resultset_computation_ctx *)arg1 andUniqueScores:(id)arg2 withResultSetItems:(id)arg3;
 - (void)deactivate;
 - (void)activate;
+- (id)rankingConfigurationWithMeContact:(id)arg1 emailAddresses:(id)arg2 phoneFavorites:(id)arg3 vipList:(id)arg4 clientBundle:(id)arg5 isScopedSearch:(_Bool)arg6 spotlightQuery:(id)arg7 userQuery:(id)arg8 whyQuery:(unsigned long long)arg9 isPeopleSearch:(_Bool)arg10;
 - (id)rankingConfigurationWithMeContact:(id)arg1 emailAddresses:(id)arg2 phoneFavorites:(id)arg3 vipList:(id)arg4 clientBundle:(id)arg5 isScopedSearch:(_Bool)arg6 spotlightQuery:(id)arg7;
 - (id)rankingConfiguration;
 - (void)dealloc;
 - (void)cancel;
 - (id)initWithSearchString:(id)arg1 language:(id)arg2 isCJK:(_Bool)arg3 experimentalWeight1:(double)arg4 experimentalWeight2:(double)arg5 currentTime:(double)arg6;
+- (id)initWithSearchString:(id)arg1 userQueryString:(id)arg2 language:(id)arg3 isCJK:(_Bool)arg4 experimentalWeight1:(double)arg5 experimentalWeight2:(double)arg6 currentTime:(double)arg7;
+- (id)initWithSearchString:(id)arg1 userQueryString:(id)arg2 language:(id)arg3 currentTime:(double)arg4;
 - (id)initWithSearchString:(id)arg1 language:(id)arg2 currentTime:(double)arg3;
 - (id)init;
 

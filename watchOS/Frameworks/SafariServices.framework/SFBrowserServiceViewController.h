@@ -8,11 +8,12 @@
 
 #import <SafariServices/SFServiceViewControllerProtocol-Protocol.h>
 #import <SafariServices/_SFActivityDelegate-Protocol.h>
+#import <SafariServices/_SFLinkPreviewHeaderDelegate-Protocol.h>
 
 @class NSDate, NSString, NSTimer, SFBrowserPersonaAnalyticsHelper, SFUserNotification, WKProcessPool, _SFWebViewUsageMonitor;
 
 __attribute__((visibility("hidden")))
-@interface SFBrowserServiceViewController : _SFBrowserContentViewController <_SFActivityDelegate, SFServiceViewControllerProtocol>
+@interface SFBrowserServiceViewController : _SFBrowserContentViewController <_SFActivityDelegate, _SFLinkPreviewHeaderDelegate, SFServiceViewControllerProtocol>
 {
     CDUnknownBlockType _activityViewControllerInfoFetchCompletionHandler;
     _SFWebViewUsageMonitor *_usageMonitor;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *hostApplicationCallbackURLScheme; // @synthesize hostApplicationCallbackURLScheme=_hostApplicationCallbackURLScheme;
 @property(retain, nonatomic) SFUserNotification *userNotification; // @synthesize userNotification=_userNotification;
 - (void).cxx_destruct;
+- (void)linkPreviewHeader:(id)arg1 didEnableLinkPreview:(_Bool)arg2;
 - (void)browserViewDidReceiveTouchEvent:(id)arg1;
 - (void)safariActivity:(id)arg1 didFinish:(_Bool)arg2;
 - (void)webViewControllerWebProcessDidCrash:(id)arg1;
@@ -59,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_notifyInitialLoadDidFinish:(_Bool)arg1;
 - (void)_updateRemoteSwipeGestureState;
 - (void)_dismiss;
+- (void)didRequestShowLinkPreviews:(_Bool)arg1;
 - (void)didDetectUserInteractionFromHostApp;
 - (void)didDetectRemoteViewControllerViewIsHidden;
 - (void)setDismissButtonStyle:(int)arg1;
@@ -80,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)updateScrollViewIndicatorVerticalInsets:(struct UIEdgeInsets)arg1 horizontalInsets:(struct UIEdgeInsets)arg2;
 - (id)processPoolConfiguration;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)setDisplayMode:(int)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)_willAppearInRemoteViewController;

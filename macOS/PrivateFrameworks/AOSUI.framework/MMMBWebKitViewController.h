@@ -77,6 +77,7 @@
 - (void)leftNavigationButtonClicked:(id)arg1;
 @property(readonly, nonatomic) WebView *webView;
 - (void)loadURLRequest:(id)arg1;
+- (void)dealloc;
 - (id)initMBWebKitViewControllerInView:(id)arg1 mbUIDelegate:(id)arg2 authenticationResults:(id)arg3;
 - (id)initMBWebKitViewControllerInView:(id)arg1 mbUIDelegate:(id)arg2;
 

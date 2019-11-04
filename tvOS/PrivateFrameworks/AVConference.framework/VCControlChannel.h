@@ -25,9 +25,11 @@ __attribute__((visibility("hidden")))
     int _maxReceivedRate;
     int _minReceivedRate;
     double _lastUpdateTimestamp;
+    unsigned int _reliableMessageResendInterval;
     NSObject<OS_dispatch_queue> *_asyncProcessingQueue;
 }
 
+@property(readonly, nonatomic) unsigned int reliableMessageResendInterval; // @synthesize reliableMessageResendInterval=_reliableMessageResendInterval;
 - (void)setEncryptionWithEncryptionMaterial:(CDStruct_791df8ea *)arg1;
 - (void)broadcastUnreliableMessage:(id)arg1;
 - (void)sendUnreliableMessage:(id)arg1 participantID:(unsigned long long)arg2;

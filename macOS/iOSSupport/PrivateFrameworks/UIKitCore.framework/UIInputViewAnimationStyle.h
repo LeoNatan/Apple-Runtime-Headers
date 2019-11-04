@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     BOOL interactivelyCancelled;
     BOOL _isLegacy;
     BOOL force;
+    BOOL _dontMerge;
 }
 
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2;
 + (id)animationStyleDefault;
 + (id)animationStyleImmediate;
+@property(nonatomic) BOOL dontMerge; // @synthesize dontMerge=_dontMerge;
 @property(nonatomic) BOOL interactivelyCancelled; // @synthesize interactivelyCancelled;
 @property(nonatomic) unsigned long long extraOptions; // @synthesize extraOptions;
 @property(nonatomic) BOOL force; // @synthesize force;

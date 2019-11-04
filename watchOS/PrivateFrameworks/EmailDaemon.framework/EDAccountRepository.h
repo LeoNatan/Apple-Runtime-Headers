@@ -9,13 +9,14 @@
 #import <EmailDaemon/EDAccountChangeHookResponder-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDAccountECAccountTransformer, EDPersistenceHookRegistry, NSMutableDictionary, NSString;
+@class EDAccountECAccountTransformer, EDPersistenceHookRegistry, NSMutableSet, NSString;
 @protocol EDAccountsProvider;
 
 @interface EDAccountRepository : NSObject <EFLoggable, EDAccountChangeHookResponder>
 {
+    NSMutableSet *_observers;
+    struct os_unfair_lock_s _lock;
     EDAccountECAccountTransformer *_transformer;
-    NSMutableDictionary *_observersByIdentifier;
     id <EDAccountsProvider> _accountsProvider;
     EDPersistenceHookRegistry *_hookRegistry;
 }
@@ -23,16 +24,14 @@
 + (id)log;
 @property(nonatomic) __weak EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
-@property(retain, nonatomic) NSMutableDictionary *observersByIdentifier; // @synthesize observersByIdentifier=_observersByIdentifier;
 @property(retain, nonatomic) EDAccountECAccountTransformer *transformer; // @synthesize transformer=_transformer;
 - (void).cxx_destruct;
 - (void)accountsChanged:(id)arg1;
 - (void)accountsRemoved:(id)arg1;
 - (void)accountsAdded:(id)arg1;
 - (id)transformAccounts:(id)arg1;
-- (void)cancelObservation:(id)arg1;
-- (void)startObservingWithResultsObserver:(id)arg1 observationIdentifier:(id)arg2;
 - (void)allAccountsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)registerObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)allAccounts;
 - (void)dealloc;
 - (id)initWithAccountsProvider:(id)arg1 hookRegistry:(id)arg2;

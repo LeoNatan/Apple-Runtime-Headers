@@ -8,13 +8,14 @@
 
 #import <MapsSupport/MSPReceiverETAControllerDelegate-Protocol.h>
 #import <MapsSupport/MSPSenderETAControllerDelegate-Protocol.h>
+#import <MapsSupport/MSPSharedTripAvailabiltyDelegate-Protocol.h>
 #import <MapsSupport/MSPSharedTripXPCServer-Protocol.h>
 #import <MapsSupport/NSXPCListenerDelegate-Protocol.h>
 
 @class MSPReceiverETAController, MSPSenderETAController, MSPSharedTripRelay, NSMutableSet, NSString, NSXPCListener;
 @protocol OS_dispatch_queue;
 
-@interface MSPSharedTripServer : NSObject <NSXPCListenerDelegate, MSPReceiverETAControllerDelegate, MSPSenderETAControllerDelegate, MSPSharedTripXPCServer>
+@interface MSPSharedTripServer : NSObject <NSXPCListenerDelegate, MSPReceiverETAControllerDelegate, MSPSenderETAControllerDelegate, MSPSharedTripAvailabiltyDelegate, MSPSharedTripXPCServer>
 {
     MSPSenderETAController *_sendingController;
     MSPReceiverETAController *_receivingController;
@@ -25,13 +26,17 @@
 }
 
 - (void).cxx_destruct;
+- (void)relay:(id)arg1 accountStatusChanged:(_Bool)arg2;
 - (void)senderController:(id)arg1 sendMessage:(id)arg2 toGroup:(id)arg3;
 - (void)senderController:(id)arg1 sendMessage:(id)arg2 toParticipant:(id)arg3;
+- (void)invalidateActiveHandlesForSenderController:(id)arg1;
 - (void)senderController:(id)arg1 didInvalidateSharedTripWithError:(id)arg2;
+- (void)fetchAccountValidWithCompletion:(CDUnknownBlockType)arg1;
 - (void)blockSharedTrip:(id)arg1;
 - (void)fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unsubscribeFromSharedTripUpdatesWithIdentifier:(id)arg1;
 - (void)subscribeToSharedTripUpdatesWithIdentifier:(id)arg1;
+- (void)fetchActiveHandlesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopSharingTrip;
 - (void)stopSharingTripWithMessagesGroup:(id)arg1;
 - (void)startSharingTripWithMessagesGroup:(id)arg1;
@@ -39,6 +44,7 @@
 - (void)startSharingTripWithMessagesContacts:(id)arg1;
 - (void)stopSharingTripWithContacts:(id)arg1;
 - (void)startSharingTripWithContacts:(id)arg1;
+- (void)fetchSendingIdentityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkin;
 - (void)etaController:(id)arg1 sharedTripDidClose:(id)arg2;
 - (void)etaController:(id)arg1 sharedTripDidBecomeUnavailable:(id)arg2;
@@ -52,6 +58,8 @@
 - (id)connections;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)createXPCListener;
+- (void)cleanConnections;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

@@ -14,7 +14,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (void)_axAnnotateCell:(id)arg1 atIndexPath:(id)arg2;
-- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2;
+- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_switchViewModeForCurrentMode:(long long)arg1 animated:(_Bool)arg2;
 - (void)_accessibilityLoadAccessibilityInformation;
 

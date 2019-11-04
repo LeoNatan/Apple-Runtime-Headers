@@ -55,6 +55,7 @@
 @property(nonatomic) unsigned long long passwordType; // @synthesize passwordType=_passwordType;
 - (void).cxx_destruct;
 - (void)setDiffUMUserPropertiesFromUMUser:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToLKUser:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

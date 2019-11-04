@@ -11,10 +11,11 @@
     struct _xmlSchema *_xsdSchema;
 }
 
++ (id)validatorWithPathToXSD:(id)arg1;
++ (id)validatorWithXSD:(id)arg1;
 - (_Bool)validateXML:(id)arg1 simpleError:(id *)arg2 detailedErrors:(id *)arg3;
 - (void)dealloc;
-- (id)initWithPathToXSD:(id)arg1;
-- (id)initWithXSD:(id)arg1;
+- (id)_initWithSchema:(struct _xmlSchema *)arg1;
 
 @end
 

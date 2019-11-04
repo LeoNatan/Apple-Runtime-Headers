@@ -8,10 +8,12 @@
 
 @interface _UIFontSystemCacheKey : _UIFontCacheKey
 {
+    _Bool _textLegibility;
     int _traits;
     float _pointSize;
 }
 
+@property(nonatomic) _Bool textLegibility; // @synthesize textLegibility=_textLegibility;
 @property(nonatomic) float pointSize; // @synthesize pointSize=_pointSize;
 @property(nonatomic) int traits; // @synthesize traits=_traits;
 - (id)description;

@@ -36,6 +36,7 @@
 - (id)videoFormat;
 - (void)setVideoFormat:(id)arg1;
 - (long long)worldAlignment;
+- (void)abortRecording;
 - (void)finishRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)startRecording;
 - (id)initPrivate;

@@ -16,7 +16,7 @@
 #import <NanoTimeKit/NTKTritiumAnimationControllerViewProvider-Protocol.h>
 #import <NanoTimeKit/NTKTritiumFaceAnimatorDelegate-Protocol.h>
 
-@class NSCache, NSDate, NSMutableDictionary, NSObject, NSString, NTKComplicationController, NTKComplicationDisplayWrapperView, NTKDelayedBlock, NTKFace, NTKFaceEditView, NTKFaceView, PUICClientSideAnimation, UIView;
+@class CADisplayLink, NSCache, NSDate, NSMutableDictionary, NSObject, NSString, NTKColorCodeTimeView, NTKComplicationController, NTKComplicationDisplayWrapperView, NTKDelayedBlock, NTKFace, NTKFaceEditView, NTKFaceView, PUICClientSideAnimation, UIView;
 @protocol NTKClockStatusBarViewController, NTKFaceViewControllerDelegate, OS_dispatch_source;
 
 @interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, NTKSensitiveUIStateObserver, NTKTritiumFaceAnimatorDelegate, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate, NTKFaceObserver, NTKTritiumAnimationControllerViewProvider>
@@ -55,6 +55,8 @@
     struct CGRect _faceLaunchRect;
     NSMutableDictionary *_tritiumTransitionSlotToWrapperViewMapping;
     UIViewController<NTKClockStatusBarViewController> *_tritiumStatusBarViewController;
+    NTKColorCodeTimeView *_colorCodeDebugView;
+    CADisplayLink *_colorDebugDisplayLink;
     _Bool _shouldShowSnapshot;
     _Bool _supressesNonSnapshotUI;
     _Bool _showsCanonicalContent;
@@ -222,6 +224,7 @@
 - (void)freezeAfterDelay:(double)arg1;
 - (void)freeze;
 - (_Bool)_shouldHideFaceUI;
+- (void)_updateColorDebugView;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithFace:(id)arg1 configuration:(CDUnknownBlockType)arg2;

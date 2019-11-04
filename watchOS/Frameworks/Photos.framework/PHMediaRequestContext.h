@@ -39,13 +39,14 @@
     unsigned long long _managerID;
 }
 
++ (id)chooserQueue;
 + (int)type;
 + (id)contentEditingInputRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 options:(id)arg4 useRAWAsUnadjustedBase:(_Bool)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)livePhotoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 livePhotoRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)videoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 videoRequestOptions:(id)arg4 intent:(int)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)imageRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 imageRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (void)initialize;
-@property(copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(retain, nonatomic) PHImageResourceChooser *imageResourceChooser; // @synthesize imageResourceChooser=_imageResourceChooser;
 @property(retain, nonatomic) PHImageDisplaySpec *displaySpec; // @synthesize displaySpec=_displaySpec;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
@@ -58,12 +59,12 @@
 - (void)adjustmentDataRequest:(id)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(id)arg4;
 - (void)videoChoosingAndAvailabilityRequest:(id)arg1 didFinishWithVideoURL:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)videoChoosingAndAvailabilityRequest:(id)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(id)arg4;
-- (void)videoRequest:(id)arg1 isRequestingVideoChoosingForSize:(struct CGSize)arg2;
+- (_Bool)videoRequest:(id)arg1 didStartVideoChoosingRequestForSize:(struct CGSize)arg2;
 - (void)imageRequest:(id)arg1 isRequestingScheduledWorkBlock:(CDUnknownBlockType)arg2;
 - (void)imageRequest:(id)arg1 isQueryingCacheAndDidWait:(_Bool *)arg2 didFindImage:(_Bool *)arg3 resultHandler:(CDUnknownBlockType)arg4;
 - (_Bool)imageRequest:(id)arg1 isRequestingRepairAndRetryForDataStoreKey:(id)arg2 inStore:(id)arg3 assetObjectID:(id)arg4 forValidationErrors:(id)arg5;
 - (void)mediaRequest:(id)arg1 didFinishWithResult:(id)arg2;
-- (void)mediaRequest:(id)arg1 isRequestingLocalAvailabilityChangeForResource:(id)arg2;
+- (_Bool)mediaRequest:(id)arg1 didStartLocalAvailabilityChangeRequestForResource:(id)arg2;
 - (void)mediaRequest:(id)arg1 didFindLocallyAvailableResult:(_Bool)arg2 isDegraded:(_Bool)arg3;
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didLoadData:(id)arg2;
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didFinishWithSuccess:(_Bool)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
@@ -88,7 +89,7 @@
 - (_Bool)isNetworkAccessAllowed;
 - (_Bool)isSynchronous;
 - (unsigned long long)nextRequestIndex;
-- (void)_makeAvailabilityRequest:(id)arg1 forResource:(id)arg2;
+- (_Bool)_makeAvailabilityRequest:(id)arg1 forResource:(id)arg2;
 - (void)_setupProgressIfNeeded;
 - (void)_registerAndStartRequests:(id)arg1;
 - (id)_requestWithIdentifier:(id)arg1;

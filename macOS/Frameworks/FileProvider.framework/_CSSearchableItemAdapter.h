@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSData *tagData;
 - (id)tags;
 @property(readonly, nonatomic) NSDictionary *userInfo;
-@property(readonly, copy) NSURL *fileURL;
 @property(readonly, getter=fp_isUbiquitous) BOOL fp_ubiquitous;
 @property(readonly, nonatomic) unsigned long long capabilities;
 @property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
@@ -84,6 +83,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isExcludedFromSync) BOOL excludedFromSync;
 @property(readonly, nonatomic) NSDictionary *extendedAttributes;
 @property(readonly, copy) NSString *fileSystemFilename;
+@property(readonly, copy) NSURL *fileURL;
 @property(readonly, nonatomic) id <NSFileProviderItemFlags> flags;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
 @property(readonly, copy) NSNumber *hasUnresolvedConflicts;

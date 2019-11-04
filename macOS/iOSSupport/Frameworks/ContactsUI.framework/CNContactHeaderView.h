@@ -16,6 +16,7 @@
 {
     BOOL _needsReload;
     BOOL _needsLabelSizeCalculation;
+    BOOL _shouldUseConstrainedMaxHeight;
     BOOL _alwaysShowsMonogram;
     BOOL _visibleToScrollViews;
     BOOL _shouldShowBelowNavigationTitle;
@@ -29,6 +30,7 @@
     NSLayoutConstraint *_photoHeightConstraint;
     CNContactHeaderViewSizeAttributes *_sizeAttributes;
     double _lastViewWidth;
+    double _constrainedMaxHeight;
     CNContactPhotoView *_photoView;
 }
 
@@ -41,6 +43,8 @@
 @property(nonatomic) BOOL visibleToScrollViews; // @synthesize visibleToScrollViews=_visibleToScrollViews;
 @property(nonatomic) BOOL alwaysShowsMonogram; // @synthesize alwaysShowsMonogram=_alwaysShowsMonogram;
 @property(readonly, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
+@property(nonatomic) BOOL shouldUseConstrainedMaxHeight; // @synthesize shouldUseConstrainedMaxHeight=_shouldUseConstrainedMaxHeight;
+@property(nonatomic) double constrainedMaxHeight; // @synthesize constrainedMaxHeight=_constrainedMaxHeight;
 @property(nonatomic) double lastViewWidth; // @synthesize lastViewWidth=_lastViewWidth;
 @property(nonatomic) BOOL needsLabelSizeCalculation; // @synthesize needsLabelSizeCalculation=_needsLabelSizeCalculation;
 @property(retain, nonatomic) CNContactHeaderViewSizeAttributes *sizeAttributes; // @synthesize sizeAttributes=_sizeAttributes;
@@ -60,6 +64,8 @@
 - (void)photoViewDidUpdate:(id)arg1;
 - (void)updateSizeDependentAttributes;
 - (void)layoutSubviews;
+- (double)currentHeightPercentMaximizedForMaxHeight:(double)arg1;
+- (double)currentHeightPercentMaximizedForPhoto;
 - (double)currentHeightPercentMaximized;
 - (BOOL)canBecomeFirstResponder;
 - (void)reloadDataPreservingChanges:(BOOL)arg1;
@@ -70,6 +76,8 @@
 - (void)updateWithContacts:(id)arg1;
 - (void)updateWithNewContact:(id)arg1;
 - (void)updateConstraints;
+- (void)setConstrainedMaxHeight:(double)arg1 enabled:(BOOL)arg2;
+- (double)defaultMaxHeight;
 @property(readonly, nonatomic) double maxHeight;
 @property(readonly, nonatomic) double minHeight;
 - (double)safeAreaPhotoOffset;

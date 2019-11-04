@@ -122,7 +122,7 @@
 - (id)makeSubstitueRenderImageFileFromPath:(id)arg1 primaryResource:(id)arg2 fileSuffix:(id)arg3 error:(id *)arg4;
 - (void)updateOriginalResourceOptionsWithResource:(id)arg1 sourceUrl:(id)arg2;
 - (id)_secureMove:(_Bool)arg1 assetResource:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
-- (id)_secureMove:(_Bool)arg1 fileAtURL:(id)arg2 toURL:(id)arg3 error:(id *)arg4;
+- (id)_secureMove:(_Bool)arg1 fileAtURL:(id)arg2 toURL:(id)arg3 capabilities:(id)arg4 error:(id *)arg5;
 @property(readonly, nonatomic) NSDictionary *_movedFiles;
 - (void)_resetMovedFiles;
 - (_Bool)_restoreMovedFilesOnFailure;

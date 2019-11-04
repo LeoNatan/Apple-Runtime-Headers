@@ -20,7 +20,7 @@
 @property(nonatomic) unsigned long long remainingPhotos; // @synthesize remainingPhotos=_remainingPhotos;
 - (void).cxx_destruct;
 - (void)captureOutput:(id)arg1 didFinishProcessingPhoto:(id)arg2 error:(id)arg3;
-- (void)takePhotoWithDevice:(id)arg1;
+- (void)takePhoto;
 - (void)runWithAppKitUserInterface:(id)arg1 input:(id)arg2;
 
 // Remaining properties

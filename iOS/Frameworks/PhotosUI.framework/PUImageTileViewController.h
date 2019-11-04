@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     _Bool __needsUpdateFullsizeImageMetadata;
     _Bool __needsUpdateFullsizeTiledLayer;
     _Bool __isDisplayingFullQualityImage;
+    _Bool _shouldUsePenultimateVersionForNextImageUpdate;
     _Bool _canUseFullsizeTiledLayer;
     PUAssetViewModel *_assetViewModel;
     id <PUDisplayAsset> _asset;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PXImageLayerModulator *imageLayerModulator; // @synthesize imageLayerModulator=_imageLayerModulator;
 @property(retain, nonatomic, setter=_setImageRequester:) PUImageRequester *_imageRequester; // @synthesize _imageRequester=__imageRequester;
 @property(nonatomic) _Bool canUseFullsizeTiledLayer; // @synthesize canUseFullsizeTiledLayer=_canUseFullsizeTiledLayer;
+@property(nonatomic, setter=_setShouldUsePenultimateVersionForNextImageUpdate:) _Bool shouldUsePenultimateVersionForNextImageUpdate; // @synthesize shouldUsePenultimateVersionForNextImageUpdate=_shouldUsePenultimateVersionForNextImageUpdate;
 @property(retain, nonatomic, setter=_setAssetLoadingStartDate:) NSDate *_assetLoadingStartDate; // @synthesize _assetLoadingStartDate=__assetLoadingStartDate;
 @property(nonatomic, setter=_setAssetLoadingStage:) long long _assetLoadingStage; // @synthesize _assetLoadingStage=__assetLoadingStage;
 @property(nonatomic, setter=_setDisplayingFullQualityImage:) _Bool _isDisplayingFullQualityImage; // @synthesize _isDisplayingFullQualityImage=__isDisplayingFullQualityImage;
@@ -97,6 +99,7 @@ __attribute__((visibility("hidden")))
 - (void)imageRequester:(id)arg1 didChange:(id)arg2;
 - (void)_updateImageIfNeeded;
 - (void)_invalidateImage;
+- (void)_invalidate;
 - (void)_updateIfNeeded;
 - (void)_setNeedsUpdate;
 - (_Bool)_needsUpdate;
@@ -111,6 +114,7 @@ __attribute__((visibility("hidden")))
 - (void)setEdgeAntialiasingEnabled:(_Bool)arg1;
 - (void)didChangeVisibleRect;
 - (_Bool)wantsVisibleRectChanges;
+- (void)_setAssetWithoutUpdateIfNeeded:(id)arg1;
 - (void)applyLayoutInfo:(id)arg1;
 - (void)becomeReusable;
 - (id)loadView;

@@ -11,6 +11,7 @@
 + (id)safari_stringAsHexWithData:(id)arg1;
 + (void)safari_reverseEnumerateComponents:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool safari_isSpecialFolderRecordName;
+- (_Bool)safari_looksLikeWillRedirectToURLStringAfterLogin:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *safari_suggestedFilenameFromTitleString;
 - (id)safari_stringByRemovingWwwDotPrefix;
 - (long long)safari_localizedCompareSortingEmptyStringAndNumericPrefixToEnd:(id)arg1;

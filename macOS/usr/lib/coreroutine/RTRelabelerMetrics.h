@@ -37,7 +37,7 @@
 - (void)setFilteredInputMetricsUsingContextCandidates:(id)arg1;
 - (void)setPreprocessedMetricsUsingInputCandidate:(struct RTPair *)arg1 contextCandidates:(id)arg2;
 - (id)initWithRelabeler:(id)arg1;
-- (id)init;
+- (id)initWithLoggingEnabled:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

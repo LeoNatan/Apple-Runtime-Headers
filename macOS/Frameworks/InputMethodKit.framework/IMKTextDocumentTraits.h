@@ -11,11 +11,14 @@
     unsigned long long _autoCapitalizationType;
     BOOL _autoPeriodEnabled;
     BOOL _secureTextEntry;
+    BOOL _suppressCandidates;
 }
 
+@property(readonly, nonatomic, getter=shouldSuppressCandidates) BOOL suppressCandidates; // @synthesize suppressCandidates=_suppressCandidates;
 @property(readonly, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(readonly, nonatomic, getter=isAutoPeriodEnabled) BOOL autoPeriodEnabled; // @synthesize autoPeriodEnabled=_autoPeriodEnabled;
 @property(readonly, nonatomic) unsigned long long autoCapitalizationType; // @synthesize autoCapitalizationType=_autoCapitalizationType;
+- (id)initWithAutoCapitalizationType:(unsigned long long)arg1 autoPeriodEnabled:(BOOL)arg2 secureTextEntry:(BOOL)arg3 suppressCandidates:(BOOL)arg4;
 - (id)initWithAutoCapitalizationType:(unsigned long long)arg1 autoPeriodEnabled:(BOOL)arg2 secureTextEntry:(BOOL)arg3;
 - (id)init;
 

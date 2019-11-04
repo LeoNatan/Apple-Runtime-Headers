@@ -7,7 +7,9 @@
 @class NSString, NSUUID, XCTCapabilities, XCTSpindumpRequestSpecification;
 
 @protocol XCTestManager_ManagerInterface
+- (void)_XCT_requestBackgroundAssertionWithReply:(void (^)(void))arg1;
 - (void)_XCT_requestBackgroundAssertionForPID:(int)arg1 reply:(void (^)(BOOL))arg2;
+- (void)_XCT_requestScreenshotWithReply:(void (^)(NSData *, NSError *))arg1;
 - (void)_XCT_requestScreenshotOfScreenWithID:(unsigned int)arg1 withRect:(struct CGRect)arg2 uti:(NSString *)arg3 compressionQuality:(double)arg4 withReply:(void (^)(NSData *, NSError *))arg5;
 - (void)_XCT_requestSpindumpWithSpecification:(XCTSpindumpRequestSpecification *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
 - (void)_XCT_requestAutomationSessionBlacklist:(void (^)(NSSet *, NSError *))arg1;

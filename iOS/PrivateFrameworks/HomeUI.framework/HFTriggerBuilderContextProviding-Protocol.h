@@ -17,6 +17,7 @@
 @property(readonly, copy, nonatomic) NSString *actionEditorInstructionsDescription;
 @property(readonly, copy, nonatomic) NSString *serviceActionsInstructionDescription;
 @property(readonly, copy, nonatomic) NSString *testActionsInstructionDescription;
+@property(readonly, nonatomic) _Bool filtersEmptyActionSets;
 @property(readonly, nonatomic) _Bool allowDurationEditing;
 @property(readonly, nonatomic) _Bool showConditionTriggers;
 @property(readonly, nonatomic) _Bool showActionSetsInstructions;

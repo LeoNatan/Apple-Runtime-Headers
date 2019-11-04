@@ -9,7 +9,7 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class INHomeAttributeRange, NSString;
 
 @interface INHomeAttributeValue : NSObject <NSCopying, NSSecureCoding>
 {
@@ -19,10 +19,12 @@
     NSString *_stringValue;
     int _limitValue;
     int _unit;
+    INHomeAttributeRange *_rangeValue;
     double _doubleValue;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) INHomeAttributeRange *rangeValue; // @synthesize rangeValue=_rangeValue;
 @property(readonly, nonatomic) int unit; // @synthesize unit=_unit;
 @property(readonly, nonatomic) int limitValue; // @synthesize limitValue=_limitValue;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
@@ -36,7 +38,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithType:(int)arg1 boolValue:(_Bool)arg2 doubleValue:(double)arg3 integerValue:(int)arg4 stringValue:(id)arg5 limitValue:(int)arg6 unit:(int)arg7;
+- (id)initWithType:(int)arg1 boolValue:(_Bool)arg2 doubleValue:(double)arg3 integerValue:(int)arg4 stringValue:(id)arg5 limitValue:(int)arg6 unit:(int)arg7 rangeValue:(id)arg8;
+- (id)initWithRangeValue:(id)arg1;
 - (id)initWithLimitValue:(int)arg1;
 - (id)initWithStringValue:(id)arg1 unit:(int)arg2;
 - (id)initWithIntegerValue:(int)arg1 unit:(int)arg2;

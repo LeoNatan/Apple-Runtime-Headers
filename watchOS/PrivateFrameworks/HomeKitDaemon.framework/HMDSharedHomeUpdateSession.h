@@ -10,47 +10,45 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDMessageDispatcher, HMDRemoteDeviceMessageDestination, HMDResidentDevice, HMFTimer, NSDictionary, NSString, NSUUID;
+@class HMDHome, HMDMessageDispatcher, HMFTimer, NSDictionary, NSString, NSUUID;
 @protocol HMDSharedHomeUpdateSessionDelegate, OS_dispatch_queue;
 
 @interface HMDSharedHomeUpdateSession : NSObject <HMFLogging, HMFTimerDelegate, HMFDumpState>
 {
-    NSString *_homeIdentifier;
     NSUUID *_sessionID;
-    NSDictionary *_messagePayload;
-    HMDMessageDispatcher *_remoteMessageDispatcher;
-    HMDRemoteDeviceMessageDestination *_destination;
-    HMDResidentDevice *_residentDevice;
-    HMFTimer *_timer;
-    unsigned int _retryCount;
     id <HMDSharedHomeUpdateSessionDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
+    HMDHome *_home;
+    NSDictionary *_messagePayload;
+    HMDMessageDispatcher *_remoteMessageDispatcher;
+    HMFTimer *_timer;
+    unsigned int _retryCount;
     double _currentTimerValue;
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) __weak id <HMDSharedHomeUpdateSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double currentTimerValue; // @synthesize currentTimerValue=_currentTimerValue;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) HMFTimer *timer; // @synthesize timer=_timer;
-@property(readonly, nonatomic) HMDResidentDevice *residentDevice; // @synthesize residentDevice=_residentDevice;
-@property(readonly, nonatomic) HMDRemoteDeviceMessageDestination *destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) NSDictionary *messagePayload; // @synthesize messagePayload=_messagePayload;
+@property(readonly, nonatomic) HMDHome *home; // @synthesize home=_home;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(readonly, nonatomic) __weak id <HMDSharedHomeUpdateSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-@property(readonly, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 - (void).cxx_destruct;
 - (id)dumpState;
 - (void)_callDelegate;
 - (void)timerDidFire:(id)arg1;
 - (void)startTimer;
 - (void)_requestDataSync;
+- (id)_selectResident;
 - (void)requestDataSync;
+@property(readonly, nonatomic) NSString *homeIdentifier;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (void)dealloc;
-- (id)initWithHomeIdentifier:(id)arg1 delegate:(id)arg2 workQueue:(id)arg3 destination:(id)arg4 residentDevice:(id)arg5 messagePayload:(id)arg6 remoteMessageDispatcher:(id)arg7;
+- (id)initWithHome:(id)arg1 delegate:(id)arg2 workQueue:(id)arg3 messagePayload:(id)arg4 remoteMessageDispatcher:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

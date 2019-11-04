@@ -13,12 +13,11 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDApplicationData, HMDHome, HMFMessageDispatcher, HMFTimer, NSArray, NSDate, NSMutableArray, NSObject, NSSet, NSString, NSUUID;
+@class HMDApplicationData, HMDHome, HMFMessage, HMFMessageDispatcher, HMFTimer, NSArray, NSDate, NSDictionary, NSMutableArray, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDActionSet : HMFObject <HMFLogging, HMFTimerDelegate, HMDHomeMessageReceiver, NSSecureCoding, HMFDumpState, HMDBackingStoreObjectProtocol>
 {
-    _Bool _executionInProgress;
     NSString *_name;
     NSString *_type;
     NSUUID *_uuid;
@@ -28,6 +27,9 @@
     HMFMessageDispatcher *_msgDispatcher;
     NSMutableArray *_currentActions;
     HMFTimer *_executionTimeout;
+    NSDate *_executionStart;
+    HMFMessage *_executionMessage;
+    NSDictionary *_executionInitialStates;
     HMDApplicationData *_appData;
 }
 
@@ -37,8 +39,10 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)isBuiltinActionSetType:(id)arg1;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;
+@property(retain, nonatomic) NSDictionary *executionInitialStates; // @synthesize executionInitialStates=_executionInitialStates;
+@property(retain, nonatomic) HMFMessage *executionMessage; // @synthesize executionMessage=_executionMessage;
+@property(retain, nonatomic) NSDate *executionStart; // @synthesize executionStart=_executionStart;
 @property(retain, nonatomic) HMFTimer *executionTimeout; // @synthesize executionTimeout=_executionTimeout;
-@property(nonatomic) _Bool executionInProgress; // @synthesize executionInProgress=_executionInProgress;
 @property(retain, nonatomic) NSMutableArray *currentActions; // @synthesize currentActions=_currentActions;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -54,13 +58,14 @@
 - (void)_processActionSetModelUpdated:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)_executeGenericActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_executeMediaPlaybackActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_issueReadRequests:(id)arg1;
-- (void)_issueWriteRequests:(id)arg1 readResponse:(id)arg2 message:(id)arg3;
+- (void)_issueReadRequests;
+- (void)_issueWriteRequests:(id)arg1;
 - (id)_logExecuteAction:(id)arg1;
 - (void)_execute:(id)arg1 captureCurrentState:(_Bool)arg2 writeRequestTuples:(id)arg3;
 - (void)timerDidFire:(id)arg1;
-- (void)handleExecutionCompleted:(id)arg1 startDate:(id)arg2 error:(id)arg3 readResponse:(id)arg4 response:(id)arg5;
+- (void)handleExecutionCompletedWithOverallError:(id)arg1 response:(id)arg2;
 - (void)_logDuetEvent:(id)arg1 endDate:(id)arg2 message:(id)arg3;
 - (void)_logDuetRoomEvent;
 - (id)_generateOverallError:(id)arg1 forSource:(unsigned long long)arg2;
@@ -94,6 +99,7 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool containsShortcutActions;
 @property(readonly, nonatomic) _Bool containsMediaPlaybackActions;
 - (_Bool)containsUnsecuringAction;
 - (_Bool)containsSecureCharacteristic;

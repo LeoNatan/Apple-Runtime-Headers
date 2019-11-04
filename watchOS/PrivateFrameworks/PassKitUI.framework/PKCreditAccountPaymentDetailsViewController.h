@@ -37,6 +37,7 @@
 
 @property(nonatomic) __weak id <PKCreditAccountPaymentDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)_cancelPayment:(unsigned int)arg1;
 - (void)_configureLinkCell:(id)arg1;
 - (void)_configureDismissCell:(id)arg1;
@@ -72,6 +73,8 @@
 - (int)_recurringPaymentDetailsRowTypeForRowAtIndex:(int)arg1;
 - (void)_computeRecurringDetailsRowMap;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithAccount:(id)arg1 payment:(id)arg2 paymentWebService:(id)arg3 detailViewStyle:(int)arg4;
 

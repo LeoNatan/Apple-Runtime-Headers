@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) NSArray *registeredDragTypes; // @synthesize registeredDragTypes=_registeredDragTypes;
+- (void)updateLayer;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (void)draggingEnded:(id)arg1;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)draggingEntered:(id)arg1;
 - (void)setDragDelegate:(id)arg1;
 - (void)dealloc;
+- (BOOL)wantsUpdateLayer;
 - (void)awakeFromNib;
 - (void)registerForDragTypes;
 

@@ -14,6 +14,7 @@
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) long long conversionGroup; // @dynamic conversionGroup;
+@property(copy, nonatomic) NSString *spatialOverCaptureGroupIdentifier; // @dynamic spatialOverCaptureGroupIdentifier;
 @property(copy, nonatomic) NSString *relatedUUID; // @dynamic relatedUUID;
 @property(nonatomic, getter=isTimeLapseVideo) BOOL timeLapseVideo; // @dynamic timeLapseVideo;
 @property(nonatomic, getter=isHighFrameRateVideo) BOOL highFrameRateVideo; // @dynamic highFrameRateVideo;

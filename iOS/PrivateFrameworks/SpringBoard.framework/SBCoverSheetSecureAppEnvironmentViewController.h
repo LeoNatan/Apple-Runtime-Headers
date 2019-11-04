@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <SpringBoard/SBApplicationHosting-Protocol.h>
+#import <SpringBoard/CSApplicationHosting-Protocol.h>
 #import <SpringBoard/SBCoverSheetSlidingViewControllerContentViewController-Protocol.h>
 #import <SpringBoard/SBHomeGestureParticipantDelegate-Protocol.h>
 #import <SpringBoard/SBSecureAppObserver-Protocol.h>
@@ -14,7 +14,7 @@
 @class NSString, SBDashBoardHostedAppViewController, SBHomeGestureParticipant;
 @protocol BSInvalidatable, SBCoverSheetSecureAppEnvironmentViewControllerDelegate;
 
-@interface SBCoverSheetSecureAppEnvironmentViewController : UIViewController <SBHomeGestureParticipantDelegate, SBSecureAppObserver, SBApplicationHosting, SBCoverSheetSlidingViewControllerContentViewController>
+@interface SBCoverSheetSecureAppEnvironmentViewController : UIViewController <SBHomeGestureParticipantDelegate, SBSecureAppObserver, CSApplicationHosting, SBCoverSheetSlidingViewControllerContentViewController>
 {
     id <BSInvalidatable> _biometricMatchingAssertion;
     unsigned long long _currentOrientationMask;
@@ -37,6 +37,7 @@
 - (void)requestHomeGestureOwnership;
 - (void)secureAppOfTypeDidTakeNewAssertion:(unsigned long long)arg1;
 - (void)secureAppOfTypeDidBegin:(unsigned long long)arg1;
+- (_Bool)handlesRotationIndependentOfCoverSheet;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
 - (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;

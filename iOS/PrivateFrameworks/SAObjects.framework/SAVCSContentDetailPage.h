@@ -14,6 +14,7 @@
 
 + (id)contentDetailPageWithDictionary:(id)arg1 context:(id)arg2;
 + (id)contentDetailPage;
+@property(copy, nonatomic) NSURL *utsSearchUrl;
 @property(copy, nonatomic) NSString *utsId;
 @property(nonatomic) _Bool userDriven;
 @property(copy, nonatomic) NSURL *url;

@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)_accessDelegate:(CDUnknownBlockType)arg1;
 - (_Bool)_hasInterfaceOfType:(unsigned long long)arg1;
+- (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
 - (void)passOwnershipTokenWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)storePassOwnershipToken:(id)arg1 withIdentifier:(id)arg2;
 - (void)performProductActionRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -107,6 +108,8 @@
 - (void)mapsMerchantsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)passUniqueIdentifierForTransactionWithServiceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)passUniqueIdentifierForTransactionWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)installmentPlansWithTransactionReferennceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)installmentTransactionsForInstallmentPlanIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionWithReferenceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionWithServiceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionWithTransactionIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -48,6 +48,7 @@
 + (_Bool)canSendSubject;
 + (_Bool)_canSendText;
 + (void)_setupAccountMonitor;
++ (id)log;
 @property(readonly, copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void)setShareSheetSessionID:(id)arg1;
 - (id)shareSheetSessionID;

@@ -46,7 +46,7 @@
 - (id)_addAdditionalPostLogoutInstallRequests:(id)arg1;
 - (void)_runBackgroundActionsOnCurrentQueueIfAppropriate:(char *)arg1 shouldSkipScanning:(BOOL)arg2;
 - (void)_installStateDidChangeForKeys:(id)arg1;
-- (void)_refreshLocalUpdateObjects:(id)arg1 afterScan:(BOOL)arg2;
+- (void)_refreshLocalUpdateObjects:(id)arg1 afterScan:(BOOL)arg2 joinUpdateInfoQueue:(BOOL)arg3;
 - (void)authChallengeWasReceived:(id)arg1 handled:(char *)arg2;
 - (void)resetServiceWithReply:(CDUnknownBlockType)arg1;
 - (void)dumpServiceDebugInfo;

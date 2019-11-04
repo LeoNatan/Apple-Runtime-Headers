@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class PKAccount, PKPaymentPass;
+@class PKAccount, PKBusinessChatController, PKPaymentPass;
 @protocol PKAccountBillPaymentObserver, PKAccountServiceAccountResolutionControllerDelegate;
 
 @interface PKAccountServiceAccountResolutionController : NSObject
 {
+    PKBusinessChatController *_businessChatController;
     PKAccount *_account;
     PKPaymentPass *_pass;
     id <PKAccountServiceAccountResolutionControllerDelegate> _delegate;
@@ -22,10 +23,13 @@
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (void)_openBusinessChatWithContext:(id)arg1;
+- (void)_callIssuer;
+- (id)_alertControllerForBusinessChatContext:(id)arg1;
 - (void)_handleAccountServiceAccountDidChangeNotification:(id)arg1;
 - (void)_presentViewController:(id)arg1;
-- (void)_presentAccountServiceAction:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)presentFlowForAccountResolution:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentAccountServiceAction:(unsigned long long)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentFlowForAccountResolution:(unsigned long long)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithAccount:(id)arg1 pass:(id)arg2;
 
 @end

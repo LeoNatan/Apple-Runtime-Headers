@@ -42,7 +42,7 @@
 @property(readonly, nonatomic, getter=isReadyToPlay) _Bool readyToPlay;
 - (void)invalidateComposition;
 - (void)applyTrimTimeRange:(CDStruct_e83c9415)arg1;
-- (void)seekToTime:(CDStruct_1b6d18a9)arg1 untrimmed:(_Bool)arg2;
+- (void)seekToTime:(CDStruct_1b6d18a9)arg1 untrimmed:(_Bool)arg2 exact:(_Bool)arg3;
 - (void)seekToTime:(CDStruct_1b6d18a9)arg1;
 - (void)requestPlayerItemWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) UIView *loupePlayerView; // @synthesize loupePlayerView=_loupePlayerView;

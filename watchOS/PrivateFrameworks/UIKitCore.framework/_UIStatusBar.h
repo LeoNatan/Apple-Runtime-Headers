@@ -68,6 +68,7 @@
 - (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;
+- (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldBeginAtPoint:(struct CGPoint)arg2;
 - (id)_statusBarWindowForAccessibilityHUD;
 - (id)dataEntryKeysForItemsWithIdentifiers:(id)arg1;
 - (id)itemIdentifiersInRegionsWithIdentifiers:(id)arg1;

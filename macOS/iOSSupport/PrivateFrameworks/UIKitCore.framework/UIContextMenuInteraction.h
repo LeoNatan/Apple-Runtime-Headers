@@ -19,17 +19,18 @@
     struct {
         char previewForHighlighting;
         char previewForDismissing;
-        char willCommit;
-        char willPresent;
-        char didEnd;
         char willPerformPreviewActionForMenuWithConfiguration;
         char willDisplayMenuForConfiguration;
         char willEndForConfiguration;
+        char styleForMenuWithConfiguration;
+        char accessoriesForMenuWithConfiguration;
         char asyncConfigurationForMenuAtLocation;
         char overrideSuggestedActions;
-        char styleForMenuWithConfiguration;
         char shouldAllowDragAfterDismiss;
         char interactionEffectForTargetedPreview;
+        char willCommit;
+        char willPresent;
+        char didEnd;
     } _delegateImplements;
     UIView *_view;
     id <UIContextMenuInteractionDelegate> _delegate;
@@ -41,6 +42,7 @@
     _UIContextMenuAnimator *_pendingCommitAnimator;
 }
 
++ (id)_deferredMenuPlaceholder;
 @property(retain, nonatomic) _UIContextMenuAnimator *pendingCommitAnimator; // @synthesize pendingCommitAnimator=_pendingCommitAnimator;
 @property(copy, nonatomic) UITargetedPreview *stashedPreview; // @synthesize stashedPreview=_stashedPreview;
 @property(retain, nonatomic) _UIClickPresentationInteraction *presentationInteraction; // @synthesize presentationInteraction=_presentationInteraction;
@@ -52,7 +54,7 @@
 - (void).cxx_destruct;
 - (id)_suggestedMenuForConfiguration:(id)arg1;
 - (id)_delegate_contextMenuInteractionWillEndForConfiguration:(id)arg1 presentation:(id)arg2;
-- (id)_delegate_contextMenuInteractionWillPresentForConfiguration:(id)arg1;
+- (id)_delegate_contextMenuInteractionWillDisplayForConfiguration:(id)arg1;
 - (void)_delegate_tappedPreviewForConfiguration:(id)arg1 withAnimator:(id)arg2;
 - (id)_delegate_previewForDismissingForConfiguration:(id)arg1;
 - (id)_delegate_previewForHighlightingForConfiguration:(id)arg1;
@@ -71,6 +73,7 @@
 - (void)_clickPresentationInteractionEnded:(id)arg1 forPresentation:(id)arg2 reason:(unsigned long long)arg3;
 - (id)_fulfilledConfigurationForConfiguration:(id)arg1;
 - (unsigned long long)_actualLayoutForPreferredLayout:(unsigned long long)arg1 withConfiguration:(id)arg2;
+- (id)_accessoryViewsForPreviewPlatterPresentationController:(id)arg1 layoutAnchor:(CDStruct_6f807b77)arg2;
 - (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;
 - (void)_clickPresentationInteraction:(id)arg1 item:(id)arg2 willAnimateDragCancelWithAnimator:(id)arg3;
 - (id)_clickPresentationInteraction:(id)arg1 previewForCancellingDragItem:(id)arg2;

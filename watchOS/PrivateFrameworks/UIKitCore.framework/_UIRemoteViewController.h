@@ -69,6 +69,7 @@
     _Bool __shouldUpdateRemoteTextEffectsWindow;
     int _preferredUserInterfaceStyle;
     _Bool _isUpdatingSize;
+    _Bool _isUpdatingSizeInHost;
     _Bool _serviceViewShouldShareTouchesWithHost;
     BKSTouchDeliveryPolicyAssertion *_touchDeliveryPolicyAssertion;
 }
@@ -86,6 +87,7 @@
 + (id)serviceViewControllerInterface;
 + (_Bool)shouldPropagateAppearanceCustomizations;
 @property(nonatomic) _Bool serviceViewShouldShareTouchesWithHost; // @synthesize serviceViewShouldShareTouchesWithHost=_serviceViewShouldShareTouchesWithHost;
+@property(nonatomic, setter=_setIsUpdatingSizeInHost:) _Bool _isUpdatingSizeInHost; // @synthesize _isUpdatingSizeInHost;
 @property(nonatomic, setter=_setIsUpdatingSize:) _Bool _isUpdatingSize; // @synthesize _isUpdatingSize;
 @property(retain, nonatomic, setter=_setTouchDeliveryPolicyAssertion:) BKSTouchDeliveryPolicyAssertion *_touchDeliveryPolicyAssertion; // @synthesize _touchDeliveryPolicyAssertion;
 - (void).cxx_destruct;
@@ -111,7 +113,7 @@
 - (void)_appearanceInvocationsDidChange:(id)arg1;
 - (_Bool)shouldPropagateAppearanceCustomizations;
 - (id)_appearanceSource;
-- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 offset:(float)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 offset:(float)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(float)arg1 offset:(float)arg2;
 - (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(float)arg1 offset:(float)arg2;
 - (void)_setSheetConfiguration:(id)arg1;
@@ -122,6 +124,7 @@
 - (void)__viewServicePreferredContentSizeDidChange:(struct CGSize)arg1 fence:(id)arg2;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(_Bool)arg1;
 - (void)__viewServicePopoverDidChangeContentSize:(struct CGSize)arg1 animated:(_Bool)arg2 fence:(id)arg3 withReplyHandler:(CDUnknownBlockType)arg4;
+- (void)__viewServiceDidChangeKeyWindow:(_Bool)arg1;
 - (void)__viewServiceDidPromoteFirstResponder;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)__setViewServiceIsDisplayingPopover:(_Bool)arg1;
@@ -186,6 +189,7 @@
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_applicationWillDeactivate:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_removeTextEffectsRemoteViews;
 - (void)_snapshotAndRemoveTextEffectsRemoteView;
 - (void)_restoreTextEffectsRemoteView;
 - (id)textEffectsWindowForServiceScreen;

@@ -16,9 +16,7 @@
         unsigned long long size;
     } _deviceIDs;
     unsigned int _errorCode;
-    struct {
-        unsigned int errorCode:1;
-    } _has;
+    CDStruct_70a7dc3e _has;
 }
 
 @property(nonatomic) unsigned int errorCode; // @synthesize errorCode=_errorCode;

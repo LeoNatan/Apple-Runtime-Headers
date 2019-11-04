@@ -13,6 +13,7 @@
 
 @interface HMDMediaPlaybackAction : HMDAction <NSSecureCoding, HMDBackingStoreObjectProtocol>
 {
+    BOOL _encodePlaybackArchiveForExecution;
     NSSet *_mediaProfiles;
     NSNumber *_volume;
     MPPlaybackArchive *_playbackArchive;
@@ -27,18 +28,21 @@
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
 @property(retain, nonatomic) NSMutableSet *profileUUIDs; // @synthesize profileUUIDs=_profileUUIDs;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
+@property(nonatomic) BOOL encodePlaybackArchiveForExecution; // @synthesize encodePlaybackArchiveForExecution=_encodePlaybackArchiveForExecution;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 - (void).cxx_destruct;
 - (id)modelObjectWithUpdatedMediaProfiles:(id)arg1;
-- (id)modelObjectWithChangeType:(unsigned long long)arg1;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (Class)modelClass;
+- (id)initWithModelObject:(id)arg1 parent:(id)arg2 error:(id *)arg3;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)_processPlaybackActionModelUpdated:(id)arg1 message:(id)arg2;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)validate;
 - (void)executeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)dictionaryRepresentation;

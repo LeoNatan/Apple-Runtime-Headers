@@ -19,6 +19,7 @@
     id <MTDelegatePackage> _delegatePackage;
 }
 
++ (id)kitWithTopic:(id)arg1 bagProfile:(id)arg2 profileVersion:(id)arg3;
 @property(retain, nonatomic) id <MTDelegatePackage> delegatePackage; // @synthesize delegatePackage=_delegatePackage;
 @property(retain, nonatomic) MTSystem *system; // @synthesize system=_system;
 @property(retain, nonatomic) MTConfig *config; // @synthesize config=_config;
@@ -28,6 +29,7 @@
 - (void).cxx_destruct;
 - (id)initWithTopic:(id)arg1 delegatePackage:(id)arg2;
 - (id)initWithTopic:(id)arg1;
+- (id)initWithTopic:(id)arg1 bagProfile:(id)arg2 profileVersion:(id)arg3;
 
 @end
 

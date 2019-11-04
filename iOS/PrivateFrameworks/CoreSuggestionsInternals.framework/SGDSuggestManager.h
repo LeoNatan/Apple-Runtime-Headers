@@ -8,7 +8,7 @@
 
 #import <CoreSuggestionsInternals/SGDSuggestManagerAllProtocol-Protocol.h>
 
-@class CNContactStore, EKEventStore, NSDictionary, NSLock, NSMutableSet, NSOperationQueue, NSString, NSXPCConnection, SGDManagerForCTS, SGFuture, SGSearchableItemIdTriple, SGServiceContext, SGSqlEntityStore, SGSuggestHistory, SGXpcTransaction, _PASNotificationToken;
+@class CNContactStore, EKEventStore, NSDictionary, NSLock, NSOperationQueue, NSString, NSXPCConnection, SGDManagerForCTS, SGFuture, SGSearchableItemIdTriple, SGServiceContext, SGSqlEntityStore, SGSuggestHistory, SGXpcTransaction, _PASLock, _PASNotificationToken;
 
 @interface SGDSuggestManager : NSObject <SGDSuggestManagerAllProtocol>
 {
@@ -27,7 +27,7 @@
     SGFuture *_lastSuggestionsFromMessageResponse;
     NSLock *_lastSuggestionsFromMessageLock;
     int _settingsChangeToken;
-    NSMutableSet *_recentlyHarvestedDetail;
+    _PASLock *_recentlyHarvestedDetailLock;
     SGServiceContext *_context;
     NSString *_clientName;
 }

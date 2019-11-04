@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _additionalPlaceTypes;
     NSString *_deviceCountryCode;
     NSString *_deviceSku;
     NSString *_displayRegion;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_additionalPlaceTypes:1;
         unsigned int read_deviceCountryCode:1;
@@ -88,6 +90,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *locations;
 - (void)_readLocations;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

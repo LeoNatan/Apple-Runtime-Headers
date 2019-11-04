@@ -27,7 +27,10 @@
 - (long long)preferredUnlockedGestureDismissalStyle;
 - (long long)preferredLockedGestureDismissalStyle;
 - (_Bool)isContentOpaque;
+- (CDUnknownBlockType)sceneDeactivationPredicate;
 - (_Bool)handleHomeButtonPress;
+- (_Bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)dealloc;

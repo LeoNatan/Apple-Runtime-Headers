@@ -92,6 +92,7 @@
 - (id)initForNotesAccountCreationWithAccountID:(id)arg1;
 - (id)initForMailAccountCreationWithAccountID:(id)arg1;
 - (id)initForAccountCreation;
+- (void)dealloc;
 - (id)initInView:(id)arg1;
 - (id)init;
 

@@ -67,7 +67,7 @@
 - (unsigned long long)fetchCoalescedCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
 - (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3 offset:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
 - (unsigned long long)fetchCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
-- (long long)deleteCallsWithPredicate:(id)arg1 error:(id *)arg2;
+- (long long)deleteCallsWithPredicate:(id)arg1;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;
 - (id)init:(_Bool)arg1;

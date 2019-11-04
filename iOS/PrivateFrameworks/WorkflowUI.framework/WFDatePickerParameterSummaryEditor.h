@@ -10,22 +10,23 @@
 #import <WorkflowUI/WFNonViewResponderDelegate-Protocol.h>
 #import <WorkflowUI/WFVariableUIDelegate-Protocol.h>
 
-@class NSString, UIDatePicker, UIViewController, WFNonViewResponder, WFVariableInputCoordinator;
+@class NSString, UIDatePicker, UIView, UIViewController, WFNonViewResponder, WFVariableInputCoordinator;
 
 @interface WFDatePickerParameterSummaryEditor : WFModuleSummaryEditor <UIPopoverPresentationControllerDelegate, WFNonViewResponderDelegate, WFVariableUIDelegate>
 {
     _Bool _isPickingMagicVariable;
     UIViewController *_presentedViewController;
+    UIView *_sourceView;
     UIDatePicker *_datePicker;
     WFNonViewResponder *_datePickerResponder;
     WFVariableInputCoordinator *_variableCoordinator;
 }
 
-+ (_Bool)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) _Bool isPickingMagicVariable; // @synthesize isPickingMagicVariable=_isPickingMagicVariable;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(retain, nonatomic) WFNonViewResponder *datePickerResponder; // @synthesize datePickerResponder=_datePickerResponder;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
+@property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
@@ -33,12 +34,12 @@
 - (void)responderWillResign:(id)arg1;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
-- (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
+- (void)sourceViewTintColorDidChange;
 - (void)datePickerValueChanged:(id)arg1;
 - (void)setVariableUIDelegate:(id)arg1;
 - (void)setVariableProvider:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

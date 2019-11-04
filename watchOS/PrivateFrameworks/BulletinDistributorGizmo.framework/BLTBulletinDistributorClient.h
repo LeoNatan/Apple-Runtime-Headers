@@ -81,7 +81,7 @@
 - (unsigned int)notificationDestinationForSection:(id)arg1;
 - (_Bool)_sectionAllowsNotifications:(id)arg1;
 - (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 bulletin:(id)arg2 knownSectionID:(id)arg3 publisherMatchID:(id)arg4 universalSectionID:(id)arg5 transmissionDate:(id)arg6 isTrafficRestricted:(_Bool)arg7 singleNotificationExpected:(_Bool)arg8;
-- (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 forLocalBulletin:(id)arg2;
+- (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 forLocalBulletin:(id)arg2 universalSectionID:(id)arg3;
 - (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemoteBulletin:(id)arg2 publisherMatchID:(id)arg3 universalSectionID:(id)arg4 knownSectionID:(id)arg5 feed:(unsigned int)arg6 transmissionDate:(id)arg7 isTrafficRestricted:(_Bool)arg8;
 - (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemotePublisherMatchID:(id)arg2 universalSectionID:(id)arg3 knownSectionID:(id)arg4 feed:(unsigned int)arg5 transmissionDate:(id)arg6;
 - (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemoteBulletin:(id)arg2 universalSectionID:(id)arg3 feed:(unsigned int)arg4 transmissionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6;

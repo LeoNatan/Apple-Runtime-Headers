@@ -71,7 +71,7 @@
 - (id)_lastLongTimeWithoutSuccessfulCloudSyncReportDateKeyWithError:(id *)arg1;
 - (void)_queue_checkLastSyncDate;
 - (void)_updateCachedLastSyncDatesWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_setupPeriodicActivity;
+- (void)_queue_setupPeriodicActivity;
 - (void)_queue_triggerSyncForAccountChange;
 - (id)_fetchDescriptionForProfile:(id)arg1 options:(unsigned long long)arg2 reason:(long long)arg3 taskTree:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (id)_resetProfile:(id)arg1 options:(unsigned long long)arg2 reason:(long long)arg3 taskTree:(id)arg4;
@@ -84,6 +84,7 @@
 - (id)_queue_syncProfilesWithIdentifiers:(id)arg1 withOptions:(unsigned long long)arg2 reason:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_unitTest_shouldSyncProfile:(id)arg1;
 - (id)_primaryProfile;
+- (_Bool)_queue_canPerformCloudSyncWithError:(id *)arg1;
 - (_Bool)canPerformCloudSyncWithError:(id *)arg1;
 - (void)_setHealthAccountDataclassEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)accountConfigurationDidChangeWithCompletion:(CDUnknownBlockType)arg1;

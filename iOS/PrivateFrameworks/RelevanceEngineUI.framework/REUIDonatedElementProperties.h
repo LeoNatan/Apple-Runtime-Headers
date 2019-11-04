@@ -9,7 +9,7 @@
 #import <RelevanceEngineUI/NSCopying-Protocol.h>
 #import <RelevanceEngineUI/NSSecureCoding-Protocol.h>
 
-@class INIntent, INRelevantShortcut, NSString, NSUserActivity, REDonatedAction, UIImage;
+@class INIntent, INInteraction, INRelevantShortcut, NSString, NSUserActivity, REDonatedAction, UIImage;
 
 @interface REUIDonatedElementProperties : NSObject <NSSecureCoding, NSCopying>
 {
@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, nonatomic) REDonatedAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) INInteraction *interaction;
 - (void)_loadAppContentPropertiesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_scaleImageForDisplay:(id)arg1;
 - (void)_loadContentForRelevantShortcut:(id)arg1 completion:(CDUnknownBlockType)arg2;

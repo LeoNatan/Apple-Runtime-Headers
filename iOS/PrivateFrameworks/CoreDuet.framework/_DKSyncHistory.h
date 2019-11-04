@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithLastSyncDate:(id)arg1 lastDaySyncCount:(unsigned long long)arg2;
+- (id)init;
 
 @end
 

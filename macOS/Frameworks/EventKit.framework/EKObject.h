@@ -156,7 +156,7 @@
 - (id)_convertBackingObjectsWithPath:(id)arg1 updateBackingObjects:(BOOL)arg2 allChangedBackingObjects:(id)arg3 eventStore:(id)arg4 updatedBackingObjectProvider:(id)arg5;
 - (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
-- (void)_emptyMeltedCacheForKey:(id)arg1;
+- (void)emptyMeltedCacheForKey:(id)arg1;
 - (void)emptyMeltedCache;
 - (void)_resetMeltedCache;
 - (void)updateMultiValueCacheForChangeSet:(id)arg1 preservingExistingAdds:(BOOL)arg2;

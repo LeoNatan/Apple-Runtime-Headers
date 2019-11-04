@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDExternalActionDetail : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_actionLabel;
     NSString *_actionUrlComponent;
     NSString *_actionUrlVerb;
     NSString *_logoId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_actionLabel:1;
@@ -60,6 +62,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *actionLabel;
 @property(readonly, nonatomic) _Bool hasActionLabel;
 - (void)_readActionLabel;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

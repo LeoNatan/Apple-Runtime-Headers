@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 
 - (_Bool)shouldPopoverSuggestionsBanner;
 - (unsigned int)suggestedAppStripLimit;
+- (float)searchLinkThumbnailWidth;
+- (float)searchPhotoThumbnailWidth;
 - (id)fullscreenPickerActionLayoutAxisPrioritiesForWidth:(float)arg1;
 - (_Bool)shouldAlignRecipientGlyphsWithMargins;
 - (float)photoPickerMaxPopoverPhotoHeight;

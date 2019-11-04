@@ -6,17 +6,15 @@
 
 #import <SpringBoardHome/SBLeafIcon.h>
 
-@class NSString, SBApplication;
+@class SBApplication;
 
 @interface SBApplicationIcon : SBLeafIcon
 {
     SBApplication *_application;
-    NSString *_masqueradeIdentifier;
 }
 
 + (_Bool)canGenerateIconsInBackground;
 - (void).cxx_destruct;
-- (id)masqueradeIdentifier;
 - (id)application;
 - (_Bool)isApplicationIcon;
 - (void)_noteActiveDataSourceDidChangeAndReloadIcon:(_Bool)arg1;

@@ -6,15 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoard/BSDescriptionProviding-Protocol.h>
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoard/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <SpringBoard/_SBHUDHostViewControllerDelegate-Protocol.h>
 
 @class NSCountedSet, NSString, SBHUDSettings, SBMainScreenActiveInterfaceOrientationWindow, UIScreen, _SBHUDHostViewController;
+@protocol BSInvalidatable;
 
-@interface SBHUDController : NSObject <_SBHUDHostViewControllerDelegate, PTSettingsKeyObserver, UIViewControllerTransitioningDelegate>
+@interface SBHUDController : NSObject <_SBHUDHostViewControllerDelegate, PTSettingsKeyObserver, BSDescriptionProviding, UIViewControllerTransitioningDelegate>
 {
     NSCountedSet *_hudHiddenAssertions;
+    id <BSInvalidatable> _stateCaptureHandle;
     UIScreen *_screen;
     SBMainScreenActiveInterfaceOrientationWindow *_hudWindow;
     _SBHUDHostViewController *_hudViewController;
@@ -34,6 +37,7 @@
 - (void)hudViewController:(id)arg1 didDismissHUD:(id)arg2;
 - (void)hudViewController:(id)arg1 willDismissHUD:(id)arg2;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (void)_notificationWhichWeWantToUseToTearEverythingDown:(id)arg1;
 - (void)_tearDown;
 - (void)_tearDownIfNoHuds;
 - (void)_createHUDWindowIfNeeded;
@@ -49,13 +53,18 @@
 - (id)knownHUDs;
 - (id)presentingHUDs;
 - (id)presentedHUDs;
+- (void)_setupStateCapture;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithScreen:(id)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

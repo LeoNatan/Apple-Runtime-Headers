@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, _MRContentItemProtobuf, _MRPlaybackSessionMigrateRequestProtobuf;
+#import <MediaRemote/NSCopying-Protocol.h>
 
-@interface MRPlaybackSessionMigrateRequest : NSObject
+@class NSString, _MRContentItemProtobuf, _MRPlaybackSessionMigrateRequestProtobuf, _MRPlaybackSessionRequestProtobuf;
+
+@interface MRPlaybackSessionMigrateRequest : NSObject <NSCopying>
 {
     _MRPlaybackSessionMigrateRequestProtobuf *_descriptor;
 }
@@ -19,10 +21,13 @@
 - (void)endEvent:(id)arg1 withError:(id)arg2;
 - (void)endEvent:(id)arg1;
 - (void)startEvent:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *report;
 @property(readonly, nonatomic) _MRPlaybackSessionMigrateRequestProtobuf *descriptor;
+@property(retain, nonatomic) _MRPlaybackSessionRequestProtobuf *playbackSessionRequest;
 @property(retain, nonatomic) _MRContentItemProtobuf *contentItem;
+@property(nonatomic) double playbackRate;
 @property(nonatomic) double playbackPosition;
 @property(nonatomic) unsigned int playbackState;
 @property(nonatomic) long endpointOptions;

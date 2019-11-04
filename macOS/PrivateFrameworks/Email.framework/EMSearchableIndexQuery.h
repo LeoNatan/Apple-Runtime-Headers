@@ -12,7 +12,7 @@
 #import <Email/EMSearchableIndexQueryBuilder-Protocol.h>
 #import <Email/NSProgressReporting-Protocol.h>
 
-@class CSSearchQuery, EFPromise, EMSearchableIndexQueryExpression, NSArray, NSLock, NSProgress, NSString;
+@class CSSearchQuery, EFPromise, EMSearchableIndexQueryExpression, NSArray, NSError, NSLock, NSProgress, NSString;
 
 @interface EMSearchableIndexQuery : NSObject <EFLoggable, EMSearchableIndexQueryBuilder, EFSignpostable, EFCancelable, NSProgressReporting>
 {
@@ -23,6 +23,7 @@
     BOOL _counting;
     BOOL _live;
     BOOL _queryDidMoveToFinishedState;
+    BOOL _liveQueryDidGather;
     NSString *_bundleIdentifier;
     CDUnknownBlockType _resultsBlock;
     CDUnknownBlockType _completionBlock;
@@ -40,6 +41,7 @@
     NSString *_logPrefixString;
     NSString *_queryStatus;
     long long _count;
+    NSError *_simulatedFailedQueryError;
     CSSearchQuery *_query;
 }
 
@@ -56,7 +58,9 @@
 + (id)_modifierStringFromModifiers:(unsigned long long)arg1;
 + (id)_operandStringForOperand:(long long)arg1;
 @property(retain, nonatomic) CSSearchQuery *query; // @synthesize query=_query;
+@property(retain, nonatomic) NSError *simulatedFailedQueryError; // @synthesize simulatedFailedQueryError=_simulatedFailedQueryError;
 @property(nonatomic) long long count; // @synthesize count=_count;
+@property(nonatomic) BOOL liveQueryDidGather; // @synthesize liveQueryDidGather=_liveQueryDidGather;
 @property(nonatomic) BOOL queryDidMoveToFinishedState; // @synthesize queryDidMoveToFinishedState=_queryDidMoveToFinishedState;
 @property(copy, nonatomic) NSString *queryStatus; // @synthesize queryStatus=_queryStatus;
 @property(copy, nonatomic) NSString *logPrefixString; // @synthesize logPrefixString=_logPrefixString;
@@ -90,8 +94,11 @@
 - (void)_performClientWork:(CDUnknownBlockType)arg1;
 - (void)_removeAllLiveUpdatesBlocks;
 - (void)_removeResultsBlock;
+- (void)simulateFailedQueryWithError:(id)arg1;
 - (void)start;
+@property(readonly, nonatomic) BOOL isCancelled;
 - (void)_cancel;
+- (void)_cancelQuery;
 - (void)cancel;
 - (void)_failedWithError:(id)arg1;
 - (BOOL)_isCancellationError:(id)arg1;

@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+- (CDStruct_79c71658)_nativeDimensionsWithoutCrop;
 - (CDStruct_79c71658)_highQualitySensorDimensions;
 - (_Bool)isCompatibleWithInfraredFormat:(id)arg1;
 - (_Bool)isValidDerivedBravoFormatForUnderlyingFormat:(id)arg1;
@@ -31,6 +32,7 @@
 - (CDStruct_79c71658)_visibleSensorDimensionsIncludingCinematic:(_Bool)arg1;
 - (CDStruct_79c71658)_maxUseableSensorDimensions;
 - (CDStruct_79c71658)_outputDimensions;
+@property(readonly, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported;
 @property(readonly) int ispPowerConsumption;
 @property(readonly) int variableSensorPowerConsumption;
 @property(readonly) int baseSensorPowerConsumption;
@@ -78,6 +80,7 @@
 - (int)stillImageNoiseReductionAndStabilizationScheme;
 @property(readonly, getter=isIrisVideoStabilizationSupported) _Bool irisVideoStabilizationSupported;
 @property(readonly, getter=isIrisSupported) _Bool irisSupported;
+@property(readonly) _Bool configureForSpatialOverCaptureSupport;
 @property(readonly) _Bool configureForStillImageStabilizationSupport;
 @property(readonly, getter=isStillImageStabilizationSupported) _Bool stillImageStabilizationSupported;
 @property(readonly) _Bool needsPreviewDPCC;

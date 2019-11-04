@@ -68,7 +68,7 @@
 - (_Bool)isAdjustedResource;
 - (_Bool)isDefaultOrientation;
 - (id)fileURL;
-- (void)setQualitySortValueBasedOnAssetWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
+- (void)setQualitySortValueBasedOnAssetWidth:(long long)arg1 height:(long long)arg2;
 - (void)setResourceIdentity:(id)arg1 managedObjectContext:(id)arg2;
 - (_Bool)repairResourceValidationErrors:(id)arg1 managedObjectContext:(id)arg2;
 - (id)validatedExternalResourceRepresentationUsingFileURL:(id)arg1;
@@ -100,6 +100,8 @@
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;
 - (_Bool)_colorSpaceIsNativeForDisplay;
+- (id)_libraryID;
+- (id)referenceMediaFileURL;
 - (_Bool)canRepresentAsSidecar;
 @property(readonly, retain, nonatomic) CPLScopedIdentifier *scopedIdentifier;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;

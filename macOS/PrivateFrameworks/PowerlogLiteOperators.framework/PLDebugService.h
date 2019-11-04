@@ -88,6 +88,7 @@
 - (void)stressAggregateSmall;
 - (void)testUTF8;
 - (void)testCompression;
+- (void)fireSignificantBatteryChangeNotification;
 - (id)testPLAPICore_LastEntryForKeyWC:(id)arg1;
 - (id)testPLAPICore_LastEntryForKeyWSEK:(id)arg1;
 - (id)testPLAPICore_EntriesForKeyBeforeTICWF:(id)arg1;

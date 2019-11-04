@@ -14,5 +14,6 @@
 - (void)sessionDidReceiveErrorCode:(long long)arg1 string:(NSString *)arg2;
 - (void)sessionDidReceiveString:(NSString *)arg1;
 - (void)sessionWantsResponse:(_Bool)arg1;
+- (void)dismissCoalescingSession;
 @end
 

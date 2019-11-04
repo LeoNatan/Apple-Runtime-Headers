@@ -50,6 +50,8 @@
 - (oneway void)pauseRecording;
 - (oneway void)getSystemBroadcastExtensionInfo:(CDUnknownBlockType)arg1;
 - (oneway void)setupBroadcastWithHostBundleID:(id)arg1 broadcastExtensionBundleID:(id)arg2 broadcastConfigurationData:(id)arg3 userInfo:(id)arg4 handler:(CDUnknownBlockType)arg5;
+- (oneway void)macApplicationDidBecomeActiveWithContextID:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (oneway void)macApplicationDidResignActive;
 - (oneway void)saveVideoToCameraRoll:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(CDUnknownBlockType)arg3;
 - (oneway void)stopRecordingWithHandler:(CDUnknownBlockType)arg1;

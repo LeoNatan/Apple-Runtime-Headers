@@ -40,6 +40,7 @@
 - (void)dataSource:(id)arg1 didUpdateMigrating:(BOOL)arg2;
 @property(readonly, getter=isMigrating) BOOL migrating;
 @property(readonly, copy) HMFSoftwareVersion *softwareVersion;
+@property(readonly, copy) NSString *modelIdentifier;
 @property(readonly) long long productVariant;
 @property(readonly) long long productClass;
 @property(readonly) long long productPlatform;

@@ -20,6 +20,7 @@
 
 + (unsigned int)mapWheelchairUserActivityType:(unsigned int)arg1 isWheelchairUser:(_Bool)arg2;
 + (id)possibleActivityTypesForIdentifier:(unsigned int)arg1 locationType:(int)arg2 swimmingLocationType:(int)arg3 wheelchairUser:(_Bool)arg4;
++ (_Bool)shouldDisambiguateOnLocationType:(unsigned int)arg1;
 + (id)swimmingOtherActivityTypes;
 + (id)swimmingOptimizedActivityTypes;
 + (id)wheelchairActivityTypes;

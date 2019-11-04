@@ -11,7 +11,7 @@
 #import <WorkflowKit/WFUUIDProvider-Protocol.h>
 #import <WorkflowKit/WFVariableProvider-Protocol.h>
 
-@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, NSUnit, UIImage, WFActionParameterSummary, WFContentCollection, WFParameter, WFResourceManager, WFWorkflow;
+@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, WFActionParameterSummary, WFContentCollection, WFImage, WFParameter, WFResourceManager, WFWorkflow;
 @protocol WFActionParameterInputProvider, WFUserInterface, WFVariableDataSource;
 
 @interface WFAction : NSObject <WFUUIDProvider, WFParameterEventObserver, NSCopying, WFVariableProvider>
@@ -192,7 +192,7 @@
 @property(readonly, nonatomic) _Bool neverSuggested;
 @property(readonly, nonatomic) _Bool outputsMultipleItems;
 @property(readonly, nonatomic) _Bool inputsMultipleItems;
-@property(readonly, nonatomic) NSUnit *outputMeasurementUnit;
+@property(readonly, nonatomic) NSString *outputMeasurementUnitType;
 @property(readonly, nonatomic) NSArray *outputTypes;
 @property(readonly, nonatomic) NSArray *inputTypes;
 @property(readonly, nonatomic) NSString *inputParameterKey;
@@ -245,10 +245,10 @@
 @property(readonly, nonatomic) NSString *descriptionSummary;
 - (id)outputDictionary;
 @property(readonly, nonatomic) NSDictionary *descriptionDictionary;
-@property(readonly, nonatomic) UIImage *keyImage;
-@property(readonly, nonatomic) UIImage *outputIcon;
+@property(readonly, nonatomic) WFImage *keyImage;
+@property(readonly, nonatomic) WFImage *outputIcon;
 - (void)loadIconWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) WFImage *icon;
 @property(readonly, nonatomic) NSString *iconName;
 @property(readonly, nonatomic) NSArray *localizedCategories;
 @property(readonly, nonatomic) NSArray *categories;

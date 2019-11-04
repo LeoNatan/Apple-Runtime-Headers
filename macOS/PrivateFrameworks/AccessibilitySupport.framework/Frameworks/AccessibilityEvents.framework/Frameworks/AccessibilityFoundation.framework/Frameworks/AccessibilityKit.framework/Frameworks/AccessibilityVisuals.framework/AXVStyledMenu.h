@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) AXVStyledMenuView *menuView;
 @property(nonatomic) struct CGRect menuViewFrame;
-@property(nonatomic) BOOL showTarget;
+- (void)setMenuTargetOrigin:(struct CGPoint)arg1;
 @property(nonatomic) struct CGSize menuItemSize;
 @property(nonatomic) long long displayStyle;
 @property(retain, nonatomic) NSArray *menuItems;

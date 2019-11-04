@@ -108,7 +108,7 @@
 - (id)startTaskToClear:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareRender:(id)arg1 fromRect:(struct CGRect)arg2 toDestination:(id)arg3 atPoint:(struct CGPoint)arg4 error:(id *)arg5;
 - (id)startTaskToRender:(id)arg1 toDestination:(id)arg2 error:(id *)arg3;
-- (id)_startTaskToRender:(id)arg1 toDestination:(id)arg2 forPrepareRender:(_Bool)arg3 error:(id *)arg4;
+- (id)_startTaskToRender:(id)arg1 toDestination:(id)arg2 forPrepareRender:(_Bool)arg3 forClear:(_Bool)arg4 error:(id *)arg5;
 - (id)startTaskToRender:(id)arg1 fromRect:(struct CGRect)arg2 toDestination:(id)arg3 atPoint:(struct CGPoint)arg4 error:(id *)arg5;
 
 @end

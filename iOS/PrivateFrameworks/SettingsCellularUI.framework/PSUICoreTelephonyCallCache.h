@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (id)localizedPhoneNumber:(id)arg1 context:(id)arg2;
 - (id)currentCallTypes;
 - (id)init;
+- (void)dealloc;
 - (id)initPrivate;
 
 @end

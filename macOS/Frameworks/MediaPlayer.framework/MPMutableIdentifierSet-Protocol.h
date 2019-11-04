@@ -10,6 +10,7 @@
 
 @protocol MPMutableIdentifierSet <NSObject>
 @property(copy, nonatomic) NSString *vendorID;
+@property(nonatomic, getter=isPlaceholder) BOOL placeholder;
 @property(nonatomic) BOOL shouldExcludeFromShuffle;
 @property(copy, nonatomic) NSString *lyricsID;
 @property(copy, nonatomic) NSString *contentItemID;

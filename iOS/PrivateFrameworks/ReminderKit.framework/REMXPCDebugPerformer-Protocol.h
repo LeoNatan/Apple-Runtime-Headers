@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString, NSUUID, REMObjectID, REMStoreContainerToken;
+@class NSString, NSURL, NSUUID, REMObjectID, REMStoreContainerToken;
 
 @protocol REMXPCDebugPerformer
+- (void)downloadContainerToOutputDir:(NSURL *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)resetBabysitterWithRestrictedAccountID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)dataAccessStatusReports:(void (^)(NSArray *, NSError *))arg1;
 - (void)logStoresDirectoryContents;

@@ -127,8 +127,12 @@
         unsigned int delegateContextMenuConfigurationForItemAtIndexPath:1;
         unsigned int delegateContextMenuPreviewForHighlighting:1;
         unsigned int delegateContextMenuPreviewForDismissing:1;
-        unsigned int delegateContextMenuwillPerformPreviewActionForMenuWithConfiguration:1;
+        unsigned int delegateContextMenuwillPerformPreviewAction:1;
         unsigned int delegateContextMenuWillCommitMenuWithAnimator:1;
+        unsigned int delegateWillDisplayContextMenu:1;
+        unsigned int delegateWillEndContextMenuInteraction:1;
+        unsigned int delegateStyleForContextMenu:1;
+        unsigned int delegateAccessoriesForContextMenu:1;
         unsigned int dataSourceNumberOfSections:1;
         unsigned int dataSourceViewForSupplementaryElement:1;
         unsigned int dataSourceCanMoveItemAtIndexPathSPI:1;
@@ -220,6 +224,12 @@
     UIKeyCommand *_selectCellBelowCommand;
     UIKeyCommand *_selectCellRightCommand;
     UIKeyCommand *_selectCellLeftCommand;
+    UIKeyCommand *_extendToCellAboveCommand;
+    UIKeyCommand *_extendToCellBelowCommand;
+    UIKeyCommand *_extendToCellRightCommand;
+    UIKeyCommand *_extendToCellLeftCommand;
+    NSIndexPath *_firstKeySelectedIndexPath;
+    NSIndexPath *_lastKeySelectedIndexPath;
     UIContextMenuInteraction *_contextMenuInteraction;
     BOOL _prefetchingEnabled;
     BOOL _searchFullPageOnFocusUpdate;
@@ -255,6 +265,10 @@
 @property(nonatomic) __weak id <UICollectionViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UICollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_layout;
 - (void).cxx_destruct;
+- (id)_contextMenuInteraction:(id)arg1 accessoriesForMenuWithConfiguration:(id)arg2 layoutAnchor:(CDStruct_6f807b77)arg3;
+- (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
+- (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
+- (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
@@ -365,6 +379,8 @@
 - (void)_updateReorderingTargetPosition:(struct CGPoint)arg1;
 - (BOOL)_beginReorderingItemAtIndexPath:(id)arg1;
 - (void)_advanceSelectedIndexPathForKeyCommand:(id)arg1;
+- (id)_findLastUserSelectableIndexPath;
+- (id)_findFirstUserSelectableIndexPath;
 - (id)keyCommands;
 - (void)_focusedItem:(id)arg1 isMinX:(char *)arg2 isMaxX:(char *)arg3 isMinY:(char *)arg4 isMaxY:(char *)arg5;
 - (id)_fulfillPromisedFocusRegionForCell:(id)arg1;
@@ -676,7 +692,9 @@
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned long long)arg3;
+- (void)_selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned long long)arg3 notifyDelegate:(BOOL)arg4 deselectPrevious:(BOOL)arg5;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned long long)arg3 notifyDelegate:(BOOL)arg4;
+- (BOOL)_delegateAllowsSelectingItemAtIndexPath:(id)arg1;
 - (void)_deselectAllAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (id)_managedViews;
 - (BOOL)_removeCellFromVisibleCells:(id)arg1;
@@ -716,6 +734,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) UIContextMenuInteraction *contextMenuInteraction;
 - (id)_visibleViewForLayoutAttributes:(id)arg1;
 - (id)_visibleCellForIndexPath:(id)arg1;
 

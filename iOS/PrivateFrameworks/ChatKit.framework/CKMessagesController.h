@@ -148,6 +148,7 @@
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (_Bool)composeChatControllerShouldShowBackButtonViewDuringSendAnimation:(id)arg1;
 - (void)composeChatController:(id)arg1 didSelectNewConversation:(id)arg2;
+- (void)cancelAndDestroyCompositionWithoutDismiss;
 - (void)composeChatControllerDidCancelComposition:(id)arg1;
 - (_Bool)composeChatControllerCanEditRecipients;
 - (id)navigationBarBackdropLayerGroupNameForChatController:(id)arg1;
@@ -169,6 +170,7 @@
 - (void)didReceiveMemoryWarning;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
+- (id)childViewControllerForStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidDisappear:(_Bool)arg1;

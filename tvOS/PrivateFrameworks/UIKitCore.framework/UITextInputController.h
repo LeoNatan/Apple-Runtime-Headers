@@ -103,7 +103,6 @@
 - (void)_removeShortcutController;
 - (void)_share:(id)arg1;
 - (void)_removeShareController;
-- (void)_removeDefinitionController;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)selectAll:(id)arg1;

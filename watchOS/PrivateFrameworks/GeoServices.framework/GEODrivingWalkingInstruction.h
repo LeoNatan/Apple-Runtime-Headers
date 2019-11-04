@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEODrivingWalkingInstruction : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_continueCommands;
     GEOFormattedString *_distance;
     NSMutableArray *_mergeCommands;
     NSMutableArray *_normalCommands;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_continueCommands:1;
@@ -75,6 +77,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOFormattedString *distance;
 @property(readonly, nonatomic) _Bool hasDistance;
 - (void)_readDistance;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

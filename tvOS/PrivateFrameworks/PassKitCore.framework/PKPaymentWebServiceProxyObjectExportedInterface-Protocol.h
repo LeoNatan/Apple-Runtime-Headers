@@ -31,6 +31,7 @@
 - (void)notePasscodeUpgradeFlowDidEnd;
 - (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(NSString *)arg1;
+- (void)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)appleAccountInformationWithCompletion:(void (^)(PKAppleAccountInformation *))arg1;
 - (void)renewAppleAccountWithCompletionHandler:(void (^)(long long, PKAppleAccountInformation *))arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(void (^)(_Bool))arg1;

@@ -32,6 +32,7 @@
 - (_Bool)configureWithCalendar:(id)arg1 preview:(_Bool)arg2;
 - (void)reset;
 - (void)eventViewController:(id)arg1 tableViewDidScroll:(id)arg2;
+- (void)updateViewColors;
 
 @end
 

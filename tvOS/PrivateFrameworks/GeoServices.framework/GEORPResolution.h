@@ -13,7 +13,6 @@
 @interface GEORPResolution : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOMapRegion *_displayRegion;
     NSString *_localizedAlertText;
     NSMutableArray *_localizedChangeLists;
@@ -21,6 +20,9 @@
     double _resolutionDate;
     unsigned long long _transitLineMuid;
     NSMutableArray *_updatedPlaces;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _displayStyle;
     struct {
         unsigned int has_resolutionDate:1;
@@ -87,6 +89,8 @@
 - (void)_readDisplayRegion;
 @property(nonatomic) _Bool hasResolutionDate;
 @property(nonatomic) double resolutionDate;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

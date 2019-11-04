@@ -30,6 +30,7 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
++ (void)startLaunchListenerWithHandler:(CDUnknownBlockType)arg1 queue:(id)arg2;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSMutableDictionary *recentlySeenUUIDs; // @synthesize recentlySeenUUIDs=_recentlySeenUUIDs;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
@@ -48,7 +49,7 @@
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (id)_fetchPaymentInstrumentsForRequestingDevice:(id)arg1;
-- (id)_preparePaymentDeviceResponseForRequestingDevice:(id)arg1;
+- (id)_preparePaymentDeviceResponseForRequestingDevice:(id)arg1 userDisabled:(_Bool)arg2;
 - (void)_registerListeners;
 - (void)_postCTLMThrottleUncapNotification;
 - (void)_unregisterCTLMThrottleUncapNotification;

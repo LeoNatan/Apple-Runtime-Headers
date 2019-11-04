@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVOutputContext, AVPixelBufferAttributeMediator, AVPlayerItem, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol AVCallbackCancellation><AVKVOIntrospection, AVLoggingIdentifier, OS_dispatch_queue;
+@protocol AVBlockScheduler, AVLoggingIdentifier, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerInternal : NSObject
@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
     BOOL logPerformanceData;
     struct OpaqueFigSimpleMutex *prerollIDMutex;
     NSObject<OS_dispatch_queue> *configurationQueue;
+    id layerVisibilityChangeToken;
+    id <AVBlockScheduler> KVOChangeSerializer;
     long long status;
     NSError *error;
     AVPlayerItem *currentItem;
@@ -91,7 +93,7 @@ __attribute__((visibility("hidden")))
     int pendingPrerollID;
     CDUnknownBlockType prerollCompletionHandler;
     id currentItemSuppressesVideoLayersNotificationToken;
-    id <AVCallbackCancellation><AVKVOIntrospection> currentItemPreferredPixelBufferAttributesCallbackInvoker;
+    id currentItemPreferredPixelBufferAttributesNotificationToken;
     struct OpaqueFigPlayer *figPlayer;
     struct OpaqueFigPlaybackItem *figPlaybackItemToIdentifyNextCurrentItem;
     BOOL needsToCreateFigPlayer;

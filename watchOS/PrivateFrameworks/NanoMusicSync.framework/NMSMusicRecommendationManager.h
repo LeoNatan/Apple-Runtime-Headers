@@ -69,8 +69,9 @@
 - (void)_registerForPairingFinishedNotification;
 - (void)dealloc;
 - (id)init;
+- (void)nms_fetchRecommendationForModelObject:(id)arg1 forRecommendationTypes:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)nms_deselectRecommendationIfNecessaryForModelObject:(id)arg1;
-- (void)nms_selectedRecommendationsContainModelObject:(id)arg1 forRecommendationTypes:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)nms_fetchSelectedRecommendationTypesForModelObject:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
 

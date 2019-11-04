@@ -10,7 +10,7 @@
 #import <PencilKit/PKDrawingGestureRecognizerDelegate-Protocol.h>
 #import <PencilKit/PKDrawingGestureTarget-Protocol.h>
 
-@class CADisplayLink, NSArray, NSMutableArray, NSMutableSet, NSObject, NSString, PKController, PKDrawing, PKDrawingPowerSavingController, PKInk, PKMetalRendererController, PKMetalView, PKRulerController, PKSelectionController, UIColor, UIGestureRecognizer, UIImage;
+@class CADisplayLink, NSArray, NSMutableArray, NSMutableSet, NSObject, NSString, PKController, PKDrawing, PKDrawingPowerSavingController, PKInk, PKMetalRendererController, PKMetalView, PKRulerController, PKSelectionController, PKToolPicker, UIColor, UIGestureRecognizer, UIImage;
 @protocol OS_dispatch_queue, PKDrawingGestureRecognizerProtocol, PKTiledCanvasViewDelegate;
 
 @interface PKTiledCanvasView : UIView <PKDrawingGestureRecognizerDelegate, PKControllerDelegate, PKDrawingGestureTarget>
@@ -71,6 +71,7 @@
     double _liveAnimationStartTime;
     NSMutableArray *_fadeOutStrokeAnimations;
     NSMutableSet *_strokeUUIDsAboutToBeRemoved;
+    PKToolPicker *_toolPickerToRestoreBackgroundMaterialUpdatingState;
     struct CGSize __fixedPixelSize;
     struct CGPoint __oldEraseLocation;
     struct CGPoint __drawingBeganLocation;
@@ -81,6 +82,7 @@
 
 + (void)setupDefaults;
 + (void)initialize;
+@property(nonatomic) __weak PKToolPicker *toolPickerToRestoreBackgroundMaterialUpdatingState; // @synthesize toolPickerToRestoreBackgroundMaterialUpdatingState=_toolPickerToRestoreBackgroundMaterialUpdatingState;
 @property(nonatomic) _Bool editMenuVisible; // @synthesize editMenuVisible=_editMenuVisible;
 @property(retain, nonatomic) NSMutableSet *strokeUUIDsAboutToBeRemoved; // @synthesize strokeUUIDsAboutToBeRemoved=_strokeUUIDsAboutToBeRemoved;
 @property(retain, nonatomic) NSMutableArray *fadeOutStrokeAnimations; // @synthesize fadeOutStrokeAnimations=_fadeOutStrokeAnimations;
@@ -176,6 +178,7 @@
 - (void)_drawingDisplay:(double)arg1;
 @property(readonly, nonatomic) _Bool hasVisibleStrokes;
 - (void)setHidden:(_Bool)arg1;
+- (void)schedulePurgeResourcesBlock;
 - (void)handleDrawingShouldPause:(_Bool)arg1;
 - (_Bool)_isLiveAnimating;
 - (void)setNeedsDrawingDisplay;

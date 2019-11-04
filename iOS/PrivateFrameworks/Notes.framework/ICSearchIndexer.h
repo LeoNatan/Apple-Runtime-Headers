@@ -61,6 +61,7 @@
 - (void)addDataSource:(id)arg1;
 @property(readonly, nonatomic) NSArray *dataSources;
 - (void)processChanges;
+- (void)performBlockOnIndexingQueue:(CDUnknownBlockType)arg1;
 - (void)dataSourceDidChange:(id)arg1;
 - (void)stopObservingChanges;
 - (void)startObservingChanges;

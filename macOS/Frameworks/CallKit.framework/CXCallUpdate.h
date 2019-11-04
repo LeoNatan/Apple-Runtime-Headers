@@ -12,7 +12,7 @@
 
 @class CXHandle, CXHandoffContext, NSDictionary, NSSet, NSString, NSUUID;
 
-@interface CXCallUpdate : NSObject <NSSecureCoding, CXCopying, NSCopying>
+@interface CXCallUpdate : NSObject <CXCopying, NSSecureCoding, NSCopying>
 {
     BOOL _supportsHolding;
     BOOL _supportsGrouping;

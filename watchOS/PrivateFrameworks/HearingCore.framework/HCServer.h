@@ -32,9 +32,10 @@
 @property(readonly, nonatomic) _Bool isConnected;
 - (_Bool)shouldRestartOnInterruption;
 - (void)resetConnection;
-- (void)terminateConnection;
+- (void)terminateConnectionAndNotify:(_Bool)arg1;
 - (void)startServerWithDelegate:(id)arg1;
 - (void)dealloc;
+- (id)init;
 
 @end
 

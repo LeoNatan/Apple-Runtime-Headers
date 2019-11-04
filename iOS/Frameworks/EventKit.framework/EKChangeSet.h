@@ -32,6 +32,7 @@
 @property(nonatomic) _Bool isModified; // @synthesize isModified=_isModified;
 @property(nonatomic) _Bool isNew; // @synthesize isNew=_isNew;
 - (void).cxx_destruct;
+- (_Bool)isEffectivelyEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)summary;
 - (id)description;

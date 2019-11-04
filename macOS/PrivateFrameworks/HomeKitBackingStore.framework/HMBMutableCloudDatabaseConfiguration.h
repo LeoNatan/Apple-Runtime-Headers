@@ -6,7 +6,7 @@
 
 #import <HomeKitBackingStore/HMBCloudDatabaseConfiguration.h>
 
-@class CKOperationConfiguration, NSString;
+@class CKOperationConfiguration, HMFScheduler, NSString;
 
 @interface HMBMutableCloudDatabaseConfiguration : HMBCloudDatabaseConfiguration
 {
@@ -15,6 +15,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
+@property(retain, nonatomic) HMFScheduler *apsRegistrationScheduler; // @dynamic apsRegistrationScheduler;
 @property(copy) CKOperationConfiguration *defaultOperationConfiguration; // @dynamic defaultOperationConfiguration;
 @property(getter=isManateeContainer) BOOL manateeContainer; // @dynamic manateeContainer;
 @property(copy) NSString *sourceApplicationBundleIdentifier; // @dynamic sourceApplicationBundleIdentifier;

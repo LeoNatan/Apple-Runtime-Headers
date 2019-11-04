@@ -16,13 +16,11 @@ __attribute__((visibility("hidden")))
     _UIFeedback<_UIFeedbackDiscretePlayable> *_clickDownAudioFeedback;
     _UIFeedback<_UIFeedbackDiscretePlayable> *_clickUpFeedback;
     _UIFeedback<_UIFeedbackDiscretePlayable> *_clickUpAudioFeedback;
-    _UIFeedback<_UIFeedbackDiscretePlayable> *_dragFeedback;
 }
 
 + (id)defaultConfiguration;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownFeedback; // @synthesize clickDownFeedback=_clickDownFeedback;
 - (void).cxx_destruct;
-@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *dragFeedback; // @synthesize dragFeedback=_dragFeedback;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpAudioFeedback; // @synthesize clickUpAudioFeedback=_clickUpAudioFeedback;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpFeedback; // @synthesize clickUpFeedback=_clickUpFeedback;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownAudioFeedback; // @synthesize clickDownAudioFeedback=_clickDownAudioFeedback;

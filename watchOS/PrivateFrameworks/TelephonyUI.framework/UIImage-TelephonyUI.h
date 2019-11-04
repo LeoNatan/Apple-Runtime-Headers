@@ -46,9 +46,12 @@
 + (id)telephonyUIUnreadIndicatorGlyphImage;
 + (id)telephonyUIInfoButtonGlyphImage;
 + (id)telephonyUIActionButtonGlyphImage;
++ (void)clearCachedCappedSizeImagesIfNeeded;
++ (_Bool)cappedSizedImagesAreValid;
 + (id)systemImageNameForSymbolType:(int)arg1;
 + (id)tpImageForSymbolType:(int)arg1 configuration:(id)arg2;
 + (id)tpImageForSymbolType:(int)arg1 pointSize:(float)arg2;
++ (id)tpImageForSymbolType:(int)arg1 textStyle:(id)arg2 cappedAt:(id)arg3;
 + (id)tpImageForSymbolType:(int)arg1 textStyle:(id)arg2 scale:(int)arg3 isStaticSize:(_Bool)arg4;
 + (int)scaleForTPScale:(int)arg1;
 + (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;

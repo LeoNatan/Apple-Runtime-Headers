@@ -19,6 +19,7 @@
     NSSet *_sceneClassifications;
     BOOL _hidden;
     BOOL _favorite;
+    BOOL _syncFailureHidden;
     BOOL _cloudIsDeletable;
     BOOL _complete;
     BOOL _hasAdjustments;
@@ -60,6 +61,7 @@
     double _curationScore;
     long long _cloudPlaceholderKind;
     long long _videoCpDurationValue;
+    unsigned long long _reframeVariation;
     NSArray *_faceRegions;
     double _faceAreaMinX;
     double _faceAreaMaxX;
@@ -182,6 +184,7 @@
 @property(readonly, nonatomic) NSArray *faceRegions; // @synthesize faceRegions=_faceRegions;
 @property(readonly, nonatomic) struct CGRect acceptableCropRect; // @synthesize acceptableCropRect=_acceptableCropRect;
 @property(readonly, nonatomic) struct CGRect preferredCropRect; // @synthesize preferredCropRect=_preferredCropRect;
+@property(readonly, nonatomic) unsigned long long reframeVariation; // @synthesize reframeVariation=_reframeVariation;
 @property(readonly, nonatomic) float hdrGain; // @synthesize hdrGain=_hdrGain;
 @property(readonly, nonatomic) unsigned short playbackVariation; // @synthesize playbackVariation=_playbackVariation;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D locationCoordinate; // @synthesize locationCoordinate=_locationCoordinate;
@@ -210,6 +213,7 @@
 @property(readonly, nonatomic) int avalanchePickType; // @synthesize avalanchePickType=_avalanchePickType;
 @property(readonly, nonatomic) unsigned long long localResourcesState; // @synthesize localResourcesState=_localResourcesState;
 @property(readonly, nonatomic) NSString *burstIdentifier; // @synthesize burstIdentifier=_burstIdentifier;
+@property(readonly, nonatomic, getter=isSyncFailureHidden) BOOL syncFailureHidden; // @synthesize syncFailureHidden=_syncFailureHidden;
 @property(readonly, nonatomic, getter=isFavorite) BOOL favorite; // @synthesize favorite=_favorite;
 @property(readonly, nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
@@ -358,6 +362,7 @@
 - (void)_addPropertyHint:(unsigned long long)arg1;
 - (void)fetchPropertySetsIfNeeded;
 - (void)_createExtendedPropertySetsIfNeededWithPropertyHint:(unsigned long long)arg1 fetchDictionary:(id)arg2;
+- (BOOL)needsDeferredProcessing;
 @property(readonly, nonatomic) NSDate *localCreationDate; // @synthesize localCreationDate=_localCreationDate;
 - (BOOL)isMediaSubtype:(unsigned long long)arg1;
 - (short)assetSource;

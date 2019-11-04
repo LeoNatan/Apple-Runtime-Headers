@@ -13,7 +13,6 @@
 @interface GEOResource : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_regions;
     unsigned int _regionsCount;
@@ -21,6 +20,9 @@
     NSData *_checksum;
     NSString *_filename;
     NSMutableArray *_filters;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _connectionType;
     unsigned int _preferWiFiAllowedStaleThreshold;
     int _resourceType;
@@ -91,6 +93,8 @@
 @property(nonatomic) _Bool hasResourceType;
 @property(nonatomic) int resourceType;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (_Bool)_geo_isRelevantForScales:(id)arg1 scenarios:(id)arg2;
 
 @end

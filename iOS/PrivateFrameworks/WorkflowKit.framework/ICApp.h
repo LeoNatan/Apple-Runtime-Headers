@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, UIImage;
+@class NSArray, NSDictionary, NSString, WFImage;
+@protocol OS_dispatch_queue;
 
 @interface ICApp : NSObject
 {
@@ -15,15 +16,14 @@
     NSArray *_schemes;
     NSArray *_shareExtensions;
     NSString *_localizedName;
+    WFImage *_icon;
     NSString *_identifier;
     NSDictionary *_definition;
-    UIImage *_icon;
-    UIImage *_homeScreenIcon;
+    NSObject<OS_dispatch_queue> *_stateAccessQueue;
 }
 
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateAccessQueue; // @synthesize stateAccessQueue=_stateAccessQueue;
 @property(nonatomic) _Bool checkedInstallStatus; // @synthesize checkedInstallStatus=_checkedInstallStatus;
-@property(retain, nonatomic) UIImage *homeScreenIcon; // @synthesize homeScreenIcon=_homeScreenIcon;
-@property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -46,6 +46,7 @@
 @property(readonly, nonatomic) NSArray *exportedFileTypes;
 - (id)schemeNamed:(id)arg1;
 @property(readonly, nonatomic) NSArray *schemes; // @synthesize schemes=_schemes;
+@property(retain, nonatomic) WFImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSString *iTunesIdentifier;
 - (id)localizedString:(id)arg1 identifier:(id)arg2;
 @property(readonly, nonatomic) NSString *localizedShortName;

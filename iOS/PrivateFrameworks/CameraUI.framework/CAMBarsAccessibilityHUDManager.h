@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)preferredContentSizeChanged;
 - (void)_handleAccessibilityLongPressGesture:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (struct CGPoint)locationOfAccessibilityGestureInView:(id)arg1;
 - (id)initWithView:(id)arg1 delegate:(id)arg2 cancelsTouchesInView:(_Bool)arg3;

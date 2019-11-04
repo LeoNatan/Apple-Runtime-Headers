@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <FileProvider/NSCopying-Protocol.h>
-#import <FileProvider/NSProgressReporting-Protocol.h>
 #import <FileProvider/NSSecureCoding-Protocol.h>
 
 @class FPItemCollection, NSArray, NSError, NSFileProviderDomain, NSFileProviderManager, NSProgress, NSString, NSURL;
 
-@interface FPProviderDomain : NSObject <NSSecureCoding, NSCopying, NSProgressReporting>
+@interface FPProviderDomain : NSObject <NSSecureCoding, NSCopying>
 {
     FPItemCollection *_itemCollection;
     BOOL _keepLocalStorageUpToDate;
@@ -28,7 +27,7 @@
     BOOL _needsAuthentication;
     BOOL _ejectable;
     BOOL _shouldHideExtensionName;
-    NSProgress *_progress;
+    BOOL _shouldHideDomainDisplayName;
     NSString *_identifier;
     NSString *_providerID;
     NSArray *_supportedFileTypes;
@@ -36,6 +35,7 @@
     NSURL *_extensionBundleURL;
     NSArray *_storageURLs;
     NSArray *_supportedSearchFilters;
+    NSProgress *_progress;
     NSFileProviderManager *_manager;
     NSString *_providerDisplayName;
     NSFileProviderDomain *_domain;
@@ -52,6 +52,7 @@
 + (BOOL)supportsSecureCoding;
 + (void)endMonitoringProviderDomainChanges:(id)arg1;
 + (id)beginMonitoringProviderDomainChangesWithHandler:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL shouldHideDomainDisplayName; // @synthesize shouldHideDomainDisplayName=_shouldHideDomainDisplayName;
 @property(nonatomic) BOOL shouldHideExtensionName; // @synthesize shouldHideExtensionName=_shouldHideExtensionName;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *purposeIdentifier; // @synthesize purposeIdentifier=_purposeIdentifier;
@@ -59,6 +60,7 @@
 @property(retain, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSString *providerDisplayName; // @synthesize providerDisplayName=_providerDisplayName;
 @property(readonly, nonatomic) NSFileProviderManager *manager; // @synthesize manager=_manager;
+@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) BOOL needsAuthentication; // @synthesize needsAuthentication=_needsAuthentication;
 @property(nonatomic) BOOL supportsPickingFolders; // @synthesize supportsPickingFolders=_supportsPickingFolders;
 @property(nonatomic) BOOL usesUniqueItemIdentifiersAcrossDevices; // @synthesize usesUniqueItemIdentifiersAcrossDevices=_usesUniqueItemIdentifiersAcrossDevices;
@@ -76,7 +78,6 @@
 @property(nonatomic, getter=isReadOnly) BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic, getter=isEmpty) BOOL empty;
@@ -84,7 +85,7 @@
 @property(readonly, nonatomic) BOOL isiCloudDriveProvider;
 - (void)setEnabled:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *iCloudAccountIdentifier;
 @property(readonly, nonatomic) BOOL containsPhotos;
@@ -95,9 +96,8 @@
 @property(readonly, nonatomic) NSString *domainDisplayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-- (void)_setupProgressReporting;
+- (id)debugDescription;
+- (id)description;
 - (id)initWithProviderID:(id)arg1 domain:(id)arg2;
 - (id)init;
 - (id)storageURL;
@@ -105,9 +105,6 @@
 - (id)providerIdentifier;
 - (id)localizedName;
 - (id)localizedTitleForSortDescriptor:(id)arg1;
-
-// Remaining properties
-@property(readonly) Class superclass;
 
 @end
 

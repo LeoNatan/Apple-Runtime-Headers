@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     _Bool didCancelActiveSearch;
     long long currentGestureState;
     BOOL hasSelection;
+    struct CGPoint topLeftSelectionPoint;
+    struct CGPoint bottomRightSelectionPoint;
 }
 
 - (void).cxx_destruct;

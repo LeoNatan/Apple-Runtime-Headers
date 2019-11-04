@@ -41,6 +41,8 @@
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 - (void).cxx_destruct;
+- (void)_actuateSelectionTapticFeedback;
+- (void)_prepareForTapticFeedback;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 @property(retain, nonatomic) id value;

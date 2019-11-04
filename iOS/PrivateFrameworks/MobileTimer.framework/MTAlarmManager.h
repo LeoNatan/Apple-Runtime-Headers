@@ -45,9 +45,12 @@
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeBedtimeNotification:(_Bool)arg3;
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2;
+- (id)_sortedNextAlarmsAfterDate:(id)arg1 includeSleepAlarm:(_Bool)arg2 includeBedtimeNotification:(_Bool)arg3 doSynchronous:(_Bool)arg4;
 - (id)_sortedNextAlarmsAfterDate:(id)arg1 includeSleepAlarm:(_Bool)arg2 includeBedtimeNotification:(_Bool)arg3;
+- (id)_nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4 doSynchronous:(_Bool)arg5;
 - (id)nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4;
 - (id)nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
+- (id)_nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4 doSynchronous:(_Bool)arg5;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3 includeBedtimeNotification:(_Bool)arg4;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeBedtimeNotification:(_Bool)arg3;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(_Bool)arg3;
@@ -60,6 +63,7 @@
 - (id)nextAlarm;
 - (id)sleepAlarm;
 - (id)alarmsIncludingSleepAlarm:(_Bool)arg1;
+- (id)_alarmsIncludingSleepAlarm:(_Bool)arg1 doSynchronous:(_Bool)arg2;
 - (void)_getCachedAlarmsWithFuture:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
 - (void)reconnect;
 - (void)checkIn;

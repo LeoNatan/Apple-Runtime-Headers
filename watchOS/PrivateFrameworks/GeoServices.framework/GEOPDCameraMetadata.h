@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDCameraMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_084d6ede _textureIds;
     GEOPDLensProjection *_lensProjection;
     GEOPDOrientedPosition *_position;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _cameraNumber;
     int _imageHeight;
     int _imageWidth;
@@ -70,6 +72,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasCameraNumber;
 @property(nonatomic) int cameraNumber;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

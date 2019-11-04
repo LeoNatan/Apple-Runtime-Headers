@@ -50,6 +50,7 @@
 - (void)finish;
 - (void)prepare;
 @property(readonly) double intervalSinceLastReport; // @dynamic intervalSinceLastReport;
+- (void)extendTimeoutOrUpdateStopIfNeeded:(_Bool *)arg1;
 - (void)extendTimeout;
 - (void)stopAcceptingResults;
 - (_Bool)isEqualToWorkerJob:(id)arg1;

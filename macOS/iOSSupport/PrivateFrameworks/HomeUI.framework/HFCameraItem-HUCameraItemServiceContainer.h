@@ -7,6 +7,7 @@
 #import <Home/HFCameraItem.h>
 
 @interface HFCameraItem (HUCameraItemServiceContainer)
+- (id)hu_containedAccessories;
 - (id)hu_containedServices;
 @end
 

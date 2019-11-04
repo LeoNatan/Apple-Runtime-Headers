@@ -30,6 +30,7 @@
 - (id)presentingViewControllerFromRoot:(id)arg1;
 - (id)navigationControllerFromRoot:(id)arg1;
 - (void)completePromptWithError:(id)arg1;
+- (void)viewControllerCleanUp;
 - (void)authorizationRequestDidDisappear;
 - (void)authorizationRequestWillDisappear;
 - (_Bool)isViewControllerPresentedModally;

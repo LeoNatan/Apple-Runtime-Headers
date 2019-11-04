@@ -6,17 +6,25 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class HKSourceDataModel;
+@class HKSourceDataModel, UIImageView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface WDSourcesListTableViewCell : UITableViewCell
 {
     HKSourceDataModel *_sourceModel;
+    UIImageView *_iconImage;
+    UILabel *_titleLabel;
 }
 
++ (id)defaultReuseIdentifier;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIImageView *iconImage; // @synthesize iconImage=_iconImage;
 @property(retain, nonatomic) HKSourceDataModel *sourceModel; // @synthesize sourceModel=_sourceModel;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
+- (void)setupConstraints;
+- (void)setUpSubviews;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

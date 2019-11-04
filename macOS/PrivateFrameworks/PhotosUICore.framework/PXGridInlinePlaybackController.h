@@ -56,6 +56,7 @@
 - (void)setNeedsUpdate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)preferencesDidChange;
+- (void)_handleOcclusionNotification:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
 - (void)_processInfoPowerStateDidChange:(id)arg1;

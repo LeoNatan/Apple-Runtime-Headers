@@ -50,12 +50,18 @@
 - (void)_updateSubviewAlphas;
 - (void)_updateLabels;
 - (void)_updateHighlightedView;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForMenuItem:(id)arg1;
+- (id)hudItemForMenuHeader;
 - (_Bool)_shouldTrackView:(id)arg1 forTouchAtLocation:(struct CGPoint)arg2;
 - (unsigned long long)_indexOfItemToTrackForTouchAtLocation:(struct CGPoint)arg1;
+- (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (void)didChangeContentSize;
 - (_Bool)shouldScaleImageWhileHighlighted;

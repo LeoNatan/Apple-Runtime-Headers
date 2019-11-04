@@ -6,12 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <StoreKit/SKRemoteDismissingViewController-Protocol.h>
 #import <StoreKit/SKScreenTrackingDelegate-Protocol.h>
+#import <StoreKit/UIViewControllerTransitioningDelegate-Protocol.h>
 
 @class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation;
 @protocol SKStoreProductViewControllerDelegate, SKStoreProductViewControllerDelegatePrivate, SKUIServiceProductPageViewController;
 
-@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate>
+@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate, UIViewControllerTransitioningDelegate, SKRemoteDismissingViewController>
 {
     NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
@@ -54,6 +56,9 @@
 @property(copy, nonatomic) NSString *additionalBuyParameters; // @synthesize additionalBuyParameters=_additionalBuyParameters;
 @property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)dismissRemoteViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (id)interactionControllerForDismissal:(id)arg1;
+- (id)animationControllerForDismissedController:(id)arg1;
 - (void)sk_didBecomeOffScreen:(id)arg1;
 - (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_throwUnsupportedPresentationException;
@@ -78,17 +83,17 @@
 - (void)finishImmediately;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
 - (void)_sk_applicationDidEnterBackground:(id)arg1;
-- (void)dismissModalViewControllerAnimated:(_Bool)arg1;
-- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (int)_preferredStatusBarVisibility;
 - (long long)preferredStatusBarStyle;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
+- (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)loadView;
 - (void)loadProductWithParameters:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

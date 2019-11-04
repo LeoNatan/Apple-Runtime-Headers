@@ -67,6 +67,7 @@
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (id)declaredLayoutConstraints;
 - (void)updateConstraints;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (double)baselineOffsetFromBottom;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;

@@ -393,8 +393,8 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    float _field1;
-} CDStruct_37a3040a;
+    double _field1;
+} CDStruct_2418a849;
 
 typedef struct CDStruct_183601bc;
 

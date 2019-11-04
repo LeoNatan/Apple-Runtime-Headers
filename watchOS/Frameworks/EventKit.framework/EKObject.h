@@ -97,10 +97,10 @@ __attribute__((visibility("hidden")))
 - (id)cachedMeltedChildIdentifierToParentMap;
 - (id)prepareReminderKitObjectForSaveWithUpdatedBackingObjectProvider:(id)arg1;
 - (EKPersistentObject_556b3b22 *)backingObjectOfChildObject:(id)arg1 withRelationshipKey:(id)arg2;
-- (id)_convertBackingObjectsWithPath:(id)arg1 updateBackingObjects:(_Bool)arg2 allChangedBackingObjects:(id)arg3 updatedBackingObjectProvider:(id)arg4;
+- (id)_convertBackingObjectsWithPath:(id)arg1 updateBackingObjects:(_Bool)arg2 allChangedBackingObjects:(id)arg3 eventStore:(id)arg4 updatedBackingObjectProvider:(id)arg5;
 - (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
-- (void)_emptyMeltedCacheForKey:(id)arg1;
+- (void)emptyMeltedCacheForKey:(id)arg1;
 - (void)emptyMeltedCache;
 - (void)_resetMeltedCache;
 - (void)updateMultiValueCacheForChangeSet:(id)arg1 preservingExistingAdds:(_Bool)arg2;
@@ -129,6 +129,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_refreshCommon;
 - (_Bool)_refreshable;
 - (_Bool)_resetCommon;
+- (_Bool)_resetIfBackingObjectIsOfClass:(Class)arg1 fetchResetFrozenObjectBlock:(CDUnknownBlockType)arg2;
 - (void)_rollbackCommon;
 - (id)changedKeys;
 - (void)replaceMultiChangedObjectValuesWithObjectValues:(id)arg1 forKey:(id)arg2;

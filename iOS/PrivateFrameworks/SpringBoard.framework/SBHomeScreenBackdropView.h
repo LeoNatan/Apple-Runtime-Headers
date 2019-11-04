@@ -32,9 +32,9 @@
 - (void)beginRequiringLiveBackdropViewForReason:(id)arg1;
 - (void)beginRequiringBackdropViewForReason:(id)arg1;
 - (void)_configureBackdropAnimatableProperty;
-- (void)_setupBackdropViewWithRecipe:(long long)arg1;
+- (void)_setupBackdropViewWithRecipe:(long long)arg1 scaleAdjustment:(CDUnknownBlockType)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 withMaterialRecipe:(long long)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 materialRecipe:(long long)arg2 scaleAdjustment:(CDUnknownBlockType)arg3;
 
 @end
 

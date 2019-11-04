@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)createSnapshotFromLayer:(id)arg1;
++ (id)createSnapshotFromLayer:(id)arg1 buffer:(struct __IOSurface *)arg2;
 
 @end
 

@@ -15,6 +15,7 @@
 }
 
 + (Class)cellClass;
++ (id)indexingString;
 + (id)reuseIdentifier;
 + (id)sectionIdentifier;
 + (id)sectionTitle;

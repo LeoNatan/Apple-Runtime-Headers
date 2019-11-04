@@ -16,6 +16,7 @@
     long long _dpiFactor;
     unsigned char _deviceRole;
     NSData *_mediaBlobCompressed;
+    NSData *_mediaBlobNegotiated;
     NSString *_dataSessionID;
     long long _mediaStreamMode;
     VCMediaNegotiator *_mediaNegotiator;

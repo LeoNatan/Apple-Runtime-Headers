@@ -6,22 +6,25 @@
 
 #import <QuickLook/QLItemViewController.h>
 
-@class LOViewController, NSString;
+@class NSString, STLockoutViewController;
 
 __attribute__((visibility("hidden")))
 @interface QLScreenTimeItemViewController : QLItemViewController
 {
     NSString *_bundleIdentifier;
-    LOViewController *_lockoutViewController;
+    NSString *_categoryIdentifier;
+    STLockoutViewController *_lockoutViewController;
 }
 
-@property(retain, nonatomic) LOViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
+@property(retain, nonatomic) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
+@property(retain, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (_Bool)canEnterFullScreen;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithCategoryIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 
 @end

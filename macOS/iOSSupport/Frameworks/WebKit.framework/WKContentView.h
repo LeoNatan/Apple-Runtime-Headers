@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
     BOOL _preventsPanningInXAxis;
     BOOL _preventsPanningInYAxis;
     struct RetainPtr<WKSyntheticTapGestureRecognizer> _singleTapGestureRecognizer;
-    struct RetainPtr<_UIWebHighlightLongPressGestureRecognizer> _highlightLongPressGestureRecognizer;
+    struct RetainPtr<WKHighlightLongPressGestureRecognizer> _highlightLongPressGestureRecognizer;
     struct RetainPtr<UILongPressGestureRecognizer> _longPressGestureRecognizer;
     struct RetainPtr<WKSyntheticTapGestureRecognizer> _doubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _nonBlockingDoubleTapGestureRecognizer;
@@ -44,6 +44,10 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UITapGestureRecognizer> _stylusSingleTapGestureRecognizer;
     struct RetainPtr<WKInspectorNodeSearchGestureRecognizer> _inspectorNodeSearchGestureRecognizer;
     struct RetainPtr<WKTouchActionGestureRecognizer> _touchActionGestureRecognizer;
+    struct RetainPtr<UISwipeGestureRecognizer> _touchActionLeftSwipeGestureRecognizer;
+    struct RetainPtr<UISwipeGestureRecognizer> _touchActionRightSwipeGestureRecognizer;
+    struct RetainPtr<UISwipeGestureRecognizer> _touchActionUpSwipeGestureRecognizer;
+    struct RetainPtr<UISwipeGestureRecognizer> _touchActionDownSwipeGestureRecognizer;
     struct RetainPtr<UIHoverGestureRecognizer> _hoverGestureRecognizer;
     struct RetainPtr<_UILookupGestureRecognizer> _lookupGestureRecognizer;
     struct CGPoint _lastHoverLocation;
@@ -109,9 +113,11 @@ __attribute__((visibility("hidden")))
     BOOL _isBlurringFocusedElement;
     BOOL _focusRequiresStrongPasswordAssistance;
     BOOL _waitingForEditDragSnapshot;
+    long long _dropAnimationCount;
     BOOL _hasSetUpInteractions;
     unsigned long long _ignoreSelectionCommandFadeCount;
     long long _suppressNonEditableSingleTapTextInteractionCount;
+    long long _processingChangeSelectionWithGestureCount;
     CompletionHandler_2aa2525f _domPasteRequestHandler;
     struct BlockPtr<void (UIWKAutocorrectionContext *)> _pendingAutocorrectionContextHandler;
     struct DragDropInteractionState _dragDropInteractionState;
@@ -216,6 +222,7 @@ __attribute__((visibility("hidden")))
 - (void)_dragInteraction:(id)arg1 itemsForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3 completion:(CDUnknownBlockType)arg4;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (BOOL)_dragInteraction:(id)arg1 shouldDelayCompetingGestureRecognizer:(id)arg2;
+- (BOOL)_handleDropByInsertingImagePlaceholders:(id)arg1 session:(id)arg2;
 - (void)selectPositionAtPoint:(struct CGPoint)arg1 withContextRequest:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDocumentContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)adjustSelectionWithDelta:(struct _NSRange)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -246,6 +253,7 @@ __attribute__((visibility("hidden")))
 - (void)_didChangeDragInteractionPolicy;
 - (void)_hideContextMenuHintContainer;
 - (id)containerViewForTargetedPreviews;
+@property(readonly, nonatomic) BOOL _shouldUseLegacySelectPopoverDismissalBehavior;
 @property(readonly, nonatomic) BOOL _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) BOOL _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) BOOL _shouldUseContextMenus;
@@ -262,7 +270,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (Optional_667115b7)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_abfce3f5)positionInformationForActionSheetAssistant:(id)arg1;
 - (BOOL)isAnyTouchOverActiveArea:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (BOOL)shouldIgnoreWebTouch;
@@ -609,9 +617,10 @@ __attribute__((visibility("hidden")))
 - (void)_finishInteraction;
 - (void)_cancelInteraction;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)_shouldToggleSelectionCommandsAfterTapAt:(struct CGPoint)arg1;
 - (id)_uiTextSelectionRects;
 - (void)_invokeAndRemovePendingHandlersValidForCurrentPositionInformation;
-- (BOOL)_currentPositionInformationIsApproximatelyValidForRequest:(const struct InteractionInformationRequest *)arg1;
+- (BOOL)_currentPositionInformationIsApproximatelyValidForRequest:(const struct InteractionInformationRequest *)arg1 radiusForApproximation:(int)arg2;
 - (BOOL)_hasValidOutstandingPositionInformationRequest:(const struct InteractionInformationRequest *)arg1;
 - (BOOL)_currentPositionInformationIsValidForRequest:(const struct InteractionInformationRequest *)arg1;
 - (void)requestAsynchronousPositionInformationUpdate:(struct InteractionInformationRequest)arg1;
@@ -655,6 +664,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)gestureRecognizerMayDoubleTapToZoomWebView:(id)arg1;
 - (BOOL)gestureRecognizerMayPinchToZoomWebView:(id)arg1;
 - (BOOL)gestureRecognizerMayPanWebView:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_handleTouchActionsForTouchEvent:(const struct NativeWebTouchEvent *)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
 - (Optional_6686b3f7)activeTouchIdentifierForGestureRecognizer:(id)arg1;
@@ -687,6 +697,8 @@ __attribute__((visibility("hidden")))
 - (id)_scroller;
 - (double)inverseScale;
 - (id)unscaledView;
+- (void)_updateLongPressAndHighlightLongPressGestures;
+- (void)_didChangeLinkPreviewAvailability;
 - (void)_addDefaultGestureRecognizers;
 - (void)_removeDefaultGestureRecognizers;
 - (void)cleanupInteraction;

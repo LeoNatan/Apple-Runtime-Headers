@@ -42,7 +42,7 @@
 - (void)_iterateMessagesMatchingQuery:(id)arg1 cancelationToken:(id)arg2 consumer:(id)arg3;
 - (void)iteratePersistedMessagesMatchingQuery:(id)arg1 cancelationToken:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)iterateMessagesMatchingQuery:(id)arg1 batchSize:(long long)arg2 firstBatchSize:(long long)arg3 limit:(long long)arg4 cancelationToken:(id)arg5 handler:(CDUnknownBlockType)arg6;
-- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4;
+- (id)initWithMailboxPersistence:(id)arg1 database:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

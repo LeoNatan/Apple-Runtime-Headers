@@ -44,7 +44,9 @@
     struct PXGItemsLayout *_decadesItemLayout;
     NSMutableSet *_itemLayoutsAllowedToLoad;
     NSDateInterval *_lastReturnedDateInterval;
+    unsigned long long _lastReturnedDateIntervalDataSourceIdentifier;
     NSArray *_lastReturnedLocationNames;
+    unsigned long long _lastReturnedLocationNamesDataSourceIdentifier;
     _Bool _scrolledWhileAnimatingZoom;
     _Bool _performedInitialVisualShift;
     long long _visuallyStableAnchorItem;
@@ -52,6 +54,7 @@
     _Bool _visuallyStableAnchorAllowedCloseToTop;
     unsigned long long _dataSourceIdentifierOfCachedRangeForSelectedItems;
     struct _NSRange _cachedRangeForSelectedItems;
+    _Bool _didChangeFiltering;
     _Bool _shouldAnimateTowardsAnchor;
     _Bool _wasTracking;
     PXCuratedLibraryLayoutSpec *_spec;
@@ -121,6 +124,7 @@
 - (id)presentedItemsGeometryForDataSource:(id)arg1;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *primaryItemsLayout;
 - (_Bool)_wantsDecorationForNumberOfColumns:(long long)arg1;
+- (double)_itemCaptionSpacingForLayout:(struct PXGItemsLayout *)arg1;
 - (double)_interItemSpacingForLayout:(struct PXGItemsLayout *)arg1;
 - (_Bool)_layoutHasIndividualItems:(struct PXGItemsLayout *)arg1;
 - (_Bool)_layoutIsAspectFit:(struct PXGItemsLayout *)arg1;

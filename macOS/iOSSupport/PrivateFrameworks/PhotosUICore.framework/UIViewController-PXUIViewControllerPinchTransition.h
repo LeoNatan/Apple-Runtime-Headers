@@ -57,6 +57,8 @@
 - (void)px_enumerateDescendantViewControllersWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (BOOL)px_isDescendantOfViewController:(id)arg1;
 - (BOOL)px_canPresentViewControllerAnimated:(BOOL)arg1;
+- (void)px_presentOverTopmostPresentedViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) UIViewController *px_topmostPresentedViewController;
 @property(readonly, nonatomic) struct UIEdgeInsets px_layoutMargins;
 @property(readonly, nonatomic) struct UIEdgeInsets px_safeAreaInsets;
 @property(readonly, nonatomic) BOOL px_isVisible;

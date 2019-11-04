@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) NSNumber *dsid;
 @property(readonly) unsigned long long hash;
+@property(readonly) BOOL isChildAccount;
 @property(readonly) Class superclass;
 
 @end

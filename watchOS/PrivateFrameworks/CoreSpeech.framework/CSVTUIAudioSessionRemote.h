@@ -28,6 +28,7 @@
 - (void)audioRecorderDisconnected:(id)arg1;
 - (void)audioRecorderDidStopRecord:(id)arg1 audioStreamHandleId:(unsigned int)arg2 reason:(int)arg3;
 - (void)audioRecorderDidStartRecord:(id)arg1 audioStreamHandleId:(unsigned int)arg2 successfully:(_Bool)arg3 error:(id)arg4;
+- (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned int)arg2 buffer:(id)arg3;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned int)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
 - (void)_handleDidStopWithReason:(int)arg1;
 - (unsigned int)audioSource;

@@ -447,6 +447,7 @@
 - (void)contactGroupPickerDidFinish:(id)arg1 withGroup:(id)arg2;
 - (void)contactGroupPickerDidCancel:(id)arg1;
 - (id)alreadyPickedGroups;
+- (BOOL)propertyItemCanIgnoreGuardianRestrictions;
 - (id)_phoneticNameForValue:(id)arg1 currentPhoneticName:(id)arg2 property:(id)arg3;
 - (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
 - (id)sharedActionsDataSource;
@@ -473,6 +474,7 @@
 - (void)performConfirmedCancel;
 - (BOOL)isModalInPresentation;
 - (void)presentationControllerWillDismiss:(id)arg1;
+- (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)updateOutOfProcessFullscreenPresentationIfNeeded;
 - (void)shouldPresentFullscreen:(BOOL)arg1;
@@ -533,6 +535,7 @@
 - (BOOL)editRequiresAuthorization;
 - (BOOL)editingChangeRequiresAuthorization;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)shouldIgnoreGuardianRestrictions;
 - (void)resetAuthorizationState;
 - (void)finishEditing:(id)arg1;
 - (void)toggleEditing:(id)arg1;

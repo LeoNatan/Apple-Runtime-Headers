@@ -13,11 +13,9 @@
     NSString *_userID;
     NSString *_deviceToken;
     NSString *_storefrontID;
-    unsigned long long _bundleSubscriptionState;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long bundleSubscriptionState; // @synthesize bundleSubscriptionState=_bundleSubscriptionState;
 @property(copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(copy, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
 @property(copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
@@ -25,7 +23,7 @@
 - (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUserID:(id)arg1 deviceToken:(id)arg2 storefrontID:(id)arg3 bundleSubscriptionState:(unsigned long long)arg4;
+- (id)initWithUserID:(id)arg1 deviceToken:(id)arg2 storefrontID:(id)arg3;
 
 @end
 

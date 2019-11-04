@@ -34,13 +34,12 @@ __attribute__((visibility("hidden")))
 - (long long)_lastConfirmedAge;
 - (void)_performAgeGateVerificationWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)_requiredAgeForPlayback;
-- (_Bool)_isAllowed:(_Bool)arg1 isTVShow:(_Bool)arg2;
-- (void)_showRestrictionsAlert:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_isAllowedToPlayOrPurchase;
+- (void)_showRestrictionsAlertForRatingDomain:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performRestrictionsCheckWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_contentRatingValue;
+- (id)_ratingValue;
 - (_Bool)_isTrailer;
-- (_Bool)_isTVShow;
-- (_Bool)_isMovie;
+- (id)_ratingDomain;
 - (void)_preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;

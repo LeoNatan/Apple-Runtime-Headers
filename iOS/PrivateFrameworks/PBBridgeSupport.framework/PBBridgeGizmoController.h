@@ -31,7 +31,6 @@
 }
 
 + (id)prepareOfflineTermsResponse:(id)arg1;
-+ (id)licensePathForAppleLanguages:(id)arg1;
 + (id)warrantyFilePathForLanguageCode:(id)arg1 countryCode:(id)arg2;
 @property(copy, nonatomic) CDUnknownBlockType enableSiriCompletion; // @synthesize enableSiriCompletion=_enableSiriCompletion;
 @property(copy, nonatomic) CDUnknownBlockType siriStateCompletion; // @synthesize siriStateCompletion=_siriStateCompletion;

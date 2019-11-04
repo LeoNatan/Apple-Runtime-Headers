@@ -70,7 +70,6 @@
 + (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bagContract:(id)arg3 logKey:(id)arg4;
 + (BOOL)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3 bagContract:(id)arg4 logKey:(id)arg5;
 + (BOOL)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(long long)arg2 bagContract:(id)arg3 logKey:(id)arg4;
-+ (id)_appleLanguagesObservable;
 + (void)stopListeningForDeviceLanguageChange;
 + (void)startListeningForDeviceLanguageChangeWithBagContract:(id)arg1;
 + (id)language;

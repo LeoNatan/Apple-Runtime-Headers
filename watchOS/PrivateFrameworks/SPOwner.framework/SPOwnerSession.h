@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <SPOwner/SPLostModeSupportProtocol-Protocol.h>
 #import <SPOwner/SPOwnerSessionPrivateProtocol-Protocol.h>
 #import <SPOwner/SPTrackingAvoidanceServiceProtocol-Protocol.h>
 
 @class FMXPCServiceDescription, FMXPCSession, NSDate, NSDictionary, NSOperationQueue, NSSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source, SPOwnerSessionXPCProtocol;
 
-@interface SPOwnerSession : NSObject <SPTrackingAvoidanceServiceProtocol, SPOwnerSessionPrivateProtocol>
+@interface SPOwnerSession : NSObject <SPLostModeSupportProtocol, SPTrackingAvoidanceServiceProtocol, SPOwnerSessionPrivateProtocol>
 {
-    _Bool _cacheFetchInProgress;
     CDUnknownBlockType beaconAddedBlock;
     CDUnknownBlockType beaconRemovedBlock;
     CDUnknownBlockType beaconsChangedBlock;
     CDUnknownBlockType latestLocationsUpdatedBlock;
+    NSSet *_locationSources;
     FMXPCServiceDescription *_serviceDescription;
     FMXPCSession *_session;
     id <SPOwnerSessionXPCProtocol> _proxy;
@@ -32,12 +33,13 @@
     id _beaconEstimatedLocationChangedNotificationToken;
     NSDictionary *_locationCache;
     NSObject<OS_dispatch_source> *_locationFetchDispatchTimer;
+    NSObject<OS_dispatch_source> *_connectionExpiryDispatchTimer;
     NSDate *_fetchLimit;
 }
 
 @property(copy, nonatomic) NSDate *fetchLimit; // @synthesize fetchLimit=_fetchLimit;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *connectionExpiryDispatchTimer; // @synthesize connectionExpiryDispatchTimer=_connectionExpiryDispatchTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *locationFetchDispatchTimer; // @synthesize locationFetchDispatchTimer=_locationFetchDispatchTimer;
-@property(nonatomic) _Bool cacheFetchInProgress; // @synthesize cacheFetchInProgress=_cacheFetchInProgress;
 @property(retain, nonatomic) NSDictionary *locationCache; // @synthesize locationCache=_locationCache;
 @property(nonatomic) __weak id beaconEstimatedLocationChangedNotificationToken; // @synthesize beaconEstimatedLocationChangedNotificationToken=_beaconEstimatedLocationChangedNotificationToken;
 @property(nonatomic) __weak id tagSeparationBeaconsChangedNotificationToken; // @synthesize tagSeparationBeaconsChangedNotificationToken=_tagSeparationBeaconsChangedNotificationToken;
@@ -50,6 +52,7 @@
 @property(retain, nonatomic) id <SPOwnerSessionXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
+@property(copy, nonatomic) NSSet *locationSources; // @synthesize locationSources=_locationSources;
 @property(copy, nonatomic) CDUnknownBlockType latestLocationsUpdatedBlock; // @synthesize latestLocationsUpdatedBlock;
 @property(copy, nonatomic) CDUnknownBlockType beaconsChangedBlock; // @synthesize beaconsChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType beaconRemovedBlock; // @synthesize beaconRemovedBlock;
@@ -72,6 +75,9 @@
 - (oneway void)forceDistributeKeysWithCompletion:(CDUnknownBlockType)arg1;
 - (oneway void)beaconForUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rawSearchResultsForBeacon:(id)arg1 dateInterval:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateConnectionExpiryDispatchTimerWithBeacons:(id)arg1;
+- (void)connectionExpiryTimerFired;
+- (void)setConnectionExpiryDispatchTimerWithInterval:(double)arg1;
 - (void)locationFetchTimerFired;
 - (void)setLocationFetchDispatchTimerWithInterval:(double)arg1;
 - (void)locationsForBeacons:(id)arg1 completion:(CDUnknownBlockType)arg2;

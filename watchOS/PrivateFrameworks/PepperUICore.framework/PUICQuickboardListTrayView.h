@@ -6,29 +6,38 @@
 
 #import <UIKit/UIStackView.h>
 
-@class NSArray, PUICQuickboardListTraySpecs;
+@class NSArray, NSObject, PUICQuickboardListTraySpecs;
+@protocol OS_os_log;
 
 @interface PUICQuickboardListTrayView : UIStackView
 {
     PUICQuickboardListTraySpecs *_specs;
+    NSArray *_buttons;
     UIStackView *_firstRow;
     UIStackView *_secondRow;
-    NSArray *_buttons;
+    NSArray *_firstRowButtons;
+    NSArray *_secondRowButtons;
+    NSObject<OS_os_log> *_log;
 }
 
-@property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
+@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
+@property(retain, nonatomic) NSArray *secondRowButtons; // @synthesize secondRowButtons=_secondRowButtons;
+@property(retain, nonatomic) NSArray *firstRowButtons; // @synthesize firstRowButtons=_firstRowButtons;
 @property(nonatomic) __weak UIStackView *secondRow; // @synthesize secondRow=_secondRow;
-@property(retain, nonatomic) UIStackView *firstRow; // @synthesize firstRow=_firstRow;
+@property(nonatomic) __weak UIStackView *firstRow; // @synthesize firstRow=_firstRow;
+@property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) PUICQuickboardListTraySpecs *specs; // @synthesize specs=_specs;
 - (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (void)updateInnerSpacingForRow:(id)arg1;
-- (void)layoutButtons:(id)arg1;
-- (id)rowStackView;
+- (void)replaceAllSubviewsFrom:(id)arg1 with:(id)arg2;
+- (id)layoutRowView:(id)arg1 withButtons:(id)arg2;
+- (id)rowStackViewWithArrangedSubviews:(id)arg1;
+- (unsigned int)priorityForButton:(id)arg1;
 @property(readonly, nonatomic) float contentHeight;
 @property(readonly, nonatomic) unsigned int rows;
-- (void)layoutButtons;
 - (void)configureWithButtons:(id)arg1;
+- (void)layoutButtons;
 - (id)init;
 
 @end

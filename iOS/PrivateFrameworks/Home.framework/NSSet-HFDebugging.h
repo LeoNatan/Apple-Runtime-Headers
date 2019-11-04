@@ -8,5 +8,7 @@
 
 @interface NSSet (HFDebugging)
 - (id)hf_prettyDescription;
+- (id)hf_homePodMediaProfiles;
+- (id)hf_appleTVMediaProfiles;
 @end
 

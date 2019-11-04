@@ -25,6 +25,7 @@
     CNContactStore *_contactStore;
     CoreTelephonyClient *_telephonyClient;
     NSObject<OS_dispatch_queue> *_telephonyUpdateQueue;
+    NSObject<OS_dispatch_queue> *_accountStoreQueue;
     NSNumber *_callCapabilitiesSupportsTelephonyCalls;
 }
 
@@ -51,6 +52,7 @@
 + (id)sharedCallCenter;
 + (id)sharedUtilityProvider;
 @property(retain, nonatomic) NSNumber *callCapabilitiesSupportsTelephonyCalls; // @synthesize callCapabilitiesSupportsTelephonyCalls=_callCapabilitiesSupportsTelephonyCalls;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *accountStoreQueue; // @synthesize accountStoreQueue=_accountStoreQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *telephonyUpdateQueue; // @synthesize telephonyUpdateQueue=_telephonyUpdateQueue;
 @property(retain, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) _Bool headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;

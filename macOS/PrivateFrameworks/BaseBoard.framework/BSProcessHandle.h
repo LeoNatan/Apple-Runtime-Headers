@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)processHandleForTaskNameRight:(id)arg1 bundleID:(id)arg2;
 + (id)processHandleForPID:(int)arg1 bundleID:(id)arg2;
 + (id)processHandleForTaskNameRight:(id)arg1;
 + (id)processHandleForPID:(int)arg1;
@@ -56,6 +57,7 @@
 - (id)_initWithPID:(int)arg1 bundleID:(id)arg2;
 - (id)initWithConnection:(id)arg1;
 - (id)initWithPID:(int)arg1 bundleID:(id)arg2;
+- (id)initWithTaskNameRight:(id)arg1 bundleID:(id)arg2;
 - (id)initWithCurrentProcess;
 - (id)initWithAuditToken:(id)arg1;
 - (id)initWithTaskNameRight:(id)arg1;

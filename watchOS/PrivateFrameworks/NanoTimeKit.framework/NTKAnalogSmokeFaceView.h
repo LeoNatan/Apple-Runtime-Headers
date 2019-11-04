@@ -21,7 +21,7 @@
 @property(nonatomic) unsigned int currentSmokeColor; // @synthesize currentSmokeColor=_currentSmokeColor;
 - (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (_Bool)_wantsConstantSpeedZoom;
 - (void)reloadDataSources;
 - (void)setupDataSources;

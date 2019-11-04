@@ -23,7 +23,6 @@
     NSDictionary *_edamAttributes;
 }
 
-+ (void)populateNoteFromWebView:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSDictionary *edamAttributes; // @synthesize edamAttributes=_edamAttributes;
 @property(retain, nonatomic) EDAMNote *serviceNote; // @synthesize serviceNote=_serviceNote;
 @property(copy, nonatomic) NSString *cachedENMLContent; // @synthesize cachedENMLContent=_cachedENMLContent;

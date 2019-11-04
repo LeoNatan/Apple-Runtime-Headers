@@ -19,6 +19,7 @@
 @property(readonly) CDStruct_e83c9415 photoProcessingTimeRange;
 @property(readonly) unsigned long long expectedPhotoCount;
 @property(readonly, getter=isDualCameraFusionEnabled) BOOL dualCameraFusionEnabled;
+@property(readonly, getter=isVirtualDeviceFusionEnabled) BOOL virtualDeviceFusionEnabled;
 @property(readonly, getter=isRedEyeReductionEnabled) BOOL redEyeReductionEnabled;
 @property(readonly, getter=isFlashEnabled) BOOL flashEnabled;
 - (CDStruct_79c71658)dimensionsForSemanticSegmentationMatteOfType:(id)arg1;

@@ -235,6 +235,8 @@
 - (void)_barMetricsDidChange;
 - (void)_updateURLOutlineCornerRadius;
 - (void)_updateProgressViewCornerRadius;
+- (void)_updateProgressViewFillColor;
+- (void)_updateFillColorForProgressView:(id)arg1;
 - (id)_URLLabelFont;
 - (void)_updateFonts;
 @property(nonatomic) _Bool hasToolbar;

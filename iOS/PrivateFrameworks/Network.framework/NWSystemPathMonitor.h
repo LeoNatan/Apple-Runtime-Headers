@@ -11,9 +11,9 @@
 
 @interface NWSystemPathMonitor : NSObject
 {
-    BOOL _wifiPrimary;
-    BOOL _ethernetPrimary;
-    BOOL _vpnActive;
+    _Bool _wifiPrimary;
+    _Bool _ethernetPrimary;
+    _Bool _vpnActive;
     int _vpnNotifyToken;
     NWMonitor *_vpnMonitor;
     NWPathEvaluator *_primaryEvaluator;
@@ -31,9 +31,9 @@
 @property int vpnNotifyToken; // @synthesize vpnNotifyToken=_vpnNotifyToken;
 @property(retain) NWPathEvaluator *primaryEvaluator; // @synthesize primaryEvaluator=_primaryEvaluator;
 @property(retain) NWMonitor *vpnMonitor; // @synthesize vpnMonitor=_vpnMonitor;
-@property(nonatomic, getter=isVPNActive) BOOL vpnActive; // @synthesize vpnActive=_vpnActive;
-@property(nonatomic, getter=isEthernetPrimary) BOOL ethernetPrimary; // @synthesize ethernetPrimary=_ethernetPrimary;
-@property(nonatomic, getter=isWiFiPrimary) BOOL wifiPrimary; // @synthesize wifiPrimary=_wifiPrimary;
+@property(nonatomic, getter=isVPNActive) _Bool vpnActive; // @synthesize vpnActive=_vpnActive;
+@property(nonatomic, getter=isEthernetPrimary) _Bool ethernetPrimary; // @synthesize ethernetPrimary=_ethernetPrimary;
+@property(nonatomic, getter=isWiFiPrimary) _Bool wifiPrimary; // @synthesize wifiPrimary=_wifiPrimary;
 - (void).cxx_destruct;
 - (void)updateVPNMonitor;
 - (void)registerForVPNNotifications;

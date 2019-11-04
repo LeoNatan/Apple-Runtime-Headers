@@ -25,6 +25,9 @@
     NSString *_debugFilesPrefix;
 }
 
++ (id)updateCropAdjustment:(id)arg1 after:(id)arg2 error:(out id *)arg3;
++ (struct CGRect)overcaptureRectForStitchedOvercaptureSize:(CDStruct_912cb5d2)arg1 overcaptureVideoComplementSize:(CDStruct_912cb5d2)arg2 primarySize:(CDStruct_912cb5d2)arg3 autoLoopStabilizedCropRect:(struct CGRect)arg4;
++ (BOOL)stitchedOvercaptureRect:(struct CGRect *)arg1 primaryRect:(struct CGRect *)arg2 forComposition:(id)arg3 error:(out id *)arg4;
 @property(copy) NSString *debugFilesPrefix; // @synthesize debugFilesPrefix=_debugFilesPrefix;
 @property BOOL debugFilesEnabled; // @synthesize debugFilesEnabled=_debugFilesEnabled;
 @property double minAutoStraighten; // @synthesize minAutoStraighten=_minAutoStraighten;

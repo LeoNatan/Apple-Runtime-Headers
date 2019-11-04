@@ -13,6 +13,7 @@
 - (void)fetchSharedTripsWithCompletion:(void (^)(NSArray *))arg1;
 - (void)unsubscribeFromSharedTripUpdatesWithIdentifier:(NSString *)arg1;
 - (void)subscribeToSharedTripUpdatesWithIdentifier:(NSString *)arg1;
+- (void)fetchActiveHandlesWithCompletion:(void (^)(NSArray *))arg1;
 - (void)stopSharingTrip;
 - (void)stopSharingTripWithMessagesGroup:(NSString *)arg1;
 - (void)startSharingTripWithMessagesGroup:(NSString *)arg1;
@@ -20,6 +21,8 @@
 - (void)startSharingTripWithMessagesContacts:(NSArray *)arg1;
 - (void)stopSharingTripWithContacts:(NSArray *)arg1;
 - (void)startSharingTripWithContacts:(NSArray *)arg1;
+- (void)fetchSendingIdentityWithCompletion:(void (^)(NSString *, NSString *))arg1;
+- (void)fetchAccountValidWithCompletion:(void (^)(_Bool))arg1;
 - (void)checkin;
 @end
 

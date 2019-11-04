@@ -28,7 +28,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
 - (void)sessionAudioControlUpdated:(id)arg1;
+- (void)handleSessionVolumeUpdatedNotification:(id)arg1;
 - (void)handleSessionPlaybackStateUpdatedNotification:(id)arg1;
+- (void)handleSessionUpdatedNotification:(id)arg1;
 - (void)_handleSetPower:(id)arg1;
 - (void)_handleSetValue:(id)arg1 withRequestProperty:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)handleSetValue:(id)arg1 withRequestProperty:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

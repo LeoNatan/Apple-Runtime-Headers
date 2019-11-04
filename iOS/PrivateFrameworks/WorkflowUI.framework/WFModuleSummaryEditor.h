@@ -29,8 +29,8 @@
     WFVariableConfigurationResponder *_variableResponder;
 }
 
++ (unsigned long long)variableResultTypeForParameter:(id)arg1;
 + (_Bool)supportsEditingTextAttachment:(id)arg1 inSlotWithIdentifier:(id)arg2;
-+ (_Bool)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) _Bool returnToKeyboardOnComplete; // @synthesize returnToKeyboardOnComplete=_returnToKeyboardOnComplete;
 @property(nonatomic) _Bool variableResponderSuspended; // @synthesize variableResponderSuspended=_variableResponderSuspended;
 @property(retain, nonatomic) WFVariableConfigurationResponder *variableResponder; // @synthesize variableResponder=_variableResponder;
@@ -56,21 +56,27 @@
 - (void)_beginEditingVariableAttachment:(id)arg1 withParentView:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (_Bool)canTypeAlongsideVariables;
-- (unsigned long long)variableResultType;
 - (void)beginEditingTextAttachment:(id)arg1 inSlotWithIdentifier:(id)arg2 sourceView:(id)arg3;
-- (void)presentVariablePickerWithCurrentState:(id)arg1 fromViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)variableMenuInitialStateForSlotWithIdentifier:(id)arg1;
+- (_Bool)variableMenuSupportsVariableSelectionForSlotWithIdentifier:(id)arg1;
+- (void)beginVariableMenuForSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
+- (void)sourceViewTintColorDidChange;
 - (void)textEntryDidFinish;
+- (void)textEntryDidPasteWithOriginalBlock:(CDUnknownBlockType)arg1;
+- (void)textEntryDidCopyWithOriginalBlock:(CDUnknownBlockType)arg1;
+- (void)textEntryDidCutWithOriginalBlock:(CDUnknownBlockType)arg1;
 - (void)textEntryTextDidChange:(id)arg1;
 - (_Bool)textEntryShouldChangeText:(id)arg1;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(_Bool *)arg2;
 - (void)requestTextEntry;
+- (void)completeEditingWithTextAttachmentToEdit:(id)arg1;
 - (void)completeEditing;
 - (void)commitMultipleState:(id)arg1;
 - (void)commitState:(id)arg1;
 - (void)stageState:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginEditingNewArrayElementFromSourceViewController:(id)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect)arg3;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 - (id)initWithParameter:(id)arg1 initialState:(id)arg2 initialArrayState:(id)arg3 arrayIndex:(unsigned long long)arg4 processing:(_Bool)arg5;
 
 // Remaining properties

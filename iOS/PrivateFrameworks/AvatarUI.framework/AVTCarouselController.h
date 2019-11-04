@@ -37,7 +37,6 @@
     long long _mode;
 }
 
-+ (void)setupAVTView:(id)arg1;
 + (id)recordingCarouselForRecordDataSource:(id)arg1;
 + (id)displayingCarouselForRecordDataSource:(id)arg1;
 + (id)sessionProviderForMode:(long long)arg1 environment:(id)arg2;
@@ -90,11 +89,10 @@
 @property(nonatomic) _Bool allowsCreate;
 - (void)displayAvatarRecord:(id)arg1 animated:(_Bool)arg2;
 - (void)displayAvatarRecordWithIdentifier:(id)arg1 animated:(_Bool)arg2;
-- (void)setSingleAvatarMode:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)unlockFromFocusedViewAnimated:(_Bool)arg1;
-- (void)lockOnFocusedViewAnimated:(_Bool)arg1;
+- (void)setSingleAvatarMode:(_Bool)arg1 fillContainer:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)reloadDataCenteringToAvatarRecord:(id)arg1;
 - (void)reloadData;
+- (void)setupAVTView:(id)arg1;
 - (void)beginAVTViewSession;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

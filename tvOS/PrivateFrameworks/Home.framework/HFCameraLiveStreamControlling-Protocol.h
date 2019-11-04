@@ -11,6 +11,7 @@
 
 @protocol HFCameraLiveStreamControlling <NSObject>
 @property(nonatomic, getter=isMicrophoneEnabled) _Bool microphoneEnabled;
+@property(nonatomic) float streamAudioVolume;
 @property(nonatomic, getter=isStreamAudioEnabled) _Bool streamAudioEnabled;
 @property(readonly, nonatomic) NSError *streamError;
 @property(readonly, nonatomic) HMCameraSource *liveCameraSource;

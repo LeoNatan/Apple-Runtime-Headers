@@ -12,6 +12,8 @@
 {
     NSMutableDictionary *_intentResponseCodableCodes;
     NSString *_outputAttributeName;
+    NSString *_attributeKeyPrefix;
+    NSString *_attributesKeyPrefix;
     NSArray *_responseCodes;
 }
 

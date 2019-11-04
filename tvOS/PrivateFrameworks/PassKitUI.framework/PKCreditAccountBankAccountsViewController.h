@@ -40,6 +40,7 @@
 - (void)_didSelectDeleteBroadwayBankAccountAtIndexPath:(id)arg1;
 - (_Bool)_isBankAccountIndexPath:(id)arg1;
 - (void)_updateEditButtonIfNecessary;
+- (void)_toggleEditingMode;
 - (void)_editButtonPressed:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithAccount:(id)arg1 paymentWebService:(id)arg2 context:(long long)arg3;

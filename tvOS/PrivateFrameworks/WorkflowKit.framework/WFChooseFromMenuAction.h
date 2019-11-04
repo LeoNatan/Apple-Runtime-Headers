@@ -38,7 +38,6 @@
 - (_Bool)inputRequired;
 - (id)localizedName;
 - (id)name;
-- (id)attributedLocalizedName;
 - (id)serializedParameters;
 - (void)initializeParameters;
 - (id)initWithIdentifier:(id)arg1 definition:(id)arg2 serializedParameters:(id)arg3;

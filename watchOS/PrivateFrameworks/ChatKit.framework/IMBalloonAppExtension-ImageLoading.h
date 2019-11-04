@@ -22,6 +22,7 @@
 - (id)_appIconFromFileURL:(id)arg1;
 - (void)__ck_prefetchBrowserImageForInterfaceStyle:(int)arg1;
 - (id)placeholderImageForInterfaceStyle:(int)arg1;
+- (id)_validProxy;
 - (id)_adamID;
 @property(readonly, nonatomic) NSString *containingBundleIdentifier;
 @end

@@ -13,7 +13,6 @@
 
 @interface WFOutOfProcessWorkflowController : NSObject <WFOutOfProcessWorkflowControllerHost>
 {
-    _Bool _running;
     WFContentCollection *_input;
     WFContentCollection *_output;
     id <WFOutOfProcessWorkflowControllerDelegate> _delegate;
@@ -26,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_internalSerialQueue;
     NSObject<OS_dispatch_source> *_extensionMaxRunTimeTimer;
     int _state;
+    double _timeoutSeconds;
 }
 
 @property(nonatomic) int state; // @synthesize state=_state;
@@ -34,9 +34,9 @@
 @property(retain, nonatomic) NSUUID *extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) WFWorkflowReference *workflowReference; // @synthesize workflowReference=_workflowReference;
+@property(readonly, nonatomic) double timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(readonly, nonatomic) int environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) NSData *workflowData; // @synthesize workflowData=_workflowData;
-@property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak id <WFOutOfProcessWorkflowControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFContentCollection *output; // @synthesize output=_output;
@@ -47,11 +47,12 @@
 - (void)reportFinishToDelegateWithError:(id)arg1 cancelled:(_Bool)arg2;
 - (void)restartTimeoutTimer;
 - (void)cancelTimeoutTimer;
-- (void)stopExtensionForcefully:(_Bool)arg1;
+- (void)stopExtension;
 - (void)handleXPCConnectionInterruption;
 - (void)handleExtensionMaxRunTimeExceeded;
 - (id)extensionInterface;
 - (id)extensionContext;
+@property(readonly, nonatomic, getter=isRunning) _Bool running;
 - (void)stop;
 - (_Bool)runWithInput:(id)arg1 error:(out id *)arg2;
 - (void)dealloc;

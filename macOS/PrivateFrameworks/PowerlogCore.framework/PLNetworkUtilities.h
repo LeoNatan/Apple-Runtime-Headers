@@ -10,9 +10,12 @@
 {
 }
 
++ (BOOL)isESPPacket:(struct __CFData *)arg1 offset:(unsigned char)arg2;
 + (id)udpParse:(struct __CFData *)arg1 offset:(unsigned char)arg2;
 + (id)tcpParse:(struct __CFData *)arg1 offset:(unsigned char)arg2;
-+ (id)decodeIPPacket:(id)arg1;
++ (id)decodeIPPacket:(id)arg1 decodedESPPacket:(BOOL)arg2;
++ (id)handleESPPacket:(BOOL)arg1;
++ (id)getIPSecWakePacketHeader;
 + (id)decodeEtherType:(unsigned short)arg1;
 + (id)stringFromTrafficClass:(unsigned int)arg1;
 + (id)interfaceNameForIndex:(id)arg1;

@@ -70,6 +70,7 @@
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateMatchedLocation:(MNLocation *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didChangeNavigationState:(int)arg2;
+- (void)navigationServiceDidSynchronize:(MNNavigationService *)arg1;
 - (void)navigationService:(MNNavigationService *)arg1 didFailWithError:(NSError *)arg2;
 - (void)navigationServiceWillResumeFromPause:(MNNavigationService *)arg1;
 - (void)navigationServiceWillPause:(MNNavigationService *)arg1;

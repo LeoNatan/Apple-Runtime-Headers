@@ -57,7 +57,6 @@
 - (Class)modelClassForTypeName:(id)arg1;
 - (id)typeNameForModelClass:(Class)arg1;
 - (unsigned long long)bestModelEncodingForStorageLocation:(unsigned long long)arg1;
-- (id)queryFieldsForClass:(Class)arg1;
 - (id)unavailableVersionsForModelClass:(Class)arg1;
 - (id)readOnlyVersionsForModelClass:(Class)arg1;
 - (id)initWithDataVersion:(id)arg1 legacyDataVersion:(id)arg2;

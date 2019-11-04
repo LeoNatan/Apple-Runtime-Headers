@@ -6,9 +6,10 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class SBModalAlertPresentationCoordinator;
+@class NSSet, SBModalAlertPresentationCoordinator;
 
 @protocol SBModalAlertPresentationCoordinatorDelegate <NSObject>
 - (void)modalAlertPresentationCoordinator:(SBModalAlertPresentationCoordinator *)arg1 didChangeShowingSystemModalAlert:(_Bool)arg2;
+- (NSSet *)modalAlertPresentationCoordinatorRequestedForegroundScenes:(SBModalAlertPresentationCoordinator *)arg1;
 @end
 

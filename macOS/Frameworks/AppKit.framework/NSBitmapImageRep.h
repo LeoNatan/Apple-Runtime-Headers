@@ -78,7 +78,7 @@
 - (void)setColor:(id)arg1 atX:(long long)arg2 y:(long long)arg3;
 @property(readonly) char *bitmapData;
 - (void)getBitmapDataPlanes:(char **)arg1;
-- (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
+- (BOOL)_wantsToBeCached;
 - (struct CGImage *)CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
 @property(readonly) struct CGImage *CGImage;
 - (BOOL)draw;

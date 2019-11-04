@@ -58,6 +58,13 @@
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+- (BOOL)_repairLegacyMigrationDuplicateVersionCloudResources:(id)arg1;
+- (BOOL)_repairTableThumbFragmentation;
+- (BOOL)_repushAllUserSmartAlbum:(id)arg1;
+- (BOOL)_repairOrphanedProjectAlbumsInStore:(id)arg1;
+- (BOOL)_runPairingForAssetsInStore:(id)arg1;
+- (BOOL)_scavengeSnowplowMetadataForAssetsInStore:(id)arg1;
+- (BOOL)_fixInvalidPostMigrationFileSystemImportedAssets:(id)arg1;
 - (BOOL)_updateQualitySortForResourcesWithCPLResourceTypeVideoFullSizeInStore:(id)arg1;
 - (BOOL)_fixAdjustedFingerprintsInStore:(id)arg1;
 - (BOOL)_fixUnpushedVideoComplementResourcesInStore:(id)arg1;
@@ -211,7 +218,7 @@
 - (BOOL)_migrateOriginalColorSpaceInStagedStore:(id)arg1;
 - (BOOL)_performMigrationCacheDateCreatedOnResources:(BOOL)arg1 cacheItemIdentifierOnResources:(BOOL)arg2 store:(id)arg3;
 - (BOOL)_fixupEditorBundleIDsInStore:(id)arg1;
-- (BOOL)_forceDupeAnalysis;
+- (void)_forceDupeAnalysis;
 - (BOOL)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
 - (BOOL)_fixupAssetPersistence:(id)arg1;
 - (BOOL)_persistVideoComplPropertiesInStore:(id)arg1;
@@ -352,6 +359,7 @@
 - (void)dontImportFileSystemDataIntoDatabase;
 - (void)_repairPotentialModelCorruption;
 - (void)cleanupModelForDataMigrationForRestoreType:(long long)arg1;
+- (void)handleGreenChanges:(id)arg1;
 - (void)_migratePersonContactInfo;
 - (void)_loadFacesFileSystemDataIntoDatabase;
 - (void)setLoadingFacesFromFileSystem:(BOOL)arg1;
@@ -392,7 +400,6 @@
 - (void)_createPhotoDataDirectoryFailedWithNoPermission:(id)arg1;
 - (BOOL)shouldCreateDatabase;
 - (long long)migrateOrCreateDatabaseIfNecessaryWithPersistentContainer:(id)arg1 migrationPolicy:(unsigned int)arg2 error:(id *)arg3;
-- (void)removeForceRebuildIndicatorFile;
 - (long long)checkForceRebuildIndicatorFile;
 - (BOOL)debug_resetThumbnailsAndInitiateRebuildRequest;
 - (BOOL)_removeEvents:(id)arg1;

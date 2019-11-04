@@ -14,7 +14,7 @@
 }
 
 + (id)sharedServiceClient;
-- (void)notifyWeatherForecast:(id)arg1 airQualityConditions:(id)arg2 hourlyForecasts:(id)arg3 dailyForecasts:(id)arg4 location:(id)arg5;
+- (void)notifyWeatherForecast:(id)arg1 airQualityConditions:(id)arg2 hourlyForecasts:(id)arg3 dailyForecasts:(id)arg4 latitude:(double)arg5 longitude:(double)arg6;
 - (void)notifyPassKitPayment:(id)arg1 transaction:(id)arg2 info:(id)arg3;
 - (unsigned char)timeSyncMachTimeStamp:(unsigned long long *)arg1 oscarTimeStamp:(unsigned long long *)arg2;
 - (unsigned char)gyroCalibrationDatabaseSupportsMiniCalibration:(int *)arg1;

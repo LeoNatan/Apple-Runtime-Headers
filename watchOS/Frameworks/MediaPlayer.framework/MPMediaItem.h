@@ -21,6 +21,7 @@
 + (id)persistentIDPropertyForGroupingType:(int)arg1;
 + (_Bool)canFilterByProperty:(id)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)itemFromSong:(id)arg1;
 + (id)screenshotArtworkCatalogCacheProperties;
 + (id)artworkCatalogCacheProperties;
 + (id)MPSD_mediaItemPropertiesForDownloadability;
@@ -111,7 +112,6 @@
 - (_Bool)didSkipWithPlayedToTime:(double)arg1;
 - (id)valuesForProperties:(id)arg1;
 - (id)valueForProperty:(id)arg1;
-- (Class)itemArrayCoderPIDDataCodingClass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

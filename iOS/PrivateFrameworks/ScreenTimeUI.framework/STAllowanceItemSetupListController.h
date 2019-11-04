@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (id)_categoryDetailText:(id)arg1;
 - (id)_webDomainSpecifierForDomain:(id)arg1;
 - (id)_categorySpecifierForIdentifier:(id)arg1;
+- (id)_applicationSpecifierForBundleIdentifier:(id)arg1 categoryIdentifier:(id)arg2;
 - (void)_updateApplicationSpecifiersWithBundleIdentifier:(id)arg1 categoryIdentifier:(id)arg2 shouldInsertSpecifier:(_Bool)arg3;
 - (id)specifiers;
 - (void)setSpecifier:(id)arg1;

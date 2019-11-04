@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)newPackedMessageFromDictionary:(id)arg1;
 - (void)sendMessage:(id)arg1 withTopic:(id)arg2 participantID:(unsigned long long)arg3;
 - (void)sendMessage:(id)arg1 withTopic:(id)arg2;
+- (id)messageForTopic:(id)arg1 command:(id)arg2;
 - (void)addTopic:(id)arg1 associatedStrings:(id)arg2 allowConcurrent:(_Bool)arg3 receiveHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (void)stopMessaging;

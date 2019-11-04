@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)_findOffRouteJunctions;
 - (id)offRouteGraphJunctionsWithNavContext:(struct NavContext *)arg1 maxJunctions:(unsigned int)arg2 isOnRoute:(_Bool)arg3;
 - (void)_updateIntersectionsForDepth:(unsigned int)arg1;
+- (id)offRouteJunctionList;
 - (id)junctionListForDepth:(unsigned int)arg1;
 - (unsigned int)countReadyJunctionLists;
 - (void)evaluateDualCarriagewayForJunction:(id)arg1 outputJunctionList:(id)arg2;

@@ -34,7 +34,6 @@
 + (id)logURLForCurrentTimeAndBundle:(id)arg1;
 + (id)relativePositionKey;
 + (id)sharedManager;
-+ (void)initialize;
 @property(retain, nonatomic) id <SFFeedbackListener> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL submissionEnabled; // @synthesize submissionEnabled=_submissionEnabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

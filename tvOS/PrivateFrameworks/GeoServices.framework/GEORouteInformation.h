@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEORouteInformation : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_detail;
     GEOFormattedString *_duration;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_detail:1;
@@ -48,6 +50,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOFormattedString *duration;
 @property(readonly, nonatomic) _Bool hasDuration;
 - (void)_readDuration;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

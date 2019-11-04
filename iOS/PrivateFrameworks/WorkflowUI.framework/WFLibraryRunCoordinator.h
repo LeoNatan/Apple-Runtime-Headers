@@ -10,7 +10,7 @@
 #import <WorkflowUI/WFParameterInputViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFWorkflowControllerDelegate-Protocol.h>
 
-@class NSHashTable, NSString, WFAction, WFDatabase, WFParameterInputViewController, WFWorkflowController, WFWorkflowReference;
+@class NSHashTable, NSString, WFAction, WFDatabase, WFParameterInputViewController, WFWorkflowController, WFWorkflowReference, WFWorkflowRunEvent;
 @protocol WFLibraryRunCoordinatorDelegate;
 
 @interface WFLibraryRunCoordinator : NSObject <WFParameterInputViewControllerDelegate, WFActionParameterInputProvider, WFWorkflowControllerDelegate>
@@ -27,9 +27,11 @@
     CDUnknownBlockType _completionHandler;
     WFParameterInputViewController *_runningInputViewController;
     id <WFLibraryRunCoordinatorDelegate> _delegateOverride;
+    WFWorkflowRunEvent *_runEvent;
 }
 
 @property(nonatomic) _Bool handingOff; // @synthesize handingOff=_handingOff;
+@property(retain, nonatomic) WFWorkflowRunEvent *runEvent; // @synthesize runEvent=_runEvent;
 @property(nonatomic) __weak id <WFLibraryRunCoordinatorDelegate> delegateOverride; // @synthesize delegateOverride=_delegateOverride;
 @property(nonatomic) __weak WFParameterInputViewController *runningInputViewController; // @synthesize runningInputViewController=_runningInputViewController;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

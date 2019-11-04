@@ -124,7 +124,7 @@
 - (void)reconfigureVisibleSpeakerButtonCells;
 - (void)_refreshLocationsForRecipientsIfNecessary;
 - (void)_tearDownLiveBubbles;
-- (void)chatRegistryDidLoad:(id)arg1;
+- (void)connectivityChanged:(id)arg1;
 - (void)chatItemsDidChange:(id)arg1;
 - (void)chatItemIsFilteredChanged:(id)arg1;
 - (void)multiwayCallStateChanged:(id)arg1;
@@ -138,8 +138,14 @@
 - (void)transferRestored:(id)arg1;
 - (void)_launchTapToRadar;
 - (void)_resendMessageAtIndexPath:(id)arg1;
+- (void)_downgradeMessage:(id)arg1;
 - (void)_downgradeMessageAtIndexPath:(id)arg1;
 - (void)_replayLastImpactEffectIfNotFromMe;
+- (id)hawkingFailurePromptMessageForHandle:(id)arg1;
+- (id)makeHawkingPromptForMessage:(id)arg1 toRecipient:(id)arg2 fromSender:(id)arg3 withSMSOption:(_Bool)arg4;
+- (void)presentHawkingPromptForMessage:(id)arg1;
+- (_Bool)shouldPresentHawkingPromptForMessage:(id)arg1;
+- (void)repromptLastBlackholeFailureIfNotPrompted;
 - (void)_releaseActiveBalloonControllers;
 - (struct CGRect)convertedBoundsToCullFromView:(id)arg1;
 - (void)cullCellSubviews;
@@ -284,6 +290,7 @@
 - (void)performResumeDeferredSetup;
 - (void)prepareForSuspend;
 - (void)parentControllerDidBecomeActive;
+- (_Bool)_canUseOpaqueMask;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;

@@ -347,6 +347,7 @@ struct _VCAudioEndpointData {
 struct _VCAudioIOControllerClientIO {
     void *processSamplesContext;
     CDUnknownFunctionPointerType processSamples;
+    NSObject *runLock;
 };
 
 struct _VCAudioIOControllerIOState {

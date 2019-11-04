@@ -40,8 +40,6 @@
     RTXPCActivityManager *_xpcActivityManager;
 }
 
-+ (id)locationFromAggregateVisits:(id)arg1;
-+ (id)visitFromAggregateVisits:(id)arg1;
 @property(nonatomic) _Bool monitorFingerprints; // @synthesize monitorFingerprints=_monitorFingerprints;
 @property(readonly, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(readonly, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
@@ -83,6 +81,7 @@
 - (void)_onFingerprintManagerNotification:(id)arg1;
 - (void)onContactsManagerNotification:(id)arg1;
 - (void)_onContactsManagerNotification:(id)arg1;
+- (_Bool)_consolidateKnownPlaceTypesWithError:(id *)arg1;
 - (void)classifyPlaceTypesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_classifyPlaceTypesWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_classifyPlaceTypes:(id *)arg1;
@@ -92,6 +91,8 @@
 - (void)relabelWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_relabelWithRelabeler:(id)arg1 relabelerPersister:(id)arg2 error:(id *)arg3;
 - (_Bool)_relabelWithError:(id *)arg1;
+- (id)createRelabelerPersisterWithError:(id *)arg1;
+- (id)createRelabeler;
 - (id)getRelabeledInferredMapItemForCandidate:(struct RTPair *)arg1 relabeler:(id)arg2 loiIdentifierToCoalescedSourceMap:(id)arg3 submitMetrics:(_Bool)arg4 error:(id *)arg5;
 - (id)extractCandidate:(struct RTPair *)arg1 fromNearbyCandidates:(id)arg2 extractedCandidate:(struct RTPair **)arg3 error:(id *)arg4;
 - (id)getNearbyCandidatesAroundLocation:(id)arg1 distance:(double)arg2 loiIdentifierToCoalescedSourceMap:(id)arg3 error:(id *)arg4;
@@ -100,7 +101,6 @@
 - (void)reconcileLearnedLocationsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_reconcileLearnedLocationsWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_reconcileLearnedLocationsWithError:(id *)arg1;
-- (unsigned long long)preferredReconciliationAlgorithm;
 - (void)trainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
 - (void)_requestTrainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
 - (void)requestTrainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;

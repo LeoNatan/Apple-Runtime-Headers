@@ -68,9 +68,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBecomeFirstResponder;
 - (void)_performCloseKeyCommand;
 - (void)_setUpKeyCommands;
-- (void)_presentDetachSheet;
+- (void)_presentDetachSheetForEvent:(id)arg1 saveAttachments:(_Bool)arg2;
+- (void)_presentAttachmentRecurrenceSheetForEvent:(id)arg1;
 - (id)_viewForSheet;
 - (id)_nameForDeleteButton;
+- (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)_performSave:(int)arg1 animated:(_Bool)arg2;
 - (void)_performDelete:(int)arg1;
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
@@ -101,6 +103,7 @@ __attribute__((visibility("hidden")))
 - (void)editItem:(id)arg1 wantsRowInsertions:(id)arg2 rowDeletions:(id)arg3;
 - (int)rowNumberForEditItem:(id)arg1;
 - (void)editItem:(id)arg1 wantsRowReload:(id)arg2;
+- (void)editItemWantsFooterTitlesToReload:(id)arg1;
 - (void)editItem:(id)arg1 performActionsOnCellAtSubitem:(unsigned int)arg2 actions:(CDUnknownBlockType)arg3;
 - (void)_reallyHandleCellHeightChange;
 - (void)_tableViewDidUpdateHeights;
@@ -138,6 +141,9 @@ __attribute__((visibility("hidden")))
 - (id)defaultAlertTitle;
 - (void)setupDeleteButton;
 - (id)preferredTitle;
+- (_Bool)hasAttachmentChanges;
+- (id)attachmentsModifiedEvent;
+- (_Bool)attachmentsModifiedOnRecurrence;
 - (_Bool)saveCalendarItemWithSpan:(int)arg1 error:(id *)arg2;
 - (void)prepareEditItems;
 - (void)_setCalendarItemOnEditItems;
@@ -146,6 +152,7 @@ __attribute__((visibility("hidden")))
 - (void)_completeWithAction:(int)arg1 animated:(_Bool)arg2 notify:(_Bool)arg3;
 - (void)completeWithAction:(int)arg1 animated:(_Bool)arg2;
 - (_Bool)saveWithSpan:(int)arg1 animated:(_Bool)arg2;
+- (void)resignCurrentEditItemFirstResponder;
 - (void)focus:(unsigned int)arg1 select:(_Bool)arg2;
 - (_Bool)hasUnsavedChanges;
 - (_Bool)willPresentDialogOnSave;

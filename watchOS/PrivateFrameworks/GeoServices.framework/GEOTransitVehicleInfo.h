@@ -13,13 +13,15 @@
 @interface GEOTransitVehicleInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _clusteredRouteLineArtworkIndexs;
     GEOTransitVehicleTime *_arrivalTime;
     GEOTransitVehicleTime *_departureTime;
     unsigned long long _tripMuid;
     NSString *_vehicleNumber;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _departureFrequencyMax;
     unsigned int _departureFrequencyMin;
     unsigned int _lineIndex;
@@ -97,6 +99,8 @@
 @property(readonly, nonatomic) _Bool hasArrivalTime;
 - (void)_readArrivalTime;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

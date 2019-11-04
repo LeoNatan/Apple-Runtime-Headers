@@ -10,7 +10,7 @@
 #import <HomeAI/HMFTimerDelegate-Protocol.h>
 #import <HomeAI/HMISystemResourceUsageMonitorDelegate-Protocol.h>
 
-@class HMFMemoryMonitor, HMFTimer, HMFUnfairLock, HMIPIDController, HMISystemResourceUsageMonitor, MovingAverage, NSArray, NSObject, NSPointerArray, NSString;
+@class HMFTimer, HMFUnfairLock, HMIPIDController, HMISystemResourceUsageMonitor, MovingAverage, NSArray, NSObject, NSPointerArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HMICameraVideoAnalyzerScheduler : HMFObject <HMFLogging, HMFTimerDelegate, HMISystemResourceUsageMonitorDelegate>
@@ -24,7 +24,6 @@
     NSPointerArray *_internalAnalyzers;
     HMISystemResourceUsageMonitor *_systemResourceUsageMonitor;
     long long _systemResourceUsageMonitorUsageLevel;
-    HMFMemoryMonitor *_memoryMonitor;
     HMIPIDController *_thermalPIDController;
     MovingAverage *_averageAnalysisTimeMovingAverage;
     MovingAverage *_averageTotalAnalysisTimeMovingAverage;
@@ -37,7 +36,6 @@
 @property(readonly) MovingAverage *averageTotalAnalysisTimeMovingAverage; // @synthesize averageTotalAnalysisTimeMovingAverage=_averageTotalAnalysisTimeMovingAverage;
 @property(readonly) MovingAverage *averageAnalysisTimeMovingAverage; // @synthesize averageAnalysisTimeMovingAverage=_averageAnalysisTimeMovingAverage;
 @property(readonly) HMIPIDController *thermalPIDController; // @synthesize thermalPIDController=_thermalPIDController;
-@property(readonly) HMFMemoryMonitor *memoryMonitor; // @synthesize memoryMonitor=_memoryMonitor;
 @property long long systemResourceUsageMonitorUsageLevel; // @synthesize systemResourceUsageMonitorUsageLevel=_systemResourceUsageMonitorUsageLevel;
 @property(readonly) HMISystemResourceUsageMonitor *systemResourceUsageMonitor; // @synthesize systemResourceUsageMonitor=_systemResourceUsageMonitor;
 @property(readonly) NSPointerArray *internalAnalyzers; // @synthesize internalAnalyzers=_internalAnalyzers;
@@ -56,11 +54,13 @@
 - (void)updateAnalysisFPS:(id)arg1;
 @property(readonly) double averageTotalAnalysisTime;
 @property(readonly) double averageAnalysisTime;
+@property(readonly) long long activeAnalyzerCount;
 @property(readonly) unsigned long long maxConcurrentAnalyzers; // @synthesize maxConcurrentAnalyzers=_maxConcurrentAnalyzers;
 - (_Bool)inFullBypassMode;
 @property(readonly) double analysisFPS; // @synthesize analysisFPS=_analysisFPS;
 @property(readonly) long long systemResourceUsageLevel;
 - (void)systemResourceUsageDidChangeTo:(long long)arg1;
+- (void)resumeThermalPIDController;
 - (id)init;
 
 // Remaining properties

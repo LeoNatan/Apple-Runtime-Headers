@@ -32,6 +32,7 @@
 }
 
 + (CDUnknownBlockType)createExportDataWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)authorizationRequestStatusForBundle:(id)arg1 sensors:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)requestAuthorizationForBundle:(id)arg1 sensors:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (void)requestAuthorizationForSensors:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)requestAuthorizationForSensors:(id)arg1;
@@ -53,7 +54,7 @@
 @property __weak id <SRSensorReaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *sensor; // @synthesize sensor=_sensor;
 - (void).cxx_destruct;
-- (void)authorizedServicesDidChange:(id)arg1;
+- (void)authorizedServicesDidChange:(id)arg1 forBundleIdentifier:(id)arg2;
 @property(readonly, getter=isAuthorized) _Bool authorized;
 - (id)authorizedServices;
 - (void)stopRecordingWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -75,7 +76,6 @@
 - (void)didCompleteFetch:(id)arg1;
 - (_Bool)fetchingRequest:(id)arg1 didFetchResult:(id)arg2;
 - (void)fetchDevices:(CDUnknownBlockType)arg1;
-- (void)fetchDeviceIds:(CDUnknownBlockType)arg1;
 - (void)fetchDevices;
 @property(readonly, retain) SRSensorDatastore *datastore;
 - (void)resetDatastoreFiles:(id)arg1;

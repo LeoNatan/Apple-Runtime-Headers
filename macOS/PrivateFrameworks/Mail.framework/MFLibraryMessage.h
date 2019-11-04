@@ -120,6 +120,7 @@
 @property(readonly, nonatomic) BOOL hasAttachments;
 @property(readonly, nonatomic) id <ECMessageHeaders> headers;
 @property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly, nonatomic) BOOL isServerSearchResult;
 @property(readonly) NSSet *labels;
 @property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
 @property(readonly, copy) NSArray *listUnsubscribe;

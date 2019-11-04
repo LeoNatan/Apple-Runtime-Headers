@@ -30,6 +30,7 @@
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *privateDescription;
 @property(readonly, copy) NSString *shortDescription;
+- (_Bool)cancelOnSetup;
 - (void)main;
 - (id)initWithRouteIDs:(id)arg1 volume:(id)arg2;
 

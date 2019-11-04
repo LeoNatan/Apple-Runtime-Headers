@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     UIKeyboardCandidateViewState *_extendedScrolledBarState;
     UIKeyboardCandidateViewState *_inlineViewState;
     UIKeyboardCandidateViewState *_extendedInlineViewState;
+    double _additionalExtendedBarBackdropOffset;
     TIKeyboardCandidate *_currentCandidate;
     NSDictionary *_opacities;
     UIPanGestureRecognizer *_panGestureRecognizer;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool darkKeyboardChanged; // @synthesize darkKeyboardChanged=_darkKeyboardChanged;
 @property(nonatomic) _Bool darkKeyboard; // @synthesize darkKeyboard=_darkKeyboard;
 @property(retain, nonatomic) TIKeyboardCandidate *currentCandidate; // @synthesize currentCandidate=_currentCandidate;
+@property(nonatomic) double additionalExtendedBarBackdropOffset; // @synthesize additionalExtendedBarBackdropOffset=_additionalExtendedBarBackdropOffset;
 @property(retain, nonatomic) UIKeyboardCandidateViewState *extendedInlineViewState; // @synthesize extendedInlineViewState=_extendedInlineViewState;
 @property(retain, nonatomic) UIKeyboardCandidateViewState *inlineViewState; // @synthesize inlineViewState=_inlineViewState;
 @property(retain, nonatomic) UIKeyboardCandidateViewState *extendedScrolledBarState; // @synthesize extendedScrolledBarState=_extendedScrolledBarState;
@@ -129,6 +131,7 @@ __attribute__((visibility("hidden")))
 - (void)toggleInlineViewExtendedAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)toggleBarExtendedWithAnimator:(id)arg1;
 - (void)toggleBarExtended;
+- (void)extendKeyboardBackdropHeight:(double)arg1;
 - (void)setupAnimatorWithCurve:(long long)arg1;
 @property(readonly, nonatomic) _Bool isExtended;
 @property(readonly, nonatomic) _Bool inlineViewIsExtended;

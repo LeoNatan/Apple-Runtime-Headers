@@ -328,11 +328,6 @@ struct WFRowTemplateValueInfo {
     id _field5;
 };
 
-struct _NSRange {
-    unsigned int _field1;
-    unsigned int _field2;
-};
-
 struct _WFDatabaseResultsSlice {
     unsigned int startIndex;
     unsigned int endIndex;

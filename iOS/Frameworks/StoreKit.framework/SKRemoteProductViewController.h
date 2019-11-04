@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)loadDidFinishWithResult:(id)arg1 error:(id)arg2;
 - (void)didReceiveTitle:(id)arg1;
 - (void)didFinishWithResult:(id)arg1;
+- (void)didFinishDismissal;
 - (void)didFinish;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;

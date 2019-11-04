@@ -20,8 +20,11 @@
 @property(copy, nonatomic) CDUnknownBlockType moduleControllerBuilder; // @synthesize moduleControllerBuilder=_moduleControllerBuilder;
 @property(readonly, nonatomic) NSArray *moduleControllers; // @synthesize moduleControllers=_moduleControllers;
 - (void).cxx_destruct;
+- (void)dismissTextViewController;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)viewDidLayoutSubviews;
 - (void)_updateTitle;
 - (id)buildItemModuleControllerForModule:(id)arg1;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;

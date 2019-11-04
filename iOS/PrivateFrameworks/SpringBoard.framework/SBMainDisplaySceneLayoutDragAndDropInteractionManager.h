@@ -82,6 +82,7 @@
 - (void)dragAndDropTransaction:(id)arg1 didUpdateGesture:(id)arg2;
 - (void)dragAndDropTransaction:(id)arg1 didBeginGesture:(id)arg2;
 - (void)handleWindowDragGestureRecognizer:(id)arg1;
+- (_Bool)shouldBeginWindowDragGesture;
 - (void)dealloc;
 - (id)initWithMainSwitcherContentController:(id)arg1 floatingSwitcherContentController:(id)arg2 sceneLayoutViewController:(id)arg3 delegate:(id)arg4;
 

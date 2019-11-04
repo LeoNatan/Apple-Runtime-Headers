@@ -13,12 +13,14 @@
 @interface GEOURLExtraStorage : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOMapRegion *_mapRegion;
     NSString *_phoneNumber;
     GEOStyleAttributes *_styleAttributes;
     NSString *_url;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_mapRegion:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) _Bool hasStyleAttributes;
 - (void)_readStyleAttributes;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

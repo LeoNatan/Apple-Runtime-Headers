@@ -8,14 +8,22 @@
 
 #import <PassKitUI/UIViewControllerAnimatedTransitioning-Protocol.h>
 
-@class NSString;
+@class NSString, PKCompactNavigationContainerController, UIView, UIViewController;
+@protocol UIViewControllerContextTransitioning;
 
 @interface PKCompactNavigationContainerControllerPresentationAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 {
+    id <UIViewControllerContextTransitioning> _transitionContext;
     _Bool _presenting;
+    UIViewController *_presentingVC;
+    UIView *_presentingView;
+    PKCompactNavigationContainerController *_presentedVC;
+    UIView *_presentedView;
 }
 
+- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
+- (void)_updateWithTransitionContext:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)initWithPresenting:(_Bool)arg1;
 

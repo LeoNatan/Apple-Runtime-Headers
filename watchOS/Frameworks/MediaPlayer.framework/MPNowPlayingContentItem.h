@@ -82,6 +82,7 @@
 @property(copy, nonatomic) NSString *info;
 @property(copy, nonatomic) NSString *directorName;
 @property(copy, nonatomic) NSString *collectionIdentifier;
+@property(copy, nonatomic) NSString *albumYear;
 @property(copy, nonatomic) NSString *albumName;
 @property(copy, nonatomic) NSString *albumArtistName;
 @property(copy, nonatomic) NSDictionary *userInfo;

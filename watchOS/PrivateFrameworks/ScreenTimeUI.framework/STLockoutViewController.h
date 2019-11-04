@@ -8,7 +8,7 @@
 
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
 
-@class NSString, STLockoutPolicyController, UIImageView, UILabel, UIStackView;
+@class NSString, STBlockingBackdropView, STLockoutPolicyController, UIImageView, UILabel, UIStackView;
 @protocol STLockoutViewControllerDelegate;
 
 @interface STLockoutViewController : PUICActionContentController <STLockoutPolicyControllerDelegate>
@@ -49,7 +49,9 @@
 - (void).cxx_destruct;
 - (void)stateDidChange:(unsigned int)arg1;
 - (void)viewWillLayoutSubviews;
+@property(retain, nonatomic) STBlockingBackdropView *contentView;
 - (void)viewDidLoad;
+- (id)nextResponder;
 - (id)initWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
 - (id)initWithWebsiteURL:(id)arg1;

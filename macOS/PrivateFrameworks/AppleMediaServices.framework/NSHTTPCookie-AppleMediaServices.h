@@ -6,7 +6,22 @@
 
 #import <Foundation/NSHTTPCookie.h>
 
-@interface NSHTTPCookie (AppleMediaServices)
+#import <AppleMediaServices/AMSHashable-Protocol.h>
+
+@class NSString;
+
+@interface NSHTTPCookie (AppleMediaServices) <AMSHashable>
++ (id)ams_cookieByMarkingCookieAsDeleted:(id)arg1;
+@property(readonly) NSString *hashedDescription;
+- (BOOL)ams_isEquivalent:(id)arg1;
+@property(readonly, getter=ams_isExpired) BOOL ams_expired;
+@property(readonly, getter=ams_isDeleted) BOOL ams_deleted;
 @property(readonly, getter=ams_isCookieValidForBag) BOOL ams_cookieValidForBag;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

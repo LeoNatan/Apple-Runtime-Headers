@@ -49,6 +49,7 @@
 - (void)didEndTransitionToVisible:(_Bool)arg1;
 - (void)willBeginTransitionToVisible:(_Bool)arg1;
 - (void)prepareForReuse;
+- (id)animationControllerForTransitionRequest:(id)arg1;
 - (void)configureWithWorkspaceEntity:(id)arg1 forLayoutElement:(id)arg2 layoutState:(id)arg3 referenceFrame:(struct CGRect)arg4;
 - (void)invalidate;
 @property(readonly, nonatomic) _Bool supportsReuse;

@@ -24,7 +24,7 @@
 - (unsigned long long)availableResourceSizeForUploadIdentifier:(id)arg1;
 - (id)resourceTypesToUploadForUploadIdentifier:(id)arg1;
 - (_Bool)deleteResourcesToUploadWithUploadIdentifier:(id)arg1 error:(id *)arg2;
-- (_Bool)storeResourcesToUpload:(id)arg1 withUploadIdentifier:(id)arg2 error:(id *)arg3;
+- (_Bool)storeResourcesToUpload:(id)arg1 withUploadIdentifier:(id)arg2 shouldCheckResources:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (unsigned long long)scopeType;
 

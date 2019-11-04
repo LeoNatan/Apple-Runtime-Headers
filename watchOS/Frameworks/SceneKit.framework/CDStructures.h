@@ -90,29 +90,6 @@ struct SCNCAction {
     float _field19;
 };
 
-struct SCNCActionCustom {
-    CDUnknownFunctionPointerType *_field1;
-    float _field2;
-    CDUnknownBlockType _field3;
-    id _field4;
-    _Bool _field5;
-    double _field6;
-    double _field7;
-    float _field8;
-    float _field9;
-    double _field10;
-    _Bool _field11;
-    _Bool _field12;
-    CDUnknownBlockType _field13;
-    struct __CFString *_field14;
-    int _field15;
-    float _field16;
-    float _field17;
-    float _field18;
-    float _field19;
-    CDUnknownBlockType _field20;
-};
-
 struct SCNCActionFade {
     CDUnknownFunctionPointerType *_field1;
     float _field2;

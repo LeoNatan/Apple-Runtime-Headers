@@ -25,6 +25,7 @@
 - (id)queryForAllRelevantShortcuts;
 - (id)_queryForDonatedActionsAfterDate:(id)arg1 streams:(id)arg2;
 - (id)queryForDonatedActionsAfterDate:(id)arg1;
+- (id)queryForAllDonatedActionsWithIdentifier:(id)arg1;
 - (id)queryForAllDonatedActions;
 - (id)_createEventsFromDuetEvents:(id)arg1;
 - (id)_duetChargingEventStream;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIPageControl.h>
 
-@class SBIconPageIndicatorImageSetCache, SBIconPageIndicatorImageSetResult, _UILegibilitySettings;
+@class NSArray, SBIconPageIndicatorImageSetCache, SBIconPageIndicatorImageSetResult, _UILegibilitySettings;
 @protocol SBIconListPageControlDelegate;
 
 @interface SBIconListPageControl : UIPageControl
@@ -20,8 +20,10 @@
     _UILegibilitySettings *_legibilitySettings;
     id <SBIconListPageControlDelegate> _delegate;
     SBIconPageIndicatorImageSetCache *_imageSetCache;
+    NSArray *_touchIgnoreRects;
 }
 
+@property(copy, nonatomic) NSArray *touchIgnoreRects; // @synthesize touchIgnoreRects=_touchIgnoreRects;
 @property(retain, nonatomic) SBIconPageIndicatorImageSetCache *imageSetCache; // @synthesize imageSetCache=_imageSetCache;
 @property(nonatomic) __weak id <SBIconListPageControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isLegibilityEnabled) _Bool legibilityEnabled; // @synthesize legibilityEnabled=_legibilityEnabled;
@@ -35,6 +37,7 @@
 - (id)_searchIndicatorImage:(_Bool)arg1;
 - (void)_setIndicatorImage:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3;
 - (void)setFrame:(struct CGRect)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

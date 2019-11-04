@@ -20,6 +20,7 @@
     WGPlatterHeaderContentView *_headerContentView;
     double _cornerRadius;
     _Bool _adjustsFontForContentSizeCategory;
+    _Bool _contentViewHitTestingDisabled;
     _Bool _backgroundHidden;
     _Bool _showingMoreContent;
     NSString *_materialGroupNameBase;
@@ -39,6 +40,7 @@
 @property(nonatomic) double overrideHeightForLayingOutContentView; // @synthesize overrideHeightForLayingOutContentView=_overrideHeightForLayingOutContentView;
 @property(nonatomic, getter=isBackgroundHidden) _Bool backgroundHidden; // @synthesize backgroundHidden=_backgroundHidden;
 @property(nonatomic) unsigned long long clippingEdge; // @synthesize clippingEdge=_clippingEdge;
+@property(nonatomic, getter=isContentViewHitTestingDisabled) _Bool contentViewHitTestingDisabled; // @synthesize contentViewHitTestingDisabled=_contentViewHitTestingDisabled;
 @property(retain, nonatomic, setter=_setContentView:) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak WGWidgetListItemViewController *listItem; // @synthesize listItem=_listItem;
 @property(nonatomic) __weak WGWidgetHostingViewController *widgetHost; // @synthesize widgetHost=_widgetHost;

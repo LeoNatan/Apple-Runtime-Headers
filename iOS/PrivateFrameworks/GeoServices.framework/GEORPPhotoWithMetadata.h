@@ -13,12 +13,14 @@
 @interface GEORPPhotoWithMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     double _creationDate;
     NSData *_data;
     GEOLatLng *_geotagCoordinate;
     double _geotagHorizontalAccuracy;
     double _geotagTimestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_creationDate:1;
         unsigned int has_geotagHorizontalAccuracy:1;
@@ -57,6 +59,8 @@
 @property(retain, nonatomic) NSData *data;
 @property(readonly, nonatomic) _Bool hasData;
 - (void)_readData;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

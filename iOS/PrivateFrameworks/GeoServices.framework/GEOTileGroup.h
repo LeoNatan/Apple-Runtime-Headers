@@ -13,7 +13,6 @@
 @interface GEOTileGroup : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_9f2792e4 _attributionIndexs;
     CDStruct_9f2792e4 _fontIndexs;
@@ -31,6 +30,9 @@
     unsigned long long _tileSetsCount;
     unsigned long long _tileSetsSpace;
     CDStruct_9f2792e4 _xmlIndexs;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _identifier;
     unsigned int _muninVersionIndex;
     struct {
@@ -160,6 +162,8 @@
 - (void)_readTileSets;
 @property(nonatomic) unsigned int identifier;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

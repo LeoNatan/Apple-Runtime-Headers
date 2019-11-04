@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (void)_forceIngestionForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)documentURLFromBookmarkableString:(id)arg1 creatingPlaceholderIfMissing:(_Bool)arg2 ignoreAlternateContentsURL:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)providerDomainForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)providerDomainForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)providerDomainsCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unpinItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)pinItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

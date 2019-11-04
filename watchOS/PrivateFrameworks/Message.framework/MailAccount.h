@@ -189,6 +189,7 @@
 @property(readonly, copy) NSString *description;
 - (_Bool)_deleteMailbox:(id)arg1;
 - (_Bool)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
+- (void)_writeMailboxCacheWithPrejudice:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_writeMailboxCacheWithPrejudice:(_Bool)arg1;
 - (void)_loadEntriesFromFileSystemPath:(id)arg1 parent:(id)arg2;
 - (void)setMailboxCachePath:(id)arg1;
@@ -241,7 +242,7 @@
 - (_Bool)supportsPurge;
 - (_Bool)supportsMailboxEditing;
 - (_Bool)supportsSyncingReadState;
-- (_Bool)supportsRemoteAppend;
+@property(readonly, nonatomic) _Bool supportsRemoteAppend;
 - (_Bool)supportsAppend;
 - (_Bool)shouldAppearInMailSettings;
 - (void)setupLibrary;
@@ -379,6 +380,7 @@
 @property(readonly, nonatomic) _Bool isManaged;
 @property(readonly, nonatomic, getter=isManaged) _Bool managed;
 @property(copy, nonatomic) NSString *password;
+@property(readonly, nonatomic) _Bool primaryiCloudAccount;
 @property(readonly) Class superclass;
 @property(readonly, copy, nonatomic) ACAccount *systemAccount;
 

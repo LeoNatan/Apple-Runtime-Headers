@@ -84,6 +84,7 @@
 - (void)updateContentWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 activitiesByUUID:(id)arg4 nearbyCountSlotID:(id)arg5 animated:(_Bool)arg6;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureCollectionViewIfNeeded;
+- (void)overrideLayoutConfigurationWithSafeAreaInsets:(_Bool)arg1;
 - (id)activityCollectionViewLayout;
 @property(readonly, nonatomic) LPLinkMetadata *headerMetadata;
 - (void)updateHeaderSize;

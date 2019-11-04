@@ -74,6 +74,7 @@
 @property(readonly, copy, nonatomic) NSString *firstUseDescriptionText;
 @property(readonly, copy, nonatomic) NSArray *enabledDomains;
 @property(readonly, copy, nonatomic) NSArray *recentlyUsedAppIdentifierWhitelist;
+@property(readonly, nonatomic) _Bool imageTimingFeedbackEnabled;
 @property(readonly, nonatomic) _Bool feedbackEnabled;
 @property(readonly, nonatomic) long long abTest2WeekZoneSize;
 @property(readonly, nonatomic) unsigned long long maximumCachedQueriesToSend;

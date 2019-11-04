@@ -12,58 +12,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGDataProviderDirectCallbacks {
-    unsigned int version;
-    CDUnknownFunctionPointerType getBytePointer;
-    CDUnknownFunctionPointerType releaseBytePointer;
-    CDUnknownFunctionPointerType getBytesAtPosition;
-    CDUnknownFunctionPointerType releaseInfo;
-};
-
-struct CGDataProviderSequentialCallbacks {
-    unsigned int version;
-    CDUnknownFunctionPointerType getBytes;
-    CDUnknownFunctionPointerType skipForward;
-    CDUnknownFunctionPointerType rewind;
-    CDUnknownFunctionPointerType releaseInfo;
-};
-
-struct CGSize {
-    double _field1;
-    double _field2;
-};
-
-struct _ftsent {
-    struct _ftsent *_field1;
-    struct _ftsent *_field2;
-    struct _ftsent *_field3;
-    long long _field4;
-    void *_field5;
-    char *_field6;
-    char *_field7;
-    int _field8;
-    int _field9;
-    unsigned short _field10;
-    unsigned short _field11;
-    unsigned long long _field12;
-    int _field13;
-    unsigned short _field14;
-    short _field15;
-    unsigned short _field16;
-    unsigned short _field17;
-    unsigned short _field18;
-    struct stat *_field19;
-    char _field20[1];
-};
-
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
-};
-
-struct stat;
-
-struct timespec {
-    long long tv_sec;
-    long long tv_nsec;
 };
 

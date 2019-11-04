@@ -31,6 +31,9 @@
     long long _avkitRequestedOverscanCompensation;
 }
 
++ (id)_findNewKeyWindowSceneOnScreen:(id)arg1;
++ (void)_setShouldRestoreKeyWindowSceneOnActivation:(_Bool)arg1;
++ (_Bool)_shouldRestoreKeyWindowSceneOnActivation;
 + (id)_keyWindowScene;
 + (id)_placeholderWindowSceneForScreen:(id)arg1 create:(_Bool)arg2;
 + (id)_keyboardWindowSceneForScreen:(id)arg1 create:(_Bool)arg2;

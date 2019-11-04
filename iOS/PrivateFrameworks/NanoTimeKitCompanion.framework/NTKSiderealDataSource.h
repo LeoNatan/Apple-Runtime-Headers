@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLKUIAlmanacTransitInfo, CLLocation, NSArray, NSDate, NSOrderedSet;
+@class CLKUIAlmanacTransitInfo, CLLocation, NSArray, NSCalendar, NSDate, NSOrderedSet;
 @protocol NTKSiderealDataSourceDelegate;
 
 @interface NTKSiderealDataSource : NSObject
@@ -16,6 +16,10 @@
     NSDate *_endOfDayForReferenceDate;
     NSOrderedSet *_daytimeEvents;
     struct NSString *_locationManagerToken;
+    NSCalendar *_currentCalendar;
+    NSDate *_cachedDate;
+    NSDate *_cachedStartOfDay;
+    NSDate *_cachedStartOfNextDay;
     _Bool _isConstantSunUpOrDown;
     id <NTKSiderealDataSourceDelegate> _delegate;
     CLKUIAlmanacTransitInfo *_sunriseSunsetInfo;
@@ -26,7 +30,6 @@
     NSArray *_waypoints;
 }
 
-+ (double)reverseInterpolateBetweenCalendricalMidnights:(id)arg1;
 @property(nonatomic) _Bool isConstantSunUpOrDown; // @synthesize isConstantSunUpOrDown=_isConstantSunUpOrDown;
 @property(retain, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 @property(retain, nonatomic) NSOrderedSet *sectors; // @synthesize sectors=_sectors;
@@ -39,6 +42,7 @@
 - (_Bool)date:(id)arg1 isBetweenDate:(id)arg2 andDate:(id)arg3;
 - (long long)_endOfDayEventFollowingSolarEvent:(long long)arg1;
 - (long long)_startOfDayEventPreceedingFirstSolarEvent:(long long)arg1;
+- (double)reverseInterpolateBetweenCalendricalMidnights:(id)arg1;
 - (id)interpolateBetweenCalendricalMidnights:(double)arg1;
 - (_Bool)isDateInReferenceDate:(id)arg1;
 - (CDStruct_869f9c67)altitudeForProgress:(double)arg1;
@@ -49,6 +53,7 @@
 - (void)startLocationUpdates;
 - (id)_placeholderSolarEvents;
 - (id)_allAvailableSolarEvents;
+- (id)_eventWithType:(long long)arg1 time:(id)arg2;
 - (void)_notifyDataDidUpdate;
 - (void)_updateData;
 - (void)_updateWaypoints;

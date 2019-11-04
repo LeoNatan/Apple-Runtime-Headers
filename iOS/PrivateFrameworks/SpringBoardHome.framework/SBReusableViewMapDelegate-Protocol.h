@@ -15,5 +15,6 @@
 
 @optional
 - (_Bool)viewMap:(SBReusableViewMap *)arg1 shouldRecycleView:(UIView<SBReusableView> *)arg2;
+- (UIView<SBReusableView> *)viewMap:(SBReusableViewMap *)arg1 makeNewViewOfClass:(Class)arg2;
 @end
 

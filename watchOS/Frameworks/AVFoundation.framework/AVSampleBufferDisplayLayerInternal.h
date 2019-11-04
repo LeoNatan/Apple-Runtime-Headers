@@ -39,6 +39,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType pendingPrerollCompleteCallback;
     int pendingPrerollRequestID;
     NSObject<OS_dispatch_queue> *queueForCallingPrerollCompleteCallback;
+    int upcomingPTSExpectation;
+    CDStruct_1b6d18a9 minimumUpcomingPTS;
 }
 
 @end

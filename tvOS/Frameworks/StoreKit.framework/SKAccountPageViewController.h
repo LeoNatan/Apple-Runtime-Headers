@@ -48,6 +48,8 @@
 - (void)_addRemoteView;
 - (unsigned long long)_indexForFirstBridgedNavigationViewController;
 - (void)_popAllBridgedNavigationViewControllers;
+- (id)_overrideScheme:(id)arg1;
+- (void)_setupNavigationItem;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)overrideRedeemOperationWithCode:(id)arg1 cameraRecognized:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)redeemCameraViewController:(id)arg1 didFinishWithRedeem:(id)arg2;
@@ -74,6 +76,7 @@
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
 - (void)loadView;
 - (void)prepareWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)loadWithCompletionBlock:(CDUnknownBlockType)arg1;

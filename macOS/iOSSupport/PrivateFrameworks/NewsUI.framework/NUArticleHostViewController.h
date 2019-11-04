@@ -11,7 +11,7 @@
 #import <NewsUI/NUPageable-Protocol.h>
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 
-@class FCArticle, FCIssue, FCObservable, NFMultiDelegate, NSHashTable, NSString, UIScrollView, UIView;
+@class FCArticle, FCIssue, FCObservable, NFMultiDelegate, NSHashTable, NSString, UIResponder, UIScrollView, UIView;
 @protocol NUAnalyticsReporting, NUArticleContentSizeManager, NUArticleViewControllerFactory, NUErrorMessageFactory, NULoadingDelegate, NULoadingViewProviding, NUSettings;
 
 @interface NUArticleHostViewController : UIViewController <NULoadingDelegate, SXAnalyticsReporting, NUPageable, NUBarCompressible>
@@ -19,6 +19,7 @@
     NSString *_pageIdentifier;
     id <NULoadingDelegate> _loadingDelegate;
     FCObservable *_articleViewStyler;
+    UIResponder *_responder;
     FCArticle *_article;
     FCIssue *_issue;
     id <NUArticleViewControllerFactory> _articleViewControllerFactory;
@@ -41,6 +42,7 @@
 @property(readonly, nonatomic) id <NUArticleViewControllerFactory> articleViewControllerFactory; // @synthesize articleViewControllerFactory=_articleViewControllerFactory;
 @property(readonly, nonatomic) FCIssue *issue; // @synthesize issue=_issue;
 @property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
+@property(retain, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
 @property(readonly, nonatomic) FCObservable *articleViewStyler; // @synthesize articleViewStyler=_articleViewStyler;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 @property(readonly, copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
@@ -56,6 +58,8 @@
 - (void)viewDidLayoutSubviews;
 @property(nonatomic) long long contentScale;
 @property(retain, nonatomic) NSString *contentSizeCategory;
+- (BOOL)resignFirstResponder;
+- (BOOL)becomeFirstResponder;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) NSHashTable *loadingListeners;
 - (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4 contentSizeManager:(id)arg5;

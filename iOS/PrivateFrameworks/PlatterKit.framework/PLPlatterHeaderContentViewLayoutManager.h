@@ -30,6 +30,7 @@
 @property(readonly, nonatomic, getter=_iconButtons) NSArray *iconButtons;
 @property(readonly, nonatomic, getter=_heedsHorizontalLayoutMargins) _Bool heedsHorizontalLayoutMargins;
 @property(readonly, nonatomic, getter=_shouldReverseLayoutDirection) _Bool shouldReverseLayoutDirection;
+- (void)invalidateCachedSizeInfo;
 - (void)layoutDateLabelWithScale:(double)arg1;
 - (void)layoutUtilityButtonWithScale:(double)arg1;
 - (void)layoutTitleLabelWithTrailingXLimit:(double)arg1 scale:(double)arg2;

@@ -47,7 +47,7 @@
 - (void).cxx_destruct;
 - (void)_removeResidentDeviceWithModel:(id)arg1 message:(id)arg2;
 - (void)_addResidentDeviceWithModel:(id)arg1 message:(id)arg2;
-- (void)updatePrimaryResidentWithUUID:(id)arg1;
+- (void)updatePrimaryResidentWithUUID:(id)arg1 actions:(id)arg2;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)_handleCloudZoneReadyNotification:(id)arg1;
@@ -74,7 +74,7 @@
 - (id)_electionParameters;
 - (_Bool)_isAtHome;
 - (long long)compareResidentDeviceA:(id)arg1 electionParametersA:(id)arg2 residentDeviceB:(id)arg3 electionParametersB:(id)arg4;
-- (void)conditionallyConfirmOnBoot;
+- (void)confirmPrimaryResident;
 - (void)confirmOnAvailability;
 - (void)confirmAsResident;
 - (void)__handleConfirmationRequest:(id)arg1;
@@ -108,7 +108,7 @@
 - (id)residentWithUUID:(id)arg1;
 @property(nonatomic, getter=hasFirstHomeZoneFetch) _Bool firstHomeZoneFetch; // @synthesize firstHomeZoneFetch=_firstHomeZoneFetch;
 @property(nonatomic, getter=hasFirstLegacyFetch) _Bool firstLegacyFetch; // @synthesize firstLegacyFetch=_firstLegacyFetch;
-@property(retain, nonatomic) NSUUID *primaryResidentUUID; // @synthesize primaryResidentUUID=_primaryResidentUUID;
+@property(readonly, nonatomic) NSUUID *primaryResidentUUID; // @synthesize primaryResidentUUID=_primaryResidentUUID;
 @property(readonly, nonatomic) __weak HMDResidentDevice *primaryResidentDevice;
 - (void)removeDataSource:(id)arg1;
 - (void)addDataSource:(id)arg1;
@@ -116,6 +116,7 @@
 - (void)_setupSessionWithPrimaryResidentDevice;
 - (void)_run;
 - (void)run;
+@property(readonly, nonatomic) _Bool hasTrustZoneCapableResident;
 - (void)_registerForMessages;
 - (void)configureWithHome:(id)arg1;
 @property(readonly) HMDMessageDispatcher *messageDispatcher;

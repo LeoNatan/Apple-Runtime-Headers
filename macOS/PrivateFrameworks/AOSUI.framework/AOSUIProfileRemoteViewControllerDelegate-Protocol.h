@@ -10,6 +10,5 @@
 
 @protocol AOSUIProfileRemoteViewControllerDelegate <NSObject>
 - (void)profileRemoteViewController_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(NSArray *)arg2;
-- (void)profileRemoteViewController_hideOverlay:(BOOL)arg1;
 @end
 

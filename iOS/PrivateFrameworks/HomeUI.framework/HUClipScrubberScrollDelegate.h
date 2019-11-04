@@ -9,7 +9,7 @@
 #import <HomeUI/UICollectionViewDelegate-Protocol.h>
 #import <HomeUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class HFCameraPlaybackEngine, HUClipScrubberDataSource, NSString, UICollectionView;
+@class HFCameraPlaybackEngine, HMCameraClip, HUClipScrubberDataSource, NSString, UICollectionView;
 
 @interface HUClipScrubberScrollDelegate : NSObject <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 {
@@ -20,8 +20,12 @@
     UICollectionView *_clipCollectionView;
     HFCameraPlaybackEngine *_playbackEngine;
     double _lastContentWidth;
+    HMCameraClip *_currentClip;
+    double _targetScrollOffset;
 }
 
+@property(nonatomic) double targetScrollOffset; // @synthesize targetScrollOffset=_targetScrollOffset;
+@property(retain, nonatomic) HMCameraClip *currentClip; // @synthesize currentClip=_currentClip;
 @property(nonatomic) double lastContentWidth; // @synthesize lastContentWidth=_lastContentWidth;
 @property(nonatomic) _Bool hasUserInteractedWithScrubber; // @synthesize hasUserInteractedWithScrubber=_hasUserInteractedWithScrubber;
 @property(nonatomic) _Bool isUserScrubbing; // @synthesize isUserScrubbing=_isUserScrubbing;
@@ -35,6 +39,7 @@
 - (id)_selectedDateForTodayFromClip:(id)arg1 percentDuration:(float)arg2;
 - (id)_selectedDateForClipInRect:(struct CGRect)arg1;
 - (float)playheadPosition;
+- (id)_selectedDateForAreaOfNoActivityAtPoint:(struct CGPoint)arg1 inScrollView:(id)arg2;
 - (void)_handleOutOfBoundsTimelinePosition:(float)arg1;
 - (_Bool)_shouldScrollBypassPlaybackEngineUpdate;
 - (_Bool)_indexPathContainsClip:(id)arg1;
@@ -42,6 +47,7 @@
 - (void)updateCollectionView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;

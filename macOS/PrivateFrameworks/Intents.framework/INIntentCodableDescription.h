@@ -18,6 +18,8 @@
     BOOL _eligibleForSuggestions;
     NSString *_inputAttributeName;
     NSString *_keyAttributeName;
+    NSString *_attributeKeyPrefix;
+    NSString *_attributesKeyPrefix;
     NSString *_title;
     NSString *_titleLocID;
     NSString *_descriptiveText;

@@ -7,33 +7,37 @@
 #import <objc/NSObject.h>
 
 #import <VideosUI/TVPreviewInteractionController-Protocol.h>
-#import <VideosUI/_UIClickPresentationInteractionDelegate-Protocol.h>
+#import <VideosUI/UIContextMenuInteractionDelegate_Private-Protocol.h>
 
-@class IKViewElement, NSString, UIView, UIViewController, _UIClickPresentationInteraction;
+@class IKViewElement, NSString, UIContextMenuInteraction, UIView, UIViewController;
 
 __attribute__((visibility("hidden")))
-@interface VUIViewInteractionController : NSObject <_UIClickPresentationInteractionDelegate, TVPreviewInteractionController>
+@interface VUIViewInteractionController : NSObject <UIContextMenuInteractionDelegate_Private, TVPreviewInteractionController>
 {
-    _UIClickPresentationInteraction *_clickPresentation;
+    UIContextMenuInteraction *_interaction;
     UIView *_presentingView;
     UIViewController *_presentingViewController;
     IKViewElement *_presentingElement;
 }
 
++ (void)setContextMenuTemplateInterface:(id)arg1;
++ (id)getHighlightedView;
++ (void)updateContextMenuWithMenuItems:(id)arg1;
 @property(nonatomic) __weak IKViewElement *presentingElement; // @synthesize presentingElement=_presentingElement;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) __weak UIView *presentingView; // @synthesize presentingView=_presentingView;
+@property(retain, nonatomic) UIContextMenuInteraction *interaction; // @synthesize interaction=_interaction;
 - (void).cxx_destruct;
-- (id)_getViewElementAtLocation:(struct CGPoint)arg1;
+- (id)_getViewElementWithContextMenuAtLocation:(struct CGPoint)arg1;
 - (id)_getViewAtLocation:(struct CGPoint)arg1;
-- (_Bool)clickPresentationInteractionShouldBegin:(id)arg1;
-- (id)clickPresentationInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
-- (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;
-- (void)_applicationDidEnterBackground:(id)arg1;
+- (id)_getPreviewViewControllerWithElement:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
+- (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
+- (void)dismissInteractionView;
 - (_Bool)collectionView:(id)arg1 shouldHandleLongPressForItemAtIndexPath:(id)arg2;
 - (void)updatePresentingElement:(id)arg1;
-- (void)dismissInteractionView;
-- (void)dealloc;
 - (id)initWithPresentingViewController:(id)arg1 presentingView:(id)arg2 presentingElement:(id)arg3;
 
 // Remaining properties

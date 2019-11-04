@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <UIKitMacHelper/NSMenuDelegate-Protocol.h>
+#import <UIKitMacHelper/NSSharingServicePickerDelegate-Protocol.h>
 #import <UIKitMacHelper/UINSMenuController-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface UINSMenuController : NSObject <UINSMenuController, NSMenuDelegate>
+@interface UINSMenuController : NSObject <UINSMenuController, NSMenuDelegate, NSSharingServicePickerDelegate>
 {
     id _currentContextMenu;
     CDUnknownBlockType _performItemAction;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType performItemAction; // @synthesize performItemAction=_performItemAction;
 @property(readonly, nonatomic) id currentContextMenu; // @synthesize currentContextMenu=_currentContextMenu;
 - (void).cxx_destruct;
+- (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (void)showSharingMenuInNSWindow:(id)arg1 atLocationInWindow:(struct CGPoint)arg2 activityItemsConfiguration:(id)arg3;
 - (void)_showContextMenu:(id)arg1 forView:(id)arg2 withEvent:(id)arg3;
 - (id)_prepareToShowContextMenu:(id)arg1 activityItemsConfiguration:(id)arg2;

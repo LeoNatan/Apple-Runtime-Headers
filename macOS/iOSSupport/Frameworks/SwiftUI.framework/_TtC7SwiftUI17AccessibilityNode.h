@@ -6,12 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <SwiftUI/UIAccessibilityIdentification-Protocol.h>
-
-@class NSArray, NSAttributedString, NSString, UIBezierPath;
-
 __attribute__((visibility("hidden")))
-@interface _TtC7SwiftUI17AccessibilityNode : NSObject <UIAccessibilityIdentification>
+@interface _TtC7SwiftUI17AccessibilityNode : NSObject
 {
     // Error parsing type: , name: children
     // Error parsing type: , name: parent
@@ -26,35 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
-- (BOOL)_accessibilityScrollToVisible;
-- (BOOL)accessibilityScroll:(long long)arg1;
-- (void)accessibilityElementDidLoseFocus;
-- (void)accessibilityElementDidBecomeFocused;
-- (BOOL)accessibilityPerformMagicTap;
-- (BOOL)accessibilityPerformEscape;
-- (BOOL)accessibilityActivate;
-@property(nonatomic, copy) NSArray *accessibilityCustomActions;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-@property(nonatomic, retain) UIBezierPath *accessibilityPath;
-@property(nonatomic) BOOL shouldGroupAccessibilityChildren;
-@property(nonatomic) BOOL accessibilityElementsHidden;
-@property(nonatomic) BOOL accessibilityViewIsModal;
-@property(nonatomic) struct CGPoint accessibilityActivationPoint;
-@property(nonatomic, copy) NSArray *accessibilityElements;
-@property(nonatomic) struct CGRect accessibilityFrame;
-@property(nonatomic, copy) NSString *accessibilityLanguage;
-@property(nonatomic, retain) NSAttributedString *accessibilityAttributedHint;
-@property(nonatomic, copy) NSString *accessibilityHint;
-@property(nonatomic, retain) NSAttributedString *accessibilityAttributedValue;
-@property(nonatomic, copy) NSString *accessibilityValue;
-@property(nonatomic, retain) NSAttributedString *accessibilityAttributedLabel;
-@property(nonatomic, copy) NSString *accessibilityLabel;
-@property(nonatomic) unsigned long long accessibilityTraits;
-@property(nonatomic) BOOL isAccessibilityElement;
-@property(nonatomic, copy) NSString *accessibilityIdentifier;
-- (BOOL)_internal_handleCustomActionWithUiAction:(id)arg1;
-- (unsigned long long)_accessibilityAutomationType;
 
 @end
 

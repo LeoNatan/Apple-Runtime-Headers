@@ -13,8 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)_accessibilityUpdateFocus;
+- (_Bool)_accessibilityDismissDiverseEmojiPlatter;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (_Bool)accessibilityPerformEscape;
 - (_Bool)accessibilityViewIsModal;
 - (void)_accessibilitySetRecentEmojiView:(id)arg1;
 - (void)_axSetRecentEmojiView:(id)arg1;

@@ -27,7 +27,7 @@
 }
 
 + (id)itemWithCustomView:(id)arg1;
-+ (id)optionsGroupWithController:(id)arg1;
++ (id)optionsGroupWithTitle:(id)arg1 controller:(id)arg2;
 + (id)stepperWithController:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (id)buttonWithTitle:(id)arg1 textStyle:(id)arg2 icon:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)buttonWithAttributedTitle:(id)arg1 textStyle:(id)arg2 icon:(id)arg3 handler:(CDUnknownBlockType)arg4;
@@ -45,6 +45,7 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (void)updateOptionsGroupDetailLabel;
 - (id)initWithType:(long long)arg1;
 
 @end

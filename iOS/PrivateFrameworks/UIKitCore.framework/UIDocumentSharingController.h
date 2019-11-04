@@ -59,6 +59,7 @@
 - (id)_sharingViewPresentationController;
 - (id)_customPresentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (_Bool)_requiresCustomPresentationController;
+- (void)_cloudSharingControllerDidActivateShowSharedFolder;
 - (void)_cloudSharingControllerDidModifySecondarySwitch:(_Bool)arg1;
 - (void)_cloudSharingControllerDidModifyPrimarySwitch:(_Bool)arg1;
 - (void)_requestSavedShareWithCompletion:(CDUnknownBlockType)arg1;
@@ -72,6 +73,7 @@
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 @property(readonly, nonatomic, getter=_remoteViewController) _UIShareInvitationRemoteViewController *remoteViewController;
 - (void)_updatePresentationStyleForLegacyAppearance;
+- (void)_presentationControllerDidDismiss:(id)arg1;
 - (void)dealloc;
 - (id)initWithFileURL:(id)arg1 error:(id *)arg2;
 - (id)initWithFileURL:(id)arg1;

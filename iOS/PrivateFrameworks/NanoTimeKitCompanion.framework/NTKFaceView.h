@@ -298,6 +298,7 @@
 - (id)_blurSourceImage;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_applyShowsLockedUI;
 - (void)_reorderSwitcherSnapshotView;
 - (void)handleUnadornedSnapshotRemoved;

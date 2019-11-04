@@ -17,6 +17,7 @@
     UIScrollView *_scrollView;
     unsigned int _state;
     unsigned int _stateOnRetry;
+    _Bool _startedInitialIngestion;
     PKContactlessCardIngester *_cardIngester;
     PKPaymentContactlessProductCredential *_paymentCredential;
     PKPaymentPass *_paymentPass;
@@ -81,7 +82,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)_setIdleTimerDisabled:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

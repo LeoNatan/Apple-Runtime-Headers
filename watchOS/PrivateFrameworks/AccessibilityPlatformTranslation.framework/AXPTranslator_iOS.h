@@ -55,6 +55,7 @@
 - (id)_processingSmuggledMarzipanRequest:(id)arg1 parameter:(id)arg2 error:(unsigned int *)arg3;
 - (id)_processRawElementDataRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processMoveFocusToOpaqueElementAttributeRequest:(id)arg1 parameter:(id)arg2 direction:(long)arg3 error:(unsigned int *)arg4;
+- (id)_processClassNameAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processChildrenAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processAttributedLabelAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processIsEnabledAttributeRequest:(id)arg1 error:(unsigned int *)arg2;

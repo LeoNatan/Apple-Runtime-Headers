@@ -14,18 +14,21 @@
 @interface WFSlotTemplateTypingTextView : UITextView <WFSlotTemplateTextEntry>
 {
     _Bool _clearsZeroWhenTyping;
+    UIView *_inputHintView;
     UIFont *_emojiOverrideFont;
 }
 
 @property(retain, nonatomic) UIFont *emojiOverrideFont; // @synthesize emojiOverrideFont=_emojiOverrideFont;
+@property(retain, nonatomic) UIView *inputHintView; // @synthesize inputHintView=_inputHintView;
 @property(nonatomic) _Bool clearsZeroWhenTyping; // @synthesize clearsZeroWhenTyping=_clearsZeroWhenTyping;
 - (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (void)wf_applyEmojiOverrideFont;
 - (void)paste:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)cut:(id)arg1;
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
-- (void)insertTextAttachment:(id)arg1;
 
 // Remaining properties
 @property(nonatomic) long long autocapitalizationType;
@@ -36,6 +39,7 @@
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(readonly, nonatomic) UITextPosition *endOfDocument;
+@property(readonly, nonatomic) UIFont *font;
 @property(readonly, nonatomic) _Bool hasText;
 @property(readonly) unsigned long long hash;
 @property(retain, nonatomic) UIView *inputAccessoryView;

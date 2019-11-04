@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareDisplayItems:(id)arg1;
 - (id)addSymbolImageName;
 - (id)dedupedSuggestionItemsGroupedByProvider;
+- (id)itemsForProviderIdentifier:(id)arg1;
 - (long long)indexForDefaultMonogram;
 - (id)providerOfClass:(Class)arg1;
 - (id)initWithProviders:(id)arg1 environment:(id)arg2 allowAddItem:(BOOL)arg3;

@@ -155,9 +155,7 @@
 - (void)action:(id)arg1 value:(id)arg2;
 - (id)checkView:(id)arg1 forCompanionProperty:(id)arg2;
 - (void)purgeAndRecreate;
-- (void)performActionWithItemID:(id)arg1 forNotificationID:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setInterfaceValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
-- (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (void)updateIBDismissButtonFrame;
 - (void)prepareInterfaceForIB;
 - (void)viewDidLayoutSubviews;

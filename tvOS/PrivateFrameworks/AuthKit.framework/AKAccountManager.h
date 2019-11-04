@@ -107,6 +107,7 @@
 - (_Bool)verifiedPrimaryEmailForAccount:(id)arg1;
 - (_Bool)_setUsername:(id)arg1 forAccount:(id)arg2;
 - (void)updateUsername:(id)arg1 forAccountsWithAltDSID:(id)arg2;
+- (void)updateVerifiedEmail:(_Bool)arg1 forAccountWithAltDSID:(id)arg2;
 - (id)formattedUsernameForAccount:(id)arg1;
 - (void)setAliases:(id)arg1 forAccount:(id)arg2;
 - (id)aliasesForAccount:(id)arg1;

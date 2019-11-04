@@ -38,6 +38,7 @@
 @property(readonly) NSString *localizedName;
 @property(readonly) unsigned long long personNameComponentsOrder;
 - (id)emailAtIndex:(unsigned long long)arg1;
+- (id)_userSelection;
 @property(readonly) AKAuthorizationUserResponse *userResponse;
 @property(readonly) NSString *forwardingEmail;
 @property(readonly) NSString *chosenEmail;

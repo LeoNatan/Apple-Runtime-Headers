@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (id)cornerRadiusSettingsForIndex:(unsigned long long)arg1;
 - (long long)dockUpdateMode;
-- (long long)layoutUpdateMode;
 - (double)dimmingAlpha;
 - (double)homeScreenAlpha;
 - (double)backdropBlurProgress;

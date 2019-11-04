@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
     _Bool _playRetain;
     NSArray *_channelAssignments;
     AVAudioSession *_audioSession;
+    _Bool _sessionListenerWasSet;
+    unsigned long long _endInterruptionFlags;
     struct AVAudioPlayerCpp *_localPlayer;
     NSObject<OS_dispatch_queue> *_gcd;
 }

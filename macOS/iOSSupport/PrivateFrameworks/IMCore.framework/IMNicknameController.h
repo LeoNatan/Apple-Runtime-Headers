@@ -38,7 +38,9 @@
 - (id)contactStore;
 - (id)meCardSharingState;
 - (id)daemonController;
+- (id)truncateNameIfNeeded:(id)arg1;
 - (void)updatePersonalNicknameIfNecessaryWithMeCardSharingResult:(id)arg1;
+- (void)setPersonalNicknameFromOnboardingResult:(id)arg1;
 - (id)_handleIDsForHandle:(id)arg1;
 - (void)handleSharingListsDidChange;
 - (void)nicknameStoreDidChange;

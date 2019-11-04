@@ -14,13 +14,14 @@
     NSPopUpButton *_rightDoubleTapButton;
 }
 
++ (_Bool)deviceHasViews:(id)arg1;
 @property NSPopUpButton *rightDoubleTapButton; // @synthesize rightDoubleTapButton=_rightDoubleTapButton;
 @property NSPopUpButton *leftDoubleTapButton; // @synthesize leftDoubleTapButton=_leftDoubleTapButton;
-- (void)handleRightMenu:(id)arg1;
-- (void)handleLeftMenu:(id)arg1;
+- (void)handleMenu:(id)arg1;
+- (void)setupPopUp:(id)arg1 withCtrlName:(id)arg2;
+- (id)keyForDoubleTap:(unsigned char)arg1;
+- (id)clickOptions;
 - (void)loadPrefs;
-- (long long)menuIndexForAAPDoubleTap:(unsigned char)arg1;
-- (unsigned char)aapDoubleTapForMenuIndex:(long long)arg1;
 - (id)viewsToAlign;
 - (void)viewDidLoad;
 - (id)init;

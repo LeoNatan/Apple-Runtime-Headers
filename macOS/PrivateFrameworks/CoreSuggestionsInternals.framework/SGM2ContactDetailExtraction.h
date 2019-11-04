@@ -13,20 +13,28 @@
 @interface SGM2ContactDetailExtraction : PBCodable <NSCopying>
 {
     int _detail;
+    unsigned int _extractionModelVersion;
+    int _extractionSignatureSource;
     int _foundInSenderCNContact;
     NSString *_key;
     int _outcome;
     int _source;
+    BOOL _isUnlikelyPhone;
     BOOL _signature;
     struct {
         unsigned int detail:1;
+        unsigned int extractionModelVersion:1;
+        unsigned int extractionSignatureSource:1;
         unsigned int foundInSenderCNContact:1;
         unsigned int outcome:1;
         unsigned int source:1;
+        unsigned int isUnlikelyPhone:1;
         unsigned int signature:1;
     } _has;
 }
 
+@property(nonatomic) BOOL isUnlikelyPhone; // @synthesize isUnlikelyPhone=_isUnlikelyPhone;
+@property(nonatomic) unsigned int extractionModelVersion; // @synthesize extractionModelVersion=_extractionModelVersion;
 @property(nonatomic) BOOL signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
@@ -39,6 +47,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsExtractionSignatureSource:(id)arg1;
+- (id)extractionSignatureSourceAsString:(int)arg1;
+@property(nonatomic) BOOL hasExtractionSignatureSource;
+@property(nonatomic) int extractionSignatureSource; // @synthesize extractionSignatureSource=_extractionSignatureSource;
+@property(nonatomic) BOOL hasIsUnlikelyPhone;
+@property(nonatomic) BOOL hasExtractionModelVersion;
 - (int)StringAsFoundInSenderCNContact:(id)arg1;
 - (id)foundInSenderCNContactAsString:(int)arg1;
 @property(nonatomic) BOOL hasFoundInSenderCNContact;

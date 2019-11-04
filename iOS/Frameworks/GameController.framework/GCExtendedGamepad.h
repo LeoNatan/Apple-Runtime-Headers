@@ -61,6 +61,7 @@
 - (void).cxx_destruct;
 - (_Bool)isBluetoothAndUSBMirrored;
 - (void)setStateFromExtendedGamepad:(id)arg1;
+- (void)setEnableTimeForHaptics:(_Bool)arg1;
 - (void)setHapticMotor:(int)arg1 frequency:(float)arg2;
 - (void)setLightbarColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 - (id)productCategory;

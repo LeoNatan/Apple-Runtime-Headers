@@ -12,6 +12,8 @@
 
 + (id)_nameLocalizationKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
 + (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)_stylesInGlory;
++ (id)_stylesInGrace;
 + (id)_orderedValuesForDevice:(id)arg1;
 + (id)optionWithStyle:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;

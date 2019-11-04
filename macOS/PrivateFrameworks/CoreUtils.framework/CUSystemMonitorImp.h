@@ -67,7 +67,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_scInitialKeys;
     NSString *_scKeyConsoleUser;
     NSString *_scKeySystemName;
+    NSString *_scPatternNetInterfaceIPv4;
+    NSString *_scPatternNetInterfaceIPv6;
     NSArray *_scNotificationKeys;
+    NSArray *_scNotificationPatterns;
     NSString *_systemName;
     int _systemLockState;
     int _systemLockStateToken;
@@ -89,6 +92,7 @@ __attribute__((visibility("hidden")))
 - (void)_systemLockStateMonitorStop;
 - (void)_systemLockStateMonitorStart;
 - (void)_systemConfigSystemNameChanged:(BOOL)arg1;
+- (void)_systemConfigNetInterfaceChanged:(id)arg1 initial:(BOOL)arg2;
 - (void)_systemConfigConsoleUserChanged:(BOOL)arg1;
 - (void)_systemConfigChanged:(id)arg1 initial:(BOOL)arg2;
 - (void)_systemConfigUpdateNotifications;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (void)appendDescriptionTo:(id)arg1;
 - (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
 - (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
+- (id)implementationReplacingTintColor:(id)arg1;
 - (id)implementationForUserInterfaceStyle:(long long)arg1;
 - (_Bool)invertAutomaticStyle;
 - (long long)vibrancyStyle;

@@ -6,9 +6,16 @@
 
 #import <NewsArticles/_TtC12NewsArticles27ArticleViewerViewController.h>
 
-#import <NewsArticles/NANavigationControl-Protocol.h>
+@class NSArray;
 
-@interface _TtC12NewsArticles27ArticleViewerViewController (NewsArticles3) <NANavigationControl>
-- (void)enableNavigation:(_Bool)arg1;
+@interface _TtC12NewsArticles27ArticleViewerViewController (NewsArticles3)
+- (void)showTableOfContentsKeyCommand;
+- (void)saveStoryKeyCommand;
+- (void)dislikeStoryKeyCommand;
+- (void)likeStoryKeyCommand;
+- (void)closeStoryKeyCommand;
+- (void)nextStoryKeyCommand;
+- (void)previousStoryKeyCommand;
+@property(nonatomic, readonly) NSArray *keyCommands;
 @end
 

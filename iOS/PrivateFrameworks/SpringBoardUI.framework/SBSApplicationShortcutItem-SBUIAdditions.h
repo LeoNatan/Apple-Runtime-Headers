@@ -10,7 +10,9 @@
 
 @interface SBSApplicationShortcutItem (SBUIAdditions)
 - (void)sb_buildIconImageWithApplicationBundleURL:(id)arg1 image:(id *)arg2 systemImageName:(id *)arg3;
-- (id)_monogrammer;
+- (id)_darkMonogrammer;
+- (id)_lightMonogrammer;
+- (id)_monogrammerForKey:(char *)arg1 style:(long long)arg2;
 - (id)_assetManager;
 - (void)_setupAssetManagerWithApplicationBundleURL:(id)arg1;
 @property(retain, nonatomic) UIView *badgeView;

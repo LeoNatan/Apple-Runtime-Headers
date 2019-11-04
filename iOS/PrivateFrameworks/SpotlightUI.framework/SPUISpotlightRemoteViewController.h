@@ -39,10 +39,11 @@
 - (void).cxx_destruct;
 - (id)watchdogTerminationRequestForProcess:(id)arg1 error:(id)arg2;
 - (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
+- (_Bool)setSceneFrameOnRotation;
 - (_Bool)_canShowWhileLocked;
 - (void)clearEventQueue;
 - (void)addOrExecuteEventAsNeeded:(CDUnknownBlockType)arg1;
-- (struct CGRect)hostViewRectForRect:(struct CGRect)arg1;
+- (struct CGRect)sceneSettingsFrameFromRect:(struct CGRect)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)activeInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithDuration:(double)arg2 fromOrientation:(long long)arg3;
 - (void)activeInterfaceOrientationWillChangeToOrientation:(long long)arg1;

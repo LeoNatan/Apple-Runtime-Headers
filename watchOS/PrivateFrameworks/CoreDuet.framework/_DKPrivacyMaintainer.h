@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)maintainPrivacyWithKnowledgeStorage:(id)arg1 installedApps:(id)arg2 deleteMaxCount:(unsigned int)arg3 objectMaxCount:(unsigned int)arg4 objectMaxLifespan:(double)arg5;
++ (void)maintainPrivacyWithKnowledgeStorage:(id)arg1 installedApps:(id)arg2 deleteMaxCount:(unsigned int)arg3 objectMaxCount:(unsigned int)arg4 objectMaxLifespan:(double)arg5 activity:(id)arg6;
 + (id)deletionPredicateForBundleID:(id)arg1;
 
 @end

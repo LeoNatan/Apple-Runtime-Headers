@@ -6,11 +6,13 @@
 
 #import <MediaPlayer/NSObject-Protocol.h>
 
-@class PBCodable;
+@class MPMediaLibrary, PBCodable;
 @protocol MPPProtobufferCoding;
 
 @protocol MPPProtobufferCoding <NSObject>
 - (PBCodable *)protobufferEncodableObject;
+- (PBCodable *)protobufferEncodableObjectFromLibrary:(MPMediaLibrary *)arg1;
 - (id <MPPProtobufferCoding>)initWithProtobufferDecodableObject:(PBCodable *)arg1;
+- (id <MPPProtobufferCoding>)initWithProtobufferDecodableObject:(PBCodable *)arg1 library:(MPMediaLibrary *)arg2;
 @end
 

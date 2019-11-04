@@ -11,7 +11,6 @@
 
 @class MFActivityMonitor;
 
-__attribute__((visibility("hidden")))
 @interface _MFBlockIterationHandler : NSObject <MFSearchResultHandler, QueryProgressMonitor>
 {
     CDUnknownBlockType _block;

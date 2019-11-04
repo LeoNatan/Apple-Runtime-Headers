@@ -50,6 +50,7 @@
 - (void)addListener:(id)arg1;
 - (id)CTPNRForSIM:(id)arg1;
 - (_Bool)isPhoneNumberEmergencyNumber:(id)arg1;
+- (id)contextForSim:(id)arg1;
 - (id)SIMForIdentifier:(id)arg1;
 - (id)currentSIMsWithError:(id *)arg1;
 - (id)_unlocked_currentSIMsWithError:(id *)arg1;

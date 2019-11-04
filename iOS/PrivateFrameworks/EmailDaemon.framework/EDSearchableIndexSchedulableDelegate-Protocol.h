@@ -20,5 +20,8 @@
 - (void)indexingDidResumeForSearchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1;
 - (void)searchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1 didIndexItemCount:(long long)arg2;
 - (void)searchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1 didIndexForTime:(double)arg2;
+
+@optional
+- (void)didCancelDataSourceUpdateRequestForSearchableIndexSchedulable:(id <EDSearchableIndexSchedulable>)arg1;
 @end
 

@@ -8,6 +8,5 @@
 
 @protocol AOSUIProfileViewHostDelegate
 - (void)viewHost_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(NSArray *)arg2;
-- (void)viewHost_hideOverlay:(BOOL)arg1;
 @end
 

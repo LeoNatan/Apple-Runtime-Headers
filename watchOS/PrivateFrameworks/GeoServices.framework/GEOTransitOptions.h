@@ -13,10 +13,12 @@
 @interface GEOTransitOptions : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _avoidedModes;
     GEOFareOptions *_fareOptions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _prioritization;
     int _routingBehavior;
     struct {
@@ -69,6 +71,8 @@
 @property(readonly, nonatomic) unsigned int avoidedModesCount;
 - (void)_readAvoidedModes;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

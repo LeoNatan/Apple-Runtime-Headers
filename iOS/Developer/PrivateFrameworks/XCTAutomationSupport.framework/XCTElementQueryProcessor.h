@@ -6,35 +6,20 @@
 
 #import <objc/NSObject.h>
 
-#import <XCTAutomationSupport/XCTElementSnapshotAttributeDataSource-Protocol.h>
-#import <XCTAutomationSupport/XCTElementSnapshotProvider-Protocol.h>
+@class XCTCapabilities;
+@protocol XCTElementSnapshotProvider><XCTElementSnapshotAttributeDataSource;
 
-@class NSString, XCTCapabilities;
-@protocol XCTElementSnapshotProvider;
-
-@interface XCTElementQueryProcessor : NSObject <XCTElementSnapshotProvider, XCTElementSnapshotAttributeDataSource>
+@interface XCTElementQueryProcessor : NSObject
 {
-    id <XCTElementSnapshotProvider> _snapshotProvider;
+    id <XCTElementSnapshotProvider><XCTElementSnapshotAttributeDataSource> _dataSource;
     XCTCapabilities *_remoteInterfaceCapabilities;
 }
 
 @property(retain) XCTCapabilities *remoteInterfaceCapabilities; // @synthesize remoteInterfaceCapabilities=_remoteInterfaceCapabilities;
-@property __weak id <XCTElementSnapshotProvider> snapshotProvider; // @synthesize snapshotProvider=_snapshotProvider;
+@property(readonly) __weak id <XCTElementSnapshotProvider><XCTElementSnapshotAttributeDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-@property(readonly) _Bool usePointTransformationsForFrameConversions;
-@property(readonly) _Bool supportsHostedViewCoordinateTransformations;
-- (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
-- (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
-@property(readonly) _Bool allowsRemoteAccess;
-- (id)snapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 timeoutControls:(id)arg4 error:(id *)arg5;
 - (void)fetchMatchesForQuery:(id)arg1 clientCapabilities:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithDataSource:(id)arg1;
 
 @end
 

@@ -43,7 +43,6 @@
     BOOL _showsSkimmingSlideshow;
     BOOL _showsSkimmingInteraction;
     BOOL _allowsPositionDependentHeaderContentOpacity;
-    BOOL _viewBasedDecorationsEnabled;
     BOOL _presentedSkimming;
     PXCuratedLibraryOverlayButtonConfiguration *_showAllButtonConfiguration;
     PXCuratedLibraryOverlayButtonConfiguration *_selectAllButtonConfiguration;
@@ -76,7 +75,6 @@
 @property(readonly, nonatomic) BOOL presentedSkimming; // @synthesize presentedSkimming=_presentedSkimming;
 @property(readonly, nonatomic) struct PXSimpleIndexPath presentedSectionIndexPath; // @synthesize presentedSectionIndexPath=_presentedSectionIndexPath;
 @property(nonatomic) struct CGRect showAllButtonFrame; // @synthesize showAllButtonFrame=_showAllButtonFrame;
-@property(readonly, nonatomic) BOOL viewBasedDecorationsEnabled; // @synthesize viewBasedDecorationsEnabled=_viewBasedDecorationsEnabled;
 @property(nonatomic) double distanceBetweenHeaderTopAndNextBodyTop; // @synthesize distanceBetweenHeaderTopAndNextBodyTop=_distanceBetweenHeaderTopAndNextBodyTop;
 @property(nonatomic) double distanceBetweenTitleTopAndBodyBottom; // @synthesize distanceBetweenTitleTopAndBodyBottom=_distanceBetweenTitleTopAndBodyBottom;
 @property(nonatomic) BOOL allowsPositionDependentHeaderContentOpacity; // @synthesize allowsPositionDependentHeaderContentOpacity=_allowsPositionDependentHeaderContentOpacity;
@@ -176,7 +174,7 @@
 @property(copy, nonatomic) NSSet *draggedAssetReferences;
 @property(retain, nonatomic) PXSelectionSnapshot *selectionSnapshot;
 - (void)setDataSource:(id)arg1 section:(long long)arg2;
-- (id)initWithSection:(long long)arg1 dataSource:(id)arg2 actionManager:(id)arg3 zoomLevel:(long long)arg4 viewBasedDecorationsEnabled:(BOOL)arg5 spec:(id)arg6;
+- (id)initWithSection:(long long)arg1 dataSource:(id)arg2 actionManager:(id)arg3 zoomLevel:(long long)arg4 spec:(id)arg5;
 - (id)init;
 
 // Remaining properties

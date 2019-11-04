@@ -7,10 +7,11 @@
 @class NSString;
 
 @protocol SiriUISetupXPCProtocol
+- (void)setSiriDataSharingOptInStatus:(long long)arg1 completionHandler:(void (^)(void))arg2;
 - (void)enableVoiceTriggerWithCompletionHandler:(void (^)(void))arg1;
 - (void)disableAskSiriWithCompletionHandler:(void (^)(void))arg1;
 - (void)enableAskSiriWithLanguageCode:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
 - (void)setLaunchAgentEnabled:(BOOL)arg1;
-- (void)getSiriStateWithReply:(void (^)(BOOL, BOOL, BOOL, BOOL))arg1;
+- (void)getSiriStateWithReply:(void (^)(BOOL, BOOL, BOOL, BOOL, BOOL, long long))arg1;
 @end
 

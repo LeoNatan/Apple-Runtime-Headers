@@ -11,7 +11,7 @@
 
 @protocol SBFloatingApplicationLiveContentOverlayView <SBSwitcherLiveContentOverlay>
 - (void)invalidate;
-- (void)setAsynchronousRenderingDisabled:(_Bool)arg1;
+- (void)setLiveContentRasterizationDisabled:(_Bool)arg1;
 - (void)configureWithWorkspaceEntity:(SBWorkspaceEntity *)arg1 referenceFrame:(struct CGRect)arg2 interfaceOrientation:(long long)arg3;
 - (UIViewController<SBLayoutStateTransitionObserver> *)contentViewController;
 @end

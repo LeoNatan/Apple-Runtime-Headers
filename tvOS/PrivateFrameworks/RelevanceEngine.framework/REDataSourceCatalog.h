@@ -26,7 +26,7 @@
 - (CDStruct_2ec95fd7)minimumSupportedSystemVersionForDataSourceWithIdentifier:(id)arg1;
 - (id)localizedNameForDataSourceWithIdentifier:(id)arg1;
 - (id)localizedNameForApplicationWithIdentifier:(id)arg1;
-- (void)imageForDataSourceWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)imageForDataSourceWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)imageForApplicationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)localAndRemoteAppIdentifiersForDataSourceIdentifiers:(id)arg1;
 - (void)donatedAppIdentifiersWithCompletion:(CDUnknownBlockType)arg1;

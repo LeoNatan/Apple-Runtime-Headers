@@ -17,6 +17,7 @@
     _Bool _disableCompactVoiceFallback;
     _Bool _forceServerTTS;
     _Bool _canUseServerTTS;
+    _Bool _retryDeviceOnNetworkStall;
     _Bool _useCustomVoice;
     _Bool _audioSessionIDIsValid;
     _Bool _maintainsInput;
@@ -59,6 +60,7 @@
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(copy, nonatomic) NSURL *resourceSearchPathURL; // @synthesize resourceSearchPathURL=_resourceSearchPathURL;
 @property(copy, nonatomic) NSURL *resourceListURL; // @synthesize resourceListURL=_resourceListURL;
+@property(nonatomic) _Bool retryDeviceOnNetworkStall; // @synthesize retryDeviceOnNetworkStall=_retryDeviceOnNetworkStall;
 @property(nonatomic) _Bool canUseServerTTS; // @synthesize canUseServerTTS=_canUseServerTTS;
 @property(nonatomic) _Bool forceServerTTS; // @synthesize forceServerTTS=_forceServerTTS;
 @property(nonatomic) unsigned int audioSessionID; // @synthesize audioSessionID=_audioSessionID;

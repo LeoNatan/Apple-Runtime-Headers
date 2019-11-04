@@ -6,7 +6,6 @@
 
 #import <AssetExplorer/AEAssetPackage.h>
 
-__attribute__((visibility("hidden")))
 @interface AEPHAssetPackage : AEAssetPackage
 {
     id _resourcePinningHandle;

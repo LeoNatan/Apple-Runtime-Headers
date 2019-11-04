@@ -33,10 +33,12 @@
     NSString *_contactIdentifier;
     NSString *_customIdentifier;
     NSString *_relationship;
+    NSString *_phonemeData;
 }
 
 + (id)expectedCNContactKeys;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *phonemeData; // @synthesize phonemeData=_phonemeData;
 @property(copy, nonatomic) NSArray *alternatives; // @synthesize alternatives=_alternatives;
 @property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
 @property(nonatomic) int suggestionType; // @synthesize suggestionType=_suggestionType;
@@ -51,6 +53,7 @@
 @property(readonly, copy, nonatomic) NSArray *alternativeSiriMatches;
 - (id)_dictionaryRepresentation;
 - (id)initWithContact:(id)arg1;
+- (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 relationship:(id)arg8 aliases:(id)arg9 suggestionType:(int)arg10 isMe:(_Bool)arg11 alternatives:(id)arg12 sourceAppBundleIdentifier:(id)arg13 phonemeData:(id)arg14;
 - (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 relationship:(id)arg8 aliases:(id)arg9 suggestionType:(int)arg10 isMe:(_Bool)arg11 alternatives:(id)arg12 sourceAppBundleIdentifier:(id)arg13;
 - (id)_sourceAppBundleIdentifier;
 - (id)_aliases;

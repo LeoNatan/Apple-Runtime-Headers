@@ -23,6 +23,7 @@
 + (_Bool)mailItemIsValid:(id)arg1;
 + (_Bool)mailItemIsRecent:(id)arg1;
 + (_Bool)mailItemIsSPAM:(id)arg1 emailHeaders:(id)arg2 mailboxIdentifiers:(id)arg3;
++ (_Bool)searchableItemIsOutgoing:(id)arg1;
 + (_Bool)searchableItemIsEmpty:(id)arg1;
 + (_Bool)mailItemIsFromSupportedAccount:(id)arg1;
 + (_Bool)mailItemIsInTrash:(id)arg1 mailboxIdentifiers:(id)arg2;

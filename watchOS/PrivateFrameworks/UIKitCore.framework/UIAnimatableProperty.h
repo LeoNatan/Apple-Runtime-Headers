@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIViewInProcessAnimationState *animationState; // @synthesize animationState=_animationState;
 @property(retain, nonatomic) id <UIViewAnimationComposing> composer; // @synthesize composer=_composer;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
-@property(retain, nonatomic) id presentationValue; // @synthesize presentationValue=_presentationValue;
+@property(retain) id presentationValue; // @synthesize presentationValue=_presentationValue;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
 - (id)debugDescription;

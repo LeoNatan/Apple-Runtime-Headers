@@ -84,6 +84,10 @@
     _Bool _wasEmergency;
     SFDiagnostics *_sfdiagnostics;
     AFWatchdogTimer *_sfDiagnosticsTimer;
+    struct {
+        _Bool isBTLEScanning;
+        _Bool isBTLEAdvertising;
+    } _heySiriBTLEState;
 }
 
 + (void)clearCurrentCoordinator;
@@ -102,7 +106,6 @@
 - (_Bool)_testAndUpdateWedgeFilter:(id)arg1;
 - (void)notifyCurrentDecisionResult;
 - (void)_updateRepliesWith:(id)arg1 id:(id)arg2 data:(id)arg3;
-- (_Bool)_isAlreadyAdvertising;
 - (_Bool)_inTaskTriggerWasTooSoon;
 - (id)_sortedReplies:(id)arg1;
 - (id)_sortedReplies;
@@ -149,8 +152,8 @@
 - (void)_enterState:(unsigned long long)arg1;
 - (void)_cancelOverallTimeout;
 - (void)_setOverallTimeout;
+- (void)_cancelTimer;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenEnterState:(unsigned long long)arg3;
-- (void)_startTimer:(id)arg1 until:(id)arg2 thenExecute:(CDUnknownBlockType)arg3;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenExecute:(CDUnknownBlockType)arg3;
 - (void)_startListenTimer;
 - (void)_CreateDispatchTimerForEvent:(id)arg1 toExecute:(CDUnknownBlockType)arg2;

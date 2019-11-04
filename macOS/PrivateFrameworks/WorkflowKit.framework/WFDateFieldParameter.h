@@ -10,15 +10,19 @@
 
 @interface WFDateFieldParameter : WFTextInputParameter
 {
+    BOOL _detectsAllDayDates;
+    BOOL _forcesAllDayDates;
     NSDateFormatter *_hintDateFormatter;
     NSString *_reactiveParameterKey;
     NSString *_hintDateMode;
 }
 
 @property(readonly, nonatomic) NSString *hintDateMode; // @synthesize hintDateMode=_hintDateMode;
+@property(nonatomic) BOOL forcesAllDayDates; // @synthesize forcesAllDayDates=_forcesAllDayDates;
+@property(readonly, nonatomic) BOOL detectsAllDayDates; // @synthesize detectsAllDayDates=_detectsAllDayDates;
 @property(readonly, nonatomic) NSString *reactiveParameterKey; // @synthesize reactiveParameterKey=_reactiveParameterKey;
 - (void).cxx_destruct;
-- (id)localizedIncompleteHintString;
+@property(readonly, nonatomic) NSString *localizedIncompleteHintString;
 - (id)hintForState:(id)arg1;
 @property(readonly, nonatomic) NSDateFormatter *hintDateFormatter; // @synthesize hintDateFormatter=_hintDateFormatter;
 @property(readonly, nonatomic) BOOL dateOnlyMode;

@@ -6,7 +6,7 @@
 
 #import <SAObjects/SAUISnippet.h>
 
-@class NSArray;
+@class NSArray, NSDate, NSString;
 
 @interface SACalendarEventSnippet : SAUISnippet
 {
@@ -14,6 +14,9 @@
 
 + (id)eventSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)eventSnippet;
+@property(copy, nonatomic) NSString *timeZoneId;
+@property(copy, nonatomic) NSDate *snippetStartDate;
+@property(copy, nonatomic) NSDate *snippetEndDate;
 @property(copy, nonatomic) NSArray *events;
 - (id)encodedClassName;
 - (id)groupIdentifier;

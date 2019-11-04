@@ -19,6 +19,8 @@
 + (id)makeDCFFileNameByHashingFileName:(id)arg1 createDate:(id)arg2 fileSize:(unsigned long long)arg3;
 + (id)makeDCFFileNameFromFileName:(id)arg1 createDate:(id)arg2 fileSize:(unsigned long long)arg3;
 + (BOOL)fileName:(id)arg1 matchesRegex:(id)arg2;
++ (id)fileNameByRemovingSpatialOverCaptureMarkerInFileName:(id)arg1;
++ (BOOL)isSpatialOverCaptureFileName:(id)arg1;
 + (id)fileNameByRemovingRenderMarkerInFileName:(id)arg1;
 + (BOOL)isRenderFileName:(id)arg1;
 + (id)renderDCFRegex;

@@ -6,12 +6,23 @@
 
 #import <UIKit/UINavigationController.h>
 
-@interface HUQuickControlNavigationController : UINavigationController
+#import <HomeUI/HUViewControllerCustomDismissing-Protocol.h>
+
+@class NSString;
+
+@interface HUQuickControlNavigationController : UINavigationController <HUViewControllerCustomDismissing>
 {
 }
 
+- (id)hu_prepareForDismissalAnimated:(BOOL)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)viewDidLoad;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

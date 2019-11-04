@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface NSTouchBarCustomizationPreviewLayout : NSCollectionViewLayout
 {
     struct CGRect _escapeKeyRect;
+    struct CGRect _closeButtonRect;
     NSArray *_sectionLayouts;
 }
 

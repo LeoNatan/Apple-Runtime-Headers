@@ -6,18 +6,19 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class NSMutableSet, NSSet, NSString, PXAssetCollectionReference, PXAssetReference, PXCuratedLibraryAssetCollectionSkimmingInfo, PXGView, UXBarButtonItem;
-@protocol PXCuratedLibraryViewModelPresenter;
+@class NSMutableSet, NSSet, PXAssetCollectionReference, PXAssetReference, PXCPLServiceUI, PXCuratedLibraryAssetCollectionSkimmingInfo, PXGView, UXBarButtonItem;
+@protocol PXCuratedLibraryViewModelPresenter, PXFilterState;
 
 @protocol PXMutablePhotosLibraryViewModel <NSObject>
+@property(retain, nonatomic) PXCPLServiceUI *cplServiceUI;
 @property(nonatomic) BOOL wantsDarkStatusBar;
 @property(retain, nonatomic) UXBarButtonItem *navigationDisplayModeButtonItem;
+@property(copy, nonatomic) id <PXFilterState> allPhotosFilterState;
 @property(nonatomic) long long zoomLevel;
-@property(copy, nonatomic) NSString *selectModeCaption;
-@property(nonatomic) unsigned long long libraryState;
 @property(copy, nonatomic) NSSet *draggedAssetReferences;
 @property(retain, nonatomic) PXCuratedLibraryAssetCollectionSkimmingInfo *skimmingInfo;
 @property(nonatomic) BOOL allPhotosLayoutIsAnimating;
+@property(nonatomic) BOOL allPhotosCaptionsVisible;
 @property(nonatomic) BOOL allPhotosAspectFit;
 @property(nonatomic) BOOL isInteractiveZooming;
 @property(nonatomic) double daysMarginScale;

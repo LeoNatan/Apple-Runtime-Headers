@@ -15,6 +15,8 @@
 @interface RLMArray : NSObject <RLMThreadConfined_Private, RLMCollection, NSFastEnumeration>
 {
     NSString *_objectClassName;
+    int _type;
+    _Bool _optional;
     NSString *_key;
     RLMObjectBase *_parentObject;
     NSMutableArray *_backingArray;
@@ -22,24 +24,28 @@
 
 + (id)objectWithThreadSafeReference:(unique_ptr_d0e912ad)arg1 metadata:(id)arg2 realm:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *objectClassName; // @synthesize objectClassName=_objectClassName;
+@property(readonly, nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
+@property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) id objectiveCMetadata;
-- (unique_ptr_d0e912ad)makeThreadSafeReference;
 - (id)descriptionWithMaxDepth:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
-- (unsigned long long)indexOfObjectWhere:(id)arg1 args:(struct __va_list_tag [1])arg2;
-- (unsigned long long)indexOfObjectWhere:(id)arg1;
+@property(readonly, nonatomic) id objectiveCMetadata;
+- (unique_ptr_d0e912ad)makeThreadSafeReference;
 - (id)addNotificationBlock:(CDUnknownBlockType)arg1;
 - (id)sortedResultsUsingDescriptors:(id)arg1;
-- (id)sortedResultsUsingProperty:(id)arg1 ascending:(_Bool)arg2;
-- (id)sortedResultsUsingKeyPath:(id)arg1 ascending:(_Bool)arg2;
 - (id)objectsWithPredicate:(id)arg1;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (id)objectsAtIndexes:(id)arg1;
 - (unsigned long long)indexOfObjectWithPredicate:(id)arg1;
+- (id)averageOfProperty:(id)arg1;
+- (id)sumOfProperty:(id)arg1;
+- (id)maxOfProperty:(id)arg1;
+- (id)minOfProperty:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
+- (id)aggregateProperty:(id)arg1 operation:(id)arg2 method:(SEL)arg3;
+- (int)typeForProperty:(id)arg1;
 - (id)objectsWhere:(id)arg1 args:(struct __va_list_tag [1])arg2;
 - (id)objectsWhere:(id)arg1;
 - (void)removeAllObjects;
@@ -56,14 +62,18 @@
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)objectAtIndex:(unsigned long long)arg1;
+- (id)lastObject;
+- (id)firstObject;
+@property(readonly, nonatomic) RLMRealm *realm;
+- (unsigned long long)indexOfObjectWhere:(id)arg1 args:(struct __va_list_tag [1])arg2;
+- (unsigned long long)indexOfObjectWhere:(id)arg1;
+- (id)sortedResultsUsingKeyPath:(id)arg1 ascending:(_Bool)arg2;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (void)removeLastObject;
 - (void)addObject:(id)arg1;
 - (void)addObjects:(id)arg1;
-- (id)lastObject;
-- (id)firstObject;
-@property(readonly, nonatomic) RLMRealm *realm;
+- (id)initWithObjectType:(int)arg1 optional:(_Bool)arg2;
 - (id)initWithObjectClassName:(id)arg1;
 
 // Remaining properties

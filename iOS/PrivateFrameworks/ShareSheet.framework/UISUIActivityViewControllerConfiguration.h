@@ -37,6 +37,7 @@
     NSString *_sessionID;
     UITraitCollection *_hostTraitCollection;
     NSLocale *_hostLocale;
+    NSArray *_preferredLocalizations;
     NSArray *_includedActivityTypes;
     NSArray *_excludedActivityTypes;
     NSArray *_activityTypeOrder;
@@ -63,6 +64,7 @@
 @property(nonatomic) _Bool shouldMatchOnlyUserElectedExtensions; // @synthesize shouldMatchOnlyUserElectedExtensions=_shouldMatchOnlyUserElectedExtensions;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(nonatomic) _Bool allowsEmbedding; // @synthesize allowsEmbedding=_allowsEmbedding;
+@property(retain, nonatomic) NSArray *preferredLocalizations; // @synthesize preferredLocalizations=_preferredLocalizations;
 @property(retain, nonatomic) NSLocale *hostLocale; // @synthesize hostLocale=_hostLocale;
 @property(nonatomic) struct NSDirectionalEdgeInsets hostLayoutMargins; // @synthesize hostLayoutMargins=_hostLayoutMargins;
 @property(retain, nonatomic) UITraitCollection *hostTraitCollection; // @synthesize hostTraitCollection=_hostTraitCollection;
@@ -83,6 +85,7 @@
 - (id)_contextForMatchingActivityItems:(id)arg1 activityItemValues:(id)arg2 activityItemValueClasses:(id)arg3;
 - (id)contextForMatchingByActivityItems:(id)arg1 itemValues:(id)arg2;
 - (id)contextForMatchingByActivityItemValueClasses;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

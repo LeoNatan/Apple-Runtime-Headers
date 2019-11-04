@@ -16,10 +16,12 @@
     RPStreamSession *_rapportStream;
     CDUnknownBlockType _handler;
     SidecarSession *_session;
+    // Error parsing type: AQ, name: _status
     // Error parsing type: AB, name: _activated
 }
 
 + (BOOL)supportsSecureCoding;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -31,6 +33,8 @@
 @property(readonly) unsigned long long flags;
 @property(readonly) long long type;
 @property(readonly, nonatomic) long long transport;
+- (void)setStatus:(unsigned long long)arg1;
+@property(readonly) unsigned long long status;
 @property(readonly) SidecarSession *session;
 @property(readonly) NSString *identifier;
 @property(readonly) long long fileDescriptor;

@@ -19,7 +19,7 @@
 @property(copy, nonatomic) MPModelLibraryAddToPlaylistChangeRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
 - (_Bool)_isCloudLibraryEnabled;
-- (void)_finishWithCloudLibraryUpdateForPlaylist:(id)arg1;
+- (void)_updateCloudLibraryForPlaylist:(id)arg1;
 - (void)execute;
 
 @end

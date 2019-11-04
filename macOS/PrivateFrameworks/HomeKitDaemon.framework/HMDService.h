@@ -51,7 +51,7 @@
 
 + (BOOL)hasMessageReceiverChildren;
 + (BOOL)supportsSecureCoding;
-+ (BOOL)processUpdateForCharacteristicType:(id)arg1 value:(id)arg2 serviceType:(id)arg3 service:(id)arg4 serviceTransactionGetter:(CDUnknownBlockType)arg5 accessory:(id)arg6 accessoryTransaction:(id)arg7 accInfoChanged:(char *)arg8;
++ (BOOL)processUpdateForCharacteristicType:(id)arg1 value:(id)arg2 serviceType:(id)arg3 service:(id)arg4 serviceTransactionGetter:(CDUnknownBlockType)arg5 accessory:(id)arg6 accessoryTransaction:(id)arg7 accessoryTransactionChanged:(char *)arg8;
 + (BOOL)validateProvidedName:(id)arg1;
 + (id)logCategory;
 + (id)generateUUIDWithAccessoryUUID:(id)arg1 serviceID:(id)arg2;

@@ -13,8 +13,12 @@
     NSPopUpButton *_doubleTapButton;
 }
 
++ (_Bool)deviceHasViews:(id)arg1;
 @property NSPopUpButton *doubleTapButton; // @synthesize doubleTapButton=_doubleTapButton;
 - (void)handleMenu:(id)arg1;
+- (void)setupPopUp:(id)arg1;
+- (id)keyForDoubleTap:(unsigned char)arg1;
+- (id)clickOptions;
 - (void)loadPrefs;
 - (id)viewsToAlign;
 - (void)viewDidLoad;

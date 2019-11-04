@@ -30,8 +30,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)_mapShutdownOptionsToOptions:(id)arg1;
 - (BOOL)_isWhitelistedLaunchSuspendedApp:(id)arg1;
-- (BOOL)_requireEntitlementToOpenURL:(id)arg1 options:(id)arg2;
-- (BOOL)_isTrustedRequestToOpenApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4;
+- (BOOL)_isTrustedRequest:(id)arg1 forCaller:(id)arg2 fromClient:(id)arg3 forApplication:(id)arg4 withOptions:(id)arg5 fatalError:(out id *)arg6;
 - (void)_performExitTasksForRelaunch:(BOOL)arg1;
 - (void)_setInfoProvider;
 - (oneway void)openApplication:(id)arg1 withOptions:(id)arg2 originator:(id)arg3 requestID:(id)arg4 completion:(CDUnknownBlockType)arg5;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) WKSelectPopover *popover; // @synthesize popover=_popover;
+@property(readonly, nonatomic) _Bool shouldDismissWithAnimation;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (struct OptionItem *)findItemAt:(id)arg1;

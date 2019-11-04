@@ -12,6 +12,7 @@
 {
 }
 
+- (unsigned int)priority;
 - (unsigned int)type;
 @property(readonly, nonatomic) _MRSetStateMessageProtobuf *state;
 - (id)initWithNowPlayingState:(id)arg1;

@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (_Bool)shouldOpenInApp;
+- (_Bool)shouldOpenInSafari;
 - (id)notificationURL;
 - (id)notificationIconBundleIdentifier;
 - (_Bool)canBePerformedByOpeningURL;
@@ -23,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)localizedName;
 - (id)companionAction;
 - (id)appLink;
-- (_Bool)useAppLink;
 - (id)icon;
 
 @end

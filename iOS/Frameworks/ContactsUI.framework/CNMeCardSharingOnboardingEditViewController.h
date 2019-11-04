@@ -14,7 +14,7 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 #import <ContactsUI/UITextFieldDelegate-Protocol.h>
 
-@class CNAvatarEditingManager, CNContact, CNContactStore, CNMeCardSharingLogger, CNMeCardSharingOnboardingAvatarCarouselViewController, CNMeCardSharingOnboardingHeaderViewController, CNMeCardSharingPickerLayoutAttributes, CNMutableContact, CNPhotoPickerVariantsManager, CNPhotoPickerViewController, NSString, UITextField;
+@class CNAvatarEditingManager, CNContact, CNContactStore, CNMeCardSharingOnboardingAvatarCarouselViewController, CNMeCardSharingOnboardingHeaderViewController, CNMeCardSharingPickerLayoutAttributes, CNMutableContact, CNPhotoPickerVariantsManager, CNPhotoPickerViewController, CNSharingProfileLogger, NSString, UITextField;
 @protocol AVTAvatarRecord, CNMeCardSharingNameProvider, CNMeCardSharingOnboardingEditViewControllerDelegate;
 
 @interface CNMeCardSharingOnboardingEditViewController : CNMeCardSharingOnboardingViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate, CNPhotoPickerViewControllerDelegate, CNAvatarEditingManagerDelegate, CNPhotoPickerVariantListControllerDelegate>
@@ -39,12 +39,12 @@
     CNPhotoPickerViewController *_photoPickerViewController;
     CNPhotoPickerVariantsManager *_variantsManager;
     CNAvatarEditingManager *_posePicker;
-    CNMeCardSharingLogger *_logger;
+    CNSharingProfileLogger *_logger;
 }
 
 + (id)headerText;
 + (id)descriptorForRequiredKeys;
-@property(readonly, nonatomic) CNMeCardSharingLogger *logger; // @synthesize logger=_logger;
+@property(readonly, nonatomic) CNSharingProfileLogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) CNAvatarEditingManager *posePicker; // @synthesize posePicker=_posePicker;
 @property(retain, nonatomic) CNPhotoPickerVariantsManager *variantsManager; // @synthesize variantsManager=_variantsManager;
 @property(retain, nonatomic) CNPhotoPickerViewController *photoPickerViewController; // @synthesize photoPickerViewController=_photoPickerViewController;
@@ -88,6 +88,7 @@
 - (void)avatarPosePickerManager:(id)arg1 didFinishWithProviderItem:(id)arg2;
 - (void)showAvatarPosePickerFromItem:(id)arg1;
 - (void)notifyDelegateWithContactImage:(id)arg1 didSaveToMeContact:(_Bool)arg2;
+- (void)presentErrorAlertForEmptyPhotoIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)finishOnboardingWithDidSaveToMeContact:(_Bool)arg1;
 - (long long)contactImageSourceForType:(unsigned long long)arg1;
 - (void)promptForSavingToMeCard;

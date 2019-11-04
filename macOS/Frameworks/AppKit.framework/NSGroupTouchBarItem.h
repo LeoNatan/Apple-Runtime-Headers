@@ -22,7 +22,6 @@
     id _private;
 }
 
-+ (id)keyPathsForValuesAffecting_requiresReducedMetricAppearance;
 + (id)keyPathsForValuesAffectingEffectiveCompressibleUserInterfaceOptions;
 + (id)alertStyleGroupItemWithIdentifier:(id)arg1;
 + (id)groupItemWithIdentifier:(id)arg1 items:(id)arg2 allowedCompressionOptions:(id)arg3;
@@ -32,10 +31,9 @@
 - (void)item:(id)arg1 minSize:(struct CGSize *)arg2 maxSize:(struct CGSize *)arg3 preferredSize:(struct CGSize *)arg4;
 - (id)_defaultCompressionOptionOrder;
 - (double)_minimumWidthForCompressionOptions:(id)arg1;
-- (void)_invalidateMeasurementsOfItem:(id)arg1;
+- (void)invalidateMeasurementsOfItem:(id)arg1;
 - (void)frameChangesEnded;
 - (id)compressionGroupLayout;
-- (BOOL)_requiresReducedMetricAppearance;
 - (void)setGroupHasAlertStyle:(BOOL)arg1;
 - (BOOL)groupHasAlertStyle;
 @property(copy) NSArray *prioritizedCompressionOptions;

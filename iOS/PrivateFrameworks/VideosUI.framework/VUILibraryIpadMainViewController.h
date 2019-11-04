@@ -7,28 +7,32 @@
 #import <VideosUI/VUILibraryFetchControllerViewController.h>
 
 #import <VideosUI/UIGestureRecognizerDelegate-Protocol.h>
+#import <VideosUI/VUILibraryCategoryMenuViewModelDelegate-Protocol.h>
 #import <VideosUI/VUILibrarySplitViewControllerDelegate-Protocol.h>
-#import <VideosUI/VUIMediaEntitiesFetchControllerDelegate-Protocol.h>
 
-@class NSString, VUIDownloadViewController, VUILibrarySplitViewController, VUIMediaEntitiesFetchController;
+@class NSSet, NSString, VUIDownloadViewController, VUILibraryCategoryMenuViewModel, VUILibrarySplitViewController;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryIpadMainViewController : VUILibraryFetchControllerViewController <VUIMediaEntitiesFetchControllerDelegate, VUILibrarySplitViewControllerDelegate, UIGestureRecognizerDelegate>
+@interface VUILibraryIpadMainViewController : VUILibraryFetchControllerViewController <VUILibraryCategoryMenuViewModelDelegate, VUILibrarySplitViewControllerDelegate, UIGestureRecognizerDelegate>
 {
     _Bool _areLocalMediaItemsAvailable;
-    _Bool _hasFetchCompleted;
+    VUILibraryCategoryMenuViewModel *_categoryViewModel;
+    NSSet *_validCategories;
     VUILibrarySplitViewController *_librarySplitViewController;
     VUIDownloadViewController *_downloadViewController;
-    VUIMediaEntitiesFetchController *_downloadFetchController;
 }
 
-@property(retain, nonatomic) VUIMediaEntitiesFetchController *downloadFetchController; // @synthesize downloadFetchController=_downloadFetchController;
 @property(retain, nonatomic) VUIDownloadViewController *downloadViewController; // @synthesize downloadViewController=_downloadViewController;
 @property(retain, nonatomic) VUILibrarySplitViewController *librarySplitViewController; // @synthesize librarySplitViewController=_librarySplitViewController;
-@property(nonatomic) _Bool hasFetchCompleted; // @synthesize hasFetchCompleted=_hasFetchCompleted;
+@property(retain, nonatomic) NSSet *validCategories; // @synthesize validCategories=_validCategories;
+@property(retain, nonatomic) VUILibraryCategoryMenuViewModel *categoryViewModel; // @synthesize categoryViewModel=_categoryViewModel;
 @property(nonatomic) _Bool areLocalMediaItemsAvailable; // @synthesize areLocalMediaItemsAvailable=_areLocalMediaItemsAvailable;
 - (void).cxx_destruct;
 - (_Bool)vui_ppt_isLoading;
+- (void)_updateVisibleViewControllerForCategories:(id)arg1 error:(id)arg2;
+- (void)categoryViewModel:(id)arg1 categoriesDidChange:(id)arg2;
+- (void)categoryViewModel:(id)arg1 fetchDidCompleteWithCategories:(id)arg2 error:(id)arg3;
+- (void)_setupDownloadViewController;
 - (void)_accountsChanged:(id)arg1;
 - (void)_deviceMediaLibraryUpdateStateDidChange:(id)arg1;
 - (void)_stopMonitoringDeviceMediaLibraryInitialUpdate;
@@ -40,12 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)_addNotificationObserversWithDeviceLibrary:(id)arg1;
 - (void)_addMediaLibraryNotificationObservers;
 - (id)_deviceMediaLibrary;
-- (void)_updateViewIfFetchHasCompleted;
-- (void)_startDownloadFetchController;
-- (void)librarySplitViewControllerDidFinishLoading:(id)arg1 withCategories:(id)arg2 error:(id)arg3;
 - (void)librarySplitViewControllerShouldDismiss:(id)arg1;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
 - (void)loadView;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)viewDidLoad;

@@ -85,6 +85,10 @@
     unsigned short _lastPHash;
     double _lastEmergencyAttempt;
     BOOL _wasEmergency;
+    struct {
+        char isBTLEScanning;
+        char isBTLEAdvertising;
+    } _heySiriBTLEState;
 }
 
 + (void)clearCurrentCoordinator;
@@ -112,7 +116,6 @@
 - (BOOL)_testAndUpdateWedgeFilter:(id)arg1;
 - (void)notifyCurrentDecisionResult;
 - (void)_updateRepliesWith:(id)arg1 id:(id)arg2 data:(id)arg3;
-- (BOOL)_isAlreadyAdvertising;
 - (BOOL)_inTaskTriggerWasTooSoon;
 - (id)_sortedReplies:(id)arg1;
 - (id)_sortedReplies;
@@ -159,8 +162,8 @@
 - (void)_enterState:(unsigned long long)arg1;
 - (void)_cancelOverallTimeout;
 - (void)_setOverallTimeout;
+- (void)_cancelTimer;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenEnterState:(unsigned long long)arg3;
-- (void)_startTimer:(id)arg1 until:(id)arg2 thenExecute:(CDUnknownBlockType)arg3;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenExecute:(CDUnknownBlockType)arg3;
 - (void)_startListenTimer;
 - (void)_CreateDispatchTimerForEvent:(id)arg1 toExecute:(CDUnknownBlockType)arg2;

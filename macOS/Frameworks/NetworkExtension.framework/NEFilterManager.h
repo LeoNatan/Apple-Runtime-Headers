@@ -13,13 +13,13 @@
 @interface NEFilterManager : NSObject <NEPrettyDescription>
 {
     BOOL _hasLoaded;
-    NEConfiguration *_configuration;
     NEConfigurationManager *_configurationManager;
+    NEConfiguration *_configuration;
 }
 
 + (id)sharedManager;
-@property(readonly) NEConfigurationManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain) NEConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(readonly) NEConfigurationManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 @property BOOL hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 - (void).cxx_destruct;
 @property long long grade;

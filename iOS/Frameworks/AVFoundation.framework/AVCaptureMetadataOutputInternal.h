@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *metadataObjectTypes;
     struct CGRect rectOfInterest;
     _Bool faceTrackingMetadataObjectTypesAvailable;
+    long long faceTrackingMaxFaces;
+    _Bool faceTrackingUsesFaceRecognition;
     _Bool offlineVideoStabilizationMotionMetadataObjectTypesAvailable;
 }
 

@@ -6,23 +6,19 @@
 
 #import <AppKit/NSViewController.h>
 
-@class IOBluetoothDevice, NSMenuItem;
+@class IOBluetoothDevice;
 
 @interface AudioOptionsViewController : NSViewController
 {
     IOBluetoothDevice *_device;
-    NSMenuItem *_mAutoMI;
-    NSMenuItem *_mAlwaysLeftMI;
-    NSMenuItem *_mAlwaysRightMI;
 }
 
-+ (id)viewsForDevice:(id)arg1;
++ (id)createViewsForDevice:(id)arg1;
 + (_Bool)deviceHasViews:(id)arg1;
-+ (_Bool)isListeningModePanelShownForDevice:(id)arg1;
-@property NSMenuItem *mAlwaysRightMI; // @synthesize mAlwaysRightMI=_mAlwaysRightMI;
-@property NSMenuItem *mAlwaysLeftMI; // @synthesize mAlwaysLeftMI=_mAlwaysLeftMI;
-@property NSMenuItem *mAutoMI; // @synthesize mAutoMI=_mAutoMI;
++ (id)viewsSupported;
 @property IOBluetoothDevice *device; // @synthesize device=_device;
+- (void)addPopUpItemWithResKey:(id)arg1 key:(id)arg2 tag:(int)arg3;
+- (id)deviceSpecificLocalizedStringForKey:(id)arg1;
 - (id)viewsToAlign;
 - (void)handleClose;
 - (void)loadPrefs;

@@ -30,6 +30,7 @@
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (id)description;
+- (void)requestRemovalFromEnclosingView;
 - (void)didInvalidateSizeAnimate:(BOOL)arg1;
 - (id)sendFeedbackForPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)openPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;

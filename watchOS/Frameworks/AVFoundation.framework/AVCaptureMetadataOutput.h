@@ -20,6 +20,7 @@
 + (id)new;
 + (void)initialize;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateOverrideCallbackQueue;
 @property(readonly, nonatomic) id delegateOverride;
 - (void)setOfflineVideoStabilizationMotionMetadataObjectTypesAvailable:(_Bool)arg1;
 - (_Bool)isOfflineVideoStabilizationMotionMetadataObjectTypesAvailable;

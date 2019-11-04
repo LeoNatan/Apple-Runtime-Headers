@@ -6,24 +6,65 @@
 
 #import <objc/NSObject.h>
 
-@protocol CMWakeGestureDelegate;
+@class NSString;
+@protocol CMWakeGestureDelegate, OS_dispatch_queue;
 
 @interface CMWakeGestureManager : NSObject
 {
+    NSObject<OS_dispatch_queue> *fDispatchQ;
+    _Bool gestureUpdatesStarted;
+    struct Dispatcher *fWakeDispatcher;
+    struct Dispatcher *fPowerStateDispatcher;
+    struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor>> fWakeGestureVisitor;
+    long long fCurrentState;
+    int fMeasureLatencyState;
+    double fWakePacketTimestamp;
+    struct IONotificationPort *fIoNotifyPort;
+    unsigned int fIoNotification;
+    unsigned int backlightService;
+    double fLastNotificationTime;
+    int fScreenDimmingNotificationToken;
+    int fLockScreenToken;
+    double fLastDisplayOnTime;
+    NSString *fProcessName;
+    _Bool fIsRunningInPrimaryProcess;
+    _Bool fEnableLatencyAlert;
+    _Bool fEnableAudioAlert;
+    int fLatencyAlertThreshold;
+    BOOL fDisplayState;
+    int fSelector;
     id <CMWakeGestureDelegate> _delegate;
 }
 
++ (id)stringForViewPose:(unsigned char)arg1;
++ (id)stringForStartPose:(unsigned char)arg1;
++ (id)stringForMode:(unsigned char)arg1;
++ (id)stringForNotification:(unsigned char)arg1;
++ (unsigned char)toRaw:(long long)arg1;
++ (long long)toState:(unsigned char)arg1;
++ (_Bool)hasSlowBootArgs;
 + (_Bool)isWakeGestureOverrideEnabled;
 + (_Bool)isWakeGestureAvailable;
 + (id)sharedManager;
 + (id)stringForGestureState:(long long)arg1;
 @property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)logAssert;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)onBacklightServiceUpdated:(unsigned int)arg1;
+- (void)onPowerStateUpdated:(const struct Sample *)arg1;
+- (void)onWakeUpdated:(const struct Sample *)arg1;
+- (void)onNotificationControl:(id)arg1;
+- (void)playAlert;
+- (void)loadPreferences;
+- (void)invokeDelegateWithState:(long long)arg1;
 - (void)forceDetected;
 - (void)simulateGesture:(long long)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;
 - (void)startWakeGestureUpdates;
+- (void)dealloc;
+- (id)initWithQueue:(id)arg1;
+- (void)reenableDetectedStateRecognition;
 
 @end
 

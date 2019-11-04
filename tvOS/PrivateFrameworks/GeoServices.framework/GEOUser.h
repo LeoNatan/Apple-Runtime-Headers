@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOUser : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPhoto *_image;
     NSString *_name;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     CDStruct_f720eac6 _flags;
 }
 
@@ -41,6 +43,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
 - (void)_readName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

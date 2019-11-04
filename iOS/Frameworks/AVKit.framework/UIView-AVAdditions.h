@@ -22,6 +22,8 @@
 - (_Bool)avkit_isBeingScrollTested;
 - (id)avkit_backdropGroupLeader;
 - (void)avkit_needsUpdateBackdropCaptureViewHidden;
+- (_Bool)avkit_isBeingDismissed;
+- (_Bool)avkit_isCounterRotatedForTransition;
 - (_Bool)avkit_isVideoGravityFrozen;
 - (struct UIEdgeInsets)avkit_overrideLayoutMarginsForCounterRotation;
 - (_Bool)avkit_isCompletelyTransparent;

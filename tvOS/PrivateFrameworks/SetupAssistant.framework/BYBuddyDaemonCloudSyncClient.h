@@ -29,6 +29,7 @@
 - (void)syncProgress:(double)arg1;
 - (void)connectToDaemon;
 - (void)cloudSyncProgressUpdate:(long long)arg1 completedClients:(long long)arg2 errors:(id)arg3;
+- (void)fetchCurrentSyncState:(CDUnknownBlockType)arg1;
 - (void)isSyncInProgress:(CDUnknownBlockType)arg1;
 - (void)cancelSync;
 - (void)startSync;

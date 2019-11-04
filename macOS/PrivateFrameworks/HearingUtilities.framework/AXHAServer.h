@@ -19,12 +19,14 @@
     NSArray *_availableHearingAids;
     NSArray *_availableControllers;
     NSString *_hearingDeviceName;
+    NSString *_connectedDeviceName;
     NSMutableDictionary *_updates;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *updates; // @synthesize updates=_updates;
 @property(nonatomic) BOOL hearingAidConnectedOrReachable; // @synthesize hearingAidConnectedOrReachable=_hearingAidConnectedOrReachable;
+@property(retain, nonatomic) NSString *connectedDeviceName; // @synthesize connectedDeviceName=_connectedDeviceName;
 @property(retain, nonatomic) NSString *hearingDeviceName; // @synthesize hearingDeviceName=_hearingDeviceName;
 @property(nonatomic) BOOL hearingAidReachableForAudioTransfer; // @synthesize hearingAidReachableForAudioTransfer=_hearingAidReachableForAudioTransfer;
 @property(retain, nonatomic) NSArray *availableControllers; // @synthesize availableControllers=_availableControllers;
@@ -32,7 +34,6 @@
 - (void)stopLiveListen;
 - (void)startLiveListen;
 - (void)registerListener:(id)arg1 forLiveListenLevelsHandler:(CDUnknownBlockType)arg2;
-- (BOOL)updateReachabilityAndWait:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL hearingAidReachable;
 - (void)cancelHearingAidConnectionRequest;
 - (void)requestHearingAidConnectionWithReason:(long long)arg1;
@@ -40,6 +41,8 @@
 - (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 andDeviceID:(id)arg3;
 - (void)updateProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (void)registerListener:(id)arg1 forPropertyUpdateHandler:(CDUnknownBlockType)arg2;
+- (void)_registerListener:(id)arg1 forAvailableDeviceHandler:(CDUnknownBlockType)arg2 beginSearching:(BOOL)arg3;
+- (void)registerPassiveListener:(id)arg1 forAvailableDeviceHandler:(CDUnknownBlockType)arg2;
 - (void)registerListener:(id)arg1 forAvailableDeviceHandler:(CDUnknownBlockType)arg2;
 - (void)registerResponseBlock:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
 - (void)registerUpdateBlock:(id)arg1 forIdentier:(unsigned long long)arg2 withListener:(id)arg3;

@@ -43,6 +43,7 @@
 - (void)checkTriggerStateWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getConfiguredTriggerDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fireTriggerWithIdentifier:(id)arg1 force:(_Bool)arg2 eventInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)unregisterTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerAllTriggersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)outOfProcessWorkflowController:(id)arg1 didFinishWithError:(id)arg2 cancelled:(_Bool)arg3;

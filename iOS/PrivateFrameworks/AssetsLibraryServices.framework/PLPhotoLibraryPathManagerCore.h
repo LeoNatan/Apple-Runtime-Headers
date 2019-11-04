@@ -8,7 +8,7 @@
 
 #import <AssetsLibraryServices/PLPhotoLibraryPathManager-Protocol.h>
 
-@class NSFileManager, NSString, NSURL;
+@class NSFileManager, NSString, NSURL, PLFileSystemCapabilities;
 
 @interface PLPhotoLibraryPathManagerCore : NSObject <PLPhotoLibraryPathManager>
 {
@@ -19,6 +19,7 @@
     unsigned int _externalDirectoriesExists;
     unsigned int _persistedAlbumDataDirectoryExists;
     NSFileManager *_fm;
+    PLFileSystemCapabilities *_capabilities;
     NSURL *_libraryURL;
     NSString *_baseDirectory;
     NSString *_assetUUIDRecoveryMappingPath;
@@ -28,15 +29,17 @@
 }
 
 + (id)basenameForSpatialOverCaptureFromOriginalBasename:(id)arg1;
++ (void)recordPrevSystemLibraryPath:(id)arg1;
 + (_Bool)isSystemLibraryURLDefined;
 + (_Bool)setSystemLibraryURL:(id)arg1 options:(unsigned short)arg2 error:(id *)arg3;
 + (id)systemLibraryURLIfResolvable;
 + (id)systemLibraryURL;
++ (id)_constructLegacySystemPhotoLibraryURLFromUnresolvableBookmark:(id)arg1;
 + (id)_legacySystemLibraryPath;
 + (id)_legacySystemLibraryBookmarkData;
 + (void)_updateSystemLibraryURLWithOldValue:(id)arg1;
 + (id)systemLibraryBaseDirectory;
-+ (_Bool)isValidSystemPhotoLibraryURL:(id)arg1;
++ (_Bool)isSupportedFileSystemAtURL:(id)arg1;
 + (_Bool)isSystemPhotoLibraryURL:(id)arg1;
 + (id)systemLibraryPathManager;
 + (void)listenForSystemPhotoLibraryURLChanges;
@@ -48,6 +51,7 @@
 @property(copy) NSString *assetUUIDRecoveryMappingPath; // @synthesize assetUUIDRecoveryMappingPath=_assetUUIDRecoveryMappingPath;
 @property(copy) NSString *baseDirectory; // @synthesize baseDirectory=_baseDirectory;
 @property(copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
+@property(readonly, nonatomic) PLFileSystemCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 - (void).cxx_destruct;
 - (id)pathsGroupedByAssetBasePathFromFilePaths:(id)arg1;
 - (id)assetBaseFilenameForAdjustmentFilePath:(id)arg1;

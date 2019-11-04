@@ -116,7 +116,6 @@
 - (void).cxx_destruct;
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
-- (id)logContextForLogMsgEvent:(id)arg1;
 - (void)placeCardWillCloseFromClientType:(unsigned long long)arg1;
 - (id)generateUnactionableUIElementsForAnalytics;
 - (id)generateAvailableActionForAnalytics;
@@ -130,6 +129,7 @@
 - (void)placeParentInfoViewController:(id)arg1 didSelectParent:(id)arg2;
 - (void)officialAppViewControllerDidFinishLoading:(id)arg1 error:(id)arg2;
 - (void)placeServiceViewControllerDidTapHeaderButton:(id)arg1;
+- (_Bool)shouldMoveMuninStorefrontViewForPlaceCardPhotosController:(id)arg1;
 - (void)cleanMuninContainerForPlaceCardPhotosController:(id)arg1;
 - (id)muninContainerForPlaceCardPhotosController:(id)arg1;
 - (void)placeCardPhotosController:(id)arg1 enterMuninForMapItem:(id)arg2 muninView:(id)arg3;
@@ -157,6 +157,7 @@
 - (void)_dismissModalViewController;
 - (id)transitDeparturesViewControllerTraits:(id)arg1;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
+- (_Bool)transitDeparturesViewController:(id)arg1 canSelectDepartureSequence:(id)arg2 transitMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;
 - (void)transitDeparturesViewController:(id)arg1 didSelectDepartureSequence:(id)arg2 transitMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;
 - (void)transitDeparturesViewController:(id)arg1 showIncidents:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectConnectionInformation:(id)arg2;

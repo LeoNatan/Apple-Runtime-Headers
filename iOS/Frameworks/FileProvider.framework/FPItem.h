@@ -67,7 +67,7 @@
     NSURL *_fileURL;
     NSArray *_decorations;
     NSString *_filename;
-    NSString *_appContainerBundleIdentifier;
+    NSString *_fp_appContainerBundleIdentifier;
     NSString *_preformattedOwnerName;
     NSString *_preformattedMostRecentEditorName;
     NSString *_formerIdentifier;
@@ -118,7 +118,7 @@
 @property(retain, nonatomic) NSString *formerIdentifier; // @synthesize formerIdentifier=_formerIdentifier;
 @property(retain, nonatomic) NSString *preformattedMostRecentEditorName; // @synthesize preformattedMostRecentEditorName=_preformattedMostRecentEditorName;
 @property(retain, nonatomic) NSString *preformattedOwnerName; // @synthesize preformattedOwnerName=_preformattedOwnerName;
-@property(copy, nonatomic) NSString *appContainerBundleIdentifier; // @synthesize appContainerBundleIdentifier=_appContainerBundleIdentifier;
+@property(copy, nonatomic) NSString *fp_appContainerBundleIdentifier; // @synthesize fp_appContainerBundleIdentifier=_fp_appContainerBundleIdentifier;
 @property(nonatomic, getter=isRecursivelyDownloaded) _Bool recursivelyDownloaded; // @synthesize recursivelyDownloaded=_recursivelyDownloaded;
 @property(copy, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
@@ -175,6 +175,7 @@
 @property(readonly, nonatomic) NSArray *itemDecorations;
 - (id)_sharedByDecorationType;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
+@property(readonly, copy, nonatomic) NSString *appContainerBundleIdentifier;
 - (void)setFp_SpotlightDomainIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *fp_spotlightDomainIdentifier;
 - (long long)localizedStandardTagsCompare:(id)arg1;
@@ -221,6 +222,7 @@
 - (id)fp_cs_uniqueIdentifier;
 - (id)initWithSearchableItem:(id)arg1;
 - (id)toSearchableItem;
+- (void *)_coreSpotlightAttributeForKey:(id)arg1;
 @property(readonly, nonatomic) NSString *localizedSharingStatusString;
 @property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
 @property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) _Bool fp_addedByCurrentUser;

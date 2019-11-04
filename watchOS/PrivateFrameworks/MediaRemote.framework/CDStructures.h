@@ -35,39 +35,6 @@ struct _MRHIDTouchEvent {
     unsigned int _field4;
 };
 
-struct _MRNowPlayingPlayerPathProtobuf {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-};
-
-struct _MROriginProtobuf {
-    Class _field1;
-    id _field2;
-    id _field3;
-    int _field4;
-    int _field5;
-    CDStruct_d7010776 _field6;
-};
-
-struct _MRPlaybackSessionProtobuf {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-};
-
-struct _MRPlaybackSessionRequestProtobuf {
-    Class _field1;
-    id _field2;
-    int _field3;
-    int _field4;
-    id _field5;
-    id _field6;
-    CDStruct_d7010776 _field7;
-};
-
 struct _MRTextInputTraits {
     unsigned int autocapitalizationType;
     unsigned int autocorrectionType;
@@ -116,13 +83,12 @@ typedef struct {
 
 // Ambiguous groups
 typedef struct {
-    unsigned int :1;
-    unsigned int :1;
-} CDStruct_d7010776;
-
-typedef struct {
     unsigned int controllerID:1;
 } CDStruct_669c4a63;
+
+typedef struct {
+    unsigned int errorCode:1;
+} CDStruct_70a7dc3e;
 
 typedef struct {
     unsigned int state:1;

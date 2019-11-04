@@ -12,7 +12,6 @@
 @interface SUOSUShimController : NSObject
 {
     BOOL _currentlyFetchingMajorOSUpdateForURLScheme;
-    BOOL _scanInProgress;
     NSDate *_latestSuccessfulScanDate;
     NSObject<OS_dispatch_queue> *_operationQueue;
     NSObject<OS_dispatch_queue> *_installNotifyQueue;
@@ -33,7 +32,6 @@
     NSDate *_latestCatalogModifiedDate;
 }
 
-@property BOOL scanInProgress; // @synthesize scanInProgress=_scanInProgress;
 @property(retain) NSDate *latestCatalogModifiedDate; // @synthesize latestCatalogModifiedDate=_latestCatalogModifiedDate;
 @property(retain) SUOSUMajorProduct *latestQualifyingMajorProduct; // @synthesize latestQualifyingMajorProduct=_latestQualifyingMajorProduct;
 @property(retain) NSArray *availableMajorUpdates; // @synthesize availableMajorUpdates=_availableMajorUpdates;

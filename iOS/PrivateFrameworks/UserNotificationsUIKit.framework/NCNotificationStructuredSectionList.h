@@ -22,6 +22,7 @@
     _Bool _supportsDynamicGrouping;
     _Bool _historySection;
     _Bool _notificationListViewRevealed;
+    _Bool _headerViewHeightValid;
     _Bool _performingDynamicGrouping;
     _Bool _dynamicGroupingActive;
     NSString *_logDescription;
@@ -35,12 +36,17 @@
     NCNotificationListView *_sectionListView;
     NCNotificationListSectionHeaderView *_headerView;
     NCNotificationListSectionRevealHintView *_revealHintView;
+    double _headerViewHeight;
     unsigned long long _dynamicGroupingThreshold;
+    NSMutableSet *_groupListsToSort;
 }
 
+@property(retain, nonatomic) NSMutableSet *groupListsToSort; // @synthesize groupListsToSort=_groupListsToSort;
 @property(nonatomic, getter=isDynamicGroupingActive) _Bool dynamicGroupingActive; // @synthesize dynamicGroupingActive=_dynamicGroupingActive;
 @property(nonatomic, getter=isPerformingDynamicGrouping) _Bool performingDynamicGrouping; // @synthesize performingDynamicGrouping=_performingDynamicGrouping;
 @property(nonatomic) unsigned long long dynamicGroupingThreshold; // @synthesize dynamicGroupingThreshold=_dynamicGroupingThreshold;
+@property(nonatomic, getter=isHeaderViewHeightValid) _Bool headerViewHeightValid; // @synthesize headerViewHeightValid=_headerViewHeightValid;
+@property(nonatomic) double headerViewHeight; // @synthesize headerViewHeight=_headerViewHeight;
 @property(retain, nonatomic) NCNotificationListSectionRevealHintView *revealHintView; // @synthesize revealHintView=_revealHintView;
 @property(retain, nonatomic) NCNotificationListSectionHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) NCNotificationListView *sectionListView; // @synthesize sectionListView=_sectionListView;
@@ -97,6 +103,7 @@
 - (void)sectionHeaderViewDidReceiveClearAllAction:(id)arg1;
 - (void)sectionHeaderView:(id)arg1 didReceiveClearActionForSectionIdentifier:(id)arg2;
 - (void)sectionHeaderViewDidTransitionToClearState:(id)arg1;
+- (_Bool)notificationGroupListShouldScrollToTop:(id)arg1;
 - (void)notificationGroupList:(id)arg1 requestsScrollToTopOfGroupWithCompletion:(CDUnknownBlockType)arg2;
 - (id)notificationGroupList:(id)arg1 requestsAuxiliaryOptionsContentProviderForNotificationRequest:(id)arg2 isLongLook:(_Bool)arg3;
 - (void)notificationGroupList:(id)arg1 didRemoveNotificationRequest:(id)arg2;
@@ -117,6 +124,7 @@
 - (void)insertNotificationRequest:(id)arg1;
 @property(readonly, nonatomic) unsigned long long notificationCount;
 @property(readonly, nonatomic) unsigned long long count;
+- (void)sortNotificationGroupListsIfNecessary;
 - (void)collapseGroupForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)expandGroupForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)clearAllNotificationRequests;

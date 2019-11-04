@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEORegionalResource : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_tileRanges;
     unsigned int _tileRangesCount;
@@ -22,6 +21,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_attributions;
     NSMutableArray *_iconChecksums;
     NSMutableArray *_icons;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _x;
     unsigned int _y;
     unsigned int _z;
@@ -98,6 +100,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasX;
 @property(nonatomic) unsigned int x;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

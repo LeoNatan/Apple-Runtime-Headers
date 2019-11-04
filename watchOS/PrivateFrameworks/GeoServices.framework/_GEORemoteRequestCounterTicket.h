@@ -19,17 +19,18 @@ __attribute__((visibility("hidden")))
     NSString *_requestId;
     GEORequestCounterRemoteProxy *_remoteProxy;
     NSObject<OS_nw_activity> *_nwActivity;
+    _Bool _complete;
 }
 
 + (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2 remoteProxy:(id)arg3;
 + (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)requestCompletedWithResult:(unsigned char)arg1 xmitBytes:(long long)arg2 recvBytes:(long long)arg3;
 - (void)startingRequestWithTask:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

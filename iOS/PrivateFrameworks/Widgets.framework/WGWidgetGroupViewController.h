@@ -61,6 +61,7 @@
 - (long long)_activeLayoutMode;
 - (long long)_layoutModeForSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) UIView *extraViewsContainer;
+@property(readonly, nonatomic) _Bool shouldAnimateFirstTwoViewsAsOne;
 @property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
 - (void)viewDidDisappear:(_Bool)arg1;

@@ -159,6 +159,7 @@
 - (void)setMessageFlags:(long long)arg1 mask:(long long)arg2;
 @property(readonly, nonatomic) ECMessageFlags *flags;
 @property(readonly, nonatomic) long long messageFlags;
+@property(readonly, nonatomic) BOOL isServerSearchResult;
 @property(copy) NSUUID *documentID;
 @property(readonly, nonatomic) BOOL isMessageMeeting;
 @property(readonly, nonatomic) BOOL isEditable;

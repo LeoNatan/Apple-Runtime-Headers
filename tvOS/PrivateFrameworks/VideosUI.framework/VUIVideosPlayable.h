@@ -23,11 +23,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *bookmarkID; // @synthesize bookmarkID=_bookmarkID;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSharedPurchase) _Bool sharedPurchase;
+@property(readonly, nonatomic) _Bool isiTunesPurchaseOrRental;
 @property(readonly, nonatomic) NSNumber *frequencyOfAgeConfirmation;
 @property(readonly, nonatomic) NSNumber *requiredAgeForPlayback;
 @property(readonly, nonatomic) NSURL *tvAppDeeplinkURL;
 @property(readonly, nonatomic) VUIExtrasInfo *extrasInfo;
 @property(readonly, nonatomic) NSString *referenceID;
+@property(readonly, nonatomic) NSString *rtcServiceIdentifier;
 @property(readonly, nonatomic) _Bool disableScrubbing;
 @property(readonly, nonatomic) NSString *externalServiceID;
 @property(readonly, nonatomic) NSString *liveStreamServiceID;
@@ -55,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDictionary *fpsAdditionalServerParams;
 @property(readonly, nonatomic) NSURL *fpsCertificateURL;
 @property(readonly, nonatomic) NSURL *fpsKeyServerURL;
+@property(readonly, nonatomic) NSURL *downloadURL;
 @property(readonly, nonatomic) NSURL *hlsURL;
 @property(readonly, nonatomic) NSURL *playbackURL;
 @property(readonly, nonatomic) _Bool isMovie;

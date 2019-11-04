@@ -33,7 +33,7 @@
 @property(copy) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property _Bool regeneratePublicKey; // @synthesize regeneratePublicKey=_regeneratePublicKey;
 - (void).cxx_destruct;
-- (id)_newUpdateTouchIDSettingsOperationWithTwoKeys;
+- (id)_newUpdateTouchIDSettingsOperation;
 - (void)run;
 - (id)initWithAccountIdentifier:(id)arg1;
 

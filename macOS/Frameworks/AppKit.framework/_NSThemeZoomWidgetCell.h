@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)performHandoff:(id)arg1;
 - (void)_setTemporaryMouseOutsideLeftGroup:(BOOL)arg1 ofView:(id)arg2;
+- (void)_hoverTriggeredShowMenuForView:(id)arg1;
 - (void)showMenu:(id)arg1;
 - (void)performClick:(id)arg1;
 - (void)mouseExited:(id)arg1;

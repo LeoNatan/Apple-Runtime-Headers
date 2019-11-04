@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_currentCompletions;
     _Bool _backButtonHidden;
     _Bool _leadingItemsSupplementBackItem;
+    NSDictionary *_effectiveTitleAttributes;
     id <_UINavigationBarContentViewDelegate> _delegate;
     UIBarButtonItem *_backButtonItem;
     NSArray *_leadingBarButtonItems;
@@ -91,12 +92,9 @@ __attribute__((visibility("hidden")))
 - (void)titleView:(id)arg1 needsUpdatedContentOverlayRects:(id)arg2;
 - (id)_layoutForAugmentedTitleView:(id)arg1;
 - (struct CGRect)_overlayRectForView:(id)arg1 inTargetView:(id)arg2;
-- (void)backButtonAppearanceChanged;
-@property(retain, nonatomic) _UIBarButtonItemData *backButtonAppearance;
-- (void)doneItemAppearanceChanged;
-@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance;
-- (void)plainItemAppearanceChanged;
-@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *backButtonAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *doneItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *plainItemAppearance;
 - (void)_appearanceChanged;
 - (void)backButtonTitleDidChange;
 @property(nonatomic, setter=_setBackButtonMaximumWidth:) float backButtonMaximumWidth;
@@ -110,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateAugmentedTitleViewNavigationBarTraitsTo:(id)arg1 from:(id)arg2;
 - (void)tintColorDidChange;
+- (void)adoptNewLayout;
 - (void)adoptLayout:(id)arg1;
 - (void)clearTransitionContext;
 - (void)finalizeStateFromTransition:(id)arg1;
@@ -138,6 +137,7 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_setupTitleViewAnimated:(_Bool)arg1;
 - (void)_applyTitleAttributesToLabel:(id)arg1 withString:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *effectiveTitleAttributes; // @synthesize effectiveTitleAttributes=_effectiveTitleAttributes;
 - (void)_setupTrailingButtonBarAnimated:(_Bool)arg1;
 - (void)_setupLeadingButtonBarAnimated:(_Bool)arg1;
 - (void)setNeedsBackButtonUpdate;

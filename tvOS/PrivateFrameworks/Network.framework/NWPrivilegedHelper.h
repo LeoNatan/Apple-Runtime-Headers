@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)handleRequest:(id)arg1 onConnection:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 - (void)startThrottlePolicyEventListener;
-- (BOOL)startXPCListener;
+- (_Bool)startXPCListener;
 - (void)registerHelperFunctions;
 - (void)registerHandlerFunction:(CDUnknownFunctionPointerType)arg1 type:(int)arg2 allowedEntitlementGroup:(id)arg3;
 

@@ -39,7 +39,6 @@
 + (id)_unadjustedValueForItemPropertyVolumeNormalizationWithDefaultValue:(id)arg1;
 + (id)onDiskProviders;
 @property(nonatomic) __weak MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
-@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) id <MPArtworkDataSource> artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
 @property(readonly, nonatomic) MPMediaEntityCache *entityCache; // @synthesize entityCache=_entityCache;
 @property(retain, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
@@ -79,6 +78,7 @@
 - (id)_adjustedItemTimeOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedPropertyMediaTypeOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedPlaylistPropertySeedItemsOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void)performBackgroundTaskWithBlock:(CDUnknownBlockType)arg1;
 - (id)ML3SystemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2 subscriptionFilteringOptions:(int)arg3 additionalFilterPredicates:(id)arg4;
 - (id)systemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2 subscriptionFilteringOptions:(int)arg3;

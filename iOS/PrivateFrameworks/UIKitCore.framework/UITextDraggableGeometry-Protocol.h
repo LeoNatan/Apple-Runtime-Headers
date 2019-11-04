@@ -10,7 +10,7 @@
 
 @protocol UITextDraggableGeometry <NSObject>
 @property(nonatomic) long long geometryOptions;
-- (UITargetedDragPreview * (^)(UIView *, _Bool))targetedPreviewProviderForTextInRange:(struct _NSRange)arg1;
+- (UITargetedDragPreview * (^)(UIView *, _Bool))targetedPreviewProviderForTextInRange:(struct _NSRange)arg1 dismissing:(_Bool)arg2;
 - (UITargetedDragPreview *)previewForDroppingTextInRange:(UITextRange *)arg1 toPosition:(UITextPosition *)arg2 inContainerView:(UIView *)arg3;
 - (NSArray *)draggableObjectsForTextRange:(UITextRange *)arg1;
 - (UITextRange *)textRangeForAttachmentInTextRange:(UITextRange *)arg1 atPoint:(struct CGPoint)arg2;

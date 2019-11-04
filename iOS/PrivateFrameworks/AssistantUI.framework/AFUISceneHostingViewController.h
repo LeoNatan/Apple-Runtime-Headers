@@ -23,8 +23,10 @@
     id <FBSceneHost> _sceneHost;
     FBScene *_scene;
     id <BSInvalidatable> _predicateInvalidationHandler;
+    long long _currentOrientation;
 }
 
+@property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(nonatomic) _Bool pauseDeferrals; // @synthesize pauseDeferrals=_pauseDeferrals;
 @property(retain, nonatomic) id <BSInvalidatable> predicateInvalidationHandler; // @synthesize predicateInvalidationHandler=_predicateInvalidationHandler;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
@@ -38,7 +40,7 @@
 - (void).cxx_destruct;
 - (_Bool)_hasScene;
 - (void)sceneController:(id)arg1 sceneDidUpdateClientSettings:(id)arg2;
-- (void)sceneController:(id)arg1 sceneWasInvalidated:(id)arg2;
+- (void)sceneController:(id)arg1 sceneWasInvalidated:(id)arg2 forReason:(unsigned long long)arg3;
 - (void)sceneController:(id)arg1 sceneContentStateDidChange:(id)arg2;
 - (id)sceneConfigurationForDelegate;
 - (void)_updateDeferralChainWithWindow:(id)arg1;
@@ -46,7 +48,8 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
-- (void)_noteSceneDidInvalidate;
+- (void)_audioCategoriesDisablingVolumeHUDDidChangeTo:(id)arg1;
+- (void)_handleInvalidationForReason:(unsigned long long)arg1 explanation:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_transitionContentsWithView:(id)arg1 forContentState:(long long)arg2;
 - (void)updateSceneWithConfiguration:(id)arg1;
@@ -54,9 +57,12 @@
 - (void)startDeferringHIDEventsIfNeeded;
 - (_Bool)isDeferringHIDEvents;
 - (_Bool)isHostingScene;
-- (void)deactiveSceneWithCompletion:(CDUnknownBlockType)arg1;
+- (void)deactivateSceneForReason:(unsigned long long)arg1 explanation:(id)arg2;
 - (void)stopHostingScene;
 - (void)startHostingSceneForConfiguration:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)updateRemoteSceneWithFrontMostAppInterfaceOrientation:(long long)arg1;
+- (void)updateSettingsForInterfaceOrientationChange:(long long)arg1 willAnimationWithDuration:(double)arg2;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

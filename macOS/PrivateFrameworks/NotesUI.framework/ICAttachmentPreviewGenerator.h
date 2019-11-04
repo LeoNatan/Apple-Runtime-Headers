@@ -68,6 +68,7 @@
 - (void)attachmentWillBeDeleted:(id)arg1;
 - (void)attachmentNeedsPreviewGenerationNotification:(id)arg1;
 - (void)attachmentDidLoad:(id)arg1;
+- (void)adjustUserTitleIfNecessaryForAttachment:(id)arg1;
 - (void)postProcessPreviewForAttachment:(id)arg1;
 - (void)postProcessPendingPreviews;
 - (void)beginPostProcessingAfterDelayIfNecessaryWithForceDelay:(BOOL)arg1;

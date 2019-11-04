@@ -20,12 +20,10 @@
     NSArray *__plAssets;
     NSArray *__plAdditionalAssetsToDelete;
     UIAlertController *__mainAlertController;
-    UIAlertController *__overQuotaConfirmationAlertController;
     UIAlertController *__oneTimeConfirmationAlertController;
 }
 
 @property(retain, nonatomic, setter=_setOneTimeConfirmationAlertController:) UIAlertController *_oneTimeConfirmationAlertController; // @synthesize _oneTimeConfirmationAlertController=__oneTimeConfirmationAlertController;
-@property(retain, nonatomic, setter=_setOverQuotaConfirmationAlertController:) UIAlertController *_overQuotaConfirmationAlertController; // @synthesize _overQuotaConfirmationAlertController=__overQuotaConfirmationAlertController;
 @property(retain, nonatomic, setter=_setMainAlertController:) UIAlertController *_mainAlertController; // @synthesize _mainAlertController=__mainAlertController;
 @property(readonly, copy, nonatomic) NSArray *_plAdditionalAssetsToDelete; // @synthesize _plAdditionalAssetsToDelete=__plAdditionalAssetsToDelete;
 @property(readonly, copy, nonatomic) NSArray *_plAssets; // @synthesize _plAssets=__plAssets;
@@ -36,12 +34,9 @@
 - (void).cxx_destruct;
 - (void)_getDeleteActionSheetTitle:(id *)arg1 destructiveButtonTitle:(id *)arg2 cancelButtonTitle:(id *)arg3 forAssets:(id)arg4 additionalPhotoStreamAssets:(id)arg5;
 - (void)_handleOneTimeAlertConfirmed;
-- (void)_handleOverQuotaAlertConfirmed:(_Bool)arg1;
 - (void)_handleMainAlertConfirmed:(_Bool)arg1;
 - (void)_showOnetimeConfirmation;
-- (void)_showOverQuotaConfirmationSheet;
 - (void)_ensureOneTimeConfirmationAlertController;
-- (void)_ensureOverQuotaConfirmationAlertController;
 - (void)_ensureMainAlertController;
 - (void)_runDestructiveActionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleFinalUserDecisionShouldDelete:(_Bool)arg1;

@@ -6,8 +6,6 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSString;
-
 @interface WFAppPickerParameter : WFParameter
 {
     int _appSearchType;
@@ -17,7 +15,7 @@
 - (id)stateForApp:(id)arg1;
 - (id)accessoryIconForState:(id)arg1;
 - (id)localizedLabelForState:(id)arg1;
-@property(readonly, nonatomic) NSString *placeholder;
+- (id)localizedPlaceholder;
 - (id)defaultSupportedVariableTypes;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

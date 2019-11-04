@@ -13,7 +13,7 @@
     _Bool _cacheIsValid;
     NSArray *_planItems;
     NSArray *_danglingPlanItems;
-    NSArray *_cellularPlanPendingTransfer;
+    NSArray *_plansPendingTransfer;
     NSDictionary *_referenceMap;
     CTCellularPlanItem *_selectedPlanItem;
     _Bool _hasSubscriptions;
@@ -52,9 +52,10 @@
 - (void)setSelectedPlanItemForData:(id)arg1;
 @property(retain, nonatomic) CTCellularPlanItem *selectedPlanItem;
 - (id)planFromReferenceSafe:(id)arg1;
+- (id)planPendingTransferFromReference:(id)arg1;
 - (id)danglingPlanFromReference:(id)arg1;
 - (id)planFromReference:(id)arg1;
-@property(readonly, nonatomic) NSArray *cellularPlansPendingTransfer;
+@property(readonly, nonatomic) NSArray *plansPendingTransfer;
 @property(readonly, nonatomic) NSArray *danglingPlanItems;
 @property(readonly, nonatomic) NSArray *embeddedPlanItems;
 @property(readonly, nonatomic) NSArray *planItems;

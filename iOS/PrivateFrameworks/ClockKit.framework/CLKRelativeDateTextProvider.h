@@ -21,6 +21,7 @@
     _Bool _shrinkUnitsInCJK;
     _Bool _disableOffsetPrefix;
     _Bool _twoDigitMinuteZeroPadding;
+    _Bool _showLeadingMinutes;
     _Bool _wantsSubseconds;
     _Bool _pauseTimerAtZero;
     NSDate *_date;
@@ -34,6 +35,7 @@
 + (id)textProviderWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
 @property(nonatomic) _Bool pauseTimerAtZero; // @synthesize pauseTimerAtZero=_pauseTimerAtZero;
 @property(nonatomic) _Bool wantsSubseconds; // @synthesize wantsSubseconds=_wantsSubseconds;
+@property(nonatomic) _Bool showLeadingMinutes; // @synthesize showLeadingMinutes=_showLeadingMinutes;
 @property(nonatomic) _Bool twoDigitMinuteZeroPadding; // @synthesize twoDigitMinuteZeroPadding=_twoDigitMinuteZeroPadding;
 @property(nonatomic) _Bool disableOffsetPrefix; // @synthesize disableOffsetPrefix=_disableOffsetPrefix;
 @property(nonatomic) _Bool shrinkUnitsInCJK; // @synthesize shrinkUnitsInCJK=_shrinkUnitsInCJK;

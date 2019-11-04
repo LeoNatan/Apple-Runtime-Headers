@@ -19,7 +19,6 @@
 {
     id <CNUIFamilyMemberContactsPresentation> _familyMemberContactsPresentation;
     FAFamilyMember *_familyMember;
-    long long _status;
     id <CNUIFamilyMemberWhitelistedContactsControllerDelegate> _delegate;
     CNContactStore *_familyMemberScopedContactStore;
     CNContactFormatter *_contactCardWarningFormatter;
@@ -37,7 +36,6 @@
 @property(readonly, nonatomic) CNContactFormatter *contactCardWarningFormatter; // @synthesize contactCardWarningFormatter=_contactCardWarningFormatter;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(nonatomic) __weak id <CNUIFamilyMemberWhitelistedContactsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void).cxx_destruct;
 - (void)addContactsToWhitelist:(id)arg1;
@@ -66,7 +64,8 @@
 - (_Bool)contactManagementEnabled;
 - (void)familyMemberContactItemsDidChange;
 @property(readonly, nonatomic) NSArray *familyMemberContactItems;
-- (long long)fetchStatus;
+@property(readonly, nonatomic) long long fetchStatus;
+@property(readonly, nonatomic) long long status;
 @property(readonly, nonatomic) id <CNUIFamilyMemberContactsPresentation> familyMemberContactsPresentation; // @synthesize familyMemberContactsPresentation=_familyMemberContactsPresentation;
 - (id)initWithFamilyMember:(id)arg1 familyMemberContactsPresentation:(id)arg2;
 - (id)init;

@@ -33,7 +33,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_configureLayout;
 - (double)descriptionTopMargin;
-- (double)titleTopMargin;
+- (double)titleTopMarginPad;
+- (double)titleTopMarginPhone;
 - (struct UIEdgeInsets)safeAreaInsets;
 - (id)init;
 

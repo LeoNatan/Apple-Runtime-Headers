@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class MPPlaybackArchive, NSDictionary, NSNumber, NSSet;
+@class MPPlaybackArchive, NSNumber, NSSet;
 
 @interface HMDMPCSessionData : HMFObject
 {
@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) NSNumber *playbackStateNumber; // @synthesize playbackStateNumber=_playbackStateNumber;
 @property(readonly, copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation;
+- (id)dictionaryRepresentation:(BOOL)arg1;
 - (id)initWithMediaAction:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 profileSource:(id)arg2;
 - (id)initWithMediaProfiles:(id)arg1 playbackState:(id)arg2 playbackVolume:(id)arg3 playbackArchive:(id)arg4;

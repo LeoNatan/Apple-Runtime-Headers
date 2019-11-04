@@ -7,15 +7,17 @@
 #import <UIKit/_UIRemoteViewController.h>
 
 #import <CoreFollowUpUI/FLExtensionHostInterface-Protocol.h>
+#import <CoreFollowUpUI/_UIRemoteViewControllerContaining-Protocol.h>
 
 @class NSString;
 
-@interface FLHostViewController : _UIRemoteViewController <FLExtensionHostInterface>
+@interface FLHostViewController : _UIRemoteViewController <_UIRemoteViewControllerContaining, FLExtensionHostInterface>
 {
 }
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;
 

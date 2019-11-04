@@ -54,13 +54,13 @@
         CDStruct_63a3d127 composer;
         CDStruct_63a3d127 genre;
         CDStruct_f9384266 homeSharingAsset;
-        CDStruct_99cfb959 lyrics;
+        CDStruct_78b3e931 lyrics;
     } _requestedSongProperties;
 }
 
 + (id)allSupportedProperties;
 - (void).cxx_destruct;
-- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2 userIdentity:(id)arg3;
 
 @end
 

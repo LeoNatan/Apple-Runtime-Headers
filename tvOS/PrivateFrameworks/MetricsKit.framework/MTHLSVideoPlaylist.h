@@ -29,6 +29,7 @@
 - (void)addRollItemWithStartOverallPosition:(unsigned long long)arg1 duration:(unsigned long long)arg2 metricsData:(id)arg3;
 - (void)addRollInfoItem:(id)arg1;
 - (void)addRollInfoItems:(id)arg1;
+- (id)initWithMainFeatureMetricsData:(id)arg1;
 - (id)initWithStartPosition:(unsigned long long)arg1 mainFeatureMetricsData:(id)arg2;
 
 // Remaining properties

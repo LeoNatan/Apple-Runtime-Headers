@@ -67,6 +67,7 @@
 - (_Bool)disableAvatarSnapshotting;
 - (void)setDisableAvatarSnapshotting:(_Bool)arg1;
 - (_Bool)isModalInPresentation;
+- (id)appropriatePresentationController;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithAvatarRecord:(id)arg1 avtViewSessionProvider:(id)arg2 store:(id)arg3 enviroment:(id)arg4 isCreating:(_Bool)arg5;

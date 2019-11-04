@@ -16,7 +16,9 @@
 }
 
 - (id)setPersonalRequestsDevices:(id)arg1;
-- (id)turnOnPersonalRequestsForAllDevices;
+- (id)turnOnPersonalRequestsForAllMultiUserCapableDevices;
+- (void)_turnOnPersonalRequestForItem:(id)arg1 cell:(id)arg2 didTurnOn:(_Bool)arg3;
+- (void)_presentConfirmationForEnablingPersonalRequestsForItem:(id)arg1 cell:(id)arg2 didTurnOn:(_Bool)arg3 showLanguageVariant:(_Bool)arg4;
 - (void)_togglePersonalRequestStateForItem:(id)arg1;
 - (void)_presentAlert:(id)arg1;
 - (id)_promptToChangeLocationDeviceFromCurrentDevice:(id)arg1;

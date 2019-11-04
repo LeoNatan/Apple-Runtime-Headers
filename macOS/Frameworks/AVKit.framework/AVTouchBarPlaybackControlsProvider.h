@@ -8,27 +8,31 @@
 
 #import <AVKit/AVTouchBarMediaSelectionButtonViewControllerDelegate-Protocol.h>
 #import <AVKit/AVTouchBarMediaSelectionViewControllerDelegate-Protocol.h>
+#import <AVKit/AVTouchBarScrubberDelegate-Protocol.h>
 #import <AVKit/NSTouchBarDelegate-Protocol.h>
 #import <AVKit/NSTouchBarProvider-Protocol.h>
 
 @class AVPlayerView, AVTouchBarMediaSelectionButtonViewController, AVTouchBarMediaSelectionViewController, AVTouchBarPlaybackControlsViewController, NSCustomTouchBarItem, NSPopoverTouchBarItem, NSString, NSTouchBar;
 @protocol AVTouchBarMediaSelectionControlling><AVTouchBarPlaybackControlsControllingInternal><AVTouchBarTrackControlling><AVTimeControlling, AVTouchBarPlaybackControlsControlling;
 
-@interface AVTouchBarPlaybackControlsProvider : NSResponder <AVTouchBarMediaSelectionViewControllerDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, NSTouchBarDelegate, NSTouchBarProvider>
+@interface AVTouchBarPlaybackControlsProvider : NSResponder <AVTouchBarScrubberDelegate, AVTouchBarMediaSelectionViewControllerDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, NSTouchBarDelegate, NSTouchBarProvider>
 {
     NSTouchBar *_touchBar;
     id <AVTouchBarPlaybackControlsControlling> _playbackControlsController;
     id <AVTouchBarMediaSelectionControlling><AVTouchBarPlaybackControlsControllingInternal><AVTouchBarTrackControlling><AVTimeControlling> _playerController;
     AVPlayerView *_playerView;
     NSCustomTouchBarItem *_playbackControlsTouchBarItem;
+    NSPopoverTouchBarItem *_compactTouchBarScrubberItem;
     AVTouchBarPlaybackControlsViewController *_touchBarPlaybackControlsViewController;
     NSPopoverTouchBarItem *_mediaSelectionButtonTouchBarItem;
     NSCustomTouchBarItem *_mediaSelectionOptionsTouchBarItem;
     AVTouchBarMediaSelectionButtonViewController *_touchBarMediaSelectionButtonViewController;
     AVTouchBarMediaSelectionViewController *_touchBarMediaSelectionViewController;
+    BOOL _prefersCompactTouchBarScrubber;
 }
 
 + (void)initialize;
+@property(nonatomic) BOOL prefersCompactTouchBarScrubber; // @synthesize prefersCompactTouchBarScrubber=_prefersCompactTouchBarScrubber;
 - (void).cxx_destruct;
 - (void)updateTouchBarItemIdentifiersForTouchBar:(id)arg1;
 - (BOOL)isTouchBarPlaybackControlsViewControllerLoaded;
@@ -38,6 +42,7 @@
 - (BOOL)isTouchBarMediaSelectionViewControllerLoaded;
 - (id)touchBarMediaSelectionViewController;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)touchBarScrubber:(id)arg1 presentMediaSelectionViewControllerInPopover:(id)arg2;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 @property(readonly) NSTouchBar *touchBar;
 - (void)touchBarMediaSelectionButtonViewControllerPresentMediaSelectionPopover:(id)arg1;

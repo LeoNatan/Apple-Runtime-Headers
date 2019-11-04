@@ -55,7 +55,6 @@
 - (id)requestWithArguments:(id)arg1;
 - (id)operationWithClient:(id)arg1 arguments:(id)arg2;
 - (id)arrayByParsingAndRemovingArgumentFlags:(id)arg1;
-- (_Bool)pluckFlag:(id)arg1 fromArguments:(id)arg2;
 - (void)runWithClient:(id)arg1 arguments:(id)arg2;
 - (void)runWithArguments:(id)arg1;
 - (id)init;

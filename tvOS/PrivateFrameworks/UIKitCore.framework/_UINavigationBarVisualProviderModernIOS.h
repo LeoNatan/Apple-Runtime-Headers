@@ -91,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (long long)statusBarStyle;
 - (long long)currentContentSize;
 - (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
+- (void)traitCollectionDidChangeOnSubtree:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)animateForSearchPresentation:(_Bool)arg1;
 - (void)prepareForPop;
@@ -153,6 +154,7 @@ __attribute__((visibility("hidden")))
 - (void)updateArchivedSubviews:(id)arg1;
 - (void)provideViewsForContents:(id)arg1 topItem:(id)arg2 backItem:(id)arg3;
 - (void)_invalidateIntrinsicContentSizeAndNotifySizeChanged;
+- (struct CGSize)sizeForRestoringFromCancelledTransition;
 - (void)recordBarSize:(struct CGSize)arg1;
 - (void)changeLayout;
 - (void)changeAppearance;

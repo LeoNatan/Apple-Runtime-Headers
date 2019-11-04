@@ -67,6 +67,7 @@
 - (id)storedClientRecordWithLocalScopedIdentifier:(id)arg1;
 - (BOOL)checkScopeIdentifier:(id)arg1;
 - (id)resourceIdentitiesForRecordWithLocalScopedIdentifier:(id)arg1;
+- (id)enqueuedOrStoredRecordWithLocalScopedIdentifier:(id)arg1;
 - (id)_resourceIdentitiesFromChange:(id)arg1;
 - (BOOL)knowsClientRecordWithScopedIdentifier:(id)arg1;
 @property(readonly, nonatomic) BOOL hasPushChangeTasks;

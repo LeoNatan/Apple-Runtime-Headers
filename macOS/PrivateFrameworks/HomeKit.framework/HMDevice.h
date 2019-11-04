@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKit/HMFObject-Protocol.h>
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMFKey, HMFUnfairLock, NSString, NSUUID;
+@class HMFKey, HMFUnfairLock, NSArray, NSString, NSUUID;
 
-@interface HMDevice : NSObject <HMObjectMerge, NSSecureCoding>
+@interface HMDevice : NSObject <HMFObject, HMObjectMerge, NSSecureCoding>
 {
     HMFUnfairLock *_lock;
     BOOL _currentDevice;
@@ -22,11 +23,16 @@
     NSUUID *_uuid;
 }
 
++ (id)shortDescription;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, copy) NSUUID *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(readonly, getter=isCurrentDevice) BOOL currentDevice; // @synthesize currentDevice=_currentDevice;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -40,7 +46,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *propertyDescription;
 @property(readonly) Class superclass;
 
 @end

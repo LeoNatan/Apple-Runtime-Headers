@@ -6,25 +6,23 @@
 
 #import <Message/MFMailDelivery.h>
 
-@class DAMailAccount, NSString;
+@class DAMailAccount, MFMessageLibrary, NSString;
 
 @interface MFDADelivery : MFMailDelivery
 {
     DAMailAccount *_DAMailAccount;
-    NSString *_folderId;
-    NSString *_accountId;
-    NSString *_repliedMessageId;
-    NSString *_forwardedMessageId;
-    NSString *_repliedLongId;
-    NSString *_forwardedLongId;
+    MFMessageLibrary *_library;
+    NSString *_folderID;
+    NSString *_accountID;
+    NSString *_originalMessageID;
+    NSString *_originalLongID;
 }
 
 - (void).cxx_destruct;
+- (void)_updateBasedOnOriginalMessage:(id)arg1;
 - (id)deliverSynchronously;
 - (id)newMessageWriter;
 - (void)setDAMailAccount:(id)arg1;
-- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
-- (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 
 @end
 

@@ -6,12 +6,12 @@
 
 #import <Email/EFPubliclyDescribable-Protocol.h>
 
-@class EMContentRequestOptions, NSArray, NSDate, NSProgress, NSString;
+@class EMContentRequestOptions, EMMailDropMetadata, NSArray, NSProgress, NSString;
 @protocol EMContentItemRequestDelegate;
 
 @protocol EMContentItem <EFPubliclyDescribable>
 @property(readonly, nonatomic) int exchangeEventUID;
-@property(readonly, nonatomic) NSDate *expiryDate;
+@property(readonly, copy, nonatomic) EMMailDropMetadata *mailDropMetadata;
 @property(readonly, nonatomic) long long storageByteCount;
 @property(readonly, nonatomic) long long dataTransferByteCount;
 @property(readonly, copy, nonatomic) NSString *UTType;

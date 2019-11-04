@@ -13,7 +13,6 @@
 @interface GEOAnalyticsPipelineStateData : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _placeCardPossibleactions;
     CDStruct_95bda58d _placeCardUnactionableuielements;
     GEOCarInfo *_carPlayInfo;
@@ -48,6 +47,9 @@
     GEORouteDetails *_routeRouteDetails;
     NSMutableArray *_suggestionsDisplayedresults;
     NSString *_suggestionsSearchstring;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _lookaroundHeading;
     unsigned int _lookaroundNumberPoisInView;
     int _mapSettingsNavVolume;
@@ -61,6 +63,9 @@
     int _placeCardPlaceactiondetailsResultindex;
     int _placeCardPlaceactiondetailsTransitplacecardTransitcategory;
     int _placeCardPlacecardtype;
+    int _restoreLayoutinfo;
+    int _restoreLayoutstyle;
+    int _restoreUitarget;
     int _suggestionsAcsequencenumber;
     int _suggestionsSearchfieldtype;
     int _suggestionsSelectedindex;
@@ -116,6 +121,9 @@
         unsigned int has_placeCardPlaceactiondetailsResultindex:1;
         unsigned int has_placeCardPlaceactiondetailsTransitplacecardTransitcategory:1;
         unsigned int has_placeCardPlacecardtype:1;
+        unsigned int has_restoreLayoutinfo:1;
+        unsigned int has_restoreLayoutstyle:1;
+        unsigned int has_restoreUitarget:1;
         unsigned int has_suggestionsAcsequencenumber:1;
         unsigned int has_suggestionsSearchfieldtype:1;
         unsigned int has_suggestionsSelectedindex:1;
@@ -216,6 +224,9 @@
         unsigned int wrote_placeCardPlaceactiondetailsResultindex:1;
         unsigned int wrote_placeCardPlaceactiondetailsTransitplacecardTransitcategory:1;
         unsigned int wrote_placeCardPlacecardtype:1;
+        unsigned int wrote_restoreLayoutinfo:1;
+        unsigned int wrote_restoreLayoutstyle:1;
+        unsigned int wrote_restoreUitarget:1;
         unsigned int wrote_suggestionsAcsequencenumber:1;
         unsigned int wrote_suggestionsSearchfieldtype:1;
         unsigned int wrote_suggestionsSelectedindex:1;
@@ -263,6 +274,18 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsRestoreUitarget:(id)arg1;
+- (id)restoreUitargetAsString:(int)arg1;
+@property(nonatomic) _Bool hasRestoreUitarget;
+@property(nonatomic) int restoreUitarget;
+- (int)StringAsRestoreLayoutstyle:(id)arg1;
+- (id)restoreLayoutstyleAsString:(int)arg1;
+@property(nonatomic) _Bool hasRestoreLayoutstyle;
+@property(nonatomic) int restoreLayoutstyle;
+- (int)StringAsRestoreLayoutinfo:(id)arg1;
+- (id)restoreLayoutinfoAsString:(int)arg1;
+@property(nonatomic) _Bool hasRestoreLayoutinfo;
+@property(nonatomic) int restoreLayoutinfo;
 @property(nonatomic) _Bool hasLandscape;
 @property(nonatomic) _Bool landscape;
 - (id)suggestionsDisplayedresultsAtIndex:(unsigned long long)arg1;
@@ -475,6 +498,8 @@
 @property(readonly, nonatomic) _Bool hasDeviceInputLocale;
 - (void)_readDeviceInputLocale;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

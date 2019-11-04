@@ -81,7 +81,7 @@
 - (void)archiveBackup:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)registerForRestoreProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)registerForBackupProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (id)restoreDevice:(id)arg1 fromBackup:(id)arg2 withPassword:(id)arg3 withReply:(CDUnknownBlockType)arg4;
+- (id)restoreDevice:(id)arg1 fromBackup:(id)arg2 withPassword:(id)arg3 setPasswordInKeychain:(BOOL)arg4 withReply:(CDUnknownBlockType)arg5;
 - (void)isRestoreFromBackupInProgressForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)cancelBackupForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)backupDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;

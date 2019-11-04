@@ -6,11 +6,17 @@
 
 #import <SettingsCellularUI/PSUIDanglingPlanTableCell.h>
 
+@class CTCellularPlanPendingTransfer;
+
 __attribute__((visibility("hidden")))
 @interface PSUIPlanPendingTransferActivatingTableCell : PSUIDanglingPlanTableCell
 {
+    CTCellularPlanPendingTransfer *_planPendingTransfer;
 }
 
+@property(retain, nonatomic) CTCellularPlanPendingTransfer *planPendingTransfer; // @synthesize planPendingTransfer=_planPendingTransfer;
+- (void).cxx_destruct;
+- (id)_setStatusLabelText;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 
 @end

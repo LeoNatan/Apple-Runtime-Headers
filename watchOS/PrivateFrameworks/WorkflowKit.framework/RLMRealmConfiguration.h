@@ -57,6 +57,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (struct Config *)config;
+@property(readonly, nonatomic) NSArray *allRealmFileURLs;
 
 @end
 

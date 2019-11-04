@@ -8,3 +8,10 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct CGPoint {
+    double _field1;
+    double _field2;
+};
+

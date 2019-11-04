@@ -31,7 +31,7 @@
 + (void)saveMonitor:(id)arg1;
 + (id)copySavedMonitorForNetworkDescriptionArray:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3;
 + (void)initialize;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property unsigned int mID; // @synthesize mID=_mID;
 @property(retain) NWInterface *interface; // @synthesize interface=_interface;
 @property(retain) NSURL *lastProbeURL; // @synthesize lastProbeURL=_lastProbeURL;
@@ -45,13 +45,13 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *privateDescription;
 @property(readonly, copy) NSString *description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 @property(readonly) unsigned long long hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)matchesNetworkDescriptionArray:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)matchesNetworkDescriptionArray:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3;
 - (void)dealloc;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)evaluateStartingAtIndex:(unsigned long long)arg1 probeUUID:(id)arg2 probeWasSuccessful:(BOOL)arg3;
+- (void)evaluateStartingAtIndex:(unsigned long long)arg1 probeUUID:(id)arg2 probeWasSuccessful:(_Bool)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 
 // Remaining properties

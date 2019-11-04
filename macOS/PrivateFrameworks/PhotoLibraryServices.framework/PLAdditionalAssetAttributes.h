@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/PLPTPTransferableAdditionalAssetAttributes-Protocol.h>
 
-@class CLLocation, NSData, NSDate, NSManagedObject, NSNumber, NSSet, NSString, PLAssetDescription, PLEditedIPTCAttributes, PLManagedAsset, PLSceneprint, PLUnmanagedAdjustment;
+@class CLLocation, NSData, NSDate, NSManagedObject, NSNumber, NSSet, NSString, PLAssetDescription, PLEditedIPTCAttributes, PLManagedAsset, PLSceneprint, PLSpatialOverCaptureInformation, PLUnmanagedAdjustment;
 
 @interface PLAdditionalAssetAttributes : PLManagedObject <PLPTPTransferableAdditionalAssetAttributes>
 {
@@ -41,6 +41,7 @@
 - (void)setCloudRecoveryStateFlag:(unsigned long long)arg1;
 - (BOOL)hasConsistentCloudState;
 - (void)setSceneprintWithData:(id)arg1;
+@property(readonly) PLSpatialOverCaptureInformation *spatialOverCaptureInformation;
 
 // Remaining properties
 @property(copy, nonatomic) NSString *adjustedFingerPrint; // @dynamic adjustedFingerPrint;

@@ -19,6 +19,7 @@
 + (id)validationErrorSubtaskAndParentNotOnSameList:(id)arg1 parentReminderID:(id)arg2;
 + (id)validationErrorNestedSubtask:(id)arg1 parentReminderID:(id)arg2;
 + (id)validationErrorMoveReminderFromList:(id)arg1 toList:(id)arg2 inAccount:(id)arg3;
++ (id)validationErrorListHasNoAccount:(id)arg1;
 + (id)validationErrorMoveFromAccount:(id)arg1 toAccout:(id)arg2;
 + (id)saveErrorWithCoreDataError:(id)arg1;
 + (id)noSuchObjectErrorWithDACalendarItemUniqueIdentifier:(id)arg1;
@@ -26,6 +27,7 @@
 + (id)noSuchObjectErrorWithObjectID:(id)arg1;
 + (_Bool)isNoSuchObjectError:(id)arg1 forObjectID:(id)arg2;
 + (id)cancelledError;
++ (id)babySatErrorWithOperationName:(id)arg1;
 + (id)throttledErrorWithRemainingTimeInterval:(double)arg1;
 + (id)unauthorizedErrorWithMissingEntitlement:(id)arg1 requestedAccessLevel:(id)arg2 currentAccesslevel:(id)arg3;
 + (id)unauthorizedErrorWithMissingEntitlement:(id)arg1;

@@ -10,14 +10,22 @@
 
 @interface SGM2BirthdayExtractionWithSupervision : PBCodable <NSCopying>
 {
+    unsigned int _modelVersion;
+    int _offset;
     BOOL _dateIsCorrect;
+    BOOL _didRegexTrigger;
     BOOL _isFromCongratulation;
     struct {
+        unsigned int modelVersion:1;
+        unsigned int offset:1;
         unsigned int dateIsCorrect:1;
+        unsigned int didRegexTrigger:1;
         unsigned int isFromCongratulation:1;
     } _has;
 }
 
+@property(nonatomic) BOOL didRegexTrigger; // @synthesize didRegexTrigger=_didRegexTrigger;
+@property(nonatomic) unsigned int modelVersion; // @synthesize modelVersion=_modelVersion;
 @property(nonatomic) BOOL isFromCongratulation; // @synthesize isFromCongratulation=_isFromCongratulation;
 @property(nonatomic) BOOL dateIsCorrect; // @synthesize dateIsCorrect=_dateIsCorrect;
 - (void)mergeFrom:(id)arg1;
@@ -29,6 +37,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsOffset:(id)arg1;
+- (id)offsetAsString:(int)arg1;
+@property(nonatomic) BOOL hasOffset;
+@property(nonatomic) int offset; // @synthesize offset=_offset;
+@property(nonatomic) BOOL hasDidRegexTrigger;
+@property(nonatomic) BOOL hasModelVersion;
 @property(nonatomic) BOOL hasIsFromCongratulation;
 @property(nonatomic) BOOL hasDateIsCorrect;
 

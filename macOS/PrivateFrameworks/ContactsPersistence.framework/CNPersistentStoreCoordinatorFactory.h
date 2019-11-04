@@ -12,11 +12,9 @@ __attribute__((visibility("hidden")))
     BOOL _readOnly;
 }
 
-+ (id)urlForAccountWithIdentifier:(id)arg1 baseURL:(id)arg2;
 - (id)builderWithStoreDescription:(id)arg1;
 - (id)makeCoordinatorWithStoreAtURL:(id)arg1 storeDescription:(id)arg2;
 - (id)addStoresForAccountCollection:(id)arg1 withStoreBuilder:(id)arg2;
-- (id)accountIdentifiersFromAccountCollection:(id)arg1;
 - (id)pool_makeCoordinatorForAllSourcesWithAccountCollection:(id)arg1;
 - (id)makeCoordinatorForSourcesWithAccountCollection:(id)arg1;
 - (id)initReadOnly:(BOOL)arg1;

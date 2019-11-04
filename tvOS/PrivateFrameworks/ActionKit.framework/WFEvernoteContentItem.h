@@ -20,7 +20,6 @@
 + (id)contentCategories;
 + (id)outputTypes;
 + (id)ownedTypes;
-+ (_Bool)isAvailableOnPlatform:(long long)arg1;
 + (id)itemWithNoteRef:(id)arg1 note:(id)arg2;
 + (void)createNoteWithContent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)propertyBuilders;

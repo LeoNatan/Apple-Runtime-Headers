@@ -13,17 +13,17 @@
 __attribute__((visibility("hidden")))
 @interface IKScanInfo : NSObject <NSCopying>
 {
-    NSURL *_url;
-    long long _percentageComplete;
-    NSString *_name;
     struct CGImage *_icon;
-    long long _pageCount;
     BOOL _scanDone;
+    NSURL *_url;
+    NSString *_name;
+    long long _percentageComplete;
+    long long _pageCount;
 }
 
 @property(nonatomic) BOOL scanDone; // @synthesize scanDone=_scanDone;
 @property long long pageCount; // @synthesize pageCount=_pageCount;
-@property long long percentageComplete; // @synthesize percentageComplete=_percentageComplete;
+@property(nonatomic) long long percentageComplete; // @synthesize percentageComplete=_percentageComplete;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void)showInFinder:(id)arg1;

@@ -55,13 +55,13 @@
 - (id)messagesToJournalForMessages:(id)arg1 inMailbox:(id)arg2;
 - (id)addLabels:(id)arg1 removeLabels:(id)arg2 forMessages:(id)arg3;
 - (id)applyFlagChange:(id)arg1 toMessages:(id)arg2;
-- (void)applyFlagChange:(id)arg1 toAllMessagesFromMailbox:(id)arg2 exceptMessages:(id)arg3;
+- (void)applyFlagChange:(id)arg1 toAllMessagesFromMailboxes:(id)arg2 exceptMessages:(id)arg3;
 - (void)deleteMessages:(id)arg1;
 - (id)addNewMessages:(id)arg1 mailboxURL:(id)arg2 userInitiated:(_Bool)arg3;
-- (void)transferAllMessagesFromMailbox:(id)arg1 exceptMessages:(id)arg2 transferType:(long long)arg3 destinationMailboxURL:(id)arg4 userInitiated:(_Bool)arg5;
-- (void)copyAllMessagesFromMailbox:(id)arg1 exceptMessages:(id)arg2 destinationMailboxURL:(id)arg3 userInitiated:(_Bool)arg4;
-- (void)moveAllMessagesFromMailbox:(id)arg1 exceptMessages:(id)arg2 destinationMailboxURL:(id)arg3 userInitiated:(_Bool)arg4;
-- (void)deleteAllMessageFromMailbox:(id)arg1 exceptMessages:(id)arg2;
+- (void)transferAllMessagesFromMailboxes:(id)arg1 exceptMessages:(id)arg2 transferType:(long long)arg3 destinationMailboxURL:(id)arg4 userInitiated:(_Bool)arg5;
+- (void)deleteAllMessageFromMailboxes:(id)arg1 exceptMessages:(id)arg2;
+- (void)didFinishPersistenceDidAddMessages:(id)arg1;
+- (void)willStartPersistenceDidAddMessages:(id)arg1;
 - (void)transferMessages:(id)arg1 transferType:(long long)arg2 destinationMailboxURL:(id)arg3 userInitiated:(_Bool)arg4 oldMessagesByNewMessage:(id)arg5;
 - (id)transferMessages:(id)arg1 transferType:(long long)arg2 destinationMailboxURL:(id)arg3 userInitiated:(_Bool)arg4;
 - (id)copyMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(_Bool)arg3;

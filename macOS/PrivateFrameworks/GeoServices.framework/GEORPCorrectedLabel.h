@@ -13,13 +13,15 @@
 @interface GEORPCorrectedLabel : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_coordinate;
     NSString *_correctedValue;
     NSMutableArray *_featureHandles;
     GEOMapRegion *_featureRegion;
     NSString *_originalValue;
     unsigned long long _uid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _localizedLabels;
     struct {
         unsigned int has_uid:1;
@@ -75,6 +77,8 @@
 @property(retain, nonatomic) NSString *originalValue;
 @property(readonly, nonatomic) BOOL hasOriginalValue;
 - (void)_readOriginalValue;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

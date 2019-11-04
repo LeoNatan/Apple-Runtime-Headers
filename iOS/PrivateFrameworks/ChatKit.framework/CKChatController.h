@@ -45,7 +45,7 @@
 #import <ChatKit/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <ChatKit/_UIClickInteractionDelegate-Protocol.h>
 
-@class CADisplayLink, CKAudioTrimViewController, CKChatInputController, CKComposition, CKEffectPickerViewController, CKFunCameraViewController, CKInvisibleInkEffectController, CKMessageEntryView, CKMessageEntryViewController, CKNavbarCanvasViewController, CKNicknameBannerView, CKNicknameUpdatesViewController, CKOnboardingController, CKQLDetailsPreviewController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKThrowAnimationManager, CKUnexpectedlyLoggedOutNotificationView, CKUnreadBannerView, CKVideoMessageRecordingViewController, CKVideoTrimController, CNContactPickerViewController, IMNickname, IMPluginPayload, IMScheduledUpdater, NSLayoutConstraint, NSNumber, NSObject, NSString, SGFoundInSuggestionPresenter, STConversationContext, UIImagePickerController, UIToolbar, UIView, UIWindow;
+@class CADisplayLink, CKAudioTrimViewController, CKChatInputController, CKComposition, CKEffectPickerViewController, CKFunCameraViewController, CKInvisibleInkEffectController, CKMessageEntryView, CKMessageEntryViewController, CKNavbarCanvasViewController, CKNicknameBannerView, CKNicknameUpdatesViewController, CKOnboardingController, CKQLDetailsPreviewController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKThrowAnimationManager, CKUnexpectedlyLoggedOutNotificationView, CKUnreadBannerView, CKVideoMessageRecordingViewController, CKVideoTrimController, CNContactPickerViewController, IMNickname, IMPluginPayload, IMScheduledUpdater, NSLayoutConstraint, NSNumber, NSObject, NSString, SGFoundInSuggestionPresenter, UIImagePickerController, UIToolbar, UIView, UIWindow;
 @protocol CKChatControllerDelegate, OS_dispatch_group, UIDragSession, UIDropSession;
 
 @interface CKChatController : CKCoreChatController <CKEffectPickerViewControllerDelegate, CKThrowAnimationManagerDelegate, CKSendAnimationManagerDelegate, CKSendAnimationBalloonProvider, UIInteractionProgressObserver, QLPreviewControllerDelegate, CKReaderViewControllerDelegate, PKAddPassesViewControllerDelegate, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, CKVideoMessageRecordingViewControllerDelegate, CKActionMenuGestureRecognizerButtonDelegate, PHPhotoLibraryChangeObserver, CNContactPickerDelegate, CKMessageEntryViewDelegate, CKTrimControllerDelegate, AFContextProvider, UIGestureRecognizerDelegate, CKChatInputControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKBrowserDragControllerTranscriptDelegate, SGSuggestionPresenterDelegate, CKDetailsControllerDelegate, _UIClickInteractionDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, UIPopoverPresentationControllerDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UITextDropDelegate, UITextPasteDelegate, CKExtensionConsumer, CKFunCameraViewControllerDelegate, ILClassificationUIExtensionHostViewControllerDelegate, CKNicknameBannerViewDelegate, CKOnboardingControllerDelegate, CKNicknameUpdatesViewControllerDelegate, CKNavbarCanvasViewControllerDelegate>
@@ -117,12 +117,10 @@
     CNContactPickerViewController *_contactPicker;
     IMNickname *_currentNickname;
     CKOnboardingController *_onboardingController;
-    STConversationContext *_currentScreenTimeConversationContext;
     struct CGPoint _initialContentOffset;
     struct UIEdgeInsets _initialContentInset;
 }
 
-@property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(retain, nonatomic) IMNickname *currentNickname; // @synthesize currentNickname=_currentNickname;
 @property(retain, nonatomic) CNContactPickerViewController *contactPicker; // @synthesize contactPicker=_contactPicker;
@@ -223,7 +221,7 @@
 - (void)textPasteConfigurationSupporting:(id)arg1 transformPasteItem:(id)arg2;
 - (id)textDroppableView:(id)arg1 proposalForDrop:(id)arg2;
 - (id)_meContact;
-- (_Bool)showNicknameSharingOnboardingIfNeeded;
+- (_Bool)showNicknameSharingOnboarding;
 - (_Bool)_shouldShowNicknameOnboardingFlow;
 - (void)onboardingControllerDidFinish:(id)arg1;
 - (id)presentingViewControllerForOnboardingController:(id)arg1;
@@ -232,7 +230,7 @@
 - (void)nicknameController:(id)arg1 ignoreButtonTappedForBanner:(id)arg2;
 - (void)nicknameController:(id)arg1 updateButtonTappedForBanner:(id)arg2;
 - (id)nicknameUpdatesForController:(id)arg1;
-- (void)nicknameBannerDidInteractWithOutgoingShare:(id)arg1;
+- (void)nicknameBannerDidInteractWithOnboardingOffer:(id)arg1;
 - (void)nicknameBannerViewDismissButtonTapped:(id)arg1;
 - (void)nicknameBannerViewActionButtonTapped:(id)arg1;
 - (void)_replaceNicknameBannerView:(id)arg1 withNewBannerView:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -433,6 +431,7 @@
 - (void)keyboardWillBeginInteractiveDismissal:(id)arg1;
 - (void)keyboardShouldShowCandidates:(id)arg1;
 - (void)keyboardShouldShowPredictions:(id)arg1;
+- (void)keyboardDidChangeFrame:(id)arg1;
 - (void)keyboardDidShowOrHide:(id)arg1;
 - (void)keyboardWillShowOrHide:(id)arg1;
 - (void)_askToTurnOnSMSRelayIfNeeded;
@@ -498,6 +497,7 @@
 - (void)beginHoldingAutorotationForKey:(id)arg1;
 - (void)_autorotationUpdaterFired;
 - (_Bool)shouldAutorotate;
+- (id)_currentPresentationController;
 - (void)performResumeDeferredSetup;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)isCollapsed;
@@ -506,6 +506,9 @@
 - (long long)preferredStatusBarStyle;
 - (void)configureForCurrentTraitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)didReceiveMemoryWarning;
 - (void)prepareForSuspend;
@@ -522,19 +525,20 @@
 - (void)setUnreadBannerHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)_tearDownScreenTimeHandlingIfNeeded;
-- (void)_setupScreenTimeHandling;
 - (void)insertInitialCompositionIfNeeded;
 - (_Bool)_chatShowsUnexpectedlyLoggedOutNotification;
 - (void)_updateTranscriptInlineNotification;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;
+- (void)viewDidLoad;
 - (void)loadView;
-- (void)_setupLockoutChildViewController;
-- (void)_removeLockoutViewController;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)showScreenTimeShieldIfNeeded;
+- (_Bool)shouldPresentBlockingDowntimeViewController;
+- (void)removeLockoutControllerIfNeeded;
 - (_Bool)isHandwritingLandscape;
 - (void)forciblyUnloadChatInputController;
 - (void)setConversation:(id)arg1;
+- (void)updateScreenTimeShieldIfNeededForChat:(id)arg1;
+- (void)chatAllowedByScreenTimeChanged:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (void)prepareToDismissForSecondInstance;

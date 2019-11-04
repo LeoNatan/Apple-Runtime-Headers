@@ -139,7 +139,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)_initWithPackages:(id)arg1 destination:(id)arg2;
+- (id)_initWithPackages:(id)arg1 destination:(id)arg2 withOutError:(id *)arg3;
 - (id)init;
 - (id)initWithPackages:(id)arg1 destination:(id)arg2;
 - (BOOL)_isRequestCompatibleWithRights:(id)arg1;

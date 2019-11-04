@@ -138,6 +138,7 @@
 - (void)submitRequest;
 - (void)submitRequestWithFilevaultConversion:(BOOL)arg1 for:(id)arg2 withPassword:(id)arg3 andBag:(id)arg4;
 - (void)dumpNodeSpaceCalculationsForDebugging:(id)arg1 depth:(unsigned long long)arg2;
+- (BOOL)hasAtleastOneSecureTokenHoldingAdmin;
 - (void)showFileVaultManagementIfNeeded;
 - (void)pressedPromoteToAdminButton:(id)arg1;
 - (void)pressedPasswordButton:(id)arg1;

@@ -11,7 +11,7 @@
 #import <PhotosUICore/PXSectionedDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXSettingsKeyObserver-Protocol.h>
 
-@class NSDate, NSString, PXCMMSuggestionsDataSourceManager;
+@class NSDate, NSString, PXCMMSuggestionsDataSourceManager, PXCPLStatus;
 @protocol PXCMMWorkflowPresenting;
 
 @interface PXCMMSuggestionsHorizontalGadgetProvider : PXGadgetProvider <PXSettingsKeyObserver, PXChangeObserver, PXSectionedDataSourceManagerObserver, PXForYouRankable>
@@ -19,6 +19,8 @@
     PXCMMSuggestionsDataSourceManager *_dataSourceManager;
     CDUnknownBlockType _pendingNavigationBlock;
     _Bool _didGenerateGadgets;
+    PXCPLStatus *_cplStatusProvider;
+    _Bool _cmmIsAvailable;
     id <PXCMMWorkflowPresenting> _workflowPresenter;
     NSDate *_cachedPriorityDate;
 }

@@ -13,10 +13,12 @@
 @interface GEORPCurrentEnvironmentManifestURLs : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_environmentDisplayName;
     NSString *_environmentReleaseName;
     NSMutableArray *_urls;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_environmentDisplayName:1;
         unsigned int read_environmentReleaseName:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) NSString *environmentDisplayName;
 @property(readonly, nonatomic) _Bool hasEnvironmentDisplayName;
 - (void)_readEnvironmentDisplayName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

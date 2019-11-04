@@ -560,7 +560,6 @@ struct Server {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
-    unsigned int :1;
 };
 
 struct Shape;

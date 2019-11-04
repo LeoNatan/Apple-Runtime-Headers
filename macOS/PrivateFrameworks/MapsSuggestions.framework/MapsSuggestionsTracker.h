@@ -60,7 +60,8 @@
 - (void)setLocation:(id)arg1;
 - (void)_requestETAs;
 - (void)_requestDistances;
-- (void)_decorateEntry:(id)arg1 eta:(id)arg2;
+- (void)_decorateFlightInfoForEntry:(id)arg1;
+- (void)_decorateETA:(id)arg1 forEntry:(id)arg2;
 - (void)trackSuggestionEntries:(struct NSArray *)arg1 transportType:(int)arg2;
 - (void)_captureSignalsFromEntries:(struct NSArray *)arg1;
 - (id)_bestValidOfflineETAForEntry:(id)arg1 destinationKey:(id)arg2;

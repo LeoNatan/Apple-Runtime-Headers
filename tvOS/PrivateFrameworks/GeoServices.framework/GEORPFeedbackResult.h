@@ -13,13 +13,15 @@
 @interface GEORPFeedbackResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPFeedbackIdLookupResult *_idLookupResult;
     GEORPFeedbackImageUploadResult *_imageUploadResult;
     GEORPFeedbackLayoutConfigResult *_layoutConfigResult;
     GEORPFeedbackQueryResult *_queryResult;
     GEORPFeedbackSubmissionResult *_submissionResult;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_idLookupResult:1;
@@ -65,6 +67,8 @@
 @property(retain, nonatomic) GEORPFeedbackSubmissionResult *submissionResult;
 @property(readonly, nonatomic) _Bool hasSubmissionResult;
 - (void)_readSubmissionResult;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

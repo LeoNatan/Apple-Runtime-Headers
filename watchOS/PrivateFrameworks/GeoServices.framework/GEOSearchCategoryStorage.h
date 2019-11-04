@@ -13,10 +13,12 @@
 @interface GEOSearchCategoryStorage : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAutocompleteEntry *_autocompleteEntry;
     GEOPDBrowseCategory *_browseCategory;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_autocompleteEntry:1;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) GEOPDBrowseCategory *browseCategory;
 @property(readonly, nonatomic) _Bool hasBrowseCategory;
 - (void)_readBrowseCategory;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithSearchCategory:(id)arg1;
 
 @end

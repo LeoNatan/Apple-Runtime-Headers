@@ -8,8 +8,6 @@
 @protocol OS_xpc_object;
 
 @protocol transparencyd_protocol
-- (void)removeMultiSamplerForName:(NSString *)arg1;
-- (void)addMultiSamplerForName:(NSString *)arg1 withTimeInterval:(double)arg2 block:(NSDictionary * (^)(void))arg3;
 - (void)logMetric:(NSNumber *)arg1 withName:(NSString *)arg2;
 - (void)logResultForEvent:(NSString *)arg1 hardFailure:(_Bool)arg2 result:(NSError *)arg3 withAttributes:(NSDictionary *)arg4;
 - (void)logResultForEvent:(NSString *)arg1 hardFailure:(_Bool)arg2 result:(NSError *)arg3;
@@ -17,18 +15,28 @@
 - (void)logSoftFailureForEventNamed:(NSString *)arg1 withAttributes:(NSDictionary *)arg2;
 - (void)logHardFailureForEventNamed:(NSString *)arg1 withAttributes:(NSDictionary *)arg2;
 - (void)logSuccessForEventNamed:(NSString *)arg1;
+- (void)copyApplicationTranscript:(NSString *)arg1 block:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)copyDaemonState:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)copyDataStoreStatistics:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)clearPublicKeyStoreState:(NSString *)arg1 block:(void (^)(NSError *))arg2;
+- (void)clearLogClientConfiguration:(void (^)(NSError *))arg1;
 - (void)clearApplicationState:(NSString *)arg1 completionBlock:(void (^)(NSError *))arg2;
+- (void)runDutyCycle:(void (^)(NSError *))arg1;
 - (void)runDutyCycleForActivity:(NSObject<OS_xpc_object> *)arg1;
+- (void)copyKeyStoreStateFromDisk:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)copyKeyStoreState:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)copyLogClientConfiguration:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)copyApplicationState:(NSString *)arg1 block:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)forceApplicationConfig:(NSString *)arg1 block:(void (^)(NSError *))arg2;
 - (void)forceApplicationKeysFetch:(NSString *)arg1 block:(void (^)(NSData *, NSError *))arg2;
 - (void)forceApplicationKeysDownload:(NSString *)arg1 block:(void (^)(NSData *, unsigned int, NSError *))arg2;
 - (void)forceConfigUpdate:(void (^)(NSError *))arg1;
 - (void)forceValidateUUID:(NSUUID *)arg1 uri:(NSString *)arg2 block:(void (^)(unsigned int, NSError *))arg3;
-- (void)convertToSelfRequest:(NSUUID *)arg1 serverDatas:(NSArray *)arg2 syncedDatas:(NSArray *)arg3 queryResponse:(NSData *)arg4 updateCompletionBlock:(void (^)(NSUUID *, NSError *))arg5;
+- (void)convertToSelfRequest:(NSUUID *)arg1 serverDatas:(NSArray *)arg2 syncedDatas:(NSArray *)arg3 queryRequest:(NSData *)arg4 queryResponse:(NSData *)arg5 updateCompletionBlock:(void (^)(NSUUID *, NSError *))arg6;
 - (void)validateEnrollmentUriResult:(NSString *)arg1 uuid:(NSUUID *)arg2 completionBlock:(void (^)(NSString *, unsigned int, KTTransparentData *, NSError *))arg3;
-- (void)validateEnrollmentUri:(NSString *)arg1 application:(NSString *)arg2 accountID:(NSData *)arg3 loggableData:(KTLoggableData *)arg4 queryResponse:(NSData *)arg5 promiseCompletionBlock:(void (^)(NSString *, NSUUID *, NSError *))arg6;
+- (void)validateEnrollmentUri:(NSString *)arg1 application:(NSString *)arg2 accountID:(NSData *)arg3 loggableData:(KTLoggableData *)arg4 queryRequest:(NSData *)arg5 queryResponse:(NSData *)arg6 promiseCompletionBlock:(void (^)(NSString *, NSUUID *, NSError *))arg7;
 - (void)validateSelfUriResult:(NSString *)arg1 uuid:(NSUUID *)arg2 syncedDatas:(NSArray *)arg3 completionBlock:(void (^)(NSString *, unsigned int, KTTransparentData *, NSError *))arg4;
 - (void)validatePeerUriResult:(NSString *)arg1 uuid:(NSUUID *)arg2 completionBlock:(void (^)(NSString *, unsigned int, KTTransparentData *, NSError *))arg3;
-- (void)validatePeerUri:(NSString *)arg1 application:(NSString *)arg2 accountID:(NSData *)arg3 loggableDatas:(NSArray *)arg4 queryResponse:(NSData *)arg5 promiseCompletionBlock:(void (^)(NSString *, NSUUID *, NSError *))arg6;
+- (void)validatePeerUri:(NSString *)arg1 application:(NSString *)arg2 accountID:(NSData *)arg3 loggableDatas:(NSArray *)arg4 queryRequest:(NSData *)arg5 queryResponse:(NSData *)arg6 promiseCompletionBlock:(void (^)(NSString *, NSUUID *, NSError *))arg7;
 @end
 

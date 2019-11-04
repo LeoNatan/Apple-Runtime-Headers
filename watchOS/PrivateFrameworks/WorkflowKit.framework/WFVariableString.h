@@ -9,7 +9,7 @@
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/WFVariableSerialization-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString;
+@class NSArray, NSString;
 
 @interface WFVariableString : NSObject <WFVariableSerialization, NSCopying>
 {
@@ -17,12 +17,13 @@
 }
 
 + (_Bool)dictionaryIsSerializedVariableString:(id)arg1;
-+ (id)attributedStringWithVariable:(id)arg1;
 @property(readonly, nonatomic) NSArray *stringsAndVariables; // @synthesize stringsAndVariables=_stringsAndVariables;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSArray *variables;
 @property(readonly, nonatomic) NSString *stringByReplacingVariablesWithNames;
 @property(readonly, nonatomic) NSString *stringByRemovingVariables;
+- (void)processIntoStringsAndAttachmentsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)processIntoContentItemsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)processWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)serializedRepresentation;
@@ -38,16 +39,9 @@
 - (void)addVariableDelegate:(id)arg1;
 - (_Bool)representsSingleContentVariable;
 - (id)variablesOfType:(id)arg1;
-- (id)attributedStringByAddingTypingAttributes:(id)arg1;
-- (id)substringWithRange:(struct _NSRange)arg1;
-- (id)stringByReplacingCharactersInRange:(struct _NSRange)arg1 withVariableString:(id)arg2;
-- (id)stringByReplacingCharactersInRange:(struct _NSRange)arg1 withVariable:(id)arg2;
-@property(readonly, nonatomic) NSAttributedString *attributedString;
-- (id)initWithAttributedString:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

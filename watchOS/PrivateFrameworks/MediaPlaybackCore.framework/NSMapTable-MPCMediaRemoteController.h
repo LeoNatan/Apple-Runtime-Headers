@@ -6,11 +6,12 @@
 
 #import <Foundation/NSMapTable.h>
 
-#import <MediaPlaybackCore/MPCSupportedCommands-Protocol.h>
+#import <MediaPlaybackCore/_MPCSupportedCommands-Protocol.h>
 
 @class NSString;
 
-@interface NSMapTable (MPCMediaRemoteController) <MPCSupportedCommands>
+@interface NSMapTable (MPCMediaRemoteController) <_MPCSupportedCommands>
+- (id)_allCommandInfos;
 - (struct _MRMediaRemoteCommandInfo *)commandInfoForCommand:(unsigned int)arg1;
 
 // Remaining properties

@@ -8,7 +8,7 @@
 
 #import <ContentKit/WFContentItemClass-Protocol.h>
 
-@class UIImage, WFFileType;
+@class WFFileType, WFImage;
 
 @interface WFImageContentItem : WFGenericFileContentItem <WFContentItemClass>
 {
@@ -39,7 +39,8 @@
 - (id)generateFileRepresentationForType:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)generateImageFileForType:(id)arg1 includingMetadata:(_Bool)arg2 compressionQuality:(id)arg3 error:(id *)arg4;
 - (id)imageFile;
-@property(readonly, nonatomic) UIImage *image;
+@property(readonly, nonatomic) WFImage *image;
+- (_Bool)isObjectBacked;
 - (_Bool)isScreenshot;
 - (id)orientation;
 - (id)location;

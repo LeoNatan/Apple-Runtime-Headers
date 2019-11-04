@@ -8,14 +8,15 @@
 
 #import <Navigation/MNArrivalUpdaterDelegate-Protocol.h>
 
-@class GEONavigationMapMatcher, MNArrivalUpdater, MNLocation, NSData, NSString, NSTimer;
+@class GEONavigationMapMatcher, MNArrivalUpdater, MNLocation, NSData, NSDate, NSMutableArray, NSString, NSTimer;
 @protocol GEODirectionServiceTicket;
 
 @interface MNTurnByTurnLocationTracker : MNLocationTracker <MNArrivalUpdaterDelegate>
 {
     GEONavigationMapMatcher *_mapMatcher;
     MNArrivalUpdater *_arrivalUpdater;
-    double _startTime;
+    NSDate *_startDate;
+    CDStruct_2c43369c _originCoordinate;
     id <GEODirectionServiceTicket> _rerouteTicket;
     NSData *_serverSessionState;
     unsigned long long _rerouteReason;
@@ -23,8 +24,8 @@
     unsigned long long _responseErrorCount;
     unsigned long long _recalculationNetworkUnreachableCount;
     NSTimer *_recalculationRetryTimer;
-    unsigned long long _reroutesOnFeature;
-    MNLocation *_lastLocationUsedForReroute;
+    MNLocation *_previousRerouteLocation;
+    NSMutableArray *_rerouteDates;
     unsigned long long _consecutiveOffRouteCount;
     MNLocation *_lastKnownGoodLocationOnRoute;
     _Bool _isNavigatingInLowGuidance;
@@ -51,7 +52,7 @@
 - (void)stopTracking;
 - (void)startTracking;
 - (_Bool)isRerouting;
-- (_Bool)_shouldThrottleRerouteForLocation:(id)arg1 lastRerouteLocation:(id)arg2;
+- (_Bool)_allowRerouteForLocation:(id)arg1 outError:(out id *)arg2;
 - (void)_failedToRecalculateRouteWithError:(id)arg1;
 - (void)_recalculationRetryTimerFired:(id)arg1;
 - (void)_retryLastRouteRecalculation;

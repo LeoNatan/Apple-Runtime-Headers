@@ -8,7 +8,7 @@
 
 #import <AvatarKit/SCNMaterialPropertyTextureProvider-Protocol.h>
 
-@class AVTCompositorPipeline, AVTCompositor_GPU, AVTMemoji, NSString;
+@class AVTCompositorPipeline, AVTCompositor_GPU, AVTMemoji, NSMutableSet, NSString;
 
 @interface AVTCompositorTextureProvider : NSObject <SCNMaterialPropertyTextureProvider>
 {
@@ -18,6 +18,7 @@
     NSString *_propertyName;
     _Bool _skinIsDirty;
     long long _componentDirtyMask;
+    NSMutableSet *_helperTokens;
 }
 
 - (void).cxx_destruct;

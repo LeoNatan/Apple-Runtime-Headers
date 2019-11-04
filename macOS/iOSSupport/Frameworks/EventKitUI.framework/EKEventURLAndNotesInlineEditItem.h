@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)searchStringForEventAutocomplete;
 - (BOOL)isSaveable;
+- (void)tableViewDidScroll;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (BOOL)isInline;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;

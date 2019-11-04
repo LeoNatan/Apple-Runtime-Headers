@@ -13,7 +13,7 @@
 
 @interface HUSetupNetworkRouterAppPunchoutViewController : OBWelcomeController <HFSetupPairingPopupAppPunchout>
 {
-    id <HFSetupPairingPopupDelegate> _delegate;
+    id <HFSetupPairingPopupDelegate> _popupDelegate;
     HMSetupAccessoryDescription *_setupAccessoryDescription;
     HFAppPunchoutRequest *_punchoutRequest;
     HULinkedApplicationItem *_linkedApplicationItem;
@@ -24,14 +24,14 @@
 @property(retain, nonatomic) HULinkedApplicationItem *linkedApplicationItem; // @synthesize linkedApplicationItem=_linkedApplicationItem;
 @property(retain, nonatomic) HFAppPunchoutRequest *punchoutRequest; // @synthesize punchoutRequest=_punchoutRequest;
 @property(readonly, nonatomic) HMSetupAccessoryDescription *setupAccessoryDescription; // @synthesize setupAccessoryDescription=_setupAccessoryDescription;
-@property(readonly, nonatomic) __weak id <HFSetupPairingPopupDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <HFSetupPairingPopupDelegate> popupDelegate; // @synthesize popupDelegate=_popupDelegate;
 - (void).cxx_destruct;
 - (void)_cancelPressed:(id)arg1;
 - (void)_punchoutPressed:(id)arg1;
 - (id)_lookUpSoftwareAndUpdateUI;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) unsigned long long popupType;
-- (id)initWithDelegate:(id)arg1 setupAccessoryDescription:(id)arg2;
+- (id)initWithPopupDelegate:(id)arg1 setupAccessoryDescription:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

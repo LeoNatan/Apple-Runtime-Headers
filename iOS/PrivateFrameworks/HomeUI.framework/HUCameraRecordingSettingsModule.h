@@ -15,6 +15,9 @@
 {
     NSSet *_itemProviders;
     unsigned long long _displayStyle;
+    NSString *_longestCameraUsageOptionItemTitle;
+    NSString *_longestCameraPresenceItemTitle;
+    NSArray *_cameraPresenceItems;
     id <HUCameraRecordingSettingsModuleDelegate> _delegate;
     NSSet *_cameraProfiles;
     HUCameraRecordingOptionsItem *_recordingOptionsItem;
@@ -33,6 +36,9 @@
 @property(readonly, nonatomic) HUCameraRecordingOptionsItem *recordingOptionsItem; // @synthesize recordingOptionsItem=_recordingOptionsItem;
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 @property(nonatomic) __weak id <HUCameraRecordingSettingsModuleDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) NSArray *cameraPresenceItems; // @synthesize cameraPresenceItems=_cameraPresenceItems;
+@property(readonly, nonatomic) NSString *longestCameraPresenceItemTitle; // @synthesize longestCameraPresenceItemTitle=_longestCameraPresenceItemTitle;
+@property(readonly, nonatomic) NSString *longestCameraUsageOptionItemTitle; // @synthesize longestCameraUsageOptionItemTitle=_longestCameraUsageOptionItemTitle;
 @property(readonly, nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (void).cxx_destruct;

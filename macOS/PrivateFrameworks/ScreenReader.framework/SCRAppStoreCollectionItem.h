@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)allowFocusThroughSingleChild;
 - (id)_collectionItemSection;
 
 @end

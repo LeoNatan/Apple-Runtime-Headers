@@ -17,7 +17,6 @@
 - (id)composeButton;
 - (void)_updateToolbarItems;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)loadView;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

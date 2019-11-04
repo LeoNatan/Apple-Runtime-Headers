@@ -51,6 +51,7 @@
 - (id)changedLocalIdentifiersForEntityClass:(Class)arg1 context:(id)arg2;
 - (id)changedLocalIdentifiersForEntityClass:(Class)arg1;
 - (BOOL)containsChangesForEntityClass:(Class)arg1;
+- (BOOL)intersectsWithDetectionCriteria:(id)arg1 managedObjectContext:(id)arg2;
 - (id)changeDetailsForFetchResult:(id)arg1;
 - (id)changeDetailsForObject:(id)arg1;
 - (BOOL)packedBadgeAttributesChangedForPHAssetOID:(id)arg1;

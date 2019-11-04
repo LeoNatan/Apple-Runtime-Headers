@@ -21,7 +21,7 @@
 #import <DoNotDisturbServer/DNDSSettingsSyncManagerDelegate-Protocol.h>
 #import <DoNotDisturbServer/DNDSStateProviderDataSource-Protocol.h>
 
-@class DNDSCalendarEventLifetimeMonitor, DNDSClientDetailsProvider, DNDSEventBehaviorResolver, DNDSModeAssertionManager, DNDSPairedDeviceStateMonitor, DNDSRemoteServiceProvider, DNDSScheduleLifetimeMonitor, DNDSScheduleManager, DNDSSettingsManager, DNDSStateProvider, NSArray, NSString;
+@class DNDSCalendarEventLifetimeMonitor, DNDSClientDetailsProvider, DNDSEventBehaviorResolver, DNDSModeAssertionManager, DNDSPairedDeviceStateMonitor, DNDSRemoteServiceProvider, DNDSScheduleLifetimeMonitor, DNDSScheduleManager, DNDSSettingsManager, DNDSStateProvider, IDSService, NSArray, NSString;
 @protocol DNDSAssertionSyncManager, DNDSSettingsSyncManager, OS_dispatch_queue;
 
 @interface DNDSServer : NSObject <DNDSEventBehaviorResolverDataSource, DNDSLifetimeMonitorDataSource, DNDSScheduleLifetimeMonitorDataSource, DNDSLifetimeMonitorDelegate, DNDSStateProviderDataSource, DNDSRemoteServiceProviderDelegate, DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSLegacyAssertionSyncManagerDataSource, DNDSSettingsSyncManagerDataSource, DNDSSettingsSyncManagerDelegate, DNDSScheduleManagerDataSource, DNDSSettingsManagerDelegate, DNDSPairedDeviceStateMonitorDelegate>
@@ -39,6 +39,7 @@
     id <DNDSAssertionSyncManager> _assertionSyncManager;
     id <DNDSSettingsSyncManager> _settingsSyncManager;
     DNDSSettingsManager *_settingsManager;
+    IDSService *_idsService;
     DNDSPairedDeviceStateMonitor *_pairedDeviceStateMonitor;
     unsigned int _lockState;
     unsigned int _lostModeState;

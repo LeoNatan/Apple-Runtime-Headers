@@ -18,7 +18,7 @@
     CDUnknownBlockType _selectionHandler;
 }
 
-+ (id)presentWithParameter:(id)arg1 state:(id)arg2 variableProvider:(id)arg3 variableUIDelegate:(id)arg4 processing:(_Bool)arg5 sourceView:(id)arg6 sourceRect:(struct CGRect)arg7 viewController:(id)arg8 selectionHandler:(CDUnknownBlockType)arg9 tintColor:(id)arg10;
++ (id)presentWithParameter:(id)arg1 state:(id)arg2 variableProvider:(id)arg3 variableUIDelegate:(id)arg4 processing:(_Bool)arg5 sourceView:(id)arg6 sourceRect:(struct CGRect)arg7 viewController:(id)arg8 selectionHandler:(CDUnknownBlockType)arg9;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 @property(copy, nonatomic) NSArray *parameterStates; // @synthesize parameterStates=_parameterStates;
 @property(retain, nonatomic) WFEnumerationParameter *parameter; // @synthesize parameter=_parameter;

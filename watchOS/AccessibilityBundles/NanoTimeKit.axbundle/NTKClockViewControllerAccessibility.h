@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (void)_endFaceLibraryControllerPresentation;
 - (void)_showLibraryViewControllerAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_accessibilityLoadAccessibilityInformation;
 
 @end
 

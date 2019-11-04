@@ -7,6 +7,7 @@
 #import <SpringBoardServices/SBSApplicationShortcutItem.h>
 
 @interface SBSApplicationShortcutItem (SBHAdditions)
+@property(readonly, nonatomic) _Bool sbh_isDestructive;
 @property(readonly, nonatomic) _Bool sbh_isShortcutSpringBoardOnly;
 @property(readonly, nonatomic) _Bool sbh_isSystemShortcut;
 @end

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDate, NSString, _DKSyncHistory, _DKSyncPeer;
+@class NSArray, NSDate, NSString, _DKCompatibility, _DKSyncHistory, _DKSyncPeer;
 
 @protocol _DKSyncLocalKnowledgeStorage
 - (_Bool)deleteEventsWithEventIDs:(NSArray *)arg1 error:(id *)arg2;
@@ -16,6 +16,7 @@
 - (_Bool)saveSyncedDownWindows:(NSArray *)arg1 peer:(_DKSyncPeer *)arg2 transportName:(NSString *)arg3 error:(id *)arg4;
 - (NSArray *)sortedSyncDownWindowsOverlappingBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 peer:(_DKSyncPeer *)arg3 error:(id *)arg4;
 - (NSArray *)tombstonesSinceDate:(NSDate *)arg1 streamNames:(NSArray *)arg2 limit:(unsigned int)arg3 endDate:(id *)arg4 error:(id *)arg5;
+- (NSArray *)sortedEventsFromSyncWindows:(NSArray *)arg1 streamNames:(NSArray *)arg2 compatibility:(_DKCompatibility *)arg3 limit:(unsigned int)arg4 fetchOrder:(int)arg5 error:(id *)arg6;
 - (NSArray *)sortedEventsFromSyncWindows:(NSArray *)arg1 streamNames:(NSArray *)arg2 limit:(unsigned int)arg3 fetchOrder:(int)arg4 error:(id *)arg5;
 @end
 

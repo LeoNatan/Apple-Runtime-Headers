@@ -21,6 +21,7 @@
     _Bool _deferTableViewUpdates;
     _Bool _inDisambiguationMode;
     _Bool _hasPerformedRecipientExpansion;
+    _Bool _isDeviceLocked;
     id <CNAutocompleteResultsTableViewControllerDelegate> _delegate;
     NSArray *_recipients;
     double _trailingButtonMidlineInsetFromLayoutMargin;
@@ -28,6 +29,7 @@
 }
 
 + (void)dispatchMainIfNecessary:(CDUnknownBlockType)arg1;
+@property(nonatomic) _Bool isDeviceLocked; // @synthesize isDeviceLocked=_isDeviceLocked;
 @property(nonatomic) _Bool hasPerformedRecipientExpansion; // @synthesize hasPerformedRecipientExpansion=_hasPerformedRecipientExpansion;
 @property(nonatomic) _Bool inDisambiguationMode; // @synthesize inDisambiguationMode=_inDisambiguationMode;
 @property(retain, nonatomic) NSMutableSet *expandedIdentifiers; // @synthesize expandedIdentifiers=_expandedIdentifiers;
@@ -39,6 +41,7 @@
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)didTapInfoButtonForCell:(id)arg1;
+- (_Bool)shouldShowCheckmarkForRecipient:(id)arg1 preferredRecipient:(id)arg2;
 - (_Bool)updatePreferredRecipientForCell:(id)arg1 isInvalidation:(_Bool)arg2;
 - (void)updateLabelColorForCell:(id)arg1;
 - (void)invalidatePreferredRecipients;
@@ -70,6 +73,7 @@
 - (id)_flattenedIndexPaths;
 - (void)updateRecipients:(id)arg1 disambiguatingRecipient:(id)arg2;
 - (id)unificationIdentifierForRecipient:(id)arg1;
+- (_Bool)_deviceIsLockedWithPassword;
 - (void)_updateTableViewModelAnimated:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithStyle:(long long)arg1;

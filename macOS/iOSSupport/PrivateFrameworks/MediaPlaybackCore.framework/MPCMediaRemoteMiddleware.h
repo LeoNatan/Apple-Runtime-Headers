@@ -10,12 +10,14 @@
 #import <MediaPlaybackCore/MPCPlayerSessionResponseBuilder-Protocol.h>
 #import <MediaPlaybackCore/MPCResponseMediaRemoteControllerChaining-Protocol.h>
 #import <MediaPlaybackCore/MPMiddleware-Protocol.h>
+#import <MediaPlaybackCore/_MPCStateDumpPropertyListTransformable-Protocol.h>
 
 @class MPCFuture, MPCMediaRemoteController, MPSectionedCollection, NSArray, NSIndexPath, NSString;
 @protocol MPCSupportedCommands;
 
-@interface MPCMediaRemoteMiddleware : NSObject <MPCResponseMediaRemoteControllerChaining, MPCPlayerResponseBuilder, MPCPlayerSessionResponseBuilder, MPMiddleware>
+@interface MPCMediaRemoteMiddleware : NSObject <MPCResponseMediaRemoteControllerChaining, MPCPlayerResponseBuilder, MPCPlayerSessionResponseBuilder, _MPCStateDumpPropertyListTransformable, MPMiddleware>
 {
+    BOOL _skippedMetadata;
     NSArray *_invalidationObservers;
     MPCFuture *_controllerFuture;
     MPCMediaRemoteController *_controller;
@@ -27,6 +29,7 @@
     long long _playerState;
 }
 
+@property(readonly, nonatomic) BOOL skippedMetadata; // @synthesize skippedMetadata=_skippedMetadata;
 @property(nonatomic) long long playerState; // @synthesize playerState=_playerState;
 @property(copy, nonatomic) NSString *queueIdentifier; // @synthesize queueIdentifier=_queueIdentifier;
 @property(copy, nonatomic) NSIndexPath *playingIndexPath; // @synthesize playingIndexPath=_playingIndexPath;
@@ -37,6 +40,7 @@
 @property(retain, nonatomic) MPCFuture *controllerFuture; // @synthesize controllerFuture=_controllerFuture;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (id)operationsForSessionRequest:(id)arg1;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;

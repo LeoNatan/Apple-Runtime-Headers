@@ -13,13 +13,16 @@
 
 @interface SearchUIMapPlaceCardSectionView : SearchUICardSectionView <NUIContainerViewDelegate, _MKPlaceViewControllerDelegate>
 {
+    _Bool _alreadyDispatchedOnMainQueue;
     SearchUIMapsViewController *_mapViewController;
     struct CGSize _placecardBoundsSize;
 }
 
 @property(nonatomic) struct CGSize placecardBoundsSize; // @synthesize placecardBoundsSize=_placecardBoundsSize;
+@property _Bool alreadyDispatchedOnMainQueue; // @synthesize alreadyDispatchedOnMainQueue=_alreadyDispatchedOnMainQueue;
 @property(retain) SearchUIMapsViewController *mapViewController; // @synthesize mapViewController=_mapViewController;
 - (void).cxx_destruct;
+- (void)placeViewController:(id)arg1 requestPasscodeUnlockWithCompletion:(CDUnknownBlockType)arg2;
 - (id)embeddedViewController;
 - (void)placeViewControllerDidUpdateHeight:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;

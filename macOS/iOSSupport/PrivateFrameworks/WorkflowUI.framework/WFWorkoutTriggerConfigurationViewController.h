@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (void)triggerTableViewControllerDidCancel:(id)arg1;
-- (void)triggerTableViewController:(id)arg1 didSelectOptions:(id)arg2;
+- (void)triggerTableViewController:(id)arg1 didFinishWithAnySelected:(BOOL)arg2 orSelectedOptions:(id)arg3;
 - (void)presentNavControllerWithRootViewController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

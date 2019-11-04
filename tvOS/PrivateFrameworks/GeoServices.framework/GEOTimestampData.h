@@ -14,10 +14,12 @@
 @interface GEOTimestampData : PBCodable <GEOServerFormatTokenTimeStampValue, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_formatPattern;
     NSString *_timezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _timestampVal;
     _Bool _displayTimezone;
     struct {
@@ -58,6 +60,8 @@
 - (void)_readTimezone;
 @property(nonatomic) _Bool hasTimestampVal;
 @property(nonatomic) unsigned int timestampVal;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 @property(readonly, nonatomic) double timeStamp;
 - (_Bool)displayTimeZone;

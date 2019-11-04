@@ -157,7 +157,9 @@
 - (void)_delayWriteProperties;
 - (BOOL)propertyIsAvailable:(unsigned long long)arg1 forEar:(int)arg2;
 - (void)loadRequiredProperties;
+- (BOOL)checkDidLoadProperties:(unsigned long long)arg1;
 - (BOOL)didLoadRequiredProperties;
+- (BOOL)didLoadRequiredPeerProperties;
 - (BOOL)didLoadBasicProperties;
 - (BOOL)didLoadProperty:(unsigned long long)arg1;
 - (BOOL)containsPeripheralWithUUID:(id)arg1;

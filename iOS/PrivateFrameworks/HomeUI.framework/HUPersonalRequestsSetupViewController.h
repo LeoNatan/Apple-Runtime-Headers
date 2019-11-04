@@ -4,31 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OnBoardingKit/OBWelcomeController.h>
+#import <HomeUI/HUImageOBWelcomeController.h>
 
 #import <HomeUI/HFItemManagerDelegate-Protocol.h>
 #import <HomeUI/HUConfigurationViewController-Protocol.h>
 #import <HomeUI/HUItemTableModuleControllerHosting-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
 
-@class HULocationDevice, HUPersonalRequestsDevicesModuleController, HUPersonalRequestsEditorItemManager, NSString, OBLinkTrayButton, OBTrayButton;
+@class HMHome, HULocationDevice, HUPersonalRequestsDevicesModuleController, HUPersonalRequestsEditorItemManager, NSArray, NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
-@interface HUPersonalRequestsSetupViewController : OBWelcomeController <HFItemManagerDelegate, HUItemTableModuleControllerHosting, HUConfigurationViewController, HUPreloadableViewController>
+@interface HUPersonalRequestsSetupViewController : HUImageOBWelcomeController <HFItemManagerDelegate, HUItemTableModuleControllerHosting, HUConfigurationViewController, HUPreloadableViewController>
 {
     id <HUConfigurationViewControllerDelegate> _delegate;
+    HMHome *_home;
     OBTrayButton *_usePRButton;
     OBLinkTrayButton *_customizeButton;
     HULocationDevice *_locationDevice;
+    NSArray *_supportedMultiUserLanguages;
     HUPersonalRequestsEditorItemManager *_prEditorItemManager;
     HUPersonalRequestsDevicesModuleController *_prDevicesModuleController;
 }
 
 @property(retain, nonatomic) HUPersonalRequestsDevicesModuleController *prDevicesModuleController; // @synthesize prDevicesModuleController=_prDevicesModuleController;
 @property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
+@property(retain, nonatomic) NSArray *supportedMultiUserLanguages; // @synthesize supportedMultiUserLanguages=_supportedMultiUserLanguages;
 @property(retain, nonatomic) HULocationDevice *locationDevice; // @synthesize locationDevice=_locationDevice;
 @property(retain, nonatomic) OBLinkTrayButton *customizeButton; // @synthesize customizeButton=_customizeButton;
 @property(retain, nonatomic) OBTrayButton *usePRButton; // @synthesize usePRButton=_usePRButton;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -37,11 +41,12 @@
 - (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
 - (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;
 - (id)hu_preloadContent;
+- (_Bool)_allPersonalRequestsDevicesSupportVoiceRecognition;
 - (void)_turnOnAllPersonalRequests:(id)arg1;
 - (void)_dontUsePersonalRequests:(id)arg1;
 - (void)_customizePersonalRequests:(id)arg1;
 - (void)_setupPersonalRequestsItemInfrastructure;
-- (id)init;
+- (id)initWithHome:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

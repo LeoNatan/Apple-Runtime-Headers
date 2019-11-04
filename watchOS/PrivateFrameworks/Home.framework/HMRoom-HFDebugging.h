@@ -16,6 +16,7 @@
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_updateWallpaperImage:(id)arg1;
 @property(readonly, nonatomic) UIImage *hf_wallpaperImage;
+@property(readonly, nonatomic) NSArray *hf_visibleAccessories;
 @property(readonly, nonatomic) NSSet *hf_allVisibleServices;
 @property(readonly, nonatomic) NSArray *hf_unpairedHomePods;
 @property(readonly, nonatomic) NSArray *hf_allZones;

@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)imageByApplyingEffect:(id)arg1 withContext:(id)arg2 toImage:(id)arg3 withSize:(struct CGSize)arg4;
 + (id)imageByApplyingEffect:(id)arg1 withContext:(id)arg2 toImageData:(id)arg3;
-+ (void)imagesByApplyingEffectsToImageData:(id)arg1 withScale:(double)arg2 withCropRect:(struct CGRect)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)imagesByApplyingEffectsToImageData:(id)arg1 withScaleFactor:(double)arg2 originalImageScale:(double)arg3 cropRect:(struct CGRect)arg4 completion:(CDUnknownBlockType)arg5;
 + (id)displayNameForFilterNamed:(id)arg1;
 + (id)coreImageFilterDisplayNames;
 + (id)coreImageFilterNames;

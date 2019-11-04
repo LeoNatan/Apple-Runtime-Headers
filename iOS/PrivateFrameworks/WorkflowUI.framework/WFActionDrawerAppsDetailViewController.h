@@ -18,10 +18,12 @@
 
 @interface WFActionDrawerAppsDetailViewController : WFActionDrawerCompositeResultsViewController <UITableViewDataSource, UITableViewDelegate, WFActionDrawerSiriSuggestionsTableViewCellDelegate, WFActionDrawerActionTableViewCellDelegate, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable>
 {
+    _Bool _loading;
     id <WFActionDrawerAppsDetailViewControllerDelegate> _delegate;
     NSString *_bundleIdentifier;
 }
 
+@property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <WFActionDrawerAppsDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

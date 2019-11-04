@@ -8,3 +8,10 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Typedef'd Structures
+
+// Ambiguous groups
+typedef struct {
+    unsigned int originIdentifier:1;
+} CDStruct_7fce75b2;
+

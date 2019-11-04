@@ -7,9 +7,7 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (Utilities)
-- (id)deepCopy;
-- (id)removingKeys:(id)arg1;
-- (id)JSONString;
-- (id)nullToNilObjectForKey:(id)arg1;
+- (id)mt_deepCopy;
+- (id)mt_removingKeys:(id)arg1;
 @end
 

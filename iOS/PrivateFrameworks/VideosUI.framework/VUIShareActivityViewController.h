@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_prepareShareSheet:(id *)arg1 applicationActivities:(id *)arg2 inViewElement:(id)arg3;
 + (id)configureViewWithElement:(id)arg1;
++ (void)shareMediaWithShareSheet:(id)arg1;
 + (void)shareMediaItem:(id)arg1 title:(id)arg2 subtitle:(id)arg3 imageURLStr:(id)arg4 sourceView:(id)arg5;
 @property(retain, nonatomic) NSString *itemSubtitle; // @synthesize itemSubtitle=_itemSubtitle;
 @property(retain, nonatomic) NSString *itemTitle; // @synthesize itemTitle=_itemTitle;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class NSDictionary, NSNumber, NSString, WLKStoreOfferPeriod;
 
 @interface WLKStoreOffer : NSObject
 {
@@ -17,10 +17,16 @@
     unsigned long long _subscriptionType;
     NSString *_title;
     NSDictionary *_dictionary;
+    WLKStoreOfferPeriod *_renewalPeriod;
+    WLKStoreOfferPeriod *_freeTrialPeriod;
+    WLKStoreOfferPeriod *_introOfferPeriod;
 }
 
 + (id)offersWithMAPIDictionaries:(id)arg1;
 + (id)offersWithSubscriptionDictionaries:(id)arg1;
+@property(readonly, nonatomic) WLKStoreOfferPeriod *introOfferPeriod; // @synthesize introOfferPeriod=_introOfferPeriod;
+@property(readonly, nonatomic) WLKStoreOfferPeriod *freeTrialPeriod; // @synthesize freeTrialPeriod=_freeTrialPeriod;
+@property(readonly, nonatomic) WLKStoreOfferPeriod *renewalPeriod; // @synthesize renewalPeriod=_renewalPeriod;
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) unsigned long long subscriptionType; // @synthesize subscriptionType=_subscriptionType;
@@ -29,6 +35,7 @@
 @property(readonly, nonatomic) NSString *formattedPrice; // @synthesize formattedPrice=_formattedPrice;
 @property(readonly, nonatomic) NSString *buyParameters; // @synthesize buyParameters=_buyParameters;
 - (void).cxx_destruct;
+- (_Bool)specialOfferEligible;
 - (id)initWithMAPIDictionary:(id)arg1;
 - (id)initWithSubscriptionDictionary:(id)arg1;
 - (id)sui_buttonTitle;

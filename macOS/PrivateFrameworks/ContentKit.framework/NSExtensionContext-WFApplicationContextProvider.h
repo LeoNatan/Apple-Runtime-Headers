@@ -12,6 +12,7 @@
 @protocol WFExtensionApplicationContextProviderDelegate;
 
 @interface NSExtensionContext (WFApplicationContextProvider) <WFApplicationContextProvider>
+- (BOOL)shouldReverseLayoutDirection;
 @property(nonatomic) __weak id <WFExtensionApplicationContextProviderDelegate> extensionApplicationContextProviderDelegate;
 - (id)notificationNameForApplicationStateEvent:(long long)arg1 applicationContext:(id)arg2;
 - (id)currentUserInterfaceTypeForWFApplicationContext:(id)arg1;

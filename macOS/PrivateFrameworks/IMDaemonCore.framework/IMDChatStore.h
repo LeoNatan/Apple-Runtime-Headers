@@ -37,6 +37,8 @@
 - (unsigned long long)unreadCountForChat:(id)arg1;
 - (id)storeChat:(id)arg1;
 - (id)loadAllChats;
+- (void)unblackholeChat:(id)arg1;
+- (void)blackholeChat:(id)arg1;
 - (void)unarchiveChat:(id)arg1;
 - (void)archiveChat:(id)arg1;
 - (void)_updateModificationDate;

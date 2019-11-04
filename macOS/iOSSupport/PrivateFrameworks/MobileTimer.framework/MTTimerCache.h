@@ -7,26 +7,28 @@
 #import <objc/NSObject.h>
 
 @class MTTimer, NSMutableArray;
-@protocol NAScheduler;
 
 @interface MTTimerCache : NSObject
 {
     BOOL _needsUpdate;
+    struct os_unfair_lock_s _cacheLock;
     CDUnknownBlockType _updateBlock;
     NSMutableArray *_orderedTimers;
     MTTimer *_nextTimer;
-    id <NAScheduler> _serializer;
 }
 
+@property(nonatomic) struct os_unfair_lock_s cacheLock; // @synthesize cacheLock=_cacheLock;
 @property(nonatomic) BOOL needsUpdate; // @synthesize needsUpdate=_needsUpdate;
-@property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(retain, nonatomic) MTTimer *nextTimer; // @synthesize nextTimer=_nextTimer;
 @property(retain, nonatomic) NSMutableArray *orderedTimers; // @synthesize orderedTimers=_orderedTimers;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 - (void).cxx_destruct;
+- (void)getCachedTimersSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getCachedTimersWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_getCachedTimersWithCompletion:(CDUnknownBlockType)arg1 doSynchronous:(BOOL)arg2;
+- (BOOL)_isUpdateNeeded;
 - (void)markNeedsUpdate;
-- (id)initWithUpdateBlock:(CDUnknownBlockType)arg1 scheduler:(id)arg2;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (id)initWithUpdateBlock:(CDUnknownBlockType)arg1;
 
 @end

@@ -34,7 +34,6 @@
 - (void).cxx_destruct;
 - (void)_loadImageData;
 - (struct CGSize)_iconSize;
-- (void)_layoutLabelsForBounds:(struct CGRect)arg1;
 - (double)_buttonWidthForLabelWidth:(double)arg1;
 - (struct CGSize)_buttonSizeForBounds:(struct CGRect)arg1;
 - (id)_editorialDescriptionLabelFont;

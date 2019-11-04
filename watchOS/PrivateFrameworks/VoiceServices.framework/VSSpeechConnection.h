@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VSSpeechConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)killDaemon;
 - (void)forwardStreamObject:(id)arg1;
 - (void)getTTSServerVoicesWithFilter:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getLogToFile:(CDUnknownBlockType)arg1;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSystemSpeaking;
 - (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 - (id)availableVoicesForLanguageCode:(id)arg1;
+- (void)estimateDurationWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)queryPhaticCapabilityWithRequest:(id)arg1;
 - (void)prewarmIfNeededWithRequest:(id)arg1;
 - (void)updateWithConnectionIdentifier:(id)arg1;

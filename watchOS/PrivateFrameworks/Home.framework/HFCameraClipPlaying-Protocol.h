@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSArray *clips;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile;
 @property(readonly, nonatomic) AVPlayer *player;
+- (void)endScrubbingWithOffset:(double)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (id)addPeriodicTimeObserverForInterval:(double)arg1 usingBlock:(void (^)(void))arg2;
 - (void)pause;

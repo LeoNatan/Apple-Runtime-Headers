@@ -52,6 +52,7 @@
 - (id)initWithData:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (void)finalize;
+- (id)init;
 - (void)endInterruption;
 - (void)endInterruptionWithFlags:(id)arg1;
 - (void)beginInterruption;

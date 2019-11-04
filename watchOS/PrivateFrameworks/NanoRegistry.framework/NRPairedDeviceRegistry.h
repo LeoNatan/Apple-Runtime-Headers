@@ -39,6 +39,7 @@
 - (void).cxx_destruct;
 - (void)isPhoneReadyToMigrateDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)isAssertionActive:(id)arg1;
+- (_Bool)hasCompletedInitialSyncForPairingID:(id)arg1;
 - (unsigned int)migrationCountForPairingID:(id)arg1;
 - (unsigned int)lastSyncSwitchIndex;
 - (void)clearRecoveryFlagWithCompletion:(CDUnknownBlockType)arg1;

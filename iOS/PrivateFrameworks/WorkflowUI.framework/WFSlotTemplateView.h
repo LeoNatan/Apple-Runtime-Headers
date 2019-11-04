@@ -34,7 +34,7 @@
     NSArray *_accessibilityElements;
 }
 
-+ (double)heightForWidth:(double)arg1 withContents:(id)arg2 font:(id)arg3 unpopulatedFont:(id)arg4 paragraphStyle:(id)arg5;
++ (double)heightForWidth:(double)arg1 withContents:(id)arg2 horizontalPadding:(double)arg3 font:(id)arg4 unpopulatedFont:(id)arg5 paragraphStyle:(id)arg6;
 @property(retain, nonatomic) NSArray *accessibilityElements; // @synthesize accessibilityElements=_accessibilityElements;
 @property(nonatomic) unsigned long long lastLayoutManagerLineCount; // @synthesize lastLayoutManagerLineCount=_lastLayoutManagerLineCount;
 @property(nonatomic) _Bool typingAllowsMultipleLines; // @synthesize typingAllowsMultipleLines=_typingAllowsMultipleLines;
@@ -68,10 +68,13 @@
 - (id)slotIdentifierForAttachmentInteraction:(id)arg1 characterRange:(struct _NSRange)arg2;
 - (void)handleLongPressGesture:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (void)slotTemplateTypingTextViewDidPaste:(id)arg1 withOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateTypingTextViewDidCopy:(id)arg1 withOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateTypingTextViewDidCut:(id)arg1 withOriginalBlock:(CDUnknownBlockType)arg2;
 - (void)slotTemplateTypingTextViewDidDelete:(id)arg1;
 - (void)slotTemplateStorageDidInvalidateDisplay:(id)arg1;
 - (void)tintColorDidChange;
-- (void)updateEnabledStateInTextStorage;
+- (void)updateTintColorInTextStorage;
 - (struct CGRect)sourceRectForSlot:(id)arg1;
 - (struct CGRect)sourceRectForSlotWithIdentifier:(id)arg1;
 - (id)slotAtPoint:(struct CGPoint)arg1;
@@ -97,6 +100,9 @@
 - (_Bool)hasSlotWithIdentifier:(id)arg1;
 - (void)setContents:(id)arg1 animated:(_Bool)arg2;
 @property(nonatomic) _Bool extendSlotBackgroundOffEdges;
+- (void)setDisabledSlotTitleColor:(id)arg1 backgroundColor:(id)arg2 animated:(_Bool)arg3;
+@property(readonly, nonatomic) UIColor *disabledSlotBackgroundColor;
+@property(readonly, nonatomic) UIColor *disabledSlotTitleColor;
 - (id)typingParagraphStyleForParagraphStyle:(id)arg1;
 @property(copy, nonatomic) NSParagraphStyle *paragraphStyle;
 @property(retain, nonatomic) UIColor *textColor;

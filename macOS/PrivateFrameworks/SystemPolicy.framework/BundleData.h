@@ -25,6 +25,7 @@
 - (void)reloadIfNecessary;
 - (void)loadInternalData:(id)arg1;
 - (void)doReload;
+- (void)setupFSStream;
 - (id)initWithURL:(id)arg1 withReloadBlock:(CDUnknownBlockType)arg2 watchForUpdates:(BOOL)arg3;
 - (void)dealloc;
 - (id)init;

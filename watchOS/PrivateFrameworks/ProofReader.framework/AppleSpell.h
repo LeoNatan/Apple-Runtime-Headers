@@ -142,6 +142,7 @@
 - (unsigned int)_tokenIDForString:(id)arg1 languageModel:(id)arg2 language:(id)arg3 terminatorTokenID:(unsigned int)arg4;
 - (unsigned int)_tokenIDForString:(id)arg1 languageModel:(id)arg2 language:(id)arg3 createIfAbsent:(_Bool)arg4 terminatorTokenID:(unsigned int)arg5;
 - (id)_standardizedLanguageModelStringForString:(id)arg1;
+- (id)sentenceTerminatorCharacterSet;
 - (void)clearCaches;
 - (id)sentenceCorrectionsDictionaryForLanguage:(id)arg1;
 - (id)phraseCorrectionsDictionaryForLanguage:(id)arg1;

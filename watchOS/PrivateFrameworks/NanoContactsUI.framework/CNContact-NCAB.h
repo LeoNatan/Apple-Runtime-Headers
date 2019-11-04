@@ -17,6 +17,7 @@
 + (_Bool)quickActionsEnabled;
 + (_Bool)suggestionsShownInEditMode;
 + (_Bool)suggestionsEnabled;
+- (id)allPhoneNumbersAndEmailsWithFormattedNumbers:(_Bool)arg1;
 - (id)allPhoneNumbersAndEmails;
 @property(readonly, nonatomic, getter=isMailable) _Bool mailable;
 @property(readonly, nonatomic, getter=isMessagable) _Bool messagable;

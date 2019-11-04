@@ -72,6 +72,7 @@
     NSString *_title;
     NSArray *_titleLocalizationArguments;
     NSString *_titleLocalizationKey;
+    unsigned long long _realertCount;
     NSString *_summaryArgument;
     unsigned long long _summaryArgumentCount;
     NSString *_targetContentIdentifier;
@@ -123,6 +124,7 @@
 @property(copy, nonatomic) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(nonatomic) unsigned long long summaryArgumentCount; // @synthesize summaryArgumentCount=_summaryArgumentCount;
 @property(copy, nonatomic) NSString *summaryArgument; // @synthesize summaryArgument=_summaryArgument;
+@property(nonatomic) unsigned long long realertCount; // @synthesize realertCount=_realertCount;
 @property(copy, nonatomic) NSString *titleLocalizationKey; // @synthesize titleLocalizationKey=_titleLocalizationKey;
 @property(copy, nonatomic) NSArray *titleLocalizationArguments; // @synthesize titleLocalizationArguments=_titleLocalizationArguments;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

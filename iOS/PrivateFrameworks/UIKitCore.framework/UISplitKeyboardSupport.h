@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)completedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (_Bool)startedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (void)translateToPlacement:(id)arg1 animated:(_Bool)arg2;
+- (void)willPerformPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (void)updatedControllerApplicator:(id)arg1;
 @property(readonly, nonatomic) _Bool isSplitting;
 @property(readonly, nonatomic) _Bool isTranslating;

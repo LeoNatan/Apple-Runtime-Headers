@@ -19,6 +19,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_handleAppSwitcherWillPresent:(id)arg1;
 - (void)_handleCoverSheetDidPresent:(id)arg1;
 - (void)_dismissRemoteOverlayVC:(id)arg1;
 - (id)_realOverlayViewController;

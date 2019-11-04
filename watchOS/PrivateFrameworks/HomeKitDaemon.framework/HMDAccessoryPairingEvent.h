@@ -17,6 +17,8 @@
     _Bool _wacLegacy;
     _Bool _usedWiFiPPSK;
     _Bool _usedOwnershipProof;
+    _Bool _networkRouterAdd;
+    _Bool _networkRouterReplace;
     HMDAccessory *_pairedAccessory;
     int _linkType;
     int _certificationStatus;
@@ -25,11 +27,13 @@
 }
 
 + (id)removingAccessory:(id)arg1 hapAccessory:(id)arg2;
-+ (id)pairingAccessory:(id)arg1;
-+ (id)pairingAccessoryWithDescription:(id)arg1;
++ (id)pairingAccessory:(id)arg1 home:(id)arg2;
++ (id)pairingAccessoryWithDescription:(id)arg1 home:(id)arg2;
 + (id)uuid;
 + (void)initialize;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic, getter=isNetworkRouterReplace) _Bool networkRouterReplace; // @synthesize networkRouterReplace=_networkRouterReplace;
+@property(nonatomic, getter=isNetworkRouterAdd) _Bool networkRouterAdd; // @synthesize networkRouterAdd=_networkRouterAdd;
 @property(nonatomic, getter=isUsedOwnershipProof) _Bool usedOwnershipProof; // @synthesize usedOwnershipProof=_usedOwnershipProof;
 @property(nonatomic, getter=isUsedWiFiPPSK) _Bool usedWiFiPPSK; // @synthesize usedWiFiPPSK=_usedWiFiPPSK;
 @property(nonatomic) unsigned int authMethod; // @synthesize authMethod=_authMethod;
@@ -44,8 +48,8 @@
 - (void)pairedToServer:(id)arg1 certificationStatus:(int)arg2;
 - (void)setAuthenticationMethod:(unsigned int)arg1;
 - (void)setAddedViaWAC:(_Bool)arg1;
-- (id)initWithAccessoryDescription:(id)arg1;
-- (id)initWithUnpairedAccessory:(id)arg1 pairedAccessory:(id)arg2 hapAccessory:(id)arg3 isAddOperation:(_Bool)arg4;
+- (id)initWithAccessoryDescription:(id)arg1 home:(id)arg2;
+- (id)initWithUnpairedAccessory:(id)arg1 pairedAccessory:(id)arg2 hapAccessory:(id)arg3 home:(id)arg4 isAddOperation:(_Bool)arg5;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 

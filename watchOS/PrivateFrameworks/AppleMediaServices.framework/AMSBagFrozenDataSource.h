@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType dataSourceChangedHandler;
+@property(copy, nonatomic) CDUnknownBlockType dataSourceDataInvalidatedHandler;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

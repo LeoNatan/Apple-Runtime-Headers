@@ -19,14 +19,17 @@
     GEOObserverHashTable *_receivingObservers;
     GEOObserverHashTable *_sendingObservers;
     NSMutableArray *_receivedTrips;
+    _Bool _sendingAccountAvailable;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_openConnectionIfNeeded;
 - (id)_remoteObjectProxy;
+- (void)accountAvailabilityDidChange:(_Bool)arg1;
 - (void)sendMessage:(id)arg1 toGroup:(id)arg2;
 - (void)sendMessage:(id)arg1 toParticipant:(id)arg2;
+- (void)invalidateActiveHandles;
 - (void)sharedTripInvalidatedWithError:(id)arg1;
 - (void)_insertOrUpdateTrip:(id)arg1;
 - (void)sharedTripDidClose:(id)arg1;
@@ -36,6 +39,8 @@
 - (void)destinationReachedDidUpdateForSharedTrip:(id)arg1;
 - (void)destinationDidUpdateForSharedTrip:(id)arg1;
 - (void)sharedTripDidBecomeAvailable:(id)arg1;
+- (void)_fetchAccountValidWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchAccountValidWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_blockSharedTrip:(id)arg1;
 - (void)blockSharedTrip:(id)arg1;
 - (void)_unsubscribeFromSharedTripUpdatesWithIdentifier:(id)arg1;
@@ -45,6 +50,9 @@
 - (void)_fetchSharedTripsOnQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_fetchActiveHandlesOnQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_fetchActiveHandlesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchActiveHandlesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_stopSharingTrip;
 - (void)stopSharingTrip;
 - (void)_stopSharingTripWithMessagesGroup:(id)arg1;
@@ -59,12 +67,16 @@
 - (void)stopSharingTripWithContacts:(id)arg1;
 - (void)_startSharingTripWithContacts:(id)arg1;
 - (void)startSharingTripWithContacts:(id)arg1;
+- (void)_fetchSendingIdentityWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchSendingIdentityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_checkin;
 - (void)checkin;
 - (void)removeSendingObserver:(id)arg1;
 - (void)addSendingObserver:(id)arg1;
 - (void)removeReceivingObserver:(id)arg1;
 - (void)addReceivingObserver:(id)arg1;
+@property(readonly, nonatomic) _Bool hasValidSharingAccount;
+- (void)initializeAccountAvailability;
 - (void)initializeTrips;
 @property(readonly, nonatomic) NSArray *receivedTrips;
 - (id)init;

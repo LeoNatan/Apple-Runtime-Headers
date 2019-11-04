@@ -26,10 +26,10 @@
 @property __weak NSObject<NWRemotePacketProxyDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int receiveWindowPacketCount; // @synthesize receiveWindowPacketCount=_receiveWindowPacketCount;
 - (void).cxx_destruct;
-- (BOOL)receiveRemotePacket:(id)arg1;
+- (_Bool)receiveRemotePacket:(id)arg1;
 - (void)setOutputProtocolHandler:(struct nw_protocol *)arg1 local:(id)arg2 remote:(id)arg3 ipProtocol:(unsigned char)arg4;
 - (void)setDefaultOutputProtocolHandler:(struct nw_protocol *)arg1;
-- (struct nw_protocol *)outputHandlerForPacket:(id)arg1 inbound:(BOOL)arg2;
+- (struct nw_protocol *)outputHandlerForPacket:(id)arg1 inbound:(_Bool)arg2;
 @property(readonly, nonatomic) struct nw_protocol *protocol;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;

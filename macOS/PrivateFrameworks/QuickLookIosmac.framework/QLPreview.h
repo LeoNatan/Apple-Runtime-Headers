@@ -51,6 +51,7 @@
 @property(readonly) NSString *searchableItemUniqueIdentifier;
 @property(readonly) NSURL *url;
 @property(copy) NSString *displayBundleID;
+- (id)previewContentType;
 @property(readonly) NSString *contentType;
 @property(readonly) NSURL *previewURL;
 - (void)setPreviewURL:(id)arg1;

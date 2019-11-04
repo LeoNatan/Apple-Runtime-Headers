@@ -6,38 +6,12 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/QLPreviewControllerDataSource-Protocol.h>
-#import <ActionKit/QLPreviewControllerDelegate-Protocol.h>
-
-@class NSArray, NSMapTable, NSString;
-
-@interface WFMarkupAction : WFAction <QLPreviewControllerDelegate, QLPreviewControllerDataSource>
+@interface WFMarkupAction : WFAction
 {
-    NSArray *_previewItems;
-    NSMapTable *_editedFileURLsByPreviewItem;
 }
 
-@property(retain, nonatomic) NSMapTable *editedFileURLsByPreviewItem; // @synthesize editedFileURLsByPreviewItem=_editedFileURLsByPreviewItem;
-@property(retain, nonatomic) NSArray *previewItems; // @synthesize previewItems=_previewItems;
-- (void).cxx_destruct;
 - (id)localizedSubcategoryForCategory:(id)arg1;
 - (id)subcategoryForCategory:(id)arg1;
-- (void)previewControllerDidDismiss:(id)arg1;
-- (void)previewController:(id)arg1 didSaveEditedCopyOfPreviewItem:(id)arg2 atURL:(id)arg3;
-- (long long)previewController:(id)arg1 editingModeForPreviewItem:(id)arg2;
-- (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
-- (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (void)finishRunningWithError:(id)arg1;
-- (id)editedItems;
-- (void)showMarkupWithItems:(id)arg1 userInterface:(id)arg2;
-- (void)getPreviewItemsWithInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

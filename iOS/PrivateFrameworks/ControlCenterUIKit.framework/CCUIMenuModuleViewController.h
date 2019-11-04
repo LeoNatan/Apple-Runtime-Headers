@@ -27,6 +27,7 @@
     UIActivityIndicatorView *_busyIndicatorView;
     UILongPressGestureRecognizer *_pressGestureRecognizer;
     UISelectionFeedbackGenerator *_feedbackGenerator;
+    _Bool _allowsMenuInteraction;
     _Bool _ignoreMenuItemAtTouchLocationAfterExpanded;
     struct CGPoint _touchLocationToIgnore;
     CCUIMenuModuleItemView *_footerButtonView;
@@ -79,7 +80,6 @@
 - (void)_layoutHeaderSeparatorForSize:(struct CGSize)arg1;
 - (void)_layoutBusyIndicatorForSize:(struct CGSize)arg1;
 - (void)_layoutFooterButtonForSize:(struct CGSize)arg1;
-- (void)_updateTouchLocationToIgnore;
 - (void)_layoutTitleLabelForSize:(struct CGSize)arg1;
 - (void)_layoutGlyphViewForSize:(struct CGSize)arg1;
 - (void)_layoutTransformViewForSize:(struct CGSize)arg1;
@@ -89,11 +89,11 @@
 - (void)setGlyphImage:(id)arg1;
 - (id)viewForTouchContinuation;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
+- (void)didTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 - (double)preferredExpandedContentHeightWithWidth:(double)arg1;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
-- (void)didTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)contentModuleWillTransitionToExpandedContentMode:(_Bool)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (double)_desiredExpandedHeight;

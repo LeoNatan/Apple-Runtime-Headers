@@ -23,6 +23,7 @@
 + (id)timePeriodsForSampleTypes:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (long long)countOfSamplesWithType:(id)arg1 profile:(id)arg2 matchingPredicate:(id)arg3 withError:(id *)arg4;
 + (id)sourceIDsForSamplesWithType:(id)arg1 profile:(id)arg2 predicate:(id)arg3 error:(id *)arg4;
++ (id)entityEnumeratorWithTypes:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)entityEnumeratorWithType:(id)arg1 profile:(id)arg2;
 + (id)samplesWithType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 limit:(unsigned long long)arg5 anchor:(id *)arg6 error:(id *)arg7;
 + (_Bool)enumerateAssociatedObjectsForIdentifier:(long long)arg1 inDatabase:(id)arg2 error:(id *)arg3 associatedObjectHandler:(CDUnknownBlockType)arg4;

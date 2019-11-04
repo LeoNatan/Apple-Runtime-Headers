@@ -24,11 +24,13 @@
 @property(retain, nonatomic) NSMutableDictionary *l_refreshingWaiters; // @synthesize l_refreshingWaiters=_l_refreshingWaiters;
 @property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 - (void).cxx_destruct;
+- (void)_diagnosticReportWithWaiterID:(id)arg1 failureCount:(int)arg2;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
 - (void)_l_giveAccountWithIDAnotherChance:(id)arg1;
 - (_Bool)accountShouldContinue:(id)arg1;
 - (_Bool)accountWithIDShouldContinue:(id)arg1;
 - (void)unregisterAccount:(id)arg1 forOperationWithName:(id)arg2;
+- (id)tokenByRegisteringAccount:(id)arg1 forOperationWithName:(id)arg2;
 - (_Bool)registerAccount:(id)arg1 forOperationWithName:(id)arg2;
 - (void)_l_decrementRefreshCountForWaiterID:(id)arg1 operationName:(id)arg2;
 - (void)_l_decrementRefreshCountForWaiter:(id)arg1 forOperationWithName:(id)arg2;

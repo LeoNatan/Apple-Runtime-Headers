@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     BOOL m_wasShowingCommands;
     BOOL m_delayShowingCommands;
     BOOL m_dictationReplacementsMode;
+    BOOL m_shouldEmphasizeNextSelectionRects;
     int m_showingCommandsCounter;
-    BOOL m_preserveEmphasisForRangeView;
     NSArray *m_replacements;
     BOOL m_deferSelectionCommands;
     struct __CFRunLoopObserver *m_observer;
@@ -126,7 +126,6 @@ __attribute__((visibility("hidden")))
 - (void)updateSelectionDots;
 - (void)updateSelectionRectsIfNeeded;
 - (void)deferredUpdateSelectionCommands;
-- (void)clearEmphasisImmediately;
 - (void)setEmphasisOnNextSelectionRects;
 - (void)deferredUpdateSelectionRects;
 - (void)wilLResume:(id)arg1;

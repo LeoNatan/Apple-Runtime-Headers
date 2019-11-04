@@ -429,6 +429,7 @@
 - (long long)_accessibilityDataSeriesType;
 - (id)_accessibilityDataSeriesValuesForAxis:(long long)arg1;
 - (id)_accessibilityDataSeriesName;
+- (id)_accessibilityElementToFocusForAppearanceScreenChange;
 - (void)_fkaMoveRight;
 - (void)_fkaMoveLeft;
 - (void)_fkaMoveDown;
@@ -756,7 +757,7 @@
 - (_Bool)_accessibilityViewControllerShouldPreventScrollToVisibleForElement:(id)arg1;
 - (_Bool)_accessibilityScrollToVisible;
 - (_Bool)_accessibilityScrollToVisibleForNextElementRetrieval:(long long)arg1;
-- (_Bool)_accessibilityShowContextMenu;
+- (_Bool)_accessibilityShowContextMenuWithTargetPointValue:(id)arg1;
 - (struct CGPoint)_accessibilityContentOffset;
 - (_Bool)_accessibilityCanScrollInAtLeastOneDirection;
 - (id)_accessibilityTabBarAncestor;

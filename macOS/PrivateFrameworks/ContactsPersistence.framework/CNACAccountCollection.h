@@ -8,7 +8,7 @@
 
 #import <ContactsPersistence/CNAccountCollection-Protocol.h>
 
-@class CNAccountCollectionUpdateWatcher, CNPublishingSubject, NSArray, NSString, NSURL;
+@class CNAccountCollectionUpdateWatcher, CNPublishingSubject, CNUnfairLock, NSArray, NSString, NSURL;
 @protocol CNAccountDescription;
 
 @interface CNACAccountCollection : NSObject <CNAccountCollection>
@@ -19,17 +19,23 @@
     BOOL _includeLocalAccount;
     NSString *_tag;
     CNAccountCollectionUpdateWatcher *_updateWatcher;
+    CNUnfairLock *_resourceLock;
+    NSArray *_enabledAccounts;
+    NSArray *_enabledPersistentAccounts;
+    CNPublishingSubject *_enabledPersistentAccountsObservable;
 }
 
 @property(retain) CNAccountCollectionUpdateWatcher *updateWatcher; // @synthesize updateWatcher=_updateWatcher;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
+@property(retain) CNPublishingSubject *enabledPersistentAccountsObservable; // @synthesize enabledPersistentAccountsObservable=_enabledPersistentAccountsObservable;
 @property(retain) CNPublishingSubject *enabledAccountsObservable; // @synthesize enabledAccountsObservable=_enabledAccountsObservable;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
+@property(retain) NSArray *enabledPersistentAccounts; // @synthesize enabledPersistentAccounts=_enabledPersistentAccounts;
+@property(copy) NSArray *enabledAccounts; // @synthesize enabledAccounts=_enabledAccounts;
 @property(retain) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly) BOOL includeLocalAccount;
-@property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly) id <CNAccountDescription> defaultAccount;
 @property(readonly, copy) NSArray *allAccounts;
 - (id)accountWithIdentifier:(id)arg1;

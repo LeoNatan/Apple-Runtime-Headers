@@ -24,10 +24,7 @@
 + (BOOL)loadModelsWithDirectory:(id)arg1 intoModelDict:(id)arg2;
 + (void)pathsFor:(unsigned long long)arg1 withParentPath:(id)arg2 modelPath:(id *)arg3 directivesPath:(id *)arg4;
 + (void)cannedInfoForType:(unsigned long long)arg1 directivesPath:(id *)arg2 modelName:(id *)arg3;
-+ (id)errorDomain;
 + (id)sharedModelManager;
-+ (const void *)associatedObjectKeyForType:(long long)arg1;
-+ (void)initialize;
 @property(nonatomic) void *modelUpdatingLock; // @synthesize modelUpdatingLock=_modelUpdatingLock;
 @property(nonatomic) unsigned long long activeCount; // @synthesize activeCount=_activeCount;
 @property(retain, nonatomic) NSMutableDictionary *models; // @synthesize models=_models;

@@ -21,6 +21,7 @@
     _Bool _supportsUrsa;
     int _pairedDeviceCapabilitiesChangeNotificationToken;
     struct os_unfair_lock_s _capabilitiesLock;
+    unsigned long long _version;
     unsigned long long _sizeClass;
     double _screenScale;
     double _screenCornerRadius;
@@ -34,6 +35,7 @@
 + (id)nrDeviceForNRDeviceUUID:(id)arg1;
 + (id)deviceForNRDeviceUUID:(id)arg1;
 + (id)deviceForNRDevice:(id)arg1 forced:(_Bool)arg2;
++ (id)_cachedDeviceForUUID:(id)arg1;
 + (id)deviceForNRDevice:(id)arg1;
 + (void)_resetCurrentDevice;
 + (void)_deviceDidBecomeActive;
@@ -64,6 +66,7 @@
 @property(readonly, nonatomic) _Bool isLocked;
 - (_Bool)_queryAndCacheNanoRegistryDeviceCapabilities;
 @property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
+@property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (void)_loadDeviceInfo;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;

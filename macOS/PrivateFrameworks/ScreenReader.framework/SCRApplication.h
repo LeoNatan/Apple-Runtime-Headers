@@ -357,7 +357,6 @@ __attribute__((visibility("hidden")))
 - (void)_webAreaWasLoaded:(id)arg1;
 - (void)_resetVOCursorAfterWebLoad:(id)arg1;
 - (BOOL)_moveIntoWebArea:(id)arg1 uiElement:(id)arg2;
-- (void)_spinRunloopForDuration:(double)arg1;
 - (void)_sendApplePayAnnouncementRequest:(id)arg1;
 - (void)_authorizationCanceled:(id)arg1;
 - (void)_authorizationSuccessful:(id)arg1;

@@ -29,7 +29,7 @@
 + (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)tritium_invalidateMetalContentForSnapshot;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;
@@ -60,6 +60,7 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (_Bool)_isAnalog;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyShowsCanonicalContent;
 - (void)_applyDataMode;
@@ -88,6 +89,8 @@
 - (int)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_needsForegroundContainerView;
 - (void)_stopOutputtingTime;
+- (void)_characterOutputTime:(id)arg1 withGesture:(unsigned int)arg2;
+- (void)_legacyOutputTime:(id)arg1;
 - (void)_outputTime:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;

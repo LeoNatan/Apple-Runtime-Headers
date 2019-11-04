@@ -32,6 +32,7 @@
     NSString *_namePrefix;
     NSString *_nameSuffix;
     NSString *_nickName;
+    NSString *_phonemeData;
     NSString *_phoneticFirstName;
     NSString *_phoneticLastName;
     NSString *_phoneticMiddleName;
@@ -53,6 +54,7 @@
 @property(copy, nonatomic) NSString *phoneticMiddleName; // @synthesize phoneticMiddleName=_phoneticMiddleName;
 @property(copy, nonatomic) NSString *phoneticLastName; // @synthesize phoneticLastName=_phoneticLastName;
 @property(copy, nonatomic) NSString *phoneticFirstName; // @synthesize phoneticFirstName=_phoneticFirstName;
+@property(copy, nonatomic) NSString *phonemeData; // @synthesize phonemeData=_phonemeData;
 @property(copy, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(copy, nonatomic) NSString *nameSuffix; // @synthesize nameSuffix=_nameSuffix;
 @property(copy, nonatomic) NSString *namePrefix; // @synthesize namePrefix=_namePrefix;
@@ -85,6 +87,7 @@
 @property(readonly, nonatomic) _Bool hasPhoneticMiddleName;
 @property(readonly, nonatomic) _Bool hasPhoneticLastName;
 @property(readonly, nonatomic) _Bool hasPhoneticFirstName;
+@property(readonly, nonatomic) _Bool hasPhonemeData;
 @property(readonly, nonatomic) _Bool hasNickName;
 @property(readonly, nonatomic) _Bool hasNameSuffix;
 @property(readonly, nonatomic) _Bool hasNamePrefix;

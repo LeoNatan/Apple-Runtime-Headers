@@ -869,6 +869,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)didAllowPopUpWindowsForDomain:(id)arg1;
 - (void)promptToAllowDownloadFileOnDomain:(id)arg1 originatingURLString:(id)arg2 withDecisionHandler:(CDUnknownBlockType)arg3;
 - (void)_fulfillDownloadsPendingPermissionDecisionHandlerForDomain:(id)arg1 permitted:(BOOL)arg2;
+- (void)_denyAllPendingDownloads;
 - (void)_enqueueDownloadsDecisionHandler:(CDUnknownBlockType)arg1 forDomain:(id)arg2;
 - (BOOL)didWantToDownloadURL:(id)arg1;
 - (void)wantsDownloadURL:(id)arg1;

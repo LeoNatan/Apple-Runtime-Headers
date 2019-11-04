@@ -31,6 +31,8 @@
 - (void)logAggDContextSpecificCheckpointForKey:(id)arg1;
 - (id)_contextSpecificStringForAggDKey:(id)arg1;
 - (void)_showAddToWatchOfferForPass:(id)arg1;
+- (void)_presentMakeDefaultViewControllerForPass:(id)arg1;
+- (_Bool)_shouldShowMakeDefaultViewControllerForPass:(id)arg1;
 - (void)presentVerificationViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_showVerificationForPass:(id)arg1;
 - (long long)_paymentPassState;

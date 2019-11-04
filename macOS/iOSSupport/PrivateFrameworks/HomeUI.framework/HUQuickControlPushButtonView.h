@@ -41,8 +41,8 @@
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 @property(retain, nonatomic) id value;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
-- (void)_actuateTapticFeedbackIfAvailableWithIntensity:(double)arg1;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_actuateTapticFeedbackWithIntensity:(double)arg1;
+- (void)_prepareForTapticFeedback;
 - (void)_animateToShrinkView;
 - (void)_animateToEnlargeView;
 - (void)_updateDecorationIconDescriptorAnimated:(BOOL)arg1;

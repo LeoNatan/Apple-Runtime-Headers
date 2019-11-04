@@ -15,7 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (_Bool)_accessibilityServesAsContainingParentForOrdering;
 - (_Bool)_accessibilityOnlyComparesByXAxis;
-- (id)initUsingLightControls:(_Bool)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

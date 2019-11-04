@@ -154,8 +154,11 @@
 - (void)_updateAccessoriesIfNeeded;
 - (void)_updateAccessories;
 - (void)_updateAccessoryMetrics;
-- (id)_trailingAccessoriesForType:(int)arg1 view:(id)arg2 editing:(_Bool)arg3;
+- (id)_trailingAccessoriesForType:(int)arg1 view:(id)arg2 editing:(_Bool)arg3 style:(int)arg4;
 - (id)_leadingAccessoriesForEditing:(_Bool)arg1 style:(int)arg2;
+- (id)_editControlAccessoryForStyle:(int)arg1;
+- (_Bool)_editControlShouldBeOnLeadingSideForStyle:(int)arg1;
+- (int)_sanitizedEditingStyleForEditing:(_Bool)arg1 style:(int)arg2;
 - (void)_setAccessoryManager:(id)arg1;
 @property(nonatomic, getter=_usesModernAccessoriesLayout, setter=_setUsesModernAccessoriesLayout:) _Bool usesModernAccessoriesLayout;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -368,6 +371,7 @@
 - (void)_setAccessoryTintColor:(id)arg1;
 @property(retain, nonatomic) UIView *accessoryView;
 @property(nonatomic) int accessoryType;
+- (_Bool)_updateExpansionButtonFromType:(int)arg1 toType:(int)arg2;
 - (void)_syncAccessoryViewsIfNecessary;
 @property(nonatomic) _Bool shouldIndentWhileEditing;
 @property(nonatomic) _Bool showsReorderControl;

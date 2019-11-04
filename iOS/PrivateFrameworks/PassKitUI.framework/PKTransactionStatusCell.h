@@ -19,9 +19,11 @@
     NSString *_secondaryTitle;
     NSString *_secondaryValue;
     UIColor *_primaryTextOverrideColor;
+    UIColor *_secondaryTextOverrideColor;
 }
 
 @property(nonatomic) _Bool isBridge; // @synthesize isBridge=_isBridge;
+@property(retain, nonatomic) UIColor *secondaryTextOverrideColor; // @synthesize secondaryTextOverrideColor=_secondaryTextOverrideColor;
 @property(retain, nonatomic) UIColor *primaryTextOverrideColor; // @synthesize primaryTextOverrideColor=_primaryTextOverrideColor;
 @property(copy, nonatomic) NSString *secondaryValue; // @synthesize secondaryValue=_secondaryValue;
 @property(copy, nonatomic) NSString *secondaryTitle; // @synthesize secondaryTitle=_secondaryTitle;

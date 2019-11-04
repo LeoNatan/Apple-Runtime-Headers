@@ -163,6 +163,7 @@
 - (BOOL)_isExcludedByExcludable:(id)arg1;
 - (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
 - (BOOL)_delegateCanBePreventedByGestureRecognizer:(id)arg1;
+- (void)_addActiveEvent:(id)arg1;
 - (id)_beganObservable;
 - (BOOL)_shouldBegin;
 - (BOOL)_shouldReceivePress:(id)arg1;

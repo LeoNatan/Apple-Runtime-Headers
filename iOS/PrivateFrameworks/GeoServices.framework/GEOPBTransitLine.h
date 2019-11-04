@@ -14,7 +14,6 @@
 @interface GEOPBTransitLine : PBCodable <GEOTransitNamedItem, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOPBTransitTimeRange *_operatingHours;
     unsigned long long _operatingHoursCount;
@@ -27,6 +26,9 @@
     unsigned long long _muid;
     NSString *_nameDisplayString;
     GEOStyleAttributes *_styleAttributes;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _guidanceSnappingType;
     unsigned int _lineIndex;
     int _placeDisplayStyle;
@@ -133,6 +135,8 @@
 @property(nonatomic) _Bool hasLineIndex;
 @property(nonatomic) unsigned int lineIndex;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)identifierWithLocationHint:(CDStruct_c3b9c2ee)arg1;
 - (id)geoTransitLineWithSystem:(id)arg1 locationHint:(CDStruct_c3b9c2ee)arg2;
 - (id)bestName;

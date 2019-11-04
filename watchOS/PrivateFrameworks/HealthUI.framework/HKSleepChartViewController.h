@@ -34,6 +34,7 @@
 - (id)makeAnnotationDataSource;
 - (void)configureDisplayTypes:(id)arg1 timeScope:(int)arg2 stackOffset:(int)arg3;
 - (id)calendarQueryDisplayType;
+- (id)descriptionSpansForGraphView:(id)arg1;
 - (void)primaryGraphViewControllerDidInitialize:(id)arg1;
 - (id)initWithDisplayTypes:(id)arg1 healthStore:(id)arg2 unitPreferenceController:(id)arg3 dateCache:(id)arg4 chartDataCacheController:(id)arg5 selectedTimeScopeController:(id)arg6 initialXValue:(id)arg7 options:(unsigned int)arg8;
 

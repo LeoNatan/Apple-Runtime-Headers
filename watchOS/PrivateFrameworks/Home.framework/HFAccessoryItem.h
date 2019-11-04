@@ -12,7 +12,7 @@
 #import <Home/HFServiceLikeBuilderCreating-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 
-@class HMAccessory, NSArray, NSSet, NSString;
+@class HMAccessory, HMHome, NSArray, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject;
 
 @interface HFAccessoryItem : HFItem <HFServiceLikeItem, HFActionBuilderFactory, HFServiceLikeBuilderCreating, HFGroupableItemProtocol, HFCompoundItemProtocol>
@@ -30,10 +30,10 @@
 - (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(CDUnknownBlockType)arg2;
 - (id)_mostCommonValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
-- (id)_multiSensorIconDescriptor;
+- (_Bool)isMultiLightDevice;
 - (_Bool)isMultiSensorDevice;
 - (id)_buildControlDescription;
-- (id)_buildTileDescription;
+- (id)_buildTileDescription:(_Bool)arg1;
 @property(readonly, nonatomic) NSArray *allHomeKitObjects;
 @property(readonly, nonatomic) id <HFHomeKitObject> primaryHomeKitObject;
 @property(readonly, nonatomic) unsigned int numberOfCompoundItems;
@@ -45,6 +45,7 @@
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)accessories;
 @property(readonly, nonatomic) NSSet *services;
+@property(readonly, nonatomic) HMHome *home;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (_Bool)actionsMayRequireDeviceUnlock;
 - (_Bool)containsActions;

@@ -18,7 +18,7 @@
 - (void)tabCollectionView:(id)arg1 didSelectItem:(id)arg2;
 - (void)moveTabDocument:(id)arg1 overTabDocument:(id)arg2;
 - (id)tiltedTabViewToolbarItems;
-- (void)updateTiltedTabViewToolbarItems;
+- (void)updateTiltedTabViewToolbarItems:(_Bool)arg1;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

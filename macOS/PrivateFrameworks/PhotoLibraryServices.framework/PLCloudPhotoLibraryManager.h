@@ -14,7 +14,7 @@
 #import <PhotoLibraryServices/PLCloudUserSessionHandling-Protocol.h>
 #import <PhotoLibraryServices/PLForegroundMonitorDelegate-Protocol.h>
 
-@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLCacheDeleteSupport, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLLibraryServicesManager, PLPhotoLibrary, PLPhotoLibraryPathManager;
+@class CPLLibraryManager, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLCacheDeleteSupport, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLLibraryServicesManager, PLPhotoLibrary, PLPhotoLibraryPathManager;
 @protocol OS_dispatch_queue, OS_dispatch_source, PLCloudChangeTracker;
 
 @interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundMonitorDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
@@ -32,6 +32,7 @@
     BOOL _pushOnIdle;
     BOOL _pullOnIdle;
     BOOL _modeChangePending;
+    BOOL _hasSettledInitialBatch;
     CPLLibraryManager *_cplLibrary;
     int _pauseRequest;
     short _pauseReason;
@@ -39,7 +40,7 @@
     PLCloudResourceManager *_resourceManager;
     NSObject<OS_dispatch_source> *_unpauseDispatchTimer;
     NSObject<OS_dispatch_source> *_userUnpauseDispatchTimer;
-    NSDate *_pendingResetSyncDate;
+    long long _pendingResetSyncType;
     BOOL _initializedMaster;
     PFCoalescer *_coalescer;
     NSObject<OS_dispatch_queue> *_uploadDownloadCountQueue;
@@ -89,7 +90,7 @@
 - (void)_stopWorkInProgressTimer;
 - (void)_startWorkInProgressTimer;
 - (void)endUserSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) BOOL inResetSync;
+@property(readonly, nonatomic) long long currentResetSyncType;
 @property(readonly, nonatomic) unsigned long long totalUploadedOriginalSize;
 @property(readonly, nonatomic) unsigned long long totalSizeOfUnpushedOriginals;
 @property(readonly, nonatomic) unsigned long long totalNumberOfUploadedMasters;
@@ -226,6 +227,7 @@
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)enableiCPLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)sizeOfResourcesToUploadByCPL:(id *)arg1;
+- (void)invalidate;
 - (id)initWithLibraryServicesManager:(id)arg1;
 - (id)_debugNameForMode:(unsigned long long)arg1;
 

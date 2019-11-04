@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)addDevicesObject:(id)arg1;
 - (void)removeDevicesObject:(id)arg1;
+- (_Bool)updateWithMutation:(id)arg1 error:(id *)arg2;
 - (id)deviceForDeviceIdVRFOutput:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithMutation:(id)arg1;

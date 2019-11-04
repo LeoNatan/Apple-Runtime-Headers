@@ -9,7 +9,7 @@
 #import <ScreenTimeUI/CNContactViewControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
 
-@class NSObject, NSString, SBSLockScreenService, STHourglassView, STLockoutPolicyController, UIAlertController, UIButton, UILabel, UIVisualEffectView;
+@class NSObject, NSString, SBSLockScreenService, STBlockingBackdropView, STHourglassView, STLockoutPolicyController, UIAlertController, UIButton, UILabel;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
 @interface STLockoutViewController : UIViewController <CNContactViewControllerDelegate, STLockoutPolicyControllerDelegate>
@@ -31,7 +31,6 @@
     _Bool _forSnapshot;
     _Bool _didFinishDismissing;
     STLockoutPolicyController *_policyController;
-    UIVisualEffectView *_backdropView;
     STHourglassView *_hourglassView;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
@@ -62,7 +61,6 @@
 @property __weak UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
-@property __weak UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(nonatomic) _Bool mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
 @property(nonatomic) _Bool okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
@@ -105,6 +103,7 @@
 - (void)_changeMainButtonToEnterScreenTimePasscode;
 - (void)_changeMainButtonToIgnoreLimit;
 - (void)_changeMainButtonToAskForMore;
+- (void)_updateMainButtonVisibility;
 - (void)_updateOKButtonVisibility;
 - (void)_changeMessageToInitial;
 - (void)_presentAlertController:(id)arg1;
@@ -123,10 +122,13 @@
 @property(copy, nonatomic) NSString *bundleIdentifier;
 - (void)_setupCommon;
 - (void)dealloc;
+@property(readonly, nonatomic) STBlockingBackdropView *viewIfLoaded;
+@property(retain, nonatomic) STBlockingBackdropView *view;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)nextResponder;
 - (id)initWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
 - (id)initWithWebsiteURL:(id)arg1;

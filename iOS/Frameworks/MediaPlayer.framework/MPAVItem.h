@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAsset, AVPlayerItem, AVPlayerItemAccessLog, MPAlternateTracks, MPMediaItem, MPModelGenericObject, MPModelPlayEvent, MPNowPlayingContentItem, MPQueueFeeder, NSArray, NSDictionary, NSError, NSNumber, NSString, NSURL;
+@class AVAsset, AVPlayerItem, AVPlayerItemAccessLog, ICMusicSubscriptionLeaseStatus, MPAlternateTracks, MPMediaItem, MPModelGenericObject, MPModelPlayEvent, MPNowPlayingContentItem, MPQueueFeeder, NSArray, NSDictionary, NSError, NSNumber, NSString, NSURL;
 @protocol MPAVItemObserver, OS_dispatch_queue;
 
 @interface MPAVItem : NSObject
@@ -48,6 +48,7 @@
     long long _likedState;
     CDStruct_1b6d18a9 _playerItemDuration;
     long long _exportableArtworkRevision;
+    _Bool _meetsPlaybackHistoryThreshold;
     _Bool _assetLoaded;
     _Bool _didAttemptToLoadAsset;
     _Bool _canReusePlayerItem;
@@ -55,6 +56,7 @@
     _Bool _supportsLikedState;
     _Bool _prefersSeekOverSkip;
     _Bool _hasProtectedContent;
+    _Bool _tailPlaceholder;
     _Bool _startItem;
     _Bool _shouldPreventPlayback;
     _Bool _allowsAirPlayFromCloud;
@@ -82,6 +84,8 @@
     NSString *_storeFrontIdentifier;
     NSNumber *_storeAccountID;
     NSNumber *_useListeningHistory;
+    long long _leasePlaybackPreventionState;
+    ICMusicSubscriptionLeaseStatus *_leaseStatus;
     NSString *_contentItemID;
 }
 
@@ -93,6 +97,8 @@
 + (void)setDefaultScaleMode:(long long)arg1;
 + (long long)defaultScaleMode;
 @property(copy, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
+@property(readonly, copy, nonatomic) ICMusicSubscriptionLeaseStatus *leaseStatus; // @synthesize leaseStatus=_leaseStatus;
+@property(readonly, nonatomic) long long leasePlaybackPreventionState; // @synthesize leasePlaybackPreventionState=_leasePlaybackPreventionState;
 @property(readonly, nonatomic) NSNumber *useListeningHistory; // @synthesize useListeningHistory=_useListeningHistory;
 @property(readonly, nonatomic) NSNumber *storeAccountID; // @synthesize storeAccountID=_storeAccountID;
 @property(nonatomic, getter=hasExternalDisplay) _Bool externalDisplay; // @synthesize externalDisplay=_externalDisplay;
@@ -107,6 +113,7 @@
 @property(readonly, nonatomic) MPModelGenericObject *modelGenericObject; // @synthesize modelGenericObject=_modelGenericObject;
 @property(readonly, nonatomic) _Bool shouldPreventPlayback; // @synthesize shouldPreventPlayback=_shouldPreventPlayback;
 @property(nonatomic, getter=isStartItem) _Bool startItem; // @synthesize startItem=_startItem;
+@property(readonly, nonatomic, getter=isTailPlaceholder) _Bool tailPlaceholder; // @synthesize tailPlaceholder=_tailPlaceholder;
 @property(readonly, nonatomic) _Bool hasProtectedContent; // @synthesize hasProtectedContent=_hasProtectedContent;
 @property(readonly, nonatomic) _Bool prefersSeekOverSkip; // @synthesize prefersSeekOverSkip=_prefersSeekOverSkip;
 @property(nonatomic) float loudnessInfoVolumeNormalization; // @synthesize loudnessInfoVolumeNormalization=_loudnessInfoVolumeNormalization;
@@ -125,6 +132,7 @@
 @property(readonly, nonatomic) _Bool canReusePlayerItem; // @synthesize canReusePlayerItem=_canReusePlayerItem;
 @property(readonly, nonatomic) _Bool didAttemptToLoadAsset; // @synthesize didAttemptToLoadAsset=_didAttemptToLoadAsset;
 @property(readonly, nonatomic, getter=isAssetLoaded) _Bool assetLoaded; // @synthesize assetLoaded=_assetLoaded;
+@property(readonly, nonatomic) _Bool meetsPlaybackHistoryThreshold; // @synthesize meetsPlaybackHistoryThreshold=_meetsPlaybackHistoryThreshold;
 @property(nonatomic) __weak id <MPAVItemObserver> observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSArray *urlTimeMarkers; // @synthesize urlTimeMarkers=_urlTimeMarkers;
 @property(nonatomic) float soundCheckVolumeNormalization; // @synthesize soundCheckVolumeNormalization=_soundCheckVolumeNormalization;
@@ -251,6 +259,7 @@
 - (unsigned long long)alternatesCountForTypes:(unsigned long long)arg1;
 - (_Bool)hasAlternatesForTypes:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *containerUniqueID;
+@property(readonly, nonatomic) _Bool hasTimeSyncedLyrics;
 @property(readonly, nonatomic) _Bool hasStoreLyrics;
 @property(readonly, nonatomic) NSString *libraryLyrics;
 @property(readonly, nonatomic) NSString *lyrics;
@@ -272,6 +281,7 @@
 @property(readonly, nonatomic) long long artistStoreID;
 @property(readonly, nonatomic) NSString *albumArtist;
 @property(readonly, nonatomic) NSString *artist;
+- (long long)albumYear;
 @property(readonly, nonatomic) NSString *album;
 @property(readonly, nonatomic) AVPlayerItemAccessLog *accessLog;
 - (id)url;
@@ -298,6 +308,7 @@
 @property(readonly, nonatomic) AVAsset *asset;
 - (void)_loadAssetAndPlayerItem;
 - (void)loadAssetAndPlayerItem;
+- (void)disableItemReuse;
 @property(readonly, nonatomic) _Bool canUseLoadedAsset;
 - (void)flushNowPlayingCaches;
 - (void)dealloc;
@@ -308,6 +319,8 @@
 - (id)initWithURL:(id)arg1;
 - (id)init;
 - (_Bool)isSupportedDefaultPlaybackSpeed:(long long)arg1;
+@property(readonly, nonatomic, getter=isPlaceholder) _Bool placeholder;
+- (void)setMeetsPlaybackHistoryThresholdForElapsedTime:(double)arg1 startTime:(double)arg2;
 - (CDUnknownBlockType)artworkCatalogBlock;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 

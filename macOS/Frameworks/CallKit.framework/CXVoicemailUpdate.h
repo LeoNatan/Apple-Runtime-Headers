@@ -12,7 +12,7 @@
 
 @class CXHandle, NSDate, NSString, NSURL, NSUUID;
 
-@interface CXVoicemailUpdate : NSObject <NSSecureCoding, CXCopying, NSCopying>
+@interface CXVoicemailUpdate : NSObject <CXCopying, NSSecureCoding, NSCopying>
 {
     BOOL _played;
     BOOL _trashed;

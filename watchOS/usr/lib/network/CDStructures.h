@@ -552,13 +552,12 @@ struct nw_parameters_path_value {
     unsigned int use_p2p:1;
     unsigned int no_fallback:1;
     unsigned int no_cellular_fallback:1;
-    unsigned int multipath_fallback:1;
     unsigned int discretionary:1;
     unsigned int allow_socket_access:1;
     unsigned int only_primary_requires_type:1;
     unsigned int prefer_no_proxy:1;
     unsigned int no_proxy_path_selection:1;
-    unsigned int __pad_bits:1;
+    unsigned int __pad_bits:2;
     unsigned char __pad[2];
 };
 

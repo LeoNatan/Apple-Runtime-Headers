@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <EmailDaemon/EDThreadQueryHandler.h>
+#import <EmailDaemon/EDMessageRepositoryQueryHandler.h>
 
 #import <EmailDaemon/EDMessageChangeHookResponder-Protocol.h>
 #import <EmailDaemon/EDThreadChangeHookResponder-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDThreadPersistence, EDUpdateThrottler, EFCancelationToken, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class EDThreadPersistence, EDThreadReloadSummaryHelper, EDUpdateThrottler, EFCancelationToken, EMMailboxScope, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol EFCancelable, EFScheduler;
 
-@interface EDPrecomputedThreadQueryHandler : EDThreadQueryHandler <EDMessageChangeHookResponder, EDThreadChangeHookResponder, EFLoggable>
+@interface EDPrecomputedThreadQueryHandler : EDMessageRepositoryQueryHandler <EDMessageChangeHookResponder, EDThreadChangeHookResponder, EFLoggable>
 {
     EMThreadScope *_threadScope;
     EDThreadPersistence *_threadPersistence;
@@ -22,21 +22,23 @@
     EFCancelationToken *_cancelationToken;
     NSMutableDictionary *_pendingChanges;
     NSMutableArray *_pendingPositionChanges;
-    NSMutableSet *_pendingDeletes;
     NSMutableSet *_unreportedJournaledObjectIDs;
     NSMutableDictionary *_reportedJournaledObjectIDs;
     NSMutableDictionary *_oldestThreadObjectIDsByMailbox;
     id <EFCancelable> _updateOldestThreadsCancelationToken;
     EDUpdateThrottler *_updateThrottler;
+    EDThreadReloadSummaryHelper *_reloadSummaryHelper;
+    EMMailboxScope *_mailboxScope;
 }
 
 + (id)log;
+@property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
+@property(readonly, nonatomic) EDThreadReloadSummaryHelper *reloadSummaryHelper; // @synthesize reloadSummaryHelper=_reloadSummaryHelper;
 @property(readonly, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
 @property(retain, nonatomic) id <EFCancelable> updateOldestThreadsCancelationToken; // @synthesize updateOldestThreadsCancelationToken=_updateOldestThreadsCancelationToken;
 @property(retain, nonatomic) NSMutableDictionary *oldestThreadObjectIDsByMailbox; // @synthesize oldestThreadObjectIDsByMailbox=_oldestThreadObjectIDsByMailbox;
 @property(retain, nonatomic) NSMutableDictionary *reportedJournaledObjectIDs; // @synthesize reportedJournaledObjectIDs=_reportedJournaledObjectIDs;
 @property(retain, nonatomic) NSMutableSet *unreportedJournaledObjectIDs; // @synthesize unreportedJournaledObjectIDs=_unreportedJournaledObjectIDs;
-@property(retain, nonatomic) NSMutableSet *pendingDeletes; // @synthesize pendingDeletes=_pendingDeletes;
 @property(retain, nonatomic) NSMutableArray *pendingPositionChanges; // @synthesize pendingPositionChanges=_pendingPositionChanges;
 @property(retain, nonatomic) NSMutableDictionary *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
 @property(retain, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
@@ -48,8 +50,8 @@
 - (void)_oldestThreadsNeedUpdate;
 - (id)_messageForPersistedMessage:(id)arg1;
 - (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
-- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
-- (void)persistenceCanResetThreadScope:(id)arg1 replyBlock:(CDUnknownBlockType)arg2;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 oldConversationID:(long long)arg2 message:(id)arg3 generationWindow:(id)arg4;
+- (void)persistenceWillResetThreadScope:(id)arg1 denyBlock:(CDUnknownBlockType)arg2;
 - (void)persistenceDidFinishThreadUpdates;
 - (void)persistenceIsDeletingThreadWithObjectID:(id)arg1 generationWindow:(id)arg2;
 - (_Bool)_keyPathsAffectSorting:(id)arg1;

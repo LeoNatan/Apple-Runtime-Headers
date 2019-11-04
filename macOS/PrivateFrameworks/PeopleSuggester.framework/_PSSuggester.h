@@ -18,15 +18,16 @@
 + (id)suggesterWithDaemon;
 @property(readonly, nonatomic) _PSSuggesterConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+- (void)provideFeedbackForMessagesZkwSuggestions:(id)arg1;
 - (void)provideFeedbackForSuggestions:(id)arg1;
 - (id)relativeAppUsageProbabilitiesForCandidateBundleIds:(id)arg1 daysAgo:(long long)arg2;
 - (id)hourOfDayProbabilitiesToInteractWithContacts:(id)arg1;
 - (id)hourOfDayProbabilitiesToInteractWithContact:(id)arg1;
-- (id)shareExtensionSuggestionsFromContext:(id)arg1;
 - (id)rankedAutocompleteSuggestionsFromContext:(id)arg1 candidates:(id)arg2;
 - (id)rankedZKWSuggestionsFromContext:(id)arg1;
 - (id)rankedGlobalSuggestionsFromContext:(id)arg1 contactsOnly:(BOOL)arg2;
 - (id)rankedNameSuggestionsFromContext:(id)arg1 name:(id)arg2;
+- (id)shareExtensionSuggestionsFromContext:(id)arg1;
 - (id)suggestInteractionsFromContext:(id)arg1;
 - (id)shareSheetInteractionsFromContext:(id)arg1;
 - (void)dealloc;

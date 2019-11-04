@@ -11,9 +11,11 @@
 @interface HUGridFlowLayoutCellAttributes : UICollectionViewLayoutAttributes
 {
     HFWallpaperSlice *_blurredWallpaperSlice;
+    HFWallpaperSlice *_darkModeBlurredWallpaperSlice;
     struct CGRect _normalizedWallpaperRect;
 }
 
+@property(retain, nonatomic) HFWallpaperSlice *darkModeBlurredWallpaperSlice; // @synthesize darkModeBlurredWallpaperSlice=_darkModeBlurredWallpaperSlice;
 @property(retain, nonatomic) HFWallpaperSlice *blurredWallpaperSlice; // @synthesize blurredWallpaperSlice=_blurredWallpaperSlice;
 @property(nonatomic) struct CGRect normalizedWallpaperRect; // @synthesize normalizedWallpaperRect=_normalizedWallpaperRect;
 - (void).cxx_destruct;

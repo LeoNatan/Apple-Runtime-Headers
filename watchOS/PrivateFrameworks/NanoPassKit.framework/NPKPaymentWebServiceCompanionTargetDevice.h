@@ -11,12 +11,11 @@
 #import <NanoPassKit/PKPaymentWebServiceTargetDeviceProtocol-Protocol.h>
 
 @class IDSService, NPKCompanionAgentConnection, NPKTapToRadarManager, NPKTargetDeviceAssertionManager, NRActiveDeviceAssertion, NSMutableDictionary, NSString;
-@protocol NPKPaymentWebServiceCompanionTargetDeviceDelegate, NPKPaymentWebServiceCompanionTargetDevicePasscodeChangeDelegate, OS_dispatch_queue;
+@protocol NPKPasscodeChangeCoordinatorProtocol, NPKPaymentWebServiceCompanionTargetDeviceDelegate, OS_dispatch_queue;
 
 @interface NPKPaymentWebServiceCompanionTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceTargetDeviceProtocol, PKPaymentWebServiceArchiver>
 {
     id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> _delegate;
-    id <NPKPaymentWebServiceCompanionTargetDevicePasscodeChangeDelegate> _passcodeChangeDelegate;
     unsigned int _context;
     IDSService *_provisioningService;
     NPKCompanionAgentConnection *_companionAgentConnection;
@@ -26,9 +25,13 @@
     NRActiveDeviceAssertion *_provisioningActiveDeviceAssertion;
     NPKTargetDeviceAssertionManager *_remoteDeviceAssertionManager;
     NPKTapToRadarManager *_manager;
+    id <NPKPasscodeChangeCoordinatorProtocol> _passcodeChangeCoordinator;
+    id _passcodeUpgradeFlowController;
 }
 
 + (id)bridgedClientInfoHTTPHeader;
+@property(nonatomic) __weak id passcodeUpgradeFlowController; // @synthesize passcodeUpgradeFlowController=_passcodeUpgradeFlowController;
+@property(retain, nonatomic) id <NPKPasscodeChangeCoordinatorProtocol> passcodeChangeCoordinator; // @synthesize passcodeChangeCoordinator=_passcodeChangeCoordinator;
 @property(retain, nonatomic) NPKTapToRadarManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) NPKTargetDeviceAssertionManager *remoteDeviceAssertionManager; // @synthesize remoteDeviceAssertionManager=_remoteDeviceAssertionManager;
 @property(retain, nonatomic) NRActiveDeviceAssertion *provisioningActiveDeviceAssertion; // @synthesize provisioningActiveDeviceAssertion=_provisioningActiveDeviceAssertion;
@@ -38,7 +41,6 @@
 @property(retain, nonatomic) NPKCompanionAgentConnection *companionAgentConnection; // @synthesize companionAgentConnection=_companionAgentConnection;
 @property(retain, nonatomic) IDSService *provisioningService; // @synthesize provisioningService=_provisioningService;
 @property(nonatomic) unsigned int context; // @synthesize context=_context;
-@property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDevicePasscodeChangeDelegate> passcodeChangeDelegate; // @synthesize passcodeChangeDelegate=_passcodeChangeDelegate;
 @property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)_currentlyPairing;
@@ -55,11 +57,13 @@
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
 - (void)_invalidateAssertionOfType:(unsigned int)arg1;
 - (void)_acquireAssertionOfType:(unsigned int)arg1;
+- (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
 - (void)endRequiringUpgradedPasscodeIfNecessary;
 - (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
 - (void)handlePasscodeUpgradeFlowShouldExitRequest:(id)arg1;
+- (void)exitPasscodeUpgradeForPasscodeUpgradeFlowController:(id)arg1 withShouldContinue:(_Bool)arg2 error:(id)arg3;
 - (void)applyPasscodeRestrictionsResponse:(id)arg1;
-- (void)applyPasscodeRestrictionsRequestWithCompletion:(CDUnknownBlockType)arg1;
+- (void)requestPasscodeUpgradeForPasscodeUpgradeFlowController:(id)arg1 withVisibleViewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)checkPasscodePolicyComplianceResponse:(id)arg1;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -107,11 +111,11 @@
 - (id)_deviceSupportedFeatureIdentifiers;
 - (void)paymentWebService:(id)arg1 updateAccountWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateAccountWithIdentifierResponse:(id)arg1;
+- (id)supportedFeatureIdentifiersForAccountProvisioningWithPaymentWebService:(id)arg1;
 - (id)supportedFeatureIdentifiersWithPaymentWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 deviceMetadataWithFields:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deviceMetadataResponse:(id)arg1;
 - (void)updatedAccountsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
-- (void)updatedAccountsForProvisioningResponse:(id)arg1;
 - (_Bool)paymentWebServiceSupportsAccounts:(id)arg1;
 - (void)handleDeviceUnlockedForPendingProvisioningRequest:(id)arg1;
 - (void)handlePeerPaymentTermsAndConditionsAcceptanceRequest:(id)arg1;

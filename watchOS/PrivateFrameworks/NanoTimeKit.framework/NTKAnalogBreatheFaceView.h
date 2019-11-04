@@ -20,7 +20,7 @@
 @property(retain, nonatomic) CSLPIBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 - (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)_releaseBacklightAssertion;
 - (void)_takeBacklightAssertion;
 - (void)setupDataSources;

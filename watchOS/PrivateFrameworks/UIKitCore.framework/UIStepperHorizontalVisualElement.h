@@ -80,7 +80,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateButton:(id)arg1 backgroundView:(id)arg2 highlightView:(id)arg3 backgroundImage:(id)arg4 highlightImage:(id)arg5 onRight:(_Bool)arg6;
 - (void)_updateHighlight:(id)arg1 button:(id)arg2 onRight:(_Bool)arg3;
 - (id)_alphaAnimator:(_Bool)arg1;
+- (struct CGRect)_rightHighlightInsetFrame;
 - (struct CGRect)_rightHighlightFrame;
+- (struct CGRect)_leftHighlightInsetFrame;
 - (struct CGRect)_leftHighlightFrame;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2;

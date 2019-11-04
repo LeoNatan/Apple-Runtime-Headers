@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DeviceManager, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString;
+@class ICDeviceManager, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSNumber, NSString;
 @protocol ICDeviceDelegate;
 
 @interface ICDevice : NSObject
@@ -25,7 +25,6 @@
     int _ipPort;
     id <ICDeviceDelegate> _delegate;
     unsigned long long _type;
-    NSArray *_capabilities;
     NSString *_name;
     NSString *_productKind;
     struct CGImage *_icon;
@@ -38,7 +37,10 @@
     NSString *_serialNumberString;
     NSString *_autolaunchApplicationPath;
     NSString *_persistentIDString;
-    DeviceManager *_deviceManager;
+    NSMutableSet *_deviceCapabilities;
+    ICDeviceManager *_deviceManager;
+    NSString *_internalUUID;
+    NSNumber *_deviceHandle;
     NSString *_volumePath;
     CDUnknownBlockType _completionBlock;
     NSNumber *_connectionID;
@@ -71,7 +73,10 @@
 @property _Bool openSessionPending; // @synthesize openSessionPending=_openSessionPending;
 @property _Bool autoOpenSession; // @synthesize autoOpenSession=_autoOpenSession;
 @property(copy, nonatomic) NSString *volumePath; // @synthesize volumePath=_volumePath;
-@property(retain, nonatomic) DeviceManager *deviceManager; // @synthesize deviceManager=_deviceManager;
+@property(copy, nonatomic) NSNumber *deviceHandle; // @synthesize deviceHandle=_deviceHandle;
+@property(copy, nonatomic) NSString *internalUUID; // @synthesize internalUUID=_internalUUID;
+@property(retain, nonatomic) ICDeviceManager *deviceManager; // @synthesize deviceManager=_deviceManager;
+@property(retain, nonatomic) NSMutableSet *deviceCapabilities; // @synthesize deviceCapabilities=_deviceCapabilities;
 @property(readonly) int moduleExecutableArchitecture; // @synthesize moduleExecutableArchitecture=_moduleExecutableArchitecture;
 @property(copy, nonatomic) NSString *persistentIDString; // @synthesize persistentIDString=_persistentIDString;
 @property(readonly, getter=isRemote) _Bool remote; // @synthesize remote=_remote;
@@ -90,7 +95,6 @@
 @property(nonatomic) struct CGImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *productKind; // @synthesize productKind=_productKind;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) id <ICDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleImageCaptureEventNotification:(id)arg1;
@@ -105,6 +109,9 @@
 - (void)requestEjectWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)canEject;
 - (void)requestEject;
+- (void)removeCapability:(id)arg1;
+- (void)addCapability:(id)arg1;
+@property(readonly, nonatomic) NSArray *capabilities;
 - (void)dealloc;
 - (id)description;
 - (id)init;

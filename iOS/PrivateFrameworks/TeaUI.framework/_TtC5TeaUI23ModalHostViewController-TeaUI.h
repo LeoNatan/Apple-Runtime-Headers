@@ -11,5 +11,6 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+@property(nonatomic, readonly) long long preferredStatusBarStyle;
 @end
 

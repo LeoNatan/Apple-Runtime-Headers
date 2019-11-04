@@ -8,7 +8,7 @@
 
 #import <AXSpeechManager/TTSSpeechSynthesizerDelegate-Protocol.h>
 
-@class AVAudioSession, AXDispatchTimer, AXSpeechAction, AXSpeechThread, NSArray, NSMutableArray, NSNumber, NSString, TTSSpeechSynthesizer;
+@class AVAudioSession, AXDispatchTimer, AXSpeechAction, AXSpeechThread, NSArray, NSLock, NSMutableArray, NSNumber, NSString, TTSSpeechSynthesizer;
 @protocol OS_dispatch_queue;
 
 @interface AXSpeechManager : NSObject <TTSSpeechSynthesizerDelegate>
@@ -19,6 +19,9 @@
     NSObject<OS_dispatch_queue> *_propertyQueue;
     _Bool _isSpeaking;
     _Bool _speechEnabled;
+    _Bool _audioSessionObserversEnabled;
+    _Bool _speechThreadFinished;
+    NSLock *_speechThreadQueueLock;
     _Bool _isPaused;
     _Bool _isInAudioInterruption;
     _Bool _supportsAccurateWordCallbacks;
@@ -35,6 +38,7 @@
     NSString *_audioSessionCategory;
     unsigned long long _setActiveOptions;
     AVAudioSession *_audioSession;
+    double _audioSessionInactiveTimeout;
     CDUnknownBlockType _requestWillStart;
     NSNumber *_originalSpeechRateForJobOverride;
     AXDispatchTimer *_audioDeactivatorTimer;
@@ -49,6 +53,7 @@
 + (id)matchedRangesForString:(id)arg1 withRegularExpression:(struct URegularExpression *)arg2;
 + (struct URegularExpression *)createRegularExpressionFromString:(id)arg1;
 + (id)_resetAvailableVoices:(_Bool)arg1;
++ (_Bool)currentProcessAllowedToSaveVoiceInfo;
 + (id)_resetAvailableVoices;
 + (id)availableVoices:(_Bool)arg1;
 + (id)availableVoices;
@@ -65,6 +70,7 @@
 @property(retain, nonatomic) AXDispatchTimer *audioDeactivatorTimer; // @synthesize audioDeactivatorTimer=_audioDeactivatorTimer;
 @property(retain, nonatomic) NSNumber *originalSpeechRateForJobOverride; // @synthesize originalSpeechRateForJobOverride=_originalSpeechRateForJobOverride;
 @property(copy, nonatomic) CDUnknownBlockType requestWillStart; // @synthesize requestWillStart=_requestWillStart;
+@property(nonatomic) double audioSessionInactiveTimeout; // @synthesize audioSessionInactiveTimeout=_audioSessionInactiveTimeout;
 @property(nonatomic) _Bool usesAuxiliarySession; // @synthesize usesAuxiliarySession=_usesAuxiliarySession;
 @property(readonly, nonatomic) _Bool showControlCenterControls; // @synthesize showControlCenterControls=_showControlCenterControls;
 @property(retain, nonatomic) AXSpeechAction *requestedActionDuringAudioInterruption; // @synthesize requestedActionDuringAudioInterruption=_requestedActionDuringAudioInterruption;
@@ -76,6 +82,7 @@
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 withError:(id)arg4;
 - (void)__speechJobFinished:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
+- (void)_processDidStartCallback:(id)arg1;
 @property(nonatomic) unsigned int audioQueueFlags; // @synthesize audioQueueFlags=_audioQueueFlags;
 @property(retain, nonatomic) NSArray *outputChannels;
 @property(readonly, nonatomic) _Bool isSpeaking; // @dynamic isSpeaking;
@@ -115,8 +122,13 @@
 - (void)_handleMediaServicesWereLost:(id)arg1;
 - (void)_tearDown;
 - (void)tearDown;
+- (_Bool)_enqueueSelectorOnSpeechThread:(SEL)arg1 object:(id)arg2 waitUntilDone:(_Bool)arg3;
 - (void)dealloc;
+- (void)handleAudioSessionObservers:(_Bool)arg1;
+- (void)_updateAuxiliarySession:(_Bool)arg1;
 - (void)_updateAuxiliarySession;
+- (void)__activeAudioRouteChanged:(id)arg1;
+- (void)_activeAudioRouteChanged:(id)arg1;
 - (id)init;
 
 // Remaining properties

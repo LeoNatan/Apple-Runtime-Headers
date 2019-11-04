@@ -12,12 +12,14 @@
 
 @interface _HKGraphViewAxisAnnotationHandler : NSObject <HKGraphSeriesAxisAnnotation>
 {
+    _Bool _disableDuringTiling;
     _Bool _clearedPreviousAnnotations;
     NSMapTable *_seriesToAnnotations;
 }
 
 @property(nonatomic) _Bool clearedPreviousAnnotations; // @synthesize clearedPreviousAnnotations=_clearedPreviousAnnotations;
 @property(retain, nonatomic) NSMapTable *seriesToAnnotations; // @synthesize seriesToAnnotations=_seriesToAnnotations;
+@property(nonatomic) _Bool disableDuringTiling; // @synthesize disableDuringTiling=_disableDuringTiling;
 - (void).cxx_destruct;
 - (void)clearAxisAnnotations;
 - (int)applyAnnotationForSeries:(id)arg1 commonAxes:(id)arg2;

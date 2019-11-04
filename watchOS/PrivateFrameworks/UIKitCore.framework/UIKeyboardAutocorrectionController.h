@@ -12,18 +12,18 @@ __attribute__((visibility("hidden")))
 @interface UIKeyboardAutocorrectionController : NSObject
 {
     unsigned long _signpostToken;
+    _Bool _requestedAutocorrection;
     _Bool _needsAutocorrection;
     _Bool _deferredAutocorrection;
-    _Bool _requestedAutocorrection;
     TIAutocorrectionList *_autocorrectionList;
     TIAutocorrectionList *_textSuggestionList;
     NSHashTable *_autocorrectionObservers;
 }
 
 @property(retain, nonatomic) NSHashTable *autocorrectionObservers; // @synthesize autocorrectionObservers=_autocorrectionObservers;
-@property(nonatomic) _Bool requestedAutocorrection; // @synthesize requestedAutocorrection=_requestedAutocorrection;
 @property(nonatomic) _Bool deferredAutocorrection; // @synthesize deferredAutocorrection=_deferredAutocorrection;
 @property(nonatomic) _Bool needsAutocorrection; // @synthesize needsAutocorrection=_needsAutocorrection;
+@property(nonatomic) _Bool requestedAutocorrection; // @synthesize requestedAutocorrection=_requestedAutocorrection;
 @property(retain, nonatomic) TIAutocorrectionList *textSuggestionList; // @synthesize textSuggestionList=_textSuggestionList;
 - (void).cxx_destruct;
 - (void)requestAutocorrectionWithExecutionContext:(id)arg1;

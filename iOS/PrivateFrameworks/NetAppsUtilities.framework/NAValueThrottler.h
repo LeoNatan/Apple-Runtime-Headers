@@ -20,7 +20,7 @@
 
 @property(retain, nonatomic) id <NACancelable> valueUpdateCancelationToken; // @synthesize valueUpdateCancelationToken=_valueUpdateCancelationToken;
 @property(readonly, nonatomic) NSMutableSet *observerBlocks; // @synthesize observerBlocks=_observerBlocks;
-@property(retain, nonatomic) id value; // @synthesize value=_value;
+@property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) id <NAScheduler> updateScheduler; // @synthesize updateScheduler=_updateScheduler;
 @property(readonly, nonatomic) double throttleInterval; // @synthesize throttleInterval=_throttleInterval;
 - (void).cxx_destruct;
@@ -29,6 +29,8 @@
 - (id)observeValueChangesWithBlock:(CDUnknownBlockType)arg1;
 - (void)_notifyObserversOfValueUpdate;
 - (void)_enqueueValueUpdateIfNecessary;
+- (void)setValue:(id)arg1;
+- (void)setValue:(id)arg1 notifyObservers:(_Bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithThrottleInterval:(double)arg1 initialValue:(id)arg2;

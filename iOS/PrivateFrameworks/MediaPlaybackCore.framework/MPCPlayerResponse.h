@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) MPCPlayerResponseTracklist *tracklist; // @synthesize tracklist=_tracklist;
 - (void).cxx_destruct;
 - (id)_commandRequestForMediaRemoteCommand:(unsigned int)arg1;
+- (id)_stateDumpObject;
 - (id)stop;
 - (id)play;
 - (id)pause;

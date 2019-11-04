@@ -56,7 +56,7 @@
 @property(readonly, copy, nonatomic) NSNumber *limitUserInterfaces;
 @property(readonly, copy, nonatomic) NSNumber *nightMode;
 - (id)_fig_safe_description;
-- (id)initWithFigEndpoint:(struct OpaqueFigEndpoint *)arg1;
+- (id)initWithFigEndpoint:(struct OpaqueFigEndpoint *)arg1 requiresCarCapabilities:(_Bool)arg2;
 
 @end
 

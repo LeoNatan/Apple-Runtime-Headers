@@ -22,6 +22,7 @@
 - (void)invalidateShiftedLocationForAllAssetsInMoments;
 - (NSDictionary *)locationCoordinatesForAssetIDs:(NSArray *)arg1;
 - (void)logRoutineInformation;
+- (void)fetchLocationsOfInterestIfNeeded;
 - (NSArray *)locationsOfInterest;
 - (_Bool)cameraIsActive;
 - (_Bool)routineIsAvailable;

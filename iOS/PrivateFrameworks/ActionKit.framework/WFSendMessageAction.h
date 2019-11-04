@@ -6,18 +6,12 @@
 
 #import <WorkflowKit/WFHandleSystemIntentAction.h>
 
-#import <ActionKit/MFMessageComposeViewControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFSendMessageAction : WFHandleSystemIntentAction <MFMessageComposeViewControllerDelegate>
+@interface WFSendMessageAction : WFHandleSystemIntentAction
 {
 }
 
 - (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;
-- (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (id)accessResourcesToBeAuthorizedImplicitlyForUpdatedParameterState:(id)arg1 forParameter:(id)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (void)getContentFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getRecipients:(CDUnknownBlockType)arg1;
@@ -26,12 +20,6 @@
 - (id)minimumSupportedClientVersion;
 - (_Bool)skipsProcessingHiddenParameters;
 - (_Bool)opensInApp;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

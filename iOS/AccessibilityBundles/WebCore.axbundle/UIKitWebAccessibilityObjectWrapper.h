@@ -66,7 +66,6 @@
 - (void)postChildrenChangedNotification;
 - (void)postInvalidStatusChangedNotification;
 - (void)postLoadCompleteNotification;
-- (void)_repostLoadCompleteNotification;
 - (void)postSelectedTextChangeNotification;
 - (void)_repostWebSelectionChange;
 - (void)_repostWebNotificaton:(id)arg1;
@@ -83,8 +82,8 @@
 - (_Bool)_accessibilityHasTextOperations;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (void)_accessibilityReplaceCharactersAtCursor:(unsigned long long)arg1 withString:(id)arg2;
-- (struct _NSRange)_accessibilitySelectedTextRangeForHandwritingWithValue:(id)arg1;
 - (void)_accessibilityInsertText:(id)arg1;
+- (struct _NSRange)_accessibilitySelectedTextRangeForHandwritingWithValue:(id)arg1;
 - (id)_accessibilityValueForHandwriting;
 - (void)_performLiveRegionUpdate;
 - (id)_accessibilityWebAreaURL;
@@ -97,6 +96,7 @@
 - (id)accessibilityCustomRotors;
 - (_Bool)_accessibilityIsTopMostWebElement;
 - (id)_accessibilityCustomRotor:(long long)arg1;
+- (id)_misspelledWordRotor;
 - (id)_axWebKitSearchKeyForCustomRotorType:(long long)arg1;
 - (id)accessibilityCustomActions;
 - (void)accessibilityDecrement;

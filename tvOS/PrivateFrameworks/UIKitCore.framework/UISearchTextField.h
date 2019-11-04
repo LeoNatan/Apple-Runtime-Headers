@@ -87,6 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)_setOffsetValue:(id)arg1 forIcon:(long long)arg2;
 - (id)_clearButtonImageForState:(unsigned long long)arg1;
 - (void)_setClearButtonImage:(id)arg1 forState:(unsigned long long)arg2;
+@property(nonatomic, setter=_setIgnoresDynamicType:) _Bool _ignoresDynamicType;
 - (void)_setMagnifyingGlassImage:(id)arg1;
 - (_Bool)canBecomeFocused;
 - (struct CGSize)intrinsicContentSize;

@@ -12,6 +12,7 @@
 @interface PXGColorProgramLibrary : NSObject
 {
     NSMutableArray *_programs;
+    struct os_unfair_lock_s _lock;
     id <MTLDevice> _device;
     struct CGColorSpace *_destinationColorSpace;
 }

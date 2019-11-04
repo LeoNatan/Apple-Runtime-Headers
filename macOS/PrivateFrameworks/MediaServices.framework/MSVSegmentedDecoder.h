@@ -6,22 +6,28 @@
 
 #import <Foundation/NSCoder.h>
 
-@class MSVSegmentedCodingPackage, NSArray;
+@class MSVSegmentedCodingPackage, NSArray, NSDictionary;
 
 @interface MSVSegmentedDecoder : NSCoder
 {
     MSVSegmentedCodingPackage *_package;
     Class _rootClass;
     NSArray *_subcoders;
+    NSDictionary *_userInfo;
 }
 
++ (id)decodedObjectOfClasses:(id)arg1 fromPackage:(id)arg2 userInfo:(id)arg3 error:(id *)arg4;
 + (id)decodedObjectOfClasses:(id)arg1 fromPackage:(id)arg2 error:(id *)arg3;
++ (id)decodedObjectOfClass:(Class)arg1 fromPackage:(id)arg2 userInfo:(id)arg3 error:(id *)arg4;
 + (id)decodedObjectOfClass:(Class)arg1 fromPackage:(id)arg2 error:(id *)arg3;
+@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSArray *subcoders; // @synthesize subcoders=_subcoders;
 @property(retain, nonatomic) Class rootClass; // @synthesize rootClass=_rootClass;
 @property(retain, nonatomic) MSVSegmentedCodingPackage *package; // @synthesize package=_package;
 - (void).cxx_destruct;
 - (id)_coderForKey:(id)arg1;
+- (void)msv_setUserInfo:(id)arg1;
+- (id)msv_userInfo;
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned long long *)arg2;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
@@ -32,6 +38,7 @@
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (BOOL)containsValueForKey:(id)arg1;
 - (id)decodeRootObjectOfClasses:(id)arg1 error:(id *)arg2;
+- (id)initWithCodingPackage:(id)arg1 userInfo:(id)arg2 error:(id *)arg3;
 - (id)initWithCodingPackage:(id)arg1 error:(id *)arg2;
 
 @end

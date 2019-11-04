@@ -9,20 +9,14 @@
 #import <AssistantUI/AFUISiriRemoteViewHosting-Protocol.h>
 #import <AssistantUI/SiriUISiriStatusViewDelegate-Protocol.h>
 
-@class AFUIStarkGradientView, NSString, SiriUIAudioRoutePickerButton, SiriUIConfiguration, SiriUIContentButton, SiriUIHelpButton, SiriUIVisualEffectView, UIImageView, UILabel, _UIBackdropView, _UIVisualEffectBackdropView;
+@class AFUISiriCarPlayView, NSString, SiriUIAudioRoutePickerButton, SiriUIConfiguration, SiriUIContentButton, SiriUIHelpButton, SiriUIVisualEffectView, UIImageView, UILabel, _UIBackdropView;
 @protocol AFUISiriViewDataSource, AFUISiriViewDelegate, SiriUISiriStatusViewProtocol;
 
 @interface AFUISiriView : UIView <SiriUISiriStatusViewDelegate, AFUISiriRemoteViewHosting>
 {
     _UIBackdropView *_backdropView;
     _Bool _backdropViewVisible;
-    UIView *_carPlayContainerView;
-    UIView *_carPlayBackgroundView;
-    UIImageView *_carPlayAuraView;
-    AFUIStarkGradientView *_carPlayGradientView;
-    _UIVisualEffectBackdropView *_carPlayGatekeeperBackdropView;
-    _Bool _carPlayGatekeeperBackdropViewVisible;
-    UIView *_carPlaySystemBackgroundView;
+    AFUISiriCarPlayView *_carPlayView;
     struct UIEdgeInsets _suspendedSafeAreaInsets;
     _Bool _safeAreaInsetsSuspended;
     UIView *_dimmingAndLockContainer;
@@ -47,14 +41,12 @@
     _Bool _keepStatusViewHidden;
     _Bool _flamesViewDeferred;
     _Bool _helpButtonDeferred;
-    _Bool _carDisplaySnippetVisible;
     _Bool _inFluidDismissal;
     UIView *_remoteContentView;
     UIView *_foregroundView;
     UIView *_foregroundContainerView;
     id <AFUISiriViewDataSource> _dataSource;
     id <AFUISiriViewDelegate> _delegate;
-    long long _carDisplaySnippetMode;
     long long _siriSessionState;
     long long _mode;
     UIView<SiriUISiriStatusViewProtocol> *_siriStatusView;
@@ -65,8 +57,6 @@
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) long long siriSessionState; // @synthesize siriSessionState=_siriSessionState;
 @property(nonatomic, getter=isInFluidDismissal) _Bool inFluidDismissal; // @synthesize inFluidDismissal=_inFluidDismissal;
-@property(nonatomic) long long carDisplaySnippetMode; // @synthesize carDisplaySnippetMode=_carDisplaySnippetMode;
-@property(nonatomic) _Bool carDisplaySnippetVisible; // @synthesize carDisplaySnippetVisible=_carDisplaySnippetVisible;
 @property(nonatomic) _Bool helpButtonDeferred; // @synthesize helpButtonDeferred=_helpButtonDeferred;
 @property(nonatomic) _Bool flamesViewDeferred; // @synthesize flamesViewDeferred=_flamesViewDeferred;
 @property(nonatomic) _Bool keepStatusViewHidden; // @synthesize keepStatusViewHidden=_keepStatusViewHidden;
@@ -114,7 +104,6 @@
 - (id)dimBackdropSettings;
 - (void)setBackdropShouldRasterize:(_Bool)arg1;
 - (void)setBackdropVisible:(_Bool)arg1;
-- (void)setCarPlayGatekeeperBackdropVisible:(_Bool)arg1;
 @property(readonly, nonatomic) _UIBackdropView *backgroundBlurView;
 - (void)reloadData;
 - (void)fadeOutCurrentAura;
@@ -125,6 +114,7 @@
 - (void)setStatusViewUserInteractionEnabled:(_Bool)arg1;
 - (void)_animateButtonsHidden:(_Bool)arg1;
 - (void)_updateControlsAppearance;
+- (void)setCarDisplaySnippetMode:(long long)arg1;
 - (void)_setSafeAreaInsetsSuspended:(_Bool)arg1;
 - (void)safeAreaInsetsDidChange;
 - (struct UIEdgeInsets)safeAreaInsets;
@@ -132,10 +122,11 @@
 - (void)_layoutReportBugButton;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (_Bool)isCarPlayMode;
+- (_Bool)_isCarPlayMode:(long long)arg1;
 - (void)_destroyAssistantVersionLabelIfNecessary;
 - (void)_createAssistantVersionLabelIfNecessary;
 - (void)_setupButtonsIfNecessary;
+- (void)_updateSiriStatusViewForMode:(long long)arg1;
 - (_Bool)_reducesMotionEffects;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

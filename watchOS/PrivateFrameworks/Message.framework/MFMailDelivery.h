@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DeliveryAccount, ECHTMLStringAndMIMECharset, MFDeliveryResult, MFMailMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary;
+@class DeliveryAccount, ECHTMLStringAndMIMECharset, EMMessageObjectID, MFDeliveryResult, MFMailMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary;
 
 @interface MFMailDelivery : NSObject
 {
@@ -25,6 +25,9 @@
     unsigned int _threaded:1;
     unsigned int _useCellDataOnly:1;
     _Bool _isUserRequested;
+    EMMessageObjectID *_originalMessageObjectID;
+    MFMailMessage *_originalMessage;
+    int _action;
     unsigned long long _conversationFlags;
 }
 
@@ -32,10 +35,14 @@
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 + (id)newWithMessage:(id)arg1;
+@property(nonatomic) int action; // @synthesize action=_action;
+@property(retain, nonatomic) MFMailMessage *originalMessage; // @synthesize originalMessage=_originalMessage;
+@property(retain, nonatomic) EMMessageObjectID *originalMessageObjectID; // @synthesize originalMessageObjectID=_originalMessageObjectID;
 @property(nonatomic) _Bool isUserRequested; // @synthesize isUserRequested=_isUserRequested;
 @property(nonatomic) unsigned long long conversationFlags; // @synthesize conversationFlags=_conversationFlags;
 @property(retain, nonatomic) NSDictionary *compositionSpecification; // @synthesize compositionSpecification=_compositionSpecification;
 - (void).cxx_destruct;
+- (void)updateOriginalMessageFromHeaders:(id)arg1;
 - (void)archive;
 - (void)setCellDataOnly:(_Bool)arg1;
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;

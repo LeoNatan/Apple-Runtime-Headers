@@ -13,6 +13,7 @@
 - (_Bool)swipeSelectionManagerIsInMultiSelectMode:(PXSwipeSelectionManager *)arg1;
 
 @optional
+- (void)swipeSelectionManagerDidAutoScroll:(PXSwipeSelectionManager *)arg1;
 - (PXIndexPathSet *)swipeSelectionManager:(PXSwipeSelectionManager *)arg1 indexPathSetFromIndexPath:(struct PXSimpleIndexPath)arg2 toIndexPath:(struct PXSimpleIndexPath)arg3;
 - (void)swipeSelectionManagerAutomaticallyTransitionToMultiSelectMode:(PXSwipeSelectionManager *)arg1;
 - (_Bool)swipeSelectionManager:(PXSwipeSelectionManager *)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;

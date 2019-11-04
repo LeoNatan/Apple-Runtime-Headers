@@ -6,11 +6,11 @@
 
 #import <CoreNFC/NSObject-Protocol.h>
 
-@class NSObject, NSString;
+@class NFReaderSessionConfig, NSObject;
 @protocol NFReaderSessionCallbacks;
 
 @protocol NFCHardwareManagerInterface <NSObject>
 - (oneway void)areFeaturesSupported:(unsigned long long)arg1 callback:(void (^)(_Bool, NSError *))arg2;
-- (oneway void)queueReaderSession:(NSObject<NFReaderSessionCallbacks> *)arg1 showSharingUI:(unsigned long long)arg2 coreNFCSessionType:(unsigned long long)arg3 scanText:(NSString *)arg4 callback:(void (^)(NSObject<NFReaderSessionInterface> *, _Bool, NSError *))arg5;
+- (oneway void)queueReaderSession:(NSObject<NFReaderSessionCallbacks> *)arg1 sessionConfig:(NFReaderSessionConfig *)arg2 callback:(void (^)(NSObject<NFReaderSessionInterface> *, _Bool, NSError *))arg3;
 @end
 

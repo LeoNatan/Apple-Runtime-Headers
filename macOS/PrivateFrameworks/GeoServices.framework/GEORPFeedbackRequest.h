@@ -13,7 +13,6 @@
 @interface GEORPFeedbackRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOABSecondPartyPlaceRequestClientMetaData *_abClientMetadata;
     GEOPDAnalyticMetadata *_analyticMetadata;
@@ -23,6 +22,9 @@
     NSMutableArray *_displayLanguages;
     GEORPFeedbackRequestParameters *_feedbackRequestParameters;
     GEORPFeedbackUserInfo *_userInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _feedbackRequestType;
     struct {
         unsigned int has_feedbackRequestType:1;
@@ -97,6 +99,8 @@
 - (id)feedbackRequestTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasFeedbackRequestType;
 @property(nonatomic) int feedbackRequestType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)setPreferredEmailAddress:(id)arg1;
 - (void)_initForSubmissionParameters;
 - (id)initWithFeedbackRequestParameters:(id)arg1 userCredentials:(id)arg2 pushToken:(id)arg3 allowContactBackAtEmailAddress:(id)arg4 traits:(id)arg5;

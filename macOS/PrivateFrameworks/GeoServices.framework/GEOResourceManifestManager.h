@@ -9,7 +9,7 @@
 #import <GeoServices/GEOPListStateCapturing-Protocol.h>
 #import <GeoServices/GEOResourceManifestServerProxyDelegate-Protocol.h>
 
-@class GEOActiveTileGroup, GEOLocalizationRegionsInfo, GEOResourceManifestConfiguration, NSDictionary, NSHashTable, NSMutableArray, NSSet, NSString;
+@class GEOActiveTileGroup, GEOLocalizationRegionsInfo, GEOResourceManifestConfiguration, NSDictionary, NSHashTable, NSMutableArray, NSSet, NSString, geo_isolater;
 @protocol GEOResourceManifestServerProxy, OS_dispatch_source;
 
 @interface GEOResourceManifestManager : NSObject <GEOPListStateCapturing, GEOResourceManifestServerProxyDelegate>
@@ -30,6 +30,7 @@
     double _constantlyChangeTileGroupInterval;
     GEOLocalizationRegionsInfo *_localizationRegionsInfo;
     NSMutableArray *_networkActivityHandlers;
+    geo_isolater *_networkActivityHandlersIsolation;
     BOOL _isUpdatingManifest;
     BOOL _isLoadingResources;
     struct os_unfair_lock_s _resourceNamesToPathsLock;

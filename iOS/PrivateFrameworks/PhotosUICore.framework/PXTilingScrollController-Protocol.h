@@ -12,6 +12,7 @@
 @protocol PXTilingScrollController <NSObject>
 @property(copy, nonatomic) PXTilingScrollInfo *scrollInfo;
 @property(nonatomic) struct CGRect contentBounds;
+@property(readonly, nonatomic) struct CGRect targetRect;
 @property(readonly, nonatomic) struct CGRect constrainedVisibleRect;
 @property(readonly, nonatomic) struct CGRect visibleRect;
 @property(readonly, nonatomic) struct CGRect activeRect;

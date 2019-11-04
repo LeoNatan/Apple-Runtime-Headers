@@ -13,13 +13,15 @@
 @interface GEORPAddressCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPAccessPointCorrections *_accessPoint;
     GEORPFeedbackAddressFields *_addressFields;
     GEORPCorrectedCoordinate *_coordinate;
     GEORPMapLocation *_mapLocation;
     GEORPFeedbackAddressFields *_originalAddressFields;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_accessPoint:1;
@@ -65,6 +67,8 @@
 @property(retain, nonatomic) GEORPFeedbackAddressFields *addressFields;
 @property(readonly, nonatomic) BOOL hasAddressFields;
 - (void)_readAddressFields;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

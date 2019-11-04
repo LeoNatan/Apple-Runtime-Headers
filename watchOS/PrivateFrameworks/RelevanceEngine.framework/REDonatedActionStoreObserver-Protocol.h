@@ -6,7 +6,7 @@
 
 #import <RelevanceEngine/NSObject-Protocol.h>
 
-@class NSDictionary, REDonatedAction;
+@class NSDictionary, NSString, REDonatedAction;
 
 @protocol REDonatedActionStoreObserver <NSObject>
 - (void)donationActionStoreReceivedDonation:(REDonatedAction *)arg1 isNewDonation:(_Bool)arg2;
@@ -15,6 +15,7 @@
 - (void)donationActionStoreDidFinishLoadingData;
 - (void)donationActionStoreWillBeginLoadingData;
 - (void)donationActionStoreRemoveAllDonations;
+- (void)donationActionStoreRemovedDonationsFor:(NSString *)arg1;
 - (void)donationActionStoreRemovedDonation:(NSDictionary *)arg1;
 @end
 

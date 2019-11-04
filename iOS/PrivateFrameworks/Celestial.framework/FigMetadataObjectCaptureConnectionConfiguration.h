@@ -12,8 +12,12 @@
 {
     NSArray *_metadataIdentifiers;
     struct CGRect _metadataRectOfInterest;
+    int _faceTrackingMaxFaces;
+    _Bool _faceTrackingUsesFaceRecognition;
 }
 
+@property(nonatomic) _Bool faceTrackingUsesFaceRecognition; // @synthesize faceTrackingUsesFaceRecognition=_faceTrackingUsesFaceRecognition;
+@property(nonatomic) int faceTrackingMaxFaces; // @synthesize faceTrackingMaxFaces=_faceTrackingMaxFaces;
 @property(nonatomic) struct CGRect metadataRectOfInterest; // @synthesize metadataRectOfInterest=_metadataRectOfInterest;
 @property(copy, nonatomic) NSArray *metadataIdentifiers; // @synthesize metadataIdentifiers=_metadataIdentifiers;
 - (_Bool)isEqual:(id)arg1;

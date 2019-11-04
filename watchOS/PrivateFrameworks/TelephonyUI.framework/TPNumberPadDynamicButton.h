@@ -15,6 +15,7 @@
 + (float)unhighlightedCircleViewAlpha;
 + (id)imageForCharacter:(unsigned int)arg1 highlighted:(_Bool)arg2;
 + (id)imageForCharacter:(unsigned int)arg1;
++ (int)currentStyle;
 - (void)updateCurrentStyleIfNecessaryFromStyle:(int)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)buttonColor;

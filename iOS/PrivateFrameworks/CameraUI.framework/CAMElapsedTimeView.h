@@ -37,6 +37,7 @@
 - (void)setBackgroundStyle:(long long)arg1 animated:(_Bool)arg2;
 - (void)setShowingBackground:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isShowingBackground) _Bool showingBackground;
+- (id)_backgroundRedColor;
 - (void)resetTimer;
 - (void)endTimer;
 - (void)_setStartTime:(id)arg1;

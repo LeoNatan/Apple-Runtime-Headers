@@ -28,6 +28,8 @@
 - (void)reset;
 - (void)_closeWifiConnection;
 - (void)_scanComplete:(id)arg1 error:(_Bool)arg2;
+- (void)_scanWifiList;
+- (void)_getWifiDevice;
 - (void)_startWifiScan;
 - (id)guessedLanguages;
 - (_Bool)getCountryFromTelephony;

@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)newWithChildren:(const vector_e48f0605 *)arg1 backgroundColor:(id)arg2 tintColor:(id)arg3;
++ (id)newWithChildren:(const vector_e48f0605 *)arg1 backgroundColor:(id)arg2;
 
 @end
 

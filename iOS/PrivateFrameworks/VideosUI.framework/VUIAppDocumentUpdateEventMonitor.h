@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_notifyObserversOfEvent:(id)arg1;
 - (void)_notifyObserver:(id)arg1 ofRefreshEvent:(id)arg2;
+- (void)_handleLocationDidChangeNotification:(id)arg1;
 - (void)_handleLocationAuthorizationDidChangeNotification:(id)arg1;
 - (void)_handleClearPlayHistoryNotification:(id)arg1;
 - (void)_handlePreferredVideoFormatDidChangeNotification:(id)arg1;

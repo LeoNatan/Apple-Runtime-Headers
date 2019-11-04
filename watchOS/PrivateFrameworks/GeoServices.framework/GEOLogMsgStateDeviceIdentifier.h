@@ -13,9 +13,11 @@
 @interface GEOLogMsgStateDeviceIdentifier : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_deviceHwIdentifier;
     NSString *_deviceOsVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _deviceDarkMode;
     _Bool _isInternalInstall;
     _Bool _isInternalTool;
@@ -57,6 +59,8 @@
 @property(retain, nonatomic) NSString *deviceOsVersion;
 @property(readonly, nonatomic) _Bool hasDeviceOsVersion;
 - (void)_readDeviceOsVersion;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

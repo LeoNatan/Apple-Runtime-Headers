@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (Class)_contentViewClass;
 @property(nonatomic) BOOL allowsBlurring; // @synthesize allowsBlurring=_allowsBlurring;
 @property(nonatomic) BOOL allowsDithering; // @synthesize allowsDithering=_allowsDithering;
 @property(nonatomic, getter=_useLiveMasking, setter=_setUseLiveMasking:) BOOL useLiveMasking; // @synthesize useLiveMasking=_useLiveMasking;

@@ -21,6 +21,9 @@
 @property(readonly, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+- (id)homeButtonColor;
+- (id)homeExplanatoryText;
+- (id)homeAutomationIcon;
 - (void)setButtonTarget:(id)arg1 action:(SEL)arg2;
 - (void)setButtonColor:(id)arg1;
 - (void)setButtonTitle:(id)arg1;

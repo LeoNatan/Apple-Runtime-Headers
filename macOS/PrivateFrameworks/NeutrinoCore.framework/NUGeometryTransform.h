@@ -13,6 +13,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+-     // Error parsing type: {?=[4]}144@0:8{?=[4]}16, name: transformMatrix:
 - (CDStruct_1b6d18a9)transformTime:(CDStruct_1b6d18a9)arg1;
 - (struct CGPoint)transformPoint:(struct CGPoint)arg1;
 - (id)inverseTransform;

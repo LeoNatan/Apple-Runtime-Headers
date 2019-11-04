@@ -16,6 +16,7 @@
 @property(nonatomic) _Bool needsGestureUpdate;
 @property(nonatomic) struct CGPoint loupeGestureEndPoint;
 @property(nonatomic) _Bool autoscrolled;
+- (void)lollipopGestureWithState:(int)arg1 location:(struct CGPoint)arg2 locationOfFirstTouch:(struct CGPoint)arg3;
 - (void)endFloatingCursor;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
@@ -30,6 +31,7 @@
 - (void)extendSelectionToPoint:(struct CGPoint)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint)arg1;
 - (void)notifyKeyboardSelectionChanged;
+- (void)setFirstResponderIfNecessaryActivatingSelection:(_Bool)arg1;
 - (void)setFirstResponderIfNecessary;
 - (void)checkEditabilityAndSetFirstResponderIfNecessary;
 - (void)scrollSelectionToVisible;

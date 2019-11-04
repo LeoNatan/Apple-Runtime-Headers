@@ -28,8 +28,11 @@
 - (_Bool)shouldShowViewer;
 - (id)generateThumbnailFillToSize:(struct CGSize)arg1 contentAlignmentInsets:(struct UIEdgeInsets)arg2;
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)subtitle;
 - (id)title;
+- (Class)balloonViewClassForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (_Bool)_supportsPassbook;
 - (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3 forceInlinePreview:(_Bool)arg4;
 
 @end

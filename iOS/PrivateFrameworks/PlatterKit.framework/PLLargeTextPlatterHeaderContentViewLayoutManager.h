@@ -6,25 +6,28 @@
 
 #import <PlatterKit/PLPlatterHeaderContentViewLayoutManager.h>
 
-@class NSMutableDictionary, NSStringDrawingContext;
+@class NSStringDrawingContext;
 
 @interface PLLargeTextPlatterHeaderContentViewLayoutManager : PLPlatterHeaderContentViewLayoutManager
 {
-    NSMutableDictionary *_widthToStringToMeasuredNumLines;
     NSStringDrawingContext *_drawingContext;
+    double _referenceWidth;
+    struct CGSize _cachedTitleBoundingRectSize;
+    unsigned long long _cachedTitleNumberOfLines;
 }
 
 + (double)contentBaselineToBoundsBottomWithFont:(id)arg1 boundsWidth:(double)arg2 scale:(double)arg3;
 - (void).cxx_destruct;
-- (struct CGRect)_titleLabelBoundsForSize:(struct CGSize)arg1 withNumberOfLines:(double)arg2;
-- (struct CGRect)_utilityButtonTitleLabelBoundsForSize:(struct CGSize)arg1 withNumberOfLines:(double)arg2;
-- (struct CGRect)_dateLabelBoundsForSize:(struct CGSize)arg1;
-- (long long)_measuredNumberOfLinesForLabel:(id)arg1 withWidth:(double)arg2;
+- (struct CGRect)_titleLabelBoundsThatFitsWidth:(double)arg1;
+- (struct CGRect)_dateLabelBoundsThatFitsWidth:(double)arg1;
+- (unsigned long long)_titleLabelNumberOfLinesThatFitsWidth:(double)arg1;
+- (void)_updateCachedTitleLabelSizeInfoIfNecessaryWithWidth:(double)arg1;
+- (struct CGSize)_utilityViewSizeThatFitsWidth:(double)arg1;
 - (double)_dateLabelBaselineOffset;
 - (double)_largeTextLabelBaselineOffsetFromBottom;
 - (double)_largeTextUtilityLabelBaselineOffset;
-- (long long)_numberOfLinesForLabel:(id)arg1 withSize:(struct CGSize)arg2;
-- (void)_invalidateNumberOfLinesCache;
+- (struct CGSize)_boundingRectSizeForLabel:(id)arg1 width:(double)arg2 numberOfLines:(inout unsigned long long *)arg3;
+- (void)invalidateCachedSizeInfo;
 - (id)_dateLabelFont;
 - (double)_titleLabelBaselineOffset;
 - (void)layoutDateLabelWithScale:(double)arg1;
@@ -33,7 +36,6 @@
 - (void)layoutIconButtonsWithScale:(double)arg1;
 - (double)contentBaseline;
 - (double)headerHeightForWidth:(double)arg1;
-- (id)initWithPlatterHeaderContentView:(id)arg1;
 
 @end
 

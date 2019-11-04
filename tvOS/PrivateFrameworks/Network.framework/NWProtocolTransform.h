@@ -18,25 +18,25 @@
 
 @property(retain) NSObject<OS_nw_protocol_transform> *internalTransform; // @synthesize internalTransform=_internalTransform;
 - (void).cxx_destruct;
-@property(nonatomic) BOOL disablePathFallback;
+@property(nonatomic) _Bool disablePathFallback;
 @property(nonatomic) int dataMode;
-- (void)setFastOpenForceEnable:(BOOL)arg1;
-- (BOOL)fastOpenForceEnable;
-@property(nonatomic) BOOL tfoNoCookie;
-@property(nonatomic) BOOL tfo;
+- (void)setFastOpenForceEnable:(_Bool)arg1;
+- (_Bool)fastOpenForceEnable;
+@property(nonatomic) _Bool tfoNoCookie;
+@property(nonatomic) _Bool tfo;
 @property(nonatomic) int multipathService;
-@property(nonatomic) BOOL noProxy;
-@property(nonatomic) BOOL prohibitDirect;
+@property(nonatomic) _Bool noProxy;
+@property(nonatomic) _Bool prohibitDirect;
 @property(nonatomic) unsigned long long fallbackMode;
 @property(copy, nonatomic) NWEndpoint *replacementEndpoint;
 - (void)appendProtocol:(id)arg1 atLevel:(int)arg2;
 - (void)clearProtocolsAtLevel:(int)arg1;
 - (void)disableProtocol:(struct nw_protocol_identifier *)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (id)initWithCTransform:(id)arg1;
 - (id)init;
 

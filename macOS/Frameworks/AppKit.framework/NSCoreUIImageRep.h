@@ -19,7 +19,6 @@
 - (id)description;
 - (BOOL)_incorporatesContentStyling;
 - (BOOL)_drawOnlyUsesOneDrawingOperation;
-- (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
 - (void)setTemplate:(BOOL)arg1;
 - (BOOL)isTemplate;
 - (void)encodeWithCoder:(id)arg1;

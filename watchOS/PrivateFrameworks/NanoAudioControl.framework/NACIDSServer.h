@@ -9,12 +9,13 @@
 #import <NanoAudioControl/IDSServiceDelegate-Protocol.h>
 #import <NanoAudioControl/MPAVRoutingControllerDelegate-Protocol.h>
 #import <NanoAudioControl/MPVolumeControllerDelegate-Protocol.h>
+#import <NanoAudioControl/NACVolumeControllerDelegate-Protocol.h>
 
 @class IDSService, NACEventThrottler, NACRunAssertion, NSArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface NACIDSServer : NSObject <IDSServiceDelegate, MPVolumeControllerDelegate, MPAVRoutingControllerDelegate>
+@interface NACIDSServer : NSObject <NACVolumeControllerDelegate, IDSServiceDelegate, MPVolumeControllerDelegate, MPAVRoutingControllerDelegate>
 {
     NACRunAssertion *_systemVolumeRunAssertion;
     NACRunAssertion *_proxyVolumeRunAssertion;
@@ -44,13 +45,18 @@ __attribute__((visibility("hidden")))
 - (void)_sendMessage:(id)arg1 type:(int)arg2 timeout:(double)arg3 queueOne:(id)arg4 retry:(_Bool)arg5;
 - (void)_sendHapticState:(int)arg1;
 - (void)_sendSystemMutedState:(_Bool)arg1;
-- (void)_sendMutedState:(_Bool)arg1 target:(id)arg2;
-- (void)_sendVolumeWarningEnabled:(_Bool)arg1 volumeWarningState:(int)arg2 target:(id)arg3;
-- (void)_sendEUVolumeLimit:(float)arg1 target:(id)arg2;
-- (void)_sendVolumeControlAvailability:(_Bool)arg1 target:(id)arg2;
-- (void)_sendVolumeValue:(float)arg1 target:(id)arg2;
+- (void)_sendAvailableListeningModes:(id)arg1 currentListeningMode:(id)arg2 error:(id)arg3 forTarget:(id)arg4;
+- (void)_sendMutedState:(_Bool)arg1 forTarget:(id)arg2;
+- (void)_sendVolumeWarningEnabled:(_Bool)arg1 volumeWarningState:(int)arg2 forTarget:(id)arg3;
+- (void)_sendEUVolumeLimit:(float)arg1 forTarget:(id)arg2;
+- (void)_sendVolumeControlAvailability:(_Bool)arg1 forTarget:(id)arg2;
+- (void)_sendVolumeValue:(float)arg1 forTarget:(id)arg2;
+- (void)volumeController:(id)arg1 didFailToSetCurrentListeningModeWithError:(id)arg2;
+- (void)volumeControllerDidUpdateCurrentListeningMode:(id)arg1;
+- (void)volumeControllerDidUpdateAvailableListeningModes:(id)arg1;
 - (void)_hapticIntensityDidChangeNotification:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (id)_targetForNACVolumeController:(id)arg1;
 - (id)_targetForVolumeController:(id)arg1;
 - (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
@@ -76,6 +82,10 @@ __attribute__((visibility("hidden")))
 - (void)_handleEndObservingAudioRoutes:(id)arg1;
 - (void)_handleBeginObservingAudioRoutes:(id)arg1;
 - (void)_handleSetHapticState:(id)arg1;
+- (id)_nacVolumeControllerForTarget:(id)arg1 createIfNeeded:(_Bool)arg2;
+- (void)_handleEndObservingListeningModes:(id)arg1;
+- (void)_handleBeginObservingListeningModes:(id)arg1;
+- (void)_handleSetCurrentListeningMode:(id)arg1;
 - (void)_handleSetHapticIntensity:(id)arg1;
 - (void)_handleSetProminentHapticEnabled:(id)arg1;
 - (void)_handleSetSystemMuted:(id)arg1;

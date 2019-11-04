@@ -42,6 +42,7 @@
 - (oneway void)setAlertContextDirty;
 - (oneway void)setOverriddenApplicationContext:(NSString *)arg1 withContext:(id)arg2;
 - (oneway void)setApplicationContextForApplicationInfos:(NSArray *)arg1 withRefId:(NSString *)arg2;
+- (oneway void)fetchAppicationContextForApplicationInfo:(NSArray *)arg1 supplementalContext:(NSArray *)arg2 refID:(NSString *)arg3;
 - (oneway void)setApplicationContext:(SASetApplicationContext *)arg1;
 - (oneway void)willSetApplicationContextWithRefId:(NSString *)arg1;
 - (oneway void)rollbackClearContext;

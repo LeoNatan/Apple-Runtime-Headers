@@ -29,6 +29,7 @@
 - (id)description;
 - (_Bool)hasDiffs;
 - (void)calculateDiffs;
+- (void)calculateDiffsAndAccumulateInsertedCount:(unsigned int *)arg1 updatedCount:(unsigned int *)arg2 deletedCount:(unsigned int *)arg3;
 - (unsigned int)snapshotIndexForContainedObject:(id)arg1;
 @property(readonly) _Bool hasMoves;
 - (void)enumerateMovesWithBlock:(CDUnknownBlockType)arg1;

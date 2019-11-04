@@ -23,6 +23,8 @@
     _Bool _isExceedingQuota;
     _Bool _isClientVersionTooOld;
     _Bool _isOffline;
+    _Bool _isInSoftResetSync;
+    _Bool _isInHardResetSync;
     float _itemsToUploadProgress;
     NSDate *_syncDate;
     NSDate *_exitDate;
@@ -30,9 +32,14 @@
     unsigned long long _numberOfItemsToAdd;
     unsigned long long _numberOfOriginalsToDownload;
     unsigned long long _numberOfItemsFailingToUpload;
+    unsigned long long _numberOfPhotoAssets;
+    unsigned long long _numberOfVideoAssets;
+    unsigned long long _numberOfOtherAssets;
     unsigned long long _numberOfReferencedItems;
 }
 
+@property(nonatomic) _Bool isInHardResetSync; // @synthesize isInHardResetSync=_isInHardResetSync;
+@property(nonatomic) _Bool isInSoftResetSync; // @synthesize isInSoftResetSync=_isInSoftResetSync;
 @property(nonatomic) _Bool isOffline; // @synthesize isOffline=_isOffline;
 @property(nonatomic) _Bool isClientVersionTooOld; // @synthesize isClientVersionTooOld=_isClientVersionTooOld;
 @property(nonatomic) _Bool isExceedingQuota; // @synthesize isExceedingQuota=_isExceedingQuota;
@@ -43,6 +50,9 @@
 @property(nonatomic) _Bool isInLowDataMode; // @synthesize isInLowDataMode=_isInLowDataMode;
 @property(nonatomic) _Bool isUserPaused; // @synthesize isUserPaused=_isUserPaused;
 @property(nonatomic) unsigned long long numberOfReferencedItems; // @synthesize numberOfReferencedItems=_numberOfReferencedItems;
+@property(nonatomic) unsigned long long numberOfOtherAssets; // @synthesize numberOfOtherAssets=_numberOfOtherAssets;
+@property(nonatomic) unsigned long long numberOfVideoAssets; // @synthesize numberOfVideoAssets=_numberOfVideoAssets;
+@property(nonatomic) unsigned long long numberOfPhotoAssets; // @synthesize numberOfPhotoAssets=_numberOfPhotoAssets;
 @property(nonatomic) unsigned long long numberOfItemsFailingToUpload; // @synthesize numberOfItemsFailingToUpload=_numberOfItemsFailingToUpload;
 @property(nonatomic) unsigned long long numberOfOriginalsToDownload; // @synthesize numberOfOriginalsToDownload=_numberOfOriginalsToDownload;
 @property(nonatomic) unsigned long long numberOfItemsToAdd; // @synthesize numberOfItemsToAdd=_numberOfItemsToAdd;

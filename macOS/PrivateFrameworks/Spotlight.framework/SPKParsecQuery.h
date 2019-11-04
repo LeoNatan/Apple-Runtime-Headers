@@ -43,7 +43,6 @@
 - (BOOL)vetURLForResult:(id)arg1;
 - (BOOL)supportsRefinement;
 - (BOOL)isParsecQuery;
-- (BOOL)isRemoteQuery;
 - (void)cancel;
 - (void)start;
 - (void)queryDidFinish:(long long)arg1 fbq:(id)arg2 sections:(id)arg3 category_stats:(id)arg4 parsecCategoryOrder:(id)arg5 suggestions:(id)arg6 corrections:(id)arg7;

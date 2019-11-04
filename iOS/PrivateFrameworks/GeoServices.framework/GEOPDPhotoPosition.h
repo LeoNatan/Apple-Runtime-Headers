@@ -13,7 +13,6 @@
 @interface GEOPDPhotoPosition : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_9f2792e4 _cameraMetadataIndexs;
     GEOPDGroundDataBuild *_build;
     NSMutableArray *_cameraMetadatas;
@@ -24,6 +23,9 @@
     GEOPDOrientedPosition *_position;
     GEOPDRigMetrics *_rigMetrics;
     GEOPDOrientedTilePosition *_tilePosition;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _buildTableIndex;
     int _revision;
     struct {
@@ -109,6 +111,8 @@
 @property(nonatomic) _Bool hasImdataId;
 @property(nonatomic) unsigned long long imdataId;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

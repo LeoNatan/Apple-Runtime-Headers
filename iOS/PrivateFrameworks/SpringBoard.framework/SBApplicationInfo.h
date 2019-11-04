@@ -69,6 +69,7 @@
     _Bool _canChangeBackgroundStyle;
     _Bool _allowNonDefaultBackgroundStyle;
     _Bool _supportsDirectToAirplay;
+    _Bool _alwaysReceivesOpenURLSource;
     _Bool _ocelotApplication;
     _Bool _shouldLaunchWithLiveContentASAP;
     _Bool _cloudDemoted;
@@ -85,6 +86,7 @@
 @property(readonly, nonatomic) _Bool shouldLaunchWithLiveContentASAP; // @synthesize shouldLaunchWithLiveContentASAP=_shouldLaunchWithLiveContentASAP;
 @property(readonly, nonatomic) unsigned long long applicationSizeInBytes; // @synthesize applicationSizeInBytes=_applicationSizeInBytes;
 @property(readonly, nonatomic, getter=isOcelotApplication) _Bool ocelotApplication; // @synthesize ocelotApplication=_ocelotApplication;
+@property(readonly, nonatomic) _Bool alwaysReceivesOpenURLSource; // @synthesize alwaysReceivesOpenURLSource=_alwaysReceivesOpenURLSource;
 @property(readonly, nonatomic) _Bool supportsDirectToAirplay; // @synthesize supportsDirectToAirplay=_supportsDirectToAirplay;
 @property(readonly, nonatomic, getter=isNewsstand) _Bool newsstand; // @synthesize newsstand=_isNewsstand;
 @property(readonly, nonatomic) _Bool supports64Bit; // @synthesize supports64Bit=_supports64Bit;

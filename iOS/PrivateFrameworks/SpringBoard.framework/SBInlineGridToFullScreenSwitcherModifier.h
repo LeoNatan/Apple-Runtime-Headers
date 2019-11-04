@@ -26,7 +26,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (_Bool)isContainerStatusBarVisible;
 - (id)layoutSettings;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (double)backdropBlurProgress;
 - (double)dimmingAlpha;
 - (long long)backdropBlurType;
@@ -34,8 +34,11 @@
 - (double)darkeningAlphaForIndex:(unsigned long long)arg1;
 - (double)titleOpacityForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (double)reopenClosedWindowsButtonScale;
 - (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
+- (long long)plusButtonStyle;
+- (long long)appExposeAccessoryButtonsOverrideUserInterfaceStyle;
 - (id)appExposeAccessoryButtonsBundleIdentifier;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;

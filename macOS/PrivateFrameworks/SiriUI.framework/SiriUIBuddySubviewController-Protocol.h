@@ -10,5 +10,8 @@
 @property(readonly) BOOL shouldShowPane;
 @property(readonly) __weak SiriUIBuddyController *parentController;
 - (id)initWithParentController:(SiriUIBuddyController *)arg1;
+
+@optional
+- (void)willExitPane;
 @end
 

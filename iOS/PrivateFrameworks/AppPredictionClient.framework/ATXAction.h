@@ -18,6 +18,7 @@
     unsigned long long _userActivityHash;
     NSString *_title;
     NSString *_subtitle;
+    NSString *_languageCode;
     ATXActionCriteria *_criteria;
     _Bool _isFutureMedia;
     _Bool _isTVWhiteListedLongFormMedia;
@@ -72,6 +73,9 @@
 - (id)actionSubtitle;
 - (_Bool)hasActionTitle;
 - (id)actionTitle;
+- (void)setSubtitleForSerializationToCache;
+- (void)setTitleForSerializationToCache;
+- (_Bool)_shouldUseCachedTitle:(id)arg1 cachedLanguageCode:(id)arg2;
 - (id)actionDescription;
 @property(readonly, nonatomic) _Bool isHeuristic;
 @property(readonly, copy) NSString *description;
@@ -80,7 +84,7 @@
 - (_Bool)isEqualToAction:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)actionWithRouteInfo:(id)arg1;
-- (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned long long)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(_Bool)arg12 routeInfo:(id)arg13 title:(id)arg14 subtitle:(id)arg15;
+- (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned long long)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(_Bool)arg12 routeInfo:(id)arg13 title:(id)arg14 subtitle:(id)arg15 languageCode:(id)arg16;
 - (id)initWithNSUserActivityString:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 itemIdentifier:(id)arg4 contentAttributeSet:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 isFutureMedia:(_Bool)arg8 title:(id)arg9 subtitle:(id)arg10;
 - (id)initWithNSUserActivity:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 contentAttributeSet:(id)arg4 itemIdentifier:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 criteria:(id)arg8 isFutureMedia:(_Bool)arg9 title:(id)arg10 subtitle:(id)arg11;
 - (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 heuristicMetadata:(id)arg5 criteria:(id)arg6 isFutureMedia:(_Bool)arg7 title:(id)arg8 subtitle:(id)arg9;

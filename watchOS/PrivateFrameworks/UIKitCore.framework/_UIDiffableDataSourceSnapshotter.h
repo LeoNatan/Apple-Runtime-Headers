@@ -11,7 +11,9 @@
 }
 
 - (void)applySnapshot:(id)arg1;
+- (void)reloadFromSnapshot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadFromSnapshot:(id)arg1;
+- (void)applyDifferencesFromSnapshot:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)applyDifferencesFromSnapshot:(id)arg1;
 - (id)emptySnapshot;
 - (id)snapshot;

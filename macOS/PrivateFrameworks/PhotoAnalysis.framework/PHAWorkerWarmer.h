@@ -26,7 +26,7 @@
 - (id)init;
 - (id)statusAsDictionary;
 - (BOOL)_cooldownWorkerIfWarmed:(id)arg1;
-- (void)_warmupWorkerIfCooled:(id)arg1;
+- (void)_warmupWorkerIfCooled:(id)arg1 withProgressBlock:(CDUnknownBlockType)arg2;
 
 @end
 

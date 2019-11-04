@@ -28,7 +28,8 @@
 @property(retain, nonatomic, setter=_setOriginalDictionary:) NSDictionary *_originalDictionary; // @synthesize _originalDictionary;
 - (void).cxx_destruct;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
-- (id)keyPrefix;
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)dictionaryRepresentationForLanguage:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;

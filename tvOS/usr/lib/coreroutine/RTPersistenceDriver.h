@@ -10,7 +10,7 @@
 #import <coreroutine/RTPersistenceMetricsDelegate-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSString, RTAccount, RTAccountManager, RTDataProtectionManager, RTDefaultsManager, RTKeychainManager, RTLifeCycleManager, RTPersistenceManager, RTPersistenceResetSyncContext, RTPlatform;
+@class NSString, RTAccount, RTAccountManager, RTDarwinNotificationHelper, RTDataProtectionManager, RTDefaultsManager, RTKeychainManager, RTLifeCycleManager, RTPersistenceManager, RTPersistenceResetSyncContext, RTPlatform;
 @protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMetricsDelegate;
 
 @interface RTPersistenceDriver : NSObject <RTPersistenceMetricsDelegate, RTPersistenceDelegate, RTPurgable>
@@ -31,8 +31,10 @@
     RTAccount *_currentAccount;
     id <RTPersistenceMetricsDelegate> _metricsDelegate;
     RTPersistenceResetSyncContext *_resetSyncContext;
+    RTDarwinNotificationHelper *_notificationHelper;
 }
 
+@property(retain) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
 @property(retain) RTPersistenceResetSyncContext *resetSyncContext; // @synthesize resetSyncContext=_resetSyncContext;
 @property __weak id <RTPersistenceMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain) RTAccount *currentAccount; // @synthesize currentAccount=_currentAccount;

@@ -36,6 +36,7 @@
 + (id)assetResourcesForLivePhoto:(id)arg1;
 + (id)assetResourcesForAsset:(id)arg1;
 + (id)assetResourceForAsset:(id)arg1 qualityClass:(id)arg2;
++ (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(_Bool)arg2 includeMetadata:(_Bool)arg3 includeAdjustmentOverflowDataBlob:(_Bool)arg4;
 + (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(_Bool)arg2 includeMetadata:(_Bool)arg3;
 + (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(_Bool)arg2;
 @property(readonly, nonatomic, getter=isCurrent) _Bool current; // @synthesize current=_current;

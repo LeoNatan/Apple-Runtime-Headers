@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <MNTimeAndDistanceUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_startTimerToNextMinute;
-- (void)updateDisplayETAForRoute:(id)arg1 shouldNotifyDelegate:(_Bool)arg2;
-- (void)setRoutes:(id)arg1 mainRoute:(id)arg2 shouldNotifyDelegate:(_Bool)arg3;
-- (void)setLocation:(id)arg1 shouldNotifyDelegate:(_Bool)arg2;
+- (void)updateDisplayETAForRoute:(id)arg1 notificationType:(unsigned long long)arg2;
+- (void)setRoutes:(id)arg1 mainRoute:(id)arg2 location:(id)arg3 notificationType:(unsigned long long)arg4;
+- (void)setLocation:(id)arg1 notificationType:(unsigned long long)arg2;
 - (void)stopUpdating;
 - (void)startUpdating;
 - (void)dealloc;

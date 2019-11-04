@@ -20,6 +20,11 @@
 - (void)_updateForShallowDepthOfFieldStatusChangedAnimated:(_Bool)arg1;
 - (void)_handleFilterButtonTapped:(id)arg1;
 - (void)_axUpdateInternalMotionManager;
+- (_Bool)_shouldHideZoomControlForGraphConfiguration:(id)arg1;
+- (void)_embedCTMDescriptionOverlayView;
+- (void)_embedPortraitModeDescriptionOverlayViewWithLayoutStyle:(long long)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)_presentCameraRollViewControllerAnimated:(_Bool)arg1 interactive:(_Bool)arg2;
 - (void)_updateLevelMotionTracking;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (_Bool)accessibilityPerformMagicTap;

@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDBatchSpatialLookupResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_spatialEventLookupResults;
     NSMutableArray *_spatialPlaceLookupResults;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _statusCode;
     struct {
         unsigned int has_statusCode:1;
@@ -65,6 +67,8 @@ __attribute__((visibility("hidden")))
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCode;
 @property(nonatomic) int statusCode;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

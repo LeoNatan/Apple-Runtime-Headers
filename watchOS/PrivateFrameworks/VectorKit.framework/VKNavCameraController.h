@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
     double _maxCameraHeight;
     Unit_3d259e8a _minCameraPitch;
     Unit_3d259e8a _maxCameraPitch;
+    struct VKEdgeInsets _previousMapEdgeInsets;
     struct VKEdgeInsets _framingEdgeInset;
     struct VKEdgeInsets _framingEdgeInsetProportional;
     struct VKEdgeInsets _clientFramingInsets;
@@ -111,6 +112,7 @@ __attribute__((visibility("hidden")))
 - (void)_snapHeading;
 - (void)_snapPitch;
 - (void)edgeInsetsDidEndAnimating;
+- (void)setEdgeInsets:(struct VKEdgeInsets)arg1;
 - (void)edgeInsetsWillBeginAnimating;
 - (Unit_3d259e8a)maxCameraPitch;
 - (Unit_3d259e8a)minCameraPitch;
@@ -123,6 +125,7 @@ __attribute__((visibility("hidden")))
 - (void)_setNeedsUpdate;
 - (void)navContextCameraHeadingOverrideDidChange:(id)arg1;
 - (void)navContextStateDidChange:(id)arg1;
+- (void)_updateForAnimatedEdgeInsets;
 - (void)updateSpringsForFramingCamera;
 - (void)_addAdditionalRoutePointsToFrameToList:(vector_36073df6 *)arg1;
 - (void)updatePointsToFrame;
@@ -132,6 +135,7 @@ __attribute__((visibility("hidden")))
 - (double)distanceToManeuver:(unsigned int)arg1;
 - (void)updateSpringsForTrackingCamera;
 - (Box_3d7e3c2c)calculateViewableScreenRect;
+- (Box_3d7e3c2c)calculateViewableScreenRectForEdgeInsets:(struct VKEdgeInsets)arg1;
 - (Unit_3d259e8a)calculateHeading;
 - (void)stop;
 - (_Bool)isRotateEnabled;

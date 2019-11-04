@@ -11,13 +11,14 @@
 }
 
 + (void)_removeAllUserFonts;
++ (void)reset;
 + (id)identifierFromDirectoryName:(id)arg1;
 + (void)synchronizeFontProviders;
 + (id)knownFontProviders;
 + (id)suspendedFontProviders;
 + (void)suspendFontProvider:(id)arg1;
 + (id)resumeSuspendedFontFiles;
-+ (id)fontProvidersSubscriptionSupportInfo;
++ (id)fontProvidersSubscriptionSupportInfoAndFontFamiliesInstalled:(unsigned long long *)arg1 andRemovedCount:(unsigned long long *)arg2 andProfileFontsCount:(unsigned long long *)arg3;
 + (double)secondsSinceLastAccessed:(id)arg1;
 + (id)directoryNameFromIdentifier:(id)arg1;
 + (id)userFontsInfo;

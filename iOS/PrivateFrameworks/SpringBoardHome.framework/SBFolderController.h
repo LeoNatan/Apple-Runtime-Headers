@@ -127,6 +127,8 @@
 - (void)folderViewDidScroll:(id)arg1;
 - (void)folderViewWillUpdatePageDuringScrolling:(id)arg1;
 - (void)folderViewWillBeginScrolling:(id)arg1;
+- (void)folderViewWillEndDragging:(id)arg1;
+- (void)folderViewWillBeginDragging:(id)arg1;
 - (void)folderView:(id)arg1 currentPageIndexDidChange:(long long)arg2;
 - (void)folderView:(id)arg1 currentPageIndexWillChange:(long long)arg2;
 - (_Bool)folderView:(id)arg1 canChangeCurrentPageIndexToIndex:(long long)arg2;
@@ -169,6 +171,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct UIEdgeInsets)statusBarInsetsForOrientation:(long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
+@property(readonly, nonatomic) _Bool shouldAnimateFirstTwoViewsAsOne;
 @property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
 @property(readonly, nonatomic) UIView *extraViewsContainer;
 - (void)setContentAlpha:(double)arg1;

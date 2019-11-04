@@ -12,6 +12,7 @@
 
 @interface HMResidentDevice (HFDebugging) <HFStateDumpBuildable>
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
+- (_Bool)hf_isReachable;
 @property(readonly, nonatomic) NSString *hf_displayName;
 @property(readonly, nonatomic) HMAccessory *hf_linkedAccessory;
 

@@ -27,6 +27,7 @@
 - (void)recyclePixelBufferSourceForDisplayAssets:(id)arg1;
 - (id)pixelBufferSourceForDisplayAsset:(id)arg1 mediaProvider:(id)arg2 spriteReference:(id)arg3;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;

@@ -8,7 +8,7 @@
 
 @interface PLPhotoLibraryPathManager (conveniences)
 - (id)pathToiPhotoLibraryMediaDir;
-- (id)temporaryRenderContentURLForInternalRendersWithExtension:(id)arg1 createEmptyFile:(_Bool)arg2;
+- (id)temporaryRenderContentURLForInternalRendersWithExtension:(id)arg1;
 - (id)cloudSharingArchiveDirectory;
 - (id)directoryPathForInFlightComments:(_Bool)arg1;
 - (id)cplDownloadFinishedMarkerFilePath;
@@ -27,10 +27,13 @@
 - (id)photoStreamsDataDirectory;
 - (id)URLForMetadataWithExtension:(id)arg1 forMediaInMainDirectory:(id)arg2 withFilename:(id)arg3;
 - (id)assetPathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
-- (void)_setSqliteErrorAndExitIfNecessaryForReason:(int)arg1;
-- (void)setSqliteErrorAndExitIfNecessaryForDemoContentInstallation;
-- (void)setSqliteErrorAndExitIfNecessaryForSimulatedCorruption:(_Bool)arg1;
-- (_Bool)createSqliteErrorIndicatorFile;
-- (id)sqliteErrorIndicatorFilePath;
+- (id)recordRebuildReason;
+- (void)setSqliteErrorForReason:(long long)arg1 allowsExit:(_Bool)arg2;
+- (void)removeSqliteErrorIndicatorFile;
+- (_Bool)_createSqliteErrorIndicatorFileWithRebuildReason:(long long)arg1;
+- (id)_rebuildDateFormatter;
+- (_Bool)sqliteErrorIndicatorFileExists;
+- (id)_rebuidHistoryFilePath;
+- (id)_sqliteErrorIndicatorFilePath;
 @end
 

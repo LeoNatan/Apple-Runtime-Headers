@@ -7,15 +7,17 @@
 #import <UIKit/UIView.h>
 
 #import <PassKitUI/PKDiscoveryCardViewDelegate-Protocol.h>
+#import <PassKitUI/PKForegroundActiveArbiterObserver-Protocol.h>
 #import <PassKitUI/PKPGSVSectionSubheaderView-Protocol.h>
 #import <PassKitUI/UIScrollViewDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, PKDiscoveryCardView, PKDiscoveryDataSource, UIImage, UIPageControl, UIScrollView;
+@class NSArray, NSMutableArray, NSString, PKDiscoveryCardView, PKDiscoveryDataSource, UIImage, UIPageControl, UIScrollView;
 @protocol PKPGSVSectionSubheaderDelegate;
 
-@interface PKDiscoveryGalleryView : UIView <PKDiscoveryCardViewDelegate, UIScrollViewDelegate, PKPGSVSectionSubheaderView>
+@interface PKDiscoveryGalleryView : UIView <PKDiscoveryCardViewDelegate, UIScrollViewDelegate, PKForegroundActiveArbiterObserver, PKPGSVSectionSubheaderView>
 {
     NSMutableArray *_cardViews;
+    NSArray *_displayedCardViews;
     NSMutableArray *_discoveryCardViews;
     id <PKPGSVSectionSubheaderDelegate> _subheaderDelegate;
     PKDiscoveryCardView *_passWelcomeView;
@@ -32,6 +34,10 @@
         unsigned int hasDiscoveryCards:1;
     } _layoutState;
     _Bool _welcomeCardStateIsDirty;
+    NSString *_lastReportedDiscoveryItemIdentifier;
+    CDStruct_973bafd3 _foregroundState;
+    double _lastTimeForegroundActive;
+    _Bool _articleLayoutsUpdatedAfterEnteringForegroundActive;
     _Bool _animatingCard;
     PKDiscoveryCardView *_pressedDiscoveryCardView;
     PKDiscoveryDataSource *_dataSource;
@@ -63,17 +69,20 @@
 - (void)_updatePageControlWithDisplayIndex;
 - (void)updatePageControlFrame;
 - (void)_pageControlChanged:(id)arg1;
-- (void)_shouldDismiss;
+- (void)_updateScrollViewToCardIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
+- (_Bool)_requestDismissalIfNecessaryAfterLayoutStateUpdate;
 - (void)_removeCardView:(id)arg1 animated:(_Bool)arg2;
 - (unsigned long long)_indexForCardViewWithIdentifier:(id)arg1;
 - (struct CGSize)_contentSize;
 - (double)_defaultHeight;
+- (void)_updateCardViews;
+- (void)_updateCardViewsAnimated:(_Bool)arg1 overrideFrontmostCardToIdentifier:(id)arg2;
 - (void)_updateCardViewsAnimated:(_Bool)arg1;
-- (void)_updateDiscoveryCardViewsForUpdatedArticleLayouts:(id)arg1 animated:(_Bool)arg2;
+- (void)_updateDiscoveryCardViewsForUpdatedArticleLayouts:(id)arg1 overrideFrontmostCardToIdentifier:(id)arg2 animated:(_Bool)arg3;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)updateForPKPGSVLayoutState:(CDStruct_d8808cea)arg1;
 - (id)cardViewForCardWithItemIdentifier:(id)arg1;
 - (void)updateArticleLayouts:(id)arg1;
-- (void)layoutIfNeededAnimated:(_Bool)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)dealloc;

@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_source> *_delayTimer;
     _Bool _needsAnimationAfterWaitingForDelay;
     _Bool _delayTimerScheduled;
+    _Bool _needsFeatheringMasksContentUpdate;
     float _contentGap;
     UIView *_contentView;
     id <NMUMarqueeViewDelegate> _delegate;
@@ -56,6 +57,7 @@
 - (void)pauseAfterCompletingCurrentIteration;
 @property(readonly, nonatomic, getter=hasStartedAnimating) _Bool hasStartedAnimating;
 @property(readonly, nonatomic, getter=isMarqueeNeededForContentSize) _Bool marqueeNeededForContentSize;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;

@@ -20,7 +20,6 @@
     NSArray *_ignoredFilesInPreviousSystem;
     BOOL _engineIsRunning;
     BOOL _hasStartedMigration;
-    BOOL _isServerDisk;
     SMPaths *_pather;
 }
 
@@ -37,8 +36,8 @@
 - (void)enginePercentDone:(id)arg1;
 - (void)engineProcessingText:(id)arg1;
 - (void)engineStarted;
-- (BOOL)_cleanupPath:(id)arg1 saveAllFiles:(BOOL)arg2 onSystem:(id)arg3 error:(id *)arg4 server:(BOOL)arg5;
-- (void)_doCleanupOnArchiveReturningError:(id *)arg1 forServer:(BOOL)arg2 onSystem:(id)arg3;
+- (BOOL)_cleanupPath:(id)arg1 saveAllFiles:(BOOL)arg2 onSystem:(id)arg3 error:(id *)arg4;
+- (void)_doCleanupOnArchiveReturningError:(id *)arg1 onSystem:(id)arg2;
 - (BOOL)_createMacBuddyCookie;
 - (BOOL)_deleteRegistrationCookie;
 - (void)_mergeInstallHistory;
@@ -46,7 +45,7 @@
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (id)initWithOptions:(id)arg1 isServer:(BOOL)arg2;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

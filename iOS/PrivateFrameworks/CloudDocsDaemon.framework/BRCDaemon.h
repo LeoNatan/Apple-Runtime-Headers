@@ -88,6 +88,9 @@
 - (void)_startupAndLoadAccount;
 - (void)_startXPCListeners;
 - (void)_setupCacheDelete;
+- (unsigned long long)nonPurgeableSizeGivenPurgeableSize:(unsigned long long)arg1;
+- (unsigned long long)totalSize;
+- (unsigned long long)recursivelySizeDirectoryAtPath:(id)arg1;
 - (_Bool)_shouldCacheDeleteForVolume:(id)arg1;
 - (void)loadAndResumeAccount;
 - (void)loadAccount;

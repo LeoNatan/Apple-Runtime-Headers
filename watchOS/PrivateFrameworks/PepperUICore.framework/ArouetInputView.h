@@ -70,6 +70,7 @@
     double _maxStrokeCoallescingRecognitionDelay;
 }
 
++ (unsigned int)compileShader:(id)arg1;
 @property(retain, nonatomic) UIQuadCurvePointFIFO *interpolatingFIFO; // @synthesize interpolatingFIFO=_interpolatingFIFO;
 @property(retain, nonatomic) UIPointFIFO *pointFIFO; // @synthesize pointFIFO=_pointFIFO;
 @property(nonatomic) unsigned int pendingRecognitionRequests; // @synthesize pendingRecognitionRequests=_pendingRecognitionRequests;
@@ -101,7 +102,6 @@
 - (void)cancelLastRecognitionRequestIfAppropriate;
 - (void)enqueuePostCommitRecognitionOperation:(CDUnknownBlockType)arg1;
 - (void)recognizeDrawing;
-- (unsigned int)compileShader:(id)arg1;
 - (void)_drawView;
 - (void)updateInput;
 - (void)animateRecognition;
@@ -112,7 +112,7 @@
 - (void)_writeParticleData:(CDStruct_869f9c67 *)arg1 count:(int)arg2 deviceVariant:(int)arg3 gridRenderStyle:(int)arg4;
 - (id)_particleDataFileNameForDeviceVariant:(int)arg1 gridRenderStyle:(int)arg2;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 prewarmer:(id)arg2;
 
 @end
 

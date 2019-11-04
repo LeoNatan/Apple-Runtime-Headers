@@ -19,10 +19,10 @@
     NWPBEndpoint *_endpoint;
     NWPBParameters *_parameters;
     int _status;
-    BOOL _direct;
-    BOOL _ipv4;
-    BOOL _ipv6;
-    BOOL _local;
+    _Bool _direct;
+    _Bool _ipv4;
+    _Bool _ipv6;
+    _Bool _local;
     struct {
         unsigned int status:1;
         unsigned int direct:1;
@@ -33,10 +33,10 @@
 }
 
 + (Class)agentsType;
-@property(nonatomic) BOOL direct; // @synthesize direct=_direct;
-@property(nonatomic) BOOL local; // @synthesize local=_local;
-@property(nonatomic) BOOL ipv6; // @synthesize ipv6=_ipv6;
-@property(nonatomic) BOOL ipv4; // @synthesize ipv4=_ipv4;
+@property(nonatomic) _Bool direct; // @synthesize direct=_direct;
+@property(nonatomic) _Bool local; // @synthesize local=_local;
+@property(nonatomic) _Bool ipv6; // @synthesize ipv6=_ipv6;
+@property(nonatomic) _Bool ipv4; // @synthesize ipv4=_ipv4;
 @property(retain, nonatomic) NSMutableArray *agents; // @synthesize agents=_agents;
 @property(retain, nonatomic) NWPBInterface *delegateInterface; // @synthesize delegateInterface=_delegateInterface;
 @property(retain, nonatomic) NWPBInterface *directInterface; // @synthesize directInterface=_directInterface;
@@ -46,30 +46,30 @@
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) BOOL hasDirect;
-@property(nonatomic) BOOL hasLocal;
-@property(nonatomic) BOOL hasIpv6;
-@property(nonatomic) BOOL hasIpv4;
+@property(nonatomic) _Bool hasDirect;
+@property(nonatomic) _Bool hasLocal;
+@property(nonatomic) _Bool hasIpv6;
+@property(nonatomic) _Bool hasIpv4;
 - (id)agentsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)agentsCount;
 - (void)addAgents:(id)arg1;
 - (void)clearAgents;
-@property(readonly, nonatomic) BOOL hasDelegateInterface;
-@property(readonly, nonatomic) BOOL hasDirectInterface;
+@property(readonly, nonatomic) _Bool hasDelegateInterface;
+@property(readonly, nonatomic) _Bool hasDirectInterface;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
-@property(nonatomic) BOOL hasStatus;
+@property(nonatomic) _Bool hasStatus;
 @property(nonatomic) int status; // @synthesize status=_status;
-@property(readonly, nonatomic) BOOL hasClientUUID;
-@property(readonly, nonatomic) BOOL hasParameters;
-@property(readonly, nonatomic) BOOL hasEndpoint;
+@property(readonly, nonatomic) _Bool hasClientUUID;
+@property(readonly, nonatomic) _Bool hasParameters;
+@property(readonly, nonatomic) _Bool hasEndpoint;
 
 @end
 

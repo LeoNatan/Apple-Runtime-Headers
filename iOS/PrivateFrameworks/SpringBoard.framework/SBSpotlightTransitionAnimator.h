@@ -31,16 +31,13 @@
     } _pulldownInterval;
     id <SBUISpotlightInitiating> _initiatingViewController;
     SPUIRemoteSearchViewController *_spotlightViewController;
-    _Bool _hidesAcquiredSearchHeader;
 }
 
-@property(nonatomic) _Bool hidesAcquiredSearchHeader; // @synthesize hidesAcquiredSearchHeader=_hidesAcquiredSearchHeader;
 - (void).cxx_destruct;
 - (double)_percentVisibleForPercentComplete:(double)arg1;
 - (void)_prototypeSettingsChanged;
 - (void)_restoreSpotlightHeaderToInitiatingViewControllerForCancellation:(_Bool)arg1;
 - (void)_restoreSpotlightHeaderToInitiatingViewController;
-- (void)_configureSpotlightHeaderFromInitiatingViewController;
 - (void)_cleanupAfterAnimating:(_Bool)arg1;
 - (void)_animateIntoSearch:(_Bool)arg1;
 - (void)_finishInteractiveTransition:(id)arg1 withCompletionSpeed:(double)arg2 completionCurve:(long long)arg3;

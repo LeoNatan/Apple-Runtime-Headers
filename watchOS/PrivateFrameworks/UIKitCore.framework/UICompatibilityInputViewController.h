@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldSuppressRemoteInputController;
     _Bool _tearingDownInputController;
     double _resetInputModeTime;
+    unsigned long long _latestDelayTime;
     UIViewController *_inputController;
     NSArray *_internalEdgeMatchConstraints;
 }

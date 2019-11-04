@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class GEODirectionService, NSMutableDictionary;
+@class GEODirectionService, NSMutableDictionary, geo_isolater;
 
 @interface MNDirectionsRequestManager : NSObject
 {
     NSMutableDictionary *_pendingRequests;
+    geo_isolater *_pendingRequestsIsolater;
     GEODirectionService *_directionsService;
 }
 

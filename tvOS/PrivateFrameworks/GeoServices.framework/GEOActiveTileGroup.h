@@ -13,7 +13,6 @@
 @interface GEOActiveTileGroup : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _activeScales;
     CDStruct_95bda58d _activeScenarios;
@@ -77,6 +76,9 @@
     NSString *_wifiConnectionQualityProbeURLLegacy;
     NSMutableArray *_xmlChecksums;
     NSMutableArray *_xmls;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _identifier;
     unsigned int _locationShiftVersion;
     unsigned int _modelVersion;
@@ -530,6 +532,8 @@
 - (void)_readTileSets;
 @property(nonatomic) unsigned int identifier;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)enumerateFlyoverRegions:(CDUnknownBlockType)arg1;
 - (unsigned int)dataVersionForFlyoverRegion:(unsigned int)arg1;
 - (_Bool)hasDataVersionForFlyoverRegion:(unsigned int)arg1;

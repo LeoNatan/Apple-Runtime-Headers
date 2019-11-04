@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface FPDDownloadManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_preflightQueue;
 }
 
 + (void)initialize;

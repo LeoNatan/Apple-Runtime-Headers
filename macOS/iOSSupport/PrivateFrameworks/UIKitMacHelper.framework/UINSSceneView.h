@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 + (void)updateDisplayTiming;
 + (BOOL)requiresConstraintBasedLayout;
 + (void)initialize;
-+ (long long)sessionIDForDraggingInfo:(id)arg1;
 @property(nonatomic) BOOL shouldHostContent; // @synthesize shouldHostContent=_shouldHostContent;
 @property(copy, nonatomic) CDUnknownBlockType resizeBlock; // @synthesize resizeBlock=_resizeBlock;
 @property(retain, nonatomic) NSMutableArray *dropSessions; // @synthesize dropSessions=_dropSessions;

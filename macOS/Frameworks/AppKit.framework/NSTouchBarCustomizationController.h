@@ -20,7 +20,8 @@ __attribute__((visibility("hidden")))
 @interface NSTouchBarCustomizationController : NSObject <NSTouchBarCustomizationPreviewViewControllerDelegate, NSTouchBarCustomizationCursorManagerDelegate, NSDraggingSource, NSTouchBarCustomizationPaletteViewControllerDelegate, _NSFunctionRowCustomizationDragTargetDelegate, NSAppExceptionListener, NSWindowDelegate>
 {
     NSMenuItem *_mainMenuItem;
-    NSMenu *_viewMenu;
+    BOOL _mainMenuItemWasAutomaticallyAdded;
+    NSMenu *_mainSubmenu;
     NSArray *_auxiliaryMenuItems;
     NSArray *_overlayWindows;
     NSTouchBarCustomizationPaletteOverlayWindow *_paletteWindow;
@@ -60,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)toggleControlStripCustomizationPalette:(id)arg1;
 - (void)removeMenuItem;
 - (void)_quickTypeDidChange:(id)arg1;
+- (void)_addMenuItemToMainMenuIfNecessary:(id)arg1;
 - (void)installMenuItemIfNeeded;
 - (void)dealloc;
 @property(readonly, copy) NSTouchBarItemTree *itemTree;
@@ -70,7 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)controllerDidComplete:(id)arg1;
 - (void)_prepareToHideCustomizationDFR;
 - (void)_showCustomizationDFR;
-- (void)_prepareCustomizationDFRFWithCustomizedRect:(struct CGRect)arg1;
+- (void)_prepareCustomizationDFRFWithCustomizedRect:(struct CGRect)arg1 inPopover:(BOOL)arg2;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (void)draggingSession:(id)arg1 movedToPoint:(struct CGPoint)arg2;
 - (void)draggingSession:(id)arg1 willBeginAtPoint:(struct CGPoint)arg2;

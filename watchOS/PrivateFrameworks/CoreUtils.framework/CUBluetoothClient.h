@@ -53,11 +53,13 @@
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     struct LogCategory *_ucat;
+    int _bluetoothState;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     unsigned int _flags;
     NSString *_label;
     unsigned int _statusFlags;
     CDUnknownBlockType _bluetoothAddressChangedHandler;
+    CDUnknownBlockType _bluetoothStateChangedHandler;
     CDUnknownBlockType _deviceConnectedHandler;
     CDUnknownBlockType _deviceDisconnectedHandler;
     CDUnknownBlockType _devicePairedHandler;
@@ -72,11 +74,13 @@
 @property(copy, nonatomic) CDUnknownBlockType devicePairedHandler; // @synthesize devicePairedHandler=_devicePairedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceDisconnectedHandler; // @synthesize deviceDisconnectedHandler=_deviceDisconnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceConnectedHandler; // @synthesize deviceConnectedHandler=_deviceConnectedHandler;
+@property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothAddressChangedHandler; // @synthesize bluetoothAddressChangedHandler=_bluetoothAddressChangedHandler;
 @property(nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(nonatomic) int bluetoothState; // @synthesize bluetoothState=_bluetoothState;
 - (void).cxx_destruct;
 - (void)updateStatusFlags;
 - (void)updateDevice:(id)arg1 btDevice:(struct BTDeviceImpl *)arg2;

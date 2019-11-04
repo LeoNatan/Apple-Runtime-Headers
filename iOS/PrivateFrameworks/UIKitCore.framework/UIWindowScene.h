@@ -24,12 +24,16 @@
     id <UICoordinateSpace> _coordinateSpace;
     _Bool _shouldDisableTouchCancellationOnRotation;
     _Bool _windowWasInitializedWithDefaultStoryboard;
+    _Bool _didMakeKeyAndVisible;
     id <_UISceneMetricsCalculating> _metricsCalculator;
     _Bool __isKeyWindowScene;
     long long _screenRequestedOverscanCompensation;
     long long _avkitRequestedOverscanCompensation;
 }
 
++ (id)_findNewKeyWindowSceneOnScreen:(id)arg1;
++ (void)_setShouldRestoreKeyWindowSceneOnActivation:(_Bool)arg1;
++ (_Bool)_shouldRestoreKeyWindowSceneOnActivation;
 + (id)_keyWindowScene;
 + (id)_placeholderWindowSceneForScreen:(id)arg1 create:(_Bool)arg2;
 + (id)_keyboardWindowSceneForScreen:(id)arg1 create:(_Bool)arg2;
@@ -83,6 +87,7 @@
 - (_Bool)_windowIsFront:(id)arg1;
 @property(readonly, nonatomic) _UIContextBinder *_contextBinder;
 - (void)_makeKeyAndVisibleIfNeeded;
+- (_Bool)_needsMakeKeyAndVisible;
 - (void)_loadWindowWithStoryboardIfNeeded:(id)arg1;
 - (void)_readySceneForConnection;
 - (id)_allWindowsIncludingInternalWindows:(_Bool)arg1 onlyVisibleWindows:(_Bool)arg2;

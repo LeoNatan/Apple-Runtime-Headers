@@ -10,6 +10,7 @@
 @property(nonatomic) BOOL loadItemsOutsideAnchorViewport;
 @property(nonatomic) struct CGPoint anchorViewportCenter;
 @property(retain, nonatomic) id anchorObjectReference;
+@property(readonly, nonatomic) BOOL itemCaptionsVisible;
 @property(readonly, nonatomic) BOOL supportsContentMode;
 @property(readonly, nonatomic) struct CGRect loadedItemsRect;
 @property(readonly, nonatomic) struct _NSRange loadedItems;
@@ -19,6 +20,7 @@
 @property(readonly, nonatomic) long long visualItemShift;
 @property(nonatomic) unsigned char mediaFlags;
 @property(nonatomic) BOOL enableBestCropRect;
+@property(nonatomic) double itemCaptionSpacing;
 @property(nonatomic) double interItemSpacing;
 @property(nonatomic) struct NSEdgeInsets padding;
 @property(nonatomic) long long numberOfColumns;

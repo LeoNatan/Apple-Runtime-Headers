@@ -48,7 +48,7 @@
 - (unsigned short)charAtPosition:(unsigned int)arg1 withOffset:(int)arg2;
 - (int)tokenAtCursor;
 - (id)nextStringInEncoding:(unsigned int)arg1 quotedPrintable:(_Bool)arg2 stopTokens:(int)arg3 trim:(_Bool)arg4 maximumValueLength:(unsigned int)arg5;
-- (void)_applyNextStringInEncoding:(unsigned int)arg1 quotedPrintable:(_Bool)arg2 stopTokens:(int)arg3 trim:(_Bool)arg4 maximumValueLength:(unsigned int)arg5 intoString:(id)arg6;
+- (_Bool)_applyNextStringInEncoding:(unsigned int)arg1 quotedPrintable:(_Bool)arg2 stopTokens:(int)arg3 trim:(_Bool)arg4 maximumValueLength:(unsigned int)arg5 intoString:(id)arg6;
 - (void)unicodeSkipToStopTokens:(int)arg1;
 - (id)nextUnicodeStringStopTokens:(int)arg1 quotedPrintable:(_Bool)arg2 trim:(_Bool)arg3 maximumValueLength:(unsigned int)arg4;
 - (struct _NSRange)expandRange:(struct _NSRange)arg1 untilNextByteIs:(id)arg2;
@@ -78,6 +78,7 @@
 - (int)errorCount;
 - (unsigned int)cursor;
 - (id)initWithData:(id)arg1;
+- (id)os_log;
 
 @end
 

@@ -13,7 +13,6 @@
 @interface GEOTileSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_baseURL;
     NSMutableArray *_countryRegionWhitelists;
@@ -22,6 +21,9 @@
     NSString *_multiTileURL;
     NSMutableArray *_supportedLanguages;
     NSMutableArray *_validVersions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _alternativeMultipathTCPPort;
     int _checksumType;
     unsigned int _dataSet;
@@ -158,6 +160,8 @@
 @property(retain, nonatomic) NSString *baseURL;
 @property(readonly, nonatomic) BOOL hasBaseURL;
 - (void)_readBaseURL;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

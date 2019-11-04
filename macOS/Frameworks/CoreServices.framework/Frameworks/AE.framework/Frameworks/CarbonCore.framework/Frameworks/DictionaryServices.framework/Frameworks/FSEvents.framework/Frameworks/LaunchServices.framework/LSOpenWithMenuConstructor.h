@@ -17,9 +17,11 @@
     NSArray *_contentTypes;
     NSViewController *_otherPanelAccessoryViewController;
     id <LSOpenWithMenuDelegate> _delegate;
+    CDUnknownBlockType _selectionHandler;
 }
 
 + (void)initialize;
+@property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 @property(nonatomic) __weak id <LSOpenWithMenuDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSViewController *otherPanelAccessoryViewController; // @synthesize otherPanelAccessoryViewController=_otherPanelAccessoryViewController;
 @property(nonatomic) unsigned int rolesMask; // @synthesize rolesMask=_rolesMask;

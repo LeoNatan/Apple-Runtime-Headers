@@ -13,10 +13,13 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)accessibilityIncrement;
+- (id)accessibilityCustomActions;
 - (unsigned long long)accessibilityTraits;
+- (void)accessibilityIncrement;
 - (void)accessibilityDecrement;
+- (void)_axAdjustValue:(_Bool)arg1;
 - (id)accessibilityValue;
+- (id)_axCurrentCameraMode;
 - (void)setSelectedMode:(long long)arg1 animated:(_Bool)arg2;
 - (id)accessibilityIdentifier;
 - (struct CGRect)accessibilityFrame;

@@ -13,9 +13,11 @@
 @interface LOGMSGEVENTLogMsgEventTableBookedSession : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_bookedTableSessionId;
     NSMutableArray *_bookedTables;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_bookedTableSessionId:1;
         unsigned int read_bookedTables:1;
@@ -47,6 +49,8 @@
 @property(retain, nonatomic) NSString *bookedTableSessionId;
 @property(readonly, nonatomic) BOOL hasBookedTableSessionId;
 - (void)_readBookedTableSessionId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

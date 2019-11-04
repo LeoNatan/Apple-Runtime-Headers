@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BSTransaction, FBSystemService, SBInitialRestartState, SBRestartTransitionRequest, SBStartupTransitionController;
+@class BSTransaction, FBSystemService, NSMutableSet, SBInitialRestartState, SBRestartTransitionRequest, SBStartupTransitionController;
 @protocol SBRestartManagerDelegate, SBRestartManagerWorkspaceDataSource, SBStartupTransition;
 
 @interface SBRestartManager : NSObject
@@ -18,11 +18,10 @@
     id <SBRestartManagerWorkspaceDataSource> _workspaceDataSource;
     _Bool _isShuttingDown;
     _Bool _isRestartImminent;
-    _Bool _isUserSwitchPending;
+    NSMutableSet *_pendingExternallyControlledRestartReasons;
     FBSystemService *_systemService;
 }
 
-@property(nonatomic, getter=_isUserSwitchPending, setter=_setUserSwitchPending:) _Bool isUserSwitchPending; // @synthesize isUserSwitchPending=_isUserSwitchPending;
 @property(readonly, nonatomic) SBRestartTransitionRequest *pendingRestartTransitionRequest; // @synthesize pendingRestartTransitionRequest=_pendingRestartTransitionRequest;
 @property(nonatomic) __weak id <SBRestartManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -36,7 +35,10 @@
 - (void)_postShutdownNotification;
 - (void)_shutdownWithOptions:(unsigned long long)arg1 byUser:(_Bool)arg2 description:(id)arg3;
 - (void)_killAllAppsForPendingExitWithReason:(long long)arg1 description:(id)arg2 expiration:(double)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_isPendingExitIncludingExternallyControlledReasons:(_Bool)arg1;
 - (void)_exitIsImminent;
+- (void)_removePendingExternallyControlledRestartReason:(id)arg1;
+- (void)_addPendingExternallyControlledRestartReason:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

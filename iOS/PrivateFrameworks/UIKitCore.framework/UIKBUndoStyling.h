@@ -23,9 +23,11 @@ __attribute__((visibility("hidden")))
     UIColor *_buttonGlyphColorDisabled;
     UIColor *_elementBackgroundColor;
     UIColor *_elementCoverColor;
+    long long _appearance;
 }
 
 @property(nonatomic) _Bool cutCopyPasteIconOnly; // @synthesize cutCopyPasteIconOnly=_cutCopyPasteIconOnly;
+@property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) _Bool isRTL; // @synthesize isRTL=_isRTL;
 @property(nonatomic) _Bool undoRedoIconOnly; // @synthesize undoRedoIconOnly=_undoRedoIconOnly;
 @property(retain, nonatomic) UIColor *elementCoverColor; // @synthesize elementCoverColor=_elementCoverColor;
@@ -38,7 +40,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIVibrancyEffect *backgroundVibrancyEffect; // @synthesize backgroundVibrancyEffect=_backgroundVibrancyEffect;
 @property(retain, nonatomic) UIBlurEffect *backgroundBlurEffect; // @synthesize backgroundBlurEffect=_backgroundBlurEffect;
 - (void).cxx_destruct;
-- (void)updateBackgroundForAppearance:(long long)arg1;
+- (void)createDynamicColors;
 - (id)vibrancyEffectForBlur:(id)arg1;
 - (id)initWithKeyboardAppearance:(long long)arg1 isRTL:(_Bool)arg2;
 

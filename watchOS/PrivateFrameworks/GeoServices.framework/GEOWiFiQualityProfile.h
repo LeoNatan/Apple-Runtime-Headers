@@ -13,9 +13,11 @@
 @interface GEOWiFiQualityProfile : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOWiFiQualityHours *_hours;
     NSMutableArray *_qualities;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_hours:1;
         unsigned int read_qualities:1;
@@ -47,6 +49,8 @@
 @property(retain, nonatomic) GEOWiFiQualityHours *hours;
 @property(readonly, nonatomic) _Bool hasHours;
 - (void)_readHours;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -14,6 +14,7 @@
 - (void)setWorkflowIdentifier:(id)arg1 forToken:(id)arg2;
 - (BOOL)wf_voiceParametersDisabled;
 - (BOOL)wf_isDeviceIdiomDisabledInSiri:(long long)arg1;
+- (BOOL)wf_isCurrentDeviceModelDisabledInSiri;
 - (void)wf_registerDefaultDisabledDevices;
 - (id)wf_keyForDisablingDeviceIdiom:(long long)arg1;
 @end

@@ -14,7 +14,7 @@
 - (void)__viewServiceDidUpdatePreferredUserInterfaceStyle:(long long)arg1;
 - (void)__viewServiceDidUpdatePrefersHomeIndicatorAutoHidden:(_Bool)arg1;
 - (void)__viewServiceDidUpdatePreferredScreenEdgesDeferringSystemGestures:(long long)arg1;
-- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id <UITimingCurveProvider>)arg5;
+- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 offset:(double)arg2 duration:(double)arg3 timingCurve:(id <UITimingCurveProvider>)arg4;
 - (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(long long)arg1 animationSettings:(BSAnimationSettings *)arg2;
@@ -31,6 +31,7 @@
 - (void)__setSupportedInterfaceOrientations:(NSArray *)arg1;
 - (void)__viewServiceDidUnregisterScrollToTopView;
 - (void)__viewServiceDidRegisterScrollToTopView;
+- (void)__viewServiceDidChangeKeyWindow:(_Bool)arg1;
 - (void)__viewServiceDidPromoteFirstResponder;
 @end
 

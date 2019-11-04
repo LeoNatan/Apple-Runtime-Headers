@@ -14,9 +14,13 @@ __attribute__((visibility("hidden")))
     _Bool _includeChangeDetails;
     NSSet *_sampleTypes;
     HKQueryAnchor *_anchor;
+    int _changeDetailsQueryStrategy;
+    int _anchorStrategyChangeCountLimit;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) int anchorStrategyChangeCountLimit; // @synthesize anchorStrategyChangeCountLimit=_anchorStrategyChangeCountLimit;
+@property(nonatomic) int changeDetailsQueryStrategy; // @synthesize changeDetailsQueryStrategy=_changeDetailsQueryStrategy;
 @property(nonatomic) _Bool includeChangeDetails; // @synthesize includeChangeDetails=_includeChangeDetails;
 @property(copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(copy, nonatomic) NSSet *sampleTypes; // @synthesize sampleTypes=_sampleTypes;

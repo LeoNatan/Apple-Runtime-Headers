@@ -9,6 +9,7 @@
 @class CALNSuggestedEventNotificationInfo, NSArray, NSString;
 
 @protocol CALNSuggestedEventNotificationDataSource <NSObject>
+- (void)clearSuggestedEventNotificationWithSourceClientIdentifier:(NSString *)arg1;
 - (void)deleteCanceledSuggestedEventWithSourceClientIdentifier:(NSString *)arg1;
 - (void)ignoreSuggestedEventWithSourceClientIdentifier:(NSString *)arg1;
 - (void)confirmSuggestedEventWithSourceClientIdentifier:(NSString *)arg1;

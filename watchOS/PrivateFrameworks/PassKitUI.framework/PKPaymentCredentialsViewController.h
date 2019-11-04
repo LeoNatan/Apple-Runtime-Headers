@@ -33,8 +33,10 @@
     PKPaymentSetupFlowController *_flowController;
     _Bool _hideSetupLaterButton;
     PKPaymentSetupProduct *_product;
+    NSString *_lastBackedUpDefaultPaymentPassSerialNumber;
 }
 
+@property(copy, nonatomic) NSString *lastBackedUpDefaultPaymentPassSerialNumber; // @synthesize lastBackedUpDefaultPaymentPassSerialNumber=_lastBackedUpDefaultPaymentPassSerialNumber;
 @property(nonatomic) _Bool hideSetupLaterButton; // @synthesize hideSetupLaterButton=_hideSetupLaterButton;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 - (void).cxx_destruct;
@@ -44,7 +46,12 @@
 - (void)performSecurityCheckForCredentials:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_updatePassSnapshot:(id)arg1 paymentCredential:(id)arg2 credentialSection:(unsigned int)arg3 credentialsInCache:(id)arg4;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
+- (void)_presentAccountAlertIfNotSelectedWithContinueHandler:(CDUnknownBlockType)arg1 setupLaterHandler:(CDUnknownBlockType)arg2;
+- (void)_presentAlertForCredentialCache:(id)arg1 continueHandler:(CDUnknownBlockType)arg2 setupLaterHandler:(CDUnknownBlockType)arg3;
+- (id)_credentialCacheRequiringAlert;
+- (void)_setupLaterTapped;
 - (void)_terminateSetupFlow;
+- (void)_continue;
 - (void)_startProvisioningForCredentials:(id)arg1;
 - (void)_startProvisioningForSelectedCards;
 - (void)_presentManualAddController;
@@ -64,6 +71,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)_setPassSnapshotOnCell:(id)arg1 cell:(id)arg2;
+- (void)_configureCell:(id)arg1 inTableView:(id)arg2 atIndexPath:(id)arg3 sizing:(_Bool)arg4;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

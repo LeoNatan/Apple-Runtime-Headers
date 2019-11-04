@@ -8,14 +8,17 @@
 
 #import <UserNotificationsUI/_UNNotificationExtensionHostInterface-Protocol.h>
 
-@class UIColor;
-@protocol _UNNotificationExtensionHostDelegate;
+@class NSExtension, NSString, UIColor;
+@protocol NSCopying, _UNNotificationExtensionHostDelegate;
 
 @interface _UNNotificationExtensionHostViewController : _UIRemoteViewController <_UNNotificationExtensionHostInterface>
 {
     _Bool _wantsToBecomeFirstResponder;
     _Bool _wantsToReceiveActionResponses;
     id <_UNNotificationExtensionHostDelegate> _delegate;
+    NSExtension *_extension;
+    id <NSCopying> _extensionRequestIdentifier;
+    NSString *_notificationRequestIdentifier;
     unsigned long long _playPauseMediaButtonType;
     UIColor *_playPauseMediaButtonColor;
     struct CGRect _playPauseMediaButtonFrame;
@@ -28,6 +31,9 @@
 @property(nonatomic) unsigned long long playPauseMediaButtonType; // @synthesize playPauseMediaButtonType=_playPauseMediaButtonType;
 @property(nonatomic) _Bool wantsToReceiveActionResponses; // @synthesize wantsToReceiveActionResponses=_wantsToReceiveActionResponses;
 @property(nonatomic) _Bool wantsToBecomeFirstResponder; // @synthesize wantsToBecomeFirstResponder=_wantsToBecomeFirstResponder;
+@property(copy, nonatomic) NSString *notificationRequestIdentifier; // @synthesize notificationRequestIdentifier=_notificationRequestIdentifier;
+@property(copy, nonatomic) id <NSCopying> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
+@property(nonatomic) __weak NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <_UNNotificationExtensionHostDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_extensionSetUserNotificationActions:(id)arg1;

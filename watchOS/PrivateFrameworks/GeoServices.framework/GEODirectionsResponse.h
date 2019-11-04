@@ -14,7 +14,6 @@
 @interface GEODirectionsResponse : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOProblemDetail *_problemDetails;
     unsigned int _problemDetailsCount;
@@ -48,6 +47,9 @@
     NSString *_transitDataVersion;
     GEOPBTransitRoutingIncidentMessage *_transitIncidentMessage;
     GEOTransitRouteUpdateConfiguration *_transitRouteUpdateConfiguration;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _instructionSignFillColor;
     int _liveRouteSavingsSeconds;
     int _localDistanceUnits;
@@ -324,6 +326,8 @@
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) int status;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)_destinationMapItem;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)instanceCompatibleWithProtocolVersion:(unsigned int)arg1;

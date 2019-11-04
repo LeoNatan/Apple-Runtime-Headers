@@ -6,15 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@protocol CMWakeGestureDelegate;
+@protocol CMWakeGestureDelegate, OS_dispatch_queue;
 
 @interface CMWakeGestureManager : NSObject
 {
+    struct Dispatcher *fWakeDispatcher;
+    int fCurrentState;
+    double fLastNotificationTime;
+    _Bool fEnableAudioAlert;
+    _Bool fSendOrientationFailed;
+    int fNightStandThreshold;
+    NSObject<OS_dispatch_queue> *fDispatchQ;
+    struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor>> fWakeGestureVisitor;
+    int fScreenDimmingNotificationToken;
+    int fSelector;
     id <CMWakeGestureDelegate> _delegate;
     int _wrist;
     int _crown;
 }
 
++ (unsigned char)toRaw:(int)arg1;
++ (int)toState:(unsigned char)arg1;
 + (_Bool)isWakeGestureOverrideEnabled;
 + (_Bool)isWakeGestureAvailable;
 + (id)sharedManager;
@@ -22,16 +34,23 @@
 @property(nonatomic) int crown; // @synthesize crown=_crown;
 @property(nonatomic) int wrist; // @synthesize wrist=_wrist;
 @property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)logAssert;
-- (void)reset;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)onWakeUpdated:(const struct Sample *)arg1;
+- (void)forceDetected;
 - (_Bool)setFireAllEnabled:(_Bool)arg1;
+- (void)reset;
 - (void)setDetectedStateEnabled:(_Bool)arg1;
 - (_Bool)setNightStandMode:(_Bool)arg1 withConfiguration:(int)arg2;
-- (void)forceDetected;
+- (void)updateWristAndCrown;
 - (void)simulateGesture:(int)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
+- (void)playAlert;
 - (void)stopWakeGestureUpdates;
 - (void)startWakeGestureUpdates;
+- (void)dealloc;
+- (void)createGestureDispatcherIfNecessary;
+- (id)initWithQueue:(id)arg1;
 
 @end
 

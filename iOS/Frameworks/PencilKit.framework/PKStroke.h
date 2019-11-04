@@ -80,8 +80,6 @@
 - (void)_consumeRenderVertexes:(CDUnknownBlockType)arg1;
 - (long long)_inputType;
 @property(readonly, nonatomic) double timestamp;
-- (unsigned long long)oldHashForRandomSeedSoonToBeObsoleted;
-@property(readonly, nonatomic) unsigned long long _legacyRandomSeed;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) unsigned int _randomSeed;

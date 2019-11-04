@@ -15,7 +15,7 @@
 #import <HomeUI/HUPresentationDelegate-Protocol.h>
 #import <HomeUI/HUPresentationDelegateHost-Protocol.h>
 
-@class AVControlItem, AVHomeLoadingButtonControlItem, AVPlayerLooper, AVQueuePlayer, HFCameraItem, HFCameraPlaybackEngine, HFItem, HFItemManager, HMCameraProfile, HMHome, HUCalendarScrubberContainerViewController, HUCameraDemoPlayerView, HUCameraMiniScrubberViewController, HUCameraPlayerAVBehavior, HUCameraPlayerAccessoryViewController, HUCameraPlayerConfiguration, HUCameraPlayerFooterViewController, HUCameraPlayerLiveContentViewController, HUCameraPlayerPlaceholderContentViewController, HUCameraStatusOverlayView, HUClipScrubberViewController, HULegibilityLabel, NAUILayoutConstraintSet, NSArray, NSLayoutConstraint, NSString, NSTimer, UIAlertController, UIViewController;
+@class AVControlItem, AVHomeLoadingButtonControlItem, AVPlayerLooper, AVQueuePlayer, HFCameraItem, HFCameraPlaybackEngine, HFItem, HFItemManager, HMCameraProfile, HMHome, HUCalendarScrubberContainerViewController, HUCameraMiniScrubberViewController, HUCameraPlayerAVBehavior, HUCameraPlayerAccessoryViewController, HUCameraPlayerConfiguration, HUCameraPlayerFooterViewController, HUCameraPlayerLiveContentViewController, HUCameraPlayerPlaceholderContentViewController, HUCameraRecordingPlayerView, HUCameraStatusOverlayView, HUClipScrubberViewController, HULegibilityLabel, NAUILayoutConstraintSet, NSArray, NSLayoutConstraint, NSString, NSTimer, UIAlertController, UIViewController;
 @protocol HUCameraPlayerScrubbing, HUCameraPlayerViewControllerDelegate, HUPresentationDelegate;
 
 @interface HUCameraPlayerViewController : AVPlayerViewController <AVPlayerViewControllerDelegate, AVPlayerViewControllerDelegatePrivate, HFCameraPlaybackEngineObserver, HFItemManagerDelegate, HUCameraPlayerAVBehaviorDelegate, HUPresentationDelegate, HUItemPresentationContainer, HUPresentationDelegateHost>
@@ -25,6 +25,7 @@
     BOOL _viewVisible;
     BOOL _viewDisappearing;
     BOOL _observingReadyForDisplay;
+    BOOL _applicationIsActive;
     BOOL _shouldResumePlaying;
     id <HUPresentationDelegate> presentationDelegate;
     id <HUCameraPlayerViewControllerDelegate> _cameraDelegate;
@@ -51,7 +52,7 @@
     NAUILayoutConstraintSet *_calendarConstraintSet;
     NSLayoutConstraint *_cameraStatusViewTopConstraint;
     NSLayoutConstraint *_dayLabelTopConstraint;
-    HUCameraDemoPlayerView *_demoPlayerView;
+    HUCameraRecordingPlayerView *_demoPlayerView;
     AVPlayerLooper *_looper;
     AVQueuePlayer *_demoModeQueuePlayer;
     UIAlertController *_airplaneAlertController;
@@ -68,13 +69,14 @@
 @property(nonatomic) __weak UIAlertController *airplaneAlertController; // @synthesize airplaneAlertController=_airplaneAlertController;
 @property(nonatomic) __weak AVQueuePlayer *demoModeQueuePlayer; // @synthesize demoModeQueuePlayer=_demoModeQueuePlayer;
 @property(retain, nonatomic) AVPlayerLooper *looper; // @synthesize looper=_looper;
-@property(retain, nonatomic) HUCameraDemoPlayerView *demoPlayerView; // @synthesize demoPlayerView=_demoPlayerView;
+@property(retain, nonatomic) HUCameraRecordingPlayerView *demoPlayerView; // @synthesize demoPlayerView=_demoPlayerView;
 @property(retain, nonatomic) NSLayoutConstraint *dayLabelTopConstraint; // @synthesize dayLabelTopConstraint=_dayLabelTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *cameraStatusViewTopConstraint; // @synthesize cameraStatusViewTopConstraint=_cameraStatusViewTopConstraint;
 @property(retain, nonatomic) NAUILayoutConstraintSet *calendarConstraintSet; // @synthesize calendarConstraintSet=_calendarConstraintSet;
 @property(retain, nonatomic) NAUILayoutConstraintSet *scrubberConstraintSet; // @synthesize scrubberConstraintSet=_scrubberConstraintSet;
 @property(retain, nonatomic) NAUILayoutConstraintSet *statusIndicatorConstraintSet; // @synthesize statusIndicatorConstraintSet=_statusIndicatorConstraintSet;
 @property(retain, nonatomic) NAUILayoutConstraintSet *staticConstraintSet; // @synthesize staticConstraintSet=_staticConstraintSet;
+@property(nonatomic) BOOL applicationIsActive; // @synthesize applicationIsActive=_applicationIsActive;
 @property(nonatomic, getter=isObservingReadyForDisplay) BOOL observingReadyForDisplay; // @synthesize observingReadyForDisplay=_observingReadyForDisplay;
 @property(nonatomic, getter=isViewDisappearing) BOOL viewDisappearing; // @synthesize viewDisappearing=_viewDisappearing;
 @property(nonatomic, getter=isViewVisible) BOOL viewVisible; // @synthesize viewVisible=_viewVisible;
@@ -113,7 +115,8 @@
 - (void)playbackControlsDidUpdateVisibilityOfLoadingIndicator:(BOOL)arg1;
 - (void)playbackControlsDidToggleMuted:(BOOL)arg1;
 - (double)currentScrubberResolutionForBehavior:(id)arg1;
-- (void)playbackEngineDidUpdateClips:(id)arg1;
+- (void)playbackEngine:(id)arg1 didRemoveClips:(id)arg2;
+- (void)playbackEngine:(id)arg1 didUpdateClips:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateLiveCameraSource:(id)arg2;
@@ -136,6 +139,8 @@
 - (BOOL)_homeHasSingleCameraProfile;
 - (id)_microphoneGlyphForState:(BOOL)arg1;
 - (id)_settingsImage;
+- (id)_imageConfigurationForScrubberType;
+- (long long)_imageScaleForScrubberType;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)_shouldAutoPlayOnViewAppearance;
 - (void)_updateCanShowOverlayState;
@@ -147,6 +152,8 @@
 - (void)_presentDetailsViewController;
 - (void)pauseEngineIfNeeded;
 - (void)_addFooterConstraints;
+- (void)_configureClipScrubberViewControllerIfNeeded;
+- (void)_configureCalendarContainerViewControllerIfNeeded;
 - (void)_configureFooterViewController;
 - (void)_dismissEditInterface;
 - (void)_removePlaybackHistoryUI;
@@ -158,6 +165,7 @@
 - (BOOL)_shouldDisableLiveStreamAfterCameraStatusChange;
 - (void)_updateCameraStatus;
 - (void)_updateLivePreviewAspectRatio;
+- (void)_updateIndicatorColor;
 - (void)_updateStateForScrubbingStatus:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateStateForPlaybackPosition:(id)arg1 animated:(BOOL)arg2;
 - (void)_setupPlaybackEngine;

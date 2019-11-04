@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)highlight:(id)arg1;
 - (void)showPDFMarkupMenuView;
 - (void)_hidePDFMarkupMenuView;
+- (void)_clearTextSelectionMenuItems;
 - (id)_menuItemsForTextSelectionMenu:(unsigned long long)arg1;
 - (void)updateTextSelectionMenuAndShowMenu:(_Bool)arg1;
 - (void)showActiveMenus;

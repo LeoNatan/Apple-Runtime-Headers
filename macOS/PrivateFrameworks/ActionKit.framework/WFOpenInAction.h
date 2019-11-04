@@ -6,26 +6,22 @@
 
 #import <WorkflowKit/WFAction.h>
 
-@class NSArray, WFFileRepresentation;
+@class NSArray;
 
 @interface WFOpenInAction : WFAction
 {
-    WFFileRepresentation *_sendingFile;
-    WFFileRepresentation *_retainedFile;
     NSArray *_contentClasses;
 }
 
 @property(retain, nonatomic) NSArray *contentClasses; // @synthesize contentClasses=_contentClasses;
-@property(retain, nonatomic) WFFileRepresentation *retainedFile; // @synthesize retainedFile=_retainedFile;
-@property(nonatomic) __weak WFFileRepresentation *sendingFile; // @synthesize sendingFile=_sendingFile;
 - (void).cxx_destruct;
 - (id)selectedApp;
 - (id)outputContentClasses;
 - (id)inputContentClasses;
 - (void)updateContentClasses;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;
-- (void)openContent:(id)arg1 inApp:(id)arg2;
-- (BOOL)showsAppPicker;
+- (void)openContentInSelectedApp:(id)arg1;
+- (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end
 

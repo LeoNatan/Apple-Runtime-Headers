@@ -19,7 +19,6 @@
     unsigned long _mutationCount;
 }
 
-+ (id)readerForBurnInTesting;
 + (id)readerForMemoriesWithResourceDirectory:(id)arg1;
 + (id)readerForSyncedAlbumWithResourceDirectory:(id)arg1;
 + (id)readerForResourceDirectory:(id)arg1;

@@ -60,7 +60,7 @@
 - (BOOL)_canExtractBatchLocations;
 - (void)accessoriesBecomeUnreachable;
 - (void)accessoriesBecomeReachable;
-- (void)accessoryAdded;
+- (void)updateHomeLocation;
 - (void)_handleRetrieveLocation:(id)arg1;
 - (void)_handleLocationAuthorization:(int)arg1;
 - (void)_handleLocationAuthorizationChangedNotification:(id)arg1;

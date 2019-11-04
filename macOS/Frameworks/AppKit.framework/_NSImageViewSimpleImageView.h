@@ -16,13 +16,14 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)performBlockWithLayerContents:(CDUnknownBlockType)arg1;
+- (void)positionFromAlignmentRectFrame;
 - (id)imageContentStyle;
 - (id)image;
 - (long long)userInterfaceLayoutDirection;
 - (BOOL)allowsVibrancy;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 ownerView:(id)arg2;
+- (id)initWithOwnerView:(id)arg1;
 
 @end
 

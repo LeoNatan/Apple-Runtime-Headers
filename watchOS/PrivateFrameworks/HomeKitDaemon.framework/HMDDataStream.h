@@ -16,6 +16,7 @@
 {
     _Bool _firstMessageReceived;
     id <HMDDataStreamDelegate> _delegate;
+    NSString *_logIdentifier;
     id <HMDDataStreamTransport> _transport;
     HAPSecuritySessionEncryption *_sessionEncryption;
     NSMapTable *_protocols;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) NSMapTable *protocols; // @synthesize protocols=_protocols;
 @property(retain, nonatomic) HAPSecuritySessionEncryption *sessionEncryption; // @synthesize sessionEncryption=_sessionEncryption;
 @property(retain, nonatomic) id <HMDDataStreamTransport> transport; // @synthesize transport=_transport;
+@property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(nonatomic) __weak id <HMDDataStreamDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
@@ -57,7 +59,7 @@
 - (void)addProtocol:(id)arg1 name:(id)arg2;
 - (void)close;
 - (void)connect;
-- (id)initWithTransport:(id)arg1 sessionEncryption:(id)arg2 workQueue:(id)arg3;
+- (id)initWithTransport:(id)arg1 sessionEncryption:(id)arg2 workQueue:(id)arg3 logIdentifier:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

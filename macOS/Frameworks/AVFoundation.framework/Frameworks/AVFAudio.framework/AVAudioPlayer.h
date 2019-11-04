@@ -49,6 +49,7 @@
 - (id)initWithData:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (void)finalize;
+- (id)init;
 - (void)privRemoveSessionListener;
 - (void)decodeError:(id)arg1;
 - (void)finishedPlaying:(id)arg1;

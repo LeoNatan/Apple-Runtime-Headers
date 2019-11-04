@@ -6,7 +6,7 @@
 
 #import <PassKitCore/PDPassLibraryInAppExportedInterface-Protocol.h>
 
-@class CLLocation, NSArray, NSNumber, NSSet, NSString, PKCatalog, PKContact, PKDisplayProfile, PKFieldProperties, PKPass, PKPaymentSetupConfiguration, PKPaymentSetupRequest;
+@class CLLocation, NSArray, NSNumber, NSSet, NSString, PKCatalog, PKContact, PKDisplayProfile, PKFieldProperties, PKPaymentSetupConfiguration, PKPaymentSetupRequest;
 
 @protocol PDPassLibraryExtendedExportedInterface <PDPassLibraryInAppExportedInterface>
 - (void)paymentPassWithAssociatedAccountIdentifier:(NSString *)arg1 completion:(void (^)(PKPaymentPass *))arg2;
@@ -35,12 +35,13 @@
 - (void)removeAllScheduledActivities;
 - (void)noteAccountDeletedWithHandler:(void (^)(void))arg1;
 - (void)noteAccountChangedWithHandler:(void (^)(void))arg1;
-- (void)notifyPassUsed:(PKPass *)arg1 fromSource:(long long)arg2;
+- (void)notifyPassUsedWithIdentifier:(NSString *)arg1 fromSource:(long long)arg2;
 - (void)noteObjectSharedWithUniqueID:(NSString *)arg1;
 - (void)personalizePassWithUniqueIdentifier:(NSString *)arg1 contact:(PKContact *)arg2 personalizationToken:(NSString *)arg3 requiredPersonalizationFields:(unsigned long long)arg4 personalizationSource:(unsigned long long)arg5 handler:(void (^)(BOOL))arg6;
 - (void)updateObjectWithUniqueIdentifier:(NSString *)arg1 handler:(void (^)(BOOL))arg2;
 - (void)rescheduleCommutePlanRenewalReminderForPassWithUniqueID:(NSString *)arg1;
 - (void)updateSettings:(unsigned long long)arg1 forObjectWithUniqueID:(NSString *)arg2;
+- (void)resetApplePayWithDiagnosticReason:(NSString *)arg1 handler:(void (^)(void))arg2;
 - (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(NSString *)arg2 handler:(void (^)(void))arg3;
 - (void)getImageSetContainerForUniqueID:(NSString *)arg1 ofType:(long long)arg2 displayProfile:(PKDisplayProfile *)arg3 suffix:(NSString *)arg4 handler:(void (^)(PKImageSetXPCContainer *))arg5;
 - (void)getPassUniqueIdentifiersForFieldProperties:(PKFieldProperties *)arg1 handler:(void (^)(NSArray *))arg2;

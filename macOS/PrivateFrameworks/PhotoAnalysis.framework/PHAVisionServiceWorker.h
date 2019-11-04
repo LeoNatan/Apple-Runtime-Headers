@@ -27,6 +27,7 @@
 
 + (CDUnknownBlockType)assetResourceSmallestToLargestComparator;
 + (CDUnknownBlockType)assetResourceLargestToSmallestComparator;
++ (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
 + (void)disableANEForRequest:(id)arg1;
 + (id)defaultImageCreationOptions;
 + (id)analysisLog;
@@ -53,7 +54,6 @@
 - (id)assetResourcesForAsset:(id)arg1 fromDesiredTypes:(const long long *)arg2 count:(unsigned long long)arg3;
 - (BOOL)processAsset:(id)arg1 error:(id *)arg2;
 - (BOOL)getLocallyAvailableAssetResource:(id *)arg1 forAnalyzingAsset:(id)arg2 error:(id *)arg3;
-- (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
 - (id)assetWithLocalIdentifier:(id)arg1 error:(id *)arg2;
 - (struct CGImage *)_createCGImageFromImageSource:(struct CGImageSource *)arg1 imageOptions:(id)arg2 orientation:(unsigned long long *)arg3 error:(id *)arg4;
 - (unsigned long long)analyzeAssetResourceFileAtURL:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id *)arg4;

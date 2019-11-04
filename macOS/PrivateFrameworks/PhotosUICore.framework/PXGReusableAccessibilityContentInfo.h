@@ -61,6 +61,7 @@
 - (id)nextSibling;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
+- (id)accessibilityActionNames;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)accessibilityPerformScrollToVisible;
 - (BOOL)isAccessibilityAlternateUIVisible;

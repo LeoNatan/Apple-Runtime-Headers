@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _overlayRect;
     unsigned long long _selectedIndex;
     CDUnknownBlockType _selectionHandler;
+    long long _interfaceStyle;
 }
 
 - (void).cxx_destruct;

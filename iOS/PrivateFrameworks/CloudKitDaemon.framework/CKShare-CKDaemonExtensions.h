@@ -10,7 +10,7 @@
 - (void)_prepPCSDataWithContext:(id)arg1 databaseScope:(long long)arg2 publicSharingKey:(id)arg3 removeServerSpecifiedKeys:(_Bool)arg4 containerIdentifier:(id)arg5 sharedRecordZone:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)_prepPCSDataUsingPreDecryptedPCSOnlyWithContext:(id)arg1 databaseScope:(long long)arg2;
 - (void)_prepPCSDataWithContext:(id)arg1 databaseScope:(long long)arg2 publicSharingKey:(id)arg3 removeServerSpecifiedKeys:(_Bool)arg4 containerIdentifier:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (id)_ingestAndExportPPPCSFromShareInvitationToken:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (void)_ingestAndExportPPPCSFromShareInvitationToken:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_decryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection *)arg1 pcsManager:(id)arg2;
 - (void)_encryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection *)arg1 pcsManager:(id)arg2;
 - (_Bool)hasEncryptedPersonalInfo;

@@ -14,9 +14,10 @@
 
 @interface SBFloatingApplicationSceneLiveContentOverlayView : NSObject <SBFloatingApplicationLiveContentOverlayView, SBDeviceApplicationSceneHandleObserver, SBUISizeObservingViewDelegate>
 {
-    _Bool _rendersAsynchronously;
     _Bool _wantsMinificationFilter;
-    _Bool _asynchronousRenderingDisabled;
+    _Bool _liveContentRasterizationDisabled;
+    _Bool _asynchronousRenderingTemporarilyDisabled;
+    long long _rasterizationStyle;
     SBFloatingApplicationLiveContentWindow *_window;
     SBWindowSelfHostWrapper *_windowHostWrapper;
     SBUISizeObservingView *_sizeObservingView;
@@ -26,7 +27,8 @@
     FBDisplayLayoutElement *_displayLayoutElement;
 }
 
-@property(nonatomic) _Bool asynchronousRenderingDisabled; // @synthesize asynchronousRenderingDisabled=_asynchronousRenderingDisabled;
+@property(readonly, nonatomic) _Bool asynchronousRenderingTemporarilyDisabled; // @synthesize asynchronousRenderingTemporarilyDisabled=_asynchronousRenderingTemporarilyDisabled;
+@property(readonly, nonatomic) _Bool liveContentRasterizationDisabled; // @synthesize liveContentRasterizationDisabled=_liveContentRasterizationDisabled;
 @property(readonly, nonatomic) _Bool wantsMinificationFilter; // @synthesize wantsMinificationFilter=_wantsMinificationFilter;
 @property(readonly, nonatomic) FBDisplayLayoutElement *displayLayoutElement; // @synthesize displayLayoutElement=_displayLayoutElement;
 @property(readonly, nonatomic) SBFHomeGrabberSettings *grabberSettings; // @synthesize grabberSettings=_grabberSettings;
@@ -38,9 +40,13 @@
 - (void).cxx_destruct;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
-- (void)_updateAsynchronousRendering;
-@property(readonly, nonatomic) _Bool rendersAsynchronously; // @synthesize rendersAsynchronously=_rendersAsynchronously;
-- (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
+- (void)_updateContentWindowFrameFromView:(id)arg1;
+- (void)_updateLiveContentRasterization;
+- (void)setLiveContentRasterizationDisabled:(_Bool)arg1;
+- (void)noteNeedsLayoutUpdateFor180DegreeRotation;
+- (void)disableAsynchronousRenderingForNextCommit;
+- (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;
+@property(readonly, nonatomic) long long rasterizationStyle; // @synthesize rasterizationStyle=_rasterizationStyle;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 animator:(CDUnknownBlockType)arg3;

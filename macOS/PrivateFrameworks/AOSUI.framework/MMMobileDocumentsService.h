@@ -189,7 +189,6 @@
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
-- (BOOL)preflightForSignout:(id *)arg1 withWindow:(id)arg2 andDataclassActions:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)monitorGlobalActivity;
 - (void)confirmUserWantsToDisableiCloudDriveAndDesktopWithDialogCompletion:(CDUnknownBlockType)arg1;

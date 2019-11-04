@@ -10,7 +10,7 @@
 #import <PassKitUI/PKNumberPadSuggestionsViewDelegate-Protocol.h>
 #import <PassKitUI/UITextViewDelegate-Protocol.h>
 
-@class NSDecimalNumber, NSString, PKAccount, PKAccountBillPaymentAmountContainerView, PKBillPaymentSuggestedAmountList, PKNumberPadSuggestionsView, UILabel, UITextView;
+@class NSDecimalNumber, NSString, PKAccount, PKAccountBillPaymentAmountContainerView, PKAccountServiceAccountResolutionCofiguration, PKBillPaymentSuggestedAmountList, PKNumberPadSuggestionsView, UILabel, UITextView;
 @protocol PKAccountBillPaymentAmountDescriptionViewDelegate;
 
 @interface PKAccountBillPaymentAmountDescriptionView : UIView <PKNumberPadSuggestionsViewDelegate, UITextViewDelegate, PKEnterCurrencyAmountViewDelegate>
@@ -22,6 +22,7 @@
     NSString *_learnMoreString;
     PKBillPaymentSuggestedAmountList *_suggestionList;
     PKAccount *_account;
+    PKAccountServiceAccountResolutionCofiguration *_configuration;
     _Bool _showDescriptionLabels;
     _Bool _showDescriptionSubtitle;
     id <PKAccountBillPaymentAmountDescriptionViewDelegate> _delegate;
@@ -58,7 +59,7 @@
 - (void)numberPadSuggestionsView:(id)arg1 didSelectSuggestion:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (id)initWithSuggestedAmountList:(id)arg1 account:(id)arg2;
+- (id)initWithSuggestedAmountList:(id)arg1 account:(id)arg2 configuration:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

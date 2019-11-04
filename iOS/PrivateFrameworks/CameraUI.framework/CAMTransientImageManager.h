@@ -24,6 +24,8 @@
 - (void)removePairedVideoForUUID:(id)arg1;
 - (id)insertPairedVideoWithConvertible:(id)arg1 filterType:(long long)arg2;
 - (id)existingPairedVideoForUUID:(id)arg1;
+- (id)existingPairedVideoUUIDs;
+@property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (id)init;
 
 // Remaining properties

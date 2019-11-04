@@ -12,6 +12,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *ic_privateListeningEnabledForHomeUsers;
 @property(copy, nonatomic, setter=ic_setPrivateListeningEnabled:) NSNumber *ic_privateListeningEnabled;
 @property(copy, nonatomic, setter=ic_setAutomaticDownloadKinds:) NSSet *ic_automaticDownloadKinds;
+@property(readonly, nonatomic, getter=ic_isManageable) _Bool ic_manageable;
 @property(readonly, nonatomic, getter=ic_isLocalAccount) _Bool ic_localAccount;
 @property(copy, nonatomic, setter=ic_setCloudLibraryStateReason:) NSDictionary *ic_cloudLibraryStateReason;
 @property(readonly, copy, nonatomic) NSArray *ic_homeUserIdentifiers;

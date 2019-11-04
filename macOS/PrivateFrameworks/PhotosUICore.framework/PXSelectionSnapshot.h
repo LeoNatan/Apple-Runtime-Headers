@@ -22,6 +22,7 @@
 - (id)description;
 - (id)fetchSelectedObjects;
 - (struct PXSimpleIndexPath)indexPathOfObjectPassingTest:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) PXIndexPathSet *sectionIndexPathsContainingSelection;
 @property(readonly, nonatomic) struct PXSimpleIndexPath lastSelectedIndexPath;
 @property(readonly, nonatomic) struct PXSimpleIndexPath firstSelectedIndexPath;
 - (BOOL)areAllItemsSelected;

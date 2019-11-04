@@ -15,7 +15,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)_templateForActiveWorkout;
+- (id)_templateForActiveWorkoutInSwitcher:(_Bool)arg1;
 - (id)_noWorkoutsTemplate;
 
 @end

@@ -6,11 +6,14 @@
 
 #import <NanoMediaUI/NSObject-Protocol.h>
 
+@class NSOrderedSet, NSString;
 @protocol NACVolumeControllerDelegate;
 
 @protocol NACVolumeController <NSObject>
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled;
 @property(nonatomic) float hapticIntensity;
+@property(retain, nonatomic) NSString *currentListeningMode;
+@property(readonly, nonatomic) NSOrderedSet *availableListeningModes;
 @property(nonatomic) int hapticState;
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted;
 @property(readonly, nonatomic) float EUVolumeLimit;
@@ -23,6 +26,8 @@
 - (void)allowUserToExceedEUVolumeLimit;
 - (void)setMuted:(_Bool)arg1;
 - (void)setVolumeValue:(float)arg1;
+- (void)endObservingListeningModes;
+- (void)beginObservingListeningModes;
 - (void)endObservingHaptics;
 - (void)beginObservingHaptics;
 - (void)endObservingVolume;

@@ -9,7 +9,7 @@
 #import <SpringBoardHome/SBFolderIconImageCacheObserver-Protocol.h>
 #import <SpringBoardHome/SBFolderIconObserver-Protocol.h>
 
-@class NSMutableArray, NSString, SBFloatyFolderView, UIView, _SBIconGridWrapperView;
+@class NSHashTable, NSMutableArray, NSString, SBFloatyFolderView, UIView, _SBIconGridWrapperView;
 
 @interface SBFolderIconImageView : SBIconImageView <SBFolderIconObserver, SBFolderIconImageCacheObserver>
 {
@@ -23,7 +23,7 @@
     SBFloatyFolderView *_crossfadeFolderView;
     UIView *_crossfadeScalingView;
     _Bool _animating;
-    unsigned long long _imageUpdatesDisableCount;
+    NSHashTable *_imageUpdateDisableAssertions;
     unsigned long long _transitionToken;
     _Bool _hasCustomBackgroundView;
     unsigned long long _backgroundStyle;
@@ -59,8 +59,8 @@
 - (void)folderIconImageCache:(id)arg1 didUpdateImagesForFolderIcon:(id)arg2;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (void)iconViewLegibilitySettingsDidChange;
-- (void)enableImageUpdates;
-- (void)disableImageUpdates;
+- (void)invalidateImageUpdatesAssertion:(id)arg1;
+- (id)disableImageUpdatesForReason:(id)arg1;
 - (void)cleanupAfterFloatyFolderCrossfade;
 - (void)setFloatyFolderCrossfadeFraction:(double)arg1;
 - (void)prepareToCrossfadeWithFloatyFolderView:(id)arg1 allowFolderInteraction:(_Bool)arg2;

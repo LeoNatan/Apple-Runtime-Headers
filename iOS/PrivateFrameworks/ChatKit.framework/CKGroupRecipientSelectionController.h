@@ -17,6 +17,7 @@
 
 @property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
 - (void).cxx_destruct;
+- (id)handlesForScreenTimePolicyCheck;
 - (void)_frecencySearch;
 - (void)_updateNavigationButton;
 - (double)topInsetForNavBar;

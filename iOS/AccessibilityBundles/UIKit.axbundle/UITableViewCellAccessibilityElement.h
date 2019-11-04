@@ -94,6 +94,7 @@
 - (_Bool)_accessibilityIsAwayAlertElement;
 - (id)accessibilityHeaderElements;
 - (struct CGPoint)accessibilityActivationPoint;
+- (void)_accessibilityMarkElementForVisiblePointHitTest:(_Bool)arg1;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityIdentifier;
 - (id)accessibilityValue;

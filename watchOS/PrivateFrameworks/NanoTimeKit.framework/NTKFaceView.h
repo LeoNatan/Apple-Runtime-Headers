@@ -162,7 +162,7 @@
 - (id)_tritium_createFaceAnimator;
 - (struct NTKTritiumTimeAnimationConfiguration)tritium_timeTransitionAnimationConfiguration;
 - (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)tritium_setupForBurnInStudy;
 - (void)tritium_willSnapshotForBurnInStudy;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
@@ -349,6 +349,7 @@
 - (id)_blurSourceImage;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_applyShowsLockedUI;
 - (void)_reorderSwitcherSnapshotView;
 - (void)handleUnadornedSnapshotRemoved;

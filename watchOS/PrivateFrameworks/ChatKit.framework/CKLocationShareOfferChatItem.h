@@ -28,6 +28,7 @@
 - (void)_generateMapPreview;
 - (id)previewURLForWidth:(unsigned int)arg1;
 - (id)previewURL;
+- (id)_placeholderCacheKey;
 - (id)_previewCacheKey:(unsigned int)arg1;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 @property(readonly, nonatomic) __weak NSString *locationText;

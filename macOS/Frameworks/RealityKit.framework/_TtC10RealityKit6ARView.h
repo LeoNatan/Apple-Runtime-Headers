@@ -37,27 +37,6 @@
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)keyUp:(id)arg1;
-- (void)keyDown:(id)arg1;
-@property(nonatomic, readonly) BOOL acceptsFirstResponder;
-- (id)makeBackingLayer;
-- (void)scrollWheel:(id)arg1;
-- (void)mouseMoved:(id)arg1;
-- (void)otherMouseDragged:(id)arg1;
-- (void)rightMouseDragged:(id)arg1;
-- (void)mouseDragged:(id)arg1;
-- (void)otherMouseUp:(id)arg1;
-- (void)rightMouseUp:(id)arg1;
-- (void)mouseUp:(id)arg1;
-- (void)otherMouseDown:(id)arg1;
-- (void)rightMouseDown:(id)arg1;
-- (void)mouseDown:(id)arg1;
-- (void)willResignActiveWithNotification:(id)arg1;
-- (void)didBecomeActiveWithNotification:(id)arg1;
-@property(nonatomic) struct CGRect frame;
-- (void)viewDidMoveToSuperview;
-- (void)viewDidChangeBackingProperties;
-- (void)resizeWithNotification:(id)arg1;
 
 @end
 

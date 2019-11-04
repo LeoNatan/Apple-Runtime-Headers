@@ -24,7 +24,7 @@
 - (id)tritium_createFaceAnimator;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)_supportsTimeScrubbing;

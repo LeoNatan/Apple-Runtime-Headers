@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (AppleMediaServices)
++ (void)ams_enumerateObjectsForArrays:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)ams_objectAtIndex:(long long)arg1;
 - (id)ams_nonEmptyComponentsJoinedByString:(id)arg1;
 - (id)ams_mapWithTransform:(CDUnknownBlockType)arg1;

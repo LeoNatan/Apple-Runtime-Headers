@@ -4,35 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewCell.h>
+#import <HomeUI/HUActivityIndicatorCell.h>
 
-#import <HomeUI/HUDisableableCellProtocol-Protocol.h>
-
-@class HUTitleDescriptionContentView, NSString;
-@protocol HFStringGenerator;
-
-@interface HUCheckmarkCell : UITableViewCell <HUDisableableCellProtocol>
+@interface HUCheckmarkCell : HUActivityIndicatorCell
 {
-    _Bool _disabled;
     _Bool _checked;
-    HUTitleDescriptionContentView *_titleDescriptionView;
 }
 
-@property(retain, nonatomic) HUTitleDescriptionContentView *titleDescriptionView; // @synthesize titleDescriptionView=_titleDescriptionView;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
-@property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
-- (void)_setupConstraints;
-@property(retain, nonatomic) id <HFStringGenerator> descriptionText;
-@property(retain, nonatomic) id <HFStringGenerator> titleText;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

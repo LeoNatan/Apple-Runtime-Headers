@@ -19,6 +19,8 @@
     long long _floatingConfiguration;
     long long _floatingSwitcherVisible;
     long long _dismissInlineAppExpose;
+    long long _animationDisabled;
+    long long _source;
 }
 
 + (id)requestForDismissingInlineSwitcher;
@@ -28,6 +30,8 @@
 + (id)requestForActivatingAppSwitcher;
 + (id)requestForActivatingHomeScreen;
 + (id)requestForActivatingAppLayout:(id)arg1;
+@property(nonatomic) long long source; // @synthesize source=_source;
+@property(nonatomic) long long animationDisabled; // @synthesize animationDisabled=_animationDisabled;
 @property(nonatomic) long long dismissInlineAppExpose; // @synthesize dismissInlineAppExpose=_dismissInlineAppExpose;
 @property(nonatomic) long long floatingSwitcherVisible; // @synthesize floatingSwitcherVisible=_floatingSwitcherVisible;
 @property(nonatomic) long long floatingConfiguration; // @synthesize floatingConfiguration=_floatingConfiguration;

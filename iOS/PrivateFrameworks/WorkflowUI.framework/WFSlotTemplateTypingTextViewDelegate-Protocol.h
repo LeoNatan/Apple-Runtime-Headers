@@ -11,6 +11,9 @@
 @protocol WFSlotTemplateTypingTextViewDelegate <UITextViewDelegate>
 
 @optional
+- (void)slotTemplateTypingTextViewDidPaste:(WFSlotTemplateTypingTextView *)arg1 withOriginalBlock:(void (^)(void))arg2;
+- (void)slotTemplateTypingTextViewDidCopy:(WFSlotTemplateTypingTextView *)arg1 withOriginalBlock:(void (^)(void))arg2;
+- (void)slotTemplateTypingTextViewDidCut:(WFSlotTemplateTypingTextView *)arg1 withOriginalBlock:(void (^)(void))arg2;
 - (void)slotTemplateTypingTextViewDidDelete:(WFSlotTemplateTypingTextView *)arg1;
 @end
 

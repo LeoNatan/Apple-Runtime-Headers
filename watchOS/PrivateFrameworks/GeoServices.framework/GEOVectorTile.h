@@ -119,7 +119,7 @@
     unsigned int _transitSystemCount;
     CDStruct_3814b545 *_transitLinks;
     unsigned int _transitLinkCount;
-    CDStruct_30d0674c *_transitLinkLineKeys;
+    CDStruct_c0454aff *_transitLinkLineKeys;
     unsigned int *_transitLinkLineIndices;
     unsigned int _transitLinkLineIndicesCount;
     CDStruct_993fc297 *_transitVertices;
@@ -144,10 +144,10 @@
     unsigned long long *_idsOfTransitNodesNotInTile;
     CDStruct_fd961fc6 *_transitAccessPoints;
     unsigned int _transitAccessPointCount;
-    CDStruct_30d0674c *_transitNodeLineKeys;
+    CDStruct_c0454aff *_transitNodeLineKeys;
     unsigned int *_transitNodeLineIndices;
     unsigned int _transitNodeLineIndicesCount;
-    CDStruct_30d0674c *_transitNodeSubtitleLineKeys;
+    CDStruct_c0454aff *_transitNodeSubtitleLineKeys;
     unsigned int *_transitNodeSubtitleLineIndices;
     unsigned int _transitNodeSubtitleLineIndicesCount;
     unsigned int *_transitShieldIndices;

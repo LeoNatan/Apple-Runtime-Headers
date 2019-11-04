@@ -9,7 +9,7 @@
 #import <FamilyCircleUI/FAPickInviteeDelegate-Protocol.h>
 #import <FamilyCircleUI/RemoteUIControllerDelegate-Protocol.h>
 
-@class AAGrandSlamSigner, AAUIRemoteUIController, ACAccount, ACAccountStore, FAFamilyPickInviteeViewController, NSData, NSMutableURLRequest, NSOperationQueue, NSString, RUIObjectModel, SSAccount, UIActivityIndicatorView, UIBarButtonItem, UINavigationItem;
+@class AAGrandSlamSigner, AAUIRemoteUIController, ACAccount, ACAccountStore, FAFamilyPickInviteeViewController, FARequestConfigurator, NSData, NSMutableURLRequest, NSOperationQueue, NSString, RUIObjectModel, SSAccount, UIActivityIndicatorView, UIBarButtonItem, UINavigationItem;
 @protocol FAAddFamilyMemberDelegate><UINavigationControllerDelegate;
 
 @interface FAAddFamilyMemberViewController : UINavigationController <RemoteUIControllerDelegate, FAPickInviteeDelegate>
@@ -28,22 +28,24 @@
     UINavigationItem *_navigationItemShowingSpinner;
     NSData *_pushToken;
     FAFamilyPickInviteeViewController *_pickInviteeVC;
+    FARequestConfigurator *_requestConfigurator;
     NSString *_continuationData;
 }
 
 @property(copy, nonatomic) NSString *continuationData; // @synthesize continuationData=_continuationData;
 - (void).cxx_destruct;
 - (void)pickInviteeViewControllerWantsChildAccountFlow:(id)arg1;
+- (void)_startRemoteUIRequest:(id)arg1;
 - (void)pickInviteeViewController:(id)arg1 didCompleteWithSuccess:(_Bool)arg2;
+- (id)_requestConfigurator;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)remoteUIController:(id)arg1 willLoadRequest:(id)arg2;
+- (void)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)harvestDataFromServerHTTPResponse:(id)arg1;
 - (void)hideActivitySpinnerInNavigationBar;
 - (void)showActivitySpinnerInNavigationBar;
 - (id)_itunesAccount;
-- (id)_pushToken;
 @property(copy, nonatomic) NSString *createChildAccountInstructions;
 @property(copy, nonatomic) NSString *createChildAccountButtonTitle;
 @property(copy, nonatomic) NSString *addFamilyMemberInstructions;

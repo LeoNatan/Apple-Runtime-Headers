@@ -10,12 +10,12 @@
 
 @interface HMBMirrorOutputGroup : HMFObject
 {
-    id _groupID;
     HMBProcessingOptions *_options;
+    unsigned int _blockRow;
 }
 
+@property(readonly, nonatomic) unsigned int blockRow; // @synthesize blockRow=_blockRow;
 @property(readonly, nonatomic) HMBProcessingOptions *options; // @synthesize options=_options;
-@property(readonly, nonatomic) id groupID; // @synthesize groupID=_groupID;
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithBlockRow:(unsigned int)arg1 options:(id)arg2;

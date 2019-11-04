@@ -39,6 +39,7 @@
     CDUnknownBlockType _resultHandler;
 }
 
++ (id)chooserQueue;
 + (long long)type;
 + (id)contentEditingInputRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 options:(id)arg4 useRAWAsUnadjustedBase:(_Bool)arg5 resultHandler:(CDUnknownBlockType)arg6;
 + (id)livePhotoRequestContextWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 livePhotoRequestOptions:(id)arg4 displaySpec:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;

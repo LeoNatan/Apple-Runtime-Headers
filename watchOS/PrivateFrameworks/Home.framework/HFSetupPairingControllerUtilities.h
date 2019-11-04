@@ -10,9 +10,9 @@
 {
 }
 
-+ (_Bool)_accessoryDescription:(id)arg1 requiresUserConsentToReplaceInHome:(id)arg2;
-+ (_Bool)_accessoryDescription:(id)arg1 requiresUserConsentToAddInHome:(id)arg2;
-+ (unsigned int)processSetupAccessoryProgressChange:(int)arg1 currentPhase:(unsigned int)arg2 accessoryDescription:(id)arg3 discoveredAccessory:(id)arg4 setupResult:(id)arg5 home:(id)arg6 callerClass:(Class)arg7;
++ (_Bool)_context:(id)arg1 requiresUserConsentToReplaceInHome:(id)arg2;
++ (_Bool)_context:(id)arg1 requiresUserConsentToAddInHome:(id)arg2;
++ (unsigned int)processSetupAccessoryProgressChange:(int)arg1 currentPhase:(unsigned int)arg2 context:(id)arg3 discoveredAccessory:(id)arg4 setupResult:(id)arg5 home:(id)arg6 callerClass:(Class)arg7;
 + (void)getStatusTitle:(id *)arg1 statusDescription:(id *)arg2 forPairingPhase:(unsigned int)arg3 phaseStartDate:(id)arg4 discoveredAccessory:(id)arg5 setupResult:(id)arg6;
 + (id)_accessoryNotFoundStatusDescriptionSuffixForSetupResult:(id)arg1;
 + (_Bool)isPairingPhaseIdle:(unsigned int)arg1;

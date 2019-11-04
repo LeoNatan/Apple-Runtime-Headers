@@ -35,6 +35,7 @@
 }
 
 + (id)_leafAccountTypesToCheckForEquality;
++ (_Bool)shouldCreateAccountForBackingAccountInfo:(id)arg1;
 + (id)daAccountSubclassWithBackingAccountInfo:(id)arg1;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountIDs;

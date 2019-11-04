@@ -94,6 +94,8 @@
 - (void)removeDDMLoadFailVersion;
 - (void)updateCacheControllerToLanguageCode:(id)arg1;
 - (id)deviceFamily;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateDarkMode;
 - (void)loadFromStaticServer;
 - (void)loadHelpBook;
 - (void)updateLastLoadVersion;

@@ -19,6 +19,7 @@
 - (id)ic_storeAccountForStoreAccountID:(id)arg1 error:(id *)arg2;
 - (id)ic_activeStoreAccountWithError:(id *)arg1;
 - (id)ic_allStoreAccountsWithError:(id *)arg1;
+- (id)ic_localStoreAccountWithError:(id *)arg1;
 - (void)ic_localStoreAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)ic_storeAccountForHomeUserIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)ic_storeAccountTypeWithCompletion:(CDUnknownBlockType)arg1;

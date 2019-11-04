@@ -7,6 +7,6 @@
 #import <Intents/NSObject-Protocol.h>
 
 @protocol INFileURLEnumerable <NSObject>
-- (void)_enumerateFileURLsWithMutatingBlock:(void (^)(NSURL *))arg1;
+- (void)_intents_enumerateFileURLsWithBlock:(void (^)(NSURL *))arg1 mutate:(_Bool)arg2;
 @end
 

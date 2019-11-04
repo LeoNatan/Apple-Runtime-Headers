@@ -6,24 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class INCExtensionRequest, INCExtensionTransactionState, INIntent, INIntentResponse, NSMutableDictionary, NSUserActivity;
+@class INCExtensionRequest, INCExtensionTransactionState, INIntent, INIntentResponse, NSMutableDictionary, NSString, NSUserActivity;
 @protocol OS_dispatch_queue;
 
 @interface INCExtensionTransaction : NSObject
 {
     NSMutableDictionary *_userActivitiesByIdentifier;
     NSObject<OS_dispatch_queue> *_queue;
+    _Bool _donateInteraction;
     _Bool _shouldResetRequestAfterHandle;
     NSUserActivity *_currentUserActivity;
     INCExtensionRequest *_request;
     INIntent *_currentIntent;
     INIntentResponse *_currentIntentResponse;
+    NSString *_groupIdentifier;
     INCExtensionTransactionState *_state;
 }
 
 + (void)initialize;
 @property(nonatomic) _Bool shouldResetRequestAfterHandle; // @synthesize shouldResetRequestAfterHandle=_shouldResetRequestAfterHandle;
 @property(retain, nonatomic) INCExtensionTransactionState *state; // @synthesize state=_state;
+@property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
+@property(readonly, nonatomic) _Bool donateInteraction; // @synthesize donateInteraction=_donateInteraction;
 @property(retain, nonatomic, setter=_setCurrentIntentResponse:) INIntentResponse *currentIntentResponse; // @synthesize currentIntentResponse=_currentIntentResponse;
 @property(retain, nonatomic, setter=_setCurrentIntent:) INIntent *currentIntent; // @synthesize currentIntent=_currentIntent;
 - (void).cxx_destruct;
@@ -32,7 +36,7 @@
 - (void)_updateCurrentUserActivityForType:(long long)arg1 intent:(id)arg2 intentResponse:(id)arg3;
 - (id)userActivityWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) INCExtensionRequest *request; // @synthesize request=_request;
-- (id)initWithIntent:(id)arg1;
+- (id)initWithIntent:(id)arg1 donateInteraction:(_Bool)arg2 groupIdentifier:(id)arg3;
 - (id)description;
 
 @end

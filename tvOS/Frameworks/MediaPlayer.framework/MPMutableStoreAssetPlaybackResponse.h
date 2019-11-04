@@ -12,7 +12,10 @@
 {
 }
 
+@property(nonatomic, getter=isSubscriptionRequired) _Bool subscriptionRequired; // @dynamic subscriptionRequired;
 @property(retain, nonatomic) id suzeLeaseID; // @dynamic suzeLeaseID;
+@property(copy, nonatomic) NSArray *radioStreamAssetInfoList; // @dynamic radioStreamAssetInfoList;
+@property(nonatomic, getter=isLiveRadioStream) _Bool liveRadioStream; // @dynamic liveRadioStream;
 @property(retain, nonatomic) MPStoreHLSAssetInfo *hlsAssetInfo; // @dynamic hlsAssetInfo;
 @property(copy, nonatomic) NSArray *fileAssetInfoList; // @dynamic fileAssetInfoList;
 @property(copy, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;

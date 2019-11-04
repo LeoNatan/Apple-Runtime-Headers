@@ -29,6 +29,7 @@
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 - (void).cxx_destruct;
 - (id)_generateURLsForAssetsDBGFiles:(id)arg1;
+- (id)_keywordIDForComponent:(long long)arg1;
 - (id)_componentNameForComponent:(long long)arg1;
 - (id)_componentIDForComponent:(long long)arg1;
 - (long long)_radarComponentForFeedback:(id)arg1;

@@ -221,7 +221,6 @@
 @property(readonly, nonatomic, getter=_calloutShowAnimationGroup) NSObject<OS_dispatch_group> *calloutShowAnimationGroup; // @synthesize calloutShowAnimationGroup=_calloutShowAnimationGroup;
 - (void).cxx_destruct;
 - (void)_insertSubviewBelowAnnotationContainerView:(id)arg1;
-- (id)logContextForLogMsgEvent:(id)arg1;
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 - (void)_clearGesturesAndAnimations;

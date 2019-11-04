@@ -9,7 +9,7 @@
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 #import <PassKitUI/SBSHardwareButtonEventConsuming-Protocol.h>
 
-@class CLInUseAssertion, NSArray, NSObject, NSString, PKAssertion, PKEducationViewController, PKFieldProperties, PKPassGroupsViewController, PKPaymentService, SBSAssertion;
+@class CLInUseAssertion, NSArray, NSObject, NSString, PKAssertion, PKFieldProperties, PKPassGroupsViewController, PKPaymentService, SBSAssertion;
 @protocol BSInvalidatable, OS_dispatch_group;
 
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate, SBSHardwareButtonEventConsuming>
@@ -31,7 +31,6 @@
     _Bool _deviceUILocked;
     _Bool _processHomeButtonEvents;
     _Bool _brightnessRampingAllowed;
-    PKEducationViewController *_educationVC;
     _Bool _appearedOnce;
     _Bool _insertedGroupsVC;
     _Bool _shouldInsertGroupsVC;
@@ -42,7 +41,7 @@
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 + (id)groupsControllerWithSource:(long long)arg1;
 - (void).cxx_destruct;
-- (void)linkedApplicationOpen:(id)arg1;
+- (void)openApplication:(id)arg1;
 - (void)_contactlessInterfaceSessionFinishTransaction:(id)arg1;
 - (void)_contactlessInterfaceSessionDidAuthorize:(id)arg1;
 - (void)_paymentDidReceiveSuccessfulTransactionNotification:(id)arg1;

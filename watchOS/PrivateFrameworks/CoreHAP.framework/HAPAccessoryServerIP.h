@@ -19,12 +19,14 @@
     struct PairingSessionPrivate *_pairingSession;
     unsigned long long _featureFlags;
     HMFUnfairLock *_lock;
+    _Bool _shouldReestablishSession;
     _Bool _establishingSecureConnection;
     _Bool _wacAccessory;
     _Bool _wacComplete;
     _Bool _wacLegacy;
     _Bool _preSoftAuthWacStarted;
     _Bool _postSoftAuthWacStarted;
+    _Bool _hasUpdatedBonjour;
     _Bool _authenticated;
     _Bool _hasAttributeDatabase;
     _Bool _hasTunnelService;
@@ -90,6 +92,7 @@
 @property(retain, nonatomic) NSMutableArray *queuedOperations; // @synthesize queuedOperations=_queuedOperations;
 @property(retain, nonatomic) NSArray *ipServices; // @synthesize ipServices=_ipServices;
 @property(nonatomic) __weak HAPAccessoryServerBrowserIP *browser; // @synthesize browser=_browser;
+@property(nonatomic) _Bool hasUpdatedBonjour; // @synthesize hasUpdatedBonjour=_hasUpdatedBonjour;
 @property(retain, nonatomic) NSDictionary *bonjourDeviceInfo; // @synthesize bonjourDeviceInfo=_bonjourDeviceInfo;
 @property(copy, nonatomic) NSData *token; // @synthesize token=_token;
 @property(nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
@@ -151,7 +154,6 @@
 - (void)_getAttributeDatabase;
 - (_Bool)_parseTXTRecordDictionary:(id)arg1;
 - (_Bool)_parseAndValidateTXTRecord;
-- (void)_handleHTTPClientErrors;
 - (_Bool)_processEvent:(id)arg1 matchedCharacteristic:(id *)arg2;
 - (void)httpClient:(id)arg1 didReceiveEvent:(id)arg2;
 - (void)_handleEventResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 requestedEventState:(_Bool)arg6 completion:(CDUnknownBlockType)arg7 queue:(id)arg8;
@@ -186,8 +188,9 @@
 - (void)_continuePairingAfterMFiCertValidation;
 - (void)_handleMFiCertValidation;
 - (_Bool)stopPairingWithError:(id *)arg1;
+- (void)tearDownAndRestablishSession;
+- (void)_tearDownSessionAndReconfirm;
 - (void)_tearDownSession;
-- (void)tearDownSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)tryPairingPassword:(id)arg1 error:(id *)arg2;
 - (void)continuePairingAfterAuthPrompt;
 - (void)reconfirm;

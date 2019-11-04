@@ -16,6 +16,7 @@
     NSString *_unitString;
 }
 
++ (Class)processingValueClass;
 @property(readonly, copy, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(readonly, nonatomic) WFNumberStringSubstitutableState *magnitudeState; // @synthesize magnitudeState=_magnitudeState;
 - (void).cxx_destruct;

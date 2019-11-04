@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/PLResourceDataStore-Protocol.h>
 
-@class NSMutableDictionary, NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient, PLCloudPhotoLibraryManager, PLPhotoLibraryPathManager, PLPrimaryResourceDataStoreKeyHelper;
+@class NSDictionary, NSMutableDictionary, NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient, PLCloudPhotoLibraryManager, PLPhotoLibraryPathManager, PLPrimaryResourceDataStoreKeyHelper;
 
 @interface PLPrimaryResourceDataStore : PLResourceDataStore <PLResourceDataStore>
 {
@@ -19,14 +19,14 @@
     PAVideoConversionServiceClient *_videoConversionServiceClient;
     unsigned int _masterThumbRecipeID;
     PLPrimaryResourceDataStoreKeyHelper *_mainScopeKeyHelper;
-    NSMutableDictionary *_keyHelperByBundleScope;
+    NSDictionary *_keyHelperByBundleScope;
 }
 
 + (unsigned int)currentDeviceMasterThumbRecipeID;
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (id)supportedRecipes;
 + (unsigned int)storeClassID;
-@property(retain, nonatomic) NSMutableDictionary *keyHelperByBundleScope; // @synthesize keyHelperByBundleScope=_keyHelperByBundleScope;
+@property(retain, nonatomic) NSDictionary *keyHelperByBundleScope; // @synthesize keyHelperByBundleScope=_keyHelperByBundleScope;
 @property(retain, nonatomic) PLPrimaryResourceDataStoreKeyHelper *mainScopeKeyHelper; // @synthesize mainScopeKeyHelper=_mainScopeKeyHelper;
 @property(nonatomic) unsigned int masterThumbRecipeID; // @synthesize masterThumbRecipeID=_masterThumbRecipeID;
 - (void).cxx_destruct;

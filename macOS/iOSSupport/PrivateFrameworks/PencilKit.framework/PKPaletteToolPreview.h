@@ -63,6 +63,7 @@
 - (void)_replaceCurrentToolWithToolWithInkIdentifier:(id)arg1;
 - (void)_updateLayoutGuideConstraints;
 - (void)_animateToolViewToVisible:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)showPreviewForToolWithInk:(id)arg1 animated:(BOOL)arg2;
 - (void)showPreviewForToolWithInk:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -8,7 +8,7 @@
 
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class HMBLocalDatabase, HMBLocalSQLContext, HMBModelContainer, HMFUnfairLock, NSHashTable, NSMutableArray, NSMutableDictionary, NSString;
+@class HMBLocalDatabase, HMBLocalSQLContext, HMBModelContainer, HMFUnfairLock, NAFuture, NSHashTable, NSMutableDictionary, NSString;
 @protocol HMBLocalZoneDelegate, HMBLocalZoneID, HMBMirrorProtocol;
 
 @interface HMBLocalZone : HMFObject <HMFLogging>
@@ -24,12 +24,12 @@
     NSMutableDictionary *_observersByModelID;
     unsigned int _zoneRow;
     HMBLocalSQLContext *_sql;
-    NSMutableArray *_shutdownFutures;
+    NAFuture *_shutdownFuture;
 }
 
 + (id)logCategory;
 + (id)calculateUpdatedTokenFrom:(id)arg1 updates:(id)arg2;
-@property(retain, nonatomic) NSMutableArray *shutdownFutures; // @synthesize shutdownFutures=_shutdownFutures;
+@property(retain, nonatomic) NAFuture *shutdownFuture; // @synthesize shutdownFuture=_shutdownFuture;
 @property(nonatomic) _Bool hasStartedUp; // @synthesize hasStartedUp=_hasStartedUp;
 @property(readonly, nonatomic) HMBLocalSQLContext *sql; // @synthesize sql=_sql;
 @property(readonly, nonatomic) unsigned int zoneRow; // @synthesize zoneRow=_zoneRow;
@@ -45,8 +45,6 @@
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (_Bool)shouldLogPrivateInformation;
-- (_Bool)isShuttingDown;
-- (_Bool)isShutdown;
 - (id)shutdown;
 - (id)removeAllModelsOfTypes:(id)arg1 options:(id)arg2;
 - (id)removeModelsAndChildModelsWithIDs:(id)arg1 options:(id)arg2;
@@ -54,7 +52,7 @@
 - (id)update:(id)arg1 options:(id)arg2;
 - (id)update:(id)arg1 remove:(id)arg2 options:(id)arg3;
 - (id)flush;
-- (id)destroy;
+- (_Bool)destroyWithError:(id *)arg1;
 - (void)startUp;
 - (id)setExternalData:(id)arg1 forExternalID:(id)arg2;
 - (id)setExternalData:(id)arg1 forModelID:(id)arg2;
@@ -74,12 +72,22 @@
 - (id)triggerProcessForBlockRow:(unsigned int)arg1;
 - (id)queueIncompleteProcesses;
 - (id)observersForModelWithID:(id)arg1;
+- (void)migrateUnsupportedModels;
 - (id)inputContext:(id *)arg1;
+- (_Bool)removeOutputBlockWithRow:(unsigned int)arg1 error:(id *)arg2;
 - (id)markGroupAsSentWithOutputBlock:(unsigned int)arg1 tuples:(id)arg2;
 - (id)fetchRecordsForOutputBlock:(unsigned int)arg1 error:(id *)arg2;
 - (id)fetchOptionsForOutputBlock:(unsigned int)arg1 error:(id *)arg2;
+- (void)rebuildIndexesIfNeeded;
+- (id)countModelsUsingQuery:(id)arg1 arguments:(id)arg2 error:(id *)arg3;
+- (id)queryModelsUsingQuery:(id)arg1 arguments:(id)arg2;
+- (id)queryModelsUsingQuery:(id)arg1;
+- (id)queryModelsOfType:(Class)arg1;
+- (id)fetchModels;
+- (id)queryModelsOfType:(Class)arg1 properties:(id)arg2 filter:(CDUnknownBlockType)arg3;
+- (id)queryModelsOfType:(Class)arg1 filter:(CDUnknownBlockType)arg2;
+- (id)queryModelsOfType:(Class)arg1 predicate:(id)arg2;
 - (_Bool)removeBlockWithRow:(unsigned int)arg1 error:(id *)arg2;
-- (id)fetchItemsInBlock:(id)arg1 after:(id)arg2 limit:(unsigned int)arg3 error:(id *)arg4;
 - (id)fetchItemsInBlock:(id)arg1 error:(id *)arg2;
 - (id)fetchReadyBlocksWithType:(unsigned int)arg1 error:(id *)arg2;
 - (unsigned int)insertBlockToRemoveAllModelsAndChildModelsWithType:(unsigned int)arg1 modelIDs:(id)arg2 options:(id)arg3 error:(id *)arg4;
@@ -91,18 +99,15 @@
 - (id)update:(id)arg1;
 - (id)update:(id)arg1 remove:(id)arg2;
 - (id)objectFromData:(id)arg1 encoding:(unsigned int)arg2 storageLocation:(unsigned int)arg3 recordRowID:(unsigned int)arg4 error:(id *)arg5;
+- (_Bool)removeAllRecordsWithError:(id *)arg1;
+- (id)setExternalID:(id)arg1 externalData:(id)arg2 forRecordRow:(unsigned int)arg3;
+- (id)queryAllRowRecordsReturning:(unsigned int)arg1;
 - (id)fetchRecordRowsWithModelIDs:(id)arg1 error:(id *)arg2;
 - (id)fetchRecordRowWithExternalID:(id)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
 - (id)fetchRecordRowWithModelID:(id)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
 - (id)fetchModelWithModelID:(id)arg1 recordRow:(unsigned int *)arg2 error:(id *)arg3;
 - (id)fetchModelWithRecordRow:(unsigned int)arg1 error:(id *)arg2;
-- (id)queryModelsOfType:(Class)arg1 properties:(id)arg2 filter:(CDUnknownBlockType)arg3;
-- (id)queryModelsOfType:(Class)arg1 filter:(CDUnknownBlockType)arg2;
-- (id)queryModelsOfType:(Class)arg1 predicate:(id)arg2;
 - (_Bool)fetchModelsAndChildModelsOfType:(Class)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)fetchModelsOfType:(Class)arg1 withLimit:(unsigned int)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
-- (id)fetchModelsOfType:(Class)arg1 withLimit:(unsigned int)arg2 error:(id *)arg3;
-- (_Bool)fetchModelsOfType:(Class)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)fetchModelsOfType:(Class)arg1 error:(id *)arg2;
 - (id)fetchAllModelsWithError:(id *)arg1;
 - (id)fetchModelsWithParentModelID:(id)arg1 error:(id *)arg2;

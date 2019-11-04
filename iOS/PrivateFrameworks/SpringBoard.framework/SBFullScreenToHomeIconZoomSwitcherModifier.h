@@ -53,7 +53,7 @@
 - (id)handleTimerEvent:(id)arg1;
 - (id)transitionDidEnd;
 - (id)transitionWillBegin;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (void)didMoveToParentModifier:(id)arg1;
 - (id)initWithTransitionID:(id)arg1 appLayout:(id)arg2 direction:(unsigned long long)arg3;
 

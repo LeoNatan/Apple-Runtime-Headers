@@ -19,6 +19,7 @@
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)_createErrorWithCode:(unsigned long long)arg1 description:(id)arg2 underlyingError:(id)arg3;
 - (unsigned long long)totalCount;
 - (unsigned long long)countForValue:(id)arg1;
 - (unsigned long long)trackedValueForValue:(id)arg1;

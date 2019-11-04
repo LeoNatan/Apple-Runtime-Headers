@@ -139,9 +139,7 @@
 @property(readonly, nonatomic) NSObject<OS_os_log> *relatedLoggingConnection;
 - (void)dealloc;
 - (id)init;
-- (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 persistenceOptions:(long long)arg2;
-- (id)initWithName:(id)arg1 parentDirectoryURL:(id)arg2;
+- (id)initWithURL:(id)arg1 persistenceOptions:(long long)arg2 progressBlock:(CDUnknownBlockType)arg3;
 @property(readonly) BOOL isOnGraphQueue;
 - (void)_checkCanRead;
 - (void)_checkCanWrite;

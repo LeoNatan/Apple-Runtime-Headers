@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 @property(readonly, copy, nonatomic) NSPersistentHistoryToken *initialToken; // @synthesize initialToken=_initialToken;
 - (void).cxx_destruct;
+- (id)_safeTransactionAtIndex:(unsigned int)arg1;
 - (_Bool)_enumerateOneTransactionWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateRemainingTransactionsWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_hasMoreTransactions;

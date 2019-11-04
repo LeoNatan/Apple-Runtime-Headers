@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)_adjustForKeyboardInfo:(id)arg1;
 - (void)_stopObservingKeyboardNotifications;
 - (void)_observeKeyboardNotificationsOnScreen:(id)arg1;
+@property(readonly, nonatomic) NSArray *uncachedPossibleStates;
 - (void)animateToRequest:(id)arg1;
 - (_Bool)isTrailingViewControllerVisibleAfterAnimation;
 - (_Bool)isLeadingViewControllerVisibleAfterAnimation;

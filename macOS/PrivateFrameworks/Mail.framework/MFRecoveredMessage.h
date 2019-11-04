@@ -36,6 +36,7 @@
 - (id)_plainTextPartForMultipart:(id)arg1;
 - (id)_messageBodyWithAttachmentData:(BOOL)arg1 plainTextAlternative:(id *)arg2;
 - (id)bodyAndPlainTextAlternative:(id *)arg1;
+- (id)bodyFetchIfNotAvailable:(BOOL)arg1 updateFlags:(BOOL)arg2 allowPartial:(BOOL)arg3 skipSignatureVerification:(BOOL)arg4;
 - (id)bodyFetchIfNotAvailable:(BOOL)arg1 updateFlags:(BOOL)arg2 allowPartial:(BOOL)arg3;
 - (void)_updateAttributeSet:(id)arg1 includingHTML:(BOOL)arg2 withMessageBody:(id)arg3 orderedAttachments:(id *)arg4;
 - (id)searchableItemWithHTML:(id)arg1 messageBody:(id)arg2 updatableAttributesOnly:(BOOL)arg3;

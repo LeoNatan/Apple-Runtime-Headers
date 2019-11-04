@@ -27,6 +27,8 @@
     NSDictionary *_clientAchievementsBySection;
     NSArray *_clientRecentAchievements;
     NSArray *_clientRelevantAchievements;
+    NSDictionary *_clientAchievementsByEarnedDateComponents;
+    NSMutableDictionary *_filteredAchievementsByTemplateUniqueName;
     NSMutableDictionary *_achievementsByTemplateUniqueName;
     NSMutableDictionary *_achievementsByEarnedDateComponents;
     NSObject<OS_dispatch_queue> *_queue;
@@ -44,6 +46,8 @@
 @property(nonatomic) _Bool didFinishInitialLoad; // @synthesize didFinishInitialLoad=_didFinishInitialLoad;
 @property(retain, nonatomic) NSMutableDictionary *achievementsByEarnedDateComponents; // @synthesize achievementsByEarnedDateComponents=_achievementsByEarnedDateComponents;
 @property(retain, nonatomic) NSMutableDictionary *achievementsByTemplateUniqueName; // @synthesize achievementsByTemplateUniqueName=_achievementsByTemplateUniqueName;
+@property(retain, nonatomic) NSMutableDictionary *filteredAchievementsByTemplateUniqueName; // @synthesize filteredAchievementsByTemplateUniqueName=_filteredAchievementsByTemplateUniqueName;
+@property(retain, nonatomic) NSDictionary *clientAchievementsByEarnedDateComponents; // @synthesize clientAchievementsByEarnedDateComponents=_clientAchievementsByEarnedDateComponents;
 @property(retain, nonatomic) NSArray *clientRelevantAchievements; // @synthesize clientRelevantAchievements=_clientRelevantAchievements;
 @property(retain, nonatomic) NSArray *clientRecentAchievements; // @synthesize clientRecentAchievements=_clientRecentAchievements;
 @property(retain, nonatomic) NSDictionary *clientAchievementsBySection; // @synthesize clientAchievementsBySection=_clientAchievementsBySection;
@@ -62,7 +66,7 @@
 - (void).cxx_destruct;
 - (id)_mainSectionIndexPathForAchievement:(id)arg1;
 - (id)_recentAndRelevantSectionIndexPathForAchievement:(id)arg1;
-- (int)_deleteAchievement:(id)arg1;
+- (int)_deleteAchievement:(id)arg1 fromUnfiltered:(_Bool)arg2;
 - (int)_updateAchievement:(id)arg1;
 - (_Bool)_achievementBelongsInRelevants:(id)arg1 replacingRelevant:(id *)arg2;
 - (_Bool)_shouldShowPerfectWeekAchievement:(double)arg1;
@@ -79,6 +83,7 @@
 - (void)_deepCopyClientFacingModel;
 - (id)achievementsForDateComponents:(id)arg1;
 - (id)achievementForTemplateUniqueName:(id)arg1;
+- (id)trophyCaseAchievementForTemplateUniqueName:(id)arg1;
 - (id)achievementAtIndexPath:(id)arg1;
 - (int)numberOfItemsInSection:(int)arg1;
 @property(readonly, nonatomic) int numberOfSections;
@@ -86,6 +91,7 @@
 - (int)numberOfItemsInRecentAndRelevantSection:(int)arg1;
 @property(readonly, nonatomic) int numberOfRecentAndRelevantSections;
 - (id)headerStringForSection:(int)arg1 isRecentAndRelevant:(_Bool)arg2;
+- (void)stopFetching;
 - (void)startFetching;
 - (void)cycleQuery;
 - (id)initWithHealthStore:(id)arg1 layoutMode:(unsigned int)arg2;

@@ -10,7 +10,7 @@
 {
 }
 
-- (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
+- (id)bottomAnchor;
 
 @end
 

@@ -13,10 +13,12 @@
 @interface GEOAddressCorrectionInitResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_addressID;
     GEOLocation *_addressLocation;
     NSMutableArray *_address;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _numberOfVisitsBucketSize;
     int _statusCode;
     struct {
@@ -66,6 +68,8 @@
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCode;
 @property(nonatomic) int statusCode;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

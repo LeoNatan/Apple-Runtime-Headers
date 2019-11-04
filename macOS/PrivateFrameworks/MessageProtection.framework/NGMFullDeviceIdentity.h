@@ -15,24 +15,25 @@
 }
 
 + (id)identityWithDataRepresentation:(id)arg1 error:(id *)arg2;
++ (id)identityWithAccess:(id)arg1 error:(id *)arg2;
 + (id)identityWithAccess:(id)arg1 usageIdentifier:(id)arg2 error:(id *)arg3;
 @property(retain, nonatomic) NSMutableArray *devicePrekeys; // @synthesize devicePrekeys=_devicePrekeys;
 @property(retain, nonatomic) SigningKey *deviceSigningKey; // @synthesize deviceSigningKey=_deviceSigningKey;
 - (void).cxx_destruct;
-- (id)debugDescription;
 - (id)description;
 - (BOOL)updateWithRegisteredTicket:(id)arg1 error:(id *)arg2;
 - (id)keyRollingTicketWithError:(id *)arg1;
-- (BOOL)shouldRollEncryptionIdentity;
 - (BOOL)eraseFromKeyChain:(id *)arg1;
-- (id)signData:(id)arg1 error:(id *)arg2;
+- (BOOL)shouldRollEncryptionIdentity;
 - (id)signDataWithFormatter:(id)arg1 error:(id *)arg2;
 - (void)unsealMessage:(id)arg1 signedByPublicIdentity:(id)arg2 decryptionBlock:(CDUnknownBlockType)arg3;
 - (id)unsealMessage:(id)arg1 signedByPublicIdentity:(id)arg2 error:(id *)arg3;
-- (void)appendPrekey:(id)arg1;
 - (id)publicDeviceIdentityWithError:(id *)arg1;
 - (id)dataRepresentationWithError:(id *)arg1;
 - (id)initWithSigningKey:(id)arg1 devicePrekeys:(id)arg2;
+- (void)postMigrationKeychainCleanup;
+- (BOOL)deleteKeyWithTag:(id)arg1;
+- (BOOL)requiresMigration;
 
 @end
 

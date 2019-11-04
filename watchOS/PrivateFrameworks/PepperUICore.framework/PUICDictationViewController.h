@@ -29,6 +29,7 @@
     UITapGestureRecognizer *_flamesViewTapRecognizer;
     _Bool _shouldDisableDictation;
     _Bool _disabledDictationOnBackground;
+    _Bool _presentedDataSharingView;
     _Bool _startDictationAutomatically;
     id <PUICDictationViewControllerDelegate> _dictationDelegate;
     int _dictationMode;
@@ -77,6 +78,7 @@
 - (void)blockLowPriorityAlerts;
 - (void)tickleBacklightAssertion;
 - (void)keepScreenOn;
+- (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)addSiriFlames;
@@ -90,6 +92,7 @@
 - (void)cancelPrelistening;
 - (void)startPrelistening;
 - (_Bool)canBecomeFirstResponder;
+- (void)_setup;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)_platterImage;

@@ -14,12 +14,14 @@
 #import <MediaControls/MediaControlsEndpointControllerDelegate-Protocol.h>
 #import <MediaControls/MediaControlsMasterVolumeSliderDelegate-Protocol.h>
 #import <MediaControls/MediaControlsPanelViewControllerDelegate-Protocol.h>
+#import <MediaControls/_MCStateDumpPropertyListTransformable-Protocol.h>
 
 @class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MSVTimer, MTVisualStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, SFShareAudioViewController, UIView;
 @protocol MRPlatterViewControllerDelegate;
 
-@interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, MTVisualStylingRequiring, MediaControlsCollectionItemViewController>
+@interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, MTVisualStylingRequiring, _MCStateDumpPropertyListTransformable, MediaControlsCollectionItemViewController>
 {
+    unsigned long long _stateHandle;
     MTVisualStylingProvider *_visualStylingProvider;
     _Bool _selected;
     _Bool _allowsNowPlayingAppLaunch;
@@ -34,6 +36,8 @@
     NSString *_routeUID;
     long long _style;
     double __continuousCornerRadius;
+    NSString *_placeholderString;
+    NSString *_placeholderDeviceIdentifier;
     MRMediaControlsVideoPickerFooterView *_videoPickerFooterView;
     MRMediaControlsVideoPickerHeaderView *_videoPickerHeaderView;
     MediaControlsRoutingCornerView *_routingCornerView;
@@ -93,6 +97,8 @@
 @property(retain, nonatomic) MRMediaControlsVideoPickerHeaderView *videoPickerHeaderView; // @synthesize videoPickerHeaderView=_videoPickerHeaderView;
 @property(retain, nonatomic) MRMediaControlsVideoPickerFooterView *videoPickerFooterView; // @synthesize videoPickerFooterView=_videoPickerFooterView;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
+@property(retain, nonatomic) NSString *placeholderDeviceIdentifier; // @synthesize placeholderDeviceIdentifier=_placeholderDeviceIdentifier;
+@property(retain, nonatomic) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
 @property(nonatomic, setter=_setContinuousCornerRadius:) double _continuousCornerRadius; // @synthesize _continuousCornerRadius=__continuousCornerRadius;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
@@ -103,6 +109,7 @@
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (void)_updateExplicitTreatmentString;
 - (long long)lockScreenInternalRoutePickerOverrideWithDefaultStyle:(long long)arg1;
 - (_Bool)lockScreenPresentsOverrideRoutePicker;
@@ -167,6 +174,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)loadView;
 @property(readonly, nonatomic, getter=isDeviceUnlocked) _Bool deviceUnlocked;
 @property(readonly, nonatomic) _Bool shouldDisplayPlatter;
 @property(readonly, nonatomic) NSString *routeName;

@@ -9,7 +9,7 @@
 #import <PassKitCore/PKForegroundActiveArbiterObserver-Protocol.h>
 
 @class NSLock, NSString, NSXPCConnection, NSXPCInterface, PKXPCForwarder;
-@protocol NSObject, PKForegroundActiveArbiter, PKXPCServiceDelegate;
+@protocol NSObject, PKForegroundActiveArbiter, PKInvalidatable, PKXPCServiceDelegate;
 
 @interface PKXPCService : NSObject <PKForegroundActiveArbiterObserver>
 {
@@ -26,7 +26,7 @@
     id <PKForegroundActiveArbiter> _foregroundActiveArbiter;
     id <NSObject> _foregroundListener;
     id <NSObject> _backgroundListener;
-    int _serviceResumedToken;
+    id <PKInvalidatable> _serviceResumedListenerInvalidater;
     id <PKXPCServiceDelegate> _delegate;
     NSString *_machServiceName;
     unsigned int _options;

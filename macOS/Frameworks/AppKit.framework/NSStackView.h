@@ -70,6 +70,9 @@
 - (float)visibilityPriorityForView:(id)arg1;
 - (id)_valueOfVisibilityPriorityForView:(id)arg1;
 - (void)setVisibilityPriority:(float)arg1 forView:(id)arg2;
+- (BOOL)_hasBaselineOffsetsAtSize;
+- (id)_viewForLastBaselineLayout;
+- (id)_viewForFirstBaselineLayout;
 - (double)lastBaselineOffsetFromBottom;
 - (double)_lastBaselineOffsetFromStackViewBottomForView:(id)arg1;
 - (double)firstBaselineOffsetFromTop;

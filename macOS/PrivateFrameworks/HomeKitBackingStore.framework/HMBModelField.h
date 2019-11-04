@@ -16,6 +16,7 @@
     BOOL _encrypted;
     BOOL _excludeFromCloudStorage;
     BOOL _optional;
+    BOOL _conformsToHMBModelNativeCKWrapper;
     Class _classObj;
     NSString *_externalRecordField;
     unsigned long long _loggingVisibility;
@@ -24,6 +25,7 @@
     HMFVersion *_unavailableVersion;
     CDUnknownBlockType _encodeBlock;
     CDUnknownBlockType _decodeBlock;
+    CDUnknownBlockType _descriptionBlock;
 }
 
 + (id)deprecatedField;
@@ -31,8 +33,10 @@
 + (id)fieldWithClass:(Class)arg1 options:(id)arg2;
 + (id)optionalFieldWithClass:(Class)arg1;
 + (id)fieldWithClass:(Class)arg1;
+@property(copy, nonatomic) CDUnknownBlockType descriptionBlock; // @synthesize descriptionBlock=_descriptionBlock;
 @property(copy, nonatomic) CDUnknownBlockType decodeBlock; // @synthesize decodeBlock=_decodeBlock;
 @property(copy, nonatomic) CDUnknownBlockType encodeBlock; // @synthesize encodeBlock=_encodeBlock;
+@property(nonatomic) BOOL conformsToHMBModelNativeCKWrapper; // @synthesize conformsToHMBModelNativeCKWrapper=_conformsToHMBModelNativeCKWrapper;
 @property(copy, nonatomic) HMFVersion *unavailableVersion; // @synthesize unavailableVersion=_unavailableVersion;
 @property(copy, nonatomic) HMFVersion *readonlyVersion; // @synthesize readonlyVersion=_readonlyVersion;
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
@@ -45,10 +49,12 @@
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)descriptionForEncodedQueryableValue:(id)arg1;
 - (id)decodeQueryableValue:(id)arg1;
 - (id)encodeQueryableValue:(id)arg1;
 - (id)description;
 - (id)initWithClass:(Class)arg1 options:(id)arg2;
+- (id)initWithClass:(Class)arg1;
 
 @end
 

@@ -11,6 +11,7 @@
 @protocol SBAVSystemControllerCacheObserver <NSObject>
 
 @optional
+- (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateVolumeLimitEnforced:(_Bool)arg2;
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateAirplayDisplayActive:(_Bool)arg2;
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateActiveAudioRoutingWithRoute:(NSString *)arg2 routeAttributes:(NSDictionary *)arg3 activeOutputDevices:(NSArray *)arg4;
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateActiveOutputDevices:(NSArray *)arg2;

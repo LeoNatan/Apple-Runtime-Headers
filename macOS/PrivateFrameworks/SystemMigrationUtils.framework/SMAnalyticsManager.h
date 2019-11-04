@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)organizeAnalyticsData;
 - (void)reportAllPendingAnalytics;
+- (void)traceODTokenIssuingSuccess:(BOOL)arg1 afterRetries:(unsigned long long)arg2;
 - (BOOL)traceYaaAtDestinationError:(id)arg1 forCallback:(id)arg2;
 - (BOOL)traceYaaAtSourceErrorDescription:(id)arg1;
 - (id)init;

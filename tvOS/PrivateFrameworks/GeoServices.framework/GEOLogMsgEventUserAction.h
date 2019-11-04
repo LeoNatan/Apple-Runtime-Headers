@@ -13,9 +13,11 @@
 @interface GEOLogMsgEventUserAction : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_userActionEventKey;
     NSString *_userActionEventValue;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _userActionEventAction;
     int _userActionEventTarget;
     struct {
@@ -56,6 +58,8 @@
 @property(retain, nonatomic) NSString *userActionEventKey;
 @property(readonly, nonatomic) _Bool hasUserActionEventKey;
 - (void)_readUserActionEventKey;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

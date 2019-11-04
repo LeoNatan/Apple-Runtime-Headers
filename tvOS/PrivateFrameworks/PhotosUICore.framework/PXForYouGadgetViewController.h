@@ -36,6 +36,7 @@
 - (id)navigateToDetailsForMemoryWithLocalIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *navigationIdentifier;
 @property(readonly, nonatomic) NSString *navigationTitle;
+- (void)_userDidViewCloudFeedContent;
 - (id)_suggestionDumpURL;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 - (long long)scrollAnimationIdentifier;

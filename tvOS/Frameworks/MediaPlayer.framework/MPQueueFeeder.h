@@ -31,7 +31,7 @@
 - (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)errorResolverForItem:(id)arg1;
 - (void)getRepresentativeMetadataForPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)supplementalPlaybackContext;
+- (id)supplementalPlaybackContextWithReason:(long long)arg1;
 - (long long)supplementalPlaybackContextBehavior;
 - (long long)identifierRegistryWithExclusiveAccessReturningInteger:(CDUnknownBlockType)arg1;
 - (_Bool)identifierRegistryWithExclusiveAccessReturningBOOL:(CDUnknownBlockType)arg1;

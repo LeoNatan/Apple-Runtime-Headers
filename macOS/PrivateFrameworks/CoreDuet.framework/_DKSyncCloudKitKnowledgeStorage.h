@@ -75,6 +75,10 @@
 - (BOOL)hasDeletionsFlagForPeer:(id)arg1;
 - (void)setHasAdditionsFlag:(BOOL)arg1 forPeer:(id)arg2;
 - (BOOL)hasAdditionsFlagForPeer:(id)arg1;
+- (void)setHasZoneDeletionChanges:(BOOL)arg1 forZone:(id)arg2;
+- (BOOL)hasZoneDeletionChangesForZone:(id)arg1;
+- (void)setHasZoneAdditionChanges:(BOOL)arg1 forZone:(id)arg2;
+- (BOOL)hasZoneAdditionChangesForZone:(id)arg1;
 - (void)removeSourceDeviceIdentifierWithRecordZoneID:(id)arg1;
 - (void)fastForwardPastDeletionsInNewZone:(id)arg1 sourceDeviceID:(id)arg2;
 - (void)populateLastSeenDateIfNeededByPeer:(id)arg1;

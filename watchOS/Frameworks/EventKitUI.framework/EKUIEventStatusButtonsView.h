@@ -24,8 +24,8 @@
     _Bool _shouldUseVerticalLayout;
     id <EKUIEventStatusButtonsViewDelegate> _delegate;
     int _selectedAction;
-    float _buttonsCharge;
     int _textSizeMode;
+    struct UIEdgeInsets _buttonsTouchInsets;
 }
 
 + (_Bool)isActionDestructive:(int)arg1;
@@ -34,7 +34,7 @@
 @property(nonatomic) _Bool shouldUseVerticalLayout; // @synthesize shouldUseVerticalLayout=_shouldUseVerticalLayout;
 @property(nonatomic) _Bool disableButtonHighlights; // @synthesize disableButtonHighlights=_disableButtonHighlights;
 @property(nonatomic) int textSizeMode; // @synthesize textSizeMode=_textSizeMode;
-@property(nonatomic) float buttonsCharge; // @synthesize buttonsCharge=_buttonsCharge;
+@property(nonatomic) struct UIEdgeInsets buttonsTouchInsets; // @synthesize buttonsTouchInsets=_buttonsTouchInsets;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) int selectedAction; // @synthesize selectedAction=_selectedAction;
 @property(nonatomic) __weak id <EKUIEventStatusButtonsViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -52,7 +52,7 @@
 - (void)_updateButtonFontsWithSize:(float)arg1;
 - (_Bool)_shouldCenterButton;
 @property(readonly, nonatomic) UIButton *centerButton;
-- (id)_buttonForAction:(int)arg1;
+- (id)buttonForAction:(int)arg1;
 - (int)_buttonIndexForAction:(int)arg1;
 - (int)_actionForButton:(id)arg1;
 - (void)_updateSelectionToButton:(id)arg1;

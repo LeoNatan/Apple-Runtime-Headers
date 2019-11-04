@@ -14,7 +14,7 @@
 #import <HomeUI/UITextViewDelegate-Protocol.h>
 #import <HomeUI/WFHomeComposeViewControllerDelegate-Protocol.h>
 
-@class HFTriggerBuilder, HUForwardingTriggerActionBuilderDelegate, HUTriggerSummaryActionGridViewController, HUTriggerSummaryItemManager, NSString;
+@class HFTriggerBuilder, HUForwardingTriggerActionBuilderDelegate, HUTriggerActionFlow, HUTriggerSummaryActionGridViewController, HUTriggerSummaryItemManager, NSString;
 @protocol HUTriggerEditorDelegate;
 
 @interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate, HUMediaSelectionViewControllerDelegate>
@@ -26,10 +26,12 @@
     HFTriggerBuilder *_triggerBuilder;
     id <HUTriggerEditorDelegate> _delegate;
     HUForwardingTriggerActionBuilderDelegate *_forwardingTriggerActionBuilderDelegate;
+    HUTriggerActionFlow *_flow;
 }
 
 + (_Bool)adoptsDefaultGridLayoutMargins;
 + (id)createTriggerSummaryViewControllerForHome:(id)arg1 withTriggerActionSetBuilder:(id)arg2 andTriggerActionBuilderEditorDelegate:(id)arg3;
+@property(retain, nonatomic) HUTriggerActionFlow *flow; // @synthesize flow=_flow;
 @property(nonatomic) _Bool isEditingExistingTrigger; // @synthesize isEditingExistingTrigger=_isEditingExistingTrigger;
 @property(retain, nonatomic) HUForwardingTriggerActionBuilderDelegate *forwardingTriggerActionBuilderDelegate; // @synthesize forwardingTriggerActionBuilderDelegate=_forwardingTriggerActionBuilderDelegate;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
@@ -66,7 +68,7 @@
 - (void)_presentMediaSelection;
 - (void)_removeActionsInServiceActionItem:(id)arg1;
 - (void)_setTriggerEnabled:(_Bool)arg1;
-- (void)_deleteTrigger:(id)arg1;
+- (void)_deleteTrigger:(id)arg1 indexPath:(id)arg2;
 - (void)_addAction:(id)arg1;
 - (void)_preloadShortcutHomeManager;
 - (void)_testTrigger;
@@ -75,6 +77,7 @@
 - (void)_showEditorForTriggerBuilderItem:(id)arg1;
 - (void)_cancel:(id)arg1;
 - (void)_done:(id)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *serviceActionsGridViewController; // @synthesize serviceActionsGridViewController=_serviceActionsGridViewController;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *actionSetsGridViewController; // @synthesize actionSetsGridViewController=_actionSetsGridViewController;

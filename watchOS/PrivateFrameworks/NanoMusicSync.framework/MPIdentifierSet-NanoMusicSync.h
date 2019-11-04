@@ -7,6 +7,8 @@
 #import <MediaPlayer/MPIdentifierSet.h>
 
 @interface MPIdentifierSet (NanoMusicSync)
+- (id)nms_syncInfoAlbumIdentifier;
+- (id)nms_syncInfoPlaylistIdentifier;
 - (id)nms_universalStoreLookupID;
 @end
 

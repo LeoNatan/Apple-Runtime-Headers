@@ -9,7 +9,7 @@
 @class CAMFullscreenViewfinder;
 
 @protocol CAMFullscreenViewfinderDelegate <NSObject>
-- (void)fullscreenViewfinder:(CAMFullscreenViewfinder *)arg1 didChangeExpanded:(_Bool)arg2 forDrawerControlOfType:(long long)arg3;
+- (void)fullscreenViewfinder:(CAMFullscreenViewfinder *)arg1 didChangeExpanded:(_Bool)arg2 forDrawerControlOfType:(long long)arg3 animated:(_Bool)arg4;
 - (void)fullscreenViewfinder:(CAMFullscreenViewfinder *)arg1 didChangeControlDrawerVisibility:(_Bool)arg2;
 - (void)fullscreenViewfinderDidCreatePortraitControls:(CAMFullscreenViewfinder *)arg1;
 - (void)fullscreenViewfinderDidCreateControlDrawer:(CAMFullscreenViewfinder *)arg1;

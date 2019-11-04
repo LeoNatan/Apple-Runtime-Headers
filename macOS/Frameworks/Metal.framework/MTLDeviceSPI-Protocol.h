@@ -211,6 +211,9 @@
 - (void)unloadShaderCaches;
 - (id <MTLTexture>)newTextureWithSurface:(unsigned long long)arg1 buffer:(unsigned long long)arg2;
 - (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface *)arg2 plane:(unsigned long long)arg3;
+- (unsigned long long)minLinearTexturePitchAlignmentForDescriptor:(MTLTextureDescriptor *)arg1 mustMatchExactly:(unsigned long long *)arg2;
+- (unsigned long long)minLinearTextureBaseAddressAlignmentForDescriptor:(MTLTextureDescriptor *)arg1;
+- (unsigned long long)requiredLinearTextureBytesPerRowForDescriptor:(MTLTextureDescriptor *)arg1;
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;
 - (BOOL)deviceSupportsFeatureSet:(unsigned long long)arg1;

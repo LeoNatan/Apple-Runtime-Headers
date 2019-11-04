@@ -121,6 +121,7 @@
 - (void)setPollingIntervalOverride:(double)arg1;
 @property(readonly, nonatomic) double pollingInterval;
 - (_Bool)_isPushConnected;
+- (void)setKeepAliveOverrideOnInterface:(int)arg1 interval:(double)arg2 timeout:(double)arg3;
 @property(nonatomic) _Bool usingServerStatsAggressively;
 @property(nonatomic) double serverStatsExpectedKeepAliveInterval;
 @property(nonatomic) double serverStatsMinKeepAliveInterval;

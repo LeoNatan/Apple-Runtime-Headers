@@ -15,6 +15,7 @@
 + (void)reportSharedCalendarInvitationAsJunkWithSourceClientIdentifier:(id)arg1 inEventStore:(id)arg2;
 + (void)respondToSharedCalendarInvitationWithSourceClientIdentifier:(id)arg1 inEventStore:(id)arg2 withDataAccessExpressConnection:(id)arg3 accept:(_Bool)arg4;
 + (id)calendarWithSourceClientIdentifier:(id)arg1 inEventStore:(id)arg2;
++ (id)eventWithSourceClientIdentifier:(id)arg1 inEventStore:(id)arg2;
 + (id)notificationReferenceOfType:(int)arg1 withSourceClientIdentifier:(id)arg2 inEventStore:(id)arg3 withNotificationReferenceProvider:(id)arg4;
 + (id)sourceClientIdentifierForNotification:(id)arg1;
 + (id)objectIDWithSourceClientIdentifier:(id)arg1;

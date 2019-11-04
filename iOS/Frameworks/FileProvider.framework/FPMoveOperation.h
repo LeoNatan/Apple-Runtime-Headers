@@ -27,10 +27,12 @@
     NSMutableSet *_createdOrFailedRoots;
     NSMutableDictionary *_createdItemsByRoot;
     NSMutableDictionary *_placeholderIDsByRoot;
+    NSMutableDictionary *_URLByResolvedFPItem;
     NSDictionary *_errorsByItem;
     NSDictionary *_transferResults;
     NSMutableDictionary *_progressByRoot;
     _Bool _shouldBounceOnCollision;
+    NSDictionary *_transferLocations;
     NSMutableDictionary *_filenamesByURL;
     CDUnknownBlockType __t_patchActionOperationInfo;
     CDUnknownBlockType __t_remoteOperationWasScheduled;
@@ -42,6 +44,7 @@
 @property(copy, nonatomic) CDUnknownBlockType _t_patchActionOperationInfo; // @synthesize _t_patchActionOperationInfo=__t_patchActionOperationInfo;
 @property(copy, nonatomic) NSDictionary *progressByRoot; // @synthesize progressByRoot=_progressByRoot;
 @property(readonly, nonatomic) NSMutableDictionary *filenamesByURL; // @synthesize filenamesByURL=_filenamesByURL;
+@property(readonly, nonatomic) NSDictionary *transferLocations; // @synthesize transferLocations=_transferLocations;
 @property(nonatomic) _Bool shouldBounceOnCollision; // @synthesize shouldBounceOnCollision=_shouldBounceOnCollision;
 @property(nonatomic) unsigned long long lastUsageUpdatePolicy; // @synthesize lastUsageUpdatePolicy=__lastUsedDatePolicy;
 @property(readonly, nonatomic) NSDictionary *transferResults; // @synthesize transferResults=_transferResults;
@@ -71,6 +74,7 @@
 - (void)cancel;
 - (void)_runWithRemoteOperation:(id)arg1;
 - (void)actionMain;
+- (void)_resolveURLsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_recomputeMoveInfoIfNecessary;
 - (id)operationDescription;
 - (id)initWithSourceURLsAndNames:(id)arg1 destinationFolder:(id)arg2;
@@ -80,6 +84,7 @@
 - (id)initWithURLs:(id)arg1 destinationFolder:(id)arg2;
 - (id)initWithItems:(id)arg1 destinationURL:(id)arg2;
 - (id)initWithSourceItems:(id)arg1 orSourceURLs:(id)arg2 destinationFolder:(id)arg3 orDestinationURL:(id)arg4 action:(id)arg5;
+- (void)checkNonEmptyPackage;
 
 @end
 

@@ -12,6 +12,7 @@
 
 @optional
 - (CNContactViewCache *)contactViewCache;
+- (BOOL)propertyItemCanIgnoreGuardianRestrictions;
 - (void)propertyItem:(CNPropertyGroupItem *)arg1 willChangeValue:(id)arg2;
 @end
 

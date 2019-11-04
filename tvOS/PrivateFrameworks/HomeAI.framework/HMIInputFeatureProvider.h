@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
+- (void)dealloc;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 inputName:(id)arg2;
 
 @end

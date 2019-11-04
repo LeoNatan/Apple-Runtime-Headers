@@ -20,6 +20,7 @@
     NSMutableDictionary *_networkTypeToSizeLimit;
 }
 
++ (id)constraintsForSystemApplicationType:(int)arg1;
 + (id)mediaTypeNetworkConstraintsFromURLBag:(id)arg1;
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1 zone:(struct _NSZone *)arg2;

@@ -48,6 +48,7 @@
     NSArray *_subviewCache;
     UIViewController *_viewDelegate;
     float _cachedScreenScale;
+    float _layoutEngineWidth;
     struct {
         unsigned int userInteractionDisabled:1;
         unsigned int implementsDrawRect:1;
@@ -140,6 +141,7 @@
         unsigned int needsTraitCollectionDidChangePropagation:1;
         unsigned int isRootOfTraitCollectionDidChangePropagation:1;
         unsigned int implementsTraitCollectionForChildEnvironment:1;
+        unsigned int implementsBaselineOffsetsAtSize:1;
         unsigned int coloredViewBounds:1;
         unsigned int coloredAlignmentRects:1;
         unsigned int preservesSuperviewMargins:4;
@@ -693,6 +695,8 @@
 - (struct CGRect)_systemMarginsRelevantBounds;
 - (id)_frameLayoutItem;
 - (struct CGColor *)_backgroundCGColor;
+- (void)_prepareForWindowDealloc;
+- (void)_prepareDescendantsForWindowDealloc;
 @property(nonatomic) int compositingMode;
 - (_Bool)_hasTransparentBackground;
 - (_Bool)_hasOpaqueBackground;
@@ -748,8 +752,10 @@
 @property(nonatomic, setter=_setShouldArchiveUIAppearanceTags:) _Bool _shouldArchiveUIAppearanceTags; // @dynamic _shouldArchiveUIAppearanceTags;
 - (void)_receiveVisitor:(id)arg1;
 - (id)_alignmentRectOriginCacheCreateIfNecessary:(_Bool)arg1;
-- (float)_firstBaselineOffsetFromTop;
 - (float)_baselineOffsetFromBottom;
+- (float)_firstBaselineOffsetFromTop;
+- (void)_invalidateBaselineConstraints;
+- (_Bool)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
 - (id)_constraintsArray;
@@ -830,6 +836,12 @@
 - (struct CGRect)_compatibleBounds;
 - (void)reduceWidth:(float)arg1;
 - (_Bool)_isKnownUISearchBarComponentContainer;
+@property(readonly, nonatomic) _Bool _wantsConstraintBasedLayout;
+- (CDStruct_b2fbf00d)_baselineOffsetsAtSize:(struct CGSize)arg1;
+@property(readonly, nonatomic) unsigned int _axesForDerivingIntrinsicContentSizeFromLayoutSize;
+@property(readonly, nonatomic) _Bool _layoutHeightDependsOnWidth;
+- (struct CGSize)_layoutSizeThatFits:(struct CGSize)arg1 fixedAxes:(unsigned int)arg2;
+- (void)_measureViewWithSize:(struct CGSize)arg1 temporaryConstraints:(id)arg2 suspendingSystemConstraints:(_Bool)arg3 withOptimizedEngineBlock:(CDUnknownBlockType)arg4;
 - (id)textInputView;
 - (_Bool)_canBeReusedInPickerView;
 - (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
@@ -1102,7 +1114,9 @@
 - (_Bool)_hasLayoutEngine;
 - (struct CGPoint)_nsis_origin;
 - (struct CGRect)_nsis_bounds;
+- (struct CGRect)_nsis_layoutRectFromHostingViewInEngine:(id)arg1;
 - (struct CGRect)_nsis_compatibleBoundsInEngine:(id)arg1;
+- (struct CGSize)_nsis_layoutSizeInEngine:(id)arg1;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3 forLayoutGuide:(id)arg4;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3;
 - (_Bool)_forceLayoutEngineSolutionInRationalEdges;
@@ -1130,6 +1144,7 @@
 - (void)_configureAutolayoutFlagsNeedingLayout:(_Bool)arg1;
 - (void)_setSubviewWantsAutolayoutTripWantsAutolayout:(_Bool)arg1;
 - (void)setNeedsUpdateConstraints;
+- (void)_scheduleUpdateConstraintsPassAsEngineHostNeedingLayout:(_Bool)arg1;
 - (void)_setNeedsUpdateConstraints;
 - (void)_setNeedsUpdateConstraintsNeedingLayout:(_Bool)arg1;
 - (void)_informContainerThatSubviewsNeedUpdateConstraints;
@@ -1198,6 +1213,7 @@
 - (void)setExclusiveTouch:(_Bool)arg1;
 - (_Bool)isMultipleTouchEnabled;
 - (void)setMultipleTouchEnabled:(_Bool)arg1;
+- (void)_setFrameWithAlignmentRect:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (_Bool)_needsLayoutOnAnimatedFrameChangeForNewFrame:(struct CGRect)arg1;
 - (struct CGRect)extent;
@@ -1380,7 +1396,7 @@
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (_Bool)_canHostViewControllerContentScrollView;
-- (_Bool)_hasActingParentViewForGestureRecognizers:(id)arg1;
+- (_Bool)_isEffectivelyDescendantOfViewForGestures:(id)arg1;
 - (id)_actingParentViewForGestureRecognizers;
 - (id)_containingScrollView;
 - (id)_viewIndexPath;
@@ -1395,7 +1411,7 @@
 - (int)_viewOrderRelativeToView:(id)arg1;
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
 - (_Bool)_isAlphaHittableAndHasAlphaHittableAncestors;
-@property(retain, nonatomic, getter=_presentationControllerToNotifyOnLayoutSubviews, setter=_setPresentationControllerToNotifyOnLayoutSubviews:) UIPresentationController *_presentationControllerToNotifyOnLayoutSubviews; // @dynamic _presentationControllerToNotifyOnLayoutSubviews;
+@property(nonatomic, getter=_presentationControllerToNotifyOnLayoutSubviews, setter=_setPresentationControllerToNotifyOnLayoutSubviews:) __weak UIPresentationController *_presentationControllerToNotifyOnLayoutSubviews; // @dynamic _presentationControllerToNotifyOnLayoutSubviews;
 @property(nonatomic, getter=_viewDelegate, setter=_setViewDelegate:) UIViewController *viewDelegate;
 @property(nonatomic) _Bool viewTraversalMark;
 @property(nonatomic) _Bool skipsSubviewEnumeration;
@@ -1497,6 +1513,7 @@
 - (void)restoreUserActivityState:(id)arg1;
 - (void)updateUserActivityState:(id)arg1;
 @property(readonly, nonatomic) _Bool _shouldReverseLayoutDirection;
+- (_Bool)_subviewsNeedAxisFlipping;
 - (id)_layoutRect;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *lastBaselineAnchor;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *firstBaselineAnchor;

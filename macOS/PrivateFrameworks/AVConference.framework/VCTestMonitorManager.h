@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
     BOOL _toneInjectionEnabled;
     BOOL _forceNetworkCellular;
     BOOL _enableLoopbackInterface;
+    double _emulatedRxPLR;
     NSObject<OS_dispatch_queue> *_xpcCommandQueue;
     NSObject<OS_dispatch_queue> *_xpcCallbackQueue;
 }
 
 + (id)sharedManager;
+@property(nonatomic) double emulatedRxPLR; // @synthesize emulatedRxPLR=_emulatedRxPLR;
 @property(nonatomic) BOOL enableLoopbackInterface; // @synthesize enableLoopbackInterface=_enableLoopbackInterface;
 @property BOOL forceNetworkCellular; // @synthesize forceNetworkCellular=_forceNetworkCellular;
 @property BOOL toneInjectionEnabled; // @synthesize toneInjectionEnabled=_toneInjectionEnabled;

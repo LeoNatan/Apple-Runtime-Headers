@@ -6,7 +6,7 @@
 
 #import <SpringBoardFoundation/SBFWallpaperView.h>
 
-@class CADisplayLink, NSDictionary, NSMutableArray, SBFMotionManager, UIImage;
+@class CADisplayLink, CAGradientLayer, NSDictionary, NSMutableArray, SBFMotionManager, UIImage;
 
 @interface SBFBokehWallpaperView : SBFWallpaperView
 {
@@ -15,11 +15,13 @@
     NSMutableArray *_circleArray;
     NSDictionary *_options;
     long long _circleFillColor;
+    unsigned long long _blurFrameCount;
+    UIImage *_cachedSnapshotImage;
+    struct __IOSurface *_snapshotBuffer;
+    UIImage *_cachedFolderBlurImage;
     _Bool _isOnLockScreen;
     _Bool _contentIsVisible;
     _Bool _hasSingleVariant;
-    UIImage *_cachedSnapshotImage;
-    UIImage *_cachedFolderBlurImage;
 }
 
 + (id)defaultGradientSilver;
@@ -40,9 +42,11 @@
 - (_Bool)isDisplayingWallpaperWithConfiguration:(id)arg1 forVariant:(long long)arg2;
 - (id)cacheGroup;
 - (id)snapshotImage;
-- (void)_updateSnapshotImage;
-- (id)_averageColor;
+- (void)_updateSnapshotImageIfNeeded;
+- (id)_computeAverageColor;
+- (_Bool)_needsFallbackImageForBackdropGeneratedImage:(id)arg1;
 - (id)_imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2 overrideTraitCollection:(id)arg3;
+- (id)_folderBlurImage;
 - (id)_imageFromColor:(id)arg1;
 - (void)_updateVariantStatus;
 - (void)_screenUndimmed:(id)arg1;
@@ -50,8 +54,10 @@
 - (void)_wallpaperDidChange:(id)arg1;
 - (void)_styleModeChanged:(id)arg1;
 - (void)_updateCircleFillColor;
+- (struct CGRect)newRectForCircle:(id)arg1 potentialX:(double)arg2 potentialY:(double)arg3;
 - (void)_screenDidUpdate;
 - (void)_handleVariantChange;
+- (void)_updateOrientationIfNeeded;
 - (void)_toggleCircleAnimations:(_Bool)arg1;
 - (void)setWallpaperAnimationEnabled:(_Bool)arg1;
 - (_Bool)_thermalStateIsCritical;
@@ -60,8 +66,9 @@
 - (void)_correctGyroValues:(inout double *)arg1 y:(inout double *)arg2;
 - (_Bool)_layerIsOutOfBounds:(id)arg1;
 - (void)_addBokehCircles:(long long)arg1;
-- (id)layer;
+@property(readonly, nonatomic) CAGradientLayer *layer;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
+- (struct __IOSurface *)_createSnapshotBuffer;
 - (void)_destroyDisplayLink;
 - (void)_initDisplayLink;
 - (long long)userInterfaceStyle;

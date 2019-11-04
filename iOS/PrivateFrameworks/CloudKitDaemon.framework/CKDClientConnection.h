@@ -107,7 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)importantUserIDsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)accountInfoWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)accountStatusWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)cancelOperationWithIdentifier:(id)arg1;
+- (void)cancelOperationWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handlePerformDaemonCallWithOperationInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2 forwardingBlock:(CDUnknownBlockType)arg3;
 - (void)_addProxyOperationWithInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2 longlivedProxyPreparationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithConnection:(id)arg1;

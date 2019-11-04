@@ -6,28 +6,25 @@
 
 #import <NanoMediaUI/NMUDefaultStyleTableViewCell.h>
 
-@class PUICActivityIndicatorView, PUICTableViewCellBackgroundView, UIImage;
+@class PUICActivityIndicatorView, PUICTableViewCellBackgroundView;
 
 __attribute__((visibility("hidden")))
 @interface NMUAirPlayActionCell : NMUDefaultStyleTableViewCell
 {
-    _Bool _loading;
     PUICActivityIndicatorView *_activityIndicator;
-    UIImage *_routeIcon;
+    _Bool _loading;
     PUICTableViewCellBackgroundView *_backgroundColorDodgeView;
     PUICTableViewCellBackgroundView *_backgroundSourceOverView;
 }
 
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundSourceOverView; // @synthesize backgroundSourceOverView=_backgroundSourceOverView;
 @property(retain, nonatomic) PUICTableViewCellBackgroundView *backgroundColorDodgeView; // @synthesize backgroundColorDodgeView=_backgroundColorDodgeView;
-@property(retain, nonatomic) UIImage *routeIcon; // @synthesize routeIcon=_routeIcon;
-@property(retain, nonatomic) PUICActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 - (void).cxx_destruct;
-- (id)_routeIconPlaceholderImage;
-- (void)_setRouteImage:(id)arg1;
 - (void)setRouteIconViewForRouteType:(int)arg1 origin:(id)arg2;
+- (void)_adjustBackgroundPill;
 - (void)_updateStyle;
+- (void)setRadioSectionCell:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;

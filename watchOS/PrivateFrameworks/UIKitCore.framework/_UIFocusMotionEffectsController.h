@@ -12,15 +12,25 @@ __attribute__((visibility("hidden")))
 @interface _UIFocusMotionEffectsController : NSObject
 {
     _UIDynamicValueConvergenceAnimation *_rollbackAnimation;
+    struct CGPoint _displayOffset;
+    float _displayMovementAdjustment;
+    _Bool _displayOffsetAccumulatorEnabled;
     struct CGPoint _currentOffset;
 }
 
+@property(nonatomic) _Bool displayOffsetAccumulatorEnabled; // @synthesize displayOffsetAccumulatorEnabled=_displayOffsetAccumulatorEnabled;
 @property(readonly, nonatomic) struct CGPoint currentOffset; // @synthesize currentOffset=_currentOffset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGPoint displayOffset;
 - (void)cancelRollbackAnimation;
+- (void)startRollbackAnimationFasterConvergence;
 - (void)startRollbackAnimation;
 - (void)reset;
+- (void)resetDisplayOffsetAccumulationFactor;
+- (void)adjustDisplayOffsetAccumulationFactorForFocusTransfer;
+- (void)updateCurrentOffset:(struct CGPoint)arg1 overrideDisplayOffset:(id)arg2;
 - (void)updateCurrentOffset:(struct CGPoint)arg1;
+- (id)init;
 
 @end
 

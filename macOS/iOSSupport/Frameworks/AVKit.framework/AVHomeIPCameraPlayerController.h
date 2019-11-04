@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface AVHomeIPCameraPlayerController : AVPlayerController
 {
+    double _volume;
     BOOL _muted;
     id <AVHomeIPCameraActionButtonHandling> _delegate;
     struct CGSize _presentationSize;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (BOOL)isPlaying;
 - (void)setVolume:(double)arg1;
+- (double)volume;
 - (void)togglePlaybackEvenWhenInBackground:(id)arg1;
 - (long long)timeControlStatus;
 - (long long)status;

@@ -12,7 +12,6 @@
 
 + (id)previewActionForURL:(id)arg1 result:(struct __DDResult *)arg2 context:(id)arg3;
 - (struct CGSize)suggestedContentSize;
-- (id)additionalMenuActions;
 - (id)menuActionClasses;
 - (id)menuActions;
 - (BOOL)showMenuTitle;

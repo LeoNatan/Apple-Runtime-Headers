@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (long long)playbackQueueOffset;
 - (id)contentItemID;
+- (id)interfaceID;
 - (id)commandID;
 - (id)contextID;
 - (id)mediaRemoteOptions;

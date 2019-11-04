@@ -9,7 +9,7 @@
 #import <Navigation/MNNavigationServiceProxy-Protocol.h>
 
 @class MNSettings, NSHashTable, NSMutableArray, NSString, NSXPCConnection;
-@protocol MNNavigationServiceClientInterface;
+@protocol MNNavigationServiceClientInterface, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface MNNavigationServiceRemoteProxy : NSObject <MNNavigationServiceProxy>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_interruptionDates;
     _Bool _isReconnecting;
     CDUnknownBlockType _predictionHandler;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     long long _sandboxHandle;
     id <MNNavigationServiceClientInterface> _delegate;
 }
@@ -40,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)setTracePosition:(double)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 - (void)setTraceIsPlaying:(_Bool)arg1;
-- (void)acceptReroute:(_Bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
+- (void)acceptReroute:(_Bool)arg1 forTrafficIncidentAlert:(id)arg2;
 - (void)setJunctionViewImageWidth:(double)arg1 height:(double)arg2;
 - (void)setRideIndex:(unsigned long long)arg1 forLegIndex:(unsigned long long)arg2;
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
@@ -82,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)closeForClient:(id)arg1;
 - (void)openForClient:(id)arg1;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

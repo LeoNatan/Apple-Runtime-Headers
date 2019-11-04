@@ -14,11 +14,11 @@
 
 @interface HMDXPCClientConnection : HMFMessageTransport <HMDaemonConnection, HMFLogging>
 {
+    _Bool _activated;
     _Bool _entitledForAPIAccess;
     _Bool _entitledForBackgroundMode;
     _Bool _entitledForCameraClipsAccess;
     _Bool _entitledForMultiUserSetupAccess;
-    _Bool _activated;
     NSXPCConnection *_xpcConnection;
     HMDProcessInfo *_processInfo;
     unsigned long long _entitlements;
@@ -31,7 +31,6 @@
 + (id)logCategory;
 + (unsigned long long)entitlementsForConnection:(id)arg1;
 @property(nonatomic) __weak HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
-@property(nonatomic) _Bool activated; // @synthesize activated=_activated;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDXPCRequestTracker *requestTracker; // @synthesize requestTracker=_requestTracker;
 @property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
@@ -40,6 +39,7 @@
 @property(readonly, nonatomic, getter=isEntitledForBackgroundMode) _Bool entitledForBackgroundMode; // @synthesize entitledForBackgroundMode=_entitledForBackgroundMode;
 @property(readonly, nonatomic, getter=isEntitledForAPIAccess) _Bool entitledForAPIAccess; // @synthesize entitledForAPIAccess=_entitledForAPIAccess;
 @property(readonly) unsigned long long entitlements; // @synthesize entitlements=_entitlements;
+@property(nonatomic, getter=isActivated) _Bool activated; // @synthesize activated=_activated;
 @property(nonatomic) __weak HMDProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 @property(nonatomic) __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;

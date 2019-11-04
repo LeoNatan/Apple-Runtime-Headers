@@ -12,12 +12,13 @@
 #import <ChatKit/UISearchResultsUpdating-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKSearchCollectionView, IMTimingCollection, NSArray, NSMutableSet, NSString, UICollectionViewCompositionalLayout, UICollectionViewCompositionalLayoutConfiguration, UICollectionViewDiffableDataSource, _UIContextMenuInteraction;
+@class CKSearchCollectionView, IMTimingCollection, NSArray, NSMutableSet, NSString, UICollectionViewCompositionalLayout, UICollectionViewDiffableDataSource, _UIContextMenuInteraction;
 @protocol CKContainerSearchControllerDelegate;
 
 @interface CKSearchViewController : CKScrollViewController <CKSearchResultsTitleHeaderCellDelegate, _UIContextMenuInteractionDelegate, UISearchResultsUpdating, UICollectionViewDelegate, CKSearchControllerDelegate>
 {
     _Bool _isInitialLoad;
+    _Bool _suppressNextReloadAnimation;
     id <CKContainerSearchControllerDelegate> _delegate;
     unsigned long long _mode;
     NSArray *_searchControllers;
@@ -28,15 +29,14 @@
     CDUnknownBlockType _performAfterInitialLoadBlock;
     NSMutableSet *_searchCompleteControllerSet;
     IMTimingCollection *_timingCollection;
-    UICollectionViewCompositionalLayoutConfiguration *_layoutConfiguration;
     _UIContextMenuInteraction *_contextMenuInteraction;
 }
 
 @property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
-@property(retain, nonatomic) UICollectionViewCompositionalLayoutConfiguration *layoutConfiguration; // @synthesize layoutConfiguration=_layoutConfiguration;
 @property(retain, nonatomic) IMTimingCollection *timingCollection; // @synthesize timingCollection=_timingCollection;
 @property(retain, nonatomic) NSMutableSet *searchCompleteControllerSet; // @synthesize searchCompleteControllerSet=_searchCompleteControllerSet;
 @property(copy, nonatomic) CDUnknownBlockType performAfterInitialLoadBlock; // @synthesize performAfterInitialLoadBlock=_performAfterInitialLoadBlock;
+@property(nonatomic) _Bool suppressNextReloadAnimation; // @synthesize suppressNextReloadAnimation=_suppressNextReloadAnimation;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(retain, nonatomic) UICollectionViewCompositionalLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
@@ -52,6 +52,8 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)_currentModeIsDetails;
 - (Class)_searchResultsHeaderClass;
+- (_Bool)_needsIndexing;
+- (_Bool)_isInternalInstall;
 - (id)globalLayoutConfiguration;
 - (id)footerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)headerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
@@ -66,6 +68,7 @@
 - (struct UIEdgeInsets)parentMarginInsetsForSearchController:(id)arg1;
 - (void)deleteMessageItem:(id)arg1;
 - (void)deleteTransferGUID:(id)arg1;
+- (void)searchController:(id)arg1 requestsItemDeletionAtIndexPath:(id)arg2;
 - (void)searchController:(id)arg1 requestsPresentationOfAlertController:(id)arg2 atRect:(struct CGRect)arg3;
 - (void)searchController:(id)arg1 requestsPresentationOfShareController:(id)arg2 atRect:(struct CGRect)arg3;
 - (id)searchController:(id)arg1 conversationForChatGUID:(id)arg2;
@@ -86,6 +89,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDissapeaer:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewLayoutMarginsDidChange;
 - (void)_registerCells;

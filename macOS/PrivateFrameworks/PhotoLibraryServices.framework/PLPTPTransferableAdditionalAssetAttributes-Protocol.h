@@ -6,9 +6,10 @@
 
 #import <PhotoLibraryServices/NSObject-Protocol.h>
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, PLSpatialOverCaptureInformation;
 
 @protocol PLPTPTransferableAdditionalAssetAttributes <NSObject>
+@property(readonly, retain, nonatomic) PLSpatialOverCaptureInformation *spatialOverCaptureInformation;
 @property(readonly, nonatomic) long long ptpTrashedState;
 @property(readonly, retain, nonatomic) NSString *exifTimestampString;
 @property(readonly, retain, nonatomic) NSNumber *embeddedThumbnailWidth;

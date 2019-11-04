@@ -12,7 +12,7 @@
 
 - (id)initWithItemProviders:(id)arg1;
 - (id)initWithObjects:(id)arg1;
-- (id)initWithHeadline:(id)arg1;
+- (id)initWithHeadline:(id)arg1 userHasAccess:(BOOL)arg2;
 
 @end
 

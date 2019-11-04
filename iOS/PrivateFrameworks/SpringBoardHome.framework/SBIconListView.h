@@ -52,6 +52,7 @@
     struct SBIconListPredictedVisibleColumn _predictedVisibleColumn;
 }
 
++ (void)getLayoutMetrics:(struct SBIconListLayoutMetrics *)arg1 forBounds:(struct CGRect)arg2 insets:(struct UIEdgeInsets)arg3 orientation:(long long)arg4 numberOfColumns:(unsigned long long)arg5 numberOfRows:(unsigned long long)arg6 iconSize:(struct CGSize)arg7 iconContentScale:(double)arg8 options:(unsigned long long)arg9;
 + (struct CGRect)defaultFrameForOrientation:(long long)arg1;
 + (unsigned long long)defaultIconViewConfigurationOptions;
 + (long long)rotationAnchor;

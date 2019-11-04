@@ -6,9 +6,11 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class CLLocation;
+#import <NanoTimeKit/CLKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
-@interface NTKAstronomyComplicationDataSource : NTKComplicationDataSource
+@class CLLocation, NSString;
+
+@interface NTKAstronomyComplicationDataSource : NTKComplicationDataSource <CLKTritiumRandomizedComplicationEntryProvider>
 {
     struct NSString *_token;
     CLLocation *_currentLocation;
@@ -20,6 +22,8 @@
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
+- (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
+- (float)tritium_randomizedPossibility;
 - (void)_invalidate;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)resume;
@@ -39,6 +43,12 @@
 - (void)_startObserving;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

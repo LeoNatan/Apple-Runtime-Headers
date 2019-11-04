@@ -8,7 +8,7 @@
 
 @interface TSShareButtonWindowToolbarItemHandler : NSObject
 {
-    // Error parsing type: , name: shareAction
+    // Error parsing type: , name: activityProviderAccessor
     // Error parsing type: , name: isEnabled
 }
 
@@ -16,7 +16,7 @@
 - (id)init;
 - (void)uninstallHandler;
 - (void)installHandler;
-- (id)initWithShareAction:(CDUnknownBlockType)arg1;
+- (id)initWithActivityProviderAccessor:(CDUnknownBlockType)arg1;
 @property(nonatomic) BOOL isEnabled; // @synthesize isEnabled;
 
 @end

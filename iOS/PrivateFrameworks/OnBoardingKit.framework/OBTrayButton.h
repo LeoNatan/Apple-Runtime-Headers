@@ -12,6 +12,7 @@
 
 + (double)standardHeight;
 + (id)buttonWithType:(long long)arg1;
+- (id)_buttonFont;
 - (id)_fontTextStyle;
 - (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)layoutSubviews;

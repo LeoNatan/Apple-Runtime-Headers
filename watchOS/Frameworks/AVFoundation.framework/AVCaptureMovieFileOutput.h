@@ -20,7 +20,7 @@
 + (void)initialize;
 - (void)_updateBravoCameraSelectionBehaviorForSourceDevice:(id)arg1;
 - (void)_updateAvailableVideoCodecTypesForSourceDevice:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (long)_stopRecording;
 - (void)_startRecording:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;

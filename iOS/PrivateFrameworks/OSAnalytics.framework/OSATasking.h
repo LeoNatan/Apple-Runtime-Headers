@@ -21,7 +21,6 @@
 + (void)checkTaskingRelevance;
 + (id)applyTasking:(id)arg1 taskId:(id)arg2 fromBlob:(id)arg3;
 + (id)proxyTasking:(id)arg1 taskId:(id)arg2 usingConfig:(id)arg3 fromBlob:(id)arg4;
-+ (void)initialize;
 
 @end
 

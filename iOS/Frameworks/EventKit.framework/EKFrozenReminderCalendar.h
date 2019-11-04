@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)meltedClass;
 - (void).cxx_destruct;
+- (id)sharedOwnerName;
 - (_Bool)isColorDisplayOnly;
 - (id)externalID;
 - (id)symbolicColorName;
@@ -29,11 +30,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)_applyChangesToSaveRequest:(id)arg1 error:(id *)arg2;
 - (_Bool)_applyChanges:(id)arg1 error:(id *)arg2;
 - (id)uniqueIdentifier;
+- (id)_account;
 - (id)source;
 - (id)calendarIdentifier;
 - (id)hexColorStringFromREMColor:(id)arg1;
 - (id)REMColorFromEKHexColorString:(id)arg1;
 - (id)publishedURL;
+- (_Bool)isPublished;
 - (unsigned long long)ekSharingStatusFromREMSharingStatus:(long long)arg1;
 - (unsigned long long)sharingStatus;
 - (id)colorString;

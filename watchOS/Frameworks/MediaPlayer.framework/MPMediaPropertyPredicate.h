@@ -24,8 +24,8 @@
 @property(nonatomic) int comparisonType;
 @property(copy, nonatomic) id value;
 @property(copy, nonatomic) NSString *property;
-- (id)protobufferEncodableObject;
-- (id)initWithProtobufferDecodableObject:(id)arg1;
+- (id)protobufferEncodableObjectFromLibrary:(id)arg1;
+- (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

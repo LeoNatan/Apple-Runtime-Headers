@@ -13,7 +13,7 @@
 {
     int _state;
     KCAESGCMDuplexSession *_session;
-    NSObject<KCJoiningRequestSecretDelegate> *_secretDelegate;
+    id <KCJoiningRequestSecretDelegate> _secretDelegate;
     KCSRPClientContext *_context;
     unsigned long long _dsid;
     NSString *_piggy_uuid;
@@ -38,7 +38,7 @@
 @property(readonly) int state; // @synthesize state=_state;
 @property(readonly) unsigned long long dsid; // @synthesize dsid=_dsid;
 @property(readonly) KCSRPClientContext *context; // @synthesize context=_context;
-@property(readonly) NSObject<KCJoiningRequestSecretDelegate> *secretDelegate; // @synthesize secretDelegate=_secretDelegate;
+@property __weak id <KCJoiningRequestSecretDelegate> secretDelegate; // @synthesize secretDelegate=_secretDelegate;
 @property(readonly) KCAESGCMDuplexSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
 - (void)setConfiguration:(id)arg1;

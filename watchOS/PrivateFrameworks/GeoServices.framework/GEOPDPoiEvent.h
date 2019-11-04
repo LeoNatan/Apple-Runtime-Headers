@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPoiEvent : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_eventCategorys;
     NSMutableArray *_eventDateTimes;
@@ -23,6 +22,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_performers;
     NSMutableArray *_poiIds;
     GEOTimezone *_timezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _expectedAttendance;
     struct {
         unsigned int has_expectedAttendance:1;
@@ -103,6 +105,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDMapsIdentifier *eventId;
 @property(readonly, nonatomic) _Bool hasEventId;
 - (void)_readEventId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -25,13 +25,16 @@
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 - (void).cxx_destruct;
 - (id)commitItem;
-- (id)_performValidation;
+- (void)_ensureConsistency;
+- (id)performValidation;
 - (_Bool)isMediaActionValid:(id *)arg1;
+- (void)defaultActionIfMediaActionInvalid;
 @property(readonly, copy, nonatomic) NSString *localizedDescription;
 - (id)copyForCreatingNewAction;
 - (_Bool)hasSameTargetAsAction:(id)arg1;
 - (id)mediaProfileContainersForAccessories:(id)arg1 home:(id)arg2;
 - (id)createNewAction;
+- (_Bool)isAffectedByEndEvents;
 - (_Bool)requiresDeviceUnlock;
 - (_Bool)updateWithActionBuilder:(id)arg1;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;

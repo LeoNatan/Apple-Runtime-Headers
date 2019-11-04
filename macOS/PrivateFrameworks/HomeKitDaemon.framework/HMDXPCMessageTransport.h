@@ -11,22 +11,22 @@
 #import <HomeKitDaemon/HMFMessageTransportDelegate-Protocol.h>
 #import <HomeKitDaemon/NSXPCListenerDelegate-Protocol.h>
 
-@class HMDApplicationRegistry, NSMutableSet, NSObject, NSString, NSXPCListener;
-@protocol OS_dispatch_group, OS_dispatch_queue;
+@class HMDApplicationRegistry, NSArray, NSMutableSet, NSObject, NSString, NSXPCListener;
+@protocol HMFLocking, OS_dispatch_group, OS_dispatch_queue;
 
 @interface HMDXPCMessageTransport : HMFMessageTransport <NSXPCListenerDelegate, HMDApplicationMonitorDelegate, HMFLogging, HMFMessageTransportDelegate>
 {
+    id <HMFLocking> _lock;
     NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet *_connections;
     HMDApplicationRegistry *_applicationRegistry;
     NSXPCListener *_listener;
-    NSMutableSet *_xpcClients;
     NSObject<OS_dispatch_group> *_activeMessageTracker;
 }
 
 + (id)logCategory;
 + (id)defaultTransport;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *activeMessageTracker; // @synthesize activeMessageTracker=_activeMessageTracker;
-@property(retain, nonatomic) NSMutableSet *xpcClients; // @synthesize xpcClients=_xpcClients;
 @property(readonly) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly) HMDApplicationRegistry *applicationRegistry; // @synthesize applicationRegistry=_applicationRegistry;
 - (void).cxx_destruct;
@@ -35,6 +35,7 @@
 - (void)applicationMonitorDidChangeActiveHomeKitAppStatus:(BOOL)arg1;
 - (void)applicationMonitorDidChangeAppState:(id)arg1;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, copy) NSArray *connections;
 - (BOOL)stop;
 - (BOOL)start;
 - (id)init;

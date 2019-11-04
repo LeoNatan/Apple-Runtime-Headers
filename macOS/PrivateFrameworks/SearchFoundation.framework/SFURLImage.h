@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)initWithURL:(id)arg1;
 - (id)initWithProtobuf:(id)arg1;
 
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *contentType;
 @property(nonatomic) double cornerRadius;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(copy, nonatomic) NSString *identifier;
 @property(copy) NSData *imageData;
 @property(nonatomic) BOOL isTemplate;

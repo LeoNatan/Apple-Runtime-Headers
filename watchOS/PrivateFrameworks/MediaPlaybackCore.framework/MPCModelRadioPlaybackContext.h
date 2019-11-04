@@ -34,7 +34,7 @@
 - (id)descriptionComponents;
 - (int)repeatType;
 - (int)shuffleType;
-- (_Bool)containsTransportableContent;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

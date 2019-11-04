@@ -12,20 +12,22 @@
     unsigned int _implicitConfidenceScoreThreshold;
     unsigned int _implicitDeltaConfidenceScoreThreshold;
     unsigned int _maxNumberOfBaseProfileUtterances;
+    float _satVTImplicitThreshold;
 }
 
+@property(readonly, nonatomic) float satVTImplicitThreshold; // @synthesize satVTImplicitThreshold=_satVTImplicitThreshold;
 @property(readonly, nonatomic) unsigned int maxNumberOfBaseProfileUtterances; // @synthesize maxNumberOfBaseProfileUtterances=_maxNumberOfBaseProfileUtterances;
 @property(readonly, nonatomic) unsigned int implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
 @property(readonly, nonatomic) unsigned int implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
 @property(readonly, nonatomic) unsigned int baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;
-- (unsigned int)maxAllowedImplicitTrainingUtterances;
-- (unsigned int)maxAllowedSatVectorCount;
-- (unsigned int)satVectorCount;
-- (_Bool)checkIfUpdateNecessaryForAudioFileCount:(unsigned int)arg1;
+- (_Bool)checkIfProfileNeedsUploadForBaseProfileVectorCount:(unsigned int)arg1;
+- (_Bool)checkIfImplicitSATPossibleWithBaseProfileVectorCount:(unsigned int)arg1;
+- (_Bool)checkIfImplicitTrainingRequired;
 - (_Bool)checkIfRetrainingIsRequired;
+- (_Bool)checkIfUpdateNecessaryForAudioFileCount:(unsigned int)arg1;
 - (void)processUtterance:(id)arg1 ofSpIdType:(unsigned int)arg2 withUpdatePolicyBlock:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
-- (void)addUtterances:(id)arg1 withScoreThreshold:(float)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
-- (void)addUtterances:(id)arg1 toProfile:(id)arg2 toModel:(unsigned int)arg3 withScoreThreshold:(float)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
+- (void)addUtterances:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)initWithVoiceProfile:(id)arg1 spIdType:(unsigned int)arg2 satRunMode:(unsigned int)arg3 languageCode:(id)arg4 asset:(id)arg5;
 
 @end
 

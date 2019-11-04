@@ -13,6 +13,7 @@
 - (void)unregisterClient:(id <TUConversationManagerXPCClient>)arg1;
 - (void)registerClient:(id <TUConversationManagerXPCClient>)arg1;
 - (oneway void)buzzMember:(TUConversationMember *)arg1 conversationUUID:(NSUUID *)arg2;
+- (oneway void)setDownlinkMuted:(_Bool)arg1 forRemoteParticipantsInConversationWithUUID:(NSUUID *)arg2;
 - (oneway void)addRemoteMembers:(NSSet *)arg1 toConversationWithUUID:(NSUUID *)arg2;
 - (oneway void)conversationsByGroupUUID:(void (^)(NSDictionary *))arg1;
 @end

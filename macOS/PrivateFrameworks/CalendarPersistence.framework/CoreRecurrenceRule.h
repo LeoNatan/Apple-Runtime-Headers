@@ -104,8 +104,8 @@
 - (id)setInterval:(int)arg1;
 - (id)setUntilDate:(id)arg1;
 - (id)untilDate;
-- (unsigned long long)count;
-- (id)setCount:(unsigned long long)arg1;
+- (long long)count;
+- (id)setCount:(long long)arg1;
 - (id)range;
 - (id)setRange:(id)arg1;
 - (id)cachedEndDates;

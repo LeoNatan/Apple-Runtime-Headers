@@ -89,6 +89,7 @@
 - (struct __CFString *)clientNeedsHelpNotification;
 - (void)handleClientCallForHelp;
 - (id)databaseManagerName;
+- (BOOL)isDataVaulted;
 - (void)_unregisterForClientHelpNotifications;
 - (void)_registerForClientHelpNotifications;
 - (void)dealloc;

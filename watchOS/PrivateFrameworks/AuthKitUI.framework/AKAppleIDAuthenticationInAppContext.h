@@ -70,7 +70,6 @@
 - (void)presentSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dismissKeepUsingUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentKeepUsingUIForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_cleanUpBasicLogin;
 - (void)_cleanUpBasicLoginWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dismissBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 waitForInteraction:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

@@ -10,7 +10,5 @@
 {
 }
 
-+ (_Bool)isStealthedAOTWithDefaults:(id)arg1;
-
 @end
 

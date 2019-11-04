@@ -102,6 +102,7 @@
 - (void)displayPinCodeForAccount:(id)arg1 pinCode:(id)arg2 deviceName:(id)arg3 deviceType:(id)arg4 phoneNumber:(id)arg5;
 - (void)account:(id)arg1 buddyPictureChanged:(id)arg2 imageData:(id)arg3 imageHash:(id)arg4;
 - (void)account:(id)arg1 buddyPropertiesChanged:(id)arg2;
+- (void)networkDataAvailabilityChanged:(BOOL)arg1;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 - (void)account:(id)arg1 capabilitiesChanged:(unsigned long long)arg2;
 - (void)account:(id)arg1 statusChanged:(id)arg2;

@@ -27,6 +27,8 @@
 - (void)siriViewController:(AFUISiriViewController *)arg1 didEncounterUnexpectedError:(NSError *)arg2;
 
 @optional
+- (void)siriViewControllerSpeechRequestCancelledFromSiriOrb;
+- (void)siriViewControllerSpeechRequestStartedFromSiriOrb;
 - (void)extendCurrentTTSRequested;
 - (void)siriViewController:(AFUISiriViewController *)arg1 failTest:(NSString *)arg2 withReason:(NSString *)arg3;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didFinishTest:(NSString *)arg2;

@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIWebTouchEventsGestureRecognizer> _touchEventGestureRecognizer;
     _Bool _canSendTouchEventsAsynchronously;
     struct RetainPtr<WKSyntheticTapGestureRecognizer> _singleTapGestureRecognizer;
-    struct RetainPtr<_UIWebHighlightLongPressGestureRecognizer> _highlightLongPressGestureRecognizer;
+    struct RetainPtr<WKHighlightLongPressGestureRecognizer> _highlightLongPressGestureRecognizer;
     struct RetainPtr<UILongPressGestureRecognizer> _longPressGestureRecognizer;
     struct RetainPtr<WKSyntheticTapGestureRecognizer> _doubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _nonBlockingDoubleTapGestureRecognizer;
@@ -98,9 +98,11 @@ __attribute__((visibility("hidden")))
     _Bool _isBlurringFocusedElement;
     _Bool _focusRequiresStrongPasswordAssistance;
     _Bool _waitingForEditDragSnapshot;
+    long long _dropAnimationCount;
     _Bool _hasSetUpInteractions;
     unsigned long long _ignoreSelectionCommandFadeCount;
     long long _suppressNonEditableSingleTapTextInteractionCount;
+    long long _processingChangeSelectionWithGestureCount;
     CompletionHandler_2aa2525f _domPasteRequestHandler;
     struct BlockPtr<void (UIWKAutocorrectionContext *)> _pendingAutocorrectionContextHandler;
     struct unique_ptr<WebKit::PageClientImpl, std::__1::default_delete<WebKit::PageClientImpl>> _pageClient;
@@ -166,9 +168,11 @@ __attribute__((visibility("hidden")))
 - (id)initWithFrame:(struct CGRect)arg1 processPool:(struct WebProcessPool *)arg2 configuration:(Ref_1d7364d1 *)arg3 webView:(id)arg4;
 - (id)_commonInitializationWithProcessPool:(struct WebProcessPool *)arg1 configuration:(Ref_1d7364d1 *)arg2;
 @property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
+- (_Bool)_waitForDrawToPDFCallback;
 - (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;
 - (void)_hideContextMenuHintContainer;
 - (id)containerViewForTargetedPreviews;
+@property(readonly, nonatomic) _Bool _shouldUseLegacySelectPopoverDismissalBehavior;
 @property(readonly, nonatomic) _Bool _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) _Bool _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) _Bool _shouldUseContextMenus;
@@ -184,7 +188,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (Optional_8b32703a)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_22d926db)positionInformationForActionSheetAssistant:(id)arg1;
 - (_Bool)isAnyTouchOverActiveArea:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (_Bool)shouldIgnoreWebTouch;
@@ -528,9 +532,10 @@ __attribute__((visibility("hidden")))
 - (void)_finishInteraction;
 - (void)_cancelInteraction;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)_shouldToggleSelectionCommandsAfterTapAt:(struct CGPoint)arg1;
 - (id)_uiTextSelectionRects;
 - (void)_invokeAndRemovePendingHandlersValidForCurrentPositionInformation;
-- (_Bool)_currentPositionInformationIsApproximatelyValidForRequest:(const struct InteractionInformationRequest *)arg1;
+- (_Bool)_currentPositionInformationIsApproximatelyValidForRequest:(const struct InteractionInformationRequest *)arg1 radiusForApproximation:(int)arg2;
 - (_Bool)_hasValidOutstandingPositionInformationRequest:(const struct InteractionInformationRequest *)arg1;
 - (_Bool)_currentPositionInformationIsValidForRequest:(const struct InteractionInformationRequest *)arg1;
 - (void)requestAsynchronousPositionInformationUpdate:(struct InteractionInformationRequest)arg1;
@@ -597,6 +602,8 @@ __attribute__((visibility("hidden")))
 - (id)_scroller;
 - (double)inverseScale;
 - (id)unscaledView;
+- (void)_updateLongPressAndHighlightLongPressGestures;
+- (void)_didChangeLinkPreviewAvailability;
 - (void)_addDefaultGestureRecognizers;
 - (void)_removeDefaultGestureRecognizers;
 - (void)cleanupInteraction;

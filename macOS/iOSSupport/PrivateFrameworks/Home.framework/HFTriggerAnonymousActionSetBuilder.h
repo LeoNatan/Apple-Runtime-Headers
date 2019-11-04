@@ -8,7 +8,7 @@
 
 #import <Home/HFActionSetBuilderProtocol-Protocol.h>
 
-@class HFMediaPlaybackActionBuilder, HFMutableSetDiff, HMTrigger, NSArray, NSString;
+@class HFMediaPlaybackActionBuilder, HFMutableSetDiff, HMActionSet, HMTrigger, NSArray, NSString;
 
 @interface HFTriggerAnonymousActionSetBuilder : HFItemBuilder <HFActionSetBuilderProtocol>
 {
@@ -38,8 +38,7 @@
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (id)getOrCreateActionSet;
 - (BOOL)hasActions;
-- (void)setActionSet:(id)arg1;
-- (id)actionSet;
+@property(retain, nonatomic) HMActionSet *actionSet; // @dynamic actionSet;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 
 // Remaining properties

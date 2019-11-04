@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/WFWorkflowReferencingResource-Protocol.h>
 
-@class NSError, NSImage, NSString, WFDatabase, WFWorkflow;
+@class NSDictionary, NSError, NSString, WFDatabase, WFImage, WFWorkflow;
 @protocol NSObject, WFAccessResourcePerWorkflowState;
 
 @interface WFAccessResource : WFResource <WFWorkflowReferencingResource>
@@ -68,13 +68,14 @@
 - (void)refreshAvailabilityWithNotification:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long status;
 @property(readonly, nonatomic) NSString *protectedResourceDescription;
-@property(readonly, nonatomic) NSImage *icon;
+@property(readonly, nonatomic) WFImage *icon;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSString *associatedAppIdentifier;
 - (void)dealloc;
 - (id)initWithPersistentIdentifier:(id)arg1;
 - (id)initWithDefinition:(id)arg1;
 - (id)initWithDefinition:(id)arg1 persistentIdentifier:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *settingsUIDefinition;
 - (void)logOut;
 @property(readonly, nonatomic) BOOL logOutAffectsOtherApps;
 @property(readonly, nonatomic) BOOL canLogOut;

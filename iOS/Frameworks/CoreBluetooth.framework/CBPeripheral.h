@@ -83,6 +83,7 @@
 - (void)openL2CAPChannel:(unsigned short)arg1;
 - (void)setHighPriorityStream:(_Bool)arg1 duration:(id)arg2;
 - (void)getTimeSyncData;
+- (void)setVisibleInSettings:(_Bool)arg1;
 - (void)setPeripheralName:(id)arg1;
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 - (void)readValueForDescriptor:(id)arg1;

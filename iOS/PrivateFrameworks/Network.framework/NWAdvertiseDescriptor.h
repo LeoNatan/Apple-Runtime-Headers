@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDescriptor:(id)arg1;
 @property(readonly, nonatomic) NSString *bonjourServiceName;

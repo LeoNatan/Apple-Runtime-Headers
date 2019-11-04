@@ -6,14 +6,13 @@
 
 #import <HomeUI/HUQuickControlInteractionCoordinator.h>
 
-#import <HomeUI/CAAnimationDelegate-Protocol.h>
 #import <HomeUI/HUQuickControlSliderGestureTransformerDelegate-Protocol.h>
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
 
 @class HUDisplayLinkApplier, HUElasticApplier, HUQuickControlSliderGestureTransformer, HUQuickControlViewProfile, NSDate, NSString, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol HUQuickControlIncrementalConvertibleProfile;
 
-@interface HUQuickControlElasticSliderInteractionCoordinator : HUQuickControlInteractionCoordinator <HUQuickControlSliderGestureTransformerDelegate, UIGestureRecognizerDelegate, CAAnimationDelegate>
+@interface HUQuickControlElasticSliderInteractionCoordinator : HUQuickControlInteractionCoordinator <HUQuickControlSliderGestureTransformerDelegate, UIGestureRecognizerDelegate>
 {
     _Bool _userInteractionActive;
     _Bool _hasSecondaryValue;
@@ -60,10 +59,6 @@
 - (unsigned long long)_findClosestValueFromTouchLocation:(struct CGPoint)arg1;
 - (double)_sliderValueForLocation:(struct CGPoint)arg1;
 - (CDStruct_c3b9c2ee)_rawViewValueRange;
-- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
-- (void)_animateToShrinkView;
-- (void)_animateToEnlargeView;
-- (id)_resizingAnimationWithFromValue:(double)arg1 toValue:(double)arg2;
 - (void)_beginReceivingTouchesWithGestureRecognizer:(id)arg1 isTouchContinuation:(_Bool)arg2;
 - (void)_handleControlTapGesture:(id)arg1;
 - (void)_handleControlPanGesture:(id)arg1;

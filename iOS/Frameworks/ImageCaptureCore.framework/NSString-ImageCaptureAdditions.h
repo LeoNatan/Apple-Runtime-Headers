@@ -8,5 +8,6 @@
 
 @interface NSString (ImageCaptureAdditions)
 - (unsigned long long)baseImageFileDigits;
+- (unsigned long long)baseImageFilePrefix;
 @end
 

@@ -6,32 +6,25 @@
 
 #import <TVMLKit/TVViewLayout.h>
 
-@class TVImageLayout, VUIButtonLayout, VUITextLayout;
+@class TVImageLayout, VUITextLayout;
 
 __attribute__((visibility("hidden")))
 @interface VUIUpsellOfferViewLayout : TVViewLayout
 {
     VUITextLayout *_titleTextLayout;
     VUITextLayout *_descriptionTextLayout;
-    VUITextLayout *_disclaimerTextLayout;
-    VUIButtonLayout *_buttonLayout;
     TVImageLayout *_imageLayout;
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
 @property(readonly, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
-@property(readonly, nonatomic) VUIButtonLayout *buttonLayout; // @synthesize buttonLayout=_buttonLayout;
-@property(readonly, nonatomic) VUITextLayout *disclaimerTextLayout; // @synthesize disclaimerTextLayout=_disclaimerTextLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionTextLayout; // @synthesize descriptionTextLayout=_descriptionTextLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 - (void).cxx_destruct;
 - (void)_configureLayout;
-- (double)bottomSectionTopMargin;
-- (double)buttonSpacing;
-- (double)buttonHeight;
-- (double)disclaimerBottomMargin;
 - (double)descriptionTopMargin;
-- (double)titleTopMargin;
+- (double)titleTopMarginPad;
+- (double)titleTopMarginPhone;
 - (struct UIEdgeInsets)safeAreaInsets;
 - (id)init;
 

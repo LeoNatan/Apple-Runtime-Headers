@@ -45,7 +45,7 @@
     AVInternalPlaybackOptions *_playbackOptions;
     AVControlItem *_customOverlayControlItem;
     AVxCustomOverlayHostViewController *_customOverlayHostViewController;
-    AVContentRestrictionsViewController *__contentRestrictionsViewController;
+    AVContentRestrictionsViewController *_contentRestrictionsViewController;
     AVContentProposalViewController *_contentProposalViewController;
     id _mediaServicesWereResetObserver;
     id _willAddDeactivationReasonObserver;
@@ -240,7 +240,6 @@
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_customOverlayControlItem;
-@property(readonly, nonatomic) AVContentRestrictionsViewController *_contentRestrictionsViewController;
 @property(readonly, nonatomic) UIView *iAdPrerollView;
 - (void)didChangePlayerController;
 @property(retain, nonatomic) AVPlayerController *playerController;

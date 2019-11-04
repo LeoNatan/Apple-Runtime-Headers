@@ -11,6 +11,6 @@
 @protocol EFQueueingStrategy <NSObject>
 @property(readonly, nonatomic) NSString *descriptionType;
 - (void)dequeueObject:(id)arg1 buffer:(NSMutableArray *)arg2;
-- (void)enqueueObject:(id)arg1 buffer:(NSMutableArray *)arg2;
+- (void)enqueueObject:(id)arg1 replaceIfExists:(_Bool)arg2 buffer:(NSMutableArray *)arg3;
 @end
 

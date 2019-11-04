@@ -6,7 +6,8 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CKBalloonView;
+@class CKBalloonView, UIView;
+@protocol CKTranscriptPluginView;
 
 @protocol CKBalloonViewDelegate <NSObject>
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(CKBalloonView *)arg1;
@@ -17,6 +18,7 @@
 - (void)balloonViewTapped:(CKBalloonView *)arg1;
 
 @optional
+- (void)balloonView:(CKBalloonView *)arg1 willInsertPluginViewAsSubview:(UIView<CKTranscriptPluginView> *)arg2;
 - (void)tuConversationBalloonJoinButtonTapped:(CKBalloonView *)arg1;
 @end
 

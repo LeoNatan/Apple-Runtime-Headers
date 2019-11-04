@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableSet, NSString;
+@class NSMutableSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _UIStatisticsScalarHistogram : NSObject
 {
     NSString *_baseKey;
     int _recordCount;
-    long long _values[22];
-    NSArray *_bucketKeys;
+    unsigned long long _values[22];
+    NSString *_keys[22];
     NSMutableSet *_children;
 }
 

@@ -24,7 +24,7 @@
 - (void)workflowPickerViewController:(id)arg1 didSelectVariable:(id)arg2;
 - (void)workflowPickerViewControllerDidCancel:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

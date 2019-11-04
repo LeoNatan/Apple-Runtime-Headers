@@ -33,6 +33,7 @@
 - (void)fetchDeviceToDeviceEncryptionStatus:(CDUnknownBlockType)arg1;
 - (void)fetchAccountStatus:(CDUnknownBlockType)arg1;
 - (void)fetchAccountIdentifierWithCompletion:(CDUnknownBlockType)arg1;
+- (id)containerForAccount;
 - (id)containerWithZoneWidePCS:(BOOL)arg1;
 - (id)initWithEnvironment:(long long)arg1 createContainers:(BOOL)arg2;
 - (id)initWithEnvironment:(long long)arg1;

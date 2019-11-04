@@ -24,10 +24,11 @@
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void).cxx_destruct;
 - (id)hourOfDayProbabilitiesToInteractWithContacts:(id)arg1;
+- (id)backFillProxiesByRecencyUsingMessagesCache:(id)arg1 startIndex:(unsigned int)arg2;
 - (id)inPhoneCallHeuristicSuggestionProxies;
 - (id)hyperRecentHeuristicSuggestionProxiesWithReferenceDate:(id)arg1 predictionContextBundleId:(id)arg2;
 - (id)proximityBoostingHeuristicWithProximityBooster:(id)arg1 existingSuggestions:(id)arg2;
-- (id)maximalIntersectionGroupChatSuggestionProxyWithSeedContactIdentifiers:(id)arg1 bundleIds:(id)arg2;
+- (id)maximalIntersectionGroupChatSuggestionProxyWithSeedContactIdentifiers:(id)arg1 bundleIds:(id)arg2 meContactIdentifier:(id)arg3;
 - (id)photoSuggestionProxiesPartitionedByPresenceInAttachments:(id)arg1 photoSuggestedPeople:(id)arg2 contactIDsInAssets:(id)arg3;
 - (id)recentNonSystemSuggestionsForBundleIDs:(id)arg1 numberOfSuggestion:(unsigned int)arg2;
 - (id)seedSuggestionsForChatGuidsAndEmails:(id)arg1;

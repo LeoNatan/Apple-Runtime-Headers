@@ -19,6 +19,7 @@
 - (void)locationTracker:(MNLocationTracker *)arg1 didFailRerouteWithError:(NSError *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didReroute:(MNActiveRouteInfo *)arg2 newAlternateRoutes:(NSArray *)arg3 rerouteReason:(unsigned int)arg4 request:(GEODirectionsRequest *)arg5 response:(GEODirectionsResponse *)arg6;
 - (void)locationTrackerDidCancelReroute:(MNLocationTracker *)arg1;
+- (void)locationTracker:(MNLocationTracker *)arg1 didSuppressReroute:(NSError *)arg2;
 - (void)locationTrackerWillReroute:(MNLocationTracker *)arg1;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateETAForRoute:(MNActiveRouteInfo *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 matchedToStepIndex:(unsigned int)arg2 legIndex:(unsigned int)arg3;

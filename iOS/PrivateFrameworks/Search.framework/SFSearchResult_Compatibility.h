@@ -6,11 +6,9 @@
 
 #import <Search/SFSearchResult_SpotlightExtras.h>
 
-#import <Search/NSCopying-Protocol.h>
-
 @class NSString;
 
-@interface SFSearchResult_Compatibility : SFSearchResult_SpotlightExtras <NSCopying>
+@interface SFSearchResult_Compatibility : SFSearchResult_SpotlightExtras
 {
 }
 

@@ -23,7 +23,7 @@
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;
 - (id)tritium_timeViews;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)_updateHourLabelColorForColor:(unsigned int)arg1;
 - (void)_updateHourLabelColor;
 - (void)_updateHourLabelText;

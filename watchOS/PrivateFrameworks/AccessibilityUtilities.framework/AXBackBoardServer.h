@@ -35,6 +35,7 @@
 - (_Bool)isGuidedAccessSelfLockedToApp:(id)arg1;
 - (void)requestGuidedAccessSessionEndWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestGuidedAccessSessionStartWithConfigurationDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_sendRequestGuidedAccessSessionMessage:(id)arg1 numberOfRetryAttempts:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned int)guidedAccessAvailability;
 - (id)performGuidedAccessAutomationCommand:(id)arg1 error:(id *)arg2;
 - (void)guidedAccessEffectiveAppBundleIdentifier:(CDUnknownBlockType)arg1;

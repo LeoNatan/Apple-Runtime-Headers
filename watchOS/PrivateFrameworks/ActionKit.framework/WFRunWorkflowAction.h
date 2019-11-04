@@ -30,6 +30,7 @@
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (void)getHandoffWorkflowControllerState:(CDUnknownBlockType)arg1;
 - (void)setHandoffWorkflowControllerState:(id)arg1;
+- (void)wasAddedToWorkflowByUser:(id)arg1;
 - (id)getWorkflowWithError:(id *)arg1;
 
 // Remaining properties

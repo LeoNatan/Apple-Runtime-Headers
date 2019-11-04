@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)didReceiveUpdateWithETA:(double)arg1 lastUpdated:(double)arg2;
 @property(readonly, nonatomic) unsigned long long currentlyNecessaryNotificationType;
 - (void)didPostNotification;
+- (id)description;
 - (id)initWithMaximumNumberOfNotifications:(unsigned long long)arg1 minimumNotificationInterval:(double)arg2;
 - (id)initWithMaximumNumberOfNotifications:(unsigned long long)arg1;
 - (id)init;

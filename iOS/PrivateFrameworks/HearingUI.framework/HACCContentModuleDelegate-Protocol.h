@@ -6,11 +6,12 @@
 
 #import <HearingUI/NSObject-Protocol.h>
 
-@class AXRemoteHearingAidDevice, UIView;
+@class AXRemoteHearingAidDevice, NSArray, UIView;
 @protocol HACCContentModule;
 
 @protocol HACCContentModuleDelegate <NSObject>
 - (double)preferredContentWidth;
+- (void)updateViewForProperties:(NSArray *)arg1;
 - (void)controlDidActivate:(UIView<HACCContentModule> *)arg1;
 - (AXRemoteHearingAidDevice *)currentHearingDevice;
 @end

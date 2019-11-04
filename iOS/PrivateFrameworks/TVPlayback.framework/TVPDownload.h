@@ -8,7 +8,7 @@
 
 #import <TVPlayback/AVAssetDownloadDelegate-Protocol.h>
 
-@class AVAggregateAssetDownloadTask, AVMediaSelection, NSError, NSMapTable, NSPointerArray, NSProgress, NSString, TVPDownloadSession, TVPMediaItemLoader, TVPStateMachine;
+@class AVAggregateAssetDownloadTask, NSError, NSMapTable, NSPointerArray, NSProgress, NSString, TVPDownloadSession, TVPMediaItemLoader, TVPReportingSession, TVPStateMachine;
 @protocol TVPMediaItem;
 
 @interface TVPDownload : NSObject <AVAssetDownloadDelegate>
@@ -23,17 +23,21 @@
     AVAggregateAssetDownloadTask *_downloadTask;
     NSPointerArray *_delegates;
     NSProgress *_downloadProgress;
-    AVMediaSelection *_videoMediaSelection;
     NSMapTable *_mediaSelectionToProgressMap;
     unsigned long long _downloadInitiationBackgroundTask;
     unsigned long long _downloadTerminationBackgroundTask;
+    TVPReportingSession *_reportingSession;
+    unsigned long long _numMediaSelectionsThatWillReceiveDownloadProgress;
+    unsigned long long _numMediaSelectionsCompleted;
 }
 
 + (void)initialize;
+@property(nonatomic) unsigned long long numMediaSelectionsCompleted; // @synthesize numMediaSelectionsCompleted=_numMediaSelectionsCompleted;
+@property(nonatomic) unsigned long long numMediaSelectionsThatWillReceiveDownloadProgress; // @synthesize numMediaSelectionsThatWillReceiveDownloadProgress=_numMediaSelectionsThatWillReceiveDownloadProgress;
+@property(retain, nonatomic) TVPReportingSession *reportingSession; // @synthesize reportingSession=_reportingSession;
 @property(nonatomic) unsigned long long downloadTerminationBackgroundTask; // @synthesize downloadTerminationBackgroundTask=_downloadTerminationBackgroundTask;
 @property(nonatomic) unsigned long long downloadInitiationBackgroundTask; // @synthesize downloadInitiationBackgroundTask=_downloadInitiationBackgroundTask;
 @property(retain, nonatomic) NSMapTable *mediaSelectionToProgressMap; // @synthesize mediaSelectionToProgressMap=_mediaSelectionToProgressMap;
-@property(retain, nonatomic) AVMediaSelection *videoMediaSelection; // @synthesize videoMediaSelection=_videoMediaSelection;
 @property(retain, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(retain, nonatomic) NSPointerArray *delegates; // @synthesize delegates=_delegates;
 @property(nonatomic) _Bool downloadIsComplete; // @synthesize downloadIsComplete=_downloadIsComplete;

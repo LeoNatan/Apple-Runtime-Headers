@@ -82,6 +82,7 @@
 - (void)configureCloudShareTrustManager;
 - (id)trustTargetUUID;
 - (void)updateCloudShareID:(id)arg1;
+- (void)removeCloudShareID;
 @property(readonly) _Bool isUserSettingsPrefEnabled;
 - (id)privateZoneControllerForUserDataController:(id)arg1;
 - (id)sharedZoneControllerForUserDataController:(id)arg1;
@@ -90,18 +91,19 @@
 - (void)userDataControllerDidUpdateAssistantAccessControl:(id)arg1;
 - (_Bool)userDataController:(id)arg1 isMediaContentProfileCapableAccessoryID:(id)arg2;
 - (_Bool)userDataController:(id)arg1 isPersonalRequestCapableAccessoryID:(id)arg2;
+- (id)ownerForUserSettingsBackingStoreController:(id)arg1;
 - (id)backingStoreController:(id)arg1 createParticipantManagerForCloudZone:(id)arg2;
+- (void)didStopBackingStoreController:(id)arg1;
 - (void)didStartBackingStoreController:(id)arg1;
-- (id)zoneNameForBackingStoreController:(id)arg1;
 @property(readonly) NSUUID *userUUID;
 @property(readonly) _Bool isRunningOnHomeOwnersDevice;
+- (id)settingsController:(id)arg1 willUpdateSettingAtKeyPath:(id)arg2 withValue:(id)arg3;
 - (void)settingsController:(id)arg1 didUpdateWithCompletion:(CDUnknownBlockType)arg2;
 - (id)dictionaryEncoding;
 - (void)removeCloudData;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (id)backingStoreObjects:(long long)arg1;
-- (void)migrateAfterCloudMerge:(CDUnknownBlockType)arg1;
 - (void)migrateCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_migrateRelayAccessTokensCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fixupRelayAccessTokens;
@@ -128,6 +130,7 @@
 - (id)relayAccessTokens;
 - (void)updateRelayIdentifier:(id)arg1;
 @property(copy) NSString *relayIdentifier; // @synthesize relayIdentifier=_relayIdentifier;
+- (void)handleRemovedAccessory:(id)arg1;
 - (void)removeAccessoriesFromAssistantAccessControlList:(id)arg1;
 - (void)_handleMediaContentProfileAccessControlUpdate:(id)arg1;
 - (void)handleMediaContentProfileAccessControlUpdate:(id)arg1;
@@ -170,6 +173,9 @@
 - (void)registerForMessages;
 - (id)messageDispatcher;
 - (void)unconfigure;
+- (void)recoverTrustManagerDueToUUIDChange;
+- (void)recoverUserSettingsDueToUUIDChange;
+- (void)recoverUserCloudDataDueToUUIDChange;
 - (void)initializeUserSettingsWithHome:(id)arg1;
 - (void)configureWithHome:(id)arg1;
 - (id)dumpState;

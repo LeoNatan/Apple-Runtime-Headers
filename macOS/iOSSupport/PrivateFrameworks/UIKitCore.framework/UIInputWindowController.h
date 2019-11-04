@@ -161,6 +161,7 @@ __attribute__((visibility("hidden")))
 - (void)popAnimationStyle;
 - (void)pushAnimationStyle:(id)arg1;
 - (void)updateForKeyplaneChangeWithContext:(id)arg1;
+- (void)setDisableUpdateMaskForSecureTextEntry:(BOOL)arg1;
 - (void)checkPlaceholdersForRemoteKeyboardsAndForceConstraintsUpdate:(BOOL)arg1 layoutSubviews:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
 - (struct CGRect)convertRectFromContainerCoordinateSpaceToScreenSpace:(struct CGRect)arg1;
@@ -186,7 +187,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (void)updateSupportsDockViewController;
 - (struct UIEdgeInsets)_inputViewPadding;
-- (void)updateRootViewConstraintsForSceneFrame:(struct CGRect)arg1 bounds:(struct CGRect)arg2;
 - (void)updateViewConstraints;
 - (void)updateViewSizingConstraints;
 - (void)_presentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animationController:(id)arg4 interactionController:(id)arg5 completion:(CDUnknownBlockType)arg6;

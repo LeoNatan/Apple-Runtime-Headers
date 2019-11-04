@@ -13,6 +13,7 @@
 }
 
 + (id)descriptor;
+@property BOOL needsRefresh;
 
 // Remaining properties
 @property(nonatomic) int type; // @dynamic type;

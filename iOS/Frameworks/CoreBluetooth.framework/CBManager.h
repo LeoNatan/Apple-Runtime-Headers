@@ -19,12 +19,15 @@
     long long _state;
     long long _authorization;
     NSData *_advertisingAddress;
+    long long _advertisingAddressType;
     NSString *_localAddressString;
     NSString *_localName;
 }
 
++ (long long)authorization;
 @property(readonly) NSString *localName; // @synthesize localName=_localName;
 @property(readonly) NSString *localAddressString; // @synthesize localAddressString=_localAddressString;
+@property(readonly, nonatomic) long long advertisingAddressType; // @synthesize advertisingAddressType=_advertisingAddressType;
 @property(copy, nonatomic) NSData *advertisingAddress; // @synthesize advertisingAddress=_advertisingAddress;
 @property(nonatomic) _Bool tccComplete; // @synthesize tccComplete=_tccComplete;
 @property(nonatomic) long long authorization; // @synthesize authorization=_authorization;

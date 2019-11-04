@@ -10,6 +10,7 @@
 {
 }
 
++ (void)_addSymbolModifiersToCharacterSet:(id)arg1;
 + (id)validNameCharacterSet;
 - (id)_cleanNameString:(id)arg1;
 - (_Bool)_isOnlyWhitespace:(id)arg1;

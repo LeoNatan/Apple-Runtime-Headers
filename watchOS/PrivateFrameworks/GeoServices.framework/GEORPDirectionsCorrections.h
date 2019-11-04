@@ -13,13 +13,15 @@
 @interface GEORPDirectionsCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPCorrectedCoordinate *_arrivalCoordinate;
     NSData *_directionsResponseId;
     NSMutableArray *_instructionCorrections;
     NSString *_overviewScreenshotImageId;
     NSMutableArray *_problematicRouteIndexs;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _noGoodRoutesShown;
     struct {
         unsigned int has_noGoodRoutesShown:1;
@@ -80,6 +82,8 @@
 @property(retain, nonatomic) NSData *directionsResponseId;
 @property(readonly, nonatomic) _Bool hasDirectionsResponseId;
 - (void)_readDirectionsResponseId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

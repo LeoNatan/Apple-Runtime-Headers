@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: viewProvider
     // Error parsing type: , name: viewAnimator
     // Error parsing type: , name: keyFrame
+    // Error parsing type: , name: startedFirstAnimation
 }
 
 - (void).cxx_destruct;

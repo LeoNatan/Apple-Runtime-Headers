@@ -6,7 +6,5 @@
 
 @protocol AOSUIProfileViewControllerDelegate
 - (void)updateOverlay:(void (^)(BOOL, NSArray *))arg1;
-- (void)shouldHideOverlay:(void (^)(BOOL))arg1;
-- (void)setHideOverlayHandler:(void (^)(BOOL))arg1;
 @end
 

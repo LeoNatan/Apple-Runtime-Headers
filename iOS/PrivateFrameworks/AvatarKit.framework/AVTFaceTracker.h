@@ -78,6 +78,11 @@
 - (void)setFaceIsTracked:(_Bool)arg1;
 @property(copy) NSURL *faceTrackingRecordingURL;
 - (_Bool)faceTrackingPaused;
+@property(readonly) float videoAspectRatio;
+// Error parsing type for property videoDimensions:
+// Property attributes: T,R
+
+@property(readonly) float fieldOfView;
 @property(readonly) ARSession *arSession;
 - (_Bool)isActive;
 - (void)stop;

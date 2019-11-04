@@ -26,6 +26,7 @@
 - (void)loadMetadataSync;
 - (id)createMetadataFromCameraFile:(id)arg1;
 - (id)duration;
+- (id)spatialOverCaptureIdentifier;
 - (id)mediaGroupId;
 - (int)burstPickType;
 - (id)burstUUID;
@@ -36,6 +37,7 @@
 - (BOOL)isTagged;
 - (BOOL)performAdditionalLivePhotoChecksWithImageAsset:(id)arg1;
 - (BOOL)isBase;
+- (BOOL)isSpatialOverCapture;
 - (BOOL)isRender;
 - (BOOL)isSloMo;
 - (BOOL)hasAudioAttachment;

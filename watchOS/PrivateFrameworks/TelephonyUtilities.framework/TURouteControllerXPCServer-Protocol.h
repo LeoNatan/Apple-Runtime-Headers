@@ -9,8 +9,8 @@
 @class NSString;
 
 @protocol TURouteControllerXPCServer <NSObject>
-- (oneway void)pickPairedHostDeviceRouteWithUniqueIdentifier:(NSString *)arg1;
-- (oneway void)pickLocalRouteWithUniqueIdentifier:(NSString *)arg1;
+- (oneway void)pickPairedHostDeviceRouteWithUniqueIdentifier:(NSString *)arg1 shouldWaitUntilAvailable:(_Bool)arg2;
+- (oneway void)pickLocalRouteWithUniqueIdentifier:(NSString *)arg1 shouldWaitUntilAvailable:(_Bool)arg2;
 - (oneway void)pairedHostDeviceRoutesByUniqueIdentifier:(void (^)(NSDictionary *))arg1;
 - (oneway void)localRoutesByUniqueIdentifier:(void (^)(NSDictionary *))arg1;
 @end

@@ -15,5 +15,6 @@
 @property(copy, nonatomic, setter=tv_setIdentifier:) NSString *tvIdentifier;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
+- (id)tv_impressionableElementsForDocument:(id)arg1;
 @end
 

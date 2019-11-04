@@ -104,7 +104,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_finalizeLiftCancellation;
 - (void)_cancelLift;
-- (void)_endLift;
+- (void)_endLiftWithoutDragging;
 - (_Bool)_beginLiftForItems:(id)arg1 session:(id)arg2 animated:(_Bool)arg3;
 - (_Bool)_prepareForLiftAtPoint:(struct CGPoint)arg1 invocationType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_accessibilityAddItemsToDragSessionAtPoint:(struct CGPoint)arg1;

@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
 - (void)setUberImageOffset:(double)arg1;
-- (void)setTransitionBannerOpacity:(double)arg1;
 - (void)setBannerOpacity:(double)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) double topThreshold;

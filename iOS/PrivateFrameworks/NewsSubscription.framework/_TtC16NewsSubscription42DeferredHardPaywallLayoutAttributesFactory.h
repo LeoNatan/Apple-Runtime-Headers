@@ -29,6 +29,7 @@
     // Error parsing type: , name: mediumGradientHeight
     // Error parsing type: , name: smallGradientHeight
     // Error parsing type: , name: footerImageExtraHeight
+    // Error parsing type: , name: minimumBaseFooterImageHeight
 }
 
 @end

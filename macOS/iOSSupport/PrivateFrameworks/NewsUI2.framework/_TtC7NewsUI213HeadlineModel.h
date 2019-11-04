@@ -13,6 +13,7 @@
     // Error parsing type: , name: savedState
     // Error parsing type: , name: offensiveState
     // Error parsing type: , name: draggableState
+    // Error parsing type: , name: accessLevel
 }
 
 @end

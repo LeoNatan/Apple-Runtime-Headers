@@ -96,8 +96,10 @@
 - (void)forceOrderOutAutomaticToDirection:(int)arg1 withDuration:(double)arg2;
 - (void)forceOrderInAutomaticFromDirection:(int)arg1 withDuration:(double)arg2;
 - (id)_placementForDeactivatedKeyboard:(_Bool)arg1;
+- (_Bool)maximizeWithAnimationStyle:(id)arg1;
 - (_Bool)maximizeWithAnimation:(_Bool)arg1;
 - (_Bool)maximize;
+- (_Bool)minimizeWithAnimationStyle:(id)arg1;
 - (_Bool)minimize;
 - (void)prepareToMoveKeyboardForInputViewSet:(id)arg1 animationStyle:(id)arg2;
 - (void)performMultipleOperations:(CDUnknownBlockType)arg1 withAnimationStyle:(id)arg2;

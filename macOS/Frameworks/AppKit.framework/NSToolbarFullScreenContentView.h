@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)createLayers;
 - (void)_createCornerLayers;
 - (void)refreshLayerContents;
+- (void)refreshLayerVisibility;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)destroyToolbarLayers;
 - (id)getShadowImage;

@@ -13,10 +13,12 @@
 @interface GEOSpokenGuidance : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_announcements;
     NSMutableArray *_timeGaps;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _alignment;
     unsigned int _endDesiredTime;
     unsigned int _exclusiveSetIdentifier;
@@ -99,6 +101,8 @@
 - (void)clearAnnouncements;
 @property(retain, nonatomic) NSMutableArray *announcements;
 - (void)_readAnnouncements;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

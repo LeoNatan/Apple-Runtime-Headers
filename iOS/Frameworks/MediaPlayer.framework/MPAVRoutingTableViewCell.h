@@ -19,6 +19,7 @@
     NSTimer *_subtitleTextUpdateTimer;
     UIActivityIndicatorView *_spinnerView;
     UIImageView *_smartAudioImageView;
+    UIImageView *_checkmarkImageView;
     _Bool _mirroringSwitchVisible;
     _Bool _pendingSelection;
     _Bool _isDisplayedAsPicked;
@@ -49,7 +50,7 @@
 - (void)_animateSubtitleLabelToNextAvailableText;
 - (void)_updateSpinnerStyle;
 - (void)_updateSubtitleTextLabelForRouteItem:(id)arg1;
-- (void)_updateSmartAudioAccessory;
+- (void)_updateAccessory;
 - (id)_checkmarkImageForSmartAudio;
 - (id)_checkmarkAccessibilityLabelForSmartAudio;
 - (id)_checkmarkImageNameForSmartAudio;

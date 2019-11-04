@@ -17,6 +17,7 @@
     NSString *_customizationLabel;
 }
 
++ (id)systemCloseButtonItemWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)buttonTouchBarItemWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3 target:(id)arg4 action:(SEL)arg5;
 + (id)buttonTouchBarItemWithIdentifier:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)buttonTouchBarItemWithIdentifier:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;

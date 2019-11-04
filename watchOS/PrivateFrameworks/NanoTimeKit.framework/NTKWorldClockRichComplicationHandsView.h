@@ -8,21 +8,24 @@
 
 #import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@class CALayer, NSString;
+@class CALayer, NSString, UIColor;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKWorldClockRichComplicationHandsView : NTKAnalogHandsView <CLKMonochromeComplicationView>
 {
     CALayer *_pegDot;
     id <CLKMonochromeFilterProvider> _filterProvider;
+    UIColor *_pegDotColor;
 }
 
+@property(retain, nonatomic) UIColor *pegDotColor; // @synthesize pegDotColor=_pegDotColor;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)layoutSubviews;
 - (float)_timeAnimationFramesPerSecondForDevice:(id)arg1;
+- (int)displayedHour;
 - (id)initForDevice:(id)arg1;
 
 // Remaining properties

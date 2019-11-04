@@ -114,6 +114,7 @@
     NSArray *_payloadLongValues;
     NSArray *_payloadMassValues;
     NSArray *_payloadMediaDestinations;
+    NSArray *_payloadMediaItemGroups;
     NSArray *_payloadMediaItemValues;
     NSArray *_payloadMediaSearchs;
     NSArray *_payloadNotes;
@@ -178,6 +179,7 @@
 + (Class)payloadNoteType;
 + (Class)payloadMediaSearchType;
 + (Class)payloadMediaItemValueType;
++ (Class)payloadMediaItemGroupType;
 + (Class)payloadMediaDestinationType;
 + (Class)payloadMassValueType;
 + (Class)payloadLongValueType;
@@ -258,6 +260,7 @@
 @property(copy, nonatomic) NSArray *payloadNotes; // @synthesize payloadNotes=_payloadNotes;
 @property(copy, nonatomic) NSArray *payloadMediaSearchs; // @synthesize payloadMediaSearchs=_payloadMediaSearchs;
 @property(copy, nonatomic) NSArray *payloadMediaItemValues; // @synthesize payloadMediaItemValues=_payloadMediaItemValues;
+@property(copy, nonatomic) NSArray *payloadMediaItemGroups; // @synthesize payloadMediaItemGroups=_payloadMediaItemGroups;
 @property(copy, nonatomic) NSArray *payloadMediaDestinations; // @synthesize payloadMediaDestinations=_payloadMediaDestinations;
 @property(copy, nonatomic) NSArray *payloadMassValues; // @synthesize payloadMassValues=_payloadMassValues;
 @property(copy, nonatomic) NSArray *payloadLongValues; // @synthesize payloadLongValues=_payloadLongValues;
@@ -649,6 +652,10 @@
 @property(readonly, nonatomic) unsigned long long payloadMediaItemValuesCount;
 - (void)addPayloadMediaItemValue:(id)arg1;
 - (void)clearPayloadMediaItemValues;
+- (id)payloadMediaItemGroupAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long payloadMediaItemGroupsCount;
+- (void)addPayloadMediaItemGroup:(id)arg1;
+- (void)clearPayloadMediaItemGroups;
 - (id)payloadMediaDestinationAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long payloadMediaDestinationsCount;
 - (void)addPayloadMediaDestination:(id)arg1;

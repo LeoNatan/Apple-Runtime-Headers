@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (id)editItemEventToDetach;
 - (BOOL)editItemViewControllerShouldShowDetachAlert;
 - (BOOL)editItemViewControllerSave:(id)arg1;
+- (void)refreshCopiedEvents;
 - (BOOL)isPrivateEvent;
 - (BOOL)isReadOnlyDelegateCalendar;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;

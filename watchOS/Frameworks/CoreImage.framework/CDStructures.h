@@ -270,12 +270,6 @@ typedef struct {
 } CDStruct_c0454aff;
 
 typedef struct {
-    double _field1[4];
-    double _field2[2];
-    unsigned int _field3;
-} CDStruct_8b8affab;
-
-typedef struct {
     float _field1[4];
     float _field2[4];
     float _field3[4];

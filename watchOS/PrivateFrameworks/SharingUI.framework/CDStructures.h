@@ -38,3 +38,17 @@ typedef struct {
     unsigned int val[8];
 } CDStruct_4c969caf;
 
+typedef struct {
+    float _field1;
+    float _field2;
+    _Bool _field3;
+    _Bool _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+    float _field8;
+    float _field9;
+    float _field10;
+    float _field11;
+} CDStruct_be516c37;
+

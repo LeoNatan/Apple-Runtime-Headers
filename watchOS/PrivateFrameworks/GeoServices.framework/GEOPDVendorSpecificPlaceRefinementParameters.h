@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDVendorSpecificPlaceRefinementParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOStructuredAddress *_addressHint;
     NSData *_addressObjectHint;
@@ -24,6 +23,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _muid;
     NSString *_placeNameHint;
     NSString *_vendorId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _addressGeocodeAccuracyHint;
     int _placeTypeHint;
     int _resultProviderId;
@@ -107,6 +109,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasResultProviderId;
 @property(nonatomic) int resultProviderId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 contentProvider:(id)arg5;
 - (id)initWithMapItemToRefine:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 contentProvider:(id)arg3;
 - (id)initWithExternalBusinessID:(id)arg1 contentProvider:(id)arg2;

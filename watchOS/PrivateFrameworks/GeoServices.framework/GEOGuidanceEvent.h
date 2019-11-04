@@ -13,7 +13,6 @@
 @interface GEOGuidanceEvent : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOJunctionView *_junctionView;
     GEOVisualLaneGuidance *_laneGuidance;
@@ -21,6 +20,9 @@
     double _minSpeed;
     GEOSignGuidance *_signGuidance;
     GEOSpokenGuidance *_spokenGuidance;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _distanceZilchIndex;
     int _endValidDistance;
     int _eventType;
@@ -106,6 +108,8 @@
 @property(nonatomic) int endValidDistance;
 @property(nonatomic) _Bool hasStartValidDistance;
 @property(nonatomic) int startValidDistance;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

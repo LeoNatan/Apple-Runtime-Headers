@@ -6,43 +6,22 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/UIDocumentInteractionControllerDelegate-Protocol.h>
-#import <ActionKit/UIDocumentInteractionControllerDelegatePrivate-Protocol.h>
+@class NSArray;
 
-@class NSArray, NSString, UIDocumentInteractionController, WFFileRepresentation;
-
-@interface WFOpenInAction : WFAction <UIDocumentInteractionControllerDelegatePrivate, UIDocumentInteractionControllerDelegate>
+@interface WFOpenInAction : WFAction
 {
-    WFFileRepresentation *_sendingFile;
-    WFFileRepresentation *_retainedFile;
     NSArray *_contentClasses;
-    UIDocumentInteractionController *_document;
 }
 
-@property(retain, nonatomic) UIDocumentInteractionController *document; // @synthesize document=_document;
 @property(retain, nonatomic) NSArray *contentClasses; // @synthesize contentClasses=_contentClasses;
-@property(retain, nonatomic) WFFileRepresentation *retainedFile; // @synthesize retainedFile=_retainedFile;
-@property(nonatomic) __weak WFFileRepresentation *sendingFile; // @synthesize sendingFile=_sendingFile;
 - (void).cxx_destruct;
 - (id)selectedApp;
 - (id)outputContentClasses;
 - (id)inputContentClasses;
 - (void)updateContentClasses;
-- (id)excludedActivityTypesForDocumentInteractionController:(id)arg1;
-- (void)documentInteractionController:(id)arg1 didEndSendingToApplication:(id)arg2;
-- (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
-- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
 - (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
-- (void)openContent:(id)arg1 inApp:(id)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-- (void)runWithUIKitWidgetUserInterface:(id)arg1 input:(id)arg2;
-- (_Bool)showsAppPicker;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)openContentInSelectedApp:(id)arg1;
+- (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end
 

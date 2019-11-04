@@ -38,7 +38,7 @@
 - (id)synchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)obliterateShortcuts:(CDUnknownBlockType)arg1;
-- (_Bool)hasRunEventsInTheLast30DaysWithError:(id *)arg1;
+- (_Bool)hasRunEventsInTheLast5DaysWithError:(id *)arg1;
 - (void)runShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runShortcutWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -46,6 +46,7 @@
 - (void)checkTriggerStateWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fireTriggerWithIdentifier:(id)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getConfiguredTriggerDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)unregisterTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)refreshTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

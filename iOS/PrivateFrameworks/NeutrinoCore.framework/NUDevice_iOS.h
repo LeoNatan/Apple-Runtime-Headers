@@ -14,11 +14,11 @@
 }
 
 - (void).cxx_destruct;
-- (id)_newOpenGLRendererWithOptions:(id)arg1;
+- (id)_newOpenGLRendererWithOptions:(id)arg1 error:(out id *)arg2;
 - (id)_newMetalRendererWithOptions:(id)arg1;
-- (id)_newRendererWithOptions:(id)arg1;
-- (id)_newLowPriorityRenderer;
-- (id)_newRenderer;
+- (id)_newRendererWithOptions:(id)arg1 error:(out id *)arg2;
+- (id)_lowPriorityRenderer:(out id *)arg1;
+- (id)_newRenderer:(out id *)arg1;
 - (long long)_defaultSampleMode;
 - (long long)_openGLVirtualScreen;
 - (_Bool)hasOpenGLSupport;

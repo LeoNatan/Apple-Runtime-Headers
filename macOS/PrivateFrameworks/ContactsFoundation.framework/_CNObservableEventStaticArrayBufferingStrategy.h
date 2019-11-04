@@ -15,6 +15,7 @@
 
 @property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (void).cxx_destruct;
+- (BOOL)isSequenceTerminated;
 - (id)allEvents;
 - (void)addEvent:(id)arg1;
 - (id)initWithEvents:(id)arg1;

@@ -13,10 +13,12 @@
 @interface GEORPPostedBy : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_nickname;
     NSString *_userDsid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _role;
     struct {
         unsigned int has_role:1;
@@ -54,6 +56,8 @@
 - (id)roleAsString:(int)arg1;
 @property(nonatomic) _Bool hasRole;
 @property(nonatomic) int role;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

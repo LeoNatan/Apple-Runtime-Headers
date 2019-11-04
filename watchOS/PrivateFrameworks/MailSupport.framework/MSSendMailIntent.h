@@ -6,22 +6,31 @@
 
 #import <Intents/INIntent.h>
 
+#import <MailSupport/EFPubliclyDescribable-Protocol.h>
+
 @class NSArray, NSNumber, NSString;
 
-@interface MSSendMailIntent : INIntent
+@interface MSSendMailIntent : INIntent <EFPubliclyDescribable>
 {
 }
 
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
+@property(readonly, copy) NSString *description;
+- (id)_privacySafeDescription;
 
 // Remaining properties
 @property(copy, nonatomic) NSArray *attachments; // @dynamic attachments;
 @property(copy, nonatomic) NSArray *bcc; // @dynamic bcc;
 @property(copy, nonatomic) NSString *body; // @dynamic body;
 @property(copy, nonatomic) NSArray *cc; // @dynamic cc;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
 @property(copy, nonatomic) NSNumber *isDraft; // @dynamic isDraft;
 @property(copy, nonatomic) NSString *sender; // @dynamic sender;
 @property(copy, nonatomic) NSString *subject; // @dynamic subject;
+@property(readonly) Class superclass;
 @property(copy, nonatomic) NSArray *to; // @dynamic to;
 @property(copy, nonatomic) NSString *userTypedContent; // @dynamic userTypedContent;
+
 @end
 

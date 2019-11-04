@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: configurationManager
     // Error parsing type: , name: router
+    // Error parsing type: , name: familySharingLandingPageLauncher
 }
 
 - (void).cxx_destruct;

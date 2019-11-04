@@ -33,19 +33,21 @@
 - (void)statusBarDidChange;
 - (void)handleTritiumToolCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (id)_writeAOTResultToDisk:(id)arg1 withRequest:(id)arg2 face:(id)arg3 prefix:(id)arg4 suffix:(id)arg5;
+- (double)_freeStorageInGB;
+- (id)_writeAOTResultToDisk:(id)arg1 withRequest:(id)arg2 face:(id)arg3 prefix:(id)arg4 suffix:(id)arg5 printBlock:(CDUnknownBlockType)arg6 folderName:(id)arg7;
 - (id)_generateImageFromWindow;
 - (id)_requestFromState:(id)arg1 outputOption:(id)arg2 includeStatusBarOption:(id)arg3 generateMicaFileOption:(id)arg4 randomizedComplicationDataOption:(id)arg5 randomizedDigitalTimeLabelScaleOption:(id)arg6 requestDate:(id)arg7 renderFrameSpecifier:(id)arg8 randomizedComplicationStartDate:(id)arg9;
+- (id)_generateSnapshotWithRequest:(id)arg1 face:(id)arg2 printBlock:(CDUnknownBlockType)arg3 folderName:(id)arg4;
 - (id)_generateSnapshotWithRequest:(id)arg1;
 - (id)_frameSpecifierFromRenderDate:(id)arg1 state:(unsigned int)arg2;
 - (unsigned int)_stateFromOptionString:(id)arg1;
 - (void)_printToTritiumTool:(id)arg1;
 - (void)_handleSnapshotCommand:(id)arg1;
-- (void)_handleBurnInStudyCommand:(id)arg1;
+- (void)_handleBurnInStudyAutoCommand:(id)arg1;
 - (void)_handleTestDigitalTimeLabelCommand:(id)arg1;
 - (_Bool)_canHandleAnyCommand;
 - (void)dealloc;
-- (id)initWithStatusBarClass:(Class)arg1 faceViewSynchronizer:(CDUnknownBlockType)arg2;
+- (id)initWithStatusBarClass:(Class)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

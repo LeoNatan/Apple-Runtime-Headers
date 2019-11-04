@@ -7,8 +7,9 @@
 #import <objc/NSObject.h>
 
 #import <UIFoundation/NSCopying-Protocol.h>
+#import <UIFoundation/_NSDataSourceSnapshot-Protocol.h>
 
-@interface _NSDataSourceSnapshotter : NSObject <NSCopying>
+@interface _NSDataSourceSnapshotter : NSObject <NSCopying, _NSDataSourceSnapshot>
 {
     struct _NSRange *_sectionRanges;
     long long _sectionCount;

@@ -18,6 +18,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)documentFromSerializedData:(id)arg1 replicaIDSource:(id)arg2 forKey:(id)arg3 ofObjectID:(id)arg4;
 @property(retain, nonatomic) TTMergeableStringVersionedDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) REMReplicaIDSource *replicaIDSource; // @synthesize replicaIDSource=_replicaIDSource;
 - (void).cxx_destruct;

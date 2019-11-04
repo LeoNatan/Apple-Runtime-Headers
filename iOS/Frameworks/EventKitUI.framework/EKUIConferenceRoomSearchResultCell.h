@@ -17,6 +17,8 @@
 
 - (void).cxx_destruct;
 - (void)reloadWithConferenceRoom:(id)arg1;
+- (void)updateSeparatorInset;
+- (void)safeAreaInsetsDidChange;
 - (id)description;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

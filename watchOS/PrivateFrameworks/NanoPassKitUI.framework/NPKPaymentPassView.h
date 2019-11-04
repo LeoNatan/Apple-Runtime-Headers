@@ -10,6 +10,7 @@
 
 @interface NPKPaymentPassView : NPKPassView
 {
+    _Bool _allowDynamicView;
     _Bool _shrink;
     _Bool _useDemoArt;
     _Bool _useRasterizedPass;
@@ -21,6 +22,9 @@
     PKTransactionDataOverlayCardFaceView *_dynamicFaceView;
 }
 
++ (id)getCachedDynamicFaceViewForPass:(id)arg1;
++ (void)cacheDynamicFaceView:(id)arg1 forPass:(id)arg2;
++ (id)sharedCachedDynamicFaceViewsDict;
 + (void)clearCache;
 + (struct CGSize)_sizePreservingAspectRatioForCardArt:(id)arg1 givenMaxConstraints:(struct CGSize)arg2;
 + (float)shrunkenCardHeight;
@@ -35,16 +39,18 @@
 @property(nonatomic) _Bool useDemoArt; // @synthesize useDemoArt=_useDemoArt;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;
 - (void).cxx_destruct;
-- (void)resetDynamicView;
-- (_Bool)hasValidDynamicView;
+- (void)_recycleDynamicViewIfNecessary;
 - (void)_refreshAppleCardOnAppForeground:(id)arg1;
 - (void)_setupDynamicViewForPassIfNecessary:(id)arg1;
 - (void)setShowFullPass:(_Bool)arg1;
 - (void)_setPass:(id)arg1;
+- (void)prepareForReuse;
 - (_Bool)showFullPass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)updateUI;
+- (_Bool)isDynamicViewAllowed;
+- (void)setAllowDynamicView:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

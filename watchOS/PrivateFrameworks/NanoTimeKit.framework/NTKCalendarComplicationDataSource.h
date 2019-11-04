@@ -6,12 +6,12 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
+#import <NanoTimeKit/CLKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
 @class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NTKCalendarComplicationDataSource : NTKComplicationDataSource <NTKTritiumRandomizedComplicationEntryProvider>
+@interface NTKCalendarComplicationDataSource : NTKComplicationDataSource <CLKTritiumRandomizedComplicationEntryProvider>
 {
     NSObject<OS_dispatch_queue> *_loadQueue;
 }

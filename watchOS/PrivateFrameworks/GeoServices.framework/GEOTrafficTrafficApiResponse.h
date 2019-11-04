@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficTrafficApiResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     struct GEOSessionID _responseId;
     NSMutableArray *_incidentSnapshots;
     GEOTrafficResponseMetaData *_metaData;
     NSMutableArray *_speedSnapshots;
     NSMutableArray *_trafficSnapshots;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_responseId:1;
         unsigned int read_incidentSnapshots:1;
@@ -75,6 +77,8 @@ __attribute__((visibility("hidden")))
 - (void)clearSpeedSnapshots;
 @property(retain, nonatomic) NSMutableArray *speedSnapshots;
 - (void)_readSpeedSnapshots;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

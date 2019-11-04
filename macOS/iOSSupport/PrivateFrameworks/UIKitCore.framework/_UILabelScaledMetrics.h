@@ -14,21 +14,23 @@ __attribute__((visibility("hidden")))
     double _actualScaleFactor;
     double _baselineOffset;
     double _scaledBaselineOffset;
-    double _unscaledFirstBaselineOffset;
+    double _scaledLineHeight;
     long long _measuredNumberOfLines;
     NSAttributedString *_scaledAttributedText;
+    double _unscaledFirstBaselineOffset;
     struct CGSize _targetSize;
     struct CGSize _scaledSize;
     struct CGSize _unscaledAndPossiblyTooLargeSize;
 }
 
+@property(nonatomic) double unscaledFirstBaselineOffset; // @synthesize unscaledFirstBaselineOffset=_unscaledFirstBaselineOffset;
+@property(nonatomic) struct CGSize unscaledAndPossiblyTooLargeSize; // @synthesize unscaledAndPossiblyTooLargeSize=_unscaledAndPossiblyTooLargeSize;
 @property(retain, nonatomic) NSAttributedString *scaledAttributedText; // @synthesize scaledAttributedText=_scaledAttributedText;
 @property(nonatomic) long long measuredNumberOfLines; // @synthesize measuredNumberOfLines=_measuredNumberOfLines;
-@property(nonatomic) double unscaledFirstBaselineOffset; // @synthesize unscaledFirstBaselineOffset=_unscaledFirstBaselineOffset;
+@property(nonatomic) double scaledLineHeight; // @synthesize scaledLineHeight=_scaledLineHeight;
 @property(nonatomic) double scaledBaselineOffset; // @synthesize scaledBaselineOffset=_scaledBaselineOffset;
 @property(nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
 @property(nonatomic) double actualScaleFactor; // @synthesize actualScaleFactor=_actualScaleFactor;
-@property(nonatomic) struct CGSize unscaledAndPossiblyTooLargeSize; // @synthesize unscaledAndPossiblyTooLargeSize=_unscaledAndPossiblyTooLargeSize;
 @property(nonatomic) struct CGSize scaledSize; // @synthesize scaledSize=_scaledSize;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 - (void).cxx_destruct;

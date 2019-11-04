@@ -16,6 +16,7 @@
     unsigned int _pmConnection;
     struct IONotificationPort *_pmPort;
     unsigned int _pmNotifier;
+    unsigned int _batteryEntry;
     NSHashTable *_delegates;
     double _currentLevel;
     _Bool _isExternalPowerConnected;

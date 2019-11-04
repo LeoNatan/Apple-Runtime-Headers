@@ -9,29 +9,33 @@
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
 #import <AppleMediaServices/AMSURLProtocolDelegate-Protocol.h>
 
-@class ACAccount, AMSURLSession, NSString;
-@protocol AMSBagProtocol;
+@class ACAccount, AMSProcessInfo, NSString;
+@protocol AMSBagProtocol, NSURLSessionDelegate><AMSURLProtocolDelegate;
 
 @interface AMSSyncPasswordSettingsTask : AMSTask <AMSURLProtocolDelegate, AMSBagConsumer>
 {
     ACAccount *_account;
+    id <AMSBagProtocol> _bag;
+    AMSProcessInfo *_clientInfo;
+    id <NSURLSessionDelegate><AMSURLProtocolDelegate> _delegate;
     unsigned long long _freeSetting;
     unsigned long long _paidSetting;
-    AMSURLSession *_session;
-    id <AMSBagProtocol> _bag;
 }
 
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
 + (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (unsigned long long)paidPasswordSettingFromServerValue:(unsigned long long)arg1;
++ (unsigned long long)freePasswordSettingFromServerValue:(unsigned long long)arg1;
 + (id)serverValueForPaidPasswordSetting:(unsigned long long)arg1;
 + (id)serverValueForFreePasswordSetting:(unsigned long long)arg1;
-@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-@property(retain, nonatomic) AMSURLSession *session; // @synthesize session=_session;
-@property(nonatomic) unsigned long long paidSetting; // @synthesize paidSetting=_paidSetting;
-@property(nonatomic) unsigned long long freeSetting; // @synthesize freeSetting=_freeSetting;
-@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
+@property(readonly, nonatomic) unsigned long long paidSetting; // @synthesize paidSetting=_paidSetting;
+@property(readonly, nonatomic) unsigned long long freeSetting; // @synthesize freeSetting=_freeSetting;
+@property(readonly, nonatomic) __weak id <NSURLSessionDelegate><AMSURLProtocolDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
+@property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
+@property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (id)performSync;
 - (id)initWithAccount:(id)arg1 freeSetting:(unsigned long long)arg2 paidSetting:(unsigned long long)arg3 delegate:(id)arg4 bag:(id)arg5;

@@ -12,7 +12,6 @@
 
 @interface AOSUIProfileViewUtility : NSObject <AOSUIProfileRemoteViewControllerDelegate>
 {
-    CDUnknownBlockType _updateOverlayBlock;
     CDUnknownBlockType _updateOverlayPrefPaneBlock;
     NSRemoteViewController *_remoteViewController;
     NSViewController *_cacheViewController;
@@ -27,13 +26,10 @@
 @property(retain) NSViewController *cacheViewController; // @synthesize cacheViewController=_cacheViewController;
 @property(retain) NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(copy) CDUnknownBlockType updateOverlayPrefPaneBlock; // @synthesize updateOverlayPrefPaneBlock=_updateOverlayPrefPaneBlock;
-@property(copy) CDUnknownBlockType updateOverlayBlock; // @synthesize updateOverlayBlock=_updateOverlayBlock;
 - (void).cxx_destruct;
 - (void)_updateImageCache;
 - (void)profileRemoteViewController_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(id)arg2;
-- (void)profileRemoteViewController_hideOverlay:(BOOL)arg1;
 - (void)updateOverlay:(CDUnknownBlockType)arg1;
-- (void)shouldHideOverlay:(CDUnknownBlockType)arg1;
 - (id)serviceProxy;
 @property(readonly) NSViewController *viewController; // @dynamic viewController;
 - (void)_updateProfileViewFromCache;

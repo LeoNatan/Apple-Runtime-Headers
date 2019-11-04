@@ -10,7 +10,7 @@
 #import <WorkflowUI/WFSlotTemplateViewDelegate-Protocol.h>
 #import <WorkflowUI/WFVariableDelegate-Protocol.h>
 
-@class NSDictionary, NSHashTable, NSMutableDictionary, NSSet, NSString, UIFont, WFModuleSummaryEditor, WFModuleSummaryTemplateBuilder, WFSlotIdentifier, WFSlotTemplateView, WFVariable;
+@class NSDictionary, NSHashTable, NSMutableDictionary, NSSet, NSString, UIColor, UIFont, WFModuleSummaryEditor, WFModuleSummaryTemplateBuilder, WFSlotIdentifier, WFSlotTemplateView, WFVariable;
 @protocol WFModuleSummaryViewDelegate, WFVariableProvider, WFVariableUIDelegate;
 
 @interface WFModuleSummaryView : UIView <WFSlotTemplateViewDelegate, WFModuleSummaryEditorDelegate, WFVariableDelegate>
@@ -33,7 +33,7 @@
     NSHashTable *_variablesBeingObserved;
 }
 
-+ (double)heightForWidth:(double)arg1 withSummaryFormatString:(id)arg2 parameters:(id)arg3 editableParameters:(id)arg4 parameterStates:(id)arg5 stagedParameterStates:(id)arg6 font:(id)arg7 unpopulatedFont:(id)arg8 textAlignment:(long long)arg9;
++ (double)heightForWidth:(double)arg1 withSummaryFormatString:(id)arg2 parameters:(id)arg3 editableParameters:(id)arg4 parameterStates:(id)arg5 stagedParameterStates:(id)arg6 horizontalPadding:(double)arg7 font:(id)arg8 unpopulatedFont:(id)arg9 textAlignment:(long long)arg10;
 + (id)parameterStatesByApplyingStaging:(id)arg1 toOriginal:(id)arg2;
 + (void)enumerateVariableAttachmentsInContents:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (id)paragraphStyleWithAlignment:(long long)arg1;
@@ -55,13 +55,13 @@
 @property(readonly, copy, nonatomic) NSString *summaryFormatString; // @synthesize summaryFormatString=_summaryFormatString;
 - (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
-- (void)updateVariableAttachmentFontsInContents:(id)arg1;
+- (void)updateVariableAttachmentAppearanceInContents:(id)arg1;
 - (void)updateVariableObservationsWithContents:(id)arg1;
 - (void)summaryEditor:(id)arg1 willUpdateVariable:(id)arg2;
 - (id)transformParameterStateForSerialization:(id)arg1 inEditor:(id)arg2;
 - (void)summaryEditor:(id)arg1 didCommitParameterState:(id)arg2;
 - (void)summaryEditor:(id)arg1 didStageParameterState:(id)arg2;
-- (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(_Bool)arg2;
+- (void)summaryEditorDidFinish:(id)arg1 returnToKeyboard:(_Bool)arg2 withTextAttachmentToEdit:(id)arg3;
 - (void)summaryEditorDidRequestTextEntry:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startEditingForParameterKey:(id)arg1;
@@ -76,6 +76,9 @@
 - (void)slotTemplateViewDidInvalidateSize:(id)arg1;
 - (void)slotTemplateView:(id)arg1 deletePressedOnUnpopulatedSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didEndTypingInSlotWithIdentifier:(id)arg2;
+- (void)slotTemplateView:(id)arg1 typingDidPasteWithOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateView:(id)arg1 typingDidCopyWithOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateView:(id)arg1 typingDidCutWithOriginalBlock:(CDUnknownBlockType)arg2;
 - (void)slotTemplateView:(id)arg1 didChangeText:(id)arg2 forSlotWithIdentifier:(id)arg3;
 - (_Bool)slotTemplateView:(id)arg1 shouldChangeText:(id)arg2 forSlotWithIdentifier:(id)arg3;
 - (void)slotTemplateView:(id)arg1 willBeginTypingInSlotWithIdentifier:(id)arg2 usingTextEntry:(id)arg3 allowMultipleLines:(_Bool *)arg4;
@@ -85,6 +88,10 @@
 - (_Bool)slotTemplateView:(id)arg1 shouldLongPressSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didDeselectSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didSelectSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;
+- (void)tintColorDidChange;
+- (void)setDisabledSlotTitleColor:(id)arg1 backgroundColor:(id)arg2 animated:(_Bool)arg3;
+@property(readonly, nonatomic) UIColor *disabledSlotBackgroundColor;
+@property(readonly, nonatomic) UIColor *disabledSlotTitleColor;
 @property(nonatomic) _Bool extendSlotBackgroundOffEdges;
 @property(nonatomic) long long textAlignment;
 @property(nonatomic) double horizontalPadding;

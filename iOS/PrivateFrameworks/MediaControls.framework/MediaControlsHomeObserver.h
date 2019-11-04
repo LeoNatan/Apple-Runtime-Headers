@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <MediaControls/HFHomeManagerObserver-Protocol.h>
-#import <MediaControls/HFHomeObserver-Protocol.h>
+#import <MediaControls/HMHomeDelegate-Protocol.h>
+#import <MediaControls/HMHomeManagerDelegate-Protocol.h>
 
 @class HMHomeManager, NSMutableSet, NSString;
 @protocol MediaControlsHomeObserverDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface MediaControlsHomeObserver : NSObject <HFHomeObserver, HFHomeManagerObserver>
+@interface MediaControlsHomeObserver : NSObject <HMHomeDelegate, HMHomeManagerDelegate>
 {
     HMHomeManager *_homeManager;
     NSMutableSet *_knownUIDs;
@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
+- (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
+- (void)homeManager:(id)arg1 didAddHome:(id)arg2;
 - (void)homeManagerDidUpdateHomes:(id)arg1;
 - (void)_notifyDelegate;
 - (void)_updateUIDs;

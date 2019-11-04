@@ -223,7 +223,8 @@
 - (void)sendData:(id)arg1 toCallID:(unsigned int)arg2 encrypted:(BOOL)arg3;
 - (void)sendARPLData:(id)arg1 toCallID:(unsigned int)arg2;
 - (void)cleanupManager;
-- (id)newSessionWithDeviceRole:(int)arg1;
+- (id)newSessionWithDeviceRole:(int)arg1 reportingHierarchyToken:(id)arg2;
+- (unsigned int)initializeNewCallWithDeviceRole:(int)arg1 reportingHierarchyToken:(id)arg2;
 - (unsigned int)initializeNewCallWithDeviceRole:(int)arg1;
 - (void)dealloc;
 - (id)initWithClientPid:(int)arg1;

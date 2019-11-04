@@ -10,17 +10,17 @@
 
 @interface EDMessageQueryParser : NSObject
 {
-    EDMessageQueryTransformer *_transformer;
     EDSearchableIndex *_searchableIndex;
     EFSQLObjectPropertyMapper *_sqlPropertyMapper;
     EFSearchableIndexObjectPropertyMapper *_searchableIndexMapper;
+    EDMessageQueryTransformer *_transformer;
 }
 
 + (id)performSearchableIndexQueryPredicate:(id)arg1 propertyMapper:(id)arg2 searchableIndex:(id)arg3;
+@property(readonly, nonatomic) EDMessageQueryTransformer *transformer; // @synthesize transformer=_transformer;
 @property(readonly, nonatomic) EFSearchableIndexObjectPropertyMapper *searchableIndexMapper; // @synthesize searchableIndexMapper=_searchableIndexMapper;
 @property(readonly, nonatomic) EFSQLObjectPropertyMapper *sqlPropertyMapper; // @synthesize sqlPropertyMapper=_sqlPropertyMapper;
 @property(readonly, nonatomic) EDSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
-@property(readonly, nonatomic) EDMessageQueryTransformer *transformer; // @synthesize transformer=_transformer;
 - (void).cxx_destruct;
 - (id)sqlQueryForQuery:(id)arg1 predicate:(id)arg2;
 - (id)sqlQueryForQuery:(id)arg1;

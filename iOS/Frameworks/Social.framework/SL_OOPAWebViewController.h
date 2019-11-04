@@ -36,6 +36,7 @@
 - (void)_updateNavigationPromptWithActiveURL:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)webView:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
 - (void)_evaluateDocumentTitleForWebView:(id)arg1 retryCount:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;

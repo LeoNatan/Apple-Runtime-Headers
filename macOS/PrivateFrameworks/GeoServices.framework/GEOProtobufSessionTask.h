@@ -50,6 +50,7 @@
 - (void)start;
 @property(readonly, nonatomic) CDStruct_d1a7ebee requestKind;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 - (id)initWithSession:(id)arg1 taskIdentifier:(unsigned long long)arg2 requestTypeCode:(unsigned int)arg3 responseClass:(Class)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 requestKind:(CDStruct_d1a7ebee)arg7 auditToken:(id)arg8 throttleToken:(id)arg9;
 - (id)init;
 - (void)completeWithCancelled:(BOOL)arg1 error:(id)arg2 response:(id)arg3;
@@ -66,7 +67,6 @@
 - (void)dataSession:(id)arg1 didCompleteTask:(id)arg2;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

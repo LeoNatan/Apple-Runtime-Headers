@@ -13,7 +13,6 @@
 @interface GEOPlaceSearchResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOMapRegion *_mapRegion;
     NSMutableArray *_namedFeatures;
@@ -22,6 +21,9 @@
     NSMutableArray *_suggestionEntryLists;
     NSData *_suggestionMetadata;
     double _turnaroundTime;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _statusCodeInfo;
     int _status;
     _Bool _isChainResultSet;
@@ -109,6 +111,8 @@
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) int status;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

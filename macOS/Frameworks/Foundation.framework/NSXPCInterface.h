@@ -17,7 +17,7 @@
 
 + (id)signatureForBlock:(id)arg1;
 + (id)interfaceWithProtocol:(id)arg1;
-- (void)_methodSignature:(id *)arg1 allowedClasses:(id *)arg2 forSelector:(SEL)arg3 isReply:(BOOL)arg4;
+- (BOOL)_selectorIsAllowed:(SEL)arg1 isReply:(BOOL)arg2 methodSignature:(id *)arg3 allowedClasses:(id *)arg4;
 - (Class)_returnClassForSelector:(SEL)arg1;
 - (id)_interfaceForArgument:(unsigned long long)arg1 ofSelector:(SEL)arg2 reply:(BOOL)arg3;
 - (id)_allowedClassesForSelector:(SEL)arg1 reply:(BOOL)arg2;

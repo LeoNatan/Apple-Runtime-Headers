@@ -8,12 +8,13 @@
 
 #import <Home/NSURLSessionDelegate-Protocol.h>
 
-@class BKSProcessAssertion, HMCameraClipFetchVideoAssetContextOperation, HMCameraProfile, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSOperationQueue, NSString, NSTimer, NSURLSession, NSURLSessionDataTask;
+@class BKSProcessAssertion, HMCameraClipFetchVideoAssetContextOperation, HMCameraProfile, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSOperationQueue, NSString, NSTimer, NSURL, NSURLSession, NSURLSessionDataTask;
 @protocol HFCameraClipFeedbackObserving;
 
 @interface HFCameraClipFeedbackManager : NSObject <NSURLSessionDelegate>
 {
     _Bool _isEligibleToAddFailedClipsToPendingQueue;
+    _Bool _disableCertificatePinning;
     CDUnknownBlockType _sessionCompletionHandler;
     id <HFCameraClipFeedbackObserving> _delegate;
     NSString *_backgroundURLSessionIdentifier;
@@ -28,9 +29,15 @@
     HMCameraClipFetchVideoAssetContextOperation *_videoDownloadOperation;
     BKSProcessAssertion *_uploadsInProgressAssertion;
     HMCameraProfile *_currentCameraProfile;
+    unsigned long long _environment;
+    unsigned long long _apiVersion;
+    NSString *_currentApiKey;
+    NSString *_currentWrappedApiKey;
+    NSURL *_currentUploadURL;
 }
 
 + (id)_cameraProfileFromKey:(id)arg1;
++ (id)submissionKeyForCameraClip:(id)arg1 fromCameraProfile:(id)arg2;
 + (id)_prefixStringWithoutDate:(id)arg1;
 + (id)_appendDateStringToString:(id)arg1;
 + (id)dateStringFromDate:(id)arg1;
@@ -38,6 +45,12 @@
 + (id)feedbackRequestURLForClipUUIDString:(id)arg1;
 + (id)backgroundURLSessionIdentifier;
 + (id)sharedManager;
+@property(retain, nonatomic) NSURL *currentUploadURL; // @synthesize currentUploadURL=_currentUploadURL;
+@property(retain, nonatomic) NSString *currentWrappedApiKey; // @synthesize currentWrappedApiKey=_currentWrappedApiKey;
+@property(retain, nonatomic) NSString *currentApiKey; // @synthesize currentApiKey=_currentApiKey;
+@property(nonatomic) _Bool disableCertificatePinning; // @synthesize disableCertificatePinning=_disableCertificatePinning;
+@property(nonatomic) unsigned long long apiVersion; // @synthesize apiVersion=_apiVersion;
+@property(nonatomic) unsigned long long environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) HMCameraProfile *currentCameraProfile; // @synthesize currentCameraProfile=_currentCameraProfile;
 @property(retain, nonatomic) BKSProcessAssertion *uploadsInProgressAssertion; // @synthesize uploadsInProgressAssertion=_uploadsInProgressAssertion;
 @property(retain, nonatomic) HMCameraClipFetchVideoAssetContextOperation *videoDownloadOperation; // @synthesize videoDownloadOperation=_videoDownloadOperation;
@@ -59,7 +72,10 @@
 - (_Bool)serviceNeedsToContinueInBackground;
 - (id)_cameraProfileKeyFromSubmissionKey:(id)arg1;
 - (id)_cameraClipKeyFromSubmissionKey:(id)arg1;
-- (id)submissionKeyForCameraClip:(id)arg1 fromCameraProfile:(id)arg2;
+- (_Bool)_isValidSubmissionKey:(id)arg1;
+- (void)_cleanUpLocalFilesForIdentifier:(id)arg1;
+- (void)_removeFileAtLocation:(id)arg1;
+- (id)_encryptRecording:(id)arg1 usingKey:(id)arg2;
 - (id)_appendDateStringToString:(id)arg1;
 - (id)_identifierFromString:(id)arg1;
 - (void)_prepareQueuesForResumptionOfService;
@@ -73,10 +89,14 @@
 - (void)_beginNextSubmissionProcessForIdentifier:(id)arg1;
 - (void)_finalizeHandlingOfIdentifier:(id)arg1;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)_canChallengeBypassCertificatePinning:(id)arg1;
+- (_Bool)_canBypassCertificatePinning;
 - (void)_failAttemptToUploadCurrentIdentifier;
 - (void)_removePendingIdentifier:(id)arg1;
 - (void)_removeFailureIdentifier:(id)arg1;
 - (id)_previousFailureIdentifierForIdentifier:(id)arg1;
+- (id)feedbackServiceURL;
+- (id)feedbackServiceHostName;
 - (void)resumeServiceForURLSessionIdentifier:(id)arg1;
 - (_Bool)didPreviouslySubmitCameraClip:(id)arg1;
 - (void)submitClipsFromCameraProfile:(id)arg1;

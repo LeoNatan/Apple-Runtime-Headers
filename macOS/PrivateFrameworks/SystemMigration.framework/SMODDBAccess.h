@@ -36,6 +36,8 @@
 - (id)entryAtPath:(id)arg1;
 - (id)entriesAtPath:(id)arg1;
 - (BOOL)replaceUserRecord:(id)arg1 withRecord:(id)arg2 attributes:(id)arg3 password:(id)arg4 options:(unsigned int)arg5 error:(id *)arg6;
+- (BOOL)validatePassword:(id)arg1 againstSecureTokenForUser:(id)arg2;
+- (BOOL)userIsASecureTokenHolder:(id)arg1;
 - (BOOL)enableSecureTokenForUser:(id)arg1 withPassword:(id)arg2 andDiskPassword:(id)arg3 returningError:(id *)arg4;
 - (BOOL)establishCredentialsForSecureTokenWithName:(id)arg1 password:(id)arg2 error:(id *)arg3;
 - (void)dealloc;

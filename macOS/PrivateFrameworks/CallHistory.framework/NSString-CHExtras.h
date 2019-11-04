@@ -8,6 +8,7 @@
 
 @interface NSString (CHExtras)
 + (id)ch_stringByBase64EncodingData:(id)arg1;
++ (id)ch_stringWithCHTransactionType:(unsigned long long)arg1;
 + (id)ch_stringWithCHRecentCallVerificationStatus:(long long)arg1;
 - (id)ch_base64DecodedData;
 @end

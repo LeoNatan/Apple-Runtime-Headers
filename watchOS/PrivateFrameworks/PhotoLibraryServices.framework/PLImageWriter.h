@@ -32,7 +32,9 @@
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
 + (_Bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 finalAssetSize:(struct CGSize)arg6 isSubstandardRender:(_Bool)arg7;
++ (id)_assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2 assetType:(short)arg3;
 + (id)assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
++ (id)_assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2 assetType:(short)arg3;
 + (id)assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
 + (id)assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
@@ -43,6 +45,7 @@
 + (id)deferredPhotoPreviewDestinationURLForPrimaryAssetURL:(id)arg1;
 + (_Bool)isSpatialOverCaptureURL:(id)arg1;
 + (id)spatialOverCaptureDestinationURLForPrimaryAssetURL:(id)arg1;
++ (_Bool)_requiresAssetUUIDForJobType:(id)arg1;
 + (_Bool)_requiresIndicatorFileForJobType:(id)arg1;
 - (void).cxx_destruct;
 - (void)enqueueAutoDeleteEmptyAlbumJobWithAlbumID:(id)arg1;
@@ -66,7 +69,7 @@
 - (id)_fetchPhotoAssetForUUID:(id)arg1 moc:(id)arg2;
 - (void)_handleCameraMetadataCrashRecovery:(id)arg1;
 - (void)_handleAvalancheCrashRecovery:(id)arg1;
-- (void)_processIngestedSyncedAssetJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_processSyncClientSaveJobsJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cleanupFilesInLibrary:(id)arg1 afteriTunesSyncBeforeDate:(id)arg2;
 - (void)processSyncSaveJob:(id)arg1 library:(id)arg2 albumMap:(id)arg3;
 - (void)_resetSyncedAssetsDCIMDirectory;

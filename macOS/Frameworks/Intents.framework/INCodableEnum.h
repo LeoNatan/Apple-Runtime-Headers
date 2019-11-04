@@ -10,11 +10,14 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INCodableLocalizationTable, NSArray, NSString;
+@class INCodableLocalizationTable, NSArray, NSMutableDictionary, NSString;
 
 @interface INCodableEnum : NSObject <NSSecureCoding, NSCopying, INCodableCoding>
 {
     INCodableLocalizationTable *_localizationTable;
+    NSString *_enumValueKeyPrefix;
+    NSString *_enumValueSynonymKeyPrefix;
+    NSMutableDictionary *_dictionaryKeysForCacheGroup;
     NSString *_name;
     NSString *_displayName;
     NSString *_displayNameID;
@@ -30,6 +33,7 @@
 @property(readonly, copy, nonatomic) NSString *displayNameID; // @synthesize displayNameID=_displayNameID;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(retain, nonatomic) NSMutableDictionary *_dictionaryKeysForCacheGroup; // @synthesize _dictionaryKeysForCacheGroup;
 @property(copy, nonatomic, setter=_setLocalizationTable:) INCodableLocalizationTable *_localizationTable; // @synthesize _localizationTable;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
@@ -37,8 +41,12 @@
 - (id)dictionaryRepresentationForLanguage:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
+- (id)_dictionaryKeyForKeyPath:(id)arg1 object:(id)arg2;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
-- (id)keyPrefix;
+@property(readonly, copy, nonatomic) NSString *_enumValueSynonymKeyPrefix; // @synthesize _enumValueSynonymKeyPrefix;
+@property(readonly, copy, nonatomic) NSString *_enumValueKeyPrefix; // @synthesize _enumValueKeyPrefix;
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)localizedDisplayNameForLanguage:(id)arg1;
 @property(readonly, copy) NSString *localizedDisplayName;
 - (BOOL)isEqual:(id)arg1;

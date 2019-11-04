@@ -39,6 +39,7 @@
 - (void)rebuildMomentsDeletingExistingMoments:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
 - (void)momentGenerationStatusWithReply:(void (^)(NSString *))arg1;
 - (void)recoverAssetsInInconsistentCloudState;
+- (void)identifyAssetsWithInconsistentCloudState;
 - (void)asynchronousUnloadImageFilesForAssetWithObjectURI:(NSURL *)arg1 minimumFormat:(unsigned short)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)statusWithReply:(void (^)(NSString *))arg1;
 @end

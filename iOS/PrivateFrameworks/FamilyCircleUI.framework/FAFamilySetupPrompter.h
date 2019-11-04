@@ -29,7 +29,6 @@
 - (void)_startFamilySetupFlowWithEligibilityResponse:(id)arg1;
 - (void)_goToFamilySetup;
 - (void)_goToInvitations;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)_showUnderageAlertWithEligibilityResponse:(id)arg1;
 - (void)_showPendingInvitesDialog;
 - (void)_showConfirmationForStartingFamilySetupWithPendingInvite;

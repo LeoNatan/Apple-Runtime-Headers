@@ -17,8 +17,15 @@
 }
 
 + (id)mergePreviousOrdering:(id)arg1 incomingOrdering:(id)arg2 outgoingOrdering:(id)arg3 sendOutgoingChange:(_Bool *)arg4 saveLocalChange:(_Bool *)arg5;
-+ (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 andOutgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 detectingDuplicateWorkflowsInDatabase:(id)arg5 outWorkflowIDsToRename:(id *)arg6 outLocalWorkflowsToDelete:(id *)arg7;
++ (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 outgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 incomingOrderedWorkflowIDs:(id)arg5 outgoingOrderedWorkflowIDs:(id)arg6 detectingDuplicateWorkflowsInDatabase:(id)arg7 outWorkflowIDsToRename:(id *)arg8 outLocalWorkflowsToDelete:(id *)arg9;
++ (void)setVoiceShortcutMigrationDidSync:(_Bool)arg1;
++ (_Bool)voiceShortcutMigrationDidSync;
++ (void)setVoiceShortcutMigrationDidRun:(_Bool)arg1;
++ (_Bool)voiceShortcutMigrationDidRun;
++ (void)setIgnoresUserDeletedZoneErrors:(_Bool)arg1;
++ (_Bool)ignoresUserDeletedZoneErrors;
 + (_Bool)isSyncOrderingEnabled;
++ (void)setSyncEnabled:(_Bool)arg1;
 + (_Bool)isSyncEnabled;
 + (void)initialize;
 @property(readonly, nonatomic) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
@@ -31,7 +38,7 @@
 - (_Bool)buildOutgoingChangesFromDatabase:(id)arg1 sendAllChanges:(_Bool)arg2 outChangedWorkflows:(out id *)arg3 outPreSyncHashes:(out id *)arg4 outDeletedWorkflowIDs:(out id *)arg5 outOrderedWorkflowIDs:(out id *)arg6;
 - (void)pruneIncomingChanges:(id)arg1 deletes:(id)arg2 inDatabase:(id)arg3 outWorkflowsToReupload:(id *)arg4;
 - (_Bool)fetchChangesFromCloudKitSinceChangeToken:(id)arg1 outChangedWorkflowRecords:(out id *)arg2 outDeleted:(out id *)arg3 outOrderedWorkflowIDs:(out id *)arg4 outNewServerChangeToken:(out id *)arg5 error:(id *)arg6;
-- (_Bool)createRecordZoneIfNecessaryError:(id *)arg1;
+- (_Bool)createRecordZoneIfNecessaryWithDatabase:(id)arg1 error:(id *)arg2;
 - (void)clearSyncStateForWorkflows:(id)arg1 inDatabase:(id)arg2;
 - (id)accountNameForSyncToken;
 - (long long)fetchCurrentAccountInfo;

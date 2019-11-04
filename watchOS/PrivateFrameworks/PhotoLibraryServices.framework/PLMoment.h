@@ -6,13 +6,13 @@
 
 #import <PhotoLibraryServices/PLManagedObject.h>
 
-#import <PhotoLibraryServices/PLAssetContainer-Protocol.h>
+#import <PhotoLibraryServices/PLDiagnosticsProvider-Protocol.h>
 #import <PhotoLibraryServices/PLMomentData-Protocol.h>
 
-@class CLLocation, NSArray, NSDate, NSObject, NSOrderedSet, NSString, PLManagedAsset, PLMomentList;
+@class CLLocation, NSArray, NSDate, NSObject, NSSet, NSString, PLMomentList;
 @protocol NSCopying, PLPhotosHighlightData;
 
-@interface PLMoment : PLManagedObject <PLAssetContainer, PLMomentData>
+@interface PLMoment : PLManagedObject <PLMomentData, PLDiagnosticsProvider>
 {
     _Bool _loadedNameInfo;
     CLLocation *_cachedApproximateLocation;
@@ -57,29 +57,17 @@
 @property(readonly, nonatomic) NSDate *localStartDate;
 - (unsigned int)fetchedAssetsCount;
 @property(readonly, retain, nonatomic) NSArray *batchedAssets;
-- (void)removeAssetData:(id)arg1;
-- (void)replaceAssetDataAtIndex:(unsigned int)arg1 withAssetData:(id)arg2;
 @property(readonly, retain, nonatomic) NSObject<NSCopying> *uniqueObjectID;
 - (void)removeAssetsObject:(id)arg1;
-- (void)replaceObjectInAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)replaceObjectInAssets:(id)arg1 withObject:(id)arg2;
 - (void)didTurnIntoFault;
 - (id)mutableAssets;
 - (void)willSave;
+- (void)insertAssetData:(id)arg1;
+- (void)removeAssetData:(id)arg1;
 - (void)delete;
 - (id)diagnosticInformation;
 - (_Bool)supportsDiagnosticInformation;
-@property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset;
-@property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset;
-@property(retain, nonatomic) PLManagedAsset *keyAsset;
-@property(readonly, copy, nonatomic) NSString *localizedTitle;
-@property(readonly, nonatomic) _Bool canShowAvalancheStacks;
-@property(readonly, nonatomic) _Bool canShowComments;
-- (_Bool)canPerformEditOperation:(unsigned int)arg1;
-@property(readonly, nonatomic) _Bool isEmpty;
-@property(readonly, nonatomic) unsigned int videosCount;
-@property(readonly, nonatomic) unsigned int photosCount;
-@property(readonly, nonatomic) unsigned int assetsCount;
-@property(readonly, nonatomic) unsigned int approximateCount;
 - (void)unregisterForChanges;
 - (void)registerForChanges;
 @property(retain, nonatomic) CLLocation *approximateLocation;
@@ -115,7 +103,7 @@
 @property(nonatomic) float aggregationScore; // @dynamic aggregationScore;
 @property(nonatomic) double approximateLatitude; // @dynamic approximateLatitude;
 @property(nonatomic) double approximateLongitude; // @dynamic approximateLongitude;
-@property(retain, nonatomic) NSOrderedSet *assets; // @dynamic assets;
+@property(retain, nonatomic) NSSet *assets; // @dynamic assets;
 @property(nonatomic) int cachedCount; // @dynamic cachedCount;
 @property(nonatomic) int cachedPhotosCount; // @dynamic cachedPhotosCount;
 @property(nonatomic) int cachedVideosCount; // @dynamic cachedVideosCount;

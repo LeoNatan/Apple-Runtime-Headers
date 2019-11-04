@@ -23,7 +23,6 @@
 - (id)transformLegacyMailMessages:(id)arg1 mailboxScope:(id)arg2;
 - (id)_transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2 duplicateInfo:(id)arg3 loaderBlock:(CDUnknownBlockType)arg4;
 - (id)transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2 loaderBlock:(CDUnknownBlockType)arg3;
-- (id)transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2;
 - (id)initWithLibrary:(id)arg1 mailboxProvider:(id)arg2;
 
 // Remaining properties

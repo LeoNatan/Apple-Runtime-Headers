@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface HKSource (HealthDaemon) <HDCoding>
++ (id)_studyNameForResearchStudySource:(id)arg1;
 + (id)_applicationNameForCompanionBundleIdentifier:(id)arg1;
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
 + (_Bool)hd_isSpartanDeviceBundleIdentifier:(id)arg1;

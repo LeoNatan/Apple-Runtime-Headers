@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSDictionary *offer; // @synthesize offer=_offer;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *videosPlayables;
+- (id)notificationBody;
+- (id)notificationTitle;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) NSString *buyParams;
 @property(readonly, nonatomic) _Bool playWhenDone;

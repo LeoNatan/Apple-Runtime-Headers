@@ -11,7 +11,6 @@
 - (void)_handleAvailableOriginsDidChangeNotification:(id)arg1;
 - (void)manager:(id)arg1 connectivityDidChange:(_Bool)arg2;
 - (void)_setAutomaticallyRemoveUnavailableOriginViewControllers:(_Bool)arg1;
-- (id)nmu_userActivityContext;
 - (void)_prepareForDidShowViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (id)popToRootViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)popToViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

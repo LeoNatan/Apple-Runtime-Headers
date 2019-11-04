@@ -13,7 +13,6 @@
 @interface GEOPlaceResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_additionalPlaces;
     NSMutableArray *_disambiguationLabels;
@@ -27,6 +26,9 @@
     NSString *_suggestedQuery;
     GEOAddress *_tokenEntity;
     NSMutableArray *_unmatchedStrings;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _cacheControl;
     unsigned int _travelDistance;
     unsigned int _travelTime;
@@ -153,6 +155,8 @@
 - (void)_readAdditionalPlaces;
 @property(retain, nonatomic) GEOPlace *place;
 - (void)_readPlace;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)geoMapItem;
 
 @end

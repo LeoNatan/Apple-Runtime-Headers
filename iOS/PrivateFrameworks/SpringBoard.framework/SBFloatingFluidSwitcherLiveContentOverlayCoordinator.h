@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBSwitcherLiveContentOverlayCoordinating-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, SBFloatingApplicationLiveContentWindow;
+@class NSMutableDictionary, NSString, SBFloatingApplicationLiveContentWindow;
 @protocol SBSwitcherLiveContentOverlayCoordinatorDelegate;
 
 @interface SBFloatingFluidSwitcherLiveContentOverlayCoordinator : NSObject <SBSwitcherLiveContentOverlayCoordinating>
@@ -46,7 +46,6 @@
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionWillEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
-@property(readonly, nonatomic) NSArray *windowsToExcludeForCrossfadeSnapshot;
 - (id)init;
 
 // Remaining properties

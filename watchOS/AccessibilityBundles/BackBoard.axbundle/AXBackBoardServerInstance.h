@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import "AXBackBoardServerInstance-Protocol.h"
-#import "AXHeardServerDelegate-Protocol.h"
 
 @class AXIPCServer, NSMutableArray, NSString;
 @protocol AXBackBoardServerInstanceDelegate;
 
-@interface AXBackBoardServerInstance : NSObject <AXHeardServerDelegate, AXBackBoardServerInstance>
+@interface AXBackBoardServerInstance : NSObject <AXBackBoardServerInstance>
 {
     AXIPCServer *_server;
     NSMutableArray *_eventListeners;
@@ -36,8 +35,6 @@
 - (id)_handleBlueLightStatusEnabled:(id)arg1;
 - (id)_handleBrightnessFiltersEnabled:(id)arg1;
 - (id)_handleDisableBrightnessFilters:(id)arg1;
-- (void)hearingServerDidDie:(id)arg1;
-- (void)restartHearingServer;
 - (id)_setAXPreferenceAsMobile:(id)arg1;
 - (id)_axPreferenceAsMobile:(id)arg1;
 - (id)_handleGuidedAccessCurrentModeAndSessionApp:(id)arg1;

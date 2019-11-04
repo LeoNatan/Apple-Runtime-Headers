@@ -16,6 +16,7 @@
 {
     _Bool _needsReload;
     _Bool _needsLabelSizeCalculation;
+    _Bool _shouldUseConstrainedMaxHeight;
     _Bool _alwaysShowsMonogram;
     _Bool _visibleToScrollViews;
     _Bool _shouldShowBelowNavigationTitle;
@@ -29,6 +30,7 @@
     NSLayoutConstraint *_photoHeightConstraint;
     CNContactHeaderViewSizeAttributes *_sizeAttributes;
     double _lastViewWidth;
+    double _constrainedMaxHeight;
     CNContactPhotoView *_photoView;
 }
 
@@ -41,6 +43,8 @@
 @property(nonatomic) _Bool visibleToScrollViews; // @synthesize visibleToScrollViews=_visibleToScrollViews;
 @property(nonatomic) _Bool alwaysShowsMonogram; // @synthesize alwaysShowsMonogram=_alwaysShowsMonogram;
 @property(readonly, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
+@property(nonatomic) _Bool shouldUseConstrainedMaxHeight; // @synthesize shouldUseConstrainedMaxHeight=_shouldUseConstrainedMaxHeight;
+@property(nonatomic) double constrainedMaxHeight; // @synthesize constrainedMaxHeight=_constrainedMaxHeight;
 @property(nonatomic) double lastViewWidth; // @synthesize lastViewWidth=_lastViewWidth;
 @property(nonatomic) _Bool needsLabelSizeCalculation; // @synthesize needsLabelSizeCalculation=_needsLabelSizeCalculation;
 @property(retain, nonatomic) CNContactHeaderViewSizeAttributes *sizeAttributes; // @synthesize sizeAttributes=_sizeAttributes;
@@ -60,6 +64,8 @@
 - (void)photoViewDidUpdate:(id)arg1;
 - (void)updateSizeDependentAttributes;
 - (void)layoutSubviews;
+- (double)currentHeightPercentMaximizedForMaxHeight:(double)arg1;
+- (double)currentHeightPercentMaximizedForPhoto;
 - (double)currentHeightPercentMaximized;
 - (_Bool)canBecomeFirstResponder;
 - (void)reloadDataPreservingChanges:(_Bool)arg1;
@@ -70,6 +76,9 @@
 - (void)updateWithContacts:(id)arg1;
 - (void)updateWithNewContact:(id)arg1;
 - (void)updateConstraints;
+- (void)setConstrainedMaxHeight:(double)arg1 enabled:(_Bool)arg2;
+- (double)defaultMaxHeight;
+- (double)defaultMaxBaseHeight;
 @property(readonly, nonatomic) double maxHeight;
 @property(readonly, nonatomic) double minHeight;
 - (double)safeAreaPhotoOffset;

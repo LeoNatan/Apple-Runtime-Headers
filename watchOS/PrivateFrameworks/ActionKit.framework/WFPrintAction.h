@@ -6,23 +6,9 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/UIPrintInteractionControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFPrintAction : WFAction <UIPrintInteractionControllerDelegate>
+@interface WFPrintAction : WFAction
 {
 }
-
-- (id)printInteractionControllerParentViewController:(id)arg1;
-- (void)printFile:(id)arg1 withUserInterface:(id)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -13,11 +13,15 @@
 + (id)px_valueWithMemoryFontsSpecIdentifier:(struct PXMemoryFontsSpecIdentifier)arg1;
 + (id)px_valueWithViewSpecDescriptor:(struct PXViewSpecDescriptor)arg1;
 + (id)valueWithPXTileGeometry:(struct PXTileGeometry)arg1;
++ (id)valueWithPXDisplayAssetDetailedCounts:(CDStruct_aa0b146f)arg1;
++ (id)valueWithPXDisplayAssetTypedCount:(CDStruct_15189878)arg1;
 @property(readonly, nonatomic) struct PXTileIdentifier PXTileIdentifierValue;
 @property(readonly) struct UIEdgeInsets PXEdgeInsetsValue;
 @property(readonly, nonatomic) struct PXSimpleIndexPath px_simpleIndexPathValue;
 - (struct PXMemoryFontsSpecIdentifier)px_memoryFontsSpecIdentifierValue;
 @property(readonly, nonatomic) struct PXViewSpecDescriptor px_viewSpecDescriptorValue;
 - (struct PXTileGeometry)PXTileGeometryValue;
+@property(readonly, nonatomic) CDStruct_aa0b146f PXDisplayAssetDetailedCountsValue;
+@property(readonly, nonatomic) CDStruct_15189878 PXDisplayAssetTypedCountValue;
 @end
 

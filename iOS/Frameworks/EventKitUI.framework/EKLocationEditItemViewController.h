@@ -73,7 +73,6 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)_setupConstraints;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
 - (void)viewDidLoad;

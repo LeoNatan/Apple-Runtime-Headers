@@ -22,6 +22,7 @@
 @property(nonatomic) _Bool roundedCornerVisible; // @synthesize roundedCornerVisible=_roundedCornerVisible;
 @property(nonatomic) __weak id <SPUISearchBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)setSceneFrameOnRotation;
 - (void)updateSceneSettingsWithBlock:(CDUnknownBlockType)arg1;
 - (id)backgroundBlurView;
 - (void)setBlurProgress:(double)arg1 animated:(_Bool)arg2;

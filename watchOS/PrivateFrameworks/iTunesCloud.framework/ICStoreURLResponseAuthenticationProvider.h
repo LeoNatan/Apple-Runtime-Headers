@@ -10,14 +10,11 @@
 
 @interface ICStoreURLResponseAuthenticationProvider : ICURLResponseAuthenticationProvider <NSSecureCoding>
 {
-    int _interactionLevel;
 }
 
 + (_Bool)supportsSecureCoding;
 - (void)_adjustedAuthenticationPolicyForResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_performAuthenticationUsingRequestContext:(id)arg1 usingVerificationInteractionLevel:(int)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)performAuthenticationUsingRequestContext:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)performAuthenticationToHandleResponse:(id)arg1 toRequest:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithUserInteractionLevel:(int)arg1;

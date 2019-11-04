@@ -12,9 +12,14 @@
 
 + (void)launchDictationSettings;
 + (void)launchKeyboardSettings;
++ (void)dismissEnableDataSharingPrompt;
 + (void)dismissEnableDictationPrompt;
 + (void)dismissDialog;
++ (void)dismissedDataSharingWithResponse:(long long)arg1;
 + (void)promptToEnableDictationWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)promptReminderDataSharingWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)promptToRemindDataSharingWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)promptToEnableDataSharingWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)presentDialogForType:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)connectForOperations:(CDUnknownBlockType)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
 + (void)setTestBlock:(CDUnknownBlockType)arg1;

@@ -16,6 +16,7 @@
     UITableView *_tableView;
 }
 
++ (id)sortedServices:(id)arg1;
 + (id)prepareDeleteAllCellForTableView:(id)arg1;
 + (id)appIcon:(id)arg1 imageDescriptor:(id)arg2;
 + (id)imageDescriptorForAuthorization;

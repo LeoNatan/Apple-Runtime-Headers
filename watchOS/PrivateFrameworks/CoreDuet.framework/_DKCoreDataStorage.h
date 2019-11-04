@@ -59,6 +59,7 @@
 - (_Bool)_deleteDatabaseFiles:(id)arg1;
 - (_Bool)confirmDatabaseConnectionFor:(id)arg1;
 - (_Bool)isManagedObjectContextFor:(id)arg1 equalToManagedObjectContext:(id)arg2;
+- (id)privateManagedObjectContextFor:(id)arg1;
 - (id)managedObjectContextFor:(id)arg1;
 - (void)removeManagedObjectContextForKey:(id)arg1;
 - (id)managedObjectContextForKey:(id)arg1;
@@ -88,6 +89,7 @@
 - (struct __CFString *)clientNeedsHelpNotification;
 - (void)handleClientCallForHelp;
 - (id)databaseManagerName;
+- (_Bool)isDataVaulted;
 - (void)_unregisterForClientHelpNotifications;
 - (void)_registerForClientHelpNotifications;
 - (void)dealloc;

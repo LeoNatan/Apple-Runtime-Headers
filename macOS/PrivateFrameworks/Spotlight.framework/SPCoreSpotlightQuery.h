@@ -6,19 +6,21 @@
 
 #import <Spotlight/SPMetadataQuery.h>
 
-@class CSSearchQuery, NSArray, NSMutableArray, PRSRankingItemRanker, SPMetadataPattern;
+@class CSSearchQuery, NSArray, NSMutableDictionary, PRSRankingItemRanker, SPMetadataPattern;
 
 @interface SPCoreSpotlightQuery : SPMetadataQuery
 {
     NSArray *_rankingQueries;
-    NSMutableArray *_results;
-    NSMutableArray *_sections;
+    NSArray *_rankingPatterns;
+    NSMutableDictionary *_groupedSections;
     PRSRankingItemRanker *_ranker;
+    BOOL _gatherComplete;
     CSSearchQuery *_csQuery;
     SPMetadataPattern *_queryPattern;
 }
 
 + (id)defaultPrefetchedAttributes;
+@property(readonly, nonatomic) BOOL gatherComplete; // @synthesize gatherComplete=_gatherComplete;
 @property(readonly) SPMetadataPattern *queryPattern; // @synthesize queryPattern=_queryPattern;
 @property(retain) CSSearchQuery *csQuery; // @synthesize csQuery=_csQuery;
 - (void).cxx_destruct;
@@ -28,8 +30,14 @@
 - (void)gatherEnded;
 - (void)completed:(id)arg1;
 - (void)foundItems:(id)arg1;
-- (void)removedItems:(id)arg1;
-- (void)addNewResults:(id)arg1;
+- (void)removedItems:(id)arg1 forBundleID:(id)arg2;
+- (id)responseSections;
+- (BOOL)_removedItems:(id)arg1 forBundleID:(id)arg2;
+- (BOOL)_updateGroupSections:(id)arg1;
+- (BOOL)_updateGroupSection:(id)arg1 wtihResults:(id)arg2;
+- (BOOL)_updateResultSet:(id)arg1 withSortedResults:(id)arg2;
+- (id)buildGroupedResults:(id)arg1;
+- (void)calculateScoreForResult:(id)arg1;
 - (BOOL)isCoreSpotlightQuery;
 - (BOOL)isDocumentQuery;
 

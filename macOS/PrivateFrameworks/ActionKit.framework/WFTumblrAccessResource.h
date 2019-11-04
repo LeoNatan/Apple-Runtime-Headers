@@ -14,9 +14,9 @@
     NSString *_OAuthTokenSecret;
 }
 
-+ (void)removeTumblrOAuthTokenSecret;
-+ (void)removeTumblrOAuthToken;
++ (void)setTumblrOAuthTokenSecret:(id)arg1;
 + (id)tumblrOAuthTokenSecret;
++ (void)setTumblrOAuthToken:(id)arg1;
 + (id)tumblrOAuthToken;
 @property(copy, nonatomic) NSString *OAuthTokenSecret; // @synthesize OAuthTokenSecret=_OAuthTokenSecret;
 @property(copy, nonatomic) NSString *OAuthToken; // @synthesize OAuthToken=_OAuthToken;
@@ -25,7 +25,6 @@
 - (BOOL)canLogOut;
 - (id)username;
 - (id)resourceName;
-- (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
 - (id)protectedResourceDescription;
 - (id)associatedAppIdentifier;

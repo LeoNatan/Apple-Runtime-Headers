@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)viewDidAppear:(_Bool)arg1;
 - (id)_axFirstResultInModel:(id)arg1;
 - (long long)_axNumberOfResultsInModel:(id)arg1;
 - (id)_axResultsInSection:(id)arg1;

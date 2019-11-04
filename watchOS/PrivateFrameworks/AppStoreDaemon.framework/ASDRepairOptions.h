@@ -16,6 +16,7 @@
     _Bool _forceRevoke;
     _Bool _forceUpsell;
     NSString *_bundleID;
+    NSString *_bundlePath;
     NSNumber *_accountDSID;
     int _claimStyle;
     unsigned int _exitReason;
@@ -31,12 +32,14 @@
 @property(nonatomic) unsigned int exitReason; // @synthesize exitReason=_exitReason;
 @property(readonly, nonatomic) int claimStyle; // @synthesize claimStyle=_claimStyle;
 @property(readonly, nonatomic) NSNumber *accountDSID; // @synthesize accountDSID=_accountDSID;
+@property(readonly, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBundleID:(id)arg1 accountIdentifier:(id)arg2 claimStyle:(int)arg3;
+- (id)initWithBundlePath:(id)arg1;
 - (id)initWithBundleID:(id)arg1;
 
 @end

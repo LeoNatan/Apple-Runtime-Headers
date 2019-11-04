@@ -15,6 +15,7 @@
     _Bool _waitingForIdentityUpdate;
     _Bool _waitingForHSA2;
     _Bool _useUniqueActivityIdentifiers;
+    _Bool _skipRetryOnOperationError;
     _Bool _automaticSyncingDisabled;
     id <CKSyncEngineDataSource> _dataSource;
     CKDatabase *_database;
@@ -23,6 +24,7 @@
     CKNotificationListener *_notificationListener;
     NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_batchCreationQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     unsigned long long _maxRecordCountPerBatch;
     unsigned long long _maxRecordBytesPerBatch;
@@ -41,6 +43,7 @@
 + (id)activityIdentifierWithName:(id)arg1 database:(id)arg2 ignoringSystemConditions:(_Bool)arg3 uniquenessPointer:(id)arg4;
 + (id)supportedDatabaseScopes;
 @property(nonatomic, getter=isAutomaticSyncingDisabled) _Bool automaticSyncingDisabled; // @synthesize automaticSyncingDisabled=_automaticSyncingDisabled;
+@property(nonatomic) _Bool skipRetryOnOperationError; // @synthesize skipRetryOnOperationError=_skipRetryOnOperationError;
 @property(nonatomic) long long priorityForModifications; // @synthesize priorityForModifications=_priorityForModifications;
 @property(nonatomic) long long priorityForFetches; // @synthesize priorityForFetches=_priorityForFetches;
 @property(nonatomic) _Bool useUniqueActivityIdentifiers; // @synthesize useUniqueActivityIdentifiers=_useUniqueActivityIdentifiers;
@@ -51,6 +54,7 @@
 @property(nonatomic) unsigned long long maxRecordBytesPerBatch; // @synthesize maxRecordBytesPerBatch=_maxRecordBytesPerBatch;
 @property(nonatomic) unsigned long long maxRecordCountPerBatch; // @synthesize maxRecordCountPerBatch=_maxRecordCountPerBatch;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *batchCreationQueue; // @synthesize batchCreationQueue=_batchCreationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) CKNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;
@@ -105,6 +109,7 @@
 - (void)_fetchChangesWithOperationGroup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)nextBatchOfRecordsToModifyDefaultBehavior;
+- (id)nextBatchOfRecordsToModifyWithCustomBatching;
 - (id)nextBatchOfRecordsToModify;
 - (id)newOperationToModifyZonesToSave:(id)arg1 zoneIDsToDelete:(id)arg2 inOperationGroup:(id)arg3;
 - (void)addOperationsToModifyZonesIfNecessaryInOperationGroup:(id)arg1;

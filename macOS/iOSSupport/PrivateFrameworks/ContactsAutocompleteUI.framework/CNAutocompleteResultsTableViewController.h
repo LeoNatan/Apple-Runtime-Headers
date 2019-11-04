@@ -39,6 +39,7 @@
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)didTapInfoButtonForCell:(id)arg1;
+- (BOOL)shouldShowCheckmarkForRecipient:(id)arg1 preferredRecipient:(id)arg2;
 - (BOOL)updatePreferredRecipientForCell:(id)arg1 isInvalidation:(BOOL)arg2;
 - (void)updateLabelColorForCell:(id)arg1;
 - (void)invalidatePreferredRecipients;

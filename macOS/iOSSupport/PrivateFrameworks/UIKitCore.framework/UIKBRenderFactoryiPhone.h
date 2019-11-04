@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (double)_row4ControlSegmentWidthRight;
 - (double)_row4ControlSegmentWidthLeft;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
+- (void)_configureTraitsForPopupStyle:(id)arg1 withKey:(id)arg2 onKeyplane:(id)arg3;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned long long)arg2 rowLimit:(long long)arg3 annotationIndex:(unsigned long long)arg4;
 - (long long)rowLimitForKey:(id)arg1;
 - (BOOL)_popupMenuStyleForKey:(id)arg1;

@@ -13,10 +13,12 @@
 @interface GEOCompanionRouteUpdate : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     double _lastUpdated;
     NSData *_routeID;
     GEOTransitRouteUpdate *_transitRouteUpdate;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _type;
     struct {
         unsigned int has_lastUpdated:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) NSData *routeID;
 @property(readonly, nonatomic) _Bool hasRouteID;
 - (void)_readRouteID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithTransitRouteUpdate:(id)arg1;
 
 @end

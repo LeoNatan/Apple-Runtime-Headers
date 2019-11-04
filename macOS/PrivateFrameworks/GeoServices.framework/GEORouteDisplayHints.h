@@ -14,11 +14,13 @@
 @interface GEORouteDisplayHints : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _availablePaymentTypes;
     CDStruct_95bda58d _availablePrioritizations;
     GEORequestOptions *_transitSurchargeOptions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _showTransitSchedules;
     struct {
         unsigned int has_showTransitSchedules:1;
@@ -74,6 +76,8 @@
 @property(nonatomic) BOOL hasShowTransitSchedules;
 @property(nonatomic) BOOL showTransitSchedules;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSArray *prioritizationOptions;
 @property(readonly, nonatomic) id <GEOSurchargeOption> surchargeOptions;
 

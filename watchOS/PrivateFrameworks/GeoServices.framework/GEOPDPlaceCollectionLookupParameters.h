@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPlaceCollectionLookupParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_center;
     NSMutableArray *_collectionIds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_center:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) _Bool hasCenter;
 - (void)_readCenter;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

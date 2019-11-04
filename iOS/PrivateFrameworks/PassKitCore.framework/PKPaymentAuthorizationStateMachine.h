@@ -9,7 +9,7 @@
 #import <PassKitCore/CBCentralManagerDelegate-Protocol.h>
 #import <PassKitCore/PKContinuityPaymentCoordinatorDelegate-Protocol.h>
 
-@class CBCentralManager, NSMutableArray, NSString, PKContinuityPaymentCoordinator, PKContinuityPaymentService, PKInAppPaymentSession, PKPaymentAuthorizationClientCallbackStateParam, PKPaymentAuthorizationDataModel, PKPaymentService, PKPaymentWebService, PKPeerPaymentSession;
+@class CBCentralManager, NSArray, NSMutableArray, NSString, PKContinuityPaymentCoordinator, PKContinuityPaymentService, PKInAppPaymentSession, PKPaymentAuthorizationClientCallbackStateParam, PKPaymentAuthorizationDataModel, PKPaymentService, PKPaymentWebService, PKPeerPaymentSession;
 @protocol OS_dispatch_group, OS_dispatch_source, PKAggregateDictionaryProtocol, PKPaymentAuthorizationStateMachineDelegate;
 
 @interface PKPaymentAuthorizationStateMachine : NSObject <PKContinuityPaymentCoordinatorDelegate, CBCentralManagerDelegate>
@@ -37,8 +37,10 @@
     NSString *_instanceIdentifier;
     unsigned long long _prepareTransactionDetailsCounter;
     NSObject<OS_dispatch_group> *_delayAuthorizedStateGroup;
+    NSArray *_remoteDevicesToUpdate;
 }
 
+@property(retain, nonatomic) NSArray *remoteDevicesToUpdate; // @synthesize remoteDevicesToUpdate=_remoteDevicesToUpdate;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *delayAuthorizedStateGroup; // @synthesize delayAuthorizedStateGroup=_delayAuthorizedStateGroup;
 @property(nonatomic) _Bool detectedBluetoothOn; // @synthesize detectedBluetoothOn=_detectedBluetoothOn;
 @property(nonatomic) unsigned long long prepareTransactionDetailsCounter; // @synthesize prepareTransactionDetailsCounter=_prepareTransactionDetailsCounter;
@@ -89,12 +91,14 @@
 - (void)_enqueueDidAuthorizePaymentWithRemotePayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithByPassPayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithToken:(id)arg1;
+- (void)_enqueueDidAuthorizePaymentWithInstallmentAuthorizationToken:(id)arg1;
 - (void)_enqueueDidUpdateAccountServicePaymentMethod:(id)arg1;
 - (void)_enqueueDidSelectRemotePaymentInstrument:(id)arg1 paymentApplication:(id)arg2;
 - (void)_enqueueDidSelectRemotePaymentInstrument:(id)arg1;
 - (void)_enqueueDidSelectPaymentPass:(id)arg1 paymentApplication:(id)arg2;
 - (void)_enqueueDidSelectPaymentPass:(id)arg1;
 - (void)_enqueueDidSelectPaymentMethodWithQuote:(id)arg1;
+- (void)_enqueueDidSelectPaymentMethodWithBindToken:(id)arg1;
 - (void)_enqueueDidSelectShippingContact:(id)arg1;
 - (void)_enqueueDidRequestMerchantSession;
 - (void)_clientCallbackTimedOut;
@@ -104,10 +108,11 @@
 - (id)_dequeuePendingCallbackParam;
 - (void)_enqueueCallbackOfKind:(long long)arg1 withObject:(id)arg2;
 - (void)_dispatchNextCallbackParam;
-- (void)_updateModelWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2;
+- (void)_updateModelWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2 contentItems:(id)arg3;
 - (void)_advanceToNextState;
 - (void)_sendDidTransitionFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2 withParam:(id)arg3;
 - (void)_enqueueInitialCallbacks;
+- (void)_performInstallmentBind;
 - (void)_startPayment;
 - (void)_startRemoteDeviceUpdate;
 - (void)_startHandoff;
@@ -118,7 +123,8 @@
 - (void)_performSendClientUpdateWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2 paymentApplication:(id)arg3 status:(long long)arg4;
 - (void)_performSendRemotePaymentRequest;
 - (void)_performUpdatePaymentDevices;
-- (void)_deviceUpdateDidTimeout;
+- (void)_deviceUpdateDidFailWithNoEiligbleRemoteDevices:(id)arg1;
+- (void)_updateModelWithRemoteDevices:(id)arg1;
 - (void)_processBluetoothState:(long long)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)continuityPaymentCoordinatorDidReceiveCancellation:(id)arg1;

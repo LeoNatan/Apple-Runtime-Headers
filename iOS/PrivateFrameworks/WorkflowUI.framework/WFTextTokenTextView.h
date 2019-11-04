@@ -69,11 +69,12 @@
 - (void)beginEditingWithContext:(id)arg1;
 - (void)beginConfiguringVariable:(id)arg1;
 - (void)insertVariable:(id)arg1;
-- (void)updateFontOfVariableAttachments;
+- (void)updateAppearanceOfAllVariableAttachments;
+- (void)configureAppearanceOfVariableAttachment:(id)arg1;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 - (void)_updateVariableString:(id)arg1;
 - (void)textUpdated;
-- (id)variableAttachmentFont;
+- (void)tintColorDidChange;
 @property(retain, nonatomic) UIFont *font;
 - (void)setTextContainerInset:(struct UIEdgeInsets)arg1;
 @property(readonly, nonatomic) NSArray *currentVariables;

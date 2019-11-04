@@ -25,7 +25,8 @@
 + (_Bool)_hasEntitlementForMusicSubscriptionStatusService;
 + (id)sharedStatusController;
 - (void).cxx_destruct;
-- (void)_subscriptionStatusCacheDidChangeNotification:(id)arg1;
+- (void)_handleSubscriptionStatusCacheUnderlyingCachingPropertiesDidChangeNotification:(id)arg1;
+- (void)_handleSubscriptionStatusCacheDidChangeNotification:(id)arg1;
 - (void)_willBeginRemoteRequestForUniqueIdentifier:(id)arg1 statusHandler:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)_statusHandlerForUniqueIdentifier:(id)arg1;
 - (void)_scheduleInvalidationOfRemoteRequestingClientConnection;

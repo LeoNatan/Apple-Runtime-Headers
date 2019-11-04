@@ -8,7 +8,7 @@
 
 #import <DataDetectorsUI/UIActionSheetDelegate-Protocol.h>
 
-@class DDActionController, NSMapTable, NSOperationQueue, NSString;
+@class BCSBusinessQueryService, DDActionController, NSMapTable, NSOperationQueue, NSString;
 @protocol DDDetectionControllerDelegate, OS_dispatch_queue;
 
 @interface DDDetectionController : NSObject <UIActionSheetDelegate>
@@ -21,6 +21,7 @@
     NSMapTable *_containerToContextsTable;
     DDActionController *_actionController;
     NSObject<DDDetectionControllerDelegate> *_delegate;
+    BCSBusinessQueryService *__bizService;
 }
 
 + (id)barcodeContext:(id)arg1 preview:(BOOL)arg2 contact:(id)arg3 ics:(id)arg4;
@@ -30,10 +31,12 @@
 + (id)tapAndHoldSchemes;
 + (id)sharedController;
 + (id)updateContext:(id)arg1 forResult:(struct __DDResult *)arg2 atIndex:(unsigned long long)arg3 ofStorage:(id)arg4;
+@property(retain, nonatomic) BCSBusinessQueryService *_bizService; // @synthesize _bizService=__bizService;
 @property(nonatomic) __weak NSObject<DDDetectionControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodePreviewActionForContext:URL:result:contact:ics:
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodeActionsForContext:URL:result:contact:ics:
+- (id)_businessItemForNumber:(id)arg1 messageable:(char *)arg2;
 - (BOOL)_phoneNumberIsABusinessNumber:(id)arg1 messageable:(char *)arg2;
 -     // Error parsing type: @24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _phoneNumberFromResult:
 -     // Error parsing type: c32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16^c24, name: _checkIfBusinessWithResult:messageable:
@@ -41,7 +44,6 @@
 - (BOOL)_shouldImmediatelyShowActionSheetForURL:(id)arg1;
 - (id)_ensureURLIsURL:(id)arg1;
 -     // Error parsing type: c24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyShowActionSheetForCoreResult:
-- (void)_cacheBusinessPhoneNumber:(id)arg1;
 -     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _interactionDidStartForResult:
 - (void)_interactionDidStartForURL:(id)arg1;
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40@0:8@16@24^@32, name: _resultForURL:forContainer:context:

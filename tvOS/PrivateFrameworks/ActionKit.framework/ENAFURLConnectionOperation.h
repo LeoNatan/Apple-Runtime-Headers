@@ -26,7 +26,6 @@
     NSString *_responseString;
     long long _totalBytesRead;
     NSOutputStream *_outputStream;
-    unsigned long long _backgroundTaskIdentifier;
     CDUnknownBlockType _uploadProgress;
     CDUnknownBlockType _downloadProgress;
     CDUnknownBlockType _authenticationAgainstProtectionSpace;
@@ -45,7 +44,6 @@
 @property(copy, nonatomic) CDUnknownBlockType authenticationAgainstProtectionSpace; // @synthesize authenticationAgainstProtectionSpace=_authenticationAgainstProtectionSpace;
 @property(copy, nonatomic) CDUnknownBlockType downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(copy, nonatomic) CDUnknownBlockType uploadProgress; // @synthesize uploadProgress=_uploadProgress;
-@property(nonatomic) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(nonatomic) long long totalBytesRead; // @synthesize totalBytesRead=_totalBytesRead;
 @property(copy, nonatomic) NSString *responseString; // @synthesize responseString=_responseString;
@@ -88,7 +86,6 @@
 - (void)setAuthenticationAgainstProtectionSpaceBlock:(CDUnknownBlockType)arg1;
 - (void)setDownloadProgressBlock:(CDUnknownBlockType)arg1;
 - (void)setUploadProgressBlock:(CDUnknownBlockType)arg1;
-- (void)setShouldExecuteAsBackgroundTaskWithExpirationHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSInputStream *inputStream; // @dynamic inputStream;
 - (void)setCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;

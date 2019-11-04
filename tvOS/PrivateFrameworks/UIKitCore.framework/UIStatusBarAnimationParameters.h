@@ -15,6 +15,7 @@
     double _delay;
     long long _curve;
     id <_UIBasicAnimationFactory> _animationFactory;
+    _Bool _skipFencing;
     double _startTime;
 }
 
@@ -24,6 +25,7 @@
 + (id)fencingAnimation;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) id <_UIBasicAnimationFactory> animationFactory; // @synthesize animationFactory=_animationFactory;
+@property(nonatomic) _Bool skipFencing; // @synthesize skipFencing=_skipFencing;
 @property(nonatomic) long long curve; // @synthesize curve=_curve;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double delay; // @synthesize delay=_delay;

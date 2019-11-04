@@ -50,5 +50,6 @@
 - (void)markTouchBarAsDirty;
 - (void)toolbarCreatingIfNeeded:(BOOL)arg1 completionQueue:(NSObject<OS_dispatch_queue> *)arg2 completionHandler:(void (^)(id <UINSToolbar>, NSError *))arg3;
 - (void)acceptKeyViewHandoff:(BOOL)arg1 completionQueue:(NSObject<OS_dispatch_queue> *)arg2 completionHandler:(void (^)(BOOL))arg3;
+- (void)makeInputViewFirstResponder;
 @end
 

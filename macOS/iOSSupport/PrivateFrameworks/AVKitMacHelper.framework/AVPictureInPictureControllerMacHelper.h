@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 @interface AVPictureInPictureControllerMacHelper : NSObject <AVPictureInPictureControllerMacHelper, PIPSafariViewControllerDelegate>
 {
     BOOL _playing;
-    BOOL _muted;
+    BOOL _microphoneEnabled;
     BOOL _active;
     BOOL _showsMuteUnmuteControls;
     id <AVPictureInPictureControllerMacHelperDelegate> _delegate;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect normalizedSourceRectInWindow; // @synthesize normalizedSourceRectInWindow=_normalizedSourceRectInWindow;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(nonatomic) struct CGSize contentAspectRatio; // @synthesize contentAspectRatio=_contentAspectRatio;
-@property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
+@property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(nonatomic, getter=isPlaying) BOOL playing; // @synthesize playing=_playing;
 @property(nonatomic) __weak id <AVPictureInPictureControllerMacHelperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

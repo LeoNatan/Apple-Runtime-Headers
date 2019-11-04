@@ -25,6 +25,7 @@
 @property __weak id <STMSizeCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long cacheEventID; // @synthesize cacheEventID=_cacheEventID;
 - (void).cxx_destruct;
+- (void)addItem:(id)arg1;
 - (id)createCacheEntryForPath:(id)arg1;
 - (void)sizeAllItems;
 - (void)sizeItem:(id)arg1;

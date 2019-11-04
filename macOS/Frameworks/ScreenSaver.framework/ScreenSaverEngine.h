@@ -42,6 +42,7 @@
     id _delegate;
     unsigned long long _ssSpaceID;
     NSMutableArray *_ssSpaceArray;
+    NSString *_uuidString;
 }
 
 + (id)shared;

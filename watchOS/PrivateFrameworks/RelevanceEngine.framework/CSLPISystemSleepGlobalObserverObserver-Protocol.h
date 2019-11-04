@@ -9,6 +9,7 @@
 @protocol CSLPISystemSleepGlobalObserverObserver <NSObject>
 
 @optional
+- (void)abortSleepTasks;
 - (void)systemWake;
 - (void)willNotSleep;
 - (void)sleepImminent;

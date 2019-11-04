@@ -11,6 +11,7 @@
 @interface CCUICAPackageView : UIView
 {
     CAStateController *_stateController;
+    UIView *_packageContentView;
     CALayer *_packageLayer;
     CAPackage *_package;
     CCUICAPackageDescription *_packageDescription;
@@ -21,6 +22,7 @@
 @property(retain, nonatomic) CCUICAPackageDescription *packageDescription; // @synthesize packageDescription=_packageDescription;
 @property(retain, nonatomic) CAPackage *package; // @synthesize package=_package;
 - (void).cxx_destruct;
+- (void)_setPackage:(id)arg1;
 - (void)setStateName:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

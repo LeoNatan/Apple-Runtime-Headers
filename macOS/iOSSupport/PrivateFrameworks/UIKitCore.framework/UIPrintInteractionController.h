@@ -107,7 +107,6 @@
 - (BOOL)presentAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_presentAnimated:(BOOL)arg1 hostingScene:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
-- (id)_init;
 - (id)init;
 - (void)_cancelManualPrintPage;
 - (void)_manualPrintPage;

@@ -25,6 +25,7 @@
 - (id)externalId;
 - (void)setXPropertiesData:(id)arg1;
 - (id)XPropertiesData;
+- (void)setUUID:(id)arg1;
 @property(readonly, nonatomic) NSString *UUID;
 - (void)setFileSize:(id)arg1;
 @property(readonly, nonatomic) NSNumber *fileSize;

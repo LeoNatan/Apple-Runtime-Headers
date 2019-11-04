@@ -6,7 +6,7 @@
 
 #import <Spotlight/SPKQuery.h>
 
-@class CSFilesSearchQuery, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject, NSString, SPKResponse, SPMetadataPattern;
+@class CSFilesSearchQuery, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject, NSString, PRSRankingItemRanker, SPKResponse, SPMetadataPattern;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface SPMetadataQuery : SPKQuery
@@ -18,6 +18,7 @@
     NSDictionary *_nlpCategoryPreference;
     NSString *_nlpConfidence;
     id _queryNoteObserver;
+    PRSRankingItemRanker *_ranker;
     BOOL _isRewrite;
     BOOL _persistent;
     _Bool _definiteLocalQuery;
@@ -93,6 +94,7 @@
 - (BOOL)isDocumentQuery;
 - (id)rankingQueries;
 - (BOOL)needsIO;
+- (id)ranker;
 
 @end
 

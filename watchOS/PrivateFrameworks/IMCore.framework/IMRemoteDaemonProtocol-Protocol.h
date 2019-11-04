@@ -18,6 +18,7 @@
 - (void)nicknamePreferencesDidChange;
 - (void)blacklistHandleIDsForNicknameSharing:(NSSet *)arg1;
 - (void)whitelistHandleIDsForNicknameSharing:(NSSet *)arg1 onChatGUIDs:(NSArray *)arg2;
+- (void)ignorePendingNicknameUpdatesForHandleIDs:(NSArray *)arg1;
 - (void)clearPendingNicknameUpdatesForHandleIDs:(NSArray *)arg1;
 - (void)fetchHandleSharingState;
 - (void)fetchNicknames;
@@ -151,13 +152,13 @@
 - (void)loginAccount:(NSString *)arg1;
 - (void)autoReconnectAccount:(NSString *)arg1;
 - (void)autoLoginAccount:(NSString *)arg1;
-- (void)initiateCNContactBasedChatMerge:(_Bool)arg1;
 - (void)debugUpdateGroupParticipantversion:(unsigned int)arg1 chatIdentifier:(NSString *)arg2;
 - (void)loadChatWithChatIdentifier:(NSString *)arg1;
 - (void)removeChat:(NSString *)arg1;
 - (void)silenceChat:(NSString *)arg1 untilDate:(NSDate *)arg2;
 - (void)chat:(NSString *)arg1 updateLastAddressedSIMID:(NSString *)arg2;
 - (void)chat:(NSString *)arg1 updateLastAddressHandle:(NSString *)arg2;
+- (void)chat:(NSString *)arg1 updateIsBlackholed:(_Bool)arg2;
 - (void)chat:(NSString *)arg1 updateIsFiltered:(_Bool)arg2;
 - (void)chat:(NSString *)arg1 updateDisplayName:(NSString *)arg2;
 - (void)chat:(NSString *)arg1 updateProperties:(NSDictionary *)arg2;
@@ -207,6 +208,7 @@
 - (void)deleteFileTransferWithGUID:(NSString *)arg1;
 - (void)sendStandaloneFileTransfer:(NSString *)arg1;
 - (void)requestBuddyPicturesAndPropertiesForAccount:(NSString *)arg1;
+- (void)requestNetworkDataAvailability;
 - (void)writeAccount:(NSString *)arg1 defaults:(NSDictionary *)arg2;
 - (void)removeAccount:(NSString *)arg1;
 - (void)addAccount:(NSString *)arg1 defaults:(NSDictionary *)arg2 service:(NSString *)arg3;

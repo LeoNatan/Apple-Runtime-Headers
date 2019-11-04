@@ -16,6 +16,7 @@
 + (id)milligramsPerDeciliter;
 + (id)gramsPerLiter;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

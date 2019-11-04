@@ -39,7 +39,6 @@
 - (void)_resetMuninContainerViewState;
 - (void)_resetState;
 - (void)cancel;
-- (void)_cropImage;
 - (void)_callCompletionHandler;
 - (void)_renderMapItem;
 - (void)_takeSnapshotCompleted;
@@ -52,7 +51,7 @@
 - (void)_handleTapOnMuninView:(id)arg1;
 - (void)_handleTapOnSnapshot:(id)arg1;
 - (id)_annotationView;
-- (id)_deriveSnapshotOptions:(_Bool)arg1 isReload:(_Bool)arg2;
+- (id)_deriveSnapshotOptions:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(_Bool)arg2;
 - (void)_fetchMuninViewforMapItem:(id)arg1;

@@ -6,12 +6,13 @@
 
 #import <StoreKitUI/SKUIImageDataConsumer.h>
 
-@class IKColor, UIColor;
+@class IKColor, UIColor, UITraitCollection;
 
 @interface SKUIStyledImageDataConsumer : SKUIImageDataConsumer
 {
     struct UIEdgeInsets _borderRadii;
     IKColor *_iKBackgroundColor;
+    UITraitCollection *_startingTraitCollection;
     UIColor *_backgroundColor;
     UIColor *_borderColor;
     long long _imageContentMode;
@@ -78,7 +79,8 @@
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
 - (id)_leftToRightGradient:(struct CGRect)arg1 contentRect:(struct CGRect)arg2 drawBlock:(CDUnknownBlockType)arg3;
-- (id)_uberImageWithBounds:(struct CGRect)arg1 inputSize:(struct CGSize)arg2 drawBlock:(CDUnknownBlockType)arg3;
+- (id)_uberImageWithBounds:(struct CGRect)arg1 inputSize:(struct CGSize)arg2 backgroundColor:(id)arg3 drawBlock:(CDUnknownBlockType)arg4;
+- (id)_dynamicUberImageWithBounds:(struct CGRect)arg1 inputSize:(struct CGSize)arg2 drawBlock:(CDUnknownBlockType)arg3;
 - (id)_uberBannerImageWithBounds:(struct CGRect)arg1 inputSize:(struct CGSize)arg2 drawBlock:(CDUnknownBlockType)arg3;
 - (id)_roundedBorderWithBounds:(struct CGRect)arg1 contentRect:(struct CGRect)arg2 drawBlock:(CDUnknownBlockType)arg3;
 - (id)_radialBlurImageWithBounds:(struct CGRect)arg1 contentRect:(struct CGRect)arg2 drawBlock:(CDUnknownBlockType)arg3;

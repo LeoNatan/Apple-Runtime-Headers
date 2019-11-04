@@ -103,7 +103,6 @@
 - (void)_removeShortcutController;
 - (void)_share:(id)arg1;
 - (void)_removeShareController;
-- (void)_removeDefinitionController;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)selectAll:(id)arg1;
@@ -178,6 +177,7 @@
 - (void)_invalidateTypingAttributes;
 - (void)_addToTypingAttributes:(id)arg1 value:(id)arg2;
 - (id)_attributesForReplacementInRange:(struct _NSRange)arg1;
+- (id)_newAttributedStringForInsertionOfAttributedText:(id)arg1 inRange:(struct _NSRange)arg2;
 - (id)_newAttributedStringForInsertionOfText:(id)arg1 inRange:(struct _NSRange)arg2;
 - (id)_fixupTypingAttributeForAttributes:(id)arg1;
 @property(copy, nonatomic, getter=_whitelistedTypingAttributes, setter=_setWhitelistedTypingAttributes:) NSSet *_whitelistedTypingAttributes;
@@ -196,6 +196,7 @@
 - (void)_forceUnmarkTextDueToEditing;
 - (void)setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
+- (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 fromKeyboard:(_Bool)arg3;
 @property(readonly, nonatomic) UITextRange *markedTextRange;
 @property(nonatomic) int selectionAffinity;
 @property(copy) UITextRange *selectedTextRange;
@@ -424,6 +425,7 @@
 @property(nonatomic) int smartQuotesType;
 @property(nonatomic) int spellCheckingType;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsImagePaste;
 @property(nonatomic) _Bool suppressReturnKeyStyling;
 @property(copy, nonatomic) NSString *textContentType;
 @property(readonly, nonatomic) UIView *textInputView;

@@ -91,7 +91,9 @@
 - (void)daemonSideItemChange:(id)arg1 changedFields:(unsigned long long)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)isProviderForURL:(id)arg1;
 - (void)_unregisterFromFileCoordinator;
-- (void)_registerFileCoordinatorWithCompletion:(CDUnknownBlockType)arg1;
+- (void)reconnectToFileCoordinatorForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_createProvidedItemsDirectoryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_performForAllCoordinationProviders:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_providedItemAtURL:(id)arg1 withPresenterWithID:(id)arg2 didMoveToURL:(id)arg3;
 - (void)_providedItemAtURL:(id)arg1 didLosePresenterWithID:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 didGainPresenterWithID:(id)arg2;

@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 - (void)dispatchBlockOnDelegateQueueAsync:(CDUnknownBlockType)arg1;
-- (_Bool)isMatchingSession:(id)arg1;
+- (_Bool)isMatchingSession:(id)arg1 outError:(id *)arg2;
 - (_Bool)_disconnectWithError:(id *)arg1;
 - (void)_connectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_connectWithError:(id *)arg1;

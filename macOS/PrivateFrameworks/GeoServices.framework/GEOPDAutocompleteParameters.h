@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAutocompleteParametersAddressOnly *_addressOnly;
     GEOPDAutocompleteParametersAllEntriesWithBrowse *_allEntriesWithBrowse;
@@ -27,6 +26,9 @@ __attribute__((visibility("hidden")))
     GEOPDAutocompleteParametersPoiAddressOnly *_poiAddressOnly;
     GEOPDAutocompleteParametersSiriSearch *_siriSearch;
     GEOPDAutocompleteParametersVenueSearch *_venueSearch;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _requestType;
     BOOL _shouldPopulateMapsIdentifier;
     struct {
@@ -115,6 +117,8 @@ __attribute__((visibility("hidden")))
 - (id)requestTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasRequestType;
 @property(nonatomic) int requestType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

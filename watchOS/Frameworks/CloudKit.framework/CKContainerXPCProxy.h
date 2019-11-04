@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)handleOperationStatistics:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
-- (void)cancelOperationID:(id)arg1;
+- (void)discretionarySuspensionForOperationID:(id)arg1;
 - (id)initWithContainer:(id)arg1;
 
 // Remaining properties

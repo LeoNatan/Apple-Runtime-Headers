@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _applicationRect;
     struct CGRect _miniControlStripRect;
     struct CGRect _expandedControlStripRect;
+    struct CGRect _systemTrayRect;
     NSTouchBar *_miniTouchBar;
     NSTouchBar *_expandedTouchBar;
     long long _primaryMode;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedControlStrip;
 @property(readonly) NSTouchBar *expandedTouchBar;
 @property(readonly) NSTouchBar *miniTouchBar;
+@property(readonly) struct CGRect systemTrayRect;
 @property(readonly) struct CGRect expandedControlStripRect;
 @property(readonly) struct CGRect miniControlStripRect;
 @property(readonly) struct CGRect applicationRect;
@@ -38,7 +40,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateConfigurationIfNeeded;
 - (void)_updateExpandedControlStripTouchBarIfNeededFrom:(id)arg1 to:(id)arg2;
 - (void)_updateMiniControlStripTouchBarIfNeededFrom:(id)arg1 to:(id)arg2;
+- (BOOL)_useCompactPreferredMetrics;
 - (void)dealloc;
+@property(readonly) BOOL miniControlStripIsEmpty;
 @property(readonly) BOOL miniControlStripCustomizationIsAccessible;
 @property(readonly) long long applicationCustomizableState;
 @property(readonly) long long controlStripCustomizableState;

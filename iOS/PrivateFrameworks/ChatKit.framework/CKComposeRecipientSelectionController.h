@@ -8,18 +8,21 @@
 
 #import <ChatKit/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, UIView;
 @protocol CKComposeRecipientSelectionControllerDelegate;
 
 @interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate>
 {
+    UIView *_pillContainerView;
     CDUnknownBlockType _sendBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType sendBlock; // @synthesize sendBlock=_sendBlock;
+@property(retain, nonatomic) UIView *pillContainerView; // @synthesize pillContainerView=_pillContainerView;
 - (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (id)_handlesForRecipients:(id)arg1;
+- (_Bool)recipientIsiMessagable:(id)arg1;
 - (_Bool)_updateBackfillForNewRecipients;
 - (id)autocompleteResultIdentifier:(id)arg1;
 - (id)conversationGUIDForRecipient:(id)arg1;

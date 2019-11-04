@@ -25,6 +25,8 @@
 - (void).cxx_destruct;
 - (Class)_defaultMultitaskingModifierClass;
 - (id)lowEndHardwareModifier;
+- (id)tetheredInsertionModifierFortetheredInsertionEvent:(id)arg1;
+- (id)tetheredRemovalModifierForTetheredRemovalEvent:(id)arg1;
 - (id)insertionModifierForInsertionEvent:(id)arg1;
 - (id)entityRemovalModifierForEvent:(id)arg1;
 - (id)multitaskingModifierForEvent:(id)arg1;

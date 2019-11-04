@@ -27,6 +27,7 @@
 - (_Bool)inputPassthrough;
 - (id)iconName;
 - (id)shortName;
+- (_Bool)displaysParameterSummary;
 - (id)createAccompanyingActionWithMode:(long long)arg1;
 - (id)serializedParameters;
 - (void)generateGroupingIdentifierIfNecessary;

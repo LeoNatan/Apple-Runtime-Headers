@@ -25,6 +25,7 @@
     CDStruct_d58201db _size;
 }
 
++ (BOOL)isFusedOvercaptureFromCGImageProperties:(id)arg1;
 @property(retain) NSDictionary *auxiliaryImagesProperties; // @synthesize auxiliaryImagesProperties=_auxiliaryImagesProperties;
 @property long long componentInfo; // @synthesize componentInfo=_componentInfo;
 @property long long alphaInfo; // @synthesize alphaInfo=_alphaInfo;

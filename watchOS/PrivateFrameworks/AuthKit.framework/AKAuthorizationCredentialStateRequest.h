@@ -12,6 +12,8 @@
 
 @interface AKAuthorizationCredentialStateRequest : NSObject <NSSecureCoding>
 {
+    _Bool _shouldIgnoreUserID;
+    _Bool _shouldIgnoreTeamID;
     NSString *_userID;
     NSString *_teamID;
     NSString *_clientID;
@@ -19,6 +21,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool shouldIgnoreTeamID; // @synthesize shouldIgnoreTeamID=_shouldIgnoreTeamID;
+@property(nonatomic) _Bool shouldIgnoreUserID; // @synthesize shouldIgnoreUserID=_shouldIgnoreUserID;
 @property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(copy, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;

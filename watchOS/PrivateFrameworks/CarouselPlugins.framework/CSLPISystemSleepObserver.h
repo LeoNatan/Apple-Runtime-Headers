@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <CarouselPlugins/CSLPISystemSleepGlobalObserverObserver-Protocol.h>
+
 @class NSString;
 @protocol CSLPISystemSleepObserverDelegate, OS_dispatch_queue;
 
-@interface CSLPISystemSleepObserver : NSObject
+@interface CSLPISystemSleepObserver : NSObject <CSLPISystemSleepGlobalObserverObserver>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_identifier;
@@ -21,12 +23,20 @@
 }
 
 - (void).cxx_destruct;
+- (void)abortSleepTasks;
 - (void)_systemPowerChanged:(unsigned int)arg1 notificationID:(void *)arg2;
 - (void)_stopPowerMonitoring;
 - (void)_startPowerMonitoring;
 - (void)stop;
 - (void)dealloc;
+- (id)initForGlobalObserver:(_Bool)arg1 withQueue:(id)arg2 identifier:(id)arg3 delegate:(id)arg4;
 - (id)initWithQueue:(id)arg1 identifier:(id)arg2 delegate:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

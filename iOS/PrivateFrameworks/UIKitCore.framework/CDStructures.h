@@ -273,6 +273,30 @@ struct vector<CGRect, std::__1::allocator<CGRect>> {
     } __end_cap_;
 };
 
+struct vector<UICollectionViewLayoutAttributes *, std::__1::allocator<UICollectionViewLayoutAttributes *>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<UICollectionViewLayoutAttributes *__strong *, std::__1::allocator<UICollectionViewLayoutAttributes *>> {
+        id *__value_;
+    } __end_cap_;
+};
+
+struct vector<_NSRange, std::__1::allocator<_NSRange>> {
+    struct _NSRange *__begin_;
+    struct _NSRange *__end_;
+    struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange>> {
+        struct _NSRange *__value_;
+    } __end_cap_;
+};
+
+struct vector<long, std::__1::allocator<long>> {
+    long long *__begin_;
+    long long *__end_;
+    struct __compressed_pair<long *, std::__1::allocator<long>> {
+        long long *__value_;
+    } __end_cap_;
+};
+
 struct work_interval_instance {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -519,6 +543,13 @@ typedef struct {
     id _field5;
     struct CGSize _field6;
 } CDStruct_0ba2c6ed;
+
+typedef struct {
+    unsigned long long _field1;
+    CDStruct_6f807b77 _field2;
+    struct CGPoint _field3;
+    int _field4;
+} CDStruct_c50e6da7;
 
 typedef struct {
     _Bool overrideItemIsEnabled[42];

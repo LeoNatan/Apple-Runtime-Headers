@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficResponseMetaData : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_codeVersion;
     NSString *_dataVersion;
     NSString *_hspVersion;
     GEOTrafficTrafficIncidentsMetaData *_incidentsMetadata;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_codeVersion:1;
         unsigned int read_dataVersion:1;
@@ -55,6 +57,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *codeVersion;
 @property(readonly, nonatomic) _Bool hasCodeVersion;
 - (void)_readCodeVersion;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

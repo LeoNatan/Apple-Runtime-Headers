@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_allowedRunLoopModesForToolTips;
+- (BOOL)reconcileToCarbonWindowBounds;
 - (void)disableScreenUpdatesUntilFlush;
 - (BOOL)makeFirstResponder:(id)arg1;
 - (BOOL)accessibilityIsChildOfApp;

@@ -51,6 +51,7 @@
 - (NSString *)contentVariationName;
 - (void)showStyleSelector:(UIBarButtonItem *)arg1;
 - (void)composeViewBodyTextChanged:(MFMailComposeView *)arg1;
+- (void)composeBodyFieldDidResignFirstResponder;
 - (void)composeBodyFieldDidChangeFontAttributes:(NSDictionary *)arg1;
 - (void)composeBodyFieldDidFinishLoad;
 @end

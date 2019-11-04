@@ -18,6 +18,7 @@
     UIColor *_customBackgroundColor;
     _Bool _useLightStyle;
     _Bool _visible;
+    _Bool _snapshotsDisabled;
     _Bool _showsBackspaceButton;
     _Bool _showsEmergencyCallButton;
     _Bool _showsCancelButton;
@@ -49,6 +50,7 @@
 - (void)_cancelButtonHit;
 - (void)_configureAdditionalButtons;
 - (id)_fontForAncillaryButton;
+- (void)_setSnapshotsDisabled:(_Bool)arg1;
 - (double)_distanceToTopOfFirstButton;
 - (void)_numberPadTouchDrag:(id)arg1 forEvent:(id)arg2;
 - (void)_numberPadTouchCancelled:(id)arg1 forEvent:(id)arg2;

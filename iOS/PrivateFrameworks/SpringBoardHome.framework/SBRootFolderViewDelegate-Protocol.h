@@ -13,8 +13,7 @@
 @optional
 - (void)rootFolderView:(SBRootFolderView *)arg1 didEndOverscrollOnFirstPageWithVelocity:(double)arg2;
 - (void)rootFolderView:(SBRootFolderView *)arg1 didOverscrollOnFirstPageByAmount:(double)arg2;
-- (_Bool)rootFolderViewShouldAllowOverscrollOnFirstPage:(SBRootFolderView *)arg1;
-- (void)rootFolderViewDidChangeSidebarPinned:(SBRootFolderView *)arg1;
+- (void)rootFolderView:(SBRootFolderView *)arg1 didChangeEffectiveSidebarVisibilityProgress:(double)arg2;
 - (void)rootFolderView:(SBRootFolderView *)arg1 didChangeSidebarVisibilityProgress:(double)arg2;
 - (UIView *)backgroundViewForEditingDoneButtonForRootFolderView:(SBRootFolderView *)arg1;
 - (UIView *)backgroundViewForDockForRootFolderView:(SBRootFolderView *)arg1;

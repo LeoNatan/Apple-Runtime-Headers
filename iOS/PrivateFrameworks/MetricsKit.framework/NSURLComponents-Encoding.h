@@ -7,6 +7,6 @@
 #import <Foundation/NSURLComponents.h>
 
 @interface NSURLComponents (Encoding)
-+ (id)queryParameterStringForDictionary:(id)arg1;
++ (id)mt_queryParameterStringForDictionary:(id)arg1;
 @end
 

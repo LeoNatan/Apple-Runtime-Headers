@@ -23,12 +23,7 @@
 + (void)fetchRecommendedDonationsByAppIdentifierWithLimit:(unsigned long long)arg1 query:(id)arg2 filteringForIsEligibleForPrediction:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)fetchRecommendedDonationsForApplicationBundleIdentifier:(id)arg1 limit:(unsigned long long)arg2 query:(id)arg3 filteringForIsEligibleForPrediction:(_Bool)arg4 filteringActiveShortcuts:(_Bool)arg5 actionDonationCategory:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
 + (void)fetchRecommendedDonationsForAppPredictionsWithLimit:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (void)fetchRecommendedDonationsForApplicationBundleIdentifier:(id)arg1 limit:(unsigned long long)arg2 query:(id)arg3 filteringForIsEligibleForPrediction:(_Bool)arg4 filteringActiveShortcuts:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 + (void)fetchRecommendedDonationsForApplicationBundleIdentifier:(id)arg1 limit:(unsigned long long)arg2 query:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-+ (void)fetchRecommendedDonationsForApplicationBundleIdentifier:(id)arg1 limit:(unsigned long long)arg2 query:(id)arg3 filteringForIsEligibleForPrediction:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-+ (void)fetchRecommendedDonationsWithLimit:(unsigned long long)arg1 query:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (void)fetchRecommendedDonationsWithLimit:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (void)fetchRecommendedDonationsWithLimit:(unsigned long long)arg1 filteringActiveShortcuts:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)initialize;
 
 @end

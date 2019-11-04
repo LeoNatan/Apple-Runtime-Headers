@@ -89,8 +89,10 @@ __attribute__((visibility("hidden")))
     void *_logDump;
     void *_logBasebandDump;
     _Bool _isPeriodicLoggingEnabled;
+    _Bool _didMBLRampDown;
 }
 
+@property(nonatomic) _Bool didMBLRampDown; // @synthesize didMBLRampDown=_didMBLRampDown;
 @property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) double owrd; // @synthesize owrd=_owrd;

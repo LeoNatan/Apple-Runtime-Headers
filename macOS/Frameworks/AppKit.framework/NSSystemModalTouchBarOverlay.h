@@ -6,20 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSFunctionRow, NSFunctionRowBackgroundColorView, NSTouchBarViewController;
+@class NSFunctionRow, NSFunctionRowBackgroundColorView, NSStackView, NSTouchBar, NSTouchBarItem, NSTouchBarViewController;
 
 __attribute__((visibility("hidden")))
 @interface NSSystemModalTouchBarOverlay : NSObject
 {
     NSFunctionRow *_functionRow;
+    NSTouchBar *_touchBar;
     NSTouchBarViewController *_viewController;
     NSFunctionRowBackgroundColorView *_colorView;
+    NSStackView *_escKeyViewer;
+    NSTouchBarItem *_escKeyReplacementItem;
+    NSTouchBarItem *_systemCloseButtonItem;
     BOOL _useOverlayAnimations;
+    BOOL _showsCloseWhenInactive;
+    BOOL _isObservingEscapeReplacement;
+    BOOL _isObservingActiveState;
 }
 
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)minimize;
 - (void)dismiss;
 - (void)showTouchBar:(id)arg1 placement:(long long)arg2 systemTrayIdentifier:(id)arg3;
+- (void)_updateCloseButton;
+- (void)_removeObservers;
 - (void)dealloc;
 
 @end

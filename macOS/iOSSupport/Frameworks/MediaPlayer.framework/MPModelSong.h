@@ -26,6 +26,7 @@
 + (id)__classicalWork_KEY;
 + (id)__hasCloudSyncSource_KEY;
 + (id)__libraryAddEligible_KEY;
++ (id)__lastDevicePlaybackDate_KEY;
 + (id)__libraryAddedDate_KEY;
 + (id)__libraryAdded_KEY;
 + (id)__keepLocalManagedStatus_KEY;
@@ -59,8 +60,6 @@
 + (BOOL)supportsKeepLocalStatusObservation;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredStoreLibraryPersonalizationProperties;
-+ (BOOL)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
-+ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (id)artworkCatalog;
 - (id)humanDescription;
 - (id)mediaItemPropertyValues;
@@ -95,6 +94,7 @@
 @property(retain, nonatomic) MPModelHomeSharingAsset *homeSharingAsset; // @dynamic homeSharingAsset;
 @property(nonatomic) long long keepLocalEnableState; // @dynamic keepLocalEnableState;
 @property(nonatomic) long long keepLocalManagedStatus; // @dynamic keepLocalManagedStatus;
+@property(readonly, copy, nonatomic) NSDate *lastDevicePlaybackDate; // @dynamic lastDevicePlaybackDate;
 @property(nonatomic, getter=isLibraryAddEligible) BOOL libraryAddEligible; // @dynamic libraryAddEligible;
 @property(nonatomic, getter=isLibraryAdded) BOOL libraryAdded; // @dynamic libraryAdded;
 @property(copy, nonatomic) NSDate *libraryAddedDate; // @dynamic libraryAddedDate;

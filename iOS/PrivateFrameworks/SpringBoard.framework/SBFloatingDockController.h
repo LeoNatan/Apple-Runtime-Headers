@@ -78,6 +78,7 @@
 - (void)_configureFloatingDockBehaviorAssertionForOpenFolder:(id)arg1 atLevel:(unsigned long long)arg2;
 - (void)_handleTransitionForFolder:(id)arg1 atLevel:(unsigned long long)arg2 presenting:(_Bool)arg3 withTransitionCoordinator:(id)arg4;
 - (void)iconManager:(id)arg1 willPerformTransitionWithFolder:(id)arg2 presenting:(_Bool)arg3 withTransitionCoordinator:(id)arg4;
+- (_Bool)viewMap:(id)arg1 shouldRecycleView:(id)arg2;
 - (id)recycledViewsContainerProviderForViewMap:(id)arg1;
 - (unsigned long long)viewMap:(id)arg1 maxRecycledViewsOfClass:(Class)arg2;
 - (void)configureIconView:(id)arg1 forIcon:(id)arg2;

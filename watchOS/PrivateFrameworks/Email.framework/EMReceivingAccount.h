@@ -12,6 +12,7 @@
 
 @interface EMReceivingAccount : EMAccount <EMReceivingAccountBuilder>
 {
+    _Bool _primaryiCloudAccount;
     _Bool _sourceIsManaged;
     _Bool _shouldArchiveByDefault;
     NSString *_name;
@@ -28,6 +29,7 @@
 @property(nonatomic) _Bool sourceIsManaged; // @synthesize sourceIsManaged=_sourceIsManaged;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(retain, nonatomic) EMDeliveryAccount *deliveryAccount; // @synthesize deliveryAccount=_deliveryAccount;
+@property(nonatomic, getter=isPrimaryiCloudAccount) _Bool primaryiCloudAccount; // @synthesize primaryiCloudAccount=_primaryiCloudAccount;
 @property(copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (id)name;

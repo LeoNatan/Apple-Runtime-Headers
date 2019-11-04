@@ -19,7 +19,6 @@
 + (id)optionWithFaceColor:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
 - (_Bool)isEqual:(id)arg1;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int faceColor;
 
 @end

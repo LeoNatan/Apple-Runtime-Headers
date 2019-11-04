@@ -87,9 +87,11 @@ __attribute__((visibility("hidden")))
     void *_logDump;
     void *_logBasebandDump;
     _Bool _isPeriodicLoggingEnabled;
+    _Bool _didMBLRampDown;
     double _packetLossRateVideo;
 }
 
+@property(nonatomic) _Bool didMBLRampDown; // @synthesize didMBLRampDown=_didMBLRampDown;
 @property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
 @property(readonly, nonatomic) double owrd; // @synthesize owrd=_owrd;
 @property(nonatomic) unsigned int localBandwidthEstimation; // @synthesize localBandwidthEstimation=_localBandwidthEstimation;

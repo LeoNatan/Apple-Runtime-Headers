@@ -18,6 +18,7 @@
 - (void)sendMessage:(int)arg1 withTimeInterval:(double)arg2 string:(const char *)arg3 flag:(_Bool)arg4;
 - (void)sendMessage:(int)arg1 withDate:(id)arg2 flag:(_Bool)arg3 string:(const char *)arg4;
 - (void)sendMessage:(int)arg1 withString:(const char *)arg2;
+- (void)sendMessage:(int)arg1 withFlag1:(_Bool)arg2 flag2:(_Bool)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)sendMessage:(int)arg1 withFlag1:(_Bool)arg2 flag2:(_Bool)arg3;
 - (void)sendSimpleMessage:(int)arg1;
 

@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)sendUnreliableMessage:(id)arg1 sessionID:(unsigned int)arg2 participantID:(id)arg3 transactionDelegate:(id)arg4;
-- (BOOL)sendReliableMessage:(id)arg1 sessionID:(unsigned int)arg2 participantID:(id)arg3;
+- (BOOL)sendReliableMessage:(id)arg1 sessionID:(unsigned int)arg2 participantID:(id)arg3 timeout:(id)arg4;
 - (void)confirmedTransactionByParticipantID:(id)arg1 sessionID:(unsigned int)arg2;
 - (void)flushTransactions;
 - (void)dealloc;

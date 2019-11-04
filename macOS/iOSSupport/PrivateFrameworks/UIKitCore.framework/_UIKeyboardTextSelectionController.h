@@ -60,7 +60,6 @@ __attribute__((visibility("hidden")))
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)willBeginFloatingCursor:(BOOL)arg1;
-- (void)endHighlighterGesture;
 - (void)willBeginHighlighterGesture;
 - (void)scrollSelectionToVisible;
 - (void)updateGestureRecognizers;

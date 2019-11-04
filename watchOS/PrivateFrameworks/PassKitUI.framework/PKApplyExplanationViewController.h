@@ -37,6 +37,7 @@
 - (void)handleNextStep;
 - (id)currentPage;
 - (void)_performDoneAction:(_Bool)arg1;
+- (void)_performLearnMoreAction;
 - (void)_performActionForBlock:(CDUnknownBlockType)arg1;
 - (void)_cancel;
 - (void)_done;

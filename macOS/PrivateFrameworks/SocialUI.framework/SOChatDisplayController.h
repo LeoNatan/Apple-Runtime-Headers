@@ -79,6 +79,7 @@
 - (void)_addressBookPreferencesChanged:(id)arg1;
 - (void)_handleInfoChanged:(id)arg1;
 - (void)chatItemsDidChange;
+- (void)_chatAllowedByScreenTimeDidChange:(id)arg1;
 - (void)_chatRecipientsDidChange:(id)arg1;
 - (void)chatDisplayNameDidChange;
 - (void)chatRecipientsDidChange;

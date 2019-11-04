@@ -13,10 +13,12 @@
 @interface GEOArrivalParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_arrivalMapRegions;
     NSMutableArray *_arrivalPoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _arrivalParametersEndOfRouteDistanceThreshold;
     unsigned int _endOfRouteDistanceThreshold;
     struct {
@@ -67,6 +69,8 @@
 - (void)_readArrivalPoints;
 @property(nonatomic) _Bool hasEndOfRouteDistanceThreshold;
 @property(nonatomic) unsigned int endOfRouteDistanceThreshold;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

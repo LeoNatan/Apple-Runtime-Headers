@@ -9,7 +9,7 @@
 #import <MapKit/MKActionRowItemViewDelegate-Protocol.h>
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 
-@class MKPlaceActionManager, MKPlaceSectionItemView, NSArray, NSString, UILayoutGuide;
+@class MKPlaceActionManager, MKPlaceSectionItemView, MKPlaceholderGridCache, NSArray, NSString, UILayoutGuide;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceCardActionsRowViewController : UIViewController <MKActionRowItemViewDelegate, MKModuleViewControllerProtocol>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     MKPlaceSectionItemView *_hairlineView;
     unsigned long long _style;
     UILayoutGuide *_marginLayoutguide;
+    MKPlaceholderGridCache *_placeholderGridCache;
     NSArray *_items;
     MKPlaceActionManager *_actionManager;
 }

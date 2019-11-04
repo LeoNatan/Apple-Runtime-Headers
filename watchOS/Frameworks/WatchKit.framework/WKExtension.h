@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CSLSWaterLock, NSString, WKInterfaceController;
+@class NSString, WKInterfaceController;
 @protocol WKExtensionDelegate;
 
 @interface WKExtension : NSObject
 {
     _Bool _autorotating;
-    CSLSWaterLock *_waterLock;
     _Bool _runningTest;
     int _applicationState;
     NSString *_pptTestName;

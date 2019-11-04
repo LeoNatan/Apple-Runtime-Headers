@@ -13,8 +13,10 @@
 @interface SBFluidSwitcherAnimationController : SBUIBlockAnimationController <SBUIAnimationControllerObserver>
 {
     CDUnknownBlockType _animationCompletion;
+    SBFluidSwitcherAnimationController *_tetheredAnimationController;
 }
 
+@property(nonatomic) __weak SBFluidSwitcherAnimationController *tetheredAnimationController; // @synthesize tetheredAnimationController=_tetheredAnimationController;
 @property(copy, nonatomic) CDUnknownBlockType animationCompletion; // @synthesize animationCompletion=_animationCompletion;
 - (void).cxx_destruct;
 - (void)animationControllerDidFinishAnimation:(id)arg1;

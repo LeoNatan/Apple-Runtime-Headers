@@ -13,10 +13,12 @@
 @interface GEOTimeCheckpoints : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_9f2792e4 _distToNextCheckpoints;
     CDStruct_9f2792e4 _timeToNextCheckpoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_distToNextCheckpoints:1;
@@ -58,6 +60,8 @@
 @property(readonly, nonatomic) unsigned long long distToNextCheckpointsCount;
 - (void)_readDistToNextCheckpoints;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 @property(copy) NSString *tag;
 @property(readonly) BOOL includeLocalAccount;
+@property(readonly) CNObservable *enabledPersistentAccountsObservable;
 @property(readonly) CNObservable *enabledAccountsObservable;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly, copy) NSArray *enabledAccounts;

@@ -31,6 +31,7 @@
 - (void)extensionConnection:(SPExtensionConnection *)arg1 handleActivityReply:(NSString *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 didReceiveUserActivityDict:(NSDictionary *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 didReceiveUserActivity:(NSUserActivity *)arg2;
+- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 removeDynamicInterfaceObject:(NSDictionary *)arg3;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 setupDynamicInterfaceObject:(NSDictionary *)arg3 completion:(void (^)(UIView *))arg4;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 setUnderlyingUIHostingController:(UIViewController *)arg3;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerDismissViewController:(NSString *)arg2;
@@ -42,7 +43,7 @@
 - (void)extensionConnection:(SPExtensionConnection *)arg1 reloadRootInterfaceViewControllersWithNames:(NSArray *)arg2 initializationContextIDs:(NSArray *)arg3 pageIndex:(NSNumber *)arg4 verticalPaging:(NSNumber *)arg5;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerBecomeCurrentPageViewController:(NSString *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 scrollToObject:(NSString *)arg3 atScrollPosition:(NSNumber *)arg4 animated:(NSNumber *)arg5;
-- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerPopToRootViewController:(NSString *)arg2;
+- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerPopToRootViewController:(NSString *)arg2 completion:(void (^)(void))arg3;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerPopViewController:(NSString *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(NSDictionary *)arg4 rowNamesAndContextIDs:(NSArray *)arg5;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 presentInterfaceControllerClass:(Class)arg3 willPresent:(void (^)(NSString *))arg4 didDismiss:(void (^)(void))arg5;

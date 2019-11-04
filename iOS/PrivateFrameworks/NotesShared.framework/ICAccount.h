@@ -39,6 +39,7 @@
 + (id)allActiveAccountsInContext:(id)arg1 sortDescriptors:(id)arg2 relationshipKeyPathsForPrefetching:(id)arg3;
 + (id)allActiveAccountsInContext:(id)arg1;
 + (unsigned long long)numberOfCloudKitAccountsInContext:(id)arg1 onlyMigrated:(_Bool)arg2;
++ (id)allAccountIdentifiersInContext:(id)arg1;
 + (id)allAccountsInContext:(id)arg1;
 + (id)defaultAccountInContext:(id)arg1;
 + (id)localAccountInContext:(id)arg1;

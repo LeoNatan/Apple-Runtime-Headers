@@ -22,18 +22,18 @@
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)discoveredEndpointsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)discoveredEndpointsCount;
 - (void)addDiscoveredEndpoints:(id)arg1;
 - (void)clearDiscoveredEndpoints;
-@property(readonly, nonatomic) BOOL hasClientUUID;
+@property(readonly, nonatomic) _Bool hasClientUUID;
 
 @end
 

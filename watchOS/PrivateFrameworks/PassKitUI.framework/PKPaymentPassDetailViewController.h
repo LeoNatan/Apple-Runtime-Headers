@@ -27,7 +27,7 @@
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 
-@class CLInUseAssertion, CNContact, NSArray, NSDateFormatter, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSObject, NSString, PKAccount, PKAccountService, PKAccountServiceAccountResolutionController, PKAnimatedNavigationBarTitleView, PKBusinessChatController, PKDashboardTransactionFetcher, PKExpressPassController, PKLinkedApplication, PKPassFaceViewRendererState, PKPassHeaderView, PKPassPresentationContext, PKPaymentApplication, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentActionViewController, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentPreferences, PKPeerPaymentWebService, PKPhysicalCardActionController, PKPhysicalCardController, PKSettingTableCell, PKSpinnerHeaderView, PKTransitBalanceModel, PKTransitPassProperties, UIColor, UIImageView, UIRefreshControl, UISegmentedControl, UITableViewHeaderFooterView, UIView;
+@class CLInUseAssertion, CNContact, NSArray, NSDateFormatter, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSObject, NSString, PKAccount, PKAccountService, PKAccountServiceAccountResolutionController, PKAnimatedNavigationBarTitleView, PKDashboardTransactionFetcher, PKExpressPassController, PKLinkedApplication, PKPassFaceViewRendererState, PKPassHeaderView, PKPassPresentationContext, PKPaymentApplication, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentActionViewController, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentPreferences, PKPeerPaymentWebService, PKPhysicalCardActionController, PKPhysicalCardController, PKSettingTableCell, PKSpinnerHeaderView, PKTransitBalanceModel, PKTransitPassProperties, UIColor, UIImageView, UIRefreshControl, UISegmentedControl, UITableViewHeaderFooterView, UIView;
 @protocol OS_dispatch_group, OS_dispatch_source, PKPassDeleteHandler, PKPassLibraryDataProvider, PKPaymentDataProvider;
 
 @interface PKPaymentPassDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPeerPaymentActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPhysicalCardActionControllerDelegate, PKCreditAccountPaymentDetailsViewControllerDelegate, PKAccountAutomaticPaymentsControllerDelegate, PKAccountServiceAccountResolutionControllerDelegate, PKAccountBillPaymentObserver, PKAccountServiceObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPassHeaderViewDelegate, PKBalanceDetailsViewControllerDelegate, PKPaymentPassActionWidgetViewDelegate, PKPerformActionViewControllerDelegate, PKAMPEnrollmentManagerObserver, UITableViewDataSource, UITableViewDelegate, PSStateRestoration, PKPaymentSetupDelegate>
@@ -122,7 +122,6 @@
     NSArray *_recurringPayments;
     NSArray *_scheduledPayments;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionControllerForAccountService;
-    PKBusinessChatController *_businessChatController;
     NSIndexPath *_loadingPeerPaymentAccountActionIndexPath;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionController;
     unsigned int _peerPaymentAccountResolution;
@@ -157,6 +156,9 @@
 @property(nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
 @property(nonatomic) __weak id <PKPassDeleteHandler> deleteOverrider; // @synthesize deleteOverrider=_deleteOverrider;
 - (void).cxx_destruct;
+- (void)_reportPassDetailsAnalyticsForToggleTag:(id)arg1 toggleResult:(_Bool)arg2;
+- (void)_reportPassDetailsAnalyticsForTappedButtonTag:(id)arg1;
+- (void)_reportPassDetailsAnalyticsForTappedRowTag:(id)arg1;
 - (void)balanceDetailsViewController:(id)arg1 didUpdateBalanceReminder:(id)arg2 forBalance:(id)arg3;
 - (_Bool)shouldAllowRefresh;
 - (void)_refreshFinished:(_Bool)arg1;
@@ -242,6 +244,7 @@
 - (_Bool)_shouldShowTransferCell;
 - (void)_updatePeerPaymentPreferencesSectionVisibilityAndReloadIfNecessary;
 - (_Bool)_showsTransactionHistorySwitch;
+- (_Bool)_shouldShowTransactions;
 - (id)_createTabBarWithSelectedIndex:(int)arg1;
 - (float)_offscreenHeaderHeight;
 - (_Bool)_updateHeaderHeightDeterminingLayout:(_Bool)arg1;
@@ -272,11 +275,16 @@
 - (void)_didSelectFixPeerPaymentAtIndexPath:(id)arg1;
 - (void)_showSpinner:(_Bool)arg1 inCell:(id)arg2;
 - (void)_showSpinner:(_Bool)arg1 inCell:(id)arg2 detailText:(id)arg3;
+- (void)presentBillPayment;
+- (void)showStatementDetailsWithIdentifier:(id)arg1;
 - (void)presentBankAccounts;
 - (void)presentBalanceDetails;
 - (void)presentSchedulePayments;
+- (id)_accountResolutionController;
 - (void)_didSelectMakePayment;
 - (void)_didSelectTransferToBank;
+- (void)presentTermsAcceptance;
+- (void)presentIdentityVerification;
 - (void)presentTopUp;
 - (void)_doneLoadingPeerPaymentAccountAction;
 - (void)authAndDecryptWithVirtualCard:(id)arg1;
@@ -288,6 +296,8 @@
 - (void)_didSelectAccountServiceRewardsDetailsAtIndexPath:(id)arg1;
 - (void)_didSelectAccountServiceMakeDefaultAtIndexPath:(id)arg1;
 - (void)_didSelectAccountServiceBankAccountsAtIndexPath:(id)arg1;
+- (id)_installmentsPlanCellForTableView:(id)arg1 atIndexPath:(id)arg2;
+- (void)_didSelectInstallmentPlansAtIndexPath:(id)arg1;
 - (id)_settingsExpressTransitURL;
 - (void)_didSelectCardInfoCellAtIndexPath:(id)arg1;
 - (void)_didSelectCommutePlanAtRowIndex:(int)arg1;
@@ -447,6 +457,7 @@
 - (void)presentTransactionDetailsForTransaction:(id)arg1 animated:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

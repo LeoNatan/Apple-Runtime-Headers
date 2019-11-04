@@ -13,12 +13,14 @@
 @interface GEORPDetails : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOMapRegion *_displayRegion;
     GEORPUpdatedLabel *_label;
     NSString *_localizedDescription;
     NSString *_localizedTitle;
     NSMutableArray *_places;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _directionsType;
     int _displayStyle;
     int _mapType;
@@ -86,6 +88,8 @@
 - (id)displayStyleAsString:(int)arg1;
 @property(nonatomic) BOOL hasDisplayStyle;
 @property(nonatomic) int displayStyle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

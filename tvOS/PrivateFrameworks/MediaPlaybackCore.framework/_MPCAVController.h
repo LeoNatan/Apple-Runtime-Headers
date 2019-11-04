@@ -24,6 +24,9 @@
 @property(nonatomic, getter=hasPlayedSuccessfully) _Bool playedSuccessfully; // @synthesize playedSuccessfully=_playedSuccessfully;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void).cxx_destruct;
+- (void)_updateStateForPlaybackPrevention;
+- (void)_queueDidEndWithReason:(id)arg1 skipCL:(_Bool)arg2 lastItem:(id)arg3;
+- (void)_queueDidEndWithReason:(id)arg1 lastItem:(id)arg2;
 - (void)_setState:(long long)arg1;
 - (void)_itemDidChange:(id)arg1;
 - (void)_itemWillChange:(id)arg1;
@@ -33,6 +36,7 @@
 - (void)_configureAudioSession;
 - (void)playbackHasStartedForItem:(id)arg1;
 - (void)handlePlaybackErrorWithUserInfo:(id)arg1;
+- (void)queueController:(id)arg1 didIncrementVersionForSegment:(id)arg2;
 - (void)queueController:(id)arg1 didChangeShuffleType:(long long)arg2;
 - (void)queueController:(id)arg1 didChangeRepeatType:(long long)arg2;
 - (void)_playbackUserDefaultsEQPresetDidChangeNotification:(id)arg1;

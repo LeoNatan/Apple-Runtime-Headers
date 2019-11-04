@@ -7,33 +7,24 @@
 #import <UIKitCore/_UITextSimpleLinkInteraction.h>
 
 #import <UIKitCore/UIContextMenuInteractionDelegate-Protocol.h>
-#import <UIKitCore/_UIRotatingAlertControllerDelegate-Protocol.h>
 
-@class NSMapTable, NSString, UIContextMenuInteraction, UIWindow, _UIRotatingAlertController, _UITextInteractableItem;
+@class NSMapTable, NSString, UIContextMenuInteraction;
 
 __attribute__((visibility("hidden")))
-@interface _UITextMenuLinkInteraction : _UITextSimpleLinkInteraction <UIContextMenuInteractionDelegate, _UIRotatingAlertControllerDelegate>
+@interface _UITextMenuLinkInteraction : _UITextSimpleLinkInteraction <UIContextMenuInteractionDelegate>
 {
     UIContextMenuInteraction *_contextMenuInteraction;
     NSMapTable *_configurationItems;
-    _UITextInteractableItem *_actionSheetInteractableItem;
-    _UIRotatingAlertController *_actionSheetViewController;
-    UIWindow *_windowForActionSheetPresentation;
 }
 
 - (void).cxx_destruct;
-- (_Bool)_presentActionsForTextInteractableItem:(id)arg1;
-- (_Bool)_showActionSheetForTextInteractableItem:(id)arg1;
-- (void)sheet:(id)arg1 presentingViewControllerDidChange:(id)arg2;
-- (struct CGRect)presentationRectInHostViewForSheet:(id)arg1;
-- (struct CGRect)initialPresentationRectInHostViewForSheet:(id)arg1;
-- (id)hostViewForSheet:(id)arg1;
 - (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
 - (id)_contextMenuInteraction:(id)arg1 overrideSuggestedActionsForConfiguration:(id)arg2;
 - (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
+- (_Bool)_contextMenuInteraction:(id)arg1 shouldAttemptToPresentConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;

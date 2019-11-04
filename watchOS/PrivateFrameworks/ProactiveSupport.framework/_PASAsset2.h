@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) NSString *bundlePath;
 - (_Bool)overrideDefaultBundleWithBundleAtPath:(id)arg1;
 - (void)_issueUpdateNotificationsWithCallback:(CDUnknownBlockType)arg1;
+- (void)_purgeObsoleteInstalledAssetsFromCandidates:(id)arg1 guardedData:(id)arg2;
 - (_Bool)updateAssetMetadataUsingQueryResults:(id)arg1;
 - (void)_updateAssetMetadata;
 - (id)filesystemPathForAssetDataRelativePath:(id)arg1;
@@ -51,7 +52,8 @@
 - (void)downloadMetadataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithAssetTypeIdentifier:(id)arg1 defaultBundlePath:(id)arg2 compatibilityVersion:(unsigned int)arg3 matchingKeysAndValues:(id)arg4 notificationQueue:(id)arg5 logHandle:(id)arg6 enableAssetUpdates:(_Bool)arg7;
+- (id)_initWithAssetTypeIdentifier:(id)arg1 defaultBundlePath:(id)arg2 compatibilityVersion:(unsigned int)arg3 matchingKeysAndValues:(id)arg4 notificationQueue:(id)arg5 logHandle:(id)arg6 enableAssetUpdates:(_Bool)arg7 purgeObsoleteInstalledAssets:(_Bool)arg8;
+- (id)initWithAssetTypeDescriptorPath:(id)arg1 defaultBundlePath:(id)arg2 matchingKeysAndValues:(id)arg3 notificationQueue:(id)arg4 logHandle:(id)arg5 enableAssetUpdates:(_Bool)arg6 purgeObsoleteInstalledAssets:(_Bool)arg7;
 - (id)initWithAssetTypeDescriptorPath:(id)arg1 defaultBundlePath:(id)arg2 matchingKeysAndValues:(id)arg3 notificationQueue:(id)arg4 logHandle:(id)arg5 enableAssetUpdates:(_Bool)arg6;
 - (id)initWithAssetTypeDescriptorPath:(id)arg1 defaultBundlePath:(id)arg2 matchingKeysAndValues:(id)arg3 notificationQueue:(id)arg4 logHandle:(id)arg5;
 

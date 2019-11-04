@@ -13,10 +13,12 @@
 {
     int _type;
     int _state;
+    int _supportedOptions;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)paymentSetupFeatureWithProtobuf:(id)arg1;
+@property(nonatomic) int supportedOptions; // @synthesize supportedOptions=_supportedOptions;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (unsigned int)hash;

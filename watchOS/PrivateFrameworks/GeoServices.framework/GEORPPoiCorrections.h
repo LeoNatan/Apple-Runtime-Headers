@@ -13,7 +13,6 @@
 @interface GEORPPoiCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPAddressCorrections *_address;
     GEORPAmenityCorrections *_amenity;
@@ -26,6 +25,9 @@
     NSString *_originalUrl;
     NSString *_phone;
     NSString *_url;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _flagHoursIncorrect;
     _Bool _flagNotAtThisAddress;
     struct {
@@ -116,6 +118,8 @@
 @property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
 - (void)_readName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

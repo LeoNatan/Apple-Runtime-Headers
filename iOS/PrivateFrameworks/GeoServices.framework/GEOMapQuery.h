@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOMapQuery : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     struct GEOSessionID _sessionID;
     GEOMapRegion *_mapRegion;
     GEOPlaceSearchRequest *_placeSearchRequest;
     NSString *_query;
     GEOLocation *_userLocation;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _clientImgFmt;
     int _clientImgMaxHeight;
     int _clientImgMaxWidth;
@@ -119,6 +121,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
 - (void)_readQuery;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

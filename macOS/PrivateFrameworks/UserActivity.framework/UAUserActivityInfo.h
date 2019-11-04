@@ -24,7 +24,7 @@
     BOOL _dirty;
     BOOL _payloadAvailable;
     BOOL _payloadRequested;
-    BOOL _isActive;
+    BOOL _active;
     NSUUID *_uuid;
     unsigned long long _type;
     NSString *_title;
@@ -57,7 +57,7 @@
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy) NSString *peerDeviceType; // @synthesize peerDeviceType=_peerDeviceType;
 @property(retain) SFPeerDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
-@property BOOL isActive; // @synthesize isActive=_isActive;
+@property BOOL active; // @synthesize active=_active;
 @property(getter=isPayloadRequested) BOOL payloadRequested; // @synthesize payloadRequested=_payloadRequested;
 @property(getter=isPayloadAvailable) BOOL payloadAvailable; // @synthesize payloadAvailable=_payloadAvailable;
 @property(readonly, getter=isDirty) BOOL dirty; // @synthesize dirty=_dirty;

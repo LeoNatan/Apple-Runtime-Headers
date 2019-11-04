@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSString;
+@class NSData, NSString, UIColor;
 
 @protocol SBRendererServiceProtocol
 - (void)service_applyMaterialRecipe:(NSData *)arg1 recipeName:(NSString *)arg2 weighting:(double)arg3 downsampleFactor:(double)arg4 withReply:(void (^)(IOSurface *))arg5;
-- (void)service_applyWallpaperTreatment:(NSData *)arg1 needsLumaTreatment:(_Bool)arg2 needsDimmingTreatment:(_Bool)arg3 downsampleFactor:(double)arg4 withReply:(void (^)(IOSurface *))arg5;
+- (void)service_applyWallpaperTreatment:(NSData *)arg1 needsLumaTreatment:(_Bool)arg2 needsDimmingTreatment:(_Bool)arg3 downsampleFactor:(double)arg4 averageColor:(UIColor *)arg5 withReply:(void (^)(IOSurface *))arg6;
 @end
 

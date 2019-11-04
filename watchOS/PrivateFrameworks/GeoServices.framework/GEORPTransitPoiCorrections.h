@@ -13,7 +13,6 @@
 @interface GEORPTransitPoiCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPAccessPointCorrections *_accessPoint;
     GEORPAmenityCorrections *_amenity;
@@ -22,6 +21,9 @@
     GEORPMapLocation *_mapLocation;
     NSString *_name;
     NSString *_originalName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _lineScheduleDelay;
     _Bool _lineShapeIncorrect;
     struct {
@@ -92,6 +94,8 @@
 @property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
 - (void)_readName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

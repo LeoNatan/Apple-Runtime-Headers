@@ -20,11 +20,9 @@
     UIColor *_accessoryColor;
     _Bool _forceFullSizeDetailLabel;
     _Bool _activityIndicatorVisible;
-    float _customMinHeight;
     struct CGSize _imageSize;
 }
 
-@property(nonatomic) float customMinHeight; // @synthesize customMinHeight=_customMinHeight;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) _Bool activityIndicatorVisible; // @synthesize activityIndicatorVisible=_activityIndicatorVisible;
 @property(retain, nonatomic) UIView *remoteUIAccessoryView; // @synthesize remoteUIAccessoryView=_remoteUIAccessoryView;

@@ -8,7 +8,7 @@
 
 #import <iTunesCloud/NSCopying-Protocol.h>
 
-@class ICIAMMessageRule, NSMutableArray, NSString;
+@class ICIAMMessageRule, ICIAMMetricEvent, NSMutableArray, NSString;
 
 @interface ICIAMApplicationMessage : PBCodable <NSCopying>
 {
@@ -17,6 +17,7 @@
     int _assetPrefetchStrategy;
     NSMutableArray *_contentPages;
     int _globalPresentationPolicyGroup;
+    ICIAMMetricEvent *_holdoutEvent;
     NSString *_identifier;
     int _maximumDisplays;
     int _messageType;
@@ -44,6 +45,7 @@
 
 + (Class)contentPagesType;
 + (Class)targetType;
+@property(retain, nonatomic) ICIAMMetricEvent *holdoutEvent; // @synthesize holdoutEvent=_holdoutEvent;
 @property(retain, nonatomic) NSString *webArchiveURL; // @synthesize webArchiveURL=_webArchiveURL;
 @property(retain, nonatomic) ICIAMMessageRule *rule; // @synthesize rule=_rule;
 @property(retain, nonatomic) NSMutableArray *contentPages; // @synthesize contentPages=_contentPages;
@@ -64,6 +66,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasHoldoutEvent;
 - (int)StringAsAssetPrefetchStrategy:(id)arg1;
 - (id)assetPrefetchStrategyAsString:(int)arg1;
 @property(nonatomic) _Bool hasAssetPrefetchStrategy;

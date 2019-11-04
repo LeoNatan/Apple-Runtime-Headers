@@ -6,8 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKPreviewDispatchCache, IMBalloonPlugin, NSArray, NSCache, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString;
-@protocol CKExtensionConsumer;
+@class CKPreviewDispatchCache, IMBalloonPlugin, NSArray, NSCache, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
 @interface CKBalloonPluginManager : NSObject
 {
@@ -23,11 +22,11 @@
     _Bool _keepingEmptySections;
     _Bool _isAppInstallationObserver;
     NSString *_lastLaunchedIdentifier;
-    id <CKExtensionConsumer> _currentExtensionConsumer;
     IMBalloonPlugin *_lastViewedPlugin;
     NSArray *_visiblePlugins;
     NSArray *_cachedPotentiallyVisiblePlugins;
     NSArray *_favoriteAppStripPlugins;
+    NSMutableSet *_currentExtensionConsumers;
     NSDictionary *_pluginVersionMap;
     NSDictionary *_pluginSeenMap;
     NSDictionary *_pluginIndexPathMap;
@@ -62,6 +61,7 @@
 @property(retain, nonatomic) NSDictionary *pluginIndexPathMap; // @synthesize pluginIndexPathMap=_pluginIndexPathMap;
 @property(retain, nonatomic) NSDictionary *pluginSeenMap; // @synthesize pluginSeenMap=_pluginSeenMap;
 @property(retain, nonatomic) NSDictionary *pluginVersionMap; // @synthesize pluginVersionMap=_pluginVersionMap;
+@property(retain, nonatomic) NSMutableSet *currentExtensionConsumers; // @synthesize currentExtensionConsumers=_currentExtensionConsumers;
 @property(retain, nonatomic) NSArray *favoriteAppStripPlugins; // @synthesize favoriteAppStripPlugins=_favoriteAppStripPlugins;
 @property(retain, nonatomic) NSArray *visibleSwitcherPlugins; // @synthesize visibleSwitcherPlugins=_visibleSwitcherPlugins;
 @property(retain, nonatomic) NSArray *cachedPotentiallyVisiblePlugins; // @synthesize cachedPotentiallyVisiblePlugins=_cachedPotentiallyVisiblePlugins;
@@ -71,7 +71,6 @@
 @property(nonatomic) _Bool isAppRemovalEnabled; // @synthesize isAppRemovalEnabled=_isAppRemovalEnabled;
 @property(nonatomic) _Bool isAppInstallationEnabled; // @synthesize isAppInstallationEnabled=_isAppInstallationEnabled;
 @property(nonatomic) __weak IMBalloonPlugin *lastViewedPlugin; // @synthesize lastViewedPlugin=_lastViewedPlugin;
-@property(nonatomic) __weak id <CKExtensionConsumer> currentExtensionConsumer; // @synthesize currentExtensionConsumer=_currentExtensionConsumer;
 @property(retain, nonatomic) NSString *lastLaunchedIdentifier; // @synthesize lastLaunchedIdentifier=_lastLaunchedIdentifier;
 - (void).cxx_destruct;
 - (_Bool)_shouldShowActivity;
@@ -117,6 +116,8 @@
 - (_Bool)_shouldUninstallContainingBundle:(id)arg1;
 - (void)reloadInstalledApps:(id)arg1;
 - (void)refreshPlugins;
+- (void)removeExtensionConsumer:(id)arg1;
+- (void)addExtensionConsumer:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)descriptionOfVisibleDrawerPlugins;
@@ -148,6 +149,7 @@
 - (void)invalidateAllActivePlugins;
 - (void)invalidateAllActiveSwitcherPlugins;
 - (void)forceTearDownRemoteViewsSkippingCameraApp:(_Bool)arg1;
+- (id)bundleIdentifiersForCurrentExtensionConsumers;
 - (void)forceKillNonCameraRemoteExtensionsImmediately;
 - (void)forceKillRemoteExtensionsWithDelay:(_Bool)arg1 skipCameraApp:(_Bool)arg2;
 - (void)forceKillRemoteExtensionsWithDelay:(_Bool)arg1;

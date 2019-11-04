@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)showAlternateImage:(_Bool)arg1;
 - (void)setCurrentImage;
 - (void)didMoveToWindow;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)_selectedCompactImage;
 - (id)_selectedImage;
 - (id)_unselectedCompactImage;

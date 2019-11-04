@@ -29,7 +29,7 @@
 - (void)_setText:(id)arg1 textColor:(id)arg2 spinnerEnabled:(_Bool)arg3;
 - (void)setAvailabilityRequestInProgressState;
 - (void)setShowMoreState;
-- (void)setNoAvailableTimesStateWithNumberOfExistingTimes:(unsigned int)arg1;
+- (void)setNoAvailableTimesStateWithNumberOfExistingTimes:(unsigned int)arg1 hasError:(_Bool)arg2;
 - (void)setInitialSearchInProgressState;
 - (void)updateConstraints;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

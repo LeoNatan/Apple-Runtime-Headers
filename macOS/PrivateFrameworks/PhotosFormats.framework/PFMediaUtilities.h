@@ -28,9 +28,12 @@
 + (BOOL)isImageUTI:(id)arg1;
 + (BOOL)isMovieUTI:(id)arg1;
 + (BOOL)isAudioUTI:(id)arg1;
++ (id)imagePropertiesFromImageSource:(struct CGImageSource *)arg1 atIndex:(unsigned long long)arg2;
 + (id)imagePropertiesFromImageSource:(struct CGImageSource *)arg1;
 + (long long)defaultRasterizationDPI;
 + (BOOL)UTIRequiresRasterizationDPI:(id)arg1;
++ (BOOL)isValidAVFileForURL:(id)arg1;
++ (BOOL)isValidImageFileForURL:(id)arg1;
 + (BOOL)isValidExtension:(id)arg1 forUTI:(id)arg2;
 + (id)UTIForURL:(id)arg1 error:(id *)arg2;
 + (id)UTIForHFSType:(unsigned int)arg1;

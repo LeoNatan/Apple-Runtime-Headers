@@ -55,6 +55,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)findHiddenIconView;
 - (void)_updateScrollingState:(_Bool)arg1;
+- (void)_setScrollViewNeedsToClipCorners:(_Bool)arg1;
 - (void)_convertToSingleIconListAnimated:(_Bool)arg1;
 - (void)_convertToMultipleIconListsAnimated:(_Bool)arg1;
 - (void)fadeContentForMinificationFraction:(double)arg1;

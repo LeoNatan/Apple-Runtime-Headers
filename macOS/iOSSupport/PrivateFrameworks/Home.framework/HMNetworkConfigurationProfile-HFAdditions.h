@@ -9,13 +9,17 @@
 @class NSString;
 
 @interface HMNetworkConfigurationProfile (HFAdditions)
++ (id)_localizedStringForPurpose;
++ (id)_validCurrentModesForTargetModes;
 + (BOOL)hf_currentProtectionMode:(long long)arg1 isValidForTargetProtectionMode:(long long)arg2;
++ (BOOL)hf_targetProtectionModeIsValid:(long long)arg1;
 + (id)hf_localizedDescriptionForAllowedHostPurpose:(unsigned long long)arg1;
 + (id)hf_detailedLocalizedDescriptionForTargetProtectionMode:(long long)arg1;
 + (id)hf_detailedLocalizedTitleForTargetProtectionMode:(long long)arg1;
 + (id)hf_localizedTitleForTargetProtectionMode:(long long)arg1;
 @property(readonly, nonatomic) BOOL hf_requiresManualWiFiReconfiguration;
 @property(readonly, nonatomic) BOOL hf_hasCurrentNetworkAccessViolation;
+@property(readonly, nonatomic) BOOL hf_targetProtectionModeIsValid;
 @property(readonly, nonatomic) BOOL hf_hasProtectionModeMismatch;
 @property(readonly, copy, nonatomic) NSString *hf_targetProtectionModeDetailedLocalizedDescription;
 @property(readonly, copy, nonatomic) NSString *hf_targetProtectionModeDetailedLocalizedTitle;

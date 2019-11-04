@@ -8,22 +8,28 @@
 
 #import <MediaServices/MSVSegmentedSubDecoder-Protocol.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSString;
+@class NSArray, NSDictionary, NSMapTable, NSMutableArray, NSString;
 
 @interface MSVOPACKDecoder : NSCoder <MSVSegmentedSubDecoder>
 {
     NSArray *_objects;
     NSMapTable *_objectLookupTable;
     NSMutableArray *_wrapperStack;
+    NSDictionary *_userInfo;
 }
 
++ (id)decodedObjectOfClasses:(id)arg1 fromData:(id)arg2 userInfo:(id)arg3 error:(id *)arg4;
 + (id)decodedObjectOfClasses:(id)arg1 fromData:(id)arg2 error:(id *)arg3;
++ (id)decodedObjectOfClass:(Class)arg1 fromData:(id)arg2 userInfo:(id)arg3 error:(id *)arg4;
 + (id)decodedObjectOfClass:(Class)arg1 fromData:(id)arg2 error:(id *)arg3;
+@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSMutableArray *wrapperStack; // @synthesize wrapperStack=_wrapperStack;
 @property(readonly, nonatomic) NSMapTable *objectLookupTable; // @synthesize objectLookupTable=_objectLookupTable;
 @property(readonly, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 - (void).cxx_destruct;
 - (id)_decodeNumberForKey:(id)arg1;
+- (void)msv_setUserInfo:(id)arg1;
+- (id)msv_userInfo;
 - (void)finishDecodingPartialTopLevelObject;
 - (void)beginDecodingPartialTopLevelObjectOfClasses:(id)arg1;
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int *)arg2;
@@ -40,6 +46,7 @@
 - (_Bool)containsValueForKey:(id)arg1;
 - (_Bool)allowsKeyedCoding;
 - (_Bool)requiresSecureCoding;
+- (id)initForReadingFromData:(id)arg1 userInfo:(id)arg2 error:(id *)arg3;
 - (id)initForReadingFromData:(id)arg1 error:(id *)arg2;
 
 // Remaining properties

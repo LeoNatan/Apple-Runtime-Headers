@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlaybackCore/_MPCStateDumpPropertyListTransformable-Protocol.h>
+
 @class MPCPlayerResponse, MPCPlayerResponseItem, MPSectionedCollection, NSIndexPath, NSString;
 
-@interface MPCPlayerResponseTracklist : NSObject
+@interface MPCPlayerResponseTracklist : NSObject <_MPCStateDumpPropertyListTransformable>
 {
     unsigned int _changeItemSupport;
     NSString *_uniqueIdentifier;
@@ -37,6 +39,7 @@
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
 - (unsigned int)_determineChangeItemSupport;
+- (id)_stateDumpObject;
 - (id)disableModificationsCommand;
 - (id)changeItemCommand;
 - (id)shuffleCommand;
@@ -46,6 +49,12 @@
 - (id)resetCommand;
 @property(readonly, nonatomic) MPCPlayerResponseItem *playingItem;
 - (id)initWithResponse:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

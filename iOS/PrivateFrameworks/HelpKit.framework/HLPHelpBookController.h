@@ -10,7 +10,6 @@
 
 @interface HLPHelpBookController : HLPRemoteDataController
 {
-    _Bool _supportsDarkMode;
     _Bool _hasSectionIcon;
     _Bool _fullBookView;
     long long _contentFormatVersion;
@@ -49,7 +48,6 @@
 @property(nonatomic) _Bool hasSectionIcon; // @synthesize hasSectionIcon=_hasSectionIcon;
 @property(nonatomic) long long serverType; // @synthesize serverType=_serverType;
 @property(nonatomic) long long contentFormatVersion; // @synthesize contentFormatVersion=_contentFormatVersion;
-@property(nonatomic) _Bool supportsDarkMode; // @synthesize supportsDarkMode=_supportsDarkMode;
 - (void).cxx_destruct;
 - (id)welcomeTopicItem;
 - (id)copyrightTopicItem;

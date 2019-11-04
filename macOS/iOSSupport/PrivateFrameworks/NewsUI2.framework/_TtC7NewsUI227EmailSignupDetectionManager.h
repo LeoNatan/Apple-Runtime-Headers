@@ -9,9 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI227EmailSignupDetectionManager : NSObject
 {
+    // Error parsing type: , name: appConfigurationManager
+    // Error parsing type: , name: appLaunchUpsellManager
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: kMaxCount
-    // Error parsing type: , name: kEmailSignUpAppLaunchCurrentCount
+    // Error parsing type: , name: emailSignUpAppLaunchCurrentCount
     // Error parsing type: , name: appleAccount
 }
 

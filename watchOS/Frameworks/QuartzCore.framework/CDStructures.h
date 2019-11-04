@@ -566,7 +566,6 @@ struct Server {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
-    unsigned int :1;
 };
 
 struct Shape;
@@ -751,6 +750,7 @@ struct _CAMetalDrawablePrivate {
     id _field10;
     struct CGColorSpace *_field11;
     unsigned int _field12;
+    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

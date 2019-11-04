@@ -19,7 +19,7 @@
 + (Class)supportedCommandClass;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)_markVoiceMailAsRead:(id)arg1;
+- (void)_markVoiceMailAsRead:(id)arg1 forRemoteDevice:(id)arg2;
 - (double)_audioPlaybackDuration:(id)arg1;
 - (void)handleCommand:(id)arg1 withContext:(id)arg2 taskTracker:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)isCommandUUFR:(id)arg1;

@@ -21,6 +21,7 @@
 @property(retain) AFAnalyticsTurnBasedInstrumentationContext *currentInstrumentationTurnContext; // @synthesize currentInstrumentationTurnContext=_currentInstrumentationTurnContext;
 - (void).cxx_destruct;
 - (void)emitPunchOutEventWithURL:(id)arg1 appID:(id)arg2;
+- (void)emitDialogOutputEventWith:(id)arg1 canUseServerTTS:(_Bool)arg2 spokenDialogOutput:(id)arg3 displayedDialogOutput:(id)arg4;
 - (void)emitUUFRPresentedEventWith:(id)arg1 snippetClass:(id)arg2 dialogIdentifier:(id)arg3 dialogPhase:(id)arg4;
 - (void)emitTextToSpeechEndEvent:(id)arg1;
 - (void)emitTextToSpeechBeginEvent:(id)arg1;

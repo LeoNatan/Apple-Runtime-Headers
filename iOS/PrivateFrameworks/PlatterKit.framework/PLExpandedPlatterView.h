@@ -57,7 +57,7 @@
 - (void)_layoutScrollViewContentView;
 - (void)_layoutTopRubberbandingView;
 - (void)_layoutScrollView;
-- (struct UIEdgeInsets)_scrollViewContentInset;
+- (struct CGRect)_scrollViewContentViewFrame;
 - (void)_layoutHeader;
 - (void)_layoutDismissControl;
 - (void)_configureActionViewIfNecessaryWithActions:(id)arg1;
@@ -77,7 +77,7 @@
 - (struct CGRect)_boundsInsetHorizontallyFromDismissControlIfNecessary;
 - (struct UIEdgeInsets)_dismissControlTotalOutset;
 @property(retain, nonatomic) NSArray *interfaceActions;
-- (struct CGRect)_scrollViewContentViewFrame;
+- (struct UIEdgeInsets)minimumScrollViewContentInsets;
 - (struct CGRect)scrollViewFrame;
 - (struct CGRect)platterFrameForFrame:(struct CGRect)arg1;
 - (struct CGRect)frameForPlatterFrame:(struct CGRect)arg1;

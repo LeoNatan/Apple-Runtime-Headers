@@ -10,14 +10,14 @@
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMBLocalZone, NSMutableDictionary, NSNotificationCenter, NSObject, NSString;
+@class HMBLocalZone, NSCountedSet, NSNotificationCenter, NSObject, NSString;
 @protocol HMDNetworkRouterFirewallRuleManager, HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchScheduler, HMDNetworkRouterFirewallRuleManagerBackingStoreMirror, OS_dispatch_queue;
 
 @interface HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator : HMFObject <HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchSchedulerDelegate, HMFLogging, HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator>
 {
     id <HMDNetworkRouterFirewallRuleManager> _firewallRuleManager;
     id <HMDNetworkRouterFirewallRuleManagerBackingStoreMirror> _mirror;
-    NSMutableDictionary *_recordIDRefcountDictionary;
+    NSCountedSet *_watchedRecordIDs;
     NSNotificationCenter *_notificationCenter;
     id <HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchScheduler> _cloudFetchScheduler;
     NSObject<OS_dispatch_queue> *_ownerQueue;
@@ -26,7 +26,6 @@
 
 + (id)__createProcessingOptionsWithLabel:(id)arg1;
 + (id)__createProcessingOptionsWithLabel:(id)arg1 qualityOfService:(int)arg2;
-+ (id)__recordIDsFromAccessories:(id)arg1;
 + (id)__jsonFromRecords:(id)arg1 rawOutput:(_Bool)arg2 error:(id *)arg3;
 + (id)__jsonFromDeclarations:(struct NSDictionary *)arg1 rawOutput:(_Bool)arg2 error:(id *)arg3;
 + (id)__jsonStringFromDictionary:(struct NSDictionary *)arg1 rawOutput:(_Bool)arg2 error:(id *)arg3;
@@ -35,7 +34,6 @@
 + (int)ckContainerEnvironment;
 + (id)ckContainerIdentifier;
 + (id)logCategory;
-+ (void)initialize;
 @property(retain, nonatomic) HMBLocalZone *mirroredLocalZone; // @synthesize mirroredLocalZone=_mirroredLocalZone;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ownerQueue; // @synthesize ownerQueue=_ownerQueue;
 @property(readonly, nonatomic) id <HMDNetworkRouterFirewallRuleManagerBackingStoreCloudFetchScheduler> cloudFetchScheduler; // @synthesize cloudFetchScheduler=_cloudFetchScheduler;
@@ -59,16 +57,16 @@
 - (id)fetchRulesForAccessories:(id)arg1 qualityOfService:(int)arg2 ignoreOverrides:(_Bool)arg3 error:(id *)arg4;
 - (id)_fetchNetworkDeclarationsForAccessories:(id)arg1 options:(id)arg2 ignoreOverrides:(_Bool)arg3 error:(id *)arg4;
 - (struct NSDictionary *)_fetchAllNetworkDeclarationDataForProductGroup:(id)arg1 productNumber:(id)arg2 options:(id)arg3 error:(id *)arg4;
-- (void)_fetchCloudChangesWithQualityOfService:(int)arg1 forceChangeNotifications:(_Bool)arg2 xpcActivity:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)fetchCloudChangesWithQualityOfService:(int)arg1 forceChangeNotifications:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)stopWatchingAccessories:(id)arg1;
-- (void)startWatchingAccessories:(id)arg1;
+- (void)_fetchCloudChangesWithQualityOfService:(int)arg1 ignoreLastFetchedAccessories:(_Bool)arg2 forceChangeNotifications:(_Bool)arg3 xpcActivity:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)fetchCloudChangesWithQualityOfService:(int)arg1 ignoreLastFetchedAccessories:(_Bool)arg2 forceChangeNotifications:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)removeInterestedAccessories:(id)arg1;
+- (void)addInterestedAccessories:(id)arg1;
 - (void)shutdownWithCompletion:(CDUnknownBlockType)arg1;
 - (void)__startupWithMirror:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)__startupWithMirroredLocalZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)__startupWithLocalDatabase:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startupWithCompletion:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NSMutableDictionary *recordIDRefcountDictionary; // @synthesize recordIDRefcountDictionary=_recordIDRefcountDictionary;
+@property(readonly, nonatomic) NSCountedSet *watchedRecordIDs; // @synthesize watchedRecordIDs=_watchedRecordIDs;
 @property(retain, nonatomic) id <HMDNetworkRouterFirewallRuleManagerBackingStoreMirror> mirror; // @synthesize mirror=_mirror;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 - (id)initWithFirewallRuleManager:(id)arg1 notificationCenter:(id)arg2 cloudFetchInterval:(double)arg3 cloudFetchRetryInterval:(double)arg4 ownerQueue:(id)arg5;

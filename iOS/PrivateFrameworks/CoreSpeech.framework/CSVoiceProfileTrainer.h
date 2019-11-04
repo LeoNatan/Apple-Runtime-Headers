@@ -8,24 +8,26 @@
 
 @interface CSVoiceProfileTrainer : NSObject
 {
+    float _satVTImplicitThreshold;
     unsigned long long _baseProfileConfidenceScoreThreshold;
     unsigned long long _implicitConfidenceScoreThreshold;
     unsigned long long _implicitDeltaConfidenceScoreThreshold;
     unsigned long long _maxNumberOfBaseProfileUtterances;
 }
 
+@property(readonly, nonatomic) float satVTImplicitThreshold; // @synthesize satVTImplicitThreshold=_satVTImplicitThreshold;
 @property(readonly, nonatomic) unsigned long long maxNumberOfBaseProfileUtterances; // @synthesize maxNumberOfBaseProfileUtterances=_maxNumberOfBaseProfileUtterances;
 @property(readonly, nonatomic) unsigned long long implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
 @property(readonly, nonatomic) unsigned long long implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
 @property(readonly, nonatomic) unsigned long long baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;
-- (unsigned long long)maxAllowedImplicitTrainingUtterances;
-- (unsigned long long)maxAllowedSatVectorCount;
-- (unsigned long long)satVectorCount;
-- (_Bool)checkIfUpdateNecessaryForAudioFileCount:(unsigned long long)arg1;
+- (_Bool)checkIfProfileNeedsUploadForBaseProfileVectorCount:(unsigned long long)arg1;
+- (_Bool)checkIfImplicitSATPossibleWithBaseProfileVectorCount:(unsigned long long)arg1;
+- (_Bool)checkIfImplicitTrainingRequired;
 - (_Bool)checkIfRetrainingIsRequired;
+- (_Bool)checkIfUpdateNecessaryForAudioFileCount:(unsigned long long)arg1;
 - (void)processUtterance:(id)arg1 ofSpIdType:(unsigned long long)arg2 withUpdatePolicyBlock:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
-- (void)addUtterances:(id)arg1 withScoreThreshold:(float)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
-- (void)addUtterances:(id)arg1 toProfile:(id)arg2 toModel:(unsigned long long)arg3 withScoreThreshold:(float)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
+- (void)addUtterances:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)initWithVoiceProfile:(id)arg1 spIdType:(unsigned long long)arg2 satRunMode:(unsigned long long)arg3 languageCode:(id)arg4 asset:(id)arg5;
 
 @end
 

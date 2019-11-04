@@ -12,8 +12,11 @@
 
 @interface UIImage (TouchML) <UIImageJSExports>
 + (void)initializeJSContext:(id)arg1;
+@property(readonly, nonatomic) double width;
+@property(readonly, nonatomic) double height;
 @property(readonly, nonatomic) double aspectRatio;
 @property(readonly, nonatomic) TMLRect *bounds;
+- (id)cropImageToRect:(struct CGRect)arg1;
 - (id)resizableImage:(id)arg1:(long long)arg2;
 - (id)colorPattern;
 - (id)withRenderingMode:(long long)arg1;

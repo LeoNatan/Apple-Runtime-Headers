@@ -44,7 +44,9 @@
     BOOL _receivingHeader;
     BOOL _readRequested;
     struct NSMutableDictionary *_requests;
+    int _retryCount;
     struct NSMutableArray *_sendArray;
+    BOOL _showPasswordCalled;
     struct LogCategory *_ucat;
     unsigned int _xidLast;
     unsigned long long _receivedFrameCountCurrent;

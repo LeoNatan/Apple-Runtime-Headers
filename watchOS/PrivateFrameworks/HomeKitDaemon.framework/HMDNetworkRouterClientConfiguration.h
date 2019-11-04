@@ -14,7 +14,6 @@
 @interface HMDNetworkRouterClientConfiguration : NSObject <NSCopying, HMDTLVProtocol>
 {
     HMDTLVUnsignedNumberValue *_clientIdentifier;
-    HMDTLVUnsignedNumberValue *_interfaceIdentifier;
     HMDTLVUnsignedNumberValue *_lanIdentifier;
     HMDNetworkRouterCredential *_credential;
     HMDNetworkRouterWANFirewallConfiguration *_wanFirewallConfiguration;
@@ -26,7 +25,6 @@
 @property(retain, nonatomic) HMDNetworkRouterWANFirewallConfiguration *wanFirewallConfiguration; // @synthesize wanFirewallConfiguration=_wanFirewallConfiguration;
 @property(retain, nonatomic) HMDNetworkRouterCredential *credential; // @synthesize credential=_credential;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *lanIdentifier; // @synthesize lanIdentifier=_lanIdentifier;
-@property(retain, nonatomic) HMDTLVUnsignedNumberValue *interfaceIdentifier; // @synthesize interfaceIdentifier=_interfaceIdentifier;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
@@ -34,7 +32,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializeWithError:(id *)arg1;
 - (_Bool)parseFromData:(id)arg1 error:(id *)arg2;
-- (id)initWithClientIdentifier:(id)arg1 interfaceIdentifier:(id)arg2 lanIdentifier:(id)arg3 credential:(id)arg4 wanFirewallConfiguration:(id)arg5 lanFirewallConfiguration:(id)arg6;
+- (id)initWithClientIdentifier:(id)arg1 lanIdentifier:(id)arg2 credential:(id)arg3 wanFirewallConfiguration:(id)arg4 lanFirewallConfiguration:(id)arg5;
 - (id)init;
 
 // Remaining properties

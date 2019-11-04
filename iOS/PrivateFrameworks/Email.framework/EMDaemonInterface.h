@@ -57,6 +57,7 @@
 - (void)resetProtocolConnections;
 - (id)connectionForProtocol:(id)arg1;
 - (id)_connectionForProtocol:(id)arg1 error:(id *)arg2;
+- (void)tearDown;
 - (void)dealloc;
 - (id)initForTesting;
 - (id)initWithProxyCreator:(id)arg1;

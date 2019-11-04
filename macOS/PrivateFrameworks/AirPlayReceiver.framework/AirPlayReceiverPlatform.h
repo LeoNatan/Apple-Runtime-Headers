@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface AirPlayReceiverPlatform : NSObject
 {
-    // Error parsing type: ^{AirPlayReceiverServerPrivate={__CFRuntimeBase=QAQ}^v@i^{OpaqueAPAdvertiser}CC^{HTTPServerPrivate}@^{HTTPServerPrivate}[16C]fCiCC@IQ^{OpaqueAPReceiverSystemInfo}CC^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}IiI^{APReceiverSessionManagerOpaque}^{OpaqueFigValeria}^?^{__CFString}^{__CFString}CCCCCCC}, name: _server
+    // Error parsing type: ^{AirPlayReceiverServerPrivate={__CFRuntimeBase=QAQ}^v@ii^{OpaqueAPAdvertiser}CC^{HTTPServerPrivate}@^{HTTPServerPrivate}[16C]fCiCC@IQ^{OpaqueAPReceiverSystemInfo}CC^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}IiI^{APReceiverSessionManagerOpaque}^{OpaqueFigValeria}^?^{__CFString}^{__CFString}CCCCCCC}, name: _server
     int _uiErrorNotifyToken;
     unsigned char _playbackPrevented;
     int _playbackAllowNotifyToken;

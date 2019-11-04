@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) id <PUPhotoPickerHostService> hostProxy;
 - (id)_hostContext;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)performTraitCollectionUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performPhotoPickerPreviewOfFirstAsset;
 - (void)invalidate;

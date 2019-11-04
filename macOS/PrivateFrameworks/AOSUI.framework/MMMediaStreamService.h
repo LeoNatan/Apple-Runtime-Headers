@@ -40,7 +40,7 @@
 - (id)_simulateMediaServiceExceedsQuota;
 - (void)DSEEnableWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)preflightDSEEnableWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (BOOL)preflightForSignout:(id *)arg1 withWindow:(id)arg2 andDataclassActions:(id)arg3;
+- (BOOL)preflightForSignoutWithWindow:(id)arg1;
 - (BOOL)hasPreflightAction;
 - (void)_closeWebViewWindow;
 - (void)callCompletionWithResult:(BOOL)arg1;

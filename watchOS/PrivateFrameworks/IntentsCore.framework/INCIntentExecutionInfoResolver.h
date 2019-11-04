@@ -4,31 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <IntentsCore/INCExecutionInfoResolver.h>
 
-@class LSApplicationWorkspace, NSDictionary;
-
-@interface INCIntentExecutionInfoResolver : NSObject
+@interface INCIntentExecutionInfoResolver : INCExecutionInfoResolver
 {
-    NSDictionary *_counterpartMapping;
-    LSApplicationWorkspace *_workspace;
-    struct os_unfair_lock_s _mappingLock;
 }
 
-+ (void)initialize;
-@property(readonly, nonatomic) struct os_unfair_lock_s mappingLock; // @synthesize mappingLock=_mappingLock;
-@property(readonly, nonatomic) LSApplicationWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
-- (id)counterpartBundleIdentifiersForBundleIdentifier:(id)arg1;
-@property(readonly, copy, nonatomic) NSDictionary *counterpartMapping; // @synthesize counterpartMapping=_counterpartMapping;
-- (void)installedApplicationsDidChange:(id)arg1;
-- (id)resolveExecutionInfoUsingCounterparts:(id)arg1;
-- (id)resolveExecutionInfoByLinkingExtensionToApp:(id)arg1;
-- (id)resolveExecutionInfoBySwappingIdentifiers:(id)arg1;
 - (id)resolveExecutionInfo:(id)arg1;
-- (void)dealloc;
-- (id)initWithWorkspace:(id)arg1;
-- (id)init;
 
 @end
 

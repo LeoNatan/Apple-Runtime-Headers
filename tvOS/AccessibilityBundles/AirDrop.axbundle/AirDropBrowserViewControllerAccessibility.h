@@ -13,7 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)browserDidUpdatePeople:(id)arg1;
+- (void)browserDidUpdateMePeople:(id)arg1 knownPeople:(id)arg2 unknownPeople:(id)arg3;
+- (void)viewDidLoad;
+- (void)_accessibilityLoadAccessibilityInformation;
 
 @end
 

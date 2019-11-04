@@ -126,6 +126,7 @@
 - (void)setupMessageTracing;
 - (BOOL)runStepPrepare;
 - (BOOL)spaceIsSufficient;
+- (id)filteredErrorsAndWarnings;
 - (void)finally;
 - (BOOL)process;
 - (BOOL)preProcess;

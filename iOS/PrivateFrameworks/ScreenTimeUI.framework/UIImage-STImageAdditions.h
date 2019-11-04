@@ -12,6 +12,6 @@
 + (id)iconWithAppURL:(id)arg1;
 + (id)iconWithAppBundleID:(id)arg1;
 + (id)st_pointImageOfColor:(id)arg1;
-- (id)iconFromPrecomposedImage:(_Bool)arg1;
+- (id)iconFromPrecomposedImage:(_Bool)arg1 platform:(short)arg2;
 @end
 

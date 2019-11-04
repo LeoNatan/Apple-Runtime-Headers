@@ -30,14 +30,17 @@
     NSString *_manufacturer;
     NSString *_serialNumber;
     NSString *_firmwareVersion;
+    NSString *_productData;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 + (_Bool)isAccessoryPrimaryWithUniqueIdentifier:(id)arg1;
 + (id)instanceIDForUniqueIdentifier:(id)arg1;
 + (id)serverIdentifierWithUniqueIdentifier:(id)arg1;
++ (id)productDataStringFromData:(id)arg1;
 + (_Bool)isAccessoryPairedWithIdentifier:(id)arg1;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(copy, nonatomic) NSString *productData; // @synthesize productData=_productData;
 @property(copy, nonatomic) NSString *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(copy, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
@@ -60,7 +63,7 @@
 - (id)characteristicOfType:(id)arg1 serviceType:(id)arg2;
 - (id)characteristicsOfType:(id)arg1;
 - (id)servicesOfType:(id)arg1;
-- (_Bool)validateCharacteristicValues:(id *)arg1;
+- (_Bool)_validateCharacteristicValues;
 - (void)invalidate;
 - (_Bool)_updateForAccessoryInformationService;
 - (_Bool)_updateService:(id)arg1;

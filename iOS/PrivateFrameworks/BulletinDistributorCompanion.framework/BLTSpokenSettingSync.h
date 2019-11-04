@@ -36,11 +36,11 @@
 - (void)_queue_setNewLocalStateFromRemote:(_Bool)arg1;
 - (void)_queue_resolveState;
 - (void)transportUpdateRemoteGlobalSpokenSettingEnabled:(_Bool)arg1 date:(id)arg2;
-- (void)_queue_updateLocalGlobalSpokenSettingEnabledFromUser:(_Bool)arg1;
-- (void)bbUpdateLocalGlobalSpokenSettingEnabled:(_Bool)arg1;
+- (_Bool)_queue_updateLocalGlobalSpokenSettingEnabledFromUser:(_Bool)arg1;
+- (void)bbUpdateLocalGlobalSpokenSettingEnabled:(long long)arg1;
 - (void)_queue_setUpdatingLocalStateFromRemote;
 - (_Bool)_queue_isUpdatingLocalStateFromRemote;
-- (void)_queue_updateLocalSetting;
+- (_Bool)_queue_updateLocalSetting;
 - (void)_queue_writeRemoteSetting;
 - (void)_queue_writeLocalSetting;
 - (void)_queue_readSettings;

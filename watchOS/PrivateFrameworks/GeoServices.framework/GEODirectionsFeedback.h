@@ -13,13 +13,15 @@
 @interface GEODirectionsFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_alightNotificationFeedbacks;
     NSData *_directionResponseID;
     NSMutableArray *_guidanceFeedbacks;
     NSMutableArray *_modalitys;
     NSMutableArray *_stepFeedbacks;
     NSMutableArray *_trafficRerouteFeedbacks;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_alightNotificationFeedbacks:1;
         unsigned int read_directionResponseID:1;
@@ -91,6 +93,8 @@
 @property(retain, nonatomic) NSData *directionResponseID;
 @property(readonly, nonatomic) _Bool hasDirectionResponseID;
 - (void)_readDirectionResponseID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

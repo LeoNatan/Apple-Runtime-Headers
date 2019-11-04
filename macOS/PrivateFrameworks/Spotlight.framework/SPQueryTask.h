@@ -8,7 +8,7 @@
 
 #import <Spotlight/SPKQueryDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PRSRankingConfiguration, SFMutableResultSection, SFSearchResult_SpotlightExtras, SFStartLocalSearchFeedback, SPApplicationQuery, SPMetadataQuery;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PRSRankingConfiguration, SFMutableResultSection, SFSearchResult_SpotlightExtras, SFStartLocalSearchFeedback, SPApplicationQuery, SPKQuery, SPMetadataQuery;
 @protocol OS_dispatch_queue, OS_dispatch_source, SPQueryTaskDelegate;
 
 @interface SPQueryTask : NSObject <SPKQueryDelegate>
@@ -19,6 +19,14 @@
     BOOL _willSendPerformanceFeedback;
     unsigned int _qosClass;
     NSObject<OS_dispatch_source> *_timer;
+    SPKQuery *_timerQuery;
+    NSArray *_timerSections;
+    int _timerResponseKind;
+    int _timerTopHitIsIn;
+    double _lastResponseTime;
+    double _lastUpdateTime;
+    unsigned int _updateDelaySeconds;
+    unsigned long long _responseCount;
     struct __MDAppRankEvaluator *_appRankEvaluator;
     BOOL _forceStableResults;
     BOOL _isAdvancedQuerySyntax;
@@ -105,6 +113,9 @@
 - (void)queryTask:(id)arg1 gotResponse:(id)arg2;
 - (void)finishWithResponseKind:(int)arg1 sections:(id)arg2 groupedResults:(id)arg3 userQueryString:(id)arg4 topHitIsIn:(BOOL)arg5 suggestions:(id)arg6;
 - (void)_processResponse:(id)arg1 toQuery:(id)arg2;
+- (id)mergeResultSet:(id)arg1 withResultSet:(id)arg2;
+- (void)_sendResponseKind:(int)arg1 withSections:(id)arg2 toQuery:(id)arg3 topHitIsIn:(BOOL)arg4 delay:(double)arg5 internal:(BOOL)arg6;
+- (void)_responseTimerCancel;
 - (void)_addParsecQueryResults:(id)arg1 toSections:(id)arg2;
 - (BOOL)_isInternallyCompleted;
 - (BOOL)_topHitIsIn;
@@ -119,12 +130,11 @@
 - (id)initWithUserQuery:(id)arg1 queryGroupId:(unsigned long long)arg2 options:(unsigned long long)arg3 keyboardLanguage:(id)arg4;
 - (void)markAsUsed:(id)arg1 subItem:(BOOL)arg2;
 - (void)markAsEngaged:(id)arg1 forQueryString:(id)arg2 timestamp:(double)arg3 preview:(BOOL)arg4;
-- (void)rankAndPrune:(id)arg1 maxResults:(unsigned long long)arg2 totalResultCount:(long long *)arg3 query:(id)arg4 currentLocale:(id)arg5 isAdvancedQuerySyntax:(BOOL)arg6;
+- (void)rankAndPrune:(id)arg1 maxResults:(unsigned long long)arg2 totalResultCount:(long long *)arg3 query:(id)arg4 currentLocale:(id)arg5 isAdvancedQuerySyntax:(BOOL)arg6 currentTime:(double)arg7;
 - (id)findDistinctPathIdentifiers;
 - (void)finishResponse:(id)arg1;
 - (void)dedupeResults:(id)arg1;
 - (void)sendRankingFeedbackForResultsArray:(id)arg1;
-- (id)sortLocalResults:(id)arg1;
 - (id)URLRepresentedByBookmarkResult:(id)arg1;
 - (void)deDuplicateResultSetWithSections:(id)arg1 duplicatedDictResults:(id *)arg2 originalDictResults:(id *)arg3;
 - (long long)addResultsForGroup:(id)arg1 toArray:(id)arg2 resultIdSet:(id)arg3 focusString:(id)arg4 currentLocale:(id)arg5;

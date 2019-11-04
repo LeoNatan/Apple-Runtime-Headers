@@ -24,6 +24,8 @@
 - (BOOL)isUserNotAtHome:(id)arg1;
 - (BOOL)isUserAtHome:(id)arg1;
 - (id)regionForUser:(id)arg1;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithPresenceByPairingIdentity:(id)arg1;
 - (id)initWithPresenceByUserId:(id)arg1;

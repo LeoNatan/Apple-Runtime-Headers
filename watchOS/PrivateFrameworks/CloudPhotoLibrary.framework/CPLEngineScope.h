@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) int scopeType; // @synthesize scopeType=_scopeType;
 @property(readonly, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
 - (void).cxx_destruct;
+- (id)redactedDescription;
 - (id)description;
 - (id)statusDescription;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,12 +6,13 @@
 
 #import <MediaPlaybackCore/MPCPlaybackRequestEnvironment.h>
 
-@class MPCPlaybackDelegationProperties, MPCPrivateListeningStateSource, NSString;
+@class ICUserIdentity, MPCPlaybackDelegationProperties, MPCPrivateListeningStateSource, NSString;
 
 @interface MPCMutablePlaybackRequestEnvironment : MPCPlaybackRequestEnvironment
 {
 }
 
+@property(retain, nonatomic) ICUserIdentity *userIdentity; // @dynamic userIdentity;
 @property(copy, nonatomic) NSString *requestingBundleVersion; // @dynamic requestingBundleVersion;
 @property(copy, nonatomic) NSString *requestingBundleIdentifier; // @dynamic requestingBundleIdentifier;
 @property(copy, nonatomic) MPCPrivateListeningStateSource *privateListeningStateSource; // @dynamic privateListeningStateSource;

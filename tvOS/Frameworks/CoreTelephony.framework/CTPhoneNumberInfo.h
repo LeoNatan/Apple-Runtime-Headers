@@ -18,12 +18,14 @@
     _Bool _isRead;
     NSString *_label;
     NSString *_number;
+    NSString *_displayPhoneNumber;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool isRead; // @synthesize isRead=_isRead;
 @property(nonatomic) _Bool isEditable; // @synthesize isEditable=_isEditable;
 @property(nonatomic) _Bool isPresent; // @synthesize isPresent=_isPresent;
+@property(retain, nonatomic) NSString *displayPhoneNumber; // @synthesize displayPhoneNumber=_displayPhoneNumber;
 @property(retain, nonatomic) NSString *number; // @synthesize number=_number;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;

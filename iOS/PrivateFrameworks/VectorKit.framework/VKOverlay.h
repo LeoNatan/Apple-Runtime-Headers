@@ -17,14 +17,17 @@
     id <VKOverlayDelegate> _delegate;
     CDStruct_02837cd9 _replaceMapContentInRect;
     unsigned long long _level;
+    unsigned int identifier;
     weak_ptr_96fca551 _flyoverContainer;
     weak_ptr_4d470b75 _standardContainer;
     struct RunLoopController *_runLoopController;
     VKVectorOverlayData *_vectorData;
     struct unfair_lock _vectorDataLock;
     _Bool _canProvideVectorData;
+    unsigned int _identifier;
 }
 
+@property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct RunLoopController *runLoopController; // @synthesize runLoopController=_runLoopController;
 @property(nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(nonatomic) CDStruct_02837cd9 replaceMapContentInRect; // @synthesize replaceMapContentInRect=_replaceMapContentInRect;
@@ -40,6 +43,7 @@
 - (id)vectorData;
 - (void)drawKey:(const CDStruct_7523a67d *)arg1 inContext:(struct CGContext *)arg2;
 - (_Bool)canDrawKey:(const CDStruct_7523a67d *)arg1;
+- (_Bool)canPossiblyDrawKey:(const CDStruct_7523a67d *)arg1;
 - (void)setNeedsDisplayInRect:(const CDStruct_02837cd9 *)arg1 level:(long long)arg2 reason:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)init;

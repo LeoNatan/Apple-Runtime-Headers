@@ -13,11 +13,13 @@
 @interface GEOTransitTicketingSegment : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_paths;
     NSString *_segmentName;
     NSString *_ticketingUrl;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_paths:1;
@@ -58,6 +60,8 @@
 @property(retain, nonatomic) NSString *ticketingUrl;
 @property(readonly, nonatomic) _Bool hasTicketingUrl;
 - (void)_readTicketingUrl;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

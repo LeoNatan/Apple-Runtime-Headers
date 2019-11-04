@@ -56,6 +56,7 @@
 - (void)_editingDidEnd;
 - (void)_setEditingTransitionFraction:(float)arg1 direction:(int)arg2 position:(int)arg3 type:(int)arg4;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_applyPausedUpdate;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (unsigned int)timelineAnimationFadeTypeOverride;

@@ -12,8 +12,17 @@
 
 @interface PLServerChangePublisher : NSObject <PLChangePublisher>
 {
+    // Error parsing type: Aq, name: _postCount
+    // Error parsing type: AB, name: _hasPendingWatchNotification
+    // Error parsing type: AB, name: _suppressWatchNotification
 }
 
+- (void)unpauseLaunchEventNotifications;
+- (void)pauseLaunchEventNotifications;
+- (void)_postWatchUpdateNotification;
+- (void)_postWatchUpdateNotificationIfPending;
+- (void)_postWatchUpdateNotificationIfNotPaused;
+- (void)_postChangeHubNotification;
 - (void)distributeChangeEvent:(id)arg1 transaction:(id)arg2;
 - (id)publishChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 transaction:(id)arg3;
 

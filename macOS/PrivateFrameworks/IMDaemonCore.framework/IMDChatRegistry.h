@@ -8,7 +8,7 @@
 
 #import <IMDaemonCore/TUConversationManagerDelegate-Protocol.h>
 
-@class IMDCKUtilities, IMDCNPersonAliasResolver, IMDChatStore, IMDMessageHistorySyncController, IMDMessageProcessingController, NSArray, NSData, NSMutableDictionary, NSRecursiveLock, NSString, TUConversationManager;
+@class IMDCKUtilities, IMDChatStore, IMDMessageHistorySyncController, IMDMessageProcessingController, NSArray, NSData, NSMutableDictionary, NSRecursiveLock, NSString, TUConversationManager;
 
 @interface IMDChatRegistry : NSObject <TUConversationManagerDelegate>
 {
@@ -17,6 +17,7 @@
     NSMutableDictionary *_chats;
     BOOL _isLoading;
     BOOL _doneLoadingAfterMerge;
+    BOOL _blackholedChatsExistCache;
     NSMutableDictionary *_chatsByGroupID;
     BOOL _hasDumpedLogsForNoExisitingGroup;
     NSMutableDictionary *_idToHandlesMap;
@@ -111,11 +112,8 @@
 - (id)truncateSortedChatsGroupedByPersonCentricID:(id)arg1 toMaximumNumberOfChats:(long long)arg2;
 - (id)groupChatsBasedOnIdentityUsingCacheIfApplicable:(id)arg1;
 - (id)groupChatsBasedOnIdentity:(id)arg1;
-- (void)startHandleIDPopulation;
-- (void)_populateCNRecordIDForHandles:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_aliasToHandlesMap:(id)arg1;
 - (id)_allHandles;
-@property(readonly, nonatomic) IMDCNPersonAliasResolver *cnaliasResolver;
 - (BOOL)repairDuplicateChatsIfNeeded;
 - (BOOL)_mergeDuplicateGroupsIfNeeded;
 - (struct NSArray *)_createGroupChatsArray;
@@ -140,7 +138,8 @@
 - (void)_forceReloadChats:(BOOL)arg1;
 - (void)_setInitialLoadForTesting:(BOOL)arg1;
 - (id)_chatInfoForSaving;
-- (id)_chatInfoInRange:(struct _NSRange)arg1;
+- (id)_chatInfoInRange:(struct _NSRange)arg1 wantsBlackholed:(BOOL)arg2;
+- (id)_blackholedChatInfoForNumberOfChats:(long long)arg1;
 - (id)_chatInfoForNumberOfChats:(long long)arg1;
 - (id)_allChatInfo;
 - (id)_chatInfoForConnection;
@@ -156,6 +155,7 @@
 - (void)removeChat:(id)arg1;
 - (void)addChat:(id)arg1 firstLoad:(BOOL)arg2;
 - (void)addChat:(id)arg1;
+- (void)checkBlackholedChatsExistAfterUpdatingChatWithAdd:(BOOL)arg1;
 - (void)updateGroupIDForChat:(id)arg1 newGroupID:(id)arg2;
 - (void)updateStateForChat:(id)arg1 forcePost:(BOOL)arg2 shouldRebuildFailedMessageDate:(BOOL)arg3 setUnreadCountToZero:(BOOL)arg4;
 - (void)updateStateForChat:(id)arg1 forcePost:(BOOL)arg2 shouldRebuildFailedMessageDate:(BOOL)arg3 shouldCalculateUnreadCount:(BOOL)arg4;
@@ -182,8 +182,12 @@
 - (id)existingChatsWithGroupID:(id)arg1;
 - (id)existingChatWithGUID:(id)arg1;
 - (id)chatForRoom:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4;
-- (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 groupID:(id)arg5 displayName:(id)arg6 guid:(id)arg7 lastAddressedHandle:(id)arg8 lastAddressedSIMID:(id)arg9;
-- (id)chatForHandle:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4 lastAddressedHandle:(id)arg5 lastAddressedSIMID:(id)arg6;
+- (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 groupID:(id)arg5 displayName:(id)arg6 guid:(id)arg7 lastAddressedHandle:(id)arg8 lastAddressedSIMID:(id)arg9 isBlackholed:(BOOL)arg10;
+- (id)chatForHandle:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4 lastAddressedHandle:(id)arg5 lastAddressedSIMID:(id)arg6 isBlackholed:(BOOL)arg7;
+- (id)_chatsWithBlackholed:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL blackholedChatsExist;
+@property(readonly, nonatomic) NSArray *blackholedChats;
+@property(readonly, nonatomic) NSArray *allChats;
 @property(readonly, nonatomic) NSArray *chats;
 - (id)_sharedMessageStore;
 - (void)dealloc;

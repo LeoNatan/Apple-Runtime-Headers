@@ -24,13 +24,17 @@
     PKCurrencyAmount *_previousMaxAmount;
     PKPaymentTransactionGroup *_rewards;
     PKPaymentTransactionGroup *_interest;
+    PKPaymentTransactionGroup *_payments;
     PKPaymentTransactionGroup *_refunds;
+    PKPaymentTransactionGroup *_adjustments;
     NSArray *_spendingsPerCalendarUnit;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *spendingsPerCalendarUnit; // @synthesize spendingsPerCalendarUnit=_spendingsPerCalendarUnit;
+@property(retain, nonatomic) PKPaymentTransactionGroup *adjustments; // @synthesize adjustments=_adjustments;
 @property(retain, nonatomic) PKPaymentTransactionGroup *refunds; // @synthesize refunds=_refunds;
+@property(retain, nonatomic) PKPaymentTransactionGroup *payments; // @synthesize payments=_payments;
 @property(retain, nonatomic) PKPaymentTransactionGroup *interest; // @synthesize interest=_interest;
 @property(retain, nonatomic) PKPaymentTransactionGroup *rewards; // @synthesize rewards=_rewards;
 @property(retain, nonatomic) PKCurrencyAmount *previousMaxAmount; // @synthesize previousMaxAmount=_previousMaxAmount;

@@ -73,6 +73,7 @@
 - (void)quickboardDictationLanguageDidChange:(id)arg1;
 - (void)quickboardLanguageDidChange:(id)arg1;
 @property(retain, nonatomic) PUICQuickboardLanguageController *languageController;
+- (_Bool)showCannedResponseLanguages;
 @property(readonly, nonatomic) NSString *primaryLanguage;
 - (void)blackPunchOutView:(id)arg1;
 - (void)transparentPunchOutView:(id)arg1;

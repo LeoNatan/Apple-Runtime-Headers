@@ -44,7 +44,6 @@
 - (id)eventsForClueCollection:(id)arg1;
 - (void)prefetchEventsFromUniversalDate:(id)arg1 toUniversalDate:(id)arg2 forAssetCollectionsSortedByStartDate:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)enumerateEventsFromUniversalDate:(id)arg1 toUniversalDate:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
-- (id)_traceStringForType:(unsigned long long)arg1;
 - (id)lastLocationOfInterestVisit;
 - (void)postProcessLocationsOfInterest;
 - (id)fetchImportantLocationsOfInterest;

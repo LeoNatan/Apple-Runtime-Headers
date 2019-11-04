@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)_registerUnlockHandler;
 - (void)_openDbIfUnlocked;
-- (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(_Bool)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 ignoreIfSingular:(_Bool)arg7 block:(CDUnknownBlockType)arg8;
+- (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(_Bool)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 block:(CDUnknownBlockType)arg7;
 - (id)initWithSessionBatch:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
 #import <HomeUI/HUPresentationDelegate-Protocol.h>
 #import <HomeUI/HUQuickControlContainerViewControllerDelegate-Protocol.h>
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
+#import <HomeUI/UINavigationControllerDelegate-Protocol.h>
 #import <HomeUI/UIPresentationControllerDelegatePrivate-Protocol.h>
 #import <HomeUI/UITraitEnvironment-Protocol.h>
 #import <HomeUI/UIViewControllerTransitioningDelegate-Protocol.h>
@@ -19,7 +20,7 @@
 @class HUCardViewController, HUForceInterpolatedPressGestureRecognizer, HUGridActionSetTitleAndDescriptionView, HUGridServiceCell, HUGridServiceCellTextView, HUIconView, HUItemTableViewController, HUPressedItemContext, HUQuickControlContainerViewController, HUQuickControlNavigationController, HUQuickControlPresentationContext, NSMapTable, NSMutableSet, NSString, UILabel, UITapGestureRecognizer, UITraitCollection, UIView, UIViewController, UIVisualEffectView, _UIClickPresentationInteraction;
 @protocol HUQuickControlPresentationCoordinatorDelegate, NACancelable;
 
-@interface HUQuickControlPresentationCoordinator : NSObject <HUQuickControlContainerViewControllerDelegate, HUPresentationDelegate, UIGestureRecognizerDelegate, HUCardViewControllerDelegate, UIPresentationControllerDelegatePrivate, _UIClickPresentationInteractionDelegate, UIViewControllerTransitioningDelegate, _UISheetPresentationControllerDelegate, UITraitEnvironment>
+@interface HUQuickControlPresentationCoordinator : NSObject <HUQuickControlContainerViewControllerDelegate, HUPresentationDelegate, UIGestureRecognizerDelegate, HUCardViewControllerDelegate, UIPresentationControllerDelegatePrivate, _UIClickPresentationInteractionDelegate, UIViewControllerTransitioningDelegate, _UISheetPresentationControllerDelegate, UINavigationControllerDelegate, UITraitEnvironment>
 {
     HUCardViewController *_cardViewController;
     HUQuickControlPresentationContext *_presentationContext;
@@ -37,6 +38,7 @@
     NSMapTable *_pressedItemContexts;
     _UIClickPresentationInteraction *_presentationInteraction;
     UIVisualEffectView *_pressedTileBlurEffectView;
+    UIView *_pressedTilePrerenderedView;
     HUIconView *_transitionIconView;
     HUIconView *_transitionIconViewVibrant;
     UILabel *_transitionPrimaryLabel;
@@ -61,6 +63,7 @@
 @property(retain, nonatomic) UILabel *transitionPrimaryLabel; // @synthesize transitionPrimaryLabel=_transitionPrimaryLabel;
 @property(retain, nonatomic) HUIconView *transitionIconViewVibrant; // @synthesize transitionIconViewVibrant=_transitionIconViewVibrant;
 @property(retain, nonatomic) HUIconView *transitionIconView; // @synthesize transitionIconView=_transitionIconView;
+@property(retain, nonatomic) UIView *pressedTilePrerenderedView; // @synthesize pressedTilePrerenderedView=_pressedTilePrerenderedView;
 @property(retain, nonatomic) UIVisualEffectView *pressedTileBlurEffectView; // @synthesize pressedTileBlurEffectView=_pressedTileBlurEffectView;
 @property(retain, nonatomic) _UIClickPresentationInteraction *presentationInteraction; // @synthesize presentationInteraction=_presentationInteraction;
 @property(readonly, nonatomic) NSMapTable *pressedItemContexts; // @synthesize pressedItemContexts=_pressedItemContexts;
@@ -79,9 +82,11 @@
 @property(retain, nonatomic) HUCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
 - (void).cxx_destruct;
 - (void)_logUserMetricsAfterPress;
+- (BOOL)_allowsCardPresentationWithOnlySettings;
+- (BOOL)_isRTL;
 - (id)_dismissServiceDetailsViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)_dismissCardViewController;
-- (void)_dismissChildViewController;
+- (id)_dismissChildViewController;
 - (id)finishPresentation:(id)arg1 animated:(BOOL)arg2;
 - (void)quickControlViewControllerDidTapDetailsButton:(id)arg1;
 - (void)quickControlViewControllerWillDismissDetailsViewController:(id)arg1 shouldDismissQuickControl:(BOOL)arg2;
@@ -92,19 +97,22 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)cardViewControllerRequestingDismissal:(id)arg1;
+- (id)cardViewControllerRequestingDismissal:(id)arg1;
 - (void)presentationControllerWillDismiss:(id)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)_prepareSettingsViewController;
 @property(readonly, nonatomic, getter=isQuickControlPresented) BOOL quickControlIsPresented;
 - (void)_cleanupForQuickControlDismissal;
+- (void)_restoreOriginalTile;
 - (id)_dismissQuickControlViewControllerAnimated:(BOOL)arg1;
 - (id)dismissQuickControlAnimated:(BOOL)arg1;
 - (id)dismissQuickControlAnimated:(BOOL)arg1 wasDismissed:(char *)arg2;
 - (void)_validatePresentationContext:(id)arg1;
 - (id)_beginControlPresentationAnimated:(BOOL)arg1;
+- (BOOL)_shouldCancelPresentation;
 - (id)presentQuickControlWithContext:(id)arg1 animated:(BOOL)arg2;
-- (void)_actuateTapticFeedbackIfAvailable;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_actuateTapticFeedback;
+- (void)_prepareForTapticFeedback;
 - (void)_pressedStateDidEndForItem:(id)arg1 clearPresentationContext:(BOOL)arg2;
 - (void)_updateOverrideAttributesWithTransform:(struct CGAffineTransform)arg1 alpha:(double)arg2 forItem:(id)arg3;
 - (void)_updateOverrideAttributesWithScale:(double)arg1 forItem:(id)arg2;

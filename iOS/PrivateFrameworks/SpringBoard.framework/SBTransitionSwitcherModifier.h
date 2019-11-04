@@ -27,13 +27,15 @@
 - (void)_setTransitionPhase:(unsigned long long)arg1;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)transitionLiveContentRasterizationStyle;
+- (long long)liveContentRasterizationStyle;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (double)visibleMarginForItemContainerAtIndex:(unsigned long long)arg1;
 - (_Bool)clipsToUnobscuredMarginAtIndex:(unsigned long long)arg1;
 - (long long)layoutUpdateMode;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)transitionDidEnd;
 - (id)transitionWillUpdate;
 - (id)transitionWillBegin;

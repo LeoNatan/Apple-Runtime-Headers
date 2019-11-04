@@ -25,6 +25,7 @@
     UISearchBar *_searchBar;
     NSString *_title;
     UIView *_titleView;
+    UIView<WFDrawerPaneHeaderView> *_activeHeaderView;
     UIView *_contentView;
     NSString *_drawerGroup;
     UIView *_shadowView;
@@ -32,11 +33,9 @@
     UIVisualEffectView *_visualEffectView;
     UIView *_backgroundView;
     UIView *_backgroundContentView;
-    UIView<WFDrawerPaneHeaderView> *_activeHeaderView;
 }
 
 @property(nonatomic, getter=isCandidateForContentCapture) _Bool candidateForContentCapture; // @synthesize candidateForContentCapture=_candidateForContentCapture;
-@property(nonatomic) __weak UIView<WFDrawerPaneHeaderView> *activeHeaderView; // @synthesize activeHeaderView=_activeHeaderView;
 @property(nonatomic) __weak UIView *backgroundContentView; // @synthesize backgroundContentView=_backgroundContentView;
 @property(nonatomic) __weak UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
@@ -47,6 +46,7 @@
 @property(nonatomic) _Bool roundsTopCorners; // @synthesize roundsTopCorners=_roundsTopCorners;
 @property(nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent=_translucent;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) __weak UIView<WFDrawerPaneHeaderView> *activeHeaderView; // @synthesize activeHeaderView=_activeHeaderView;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
@@ -67,6 +67,7 @@
 - (void)updateHeaderView;
 @property(readonly, nonatomic) struct CGRect grabberAreaBounds;
 - (void)transitionContentForHeight:(double)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingFunctionRow;
+- (void).cxx_destruct;
 - (id)accessibilityParentAttribute;
 - (void)dealloc;
 - (id)init;

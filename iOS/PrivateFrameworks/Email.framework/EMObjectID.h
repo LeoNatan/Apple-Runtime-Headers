@@ -15,6 +15,7 @@
 
 @interface EMObjectID : NSObject <EFCacheable, NSSecureCoding, NSCopying>
 {
+    struct os_unfair_lock_s _lock;
     unsigned long long _hash;
     _Bool _ephemeral;
     id <NSObject><NSSecureCoding><NSCopying> _representedObjectID;
@@ -24,7 +25,6 @@
 + (_Bool)supportsSecureCoding;
 + (void)addDecodableClass:(Class)arg1;
 + (id)_decodableClasses;
-@property(readonly, nonatomic, getter=isEphemeral) _Bool ephemeral; // @synthesize ephemeral=_ephemeral;
 @property(readonly, copy, nonatomic) id <NSObject><NSSecureCoding><NSCopying> representedObjectID; // @synthesize representedObjectID=_representedObjectID;
 - (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
@@ -32,7 +32,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) EFStringHash *stringHash; // @synthesize stringHash=_stringHash;
+@property(readonly) EFStringHash *stringHash; // @synthesize stringHash=_stringHash;
+@property(readonly, getter=isEphemeral) _Bool ephemeral; // @synthesize ephemeral=_ephemeral;
 @property(readonly, copy) NSString *description;
 - (void)_commonInitAsEphemeralID:(_Bool)arg1 representedObjectID:(id)arg2;
 - (id)initAsEphemeralID:(_Bool)arg1 representedObjectID:(id)arg2;

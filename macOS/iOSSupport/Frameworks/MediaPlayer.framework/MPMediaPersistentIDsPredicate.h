@@ -22,8 +22,8 @@
 @property(readonly, nonatomic) BOOL shouldContain; // @synthesize shouldContain=_shouldContain;
 @property(readonly, nonatomic) const long long *persistentIDs; // @synthesize persistentIDs=_persistentIDs;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
-- (id)protobufferEncodableObject;
-- (id)initWithProtobufferDecodableObject:(id)arg1;
+- (id)protobufferEncodableObjectFromLibrary:(id)arg1;
+- (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

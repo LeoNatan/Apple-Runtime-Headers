@@ -72,7 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)printPaperViewDidDisappear;
 - (void)printerBrowserViewDidDisappear;
 - (void)printPanelDidDisappear;
-- (void)printNavigationConrollerDidDismiss;
+- (void)_printNavigationConrollerDidDismiss;
 - (void)cancelPrinting;
 - (void)startPrinting;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
@@ -83,6 +83,8 @@ __attribute__((visibility("hidden")))
 - (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(_Bool)arg2;
 - (void)presentPrintPanelFromRect:(struct CGRect)arg1 inView:(id)arg2 animated:(_Bool)arg3;
 - (void)presentPrintPanelAnimated:(_Bool)arg1 hostingScene:(id)arg2;
+- (struct CGSize)_getPreferredContentSize:(struct CGRect)arg1 windowFrame:(struct CGRect)arg2;
+- (struct CGSize)_makeContentSizeeWithLongSize:(double)arg1 shortSize:(double)arg2;
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentInParentAnimated:(_Bool)arg1;
 - (void)dealloc;

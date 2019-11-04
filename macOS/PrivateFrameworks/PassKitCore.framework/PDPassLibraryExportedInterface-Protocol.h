@@ -14,6 +14,8 @@
 - (void)supportsDisbursements:(void (^)(BOOL, NSError *))arg1;
 - (void)peerPaymentPassUniqueIDWithHandler:(void (^)(NSString *))arg1;
 - (void)migrateDataWithHandler:(void (^)(BOOL))arg1;
+- (void)setBackupMetadata:(NSData *)arg1 handler:(void (^)(void))arg2;
+- (void)backupMetadataWithHandler:(void (^)(NSData *))arg1;
 - (void)passWithDPANIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentPass *))arg2;
 - (void)passWithFPANIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentPass *))arg2;
 - (void)transitMessageForRouteInfo:(PKMapsTransitRouteInfo *)arg1 handler:(void (^)(PKMapsTransitMessage *))arg2;

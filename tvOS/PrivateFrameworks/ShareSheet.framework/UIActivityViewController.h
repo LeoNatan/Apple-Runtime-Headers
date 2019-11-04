@@ -66,6 +66,7 @@
     unsigned long long _beginPerformingActivityTimestamp;
     unsigned long long _viewWillAppearTimestamp;
     unsigned long long _readyToInteractTimestamp;
+    unsigned long long _creationTimestamp;
     NSArray *_activityTypesToCreateInShareService;
     NSArray *_resolvedActivityItemsForCurrentActivity;
     UIViewController *_linkViewController;
@@ -155,6 +156,7 @@
 @property(retain, nonatomic) UIViewController *linkViewController; // @synthesize linkViewController=_linkViewController;
 @property(readonly, nonatomic) NSArray *resolvedActivityItemsForCurrentActivity; // @synthesize resolvedActivityItemsForCurrentActivity=_resolvedActivityItemsForCurrentActivity;
 @property(retain, nonatomic) NSArray *activityTypesToCreateInShareService; // @synthesize activityTypesToCreateInShareService=_activityTypesToCreateInShareService;
+@property(nonatomic, getter=_creationTimestamp, setter=_setCreationTimestamp:) unsigned long long creationTimestamp; // @synthesize creationTimestamp=_creationTimestamp;
 @property(nonatomic, getter=_readyToInteractTimestamp, setter=_setReadyToInteractTimestamp:) unsigned long long readyToInteractTimestamp; // @synthesize readyToInteractTimestamp=_readyToInteractTimestamp;
 @property(nonatomic, getter=_viewWillAppearTimestamp, setter=_setViewWillAppearTimestamp:) unsigned long long viewWillAppearTimestamp; // @synthesize viewWillAppearTimestamp=_viewWillAppearTimestamp;
 @property(nonatomic, getter=_beginPerformingActivityTimestamp, setter=_setBeginPerformingActivityTimestamp:) unsigned long long beginPerformingActivityTimestamp; // @synthesize beginPerformingActivityTimestamp=_beginPerformingActivityTimestamp;
@@ -216,8 +218,8 @@
 - (void)_endDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
 - (void)_presentationControllerDismissalTransitionDidEndNotification:(id)arg1;
 - (void)_beginDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
-- (void)_endInProgressActivityExecutionForcedStrongReference;
-- (void)_beginInProgressActivityExecutionForcedStrongReference;
+- (void)_endInProgressActivityExecutionForcedStrongReferenceForActivity:(id)arg1;
+- (void)_beginInProgressActivityExecutionForcedStrongReferenceForActivity:(id)arg1;
 - (_Bool)_queueBackgroundOperationsForActivityItems:(id)arg1 activityBeingPerformed:(id)arg2;
 - (void)_performActivity:(id)arg1;
 - (_Bool)_shouldExecuteItemOperation:(id)arg1 forActivity:(id)arg2;
@@ -282,7 +284,7 @@
 - (void)willPerformInServiceActivityWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performShortcutActivityInHostWithBundleID:(id)arg1 singleUseToken:(id)arg2;
 - (void)performExtensionActivityInHostWithBundleID:(id)arg1 request:(id)arg2;
-- (void)performAirDropActivityInHostWithUUID:(id)arg1 noContentView:(_Bool)arg2;
+- (void)performAirDropActivityInHostWithNoContentView:(_Bool)arg1;
 - (void)performActivityInHostWithUUID:(id)arg1;
 - (void)_editActionsTapped;
 - (void)optionsButtonTapped;

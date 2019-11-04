@@ -31,7 +31,7 @@
 @property(nonatomic) __weak id <IAMWebMessageControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)webProcessJSODidCallClose;
-- (void)webProcessJSODidCallOpen:(id)arg1;
+- (void)webProcessJSODidCallOpen:(id)arg1 options:(id)arg2;
 - (void)webProcessJSODidCallPerformAction:(id)arg1;
 - (void)webProcessJSODidReportEvent:(id)arg1;
 - (void)webProcessPlugInBrowserContextControllerGlobalObjectIsAvailableForFrame;

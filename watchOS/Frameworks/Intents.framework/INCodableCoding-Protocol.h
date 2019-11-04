@@ -9,10 +9,11 @@
 @class NSDictionary, NSString;
 
 @protocol INCodableCoding <NSObject>
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (NSDictionary *)dictionaryRepresentationForLanguage:(NSString *)arg1;
 - (NSDictionary *)dictionaryRepresentation;
 - (void)updateWithDictionary:(NSDictionary *)arg1;
 - (NSString *)dictionaryKeyForKeyPath:(NSString *)arg1;
-- (NSString *)keyPrefix;
 @end
 

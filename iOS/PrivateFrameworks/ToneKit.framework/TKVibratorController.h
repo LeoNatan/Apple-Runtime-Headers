@@ -15,12 +15,11 @@
     NSMutableSet *_pendingStopRequestIdentifiers;
 }
 
-+ (_Bool)f24eF45EGWHwq1245odi1235hqw231ifqwQQFR;
 - (void).cxx_destruct;
 - (void)_vibrationDidCompleteWithPlayRequestIdentifier:(id)arg1;
 - (void)_turnOffIfAppropriate;
 - (void)turnOff;
-- (void)turnOnWithVibrationPattern:(id)arg1 forVibratorFeedbackKind:(unsigned long long)arg2;
+- (void)turnOnWithVibrationPattern:(id)arg1;
 - (unsigned int)_previewVibrationSystemSoundID;
 @property(readonly, nonatomic) unsigned long long vibratorState;
 - (void)dealloc;

@@ -10,5 +10,8 @@
 {
 }
 
++ (id)serializedDataFromClientMetadata:(id)arg1 error:(id *)arg2;
++ (id)deserializedMetadataFromData:(id)arg1 error:(id *)arg2;
+
 @end
 

@@ -6,5 +6,6 @@
 
 @protocol STRemoteUIPinServiceProtocol
 - (void)presentRemotePINControllerWithCompletionHandler:(void (^)(NSError *))arg1;
+- (void)isRestrictionsPasscodeSetWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 @end
 

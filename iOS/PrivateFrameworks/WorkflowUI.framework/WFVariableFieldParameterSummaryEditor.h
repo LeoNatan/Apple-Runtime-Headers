@@ -21,7 +21,7 @@
 - (void)textEntryTextDidChange:(id)arg1;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(_Bool *)arg2;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 @end
 

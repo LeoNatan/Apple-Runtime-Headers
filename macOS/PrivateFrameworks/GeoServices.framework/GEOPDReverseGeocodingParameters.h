@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDReverseGeocodingParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_extendedLocations;
     NSMutableArray *_locations;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _placeTypeLimit;
     BOOL _preserveOriginalLocation;
     struct {
@@ -71,6 +73,8 @@ __attribute__((visibility("hidden")))
 - (void)clearLocations;
 @property(retain, nonatomic) NSMutableArray *locations;
 - (void)_readLocations;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

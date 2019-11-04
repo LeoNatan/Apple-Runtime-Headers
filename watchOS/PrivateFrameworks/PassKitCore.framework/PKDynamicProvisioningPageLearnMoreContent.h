@@ -8,11 +8,12 @@
 
 #import <PassKitCore/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, NSURL;
 
 @interface PKDynamicProvisioningPageLearnMoreContent : NSObject <NSCopying>
 {
     NSString *_buttonTitle;
+    NSURL *_buttonURL;
     NSString *_title;
     NSString *_subtitle;
     NSString *_body;
@@ -25,6 +26,7 @@
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSURL *buttonURL; // @synthesize buttonURL=_buttonURL;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

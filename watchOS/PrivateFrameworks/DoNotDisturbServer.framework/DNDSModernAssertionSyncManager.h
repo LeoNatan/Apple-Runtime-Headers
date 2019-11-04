@@ -33,7 +33,6 @@
 - (void)updateForModeAssertionUpdateResult:(id)arg1;
 - (void)resume;
 - (id)initWithClientDetailsProvider:(id)arg1 syncService:(id)arg2;
-- (id)initWithClientDetailsProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

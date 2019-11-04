@@ -9,17 +9,17 @@
 #import <SpringBoardHome/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardHome/SBIconObserver-Protocol.h>
 
-@class CPMemoryPool, NSHashTable, NSMutableDictionary, NSMutableSet, NSString, UIImage;
+@class CPMemoryPool, NSHashTable, NSMutableDictionary, NSString, UIImage;
 
 @interface SBHIconImageCache : NSObject <SBIconObserver, BSDescriptionProviding>
 {
     NSMutableDictionary *_images;
     NSMutableDictionary *_unmaskedImages;
-    NSMutableSet *_failedCacheKeys;
+    NSHashTable *_failedIcons;
     UIImage *_genericImage;
     UIImage *_overlayImage;
     UIImage *_unmaskedOverlayImage;
-    NSHashTable *_observeredIcons;
+    NSHashTable *_observedIcons;
     NSHashTable *_observers;
     NSString *_name;
     unsigned long long _poolingBypassCount;

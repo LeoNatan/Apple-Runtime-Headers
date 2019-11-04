@@ -17,6 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)kindWithModelClass:(Class)arg1 cacheKey:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (id)kindWithModelClass:(Class)arg1;
 + (id)identityKind;
 @property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
@@ -27,7 +28,7 @@
 - (id)debugDescription;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)_init;
+- (id)_initWithModelClass:(Class)arg1;
 @property(readonly, nonatomic) MPModelKind *identityKind;
 - (shared_ptr_cf7b8a22)predicateWithBaseProperty:(struct ModelPropertyBase *)arg1;
 - (shared_ptr_cf7b8a22)representedSearchScopePredicate;

@@ -8,13 +8,12 @@
 
 #import <MediaPlaybackCore/AVAssetResourceLoaderDelegate-Protocol.h>
 #import <MediaPlaybackCore/AVPlayerItemMetadataOutputPushDelegate-Protocol.h>
-#import <MediaPlaybackCore/MPMusicSubscriptionLeasePlaybackParticipating-Protocol.h>
 #import <MediaPlaybackCore/MPRTCReportingItemSessionCreating-Protocol.h>
 
 @class ICMusicSubscriptionLeaseSession, ICMusicSubscriptionLeaseStatus, ICStoreRequestContext, MPCModelGenericAVItemTimedMetadataRequest, MPCModelGenericAVItemTimedMetadataResponse, MPCModelGenericAVItemUserIdentityPropertySet, MPCPlaybackRequestEnvironment, MPCSuzeLeaseSession, MPMediaLibrary, MPModelGenericObject, MPPropertySet, MPSubscriptionStatusPlaybackInformation, NSArray, NSData, NSDictionary, NSNumber, NSObject, NSOperationQueue, NSString, NSURL;
 @protocol MPCModelPlaybackAssetCacheProviding, MPCReportingIdentityPropertiesLoading, OS_dispatch_queue;
 
-@interface MPCModelGenericAVItem : MPAVItem <AVAssetResourceLoaderDelegate, AVPlayerItemMetadataOutputPushDelegate, MPMusicSubscriptionLeasePlaybackParticipating, MPRTCReportingItemSessionCreating>
+@interface MPCModelGenericAVItem : MPAVItem <AVAssetResourceLoaderDelegate, AVPlayerItemMetadataOutputPushDelegate, MPRTCReportingItemSessionCreating>
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _allowsAirPlayFromCloud;
@@ -44,7 +43,6 @@
     MPCModelGenericAVItemTimedMetadataResponse *_timedMetadataResponse;
     NSOperationQueue *_timedMetadataOperationQueue;
     BOOL _isMusicCellularStreamingAllowed;
-    NSNumber *_maximumSizeAllowedForCellularAccess;
     BOOL _isHLSAsset;
     BOOL _isiTunesStoreStream;
     ICStoreRequestContext *_storeRequestContext;
@@ -56,6 +54,7 @@
     BOOL supportsRadioTrackActions;
     BOOL _radioPlayback;
     BOOL _radioStreamPlayback;
+    BOOL _subscriptionRequired;
     long long _leasePlaybackPreventionState;
     ICMusicSubscriptionLeaseStatus *_leaseStatus;
     id <MPCModelPlaybackAssetCacheProviding> _assetCacheProvider;
@@ -74,6 +73,7 @@
 @property(retain, nonatomic) NSDictionary *trackInfo; // @synthesize trackInfo=_trackInfo;
 @property(nonatomic) long long stationItemLikedState; // @synthesize stationItemLikedState=_stationItemLikedState;
 @property(readonly, copy, nonatomic) MPCPlaybackRequestEnvironment *playbackRequestEnvironment; // @synthesize playbackRequestEnvironment=_playbackRequestEnvironment;
+@property(nonatomic, getter=isSubscriptionRequired) BOOL subscriptionRequired; // @synthesize subscriptionRequired=_subscriptionRequired;
 @property(nonatomic, getter=isRadioStreamPlayback) BOOL radioStreamPlayback; // @synthesize radioStreamPlayback=_radioStreamPlayback;
 @property(nonatomic, getter=isRadioPlayback) BOOL radioPlayback; // @synthesize radioPlayback=_radioPlayback;
 @property(copy, nonatomic, getter=isSiriInitiated) NSNumber *siriInitiated; // @synthesize siriInitiated=_siriInitiated;
@@ -84,8 +84,8 @@
 @property(copy, nonatomic) NSString *assetSourceStoreFrontID; // @synthesize assetSourceStoreFrontID=_assetSourceStoreFrontID;
 @property(retain, nonatomic) id <MPCModelPlaybackAssetCacheProviding> assetCacheProvider; // @synthesize assetCacheProvider=_assetCacheProvider;
 @property(nonatomic) BOOL supportsRadioTrackActions; // @synthesize supportsRadioTrackActions;
-@property(readonly, copy, nonatomic) ICMusicSubscriptionLeaseStatus *leaseStatus; // @synthesize leaseStatus=_leaseStatus;
-@property(readonly, nonatomic) long long leasePlaybackPreventionState; // @synthesize leasePlaybackPreventionState=_leasePlaybackPreventionState;
+- (id)leaseStatus;
+- (long long)leasePlaybackPreventionState;
 - (void).cxx_destruct;
 - (void)_updateJingleTimedMetadata;
 - (void)_updateBookmarkTime:(double)arg1 isCheckpoint:(BOOL)arg2;
@@ -108,6 +108,7 @@
 - (void)_applyLoudnessInfo;
 - (BOOL)_allowsStreamingPlayback;
 - (BOOL)_allowsAssetCaching;
+- (CDStruct_4a9aa5a8)_timeoutValues;
 - (void)_timedMetadataResponseDidInvalidateNotification:(id)arg1;
 - (void)_suzeLeaseSessionRenewDidFailNotification:(id)arg1;
 - (void)_subscriptionLeaseStatusDidChangeNotification:(id)arg1;
@@ -216,6 +217,7 @@
 - (long long)artistStoreID;
 - (long long)albumStoreID;
 - (id)albumArtist;
+- (long long)albumYear;
 - (id)album;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

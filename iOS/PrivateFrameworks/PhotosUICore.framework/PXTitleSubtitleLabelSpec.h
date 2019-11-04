@@ -17,6 +17,7 @@
     struct UIEdgeInsets _padding;
 }
 
++ (id)px_headerTitleSubtitleLabelSpecForZoomLevel:(long long)arg1 featureSpec:(id)arg2;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) double distanceBetweenTitleBaselineAndSubtitleBaseline; // @synthesize distanceBetweenTitleBaselineAndSubtitleBaseline=_distanceBetweenTitleBaselineAndSubtitleBaseline;
 @property(nonatomic) double interLabelSpacing; // @synthesize interLabelSpacing=_interLabelSpacing;

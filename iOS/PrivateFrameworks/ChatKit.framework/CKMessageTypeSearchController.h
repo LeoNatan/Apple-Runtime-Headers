@@ -27,7 +27,7 @@
 @property(nonatomic) _Bool searchTerminated; // @synthesize searchTerminated=_searchTerminated;
 - (void).cxx_destruct;
 - (void)_IMSPIQueryMessageItemsWithGUIDs:(id)arg1 results:(CDUnknownBlockType)arg2;
-- (void)_deleteResult:(id)arg1;
+- (void)deleteAttachmentForResult:(id)arg1;
 - (id)menuActionsForResult:(id)arg1 atRect:(struct CGRect)arg2;
 - (_Bool)wantsDeleteAction;
 - (struct NSDirectionalEdgeInsets)additionalGroupInsets;

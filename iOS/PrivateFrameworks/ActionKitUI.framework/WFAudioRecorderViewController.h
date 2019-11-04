@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface WFAudioRecorderViewController : WFAudioInputViewController <WFAudioRecorderDelegate>
 {
     _Bool _startImmediately;
+    _Bool _isFinishing;
     CDUnknownBlockType _completionHandler;
     double _recordingDuration;
     WFAudioRecorder *_audioRecorder;
     UIButton *_inputButton;
 }
 
+@property(nonatomic) _Bool isFinishing; // @synthesize isFinishing=_isFinishing;
 @property(nonatomic) __weak UIButton *inputButton; // @synthesize inputButton=_inputButton;
 @property(retain, nonatomic) WFAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
 @property(nonatomic) double recordingDuration; // @synthesize recordingDuration=_recordingDuration;

@@ -34,7 +34,7 @@
 - (void)finalizeLog;
 - (void)addCEPValuesForTTR;
 - (id)rankAppsAtTopForScopedSearchWithSections:(id)arg1;
-- (id)groupSectionsByCategory:(id)arg1 genreMap:(id)arg2;
+- (id)groupSectionsByCategory:(id)arg1 genreMap:(id)arg2 topSections:(id)arg3;
 - (void)updateServerScoresUsingBlockOrder:(id)arg1 bundleFeatures:(id)arg2;
 - (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(_Bool)arg3 triggerEvent:(unsigned long long)arg4 correction:(id)arg5;
 - (void)refineSectionShowingVisibleResultsWithBetterTextMatches:(id)arg1;

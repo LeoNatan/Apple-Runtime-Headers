@@ -24,8 +24,8 @@
     int _duration;
     CLLocation *_location;
     NSArray *_keywords;
-    NSString *_mediaMetaDataType;
-    NSData *_mediaMetaData;
+    NSString *_adjustedMediaMetaDataType;
+    NSData *_adjustedMediaMetaData;
     NSString *_timeZoneName;
     NSNumber *_timeZoneOffset;
     NSString *_momentIdentifier;
@@ -89,8 +89,8 @@
 @property(copy, nonatomic) NSNumber *timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
 @property(copy, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
-@property(retain, nonatomic) NSData *mediaMetaData; // @synthesize mediaMetaData=_mediaMetaData;
-@property(copy, nonatomic) NSString *mediaMetaDataType; // @synthesize mediaMetaDataType=_mediaMetaDataType;
+@property(retain, nonatomic) NSData *adjustedMediaMetaData; // @synthesize adjustedMediaMetaData=_adjustedMediaMetaData;
+@property(copy, nonatomic) NSString *adjustedMediaMetaDataType; // @synthesize adjustedMediaMetaDataType=_adjustedMediaMetaDataType;
 @property(copy, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) int duration; // @synthesize duration=_duration;
@@ -113,6 +113,7 @@
 - (_Bool)validateFullRecord;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (_Bool)supportsDeletion;
+- (_Bool)supportsResourceType:(unsigned int)arg1;
 - (_Bool)supportsResources;
 - (id)allRelatedScopedIdentifiers;
 - (int)dequeueOrder;

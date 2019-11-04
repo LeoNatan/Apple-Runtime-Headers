@@ -14,7 +14,6 @@
 @interface GEOTransitListInstruction : PBCodable <GEOComposedRouteStepTransitInstructionMerging, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_commandFormatteds;
     NSMutableArray *_detailFormatteds;
@@ -22,6 +21,9 @@
     NSMutableArray *_noticeFormatteds;
     NSMutableArray *_priceFormatteds;
     GEOTransitListTimeInstruction *_timeInstructions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_commandFormatteds:1;
@@ -92,6 +94,8 @@
 - (void)clearNoticeFormatteds;
 @property(retain, nonatomic) NSMutableArray *noticeFormatteds;
 - (void)_readNoticeFormatteds;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSArray *serverFormattedPrices;
 @property(readonly, nonatomic) NSArray *serverFormattedNotices;
 @property(readonly, nonatomic) NSArray *serverFormattedDetails;

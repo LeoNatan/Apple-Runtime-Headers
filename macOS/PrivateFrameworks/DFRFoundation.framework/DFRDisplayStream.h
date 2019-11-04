@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class DFRTouchBar;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -13,15 +14,19 @@ __attribute__((visibility("hidden")))
 {
     _Bool _firstFrame;
     _Bool _running;
+    _Bool _legacyTouchBarSim;
+    DFRTouchBar *_touchBar;
     CDUnknownBlockType _handler;
     NSObject<OS_dispatch_source> *_source;
-    unsigned int _port;
+    struct _mach_right_send {
+        unsigned int mrs_name;
+    } _sendRight;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)initWithTouchBar:(struct __DFRTouchBar *)arg1 properties:(id)arg2 queue:(id)arg3 handler:(CDUnknownBlockType)arg4;
 
 @end
 

@@ -13,10 +13,12 @@
 @interface GEOLogMsgStateApplicationIdentifier : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_appIdentifier;
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _appDarkMode;
     struct {
         unsigned int has_appDarkMode:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) NSString *appIdentifier;
 @property(readonly, nonatomic) _Bool hasAppIdentifier;
 - (void)_readAppIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

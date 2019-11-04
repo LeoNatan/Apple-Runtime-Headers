@@ -8,6 +8,7 @@
 
 @protocol RPCompanionLinkXPCServerInterface
 - (void)xpcSessionActivate:(RPSession *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)xpcServerUpdate:(RPServer *)arg1;
 - (void)xpcServerActivate:(RPServer *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)xpcDiscoveryUpdate:(RPDiscovery *)arg1;
 - (void)xpcDiscoveryActivate:(RPDiscovery *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;

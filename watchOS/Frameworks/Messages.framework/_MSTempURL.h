@@ -6,12 +6,14 @@
 
 #import <Foundation/NSURL.h>
 
-__attribute__((visibility("hidden")))
 @interface _MSTempURL : NSURL
 {
 }
 
++ (_Bool)_isInvalidPath:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (Class)classForCoder;
+- (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 
 @end

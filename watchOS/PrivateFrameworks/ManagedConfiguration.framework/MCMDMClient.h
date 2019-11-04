@@ -7,13 +7,16 @@
 #import <objc/NSObject.h>
 
 @class NSXPCConnection;
+@protocol OS_dispatch_queue;
 
 @interface MCMDMClient : NSObject
 {
     NSXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_queue> *_xpcConnectionSyncQueue;
 }
 
 + (id)sharedClient;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcConnectionSyncQueue; // @synthesize xpcConnectionSyncQueue=_xpcConnectionSyncQueue;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
 - (void)getAssertionDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
@@ -34,8 +37,10 @@
 - (id)deviceEnrollmentAuthenticationDict;
 - (id)userEnrollmentAuthenticationDictWithEnrollmentID:(id)arg1;
 - (_Bool)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 useDevelopmentAPNS:(_Bool)arg4 signMessage:(_Bool)arg5 isUserEnrollment:(_Bool)arg6 enrollmentID:(id)arg7 outError:(id *)arg8;
-- (void)_createAndStartMDMXPCConnection;
+- (void)_queue_createAndStartMDMXPCConnection;
+- (void)_destroyXPCConnectionAndInvalidate:(_Bool)arg1;
 - (void)dealloc;
+- (id)init;
 
 @end
 

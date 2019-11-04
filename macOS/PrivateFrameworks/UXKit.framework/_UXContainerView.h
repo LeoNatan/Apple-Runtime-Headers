@@ -6,23 +6,12 @@
 
 #import <UXKit/UXView.h>
 
-#import <UXKit/NSAccessibilityGroup-Protocol.h>
-
-@class NSString;
-
-@interface _UXContainerView : UXView <NSAccessibilityGroup>
+@interface _UXContainerView : UXView
 {
 }
 
 - (void)addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (void)addSubview:(id)arg1;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

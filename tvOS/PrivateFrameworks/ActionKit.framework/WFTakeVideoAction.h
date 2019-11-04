@@ -6,26 +6,9 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/UIImagePickerControllerDelegate-Protocol.h>
-#import <ActionKit/UINavigationControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFTakeVideoAction : WFAction <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface WFTakeVideoAction : WFAction
 {
 }
-
-+ (long long)cameraDeviceFromString:(id)arg1;
-+ (long long)qualityFromString:(id)arg1;
-- (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

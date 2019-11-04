@@ -8,13 +8,12 @@
 
 #import <PassKitCore/CLLocationManagerDelegate-Protocol.h>
 
-@class CLGeocoder, CLLocationManager, NSDictionary, NSMutableArray, NSMutableSet, NSString, PKMerchantCategoryCodeMap, PKUsageNotificationServer;
+@class CLGeocoder, CLLocationManager, NSMutableArray, NSMutableSet, NSString, PKMerchantCategoryCodeMap, PKUsageNotificationServer;
 @protocol OS_dispatch_source, PKPaymentTransactionProcessorDelegate;
 
 @interface PKPaymentTransactionProcessor : NSObject <CLLocationManagerDelegate>
 {
     struct os_unfair_lock_s _itemsLock;
-    struct os_unfair_lock_s _regionDataLock;
     NSMutableSet *_locationUpdateItems;
     NSMutableSet *_backgroundLocationUpdateItems;
     NSMutableArray *_reverseGeocodeItems;
@@ -30,15 +29,12 @@
     PKMerchantCategoryCodeMap *_categoryCodeMap;
     id <PKPaymentTransactionProcessorDelegate> _delegate;
     PKUsageNotificationServer *_usageNotificationServer;
-    NSDictionary *_maximumTransitLocationAccuracyPerRegion;
 }
 
-@property(retain, nonatomic) NSDictionary *maximumTransitLocationAccuracyPerRegion; // @synthesize maximumTransitLocationAccuracyPerRegion=_maximumTransitLocationAccuracyPerRegion;
 @property(nonatomic) __weak PKUsageNotificationServer *usageNotificationServer; // @synthesize usageNotificationServer=_usageNotificationServer;
 @property(nonatomic) __weak id <PKPaymentTransactionProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void).cxx_destruct;
-- (BOOL)_locationMeetsMinimumAccuracyRequirements:(id)arg1 transaction:(id)arg2;
 - (id)_pendingMerchantCleanupItemForTransaction:(id)arg1;
 - (id)_pendingStationsUpdateItemForTransaction:(id)arg1;
 - (id)_pendingLocationUpdateItemForTransaction:(id)arg1;

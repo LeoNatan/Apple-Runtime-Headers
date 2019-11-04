@@ -38,10 +38,12 @@
 - (void)appleAccountInformationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
+- (void)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deviceMetadataWithFields:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)featureApplicationsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updatedAccountsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)supportedFeatureIdentifiersForAccountProvisioningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportedFeatureIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportsAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(CDUnknownBlockType)arg1;

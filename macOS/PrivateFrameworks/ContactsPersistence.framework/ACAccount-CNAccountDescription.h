@@ -13,6 +13,7 @@
 @interface ACAccount (CNAccountDescription) <CNAccountDescription>
 - (id)_interestedAccountTypeIdentifiers;
 - (long long)_containerType;
+@property(readonly) BOOL isChildAccount;
 @property(readonly) NSNumber *dsid;
 @property(readonly) ABCDContainer *containerRepresentation;
 @property(readonly) NSURL *persistentStoreURL;

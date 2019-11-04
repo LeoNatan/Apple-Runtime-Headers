@@ -22,6 +22,8 @@
 @property(readonly, copy, nonatomic) NSString *ratingLabel; // @synthesize ratingLabel=_ratingLabel;
 @property(readonly, nonatomic) long long ratingSystem; // @synthesize ratingSystem=_ratingSystem;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation;
 @property(readonly, nonatomic, getter=isExplicitContent) _Bool explicitContent;

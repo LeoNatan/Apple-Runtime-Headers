@@ -38,6 +38,7 @@
 + (BOOL)supportPhatic;
 + (BOOL)supportPremiumModel;
 + (BOOL)supportPremiumWatchAssets;
++ (BOOL)supportCompactPlus;
 + (BOOL)supportRaiseToSpeak;
 + (BOOL)supportTTS;
 + (BOOL)supportSAT;
@@ -55,20 +56,7 @@
 + (void)URLsInDirectory:(id)arg1 matchingPattern:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)clearLogFilesInDirectory:(id)arg1 matchingPattern:(id)arg2 exceedNumber:(unsigned long long)arg3;
 + (void)removeLogFilesInDirectory:(id)arg1 matchingPattern:(id)arg2 beforeDays:(float)arg3;
-+ (unsigned long long)macHostTimeFromBridgeHostTime:(unsigned long long)arg1;
-+ (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
-+ (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
-+ (double)getHostClockFrequency;
-+ (double)hostTimeToTimeInterval:(unsigned long long)arg1;
-+ (float)hostTimeToSeconds:(unsigned long long)arg1;
-+ (unsigned long long)secondsToHostTime:(float)arg1;
-+ (unsigned long long)macHostTimeFromBridgeHostTime:(unsigned long long)arg1;
-+ (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
-+ (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
-+ (double)getHostClockFrequency;
-+ (double)hostTimeToTimeInterval:(unsigned long long)arg1;
-+ (float)hostTimeToSeconds:(unsigned long long)arg1;
-+ (unsigned long long)secondsToHostTime:(float)arg1;
++ (id)assetHashInResourcePath:(id)arg1;
 + (id)getSiriLanguageWithFallback:(id)arg1;
 + (void)apply12dBGain:(id)arg1;
 + (id)convertToShortLPCMBufFromFloatLPCMBuf:(id)arg1;
@@ -94,9 +82,9 @@
 + (id)spIdSiriDebugTrainedUsersFilePathForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectoryForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
-+ (id)spIdDataRootDirectory;
++ (id)spIdSiriDebugGradingDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
-+ (id)getHomeUserIdForVoiceProfile:(id)arg1;
++ (void)getHomeUserIdForVoiceProfile:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (id)getContentsOfDirectory:(id)arg1;
 + (id)getVoiceProfilesMarkedForUpload;
 + (void)markVoiceProfileUploaded:(id)arg1;
@@ -123,7 +111,7 @@
 + (id)spidAudioTrainUtterancesDir;
 + (void)cleanupOrphanedVoiceIdGradingFiles;
 + (BOOL)spIdAudioLogsCountLimitReached;
-+ (id)spIdAudioLogsDir2;
++ (id)spIdAudioLogsGradingDir;
 + (id)spIdAudioLogsDir;
 + (void)createDirectoryIfDoesNotExist:(id)arg1;
 + (id)spIdVoiceProfileImportRootDir;
@@ -165,13 +153,6 @@
 + (struct AudioStreamBasicDescription)opusASBD;
 + (struct AudioStreamBasicDescription)lpcmInt16NarrowBandASBD;
 + (struct AudioStreamBasicDescription)lpcmInt16ASBD;
-+ (unsigned long long)macHostTimeFromBridgeHostTime:(unsigned long long)arg1;
-+ (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
-+ (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
-+ (double)getHostClockFrequency;
-+ (double)hostTimeToTimeInterval:(unsigned long long)arg1;
-+ (float)hostTimeToSeconds:(unsigned long long)arg1;
-+ (unsigned long long)secondsToHostTime:(float)arg1;
 + (BOOL)readAudioChunksFrom:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (void)iterateBitset:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 + (unsigned int)getNumElementInBitset:(unsigned long long)arg1;
@@ -192,7 +173,6 @@
 + (BOOL)isRecordContextAutoPrompt:(id)arg1;
 + (BOOL)isRecordContextHomeButtonPress:(id)arg1;
 + (BOOL)isRecordContextVoiceTrigger:(id)arg1;
-+ (id)assetHashInResourcePath:(id)arg1;
 
 @end
 

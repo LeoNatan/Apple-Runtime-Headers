@@ -15,7 +15,6 @@
 @interface GEOFormatArgument : PBCodable <GEOServerFormatToken, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _valInt3s;
     GEOPBTransitArtwork *_artwork;
@@ -24,6 +23,9 @@
     NSMutableArray *_timestampDatas;
     NSString *_token;
     NSString *_valString;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _format;
     unsigned int _valInt1;
     unsigned int _valInt2;
@@ -107,6 +109,8 @@
 @property(readonly, nonatomic) _Bool hasToken;
 - (void)_readToken;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) id <GEOServerFormatTokenCountdownValue> countdownValue;
 @property(readonly, nonatomic) NSArray *timeStampValues;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artworkValue;

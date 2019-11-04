@@ -56,6 +56,7 @@
 - (void)updateWithResultSections:(id)arg1 resetScrollPoint:(_Bool)arg2;
 - (void)updateWithResultSections:(id)arg1;
 @property(nonatomic) _Bool shouldUseStandardSectionInsets;
+@property(nonatomic) _Bool showsVerticalScrollIndicator;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections;
 @property(nonatomic) _Bool shouldHideResultsUnderKeyboard;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener;
@@ -69,6 +70,7 @@
 @property(nonatomic) _Bool shortenTopFloatingHeader;
 - (void)didBeginScrolling;
 - (void)didScrollPastBottomOfContent;
+- (void)restoreResultsIfNeeded;
 - (id)init;
 
 // Remaining properties

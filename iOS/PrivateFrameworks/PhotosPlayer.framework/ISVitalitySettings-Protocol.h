@@ -7,12 +7,11 @@
 #import <PhotosPlayer/NSObject-Protocol.h>
 
 @protocol ISVitalitySettings <NSObject>
-- (double)minimumDurationForColorMismatch;
+- (double)maxVitalityDelay;
 - (double)maximumDelayBeforePlayback;
 - (double)minimumVisibilityFactor;
 - (double)endTimeOffset;
 - (double)playbackRate;
-- (double)minimumColorAdjustedPhotoTransitionDuration;
 - (double)minimumPhotoTransitionDuration;
 - (double)postDuration;
 - (double)preDuration;

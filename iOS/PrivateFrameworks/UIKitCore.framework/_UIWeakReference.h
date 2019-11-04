@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     id _object;
 }
 
++ (id)weakReferenceWrappingObject:(id)arg1;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

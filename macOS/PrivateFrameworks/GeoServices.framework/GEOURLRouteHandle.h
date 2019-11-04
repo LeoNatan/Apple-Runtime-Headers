@@ -13,11 +13,13 @@
 @interface GEOURLRouteHandle : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSData *_directionsResponseID;
     NSData *_routeID;
     NSData *_transitData;
     NSData *_zilchPoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_directionsResponseID:1;
         unsigned int read_routeID:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) NSData *directionsResponseID;
 @property(readonly, nonatomic) BOOL hasDirectionsResponseID;
 - (void)_readDirectionsResponseID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

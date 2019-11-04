@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)_title;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)item;
-- (id)initWithActivityItemsConfiguration:(id)arg1 index:(long long)arg2;
+- (id)initWithActivityItemsConfiguration:(id)arg1 itemAtIndex:(long long)arg2;
 
 @end
 

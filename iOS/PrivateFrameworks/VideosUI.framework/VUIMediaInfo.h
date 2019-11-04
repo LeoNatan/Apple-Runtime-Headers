@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)_auxMediaItemFromVideosPlayable:(id)arg1;
 - (id)_storeMediaItemsFromVideosPlayable:(id)arg1 andStoreDictionary:(id)arg2;
 - (id)_playlistFromVideosPlayables:(id)arg1 andStoreDictionary:(id)arg2;
+- (id)_tvpRatingDomainFromUTSRatingDomain:(id)arg1;
 - (void)_updatePlaybackStartReason;
 - (void)setUserPlaybackInitiationDate:(id)arg1 openURLCompletionDate:(id)arg2;
 - (_Bool)isEqual:(id)arg1;

@@ -141,6 +141,7 @@
 @property(readonly) NSArray *activeSessionDisplayIDs;
 @property(readonly) BOOL allowMixableAudioWhileRecording;
 @property(readonly) unsigned int opaqueSessionID;
+@property(readonly) BOOL participatesInNowPlayingAppPolicy;
 @property(readonly) NSDictionary *pickedRoute;
 @property(readonly) BOOL requiresNoAudioResources;
 @property(readonly) double speechDetectionDeviceSampleRate;

@@ -21,6 +21,7 @@
 - (BOOL)isNetworkRouterSatellite;
 - (BOOL)isNetworkRouter;
 - (BOOL)isContainedInAParent;
+- (BOOL)isAccessoryDisplayedAsIndividualTiles;
 - (BOOL)isBridge;
 - (BOOL)isNotificationSupportedCamera;
 - (BOOL)isCamera;

@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
 @property(readonly, nonatomic) id <NSObject> value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *debugDescription;
 - (_Bool)willProcessToSameValue:(id)arg1;
 - (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
 - (id)containedVariables;
@@ -33,10 +34,8 @@
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)initWithVariable:(id)arg1;
 - (id)initWithValue:(id)arg1;
-- (Class)processingValueClass;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 

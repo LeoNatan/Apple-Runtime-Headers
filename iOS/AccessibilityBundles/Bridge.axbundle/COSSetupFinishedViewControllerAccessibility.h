@@ -14,8 +14,6 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)init;
-- (void)_accessibilityLoadAccessibilityInformation;
 - (void)setIsSyncComplete:(_Bool)arg1;
 
 @end

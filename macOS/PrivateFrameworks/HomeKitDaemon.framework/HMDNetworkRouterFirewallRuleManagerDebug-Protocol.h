@@ -9,7 +9,7 @@
 @class HMFVersion, NSData, NSString;
 
 @protocol HMDNetworkRouterFirewallRuleManagerDebug <NSObject>
-- (void)fetchCloudChangesAndForceChangesFoundWithCompletion:(void (^)(NSError *))arg1;
+- (void)forceFetchCloudChangesAndForceChangeNotifications:(BOOL)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
 - (void)removeOverridesForProductGroup:(NSString *)arg1 productNumber:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)removeAllOverridesWithCompletion:(void (^)(NSError *))arg1;
 - (void)addOverrides:(NSData *)arg1 completion:(void (^)(NSError *))arg2;

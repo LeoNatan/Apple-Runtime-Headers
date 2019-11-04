@@ -6,11 +6,12 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CKConversation, CKSearchController, IMMessageItem, NSArray, NSString, UIAlertController, UITraitCollection, UIViewController;
+@class CKConversation, CKSearchController, IMMessageItem, NSArray, NSIndexPath, NSString, UIAlertController, UITraitCollection, UIViewController;
 
 @protocol CKSearchControllerDelegate <NSObject>
 - (void)deleteMessageItem:(IMMessageItem *)arg1;
 - (void)deleteTransferGUID:(NSString *)arg1;
+- (void)searchController:(CKSearchController *)arg1 requestsItemDeletionAtIndexPath:(NSIndexPath *)arg2;
 - (UITraitCollection *)containerTraitCollectionForController:(CKSearchController *)arg1;
 - (double)containerWidthForController:(CKSearchController *)arg1;
 - (struct UIEdgeInsets)parentMarginInsetsForSearchController:(CKSearchController *)arg1;

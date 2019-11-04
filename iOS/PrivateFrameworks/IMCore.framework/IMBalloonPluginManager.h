@@ -12,6 +12,7 @@
 {
     Class _richLinksDataSourceClass;
     NSMutableDictionary *_pluginsMap;
+    NSMutableDictionary *_pluginsBundleIDMap;
     id _extensionMatchingContext;
     id _highMemoryExtensionMatchingContext;
     NSString *_pluginMetaDataFolder;
@@ -37,9 +38,11 @@
 @property(retain, nonatomic) NSString *pluginMetaDataFolder; // @synthesize pluginMetaDataFolder=_pluginMetaDataFolder;
 @property(retain, nonatomic) id highMemoryExtensionMatchingContext; // @synthesize highMemoryExtensionMatchingContext=_highMemoryExtensionMatchingContext;
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
+@property(retain, nonatomic) NSMutableDictionary *pluginsBundleIDMap; // @synthesize pluginsBundleIDMap=_pluginsBundleIDMap;
 @property(retain, nonatomic) NSMutableDictionary *pluginsMap; // @synthesize pluginsMap=_pluginsMap;
 @property(readonly, retain, nonatomic) Class richLinksDataSourceClass; // @synthesize richLinksDataSourceClass=_richLinksDataSourceClass;
 - (void).cxx_destruct;
+- (id)systemBundleIdentifierForPluginIdentifier:(id)arg1;
 - (id)balloonPluginForBundleID:(id)arg1;
 - (id)allPlugins;
 - (void)insertDataSource:(id)arg1 forGUID:(id)arg2;

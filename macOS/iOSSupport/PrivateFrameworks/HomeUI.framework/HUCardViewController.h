@@ -8,13 +8,14 @@
 
 #import <HomeUI/HFItemManagerDelegate-Protocol.h>
 #import <HomeUI/HUQuickControlViewControllerCoordinatorDelegate-Protocol.h>
+#import <HomeUI/HUViewControllerCustomDismissing-Protocol.h>
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <HomeUI/UIScrollViewDelegate-Protocol.h>
 
-@class HFItem, HUQuickControlContainerViewController, HUQuickControlSummaryNavigationBarTitleView, HUQuickControlViewControllerCoordinator, NSMutableArray, NSString, UIButton, UIColor, UILayoutGuide, UIPanGestureRecognizer, UIScrollView;
+@class HFItem, HUAnimationApplier, HUQuickControlContainerViewController, HUQuickControlSummaryNavigationBarTitleView, HUQuickControlViewControllerCoordinator, NSMutableArray, NSString, UIButton, UIColor, UILayoutGuide, UIPanGestureRecognizer, UIScrollView;
 @protocol HUCardViewControllerDelegate;
 
-@interface HUCardViewController : UIViewController <HFItemManagerDelegate, UIGestureRecognizerDelegate, HUQuickControlViewControllerCoordinatorDelegate, UIScrollViewDelegate>
+@interface HUCardViewController : UIViewController <HFItemManagerDelegate, UIGestureRecognizerDelegate, HUQuickControlViewControllerCoordinatorDelegate, HUViewControllerCustomDismissing, UIScrollViewDelegate>
 {
     BOOL _hideControls;
     BOOL _hideSettings;
@@ -33,8 +34,10 @@
     NSMutableArray *_constraints;
     UIPanGestureRecognizer *_panGestureRecognizer;
     UILayoutGuide *_quickControlLayoutGuide;
+    HUAnimationApplier *_animationApplier;
 }
 
+@property(retain, nonatomic) HUAnimationApplier *animationApplier; // @synthesize animationApplier=_animationApplier;
 @property(nonatomic) BOOL reachable; // @synthesize reachable=_reachable;
 @property(retain, nonatomic) UILayoutGuide *quickControlLayoutGuide; // @synthesize quickControlLayoutGuide=_quickControlLayoutGuide;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
@@ -53,6 +56,7 @@
 @property(readonly, nonatomic) UIViewController *settingsViewController; // @synthesize settingsViewController=_settingsViewController;
 @property(readonly, nonatomic) HUQuickControlContainerViewController *quickControlViewController; // @synthesize quickControlViewController=_quickControlViewController;
 - (void).cxx_destruct;
+- (id)hu_prepareForDismissalAnimated:(BOOL)arg1;
 - (struct CGSize)overridingContentSizeForPresentedViewController:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
 - (void)controllerCoordinator:(id)arg1 didUpdateReachability:(BOOL)arg2;
@@ -63,23 +67,22 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_escapeKeyPressed;
 - (id)keyCommands;
-- (double)_adjustedFrictionForRevealAnimation;
-- (double)_adjustedTensionForRevealAnimation;
+- (id)_springAnimationSettings;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
 - (void)_nudgeScrollViewToPoint:(struct CGPoint)arg1;
-- (void)_scrollToTop;
 - (void)_scrollToSettings;
 - (void)_unlockSettings;
-- (void)_requestDismissal;
+- (id)requestDismissal;
 - (void)_closeButtonPressed:(id)arg1;
 - (void)_updateIconDescriptorAnimated:(BOOL)arg1;
 - (void)_updateControlStatusText;
 - (void)_updateReachabilityState;
 - (double)_quickControlScrollOffsetBoundary;
 - (double)_quickControlSectionHeight;
-- (void)_endUsingTapticFeedbackIfAvailable;
-- (void)_actuateTapticFeedbackIfAvailable;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (double)_hostViewHeight;
+- (void)_endUsingTapticFeedback;
+- (void)_actuateTapticFeedback;
+- (void)_prepareForTapticFeedback;
 - (void)_handlePanGesture:(id)arg1;
 - (void)dealloc;
 - (void)scrollToDetailsViewAnimated:(BOOL)arg1;

@@ -13,11 +13,13 @@
 @interface GEOLocationInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_localityName;
     NSString *_locationName;
     NSString *_secondaryLocationName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_localityName:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) NSString *locationName;
 @property(readonly, nonatomic) BOOL hasLocationName;
 - (void)_readLocationName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

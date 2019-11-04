@@ -15,12 +15,12 @@
 @interface ICCloudClient : NSObject <ICCloudServerListenerEndpointProvider, ICCloudAvailability>
 {
     _Bool _active;
+    ICConnectionConfiguration *_configuration;
     CDUnknownBlockType _updateSagaInProgressChangedHandler;
     CDUnknownBlockType _updateJaliscoInProgressChangedHandler;
     NSXPCConnection *_xpcConnection;
     NSXPCConnection *_xpcListenerEndpointProviderConnection;
     NSObject<OS_dispatch_queue> *_serialAccessQueue;
-    ICConnectionConfiguration *_configuration;
     long long _preferredVideoQuality;
     ICCloudClientAvailabilityService *_availabilityService;
     ICCloudClientCloudService *_cloudService;
@@ -29,11 +29,11 @@
 @property(readonly, nonatomic) ICCloudClientCloudService *cloudService; // @synthesize cloudService=_cloudService;
 @property(readonly, nonatomic) ICCloudClientAvailabilityService *availabilityService; // @synthesize availabilityService=_availabilityService;
 @property(nonatomic) long long preferredVideoQuality; // @synthesize preferredVideoQuality=_preferredVideoQuality;
-@property(retain, nonatomic) ICConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialAccessQueue; // @synthesize serialAccessQueue=_serialAccessQueue;
 @property(copy, nonatomic) CDUnknownBlockType updateJaliscoInProgressChangedHandler; // @synthesize updateJaliscoInProgressChangedHandler=_updateJaliscoInProgressChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateSagaInProgressChangedHandler; // @synthesize updateSagaInProgressChangedHandler=_updateSagaInProgressChangedHandler;
 - (void).cxx_destruct;
+- (void)_deauthenticateAndDisableActiveLockerAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_serverJaliscoUpdateInProgressDidChange;
 - (void)_serverSagaUpdateInProgressDidChange;
 - (void)_serverDidLaunch;
@@ -125,18 +125,17 @@
 - (void)loadJaliscoGeniusCUIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadJaliscoGeniusLearnMoreURLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadIsJaliscoGeniusSupportedWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)deauthenticateAndDisableActiveLockerAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deauthenticateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateSagaLibraryWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateSagaLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateJaliscoLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isMediaKindDisabledForJaliscoLibrary:(long long)arg1;
-- (void)updateJaliscoLibraryByAddingMediaKind:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)updateJaliscoLibraryByRemovingMediaKind:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeJaliscoLibraryWithCompletionHander:(CDUnknownBlockType)arg1;
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)becomeActive;
-- (void)authenticateAndStartInitialImport:(_Bool)arg1 mergeWithCloudLibrary:(_Bool)arg2 isExplicitUserAction:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)disableCloudLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_enableCloudLibraryWithPolicy:(long long)arg1 startinitialImport:(_Bool)arg2 isExplicitUserAction:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)enableCloudLibraryWithPolicy:(long long)arg1 startInitialImport:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)authenticateAndStartInitialImport:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)authenticateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addGeniusPlaylistWithPersistentID:(long long)arg1 name:(id)arg2 seedItemSagaIDs:(id)arg3 itemSagaIDs:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -158,6 +157,7 @@
 - (void)createPlaylistWithPersistentID:(long long)arg1 properties:(id)arg2 trackList:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setCloudAddToPlaylistBehavior:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)cloudAddToPlaylistBehavior;
+@property(readonly, nonatomic) ICConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithUserIdentity:(id)arg1;

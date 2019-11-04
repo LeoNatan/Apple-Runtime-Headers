@@ -41,6 +41,7 @@
     struct {
         unsigned int highlighted:1;
         unsigned int autosizeTextToFit:1;
+        unsigned int supportMultiLineShrinkToFit:1;
         unsigned int autotrackTextToFit:1;
         unsigned int baselineAdjustment:2;
         unsigned int enabled:1;
@@ -66,7 +67,6 @@
     } _textLabelFlags;
     BOOL _adjustsFontForContentSizeCategory;
     BOOL __textColorFollowsTintColor;
-    BOOL __supportMultiLineShrinkToFit;
     double _preferredMaxLayoutWidth;
     double _multilineContextWidth;
     UIFont *_fontForShortcutBaselineCalculation;
@@ -81,7 +81,6 @@
 + (id)_defaultColor;
 + (id)defaultFont;
 + (Class)layerClass;
-@property(nonatomic, setter=_setSupportMultiLineShrinkToFit:) BOOL _supportMultiLineShrinkToFit; // @synthesize _supportMultiLineShrinkToFit=__supportMultiLineShrinkToFit;
 @property(retain, nonatomic, setter=_setVisualStyle:) _UILabelVisualStyle *_visualStyle; // @synthesize _visualStyle=__visualStyle;
 @property(nonatomic, setter=_setTextColorFollowsTintColor:) BOOL _textColorFollowsTintColor; // @synthesize _textColorFollowsTintColor=__textColorFollowsTintColor;
 @property(nonatomic) double minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
@@ -123,7 +122,11 @@
 - (void)layerWillDraw:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)_drawTextInRect:(struct CGRect)arg1 baselineCalculationOnly:(BOOL)arg2;
+- (void)_drawTextInRectSupportingMultiLineShrinkToFit:(struct CGRect)arg1 baselineCalculationOnly:(BOOL)arg2;
+- (void)_setSupportMultiLineShrinkToFit:(BOOL)arg1;
+- (BOOL)_supportMultiLineShrinkToFit;
 - (BOOL)_updateScaledMetricsForRect:(struct CGRect)arg1;
+- (BOOL)_updateScaledMetricsForRectSupportingMultiLineShrinkToFit:(struct CGRect)arg1;
 - (BOOL)_drawsUnderline;
 - (void)drawTextInRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -141,6 +144,7 @@
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
 - (void)invalidateIntrinsicContentSize;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (BOOL)_hasBaseline;
 - (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;
@@ -170,7 +174,8 @@
 @property(retain, nonatomic) UIFont *font;
 - (void)_adjustFontForAccessibilityTraits:(BOOL)arg1;
 - (void)_setFont:(id)arg1;
-- (void)_baselineOffsetParametersDidChange;
+- (void)_invalidateBaselineConstraints;
+- (BOOL)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (id)__currentDefaultColor;
 - (id)currentTextColor;
 - (id)_disabledFontColor;

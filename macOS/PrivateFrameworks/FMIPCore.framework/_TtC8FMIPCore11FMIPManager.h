@@ -13,6 +13,7 @@
     // Error parsing type: , name: beaconRefreshingController
     // Error parsing type: , name: dataManager
     // Error parsing type: , name: garbageCollector
+    // Error parsing type: , name: locationController
     // Error parsing type: , name: serverInteractionController
     // Error parsing type: , name: actionsController
     // Error parsing type: , name: trackingAvoidance

@@ -16,6 +16,8 @@
 @property(readonly) int droppedReason;
 @property(readonly) _Bool depthDataWasDropped;
 @property(readonly) AVDepthData *depthData;
+- (id)description;
+- (id)debugDescription;
 - (void)dealloc;
 - (id)_initWithDepthData:(id)arg1 timestamp:(CDStruct_1b6d18a9)arg2 depthDataWasDropped:(_Bool)arg3 droppedReason:(int)arg4;
 

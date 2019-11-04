@@ -730,7 +730,7 @@ struct LayoutContext {
     struct View *_field26;
     struct Viewport *_field27;
     struct ARContext *_field28;
-    struct array<std::__1::unique_ptr<md::LogicContext, std::__1::default_delete<md::LogicContext>>, 14> _field29;
+    struct array<std::__1::unique_ptr<md::LogicContext, std::__1::default_delete<md::LogicContext>>, 15> _field29;
     unsigned long long _field30;
 };
 
@@ -759,8 +759,8 @@ struct LogicContext;
 
 struct LogicManager {
     CDUnknownFunctionPointerType *_field1;
-    struct unique_ptr<md::Logic, std::__1::default_delete<md::Logic>> _field2[14];
-    struct LogicTypePass _field3[14];
+    struct unique_ptr<md::Logic, std::__1::default_delete<md::Logic>> _field2[15];
+    struct LogicTypePass _field3[15];
 };
 
 struct LogicTypePass {
@@ -2086,8 +2086,8 @@ struct array<gm::Plane3<double>, 6> {
     struct Plane3<double> _field1[6];
 };
 
-struct array<std::__1::unique_ptr<md::LogicContext, std::__1::default_delete<md::LogicContext>>, 14> {
-    struct unique_ptr<md::LogicContext, std::__1::default_delete<md::LogicContext>> _field1[14];
+struct array<std::__1::unique_ptr<md::LogicContext, std::__1::default_delete<md::LogicContext>>, 15> {
+    struct unique_ptr<md::LogicContext, std::__1::default_delete<md::LogicContext>> _field1[15];
 };
 
 struct basic_ostream<char, std::__1::char_traits<char>> {

@@ -6,10 +6,9 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-#import <NewsArticles/NUArticleHardPaywallPresentationReporting-Protocol.h>
+#import <NewsArticles/NUArticleViewControllerLoadingListener-Protocol.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles3) <NUArticleHardPaywallPresentationReporting>
-- (BOOL)isPreviewing;
-- (BOOL)isShowingHardPaywall;
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles3) <NUArticleViewControllerLoadingListener>
+- (void)didLoadArticle:(id)arg1 withContext:(id)arg2;
 @end
 

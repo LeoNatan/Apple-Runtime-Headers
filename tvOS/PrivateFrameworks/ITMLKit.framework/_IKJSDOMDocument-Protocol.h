@@ -10,6 +10,8 @@
 @class IKDOMDocument, JSValue, NSArray, NSDictionary, NSString;
 
 @protocol _IKJSDOMDocument <IKJSDOMDocument, JSExport>
+- (void)recordedImpressionsMatching:(NSString *)arg1:(JSValue *)arg2:(JSValue *)arg3;
+- (void)recordedImpressions:(JSValue *)arg1:(JSValue *)arg2;
 - (NSArray *)matchingImpressions:(NSString *)arg1:(JSValue *)arg2;
 - (NSArray *)recordedImpressions:(JSValue *)arg1;
 - (NSArray *)snapshotImpressions;

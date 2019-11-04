@@ -9,7 +9,7 @@
 #import <SPOwner/NSCopying-Protocol.h>
 #import <SPOwner/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSUUID, SPHandle;
+@class NSDate, NSString, NSUUID, SPHandle;
 
 @interface SPBeaconShare : NSObject <NSCopying, NSSecureCoding>
 {
@@ -17,9 +17,11 @@
     NSUUID *_identifier;
     SPHandle *_handle;
     NSDate *_expiration;
+    NSString *_correlationIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *correlationIdentifier; // @synthesize correlationIdentifier=_correlationIdentifier;
 @property(copy, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
 @property(nonatomic) BOOL accepted; // @synthesize accepted=_accepted;
 @property(copy, nonatomic) SPHandle *handle; // @synthesize handle=_handle;
@@ -31,7 +33,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 handle:(id)arg2 accepted:(BOOL)arg3 expiration:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 handle:(id)arg2 accepted:(BOOL)arg3 expiration:(id)arg4 correlationIdentifier:(id)arg5;
 
 @end
 

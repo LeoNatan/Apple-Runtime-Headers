@@ -6,13 +6,13 @@
 
 #import <WorkflowKit/NSObject-Protocol.h>
 
-@class NSArray, NSString, UIColor, WFEnumerationParameter, WFVariableSubstitutableParameterState;
+@class NSArray, NSString, WFColor, WFEnumerationParameter, WFVariableSubstitutableParameterState;
 
 @protocol WFDynamicEnumerationDataSource <NSObject>
 - (NSString *)enumeration:(WFEnumerationParameter *)arg1 localizedLabelForPossibleState:(WFVariableSubstitutableParameterState *)arg2;
 
 @optional
-- (UIColor *)enumeration:(WFEnumerationParameter *)arg1 accessoryColorForPossibleState:(WFVariableSubstitutableParameterState *)arg2;
+- (WFColor *)enumeration:(WFEnumerationParameter *)arg1 accessoryColorForPossibleState:(WFVariableSubstitutableParameterState *)arg2;
 - (BOOL)enumerationAllowsMultipleValues:(WFEnumerationParameter *)arg1;
 - (void)loadDefaultSerializedRepresentationForEnumeration:(WFEnumerationParameter *)arg1 completionHandler:(void (^)(id, NSError *))arg2;
 - (id)defaultSerializedRepresentationForEnumeration:(WFEnumerationParameter *)arg1;

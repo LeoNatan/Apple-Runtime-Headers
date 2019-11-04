@@ -13,21 +13,24 @@
 @interface SPUnauthorizedTrackingAdvertisement : NSObject <NSSecureCoding>
 {
     unsigned char _status;
-    NSData *_address;
     NSData *_advertisementData;
     NSData *_reserved;
     long long _rssi;
     NSDate *_scanDate;
+    NSData *_data;
+    NSData *__address;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSData *_address; // @synthesize _address=__address;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSDate *scanDate; // @synthesize scanDate=_scanDate;
 @property(nonatomic) long long rssi; // @synthesize rssi=_rssi;
 @property(copy, nonatomic) NSData *reserved; // @synthesize reserved=_reserved;
 @property(nonatomic) unsigned char status; // @synthesize status=_status;
 @property(copy, nonatomic) NSData *advertisementData; // @synthesize advertisementData=_advertisementData;
-@property(copy, nonatomic) NSData *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *address;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

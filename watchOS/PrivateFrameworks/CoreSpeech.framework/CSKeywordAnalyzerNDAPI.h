@@ -25,6 +25,7 @@
 @property(nonatomic) unsigned int activePhraseId; // @synthesize activePhraseId=_activePhraseId;
 @property(nonatomic) unsigned int activeChannel; // @synthesize activeChannel=_activeChannel;
 - (void).cxx_destruct;
+- (float)getRejectLoggingThreshold;
 - (float)getLoggingThreshold;
 - (float)getThreshold;
 - (id)getSuperVectorWithEndPoint:(unsigned int)arg1;

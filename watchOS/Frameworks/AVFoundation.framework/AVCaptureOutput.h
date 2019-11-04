@@ -13,6 +13,7 @@
     AVCaptureOutputInternal *_outputInternal;
 }
 
++ (id)allOutputSubclasses;
 + (int)dataDroppedReasonFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 + (id)availableVideoCodecTypesForSourceDevice:(id)arg1 sourceFormat:(id)arg2 outputDimensions:(CDStruct_1ef3fb1f)arg3 fileType:(id)arg4 videoCodecTypesWhiteList:(id)arg5;
 + (void)initialize;
@@ -29,7 +30,7 @@
 - (_Bool)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (_Bool)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (struct CGSize)outputSizeForSourceFormat:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (void)updateMetadataTransformForSourceFormat:(id)arg1;
 - (struct CGRect)rectForMetadataOutputRectOfInterest:(struct CGRect)arg1;
 - (struct CGRect)metadataOutputRectOfInterestForRect:(struct CGRect)arg1;

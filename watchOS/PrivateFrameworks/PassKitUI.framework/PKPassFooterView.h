@@ -40,6 +40,7 @@
 - (id)_messageForRestrictedState;
 - (id)_messageForUnavailableState;
 - (id)_messageContentViewFromMessage:(id)arg1;
+- (void)_lostModeButtonTapped;
 - (_Bool)_canApplyContentViewForValueAddedService;
 - (_Bool)_canApplyContentViewForPersonalizedApplication;
 - (void)_endSessionStartTimer;

@@ -28,12 +28,14 @@
 @property(readonly, nonatomic) NSDictionary *urls; // @synthesize urls=_urls;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (id)_remoteAssetForScale:(double)arg1;
-- (void)downloadImageDataWithScale:(double)arg1 shouldWriteData:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)imageDataFromCacheWithScale:(double)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)_remoteAssetForScale:(double)arg1;
+- (void)downloadImageDataWithScale:(double)arg1 shouldWriteData:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)imageDataFromCacheWithScale:(double)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

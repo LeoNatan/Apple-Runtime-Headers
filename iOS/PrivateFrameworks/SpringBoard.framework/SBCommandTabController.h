@@ -45,9 +45,11 @@
 - (void)dataStore:(id)arg1 persistDisplayItems:(id)arg2;
 - (id)persistedDisplayItemsForDataStore:(id)arg1;
 - (_Bool)recentDisplayItemsController:(id)arg1 shouldAddItem:(id)arg2;
+- (void)recentDisplayItemsController:(id)arg1 didRemoveItem:(id)arg2;
 - (void)recentDisplayItemsControllerDidUpdateDisplayItems:(id)arg1;
 - (void)viewControllerWantsDismissal:(id)arg1;
 - (void)viewController:(id)arg1 selectedApplicationWithDisplayItem:(id)arg2;
+- (void)removeCurrentSelectedApplication;
 - (void)launchCurrentSelectedApplication;
 - (void)previous;
 - (void)next;

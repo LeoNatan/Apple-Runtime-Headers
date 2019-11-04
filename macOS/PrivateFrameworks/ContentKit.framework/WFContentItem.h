@@ -10,7 +10,7 @@
 #import <ContentKit/WFContentItemClass-Protocol.h>
 #import <ContentKit/WFCopying-Protocol.h>
 
-@class NSExtensionItem, NSImage, NSItemProvider, NSMutableDictionary, NSString, WFRepresentation, WFType;
+@class NSExtensionItem, NSItemProvider, NSMutableDictionary, NSString, WFImage, WFRepresentation, WFType;
 
 @interface WFContentItem : NSObject <WFContentItemClass, WFCopying, NSSecureCoding>
 {
@@ -106,7 +106,7 @@
 - (id)ownedTypes;
 - (void)getPreferredFileSize:(CDUnknownBlockType)arg1;
 - (void)getPreferredFileExtension:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NSImage *icon;
+@property(readonly, nonatomic) WFImage *icon;
 - (id)preferredFileType;
 - (id)preferredObjectType;
 - (id)preferredTypeOfClass:(Class)arg1;
@@ -174,8 +174,6 @@
 - (void)getFileRepresentations:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)getFileRepresentation:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)getObjectRepresentation:(CDUnknownBlockType)arg1 forClass:(Class)arg2;
-- (void)prepareForActivityItemPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (BOOL)shouldUseObjectRepresentation;
 
 @end
 

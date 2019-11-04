@@ -45,11 +45,12 @@
 - (void)dealloc;
 - (void)cleanup;
 - (_Bool)serializeToJSON:(void *)arg1 valuesOnly:(_Bool)arg2 ignoreDefaultValues:(_Bool)arg3;
+- (void)restoreFromJazzkonHacks:(float *)arg1;
 - (id)dictionaryRepresentationWithoutDefaultValues;
 - (id)_dictionaryRepresentationWithoutDefaultValues:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (void)setScores:(float *)arg1 forFeatures:(unsigned short *)arg2 count:(unsigned long long)arg3;
-- (float *)getAllScores:(float [1235])arg1;
+- (float *)getAllScores:(float [1239])arg1;
 - (float)scoreForFeature:(unsigned short)arg1;
 @property(readonly, nonatomic) _Bool receiverIsVip;
 @property(readonly, nonatomic) _Bool senderIsVip;

@@ -14,7 +14,7 @@
     CNContactStore *_contactStore;
     NSData *_changeHistoryToken;
     NSDictionary *_handleIDToCNIDMap;
-    NSDictionary *_CNIDToHandleIDMap;
+    NSMutableDictionary *_CNIDToHandleIDsMap;
     NSMutableDictionary *_IDToCNContactMap;
     double _lastContactStoreSync;
     double _lastMeContactStoreSync;
@@ -73,7 +73,7 @@
 @property(nonatomic) double lastContactStoreSync; // @synthesize lastContactStoreSync=_lastContactStoreSync;
 @property(nonatomic) _Bool batchFetchingForLaunchCompleted; // @synthesize batchFetchingForLaunchCompleted=_batchFetchingForLaunchCompleted;
 @property(retain, nonatomic) NSMutableDictionary *IDToCNContactMap; // @synthesize IDToCNContactMap=_IDToCNContactMap;
-@property(retain, nonatomic) NSDictionary *CNIDToHandleIDMap; // @synthesize CNIDToHandleIDMap=_CNIDToHandleIDMap;
+@property(retain, nonatomic) NSMutableDictionary *CNIDToHandleIDsMap; // @synthesize CNIDToHandleIDsMap=_CNIDToHandleIDsMap;
 @property(retain, nonatomic) NSDictionary *handleIDToCNIDMap; // @synthesize handleIDToCNIDMap=_handleIDToCNIDMap;
 @property(retain, nonatomic) NSData *changeHistoryToken; // @synthesize changeHistoryToken=_changeHistoryToken;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
@@ -86,17 +86,19 @@
 - (void)contactStoreChanged:(id)arg1;
 - (void)addEntriesToIDToCNContactMap:(id)arg1;
 - (id)getAllKeysFromIDToCNContactMap;
+- (void)replaceWithMutableContactForID:(id)arg1;
 - (void)replaceContact:(id)arg1 withID:(id)arg2;
 - (void)removeContactWithID:(id)arg1;
 - (id)getContactForID:(id)arg1;
 - (void)addContact:(id)arg1 withID:(id)arg2;
 - (_Bool)isContactWithIDAlreadyFetched:(id)arg1;
 - (void)generateCNIDToHandleIDMap;
-- (id)handleIDForCNID:(id)arg1;
+- (id)handleIDsForCNID:(id)arg1;
 - (void)setBatchFetchingCompleted;
 - (_Bool)isBatchFetchingForLaunchCompleted;
 - (id)completedContact:(id)arg1 withKeys:(id)arg2;
 - (id)fetchCNContactForHandleWithID:(id)arg1;
+- (id)fetchCNContactForHandleID:(id)arg1 withKeys:(id)arg2;
 - (void)fetchCNContactsForHandlesWithIDs:(id)arg1 isFinalBatch:(_Bool)arg2;
 - (void)cacheBatchFetchResults:(id)arg1 handleIDsWithoutCNID:(id)arg2;
 - (id)getContactStore;

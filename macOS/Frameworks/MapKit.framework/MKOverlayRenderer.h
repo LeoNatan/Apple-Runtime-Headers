@@ -29,6 +29,7 @@
 - (BOOL)canDrawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(double)arg2;
 - (void)overlay:(id)arg1 drawKey:(const CDStruct_7523a67d *)arg2 inContext:(struct CGContext *)arg3;
 - (BOOL)overlay:(id)arg1 canDrawKey:(const CDStruct_7523a67d *)arg2;
+- (BOOL)overlay:(id)arg1 canPossiblyDrawKey:(const CDStruct_7523a67d *)arg2;
 - (void)_forEachMapRectForKey:(const CDStruct_7523a67d *)arg1 withContext:(struct CGContext *)arg2 performBlock:(CDUnknownBlockType)arg3;
 - (BOOL)_mayExtendOutsideBounds;
 - (void)set_renderer:(id)arg1;

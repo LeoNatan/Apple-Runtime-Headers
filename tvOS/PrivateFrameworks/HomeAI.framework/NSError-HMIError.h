@@ -7,7 +7,6 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (HMIError)
-+ (id)hmiSyntheticErrorFromPreference:(id)arg1;
 + (id)hmiPrivateErrorWithCode:(long long)arg1 description:(id)arg2 underlyingError:(id)arg3;
 + (id)hmiPrivateErrorWithCode:(long long)arg1 description:(id)arg2;
 + (id)hmiPrivateErrorWithCode:(long long)arg1;

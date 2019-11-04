@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIColor *shadowColor;
     NSNumber *drawingStroke;
     UIImageSymbolConfiguration *preferredSymbolConfiguration;
+    BOOL isWidthVariant;
 }
 
 @property(retain, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration; // @synthesize preferredSymbolConfiguration;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title;
 - (void).cxx_destruct;
+- (BOOL)updateVariableLengthStringForView:(id)arg1;
 - (id)description;
 @property(retain, nonatomic) _UIGraphicsLetterpressStyle *letterpressStyle;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <AppStoreKit/SKPaymentTransactionObserver-Protocol.h>
-
-@interface _TtC11AppStoreKit25ArcadeSubscriptionManager : NSObject <SKPaymentTransactionObserver>
+@interface _TtC11AppStoreKit25ArcadeSubscriptionManager : NSObject
 {
     // Error parsing type: , name: paymentQueue
     // Error parsing type: , name: observers
@@ -22,7 +20,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)paymentQueue:(id)arg1 updatedTransactions:(id)arg2;
 - (void)entitlementsDidChange;
 - (void)dealloc;
 

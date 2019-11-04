@@ -7,13 +7,18 @@
 #import <GameCenterUI/UICollectionViewDelegate-Protocol.h>
 #import <GameCenterUI/UICollectionViewFocusDelegate_Legacy-Protocol.h>
 
-@class NSIndexPath, NSString, UICollectionView, UICollectionViewCell, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar;
-@protocol UISpringLoadedInteractionContext;
+@class NSArray, NSIndexPath, NSString, UICollectionView, UICollectionViewCell, UIContextMenuConfiguration, _UIContextMenuStyle, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar;
+@protocol UIContextMenuInteractionAnimating, UIContextMenuInteractionCommitAnimating, UISpringLoadedInteractionContext;
 
 @protocol UICollectionViewDelegate_Private <UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy>
 
 @optional
 - (_Bool)_collectionView:(UICollectionView *)arg1 shouldSpringLoadItemAtIndexPath:(NSIndexPath *)arg2 withContext:(id <UISpringLoadedInteractionContext>)arg3;
+- (NSArray *)_collectionView:(UICollectionView *)arg1 accessoriesForContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2 layoutAnchor:(CDStruct_4bcfbbae)arg3;
+- (_UIContextMenuStyle *)_collectionView:(UICollectionView *)arg1 styleForContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2;
+- (void)collectionView:(UICollectionView *)arg1 willEndContextMenuInteractionWithConfiguration:(UIContextMenuConfiguration *)arg2 animator:(id <UIContextMenuInteractionAnimating>)arg3;
+- (void)collectionView:(UICollectionView *)arg1 willDisplayContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2 animator:(id <UIContextMenuInteractionAnimating>)arg3;
+- (void)collectionView:(UICollectionView *)arg1 willCommitMenuWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg2;
 - (void)_collectionView:(UICollectionView *)arg1 horizontalIndexTitleBar:(_UIHorizontalIndexTitleBar *)arg2 selectedEntry:(_UIFocusFastScrollingIndexBarEntry *)arg3;
 - (void)_collectionView:(UICollectionView *)arg1 willLayoutCell:(UICollectionViewCell *)arg2 usingTemplateLayoutCell:(UICollectionViewCell *)arg3 forItemAtIndexPath:(NSIndexPath *)arg4;
 - (UICollectionViewCell *)_collectionView:(UICollectionView *)arg1 templateLayoutCellForCellsWithReuseIdentifier:(NSString *)arg2;

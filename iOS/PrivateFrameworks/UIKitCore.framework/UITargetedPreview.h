@@ -9,7 +9,7 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 
 @class UIPreviewParameters, UIPreviewTarget, UIView;
-@protocol _UIPreviewProvider;
+@protocol NSCopying><NSObject, _UIPreviewProvider;
 
 @interface UITargetedPreview : NSObject <NSCopying>
 {
@@ -21,9 +21,13 @@
     UIPreviewParameters *_parameters;
     UIView *_viewToSnapshot;
     id <_UIPreviewProvider> __PreviewProvider;
+    id <NSCopying><NSObject> _internalIdentifer;
+    UIView *_overridePositionTrackingView;
 }
 
 + (id)new;
+@property(retain, nonatomic, setter=_setOverridePositionTrackingView:) UIView *overridePositionTrackingView; // @synthesize overridePositionTrackingView=_overridePositionTrackingView;
+@property(copy, nonatomic) id <NSCopying><NSObject> internalIdentifer; // @synthesize internalIdentifer=_internalIdentifer;
 @property(readonly, nonatomic) _Bool hasCustomTarget; // @synthesize hasCustomTarget=_hasCustomTarget;
 @property(readonly, nonatomic) _Bool sourceViewIsInViewHierarchy; // @synthesize sourceViewIsInViewHierarchy=_sourceViewIsInViewHierarchy;
 @property(readonly, nonatomic) id <_UIPreviewProvider> _PreviewProvider; // @synthesize _PreviewProvider=__PreviewProvider;
@@ -33,6 +37,7 @@
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) UIPreviewTarget *target; // @synthesize target=_target;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 @property(nonatomic, getter=_previewMode, setter=_setPreviewMode:) long long previewMode;
 @property(nonatomic) _Bool _springboardPlatterStyle;
 - (id)retargetedPreviewWithTarget:(id)arg1;
@@ -43,6 +48,7 @@
 - (id)initWithView:(id)arg1;
 - (id)initWithView:(id)arg1 parameters:(id)arg2;
 - (id)initWithView:(id)arg1 parameters:(id)arg2 target:(id)arg3;
+- (_Bool)platterAnimator_isValidPreview;
 - (void)platterAnimator_getBounds:(struct CGRect *)arg1 center:(struct CGPoint *)arg2 transform:(struct CGAffineTransform *)arg3 forContainer:(id)arg4;
 
 @end

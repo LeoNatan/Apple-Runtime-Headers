@@ -13,10 +13,12 @@
 @interface GEOMapsSearchResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOAddress *_address;
     unsigned long long _muid;
     GEOPlaceActionDetails *_placeActionDetails;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_muid:1;
         unsigned int read_address:1;
@@ -47,6 +49,8 @@
 - (void)_readAddress;
 @property(nonatomic) _Bool hasMuid;
 @property(nonatomic) unsigned long long muid;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

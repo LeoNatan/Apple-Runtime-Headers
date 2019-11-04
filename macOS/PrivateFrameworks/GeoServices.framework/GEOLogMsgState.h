@@ -8,12 +8,11 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLogMsgStateApplicationIdentifier, GEOLogMsgStateCarPlay, GEOLogMsgStateDeviceBase, GEOLogMsgStateDeviceConnection, GEOLogMsgStateDeviceIdentifier, GEOLogMsgStateDeviceLocale, GEOLogMsgStateDeviceSettings, GEOLogMsgStateExperiments, GEOLogMsgStateExtension, GEOLogMsgStateMapSettings, GEOLogMsgStateMapUI, GEOLogMsgStateMapUIShown, GEOLogMsgStateMapView, GEOLogMsgStateMapViewLocation, GEOLogMsgStateMapsServer, GEOLogMsgStateNavigation, GEOLogMsgStatePairedDevice, GEOLogMsgStatePlaceCard, GEOLogMsgStatePlaceRequest, GEOLogMsgStateRealtimeTrafficProbe, GEOLogMsgStateRoute, GEOLogMsgStateSuggestions, GEOLogMsgStateTileSet, GEOLogMsgStateTransit, GEOLogMsgStateUserSession, NSString, PBDataReader;
+@class GEOLogMsgStateApplicationIdentifier, GEOLogMsgStateCarPlay, GEOLogMsgStateDeviceBase, GEOLogMsgStateDeviceConnection, GEOLogMsgStateDeviceIdentifier, GEOLogMsgStateDeviceLocale, GEOLogMsgStateDeviceSettings, GEOLogMsgStateExperiments, GEOLogMsgStateExtension, GEOLogMsgStateMapRestore, GEOLogMsgStateMapSettings, GEOLogMsgStateMapUI, GEOLogMsgStateMapUIShown, GEOLogMsgStateMapView, GEOLogMsgStateMapViewLocation, GEOLogMsgStateMapsServer, GEOLogMsgStateNavigation, GEOLogMsgStatePairedDevice, GEOLogMsgStatePlaceCard, GEOLogMsgStatePlaceRequest, GEOLogMsgStateRealtimeTrafficProbe, GEOLogMsgStateRoute, GEOLogMsgStateSuggestions, GEOLogMsgStateTileSet, GEOLogMsgStateTransit, GEOLogMsgStateUserSession, NSString, PBDataReader;
 
 @interface GEOLogMsgState : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLogMsgStateApplicationIdentifier *_applicationIdentifier;
     GEOLogMsgStateCarPlay *_carPlay;
     GEOLogMsgStateDeviceBase *_deviceBase;
@@ -23,6 +22,7 @@
     GEOLogMsgStateDeviceSettings *_deviceSettings;
     GEOLogMsgStateExperiments *_experiments;
     GEOLogMsgStateExtension *_extension;
+    GEOLogMsgStateMapRestore *_mapRestore;
     GEOLogMsgStateMapSettings *_mapSettings;
     GEOLogMsgStateMapUIShown *_mapUiShown;
     GEOLogMsgStateMapUI *_mapUi;
@@ -40,6 +40,9 @@
     GEOLogMsgStateTileSet *_tileSet;
     GEOLogMsgStateTransit *_transit;
     GEOLogMsgStateUserSession *_userSession;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _stateType;
     struct {
         unsigned int has_stateType:1;
@@ -52,6 +55,7 @@
         unsigned int read_deviceSettings:1;
         unsigned int read_experiments:1;
         unsigned int read_extension:1;
+        unsigned int read_mapRestore:1;
         unsigned int read_mapSettings:1;
         unsigned int read_mapUiShown:1;
         unsigned int read_mapUi:1;
@@ -78,6 +82,7 @@
         unsigned int wrote_deviceSettings:1;
         unsigned int wrote_experiments:1;
         unsigned int wrote_extension:1;
+        unsigned int wrote_mapRestore:1;
         unsigned int wrote_mapSettings:1;
         unsigned int wrote_mapUiShown:1;
         unsigned int wrote_mapUi:1;
@@ -117,6 +122,9 @@
 @property(retain, nonatomic) GEOLogMsgStateSuggestions *suggestions;
 @property(readonly, nonatomic) BOOL hasSuggestions;
 - (void)_readSuggestions;
+@property(retain, nonatomic) GEOLogMsgStateMapRestore *mapRestore;
+@property(readonly, nonatomic) BOOL hasMapRestore;
+- (void)_readMapRestore;
 @property(retain, nonatomic) GEOLogMsgStateNavigation *navigation;
 @property(readonly, nonatomic) BOOL hasNavigation;
 - (void)_readNavigation;
@@ -193,6 +201,8 @@
 @property(retain, nonatomic) NSString *stateOrigin;
 @property(readonly, nonatomic) BOOL hasStateOrigin;
 - (void)_readStateOrigin;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

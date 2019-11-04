@@ -6,24 +6,24 @@
 
 #import <UIKit/UIView.h>
 
-@class MCDPlayModeButton, MCDRepeatButton, NSArray, UILayoutGuide;
+@class MCDPlayModeButton, MCDRepeatButton, NSArray, UIStackView;
 
 @interface MCDPlayModeControlView : UIView
 {
     _Bool _fuseSubscriberLayout;
+    _Bool _showsArtwork;
     MCDRepeatButton *_repeatButton;
     MCDPlayModeButton *_moreButton;
     MCDPlayModeButton *_shuffleButton;
     MCDPlayModeButton *_addToLibraryButton;
     MCDPlayModeButton *_playbackRateButton;
+    UIStackView *_stackView;
     NSArray *_activeButtonLayoutConstraints;
-    UILayoutGuide *_leadingGuide;
-    UILayoutGuide *_trailingGuide;
 }
 
-@property(retain, nonatomic) UILayoutGuide *trailingGuide; // @synthesize trailingGuide=_trailingGuide;
-@property(retain, nonatomic) UILayoutGuide *leadingGuide; // @synthesize leadingGuide=_leadingGuide;
 @property(retain, nonatomic) NSArray *activeButtonLayoutConstraints; // @synthesize activeButtonLayoutConstraints=_activeButtonLayoutConstraints;
+@property(nonatomic) _Bool showsArtwork; // @synthesize showsArtwork=_showsArtwork;
+@property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) _Bool fuseSubscriberLayout; // @synthesize fuseSubscriberLayout=_fuseSubscriberLayout;
 @property(readonly, nonatomic) MCDPlayModeButton *playbackRateButton; // @synthesize playbackRateButton=_playbackRateButton;
 @property(readonly, nonatomic) MCDPlayModeButton *addToLibraryButton; // @synthesize addToLibraryButton=_addToLibraryButton;
@@ -34,8 +34,8 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)_updateButtonLayouts;
-- (void)setupConstraints;
-- (void)addSizeConstraintsForButton:(id)arg1;
+@property(readonly, nonatomic) double maximumButtonWidth;
+- (id)_visibleControlButtons;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

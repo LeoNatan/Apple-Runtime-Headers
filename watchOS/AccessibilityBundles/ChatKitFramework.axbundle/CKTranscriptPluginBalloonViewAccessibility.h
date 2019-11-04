@@ -22,7 +22,7 @@
 - (struct CGRect)_accessibilityMediaAnalysisFrame;
 - (unsigned int)_accessibilityMediaAnalysisOptions;
 - (_Bool)accessibilityActivate;
-- (id)accessibilityCustomActions;
+- (id)_axBalloonViewCustomActions;
 - (unsigned long long)accessibilityTraits;
 - (long long)accessibilityContainerType;
 - (id)accessibilityHint;

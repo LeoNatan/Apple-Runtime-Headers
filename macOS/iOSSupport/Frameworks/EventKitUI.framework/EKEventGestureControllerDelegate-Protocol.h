@@ -34,6 +34,7 @@
 - (UIView *)touchTrackingViewForEventGestureController:(EKEventGestureController *)arg1;
 
 @optional
+- (BOOL)eventGestureController:(EKEventGestureController *)arg1 shouldAllowShortLiftDelay:(EKEvent *)arg2;
 - (BOOL)eventGestureController:(EKEventGestureController *)arg1 shouldFadeOccurrenceAfterFling:(EKEvent *)arg2;
 - (BOOL)eventEditorPopoverActiveWhileDraggingForEventGestureController:(EKEventGestureController *)arg1;
 - (struct CGRect)marginFrameForEventGestureController:(EKEventGestureController *)arg1;

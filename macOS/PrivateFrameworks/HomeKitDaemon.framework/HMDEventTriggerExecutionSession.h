@@ -11,7 +11,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDEventTriggerUserConfirmationSession, HMDPredicateUtilities, HMDTriggerConfirmationTimer, HMFTimer, HomeKitEventTriggerExecutionSessionEvent, NSArray, NSMapTable, NSMutableArray, NSPredicate, NSString;
+@class HMDEventTriggerUserConfirmationSession, HMDPredicateUtilities, HMDTriggerConfirmationTimer, HMFTimer, HomeKitEventTriggerExecutionSessionEvent, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSPredicate, NSString;
 
 @interface HMDEventTriggerExecutionSession : HMDEventTriggerSession <HMFDumpState, HMFLogging, HMDEventDelegate, HMFTimerDelegate>
 {
@@ -32,10 +32,12 @@
     HMFTimer *_startCharacteristicsMonitorTimer;
     HomeKitEventTriggerExecutionSessionEvent *_metricEvent;
     NSMapTable *_writeRequests;
+    NSMutableSet *_mediaProfiles;
 }
 
 + (id)logCategory;
-@property(retain, nonatomic) NSMapTable *writeRequests; // @synthesize writeRequests=_writeRequests;
+@property(readonly, nonatomic) NSMutableSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
+@property(readonly, nonatomic) NSMapTable *writeRequests; // @synthesize writeRequests=_writeRequests;
 @property(readonly, nonatomic) HomeKitEventTriggerExecutionSessionEvent *metricEvent; // @synthesize metricEvent=_metricEvent;
 @property(nonatomic) BOOL executionCompleteCalled; // @synthesize executionCompleteCalled=_executionCompleteCalled;
 @property(nonatomic) BOOL restoreInProgress; // @synthesize restoreInProgress=_restoreInProgress;
@@ -55,6 +57,8 @@
 - (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (id)didOccurEvent:(id)arg1 causingDevice:(id)arg2;
+- (void)_callExecutionCompleteIfNoMoreOutstandingRequests;
+- (void)handleSessionPlaybackStateUpdatedNotification:(id)arg1;
 - (void)_handleMonitoringEvent:(id)arg1;
 - (void)_restoreState;
 - (void)_removeUserDialog;

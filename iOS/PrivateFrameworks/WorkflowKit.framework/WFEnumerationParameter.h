@@ -19,9 +19,12 @@
 @property(readonly, nonatomic) NSArray *staticPossibleStates; // @synthesize staticPossibleStates=_staticPossibleStates;
 @property(readonly, nonatomic) _Bool alwaysShowsButton; // @synthesize alwaysShowsButton=_alwaysShowsButton;
 - (void).cxx_destruct;
+- (void)stopUpdatingPossibleValues;
+- (void)startUpdatingPossibleValues;
 - (void)possibleStatesDidChange;
 - (_Bool)parameterStateIsValid:(id)arg1;
 @property(readonly, nonatomic) _Bool preferItemPickerSheet;
+@property(readonly, nonatomic) _Bool hidesAccessoryIconInEditor;
 - (id)accessoryIconForPossibleState:(id)arg1;
 - (id)accessoryColorForPossibleState:(id)arg1;
 - (id)localizedSubtitleLabelForPossibleState:(id)arg1;
@@ -30,6 +33,7 @@
 - (id)localizedLabelForPossibleState:(id)arg1 inMultipleState:(id)arg2;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (id)localizedTitleForButtonWithState:(id)arg1;
+@property(readonly, nonatomic) NSArray *possibleStatesForLocalization;
 @property(readonly, nonatomic) NSArray *possibleStates;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

@@ -13,10 +13,12 @@
 @interface GEOMatchedToken : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_62a50c50 _geoIds;
     NSString *_matchedToken;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _geoType;
     struct {
         unsigned int has_geoType:1;
@@ -57,6 +59,8 @@
 @property(retain, nonatomic) NSString *matchedToken;
 - (void)_readMatchedToken;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class UIView;
-@protocol CAMPhysicalCaptureNotifierDelegate;
+@protocol BSInvalidatable, CAMPhysicalCaptureNotifierDelegate;
 
 @interface CAMPhysicalCaptureNotifier : NSObject
 {
@@ -17,8 +17,10 @@
     long long __volumeUpButtonState;
     long long __volumeDownButtonState;
     UIView *__view;
+    id <BSInvalidatable> __cameraButtonRequest;
 }
 
+@property(retain, nonatomic) id <BSInvalidatable> _cameraButtonRequest; // @synthesize _cameraButtonRequest=__cameraButtonRequest;
 @property(readonly, nonatomic) UIView *_view; // @synthesize _view=__view;
 @property(nonatomic, setter=_setVolumeDownButtonState:) long long _volumeDownButtonState; // @synthesize _volumeDownButtonState=__volumeDownButtonState;
 @property(nonatomic, setter=_setVolumeUpButtonState:) long long _volumeUpButtonState; // @synthesize _volumeUpButtonState=__volumeUpButtonState;

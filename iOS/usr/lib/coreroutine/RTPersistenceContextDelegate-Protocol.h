@@ -10,7 +10,7 @@
 
 @protocol RTPersistenceContextDelegate <NSObject>
 - (_Bool)persistenceContextShouldExecute:(RTPersistenceContext *)arg1;
-- (void)persistenceContextPerformedSave:(RTPersistenceContext *)arg1;
+- (_Bool)persistenceContextPerformedSave:(RTPersistenceContext *)arg1 error:(id *)arg2;
 - (void)persistenceContext:(RTPersistenceContext *)arg1 encounteredError:(NSError *)arg2;
 @end
 

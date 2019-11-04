@@ -13,6 +13,7 @@
 @interface AWDHomeKitHomeConfiguration : PBCodable <NSCopying>
 {
     NSMutableArray *_eventTriggers;
+    NSMutableArray *_homeKitMultiUserSettings;
     int _networkProtectionStatus;
     unsigned int _numAccessories;
     unsigned int _numAccessoriesNetworkProtectionAutoFullAccess;
@@ -99,7 +100,9 @@
     } _has;
 }
 
++ (Class)homeKitMultiUserSettingsType;
 + (Class)eventTriggersType;
+@property(retain, nonatomic) NSMutableArray *homeKitMultiUserSettings; // @synthesize homeKitMultiUserSettings=_homeKitMultiUserSettings;
 @property(nonatomic) unsigned int numShortcuts; // @synthesize numShortcuts=_numShortcuts;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionUnprotected; // @synthesize numAccessoriesNetworkProtectionUnprotected=_numAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionHomeKitOnly; // @synthesize numAccessoriesNetworkProtectionHomeKitOnly=_numAccessoriesNetworkProtectionHomeKitOnly;
@@ -151,6 +154,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)homeKitMultiUserSettingsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)homeKitMultiUserSettingsCount;
+- (void)addHomeKitMultiUserSettings:(id)arg1;
+- (void)clearHomeKitMultiUserSettings;
 @property(nonatomic) _Bool hasNumShortcuts;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionHomeKitOnly;

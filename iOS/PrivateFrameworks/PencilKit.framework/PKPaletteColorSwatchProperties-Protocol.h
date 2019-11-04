@@ -9,6 +9,7 @@
 @class PKSwatchColor;
 
 @protocol PKPaletteColorSwatchProperties <NSObject>
+@property(nonatomic) long long colorUserInterfaceStyle;
 @property(retain, nonatomic) PKSwatchColor *swatchColor;
 @property(nonatomic) _Bool showsSelectionHighlight;
 @property(nonatomic, getter=isSelected) _Bool selected;

@@ -24,6 +24,7 @@
 - (void)addObservers;
 - (void)refreshInstalledApps;
 - (id)localizedLabelForPossibleState:(id)arg1;
+- (id)possibleStatesForLocalization;
 - (void)dealloc;
 - (void)wasRemovedFromWorkflow;
 - (void)wasAddedToWorkflow;

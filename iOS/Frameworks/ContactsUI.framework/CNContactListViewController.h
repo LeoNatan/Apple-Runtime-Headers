@@ -108,6 +108,7 @@
 @property(nonatomic) _Bool shouldAutoHideMeContactBanner; // @synthesize shouldAutoHideMeContactBanner=_shouldAutoHideMeContactBanner;
 @property(nonatomic) __weak id <CNContactListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)getVisibleIndexPaths;
 - (void)startHandlingEmergencyContacts;
 - (void)vCardImportControllerDidCompleteQueue:(id)arg1;
 - (void)vCardImportController:(id)arg1 didSaveContacts:(id)arg2;

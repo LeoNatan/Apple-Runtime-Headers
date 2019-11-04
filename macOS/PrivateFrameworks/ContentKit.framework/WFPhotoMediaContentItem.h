@@ -70,6 +70,8 @@
 - (id)metadataIfLocallyAvailable;
 - (void)getFrameRate:(CDUnknownBlockType)arg1;
 - (void)getMetadata:(CDUnknownBlockType)arg1;
+- (id)assetResourceManager;
+- (id)imageManager;
 - (id)duration;
 - (void)getPreferredFileExtension:(CDUnknownBlockType)arg1;
 - (void)getPreferredFileSize:(CDUnknownBlockType)arg1;

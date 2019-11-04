@@ -6,16 +6,20 @@
 
 #import <PhotoImaging/PICompositionExportResult.h>
 
-@class NSDictionary;
+@class NSData, NSDictionary, NSURL;
 
 @interface PICompositionExportAuxiliaryResult : PICompositionExportResult
 {
+    NSData *_companionImageData;
+    NSURL *_companionVideoURL;
     NSDictionary *_auxiliaryImages;
     NSDictionary *_properties;
 }
 
 @property(copy) NSDictionary *properties; // @synthesize properties=_properties;
 @property(retain) NSDictionary *auxiliaryImages; // @synthesize auxiliaryImages=_auxiliaryImages;
+@property(retain) NSURL *companionVideoURL; // @synthesize companionVideoURL=_companionVideoURL;
+@property(retain) NSData *companionImageData; // @synthesize companionImageData=_companionImageData;
 - (void).cxx_destruct;
 
 // Remaining properties

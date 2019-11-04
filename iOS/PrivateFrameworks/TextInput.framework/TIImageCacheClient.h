@@ -47,7 +47,7 @@
 - (struct CGImage *)copyImageForKey:(id)arg1 inGroup:(id)arg2;
 - (_Bool)imageExistsForKey:(id)arg1 inGroup:(id)arg2;
 - (void *)openAndMmap:(id)arg1 withInfo:(struct _img *)arg2;
-- (id)cacheNumberForKey:(id)arg1;
+- (id)cacheNumberForKey:(id)arg1 inGroup:(id)arg2;
 @property(nonatomic) unsigned long long cacheItemLimit;
 @property(readonly, nonatomic) int cacheVersion;
 - (void)dealloc;

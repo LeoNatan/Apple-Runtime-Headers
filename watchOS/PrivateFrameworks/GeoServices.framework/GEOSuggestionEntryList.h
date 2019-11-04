@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOSuggestionEntryList : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_localizedSectionHeader;
     NSMutableArray *_suggestionEntries;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_localizedSectionHeader:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (void)clearSuggestionEntries;
 @property(retain, nonatomic) NSMutableArray *suggestionEntries;
 - (void)_readSuggestionEntries;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

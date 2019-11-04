@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDGroundViewLabelInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _endHeading;
     NSString *_localityName;
     NSString *_locationName;
     NSString *_secondaryLocationName;
     double _startHeading;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_endHeading:1;
         unsigned int has_startHeading:1;
@@ -64,6 +66,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *locationName;
 @property(readonly, nonatomic) _Bool hasLocationName;
 - (void)_readLocationName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic, setter=_setInfoConstraints:) NSArray *_infoConstraints; // @synthesize _infoConstraints;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (CDStruct_b2fbf00d)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (float)_idealWidth;
 - (struct UIEdgeInsets)_paddingInsets;
@@ -112,8 +113,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)_hasSelectedColor;
 - (void)_updateBackgroundAndContentViews;
 - (void)_updateSelectionIndicator;
+- (struct CATransform3D)_highlightSelectionInfoTransform;
 - (void)_updateHighlight;
-- (void)_updateSelectionToTransform:(struct CATransform3D)arg1 hideSelection:(_Bool)arg2 shouldAnimate:(_Bool)arg3;
+- (void)_updateSelectionToTransform:(struct CATransform3D)arg1 infoTransform:(struct CATransform3D)arg2 hideSelection:(_Bool)arg3 shouldAnimate:(_Bool)arg4;
 - (void)_insertSelectionView;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)_updateBackgroundAndContentViewsIfNeeded;

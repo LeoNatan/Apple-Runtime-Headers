@@ -49,12 +49,13 @@
 + (id)entryEventBackwardDefinitionGPUCStates;
 + (id)entryEventBackwardDefinitionHapticsStats;
 + (id)entryEventBackwardDefinitionCarnelianVaxholmStats;
++ (id)entryEventBackwardDefinitionPPMStatsCPMSLanesEngagement;
 + (id)entryEventBackwardDefinitionPPMStatsDroopController;
 + (id)entryEventBackwardDefinitionCLPCStatsLimiterControlEffort;
 + (id)entryEventBackwardDefinitionLimiterControlEffort;
-+ (id)entryEventBackwardDefinitionCPUStatsLostPerformanceReasons;
++ (id)entryEventBackwardDefinitionCLPCStatsLostPerformance;
 + (id)entryEventBackwardDefinitionCPUStatsCPUComplexThermalUPOLimiting;
-+ (BOOL)shouldLogLostPerformanceReasons;
++ (BOOL)shouldLogLostPerformance;
 + (BOOL)shouldLogThermalUPOLimiting;
 + (BOOL)isOldLostPerfLoggingModel;
 + (id)entryEventBackwardDefinitionCPUStatsEvents;
@@ -190,6 +191,7 @@
 - (void)logIOReportSnapshot;
 - (void)modelPMPAPSocPower:(id)arg1;
 - (void)modelAPSoCPower:(id)arg1;
+- (void)logEngagementToAggD:(id)arg1;
 - (void)logEventBackwardMTRAging;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
 - (void)logEventBackwardAOPPowerState:(id)arg1 withChannels:(id)arg2;

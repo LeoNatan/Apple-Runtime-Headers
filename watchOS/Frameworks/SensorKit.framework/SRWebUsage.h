@@ -13,14 +13,12 @@
 
 @interface SRWebUsage : NSObject <SRSampleExporting, NSSecureCoding>
 {
-    NSString *_domain;
     double _totalUsageTime;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)webUsageWithDomain:(id)arg1 totalUsageTime:(double)arg2;
++ (id)webUsageWithTotalUsageTime:(double)arg1;
 @property double totalUsageTime; // @synthesize totalUsageTime=_totalUsageTime;
-@property(copy) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, copy) NSString *description;
 - (id)sr_dictionaryRepresentation;
 - (_Bool)isEqual:(id)arg1;

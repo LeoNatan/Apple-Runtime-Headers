@@ -14,10 +14,12 @@
 @interface GEOTransitListTimeInstruction : PBCodable <GEOComposedRouteStepTransitInstructionMerging, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_primaryText;
     GEOFormattedString *_secondaryText;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _hideWhenListCollapsed;
     struct {
         unsigned int has_hideWhenListCollapsed:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) GEOFormattedString *primaryText;
 @property(readonly, nonatomic) _Bool hasPrimaryText;
 - (void)_readPrimaryText;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)_transit_prepareForDeepMergeFrom:(id)arg1;
 
 // Remaining properties

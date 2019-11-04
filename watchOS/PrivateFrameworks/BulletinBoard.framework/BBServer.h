@@ -215,6 +215,7 @@
 - (void)_handleSignificantTimeChange;
 - (void)_handleSystemWake;
 - (void)_handleSystemSleep;
+- (void)_addStateCaptureHandlers;
 - (void)_updateDataProviderForSectionInfo:(id)arg1 sectionID:(id)arg2;
 - (void)_setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)_setSectionInfoNoteSettingsChanged:(id)arg1 forSectionID:(id)arg2;

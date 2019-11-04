@@ -49,12 +49,13 @@
     _Bool _authenticating;
     _Bool _recognizing;
     _Bool _returnToSummaryOnFingerOff;
-    long long _pearlState;
+    long long _faceIDState;
     _Bool _transitioning;
     NSMutableArray *_transitionCompletionHandlers;
     NSMutableArray *_pendingGlyphStateCompletionHandlers;
     _Bool _glyphStateDirty;
     _Bool _presentationWasForced;
+    _Bool _presentationWasForFieldDetect;
     _Bool _waitingForGlyphView;
     long long _transactionSubstate;
     _Bool _holdingTerminalSubstate;
@@ -83,8 +84,9 @@
     PKTransitBalanceModel *_transitBalanceModel;
 }
 
-+ (_Bool)shouldAutomaticallyAuthorizeForPassType:(unsigned long long)arg1 withContext:(id)arg2;
-+ (_Bool)initialUserIntentAssumptionForPass:(id)arg1 context:(id)arg2 paymentService:(id)arg3;
++ (_Bool)shouldAutomaticallyAuthorizeForPass:(id)arg1 withContext:(id)arg2;
++ (_Bool)initialUserIntentRequiredAssumptionForPass:(id)arg1 context:(id)arg2 paymentService:(id)arg3;
++ (_Bool)userIntentPotentiallyRequiredForPass:(id)arg1 fieldDetect:(_Bool)arg2;
 - (void).cxx_destruct;
 - (void)_processValueAddedServiceTransactionsForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_processPaymentTransactionForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -166,6 +168,7 @@
 - (void)_resetToIdleStateWhileIgnoringField:(_Bool)arg1;
 - (void)_resetToIdleState;
 - (void)_prearmButtonPressed:(id)arg1;
+- (void)_addPasscodeButtonPressed:(id)arg1;
 - (void)_passcodeFallbackButtonPressed:(id)arg1;
 - (void)_passcodeAuthenticationButtonPressed:(id)arg1;
 - (void)_beginPasscodeOnlyAuthentication;
@@ -179,6 +182,7 @@
 - (void)_endPaymentAuthorization;
 - (void)_beginPaymentAuthorizationWithImmediatePasscode:(_Bool)arg1;
 - (void)_beginPaymentAuthorization;
+- (void)payStateViewDidUpdateLayout:(id)arg1;
 - (void)payStateView:(id)arg1 revealingCheckmark:(_Bool)arg2;
 - (void)contactlessInterfaceSession:(id)arg1 didReceiveExpressState:(unsigned long long)arg2;
 - (void)contactlessInterfaceSession:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
@@ -211,7 +215,7 @@
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticator:(id)arg1 didTransitionToCoachingState:(long long)arg2;
-- (void)authenticator:(id)arg1 didTransitionToPearlState:(long long)arg2;
+- (void)authenticator:(id)arg1 didTransitionToFaceIDState:(long long)arg2;
 - (void)authenticatorWillRestartEvaluation:(id)arg1;
 - (_Bool)_recognizingBiometrics;
 - (void)paymentApplicationView:(id)arg1 didSelectApplication:(id)arg2 completion:(CDUnknownBlockType)arg3;

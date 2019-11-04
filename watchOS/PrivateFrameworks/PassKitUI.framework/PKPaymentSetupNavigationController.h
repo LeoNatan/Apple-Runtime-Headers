@@ -33,7 +33,10 @@
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (unsigned int)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
+- (void)viewController:(id)arg1 didExitPasscodeUpgradeWithShouldContinue:(_Bool)arg2 error:(id)arg3;
 - (void)viewController:(id)arg1 requestPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg2;
+- (void)viewController:(id)arg1 didExitPasscodeUpgradeForPasscodeUpgradeFlowController:(id)arg2 withShouldContinue:(_Bool)arg3 error:(id)arg4;
+- (void)viewController:(id)arg1 requestPasscodeUpgradeForPasscodeUpgradeFlowController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)_reconfigureRootViewController;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidLoad;
+- (int)_preferredModalPresentationStyle;
 - (void)loadView;
 - (id)initWithProvisioningController:(id)arg1 context:(int)arg2;
 - (id)init;

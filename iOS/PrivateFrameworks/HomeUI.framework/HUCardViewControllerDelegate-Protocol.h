@@ -6,9 +6,9 @@
 
 #import <HomeUI/NSObject-Protocol.h>
 
-@class HUCardViewController;
+@class HUCardViewController, NAFuture;
 
 @protocol HUCardViewControllerDelegate <NSObject>
-- (void)cardViewControllerRequestingDismissal:(HUCardViewController *)arg1;
+- (NAFuture *)cardViewControllerRequestingDismissal:(HUCardViewController *)arg1;
 @end
 

@@ -9,6 +9,7 @@
 @class MPAVItem, MPIdentifierSet, MPPlaceholderAVItem, MPPlaybackContext, NSString;
 
 @protocol MPCQueueControllerDataSource <MPShuffleableSectionedIdentifierListDataSource>
+@property(readonly, nonatomic) BOOL containsTransportableContent;
 @property(readonly, nonatomic) BOOL containsLiveStream;
 - (MPAVItem *)itemForItem:(NSString *)arg1 inSection:(NSString *)arg2;
 - (void)loadPlaybackContext:(MPPlaybackContext *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
@@ -17,8 +18,9 @@
 - (NSString *)firstItemIntersectingIdentifierSet:(MPIdentifierSet *)arg1;
 - (MPPlaceholderAVItem *)placeholderItemForLoadingAdditionalItemsInSection:(NSString *)arg1;
 - (void)loadAdditionalItemsForSection:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (BOOL)shouldUsePlaceholderForItem:(NSString *)arg1 inSection:(NSString *)arg2;
 - (BOOL)shouldRequestAdditionalItemsWhenReachingTailOfSection:(NSString *)arg1;
-- (BOOL)canSkipItem:(MPAVItem *)arg1;
+- (BOOL)canSkipItem:(NSString *)arg1;
 - (void)itemDidBeginPlayback:(MPAVItem *)arg1;
 @end
 

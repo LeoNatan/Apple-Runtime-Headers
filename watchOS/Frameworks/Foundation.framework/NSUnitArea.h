@@ -28,6 +28,7 @@
 + (id)squareKilometers;
 + (id)squareMegameters;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

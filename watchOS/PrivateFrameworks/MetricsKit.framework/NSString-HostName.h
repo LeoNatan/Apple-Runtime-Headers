@@ -7,7 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (HostName)
-- (id)hostName;
-- (id)SHA1Base62String;
+- (id)mt_hostName;
+- (id)mt_SHA1Base62String;
 @end
 

@@ -12,7 +12,7 @@
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 #import <SpringBoard/SBTransientOverlayViewControllerDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableArray, NSNumber, NSString, SBAlertItemsController, SBAppStatusBarSettingsAssertion, SBBannerController, SBHomeGestureArbiter, SBHomeGestureParticipant, SBIdleTimerCoordinatorHelper, SBLockStateAggregator, SBReachabilityManager, SBTransientOverlayViewController, UIScreen, UIStatusBarStyleRequest, UIWindow;
+@class NSMapTable, NSMutableArray, NSNumber, NSString, SBAlertItemsController, SBAppStatusBarSettingsAssertion, SBBannerController, SBHomeGestureArbiter, SBHomeGestureParticipant, SBIdleTimerCoordinatorHelper, SBInAppStatusBarHiddenAssertion, SBLockStateAggregator, SBReachabilityManager, SBTransientOverlayViewController, UIScreen, UIStatusBarStyleRequest, UIWindow;
 @protocol BSInvalidatable, CSExternalBehaviorProviding, SBIdleTimerCoordinating, SBTransientOverlayPresentationManagerDelegate;
 
 @interface SBTransientOverlayPresentationManager : NSObject <SBHomeGestureParticipantDelegate, SBIdleTimerCoordinating, SBTransientOverlayViewControllerDelegate, SBIdleTimerProviding, SBButtonEventsHandler>
@@ -37,7 +37,7 @@
     SBReachabilityManager *_reachabilityManager;
     UIScreen *_screen;
     SBAppStatusBarSettingsAssertion *_globalStatusBarAssertion;
-    id <BSInvalidatable> _appStatusBarAssertion;
+    SBInAppStatusBarHiddenAssertion *_appStatusBarAssertion;
     _Bool _prefersStatusBarActivityItemVisible;
     NSNumber *_preferredWhitePointAdaptivityStyleValue;
     long long _topmostViewControllerInterfaceOrientation;
@@ -69,6 +69,7 @@
 - (double)_backgroundWindowLevelForEntity:(id)arg1;
 - (void)_dismissEntity:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_buttonEventHandlingViewController;
+- (void)_applyWallpaperAnimationSuspensionAssertionForEntity:(id)arg1;
 - (void)_applyProximityDetectionModeForEntity:(id)arg1;
 - (void)transientOverlayViewControllerDidEndRotation:(id)arg1;
 - (void)transientOverlayViewControllerWillBeginRotation:(id)arg1 toInterfaceOrientation:(long long)arg2;

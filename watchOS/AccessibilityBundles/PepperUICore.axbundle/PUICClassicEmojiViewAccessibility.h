@@ -14,6 +14,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)_dismissDiversePlatter;
 - (void)_showDiverseEmojiPlatterForEmoji:(id)arg1 atIndexPath:(id)arg2;
 - (void)setDelegate:(id)arg1;
 

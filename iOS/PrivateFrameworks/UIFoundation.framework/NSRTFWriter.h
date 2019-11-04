@@ -15,6 +15,7 @@
     unsigned long long _attrStringLength;
     NSFileWrapper *_document;
     NSMutableDictionary *_fontNames;
+    NSMutableDictionary *_fontObjects;
     NSMutableDictionary *_colors;
     NSMutableArray *_listRanges;
     id _curFont;

@@ -9,7 +9,7 @@
 #import <EventKit/EKJunkInvitationProtocol_Private-Protocol.h>
 #import <EventKit/EKMutableEventOccurrenceProtocol-Protocol.h>
 
-@class EKCalendarDate, EKEventStore, EKParticipant, EKStructuredLocation, EKSuggestedEventInfo, NSArray, NSData, NSDate, NSDictionary, NSManagedObjectID, NSNumber, NSString, NSTimeZone, NSURL;
+@class EKCalendarDate, EKEventStore, EKParticipant, EKStructuredLocation, EKSuggestedEventInfo, NSArray, NSData, NSDate, NSDictionary, NSManagedObjectID, NSNumber, NSSet, NSString, NSTimeZone, NSURL;
 @protocol CalendarModelProtocol, EKProtocolParticipant, EKProtocolStructuredLocation;
 
 @interface EKEvent : EKCalendarItem <EKMutableEventOccurrenceProtocol, EKJunkInvitationProtocol_Private>
@@ -353,6 +353,8 @@
 @property(readonly, nonatomic, getter=isPrivacySetInDelegateOrSharedToMeCalendar) BOOL privacySetInDelegateOrSharedToMeCalendar;
 @property(readonly, nonatomic, getter=isPrivacySet) BOOL privacySet;
 - (unsigned long long)entityType;
+@property(readonly, nonatomic) BOOL isPrivateEventSharedToMe;
+@property(readonly, nonatomic) NSSet *detachedItems;
 - (BOOL)conformsToRecurrenceRules:(id)arg1;
 - (BOOL)_isSimpleRepeatingEvent;
 - (BOOL)allowsSpansOtherThanThisEvent;

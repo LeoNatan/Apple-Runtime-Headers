@@ -9,6 +9,7 @@
 @class NSArray, NSDictionary, NSString, NSURL;
 
 @protocol PLAssetsdCloudInternalServiceProtocol <NSObject>
+- (void)getResetSyncStatusWithReply:(void (^)(unsigned int))arg1;
 - (void)queryUserIdentitiesWithEmails:(NSArray *)arg1 phoneNumbers:(NSArray *)arg2 reply:(void (^)(_Bool, NSDictionary *, NSError *))arg3;
 - (void)forceSyncMomentShareWithUUID:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)acceptMomentShareWithUUID:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;

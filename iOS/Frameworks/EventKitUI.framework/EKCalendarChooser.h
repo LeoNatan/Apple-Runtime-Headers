@@ -22,6 +22,7 @@
     _Bool _disableCalendarEditing;
     _Bool _showsDeclinedEventsSetting;
     _Bool _showAccountStatus;
+    _Bool _onlyShowUnmanagedAccounts;
     _Bool _showDetailAccessories;
     _Bool _allowsEdit;
     CDStruct_424d6339 _flags;
@@ -53,6 +54,7 @@
 + (id)showAllString;
 @property(nonatomic) _Bool allowsEdit; // @synthesize allowsEdit=_allowsEdit;
 @property(nonatomic) _Bool showDetailAccessories; // @synthesize showDetailAccessories=_showDetailAccessories;
+@property(nonatomic) _Bool onlyShowUnmanagedAccounts; // @synthesize onlyShowUnmanagedAccounts=_onlyShowUnmanagedAccounts;
 @property(nonatomic) _Bool showAccountStatus; // @synthesize showAccountStatus=_showAccountStatus;
 @property(nonatomic) int explanatoryTextMode; // @synthesize explanatoryTextMode=_explanatoryTextMode;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
@@ -161,6 +163,7 @@
 @property(nonatomic) _Bool allowsRotation;
 - (void)setShowAll:(_Bool)arg1;
 - (struct CGSize)preferredContentSize;
+- (void)viewDidLayoutSubviews;
 - (id)_tableHeaderView;
 - (id)_viewModeTitle;
 - (void)viewDidAppear:(_Bool)arg1;

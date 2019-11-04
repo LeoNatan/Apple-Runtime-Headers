@@ -12,8 +12,6 @@
 @property(readonly, nonatomic, getter=isPaletteVisible) _Bool paletteVisible;
 @property(readonly, nonatomic, getter=isPaletteDragging) _Bool paletteDragging;
 @property(readonly, nonatomic, getter=isPaletteMinimized) _Bool paletteMinimized;
-@property(readonly, nonatomic) unsigned long long paletteEdgeLocation;
-@property(readonly, nonatomic) unsigned long long paletteCornerLocation;
 @property(readonly, nonatomic) UIView *hostingView;
 - (void)paletteViewShowFeedbackForToolChange:(PKPaletteView *)arg1;
 - (void)paletteView:(PKPaletteView *)arg1 didChangeAnnotationSupport:(_Bool)arg2;

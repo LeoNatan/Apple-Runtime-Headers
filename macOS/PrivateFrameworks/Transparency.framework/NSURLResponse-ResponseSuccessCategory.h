@@ -7,7 +7,11 @@
 #import <Foundation/NSURLResponse.h>
 
 @interface NSURLResponse (ResponseSuccessCategory)
+- (id)responseValueForHeader:(id)arg1;
+- (id)metadata;
 - (long long)responseCode;
+- (BOOL)requiresAuthorization;
 - (BOOL)successful;
+- (BOOL)hasStatusCode:(long long)arg1;
 @end
 

@@ -24,6 +24,7 @@
     CDUnknownBlockType _manateeChangedHandler;
     CDUnknownBlockType _meDeviceChangedHandler;
     CDUnknownBlockType _netFlagsChangedHandler;
+    CDUnknownBlockType _netInterfacesChangedHandler;
     CDUnknownBlockType _primaryIPChangedHandler;
     CDUnknownBlockType _primaryNetworkChangedHandler;
     CDUnknownBlockType _powerUnlimitedChangedHandler;
@@ -50,6 +51,7 @@
 @property(copy) CDUnknownBlockType powerUnlimitedChangedHandler; // @synthesize powerUnlimitedChangedHandler=_powerUnlimitedChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType primaryNetworkChangedHandler; // @synthesize primaryNetworkChangedHandler=_primaryNetworkChangedHandler;
 @property(copy) CDUnknownBlockType primaryIPChangedHandler; // @synthesize primaryIPChangedHandler=_primaryIPChangedHandler;
+@property(copy) CDUnknownBlockType netInterfacesChangedHandler; // @synthesize netInterfacesChangedHandler=_netInterfacesChangedHandler;
 @property(copy) CDUnknownBlockType netFlagsChangedHandler; // @synthesize netFlagsChangedHandler=_netFlagsChangedHandler;
 @property(copy) CDUnknownBlockType meDeviceChangedHandler; // @synthesize meDeviceChangedHandler=_meDeviceChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType manateeChangedHandler; // @synthesize manateeChangedHandler=_manateeChangedHandler;

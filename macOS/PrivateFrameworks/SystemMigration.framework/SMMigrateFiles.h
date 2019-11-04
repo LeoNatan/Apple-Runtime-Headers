@@ -29,6 +29,7 @@
 - (void)estimatedTimeRemainingChanged:(double)arg1;
 - (void)transferRateChanged:(double)arg1;
 - (void)copierFailed:(id)arg1 error:(id)arg2;
+- (void)dedupeWallpaper;
 - (BOOL)localizeFoldersForApplications;
 - (BOOL)setupCopiesForFileGroups;
 - (void)preliminarySize:(unsigned long long)arg1 andCount:(unsigned long long)arg2 forPathGroup:(unsigned long long)arg3;

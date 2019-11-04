@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
+- (void)setFixedSize:(struct CGSize)arg1;
 - (void)updateWithType:(unsigned long long)arg1;
 - (_Bool)isPlayButton;
 - (id)initWithType:(unsigned long long)arg1;

@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain) STSegmentedControlGroupSpecifierProvider *segmentedControlProvider; // @synthesize segmentedControlProvider=_segmentedControlProvider;
 @property(retain) STTestGroupSpecifierProvider *testProvider; // @synthesize testProvider=_testProvider;
 - (void).cxx_destruct;
+@property(getter=isDatePickerHidden) _Bool datePickerHidden;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_rightDatePickerBarButtonTapped:(id)arg1;
 - (void)_leftDatePickerBarButtonTapped:(id)arg1;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)setCoordinator:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

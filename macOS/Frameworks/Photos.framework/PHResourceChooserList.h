@@ -17,6 +17,7 @@
     long long _hintDataCurrentOffset;
     long long _hintDataNextItemOffset;
     BOOL _finishedPresentingFromHints;
+    BOOL _didObserveThumbnailStoreKey;
     NSSortDescriptor *_sortDescriptor;
     NSManagedObjectContext *_context;
     NSArray *_nonHintResources;

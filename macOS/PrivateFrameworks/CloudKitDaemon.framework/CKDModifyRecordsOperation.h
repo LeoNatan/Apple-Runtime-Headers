@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDDecryptRecordsOperation, CKDProtocolTranslator, CKDRecordCache, NSArray, NSData, NSDictionary, NSMapTable, NSMutableDictionary, NSObject;
+@class C2RequestOptions, CKDDecryptRecordsOperation, CKDProtocolTranslator, CKDRecordCache, NSArray, NSData, NSDictionary, NSMapTable, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -50,10 +50,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_assetUUIDToExpectedProperties;
     NSDictionary *_packageUUIDToExpectedProperties;
     NSArray *_userPublicKeys;
+    C2RequestOptions *_streamingAssetRequestOptions;
 }
 
 + (long long)isPredominatelyDownload;
 + (BOOL)_claimPackagesInRecord:(id)arg1 error:(id *)arg2;
+@property(copy, nonatomic) C2RequestOptions *streamingAssetRequestOptions; // @synthesize streamingAssetRequestOptions=_streamingAssetRequestOptions;
 @property(retain, nonatomic) NSArray *userPublicKeys; // @synthesize userPublicKeys=_userPublicKeys;
 @property(nonatomic) BOOL requestNeedsUserPublicKeys; // @synthesize requestNeedsUserPublicKeys=_requestNeedsUserPublicKeys;
 @property(nonatomic) BOOL markAsParticipantNeedsNewInvitationToken; // @synthesize markAsParticipantNeedsNewInvitationToken=_markAsParticipantNeedsNewInvitationToken;

@@ -47,6 +47,7 @@
 - (void)paymentWebServiceDidUpdateConfiguration:(PKPaymentWebService *)arg1;
 
 @optional
+- (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(NSString *)arg1;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 passOwnershipTokenWithIdentifier:(NSString *)arg2 completion:(void (^)(NSString *))arg3;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 storePassOwnershipToken:(NSString *)arg2 withIdentifier:(NSString *)arg3;
 - (void)performDeviceCheckInWithCompletion:(void (^)(_Bool, NSError *))arg1;

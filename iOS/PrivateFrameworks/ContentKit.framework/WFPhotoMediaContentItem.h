@@ -49,7 +49,6 @@
 - (void)generateAVAsset:(CDUnknownBlockType)arg1 networkAccessAllowed:(_Bool)arg2;
 - (void)generateFileRepresentation:(CDUnknownBlockType)arg1 options:(id)arg2 forType:(id)arg3;
 - (id)preferredAssetResourceForType:(id)arg1;
-- (void)retrieveLivePhotoAssetResource:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)retrieveFileWithImageManager:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)retrieveAssetResource:(id)arg1 withNetworkAccess:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getThumbnail:(CDUnknownBlockType)arg1 ofSize:(struct CGSize)arg2;
@@ -71,6 +70,8 @@
 - (id)metadataIfLocallyAvailable;
 - (void)getFrameRate:(CDUnknownBlockType)arg1;
 - (void)getMetadata:(CDUnknownBlockType)arg1;
+- (id)assetResourceManager;
+- (id)imageManager;
 - (id)duration;
 - (void)getPreferredFileExtension:(CDUnknownBlockType)arg1;
 - (void)getPreferredFileSize:(CDUnknownBlockType)arg1;

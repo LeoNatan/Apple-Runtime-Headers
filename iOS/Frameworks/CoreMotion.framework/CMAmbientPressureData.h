@@ -6,7 +6,9 @@
 
 #import <CoreMotion/CMLogItem.h>
 
-@interface CMAmbientPressureData : CMLogItem
+#import <CoreMotion/SRSampleDirectExporting-Protocol.h>
+
+@interface CMAmbientPressureData : CMLogItem <SRSampleDirectExporting>
 {
     id _internal;
 }
@@ -19,6 +21,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPressure:(CDStruct_ebf20f05)arg1 andTimestamp:(double)arg2;
+- (_Bool)sr_prefersUTF8StringRepresentation;
+- (long long)sr_writeUTF8RepresentationToOutputStream:(id)arg1;
 
 @end
 

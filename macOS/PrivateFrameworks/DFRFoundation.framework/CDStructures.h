@@ -27,10 +27,18 @@ struct CGSize {
     double height;
 };
 
+struct DFRTouchBarHandle {
+    unsigned int rawValue;
+};
+
 struct ImageData {
     struct CGImage *image;
     struct __CFString *name;
     struct CGSize size;
     unsigned int template:1;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 

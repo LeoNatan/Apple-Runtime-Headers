@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     BookmarksUndoController *_bookmarksUndoController;
     id _mouseUpEventMonitor;
     BOOL _hasMoved;
+    BOOL _isClosing;
     BOOL _ignoresOrderFront;
     BOOL _shouldDeferSettingFirstResponderDueToScrubbing;
 }
@@ -65,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (void)_startedMoving:(id)arg1;
 - (void)setUpBrowserWindow;
 - (void)zoom:(id)arg1;
+- (void)orderWindow:(long long)arg1 relativeTo:(long long)arg2;
 
 @end
 

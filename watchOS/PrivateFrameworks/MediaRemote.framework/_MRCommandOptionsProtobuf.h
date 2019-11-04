@@ -41,6 +41,7 @@
     NSString *_sourceID;
     NSString *_stationURL;
     NSData *_systemAppPlaybackQueueData;
+    NSData *_userIdentityData;
     _Bool _beginSeek;
     _Bool _endSeek;
     _Bool _externalPlayerCommand;
@@ -72,6 +73,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSData *userIdentityData; // @synthesize userIdentityData=_userIdentityData;
 @property(retain, nonatomic) NSData *playbackSession; // @synthesize playbackSession=_playbackSession;
 @property(nonatomic) _Bool endSeek; // @synthesize endSeek=_endSeek;
 @property(nonatomic) _Bool beginSeek; // @synthesize beginSeek=_beginSeek;
@@ -114,6 +116,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasUserIdentityData;
 @property(readonly, nonatomic) _Bool hasPlaybackSession;
 @property(nonatomic) _Bool hasEndSeek;
 @property(nonatomic) _Bool hasBeginSeek;

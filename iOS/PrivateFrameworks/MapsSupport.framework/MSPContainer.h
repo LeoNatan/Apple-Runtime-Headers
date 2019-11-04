@@ -26,6 +26,7 @@
     NSMutableArray *_enqueuedCoalescingEditBarrierBlocks;
     NSMutableArray *_enqueuedCoalescingCompletionBlocks;
     _Bool _hasScheduledDelayedCommitForCoalescedEdits;
+    _Bool _hasLoadedContents;
     _Bool _preventsAssertionsForDuplicateStorageIdentifiers;
     _Bool _simulatesClearingDiscardableDataAfterOperations;
 }
@@ -64,6 +65,7 @@
 - (void)_performInitialLoadNotifyingObservers:(_Bool)arg1 kickOffSynchronously:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_clearObjectCacheIfNeeded;
 - (void)accessStateSnapshotUsingConcurrentBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool containerHasLoadedContents;
 - (void)accessContentsUsingConcurrentBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithPersister:(id)arg1;

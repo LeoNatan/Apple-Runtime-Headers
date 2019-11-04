@@ -8,6 +8,7 @@
 
 @protocol AMPArtworkProtocol
 - (void)purgeAllItemsforDatabase:(unsigned long long)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)removeArtworkWithArray:(NSArray *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)removeArtwork:(unsigned long long)arg1 forUUID:(NSString *)arg2 withReply:(void (^)(unsigned long long, NSError *))arg3;
 - (void)setRemoteArtworkForInfo:(NSArray *)arg1 forDatabase:(unsigned long long)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
 - (void)setArtwork:(NSData *)arg1 forInfo:(AMPArtworkSourceInfo *)arg2 forDatabase:(unsigned long long)arg3 withReply:(void (^)(AMPSetArtworkResponse *, NSError *))arg4;

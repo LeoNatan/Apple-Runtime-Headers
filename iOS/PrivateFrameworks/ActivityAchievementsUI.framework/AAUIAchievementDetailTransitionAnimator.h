@@ -13,6 +13,7 @@
 
 @interface AAUIAchievementDetailTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 {
+    _Bool _shouldAdjustForInset;
     _Bool _shouldPlayFlipInAnimation;
     _Bool _shouldDismissGracefullyForTextSizeChange;
     _Bool _reduceMotion;
@@ -47,6 +48,7 @@
 @property(retain, nonatomic) UIView *conversionView; // @synthesize conversionView=_conversionView;
 @property(retain, nonatomic) id <AnimatorDetailViewController> detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+@property(nonatomic) _Bool shouldAdjustForInset; // @synthesize shouldAdjustForInset=_shouldAdjustForInset;
 - (void).cxx_destruct;
 - (void)animateDismissalWithContext:(id)arg1;
 - (void)reducedMotionAnimateDismissalWithContext:(id)arg1;

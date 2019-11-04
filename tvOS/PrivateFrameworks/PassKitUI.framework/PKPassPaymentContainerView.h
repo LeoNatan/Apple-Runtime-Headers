@@ -53,6 +53,7 @@
     NSMutableArray *_pendingGlyphStateCompletionHandlers;
     _Bool _glyphStateDirty;
     _Bool _presentationWasForced;
+    _Bool _presentationWasForFieldDetect;
     _Bool _waitingForGlyphView;
     long long _transactionSubstate;
     _Bool _holdingTerminalSubstate;
@@ -163,6 +164,7 @@
 - (void)_resetToIdleStateWhileIgnoringField:(_Bool)arg1;
 - (void)_resetToIdleState;
 - (void)_prearmButtonPressed:(id)arg1;
+- (void)_addPasscodeButtonPressed:(id)arg1;
 - (void)_passcodeFallbackButtonPressed:(id)arg1;
 - (void)_passcodeAuthenticationButtonPressed:(id)arg1;
 - (void)_beginPasscodeOnlyAuthentication;
@@ -176,6 +178,7 @@
 - (void)_endPaymentAuthorization;
 - (void)_beginPaymentAuthorizationWithImmediatePasscode:(_Bool)arg1;
 - (void)_beginPaymentAuthorization;
+- (void)payStateViewDidUpdateLayout:(id)arg1;
 - (void)payStateView:(id)arg1 revealingCheckmark:(_Bool)arg2;
 - (void)contactlessInterfaceSession:(id)arg1 didReceiveExpressState:(unsigned long long)arg2;
 - (void)contactlessInterfaceSession:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;

@@ -13,7 +13,6 @@
 @interface GEOWiFiESS : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _attributes;
     CDStruct_56d48c16 _authTraits;
     NSMutableArray *_bss;
@@ -21,6 +20,9 @@
     NSString *_name;
     NSMutableArray *_qualities;
     long long _uniqueIdentifier;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_uniqueIdentifier:1;
         unsigned int read_attributes:1;
@@ -96,6 +98,8 @@
 @property(readonly, nonatomic) _Bool hasIdentifier;
 - (void)_readIdentifier;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

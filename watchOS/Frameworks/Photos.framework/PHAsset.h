@@ -19,6 +19,7 @@
     NSSet *_sceneClassifications;
     _Bool _hidden;
     _Bool _favorite;
+    _Bool _syncFailureHidden;
     _Bool _cloudIsDeletable;
     _Bool _complete;
     _Bool _hasAdjustments;
@@ -159,7 +160,6 @@
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2;
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
 + (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 fetchOptions:(id)arg4 onlyKey:(_Bool)arg5;
-+ (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 adjustmentInfo:(id)arg3 renderingError:(id)arg4;
 + (id)fetchAssetsForReferences:(id)arg1 photoLibrary:(id)arg2;
 + (void)_inq_trimToMostRecentImageManagerMessages;
 + (id)_currentTimestampString;
@@ -214,6 +214,7 @@
 @property(readonly, nonatomic) int avalanchePickType; // @synthesize avalanchePickType=_avalanchePickType;
 @property(readonly, nonatomic) unsigned long long localResourcesState; // @synthesize localResourcesState=_localResourcesState;
 @property(readonly, nonatomic) NSString *burstIdentifier; // @synthesize burstIdentifier=_burstIdentifier;
+@property(readonly, nonatomic, getter=isSyncFailureHidden) _Bool syncFailureHidden; // @synthesize syncFailureHidden=_syncFailureHidden;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite; // @synthesize favorite=_favorite;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
@@ -362,6 +363,7 @@
 - (void)_addPropertyHint:(unsigned int)arg1;
 - (void)fetchPropertySetsIfNeeded;
 - (void)_createExtendedPropertySetsIfNeededWithPropertyHint:(unsigned int)arg1 fetchDictionary:(id)arg2;
+- (_Bool)needsDeferredProcessing;
 @property(readonly, nonatomic) NSDate *localCreationDate; // @synthesize localCreationDate=_localCreationDate;
 - (_Bool)isMediaSubtype:(unsigned int)arg1;
 - (short)assetSource;

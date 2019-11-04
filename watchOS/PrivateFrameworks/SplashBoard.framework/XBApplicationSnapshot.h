@@ -9,7 +9,7 @@
 #import <SplashBoard/BSDescriptionProviding-Protocol.h>
 #import <SplashBoard/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSDictionary, NSMutableDictionary, NSString, UIImage, XBApplicationSnapshotGenerationContext, XBSnapshotContainerIdentity, XBStatusBarSettings;
+@class NSDate, NSDictionary, NSMutableDictionary, NSString, UIImage, XBApplicationSnapshotGenerationContext, XBDisplayEdgeInsetsWrapper, XBSnapshotContainerIdentity, XBStatusBarSettings;
 @protocol XBSnapshotManifestStore;
 
 @interface XBApplicationSnapshot : NSObject <NSSecureCoding, BSDescriptionProviding>
@@ -55,6 +55,7 @@
     _Bool _keepImageAccessForPreHeat;
     _Bool _hasProtectedContent;
     struct os_unfair_lock_s _loadImageLock;
+    XBDisplayEdgeInsetsWrapper *_customSafeAreaInsets;
     CDUnknownBlockType _imageGenerator;
     struct CGAffineTransform _imageTransform;
 }
@@ -82,6 +83,7 @@
 @property(nonatomic) int compatibilityMode; // @synthesize compatibilityMode=_compatibilityMode;
 @property(nonatomic) int classicMode; // @synthesize classicMode=_classicMode;
 @property(copy, nonatomic) XBStatusBarSettings *statusBarSettings; // @synthesize statusBarSettings=_statusBarSettings;
+@property(retain, nonatomic) XBDisplayEdgeInsetsWrapper *customSafeAreaInsets; // @synthesize customSafeAreaInsets=_customSafeAreaInsets;
 @property(nonatomic) int userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;

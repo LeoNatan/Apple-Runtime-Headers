@@ -12,8 +12,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: blueprintViewController
-    // Error parsing type: , name: purchasingSpinnerViewControllerFactory
-    // Error parsing type: , name: $__lazy_storage_$_spinnerViewController
+    // Error parsing type: , name: purchasePresenter
     // Error parsing type: , name: modalHostStyle
     // Error parsing type: , name: pageIdentifierToDisplay
 }

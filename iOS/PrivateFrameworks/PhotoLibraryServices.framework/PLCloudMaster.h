@@ -8,13 +8,14 @@
 
 #import <PhotoLibraryServices/PLSyncableObject-Protocol.h>
 
-@class NSDate, NSManagedObject, NSSet, NSString, PLMomentShare;
+@class NSDate, NSSet, NSString, PLCloudMasterMediaMetadata, PLMomentShare;
 
 @interface PLCloudMaster : PLManagedObject <PLSyncableObject>
 {
 }
 
 + (id)entityName;
++ (unsigned long long)fullSizeJPEGSourceForUTI:(id)arg1 andImageDimensions:(struct CGSize)arg2;
 + (id)listOfSyncedProperties;
 + (id)_originalTypes;
 + (void)resetCloudMastersStateInManagedObjectContext:(id)arg1 hardReset:(_Bool)arg2;
@@ -61,7 +62,7 @@
 @property(retain, nonatomic) NSDate *importDate; // @dynamic importDate;
 @property(retain, nonatomic) NSString *importSessionID; // @dynamic importSessionID;
 @property(nonatomic) short importedBy; // @dynamic importedBy;
-@property(retain, nonatomic) NSManagedObject *mediaMetadata; // @dynamic mediaMetadata;
+@property(retain, nonatomic) PLCloudMasterMediaMetadata *mediaMetadata; // @dynamic mediaMetadata;
 @property(retain, nonatomic) NSString *mediaMetadataType; // @dynamic mediaMetadataType;
 @property(retain, nonatomic) PLMomentShare *momentShare; // @dynamic momentShare;
 @property(retain, nonatomic) NSString *originalFilename; // @dynamic originalFilename;

@@ -6,10 +6,11 @@
 
 #import <SpringBoardFoundation/SBFLockScreenDateSubtitleView.h>
 
-@class NSDate, SBFLockScreenAlternateDateLabel;
+@class NSDate, NSTimeZone, SBFLockScreenAlternateDateLabel;
 
 @interface SBFLockScreenDateSubtitleDateView : SBFLockScreenDateSubtitleView
 {
+    NSTimeZone *_timeZone;
     _Bool _useCompactDateFormat;
     NSDate *_date;
     SBFLockScreenAlternateDateLabel *_alternateDateLabel;
@@ -34,6 +35,7 @@
 - (void)layoutSubviews;
 - (void)setStrength:(double)arg1;
 - (void)setLegibilitySettings:(id)arg1;
+- (void)_setDate:(id)arg1 inTimeZone:(id)arg2;
 - (void)dealloc;
 - (void)_setupAlternateDateLabel;
 - (void)_overlayCalendarDidChange;

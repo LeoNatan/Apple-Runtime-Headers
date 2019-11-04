@@ -13,10 +13,12 @@
 @interface GEORPAddress : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOPDAddressObject *_addressObject;
     NSString *_addressString;
     GEOAddress *_geoAddress;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_addressObject:1;
         unsigned int read_addressString:1;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) GEOAddress *geoAddress;
 @property(readonly, nonatomic) _Bool hasGeoAddress;
 - (void)_readGeoAddress;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

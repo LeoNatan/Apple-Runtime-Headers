@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <Intents/INFileURLEnumerable-Protocol.h>
+#import <Intents/INFileEnumerable-Protocol.h>
 #import <Intents/INJSONSerializable-Protocol.h>
 
 @class INFile, NSString, NSURL;
 
-@interface INSendMessageAttachment : NSObject <INJSONSerializable, INFileURLEnumerable>
+@interface INSendMessageAttachment : NSObject <INJSONSerializable, INFileEnumerable>
 {
     BOOL _currentLocation;
     INFile *_file;
@@ -35,7 +35,8 @@
 @property(readonly) unsigned long long hash;
 - (id)_initWithCurrentLocation:(BOOL)arg1 file:(id)arg2 speechDataURL:(id)arg3;
 - (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
-- (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
+- (void)_intents_enumerateFileURLsWithBlock:(CDUnknownBlockType)arg1 mutate:(BOOL)arg2;
+- (void)_intents_enumerateFilesWithBlock:(CDUnknownBlockType)arg1 mutate:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

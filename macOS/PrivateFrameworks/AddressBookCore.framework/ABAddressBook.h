@@ -318,7 +318,10 @@
 - (id)nts_RecordsForUniqueIds:(id)arg1 inAccount:(id)arg2;
 - (id)recordsForUniqueIDs:(id)arg1 inAccount:(id)arg2;
 - (id)recordsForUniqueIDs:(id)arg1;
-- (unsigned long long)countOfRecords;
+- (unsigned long long)countOfRecordsWithEntityName:(id)arg1;
+@property(readonly, nonatomic) unsigned long long countOfRecords;
+@property(readonly, nonatomic) unsigned long long countOfGroups;
+@property(readonly, nonatomic) unsigned long long countOfPeople;
 - (BOOL)_propertyRepresentsCustomProperty:(id)arg1 recordType:(id)arg2;
 - (void)_clearRemoteCustomProperties;
 - (id)_remoteCustomProperties;
@@ -357,6 +360,7 @@
 - (BOOL)saveAndTriggerSync:(BOOL)arg1;
 - (BOOL)save;
 - (BOOL)saveAndReturnError:(id *)arg1;
+- (id)saveTask;
 - (void)pruneEmptyRelationships;
 - (id)makeCommonNotificationUserInfoDictionary;
 - (void)updateNotificationInfo:(id)arg1 withRecords:(id)arg2 userInfoKey:(id)arg3 ignoreRecordsForKey:(id)arg4;

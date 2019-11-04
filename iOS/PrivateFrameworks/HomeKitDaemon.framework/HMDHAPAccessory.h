@@ -110,6 +110,7 @@
 - (id)messageReceiverChildren;
 - (id)backingStoreObjects:(long long)arg1;
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (id)transactionWithObjectChangeType:(unsigned long long)arg1;
 - (void)_updateBridge:(id)arg1;
@@ -345,8 +346,11 @@
 - (void)setCurrentTimeCharacteristic:(id)arg1;
 - (id)_currentTimeCharacteristic;
 @property(readonly, nonatomic) __weak HMDCharacteristic *currentTimeCharacteristic; // @synthesize currentTimeCharacteristic=_currentTimeCharacteristic;
+- (void)handleRoomChanged:(id)arg1;
 - (void)handleRoomNameChanged:(id)arg1;
+- (void)_handleRoomChangedFromOldRoomName:(id)arg1;
 - (id)_messagesForUpdatedRoom:(id)arg1;
+- (void)_handleUpdatedName:(id)arg1;
 - (void)handleUpdatedPassword:(id)arg1;
 - (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
 - (_Bool)supportsMinimumUserPrivilege;
@@ -385,8 +389,10 @@
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)init;
 - (void)stopScan;
+- (void)_stopScan;
 - (void)scanningCompleteWithAccessoryFound:(_Bool)arg1 suspended:(_Bool)arg2;
 - (_Bool)initiateScan:(CDUnknownBlockType)arg1;
+- (void)initializeBTLEScan;
 - (_Bool)_handleUpdatedServicesForNetworkRouterProfileAndController:(id)arg1;
 - (_Bool)__createSatelliteNetworkRouterProfile:(id)arg1;
 - (_Bool)__createNetworkRouterProfileAndController:(id)arg1;
@@ -415,7 +421,9 @@
 - (void)_handleUpdatedServicesForDataStreamController:(id)arg1;
 - (_Bool)isPoweringOn;
 - (void)cancelPowerOn;
+- (void)_cancelPowerOn;
 - (void)wirelessPowerOn:(CDUnknownBlockType)arg1;
+- (void)_wirelessPowerOn:(CDUnknownBlockType)arg1;
 - (void)powerOnComplete:(id)arg1;
 - (void)wirelessResumeInit;
 

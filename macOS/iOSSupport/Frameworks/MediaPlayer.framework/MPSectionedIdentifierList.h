@@ -48,6 +48,7 @@
 - (id)_dataSourceMoveItem:(id)arg1 inSection:(id)arg2 afterEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
 - (id)_dataSourceInsertItems:(id)arg1 fromSection:(id)arg2 afterEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
 - (void)_addBranchToEntry:(id)arg1 entries:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (void)dataSourceUpdateSection:(id)arg1;
 - (void)dataSourceReloadItem:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceRemoveItem:(id)arg1 fromSection:(id)arg2;
 - (void)dataSourceMoveItemToTail:(id)arg1 inSection:(id)arg2;
@@ -91,6 +92,7 @@
 - (void)_beforeInitWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (id)initWithIdentifier:(id)arg1;
 - (id)init;
 - (id)_debugDescriptionWithEnumerator:(id)arg1 lengths:(CDStruct_a734b2e2 *)arg2;
 - (id)debugDescriptionStartingAtItem:(id)arg1 inSection:(id)arg2;

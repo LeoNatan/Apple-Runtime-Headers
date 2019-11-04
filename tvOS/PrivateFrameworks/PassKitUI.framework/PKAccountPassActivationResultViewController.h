@@ -30,7 +30,7 @@
 @property(nonatomic) _Bool didAddToAmp; // @synthesize didAddToAmp=_didAddToAmp;
 - (void).cxx_destruct;
 - (id)_setupLaterBodyString;
-- (id)_localizedStringKeyForPerformedOperations;
+- (id)_localizedStringKeyForPerformedOperationsAndMadeDefault:(_Bool)arg1;
 - (void)_terminateSetupFlow;
 - (void)_presentDisplayableError:(id)arg1;
 - (void)_presentViewController:(id)arg1;

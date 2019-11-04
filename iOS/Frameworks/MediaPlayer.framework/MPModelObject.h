@@ -8,12 +8,13 @@
 
 #import <MediaPlayer/NSCopying-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
 
 @class MPIdentifierSet, NSMutableDictionary, NSString;
 
-@interface MPModelObject : NSObject <NSCopying, NSSecureCoding>
+@interface MPModelObject : NSObject <_MPStateDumpPropertyListTransformable, NSCopying, NSSecureCoding>
 {
-    MPModelObject *_originalObject;
+    MPIdentifierSet *_originalIdentifierSet;
     NSMutableDictionary *_storage;
     _Bool _isFinalized;
     MPIdentifierSet *_identifiers;
@@ -23,6 +24,7 @@
 + (_Bool)_lookupPropertyForSelector:(SEL)arg1 result:(CDUnknownBlockType)arg2;
 + (void)_indexProperties;
 + (_Bool)supportsSecureCoding;
++ (id)classesForSecureCoding;
 + (void)performWithoutEnforcement:(CDUnknownBlockType)arg1;
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
 + (void)initialize;
@@ -32,11 +34,10 @@
 + (id)requiredLibraryRemovalProperties;
 + (_Bool)supportsKeepLocalStatusObservation;
 + (id)requiredKeepLocalStatusObservationProperties;
-+ (_Bool)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
-+ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 @property(readonly, copy, nonatomic) MPIdentifierSet *identifiers; // @synthesize identifiers=_identifiers;
 - (void).cxx_destruct;
 - (_Bool)_isModelKey:(id)arg1;
+- (id)_stateDumpObject;
 - (void)setValue:(id)arg1 forModelKey:(id)arg2;
 - (id)valueForModelKey:(id)arg1;
 - (_Bool)hasLoadedValuesForPropertySet:(id)arg1;
@@ -48,7 +49,7 @@
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 @property(readonly, nonatomic) NSString *humanDescription;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)copyWithIdentifiers:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)initWithIdentifiers:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)contentItemCollectionInfo;
@@ -56,8 +57,11 @@
 @property(readonly, nonatomic) struct MPLibraryAddStatusObserverConfiguration libraryAddStatusObserverConfiguration;
 @property(readonly, nonatomic) long long libraryRemovalSupportedOptions;
 - (id)newKeepLocalStatusObserverConfiguration;
-- (_Bool)storeItemMetadataRequestNeedsPersonalization;
-- (id)storeItemMetadataRequestItemIdentifier;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

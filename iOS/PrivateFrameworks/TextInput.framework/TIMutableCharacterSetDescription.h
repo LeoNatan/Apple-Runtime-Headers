@@ -11,6 +11,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void)removeCharactersInString:(id)arg1;
 - (void)addCharactersInString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

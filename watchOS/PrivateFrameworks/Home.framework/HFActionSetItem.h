@@ -20,13 +20,14 @@
     HFItem<HFServiceLikeItem> *_serviceLikeItem;
 }
 
-+ (id)_primaryStateForActionSet:(id)arg1 valueSource:(id)arg2 logger:(id)arg3;
++ (id)_primaryStateForActionSet:(id)arg1 valueSource:(id)arg2 logger:(id)arg3 fastInitialUpdate:(_Bool)arg4;
 + (_Bool)_value:(id)arg1 isApproximatelyEqualToValue:(id)arg2 forMinimumValue:(id)arg3 maximumValue:(id)arg4;
 @property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) unsigned int actionSetItemStyle; // @synthesize actionSetItemStyle=_actionSetItemStyle;
 @property(readonly, nonatomic) HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 - (void).cxx_destruct;
+- (id)actionSetOperation:(id)arg1 errorFromError:(id)arg2;
 - (id)turnOffActionSet;
 - (id)executeActionSet;
 - (id)rooms;

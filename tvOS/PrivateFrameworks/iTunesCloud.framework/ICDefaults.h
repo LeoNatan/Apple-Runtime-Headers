@@ -36,6 +36,8 @@
 @property(readonly, copy, nonatomic) NSString *deviceModelOverride;
 @property(readonly, copy, nonatomic) NSNumber *deviceClassOverride;
 @property(nonatomic) _Bool ignoreExtendedCertificateValidation;
+@property(copy, nonatomic) NSDictionary *lastKnownSubscriptionStatusBaseCacheKey;
+@property(copy, nonatomic) NSDictionary *lastKnownLocalStoreAccountProperties;
 @property(copy, nonatomic) NSDictionary *lastKnownUserAgeVerificationState;
 @property(nonatomic) double lastAuthenticationDialogResponseTime;
 @property(copy, nonatomic) NSDictionary *authServiceClientTokenCache;
@@ -47,7 +49,7 @@
 @property(copy, nonatomic) NSDictionary *pushNotificationState;
 @property(copy, nonatomic) NSDictionary *cachedMusicUserTokens;
 @property(copy, nonatomic) NSDictionary *cachedSubscriptionStatus;
-@property(copy, nonatomic) NSString *defaultStoreFront;
+@property(readonly, nonatomic) NSString *defaultStoreFront;
 @property(copy, nonatomic) NSString *cloudMediaLibraryUID;
 - (id)init;
 

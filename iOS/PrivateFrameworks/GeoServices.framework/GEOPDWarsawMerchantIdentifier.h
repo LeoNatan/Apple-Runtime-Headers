@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDWarsawMerchantIdentifier : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_merchantDomain;
     NSString *_merchantId;
     NSString *_merchantName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_merchantDomain:1;
@@ -54,6 +56,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *merchantDomain;
 @property(readonly, nonatomic) _Bool hasMerchantDomain;
 - (void)_readMerchantDomain;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

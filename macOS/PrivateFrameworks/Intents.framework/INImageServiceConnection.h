@@ -26,8 +26,11 @@
 - (BOOL)canStoreImage:(id)arg1;
 - (id)fetchShareExtensionIntentForExtensionContextUUID:(id)arg1;
 - (BOOL)accessBundleContentForBundleIdentifiers:(id)arg1 withBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
-- (id)availableSchemasWithError:(id *)arg1;
 - (id)loadSchemasForBundleIdentifiers:(id)arg1 error:(id *)arg2;
+- (id)availableSchemasWithError:(id *)arg1;
+- (id)imageServiceSchemaURLsForBundleIdentifiers:(id)arg1 error:(id *)arg2;
+- (id)schemaURLsForBundleIdentifiers:(id)arg1;
+- (id)_availableBundleIdentifiers;
 - (void)loadDataImageFromImage:(id)arg1 usingPortableImageLoader:(id)arg2 scaledSize:(CDStruct_8caa76fc)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)canLoadImageDataForImage:(id)arg1;
 @property(readonly, nonatomic) unsigned long long servicePriority;

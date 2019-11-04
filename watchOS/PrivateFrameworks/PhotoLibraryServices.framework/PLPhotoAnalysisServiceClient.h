@@ -74,6 +74,7 @@
 - (void)scheduleAssetForOnDemandAnalysisWithUUID:(id)arg1 workerType:(short)arg2 workerFlags:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)reportMetricsWithOptions:(id)arg1 error:(id *)arg2;
 - (id)runCurationWithItems:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)requestM5CompatibleMemoriesReturningError:(id *)arg1;
 - (id)requestTextFeaturesForMomentLocalIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)requestPeopleSuggestionLearningWithError:(id *)arg1;
 - (id)requestPeopleSuggestionLearningStatisticsWithError:(id *)arg1;

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAddressObjectGeocodingResult *_addressObjectGeocodingResult;
     GEOPDAutocompleteResult *_autocompleteResult;
@@ -55,6 +54,9 @@ __attribute__((visibility("hidden")))
     GEOPDTransitScheduleLookupResult *_transitScheduleLookupResult;
     GEOPDVendorSpecificPlaceRefinementResult *_vendorSpecificPlaceRefinementResult;
     GEOPDWifiFingerprintResult *_wifiFingerprintResult;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_addressObjectGeocodingResult:1;
@@ -271,6 +273,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDSearchResult *searchResult;
 @property(readonly, nonatomic) _Bool hasSearchResult;
 - (void)_readSearchResult;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

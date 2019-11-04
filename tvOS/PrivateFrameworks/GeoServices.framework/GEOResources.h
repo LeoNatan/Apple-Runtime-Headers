@@ -13,7 +13,6 @@
 @interface GEOResources : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_abExperimentURL;
     NSString *_addressCorrectionInitURL;
@@ -70,6 +69,9 @@
     NSString *_wifiConnectionQualityProbeURL;
     NSMutableArray *_xmlChecksums;
     NSMutableArray *_xmls;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _locationShiftVersion;
     struct {
         unsigned int has_locationShiftVersion:1;
@@ -480,6 +482,8 @@
 - (void)clearTileGroups;
 @property(retain, nonatomic) NSMutableArray *tileGroups;
 - (void)_readTileGroups;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)preferedURLSetFor:(id)arg1;
 - (_Bool)isValid;
 - (id)preferredDataSetForClientDatasetMetadata:(id)arg1;

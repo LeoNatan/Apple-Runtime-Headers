@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString, PLMutablePTPAsset;
+@class NSArray, NSMutableArray, NSString, PLMutablePTPAsset, PLSpatialOverCaptureInformation;
 @protocol PLFileManager, PLPTPConversionSupport, PLPTPTransferableAsset;
 
 @interface PLPTPAssetBuilder : NSObject
@@ -23,6 +23,12 @@
     PLMutablePTPAsset *_adjustmentPtpAsset;
     PLMutablePTPAsset *_fullSizeRenderImagePtpAsset;
     PLMutablePTPAsset *_fullSizeRenderVideoPtpAsset;
+    PLMutablePTPAsset *_spatialOverCaptureImagePtpAsset;
+    PLMutablePTPAsset *_spatialOverCaptureVideoComplementPtpAsset;
+    PLMutablePTPAsset *_originalAdjustmentPtpAsset;
+    PLSpatialOverCaptureInformation *_cachedSpatialOverCaptureInformation;
+    PLMutablePTPAsset *_penultimateImagePtpAsset;
+    PLMutablePTPAsset *_penultimateVideoPtpAsset;
     NSMutableArray *_convertedAssets;
     BOOL _irisSidecarRequiresFormatConversion;
 }
@@ -30,6 +36,12 @@
 + (BOOL)_shouldIncludeDiagnosticFile;
 + (id)pictureTransferProtocolAssetsForAsset:(id)arg1 withConversionSupport:(id)arg2;
 - (void).cxx_destruct;
+- (void)buildPenultimateVideoPtpAsset;
+- (void)buildPenultimateImagePtpAsset;
+- (void)buildOriginalAdjustmentPtpAsset;
+- (void)buildSpatialOverCaptureVideoComplementPtpAsset;
+- (void)buildSpatialOverCaptureContentPtpAsset;
+- (BOOL)hasSpatialOverCaptureContent;
 - (void)_buildFullSizeRenderVideoAsset;
 - (void)_buildFullSizeRenderImageAsset;
 - (void)_buildAdjustmentAsset;
@@ -37,6 +49,9 @@
 - (id)_assetForSidecar:(id)arg1 sidecarPath:(id)arg2 irisSidecarPath:(id)arg3;
 - (void)_buildSidecarAssets;
 - (void)_buildDeletedFlag;
+- (void)_buildSpatialOverCaptureLivePhotoPairingIdentifier;
+- (void)_buildSpatialOverCaptureGroupIdentifier;
+- (id)spatialOverCaptureInformation;
 - (void)_buildRelatedUUID;
 - (void)_buildTimelapse;
 - (void)_buildSlowMo;

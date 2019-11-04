@@ -18,6 +18,7 @@
 @property(retain, nonatomic) NSArray *interfaceActions;
 @property(nonatomic) struct CGSize customContentSize;
 @property(readonly, nonatomic) UIScrollView *scrollView;
+- (struct UIEdgeInsets)minimumScrollViewContentInsets;
 - (struct CGRect)scrollViewFrame;
 - (struct CGRect)platterFrameForFrame:(struct CGRect)arg1;
 - (struct CGRect)frameForPlatterFrame:(struct CGRect)arg1;

@@ -13,6 +13,8 @@
 - (void)removeTodayOverlayObserver:(id <SBFTodayOverlayObserving>)arg1;
 - (void)addTodayOverlayObserver:(id <SBFTodayOverlayObserving>)arg1;
 - (double)finalPresentationProgressForPresentationProgress:(double)arg1 gestureVelocity:(double)arg2;
-- (void)setPresentationProgress:(double)arg1 animated:(_Bool)arg2 completionHandler:(void (^)(_Bool))arg3;
+- (void)dismissAnimated:(_Bool)arg1;
+- (void)presentAnimated:(_Bool)arg1;
+- (void)setPresentationProgress:(double)arg1 interactive:(_Bool)arg2 animated:(_Bool)arg3 completionHandler:(void (^)(_Bool))arg4;
 @end
 

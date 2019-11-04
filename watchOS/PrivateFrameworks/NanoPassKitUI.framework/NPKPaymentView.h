@@ -155,7 +155,6 @@
 - (id)_instructionViewWithBalanceString:(id)arg1;
 - (id)_instructionViewWithBalance:(id)arg1 currencyCode:(id)arg2;
 - (id)_instructionViewWithAvailableCredit:(id)arg1 currencyCode:(id)arg2;
-- (void)_validateAndCorrectDynamicViewIfNecessary;
 - (id)_instructionViewForTransitPassProperties:(id)arg1 pass:(id)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2 shouldConstrainWidth:(_Bool)arg3;

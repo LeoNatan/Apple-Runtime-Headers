@@ -37,6 +37,7 @@
 @property(retain, nonatomic) NSArray *enteredRecipients; // @synthesize enteredRecipients=_enteredRecipients;
 @property(nonatomic) _Bool shouldHideGroupsDonations; // @synthesize shouldHideGroupsDonations;
 - (void).cxx_destruct;
+- (long long)idsStatusForAddress:(id)arg1;
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;
 - (id)_conversationList;

@@ -116,8 +116,6 @@
 - (void)updateSagaLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateJaliscoLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isMediaKindDisabledForJaliscoLibrary:(long long)arg1;
-- (void)updateJaliscoLibraryByAddingMediaKind:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)updateJaliscoLibraryByRemovingMediaKind:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeJaliscoLibraryWithCompletionHander:(CDUnknownBlockType)arg1;
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)becomeActive;

@@ -13,11 +13,13 @@
 @interface GEOMapItemClientAttributes : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOMapItemAddressBookAttributes *_addressBookAttributes;
     GEOMapItemCorrectedLocationAttributes *_correctedLocationAttributes;
     GEOMapItemRoutineAttributes *_routineAttributes;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_addressBookAttributes:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) GEOMapItemAddressBookAttributes *addressBookAttributes;
 @property(readonly, nonatomic) _Bool hasAddressBookAttributes;
 - (void)_readAddressBookAttributes;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -23,7 +23,8 @@
     FCContextConfiguration *_contextConfiguration;
     id <FCFeldsparIDProvider> _feldsparIDProvider;
     NSObject<OS_dispatch_queue> *_accessQueue;
-    FCAsyncSerialQueue *_requestSerialQueue;
+    NSObject<OS_dispatch_queue> *_appConfigFetchQueue;
+    FCAsyncSerialQueue *_remoteConfigManagerSerialQueue;
     FCKeyValueStore *_localStore;
     FCNewsAppConfig *_currentAppConfiguration;
     NSArray *_treatmentIDs;
@@ -50,7 +51,8 @@
 @property(copy, nonatomic) NSArray *treatmentIDs; // @synthesize treatmentIDs=_treatmentIDs;
 @property(copy, nonatomic) FCNewsAppConfig *currentAppConfiguration; // @synthesize currentAppConfiguration=_currentAppConfiguration;
 @property(retain, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
-@property(readonly, nonatomic) FCAsyncSerialQueue *requestSerialQueue; // @synthesize requestSerialQueue=_requestSerialQueue;
+@property(readonly, nonatomic) FCAsyncSerialQueue *remoteConfigManagerSerialQueue; // @synthesize remoteConfigManagerSerialQueue=_remoteConfigManagerSerialQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *appConfigFetchQueue; // @synthesize appConfigFetchQueue=_appConfigFetchQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) id <FCFeldsparIDProvider> feldsparIDProvider; // @synthesize feldsparIDProvider=_feldsparIDProvider;
 @property(readonly, nonatomic) FCContextConfiguration *contextConfiguration; // @synthesize contextConfiguration=_contextConfiguration;
@@ -74,10 +76,10 @@
 - (void)_loadConfigurationFromStore:(id)arg1;
 - (void)_configurationDidChangeSignificantConfigChange:(_Bool)arg1;
 - (id)_storefrontID;
-- (void)_fetchMagazinesConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_fetchAppWidgetConfigurationIfNeededUseBackgroundRefreshRate:(_Bool)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_fetchAppConfigurationWithConfigurationSettings:(id)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 shouldRefresh:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_fetchRemoteMagazinesConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_fetchRemoteAppWidgetConfigurationIfNeededUseBackgroundRefreshRate:(_Bool)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_refreshAppConfigurationWithConfigurationSettings:(id)arg1 force:(_Bool)arg2 completionQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 forceRefresh:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)fetchConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;

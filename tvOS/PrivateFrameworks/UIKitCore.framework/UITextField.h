@@ -328,6 +328,7 @@
 - (_Bool)_hasFloatingFieldEditor;
 - (id)_currentTextColor;
 - (_Bool)_textShouldUseVibrancy;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)didMoveToWindow;
 - (void)removeFromSuperview;
 - (struct CGPoint)_originForTextFieldLabel:(id)arg1;
@@ -638,6 +639,7 @@
 - (long long)_currentTextAlignment;
 - (void)__resumeBecomeFirstResponder;
 - (void)_initialScrollDidFinish:(id)arg1;
+- (_Bool)_shouldSuppressSelectionHandles;
 - (void)_activateSelectionView;
 - (void)_stopObservingFieldEditorScroll;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;

@@ -10,10 +10,15 @@
 {
 }
 
++ (BOOL)initiateCredentialRenewal:(id *)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (BOOL)eligibleForEnrollmentVerify;
++ (BOOL)eligibleForPeerVerify;
++ (BOOL)eligibleForSelfVerify;
 + (id)authToken:(id *)arg1;
++ (id)primaryAccount:(id *)arg1;
 + (unsigned long long)accountLevel:(id)arg1;
 + (id)createAuthToken:(id)arg1 authToken:(id)arg2;
-+ (long long)accountLevelErrorCodeForLevel:(unsigned long long)arg1;
++ (long long)accountLevelErrorCodeForLevel:(id)arg1;
 + (id)sharedAccountStore;
 + (id)createAuthkitSession;
 

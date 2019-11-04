@@ -9,6 +9,6 @@
 @class NTKComplicationController;
 
 @protocol NTKComplicationControllerTritiumDelegate <NSObject>
-- (void)complicationControllerTimelineEntriesDidChange:(NTKComplicationController *)arg1;
+- (void)complicationController:(NTKComplicationController *)arg1 timelineEntriesDidChangeWithTritiumUpdatePriority:(int)arg2;
 @end
 

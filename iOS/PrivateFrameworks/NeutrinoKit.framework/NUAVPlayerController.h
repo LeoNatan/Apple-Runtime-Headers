@@ -17,6 +17,7 @@
         _Bool registeredPlayer;
     } _playerControllerKVOFlags;
     NSMutableArray *_playerItemObservations;
+    _Bool _currentlySeeking;
     _Bool _loopsVideo;
     _Bool _muted;
     AVPlayer *_player;
@@ -55,8 +56,7 @@
 - (void)_notifyPlaybackRateChange:(float)arg1;
 - (void)addPlaybackRateObserver:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)step:(long long)arg1;
-- (void)seek:(CDStruct_198678f7)arg1;
-- (void)seekToTime:(double)arg1;
+- (void)seek:(CDStruct_198678f7)arg1 exact:(_Bool)arg2;
 - (void)seekBack;
 - (void)seekForward;
 - (void)play;

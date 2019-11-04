@@ -6,25 +6,23 @@
 
 #import <PhotosUICore/PXFooterViewModel.h>
 
-#import <PhotosUICore/PXCPLServiceUIDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCloudQuotaControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXSettingsKeyObserver-Protocol.h>
 
 @class NSArray, NSString, PXCPLServiceUI, PXCloudQuotaController, PXCuratedLibraryAnalysisStatus, PXCuratedLibraryItemCountsController, PXFooterSettings;
-@protocol PXCuratedLibraryFooterCPLActionDelegate, PXCuratedLibraryFooterViewModelPresentationDelegate;
+@protocol PXCuratedLibraryFooterViewModelPresentationDelegate;
 
-@interface PXCuratedLibraryFooterViewModel : PXFooterViewModel <PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PXChangeObserver, PXSettingsKeyObserver>
+@interface PXCuratedLibraryFooterViewModel : PXFooterViewModel <PXCloudQuotaControllerDelegate, PXChangeObserver, PXSettingsKeyObserver>
 {
+    PXCPLServiceUI *_cplServiceUI;
     PXCloudQuotaController *_cloudQuotaController;
     long long _animatedGridCycleIndex;
     _Bool _hasImportantInformation;
     _Bool _isFooterShown;
     NSArray *_syncProgressAlbums;
     id <PXCuratedLibraryFooterViewModelPresentationDelegate> _presentingDelegate;
-    id <PXCuratedLibraryFooterCPLActionDelegate> _cplActionDelegate;
     long long _mode;
-    PXCPLServiceUI *_cplServiceUI;
     PXCuratedLibraryAnalysisStatus *_analysisStatus;
     PXCuratedLibraryItemCountsController *_itemCountsController;
     PXFooterSettings *_settings;
@@ -33,24 +31,19 @@
 + (_Bool)hasCPLStatusForServiceStatus:(id)arg1 serviceUIStatus:(id)arg2;
 + (_Bool)hasAnalysisProgressForMode:(long long)arg1 analysisStatus:(id)arg2 serviceStatus:(id)arg3 serviceUIStatus:(id)arg4 userDefaults:(id)arg5 outAnimatedIconMode:(long long *)arg6 outProgress:(float *)arg7 outTitle:(id *)arg8 outDescription:(id *)arg9;
 + (_Bool)_hasSyncProgressStatusForSyncAlbums:(id)arg1 outImportOperations:(int *)arg2;
-+ (void)_getTitle:(id *)arg1 description:(id *)arg2 forMode:(long long)arg3 itemCountsController:(id)arg4 analysisStatus:(id)arg5;
++ (id)_titleWithOptionalDescription:(id *)arg1 progress:(float *)arg2 forMode:(long long)arg3 itemCountsController:(id)arg4 analysisStatus:(id)arg5 serviceStatus:(id)arg6 inRebuild:(_Bool)arg7;
 @property(nonatomic) _Bool isFooterShown; // @synthesize isFooterShown=_isFooterShown;
 @property(readonly, nonatomic) PXFooterSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) PXCuratedLibraryItemCountsController *itemCountsController; // @synthesize itemCountsController=_itemCountsController;
 @property(readonly, nonatomic) PXCuratedLibraryAnalysisStatus *analysisStatus; // @synthesize analysisStatus=_analysisStatus;
 @property(readonly, nonatomic) PXCloudQuotaController *cloudQuotaController; // @synthesize cloudQuotaController=_cloudQuotaController;
-@property(readonly, nonatomic) PXCPLServiceUI *cplServiceUI; // @synthesize cplServiceUI=_cplServiceUI;
 @property(readonly, nonatomic) _Bool hasImportantInformation; // @synthesize hasImportantInformation=_hasImportantInformation;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-@property(nonatomic) __weak id <PXCuratedLibraryFooterCPLActionDelegate> cplActionDelegate; // @synthesize cplActionDelegate=_cplActionDelegate;
 @property(nonatomic) __weak id <PXCuratedLibraryFooterViewModelPresentationDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
 - (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (struct NSObject *)presentingViewControllerForCloudQuotaController:(id)arg1;
 - (void)cloudQuotaController:(id)arg1 presentInformationBanner:(id)arg2;
-- (_Bool)serviceUI:(id)arg1 performAction:(long long)arg2;
-- (void)serviceUI:(id)arg1 progressDidChange:(float)arg2;
-- (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateExposedProperties;
 - (void)_updateHasImportantInformation;
@@ -60,7 +53,7 @@
 - (void)didHideFooter;
 - (void)didShowFooter;
 - (void)setHasImportantInformation:(_Bool)arg1;
-- (id)initWithItemCountsController:(id)arg1 cplService:(id)arg2 analysisStatus:(id)arg3 mode:(long long)arg4;
+- (id)initWithItemCountsController:(id)arg1 cplServiceUI:(id)arg2 analysisStatus:(id)arg3 mode:(long long)arg4;
 - (id)init;
 
 // Remaining properties

@@ -248,6 +248,7 @@
 + (id)_tertiaryFillColor;
 + (id)_secondaryFillColor;
 + (id)_fillColor;
++ (id)_systemChromeShadowColor;
 + (id)_alertControllerDimmingViewColor;
 + (id)_controlVibrantBottomBackgroundColor;
 + (id)_controlVibrantTopBackgroundColor;

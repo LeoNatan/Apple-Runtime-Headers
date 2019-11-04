@@ -15,7 +15,7 @@
 {
     id _target;
     SEL _action;
-    BOOL _expanded;
+    long long _state;
     BOOL _highlighted;
     CALayer *_backgroundLayer;
     CALayer *_upperChevronLayer;
@@ -29,7 +29,7 @@
 + (id)keyPathsForValuesAffectingAlignmentRectInsets;
 + (id)keyPathsForValuesInvalidatingDisplay;
 @property(getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
-@property(getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
+@property long long state; // @synthesize state=_state;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;

@@ -64,6 +64,7 @@
 - (void)updateWithValue:(id)arg1 onSetting:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateWithValue:(id)arg1 onSettingIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateWithEncodedValue:(id)arg1 onSettingIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)settingForKeyPath:(id)arg1;
 - (id)settingForIdentifier:(id)arg1;
 - (id)settingGroupForIdentifier:(id)arg1;
 @property(readonly) NSArray *allObjectIdentifiers;

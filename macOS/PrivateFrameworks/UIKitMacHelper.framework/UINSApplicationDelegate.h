@@ -126,6 +126,9 @@
 @property(copy, nonatomic) CDUnknownBlockType becomeFirstResponderHandler; // @synthesize becomeFirstResponderHandler=_becomeFirstResponderHandler;
 @property(retain, nonatomic) id <NSObject> appearanceObserver; // @synthesize appearanceObserver=_appearanceObserver;
 - (void).cxx_destruct;
+- (void)installIsUIKeyCommandEventHandler:(CDUnknownBlockType)arg1;
+- (void)installHandleUIKeyCommandEventHandler:(CDUnknownBlockType)arg1;
+- (id)convertKeyCodeToUIKeyInput:(id)arg1;
 - (void)_sendSystemAppRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_activateAppAndSendSystemAppRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)activateIgnoringOtherApps:(BOOL)arg1;
@@ -151,7 +154,7 @@
 - (void)_didSetUIKitScaleFactor:(double)arg1;
 @property(readonly, copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void)handleAppleEvent:(id)arg1 withReplyEvent:(id)arg2;
-- (void)_tryToExtractBackgroundLaunchRequestFromCurrentAppleEvent;
+- (BOOL)_tryToExtractBackgroundLaunchRequestFromCurrentAppleEvent;
 - (BOOL)applicationShouldHandleReopen:(id)arg1 hasVisibleWindows:(BOOL)arg2;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)_launchingDidComplete;

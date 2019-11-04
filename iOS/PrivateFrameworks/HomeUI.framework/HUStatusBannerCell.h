@@ -44,7 +44,6 @@
 @property(readonly, copy) NSString *description;
 - (void)_configureBannerForUnfinishedOnboardingFlowKeyPath:(id)arg1;
 - (void)updateUIWithAnimation:(_Bool)arg1;
-- (void)_applyRoundedCornersToLipViewForLayoutWidth:(double)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

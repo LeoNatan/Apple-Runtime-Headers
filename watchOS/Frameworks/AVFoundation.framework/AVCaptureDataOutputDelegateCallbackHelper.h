@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_validateCallbackQueue:(id)arg1 exceptionReason:(id *)arg2;
 - (id)_activeCallbackQueue;
 - (id)_activeDelegate;
+@property(readonly) NSObject<OS_dispatch_queue> *delegateOverrideCallbackQueue;
 @property(readonly) id delegateOverride;
 - (_Bool)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2 exceptionReason:(id *)arg3;
 @property(readonly) NSObject<OS_dispatch_queue> *clientCallbackQueue;

@@ -21,6 +21,7 @@
 @property(nonatomic) __weak ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
 @property(nonatomic, getter=isDone) _Bool done; // @synthesize done=_done;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (void)setDone:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)init;
 - (void)setFrame:(struct CGRect)arg1 leftToRight:(_Bool)arg2;

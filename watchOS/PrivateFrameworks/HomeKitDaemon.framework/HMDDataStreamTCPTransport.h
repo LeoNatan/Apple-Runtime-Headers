@@ -21,9 +21,11 @@
     HMFNetAddress *_remoteAddress;
     NSObject<OS_tcp_connection> *_tcpConnection;
     HMDDataStreamFrameReader *_byteReader;
+    NSString *_logIdentifier;
 }
 
 + (id)logCategory;
+@property(copy, nonatomic) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(retain, nonatomic) HMDDataStreamFrameReader *byteReader; // @synthesize byteReader=_byteReader;
 @property(retain, nonatomic) NSObject<OS_tcp_connection> *tcpConnection; // @synthesize tcpConnection=_tcpConnection;
 @property(retain, nonatomic) HMFNetAddress *remoteAddress; // @synthesize remoteAddress=_remoteAddress;
@@ -38,7 +40,7 @@
 - (void)_start;
 - (void)connect;
 - (void)dealloc;
-- (id)initWithAddress:(id)arg1 port:(int)arg2 workQueue:(id)arg3;
+- (id)initWithAddress:(id)arg1 port:(int)arg2 workQueue:(id)arg3 logIdentifier:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

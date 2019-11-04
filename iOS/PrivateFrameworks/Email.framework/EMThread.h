@@ -12,7 +12,7 @@
 #import <Email/NSCopying-Protocol.h>
 #import <Email/NSSecureCoding-Protocol.h>
 
-@class ECMessageFlags, ECSubject, EFQuery, EMMailboxScope, EMMessage, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString;
+@class ECMessageFlags, ECSubject, EFQuery, EMMailboxScope, EMMessage, EMMessageListChangeObserverHelper, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString;
 @protocol EMCollectionItemID, EMMailboxTypeResolver;
 
 @interface EMThread : EMCollection <EMThreadBuilder, EFLoggable, NSCopying, NSSecureCoding, EMMessageListItem>
@@ -43,10 +43,12 @@
     unsigned long long _count;
     id <EMCollectionItemID> _displayMessageItemID;
     EFQuery *_originatingQuery;
+    EMMessageListChangeObserverHelper *_changeObserverHelper;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)log;
+@property(retain, nonatomic) EMMessageListChangeObserverHelper *changeObserverHelper; // @synthesize changeObserverHelper=_changeObserverHelper;
 @property(readonly, nonatomic) EFQuery *originatingQuery; // @synthesize originatingQuery=_originatingQuery;
 - (void)setIsCCMe:(_Bool)arg1;
 @property(readonly) _Bool isCCMe;
@@ -83,6 +85,7 @@
 - (void)setDate:(id)arg1;
 @property(readonly) NSDate *date;
 - (void).cxx_destruct;
+- (void)notifyChangeObserverAboutChangesByItemIDs:(id)arg1;
 @property(readonly) _Bool isEditable;
 @property(readonly) _Bool shouldArchiveByDefault;
 @property(readonly) _Bool supportsArchiving;
@@ -90,6 +93,7 @@
 @property(readonly) EMMessage *displayMessage;
 @property(readonly) EMObjectID *displayMessageObjectID;
 - (void)setMailboxes:(id)arg1;
+@property long long _internalID;
 @property(readonly, copy) NSArray *mailboxes;
 - (void)setMailboxObjectIDs:(id)arg1;
 @property(readonly, copy) NSArray *mailboxObjectIDs;

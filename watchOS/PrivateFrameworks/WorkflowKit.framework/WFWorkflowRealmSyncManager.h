@@ -10,13 +10,14 @@
 #import <WorkflowKit/WFDatabaseResultObserver-Protocol.h>
 
 @class NSLock, NSMutableArray, WFDatabase, WFDatabaseResult;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue, OS_dispatch_source, WFUserInterface;
 
 @interface WFWorkflowRealmSyncManager : NSObject <WFApplicationStateObserver, WFDatabaseResultObserver>
 {
     _Bool _pendingResume;
     _Bool _syncPending;
     int _accountStatus;
+    id <WFUserInterface> _userInterface;
     WFDatabase *_database;
     WFDatabaseResult *_databaseResultForObservation;
     unsigned int _pauseCount;
@@ -41,6 +42,7 @@
 @property(nonatomic) unsigned int pauseCount; // @synthesize pauseCount=_pauseCount;
 @property(retain, nonatomic) WFDatabaseResult *databaseResultForObservation; // @synthesize databaseResultForObservation=_databaseResultForObservation;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
+@property(retain, nonatomic) id <WFUserInterface> userInterface; // @synthesize userInterface=_userInterface;
 @property(readonly, nonatomic) int accountStatus; // @synthesize accountStatus=_accountStatus;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -61,6 +63,7 @@
 - (void)triggerSync:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)completeSyncWithSuccess:(_Bool)arg1 changes:(_Bool)arg2 error:(id)arg3;
 - (void)pushCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)handleUserDeletedZoneErrorIfNeededWithSuccess:(_Bool)arg1 changes:(_Bool)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)startSync;
 - (void)dealloc;
 - (id)initWithDatabase:(id)arg1;

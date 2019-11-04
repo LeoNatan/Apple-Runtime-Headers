@@ -26,11 +26,13 @@
     _Bool _contentOffsetChanged;
     _Bool _isInEditModeChanged;
     _Bool _toggleCTMChanged;
+    _Bool _flippingFullSizeRenderStateChanged;
     PUBrowsingVideoPlayerChange *_videoPlayerChange;
     PUBrowsingIrisPlayerChange *_irisPlayerChange;
     PUBrowsingAnimatedImagePlayerChange *_animatedImageChange;
 }
 
+@property(nonatomic, setter=_setFlippingFullSizeRenderStateChanged:) _Bool flippingFullSizeRenderStateChanged; // @synthesize flippingFullSizeRenderStateChanged=_flippingFullSizeRenderStateChanged;
 @property(nonatomic, setter=_setToggleCTMChanged:) _Bool toggleCTMChanged; // @synthesize toggleCTMChanged=_toggleCTMChanged;
 @property(nonatomic, setter=_setIsInEditModeChanged:) _Bool isInEditModeChanged; // @synthesize isInEditModeChanged=_isInEditModeChanged;
 @property(nonatomic, setter=_setContentOffsetChanged:) _Bool contentOffsetChanged; // @synthesize contentOffsetChanged=_contentOffsetChanged;

@@ -33,7 +33,7 @@
 - (void)_clientContextDidLoadWithContext:(id)arg1 error:(id)arg2;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (struct CGSize)preferredContentSize;

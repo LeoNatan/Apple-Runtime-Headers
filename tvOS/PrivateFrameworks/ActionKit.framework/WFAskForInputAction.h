@@ -12,6 +12,7 @@
 {
 }
 
+- (id)outputContentClasses;
 - (void)finishRunningWithDate:(id)arg1;
 - (void)finishRunningWithResultText:(id)arg1;
 - (void)getOutputFromIntentResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

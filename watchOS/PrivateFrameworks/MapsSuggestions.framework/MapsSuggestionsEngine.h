@@ -20,7 +20,6 @@
     GEOAutomobileOptions *_automobileOptions;
 }
 
-+ (void)load;
 + (id)defaultCachePath;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(nonatomic) int mapType; // @synthesize mapType=_mapType;

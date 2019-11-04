@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSearchPlaceContextMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_interpretedCategory;
     NSString *_matchedDisplayName;
     NSString *_normalizedQuery;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _isDefaultName;
     struct {
         unsigned int has_isDefaultName:1;
@@ -59,6 +61,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *matchedDisplayName;
 @property(readonly, nonatomic) _Bool hasMatchedDisplayName;
 - (void)_readMatchedDisplayName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

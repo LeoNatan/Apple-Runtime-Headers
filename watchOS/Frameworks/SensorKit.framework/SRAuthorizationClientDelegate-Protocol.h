@@ -6,9 +6,9 @@
 
 #import <SensorKit/NSObject-Protocol.h>
 
-@class NSSet;
+@class NSSet, NSString;
 
 @protocol SRAuthorizationClientDelegate <NSObject>
-- (void)authorizedServicesDidChange:(NSSet *)arg1;
+- (void)authorizedServicesDidChange:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
 @end
 

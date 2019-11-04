@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) UIColor *cropsCornerColor;
 @property(readonly, nonatomic) long long backgroundBlurEffectStyle;
 - (int)_preferredStatusBarVisibility;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (long long)preferredStatusBarStyle;

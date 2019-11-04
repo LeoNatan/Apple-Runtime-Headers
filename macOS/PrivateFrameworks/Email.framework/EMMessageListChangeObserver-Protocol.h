@@ -16,5 +16,6 @@
 @optional
 - (void)collection:(EMCollection *)arg1 oldestItemsUpdatedForMailboxes:(NSDictionary *)arg2;
 - (void)collection:(EMCollection *)arg1 didFinishInitialLoadForThreadWithItemID:(id <EMCollectionItemID>)arg2;
+- (void)collection:(EMCollection *)arg1 changedItemIDs:(NSArray *)arg2 itemIDsWithCountChanges:(NSArray *)arg3;
 @end
 

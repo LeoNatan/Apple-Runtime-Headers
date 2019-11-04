@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class IDSDataChannelLinkContext, NSData, NSMutableArray, NSMutableDictionary;
-@protocol OS_dispatch_semaphore, OS_nw_connection, OS_nw_path_evaluator;
+@protocol OS_nw_connection, OS_nw_path_evaluator;
 
 @interface _IDSDatagramChannel : NSObject
 {
@@ -18,8 +18,8 @@
     CDUnknownBlockType _readHandlerWithOptions;
     _Bool _connected;
     struct os_unfair_lock_s _writeLock;
-    // Error parsing type: Ai, name: _readState
-    NSObject<OS_dispatch_semaphore> *_readSema;
+    struct os_unfair_lock_s _readLock;
+    _Bool _isInvalidated;
     NSObject<OS_nw_connection> *_connection;
     _Bool _hasMetadata;
     _Bool _sentFirstReadLinkInfo;

@@ -13,8 +13,9 @@
 @property(readonly, nonatomic) NSXPCInterface *managerInterface;
 @property(readonly, nonatomic) NSXPCInterface *driverInterface;
 @property(readonly, nonatomic) NSArray *uuids;
-- (void)handlePluginUpdateEnds:(NSArray *)arg1;
-- (void)handlePluginUpdateBegins:(NSArray *)arg1;
+- (void)handleAppsUpdateEnds:(NSArray *)arg1;
+- (void)handleAppsUpdateEnding:(NSArray *)arg1;
+- (void)handleAppsUpdateBegins:(NSArray *)arg1;
 - (void)handleAppsUninstalled:(NSArray *)arg1;
 - (void)handleCancel;
 - (void)handleDisposeWithCompletionHandler:(void (^)(void))arg1;

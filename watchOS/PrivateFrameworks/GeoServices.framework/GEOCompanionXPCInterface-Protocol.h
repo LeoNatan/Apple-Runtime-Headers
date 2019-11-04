@@ -8,13 +8,13 @@
 
 @protocol GEOCompanionXPCInterface
 - (void)fetchExperimentsConfiguration:(void (^)(NSData *, NSError *))arg1;
-- (void)requestPlaceData:(GEOPDPlaceRequest *)arg1 traits:(GEOMapServiceTraits *)arg2 withCallback:(void (^)(NSData *, NSError *))arg3;
+- (void)requestPlaceData:(GEOPDPlaceRequest *)arg1 traits:(GEOMapServiceTraits *)arg2 bundleIdentifier:(NSString *)arg3 withCallback:(void (^)(NSData *, NSError *))arg4;
 - (void)checkPairedDeviceReachability:(void (^)(_Bool))arg1;
 - (void)loadResource:(NSString *)arg1 fromURL:(NSURL *)arg2 isRegional:(_Bool)arg3 withCallback:(void (^)(NSData *, NSError *))arg4;
 - (void)updateCountryCode:(void (^)(NSString *, NSError *))arg1;
 - (void)reportCorruptTile:(NSData *)arg1;
 - (void)cancelTilesForRequestIdentifier:(NSString *)arg1;
-- (void)sendEnqueuedTileFetchesForRequestIdentifier:(NSString *)arg1;
+- (void)sendEnqueuedTileFetchesForRequestIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2;
 - (void)enqueueFetchTile:(NSData *)arg1 priority:(unsigned int)arg2 baseURL:(NSURL *)arg3 baseHeaders:(NSDictionary *)arg4 cachedBaseETag:(NSString *)arg5 localizationURL:(NSURL *)arg6 localizationHeaders:(NSDictionary *)arg7 cachedLocalizationETag:(NSString *)arg8 checksumMethod:(int)arg9 signpostID:(unsigned long long)arg10 forRequestIdentifier:(NSString *)arg11 callback:(void (^)(NSData *, NSData *, NSString *, NSData *, NSString *, NSError *, NSDictionary *))arg12;
 @end
 

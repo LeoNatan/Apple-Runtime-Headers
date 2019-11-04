@@ -45,6 +45,7 @@
     PHImportAsset *_videoComplement;
     PHImportAsset *_largeRender;
     PHImportAsset *_largeMovieRender;
+    PHImportAsset *_spatialOverCapture;
     PHImportAsset *_base;
     PHImportAsset *_thumbnailRender;
     PHImportAsset *_miniRender;
@@ -95,6 +96,7 @@
 @property(retain, nonatomic) PHImportAsset *miniRender; // @synthesize miniRender=_miniRender;
 @property(retain, nonatomic) PHImportAsset *thumbnailRender; // @synthesize thumbnailRender=_thumbnailRender;
 @property(retain, nonatomic) PHImportAsset *base; // @synthesize base=_base;
+@property(retain, nonatomic) PHImportAsset *spatialOverCapture; // @synthesize spatialOverCapture=_spatialOverCapture;
 @property(retain, nonatomic) PHImportAsset *largeMovieRender; // @synthesize largeMovieRender=_largeMovieRender;
 @property(retain, nonatomic) PHImportAsset *largeRender; // @synthesize largeRender=_largeRender;
 @property(retain, nonatomic) PHImportAsset *videoComplement; // @synthesize videoComplement=_videoComplement;
@@ -191,6 +193,7 @@
 @property(readonly, nonatomic) NSString *cameraModel;
 @property(readonly, nonatomic) NSString *cameraMake;
 @property(readonly, nonatomic) NSNumber *duration;
+- (id)spatialOverCaptureIdentifier;
 - (id)mediaGroupId;
 - (int)burstPickType;
 - (id)groupingUUID;
@@ -207,6 +210,7 @@
 - (id)basenameForOriginalAdjustmentData;
 - (BOOL)isOriginalAdjustmentData;
 - (BOOL)isBase;
+- (BOOL)isSpatialOverCapture;
 - (BOOL)isRender;
 - (BOOL)isPrimary;
 - (BOOL)isRepresentation;

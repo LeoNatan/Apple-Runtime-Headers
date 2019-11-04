@@ -48,6 +48,7 @@
 + (id)zettabytes;
 + (id)yottabytes;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

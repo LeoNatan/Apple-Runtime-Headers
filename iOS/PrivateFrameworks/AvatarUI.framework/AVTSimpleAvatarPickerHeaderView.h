@@ -13,17 +13,20 @@
     AVTCircularButton *_button;
     CDUnknownBlockType _buttonPressedBlock;
     NSString *_currentSymbolName;
-    UIImageSymbolConfiguration *_symbolConfiguration;
+    UIImageSymbolConfiguration *_plusSymbolConfiguration;
+    UIImageSymbolConfiguration *_ellipsisSymbolConfiguration;
 }
 
 + (id)reuseIdentifier;
-@property(readonly, nonatomic) UIImageSymbolConfiguration *symbolConfiguration; // @synthesize symbolConfiguration=_symbolConfiguration;
+@property(retain, nonatomic) UIImageSymbolConfiguration *ellipsisSymbolConfiguration; // @synthesize ellipsisSymbolConfiguration=_ellipsisSymbolConfiguration;
+@property(retain, nonatomic) UIImageSymbolConfiguration *plusSymbolConfiguration; // @synthesize plusSymbolConfiguration=_plusSymbolConfiguration;
 @property(retain, nonatomic) NSString *currentSymbolName; // @synthesize currentSymbolName=_currentSymbolName;
 @property(copy, nonatomic) CDUnknownBlockType buttonPressedBlock; // @synthesize buttonPressedBlock=_buttonPressedBlock;
 @property(readonly, nonatomic) AVTCircularButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
-- (void)updateWithSymbolNamed:(id)arg1 animated:(_Bool)arg2;
+- (void)updateWithSymbolNamed:(id)arg1 configuration:(id)arg2 animated:(_Bool)arg3;
+- (void)updateForEditMode:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setupLayout;
 - (id)initWithFrame:(struct CGRect)arg1;
 

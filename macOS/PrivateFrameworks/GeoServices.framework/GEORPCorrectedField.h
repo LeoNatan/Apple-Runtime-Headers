@@ -13,10 +13,12 @@
 @interface GEORPCorrectedField : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_correctedValue;
     NSString *_fieldName;
     NSString *_originalValue;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _field;
     BOOL _isMarkedIncorrect;
     struct {
@@ -60,6 +62,8 @@
 - (id)fieldAsString:(int)arg1;
 @property(nonatomic) BOOL hasField;
 @property(nonatomic) int field;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -13,9 +13,11 @@
 @interface GEOTransitIncidentItem : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_transitIncidentTitle;
     NSString *_transitLineMuid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_transitIncidentTitle:1;
         unsigned int read_transitLineMuid:1;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) NSString *transitIncidentTitle;
 @property(readonly, nonatomic) BOOL hasTransitIncidentTitle;
 - (void)_readTransitIncidentTitle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

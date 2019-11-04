@@ -12,6 +12,7 @@
 {
 }
 
+- (void)handleCloseButtonOfCharacterPickerFunctionRowItem;
 - (void)setAllowsCollapsingCandidateList:(BOOL)arg1;
 - (id)exportedInterface;
 - (void)loadView;

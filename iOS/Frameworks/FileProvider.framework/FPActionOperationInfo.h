@@ -14,6 +14,7 @@
 {
     _Bool _attachSandboxExtensionsOnXPCEncoding;
     _Bool __t_clientDrivenReader;
+    unsigned int _qos;
     NSString *_operationID;
     NSArray *_roots;
     unsigned long long __t_moveQueueWidth;
@@ -22,11 +23,11 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool _t_clientDrivenReader; // @synthesize _t_clientDrivenReader=__t_clientDrivenReader;
 @property(nonatomic) unsigned long long _t_moveQueueWidth; // @synthesize _t_moveQueueWidth=__t_moveQueueWidth;
+@property(nonatomic) unsigned int qos; // @synthesize qos=_qos;
 @property(nonatomic) _Bool attachSandboxExtensionsOnXPCEncoding; // @synthesize attachSandboxExtensionsOnXPCEncoding=_attachSandboxExtensionsOnXPCEncoding;
 @property(retain, nonatomic) NSArray *roots; // @synthesize roots=_roots;
 @property(copy, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
 - (void).cxx_destruct;
-- (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithOperationID:(id)arg1 roots:(id)arg2;

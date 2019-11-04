@@ -8,5 +8,6 @@
 
 @interface CIImage (PUPerspectiveTransform)
 -     // Error parsing type: @64@0:8{?=[3]}16, name: pu_imageWithPerspectiveTransform:
+-     // Error parsing type: @96@0:8{?=[3]}16{CGRect={CGPoint=dd}{CGSize=dd}}64, name: pu_imageWithPerspectiveTransform:extent:
 @end
 

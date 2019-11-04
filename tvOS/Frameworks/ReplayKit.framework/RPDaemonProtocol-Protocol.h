@@ -20,6 +20,8 @@
 - (oneway void)setMicrophoneEnabled:(_Bool)arg1;
 - (oneway void)resumeRecordingWithWindowLayerContextID:(unsigned int)arg1 completionHandler:(void (^)(_Bool))arg2;
 - (oneway void)pauseRecording;
+- (oneway void)macApplicationDidBecomeActiveWithContextID:(unsigned int)arg1 completionHandler:(void (^)(_Bool))arg2;
+- (oneway void)macApplicationDidResignActive;
 - (oneway void)saveVideoToCameraRoll:(NSURL *)arg1 handler:(void (^)(NSError *))arg2;
 - (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(void (^)(NSURL *, NSError *))arg3;
 - (oneway void)stopRecordingWithHandler:(void (^)(NSURL *, NSError *))arg1;

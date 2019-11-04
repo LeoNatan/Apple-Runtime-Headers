@@ -13,11 +13,13 @@
 @interface GEORPPoiFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPPoiCorrections *_corrections;
     GEOPDPlaceRequest *_placeRequest;
     GEOPDPlace *_place;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _correctionType;
     _Bool _addOtherPoi;
     struct {
@@ -65,6 +67,8 @@
 - (id)correctionTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasCorrectionType;
 @property(nonatomic) int correctionType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

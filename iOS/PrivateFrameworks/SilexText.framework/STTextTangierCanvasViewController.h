@@ -8,15 +8,17 @@
 
 @interface STTextTangierCanvasViewController : TSWPiOSCanvasViewController
 {
+    _Bool _selectionEnabled;
 }
 
+@property(nonatomic) _Bool selectionEnabled; // @synthesize selectionEnabled=_selectionEnabled;
 - (void)dealloc;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (void)interactionDidEnd:(id)arg1;
 - (_Bool)interactionShouldBegin:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)selectAll:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canBecomeFirstResponder;
-- (void)viewDidAppear:(_Bool)arg1;
 - (id)actionForHyperlink:(id)arg1 inRep:(id)arg2 gesture:(id)arg3;
 - (void)loadView;
 

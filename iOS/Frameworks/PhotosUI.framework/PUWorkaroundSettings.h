@@ -10,10 +10,12 @@ __attribute__((visibility("hidden")))
 @interface PUWorkaroundSettings : PXSettings
 {
     _Bool _addRemoveVideoLayer;
+    _Bool _shouldWorkAround54502886;
 }
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+@property(nonatomic) _Bool shouldWorkAround54502886; // @synthesize shouldWorkAround54502886=_shouldWorkAround54502886;
 @property(nonatomic) _Bool addRemoveVideoLayer; // @synthesize addRemoveVideoLayer=_addRemoveVideoLayer;
 - (void)setDefaultValues;
 - (id)parentSettings;

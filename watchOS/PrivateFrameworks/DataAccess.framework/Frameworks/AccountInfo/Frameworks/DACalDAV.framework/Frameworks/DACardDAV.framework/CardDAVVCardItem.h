@@ -29,8 +29,7 @@
 @property(readonly, nonatomic) NSData *dataPayload;
 @property(retain, nonatomic) NSNumber *clientID;
 @property(retain, nonatomic) NSURL *serverID;
-- (id)convertToDAContactSearchResultElementWithAccount:(id)arg1;
-- (id)convertToDAContactSearchResultElement:(id)arg1;
+- (id)convertToDAContactSearchResultElement;
 - (id)createOrphanedABRecordFromParsedVCardOutRecordType:(unsigned int *)arg1;
 - (void)loadClientIDs;
 - (_Bool)saveIfGroupWithLocalObject:(id)arg1 toContainer:(id)arg2 shouldMergeProperties:(_Bool)arg3 outMergeDidChooseLocalProperties:(_Bool *)arg4 account:(id)arg5;

@@ -13,10 +13,12 @@
 @interface GEOPDStorefrontPresentation : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOPDStorefrontView *_closeUpView;
     NSString *_overlayImageUrl;
     GEOPDStorefrontView *_standOffView;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_closeUpView:1;
         unsigned int read_overlayImageUrl:1;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) GEOPDStorefrontView *closeUpView;
 @property(readonly, nonatomic) _Bool hasCloseUpView;
 - (void)_readCloseUpView;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

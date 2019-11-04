@@ -12,7 +12,7 @@
 }
 
 + (id)sharedInstance;
-- (void)_notifyObserver:(id)arg1 splitterState:(unsigned long long)arg2;
+- (void)_notifyObserver:(id)arg1 splitterState:(unsigned long long)arg2 shouldDisableSpeakerVerificationInSplitterMode:(_Bool)arg3;
 - (void)_didReceiveWirelessSplitterStateChange;
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;

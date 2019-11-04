@@ -6,18 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class KTApplicationPublicKeyStore, NSString;
 
 @interface KTInclusionProofVerifier : NSObject
 {
-    NSDictionary *_appTrustedKeys;
-    NSDictionary *_tltTrustedKeys;
+    KTApplicationPublicKeyStore *_keyStore;
     NSString *_application;
 }
 
 @property(retain) NSString *application; // @synthesize application=_application;
-@property(retain) NSDictionary *tltTrustedKeys; // @synthesize tltTrustedKeys=_tltTrustedKeys;
-@property(retain) NSDictionary *appTrustedKeys; // @synthesize appTrustedKeys=_appTrustedKeys;
+@property(readonly) KTApplicationPublicKeyStore *keyStore; // @synthesize keyStore=_keyStore;
 - (void).cxx_destruct;
 - (_Bool)verifyInclusionProofWithMapEntry:(id)arg1 perAppLogEntry:(id)arg2 topLevelTreeEntry:(id)arg3 error:(id *)arg4;
 - (id)initWithKeyStore:(id)arg1 application:(id)arg2;

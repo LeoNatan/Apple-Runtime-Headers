@@ -113,7 +113,7 @@
 - (void)_loadLayoutRules;
 - (void)layoutSubviews;
 - (_Bool)slotUsesCurvedText:(id)arg1;
-- (void)_applyEntryModel:(id)arg1 byFraction:(float)arg2 updateLabels:(_Bool)arg3 animated:(_Bool)arg4;
+- (void)_applyEntryModel:(id)arg1 byFraction:(float)arg2 updateLabels:(_Bool)arg3 ignoreScreenBlanked:(_Bool)arg4 animated:(_Bool)arg5;
 - (void)_applyCurrentEntryModelByFraction:(float)arg1 updateLabels:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_applyCurrentEntryModelAnimated:(_Bool)arg1;
 - (void)applyEntryModelWithUnfilledRings:(id)arg1;

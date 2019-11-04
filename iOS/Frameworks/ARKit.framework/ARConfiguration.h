@@ -45,6 +45,7 @@
 @property(retain, nonatomic) ARVideoFormat *videoFormat; // @synthesize videoFormat=_videoFormat;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isKindOfConfiguration:(Class)arg1;
 - (id)description;
 - (id)descriptionWithoutBrackets;
 - (_Bool)isEqual:(id)arg1;

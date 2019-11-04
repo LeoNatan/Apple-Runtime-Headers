@@ -26,6 +26,7 @@
     EMSecurityInformation *_securityInformation;
     CSSearchableItem *_searchableItem;
     EMListUnsubscribeCommand *_unsubscribeCommand;
+    int _transportType;
     EFSandboxedURLWrapper *_urlWrapper;
     id <_EMDistantContentRepresentation> _distantContentRepresentation;
     CDUnknownBlockType _requestMoreContentBlock;
@@ -35,10 +36,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)temporaryURLWithData:(id)arg1 clientIdentifier:(id)arg2 preferredFilename:(id)arg3 pathExtension:(id)arg4 cleanupInvocable:(id *)arg5 error:(id *)arg6;
 + (id)distantContentRepresentationInterface;
++ (id)contentRequestDelegateInterface;
 + (id)log;
 @property(copy, nonatomic) CDUnknownBlockType requestMoreContentBlock; // @synthesize requestMoreContentBlock=_requestMoreContentBlock;
 @property(retain, nonatomic) id <_EMDistantContentRepresentation> distantContentRepresentation; // @synthesize distantContentRepresentation=_distantContentRepresentation;
 @property(retain, nonatomic) EFSandboxedURLWrapper *urlWrapper; // @synthesize urlWrapper=_urlWrapper;
+@property(nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(nonatomic) long long remainingByteCount; // @synthesize remainingByteCount=_remainingByteCount;
 @property(nonatomic) _Bool hasMoreContent; // @synthesize hasMoreContent=_hasMoreContent;
 @property(retain, nonatomic) EMListUnsubscribeCommand *unsubscribeCommand; // @synthesize unsubscribeCommand=_unsubscribeCommand;
@@ -62,7 +65,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithContentMessage:(id)arg1;
+- (id)initWithContentMessage:(id)arg1 data:(id)arg2 clientIdentifier:(id)arg3 preferredFilename:(id)arg4 extension:(id)arg5;
 - (id)initWithData:(id)arg1 clientIdentifier:(id)arg2 extension:(id)arg3 relatedItems:(id)arg4 securityInformation:(id)arg5;
 - (id)initWithData:(id)arg1 clientIdentifier:(id)arg2 preferredFilename:(id)arg3 extension:(id)arg4 relatedItems:(id)arg5 securityInformation:(id)arg6;
 - (id)initWithContentURL:(id)arg1 relatedItems:(id)arg2 securityInformation:(id)arg3;

@@ -24,6 +24,8 @@
 - (void)_sendCancelledForButton:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
 - (void)_sendEndedHoldForButton:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
 - (void)_sendBeganHoldForButton:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
+- (void)_accessibilitySetSynthesizedHoldButton:(unsigned long long)arg1;
+- (unsigned long long)_accessibilitySynthesizedHoldButton;
 - (void)_sendRegisteredTapForButton:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
 - (void)_sendTouchMightHaveBegunForButton:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
 - (void)_accessibilitySetTapAssistanceTimer:(id)arg1;

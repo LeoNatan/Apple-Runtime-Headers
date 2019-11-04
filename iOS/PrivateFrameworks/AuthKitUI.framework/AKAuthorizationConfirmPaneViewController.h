@@ -93,7 +93,6 @@
 - (void)_fetchWebIconIfNeeded;
 - (void)_setupIconView;
 - (void)_addUseOtherIDButtonToContext:(id)arg1;
-- (void)_showOrHideConfirmButton;
 - (void)_enableOrDisableConfirmButton;
 - (void)_addAuthorizationButtonToPaneContext:(id)arg1;
 - (id)_infoLabelText;
@@ -114,7 +113,7 @@
 - (void)_endEditing;
 - (void)_beginEditingRow:(unsigned long long)arg1;
 - (void)_beginEditing;
-- (double)contentTrayOffset;
+- (double)contentScrollOffset;
 - (_Bool)_shouldOverrideIntrinsicContentHeight;
 - (double)intrinsicContentHeight;
 - (void)_updateLayoutForHeightChange:(double)arg1;

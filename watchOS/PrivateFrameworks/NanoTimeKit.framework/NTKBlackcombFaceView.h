@@ -24,6 +24,7 @@
 + (int)uiSensitivity;
 - (void).cxx_destruct;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
+- (_Bool)_wantsConstantSpeedZoom;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
 - (void)tritium_didTransitionToTritiumOff;
@@ -32,6 +33,7 @@
 - (void)tritium_loadContentViews;
 - (void)layoutSubviews;
 - (void)_prepareForStatusChange:(_Bool)arg1;
+- (_Bool)_wantsStatusBarIconShadow;
 - (float)_verticalPaddingForStatusBar;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (int)_keylineStyleForComplicationSlot:(id)arg1;

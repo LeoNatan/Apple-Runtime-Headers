@@ -30,7 +30,7 @@
 @property(retain) NSDateInterval *interval; // @synthesize interval=_interval;
 - (id)sr_dictionaryRepresentation;
 - (id)deleteToDeletes;
-- (id)longWordTouchUpDown;
+- (id)longWordTouchDownDown;
 - (id)longWordTouchDownUp;
 - (id)longWordDownErrorDistance;
 - (id)longWordUpErrorDistance;
@@ -61,7 +61,7 @@
 - (id)charKeyToAnyTapKey;
 - (id)shortWordCharKeyToCharKey;
 - (id)charKeyToPrediction;
-- (id)touchUpDown;
+- (id)touchDownDown;
 - (id)shortWordCharKeyTouchDownUp;
 - (id)deleteTouchDownUp;
 - (id)spaceTouchDownUp;
@@ -74,6 +74,7 @@
 - (id)spaceUpErrorDistance;
 - (id)downErrorDistance;
 - (id)upErrorDistance;
+- (double)totalTypingDuration;
 - (int)totalHitTestCorrections;
 - (int)totalSubstitutionCorrections;
 - (int)totalNearKeyCorrections;

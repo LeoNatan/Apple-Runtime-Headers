@@ -8,17 +8,19 @@
 
 #import <CFNetwork/NSURLSessionDelegate-Protocol.h>
 
-@class NSError, NSString;
+@class NSData, NSError, NSString;
 
 @interface myDeli : NSObject <NSURLSessionDelegate>
 {
     NSError *_errorResult;
     BOOL _receivedResponse;
     BOOL _hasCanceled;
+    NSData *resumeData;
 }
 
 @property BOOL hasCanceled; // @synthesize hasCanceled=_hasCanceled;
 @property BOOL receivedResponse; // @synthesize receivedResponse=_receivedResponse;
+@property(copy) NSData *resumeData; // @synthesize resumeData;
 @property(retain) NSError *someError; // @synthesize someError=_errorResult;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;

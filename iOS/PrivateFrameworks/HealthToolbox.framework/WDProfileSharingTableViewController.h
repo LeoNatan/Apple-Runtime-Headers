@@ -6,33 +6,38 @@
 
 #import <HealthUI/HKTableViewController.h>
 
+#import <HealthToolbox/HKSourceListDataSourceObserver-Protocol.h>
 #import <HealthToolbox/HKSwitchTableViewCellDelegate-Protocol.h>
 
-@class HKCharacteristicType, HKDisplayType, HKHealthStore, HKSourceListDataSource, NSArray, NSDictionary, WDDisplayTypeDescriptionTableFooterView, WDProfile;
+@class HKCharacteristicType, HKDisplayType, HKHealthStore, HKSourceListDataSource, NSDictionary, WDDisplayTypeDescriptionTableFooterView, WDProfile;
 
 __attribute__((visibility("hidden")))
-@interface WDProfileSharingTableViewController : HKTableViewController <HKSwitchTableViewCellDelegate>
+@interface WDProfileSharingTableViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HKSourceListDataSourceObserver>
 {
     WDProfile *_profile;
     HKHealthStore *_healthStore;
-    HKSourceListDataSource *_sourceDataSource;
     HKCharacteristicType *_characteristicType;
-    NSArray *_characteristicSharingSources;
     NSDictionary *_characteristicAuthorizationRecordsBySource;
     WDDisplayTypeDescriptionTableFooterView *_footerView;
     HKDisplayType *_displayType;
     _Bool _isLoaded;
+    HKSourceListDataSource *_sourceListDataSource;
+    NSDictionary *_sourceToAuthRecord;
 }
 
+@property(copy, nonatomic) NSDictionary *sourceToAuthRecord; // @synthesize sourceToAuthRecord=_sourceToAuthRecord;
+@property(retain, nonatomic) HKSourceListDataSource *sourceListDataSource; // @synthesize sourceListDataSource=_sourceListDataSource;
 - (void).cxx_destruct;
+- (void)sourceListDataSourceDidUpdate:(id)arg1;
 - (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
+- (id)_sourceForIndexPath:(id)arg1;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)_sortedSourcesFromAuthorizationRecords:(id)arg1;
-- (void)_fetchAuthorizationRecordsBySourceForCharacteristic:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)_fetchAuthorizationRecordsBySourceForCharacteristic:(id)arg1;
 - (void)_gatherDataAndRefreshUI;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_adjustFooterHeight;

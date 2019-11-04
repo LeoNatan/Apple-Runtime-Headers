@@ -12,6 +12,7 @@
 + (id)rem_dateWithDateComponentsUsingArchivingTimeZone:(id)arg1;
 + (id)rem_dateComponentsWithDate:(id)arg1 timeZone:(id)arg2 isAllDay:(_Bool)arg3;
 + (id)rem_dateComponentsWithDateUsingArchivingTimeZone:(id)arg1 isAllDay:(_Bool)arg2;
+- (id)rem_stringRepresentation;
 - (long long)rem_compare:(id)arg1;
 - (_Bool)rem_isWeekendDateComponents;
 - (_Bool)rem_isAllDayDateComponents;

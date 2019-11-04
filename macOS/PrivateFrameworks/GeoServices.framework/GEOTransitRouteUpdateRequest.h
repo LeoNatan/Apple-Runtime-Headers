@@ -13,7 +13,6 @@
 @interface GEOTransitRouteUpdateRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDABClientDatasetMetadata *_abClientMetadata;
     NSData *_directionsResponseId;
@@ -24,6 +23,9 @@
     NSString *_requestingAppId;
     NSMutableArray *_routeIdentifiers;
     NSMutableArray *_serviceTags;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_abClientMetadata:1;
@@ -111,6 +113,8 @@
 - (void)clearRouteIdentifiers;
 @property(retain, nonatomic) NSMutableArray *routeIdentifiers;
 - (void)_readRouteIdentifiers;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSArray *allClientRouteIDs;
 @property(readonly, nonatomic) NSUUID *clientRouteID;
 

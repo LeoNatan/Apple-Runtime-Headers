@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldAnimateLift;
     _Bool _preparedForLift;
     _Bool _hasBegunDrag;
+    _Bool _dragDidBeginInDruid;
     NSMutableArray *_animationBlocks;
     NSMutableArray *_completionBlocks;
     long long _state;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _initialLocation;
 }
 
+@property(nonatomic) _Bool dragDidBeginInDruid; // @synthesize dragDidBeginInDruid=_dragDidBeginInDruid;
 @property(nonatomic) _Bool hasBegunDrag; // @synthesize hasBegunDrag=_hasBegunDrag;
 @property(retain, nonatomic) UITouch *initiationTouch; // @synthesize initiationTouch=_initiationTouch;
 @property(nonatomic) long long invocationType; // @synthesize invocationType=_invocationType;

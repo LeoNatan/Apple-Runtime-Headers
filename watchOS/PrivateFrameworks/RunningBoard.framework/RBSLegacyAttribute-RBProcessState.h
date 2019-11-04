@@ -22,10 +22,8 @@
 - (unsigned char)_role;
 - (_Bool)_gpuAllowed;
 - (_Bool)_preventIdleSleep;
-- (_Bool)_isValidViewServiceRequest:(id)arg1 withError:(id *)arg2;
-- (_Bool)_isApplicableToTargetIdentity:(id)arg1;
-- (_Bool)_isApplicableToTargetPropertiesInContext:(id)arg1 outBundleProperty:(out id *)arg2;
-- (_Bool)_isValidForOriginatorEntitlementsInContext:(id)arg1;
+- (_Bool)_isTargetValidForContext:(id)arg1 errorReason:(out id *)arg2;
+- (_Bool)_isOriginatorValidForContext:(id)arg1 errorReason:(out id *)arg2;
 - (_Bool)conflictsWithAttribute:(id)arg1;
 - (_Bool)isValidForContext:(id)arg1 withError:(id *)arg2;
 - (void)applyToProcessState:(id)arg1 attributePath:(unsigned long long)arg2 context:(id)arg3;

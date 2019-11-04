@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDMerchantLookupParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAdamAppIdentifier *_appIdentifier;
     NSString *_industryCategory;
@@ -30,9 +29,13 @@ __attribute__((visibility("hidden")))
     GEOLocation *_transactionLocation;
     double _transactionTimestamp;
     GEOPDWarsawMerchantIdentifier *_warsawMerchantIdentifier;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _transactionStatus;
     int _transactionType;
     BOOL _enableBrandMuidFallback;
+    BOOL _fuzzyMatched;
     struct {
         unsigned int has_industryCode:1;
         unsigned int has_transactionLocationAge:1;
@@ -40,6 +43,7 @@ __attribute__((visibility("hidden")))
         unsigned int has_transactionStatus:1;
         unsigned int has_transactionType:1;
         unsigned int has_enableBrandMuidFallback:1;
+        unsigned int has_fuzzyMatched:1;
         unsigned int read_unknownFields:1;
         unsigned int read_appIdentifier:1;
         unsigned int read_industryCategory:1;
@@ -70,6 +74,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_transactionStatus:1;
         unsigned int wrote_transactionType:1;
         unsigned int wrote_enableBrandMuidFallback:1;
+        unsigned int wrote_fuzzyMatched:1;
     } _flags;
 }
 
@@ -88,6 +93,8 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasFuzzyMatched;
+@property(nonatomic) BOOL fuzzyMatched;
 @property(retain, nonatomic) NSString *transactionId;
 @property(readonly, nonatomic) BOOL hasTransactionId;
 - (void)_readTransactionId;
@@ -137,6 +144,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *paymentNetwork;
 @property(readonly, nonatomic) BOOL hasPaymentNetwork;
 - (void)_readPaymentNetwork;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

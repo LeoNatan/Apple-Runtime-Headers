@@ -19,7 +19,7 @@
     // Error parsing type: , name: unit
     // Error parsing type: , name: preferredColors
     // Error parsing type: , name: chartableXRange
-    // Error parsing type: , name: minimumAxisSpace
+    // Error parsing type: , name: chartableYRange
 }
 
 - (void).cxx_destruct;

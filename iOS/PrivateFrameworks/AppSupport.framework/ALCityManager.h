@@ -49,6 +49,7 @@
 - (id)citiesMatchingQualifier:(id)arg1;
 - (id)bestCityForLegacyCity:(struct __CFArray *)arg1;
 - (id)cityForClassicIdentifier:(id)arg1;
+- (id)_cityForClassicIdentifier:(id)arg1 commaSearchOptions:(unsigned long long)arg2;
 - (id)citiesWithIdentifiers:(id)arg1;
 - (void)localizeCities:(id)arg1;
 - (id)citiesMatchingName:(id)arg1 localized:(_Bool)arg2;

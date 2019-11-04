@@ -6,33 +6,42 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CLKDevice, UIImageView;
+@class CAGradientLayer, CLKDevice, NTKSiderealColorManager, UIImageView;
 
 @interface NTKSiderealSolarContainerView : UIView
 {
     CLKDevice *_device;
-    UIView *_dayContainerView;
     UIImageView *_dayPathGlow;
-    UIImageView *_dayDiskGlow;
+    UIImageView *_dayDiskBloom;
     CAGradientLayer *_dayDiskGnomon;
-    UIView *_nightContainerView;
     CAGradientLayer *_nightDiskGnomon;
     double _orbitDiameter;
+    NTKSiderealColorManager *_colorManager;
+    UIView *_dayContainerView;
+    UIView *_nightContainerView;
     UIView *_dayDisk;
     UIView *_dayAccessoryContainerView;
     UIView *_nightDisk;
+    UIView *_nightRing;
     UIView *_nightAccessoryContainerView;
 }
 
 @property(retain, nonatomic) UIView *nightAccessoryContainerView; // @synthesize nightAccessoryContainerView=_nightAccessoryContainerView;
+@property(retain, nonatomic) UIView *nightRing; // @synthesize nightRing=_nightRing;
 @property(retain, nonatomic) UIView *nightDisk; // @synthesize nightDisk=_nightDisk;
 @property(retain, nonatomic) UIView *dayAccessoryContainerView; // @synthesize dayAccessoryContainerView=_dayAccessoryContainerView;
 @property(retain, nonatomic) UIView *dayDisk; // @synthesize dayDisk=_dayDisk;
+@property(retain, nonatomic) UIView *nightContainerView; // @synthesize nightContainerView=_nightContainerView;
+@property(retain, nonatomic) UIView *dayContainerView; // @synthesize dayContainerView=_dayContainerView;
 - (void).cxx_destruct;
 - (id)_newGnomonView;
-- (void)setSolarDayMaskPath:(id)arg1;
 - (void)setSolarDayProgress:(double)arg1;
-- (void)setSolarDayAltitude:(CDStruct_869f9c67)arg1;
+- (double)poseForNightRingImage;
+- (double)poseForNightDiskImage;
+- (double)poseForNightGnomonImage;
+- (double)poseForDayDiskImage;
+- (double)poseForDayDiskBloomImage;
+- (double)poseForDayGnomonImage;
 - (id)initWithFrame:(struct CGRect)arg1 orbitDiameter:(double)arg2 device:(id)arg3;
 
 @end

@@ -25,7 +25,6 @@
 - (id)wf_stringByTrimmingLeadingWhitespaceAndNewlineCharacters;
 - (id)wf_stringByTrimmingTrailingCharactersInSet:(id)arg1;
 - (id)wf_stringByTrimmingLeadingCharactersInSet:(id)arg1;
-- (_Bool)wf_hasStrongRTLCharacter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

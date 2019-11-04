@@ -17,6 +17,8 @@
     NSMutableDictionary *_flipVideoURLs;
     BOOL _canHandleAdjustmentData;
     NSNumber *_baseVersionNeeded;
+    NSURL *_overCapturePhotoURL;
+    NSURL *_overCaptureVideoURL;
     NSURL *_frontSwappingImageRenderURL;
     NSURL *_backSwappingImageRenderURL;
     NSURL *_frontSwappingVideoRenderURL;
@@ -29,6 +31,8 @@
 @property(copy, nonatomic) NSURL *frontSwappingVideoRenderURL; // @synthesize frontSwappingVideoRenderURL=_frontSwappingVideoRenderURL;
 @property(copy, nonatomic) NSURL *backSwappingImageRenderURL; // @synthesize backSwappingImageRenderURL=_backSwappingImageRenderURL;
 @property(copy, nonatomic) NSURL *frontSwappingImageRenderURL; // @synthesize frontSwappingImageRenderURL=_frontSwappingImageRenderURL;
+@property(retain, nonatomic) NSURL *overCaptureVideoURL; // @synthesize overCaptureVideoURL=_overCaptureVideoURL;
+@property(retain, nonatomic) NSURL *overCapturePhotoURL; // @synthesize overCapturePhotoURL=_overCapturePhotoURL;
 @property(retain, nonatomic) NSNumber *baseVersionNeeded; // @synthesize baseVersionNeeded=_baseVersionNeeded;
 @property(nonatomic) BOOL canHandleAdjustmentData; // @synthesize canHandleAdjustmentData=_canHandleAdjustmentData;
 - (void).cxx_destruct;

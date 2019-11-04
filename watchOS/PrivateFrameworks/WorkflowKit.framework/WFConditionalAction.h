@@ -38,6 +38,7 @@
 - (Class)settingsViewControllerClass;
 - (_Bool)groupContainsOtherwiseAction;
 - (id)defaultOutputName;
+- (id)inputSourceInWorkflow:(id)arg1;
 - (_Bool)ignoresOutputFromAction:(id)arg1 inWorkflow:(id)arg2;
 - (id)inputContentClasses;
 - (_Bool)inputRequired;

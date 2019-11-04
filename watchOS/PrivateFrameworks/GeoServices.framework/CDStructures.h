@@ -1132,9 +1132,9 @@ typedef struct {
 } CDStruct_7523a67d;
 
 typedef struct {
-    unsigned int pos;
-    unsigned int length;
-} CDStruct_30d0674c;
+    unsigned int _field1;
+    unsigned int _field2;
+} CDStruct_c0454aff;
 
 typedef struct {
     unsigned int _field1;
@@ -1678,6 +1678,15 @@ typedef struct {
 
 typedef struct {
     unsigned int read_unknownFields:1;
+    unsigned int read_context:1;
+    unsigned int read_corrections:1;
+    unsigned int wrote_unknownFields:1;
+    unsigned int wrote_context:1;
+    unsigned int wrote_corrections:1;
+} CDStruct_5bb8e4f8;
+
+typedef struct {
+    unsigned int read_unknownFields:1;
     unsigned int read_image:1;
     unsigned int read_name:1;
     unsigned int wrote_unknownFields:1;
@@ -1716,6 +1725,11 @@ typedef struct {
     unsigned int has_addressType:1;
     unsigned int has_placeType:1;
 } CDStruct_2d9f5d20;
+
+typedef struct {
+    unsigned int has_count:1;
+    unsigned int has_type:1;
+} CDStruct_dd28a305;
 
 typedef struct {
     unsigned int has_height:1;

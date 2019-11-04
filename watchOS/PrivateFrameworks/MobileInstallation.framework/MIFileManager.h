@@ -27,6 +27,9 @@
 - (_Bool)setOwnerOfURL:(id)arg1 toUID:(unsigned int)arg2 gid:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)setDataProtectionClassOfItemAtURL:(id)arg1 toClass:(int)arg2 ifPredicate:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (_Bool)dataProtectionClassOfItemAtURL:(id)arg1 class:(int *)arg2 error:(id *)arg3;
+- (id)extendedAttributesFromURL:(id)arg1 error:(id *)arg2;
+- (id)aclTextFromURL:(id)arg1 error:(id *)arg2;
+- (id)upToFirstFourBytesFromURL:(id)arg1 error:(id *)arg2;
 - (_Bool)itemDoesNotExistAtURL:(id)arg1;
 - (_Bool)itemExistsAtURL:(id)arg1;
 - (_Bool)itemExistsAtURL:(id)arg1 error:(id *)arg2;

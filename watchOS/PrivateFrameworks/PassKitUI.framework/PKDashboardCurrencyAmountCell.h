@@ -25,7 +25,7 @@
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
-- (_Bool)_shouldUseStackedLayout;
+- (_Bool)_shouldUseStackedLayoutWithBounds:(struct CGRect)arg1;
 - (void)_updateCurrencyLabel;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (void)resetFonts;

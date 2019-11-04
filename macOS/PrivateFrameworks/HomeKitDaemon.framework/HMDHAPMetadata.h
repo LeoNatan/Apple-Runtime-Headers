@@ -111,6 +111,7 @@
 - (id)categoryForIdentifier:(id)arg1;
 - (id)audioAccessoryCategory;
 - (id)categoryForOther;
+- (BOOL)shouldRefreshValueForCharacteristicWithType:(id)arg1 serviceType:(id)arg2;
 - (BOOL)shouldFilterEnableNotificationsForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (BOOL)shouldFilterChangeNotificationsForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (BOOL)shouldHomeAppShowTileForServiceType:(id)arg1;

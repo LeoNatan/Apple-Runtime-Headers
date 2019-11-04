@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPoiIconCategoryFilter : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _excludeCategoryFilters;
     CDStruct_084d6ede _includeCategoryFilters;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_excludeCategoryFilters:1;
@@ -59,6 +61,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int includeCategoryFiltersCount;
 - (void)_readIncludeCategoryFilters;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

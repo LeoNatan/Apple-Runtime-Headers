@@ -49,6 +49,7 @@
 - (void)_swapScreensWithReplicant:(id)arg1;
 - (void)_rawSetDisplayIdentifier:(id)arg1;
 - (void)_updateReplicants;
+- (BOOL)_drawingReplicantViewWithoutSideEffects;
 - (BOOL)_drawingReplicantView;
 - (void)_recursiveSetNeedsDisplayWithoutDirtyingReplicantForView:(id)arg1;
 - (void)_updateReplicant:(id)arg1;

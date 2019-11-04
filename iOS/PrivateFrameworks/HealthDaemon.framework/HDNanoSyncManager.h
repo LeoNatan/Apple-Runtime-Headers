@@ -110,7 +110,7 @@
 - (void)_queue_changeResponseDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_changeRequestDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
 - (id)_syncQueue_responseForChangesRequest:(id)arg1 syncStore:(id)arg2 statusCode:(int)arg3;
-- (void)_queue_receiveChangeRequest:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_receiveChangeRequest:(id)arg1 syncStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)_changeResponseStatusCodeForAction:(long long)arg1;
 - (long long)_queue_changeRequestActionForMessage:(id)arg1 syncStore:(id)arg2 errorDescription:(id *)arg3;
 - (void)_queue_sendSpeculativeChangeSet:(id)arg1 syncStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -161,6 +161,7 @@
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifierForRequest:(id)arg2;
 - (void)_handleOutgoingMessageError:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_queue_syncStoreForMessageCenterError:(id)arg1;
+- (void)_syncronouslyHandleIncomingRequest:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_handleIncomingResponse:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_handleIncomingRequest:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_queue_validatedSyncStore:(id)arg1 device:(id)arg2 message:(id)arg3 error:(id *)arg4;

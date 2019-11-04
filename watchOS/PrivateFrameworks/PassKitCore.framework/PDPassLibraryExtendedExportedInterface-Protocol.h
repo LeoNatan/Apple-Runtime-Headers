@@ -6,9 +6,10 @@
 
 #import <PassKitCore/PDPassLibraryInAppExportedInterface-Protocol.h>
 
-@class CLLocation, NSArray, NSNumber, NSSet, NSString, PKCatalog, PKContact, PKDisplayProfile, PKFieldProperties, PKPass, PKPaymentSetupConfiguration, PKPaymentSetupRequest;
+@class CLLocation, NSArray, NSNumber, NSSet, NSString, PKCatalog, PKContact, PKDisplayProfile, PKFieldProperties, PKPaymentSetupConfiguration, PKPaymentSetupRequest;
 
 @protocol PDPassLibraryExtendedExportedInterface <PDPassLibraryInAppExportedInterface>
+- (void)paymentPassWithAssociatedAccountIdentifier:(NSString *)arg1 completion:(void (^)(PKPaymentPass *))arg2;
 - (void)presentPaymentSetupRequest:(PKPaymentSetupRequest *)arg1 orientation:(NSNumber *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)paymentSetupFeaturesForConfiguration:(PKPaymentSetupConfiguration *)arg1 completion:(void (^)(NSArray *))arg2;
 - (void)getDataForBundleResources:(NSSet *)arg1 objectUniqueIdentifier:(NSString *)arg2 handler:(void (^)(NSDictionary *))arg3;
@@ -34,12 +35,13 @@
 - (void)removeAllScheduledActivities;
 - (void)noteAccountDeletedWithHandler:(void (^)(void))arg1;
 - (void)noteAccountChangedWithHandler:(void (^)(void))arg1;
-- (void)notifyPassUsed:(PKPass *)arg1 fromSource:(int)arg2;
+- (void)notifyPassUsedWithIdentifier:(NSString *)arg1 fromSource:(int)arg2;
 - (void)noteObjectSharedWithUniqueID:(NSString *)arg1;
 - (void)personalizePassWithUniqueIdentifier:(NSString *)arg1 contact:(PKContact *)arg2 personalizationToken:(NSString *)arg3 requiredPersonalizationFields:(unsigned int)arg4 personalizationSource:(unsigned int)arg5 handler:(void (^)(_Bool))arg6;
 - (void)updateObjectWithUniqueIdentifier:(NSString *)arg1 handler:(void (^)(_Bool))arg2;
 - (void)rescheduleCommutePlanRenewalReminderForPassWithUniqueID:(NSString *)arg1;
 - (void)updateSettings:(unsigned int)arg1 forObjectWithUniqueID:(NSString *)arg2;
+- (void)resetApplePayWithDiagnosticReason:(NSString *)arg1 handler:(void (^)(void))arg2;
 - (void)removePassesOfType:(unsigned int)arg1 withDiagnosticReason:(NSString *)arg2 handler:(void (^)(void))arg3;
 - (void)getImageSetContainerForUniqueID:(NSString *)arg1 ofType:(int)arg2 displayProfile:(PKDisplayProfile *)arg3 suffix:(NSString *)arg4 handler:(void (^)(PKImageSetXPCContainer *))arg5;
 - (void)getPassUniqueIdentifiersForFieldProperties:(PKFieldProperties *)arg1 handler:(void (^)(NSArray *))arg2;

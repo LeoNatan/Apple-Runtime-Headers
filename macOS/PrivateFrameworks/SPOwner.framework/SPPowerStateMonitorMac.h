@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <SPPowerMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)claimWakeWithReason:(id)arg1;
 - (void)stopMonitoring;
 - (void)startMonitoring;
 - (unsigned long long)parseCapabilities:(unsigned int)arg1;

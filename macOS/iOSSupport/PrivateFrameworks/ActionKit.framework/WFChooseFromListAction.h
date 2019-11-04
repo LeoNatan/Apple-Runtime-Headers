@@ -6,38 +6,18 @@
 
 #import <WorkflowKit/WFHandleCustomIntentAction.h>
 
-#import <ActionKit/UIPopoverPresentationControllerDelegate-Protocol.h>
-#import <ActionKit/WFChooseImageViewControllerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface WFChooseFromListAction : WFHandleCustomIntentAction <WFChooseImageViewControllerDelegate, UIPopoverPresentationControllerDelegate>
+@interface WFChooseFromListAction : WFHandleCustomIntentAction
 {
 }
 
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
-- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (void)presentationControllerDidDismiss:(id)arg1;
-- (void)chooseImageControllerDidCancel:(id)arg1;
-- (void)chooseImageController:(id)arg1 didSelectItems:(id)arg2;
 - (BOOL)shouldBeSuggestedAfterAction:(id)arg1 inWorkflow:(id)arg2;
-- (void)userCancelled;
 - (void)getOutputFromIntentResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)populatesInputFromInputParameter;
-- (void)runWithSiriUserInterface:(id)arg1 input:(id)arg2;
-- (void)runWithUIKitWidgetUserInterface:(id)arg1 input:(id)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-- (id)alertWithInput:(id)arg1 userInterface:(id)arg2 prompt:(id)arg3 selectedIndexes:(id)arg4 selectMultiple:(BOOL)arg5;
+- (void)presentAlertWithUserInterface:(id)arg1 input:(id)arg2;
 - (id)contentItemsFromSelectedItem:(id)arg1;
 - (id)itemsFromDictionaryItem:(id)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

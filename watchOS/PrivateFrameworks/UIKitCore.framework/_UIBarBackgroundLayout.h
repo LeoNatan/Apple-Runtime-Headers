@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class NSArray, UIColor, UIImage;
+@class NSArray, UIColor, UIImage, UIVibrancyEffect;
 
 __attribute__((visibility("hidden")))
 @interface _UIBarBackgroundLayout : NSObject <NSCopying>
@@ -23,8 +23,12 @@ __attribute__((visibility("hidden")))
     _Bool _useExplicitGeometry;
     _Bool _disableTinting;
     _Bool _shadowHidden;
+    UIVibrancyEffect *_bg1ShadowEffect;
+    UIVibrancyEffect *_bg2ShadowEffect;
 }
 
+@property(readonly, nonatomic) UIVibrancyEffect *bg2ShadowEffect; // @synthesize bg2ShadowEffect=_bg2ShadowEffect;
+@property(readonly, nonatomic) UIVibrancyEffect *bg1ShadowEffect; // @synthesize bg1ShadowEffect=_bg1ShadowEffect;
 @property(nonatomic) _Bool disableTinting; // @synthesize disableTinting=_disableTinting;
 @property(nonatomic) float backgroundTransitionProgress; // @synthesize backgroundTransitionProgress=_backgroundTransitionProgress;
 @property(nonatomic) float backgroundHeight2; // @synthesize backgroundHeight2=_backgroundHeight2;
@@ -35,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
 @property(nonatomic) int interfaceStyle; // @synthesize interfaceStyle=_interfaceStyle;
 @property(nonatomic) int interfaceIdiom; // @synthesize interfaceIdiom=_interfaceIdiom;
+- (void).cxx_destruct;
 - (id)description;
 - (void)describeInto:(id)arg1;
 @property(readonly, nonatomic) float bg2ShadowAlpha;

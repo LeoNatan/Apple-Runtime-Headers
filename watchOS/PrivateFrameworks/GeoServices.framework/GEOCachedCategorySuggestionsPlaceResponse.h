@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOCachedCategorySuggestionsPlaceResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_countryCode;
     NSString *_language;
     GEOPDPlaceResponse *_response;
     NSString *_sourceURL;
     double _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_timestamp:1;
         unsigned int read_unknownFields:1;
@@ -66,6 +68,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDPlaceResponse *response;
 @property(readonly, nonatomic) _Bool hasResponse;
 - (void)_readResponse;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

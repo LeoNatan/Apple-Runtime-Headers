@@ -37,6 +37,7 @@
 @property(nonatomic) float value; // @synthesize value=_value;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint glyphCenter;
+- (void)_setGlyphState:(id)arg1;
 - (void)_configureCompensatingGlyphPackageView:(id)arg1;
 - (void)_configureGlyphPackageView:(id)arg1;
 - (id)_newGlyphPackageView;

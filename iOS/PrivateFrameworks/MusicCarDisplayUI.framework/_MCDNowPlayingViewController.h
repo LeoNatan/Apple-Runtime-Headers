@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class MCDPlayModeControlView, MCDProgressView, MCDShadowImageView, MCDSongDetailsView, MCDTransportControlView, NSArray, NSMutableDictionary, NSString, UIColor, UIFocusContainerGuide, UIImageView, UILayoutGuide, UILongPressGestureRecognizer, UINavigationBar, UITapGestureRecognizer;
+@class MCDPlayModeControlView, MCDProgressView, MCDShadowImageView, MCDSongDetailsView, MCDTransportControlView, NSArray, NSMutableDictionary, NSString, UIColor, UIFocusContainerGuide, UIImageView, UILongPressGestureRecognizer, UINavigationBar, UITapGestureRecognizer;
 @protocol MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate;
 
 @interface _MCDNowPlayingViewController : UIViewController
@@ -44,15 +44,11 @@
     NSString *_playPauseTransportButtonImageIdentifier;
     long long _layoutType;
     MCDShadowImageView *_artworkViewBrick;
-    UILayoutGuide *_topSpacer;
-    UILayoutGuide *_bottomSpacer;
     NSArray *_activeConstraints;
     struct CGRect _nowPlayingContentRect;
 }
 
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
-@property(retain, nonatomic) UILayoutGuide *bottomSpacer; // @synthesize bottomSpacer=_bottomSpacer;
-@property(retain, nonatomic) UILayoutGuide *topSpacer; // @synthesize topSpacer=_topSpacer;
 @property(readonly, nonatomic) MCDShadowImageView *artworkViewBrick; // @synthesize artworkViewBrick=_artworkViewBrick;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
 @property(nonatomic) struct CGRect nowPlayingContentRect; // @synthesize nowPlayingContentRect=_nowPlayingContentRect;
@@ -82,9 +78,6 @@
 - (void)_invalidateConstraintCache;
 - (void)layoutStyleDidChange;
 - (void)setNowPlayingLayout:(long long)arg1 forceChange:(_Bool)arg2;
-- (double)innerSpacing;
-- (double)topPadding;
-- (double)bottomPadding;
 - (_Bool)isCompactHeight;
 - (_Bool)isCompactWidth;
 - (void)updateLayoutStyle:(_Bool)arg1;
@@ -131,7 +124,7 @@
 - (void)updateViewConstraints;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
+- (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

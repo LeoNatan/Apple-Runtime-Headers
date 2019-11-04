@@ -15,12 +15,16 @@ __attribute__((visibility("hidden")))
     struct CGRect _contentsCenter;
     NSString *_contentsScaling;
     struct CGColor *_multiplyColor;
-    struct CGSize _alignmentRectSize;
+    struct CGRect _alignmentRect;
+    struct NSEdgeInsets _capInsets;
     struct CGSize _imageSize;
+    BOOL _imageFlipped;
 }
 
+@property(nonatomic, getter=isImageFlipped) BOOL imageFlipped; // @synthesize imageFlipped=_imageFlipped;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-@property(nonatomic) struct CGSize alignmentRectSize; // @synthesize alignmentRectSize=_alignmentRectSize;
+@property(nonatomic) struct NSEdgeInsets capInsets; // @synthesize capInsets=_capInsets;
+@property(nonatomic) struct CGRect alignmentRect; // @synthesize alignmentRect=_alignmentRect;
 @property(retain, nonatomic) struct CGColor *multiplyColor; // @synthesize multiplyColor=_multiplyColor;
 @property(copy, nonatomic) NSString *contentsScaling; // @synthesize contentsScaling=_contentsScaling;
 @property(nonatomic) struct CGRect contentsCenter; // @synthesize contentsCenter=_contentsCenter;

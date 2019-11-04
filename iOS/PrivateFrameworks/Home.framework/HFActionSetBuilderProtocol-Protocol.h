@@ -6,13 +6,14 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HFActionBuilder, HFMediaPlaybackActionBuilder, NSArray;
+@class HFActionBuilder, HFMediaPlaybackActionBuilder, NAFuture, NSArray;
 
 @protocol HFActionSetBuilderProtocol <NSObject>
 @property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaAction;
 @property(readonly, nonatomic, getter=isAffectedByEndEvents) _Bool affectedByEndEvents;
 @property(readonly, nonatomic) _Bool requiresDeviceUnlock;
 @property(readonly, nonatomic) NSArray *actions;
+- (NAFuture *)deleteActionSet;
 - (void)removeAllActions;
 - (void)removeAction:(HFActionBuilder *)arg1;
 - (void)updateAction:(HFActionBuilder *)arg1;

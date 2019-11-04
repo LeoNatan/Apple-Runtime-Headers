@@ -7,8 +7,6 @@
 #import <HMFoundation/HMFSoftwareVersion.h>
 
 @interface HMFSoftwareVersion (HFAdditions)
-@property(readonly, nonatomic) _Bool hf_hasMultiUserCapableSoftware;
-@property(readonly, nonatomic) _Bool hf_supportsResetHomePodOption;
 @property(readonly, nonatomic) _Bool hf_softwareUpdateWouldSupportHomePodPairing;
 @end
 

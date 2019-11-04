@@ -25,6 +25,8 @@
 - (id)hf_fetchLogListWithTimeout:(double)arg1;
 - (id)hf_idsDeviceIdentifierWithError:(id *)arg1;
 @property(readonly, nonatomic) HFHomeKitSettingsValueManager *hf_settingsValueManager;
+- (id)hf_homePodMediaAccountIsMismatchedWithHomeMediaAccount;
+- (id)hf_homePodSupportsMultiUserLanguage;
 - (id)hf_appleMusicCurrentLoggedInAccountDSID;
 - (id)hf_appleMusicCurrentLoggedInAccount;
 @property(readonly, nonatomic) unsigned int numberOfItemsContainedWithinGroup;
@@ -33,6 +35,8 @@
 @property(readonly, nonatomic) _Bool hasValidSettings;
 @property(readonly, copy, nonatomic) NSString *hf_mediaRouteIdentifier;
 @property(readonly, copy, nonatomic) NSSet *hf_deviceIdentifiers;
+@property(readonly, nonatomic) _Bool hf_homePodIsCapableOfShowingSplitAccountError;
+@property(readonly, nonatomic) _Bool hf_homePodSupportsMultiUser;
 @property(readonly, nonatomic) HMAccessory *hf_backingAccessory;
 @property(readonly, nonatomic) NSSet *hf_dependentHomeKitObjectsForDownstreamItems;
 @property(readonly, copy, nonatomic) NSString *hf_categoryLocalizedDescription;
@@ -47,9 +51,11 @@
 @property(readonly, nonatomic) NSSet *hf_fakeDebugSymptoms;
 @property(readonly, copy) NSSet *symptoms;
 @property(readonly, nonatomic) HMSymptomsHandler *symptomsHandler;
+- (_Bool)hf_offersAutomation;
 @property(readonly, nonatomic) _Bool hf_isCurrentAccessory;
 @property(readonly, nonatomic) __weak HMRoom *hf_parentRoom;
 @property(readonly, nonatomic) HMHome *hf_home;
+@property(readonly, nonatomic) NSSet *mediaProfiles;
 @property(readonly, nonatomic) NSSet *accessories;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 

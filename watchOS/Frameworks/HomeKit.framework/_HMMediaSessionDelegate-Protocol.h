@@ -6,10 +6,11 @@
 
 #import <HomeKit/NSObject-Protocol.h>
 
-@class NSString, _HMMediaSession;
+@class NSDictionary, NSString, _HMMediaSession;
 
 @protocol _HMMediaSessionDelegate <NSObject>
 - (void)mediaSession:(_HMMediaSession *)arg1 didUpdateRouteUID:(NSString *)arg2;
+- (void)mediaSession:(_HMMediaSession *)arg1 didUpdateMediaState:(NSDictionary *)arg2;
 - (void)mediaSession:(_HMMediaSession *)arg1 didUpdatePlaybackState:(int)arg2;
 @end
 

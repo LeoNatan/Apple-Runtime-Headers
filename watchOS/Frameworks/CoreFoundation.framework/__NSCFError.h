@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)userInfo;
 - (id)domain;
 - (int)code;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)retainCount;
 - (_Bool)_isDeallocating;
 - (_Bool)_tryRetain;

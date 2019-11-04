@@ -7,10 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CoreMotion/NSSecureCoding-Protocol.h>
+#import <CoreMotion/SRSampleExporting-Protocol.h>
+#import <CoreMotion/SRSampling-Protocol.h>
 
-@class NSData;
+@class NSData, NSString;
 
-@interface CMFallStats : NSObject <NSSecureCoding>
+@interface CMFallStats : NSObject <SRSampling, SRSampleExporting, NSSecureCoding>
 {
     NSData *_data;
     _Bool _isNearFall;
@@ -22,7 +24,7 @@
 @property(readonly, nonatomic) _Bool isNearFall; // @synthesize isNearFall=_isNearFall;
 @property(readonly, nonatomic) int fallType; // @synthesize fallType=_fallType;
 @property(readonly, nonatomic) double iOStime; // @synthesize iOStime=_iOStime;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)_decodeMeta;
 - (void)dealloc;
 - (id)itemsIterator;
@@ -33,6 +35,11 @@
 - (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
 - (id)binarySampleRepresentation;
 - (id)sr_exportRepresentationEnumerator;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

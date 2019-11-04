@@ -13,13 +13,14 @@
 #import <WorkflowUI/WFVariableUIDelegate-Protocol.h>
 
 @class NSArray, NSHashTable, NSLayoutConstraint, NSMutableArray, NSString, UINavigationController, UITraitCollection, UIView, WFActionDrawerCoordinator, WFActionDrawerViewController, WFComposeFlowController, WFComposeUserActivityManager, WFDrawerController, WFEditWorkflowViewController, WFRunWorkflowToolbar, WFWorkflow, WFWorkflowSettingsLayoutMetrics;
-@protocol WFComposeViewControllerDelegate, WFModuleIndentationProvider;
+@protocol WFComposeViewControllerDelegate, WFModuleDelegate;
 
 @interface WFComposeViewController : UIViewController <WFDragCoordinator, WFVariableUIDelegate, WFDrawerControllerDelegate, WFComposeFlowControllerDelegate, WFEditWorkflowViewControllerDelegate>
 {
     _Bool _actionsHidden;
     _Bool _shouldProvideNavigationBar;
     _Bool _shouldShowShareButton;
+    _Bool _observingSharingEnabledUserDefault;
     WFEditWorkflowViewController *_workflowViewController;
     double _bottomContentInset;
     id <WFComposeViewControllerDelegate> _delegate;
@@ -47,6 +48,7 @@
 @property(retain, nonatomic) UINavigationController *drawerNavigationController; // @synthesize drawerNavigationController=_drawerNavigationController;
 @property(retain, nonatomic) WFActionDrawerCoordinator *drawerCoordinator; // @synthesize drawerCoordinator=_drawerCoordinator;
 @property(retain, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
+@property(nonatomic) _Bool observingSharingEnabledUserDefault; // @synthesize observingSharingEnabledUserDefault=_observingSharingEnabledUserDefault;
 @property(nonatomic) _Bool shouldShowShareButton; // @synthesize shouldShowShareButton=_shouldShowShareButton;
 @property(nonatomic) _Bool shouldProvideNavigationBar; // @synthesize shouldProvideNavigationBar=_shouldProvideNavigationBar;
 @property(retain, nonatomic) NSLayoutConstraint *toolbarBottomAnchor; // @synthesize toolbarBottomAnchor=_toolbarBottomAnchor;
@@ -71,7 +73,6 @@
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)accessibilityPerformEscape;
 - (_Bool)accessibilityPerformMagicTap;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)composeFlowControllerDidFinishEditing:(id)arg1;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
 - (void)showActionOutputPickerFromSourceResponder:(id)arg1 allowExtensionInput:(_Bool)arg2 variableProvider:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -87,7 +88,7 @@
 - (void)workflowViewControllerRequestsDismissal:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)dragController:(id)arg1 willBeAcceptedByDelegate:(id)arg2;
 - (void)dragController:(id)arg1 movedInsideViewControllers:(id)arg2;
-@property(readonly, nonatomic) id <WFModuleIndentationProvider> indentationProvider;
+@property(readonly, nonatomic) id <WFModuleDelegate> moduleDelegate;
 @property(readonly, nonatomic) NSArray *scrollViewsAffectingDrag;
 @property(readonly, nonatomic) NSArray *participatingViewControllers;
 @property(readonly, nonatomic) UIView *containerView;
@@ -100,6 +101,7 @@
 - (id)home;
 - (id)cancelBarButtonItem;
 - (id)doneBarButtonItem;
+- (void)adjustLargeTitleSize;
 - (void)updateNavigationBarStateAnimated:(_Bool)arg1;
 - (void)setEditingState:(unsigned long long)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateEditingStateAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -120,7 +122,9 @@
 - (void)updateToolbarVisibility;
 - (void)updateDrawerVisibility;
 - (void)updateBottomContentInsetForVisibility:(unsigned long long)arg1;
+- (_Bool)shouldUseOverlaidDrawer;
 - (id)workflowSubViewController;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -129,7 +133,6 @@
 - (void)loadView;
 @property(readonly, nonatomic) WFWorkflow *workflow;
 - (void)updateUserActivityState:(id)arg1;
-- (void)dealloc;
 - (id)initWithWorkflow:(id)arg1 database:(id)arg2 shouldProvideNavigationBar:(_Bool)arg3 shouldShowShareButton:(_Bool)arg4 actionsViewControllerClass:(Class)arg5 workflowViewControllerClass:(Class)arg6;
 - (id)initWithWorkflow:(id)arg1 database:(id)arg2;
 

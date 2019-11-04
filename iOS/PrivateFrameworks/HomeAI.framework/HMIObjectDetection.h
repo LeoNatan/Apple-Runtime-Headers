@@ -20,7 +20,8 @@
 @property(readonly) double confidence; // @synthesize confidence=_confidence;
 @property(readonly) int labelIndex; // @synthesize labelIndex=_labelIndex;
 - (id)description;
-- (id)init:(int)arg1 confidence:(double)arg2 boundingBox:(struct CGRect)arg3;
+- (id)initWithLabelIndex:(int)arg1 confidence:(double)arg2 boundingBox:(struct CGRect)arg3;
+- (id)initWithLabelIndex:(int)arg1 confidence:(double)arg2 unclampedBoundingBox:(struct CGRect)arg3;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

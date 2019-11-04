@@ -69,6 +69,7 @@
 - (id)_specialCellWithIdentifier:(id)arg1;
 - (id)_openAppCell;
 - (id)_toggleAllCell;
+- (id)_researchStudyExplanationCell;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

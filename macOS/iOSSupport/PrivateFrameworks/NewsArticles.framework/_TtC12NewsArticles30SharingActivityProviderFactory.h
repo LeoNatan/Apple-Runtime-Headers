@@ -13,6 +13,7 @@
     // Error parsing type: , name: coordinator
     // Error parsing type: , name: overlayAlertPresenter
     // Error parsing type: , name: activityTypeProvider
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

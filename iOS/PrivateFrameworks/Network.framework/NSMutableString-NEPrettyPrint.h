@@ -8,7 +8,7 @@
 
 @interface NSMutableString (NEPrettyPrint)
 - (void)appendPrettyInt:(int)arg1 withName:(id)arg2 indent:(int)arg3;
-- (void)appendPrettyBOOL:(BOOL)arg1 withName:(id)arg2 indent:(int)arg3;
-- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 indent:(int)arg3 showFullContent:(BOOL)arg4;
+- (void)appendPrettyBOOL:(_Bool)arg1 withName:(id)arg2 indent:(int)arg3;
+- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 indent:(int)arg3 showFullContent:(_Bool)arg4;
 @end
 

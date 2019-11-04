@@ -6,20 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class MSPJournal, NSArray;
+#import <MapsSupport/MSPCloudContainerObserver-Protocol.h>
+
+@class MSPJournal, NSArray, NSOrderedSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface MSPCloudMigrator : NSObject
+@interface MSPCloudMigrator : NSObject <MSPCloudContainerObserver>
 {
-    _Bool _shouldMergeFavoritesCollection;
     MSPJournal *_journal;
     NSArray *_containers;
+    NSOrderedSet *_migratedFavoriteIdentifiers;
 }
 
-@property(nonatomic) _Bool shouldMergeFavoritesCollection; // @synthesize shouldMergeFavoritesCollection=_shouldMergeFavoritesCollection;
+@property(retain, nonatomic) NSOrderedSet *migratedFavoriteIdentifiers; // @synthesize migratedFavoriteIdentifiers=_migratedFavoriteIdentifiers;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
 @property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
 - (void).cxx_destruct;
+- (void)cloudContainer:(id)arg1 didFetchChanges:(id)arg2;
+- (void)cloudContainerDidChange:(id)arg1;
 - (void)_performMigrationsForPinnedPlacesContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performMigrationsForCollectionsContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performMigrationsForHistoryContainerWithCompletion:(CDUnknownBlockType)arg1;
@@ -31,6 +35,12 @@ __attribute__((visibility("hidden")))
 - (void)performPreSyncMigrationsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithCloudContainers:(id)arg1;
 - (id)initWithContainers:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

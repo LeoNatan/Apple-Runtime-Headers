@@ -40,10 +40,12 @@
     NSNumber *_merchantCleanConfidenceLevel;
     NSString *_merchantAdditionalData;
     NSString *_merchantCanl;
+    NSNumber *_fuzzyMatched;
     GEOMapServiceTraits *_traits;
 }
 
 @property(copy, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
+@property(copy, nonatomic) NSNumber *fuzzyMatched; // @synthesize fuzzyMatched=_fuzzyMatched;
 @property(copy, nonatomic) NSString *merchantCanl; // @synthesize merchantCanl=_merchantCanl;
 @property(copy, nonatomic) NSString *merchantAdditionalData; // @synthesize merchantAdditionalData=_merchantAdditionalData;
 @property(copy, nonatomic) NSNumber *merchantCleanConfidenceLevel; // @synthesize merchantCleanConfidenceLevel=_merchantCleanConfidenceLevel;

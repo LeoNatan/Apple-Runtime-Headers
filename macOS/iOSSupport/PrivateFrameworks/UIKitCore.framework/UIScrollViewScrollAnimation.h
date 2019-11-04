@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     struct CGPoint _originalOffset;
     struct CGPoint _targetOffset;
+    BOOL _targetOffsetValidAtStart;
     double _accuracy;
     BOOL _adjustsForContentOffsetDelta;
     CABasicAnimation *_customAnimation;

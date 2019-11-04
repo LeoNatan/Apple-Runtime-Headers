@@ -9,7 +9,7 @@
 #import <Email/EFFutureDelegate-Protocol.h>
 #import <Email/EFLoggable-Protocol.h>
 
-@class EMMailboxRepository, EMRemoteConnection, NSArray, NSCache, NSHashTable, NSMapTable, NSString;
+@class EMBlockedSenderManager, EMMailboxRepository, EMRemoteConnection, NSArray, NSCache, NSHashTable, NSMapTable, NSString;
 @protocol EMVIPManager;
 
 @interface EMMessageRepository : EMRepository <EFFutureDelegate, EFLoggable>
@@ -22,6 +22,7 @@
     struct os_unfair_lock_s _observersLock;
     EMRemoteConnection *_connection;
     id <EMVIPManager> _vipManager;
+    EMBlockedSenderManager *_blockedSenderManager;
     NSCache *_queryCountCache;
     EMMailboxRepository *_mailboxRepository;
 }
@@ -31,6 +32,7 @@
 + (id)log;
 @property(readonly, nonatomic) EMMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(retain, nonatomic) NSCache *queryCountCache; // @synthesize queryCountCache=_queryCountCache;
+@property(readonly, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
@@ -40,16 +42,18 @@
 - (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 observerationIdentifier:(id)arg2 matchedChangesHandler:(CDUnknownBlockType)arg3;
 - (void)_applyChangesToCachedObjects:(id)arg1;
 - (void)loadOlderMessagesForMailboxes:(id)arg1;
-- (void)_predictMailboxForMovingMessagesWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_predictMailboxForMovingMessagesWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)cachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2;
 - (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;
 - (void)resetAllPrecomputedThreadScopes;
 - (void)resetPrecomputedThreadScopesForMailboxObjectID:(id)arg1;
 - (void)resetPrecomputedThreadScopesForMailboxType:(int)arg1;
+- (void)_updateObserversForChangeAction:(id)arg1;
 - (id)_undoActionForConversationAction:(id)arg1;
 - (id)performMessageChangeActionReturningUndoAction:(id)arg1;
 - (void)performMessageChangeAction:(id)arg1;
+- (id)requestRepresentationForMessageWithID:(id)arg1 requestID:(unsigned long long)arg2 options:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)requestRepresentationForMessageWithID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setQueryCount:(id)arg1 forQueryIdentifier:(id)arg2;
 - (id)startCountingQuery:(id)arg1 includingServerCountsForMailboxScope:(id)arg2 withObserver:(id)arg3;
@@ -66,7 +70,7 @@
 - (void)didFinishBlockingMainThreadForFuture:(id)arg1;
 - (void)didStartBlockingMainThreadForFuture:(id)arg1;
 - (void)_notifyRecoverableObservers;
-- (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3;
+- (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3 blockedSenderManager:(id)arg4;
 - (id)_init;
 - (unsigned long long)signpostID;
 

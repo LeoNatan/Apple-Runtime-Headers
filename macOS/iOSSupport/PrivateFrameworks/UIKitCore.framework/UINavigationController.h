@@ -347,7 +347,7 @@
 - (double)_widthForLayout;
 - (id)_independentContainedScrollViewIntermediateToDescendantViewController:(id)arg1;
 - (void)_calculateTopViewFramesForExpandedLayoutWithViewController:(id)arg1 contentScrollView:(id)arg2 gettingNavBarFrame:(struct CGRect *)arg3 topPaletteFrame:(struct CGRect *)arg4;
-- (void)_calculateTopViewFramesForPushPopIncomingLayoutWithViewController:(id)arg1 contentScrollView:(id)arg2 gettingNavBarFrame:(struct CGRect *)arg3 topPaletteFrame:(struct CGRect *)arg4;
+- (void)_calculateTopViewFramesFromLayoutHeightsWithViewController:(id)arg1 contentScrollView:(id)arg2 preservingContentInset:(BOOL)arg3 respectFullExtension:(BOOL)arg4 gettingNavBarFrame:(struct CGRect *)arg5 topPaletteFrame:(struct CGRect *)arg6;
 - (double)_topPalettePreferredLayoutHeightForVisibilityStateIfDisplayedForViewController:(id)arg1;
 - (void)_calculateTopViewFramesForLayoutWithViewController:(id)arg1 contentScrollView:(id)arg2 navBarFrame:(struct CGRect *)arg3 topPaletteFrame:(struct CGRect *)arg4 topLayoutType:(long long)arg5;
 - (CDStruct_6cce754d)_calculateTopLayoutInfoForViewController:(id)arg1;
@@ -356,9 +356,13 @@
 - (BOOL)_canUpdateTopViewFramesToMatchScrollView;
 - (void)_performWhileIgnoringUpdateTopViewFramesToMatchScrollOffset:(CDUnknownBlockType)arg1;
 - (long long)_topLayoutTypeForViewController:(id)arg1;
+- (BOOL)_isPopping;
+- (BOOL)_isPushing;
 - (BOOL)_isPushingOrPopping;
+- (void)_updateTopViewFramesForViewController:(id)arg1 isCancelledTransition:(BOOL)arg2 isOrientationChange:(BOOL)arg3;
 - (void)_updateTopViewFramesForViewController:(id)arg1;
 - (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
+- (BOOL)_navigationBar:(id)arg1 getContentOffsetOfObservedScrollViewIfApplicable:(struct CGPoint *)arg2;
 - (void)_updateAndObserveScrollView:(id)arg1 viewController:(id)arg2;
 - (void)_updateScrollViewObservationFlagsForScrollView:(id)arg1 navigationItem:(id)arg2;
 - (BOOL)_navigationControllerShouldObserveScrollView;
@@ -376,6 +380,7 @@
 - (void)_layoutTopViewController;
 @property(readonly, nonatomic) BOOL _isLayingOutTopViewController;
 - (void)_updateChildContentMargins;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)_updatePaletteConstraints;
 - (void)_updatePalettesWithBlock:(CDUnknownBlockType)arg1;
 - (BOOL)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;

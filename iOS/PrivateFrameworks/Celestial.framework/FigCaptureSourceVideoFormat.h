@@ -32,6 +32,7 @@
 - (CDStruct_79c71658)_visibleSensorDimensionsIncludingCinematic:(_Bool)arg1;
 - (CDStruct_79c71658)_maxUseableSensorDimensions;
 - (CDStruct_79c71658)_outputDimensions;
+@property(readonly, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported;
 @property(readonly) int ispPowerConsumption;
 @property(readonly) int variableSensorPowerConsumption;
 @property(readonly) int baseSensorPowerConsumption;
@@ -69,6 +70,7 @@
 @property(readonly) CDStruct_79c71658 highResStillImageDimensions;
 - (_Bool)usesPacked10BitFirmwareStillImageOutputPixelFormat;
 - (_Bool)isCaptureTimePhotoCurationSupported;
+@property(readonly, getter=isDeepFusionSupported) _Bool deepFusionSupported;
 @property(readonly, getter=isDigitalFlashSupported) _Bool digitalFlashSupported;
 - (int)redEyeReductionVersion;
 @property(readonly, getter=isRedEyeReductionSupported) _Bool redEyeReductionSupported;

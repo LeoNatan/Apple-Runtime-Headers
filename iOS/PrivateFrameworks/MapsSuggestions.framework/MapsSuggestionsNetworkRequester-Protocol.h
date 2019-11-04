@@ -14,7 +14,7 @@
 - (_Bool)composedWaypointForAddressString:(NSString *)arg1 completion:(void (^)(GEOComposedWaypoint *, NSError *))arg2;
 - (_Bool)composedWaypointForLocation:(GEOLocation *)arg1 completion:(void (^)(GEOComposedWaypoint *, NSError *))arg2;
 - (_Bool)composedWaypointForMapItem:(id <GEOMapItem>)arg1 completion:(void (^)(GEOComposedWaypoint *, NSError *))arg2;
-- (_Bool)searchString:(NSString *)arg1 ofPOICategory:(NSString *)arg2 withinVenue:(id <GEOVenueIdentifier>)arg3 maxResults:(unsigned int)arg4 completion:(void (^)(struct NSArray *, NSError *))arg5;
+- (_Bool)searchPOIWithName:(NSString *)arg1 ofPOICategory:(NSString *)arg2 withinVenue:(id <GEOVenueIdentifier>)arg3 maxResults:(unsigned int)arg4 completion:(void (^)(struct NSArray *, NSError *))arg5;
 - (_Bool)searchString:(NSString *)arg1 maxResults:(unsigned int)arg2 completion:(void (^)(struct NSArray *, NSError *))arg3;
 - (_Bool)resolveMapItemHandleData:(struct NSData *)arg1 completion:(void (^)(struct NSArray *, NSError *))arg2;
 - (_Bool)reverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 completion:(void (^)(struct NSArray *, NSError *))arg2;

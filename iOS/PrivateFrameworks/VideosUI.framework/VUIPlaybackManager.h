@@ -10,7 +10,7 @@
 #import <VideosUI/VUINowPlayingFeatureMonitorDelegate-Protocol.h>
 #import <VideosUI/VideosExtrasContextDelegate-Protocol.h>
 
-@class AVPlayerViewController, MPAVRoutingController, NSString, TVPStateMachine, UIButton, UIImage, UIViewController, VUINowPlayingFeatureMonitor, VUIPlayer, VUIVideoAdvisoryLogoImageDownloader, VUIVideoAdvisoryView, VideosExtrasContext, VideosExtrasPresenter;
+@class AVExternalPlaybackController, AVPlayerViewController, MPAVRoutingController, NSString, TVPStateMachine, UIButton, UIImage, UIViewController, VUINowPlayingFeatureMonitor, VUIPlayer, VUIVideoAdvisoryLogoImageDownloader, VUIVideoAdvisoryView, VideosExtrasContext, VideosExtrasPresenter;
 @protocol TVPMediaItem;
 
 @interface VUIPlaybackManager : NSObject <AVPlayerViewControllerDelegatePrivate, VideosExtrasContextDelegate, VUINowPlayingFeatureMonitorDelegate>
@@ -30,6 +30,7 @@
     UIViewController *_presentingViewController;
     long long _dismissalOperation;
     MPAVRoutingController *_routingController;
+    AVExternalPlaybackController *_avExternalPlaybackController;
     VideosExtrasPresenter *_extrasPresenter;
     VUINowPlayingFeatureMonitor *_featureMonitor;
     UIButton *_skipButton;
@@ -57,6 +58,7 @@
 @property(retain, nonatomic) UIButton *skipButton; // @synthesize skipButton=_skipButton;
 @property(retain, nonatomic) VUINowPlayingFeatureMonitor *featureMonitor; // @synthesize featureMonitor=_featureMonitor;
 @property(retain, nonatomic) VideosExtrasPresenter *extrasPresenter; // @synthesize extrasPresenter=_extrasPresenter;
+@property(retain, nonatomic) AVExternalPlaybackController *avExternalPlaybackController; // @synthesize avExternalPlaybackController=_avExternalPlaybackController;
 @property(nonatomic) _Bool requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
 @property(retain, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(nonatomic) long long dismissalOperation; // @synthesize dismissalOperation=_dismissalOperation;
@@ -72,6 +74,7 @@
 @property(retain, nonatomic) VUIPlayer *mainPlayer; // @synthesize mainPlayer=_mainPlayer;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
+- (void)_avPlayerViewControllerPresentationDidTimeout;
 - (void)_updateStopWhenBackgroundedFeatureForApplicationState:(long long)arg1 isFullScreen:(_Bool)arg2;
 - (void)_showStillWatchingAlertFeature:(id)arg1;
 - (void)_updateTimeTriggeredFeature:(id)arg1 animated:(_Bool)arg2;
@@ -93,13 +96,13 @@
 - (void)_updateRollsInfoFromMainPlayersCurrentMediaItem;
 - (void)_setExtrasButtonVisible:(_Bool)arg1;
 - (void)_notifyAVPlayerViewControllerDisplaySize;
-- (void)_updateAVPlayerViewControllerWithActiveAVPlayer;
 - (void)featureMonitor:(id)arg1 featureDidChangeState:(id)arg2 animated:(_Bool)arg3;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_registerApplicationNotifications;
+- (void)_networkReachbilityDidChange:(id)arg1;
 - (void)_externalPlaybackTypeDidChange:(id)arg1;
 - (void)_playbackErrorDidOccur:(id)arg1;
 - (void)_currentMediaItemDidChange:(id)arg1;

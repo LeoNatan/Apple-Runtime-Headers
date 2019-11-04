@@ -30,6 +30,7 @@
 @property(copy, nonatomic) NSArray *websiteIdentifiers; // @dynamic websiteIdentifiers;
 @property(copy, nonatomic) NSArray *categoryIdentifiers; // @dynamic categoryIdentifiers;
 @property(copy, nonatomic) NSArray *applicationIdentifiers; // @dynamic applicationIdentifiers;
+- (void)awakeFromFetch;
 
 // Remaining properties
 @property(readonly, nonatomic) STBlueprint *blueprint; // @dynamic blueprint;

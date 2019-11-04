@@ -14,6 +14,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)getConformingSharedUserIds:(CDUnknownBlockType)arg1;
+- (void)getConformingSharedUserIdForHomeUserId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getSharedUserProfileLimitWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getSharedUserIdForHomeUserId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHomeUserIdForSharedUserId:(id)arg1 completion:(CDUnknownBlockType)arg2;

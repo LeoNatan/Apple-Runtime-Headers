@@ -171,6 +171,7 @@
 - (id)_fetchFrozenMasterOrDetachedEventsInRange:(id)arg1 inCalendars:(id)arg2 forceNonPartial:(BOOL)arg3;
 - (id)_fetchFrozenMasterOrDetachedEventsInRange:(id)arg1 inCalendars:(id)arg2;
 - (id)_fetchFrozenMasterOrDetachedEventsInRange:(id)arg1;
+- (id)_fetchFrozenCalendarItemsOfType:(unsigned long long)arg1 withCoreDataPredicate:(id)arg2 withCalendarPredicate:(id)arg3 withFetchLimit:(id)arg4 forceNonPartial:(BOOL)arg5;
 - (id)_fetchFrozenCalendarItemsOfType:(unsigned long long)arg1 withCoreDataPredicate:(id)arg2 withCalendarPredicate:(id)arg3 withFetchLimit:(id)arg4;
 - (id)_fetchFrozenCalendarItemsOfType:(unsigned long long)arg1 withCoreDataPredicate:(id)arg2 withCalendarPredicate:(id)arg3;
 - (id)_fetchFrozenCalendarItemsOfType:(unsigned long long)arg1 withCoreDataPredicate:(id)arg2;

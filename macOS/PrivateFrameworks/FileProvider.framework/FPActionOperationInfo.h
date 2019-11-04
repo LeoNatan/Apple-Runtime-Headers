@@ -28,7 +28,6 @@
 @property(retain, nonatomic) NSArray *roots; // @synthesize roots=_roots;
 @property(copy, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
 - (void).cxx_destruct;
-- (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithOperationID:(id)arg1 roots:(id)arg2;

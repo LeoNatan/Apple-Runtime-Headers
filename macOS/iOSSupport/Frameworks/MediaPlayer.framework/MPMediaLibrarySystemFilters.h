@@ -11,7 +11,7 @@
 }
 
 + (id)filtersForLibrary:(id)arg1;
-- (BOOL)shouldExcludePurchaseHistoryContentForLibrary:(id)arg1;
+- (BOOL)shouldExcludePurchaseHistoryContent;
 
 @end
 

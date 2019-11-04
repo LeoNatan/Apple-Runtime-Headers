@@ -15,6 +15,7 @@
 
 // Remaining properties
 @property(nonatomic, getter=areDoorbellNotificationsEnabled) _Bool doorbellNotificationsEnabled; // @dynamic doorbellNotificationsEnabled;
+@property(nonatomic, getter=areMotionNotificationsEnabled) _Bool motionNotificationsEnabled;
 @property(retain, nonatomic) NSPredicate *notificationCondition; // @dynamic notificationCondition;
 @property(nonatomic, getter=areNotificationsEnabled) _Bool notificationsEnabled; // @dynamic notificationsEnabled;
 @property(retain, nonatomic) NSPredicate *smartCameraNotificationCondition; // @dynamic smartCameraNotificationCondition;

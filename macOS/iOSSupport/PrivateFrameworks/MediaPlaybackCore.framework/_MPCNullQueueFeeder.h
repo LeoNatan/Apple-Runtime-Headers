@@ -22,6 +22,7 @@
 - (id)itemForItem:(id)arg1 inSection:(id)arg2;
 - (void)loadPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)playbackInfoForItem:(id)arg1;
+@property(readonly, nonatomic) BOOL containsTransportableContent;
 @property(readonly, nonatomic) BOOL containsLiveStream;
 - (id)init;
 

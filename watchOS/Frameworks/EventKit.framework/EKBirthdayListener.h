@@ -36,6 +36,7 @@
 - (void)addBirthdayCalendars;
 - (_Bool)areBirthdaysEnabled;
 - (id)eventStore;
+- (void)checkForFailures;
 - (id)initSingleton;
 
 @end

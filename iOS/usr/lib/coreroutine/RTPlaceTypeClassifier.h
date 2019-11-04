@@ -40,7 +40,7 @@
 - (id)replaceBusinessMapItemWithReverseGeocodedMapItemForHome:(id)arg1;
 - (void)donateInferredPlaces:(id)arg1;
 - (id)getExistingClassifiedPlacesWithError:(id *)arg1;
-- (_Bool)isRottedMeCard:(id)arg1 inferredHome:(id)arg2;
+- (_Bool)isRottedMeCard:(id)arg1 inferredPlace:(id)arg2;
 - (id)initWithAlgorithmMetricCalculator:(id)arg1 contactsManager:(id)arg2 distanceCalculator:(id)arg3 learnedLocationStore:(id)arg4 mapServiceManager:(id)arg5 mapsSupportManager:(id)arg6 platform:(id)arg7 queue:(id)arg8;
 - (id)init;
 

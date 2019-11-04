@@ -29,6 +29,7 @@
 - (id)_baseURLForSourceSpecificURL:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
 @property(readonly, copy) NSArray *persistentAccounts;
+@property(readonly) CNObservable *enabledPersistentAccountsObservable;
 @property(readonly) CNObservable *enabledAccountsObservable;
 @property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly) id <CNAccountDescription> defaultAccount;

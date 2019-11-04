@@ -43,6 +43,7 @@
 + (BOOL)isAvailableForExtension:(id)arg1 inHostApplicationBundleID:(id)arg2;
 + (BOOL)isAvailableForServiceType:(id)arg1;
 + (BOOL)isAvailableForExtension:(id)arg1;
++ (BOOL)_isAvailableForMediaShareExtension:(id)arg1;
 + (BOOL)_isMultiUserDevice;
 + (BOOL)_legacyBuiltInAvailabilityForService:(id)arg1 inHostApplicationBundleID:(id)arg2;
 + (id)_shareExtensionWithIdentifier:(id)arg1;

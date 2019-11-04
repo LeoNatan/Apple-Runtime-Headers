@@ -52,6 +52,7 @@
 - (void)privCommonCleanup;
 - (void)finishedRecording;
 - (struct AudioRecorderImpl *)impl;
+- (id)init;
 
 @end
 

@@ -71,6 +71,8 @@
 - (_Bool)_isUpdateAllowed;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
 - (void)scrollToTop;
+- (void)recordedImpressionsMatching:(id)arg1 reset:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)recordedImpressions:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)impressionsMatching:(id)arg1 reset:(_Bool)arg2;
 - (id)recordedImpressions:(_Bool)arg1;
 - (id)recordedImpressions;
@@ -92,6 +94,7 @@
 - (void)onAppear;
 - (void)onUnload;
 - (void)onLoad;
+- (void)dispatchDocumentCallback:(id)arg1 eventType:(unsigned long long)arg2;
 @property(readonly, nonatomic) __weak IKJSNavigationDocument *navigationDocument;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;

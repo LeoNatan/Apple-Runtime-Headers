@@ -15,6 +15,7 @@
 - (id)hd_underlyingSQLiteError;
 - (id)hk_codableError;
 - (id)hd_persistentMessage;
+- (_Bool)hd_isManateeIdentityLossError;
 - (id)hd_cloudKitErrorRequiringUserActionFromCKErrorDomain;
 - (id)hd_cloudKitErrorRequiringUserAction;
 - (_Bool)hd_isResponseTimeout;

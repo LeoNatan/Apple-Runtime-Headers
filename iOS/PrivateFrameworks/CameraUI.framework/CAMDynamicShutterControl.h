@@ -53,7 +53,7 @@
     long long __touchSequencePhase;
     CAMDynamicShutterGestureRecognizer *__gestureRecognizer;
     CAMFeedbackController *__feedbackController;
-    long long __state;
+    long long __shutterState;
     long long __dragHandleState;
     long long __innerShapeState;
     long long __counterValue;
@@ -97,7 +97,7 @@
 @property(nonatomic, getter=_isExternalShutterPressed, setter=_setExternalShutterPressed:) _Bool _externalShutterPressed; // @synthesize _externalShutterPressed=__externalShutterPressed;
 @property(nonatomic, setter=_setInnerShapeState:) long long _innerShapeState; // @synthesize _innerShapeState=__innerShapeState;
 @property(nonatomic, setter=_setDragHandleState:) long long _dragHandleState; // @synthesize _dragHandleState=__dragHandleState;
-@property(nonatomic, setter=_setState:) long long _state; // @synthesize _state=__state;
+@property(nonatomic, setter=_setShutterState:) long long _shutterState; // @synthesize _shutterState=__shutterState;
 @property(readonly, nonatomic) CAMFeedbackController *_feedbackController; // @synthesize _feedbackController=__feedbackController;
 @property(readonly, nonatomic) CAMDynamicShutterGestureRecognizer *_gestureRecognizer; // @synthesize _gestureRecognizer=__gestureRecognizer;
 @property(nonatomic, setter=_setMostRecentTouch:) CDStruct_299b3d1e _mostRecentTouch; // @synthesize _mostRecentTouch=__mostRecentTouch;
@@ -165,6 +165,7 @@
 - (void)_updateCounterLabelText;
 - (void)externalLockButtonReleased;
 - (void)externalLockButtonPressed;
+- (void)externalButtonCancelled;
 - (void)externalButtonReleased;
 - (void)externalButtonPressed;
 - (void)_handleTapToStartStop;

@@ -112,10 +112,12 @@
 - (void)setElectrocardiogramOnboardingCompleted;
 - (id)_electrocardiogramFirstOnboardingCompletedDate;
 - (id)electrocardiogramOnboardingCountryCode;
+- (_Bool)isElectrocardiogramOnboardingCompletedNoCache;
 @property(readonly, nonatomic, getter=isElectrocardiogramOnboardingCompleted) _Bool electrocardiogramOnboardingCompleted;
 - (void)_triggerFeatureAvailabilityUpdateOnPhoneAndWatchWithDelay:(long long)arg1;
 - (void)_setFirstOnboardingCompletedDate:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setOnboardingVersionCompleted:(long long)arg1 forKey:(id)arg2 additionalValues:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_isOnboardingCompletedForKey:(id)arg1 version:(long long)arg2 useCache:(_Bool)arg3;
 - (_Bool)_isOnboardingCompletedForKey:(id)arg1 version:(long long)arg2;
 - (void)_localeDidChange;
 - (void)_pairedOrActiveDevicesDidChange:(id)arg1;

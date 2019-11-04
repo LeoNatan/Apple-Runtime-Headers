@@ -17,7 +17,6 @@
 - (id)accessibilityCustomActions;
 - (_Bool)_accessibilityPerformCallToAction:(id)arg1;
 - (id)_axCallToActionButton;
-- (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
 

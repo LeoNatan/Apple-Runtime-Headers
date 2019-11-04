@@ -15,15 +15,11 @@ __attribute__((visibility("hidden")))
     UICollectionViewLayout *_layout;
     NSMapTable *_screenPageMap;
     NSMutableIndexSet *_globalIndexesOfItemsAwaitingValidation;
-    id *_globalItems;
     NSMutableDictionary *_supplementaryLayoutAttributes;
     NSMutableDictionary *_decorationLayoutAttributes;
     NSMutableDictionary *_invalidatedSupplementaryIndexPaths;
     NSMutableDictionary *_invalidatedDecorationIndexPaths;
     struct CGRect _validLayoutRect;
-    int _numItems;
-    int _numSections;
-    int *_sectionItemCounts;
     int _lastSectionTestedForNumberOfItemsBeforeSection;
     int _lastResultForNumberOfItemsBeforeSection;
     struct CGSize _contentSize;
@@ -37,6 +33,8 @@ __attribute__((visibility("hidden")))
         unsigned int layoutIsPrepared:1;
         unsigned int layoutLocked:1;
     } _collectionViewDataFlags;
+    struct vector<UICollectionViewLayoutAttributes *, std::__1::allocator<UICollectionViewLayoutAttributes *>> _globalItems;
+    struct vector<int, std::__1::allocator<int>> _sectionItemCounts;
 }
 
 + (void)initialize;
@@ -44,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *clonedDecorationAttributes; // @synthesize clonedDecorationAttributes=_clonedDecorationAttributes;
 @property(readonly, nonatomic) NSArray *clonedSupplementaryAttributes; // @synthesize clonedSupplementaryAttributes=_clonedSupplementaryAttributes;
 @property(readonly, nonatomic) NSArray *clonedCellAttributes; // @synthesize clonedCellAttributes=_clonedCellAttributes;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isLayoutLocked) _Bool layoutLocked;
 @property(readonly, nonatomic) _Bool layoutIsPrepared;
@@ -90,7 +89,6 @@ __attribute__((visibility("hidden")))
 - (void)invalidateDecorationIndexPaths:(id)arg1;
 - (void)invalidateSupplementaryIndexPaths:(id)arg1;
 - (void)invalidateItemsAtIndexPaths:(id)arg1;
-- (void)dealloc;
 - (id)initWithCollectionView:(id)arg1 layout:(id)arg2;
 
 @end

@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (_Bool)settingsUIVisible;
 - (id)currentUser;
+- (id)cachedCurrentUserAppleID;
 - (void)currentUserChanged;
 - (void)dealloc;
 - (id)init;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MFAttachmentManager, MFAttachmentPlaceholder, MFMailDropMetadata, MFMimePart, NSString, NSURL;
+@class EMMailDropMetadata, MFAttachmentManager, MFAttachmentPlaceholder, MFMimePart, NSString, NSURL;
 @protocol MFDataConsumer;
 
 @interface MFAttachment : NSObject
@@ -85,7 +85,7 @@
 - (id)filterData:(id)arg1;
 - (id)fileURL;
 - (id)newDownloadProgress;
-@property(retain, nonatomic) MFMailDropMetadata *mailDropMetadata; // @dynamic mailDropMetadata;
+@property(retain, nonatomic) EMMailDropMetadata *mailDropMetadata; // @dynamic mailDropMetadata;
 @property _Bool isPlaceholder; // @dynamic isPlaceholder;
 - (id)fetchPlaceholderData;
 - (_Bool)isMailDropPhotoArchive;

@@ -52,6 +52,7 @@
 @property(readonly) __weak id <HMDUserSettingsBackingStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)logIdentifier;
+- (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2;
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (void)runTransaction:(id)arg1 waitForCloudPush:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)settingTransactionWithName:(id)arg1;
@@ -71,6 +72,8 @@
 - (void)_didFetchZonesWithResult:(id)arg1 isOwnedZone:(BOOL)arg2 error:(id)arg3;
 - (void)_startWithSharedZone;
 - (void)_startWithOwnedZone;
+- (void)updateParticipants;
+- (void)clearParticipants;
 - (void)destroyZone;
 - (void)_invalidate;
 - (void)registerForMediaContentAccessControlModelUpdates:(id)arg1 modelID:(id)arg2;

@@ -8,23 +8,24 @@
 
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface HMAccessoryAllowedHost : HMFObject <NSSecureCoding>
 {
     NSString *_name;
     unsigned long long _purpose;
-    NSString *_address;
+    NSSet *_addresses;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
+@property(readonly, nonatomic) NSSet *addresses; // @synthesize addresses=_addresses;
 @property(readonly, nonatomic) unsigned long long purpose; // @synthesize purpose=_purpose;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 purpose:(unsigned long long)arg2 address:(id)arg3;
+@property(readonly, nonatomic) NSString *address;
+- (id)initWithName:(id)arg1 purpose:(unsigned long long)arg2 addresses:(id)arg3;
 
 @end
 

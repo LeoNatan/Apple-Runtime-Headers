@@ -27,7 +27,7 @@
 - (id)_createSourceEntityForLocalDeviceWithError:(id *)arg1;
 - (id)_fetchClientSourceForPersistentID:(id)arg1 error:(id *)arg2;
 - (id)_sourcePersistentIDsFromSourceEntities:(id)arg1;
-- (void)_deleteSourceIfNoSampleFoundWithBundleIdentifier:(id)arg1;
+- (_Bool)_deleteSourceIfNoSampleFound:(id)arg1;
 - (id)_localSourcesForBundleIDs:(id)arg1 database:(id)arg2 error:(id *)arg3;
 - (id)_bundleIDsWithoutLocalSourceForSourcesWithPredicate:(id)arg1 database:(id)arg2 error:(id *)arg3;
 - (_Bool)_deleteSourcesWithUUIDs:(id)arg1 localSourceEntityCacheKey:(id)arg2 deleteSamples:(_Bool)arg3 database:(id)arg4 error:(id *)arg5;

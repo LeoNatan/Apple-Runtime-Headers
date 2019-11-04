@@ -6,11 +6,7 @@
 
 #import <UIKit/__UIScrollViewAccessibility_super.h>
 
-#import <UIKit/AXScrollIndicatorDelegate-Protocol.h>
-
-@class NSString;
-
-@interface UIScrollViewAccessibility : __UIScrollViewAccessibility_super <AXScrollIndicatorDelegate>
+@interface UIScrollViewAccessibility : __UIScrollViewAccessibility_super
 {
 }
 
@@ -30,6 +26,7 @@
 - (struct UIEdgeInsets)_accessibilityVisibleContentInset;
 - (void)_accessibilitySetStoredVisibleContentInset:(id)arg1;
 - (id)_accessibilityStoredVisibleContentInset;
+- (_Bool)_accessibilityShouldUseFallbackForVisibleContentInset;
 - (struct UIEdgeInsets)_accessibilityContentInset;
 - (struct CGRect)_accessibilityContentFrame;
 - (struct CGRect)accessibilityFrame;
@@ -103,12 +100,6 @@
 - (id)_axHorizontalScrollBar;
 - (void)_axSetVerticalScrollBar:(id)arg1;
 - (id)_axVerticalScrollBar;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

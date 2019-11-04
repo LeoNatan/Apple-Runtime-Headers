@@ -64,9 +64,13 @@
     _Bool _hasEarlierMessagesToLoad;
     _Bool _hasMoreRecentMessagesToLoad;
     _Bool _isCurrentlyDownloadingPurgedAssets;
+    _Bool _allowedByScreenTime;
     _Bool _hasSurfRequest;
+    NSString *_participantIDsHash;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
+    NSString *_groupChatIdentifierUppercase;
+    NSString *_hashOfParticipantIDs;
     IMOrderingTools *_orderingTools;
     NSString *_currentLocationGUID;
     double _latestTypingIndicatorTimeInterval;
@@ -87,6 +91,8 @@
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
+@property(copy, nonatomic) NSString *hashOfParticipantIDs; // @synthesize hashOfParticipantIDs=_hashOfParticipantIDs;
+@property(retain, nonatomic) NSString *groupChatIdentifierUppercase; // @synthesize groupChatIdentifierUppercase=_groupChatIdentifierUppercase;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
 @property(nonatomic) _Bool hasSurfRequest; // @synthesize hasSurfRequest=_hasSurfRequest;
@@ -143,6 +149,7 @@
 - (void)_setAccount:(id)arg1 locally:(_Bool)arg2;
 - (void)_setAccount:(id)arg1;
 - (_Bool)_hasCommunicatedOnService:(id)arg1;
+- (id)_generatePersonCentricID;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofParticipant:(id)arg3;
 - (id)valueForProperty:(id)arg1 ofParticipant:(id)arg2;
 - (id)allPropertiesOfParticipant:(id)arg1;
@@ -206,6 +213,7 @@
 - (void)_showErrorMessage:(id)arg1;
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (void)_setJoinState:(int)arg1 quietly:(_Bool)arg2;
+- (void)_clearPendingMessages;
 - (void)_setJoinState:(int)arg1;
 - (_Bool)_handleIncomingItem:(id)arg1;
 - (void)_fixSendingItemDateAndSortID:(id)arg1;
@@ -226,6 +234,8 @@
 - (void)_unwatchHandleStatusChangedForHandle:(id)arg1;
 - (void)_watchHandleStatusChangedForHandle:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
+@property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
+@property(readonly, copy, nonatomic) NSString *participantIDsHash; // @synthesize participantIDsHash=_participantIDsHash;
 - (void)_recomputeOverallChatStatusQuietly:(_Bool)arg1;
 - (void)didUnregisterFromRegistry:(id)arg1;
 - (void)clear;
@@ -245,6 +255,7 @@
 - (_Bool)allParticipantsAreContacts;
 - (_Bool)hasKnownParticipants;
 - (void)loadParticipantContactsIfNecessary;
+- (void)updateIsBlackholed:(_Bool)arg1;
 - (void)updateIsFiltered:(_Bool)arg1;
 @property(nonatomic) _Bool isFiltered; // @dynamic isFiltered;
 - (void)autoReportSpam;
@@ -368,6 +379,7 @@
 - (void)_markItemAsPlayed:(id)arg1;
 - (void)markChatItemAsPlayed:(id)arg1;
 - (void)markChatItemAsSaved:(id)arg1;
+- (void)deleteIMMessageItems:(id)arg1;
 - (void)deleteChatItems:(id)arg1;
 - (id)_getMessageChatItemMap:(id)arg1 withDeleteMap:(id)arg2 andAllChatItems:(id)arg3;
 - (id)_getDeleteChatItemMap:(id)arg1;
@@ -403,7 +415,8 @@
 - (void)_launchAppForJoinRequest:(id)arg1;
 - (id)conversation;
 - (_Bool)mapsToTUConversation:(id)arg1;
-- (void)allowedToShowConversation:(CDUnknownBlockType)arg1;
+- (id)conversationContext;
+- (_Bool)allowedToShowConversationSync;
 - (_Bool)allowedToShowConversation;
 @property(readonly, nonatomic) NSArray *alternativeSpeakableMatches;
 @property(readonly, nonatomic) NSString *vocabularyIdentifier;

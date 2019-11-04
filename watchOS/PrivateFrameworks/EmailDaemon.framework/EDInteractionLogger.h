@@ -38,7 +38,7 @@
 - (void)deliveredMessage:(id)arg1 account:(id)arg2;
 - (void)persistenceWillTransferMessages:(id)arg1 transferType:(int)arg2 destinationMailboxURL:(id)arg3 userInitiated:(_Bool)arg4;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
-- (void)persistenceDidAddMessages:(id)arg1;
+- (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (void)_conversationFlagsChanged:(id)arg1;
 - (void)_viewingEndedForAllMessages;
 - (void)applicationWillResume;

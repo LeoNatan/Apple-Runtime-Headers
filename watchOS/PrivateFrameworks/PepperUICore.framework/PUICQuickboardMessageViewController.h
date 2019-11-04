@@ -21,7 +21,6 @@
     id <PUICQuickboardEmojiViewControllerDelegate> _emojiDelegate;
 }
 
-+ (id)emojiImage;
 @property(nonatomic, getter=isAnimatingSelection) _Bool animatingSelection; // @synthesize animatingSelection=_animatingSelection;
 @property(nonatomic) __weak id <PUICQuickboardEmojiViewControllerDelegate> emojiDelegate; // @synthesize emojiDelegate=_emojiDelegate;
 @property(nonatomic) unsigned int additionalContentFlags; // @synthesize additionalContentFlags=_additionalContentFlags;
@@ -31,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)languageControllerDidChangePrimaryLanguage:(id)arg1;
 - (id)actionController;
+- (_Bool)showCannedResponseLanguages;
 - (void)extraButtonTapped:(id)arg1;
 - (void)emojiButtonTapped:(id)arg1;
 - (_Bool)supportsArouetInput;

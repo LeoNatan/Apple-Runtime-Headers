@@ -19,6 +19,7 @@
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *cacheIdentifier;
 - (void)generateCachePayloadWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_intents_copy;
 - (long long)_executionContext;
 - (void)_setExecutionContext:(long long)arg1;
 - (BOOL)_isEligibleForPrediction;

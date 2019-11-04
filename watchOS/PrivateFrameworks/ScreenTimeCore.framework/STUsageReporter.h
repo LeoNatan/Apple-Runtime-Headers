@@ -8,16 +8,18 @@
 
 #import <ScreenTimeCore/NSFetchedResultsControllerDelegate-Protocol.h>
 
-@class NSArray, NSDateInterval, NSFetchedResultsController, NSString;
+@class NSArray, NSDate, NSDateInterval, NSFetchedResultsController, NSManagedObjectID, NSString;
 
 @interface STUsageReporter : NSObject <NSFetchedResultsControllerDelegate>
 {
     _Bool _includeTotalUsageDetailItem;
     NSDateInterval *_dateInterval;
+    NSManagedObjectID *_userManagedObjectID;
     NSFetchedResultsController *_fetchedResultsController;
 }
 
 @property(readonly) NSFetchedResultsController *fetchedResultsController; // @synthesize fetchedResultsController=_fetchedResultsController;
+@property(readonly, copy) NSManagedObjectID *userManagedObjectID; // @synthesize userManagedObjectID=_userManagedObjectID;
 @property(readonly, copy) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property _Bool includeTotalUsageDetailItem; // @synthesize includeTotalUsageDetailItem=_includeTotalUsageDetailItem;
 - (void).cxx_destruct;
@@ -25,6 +27,9 @@
 - (void)_enumerateUsageBlocksWithUnitGranularity:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (id)notificationRatiosForApplication:(id)arg1 perCalendarUnit:(unsigned int)arg2;
 - (id)notificationsPerCalendarUnit:(unsigned int)arg1;
+- (id)_firstPickupFromUsageBlocks:(id)arg1;
+- (id)firstPickupOfIntervalWithMostPickups:(unsigned int *)arg1 perCalendarUnit:(unsigned int)arg2;
+@property(readonly, copy) NSDate *firstPickup;
 - (id)pickupRatiosForApplication:(id)arg1 perCalendarUnit:(unsigned int)arg2;
 - (id)pickupsPerCalendarUnit:(unsigned int)arg1;
 - (id)ratiosForWebDomain:(id)arg1 perCalendarUnit:(unsigned int)arg2;

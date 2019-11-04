@@ -307,6 +307,7 @@
 @property(nonatomic) int smartQuotesType; // @dynamic smartQuotesType;
 @property(nonatomic) int spellCheckingType; // @dynamic spellCheckingType;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsImagePaste;
 @property(nonatomic) _Bool suppressReturnKeyStyling;
 @property(copy, nonatomic) NSString *textContentType; // @dynamic textContentType;
 @property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;

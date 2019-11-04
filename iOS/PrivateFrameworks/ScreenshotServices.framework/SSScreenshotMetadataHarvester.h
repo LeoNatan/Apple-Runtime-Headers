@@ -12,10 +12,12 @@
 
 + (void)harvestScreenshotMetadataAndRespondToAction:(id)arg1;
 + (void)sendResponseForAction:(id)arg1 withObject:(id)arg2 forKey:(unsigned long long)arg3;
-+ (_Bool)canGenerateDocument;
-+ (void)_grabPDFRepresentationWithCallback:(CDUnknownBlockType)arg1;
-+ (id)screenshotServicesDelegate;
-+ (id)screenshotService;
++ (_Bool)canGenerateDocumentForIdentifier:(id)arg1;
++ (void)_grabPDFRepresentationForIdentifier:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
++ (id)_screenshotServicesDelegateWithIdentifier:(id)arg1;
++ (id)_screenshotServiceForWindowScene:(id)arg1 wantsPrivateDelegate:(_Bool)arg2;
++ (id)_applicationScreenshotServiceWithPrivateDelegate:(_Bool)arg1;
++ (id)screenshotServiceWithIdentifier:(id)arg1;
 + (void)_grabUserActivityTitleWithCallback:(CDUnknownBlockType)arg1;
 + (id)_contentRectsForMetadata;
 + (void)_crawlView:(id)arg1 executingBlock:(CDUnknownBlockType)arg2;

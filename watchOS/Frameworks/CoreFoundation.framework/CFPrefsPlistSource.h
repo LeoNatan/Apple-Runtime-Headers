@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: AB, name: _lastWriteFailed
     // Error parsing type: AB, name: _observing
     // Error parsing type: AB, name: _byteCountLimitExceeded
+    // Error parsing type: AB, name: _directMode
     // Error parsing type: AB, name: _disableBackup
     // Error parsing type: Ai, name: _fileProtectionClass
 }
@@ -49,7 +50,9 @@ __attribute__((visibility("hidden")))
 - (void)handlePossibleOversizedMessage:(int)arg1;
 - (_Bool)handleErrorReply:(id)arg1 retryCount:(int)arg2 retryContinuation:(CDUnknownBlockType)arg3;
 - (void)goReadOnlyAfterTryingToWriteKeys:(const struct __CFString **)arg1 values:(const void **)arg2 count:(long)arg3;
-- (_Bool)shouldEnableDirectMode;
+- (_Bool)isDirectModeEnabled;
+- (void)transitionIntoDirectModeIfNeededWithRetryBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_shouldEnableDirectMode;
 - (_Bool)isVolatile;
 - (void)goVolatileAfterTryingToWriteKeys:(const struct __CFString **)arg1 values:(const void **)arg2 count:(long)arg3;
 - (void)writeFailedForKeys:(const struct __CFString **)arg1 values:(const void **)arg2 count:(long)arg3;

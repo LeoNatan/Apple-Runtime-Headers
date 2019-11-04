@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSString *clientVersion; // @dynamic clientVersion;
 @property(copy, nonatomic) NSString *clientIdentifier; // @dynamic clientIdentifier;
 @property(copy, nonatomic) NSString *processName; // @dynamic processName;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @dynamic bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

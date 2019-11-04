@@ -6,9 +6,18 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFAudioPlaybackRequest, AFRequestInfo, AFVoiceInfo, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL, NSUUID;
+@class AFAudioPlaybackRequest, AFDeleteSiriHistoryContext, AFRequestInfo, AFVoiceInfo, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL, NSUUID;
 
 @protocol AFSettingsService <NSObject>
+- (oneway void)siriDesignModeIsEnabled:(void (^)(_Bool))arg1;
+- (oneway void)setSiriDesignModeEnabled:(_Bool)arg1 completion:(void (^)(void))arg2;
+- (oneway void)deleteSiriHistoryWithContext:(AFDeleteSiriHistoryContext *)arg1 withCompletion:(void (^)(NSError *))arg2;
+- (oneway void)shouldSuppressSiriDataSharingOptInAlertWithCompletion:(void (^)(_Bool))arg1;
+- (oneway void)setSiriDataSharingOptInAlertPresented:(_Bool)arg1 completion:(void (^)(void))arg2;
+- (oneway void)getSiriDataSharingOptInStatusWithCompletion:(void (^)(long long))arg1;
+- (oneway void)setSiriDataSharingOptInStatus:(long long)arg1 completion:(void (^)(void))arg2;
+- (oneway void)clearOpportuneSpeakingEdgeDetectorSignalOverride;
+- (oneway void)setOpportuneSpeakingEdgeDetectorSignalOverride:(long long)arg1;
 - (oneway void)setSpokenNotificationShouldSkipTriggerlessReplies:(_Bool)arg1;
 - (oneway void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(void (^)(_Bool))arg1;
 - (oneway void)setSpokenNotificationShouldAlwaysSpeakNotifications:(_Bool)arg1;
@@ -18,6 +27,7 @@
 - (oneway void)clearSpokenNotificationTemporarilyDisabledStatus;
 - (oneway void)setSpokenNotificationTemporarilyDisabledUntil:(NSDate *)arg1;
 - (oneway void)getSpokenNotificationTemporarilyDisabledEndDateWithCompletion:(void (^)(NSDate *))arg1;
+- (oneway void)setNanoSiriDataSharingOptInStatus:(long long)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoCrownActivationEnabled:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoLanguage:(NSString *)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoOutputVoice:(AFVoiceInfo *)arg1 withCompletion:(void (^)(void))arg2;
@@ -27,6 +37,7 @@
 - (oneway void)setNanoPhraseSpotterEnabled:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoDictationEnabled:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoAssistantEnabled:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
+- (oneway void)homeOnboardingFlowInvoked:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)fetchMultiUserVoiceIdentificationSetting:(void (^)(_Bool))arg1;
 - (oneway void)getSharedUserID:(void (^)(NSString *, NSString *, NSError *))arg1;
 - (oneway void)updateMultiUserWithSharedUserId:(NSString *)arg1 companionId:(NSString *)arg2 companionSpeechId:(NSString *)arg3 idsIdentifier:(NSString *)arg4 productPrefix:(NSString *)arg5 completion:(void (^)(NSError *))arg6;
@@ -52,6 +63,7 @@
 - (oneway void)setConfigOverrides:(NSDictionary *)arg1 completion:(void (^)(void))arg2;
 - (oneway void)getStereoPairState:(void (^)(_Bool, NSError *))arg1;
 - (oneway void)getStereoPartnerLastMyriadWinDate:(void (^)(NSDate *, NSError *))arg1;
+- (oneway void)getMeCard:(void (^)(SAPerson *, NSError *))arg1;
 - (oneway void)getDevicesWithAvailablePHSAssetsOnDeviceCheck:(void (^)(NSDictionary *, NSError *))arg1;
 - (oneway void)getDevicesWithAvailablePHSAssetsForLanguage:(NSString *)arg1 completion:(void (^)(NSArray *))arg2;
 - (oneway void)disableAndDeleteCloudSyncWithCompletion:(void (^)(NSError *))arg1;
@@ -94,6 +106,7 @@
 - (oneway void)_setSyncNeededForReason:(NSString *)arg1;
 - (oneway void)barrierWithReply:(void (^)(void))arg1;
 - (oneway void)_killDaemon;
+- (oneway void)_shutdownSessionIfIdle;
 - (oneway void)setDictationEnabled:(_Bool)arg1;
 - (oneway void)setAssistantEnabled:(_Bool)arg1;
 - (oneway void)setActiveAccountIdentifier:(NSString *)arg1;

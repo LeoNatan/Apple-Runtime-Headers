@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
     unsigned int _totalPacketsSent;
     unsigned long long _totalBytesSent;
     unsigned int _tilesPerFrame;
+    unsigned int _totalKeyFramesSent;
     struct __CFAllocator *_videoPacketAllocator;
 }
 

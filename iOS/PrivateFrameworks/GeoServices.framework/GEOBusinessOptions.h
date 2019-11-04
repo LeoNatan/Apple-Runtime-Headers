@@ -13,10 +13,12 @@
 @interface GEOBusinessOptions : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributeKeys;
     NSMutableArray *_photoOptions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxBusinessResults;
     _Bool _includeBusinessHours;
     _Bool _includeCenter;
@@ -72,6 +74,8 @@
 - (void)clearPhotoOptions;
 @property(retain, nonatomic) NSMutableArray *photoOptions;
 - (void)_readPhotoOptions;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

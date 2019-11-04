@@ -754,10 +754,9 @@
 - (void)_reactToDisplayChangedNotification;
 - (void)_reactToScreenInvalidationImmediately:(BOOL)arg1;
 - (void)_reactToScreenInvalidation:(BOOL)arg1;
-- (void)_prepareForPossibleScreenInvalidation:(BOOL)arg1;
-- (BOOL)_finishHandlingDisplayReconfig;
+- (unsigned long long)_finishHandlingDisplayReconfig;
 - (BOOL)_isHandlingDisplayReconfigThatWillRepositionWindows;
-- (BOOL)_startHandlingDisplayReconfig:(BOOL)arg1;
+- (BOOL)_startHandlingDisplayReconfig:(unsigned long long)arg1;
 - (void)_updateCanQuitQuietlyAndSafely;
 - (id)_debugCanQuietSafeQuit;
 - (BOOL)_canQuitQuietlyAndSafelyWithOptionalExplanation:(id)arg1;

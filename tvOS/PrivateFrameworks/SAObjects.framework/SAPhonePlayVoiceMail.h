@@ -6,7 +6,7 @@
 
 #import <SAObjects/SADomainCommand.h>
 
-@class NSURL;
+@class NSURL, SARemoteDevice;
 
 @interface SAPhonePlayVoiceMail : SADomainCommand
 {
@@ -16,6 +16,7 @@
 + (id)playVoiceMail;
 - (_Bool)requiresResponse;
 @property(copy, nonatomic) NSURL *voiceMailId;
+@property(retain, nonatomic) SARemoteDevice *targetDevice;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

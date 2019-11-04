@@ -28,6 +28,7 @@
 - (void)addRemoteClient:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;
+- (void)tearDown;
 - (id)initWithDaemonInterfaceFactory:(id)arg1 listener:(id)arg2;
 - (id)initWithDaemonInterfaceFactory:(id)arg1;
 

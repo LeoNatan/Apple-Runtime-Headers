@@ -18,8 +18,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)stopSound;
-- (void)playSound;
+- (void)_reallyStopSound;
+- (void)_reallyPlaySound;
 - (id)initWithType:(long long)arg1 duration:(double)arg2;
 
 // Remaining properties

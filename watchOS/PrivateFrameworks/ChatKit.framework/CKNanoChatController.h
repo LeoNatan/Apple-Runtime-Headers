@@ -25,6 +25,7 @@
 @property(retain, nonatomic) IMBalloonPlugin *currentPlugin; // @synthesize currentPlugin=_currentPlugin;
 @property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
 - (void).cxx_destruct;
+- (void)nanoPlaceCardViewController:(id)arg1 didSelectTransitIncidents:(id)arg2;
 - (void)nanoPlaceCardViewControllerDidTapAttribution:(id)arg1;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectPhoneNumber:(id)arg2;
 - (void)nanoPlaceCardViewControllerDidTapMap:(id)arg1;
@@ -41,10 +42,14 @@
 - (void)_showMapViewerForMediaObject:(id)arg1;
 - (void)showViewerForMediaObject:(id)arg1;
 - (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
+- (void)_textInputModeDidChange:(id)arg1;
 - (void)releaseSurfViewController:(id)arg1;
+- (void)chatAllowedByScreenTimeChanged:(id)arg1;
+- (void)showOrHideScreenTimeShieldIfNeededForChat:(id)arg1;
 - (id)progressBar;
 - (void)_setTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateTitleAnimated:(_Bool)arg1;
+- (void)setConversation:(id)arg1;
 - (void)_markAsReadIfNecessary;
 - (void)commitPayload:(id)arg1;
 - (void)setLocalUserIsTyping:(_Bool)arg1;
@@ -75,14 +80,10 @@
 - (void)sendComposition:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (void)viewDidAppearDeferredSetup;
-- (void)_tearDownScreenTimeHandlingIfNeeded;
-- (void)_setupScreenTimeHandling;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidLoad;
-- (void)_setupLockoutChildViewController;
-- (void)_removeLockoutViewController;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_setupLockoutChildViewControllerIfNeeded;
+- (void)_removeLockoutViewControllerIfNeeded;
 - (void)dealloc;
 
 // Remaining properties

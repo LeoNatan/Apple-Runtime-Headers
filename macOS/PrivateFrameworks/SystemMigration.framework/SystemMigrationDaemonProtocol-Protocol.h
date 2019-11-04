@@ -11,7 +11,7 @@
 - (void)migrationServerTypeForSystem:(id)arg1 reply:(void (^)(unsigned long long))arg2;
 - (void)allGroupsForSystem:(id)arg1 reply:(void (^)(NSArray *))arg2;
 - (void)validateFDEPassword:(NSString *)arg1 forSystem:(id)arg2 reply:(void (^)(BOOL))arg3;
-- (void)validatePassword:(NSString *)arg1 forUser:(NSString *)arg2 onSystem:(id)arg3 reply:(void (^)(BOOL))arg4;
+- (void)validatePassword:(NSString *)arg1 forUser:(NSString *)arg2 onSystem:(id)arg3 reply:(void (^)(BOOL, BOOL))arg4;
 - (void)allUsersForSystem:(id)arg1 reply:(void (^)(NSArray *))arg2;
 - (void)submitMigrationRequest:(NSDictionary *)arg1;
 - (void)requestScannerState:(unsigned long long)arg1;

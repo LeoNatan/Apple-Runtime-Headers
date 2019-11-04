@@ -14,6 +14,8 @@
 }
 
 + (_Bool)isValidForPersistenceWithObjectDictionary:(id)arg1;
++ (id)snapshotSortDescriptors;
++ (_Bool)shouldPersistForChangedKeys:(id)arg1 entityName:(id)arg2;
 + (unsigned int)minimumSnapshotPayloadVersion;
 + (unsigned int)payloadVersion;
 + (id)additionalEntityNames;

@@ -12,6 +12,7 @@
 
 @interface AVTViewCarouselLayout : NSObject <AVTViewCarouselLayout>
 {
+    _Bool _fillContainer;
     struct CGSize _avtViewAspectRatio;
 }
 
@@ -19,6 +20,7 @@
 + (struct CGSize)severalItemsSizeForBounds:(struct CGSize)arg1 aspectRatio:(struct CGSize)arg2;
 + (id)adaptativeLayoutWithAVTViewAspectRatio:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize avtViewAspectRatio; // @synthesize avtViewAspectRatio=_avtViewAspectRatio;
+@property(nonatomic) _Bool fillContainer; // @synthesize fillContainer=_fillContainer;
 - (struct CGSize)contentViewSizeForSize:(struct CGSize)arg1;
 - (struct CGSize)avatarViewSizeForAvailableContentSize:(struct CGSize)arg1;
 - (id)initWithAVTViewAspectRatio:(struct CGSize)arg1;

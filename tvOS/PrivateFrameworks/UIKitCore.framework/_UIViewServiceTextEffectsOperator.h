@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     int __automatic_invalidation_retainCount;
     _Bool __automatic_invalidation_invalidated;
     id _remoteViewControllerProxy;
+    _Bool _wasInvalidated;
     _UIAsyncInvocation *_prepareForDisconnectionInvocation;
     _UIAsyncInvocation *_invalidationInvocation;
     _UIHostedWindow *_hostedWindow;

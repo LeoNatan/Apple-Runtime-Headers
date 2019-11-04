@@ -6,10 +6,12 @@
 
 #import <UIKit/UIControl.h>
 
-@class UIImageView, UILabel;
+#import <CameraUI/CAMAccessibilityHUDItemProvider-Protocol.h>
+
+@class NSString, UIImageView, UILabel;
 @protocol CAMControlStatusIndicatorDelegate;
 
-@interface CAMControlStatusIndicator : UIControl
+@interface CAMControlStatusIndicator : UIControl <CAMAccessibilityHUDItemProvider>
 {
     _Bool _showingValue;
     _Bool __needsUpdateValueText;
@@ -35,17 +37,24 @@
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CAMControlStatusIndicatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
 - (void)setShowingValue:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateImageOrientationAnimated:(_Bool)arg1;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
-@property(readonly, nonatomic) _Bool canShowValue;
+- (void)stopAnimating;
+- (void)startAnimating;
 - (void)_updateValueLabelVisibilityAnimated:(_Bool)arg1;
 - (void)_updateValueText;
 - (id)valueText;
 - (void)setNeedsUpdateValueText;
+@property(readonly, nonatomic) _Bool canShowValue;
 - (_Bool)shouldUseActiveTintForCurrentState;
 - (_Bool)shouldFillOutlineForCurrentState;
+- (_Bool)shouldShowOutlineForCurrentState;
 - (_Bool)shouldUseOutline;
+@property(readonly, nonatomic) _Bool canAnimate;
+- (id)imageAnimationFramesForCurrentState;
 - (id)imageNameForCurrentState;
 - (id)imageForCurrentState;
 - (void)updateImage;
@@ -53,6 +62,12 @@
 - (double)_additionalWidthForValue;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

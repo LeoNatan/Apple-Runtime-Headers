@@ -78,7 +78,7 @@
 - (void)configureAlertBehavior:(id)arg1 audioStreamHandleId:(unsigned long long)arg2;
 - (void)enableMiniDucking:(BOOL)arg1;
 @property(nonatomic) BOOL duckOthersOption;
-- (BOOL)deactivateAudioSession:(unsigned long long)arg1 streamHandleId:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)deactivateAudioSession:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)activateAudioSessionWithReason:(unsigned long long)arg1 streamHandleId:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)prewarmAudioSessionWithStreamHandleId:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)isNarrowBandWithStreamHandleId:(unsigned long long)arg1;

@@ -6,15 +6,17 @@
 
 #import <Intents/INCodableNumberAttributeMetadata.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface INCodableCurrencyAmountAttributeMetadata : INCodableNumberAttributeMetadata
 {
+    NSString *_currencyCode;
     NSArray *_currencyCodes;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSArray *currencyCodes; // @synthesize currencyCodes=_currencyCodes;
+@property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

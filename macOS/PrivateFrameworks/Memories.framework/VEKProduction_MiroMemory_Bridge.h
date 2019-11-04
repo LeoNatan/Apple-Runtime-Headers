@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVPlayerItem, MiroAutoEditor, MiroMemory, NSSet, NSString, PHAsset, VEKBlueprint, VEKExportController;
+@class AVPlayerItem, MiroAutoEditor, MiroMemory, NSSet, NSString, PHAsset, VEKBlueprint, VEKExportController, VEKProgressWatcher;
 
 __attribute__((visibility("hidden")))
 @interface VEKProduction_MiroMemory_Bridge : NSObject
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     MiroMemory *_memory;
     AVPlayerItem *_playerItem;
     MiroAutoEditor *_autoEditor;
+    VEKProgressWatcher *_watcherProperty;
     VEKExportController *_exportController;
     unsigned long long _nonLocalPickedAssetCount;
 }
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (void)initialize;
 @property(nonatomic) unsigned long long nonLocalPickedAssetCount; // @synthesize nonLocalPickedAssetCount=_nonLocalPickedAssetCount;
 @property(retain, nonatomic) VEKExportController *exportController; // @synthesize exportController=_exportController;
+@property(retain) VEKProgressWatcher *watcherProperty; // @synthesize watcherProperty=_watcherProperty;
 @property(retain) MiroAutoEditor *autoEditor; // @synthesize autoEditor=_autoEditor;
 @property(retain) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(retain, nonatomic) MiroMemory *memory; // @synthesize memory=_memory;

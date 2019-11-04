@@ -30,9 +30,9 @@
     NSButton *_sourceShuffleButton;
     CDUnknownBlockType _sourceMenuLoadedBlock;
     NSMutableArray *_blocksToCallOnceFinishedLoading;
-    NSString *_pathToDefaultCollections;
 }
 
++ (id)_builtInCollectionsOrder;
 + (id)photoChooser;
 - (id)_mediaGroupsForPhotoChooserSource:(unsigned long long)arg1;
 - (id)_mediaGroupForID:(id)arg1;

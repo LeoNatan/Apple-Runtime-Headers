@@ -46,6 +46,8 @@ __attribute__((visibility("hidden")))
 - (id)calendarItemExternalIdentifier;
 - (id)calendar;
 - (id)calendarItemIdentifier;
+- (void)_fixAlarmUUIDsForClone:(id)arg1 from:(id)arg2;
+- (id)_copyToNewList:(id)arg1 error:(id *)arg2;
 - (_Bool)_applyChangesToSaveRequest:(id)arg1 error:(id *)arg2;
 - (_Bool)_applyChanges:(id)arg1 error:(id *)arg2;
 - (id)uniqueIdentifier;

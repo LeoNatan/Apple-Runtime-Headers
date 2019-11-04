@@ -10,7 +10,7 @@
 
 @protocol VCVoiceShortcutManagerXPCInterface <NSObject>
 - (void)obliterateShortcuts:(void (^)(NSError *))arg1;
-- (void)hasRunEventsInTheLast30DaysWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)hasRunEventsInTheLast5DaysWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)runShortcutWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)runShortcutWithName:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)deleteTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
@@ -18,6 +18,7 @@
 - (void)checkTriggerStateWithIdentifier:(NSString *)arg1 completion:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)fireTriggerWithIdentifier:(NSString *)arg1 force:(BOOL)arg2 completion:(void (^)(BOOL, NSError *))arg3;
 - (void)getConfiguredTriggerDescriptionsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
+- (void)unregisterTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)refreshTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(void (^)(NSSecurityScopedURLWrapper *, NSError *))arg1;
 - (void)setInteger:(long long)arg1 forKey:(NSString *)arg2 inDomain:(NSString *)arg3 completionHandler:(void (^)(BOOL, NSError *))arg4;

@@ -828,16 +828,17 @@ struct FrontendRouter;
 struct FullscreenManager {
     struct Document *_field1;
     RefPtr_a6a86820 _field2;
-    struct Vector<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>, 0, WTF::CrashOnOverflow, 16> _field3;
-    struct WeakPtr<WebCore::RenderFullScreen> _field4;
-    struct GenericTaskQueue<WebCore::Timer> _field5;
-    struct Deque<WTF::RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>>, 0> _field6;
+    RefPtr_a6a86820 _field3;
+    struct Vector<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>, 0, WTF::CrashOnOverflow, 16> _field4;
+    struct WeakPtr<WebCore::RenderFullScreen> _field5;
+    struct GenericTaskQueue<WebCore::Timer> _field6;
     struct Deque<WTF::RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>>, 0> _field7;
-    struct LayoutRect _field8;
-    struct unique_ptr<WebCore::RenderStyle, std::__1::default_delete<WebCore::RenderStyle>> _field9;
-    _Bool _field10;
+    struct Deque<WTF::RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>>, 0> _field8;
+    struct LayoutRect _field9;
+    struct unique_ptr<WebCore::RenderStyle, std::__1::default_delete<WebCore::RenderStyle>> _field10;
     _Bool _field11;
     _Bool _field12;
+    _Bool _field13;
 };
 
 struct Function<void ()> {

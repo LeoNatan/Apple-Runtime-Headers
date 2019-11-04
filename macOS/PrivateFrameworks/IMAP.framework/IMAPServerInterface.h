@@ -28,8 +28,9 @@
 - (unsigned int)searchedUidNextForMessageNumber:(unsigned long long)arg1;
 - (id)searchUidRange:(CDStruct_f792af56)arg1 forNewMessageIDs:(id)arg2;
 - (id)searchUidRange:(CDStruct_f792af56)arg1 forTerms:(id)arg2;
-- (BOOL)appendData:(id)arg1 toMailboxNamed:(id)arg2 flags:(id)arg3 dateReceived:(id)arg4 copyInfo:(id *)arg5 error:(id *)arg6;
+- (BOOL)appendData:(id)arg1 toMailboxNamed:(id)arg2 flags:(id)arg3 dateReceived:(id)arg4 appendInfo:(id *)arg5 error:(id *)arg6;
 - (BOOL)_transferUIDs:(id)arg1 toMailboxNamed:(id)arg2 isMove:(BOOL)arg3 copyInfo:(id *)arg4 error:(id *)arg5;
+- (id)_sourceUIDsToDestinationUIDsFromMessageInfo:(id)arg1;
 - (BOOL)moveUIDs:(id)arg1 toMailboxNamed:(id)arg2 copyInfo:(id *)arg3 error:(id *)arg4;
 - (BOOL)copyUIDs:(id)arg1 toMailboxNamed:(id)arg2 copyInfo:(id *)arg3 error:(id *)arg4;
 - (BOOL)_batchUIDs:(id)arg1 block:(CDUnknownBlockType)arg2;

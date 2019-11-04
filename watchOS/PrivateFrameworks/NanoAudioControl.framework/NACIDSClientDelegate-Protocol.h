@@ -6,7 +6,7 @@
 
 #import <NanoAudioControl/NSObject-Protocol.h>
 
-@class NACIDSClient, NACProxyVolumeControlTarget, NSArray, NSString;
+@class NACIDSClient, NACProxyVolumeControlTarget, NSArray, NSError, NSOrderedSet, NSString;
 
 @protocol NACIDSClientDelegate <NSObject>
 - (void)client:(NACIDSClient *)arg1 prominentHapticStateDidChange:(_Bool)arg2;
@@ -15,6 +15,9 @@
 - (void)client:(NACIDSClient *)arg1 systemMutedStateDidChange:(_Bool)arg2;
 - (void)client:(NACIDSClient *)arg1 routeObservationCancelledForCategory:(NSString *)arg2;
 - (void)client:(NACIDSClient *)arg1 audioRoutes:(NSArray *)arg2 didChangeForCategory:(NSString *)arg3;
+- (void)client:(NACIDSClient *)arg1 didFailToSetCurrentListeningModeForTarget:(NACProxyVolumeControlTarget *)arg2 error:(NSError *)arg3;
+- (void)client:(NACIDSClient *)arg1 currentListeningMode:(NSString *)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
+- (void)client:(NACIDSClient *)arg1 availableListeningModes:(NSOrderedSet *)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
 - (void)client:(NACIDSClient *)arg1 volumeObservationCancelledForTarget:(NACProxyVolumeControlTarget *)arg2;
 - (void)client:(NACIDSClient *)arg1 volumeWarningEnabled:(_Bool)arg2 volumeWarningState:(int)arg3 didChangeForTarget:(NACProxyVolumeControlTarget *)arg4;
 - (void)client:(NACIDSClient *)arg1 EULimit:(float)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;

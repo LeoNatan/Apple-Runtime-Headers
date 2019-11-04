@@ -32,6 +32,7 @@
 - (id)adamIDForBundleID:(id)arg1;
 - (id)bundleIdForAdamId:(id)arg1;
 - (void)buildBundleIDtoAdamIDCache:(id)arg1;
+- (id)appUsageEventsBetween:(id)arg1 and:(id)arg2 withLimit:(unsigned long long)arg3;
 - (id)appUsageEventsForLookbackPeriod:(double)arg1;
 - (id)updateVector:(id)arg1 withVector:(id)arg2 usingWeight:(float)arg3;
 - (float)weightForEvents:(id)arg1 amongEvents:(id)arg2 inLookbackPeriod:(id)arg3;

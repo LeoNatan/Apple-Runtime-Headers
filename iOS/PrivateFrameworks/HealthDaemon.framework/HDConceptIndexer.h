@@ -15,7 +15,8 @@
     NSObject<OS_dispatch_queue> *_syncQueue;
 }
 
-+ (_Bool)indexSample:(id)arg1 profile:(id)arg2 error:(id *)arg3;
++ (_Bool)insertConceptIndexEntries:(id)arg1 profile:(id)arg2 error:(id *)arg3;
++ (id)indexSample:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)sampleQueryDescriptionsFollowingAnchor:(id)arg1;
 - (void).cxx_destruct;
 - (_Bool)_syncQueue_resetWithError:(id *)arg1;

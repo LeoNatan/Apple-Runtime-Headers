@@ -11,9 +11,9 @@
 }
 
 + (id)updateReframeStateForAdjustmentData:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 outFormatIdentifier:(id *)arg4 outFormatVersion:(id *)arg5 isReframed:(_Bool)arg6;
++ (_Bool)compositionHasOvercaptureSourceSelection:(id)arg1;
 + (void)compositionController:(id)arg1 setEffectFilterName:(id)arg2 version:(long long)arg3;
 + (struct CGSize)synchronousInputSizeForCompositionController:(id)arg1;
-+ (id)synchronousImagePropertiesForCompositionController:(id)arg1 priorityLevel:(long long)arg2;
 + (_Bool)compositionController:(id)arg1 isGeometryEqualToCompositionController:(id)arg2;
 + (_Bool)compositionController:(id)arg1 isDepthIntensityEqualToCompositionController:(id)arg2;
 + (_Bool)compositionController:(id)arg1 isPortraitIntensityEqualToCompositionController:(id)arg2;

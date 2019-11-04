@@ -9,7 +9,7 @@
 @class NSData;
 
 @protocol KCJoiningAcceptCircleDelegate <NSObject>
-- (NSData *)circleGetInitialSyncViews:(id *)arg1;
+- (NSData *)circleGetInitialSyncViews:(unsigned int)arg1 error:(id *)arg2;
 - (NSData *)circleJoinDataFor:(struct __OpaqueSOSPeerInfo *)arg1 error:(id *)arg2;
 @end
 

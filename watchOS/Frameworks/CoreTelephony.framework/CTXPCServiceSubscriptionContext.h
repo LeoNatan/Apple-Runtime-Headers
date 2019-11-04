@@ -14,6 +14,7 @@
 @interface CTXPCServiceSubscriptionContext : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _isSimPresent;
+    _Bool _isSimGood;
     int _slotID;
     NSUUID *_uuid;
     NSString *_labelID;
@@ -27,6 +28,7 @@
 + (id)contextWithServiceDescriptor:(id)arg1;
 + (id)contextWithUUID:(id)arg1;
 + (id)contextWithSlot:(int)arg1;
+@property(nonatomic) _Bool isSimGood; // @synthesize isSimGood=_isSimGood;
 @property(nonatomic) _Bool isSimPresent; // @synthesize isSimPresent=_isSimPresent;
 @property(retain, nonatomic) NSNumber *userDefaultVoice; // @synthesize userDefaultVoice=_userDefaultVoice;
 @property(retain, nonatomic) NSNumber *userDataPreferred; // @synthesize userDataPreferred=_userDataPreferred;

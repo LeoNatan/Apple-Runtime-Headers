@@ -13,7 +13,7 @@
 #import <SiriActivation/SASRequestOptionsBuilderDataSource-Protocol.h>
 #import <SiriActivation/SASStateChangeListener-Protocol.h>
 
-@class AFMyriadCoordinator, AFPreferences, AFSiriTether, AFWatchdogTimer, NSMutableDictionary, NSMutableSet, NSString, NSTimer, SASBulletinManager, SASHeater, SASLockStateMonitor, SASRemoteRequestManager, SASSystemState, SASTestingInputController;
+@class AFMyriadCoordinator, AFPreferences, AFSiriTether, AFWatchdogTimer, NSMutableDictionary, NSMutableSet, NSString, NSTimer, SASBulletinManager, SASHeater, SASLockStateMonitor, SASMyriadController, SASRemoteRequestManager, SASSystemState, SASTestingInputController;
 @protocol OS_dispatch_queue;
 
 @interface SiriActivationService : NSObject <SASRequestOptionsBuilderDataSource, SASHeaterDelegate, AFMyriadDelegate, SASLockStateMonitorDelegate, SASBulletinManagerDelegate, SASStateChangeListener>
@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_voiceTriggerDispatchQueue;
     NSObject<OS_dispatch_queue> *_watchdogQueue;
     NSTimer *_B188ActivationTimer;
+    SASMyriadController *_myriadController;
     _Bool _xcTestingActive;
     _Bool _siriTetherIsAttached;
     _Bool _voiceTriggerNotifyTokenIsValid;
@@ -109,6 +110,7 @@
 - (_Bool)requestOptionsBuilder:(id)arg1 isRequestInitialWithActiviation:(id)arg2;
 - (_Bool)requestOptionsBuilder:(id)arg1 shouldRequestUseAutomaticEndpointingWithActiviation:(id)arg2;
 - (_Bool)_siriIsEnabled;
+- (void)_handleDesignModeRequest;
 - (void)_cancelPendingActivationEventWithReason:(unsigned long long)arg1;
 - (void)_cancelActivationPreparationForSetup;
 - (void)_cancelActivationPreparationIfNecessary;
@@ -121,6 +123,7 @@
 - (void)dismissSiriWithOptions:(id)arg1;
 - (_Bool)handleActivationRequest:(id)arg1 systemState:(id)arg2;
 - (_Bool)handleActivationRequest:(id)arg1;
+- (void)speechRequestStateDidChange:(long long)arg1;
 - (void)activationRequestFromTestingWithContext:(id)arg1;
 - (void)activationRequestFromVoiceTrigger;
 - (void)activationRequestFromSpotlightWithContext:(id)arg1;
@@ -148,6 +151,7 @@
 - (void)registerActivationSource:(id)arg1 withIdentifier:(id)arg2;
 - (void)siriPresentationFailureWithIdentifier:(long long)arg1 error:(id)arg2;
 - (void)siriPresentationDismissedWithIdentifier:(long long)arg1;
+- (void)siriPresentationWillDismissWithIdentifier:(long long)arg1;
 - (void)siriPresentationDisplayedWithIdentifier:(long long)arg1;
 - (void)unregisterSiriPresentationIdentifier:(long long)arg1;
 - (void)registerSiriPresentation:(id)arg1 withIdentifier:(long long)arg2;

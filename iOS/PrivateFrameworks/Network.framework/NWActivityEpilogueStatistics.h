@@ -34,7 +34,7 @@
 @property(readonly, nonatomic) unsigned long long durationMsecs;
 @property(readonly, nonatomic) unsigned long long investigation_identifier;
 @property(readonly, nonatomic) int completionReason;
-@property(readonly, nonatomic) BOOL retry;
+@property(readonly, nonatomic) _Bool retry;
 @property(readonly, nonatomic) unsigned int label;
 @property(readonly, nonatomic) unsigned int domain;
 

@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (id)dockViewHomeGestureExclusionZones;
 + (CDStruct_dff9a9da)_itemFramesForBoundingSize:(struct CGSize)arg1;
-+ (int)_effectiveHandBias;
++ (int)_currentInterfaceOrientation;
 @property(retain, nonatomic) UIKeyboardDockItem *centerDockItem; // @synthesize centerDockItem=_centerDockItem;
 @property(retain, nonatomic) UIKeyboardDockItem *rightDockItem; // @synthesize rightDockItem=_rightDockItem;
 @property(retain, nonatomic) UIKeyboardDockItem *leftDockItem; // @synthesize leftDockItem=_leftDockItem;

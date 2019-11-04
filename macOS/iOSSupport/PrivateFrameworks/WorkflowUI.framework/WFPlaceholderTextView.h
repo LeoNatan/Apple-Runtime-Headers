@@ -21,11 +21,14 @@
 - (void)layoutSubviews;
 - (void)setTextContainerInset:(struct UIEdgeInsets)arg1;
 - (void)setTextAlignment:(long long)arg1;
+- (void)invalidatePlaceholderFont;
+- (void)setTypingAttributes:(id)arg1;
 - (void)setFont:(id)arg1;
 @property(copy, nonatomic) NSAttributedString *attributedPlaceholder;
 @property(copy, nonatomic) NSString *placeholder;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 textContainer:(id)arg2;
 
 @end
 

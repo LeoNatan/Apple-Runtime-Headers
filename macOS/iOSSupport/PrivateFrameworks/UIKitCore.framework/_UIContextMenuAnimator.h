@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)performAllAnimations;
 - (void)addCompletion:(CDUnknownBlockType)arg1;
 - (void)addAnimations:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) BOOL hasAnyActions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

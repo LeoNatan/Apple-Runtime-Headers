@@ -62,6 +62,7 @@
 - (void)logEventInteractionForRealtimeEvent:(id)arg1 parentEntity:(id)arg2 interface:(unsigned short)arg3 actionType:(unsigned short)arg4;
 - (void)logEventInteractionForRealtimeEventSync:(id)arg1 parentEntity:(id)arg2 interface:(unsigned short)arg3 actionType:(unsigned short)arg4;
 - (void)logEventInteractionForEntitySync:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
+- (id)interactionKeyForCategory:(unsigned short)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (id)interactionKeyForInterface:(unsigned short)arg1 actionType:(unsigned short)arg2;
 - (void)logEventInteractionForEntity:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logEventExtractionForTemplateName:(id)arg1 extractionStatus:(unsigned short)arg2 outputExceptions:(id)arg3 outputInfos:(id)arg4 jsMessageLogs:(id)arg5 jsOutputLogs:(id)arg6 timingProcessing:(unsigned long long)arg7;
@@ -74,6 +75,7 @@
 - (void)_enrichLogWithAppsUsage:(id)arg1;
 - (void)enrichInteractionSummaryLog:(id)arg1;
 - (id)launchCountMessageAfterDate:(id)arg1;
+- (id)bucketizedRemindersCreatedAfterDate:(id)arg1 endDate:(id)arg2;
 - (void)enrichAggregateSummaryLog:(id)arg1;
 - (void)enrichReminderInteractionSummaryLog:(id)arg1;
 - (id)createInteractionSummaryForEventKey:(id)arg1 expirationDate:(id)arg2 interactionKey:(id)arg3 interactionAttributes:(id)arg4 rtcCategory:(unsigned short)arg5;

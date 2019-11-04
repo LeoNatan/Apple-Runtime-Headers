@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <SpringBoard/BSDescriptionProviding-Protocol.h>
+#import <SpringBoard/NSCopying-Protocol.h>
 
 @class BKSDisplayRenderOverlayDescriptor, NSString, NSURL;
 
-@interface SBRestartTransitionRequest : NSObject <BSDescriptionProviding>
+@interface SBRestartTransitionRequest : NSObject <BSDescriptionProviding, NSCopying>
 {
     NSString *_requester;
     NSString *_reason;
@@ -34,6 +35,7 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequester:(id)arg1 reason:(id)arg2;
 - (id)init;
 

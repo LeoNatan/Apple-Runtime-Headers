@@ -6,29 +6,34 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMFActivity, HMFUnfairLock, NSOperationQueue, NSURL;
+#import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@interface HMBSQLContext : HMFObject
+@class HMFUnfairLock, NSOperationQueue, NSString, NSURL;
+
+@interface HMBSQLContext : HMFObject <HMFLogging>
 {
     struct sqlite3_stmt *_begin;
     struct sqlite3_stmt *_commit;
     struct sqlite3_stmt *_rollback;
     _Bool _readOnly;
+    _Bool _finalized;
+    NSString *_logIdentifier;
     NSURL *_url;
     struct sqlite3 *_context;
     NSOperationQueue *_queue;
     HMFUnfairLock *_lock;
-    HMFActivity *_activity;
     unsigned long long _mutation;
 }
 
++ (id)logCategory;
 @property(nonatomic) unsigned long long mutation; // @synthesize mutation=_mutation;
-@property(retain, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
+@property(nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(retain, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) struct sqlite3 *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(retain, nonatomic) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
 - (_Bool)fetchSQLite3One:(struct sqlite3_stmt *)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)fetchSQLite3:(struct sqlite3_stmt *)arg1 limit:(unsigned long long)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
@@ -45,15 +50,22 @@
 - (id)sqlTransaction:(CDUnknownBlockType)arg1;
 - (id)sqlBlockWithActivity:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)sqlBlock:(CDUnknownBlockType)arg1;
-- (void)_unprepare;
 - (id)_prepareFrom:(id)arg1;
-- (id)close;
 - (_Bool)updateSchemaVersionTo:(long long)arg1 error:(id *)arg2;
 - (long long)migrateFromSchemaVersion:(long long)arg1 error:(id *)arg2;
 - (id)prepare;
 - (id)initialize;
+- (void)_finalize;
+- (void)finalize;
+- (void)close;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 readOnly:(_Bool)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

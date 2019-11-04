@@ -9,22 +9,30 @@
 #import <ContactsFoundation/CNObserver-Protocol.h>
 
 @class CNObservableContractEnforcement, NSMutableArray, NSString;
+@protocol CNCancelable;
 
 @interface CNPublishingSubject : CNObservable <CNObserver>
 {
+    CNObservable *_observable;
+    id <CNCancelable> _upstreamToken;
     NSMutableArray *_observers;
     CNObservableContractEnforcement *_enforcement;
 }
 
 @property(readonly, nonatomic) CNObservableContractEnforcement *enforcement; // @synthesize enforcement=_enforcement;
+@property(readonly, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) id <CNCancelable> upstreamToken; // @synthesize upstreamToken=_upstreamToken;
+@property(readonly, nonatomic) CNObservable *observable; // @synthesize observable=_observable;
 - (void).cxx_destruct;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;
+- (void)_subscribeToObservableIfNecessary;
 - (id)_allObservers;
 - (void)_removeObserver:(id)arg1;
 - (void)_addObserver:(id)arg1;
 - (id)subscribe:(id)arg1;
+- (id)initWithObservable:(id)arg1;
 - (id)init;
 
 // Remaining properties

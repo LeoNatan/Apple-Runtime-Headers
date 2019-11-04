@@ -6,7 +6,7 @@
 
 #import <TVMLKit/_TVBgImageLoadingViewController.h>
 
-@class IKViewElement, UIScrollView, VUIUpsellOfferView;
+@class IKViewElement, UIScrollView, VUIUpsellOfferTransactionView, VUIUpsellOfferView;
 
 __attribute__((visibility("hidden")))
 @interface VUIUpsellOfferViewController : _TVBgImageLoadingViewController
@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     IKViewElement *_viewElement;
     VUIUpsellOfferView *_upsellView;
     UIScrollView *_scrollView;
+    VUIUpsellOfferTransactionView *_transactionView;
 }
 
+@property(retain, nonatomic) VUIUpsellOfferTransactionView *transactionView; // @synthesize transactionView=_transactionView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) VUIUpsellOfferView *upsellView; // @synthesize upsellView=_upsellView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;

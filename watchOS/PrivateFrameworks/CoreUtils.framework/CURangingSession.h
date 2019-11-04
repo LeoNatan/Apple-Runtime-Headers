@@ -24,8 +24,12 @@
     CDUnknownBlockType _measurementHandler;
     CDUnknownBlockType _measurementHandlerEx;
     NSArray *_peers;
+    CDUnknownBlockType _statusChangedHandler;
+    unsigned int _statusFlags;
 }
 
+@property(readonly, nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
+@property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(copy, nonatomic) NSArray *peers; // @synthesize peers=_peers;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandlerEx; // @synthesize measurementHandlerEx=_measurementHandlerEx;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandler; // @synthesize measurementHandler=_measurementHandler;

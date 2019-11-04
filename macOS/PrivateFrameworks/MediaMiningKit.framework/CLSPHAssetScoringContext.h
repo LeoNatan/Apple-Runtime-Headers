@@ -18,6 +18,7 @@
     BOOL _shouldEmphasizeLive;
     BOOL _shouldEmphasizeBurst;
     BOOL _shouldEmphasizeSDOF;
+    BOOL _shouldEmphasizeReframe;
     short _audioClassificationsToEmphasize;
     double _viewCountThreshold;
     double _playCountThreshold;
@@ -26,6 +27,7 @@
 
 @property(nonatomic) double aestheticScoreThresholdToBeAwesome; // @synthesize aestheticScoreThresholdToBeAwesome=_aestheticScoreThresholdToBeAwesome;
 @property(nonatomic) short audioClassificationsToEmphasize; // @synthesize audioClassificationsToEmphasize=_audioClassificationsToEmphasize;
+@property(nonatomic) BOOL shouldEmphasizeReframe; // @synthesize shouldEmphasizeReframe=_shouldEmphasizeReframe;
 @property(nonatomic) BOOL shouldEmphasizeSDOF; // @synthesize shouldEmphasizeSDOF=_shouldEmphasizeSDOF;
 @property(nonatomic) BOOL shouldEmphasizeBurst; // @synthesize shouldEmphasizeBurst=_shouldEmphasizeBurst;
 @property(nonatomic) BOOL shouldEmphasizeLive; // @synthesize shouldEmphasizeLive=_shouldEmphasizeLive;

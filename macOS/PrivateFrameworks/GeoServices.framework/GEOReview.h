@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOReview : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_languageCode;
     double _reviewTime;
@@ -22,6 +21,9 @@ __attribute__((visibility("hidden")))
     double _score;
     NSString *_snippet;
     NSString *_uid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _isChinaSuppressed;
     struct {
         unsigned int has_reviewTime:1;
@@ -75,6 +77,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *snippet;
 @property(readonly, nonatomic) BOOL hasSnippet;
 - (void)_readSnippet;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

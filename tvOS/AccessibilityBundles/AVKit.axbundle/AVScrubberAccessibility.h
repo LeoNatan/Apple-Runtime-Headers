@@ -12,6 +12,7 @@
 
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (struct CGRect)accessibilityFrame;
 - (_Bool)_accessibilityOverridesInvalidFrames;
 
 @end

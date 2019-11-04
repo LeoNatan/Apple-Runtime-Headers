@@ -10,8 +10,8 @@
 #import <MediaPlaybackCore/MPRTCReportingItemSessionContaining-Protocol.h>
 #import <MediaPlaybackCore/MPRequestResponseControllerDelegate-Protocol.h>
 
-@class ICUserIdentity, MPCModelGenericAVItemUserIdentityPropertySet, MPCPlaybackRequestEnvironment, MPIdentifierSet, MPModelGenericObject, MPModelRequest, MPModelResponse, MPRequestResponseController, NSDictionary, NSHashTable, NSLock, NSObject, NSString;
-@protocol MPMutableIdentifierListSection, OS_dispatch_queue;
+@class ICUserIdentity, MPAVItem, MPCModelGenericAVItemUserIdentityPropertySet, MPCModelPlaybackContext, MPCPlaybackRequestEnvironment, MPIdentifierSet, MPModelGenericObject, MPModelRequest, MPModelResponse, MPRequestResponseController, NSDictionary, NSHashTable, NSLock, NSObject, NSString;
+@protocol MPCModelPlaybackRequest, MPCModelPlaybackResponse, MPMutableIdentifierListSection, OS_dispatch_queue;
 
 @interface MPCModelQueueFeeder : MPQueueFeeder <MPRTCReportingItemSessionContaining, MPRequestResponseControllerDelegate, MPCQueueControllerDataSource>
 {
@@ -23,11 +23,10 @@
     unsigned long long _backgroundTaskIdentifier;
     unsigned long long _backgroundTasks;
     NSDictionary *_endTimeModifications;
-    CDUnknownBlockType _finalTracklistLoadingCompletionHandler;
-    BOOL _hasFoundStartItem;
+    CDUnknownBlockType _loadingCompletionHandler;
     MPRequestResponseController *_requestController;
-    MPModelRequest *_request;
-    MPModelResponse *_response;
+    MPModelRequest<MPCModelPlaybackRequest> *_request;
+    MPModelResponse<MPCModelPlaybackResponse> *_response;
     NSString *_rtcReportingPlayQueueSourceIdentifier;
     BOOL _isSiriInitiated;
     MPCPlaybackRequestEnvironment *_playbackRequestEnvironment;
@@ -36,7 +35,8 @@
     NSDictionary *_startTimeModifications;
     id <MPMutableIdentifierListSection> _section;
     MPCModelGenericAVItemUserIdentityPropertySet *_identityPropertySet;
-    BOOL _isForRepresentativeMetadataOnly;
+    MPAVItem *_currentItem;
+    MPCModelPlaybackContext *_playbackContext;
     MPModelGenericObject *_fallbackSectionRepresentation;
 }
 
@@ -44,17 +44,19 @@
 @property(copy, nonatomic) MPModelGenericObject *fallbackSectionRepresentation; // @synthesize fallbackSectionRepresentation=_fallbackSectionRepresentation;
 - (void).cxx_destruct;
 - (void)_updateProactiveCaching;
-- (BOOL)_shouldRecordReturnedItemIDs;
+- (id)_sectionedModelObjectsRepresentationForSectionedCollection:(id)arg1;
 - (id)_equivalencySourceAdamIDForIdentifierSet:(id)arg1;
 - (void)_endBackgroundTaskAssertion;
-- (id)_currentPreferredStartIdentifierWithFinalResponse:(BOOL)arg1;
 - (void)_beginBackgroundTaskAssertion;
 - (BOOL)section:(id)arg1 shouldShuffleExcludeItem:(id)arg2;
 - (BOOL)section:(id)arg1 supportsShuffleType:(long long)arg2;
 - (void)reloadSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)shouldUsePlaceholderForItem:(id)arg1 inSection:(id)arg2;
 - (id)itemForItem:(id)arg1 inSection:(id)arg2;
+- (void)itemDidBeginPlayback:(id)arg1;
 - (void)loadPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)firstItemIntersectingIdentifierSet:(id)arg1;
+@property(readonly, nonatomic) BOOL containsTransportableContent;
 @property(readonly, nonatomic) BOOL containsLiveStream;
 @property(readonly, copy, nonatomic) NSString *rtcReportingPlayQueueSourceIdentifier;
 - (void)didFinishLoadingRequestForController:(id)arg1;
@@ -64,7 +66,8 @@
 - (void)getRepresentativeMetadataForPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)modelPlayEvent;
 - (id)uniqueIdentifier;
-- (id)supplementalPlaybackContext;
+- (id)updatedPlaybackContext;
+- (id)supplementalPlaybackContextWithReason:(long long)arg1;
 - (long long)supplementalPlaybackContextBehavior;
 - (id)playbackInfoForItem:(id)arg1;
 - (void)applyVolumeNormalizationForItem:(id)arg1;

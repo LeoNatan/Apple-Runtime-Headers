@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) NSDate *dateValue;
 @property(readonly, nonatomic) double doubleValue;
 @property(readonly, nonatomic) long long int64Value;
+@property(readonly, nonatomic) long long integerValue;
 @property(readonly, nonatomic) _Bool boolValue;
 @property(readonly, nonatomic) long long databaseIDValue;
 @property(readonly, nonatomic) NSNumber *numberValue;

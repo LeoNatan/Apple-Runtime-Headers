@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)_doConnectWithOptions:(unsigned long long)arg1;
 - (BOOL)_connectToService;
+- (void)isExtensionProcessWithAuditToken:(CDStruct_6ad76789)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)debugHintsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)realmsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)configurationWithCompletion:(CDUnknownBlockType)arg1;

@@ -22,16 +22,19 @@
         unsigned int supportsBlockGeneration:1;
         unsigned int disconnectedFromAssetManager:1;
     } _assetFlags;
+    CUINamedLayerStack *_layerStack;
+    id _unpinObserver;
+    CDUnknownBlockType _rebuildStackImage;
     CDUnknownBlockType _creationBlock;
     NSString *_assetName;
-    CUINamedLayerStack *__layerStack;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)_dynamicAssetNamed:(id)arg1 generator:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) CUINamedLayerStack *_layerStack; // @synthesize _layerStack=__layerStack;
 @property(copy, nonatomic) NSString *assetName; // @synthesize assetName=_assetName;
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
+@property(copy, nonatomic, setter=_setRebuildStackImage:) CDUnknownBlockType _rebuildStackImage; // @synthesize _rebuildStackImage;
+@property(nonatomic, setter=_setUnpinObserver:) __weak id _unpinObserver; // @synthesize _unpinObserver;
 @property(readonly, nonatomic) __weak _UIAssetManager *_assetManager; // @synthesize _assetManager;
 - (void).cxx_destruct;
 - (id)_cachedRenditionWithSize:(struct CGSize)arg1 tintColor:(id)arg2 traitCollection:(id)arg3 bold:(BOOL)arg4 letterpress:(BOOL)arg5 drawMode:(unsigned int)arg6;
@@ -48,6 +51,7 @@
 - (void)_registerImage:(id)arg1 withConfiguration:(id)arg2;
 - (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2;
 - (id)_nameForStoringRuntimeRegisteredImagesInMutableCatalog;
+@property(retain, nonatomic, setter=_setLayerStack:) CUINamedLayerStack *_layerStack; // @synthesize _layerStack;
 - (BOOL)isEqual:(id)arg1;
 - (void)unregisterImageWithTraitCollection:(id)arg1;
 - (void)unregisterImageWithConfiguration:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class ICAppearanceInfo, ICViewControllerManager, UIColor, UITraitCollection;
+@class ICAppearanceInfo, ICViewControllerManager, UIColor, UITraitCollection, UIWindowScene;
 
 @interface UIView (IC)
 + (void)ic_animateWithDuration:(double)arg1 timingFunction:(id)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
@@ -22,6 +22,7 @@
 - (id)ic_imageViewRenderedFromLayer;
 - (id)ic_imageRenderedFromViewHierarchy;
 - (id)ic_imageRenderedFromLayer;
+@property(readonly, nonatomic) UIWindowScene *ic_windowScene;
 @property(readonly, nonatomic) ICAppearanceInfo *ic_appearanceInfo;
 @property(copy, nonatomic) UIColor *ic_backgroundColor;
 - (void)ic_crashIfWindowIsSecure;

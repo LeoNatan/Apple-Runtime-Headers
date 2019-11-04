@@ -13,8 +13,10 @@
     float _dayViewHourScale;
     float _weekViewHourScale;
     int _dayViewFirstVisibleSecond;
+    int _weekViewFirstVisibleSecond;
 }
 
+@property(nonatomic) int weekViewFirstVisibleSecond; // @synthesize weekViewFirstVisibleSecond=_weekViewFirstVisibleSecond;
 @property(nonatomic) int dayViewFirstVisibleSecond; // @synthesize dayViewFirstVisibleSecond=_dayViewFirstVisibleSecond;
 @property(nonatomic) float weekViewHourScale; // @synthesize weekViewHourScale=_weekViewHourScale;
 @property(nonatomic) float dayViewHourScale; // @synthesize dayViewHourScale=_dayViewHourScale;

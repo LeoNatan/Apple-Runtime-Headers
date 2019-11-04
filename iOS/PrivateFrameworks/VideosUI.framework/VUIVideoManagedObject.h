@@ -27,10 +27,12 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *brandID; // @dynamic brandID;
 @property(copy, nonatomic) NSString *brandName; // @dynamic brandName;
 @property(copy, nonatomic) NSString *canonicalID; // @dynamic canonicalID;
+@property(copy, nonatomic) NSString *contentRatingDomain; // @dynamic contentRatingDomain;
 @property(copy, nonatomic) NSNumber *contentRatingRank; // @dynamic contentRatingRank;
 @property(copy, nonatomic) NSDate *dateAdded; // @dynamic dateAdded;
 @property(nonatomic) long long downloadState; // @dynamic downloadState;
 @property(copy, nonatomic) NSNumber *downloadTaskIdentifier; // @dynamic downloadTaskIdentifier;
+@property(copy, nonatomic) NSURL *downloadURL; // @dynamic downloadURL;
 @property(copy, nonatomic) NSNumber *dsid; // @dynamic dsid;
 @property(copy, nonatomic) NSNumber *duration; // @dynamic duration;
 @property(copy, nonatomic) NSString *externalID; // @dynamic externalID;

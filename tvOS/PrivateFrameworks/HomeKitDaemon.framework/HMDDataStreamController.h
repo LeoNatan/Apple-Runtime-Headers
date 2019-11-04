@@ -22,9 +22,11 @@
     NSMutableArray *_activeProtocols;
     HMDDataStreamSetup *_setupInProgress;
     CDUnknownBlockType _dataStreamFactory;
+    NSString *_logIdentifier;
 }
 
 + (id)logCategory;
+@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) CDUnknownBlockType dataStreamFactory; // @synthesize dataStreamFactory=_dataStreamFactory;
 @property(retain, nonatomic) HMDDataStreamSetup *setupInProgress; // @synthesize setupInProgress=_setupInProgress;
 @property(nonatomic) _Bool supportsDataStreamOverTCP; // @synthesize supportsDataStreamOverTCP=_supportsDataStreamOverTCP;

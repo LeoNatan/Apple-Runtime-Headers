@@ -19,6 +19,7 @@
     MKMapItem *_mapItem;
     BOOL _alreadySentFeedback;
     BOOL _shouldDisplayNoResults;
+    BOOL _shouldEnableRAPForNoResults;
     MKLocalSearchCompletion *_directionIntentOrigin;
     MKLocalSearchCompletion *_directionIntentDestination;
 }

@@ -15,8 +15,6 @@
 + (id)safeCategoryTargetClassName;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (id)accessibilityElements;
-- (void)setAxElements_iOS:(id)arg1;
-- (id)axElements_iOS;
 
 @end
 

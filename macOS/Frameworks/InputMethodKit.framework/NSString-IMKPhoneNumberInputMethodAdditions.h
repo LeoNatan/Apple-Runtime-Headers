@@ -40,6 +40,7 @@
 - (unsigned int)_codePointBeforeIndex:(unsigned long long)arg1;
 - (id)_codePoints:(unsigned long long)arg1 beforeIndex:(unsigned long long)arg2;
 - (unsigned int)_codePointAtIndex:(unsigned long long)arg1;
+- (BOOL)containsRange:(struct _NSRange)arg1;
 - (long long)_indexOfSuffixIntersecting:(id)arg1;
 @end
 

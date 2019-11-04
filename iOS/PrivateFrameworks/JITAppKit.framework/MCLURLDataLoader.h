@@ -83,6 +83,7 @@
 - (id)defaultSessionConfiguration;
 - (void)configureSession;
 @property(readonly, nonatomic) NSSet *cacheLocations;
+- (id)downloadCachesDirectory;
 - (void)setCategory:(id)arg1 forTasks:(id)arg2;
 - (void)setCategory:(id)arg1 forTask:(id)arg2;
 - (void)cancelTasks:(id)arg1;

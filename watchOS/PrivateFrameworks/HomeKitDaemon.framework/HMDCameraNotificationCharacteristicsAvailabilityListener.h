@@ -27,13 +27,10 @@
 @property __weak id <HMDCameraNotificationCharacteristicsAvailabilityListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSSet *availableCharacteristics; // @synthesize availableCharacteristics=_availableCharacteristics;
 - (void).cxx_destruct;
-- (void)handleAccessoryAdded:(id)arg1;
-- (void)handleAccessoryRoomChange:(id)arg1;
 - (void)handleServicesUpdated:(id)arg1;
 - (void)handleCharacteristicsUpdated:(id)arg1;
 - (void)_notifyDelegate;
 - (id)_accessoryCharacteristicsToObserve;
-- (id)_sameRoomAccessoriesCharacteristicsToObserve;
 - (id)_recordingTriggerCharacteristicTypeForServiceType:(id)arg1;
 - (void)_registerForNotifications;
 - (void)start;

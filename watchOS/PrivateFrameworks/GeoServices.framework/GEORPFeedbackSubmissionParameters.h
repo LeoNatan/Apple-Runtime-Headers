@@ -13,12 +13,14 @@
 @interface GEORPFeedbackSubmissionParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_clientSubmissionUuid;
     GEORPFeedbackCommonContext *_commonContext;
     GEORPFeedbackCommonCorrections *_commonCorrections;
     GEORPFeedbackDetails *_details;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _type;
     struct {
         unsigned int has_type:1;
@@ -66,6 +68,8 @@
 @property(retain, nonatomic) NSString *clientSubmissionUuid;
 @property(readonly, nonatomic) _Bool hasClientSubmissionUuid;
 - (void)_readClientSubmissionUuid;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

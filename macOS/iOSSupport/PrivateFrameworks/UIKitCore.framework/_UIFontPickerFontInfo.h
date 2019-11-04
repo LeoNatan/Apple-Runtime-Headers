@@ -48,6 +48,7 @@
 @property(readonly) NSString *localizedFamilyName;
 @property(readonly) NSString *localizedName;
 - (void)_populateLocalizedNamesIfNecessary;
+@property(readonly, getter=isFontFamilyAvailable) BOOL fontFamilyAvailable;
 - (BOOL)matchesCTFontDescriptor:(struct __CTFontDescriptor *)arg1;
 - (BOOL)matchesFamilyForCTFontDescriptor:(struct __CTFontDescriptor *)arg1;
 @property(readonly) const struct __CTFontDescriptor *ctFontDescriptor;

@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) PGHostedWindowHostingHandle *hostedWindowHostingHandle;
+- (_Bool)_canBecomeKeyWindow;
+- (_Bool)canBecomeFirstResponder;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -12,6 +12,7 @@
 @protocol NUImageProperties <NSObject>
 @property(readonly) id <NURAWImageProperties> rawProperties;
 @property(readonly) NSDictionary *auxiliaryImagesProperties;
+@property(readonly) BOOL isFusedOvercapture;
 @property(readonly) long long componentInfo;
 @property(readonly) long long alphaInfo;
 @property(readonly) NSString *fileUTI;

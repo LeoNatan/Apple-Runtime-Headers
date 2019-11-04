@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) _UITextLoupeResponderProxy *responderProxy; // @synthesize responderProxy=_responderProxy;
 - (void).cxx_destruct;
-- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3;
+- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)canBeginDragCursor:(id)arg1;
 - (void)delayedDisplayLoupe:(id)arg1;
 - (void)delayedSelectionAction:(id)arg1;

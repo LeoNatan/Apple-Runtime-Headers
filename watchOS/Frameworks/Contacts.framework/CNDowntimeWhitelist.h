@@ -27,7 +27,6 @@
 - (_Bool)isHandleStringWhitelisted:(id)arg1;
 - (id)whitelistedHandleStringsFromHandleStrings:(id)arg1;
 - (void)dealloc;
-- (void)contactStoreDidChange;
 - (id)initWithContactStore:(id)arg1;
 - (id)init;
 

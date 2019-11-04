@@ -33,6 +33,7 @@
 - (void)fetchClientRegistrationRecordsWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchClientRegistrationRecordsCreatingZoneIfNecessaryWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pushClientRegistrationRecord:(id)arg1 group:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)removeCloudRegistrationContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupCloudContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)checkClientCompatibilityWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateClientRegistrationRecordWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;

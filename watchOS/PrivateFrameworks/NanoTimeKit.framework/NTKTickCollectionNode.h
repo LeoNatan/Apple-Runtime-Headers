@@ -6,8 +6,11 @@
 
 #import <NanoTimeKit/NTKCollectionNode.h>
 
+@class UIColor;
+
 @interface NTKTickCollectionNode : NTKCollectionNode
 {
+    UIColor *_customSmallTickColor;
     unsigned int _ticks;
     float _smallColor;
     float _largeColor;
@@ -28,6 +31,7 @@
 @property(nonatomic) float largeColor; // @synthesize largeColor=_largeColor;
 @property(nonatomic) float smallColor; // @synthesize smallColor=_smallColor;
 @property(nonatomic) unsigned int ticks; // @synthesize ticks=_ticks;
+- (void).cxx_destruct;
 - (id)largeTickColor;
 - (id)smallTickColor;
 - (void)colorizeBackground:(id)arg1;

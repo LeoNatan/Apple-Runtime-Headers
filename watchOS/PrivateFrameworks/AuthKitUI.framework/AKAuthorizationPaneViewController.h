@@ -7,11 +7,11 @@
 #import <PepperUICore/PUICTableViewController.h>
 
 @class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, UIStackView;
-@protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate;
+@protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate;
 
 @interface AKAuthorizationPaneViewController : PUICTableViewController
 {
-    id <AKAuthorizationPaneViewControllerDelegate> _paneDelegate;
+    id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> _paneDelegate;
     id <AKAuthorizationEditableDataSources> _editableDataSources;
     UIStackView *_paneHeaderStackView;
     UIStackView *_paneFooterStackView;
@@ -30,11 +30,9 @@
 @property(readonly, nonatomic) UIStackView *paneFooterStackView; // @synthesize paneFooterStackView=_paneFooterStackView;
 @property(readonly, nonatomic) UIStackView *paneHeaderStackView; // @synthesize paneHeaderStackView=_paneHeaderStackView;
 @property(nonatomic) __weak id <AKAuthorizationEditableDataSources> editableDataSources; // @synthesize editableDataSources=_editableDataSources;
-@property(nonatomic) __weak id <AKAuthorizationPaneViewControllerDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
+@property(nonatomic) __weak id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
 - (void).cxx_destruct;
 - (_Bool)isWristDetectionEnabled;
-- (id)iconForData:(id)arg1 scale:(float)arg2;
-- (id)iconForContext:(id)arg1;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

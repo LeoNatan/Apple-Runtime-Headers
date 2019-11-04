@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKDashboardItemPresenter-Protocol.h>
 
-@class NSCache, NSDateFormatter, NSString, PKPaymentTransactionCollectionViewCell, UIFont, UIImage;
+@class NSCache, NSDateFormatter, NSString, PKPaymentTransactionCellController, PKPaymentTransactionCollectionViewCell, UIFont, UIImage;
 
 @interface PKTransactionGroupItemPresenter : NSObject <PKDashboardItemPresenter>
 {
@@ -22,17 +22,19 @@
     UIImage *_interestImage;
     UIImage *_appleCardImage;
     UIImage *_refundsImage;
+    UIImage *_adjustmentsImage;
     NSCache *_iconsPerMerchantCategory;
-    NSCache *_iconsPerMerchant;
     struct CGSize _groupSize;
     _Bool _needsSizing;
     NSDateFormatter *_formatterYear;
     NSDateFormatter *_formatterMonth;
     _Bool _useAccessibilityLayout;
+    PKPaymentTransactionCellController *_cellController;
 }
 
 - (void).cxx_destruct;
 - (struct CGSize)_imageSize;
+- (id)adjustmentsImage;
 - (id)refundsImage;
 - (id)appleCardImage;
 - (id)interestImage;

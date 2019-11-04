@@ -19,13 +19,11 @@
     } delegateCallbacks;
     NSCountedSet *_activities;
     NSMapTable *_activitiesByObject;
-    NSMapTable *_completedActivitiesByObject;
     id <REActivityTrackerDelegate> _delegate;
 }
 
 @property(readonly, nonatomic) __weak id <REActivityTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (unsigned int)numberOfCompletedActivities:(id)arg1 forObject:(id)arg2;
 - (id)outstandingActivitiesForObject:(id)arg1;
 @property(readonly, nonatomic) NSSet *outstandingActivities;
 - (void)endActivity:(id)arg1 forObject:(id)arg2;

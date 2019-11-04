@@ -54,6 +54,17 @@
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+- (_Bool)_repairTableThumbFragmentation;
+- (_Bool)_repushAllUserSmartAlbum:(id)arg1;
+- (_Bool)_repairOrphanedProjectAlbumsInStore:(id)arg1;
+- (_Bool)_runPairingForAssetsInStore:(id)arg1;
+- (_Bool)_scavengeSnowplowMetadataForAssetsInStore:(id)arg1;
+- (_Bool)_fixInvalidPostMigrationFileSystemImportedAssets:(id)arg1;
+- (_Bool)_updateQualitySortForResourcesWithCPLResourceTypeVideoFullSizeInStore:(id)arg1;
+- (_Bool)_fixAdjustedFingerprintsInStore:(id)arg1;
+- (_Bool)_fixUnpushedVideoComplementResourcesInStore:(id)arg1;
+- (_Bool)_fixUploadedButNotRemotelyAvailalbeCPLResourcesInStore:(id)arg1;
+- (_Bool)_fixSharedStreamVideoResourcesInStore:(id)arg1;
 - (_Bool)_removeAllSharedAssetDCIMFilesInStore:(id)arg1;
 - (_Bool)_removeCloudSharedFileAtPath:(id)arg1 withFileManager:(id)arg2 error:(id *)arg3;
 - (_Bool)relocateOriginalUBFPaths:(id)arg1;
@@ -199,7 +210,7 @@
 - (_Bool)_migrateOriginalColorSpaceInStagedStore:(id)arg1;
 - (_Bool)_performMigrationCacheDateCreatedOnResources:(_Bool)arg1 cacheItemIdentifierOnResources:(_Bool)arg2 store:(id)arg3;
 - (_Bool)_fixupEditorBundleIDsInStore:(id)arg1;
-- (_Bool)_forceDupeAnalysis;
+- (void)_forceDupeAnalysis;
 - (_Bool)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
 - (_Bool)_fixupAssetPersistence:(id)arg1;
 - (_Bool)_persistVideoComplPropertiesInStore:(id)arg1;
@@ -335,7 +346,7 @@
 - (void)_collectFileURLs:(id)arg1 urlsToSkip:(id)arg2 forAddingToAlbum:(id)arg3 intoAssetsArray:(id)arg4 assetsKind:(int)arg5 testCreationDates:(_Bool)arg6;
 - (void)_importAllDCIMAssets:(id)arg1 pendingFraction:(float)arg2;
 - (void)_rebuildAssetsFromJournal:(id)arg1 pendingFraction:(float)arg2;
-- (void)_forceCreateIndexOnOrderedAssets:(_Bool)arg1;
+- (_Bool)_createManualIndexesDropBeforeCreate:(_Bool)arg1;
 - (id)_orderedAssetsToImportCameraRollOnly:(_Bool)arg1;
 - (_Bool)shouldRebuildDCIMDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 isPhotoStream:(_Bool *)arg3 isCPLAssets:(_Bool *)arg4 cameraRollOnly:(_Bool)arg5;
 - (void)resumePhotoStreams;
@@ -344,6 +355,7 @@
 - (void)dontImportFileSystemDataIntoDatabase;
 - (void)_repairPotentialModelCorruption;
 - (void)cleanupModelForDataMigrationForRestoreType:(int)arg1;
+- (void)handleGreenChanges:(id)arg1;
 - (void)_migratePersonContactInfo;
 - (void)_loadFacesFileSystemDataIntoDatabase;
 - (void)setLoadingFacesFromFileSystem:(_Bool)arg1;
@@ -386,7 +398,6 @@
 - (void)_createPhotoDataDirectoryFailedWithNoPermission:(id)arg1;
 - (_Bool)shouldCreateDatabase;
 - (int)migrateOrCreateDatabaseIfNecessaryWithPersistentContainer:(id)arg1 migrationPolicy:(unsigned int)arg2 error:(id *)arg3;
-- (void)removeForceRebuildIndicatorFile;
 - (int)checkForceRebuildIndicatorFile;
 - (_Bool)debug_resetThumbnailsAndInitiateRebuildRequest;
 - (_Bool)_removeEvents:(id)arg1;

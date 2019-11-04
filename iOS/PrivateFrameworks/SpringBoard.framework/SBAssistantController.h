@@ -11,14 +11,15 @@
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoard/SBFAuthenticationResponder-Protocol.h>
 #import <SpringBoard/SBFIdleTimerBehaviorProviding-Protocol.h>
+#import <SpringBoard/SBFluidGestureDismissable-Protocol.h>
 #import <SpringBoard/SBHomeGestureParticipantDelegate-Protocol.h>
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 #import <SpringBoard/SiriPresentationSpringBoardMainScreenViewControllerDelegate-Protocol.h>
 
-@class BSEventQueue, FBDisplayLayoutElement, NSHashTable, NSMutableArray, NSString, SBAssistantWindow, SBFAuthenticationAssertion, SBHomeGestureParticipant, SBSystemAnimationSettings, SiriPresentationSpringBoardMainScreenViewController, UIApplicationSceneDeactivationAssertion;
+@class BSEventQueue, FBDisplayLayoutElement, NSHashTable, NSMutableArray, NSSet, NSString, SBAssistantWindow, SBFAuthenticationAssertion, SBFluidDismissalState, SBHomeGestureParticipant, SBSystemAnimationSettings, SiriPresentationSpringBoardMainScreenViewController, UIApplicationSceneDeactivationAssertion;
 @protocol BSInvalidatable, SBIdleTimer, SBIdleTimerCoordinating;
 
-@interface SBAssistantController : NSObject <CSExternalBehaviorProviding, SBFIdleTimerBehaviorProviding, PTSettingsKeyObserver, SBHomeGestureParticipantDelegate, SBFAuthenticationResponder, SiriPresentationSpringBoardMainScreenViewControllerDelegate, SBIdleTimerProviding, CSCoverSheetOverlaying>
+@interface SBAssistantController : NSObject <SBFluidGestureDismissable, CSExternalBehaviorProviding, SBFIdleTimerBehaviorProviding, PTSettingsKeyObserver, SBHomeGestureParticipantDelegate, SBFAuthenticationResponder, SiriPresentationSpringBoardMainScreenViewControllerDelegate, SBIdleTimerProviding, CSCoverSheetOverlaying>
 {
     BSEventQueue *_operationQueue;
     NSString *_appDisplayIDBeingHosted;
@@ -35,11 +36,14 @@
     _Bool _visible;
     _Bool _dismissing;
     FBDisplayLayoutElement *_mainDisplayLayoutElement;
+    SBFluidDismissalState *_fluidDismissalState;
+    NSSet *_audioCategoriesDisablingVolumeHUD;
     id <BSInvalidatable> _hideApplicationModalAlertsAssertion;
     SBSystemAnimationSettings *_settings;
     id <SBIdleTimer> _idleTimer;
     NSMutableArray *_windowLevelAssertions;
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
+    id <BSInvalidatable> _suspendWallpaperAnimationAssertion;
 }
 
 + (void)bootstrapServices;
@@ -47,6 +51,7 @@
 + (_Bool)shouldBreadcrumbLaunchedApplicationWithBundleIdentifier:(id)arg1;
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
+@property(retain, nonatomic) id <BSInvalidatable> suspendWallpaperAnimationAssertion; // @synthesize suspendWallpaperAnimationAssertion=_suspendWallpaperAnimationAssertion;
 @property(nonatomic, getter=_idleTimerCoordinator, setter=_setIdleTimerCoordinator:) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(readonly, nonatomic) _Bool unlockedDevice; // @synthesize unlockedDevice=_unlockedDevice;
@@ -55,6 +60,7 @@
 - (void)siriPresentation:(id)arg1 isEnabledDidChange:(_Bool)arg2;
 - (void)siriPresentation:(id)arg1 requestsDismissalWithOptions:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)siriPresentation:(id)arg1 requestsPresentationWithOptions:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)siriPresentation:(id)arg1 didUpdateAudioCategoriesDisablingVolumeHUD:(id)arg2;
 - (_Bool)siriPresentation:(id)arg1 requestsDeviceUnlockWithPassword:(id)arg2;
 - (void)deviceUnlockRequestedWithPassword:(id)arg1;
 - (void)screenWakeIdleTimerResetRequested;
@@ -79,6 +85,7 @@
 @property(readonly, nonatomic) long long scrollingStrategy;
 @property(readonly, nonatomic) long long participantState;
 @property(readonly, copy, nonatomic) NSString *coverSheetIdentifier;
+- (void)_setStatusBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_dismissForMainScreenWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentForMainScreenAnimated:(_Bool)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_createAssistantWindowIfNecessary;
@@ -106,6 +113,7 @@
 - (id)mainScreenView;
 - (id)window;
 - (_Bool)shouldShowLockStatusBarTime;
+- (_Bool)shouldShowSystemVolumeHUDForCategory:(id)arg1;
 - (_Bool)overrideInterfaceOrientation:(long long *)arg1;
 - (id)activationSettings;
 - (void)dismissAssistantViewIfNecessaryWithAnimation:(long long)arg1 factory:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -117,6 +125,7 @@
 - (void)dealloc;
 - (id)_init;
 - (id)init;
+@property(retain, nonatomic) SBFluidDismissalState *fluidDismissalState;
 
 // Remaining properties
 @property(readonly, nonatomic) double customIdleExpirationTimeout;

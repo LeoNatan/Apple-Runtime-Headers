@@ -72,6 +72,8 @@
 - (void)executeDaemonOperationSaveAssetJobType;
 - (short)placeHolderKindFromAssetMetadataType:(unsigned int)arg1;
 - (_Bool)isProcessingThumbnail;
+- (id)_highPriorityOperationQueue;
+- (id)_lowPriorityOperationQueue;
 - (void)runDaemonSide;
 - (void)run;
 - (void)setupSaveAssetMetadataForCollectionsJobForAssetCollections:(id)arg1 album:(id)arg2 personID:(id)arg3 info:(id)arg4;

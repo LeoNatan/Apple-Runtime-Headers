@@ -64,6 +64,7 @@
 - (id)deleteMessageGUIDs:(id)arg1 inChat:(id)arg2;
 - (void)resolveUnformattedRepresentationsForHandles:(id)arg1 onService:(id)arg2 message:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)_cleanUnformattedPhoneNumber:(id)arg1 countryCode:(id)arg2;
+- (_Bool)_isValidPhoneNumber:(id)arg1 forCountryCode:(id)arg2;
 - (struct _IMDHandleRecordStruct *)_copyHandle:(id)arg1 onService:(id)arg2;
 - (id)_chatsForMessageIdentifier:(long long)arg1;
 - (id)chatForMessageIdentifier:(long long)arg1;

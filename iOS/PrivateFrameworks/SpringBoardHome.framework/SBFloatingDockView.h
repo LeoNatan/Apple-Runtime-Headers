@@ -12,6 +12,7 @@
 {
     SBDockIconListView *_userIconListView;
     SBDockIconListView *_recentIconListView;
+    double _platterVerticalMargin;
     unsigned long long _minimumUserIconSpaces;
     SBFloatingDockPlatterView *_mainPlatterView;
     UIView *_dividerView;
@@ -20,7 +21,7 @@
     struct UIEdgeInsets _paddingEdgeInsets;
 }
 
-+ (void)getMetrics:(CDStruct_c0971cc5 *)arg1 forBounds:(struct CGRect)arg2 numberOfUserIcons:(unsigned long long)arg3 numberOfRecentIcons:(unsigned long long)arg4 paddingEdgeInsets:(struct UIEdgeInsets)arg5 referenceIconSize:(struct CGSize)arg6 maximumIconSize:(struct CGSize)arg7 referenceInterIconSpacing:(double)arg8 maximumInterIconSpacing:(double)arg9;
++ (void)getMetrics:(CDStruct_c0971cc5 *)arg1 forBounds:(struct CGRect)arg2 numberOfUserIcons:(unsigned long long)arg3 numberOfRecentIcons:(unsigned long long)arg4 paddingEdgeInsets:(struct UIEdgeInsets)arg5 referenceIconSize:(struct CGSize)arg6 maximumIconSize:(struct CGSize)arg7 referenceInterIconSpacing:(double)arg8 maximumInterIconSpacing:(double)arg9 platterVerticalMargin:(double)arg10;
 + (double)contentHeightForBounds:(struct CGRect)arg1 mainPlatterViewFrame:(struct CGRect)arg2;
 + (struct CGSize)maximumIconSizeWithIconImageInfo:(struct SBIconImageInfo)arg1;
 + (double)minimumPlatterMargin;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
 @property(retain, nonatomic) SBFloatingDockPlatterView *mainPlatterView; // @synthesize mainPlatterView=_mainPlatterView;
 @property(nonatomic) unsigned long long minimumUserIconSpaces; // @synthesize minimumUserIconSpaces=_minimumUserIconSpaces;
+@property(nonatomic) double platterVerticalMargin; // @synthesize platterVerticalMargin=_platterVerticalMargin;
 @property(nonatomic) struct UIEdgeInsets paddingEdgeInsets; // @synthesize paddingEdgeInsets=_paddingEdgeInsets;
 @property(retain, nonatomic) SBDockIconListView *recentIconListView; // @synthesize recentIconListView=_recentIconListView;
 @property(retain, nonatomic) SBDockIconListView *userIconListView; // @synthesize userIconListView=_userIconListView;

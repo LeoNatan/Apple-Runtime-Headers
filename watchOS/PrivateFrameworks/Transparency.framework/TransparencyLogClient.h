@@ -13,10 +13,15 @@
     TransparencyLogSession *_session;
 }
 
-@property(readonly) TransparencyLogSession *session; // @synthesize session=_session;
+@property(retain) TransparencyLogSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (_Bool)downloadRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)fetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)download:(id)arg1 shouldRetry:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)fetch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)fetch:(id)arg1 shouldRetry:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)needsRetry:(id)arg1;
 - (id)initWithBackgroundSession:(id)arg1;
 
 @end

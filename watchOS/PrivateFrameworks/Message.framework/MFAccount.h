@@ -41,6 +41,7 @@
 + (id)predefinedValueForKey:(id)arg1;
 + (_Bool)isPredefinedAccountType;
 + (id)existingAccountForUniqueID:(id)arg1;
++ (id)releaseAllConnectionsScheduler;
 + (id)accountTypeIdentifier;
 + (id)_accountClass;
 + (id)_newPersistentAccount;
@@ -60,6 +61,7 @@
 - (_Bool)isSyncingNotes;
 - (_Bool)isEnabledForDataclass:(id)arg1;
 - (id)enabledDataclasses;
+@property(readonly, nonatomic) _Bool primaryiCloudAccount;
 - (id)loginDisabledErrorWithTitle:(id)arg1;
 - (id)inaccessiblePasswordErrorWithTitle:(id)arg1;
 - (id)missingPasswordErrorWithTitle:(id)arg1;

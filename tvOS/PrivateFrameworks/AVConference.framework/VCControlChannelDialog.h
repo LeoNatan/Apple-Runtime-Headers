@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 + (id)newEncryptedMessageFromMessage:(id)arg1 sequenceNumber:(unsigned short)arg2 transactionDelegate:(id)arg3;
 + (_Bool)encryptMessage:(id)arg1 buffer:(char *)arg2 size:(unsigned int)arg3 sequenceNumber:(unsigned short)arg4 transactionDelegate:(id)arg5;
 - (_Bool)processMessageFromParticipant:(id)arg1 transactionID:(id)arg2 status:(unsigned int)arg3;
-- (_Bool)sendReliableMessage:(id)arg1 transactionDelegate:(id)arg2;
+- (_Bool)sendReliableMessage:(id)arg1 transactionDelegate:(id)arg2 timeout:(id)arg3;
 - (void)removeTransactionForTransactionID:(int)arg1;
 - (void)flushActiveDialogs;
 - (void)dealloc;

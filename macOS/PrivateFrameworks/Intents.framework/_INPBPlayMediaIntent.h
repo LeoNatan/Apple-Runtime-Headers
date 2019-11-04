@@ -26,6 +26,8 @@
     BOOL __encodeLegacyGloryData;
     int _playbackQueueLocation;
     int _playbackRepeatMode;
+    NSArray *_alternativeResults;
+    NSArray *_audioSearchResults;
     _INPBString *_audiobookAuthor;
     _INPBString *_audiobookTitle;
     NSArray *_buckets;
@@ -48,6 +50,8 @@
 + (Class)mediaItemsType;
 + (Class)hashedRouteUIDsType;
 + (Class)bucketType;
++ (Class)audioSearchResultsType;
++ (Class)alternativeResultsType;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *showTitle; // @synthesize showTitle=_showTitle;
 @property(nonatomic) BOOL resumePlayback; // @synthesize resumePlayback=_resumePlayback;
@@ -69,6 +73,8 @@
 @property(copy, nonatomic) NSArray *buckets; // @synthesize buckets=_buckets;
 @property(retain, nonatomic) _INPBString *audiobookTitle; // @synthesize audiobookTitle=_audiobookTitle;
 @property(retain, nonatomic) _INPBString *audiobookAuthor; // @synthesize audiobookAuthor=_audiobookAuthor;
+@property(copy, nonatomic) NSArray *audioSearchResults; // @synthesize audioSearchResults=_audioSearchResults;
+@property(copy, nonatomic) NSArray *alternativeResults; // @synthesize alternativeResults=_alternativeResults;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
@@ -111,6 +117,14 @@
 - (void)clearBuckets;
 @property(readonly, nonatomic) BOOL hasAudiobookTitle;
 @property(readonly, nonatomic) BOOL hasAudiobookAuthor;
+- (id)audioSearchResultsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long audioSearchResultsCount;
+- (void)addAudioSearchResults:(id)arg1;
+- (void)clearAudioSearchResults;
+- (id)alternativeResultsAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long alternativeResultsCount;
+- (void)addAlternativeResults:(id)arg1;
+- (void)clearAlternativeResults;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

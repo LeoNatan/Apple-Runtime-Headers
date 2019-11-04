@@ -13,6 +13,7 @@
     _Bool _preferAspectFitContentMode;
     _Bool _useSaliency;
     _Bool _allowsAspectFit;
+    long long _defaultNumberOfColumns;
     long long _initialNumberOfColumns;
     long long _maxColumnsForIndividualItems;
     double _interitemSpacing;
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(readonly, nonatomic) long long maxColumnsForIndividualItems; // @synthesize maxColumnsForIndividualItems=_maxColumnsForIndividualItems;
 @property(readonly, nonatomic) long long initialNumberOfColumns; // @synthesize initialNumberOfColumns=_initialNumberOfColumns;
+@property(readonly, nonatomic) long long defaultNumberOfColumns; // @synthesize defaultNumberOfColumns=_defaultNumberOfColumns;
 - (void).cxx_destruct;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2 availableThumbnailSizes:(id)arg3;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;

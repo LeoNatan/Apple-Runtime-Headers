@@ -6,14 +6,16 @@
 
 #import <SettingsCellularUI/PSUIDanglingPlanTableCell.h>
 
-@class UIImageView;
+@class CTCellularPlanPendingTransfer, UIImageView;
 
 __attribute__((visibility("hidden")))
 @interface PSUIPlanPendingTransferTableCell : PSUIDanglingPlanTableCell
 {
     UIImageView *_view;
+    CTCellularPlanPendingTransfer *_planPendingTransfer;
 }
 
+@property(retain, nonatomic) CTCellularPlanPendingTransfer *planPendingTransfer; // @synthesize planPendingTransfer=_planPendingTransfer;
 @property(retain, nonatomic) UIImageView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;

@@ -9,10 +9,13 @@
 #import <HomeAI/HMFLogging-Protocol.h>
 #import <HomeAI/HMICameraVideoFrameAnalyzer-Protocol.h>
 
-@class HMFOSTransaction, HMISignificantActivityDetector, NSString;
+@class HMFOSTransaction, HMFUnfairLock, HMISignificantActivityDetector, NSMapTable, NSOperationQueue, NSString;
 
 @interface HMICameraVideoFrameAnalyzerSignificantActivity : HMFObject <HMICameraVideoFrameAnalyzer, HMFLogging>
 {
+    HMFUnfairLock *_lock;
+    NSOperationQueue *_regionOfInterestOperationQueue;
+    NSMapTable *_regionOfInterestOperations;
     HMISignificantActivityDetector *_significantActivityDetector;
     HMFOSTransaction *_transaction;
 }
@@ -21,8 +24,13 @@
 + (id)classHierarchyMap;
 @property(retain, nonatomic) HMFOSTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly) HMISignificantActivityDetector *significantActivityDetector; // @synthesize significantActivityDetector=_significantActivityDetector;
+@property(readonly) NSMapTable *regionOfInterestOperations; // @synthesize regionOfInterestOperations=_regionOfInterestOperations;
+@property(readonly) NSOperationQueue *regionOfInterestOperationQueue; // @synthesize regionOfInterestOperationQueue=_regionOfInterestOperationQueue;
+@property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
-- (id)classify:(id)arg1 targetEventTypes:(long long)arg2 error:(id *)arg3;
+- (id)analyze:(id)arg1 targetEventTypes:(long long)arg2 error:(id *)arg3;
+- (long long)rankForClassLabel:(long long)arg1;
+- (void)preAnalyze:(id)arg1;
 - (void)_addSimulatedDetectionForEventType:(long long)arg1 targetEventTypes:(long long)arg2 events:(long long *)arg3 annotationScores:(id)arg4 detections:(id)arg5;
 - (double)_confidenceScoreOverrideForEventType:(long long)arg1;
 - (id)initWithConfidenceThresholds:(struct NSDictionary *)arg1 nmsThreshold:(double)arg2 error:(id *)arg3;

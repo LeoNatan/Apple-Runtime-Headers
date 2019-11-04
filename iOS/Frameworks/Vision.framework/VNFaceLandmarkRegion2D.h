@@ -11,6 +11,7 @@
 @interface VNFaceLandmarkRegion2D : VNFaceLandmarkRegion
 {
     NSMutableDictionary *_sizedPointsCache;
+    struct os_unfair_lock_s _pointsCalculatorLock;
     // Error parsing type: ^, name: _points
     NSArray *_precisionEstimatesPerPoint;
     NSArray *_occlusionFlagsPerPoint;
@@ -26,6 +27,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
+- (void)_initLocks;
 -     // Error parsing type: @88@0:8Q16{CGRect={CGPoint=dd}{CGSize=dd}}24^56Q64@72@80, name: initWithRequestRevision:faceBoundingBox:points:pointCount:precisionEstimatesPerPoint:occlusionFlagsPerPoint:
 - (const struct CGPoint *)pointsInImageOfSize:(struct CGSize)arg1;
 @property(readonly) const struct CGPoint *normalizedPoints;

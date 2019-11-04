@@ -13,9 +13,11 @@
 @interface GEONavigationRouteTransitSummary : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_possibleStops;
     NSMutableArray *_scheduledLinks;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_possibleStops:1;
         unsigned int read_scheduledLinks:1;
@@ -52,6 +54,8 @@
 - (void)clearScheduledLinks;
 @property(retain, nonatomic) NSMutableArray *scheduledLinks;
 - (void)_readScheduledLinks;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithRoute:(id)arg1;
 
 @end

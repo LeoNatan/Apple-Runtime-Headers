@@ -55,6 +55,7 @@
 - (void)setNoBackground;
 - (void)setDisplayStyle:(unsigned long long)arg1;
 - (void)loadFlightWithFlightCode:(id)arg1 airlineCode:(id)arg2 date:(id)arg3;
+- (_Bool)_canShowWhileLocked;
 - (void)awakeFromNib;
 - (void)commonInit;
 - (id)initWithFlightCode:(unsigned long long)arg1 airlineCode:(id)arg2;

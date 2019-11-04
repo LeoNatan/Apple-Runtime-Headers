@@ -13,11 +13,13 @@
 @interface GEORPFeedbackImageUploadInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_clientImageUuid;
     NSString *_imageId;
     NSString *_imageUploadUrl;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_clientImageUuid:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) NSString *imageId;
 @property(readonly, nonatomic) BOOL hasImageId;
 - (void)_readImageId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

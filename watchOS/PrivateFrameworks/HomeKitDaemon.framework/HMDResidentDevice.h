@@ -7,22 +7,22 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMDBackingStoreObjectProtocol-Protocol.h>
+#import <HomeKitDaemon/HMDDeviceControllerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFDumpState-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDDevice, HMDHome, HMDResidentDeviceManager, HMFUnfairLock, NSString, NSUUID;
+@class HMDDevice, HMDDeviceController, HMDHome, HMDResidentDeviceManager, HMFUnfairLock, NSString, NSUUID;
 
-@interface HMDResidentDevice : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding>
+@interface HMDResidentDevice : HMFObject <HMDDeviceControllerDelegate, HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding>
 {
     HMFUnfairLock *__lock;
+    HMDDevice *_device;
+    HMDDeviceController *_deviceController;
     _Bool _enabled;
     _Bool _confirmed;
     _Bool _reachable;
     _Bool _lowBattery;
-    _Bool _supportsMediaActions;
-    _Bool _supportsShortcutActions;
-    HMDDevice *_device;
     NSUUID *_identifier;
     int _batteryState;
     HMDHome *_home;
@@ -35,20 +35,19 @@
 + (id)shortDescription;
 @property(nonatomic) __weak HMDResidentDeviceManager *residentDeviceManager; // @synthesize residentDeviceManager=_residentDeviceManager;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-@property(readonly, nonatomic) _Bool supportsShortcutActions; // @synthesize supportsShortcutActions=_supportsShortcutActions;
-@property(readonly, nonatomic) _Bool supportsMediaActions; // @synthesize supportsMediaActions=_supportsMediaActions;
+@property(retain, nonatomic) HMDDevice *device; // @synthesize device=_device;
 @property(nonatomic, getter=isLowBattery) _Bool lowBattery; // @synthesize lowBattery=_lowBattery;
 @property(nonatomic) int batteryState; // @synthesize batteryState=_batteryState;
 @property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(nonatomic, getter=isConfirmed) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) HMDDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;
 - (id)dumpState;
+- (void)deviceController:(id)arg1 didUpdateDevice:(id)arg2;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
 - (void)_handleResidentDeviceUpdateConfirmed:(_Bool)arg1;
 - (void)_handleResidentDeviceUpdateEnabled:(_Bool)arg1;
@@ -56,11 +55,10 @@
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)__deviceUpdated:(id)arg1;
-- (void)__deviceAdded:(id)arg1;
-- (void)__accountAdded:(id)arg1;
+- (id)deviceController;
 - (id)runtimeState;
-- (_Bool)supportsResidentShortcutActions;
-- (_Bool)supportsResidentMediaActions;
+@property(readonly, nonatomic) _Bool supportsShortcutActions;
+@property(readonly, nonatomic) _Bool supportsMediaActions;
 @property(readonly, nonatomic) _Bool supportsMediaSystem;
 @property(readonly, nonatomic) _Bool supportsSharedEventTriggerActivation;
 @property(readonly, nonatomic) unsigned int status;
@@ -74,6 +72,7 @@
 @property(readonly, getter=isBlocked) _Bool blocked;
 - (void)configureWithHome:(id)arg1;
 - (void)dealloc;
+- (id)__initWithDeviceController:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)init;

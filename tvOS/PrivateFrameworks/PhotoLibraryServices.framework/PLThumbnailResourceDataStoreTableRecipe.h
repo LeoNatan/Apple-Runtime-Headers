@@ -13,7 +13,7 @@
 
 @property(nonatomic) unsigned int recipeID; // @synthesize recipeID=_recipeID;
 - (id)description;
-- (void)generateAndStoreForAsset:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 progress:(id *)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)generateAndStoreForAsset:(id)arg1 version:(unsigned int)arg2 imageConversionClient:(id)arg3 videoConversionClient:(id)arg4 progress:(id *)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)chooseIngredientsFrom:(id)arg1 version:(unsigned int)arg2;
 - (id)supportedVersionsForLocalResourceGeneration;
 - (id)utiInContext:(id)arg1;

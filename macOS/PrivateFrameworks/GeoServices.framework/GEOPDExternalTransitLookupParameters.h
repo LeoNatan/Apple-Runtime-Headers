@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDExternalTransitLookupParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_externalTransitStationCodes;
     NSString *_sourceId;
     GEOLocation *_transactionLocation;
     double _transactionTimestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_transactionTimestamp:1;
         unsigned int read_unknownFields:1;
@@ -65,6 +67,8 @@ __attribute__((visibility("hidden")))
 - (void)_readTransactionLocation;
 @property(nonatomic) BOOL hasTransactionTimestamp;
 @property(nonatomic) double transactionTimestamp;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

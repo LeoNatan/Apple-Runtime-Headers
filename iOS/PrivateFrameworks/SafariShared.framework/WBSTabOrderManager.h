@@ -28,9 +28,11 @@
 @property(readonly, nonatomic) id <WBSOrderedTab> tabToSelectBeforeClosingSelectedTab;
 - (_Bool)_newTabPositionPreferenceAppliesToSwawnedTabs;
 - (unsigned long long)_userPreferredNewSpawnedTabPosition;
-- (unsigned long long)_userPreferredNewBlankTabPosition;
+- (unsigned long long)_userPreferredNewBlankTabPositionInCurrentContext:(_Bool)arg1;
 - (id)tabInsertionHintForSpawnedTab;
 - (id)tabToInsertSpawnedTabAfter;
+- (id)tabInsertionHintForNewBlankTabInCurrentContext;
+- (id)_tabInsertionHintForNewBlankTabWithRecommendedPosition:(unsigned long long)arg1;
 - (id)tabInsertionHintForNewBlankTab;
 - (id)tabToInsertNewBlankTabAfter;
 - (unsigned long long)_indexOfLastRelatedTab;

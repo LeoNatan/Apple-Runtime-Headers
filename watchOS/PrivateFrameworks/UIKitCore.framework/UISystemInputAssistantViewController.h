@@ -33,11 +33,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TUISystemInputAssistantView *systemInputAssistantView;
 - (void)updateCenterViewVisibilityStateForInputDelegate:(id)arg1;
 - (void)automaticallySetCenterViewControllerBasedOnInputDelegate:(id)arg1;
+- (void)_collapseBarItems;
 - (void)_expandBarItems;
 - (void)_showCandidates;
+- (_Bool)layoutHasBuiltinAssistantView;
 - (_Bool)shouldBeShownForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (_Bool)_centerPredictionViewVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (_Bool)_assistantItemsVisibleForResponder:(id)arg1;
+- (_Bool)_isAssistantPreferenceEnabled;
 - (id)_currentInputDelegate;
 - (id)_inputDelegateAsResponder:(id)arg1;
 - (_Bool)_canShowWhileLocked;

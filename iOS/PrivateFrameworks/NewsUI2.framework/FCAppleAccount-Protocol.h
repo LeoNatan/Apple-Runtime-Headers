@@ -6,7 +6,7 @@
 
 #import <NewsUI2/NSObject-Protocol.h>
 
-@class NSString;
+@class ACAccount, NSString;
 
 @protocol FCAppleAccount <NSObject>
 - (_Bool)isPrimaryAccountEmailAddress;
@@ -18,6 +18,7 @@
 - (NSString *)iTunesAccountDSID;
 - (NSString *)iTunesAccountName;
 - (_Bool)isUserSignedIntoiTunes;
+@property(nonatomic, readonly) ACAccount *activeiTunesAccount;
 @property(nonatomic, readonly) NSString *endpointConnectionClientID;
 - (_Bool)isUserSignedInToiCloud;
 - (_Bool)isPrivateDataSyncingEnabled;

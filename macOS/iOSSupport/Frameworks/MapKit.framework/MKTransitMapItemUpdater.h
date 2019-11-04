@@ -27,6 +27,7 @@
 - (void)_transitInfoUpdated;
 - (BOOL)_isInfoExpiredRelativeToDate:(id)arg1;
 - (BOOL)isStuckWithExpiredInfoRelativeToDate:(id)arg1;
+- (void)_processUpdatedMapItems:(id)arg1 identifier:(id)arg2 ttl:(double)arg3 error:(id)arg4;
 - (void)_refreshTransitInfoIfNeeded;
 - (void)_scheduleDataUpdateForTransitItemAtDate:(id)arg1;
 - (void)_suspendDataRefreshTimer;

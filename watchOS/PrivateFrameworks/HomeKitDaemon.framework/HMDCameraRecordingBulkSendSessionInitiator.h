@@ -16,7 +16,6 @@
 {
     _Bool _hasRegisteredBulkSendListener;
     _Bool _canSendBulkSendSessionOpenRequest;
-    NSString *_logIndentifier;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDHAPAccessory *_accessory;
     CDUnknownBlockType _pendingStartSessionCallback;
@@ -28,8 +27,8 @@
 @property _Bool hasRegisteredBulkSendListener; // @synthesize hasRegisteredBulkSendListener=_hasRegisteredBulkSendListener;
 @property(readonly) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly) NSString *logIndentifier; // @synthesize logIndentifier=_logIndentifier;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 @property(readonly, getter=isSessionOpenInProgress) _Bool sessionOpenInProgress;
 - (void)_callPendingStartSessionCallbackWithSession:(id)arg1 error:(id)arg2;
 - (void)callPendingStartSessionCallback:(id)arg1 error:(id)arg2;
@@ -40,8 +39,10 @@
 - (void)accessory:(id)arg1 didReceiveBulkSessionCandidate:(id)arg2;
 - (void)_registerAsBulkSendListener;
 - (void)handleAccessoryDoesSupportBulkSendDataStream:(id)arg1;
+- (void)dealloc;
+- (void)shutDown;
 - (void)start;
-- (id)initWithWorkQueue:(id)arg1 accessory:(id)arg2 logIdentifier:(id)arg3;
+- (id)initWithWorkQueue:(id)arg1 accessory:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

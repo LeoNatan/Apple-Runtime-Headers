@@ -14,6 +14,7 @@
 {
 }
 
+- (void)getResetSyncStatusWithReply:(CDUnknownBlockType)arg1;
 - (void)forceSyncMomentShareWithUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryUserIdentitiesWithEmails:(id)arg1 phoneNumbers:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)acceptMomentShareWithUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;

@@ -117,3 +117,8 @@ typedef struct {
     long long _field2;
 } CDStruct_912cb5d2;
 
+// Ambiguous groups
+typedef struct {
+    unsigned int schemaVersion:1;
+} CDStruct_278ffb8f;
+

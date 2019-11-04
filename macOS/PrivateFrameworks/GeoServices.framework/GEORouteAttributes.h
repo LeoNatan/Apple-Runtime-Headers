@@ -13,7 +13,6 @@
 @interface GEORouteAttributes : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _additionalTransportTypes;
     CDStruct_95bda58d _uiContexts;
@@ -23,6 +22,9 @@
     NSString *_phoneticLocaleIdentifier;
     GEOTransitOptions *_transitOptions;
     GEOWalkingOptions *_walkingOptions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _basicPointsToBeIncluded;
     int _destinationType;
     int _mainTransportType;
@@ -196,6 +198,8 @@
 @property(nonatomic) BOOL hasMainTransportType;
 @property(nonatomic) int mainTransportType;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

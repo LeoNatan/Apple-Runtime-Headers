@@ -13,15 +13,13 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)setExpanded:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_accessibilityLoadExpandedViews;
+- (void)setExpanded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)loadExpandedViewsIfNecessary;
 - (_Bool)_axShareAction;
 - (_Bool)_axInfoAction;
 - (id)accessibilityCustomActions;
 - (double)_accessibilityAllowedGeometryOverlap;
 - (_Bool)isAccessibilityElement;
-- (void)_accessibilityLoadAccessibilityInformation;
 - (id)accessibilityElements;
 
 @end

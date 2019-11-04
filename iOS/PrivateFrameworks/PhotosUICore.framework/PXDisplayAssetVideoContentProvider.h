@@ -29,7 +29,7 @@
 - (void)request:(id)arg1 didFinishWithPlayerItem:(id)arg2 info:(id)arg3;
 - (void)requestLoadingProgressDidChange:(id)arg1;
 - (void)_loadingQueue_reloadContent;
-- (void)_postprocessingQueue_performPostprocessingOfItem:(id)arg1 info:(id)arg2;
+- (void)_postprocessingQueue_performPostprocessingOfItem:(id)arg1 info:(id)arg2 priority:(long long)arg3;
 - (_Bool)_loadingQueue_needsNewRequestForPriority:(long long)arg1;
 - (void)_loadingQueue_beginRequestForPriorityIfNeeded:(long long)arg1;
 - (void)_loadingQueue_cancelAllRequests;

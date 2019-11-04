@@ -45,9 +45,11 @@
 @property(copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 - (void).cxx_destruct;
 - (_Bool)isMasterChange;
+- (_Bool)allowsToOnlyUploadNewResources;
 - (_Bool)isResourceTypeAGeneratedDerivative:(unsigned int)arg1;
 - (unsigned int)dataClassType;
 - (_Bool)supportsDeletion;
+- (_Bool)supportsResourceType:(unsigned int)arg1;
 - (_Bool)supportsResources;
 - (id)name;
 - (void)setName:(id)arg1;

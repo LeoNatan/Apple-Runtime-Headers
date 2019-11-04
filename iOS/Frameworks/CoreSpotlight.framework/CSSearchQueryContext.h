@@ -84,6 +84,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)xpc_dictionary;
+@property(nonatomic) _Bool fsOnly;
 @property(nonatomic) _Bool parseUserQuery;
 @property(nonatomic) _Bool lowPriority;
 @property(nonatomic) _Bool attribute;

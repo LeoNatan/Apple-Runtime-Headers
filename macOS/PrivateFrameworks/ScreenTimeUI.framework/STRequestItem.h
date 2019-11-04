@@ -14,6 +14,8 @@
     STUsageDetailItem *_item;
 }
 
++ (id)keyPathsForValuesAffectingLocalizedDisplayName;
++ (id)keyPathsForValuesAffectingIconImage;
 @property(retain, nonatomic) STUsageDetailItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) STAskForTimeRequestResponse *request; // @synthesize request=_request;
 - (void).cxx_destruct;

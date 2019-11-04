@@ -29,6 +29,7 @@
 - (unsigned long long)_keynote_supportedInterfaceOrientations;
 - (long long)_mediaPickerController_preferredInterfaceOrientationForPresentation;
 - (unsigned long long)_mediaPickerController_supportedInterfaceOrientations;
+- (void)_checkLibraryAuthorization;
 - (void)_synchronizeSettings;
 - (void)_resetRemoteViewController;
 - (void)_addRemoteView;
@@ -37,8 +38,12 @@
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)_pickerDidCancel;
 - (void)_forceDismissal;
+- (void)setPlaybackArchiveConfiguration:(id)arg1;
+- (id)playbackArchiveConfiguration;
 - (void)setPickingForExternalPlayer:(_Bool)arg1;
 - (_Bool)pickingForExternalPlayer;
+- (void)setShowsLibraryContent:(_Bool)arg1;
+- (_Bool)showsLibraryContent;
 - (void)setShowsCatalogContent:(_Bool)arg1;
 - (_Bool)showsCatalogContent;
 - (long long)selectionMode;
@@ -60,8 +65,9 @@
 - (long long)preferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
 - (long long)modalPresentationStyle;
-- (void)viewDidLoad;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)willMoveToParentViewController:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithSupportedTypeIdentifiers:(id)arg1 selectionMode:(long long)arg2;

@@ -128,6 +128,7 @@ __attribute__((visibility("hidden")))
 - (void)setLabel:(id)arg1;
 - (void)setToolTip:(id)arg1;
 - (void)dealloc;
+- (BOOL)isBrowserViewVisible;
 - (void)updateUsageTrackingInformationAfterShowingDigitalHealthOverlay;
 - (void)updateUsageTrackingInformationIfNecessaryGivenTabIsSelected:(BOOL)arg1 windowIsMainWindow:(BOOL)arg2;
 - (void)closeWithoutConfirming;

@@ -8,19 +8,22 @@
 
 #import <SpringBoardUIServices/SBFIrisWallpaperViewDelegate-Protocol.h>
 
-@class NSString, SBFLockScreenDateView, SBFWallpaperView, SBSUIEffectsSegmentedControl, UIButton, _UILegibilityLabel;
+@class NSString, SBFLockScreenDateView, SBFWallpaperView, UIButton, UILabel, UIViewPropertyAnimator, _SBUIWallpaperInstructionView, _UILegibilityLabel;
 @protocol SBSUIWallpaperPreviewViewDelegate;
 
 @interface SBSUIWallpaperPreviewView : UIView <SBFIrisWallpaperViewDelegate>
 {
-    _Bool _irisPossible;
+    UIViewPropertyAnimator *_cropInstructionsAnimator;
+    UIViewPropertyAnimator *_effectInstructionsAnimator;
+    UIViewPropertyAnimator *_fadeOutInstructionsAnimator;
     _UILegibilityLabel *_irisInstructionsLabel1;
     _UILegibilityLabel *_irisInstructionsLabel2;
+    UILabel *_effectStateLabel;
+    _SBUIWallpaperInstructionView *_cropInstructionView;
     UIView *_gradientView;
-    _Bool _observingParallaxChanges;
-    _Bool _usingSegmentedControl;
+    _Bool _irisPossible;
+    _Bool _parallaxPossible;
     id <SBSUIWallpaperPreviewViewDelegate> _delegate;
-    SBSUIEffectsSegmentedControl *_segmentedControl;
     SBFLockScreenDateView *_dateView;
     SBFWallpaperView *_wallpaperView;
     UIButton *_irisButton;
@@ -29,21 +32,15 @@
     UIButton *_setButton;
 }
 
-+ (_Bool)shouldEnableParallaxForEffect:(unsigned long long)arg1;
-@property(retain, nonatomic) _UILegibilityLabel *irisInstructionsLabel2; // @synthesize irisInstructionsLabel2=_irisInstructionsLabel2;
-@property(retain, nonatomic) _UILegibilityLabel *irisInstructionsLabel1; // @synthesize irisInstructionsLabel1=_irisInstructionsLabel1;
 @property(retain, nonatomic) UIButton *setButton; // @synthesize setButton=_setButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIButton *parallaxButton; // @synthesize parallaxButton=_parallaxButton;
 @property(retain, nonatomic) UIButton *irisButton; // @synthesize irisButton=_irisButton;
 @property(readonly, nonatomic) SBFWallpaperView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
 @property(retain, nonatomic) SBFLockScreenDateView *dateView; // @synthesize dateView=_dateView;
-@property(retain, nonatomic) SBSUIEffectsSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(nonatomic) __weak id <SBSUIWallpaperPreviewViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)irisWallpaperViewPlaybackStateDidChange:(id)arg1;
-- (void)_updateSegmentedControl;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_layoutSetButton;
 - (void)_layoutCancelButton;
 - (void)_layoutParallaxButton;
@@ -51,17 +48,14 @@
 - (void)_layoutIrisInstructionLabels;
 - (void)_layoutStackedButtons;
 - (double)_segmentedControlInset;
-- (void)_layoutSegmentedControl;
 - (void)_layoutDateView;
 - (void)_layoutWallpaperView;
 - (void)_layoutGradientView;
 - (void)layoutSubviews;
-- (void)fadeOutIrisInstructions;
-- (void)setIrisInstructionsVisible:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_effectChanged:(id)arg1;
-- (void)_toggleMotion;
+- (void)_fadeOutInstructionsWithDelay:(double)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)displayInstructionsForEffect:(unsigned long long)arg1 enabled:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)updateForChangedSettings:(id)arg1;
 - (_Bool)shouldEnableParallax;
-- (unsigned long long)selectedEffect;
 - (void)setWallpaperView:(id)arg1;
 - (void)dealloc;
 - (void)_userDidTapOnSetButton:(id)arg1;

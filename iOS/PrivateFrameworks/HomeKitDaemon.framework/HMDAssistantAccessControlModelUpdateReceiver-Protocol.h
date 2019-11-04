@@ -10,6 +10,6 @@
 
 @protocol HMDAssistantAccessControlModelUpdateReceiver <NSObject>
 - (void)assistantAccessControlModelRemoved:(HMDAssistantAccessControlModelV2 *)arg1 completion:(void (^)(HMBAction *))arg2;
-- (void)assisteantAccessControlModelUpdated:(HMDAssistantAccessControlModelV2 *)arg1 previousModel:(HMDAssistantAccessControlModelV2 *)arg2 completion:(void (^)(HMBAction *))arg3;
+- (void)assistantAccessControlModelUpdated:(HMDAssistantAccessControlModelV2 *)arg1 previousModel:(HMDAssistantAccessControlModelV2 *)arg2 completion:(void (^)(HMBAction *))arg3;
 @end
 

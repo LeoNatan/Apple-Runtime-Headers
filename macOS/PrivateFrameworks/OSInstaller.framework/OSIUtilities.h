@@ -10,6 +10,7 @@
 {
 }
 
++ (void)takeRecoveryDiagnose;
 + (BOOL)forceAttributesOfSrcPath:(id)arg1 toDstPath:(id)arg2;
 + (void)forceNVRAMSync;
 + (BOOL)unsupportedInstallEnvironmentForGatheringDiagnosticsWithError:(id *)arg1;

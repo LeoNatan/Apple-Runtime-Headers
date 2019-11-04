@@ -8,12 +8,13 @@
 
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/WFParameterEventObserver-Protocol.h>
+#import <WorkflowKit/WFUUIDProvider-Protocol.h>
 #import <WorkflowKit/WFVariableProvider-Protocol.h>
 
-@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, NSUnit, UIImage, WFActionParameterSummary, WFContentCollection, WFParameter, WFResourceManager, WFWorkflow;
+@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, WFActionParameterSummary, WFContentCollection, WFImage, WFParameter, WFResourceManager, WFWorkflow;
 @protocol WFActionParameterInputProvider, WFUserInterface, WFVariableDataSource;
 
-@interface WFAction : NSObject <WFParameterEventObserver, NSCopying, WFVariableProvider>
+@interface WFAction : NSObject <WFUUIDProvider, WFParameterEventObserver, NSCopying, WFVariableProvider>
 {
     _Bool _running;
     _Bool _inputParameterUnlocked;
@@ -84,7 +85,7 @@
 - (id)inheritedOutputContentClassesInWorkflow:(id)arg1;
 - (id)inheritedInputVariableInWorkflow:(id)arg1;
 - (id)inputSourceInWorkflow:(id)arg1;
-- (id)outputVariableWithVariableProvider:(id)arg1;
+- (id)outputVariableWithVariableProvider:(id)arg1 UUIDProvider:(id)arg2;
 - (_Bool)canHandleInputOfContentClasses:(id)arg1 withSupportedClasses:(id)arg2 includingCoercedTypes:(_Bool)arg3;
 - (_Bool)canHandleInputOfContentClasses:(id)arg1 withSupportedClasses:(id)arg2;
 - (_Bool)shouldBeConnectedToPreviousActionInWorkflow:(id)arg1 withOutputsConsumedByFollowingActions:(id)arg2;
@@ -103,8 +104,8 @@
 - (void)initializeParameters;
 @property(copy, nonatomic) NSString *groupingIdentifier;
 @property(copy, nonatomic) NSString *outputName;
-- (id)generateUUIDIfNecessary;
-@property(readonly, nonatomic) NSString *UUID;
+- (id)generateUUIDIfNecessaryWithUUIDProvider:(id)arg1;
+@property(copy, nonatomic) NSString *UUID;
 - (void)didChangeVariableName:(id)arg1 to:(id)arg2;
 - (id)providedVariableNames;
 - (void)removeVariableObserver:(id)arg1;
@@ -119,6 +120,7 @@
 - (_Bool)hasAvailableVariables;
 @property(readonly, nonatomic) NSArray *availableOutputActions;
 @property(readonly, nonatomic) NSArray *availableVariableNames;
+- (id)generateOutputUUIDForAction:(id)arg1;
 - (id)createAccompanyingActions;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
@@ -191,7 +193,7 @@
 @property(readonly, nonatomic) _Bool neverSuggested;
 @property(readonly, nonatomic) _Bool outputsMultipleItems;
 @property(readonly, nonatomic) _Bool inputsMultipleItems;
-@property(readonly, nonatomic) NSUnit *outputMeasurementUnit;
+@property(readonly, nonatomic) NSString *outputMeasurementUnitType;
 @property(readonly, nonatomic) NSArray *outputTypes;
 @property(readonly, nonatomic) NSArray *inputTypes;
 @property(readonly, nonatomic) NSString *inputParameterKey;
@@ -206,8 +208,8 @@
 @property(readonly, nonatomic) NSString *appSection;
 @property(readonly, nonatomic) ICApp *app;
 @property(readonly, nonatomic) NSString *appIdentifier;
-@property(readonly, nonatomic) Class runningUIComponentClass;
-@property(readonly, nonatomic) Class configurationUIComponentClass;
+@property(readonly, nonatomic) Class runningViewClass;
+@property(readonly, nonatomic) Class configurationViewClass;
 @property(readonly, nonatomic) _Bool showsSettingsWhenResourcesUnavailable;
 @property(readonly, nonatomic) Class settingsViewControllerClass;
 @property(readonly, nonatomic) NSDictionary *settingsUIDefinition;
@@ -244,13 +246,14 @@
 @property(readonly, nonatomic) NSString *descriptionSummary;
 - (id)outputDictionary;
 @property(readonly, nonatomic) NSDictionary *descriptionDictionary;
-@property(readonly, nonatomic) UIImage *keyImage;
-@property(readonly, nonatomic) UIImage *outputIcon;
+@property(readonly, nonatomic) WFImage *keyImage;
+@property(readonly, nonatomic) WFImage *outputIcon;
 - (void)loadIconWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) WFImage *icon;
 @property(readonly, nonatomic) NSString *iconName;
 @property(readonly, nonatomic) NSArray *localizedCategories;
 @property(readonly, nonatomic) NSArray *categories;
+@property(readonly, nonatomic) NSAttributedString *localizedFooter;
 @property(readonly, nonatomic) NSString *localizedAttribution;
 @property(readonly, nonatomic) NSString *attribution;
 @property(readonly, nonatomic) NSString *accessibilityName;

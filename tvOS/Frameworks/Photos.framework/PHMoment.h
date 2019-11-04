@@ -42,6 +42,8 @@
 - (id)description;
 - (void)_cacheLocationWithCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(readonly, nonatomic) NSString *processedLocationTypeString;
+@property(readonly, nonatomic) NSDate *universalEndDate;
+@property(readonly, nonatomic) NSDate *universalStartDate;
 @property(readonly, nonatomic) NSDate *localEndDate;
 @property(readonly, nonatomic) NSDate *localStartDate;
 - (_Bool)collectionHasFixedOrder;

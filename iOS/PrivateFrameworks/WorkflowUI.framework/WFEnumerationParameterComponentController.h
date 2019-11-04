@@ -21,6 +21,7 @@
 - (void)willUnmount;
 - (void)didUpdateComponent;
 - (void)loadDynamicEnumerationValuesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)completeEditing;
 - (void)presentTokenChooser:(id)arg1;
 
 @end

@@ -40,12 +40,14 @@ __attribute__((visibility("hidden")))
 - (void)removeContent;
 - (struct CGSize)sizeFittingSize:(struct CGSize)arg1 titleType:(int)arg2;
 - (struct CGSize)_cachedTitleHeightSizeAndUpdateRestingSizeForWidth:(float)arg1;
+- (struct CGSize)_cachedTitleHeightSizeAndUpdateRestingSizeForWidthSupportingMultiLineShrinkToFit:(float)arg1;
 - (void)_invalidateTitleHeightCache;
 - (float)_textHeightForSize:(struct CGSize)arg1 titleType:(int)arg2;
 - (void)setContentHidden:(_Bool)arg1;
 - (void)setContentAlpha:(float)arg1;
 - (void)cleanupAfterLayoutTransitionCompleted;
 - (void)layoutViewsWithOffset:(struct UIOffset)arg1 useRestingTitleHeight:(_Bool)arg2;
+- (void)layoutViewsWithOffsetSupportingMultiLineShrinkToFit:(struct UIOffset)arg1 useRestingTitleHeight:(_Bool)arg2;
 - (void)layoutViews;
 - (void)_enforceLayoutOrdering;
 - (void)updateRestingTitleHeight;

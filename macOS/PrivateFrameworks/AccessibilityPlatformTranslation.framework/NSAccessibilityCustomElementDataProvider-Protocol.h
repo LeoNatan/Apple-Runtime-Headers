@@ -11,5 +11,9 @@
 @protocol NSAccessibilityCustomElementDataProvider <NSObject>
 + (id)elementWithAccessibilityCustomElementData:(NSData *)arg1;
 - (NSData *)accessibilityCustomElementData;
+
+@optional
+- (BOOL)overridePresenterPid:(int *)arg1;
+- (BOOL)overrideElementPid:(int *)arg1;
 @end
 

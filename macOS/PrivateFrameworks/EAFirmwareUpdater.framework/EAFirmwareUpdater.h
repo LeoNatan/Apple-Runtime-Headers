@@ -57,6 +57,7 @@
     iAUPServer *_iAUPServer;
     NSObject<OS_dispatch_queue> *_eaNotificationDispatchQueue;
     BOOL _firmwareUpdateComplete;
+    BOOL _firmwareUpdateIsUrgent;
     int _isExpectingReconnect;
     NSTimer *_reconnectTimer;
     BOOL _forceSilentUpdate;
@@ -66,6 +67,7 @@
     BOOL _skipReconnect;
     BOOL _skipVersionCheck;
     BOOL _closeEASession;
+    BOOL _excludeUniqueAccessoryCheck;
     NSString *_multiAssetAppProtocol;
     NSString *_updateBundleFilename;
     NSURL *_updateBundleURL;
@@ -90,6 +92,7 @@
 @property(retain, nonatomic) NSString *transportType; // @synthesize transportType=_transportType;
 @property(retain, nonatomic) NSString *firmwareVersionAvailable; // @synthesize firmwareVersionAvailable=_firmwareVersionAvailable;
 @property(retain, nonatomic) NSString *currentFirmwareVersionOnAcc; // @synthesize currentFirmwareVersionOnAcc=_currentFirmwareVersionOnAcc;
+@property(nonatomic) BOOL excludeUniqueAccessoryCheck; // @synthesize excludeUniqueAccessoryCheck=_excludeUniqueAccessoryCheck;
 @property(nonatomic) BOOL closeEASession; // @synthesize closeEASession=_closeEASession;
 @property(nonatomic) BOOL isMultiAssetSession; // @synthesize isMultiAssetSession=_isMultiAssetSession;
 @property(nonatomic) BOOL skipDFUMode; // @synthesize skipDFUMode=_skipDFUMode;
@@ -130,6 +133,7 @@
 - (unsigned int)getWhitelistedPersonalizationFields;
 - (id)getDeviceClassName;
 - (BOOL)updateRequiresPersonalization;
+- (BOOL)updateRequiresSuperBinary;
 - (id)validateAsset;
 - (id)validateAssetAttributes:(id)arg1;
 - (id)assetWithMaxVersion:(id)arg1;

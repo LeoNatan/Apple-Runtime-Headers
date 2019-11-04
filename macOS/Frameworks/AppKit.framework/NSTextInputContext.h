@@ -58,6 +58,10 @@
 + (void)updateInputContexts;
 + (id)inputContextWithClient:(id)arg1;
 + (void)_applicationDeactivated:(id)arg1;
++ (void)setIsUIKeyCommandEvent:(CDUnknownBlockType)arg1;
++ (CDUnknownBlockType)isUIKeyCommandEvent;
++ (void)setHandleUIKeyCommandEvent:(CDUnknownBlockType)arg1;
++ (CDUnknownBlockType)handleUIKeyCommandEvent;
 + (id)keyPathsForValuesAffectingKeyboardInputSourceOverlayVisible;
 + (BOOL)currentKeyboardInputSourceParticipatesInTouchBar;
 + (void)cycleToNextInputKeyboardLayout:(id)arg1;
@@ -142,6 +146,8 @@
 - (void)_updateAllowedInputSources;
 - (BOOL)_forceAttributedString;
 - (void)_invalidate;
+- (BOOL)_isUIKeyCommandEvent:(id)arg1;
+- (BOOL)_handleUIKeyCommandEvent:(id)arg1;
 - (BOOL)isActive;
 @property(retain) TITextInputTraits *tiTextInputTraits; // @dynamic tiTextInputTraits;
 - (void)wouldHandleEvent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -251,6 +257,8 @@
 - (id)localizedInputManagerName;
 - (void)cycleToNextInputKeyboardLayout:(id)arg1;
 - (void)cycleToNextInputScript:(id)arg1;
+- (BOOL)tsmLimitsInputSources;
+- (BOOL)onlyAllowRomanInputSources;
 - (id)_valueForTIProperty:(long long)arg1;
 - (void)_setValue:(id)arg1 forTIProperty:(long long)arg2;
 

@@ -18,10 +18,12 @@
 @property(readonly, nonatomic) NSArray *youTubeScope;
 @property(readonly, nonatomic) NSArray *defaultScope;
 @property(readonly, nonatomic) NSString *clientRedirectForAppOpenURL;
+@property(readonly, nonatomic) Class fallbackWebUserInfoResponseClass;
 @property(readonly, nonatomic) Class webUserInfoResponseClass;
 @property(readonly, nonatomic) Class webAuthRequestClass;
 @property(readonly, nonatomic) Class tokenRequestClass;
 @property(readonly, nonatomic) Class tokenResponseClass;
+@property(readonly, nonatomic) NSString *fallbackUserInfoURL;
 @property(readonly, nonatomic) NSString *userInfoURL;
 @property(readonly, nonatomic) NSString *authRequestURL;
 @property(readonly, nonatomic) NSString *tokenURL;
@@ -35,8 +37,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) NSString *fallbackUserInfoURL;
-@property(readonly, nonatomic) Class fallbackWebUserInfoResponseClass;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

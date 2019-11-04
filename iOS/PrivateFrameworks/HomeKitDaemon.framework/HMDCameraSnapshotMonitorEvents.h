@@ -30,12 +30,14 @@
     NSSet *_bulletinSnapshotCharacteristics;
     NSSet *_proactiveSnapshotCharacterisitics;
     HMDCameraNotificationCharacteristicsAvailabilityListener *_characteristicsAvailabilityListener;
+    NSString *_clientIdentifier;
 }
 
 + (_Bool)hasMessageReceiverChildren;
 + (_Bool)isMotionServiceDetectedCharacteristic:(id)arg1;
 + (_Bool)isDoorbellServiceInputCharacteristic:(id)arg1;
 + (id)logCategory;
+@property(readonly, copy) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain) HMDCameraNotificationCharacteristicsAvailabilityListener *characteristicsAvailabilityListener; // @synthesize characteristicsAvailabilityListener=_characteristicsAvailabilityListener;
 @property(retain) NSSet *proactiveSnapshotCharacterisitics; // @synthesize proactiveSnapshotCharacterisitics=_proactiveSnapshotCharacterisitics;
 @property(retain) NSSet *bulletinSnapshotCharacteristics; // @synthesize bulletinSnapshotCharacteristics=_bulletinSnapshotCharacteristics;
@@ -56,7 +58,6 @@
 - (void)_handleRemoteNotification:(id)arg1;
 - (void)handleRemoteNotificationGenerated:(id)arg1;
 - (void)handleCameraSettingsDidUpdateNotification:(id)arg1;
-- (void)handleAccessoryReachable:(id)arg1;
 @property(readonly) HMDCameraProfileSettingsModel *currentCameraSettings;
 - (void)_sendReleaseSnapshot:(id)arg1;
 - (void)_removeBulletins:(id)arg1 sessionID:(id)arg2;
@@ -65,14 +66,13 @@
 - (void)_handleSnapshotResponse:(id)arg1 cameraSessionID:(id)arg2 changedCharacteristics:(id)arg3 response:(id)arg4 responseTimer:(id)arg5;
 - (void)_characteristicsUpdated:(id)arg1 modifiedCharacteristics:(id)arg2;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
-- (void)_subscribeToNotifications;
 - (void)_handleHomedRelaunchRegistration:(id)arg1 updatedCharacteristics:(id)arg2;
 - (void)_handleUpdatedProactiveSnapshotCharacteristics:(id)arg1;
 - (void)_handleUpdatedBulletinSnapshotCharacteristics:(id)arg1;
 - (void)_handleBulletinNotificationEnableStateDidChange:(id)arg1;
 - (void)handleBulletinNotificationEnableStateDidChange:(id)arg1;
 - (void)_enableNotificationsForCharacteristics:(id)arg1 cameraSettings:(id)arg2;
-- (void)listener:(id)arg1 didUpdateAvailableCharacteristics:(id)arg2 previousCharacteristics:(id)arg3;
+- (void)listener:(id)arg1 didUpdateAvailableCharacteristics:(id)arg2;
 - (_Bool)_canEnableNotificationForCharacteristic:(id)arg1 cameraSettings:(id)arg2;
 - (void)dealloc;
 - (void)registerForMessages;

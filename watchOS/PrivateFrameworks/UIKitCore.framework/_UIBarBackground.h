@@ -6,17 +6,17 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSString, UIImageView, UIVisualEffectView, _UIBarBackgroundLayout;
+@class NSString, UIImageView, UIVisualEffectView, _UIBarBackgroundLayout, _UIBarBackgroundShadowView;
 
 __attribute__((visibility("hidden")))
 @interface _UIBarBackground : UIView
 {
     UIVisualEffectView *_effectView1;
     UIImageView *_colorAndImageView1;
-    UIImageView *_shadowView1;
+    _UIBarBackgroundShadowView *_shadowView1;
     UIVisualEffectView *_effectView2;
     UIImageView *_colorAndImageView2;
-    UIImageView *_shadowView2;
+    _UIBarBackgroundShadowView *_shadowView2;
     UIView *_topInsetView;
     float _bg1LastLayoutHeight;
     float _bg2LastLayoutHeight;
@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)transitionBackgroundViews;
 - (void)cleanupBackgroundViews;
 - (void)updateBackground;
+- (void)_setupShadowView:(id)arg1 effect:(id)arg2 image:(id)arg3 shadowColor:(id)arg4 shadowTint:(id)arg5 alpha:(float)arg6;
 - (void)prepareBackgroundViews;
 - (struct CGRect)frameForYOrigin:(float)arg1 height:(float)arg2;
 - (void)_orderSubviews;

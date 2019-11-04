@@ -24,10 +24,12 @@
     NSDictionary *_taskInformation;
     NSString *_stableIdentifier;
     NSDate *_pairingDate;
+    NSString *_correlationIdentifier;
 }
 
 + (id)SPOwner;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *correlationIdentifier; // @synthesize correlationIdentifier=_correlationIdentifier;
 @property(copy, nonatomic) NSDate *pairingDate; // @synthesize pairingDate=_pairingDate;
 @property(copy, nonatomic) NSString *stableIdentifier; // @synthesize stableIdentifier=_stableIdentifier;
 @property(copy, nonatomic) NSDictionary *taskInformation; // @synthesize taskInformation=_taskInformation;

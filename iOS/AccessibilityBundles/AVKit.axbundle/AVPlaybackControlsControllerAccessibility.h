@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_axAnnounceAudioControlStateDidChange;
 - (_Bool)_axToggleAudioControls:(id)arg1;
 - (_Bool)_axIsMuted;
 - (void)_axLoadVolumeButtonAccessibilityInformation;

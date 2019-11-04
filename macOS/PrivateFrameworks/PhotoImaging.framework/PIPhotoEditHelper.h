@@ -11,6 +11,7 @@
 }
 
 + (void)preheatEditDependencies;
++ (id)updateCropAdjustmentController:(id)arg1 after:(id)arg2 error:(out id *)arg3;
 + (BOOL)canInterpretDataWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2;
 + (id)knownFormatsVersionsMap;
 + (id)validatedCompositionCopyForComposition:(id)arg1 mediaType:(long long)arg2;

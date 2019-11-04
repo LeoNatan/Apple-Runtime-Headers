@@ -68,6 +68,7 @@
     NSNumber *_isBusiness;
     NSNumber *_isMako;
     NSNumber *_isApple;
+    BOOL _hasSuggestedName;
     BOOL _hasCheckedForSuggestions;
     NSString *_personCentricID;
     NSString *_guid;
@@ -113,6 +114,7 @@
 @property(readonly, retain, nonatomic) NSDate *feedUpdatedDate; // @synthesize feedUpdatedDate=_feedUpdatedDate;
 @property(readonly, nonatomic) unsigned int authRequestStatus; // @synthesize authRequestStatus=_authRequestStatus;
 @property(readonly, retain, nonatomic) IMAccount *account; // @synthesize account=_account;
+@property(nonatomic) BOOL hasSuggestedName; // @synthesize hasSuggestedName=_hasSuggestedName;
 @property(readonly, retain, nonatomic) NSString *uniqueName; // @synthesize uniqueName=_uniqueName;
 @property(retain, nonatomic) NSString *personCentricID; // @synthesize personCentricID=_personCentricID;
 @property(readonly, retain, nonatomic) NSString *ID; // @synthesize ID=_id;

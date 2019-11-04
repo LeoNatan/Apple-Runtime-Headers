@@ -8,7 +8,7 @@
 
 #import <PassKitUI/UINavigationControllerDelegate-Protocol.h>
 
-@class NSString, UIColor, UIImageView, UIView, UIVisualEffectView;
+@class NSString, UIImageView, UIView, UIVisualEffectView;
 
 @interface PKNavigationController : UINavigationController <UINavigationControllerDelegate>
 {
@@ -17,10 +17,10 @@
     UIView *_backgroundView;
     UIImageView *_wallpaperView;
     UIVisualEffectView *_blurView;
-    UIColor *_defaultBarItemTintColor;
+    _Bool _hasStatusBarStyleOverride;
+    long long _statusBarStyleOverride;
 }
 
-@property(retain, nonatomic) UIColor *defaultBarItemTintColor; // @synthesize defaultBarItemTintColor=_defaultBarItemTintColor;
 - (void).cxx_destruct;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
@@ -32,6 +32,7 @@
 - (void)setupWallpaper;
 - (void)setupBackgroundViewWithBlurEffect:(long long)arg1;
 - (void)_updateBarAppearanceForViewController:(id)arg1;
+- (long long)preferredStatusBarStyle;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (_Bool)_canShowWhileLocked;

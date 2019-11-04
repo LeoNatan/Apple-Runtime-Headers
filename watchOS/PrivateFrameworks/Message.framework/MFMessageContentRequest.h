@@ -25,6 +25,7 @@
 }
 
 + (id)metadataWithDictionary:(id)arg1;
++ (id)onScheduler:(id)arg1 requestID:(unsigned long long)arg2 requestContentForObjectID:(id)arg3 messagePersistence:(id)arg4 legacyMessage:(id)arg5 messageTransformer:(id)arg6 mailDropAttachmentGenerator:(id)arg7 clientIdentifier:(id)arg8 options:(id)arg9 delegate:(id)arg10 completionHandler:(CDUnknownBlockType)arg11;
 + (id)onScheduler:(id)arg1 requestContentForObjectID:(id)arg2 messagePersistence:(id)arg3 legacyMessage:(id)arg4 messageTransformer:(id)arg5 mailDropAttachmentGenerator:(id)arg6 clientIdentifier:(id)arg7 options:(id)arg8 delegate:(id)arg9 completionHandler:(CDUnknownBlockType)arg10;
 + (id)log;
 @property(readonly, nonatomic) id <EMContentItemRequestDelegate> delegate; // @synthesize delegate=_delegate;
@@ -51,6 +52,7 @@
 - (id)_generateRepresentationForLoadingContext:(id)arg1 existingRepresentation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)requestRawRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)beginRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)delegateWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_init;
 
 // Remaining properties

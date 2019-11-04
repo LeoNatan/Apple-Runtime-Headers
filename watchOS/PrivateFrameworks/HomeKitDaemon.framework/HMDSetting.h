@@ -17,6 +17,7 @@
     NSUUID *_parentIdentifier;
     NSString *_name;
     NSMutableArray *_constraints;
+    NSString *_keyPath;
     NSNumber *_type;
     NSNumber *_properties;
     HMSettingValue *_internalValue;
@@ -29,6 +30,8 @@
 @property(copy) NSNumber *properties; // @synthesize properties=_properties;
 @property(copy) NSNumber *type; // @synthesize type=_type;
 @property(getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
+- (void)setKeyPath:(id)arg1;
+@property(readonly, copy) NSString *keyPath;
 @property(retain) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;

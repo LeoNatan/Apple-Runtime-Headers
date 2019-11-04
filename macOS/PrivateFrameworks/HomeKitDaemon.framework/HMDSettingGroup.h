@@ -15,6 +15,7 @@
     NSUUID *_identifier;
     NSUUID *_parentIdentifier;
     NSString *_name;
+    NSString *_keyPath;
     NSMutableSet *_settingsInternal;
     NSMutableSet *_groupsInternal;
 }
@@ -22,6 +23,7 @@
 + (BOOL)supportsSecureCoding;
 @property(retain) NSMutableSet *groupsInternal; // @synthesize groupsInternal=_groupsInternal;
 @property(retain) NSMutableSet *settingsInternal; // @synthesize settingsInternal=_settingsInternal;
+@property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 - (id)name;
 - (id)parentIdentifier;
 - (id)identifier;

@@ -57,7 +57,8 @@
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
 - (void)cancel;
 - (void)start;
-- (id)initWithQuery:(id)arg1 threadScope:(id)arg2 messagePersistence:(id)arg3 threadPersistence:(id)arg4 hookRegistry:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7;
+- (void)tearDown;
+- (id)initWithQuery:(id)arg1 threadScope:(id)arg2 messagePersistence:(id)arg3 threadPersistence:(id)arg4 hookRegistry:(id)arg5 vipManager:(id)arg6 observer:(id)arg7 observationIdentifier:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

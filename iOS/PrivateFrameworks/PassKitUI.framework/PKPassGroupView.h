@@ -72,6 +72,7 @@
 @property(nonatomic, getter=isLoaned) _Bool loaned; // @synthesize loaned=_loaned;
 @property(nonatomic, getter=isModallyPresented) _Bool modallyPresented; // @synthesize modallyPresented=_modallyPresented;
 - (void).cxx_destruct;
+- (void)faceFrameDidChangeForPassView:(id)arg1;
 - (void)passView:(id)arg1 didPresentPassDetailsViewController:(id)arg2;
 - (void)passView:(id)arg1 willPresentPassDetailsViewController:(id)arg2;
 - (_Bool)passView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;

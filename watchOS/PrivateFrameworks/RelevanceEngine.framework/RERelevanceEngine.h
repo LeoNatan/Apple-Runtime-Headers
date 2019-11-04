@@ -43,6 +43,7 @@
     _Bool _loading;
     REUpNextScheduler *_loadingScheduler;
     struct os_unfair_lock_s _activityTrackerLock;
+    CDUnknownBlockType _resumeCompletionBlock;
     _Bool _automaticallyResumeEngine;
     RERelevanceEngineConfiguration *_configuration;
 }
@@ -54,6 +55,7 @@
 - (void)removePreferencesForObject:(id)arg1;
 - (void)setPreferences:(id)arg1 forObject:(id)arg2;
 @property(readonly, nonatomic) RERelevanceEnginePreferences *effectivePreferences;
+- (void)_notifyResumeCompleted;
 - (void)_callbackQueue_notifyLoadingState;
 - (void)activityTracker:(id)arg1 didEndActivity:(id)arg2;
 - (void)activityTracker:(id)arg1 didBeginActivity:(id)arg2;
@@ -61,7 +63,9 @@
 - (void)_queue_resumeSubsystem:(id)arg1;
 - (void)pause;
 - (void)resume;
-@property(readonly, nonatomic, getter=isRunning) _Bool running;
+- (void)resumeWithTimeout:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_queue_resumeWithTimeout:(double)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, getter=isRunning) _Bool running;
 - (void)removeElement:(id)arg1;
 - (void)addElement:(id)arg1 section:(id)arg2;
 - (void)enumerateRankedContentInSection:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

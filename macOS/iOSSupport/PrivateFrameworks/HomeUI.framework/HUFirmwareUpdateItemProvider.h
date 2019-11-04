@@ -16,8 +16,8 @@
     CDUnknownBlockType _filter;
     unsigned long long _style;
     HUInstructionsItem *_instructionsItem;
-    HULinkedApplicationItemProvider *_linkedApplicationItemProvider;
     NSSet *_linkedApplicationItems;
+    HULinkedApplicationItemProvider *_linkedApplicationItemProvider;
     NSString *_instructionsTitle;
     NSString *_instructionsDescription;
 }
@@ -28,8 +28,8 @@
 @property(retain, nonatomic) NSString *instructionsDescription; // @synthesize instructionsDescription=_instructionsDescription;
 @property(retain, nonatomic) NSString *instructionsTitle; // @synthesize instructionsTitle=_instructionsTitle;
 @property(nonatomic) BOOL hasProvidedInstructionsItem; // @synthesize hasProvidedInstructionsItem=_hasProvidedInstructionsItem;
-@property(retain, nonatomic) NSSet *linkedApplicationItems; // @synthesize linkedApplicationItems=_linkedApplicationItems;
 @property(retain, nonatomic) HULinkedApplicationItemProvider *linkedApplicationItemProvider; // @synthesize linkedApplicationItemProvider=_linkedApplicationItemProvider;
+@property(retain, nonatomic) NSSet *linkedApplicationItems; // @synthesize linkedApplicationItems=_linkedApplicationItems;
 @property(retain, nonatomic) HUInstructionsItem *instructionsItem; // @synthesize instructionsItem=_instructionsItem;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;

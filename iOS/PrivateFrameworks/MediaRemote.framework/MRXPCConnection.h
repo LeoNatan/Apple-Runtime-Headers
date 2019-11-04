@@ -23,8 +23,11 @@
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)_registerCallbacks;
-- (void)removeCustomXPCHandler:(id)arg1;
-- (void)addCustomXPCHandler:(CDUnknownBlockType)arg1 forKey:(id)arg2;
+- (id)sendSyncMessage:(id)arg1 error:(id *)arg2;
+- (void)sendMessage:(id)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)sendMessageWithType:(unsigned long long)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)removeCustomXPCHandler:(unsigned long long)arg1;
+- (void)addCustomXPCHandler:(CDUnknownBlockType)arg1 forKey:(unsigned long long)arg2;
 @property(readonly, nonatomic) int pid;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2;

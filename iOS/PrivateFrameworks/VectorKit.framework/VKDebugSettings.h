@@ -96,6 +96,8 @@
     _Bool _showNavCameraDebugLegend;
     float _ribbonCrispness;
     _Bool _useGeoResourceLib;
+    int _debugOverlayOffsetX;
+    int _debugOverlayOffsetY;
     float _altitudeLodScale;
     float _altitudeTileQualityThreshold;
     float _altitudeHideMeshTime;
@@ -322,6 +324,8 @@
 @property(nonatomic) _Bool shouldUseTestTileLoader; // @synthesize shouldUseTestTileLoader=_shouldUseTestTileLoader;
 @property(nonatomic) shared_ptr_a3c46825 debugStyleManager; // @synthesize debugStyleManager=_debugStyleManager;
 @property(nonatomic) CDStruct_7a997382 landmark2DStrokeSettings; // @synthesize landmark2DStrokeSettings=_landmark2DStrokeSettings;
+@property(nonatomic) int debugOverlayOffsetY; // @synthesize debugOverlayOffsetY=_debugOverlayOffsetY;
+@property(nonatomic) int debugOverlayOffsetX; // @synthesize debugOverlayOffsetX=_debugOverlayOffsetX;
 @property(nonatomic) _Bool suppressFootprints; // @synthesize suppressFootprints=_suppressFootprints;
 @property(retain, nonatomic) NSMutableArray *footprintsToSuppress; // @synthesize footprintsToSuppress=_footprintsToSuppress;
 @property(nonatomic) _Bool labelOcclusionDisabled; // @synthesize labelOcclusionDisabled=_labelOcclusionDisabled;

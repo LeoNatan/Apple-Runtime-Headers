@@ -9,12 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface NSTouchBarControlStripGrabberLayoutAttributes : NSCollectionViewLayoutAttributes
 {
-    BOOL _expanded;
     BOOL _enabled;
+    long long _state;
 }
 
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-@property(getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
+@property long long state; // @synthesize state=_state;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

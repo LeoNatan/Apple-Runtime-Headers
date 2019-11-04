@@ -6,7 +6,7 @@
 
 #import <ShareSheet/UIActivity.h>
 
-@class NSArray, NSString, UIImage;
+@class NSArray, NSString;
 @protocol DOCItemActivityPerformer;
 
 @interface DOCActivity : UIActivity
@@ -14,16 +14,16 @@
     id <DOCItemActivityPerformer> _actionPerformerProxy;
     NSArray *_items;
     NSString *_identifier;
-    UIImage *_icon;
+    NSString *_imageName;
     NSString *_localizedTitle;
 }
 
 + (long long)activityCategory;
 + (id)_titleForActivityIdentifier:(id)arg1;
-+ (id)_imageForActivityIdentifier:(id)arg1;
++ (id)_imageNameForActivityIdentifier:(id)arg1;
 + (id)activityWithIdentifier:(id)arg1 actionPerformerProxy:(id)arg2;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-@property(copy, nonatomic) UIImage *icon; // @synthesize icon=_icon;
+@property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly) id <DOCItemActivityPerformer> actionPerformerProxy; // @synthesize actionPerformerProxy=_actionPerformerProxy;
@@ -31,7 +31,7 @@
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)activityImage;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 - (id)initWithProxy:(id)arg1 identifier:(id)arg2;

@@ -13,11 +13,13 @@
 @interface GEOSharedNavRouteInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_57821370 _coordinates;
     CDStruct_084d6ede _trafficColorOffsets;
     CDStruct_084d6ede _trafficColors;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_coordinates:1;
@@ -69,6 +71,8 @@
 @property(readonly, nonatomic) unsigned int coordinatesCount;
 - (void)_readCoordinates;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

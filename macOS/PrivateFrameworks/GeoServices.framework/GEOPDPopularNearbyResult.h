@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPopularNearbyResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOPDLitePlaceResult *_litePlaceResults;
     unsigned long long _litePlaceResultsCount;
     unsigned long long _litePlaceResultsSpace;
     NSString *_sectionHeader;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_litePlaceResults:1;
@@ -56,6 +58,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasSectionHeader;
 - (void)_readSectionHeader;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

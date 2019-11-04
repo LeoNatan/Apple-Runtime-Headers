@@ -12,8 +12,8 @@
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 #import <SpringBoard/TFBetaLaunchHandleActivationDelegate-Protocol.h>
 
-@class FBScene, NSArray, NSLayoutConstraint, NSMutableSet, NSObject, NSString, SBFHomeGrabberSettings, SBHomeGrabberRotationView, SBHomeGrabberView, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutGestureManager, SBMainDisplaySceneLayoutStatusBarView, SBOrientationTransformWrapperView, SBSceneHandleBlockObserver, SBSeparatorView, SBUIKeyboardHomeAffordanceAssertion, UIApplicationSceneClientSettingsDiffInspector, UIView;
-@protocol OS_dispatch_queue;
+@class FBScene, NSArray, NSLayoutConstraint, NSMutableSet, NSObject, NSString, SBFHomeGrabberSettings, SBHomeGrabberRotationView, SBHomeGrabberView, SBKeyboardHomeAffordanceAssertion, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutGestureManager, SBMainDisplaySceneLayoutStatusBarView, SBOrientationTransformWrapperView, SBSceneHandleBlockObserver, SBSeparatorView, UIApplicationSceneClientSettingsDiffInspector, UIView;
+@protocol BSInvalidatable, OS_dispatch_queue;
 
 @interface SBMainDisplaySceneLayoutViewController : SBSceneLayoutViewController <SBMainDisplaySceneLayoutStatusBarViewDataSource, PTSettingsKeyObserver, SBSceneHandleObserver, TFBetaLaunchHandleActivationDelegate, SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver>
 {
@@ -32,7 +32,7 @@
     UIApplicationSceneClientSettingsDiffInspector *_clientSettingsInspector;
     _Bool _isKeyboardShowing;
     FBScene *_medusaKeyboardScene;
-    SBUIKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
+    SBKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
     NSMutableSet *_activeBetaLaunchHandles;
     NSObject<OS_dispatch_queue> *_betaLaunchUIActivationQueue;
     NSLayoutConstraint *_homeGrabberTopConstraint;
@@ -42,6 +42,7 @@
     _Bool __preventsCornerRadiusUpdate;
     double _separatorViewAlpha;
     unsigned long long _nubStyle;
+    id <BSInvalidatable> _pushPopWallpaperRequireAssertion;
     SBHomeGrabberRotationView *_homeGrabberRotationView;
     NSString *_keyboardFocusSceneID;
 }
@@ -49,6 +50,7 @@
 @property(copy, nonatomic, getter=_keyboardFocusSceneID, setter=_setKeyboardFocusSceneID:) NSString *keyboardFocusSceneID; // @synthesize keyboardFocusSceneID=_keyboardFocusSceneID;
 @property(nonatomic, setter=_setPreventsCornerRadiusUpdate:) _Bool _preventsCornerRadiusUpdate; // @synthesize _preventsCornerRadiusUpdate=__preventsCornerRadiusUpdate;
 @property(readonly, nonatomic) SBHomeGrabberRotationView *homeGrabberRotationView; // @synthesize homeGrabberRotationView=_homeGrabberRotationView;
+@property(retain, nonatomic) id <BSInvalidatable> pushPopWallpaperRequireAssertion; // @synthesize pushPopWallpaperRequireAssertion=_pushPopWallpaperRequireAssertion;
 @property(nonatomic, setter=_setNubStyle:) unsigned long long _nubStyle; // @synthesize _nubStyle;
 @property(nonatomic, setter=_setSeparatorViewAlpha:) double _separatorViewAlpha; // @synthesize _separatorViewAlpha;
 - (void).cxx_destruct;

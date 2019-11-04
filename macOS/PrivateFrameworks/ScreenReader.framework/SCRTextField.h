@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (void)_elementWasCreated:(id)arg1;
 - (void)_invalidInputChanged:(id)arg1;
 - (void)handleTextChangeWithUserInfo:(id)arg1;
+- (BOOL)keyboardHandler:(id)arg1 request:(id)arg2;
 - (BOOL)forceValueDescriptionForStaticTextChanges;
 - (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;

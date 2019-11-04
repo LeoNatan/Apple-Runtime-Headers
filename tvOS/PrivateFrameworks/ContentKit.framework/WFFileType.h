@@ -6,7 +6,7 @@
 
 #import <ContentKit/WFType.h>
 
-@class NSArray, NSDictionary, NSString, NSURL, UIImage;
+@class NSArray, NSDictionary, NSString, NSURL, WFImage;
 
 @interface WFFileType : WFType
 {
@@ -54,13 +54,13 @@
 - (_Bool)isEqualToType:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
+@property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, nonatomic) const struct __CFString *utType; // @synthesize utType=_utType;
 - (void)dealloc;
 - (id)initWithUTType:(const struct __CFString *)arg1 string:(id)arg2;
 - (id)initWithUTType:(const struct __CFString *)arg1;
-@property(readonly, nonatomic) UIImage *documentIcon;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) WFImage *documentIcon;
+@property(readonly, nonatomic) WFImage *icon;
 
 @end
 

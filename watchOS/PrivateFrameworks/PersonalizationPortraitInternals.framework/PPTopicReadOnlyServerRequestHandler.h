@@ -19,6 +19,9 @@
     _PASBundleIdResolver *_bundleIdResolver;
 }
 
++ (id)filterQIDDictionary:(id)arg1 withWhitelistOfProcess:(id)arg2;
++ (id)filterTopicRecordsNotInWhitelist:(id)arg1 withWhitelistOfProcess:(id)arg2;
++ (id)filterScoredTopicsNotInWhitelist:(id)arg1 withWhitelistOfProcess:(id)arg2;
 @property(retain, nonatomic) _PASBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void).cxx_destruct;

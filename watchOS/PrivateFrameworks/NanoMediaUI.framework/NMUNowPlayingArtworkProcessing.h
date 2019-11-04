@@ -17,7 +17,6 @@
 + (void)_clearCachedBackgroundArtworkIfNecessary;
 + (id)placeholderArtworkWithTemplateImageName:(id)arg1;
 + (void)processArtworkRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (id)artworkCatalogForItemWithDeviceLibraryPersistentID:(long long)arg1;
 
 @end
 

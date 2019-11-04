@@ -13,10 +13,12 @@
 {
     long long _type;
     long long _state;
+    long long _supportedOptions;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)paymentSetupFeatureWithProtobuf:(id)arg1;
+@property(nonatomic) long long supportedOptions; // @synthesize supportedOptions=_supportedOptions;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) long long type; // @synthesize type=_type;
 - (unsigned long long)hash;

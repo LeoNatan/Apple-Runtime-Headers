@@ -14,6 +14,7 @@
 {
 }
 
+- (BOOL)allowCopyingOfURL:(id)arg1;
 - (BOOL)allowOpenInSafariForURL:(id)arg1;
 
 // Remaining properties

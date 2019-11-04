@@ -101,6 +101,7 @@
 - (void)_accessibilityHandleRemoveConfirm;
 - (id)_accessibilityFindRemoveConfirmSubview;
 - (void)_accessibilityHandleRemoveSwitch;
+- (id)_accessibilityCellReorderControl;
 - (id)_accessibilityCellEditingControl;
 - (_Bool)_accessibilityIsRemoveConfirmVisible;
 - (_Bool)_accessibilityIsRemoveControlVisible;

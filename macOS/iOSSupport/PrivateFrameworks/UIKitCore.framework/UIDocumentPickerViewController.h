@@ -54,6 +54,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (long long)modalPresentationStyle;
+@property(nonatomic, getter=_forPickingDownloadsFolder, setter=_setForPickingDownloadsFolder:) BOOL forPickingDownloadsFolder;
 @property(nonatomic, getter=_sourceIsManaged, setter=_setSourceIsManaged:) BOOL sourceIsManaged; // @dynamic sourceIsManaged;
 - (void)_commonInitWithDocumentTypes:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

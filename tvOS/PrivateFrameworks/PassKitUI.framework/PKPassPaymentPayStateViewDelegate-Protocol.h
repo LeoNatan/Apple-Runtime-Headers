@@ -12,5 +12,6 @@
 
 @optional
 - (void)payStateView:(PKPassPaymentPayStateView *)arg1 revealingCheckmark:(_Bool)arg2;
+- (void)payStateViewDidUpdateLayout:(PKPassPaymentPayStateView *)arg1;
 @end
 

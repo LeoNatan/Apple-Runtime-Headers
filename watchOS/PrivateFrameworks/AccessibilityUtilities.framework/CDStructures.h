@@ -86,6 +86,10 @@ struct _NSRange {
     unsigned int length;
 };
 
+struct os_activity_scope_state_s {
+    unsigned long long opaque[2];
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

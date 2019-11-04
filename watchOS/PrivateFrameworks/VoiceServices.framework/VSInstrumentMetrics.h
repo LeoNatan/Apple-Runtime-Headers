@@ -26,6 +26,7 @@
     NSString *_voiceResourceAssetKey;
     NSString *_audioOutputRoute;
     int _promptCount;
+    int _errorCode;
     int _sourceOfTTS;
     long long _requestCreatedTimestamp;
     long long _eagerRequestCreatedTimeStampDiffs;
@@ -46,6 +47,7 @@
 @property long long synthesisToSpeechTimeGap; // @synthesize synthesisToSpeechTimeGap=_synthesisToSpeechTimeGap;
 @property _Bool isSpeechRequest; // @synthesize isSpeechRequest=_isSpeechRequest;
 @property int sourceOfTTS; // @synthesize sourceOfTTS=_sourceOfTTS;
+@property int errorCode; // @synthesize errorCode=_errorCode;
 @property int promptCount; // @synthesize promptCount=_promptCount;
 @property _Bool canUseServerTTS; // @synthesize canUseServerTTS=_canUseServerTTS;
 @property _Bool isServerTTSRacing; // @synthesize isServerTTSRacing=_isServerTTSRacing;

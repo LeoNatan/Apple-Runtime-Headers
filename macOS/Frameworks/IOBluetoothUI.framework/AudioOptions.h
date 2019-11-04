@@ -22,9 +22,8 @@
 @property NSView *popupReference; // @synthesize popupReference=_popupReference;
 @property NSView *optionsPanel; // @synthesize optionsPanel=_optionsPanel;
 - (void)handleDone:(id)arg1;
-- (void)loadPrefs;
 - (void)lineupViews:(id)arg1;
-- (void)loadAudioOptionViewControllers:(id)arg1;
+- (void)attachAudioOptionViewControllerViews;
 - (void)windowDidLoad;
 - (void)dealloc;
 @property IOBluetoothDevice *device;

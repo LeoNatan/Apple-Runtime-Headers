@@ -36,6 +36,7 @@
 - (void).cxx_destruct;
 - (void)deleteKnowledgeEventsMatchingPredicate:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_deleteKnowledgeEventsMatchingPredicate:(id)arg1;
+- (void)deleteAllItemsWithBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -57,9 +58,9 @@
 - (void)addUserAction:(id)arg1 withItem:(id)arg2;
 - (void)addOrUpdateSearchableItems:(id)arg1 bundleID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)addOrUpdateSearchableItems:(id)arg1 bundleID:(id)arg2;
-- (id)supportedINIntentClassNames;
 - (void)addInteractions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)addInteractions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (id)supportedINIntentClassNames;
 - (id)supportedContentTypes;
 - (id)supportedUTIs;
 - (void)addOrUpdateSearchableItems:(id)arg1;

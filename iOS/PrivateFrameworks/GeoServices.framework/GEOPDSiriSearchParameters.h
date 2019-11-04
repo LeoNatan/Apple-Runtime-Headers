@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSiriSearchParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOAddress *_address;
     NSMutableArray *_businessCategoryFilters;
@@ -23,6 +22,9 @@ __attribute__((visibility("hidden")))
     NSString *_searchString;
     NSMutableArray *_searchSubstringDescriptors;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _maxResultCount;
     int _sortOrder;
     _Bool _isStrictMapRegion;
@@ -110,6 +112,8 @@ __attribute__((visibility("hidden")))
 - (id)sortOrderAsString:(int)arg1;
 @property(nonatomic) _Bool hasSortOrder;
 @property(nonatomic) int sortOrder;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

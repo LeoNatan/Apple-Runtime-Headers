@@ -12,19 +12,18 @@
 {
     _Bool _senderIsAccountOwner;
     _Bool _senderIsBusinessChat;
-    _Bool _isSharingSenderLocation;
     CSPerson *_sender;
     NSArray *_recipients;
     NSString *_conversationIdentifier;
     NSString *_nickname;
     NSString *_photoPath;
+    NSString *_attachmentFilename;
 }
 
 + (_Bool)isSent:(id)arg1;
 + (id)_nicknameCustomKey;
 + (id)_photoPathCustomKey;
-+ (_Bool)_isSharingSenderLocation:(id)arg1 senderName:(id)arg2;
-@property(readonly) _Bool isSharingSenderLocation; // @synthesize isSharingSenderLocation=_isSharingSenderLocation;
+@property(readonly) NSString *attachmentFilename; // @synthesize attachmentFilename=_attachmentFilename;
 @property(readonly) _Bool senderIsBusinessChat; // @synthesize senderIsBusinessChat=_senderIsBusinessChat;
 @property(retain) NSString *photoPath; // @synthesize photoPath=_photoPath;
 @property(retain) NSString *nickname; // @synthesize nickname=_nickname;

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
+
 @class MPAVRoute, MPAVRoutingControllerSelectionQueue, MPAVRoutingDataSource, NSArray, NSMutableArray, NSSet, NSString;
 @protocol MPAVOutputDevicePlaybackDataSource, MPAVRoutingControllerDelegate;
 
-@interface MPAVRoutingController : NSObject
+@interface MPAVRoutingController : NSObject <_MPStateDumpPropertyListTransformable>
 {
     NSArray *_cachedRoutes;
     NSArray *_cachedPickedRoutes;
@@ -47,6 +49,7 @@
 + (void)getActiveRouteWithCompletion:(CDUnknownBlockType)arg1;
 + (id)_currentDeviceRoutingIconImage;
 + (id)_iconImageForRoute:(id)arg1;
++ (id)_iconImageForIdentifier:(id)arg1;
 + (id)_sharedSerialQueue;
 @property(readonly, nonatomic) _Bool representsLongFormVideoContent; // @synthesize representsLongFormVideoContent=_representsLongFormVideoContent;
 @property(copy, nonatomic) NSString *representedBundleID; // @synthesize representedBundleID=_representedBundleID;
@@ -61,6 +64,7 @@
 @property(readonly, nonatomic) MPAVRoutingDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <MPAVRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (_Bool)removePickedRoute:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)removePickedRoute:(id)arg1;
 - (_Bool)addPickedRoute:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -122,11 +126,16 @@
 @property(readonly, nonatomic) _Bool hasPendingPickedRoutes;
 @property(readonly, nonatomic) int externalScreenType;
 @property(readonly, copy, nonatomic) NSArray *availableRoutes;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (id)initWithDataSource:(id)arg1 name:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

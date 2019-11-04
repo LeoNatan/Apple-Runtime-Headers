@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) long long materialSettingsVersion; // @synthesize materialSettingsVersion=_materialSettingsVersion;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)_platformColorsStyleSetName;
 - (id)_newVisualStyleSet;
 - (id)_visualStyleSetDescription;
 - (id)settingsForConfiguration:(id)arg1;

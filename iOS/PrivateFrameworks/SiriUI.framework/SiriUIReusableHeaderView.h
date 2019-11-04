@@ -9,26 +9,22 @@
 #import <SiriUI/SiriUIReusableView-Protocol.h>
 #import <SiriUI/SiriUISizableHeaderView-Protocol.h>
 
-@class NSString, SiriUIKeyline, SiriUISnippetViewController, UIButton, UIColor, UIImageView, UILabel, UIView;
+@class NSString, SiriUISnippetViewController, UIButton, UIColor, UIImageView, UILabel;
 
 @interface SiriUIReusableHeaderView : UICollectionReusableView <SiriUIReusableView, SiriUISizableHeaderView>
 {
-    UIView *_backgroundView;
     UILabel *_headerLabel;
     struct UIEdgeInsets _contentInsets;
-    SiriUIKeyline *_keyline;
     UIImageView *_chevronView;
     SiriUISnippetViewController *_snippetViewController;
     NSString *_titleText;
     UIColor *_titleTextColor;
     UIButton *_headerAreaButton;
-    long long _keylineType;
 }
 
 + (id)elementKind;
 + (double)defaultHeight;
 + (id)reuseIdentifier;
-@property(nonatomic) long long keylineType; // @synthesize keylineType=_keylineType;
 @property(readonly, nonatomic) UIButton *headerAreaButton; // @synthesize headerAreaButton=_headerAreaButton;
 @property(copy, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
@@ -36,7 +32,6 @@
 - (void).cxx_destruct;
 - (double)desiredHeightForWidth:(double)arg1;
 - (void)_configureHeaderLabelForBounds:(struct CGRect)arg1;
-- (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

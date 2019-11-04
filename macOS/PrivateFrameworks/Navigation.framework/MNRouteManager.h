@@ -8,7 +8,7 @@
 
 #import <Navigation/MNLocationManagerObserver-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, GEOETARoute, GEORouteAttributes, GEORoutePreloader, MNActiveRouteInfo, NSArray, NSMutableArray, NSString;
+@class GEOApplicationAuditToken, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, GEOETARoute, GEORouteAttributes, GEORoutePreloader, MNActiveRouteInfo, NSArray, NSMutableArray, NSString;
 
 @interface MNRouteManager : NSObject <MNLocationManagerObserver>
 {
@@ -26,6 +26,7 @@
     MNActiveRouteInfo *_originalRouteInfo;
     GEORoutePreloader *_preloader;
     NSString *_tileLoaderClientIdentifier;
+    GEOApplicationAuditToken *_auditToken;
     GEOComposedRoute *_originalRoute;
 }
 
@@ -63,6 +64,8 @@
 @property(readonly, nonatomic) NSArray *allRoutes;
 @property(readonly, nonatomic) GEOETARoute *etaRoute;
 @property(readonly, nonatomic) GEOComposedRoute *currentRoute;
+- (id)initWithAuditToken:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

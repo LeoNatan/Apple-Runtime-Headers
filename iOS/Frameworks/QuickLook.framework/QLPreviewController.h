@@ -52,7 +52,7 @@
     _Bool _allowInteractiveTransitions;
     _Bool _canShowToolbar;
     _Bool _canShowNavBar;
-    _Bool _currentPreviewHasUnsavedEdits;
+    _Bool _currentPreviewHasRemoteUnsavedEdits;
     _Bool _isObtainingEditsFromServiceBeforeDismissing;
     _Bool _isContentManaged;
     _Bool _useCustomActionButton;
@@ -118,7 +118,7 @@
 @property(nonatomic) unsigned long long appearanceActions; // @synthesize appearanceActions=_appearanceActions;
 @property(nonatomic) unsigned long long quickLookVisibility; // @synthesize quickLookVisibility=_quickLookVisibility;
 @property(nonatomic) _Bool isObtainingEditsFromServiceBeforeDismissing; // @synthesize isObtainingEditsFromServiceBeforeDismissing=_isObtainingEditsFromServiceBeforeDismissing;
-@property(nonatomic) _Bool currentPreviewHasUnsavedEdits; // @synthesize currentPreviewHasUnsavedEdits=_currentPreviewHasUnsavedEdits;
+@property(nonatomic) _Bool currentPreviewHasRemoteUnsavedEdits; // @synthesize currentPreviewHasRemoteUnsavedEdits=_currentPreviewHasRemoteUnsavedEdits;
 @property _Bool canShowNavBar; // @synthesize canShowNavBar=_canShowNavBar;
 @property _Bool canShowToolbar; // @synthesize canShowToolbar=_canShowToolbar;
 @property(retain) QLTransitionController *currentAnimator; // @synthesize currentAnimator=_currentAnimator;
@@ -194,6 +194,7 @@
 - (void)updatePreviewItemAtIndex:(unsigned long long)arg1 editedCopy:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_shouldAllowInteractiveTransitions;
 - (void)_updateAllowInteractiveTransitionsIfNeeded;
+- (_Bool)currentPreviewHasUnsavedEdits;
 - (void)currentPreviewItemViewControllerHasUnsavedEdits:(_Bool)arg1;
 - (void)presentAlertControllerForScenario:(long long)arg1;
 - (void)expandContentOfItemAtIndex:(unsigned long long)arg1 withUUID:(id)arg2 unarchivedItemsURLWrapper:(id)arg3;

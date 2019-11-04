@@ -38,11 +38,17 @@
     _Bool _presentationSceneHasActivated;
     SBSExternalDisplayLayoutElement *_presentedLayoutElement;
     id <BSInvalidatable> _presentedLayoutElementAssertion;
+    NSString *_preventIdleSleepReason;
+    SBApplication *_preventIdleSleepApp;
+    _Bool _preventIdleSleepPresenting;
+    long long _powerMode;
+    BSAtomicSignal *_idleOffTimerInvalidation;
 }
 
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
+- (void)_setPreventIdleSleepForApp:(id)arg1 presenting:(_Bool)arg2;
 - (void)_enqueuePresentationUpdate;
 - (void)_updateHostingIfNecessary;
 - (void)_ensureMode:(id)arg1 overscanCompensation:(long long)arg2;

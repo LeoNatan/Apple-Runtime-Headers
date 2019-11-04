@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficIncidentDescription : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_incidentDescription;
     NSString *_language;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_incidentDescription:1;
         unsigned int read_language:1;
@@ -43,6 +45,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *language;
 @property(readonly, nonatomic) _Bool hasLanguage;
 - (void)_readLanguage;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -10,6 +10,8 @@
 {
 }
 
++ (id)photoSuggestedContacts;
++ (id)locationUUIDs;
 + (id)attachments;
 + (id)extensionContextUUID;
 + (id)targetBundleID;

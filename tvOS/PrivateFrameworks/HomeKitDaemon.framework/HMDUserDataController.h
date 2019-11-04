@@ -11,7 +11,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMFTimer, HMFUnfairLock, NSArray, NSDictionary, NSMutableSet, NSString, NSUUID;
+@class HMBModel, HMFTimer, HMFUnfairLock, NSArray, NSDictionary, NSMutableSet, NSString, NSUUID;
 @protocol HMDSettingsControllerProtocol, HMDUserDataControllerDelegate, HMDUserDataControllerTimerCreator, OS_dispatch_queue;
 
 @interface HMDUserDataController : NSObject <HMDAssistantAccessControlModelUpdateReceiver, HMDMediaContentProfileAccessControlModelUpdateReceiver, HMFLogging, HMFTimerDelegate>
@@ -63,7 +63,9 @@
 @property(readonly, copy) NSDictionary *privateSettingValuesByKeyPathForAWD;
 @property(readonly, copy) NSDictionary *sharedSettingValuesByKeyPathForAWD;
 - (void)assistantAccessControlModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)assisteantAccessControlModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)assistantAccessControlModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, copy) HMBModel *assistantAccessControlModelToReset;
+- (void)handleRemovedAccessory:(id)arg1;
 - (void)handleMediaContentProfileAccessControlUpdatedAccessoryUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAssistantAccessControlAccessoryUUIDsUpdated:(id)arg1 requireAuthenticationForSecureRequests:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleStartForZoneController:(id)arg1;

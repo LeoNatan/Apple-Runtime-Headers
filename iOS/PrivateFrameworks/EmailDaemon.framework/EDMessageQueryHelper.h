@@ -13,17 +13,19 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
 @class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EFCancelationToken, EFQuery, NSMutableSet, NSString;
-@protocol EDMessageQueryHelperDelegate, EFScheduler;
+@protocol EDMessageQueryHelperDelegate, EDRemoteSearchProvider, EFScheduler;
 
 @interface EDMessageQueryHelper : NSObject <EDMessageChangeHookResponder, EDRemoteSearchDelegate, EFLoggable, EDMessageQueryHelperMessageSource, EFCancelable>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _didStart
     NSMutableSet *_noLongerMatchingMessages;
     struct os_unfair_lock_s _noLongerMatchingMessagesLock;
+    _Bool _shouldReconcileJournal;
     EFQuery *_query;
-    id <EFScheduler> _scheduler;
     EDMessagePersistence *_messagePersistence;
     EDPersistenceHookRegistry *_hookRegistry;
+    id <EDRemoteSearchProvider> _remoteSearchProvider;
+    id <EFScheduler> _scheduler;
     id <EDMessageQueryHelperDelegate> _delegate;
     EDMessageQueryEvaluator *_queryEvaluator;
     EFCancelationToken *_cancelationToken;
@@ -36,20 +38,21 @@
 @property(readonly) NSString *pendingJournaledMessageAddsKey; // @synthesize pendingJournaledMessageAddsKey=_pendingJournaledMessageAddsKey;
 @property(readonly) NSString *pendingConversationIDChangesKey; // @synthesize pendingConversationIDChangesKey=_pendingConversationIDChangesKey;
 @property(readonly) NSString *pendingFlagChangesKey; // @synthesize pendingFlagChangesKey=_pendingFlagChangesKey;
+@property(nonatomic) _Bool shouldReconcileJournal; // @synthesize shouldReconcileJournal=_shouldReconcileJournal;
 @property(retain, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(retain, nonatomic) EDMessageQueryEvaluator *queryEvaluator; // @synthesize queryEvaluator=_queryEvaluator;
 @property(readonly, nonatomic) __weak id <EDMessageQueryHelperDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
-@property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (id)_transformAndFilterMessages:(id)arg1 includeDeleted:(_Bool)arg2;
 - (void)remoteSearchDidFindMessages:(id)arg1;
 - (void)remoteSearchDidFinish;
-- (void)persistenceDidDeleteMailboxesWithObjectIDs:(id)arg1 generationWindow:(id)arg2;
 - (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
-- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 oldConversationID:(long long)arg2 message:(id)arg3 generationWindow:(id)arg4;
 - (void)persistenceIsChangingConversationID:(long long)arg1 messages:(id)arg2 generationWindow:(id)arg3;
 - (void)persistenceWillChangeConversationID:(long long)arg1 messages:(id)arg2;
 - (void)_persistenceDidDeleteMessages:(id)arg1 includeMessagesWithDeletedFlag:(_Bool)arg2;
@@ -58,6 +61,7 @@
 - (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2 generationWindow:(id)arg3;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceDidReconcileJournaledMessages:(id)arg1 generationWindow:(id)arg2;
+- (void)persistenceDidDeleteAllMessagesInMailboxesWithURLs:(id)arg1 generationWindow:(id)arg2;
 - (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (void)_foundMessages:(id)arg1;
 - (void)persistenceIsAddingMessages:(id)arg1 journaled:(_Bool)arg2 generationWindow:(id)arg3;
@@ -66,7 +70,7 @@
 - (void)cancel;
 - (void)start;
 - (void)dealloc;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 delegate:(id)arg4;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 remoteSearchProvider:(id)arg4 scheduler:(id)arg5 delegate:(id)arg6 shouldReconcileJournal:(_Bool)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

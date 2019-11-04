@@ -35,7 +35,7 @@
 + (id)handleNotificationResponse:(id)arg1 bagContract:(id)arg2;
 + (id)_cachedImagePathForIdentifier:(id)arg1 assetURL:(id)arg2;
 + (id)_downloadAssetAtUrl:(id)arg1 withIdentifier:(id)arg2 logKey:(id)arg3 bag:(id)arg4;
-+ (BOOL)_canParseNotificationWithIdentifier:(id)arg1;
++ (BOOL)_canParseNotificationWithIdentifier:(id)arg1 userInfo:(id)arg2;
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
@@ -44,6 +44,7 @@
 + (BOOL)shouldHandleNotificationResponse:(id)arg1;
 + (id)notificationCenter:(id)arg1 openSettingsForNotification:(id)arg2 bag:(id)arg3;
 + (id)notificationCenter:(id)arg1 didChangeSettings:(id)arg2 bag:(id)arg3;
++ (void)openAppUsingBundleIdentifier:(id)arg1;
 + (void)handleServiceExtensionNotificationRequest:(id)arg1 bag:(id)arg2 withContentHandler:(CDUnknownBlockType)arg3;
 + (id)handleNotificationResponse:(id)arg1 bag:(id)arg2;
 + (long long)explicitEnabledForCenterBundleID:(id)arg1;

@@ -4,30 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDHome, HMFMessage, NSString;
+@class HMBLocalZone, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HMDCameraClipImporter : NSObject <HMFLogging>
+@interface HMDCameraClipImporter : HMFObject <HMFLogging>
 {
-    HMDHome *_home;
-    HMFMessage *_message;
+    NSString *_logIdentifier;
+    HMBLocalZone *_localZone;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 + (id)logCategory;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly) HMFMessage *message; // @synthesize message=_message;
-@property(readonly) HMDHome *home; // @synthesize home=_home;
+@property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
+@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
-- (id)logIdentifier;
-- (id)cameraProfiles;
-- (id)_createFuturesForCameraProfile:(id)arg1 clipsMetadata:(id)arg2;
-- (void)import;
-- (id)initWithHome:(id)arg1 importMessage:(id)arg2;
+- (id)importClipsWithImportData:(id)arg1;
+- (id)initWithLocalZone:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

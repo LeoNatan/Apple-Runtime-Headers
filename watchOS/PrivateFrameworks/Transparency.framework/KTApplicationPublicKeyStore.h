@@ -6,45 +6,49 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString, TransparencyManagedDataStore, TransparencyTrustedKeyStore, VRFPublicKey;
 
 @interface KTApplicationPublicKeyStore : NSObject
 {
-    NSData *_vrfKey;
-    NSDictionary *_trustedAppSigningKeys;
-    NSDictionary *_trustedTltSigningKeys;
+    VRFPublicKey *_vrfKey;
+    TransparencyTrustedKeyStore *_appKeyStore;
+    TransparencyTrustedKeyStore *_tltKeyStore;
     NSString *_application;
-    NSData *_vrfPublicKeyBytes;
+    TransparencyManagedDataStore *_dataStore;
+    NSData *_patConfigProof;
     int _vrfType;
-    NSData *_vrfSignature;
-    NSData *_vrfSignatureKeySPKI;
-    struct __CFString *_vrfSignatureAlgorithm;
+    NSDictionary *_trustedAppSigningKeys;
     NSArray *_trustedAppLeafs;
+    NSDictionary *_trustedTltSigningKeys;
     NSArray *_trustedTltLeafs;
     NSArray *_trustedIntermediates;
+    unsigned long long _patLogBeginningMs;
+    unsigned long long _tltLogBeginningMs;
 }
 
 @property(retain) NSArray *trustedIntermediates; // @synthesize trustedIntermediates=_trustedIntermediates;
 @property(retain) NSArray *trustedTltLeafs; // @synthesize trustedTltLeafs=_trustedTltLeafs;
-@property(retain) NSArray *trustedAppLeafs; // @synthesize trustedAppLeafs=_trustedAppLeafs;
-@property struct __CFString *vrfSignatureAlgorithm; // @synthesize vrfSignatureAlgorithm=_vrfSignatureAlgorithm;
-@property(retain) NSData *vrfSignatureKeySPKI; // @synthesize vrfSignatureKeySPKI=_vrfSignatureKeySPKI;
-@property(retain) NSData *vrfSignature; // @synthesize vrfSignature=_vrfSignature;
-@property int vrfType; // @synthesize vrfType=_vrfType;
-@property(retain) NSData *vrfPublicKeyBytes; // @synthesize vrfPublicKeyBytes=_vrfPublicKeyBytes;
-@property(retain) NSString *application; // @synthesize application=_application;
 @property(retain) NSDictionary *trustedTltSigningKeys; // @synthesize trustedTltSigningKeys=_trustedTltSigningKeys;
+@property(retain) NSArray *trustedAppLeafs; // @synthesize trustedAppLeafs=_trustedAppLeafs;
 @property(retain) NSDictionary *trustedAppSigningKeys; // @synthesize trustedAppSigningKeys=_trustedAppSigningKeys;
-@property(retain) NSData *vrfKey; // @synthesize vrfKey=_vrfKey;
+@property int vrfType; // @synthesize vrfType=_vrfType;
+@property(retain) NSData *patConfigProof; // @synthesize patConfigProof=_patConfigProof;
+@property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
+@property(retain) NSString *application; // @synthesize application=_application;
+@property unsigned long long tltLogBeginningMs; // @synthesize tltLogBeginningMs=_tltLogBeginningMs;
+@property unsigned long long patLogBeginningMs; // @synthesize patLogBeginningMs=_patLogBeginningMs;
+@property(retain) TransparencyTrustedKeyStore *tltKeyStore; // @synthesize tltKeyStore=_tltKeyStore;
+@property(retain) TransparencyTrustedKeyStore *appKeyStore; // @synthesize appKeyStore=_appKeyStore;
+@property(retain) VRFPublicKey *vrfKey; // @synthesize vrfKey=_vrfKey;
 - (void).cxx_destruct;
-- (id)initWithApplication:(id)arg1 diskState:(id)arg2 error:(id *)arg3;
+- (id)initWithApplication:(id)arg1 dataStore:(id)arg2 diskState:(id)arg3 error:(id *)arg4;
 - (_Bool)processDiskState:(id)arg1 error:(id *)arg2;
-- (id)initWithApplication:(id)arg1 response:(id)arg2 error:(id *)arg3;
+- (id)initWithApplication:(id)arg1 dataStore:(id)arg2 response:(id)arg3 error:(id *)arg4;
+- (void)startLogBeginTimesSampler;
 - (_Bool)processPublicKeysResponse:(id)arg1 error:(id *)arg2;
-- (_Bool)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 vrfPublicKeyBytes:(id)arg4 vrfSignatureBytes:(id)arg5 vrfSPKIHash:(id)arg6 vrfSignatureAlgorithm:(struct __CFString *)arg7 error:(id *)arg8;
-- (id)copyVRFKeyFromResponse:(id)arg1 error:(id *)arg2;
-- (id)copyVRFKeySigningKeySPKIFromResponse:(id)arg1 error:(id *)arg2;
-- (id)copyVRFKeySignatureFromResponse:(id)arg1 error:(id *)arg2;
+- (_Bool)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 patConfigProof:(id)arg4 error:(id *)arg5;
+- (_Bool)detectEpochChangeAndResetData:(unsigned long long)arg1 patLogBeginningMs:(unsigned long long)arg2 error:(id *)arg3;
+- (id)copyVRFKeyFromConfigProof:(id)arg1 error:(id *)arg2;
 - (_Bool)verifyCertificates:(id)arg1 intermediates:(id)arg2 application:(id)arg3 error:(id *)arg4;
 - (id)copyKeyStoreState;
 - (void)clearState:(id *)arg1;

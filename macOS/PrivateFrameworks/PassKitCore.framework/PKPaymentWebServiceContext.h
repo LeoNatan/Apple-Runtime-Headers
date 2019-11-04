@@ -58,8 +58,8 @@
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (id)applyServicePreferredLangaugeForFeatureIdentifier:(unsigned long long)arg1;
-- (id)applyServiceLocalizationBundleForfeatureIdentifier:(unsigned long long)arg1;
+- (id)applyServicePreferredLanguageForFeatureIdentifier:(unsigned long long)arg1;
+- (id)applyServiceLocalizationBundleForFeatureIdentifier:(unsigned long long)arg1;
 - (id)applyServiceFeaturesForRegionMeetingEnablementThreshold:(id)arg1;
 - (double)_contextProvisioningEnablementValue;
 - (id)betaPaymentNetworksForRegion:(id)arg1;

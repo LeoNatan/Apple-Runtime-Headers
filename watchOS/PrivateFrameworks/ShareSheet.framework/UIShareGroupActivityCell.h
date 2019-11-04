@@ -19,6 +19,7 @@
     UIView *_badgeSlotView;
     CALayer *_darkeningLayer;
     UIVisualEffectView *_vibrantLabelView;
+    UILabel *_labelForPositioning;
     UIImageView *_darkenedImageView;
     NSArray *_regularConstraints;
     NSArray *_largeTextConstraints;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) UIImageView *darkenedImageView; // @synthesize darkenedImageView=_darkenedImageView;
+@property(retain, nonatomic) UILabel *labelForPositioning; // @synthesize labelForPositioning=_labelForPositioning;
 @property(retain, nonatomic) UIVisualEffectView *vibrantLabelView; // @synthesize vibrantLabelView=_vibrantLabelView;
 @property(retain, nonatomic) CALayer *darkeningLayer; // @synthesize darkeningLayer=_darkeningLayer;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;

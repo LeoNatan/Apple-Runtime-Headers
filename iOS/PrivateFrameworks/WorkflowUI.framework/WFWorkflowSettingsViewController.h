@@ -23,7 +23,6 @@
     id <WFWorkflowSettingsViewControllerDelegate> _delegate;
     WFWorkflow *_workflow;
     WFDatabase *_database;
-    NSString *_stagedWorkflowNameForUpdate;
     WFAddToHomeScreenActivity *_homeScreenActivity;
     UINavigationController *_cardPresentationNavigationController;
     WFWorkflowSettingsViewDataSource *_dataSource;
@@ -32,7 +31,6 @@
 @property(retain, nonatomic) WFWorkflowSettingsViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UINavigationController *cardPresentationNavigationController; // @synthesize cardPresentationNavigationController=_cardPresentationNavigationController;
 @property(retain, nonatomic) WFAddToHomeScreenActivity *homeScreenActivity; // @synthesize homeScreenActivity=_homeScreenActivity;
-@property(retain, nonatomic) NSString *stagedWorkflowNameForUpdate; // @synthesize stagedWorkflowNameForUpdate=_stagedWorkflowNameForUpdate;
 @property(retain, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFWorkflowSettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -45,7 +43,7 @@
 - (void)homeScreenActivityDidFinish:(id)arg1 success:(_Bool)arg2;
 - (void)dismissIconViewController;
 - (void)didSelectSettingsSectionImportQuestionsAtRow:(long long)arg1;
-- (void)didSelectSettingsSectionHomeScreenAtRow:(long long)arg1;
+- (void)didSelectSettingsSectionButtonsAtRow:(long long)arg1;
 - (void)didSelectSettingsSectionShowInAtRow:(long long)arg1;
 - (void)didSelectSettingsSectionHelpAtRow:(long long)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

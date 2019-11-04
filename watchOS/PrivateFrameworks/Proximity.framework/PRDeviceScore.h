@@ -10,24 +10,24 @@
 
 @interface PRDeviceScore : NSObject
 {
-    NSData *_macAddress;
     NSData *_btAddress;
     int _proximity;
     PRRangeMeasurement *_range;
     PRAngleMeasurement *_angle;
     double _score;
     double _scoreUncertainty;
+    double _timestamp;
 }
 
+@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) double scoreUncertainty; // @synthesize scoreUncertainty=_scoreUncertainty;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) PRAngleMeasurement *angle; // @synthesize angle=_angle;
 @property(readonly) PRRangeMeasurement *range; // @synthesize range=_range;
 @property(readonly) int proximity; // @synthesize proximity=_proximity;
 @property(readonly) NSData *btAddress; // @synthesize btAddress=_btAddress;
-@property(readonly) NSData *macAddress; // @synthesize macAddress=_macAddress;
 - (void).cxx_destruct;
-- (id)initWithValues:(id)arg1 btAddress:(id)arg2 proximity:(int)arg3 range:(id)arg4 angle:(id)arg5 score:(double)arg6 scoreUncertainty:(double)arg7;
+- (id)initWithValues:(id)arg1 proximity:(int)arg2 range:(id)arg3 angle:(id)arg4 score:(double)arg5 scoreUncertainty:(double)arg6;
 - (id)init;
 
 @end

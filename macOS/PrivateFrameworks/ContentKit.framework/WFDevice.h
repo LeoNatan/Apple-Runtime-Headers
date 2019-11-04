@@ -11,11 +11,14 @@
 @interface WFDevice : NSObject
 {
     NSArray *_capabilities;
+    long long _chipID;
 }
 
 + (id)currentDevice;
+@property(readonly, nonatomic) long long chipID; // @synthesize chipID=_chipID;
 - (void).cxx_destruct;
 - (id)_deviceInfoForKey:(struct __CFString *)arg1;
+@property(readonly, nonatomic) NSString *marketingName;
 @property(readonly, nonatomic) NSString *localizedWiFiDisplayName;
 - (BOOL)hasCapability:(id)arg1;
 @property(readonly, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;

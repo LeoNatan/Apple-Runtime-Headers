@@ -8,7 +8,7 @@
 
 #import <UIKitCore/FBSSceneDelegate-Protocol.h>
 
-@class BKSAnimationFenceHandle, FBSScene, FBSSceneSettings, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSPointerArray, NSString, UIApplicationSceneClientSettings, UIApplicationSceneSettings, UISceneActivationConditions, UISceneSession, _UISceneLifecycleMonitor;
+@class BKSAnimationFenceHandle, FBSScene, FBSSceneSettings, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSPointerArray, NSString, UIApplicationSceneClientSettings, UIApplicationSceneSettings, UISceneActivationConditions, UISceneSession, _UISceneLifecycleMonitor;
 @protocol UISceneDelegate;
 
 @interface UIScene : UIResponder <FBSSceneDelegate>
@@ -51,9 +51,7 @@
         unsigned int isProcessingUpdateResponseBlocks:1;
         unsigned int readyForSuspend:1;
         unsigned int isMediaParticipant:1;
-        unsigned int isInDetachDeferringAction:1;
     } _sceneFlags;
-    NSDate *_suspensionTimeMark;
     _Bool _respondingToLifecycleEvent;
     NSNumber *__cachedInterfaceOrientation;
 }
@@ -118,10 +116,6 @@
 @property(readonly, nonatomic) _Bool _readyForSuspend;
 - (void)_prepareForSuspend;
 - (void)_prepareForResume;
-- (void)_performBlockAfterCACommitPhaseDelayingBackgroundDetach:(CDUnknownBlockType)arg1;
-- (void)_performBackgroundSceneDetach:(id)arg1;
-- (void)_cancelBackgroundSceneDetach;
-- (void)_scheduleBackgroundSceneDetach;
 @property(nonatomic, setter=_setInvolvedInMediaPlayback:) _Bool _involvedInMediaPlayback;
 - (void)_initializeSceneComponents;
 - (_Bool)_needsMakeKeyAndVisible;
@@ -147,6 +141,7 @@
 - (void)_invalidate;
 - (void)_synchronizeDrawingWithFence:(id)arg1;
 @property(readonly, nonatomic) BKSAnimationFenceHandle *_synchronizedDrawingFence;
+- (_Bool)_shouldAllowFencing;
 - (void)_compatibilityModeZoomDidChange;
 - (void)_updateUIClientSettingsWithTransitionBlock:(CDUnknownBlockType)arg1;
 - (void)_updateUIClientSettingsWithUITransitionBlock:(CDUnknownBlockType)arg1;

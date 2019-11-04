@@ -28,6 +28,7 @@
     CDUnknownBlockType redeemCompletionHandler;
     id <SKAccountPageViewControllerDelegate> _delegate;
     ACAccount *_account;
+    NSString *_referrer;
     long long _type;
     SKAccountPageViewController *_preWarmedViewController;
     SKAccountPageViewController *_presentingAccountPageViewController;
@@ -37,6 +38,7 @@
 @property(nonatomic) __weak SKAccountPageViewController *presentingAccountPageViewController; // @synthesize presentingAccountPageViewController=_presentingAccountPageViewController;
 @property(retain, nonatomic) SKAccountPageViewController *preWarmedViewController; // @synthesize preWarmedViewController=_preWarmedViewController;
 @property(nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic) NSString *referrer; // @synthesize referrer=_referrer;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) __weak id <SKAccountPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -46,6 +48,8 @@
 - (void)_addRemoteView;
 - (unsigned long long)_indexForFirstBridgedNavigationViewController;
 - (void)_popAllBridgedNavigationViewControllers;
+- (id)_overrideScheme:(id)arg1;
+- (void)_setupNavigationItem;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)overrideRedeemOperationWithCode:(id)arg1 cameraRecognized:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)redeemCameraViewController:(id)arg1 didFinishWithRedeem:(id)arg2;
@@ -72,6 +76,7 @@
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
 - (void)loadView;
 - (void)prepareWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)loadWithCompletionBlock:(CDUnknownBlockType)arg1;

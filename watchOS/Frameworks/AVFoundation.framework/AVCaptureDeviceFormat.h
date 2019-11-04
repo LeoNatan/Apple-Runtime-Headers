@@ -11,11 +11,13 @@
 @interface AVCaptureDeviceFormat : NSObject
 {
     AVCaptureDeviceFormatInternal *_internal;
+    _Bool _globalToneMappingSupported;
     _Bool _highestPhotoQualitySupported;
 }
 
 + (void)initialize;
 @property(readonly, nonatomic, getter=isHighestPhotoQualitySupported) _Bool highestPhotoQualitySupported; // @synthesize highestPhotoQualitySupported=_highestPhotoQualitySupported;
+@property(readonly, nonatomic, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported; // @synthesize globalToneMappingSupported=_globalToneMappingSupported;
 - (unsigned long)supportedRawPixelFormat;
 - (_Bool)isEquivalentToVirtualDeviceFormat:(id)arg1;
 - (int)ispPowerConsumption;

@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)webViewController:(id)arg1 didFinishDocumentLoadForNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
-- (void)webViewControllerDidDetermineReaderAvailability:(id)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
+- (void)webViewControllerDidDetermineReaderAvailability:(id)arg1 dueTo:(int)arg2;
 - (void)webViewControllerWebProcessDidBecomeResponsive:(id)arg1;
 - (void)_executeUnresponsiveWebProcessBlock;
 - (void)_terminateUnresponsiveWebProcess;

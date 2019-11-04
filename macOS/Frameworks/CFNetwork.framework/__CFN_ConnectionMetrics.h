@@ -13,6 +13,7 @@
 
 @interface __CFN_ConnectionMetrics : NSObject <NSSecureCoding>
 {
+    struct os_unfair_lock_s connectionLock;
     BOOL _TLSConfigured;
     BOOL _proxyConfigured;
     BOOL _cellular;
@@ -81,7 +82,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)subflowCounts;
+- (id)_subflowCounts;
 - (id)tcpInfo;
+- (id)_tcpInfo;
 - (void)end;
 - (void)establish;
 - (void)wait;

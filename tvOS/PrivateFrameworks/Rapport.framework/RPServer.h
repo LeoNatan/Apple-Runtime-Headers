@@ -16,6 +16,7 @@
 @interface RPServer : NSObject <NSSecureCoding, RPCompanionLinkXPCClientInterface, RPAuthenticatable>
 {
     _Bool _activateCalled;
+    _Bool _changesPending;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     struct LogCategory *_ucat;
@@ -60,7 +61,11 @@
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
 @property(nonatomic) unsigned int pairSetupFlags; // @synthesize pairSetupFlags=_pairSetupFlags;
 - (void).cxx_destruct;
+- (void)xpcServerHidePassword:(unsigned int)arg1;
+- (void)xpcServerShowPassword:(id)arg1 flags:(unsigned int)arg2;
 - (void)xpcServerAcceptSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_update;
+- (void)_updateIfNeededWithBlock:(CDUnknownBlockType)arg1;
 - (void)tryPassword:(id)arg1;
 - (void)_invalidated;
 - (void)invalidate;

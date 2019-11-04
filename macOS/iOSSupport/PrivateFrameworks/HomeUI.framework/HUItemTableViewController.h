@@ -54,9 +54,11 @@
 @property(nonatomic) unsigned long long appearState; // @synthesize appearState=_appearState;
 @property(nonatomic) BOOL wantsPreferredContentSize; // @synthesize wantsPreferredContentSize=_wantsPreferredContentSize;
 - (void).cxx_destruct;
+- (void)reloadCellForItems:(id)arg1;
 - (id)presentingViewControllerForModuleController:(id)arg1;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;
 - (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
+- (void)_transformViewControllerForRequest:(id)arg1;
 - (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;
 - (void)recursivelyDisableItemUpdates:(BOOL)arg1 withReason:(id)arg2;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
@@ -113,7 +115,6 @@
 @property(readonly, copy) NSString *description;
 - (id)textFieldForVisibleItem:(id)arg1;
 - (id)moduleControllerForItem:(id)arg1;
-- (BOOL)shouldResizeHeaderWhenLayoutSubviews;
 - (id)childViewControllersToPreload;
 - (id)itemTableFooterView;
 - (id)itemTableHeaderView;

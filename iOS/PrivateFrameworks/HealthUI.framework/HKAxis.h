@@ -61,7 +61,7 @@
 - (void)_drawTextBackgroundWithLabels:(id)arg1 font:(id)arg2 offset:(double)arg3 rect:(struct CGRect)arg4 style:(id)arg5 renderView:(id)arg6;
 - (struct CGRect)_labelBackgroundRectWithLabels:(id)arg1 font:(id)arg2 offset:(double)arg3 rect:(struct CGRect)arg4 style:(id)arg5;
 - (struct CGPoint)renderPositionForLabel:(id)arg1 rect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 constantOffset:(double)arg5 isHorizontal:(_Bool)arg6 optionalOffset:(struct CGPoint)arg7;
-- (void)_drawTextForModelRange:(id)arg1 inRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 renderView:(id)arg5 style:(id)arg6 maximumLabelSize:(struct CGSize *)arg7;
+- (void)_drawTextForModelRange:(id)arg1 inRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 renderView:(id)arg5 style:(id)arg6 maximumLabelSize:(struct CGSize *)arg7 omitOffscreenLabels:(_Bool)arg8;
 - (long long)dateZoomForZoomScale:(double)arg1;
 - (id)zoomScaleEngine;
 - (void)offsetForValueRange:(id)arg1 chartRect:(struct CGRect)arg2 zoomScaleOut:(double *)arg3 contentOffsetOut:(struct CGPoint *)arg4;
@@ -71,7 +71,7 @@
 - (_Bool)_styleIsHorizontal:(id)arg1;
 - (void)drawGridlinesForModelRange:(id)arg1 chartRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 renderView:(id)arg5 blendMode:(int)arg6;
 - (void)drawBaselineForModelRange:(id)arg1 chartRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 renderView:(id)arg5;
-- (void)drawLabelsWithModelRange:(id)arg1 chartRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 renderView:(id)arg5 maximumLabelSize:(struct CGSize *)arg6;
+- (void)drawLabelsWithModelRange:(id)arg1 chartRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 renderView:(id)arg5 maximumLabelSize:(struct CGSize *)arg6 omitOffscreenLabels:(_Bool)arg7;
 - (struct CGRect)labelRectWithModelRange:(id)arg1 chartRect:(struct CGRect)arg2 zoomScale:(double)arg3;
 - (double)_axisOffsetWithStyle:(id)arg1 chartRect:(struct CGRect)arg2 horizontalAlignmentOut:(long long *)arg3;
 - (id)adjustedRangeForFittedRange:(id)arg1 chartRange:(struct HKRange)arg2;

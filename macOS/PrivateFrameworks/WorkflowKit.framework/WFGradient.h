@@ -8,27 +8,27 @@
 
 #import <WorkflowKit/NSCopying-Protocol.h>
 
-@class NSColor;
+@class WFColor;
 
 @interface WFGradient : NSObject <NSCopying>
 {
     struct CGGradient *_CGGradient;
-    NSColor *_baseColor;
-    NSColor *_darkBaseColor;
-    NSColor *_accessibilityBaseColor;
-    NSColor *_darkAccessibilityBaseColor;
-    NSColor *_startColor;
-    NSColor *_endColor;
+    WFColor *_baseColor;
+    WFColor *_darkBaseColor;
+    WFColor *_accessibilityBaseColor;
+    WFColor *_darkAccessibilityBaseColor;
+    WFColor *_startColor;
+    WFColor *_endColor;
     long long _blendMode;
 }
 
 @property(readonly, nonatomic) long long blendMode; // @synthesize blendMode=_blendMode;
-@property(readonly, nonatomic) NSColor *endColor; // @synthesize endColor=_endColor;
-@property(readonly, nonatomic) NSColor *startColor; // @synthesize startColor=_startColor;
-@property(readonly, nonatomic) NSColor *darkAccessibilityBaseColor; // @synthesize darkAccessibilityBaseColor=_darkAccessibilityBaseColor;
-@property(readonly, nonatomic) NSColor *accessibilityBaseColor; // @synthesize accessibilityBaseColor=_accessibilityBaseColor;
-@property(readonly, nonatomic) NSColor *darkBaseColor; // @synthesize darkBaseColor=_darkBaseColor;
-@property(readonly, nonatomic) NSColor *baseColor; // @synthesize baseColor=_baseColor;
+@property(readonly, nonatomic) WFColor *endColor; // @synthesize endColor=_endColor;
+@property(readonly, nonatomic) WFColor *startColor; // @synthesize startColor=_startColor;
+@property(readonly, nonatomic) WFColor *darkAccessibilityBaseColor; // @synthesize darkAccessibilityBaseColor=_darkAccessibilityBaseColor;
+@property(readonly, nonatomic) WFColor *accessibilityBaseColor; // @synthesize accessibilityBaseColor=_accessibilityBaseColor;
+@property(readonly, nonatomic) WFColor *darkBaseColor; // @synthesize darkBaseColor=_darkBaseColor;
+@property(readonly, nonatomic) WFColor *baseColor; // @synthesize baseColor=_baseColor;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

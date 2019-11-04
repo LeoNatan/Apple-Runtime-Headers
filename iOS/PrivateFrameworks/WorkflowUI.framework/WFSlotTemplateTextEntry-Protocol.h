@@ -5,12 +5,15 @@
 //
 
 #import <WorkflowUI/UITextInput-Protocol.h>
+#import <WorkflowUI/WFInputHintProvider-Protocol.h>
 #import <WorkflowUI/WFInputViewMutable-Protocol.h>
 
-@class NSTextAttachment;
+@class NSAttributedString, UIFont, UIView;
 
-@protocol WFSlotTemplateTextEntry <WFInputViewMutable, UITextInput>
+@protocol WFSlotTemplateTextEntry <WFInputViewMutable, WFInputHintProvider, UITextInput>
+@property(retain, nonatomic) UIView *inputHintView;
+@property(readonly, nonatomic) UIFont *font;
 @property(nonatomic) _Bool clearsZeroWhenTyping;
-- (void)insertTextAttachment:(NSTextAttachment *)arg1;
+- (void)insertAttributedText:(NSAttributedString *)arg1;
 @end
 

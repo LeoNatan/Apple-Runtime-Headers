@@ -13,11 +13,13 @@
 @interface GEOLogMsgStatePlaceCard : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _possibleActions;
     CDStruct_95bda58d _unactionableUiElements;
     GEOPlaceActionDetails *_placeActionDetails;
     NSString *_placecardCategory;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _placecardType;
     _Bool _transitAdvisoryBanner;
     struct {
@@ -81,6 +83,8 @@
 @property(readonly, nonatomic) _Bool hasPlaceActionDetails;
 - (void)_readPlaceActionDetails;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

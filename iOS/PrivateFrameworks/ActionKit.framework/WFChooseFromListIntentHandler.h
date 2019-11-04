@@ -15,8 +15,8 @@
 }
 
 - (void)resolvePromptForChooseFromList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)provideItemsOptionsForChooseFromList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)resolveItemsForChooseFromList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)provideChosenItemsOptionsForChooseFromList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveChosenItemsForChooseFromList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleChooseFromList:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties

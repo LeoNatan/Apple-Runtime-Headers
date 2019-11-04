@@ -6,20 +6,18 @@
 
 #import <WatchListKit/WLKBasicContentMetadata.h>
 
-@class NSDate, NSString, WLKMovieContentRating, WLKRottenTomatoesRating;
+@class NSDate, NSString, WLKRottenTomatoesRating;
 
 @interface WLKBasicMovieMetadata : WLKBasicContentMetadata
 {
     NSString *_studio;
     WLKRottenTomatoesRating *_rottenTomatoesRating;
-    WLKMovieContentRating *_contentRating;
     double _duration;
     NSDate *_releaseDate;
 }
 
 @property(readonly, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
-@property(readonly, nonatomic) WLKMovieContentRating *contentRating; // @synthesize contentRating=_contentRating;
 @property(readonly, nonatomic) WLKRottenTomatoesRating *rottenTomatoesRating; // @synthesize rottenTomatoesRating=_rottenTomatoesRating;
 @property(readonly, copy, nonatomic) NSString *studio; // @synthesize studio=_studio;
 - (void).cxx_destruct;

@@ -12,9 +12,12 @@
 @property(nonatomic, readonly) BOOL canBecomeFirstResponder;
 - (void)handleKeyCommandWithKeyCommand:(id)arg1;
 @property(nonatomic, readonly) NSArray *keyCommands;
+- (BOOL)resignFirstResponder;
+- (BOOL)becomeFirstResponder;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

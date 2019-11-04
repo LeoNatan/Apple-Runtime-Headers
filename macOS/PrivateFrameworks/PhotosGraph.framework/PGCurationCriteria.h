@@ -36,7 +36,7 @@
 - (id)peopleTraitString;
 @property(readonly) NSString *niceDescription;
 - (double)_scoreForSceneClassifications:(id)arg1 withScenesTrait:(id)arg2 traitFailed:(char *)arg3;
-- (BOOL)passesForAsset:(id)arg1 score:(double *)arg2 reasonString:(id *)arg3;
+- (BOOL)passesForItem:(id)arg1 score:(double *)arg2 reasonString:(id *)arg3;
 - (BOOL)isPassingForAsset:(id)arg1 score:(double *)arg2;
 - (id)initWithGraph:(id)arg1 minimumAssetsRatio:(double)arg2 client:(unsigned long long)arg3;
 

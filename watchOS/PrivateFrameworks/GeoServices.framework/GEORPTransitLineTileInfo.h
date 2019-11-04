@@ -13,10 +13,12 @@
 @interface GEORPTransitLineTileInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     unsigned long long _transitLineMuid;
     NSString *_transitLineName;
     NSString *_transitSystemName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_transitLineMuid:1;
         unsigned int read_transitLineName:1;
@@ -47,6 +49,8 @@
 - (void)_readTransitLineName;
 @property(nonatomic) _Bool hasTransitLineMuid;
 @property(nonatomic) unsigned long long transitLineMuid;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

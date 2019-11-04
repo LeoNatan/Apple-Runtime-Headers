@@ -12,6 +12,7 @@
 }
 
 + (id)sharedInstance;
+- (BOOL)fetchIsEnabled;
 - (BOOL)isEnabled;
 - (void)_notifyObserver:(id)arg1 withEnabled:(BOOL)arg2;
 - (void)_didReceiveSiriSettingChanged:(BOOL)arg1;

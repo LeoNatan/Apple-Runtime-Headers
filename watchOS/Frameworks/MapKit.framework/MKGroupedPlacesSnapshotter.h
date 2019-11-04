@@ -21,6 +21,7 @@
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void).cxx_destruct;
 - (void)cancel;
+@property(readonly, nonatomic, getter=isLoading) _Bool loading;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startWithQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) MKMapCamera *camera;

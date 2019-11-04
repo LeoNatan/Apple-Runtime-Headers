@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+- (id)makeActivityAdvertisingViewingList;
 - (void)updateUserActivityState:(id)arg1 withContentsOfContact:(id)arg2;
 - (id)makeActivityAdvertisingViewingOfContact:(id)arg1;
 - (void)publishRequestToEditContact:(id)arg1;

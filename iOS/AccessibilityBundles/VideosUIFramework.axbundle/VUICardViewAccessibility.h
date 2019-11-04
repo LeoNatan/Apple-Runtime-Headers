@@ -16,6 +16,9 @@
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityAttributedValue;
 - (id)accessibilityLabel;
+- (unsigned long long)_accessibilityDownloadState;
+- (_Bool)_downloadButtonPressed:(id)arg1;
+- (id)accessibilityCustomActions;
 - (_Bool)isAccessibilityElement;
 - (id)_accessibilityEnclosingVUICardCollectionViewCell;
 

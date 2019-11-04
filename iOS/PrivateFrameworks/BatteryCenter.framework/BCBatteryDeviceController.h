@@ -24,7 +24,7 @@
 }
 
 + (id)_glyphForBatteryDevice:(id)arg1;
-+ (id)_glyphForBatteryDeviceWithTransport:(long long)arg1 accessoryCategory:(unsigned long long)arg2 vendor:(long long)arg3 productIdentifier:(long long)arg4 parts:(unsigned long long)arg5;
++ (id)_glyphForBatteryDeviceWithTransport:(long long)arg1 accessoryCategory:(unsigned long long)arg2 vendor:(long long)arg3 productIdentifier:(long long)arg4 parts:(unsigned long long)arg5 modelNumber:(id)arg6;
 + (id)_internalBatteryDeviceGlyph;
 + (id)sharedInstance;
 @property(nonatomic, getter=_chargeChangeHandlingDisabled, setter=_setChargeChangeHandlingDisabled:) _Bool chargeChangeHandlingDisabled; // @synthesize chargeChangeHandlingDisabled=_chargeChangeHandlingDisabled;

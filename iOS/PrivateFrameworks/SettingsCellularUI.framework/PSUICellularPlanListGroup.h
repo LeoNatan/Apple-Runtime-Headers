@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)danglingPlanPressed:(id)arg1;
-- (id)cellularPlanPendingTransferSpecifierDetailText:(id)arg1;
 - (id)danglingPlanSpecifierDetailText:(id)arg1;
+- (id)planPendingTransferSpecifierDetailText:(id)arg1;
 - (id)planSpecifierDetailText:(id)arg1;
 - (id)specifiers;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;

@@ -13,18 +13,24 @@
     NSMutableArray *_trackedConversations;
     _Bool _loadingConversations;
     _Bool _loadedConversations;
+    _Bool _remergingConversations;
     CKConversation *_pendingConversation;
 }
 
 + (void)_handleRegistryDidLoadNotification:(id)arg1;
 + (void)initialize;
 + (id)sharedConversationList;
+@property(nonatomic) _Bool remergingConversations; // @synthesize remergingConversations=_remergingConversations;
 @property(readonly, nonatomic) _Bool loadedConversations; // @synthesize loadedConversations=_loadedConversations;
 @property(readonly, nonatomic) _Bool loadingConversations; // @synthesize loadingConversations=_loadingConversations;
 @property(retain, nonatomic) CKConversation *pendingConversation; // @synthesize pendingConversation=_pendingConversation;
 - (void).cxx_destruct;
+- (_Bool)_messageFilteringEnabled;
 - (void)_handleMemoryWarning:(id)arg1;
+- (id)_testingTrackedConversations;
 - (id)pendingConversationCreatingIfNecessary;
+- (void)_handleChatsDidRemergeNotification:(id)arg1;
+- (void)_handleChatsWillRemergeNotification:(id)arg1;
 - (void)_chatPropertiesChanged:(id)arg1;
 - (void)_handleEngroupFinishedUpdating:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
@@ -41,13 +47,13 @@
 - (int)unreadCount;
 - (void)unpendConversation;
 - (void)beginTrackingConversation:(id)arg1 forChat:(id)arg2;
+- (_Bool)_shouldBailBeginTrackingForCurrentProcess;
 - (void)_postConversationListUpdateVisibleConversationsNotificationForUID:(id)arg1;
 - (void)_postConversationListChangedNotification;
 - (id)topMostConversation;
 - (void)resort;
 - (id)conversations;
 - (_Bool)hasActiveConversations;
-- (id)activeConversations;
 - (id)firstUnreadFilteredConversationIgnoringMessages:(id)arg1;
 - (_Bool)_shouldFilterForParticipants:(id)arg1;
 - (void)setNeedsReload;
@@ -58,7 +64,6 @@
 - (id)_copyEntitiesForAddressStrings:(id)arg1;
 - (void)_handleRegistryWillUnregisterChatNotification:(id)arg1;
 - (void)_handleRegistryDidRegisterChatNotification:(id)arg1;
-- (void)_beginTrackingAllExistingChatsIfNeededAsync;
 - (void)_beginTrackingAllExistingChatsIfNeeded;
 - (void)stopTrackingConversation:(id)arg1;
 - (id)conversationForExistingChatWithGUID:(id)arg1;

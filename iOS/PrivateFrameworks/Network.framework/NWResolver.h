@@ -19,7 +19,7 @@
     NSArray *_internalResolvedEndpointArray;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(retain) NSArray *internalResolvedEndpointArray; // @synthesize internalResolvedEndpointArray=_internalResolvedEndpointArray;
 @property(retain) NSSet *internalResolvedEndpoints; // @synthesize internalResolvedEndpoints=_internalResolvedEndpoints;
 @property long long internalStatus; // @synthesize internalStatus=_internalStatus;

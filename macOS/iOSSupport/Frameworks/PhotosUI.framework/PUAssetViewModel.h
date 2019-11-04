@@ -28,6 +28,7 @@
     BOOL _isFavorite;
     BOOL _accessoryViewVisible;
     BOOL _isInEditMode;
+    BOOL _toggleCTM;
     BOOL __needsUpdateVideoPlayers;
     id <PUDisplayAsset> _asset;
     PUModelTileTransform *_modelTileTransform;
@@ -41,6 +42,7 @@
     long long _lastAccessoryViewVisibilityChangeReason;
     long long _lastContentOffsetChangeReason;
     double _contentOffsetOverrideFactor;
+    long long _flippingFullSizeRenderState;
     long long __currentFavoriteOverrideRequest;
     long long _displayedContentUpdateCount;
     PUMediaProvider *_mediaProvider;
@@ -58,6 +60,8 @@
 @property(nonatomic) long long displayedContentUpdateCount; // @synthesize displayedContentUpdateCount=_displayedContentUpdateCount;
 @property(nonatomic, setter=_setCurrentFavoriteOverrideRequest:) long long _currentFavoriteOverrideRequest; // @synthesize _currentFavoriteOverrideRequest=__currentFavoriteOverrideRequest;
 @property(nonatomic, setter=_setNeedsUpdateVideoPlayers:) BOOL _needsUpdateVideoPlayers; // @synthesize _needsUpdateVideoPlayers=__needsUpdateVideoPlayers;
+@property(nonatomic) long long flippingFullSizeRenderState; // @synthesize flippingFullSizeRenderState=_flippingFullSizeRenderState;
+@property(nonatomic) BOOL toggleCTM; // @synthesize toggleCTM=_toggleCTM;
 @property(nonatomic) BOOL isInEditMode; // @synthesize isInEditMode=_isInEditMode;
 @property(nonatomic) double contentOffsetOverrideFactor; // @synthesize contentOffsetOverrideFactor=_contentOffsetOverrideFactor;
 @property(nonatomic) struct CGPoint overridingContentOffset; // @synthesize overridingContentOffset=_overridingContentOffset;

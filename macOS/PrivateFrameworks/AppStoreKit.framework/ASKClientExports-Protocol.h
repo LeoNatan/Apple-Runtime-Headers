@@ -22,6 +22,7 @@
 @property(readonly, copy) NSString *guid;
 @property(readonly) double screenCornerRadius;
 @property(readonly) struct CGSize screenSize;
+- (JSValue *)isPairedSystemVersionAtLeast:(JSValue *)arg1;
 - (BOOL)isActivePairedWatchSystemVersionAtLeastMajorVersion:(JSValue *)arg1 minorVersion:(JSValue *)arg2 patchVersion:(JSValue *)arg3;
 - (BOOL)deviceHasCapabilities:(NSArray *)arg1;
 @end

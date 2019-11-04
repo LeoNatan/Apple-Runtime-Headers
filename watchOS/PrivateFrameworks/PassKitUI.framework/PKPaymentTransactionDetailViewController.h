@@ -7,13 +7,16 @@
 #import <PassKitUI/PKSectionTableViewController.h>
 
 #import <PassKitUI/CNContactViewControllerDelegate-Protocol.h>
+#import <PassKitUI/PKAccountServiceAccountResolutionControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
+#import <PassKitUI/PKPaymentTransactionReportFraudConfirmationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
+#import <PassKitUI/PKTransactionDetailQuestionCellDelegate-Protocol.h>
 
-@class NSArray, NSDateFormatter, NSString, NSTimeZone, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionCellController, PKPaymentTransactionDetailHeaderView, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentStatusResponse, PKTransactionDetailBottomContainer, UIImage;
+@class NSArray, NSDateFormatter, NSString, NSTimeZone, PKAccountServiceAccountResolutionController, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionCellController, PKPaymentTransactionDetailHeaderView, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentStatusResponse, UIImage;
 @protocol PKPaymentDataProvider;
 
-@interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate, CNContactViewControllerDelegate>
+@interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate, CNContactViewControllerDelegate, PKTransactionDetailQuestionCellDelegate, PKPaymentTransactionReportFraudConfirmationViewControllerDelegate, PKAccountServiceAccountResolutionControllerDelegate>
 {
     int _detailViewStyle;
     _Bool _showRawName;
@@ -21,8 +24,11 @@
     _Bool _showProductTimeZone;
     PKPaymentTransaction *_associatedRefund;
     PKPaymentTransaction *_associatedAdjustment;
+    NSArray *_associatedInstallmentPlans;
     PKPaymentTransactionCellController *_transactionCellController;
+    PKAccountServiceAccountResolutionController *_accountResolutionController;
     _Bool _allowTransactionLinks;
+    NSString *_submittingAnswer;
     _Bool _issuerAppDeepLinkingEnabled;
     _Bool _inBridge;
     PKPaymentTransaction *_transaction;
@@ -38,10 +44,8 @@
     NSDateFormatter *_transactionLocalTimeDateFormatter;
     NSDateFormatter *_productTimeZoneFormatter;
     NSTimeZone *_productTimeZone;
-    PKTransactionDetailBottomContainer *_bottomContainer;
 }
 
-@property(retain, nonatomic) PKTransactionDetailBottomContainer *bottomContainer; // @synthesize bottomContainer=_bottomContainer;
 @property(retain, nonatomic) NSTimeZone *productTimeZone; // @synthesize productTimeZone=_productTimeZone;
 @property(retain, nonatomic) NSDateFormatter *productTimeZoneFormatter; // @synthesize productTimeZoneFormatter=_productTimeZoneFormatter;
 @property(retain, nonatomic) NSDateFormatter *transactionLocalTimeDateFormatter; // @synthesize transactionLocalTimeDateFormatter=_transactionLocalTimeDateFormatter;
@@ -58,6 +62,11 @@
 @property(readonly, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
+- (void)didReportFraudInViewController:(id)arg1;
+- (void)explanationViewControllerDidSelectCancel:(id)arg1;
+- (void)_presentPhysicalCardSuspendedAlert;
+- (void)_presentCardNumberUpdatedAlert;
+- (void)submitAnswer:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
@@ -68,6 +77,7 @@
 - (id)_fraudRiskCellForTableView:(id)arg1;
 - (id)_transactionIdentifierCellForTableView:(id)arg1;
 - (id)_statusCellForTableView:(id)arg1;
+- (id)_questionCellForTableView:(id)arg1 atIndexPath:(id)arg2;
 - (id)_amountDetailsCellForTableView:(id)arg1 atIndexPath:(id)arg2;
 - (void)_applyAmountDetailSeparatorInsetForTableView:(id)arg1 cell:(id)arg2;
 - (unsigned int)_lineItemItemForRowIndex:(unsigned int)arg1;
@@ -78,6 +88,8 @@
 - (id)_mapTilePlaceholderImage;
 - (id)_merchantAddressCellForTableView:(id)arg1;
 - (id)_transactionStatusString;
+- (void)_openBusinessChatControllerForContext:(id)arg1;
+- (void)_presentContactViewController;
 - (void)_presentReportIssue;
 - (_Bool)_transactionHasNonZeroSecondaryFundingSourceAmount;
 - (void)_openTransactionInIssuerApp;
@@ -91,11 +103,18 @@
 - (int)_numberOfActionRowsEnabled;
 - (_Bool)_shouldHighlightAction:(unsigned int)arg1;
 - (_Bool)_actionRowIsEnabled:(unsigned int)arg1;
+- (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)_updateAccountResolutionControllerIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_accountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_accountWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_showInstallmentDetailsForAssociatedInstallment:(id)arg1;
+- (id)_associatedInstallmentCellForTableView:(id)arg1 atIndexPath:(id)arg2;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_handlePeerPaymentDisplayableError:(id)arg1 withPeerPaymentController:(id)arg2;
 - (void)_performPeerPaymentAction:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_subtitleCellWithTitle:(id)arg1 subtitle:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;

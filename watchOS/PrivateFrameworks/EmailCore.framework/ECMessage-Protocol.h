@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) id <ECMimePart> bodyPart;
 @property(readonly, nonatomic, getter=isPartOfExistingThread) _Bool partOfExistingThread;
 @property(readonly, nonatomic) ECMessageFlags *flags;
+@property(readonly, nonatomic) _Bool isServerSearchResult;
 @property(readonly, nonatomic) long long conversationID;
 @property(readonly, nonatomic) id <ECMailbox> mailbox;
 @property(readonly, copy, nonatomic) NSString *remoteID;

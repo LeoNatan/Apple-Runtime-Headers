@@ -19,6 +19,7 @@
     REMChangedKeysObserver *_changedKeysObserver;
 }
 
++ (id)_deduplicateAlarms:(id)arg1;
 + (void)initialize;
 + (long long)hourForNextThirdsFromHour:(long long)arg1;
 @property(retain, nonatomic) REMChangedKeysObserver *changedKeysObserver; // @synthesize changedKeysObserver=_changedKeysObserver;
@@ -114,6 +115,7 @@
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;
 @property(retain, nonatomic) REMObjectID *listID; // @dynamic listID;
 @property(retain, nonatomic) REMCRMergeableStringDocument *notesDocument; // @dynamic notesDocument;
+@property(retain, nonatomic) NSData *notesDocumentData; // @dynamic notesDocumentData;
 @property(retain, nonatomic) REMObjectID *objectID; // @dynamic objectID;
 @property(retain, nonatomic) REMObjectID *parentReminderID; // @dynamic parentReminderID;
 @property(nonatomic) unsigned long long priority; // @dynamic priority;
@@ -127,6 +129,7 @@
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSString *timeZone; // @dynamic timeZone;
 @property(retain, nonatomic) REMCRMergeableStringDocument *titleDocument; // @dynamic titleDocument;
+@property(retain, nonatomic) NSData *titleDocumentData; // @dynamic titleDocumentData;
 @property(copy, nonatomic) REMUserActivity *userActivity; // @dynamic userActivity;
 
 @end

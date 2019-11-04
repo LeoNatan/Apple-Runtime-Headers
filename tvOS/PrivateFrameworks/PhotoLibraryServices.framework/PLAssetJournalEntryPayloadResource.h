@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) unsigned int dataStoreClassID;
 @property(readonly, nonatomic) unsigned long long cplType;
 - (void)updateStoredResource:(id)arg1;
-- (id)validatedExternalResourceWithAsset:(id)arg1;
+- (id)validatedExternalResourceWithAsset:(id)arg1 isCPLEnabled:(_Bool)arg2;
 - (id)initWithPayloadAttributes:(id)arg1;
 
 @end

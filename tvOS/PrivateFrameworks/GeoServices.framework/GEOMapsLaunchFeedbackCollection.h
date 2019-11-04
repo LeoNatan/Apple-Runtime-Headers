@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     struct GEOSessionID _sessionId;
     NSString *_sourceAppBundleId;
     NSString *_uriScheme;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_sessionId:1;
         unsigned int read_sourceAppBundleId:1;
@@ -48,6 +50,8 @@ __attribute__((visibility("hidden")))
 - (void)_readSourceAppBundleId;
 @property(nonatomic) _Bool hasSessionId;
 @property(nonatomic) struct GEOSessionID sessionId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

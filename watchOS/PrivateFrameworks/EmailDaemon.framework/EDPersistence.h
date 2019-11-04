@@ -9,7 +9,7 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
 @class EDActivityPersistence, EDConversationPersistence, EDGmailLabelPersistence, EDLocalActionPersistence, EDMailboxPersistence, EDMessageChangeManager, EDMessagePersistence, EDPersistenceDatabase, EDPersistenceHookRegistry, EDSearchableIndexManager, EDServerMessagePersistenceFactory, EDThreadPersistence, EDVIPManager, EMBlockedSenderManager, NSString;
-@protocol EDAccountsProvider, EMUserProfileProvider;
+@protocol EDAccountsProvider, EDRemoteSearchProvider, EMUserProfileProvider;
 
 @interface EDPersistence : NSObject <EFLoggable>
 {
@@ -19,6 +19,7 @@
     EDPersistenceHookRegistry *_hookRegistry;
     id <EDAccountsProvider> _accountsProvider;
     id <EMUserProfileProvider> _userProfileProvider;
+    id <EDRemoteSearchProvider> _remoteSearchProvider;
     EDVIPManager *_vipManager;
     EMBlockedSenderManager *_blockedSenderManager;
     EDActivityPersistence *_activityPersistence;
@@ -28,6 +29,7 @@
 @property(readonly) EDActivityPersistence *activityPersistence; // @synthesize activityPersistence=_activityPersistence;
 @property(readonly, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
+@property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 @property(readonly, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
 @property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 @property(readonly) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;

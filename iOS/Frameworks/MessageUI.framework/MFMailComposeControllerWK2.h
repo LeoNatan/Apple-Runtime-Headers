@@ -34,6 +34,7 @@
 - (void)composeStyleSelector:(id)arg1 didChangeTextColor:(id)arg2;
 - (void)composeStyleSelector:(id)arg1 didSelectStyle:(id)arg2;
 - (void)showStyleSelector:(id)arg1;
+- (void)composeBodyFieldDidResignFirstResponder;
 - (void)composeBodyFieldDidChangeFontAttributes:(id)arg1;
 - (void)_retainFocusOfBodyFieldIfRequired:(id)arg1;
 - (void)_preparePhotoPicker;

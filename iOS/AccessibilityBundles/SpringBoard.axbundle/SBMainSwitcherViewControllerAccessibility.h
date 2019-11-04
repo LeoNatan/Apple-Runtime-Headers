@@ -16,6 +16,7 @@
 - (_Bool)_axFloatingSwitcherIsVisible;
 - (_Bool)_axIsMainSwitcherVisible;
 - (id)_axFloatingSwitcherViewController;
+- (id)_axMainSwitcherViewController;
 - (void)_axSetUpSwitcherViewControllers;
 - (void)_axSetUpWrapperViews;
 - (void)_loadContentViewControllerIfNecessary;

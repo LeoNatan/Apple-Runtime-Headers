@@ -31,6 +31,8 @@
     _Bool _isEditingOpacity;
     _Bool _supportsOpacityEditing;
     _Bool _wantsClearBackgroundColorInCompactSize;
+    _Bool _toolPreviewMinimized;
+    _Bool _settingSelectedColor;
     unsigned long long _autoHideCorner;
     double _scalingFactor;
     UIViewController *_presentationController;
@@ -68,7 +70,9 @@
 }
 
 + (id)makeBackgroundView;
+@property(nonatomic, getter=isSettingSelectedColor) _Bool settingSelectedColor; // @synthesize settingSelectedColor=_settingSelectedColor;
 @property(retain, nonatomic) UIViewController *popoverPresentingController; // @synthesize popoverPresentingController=_popoverPresentingController;
+@property(nonatomic, getter=isToolPreviewMinimized) _Bool toolPreviewMinimized; // @synthesize toolPreviewMinimized=_toolPreviewMinimized;
 @property(readonly, nonatomic) UIPencilInteraction *pencilInteraction; // @synthesize pencilInteraction=_pencilInteraction;
 @property(nonatomic) struct UIEdgeInsets palettePopoverLayoutSceneMargins; // @synthesize palettePopoverLayoutSceneMargins=_palettePopoverLayoutSceneMargins;
 @property(nonatomic) _Bool wantsClearBackgroundColorInCompactSize; // @synthesize wantsClearBackgroundColorInCompactSize=_wantsClearBackgroundColorInCompactSize;
@@ -109,7 +113,8 @@
 @property(readonly, nonatomic) unsigned long long autoHideCorner; // @synthesize autoHideCorner=_autoHideCorner;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isBackgroundMaterialUpdatingPaused) _Bool backgroundMaterialUpdatingPaused;
-- (id)toolPreviewForMinimized;
+- (void)setToolPreviewMinimized:(_Bool)arg1 animated:(_Bool)arg2;
+- (id)toolPreviewView;
 - (id)palettePopoverPresentingController;
 @property(readonly, nonatomic) UIView *contextualEditingView;
 @property(nonatomic) long long contextEditingMode;
@@ -139,11 +144,11 @@
 - (void)additionalOptionsView:(id)arg1 didToggleAutoHideOption:(_Bool)arg2;
 - (void)additionalOptionsViewDidSelectPlusButton:(id)arg1;
 - (void)toolPreviewDidChangeToolColor:(id)arg1;
-- (void)hostView:(id)arg1 didDockPaletteToCorner:(unsigned long long)arg2;
-- (void)hostView:(id)arg1 willDockPaletteToCorner:(unsigned long long)arg2;
-- (void)hostView:(id)arg1 didDockPaletteToEdge:(unsigned long long)arg2;
+- (void)hostView:(id)arg1 didDockPaletteToPosition:(long long)arg2;
+- (void)hostView:(id)arg1 willDockPaletteToPosition:(long long)arg2 prepareForExpansion:(_Bool)arg3;
 - (void)_centerPaletteContainerSubviewToCurrentlySelectedToolForEdge:(unsigned long long)arg1;
-- (void)hostView:(id)arg1 willDockPaletteToEdge:(unsigned long long)arg2;
+- (void)_willDockPaletteToCorner:(unsigned long long)arg1;
+- (void)_willDockPaletteToEdge:(unsigned long long)arg1 prepareForExpansion:(_Bool)arg2;
 - (_Bool)colorPickerShouldDisplayColorSelection:(id)arg1;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
 - (void)toolPickerDidToggleRulerTool:(id)arg1;
@@ -151,6 +156,7 @@
 - (void)undoRedoViewDidTapRedo:(id)arg1;
 - (void)undoRedoViewDidTapUndo:(id)arg1;
 - (void)_updateContainerSizeConstraintsForEdge:(unsigned long long)arg1;
+- (void)_updateToolPreviewScalingAnimated:(_Bool)arg1;
 - (void)_updateToolPreviewForEdge:(unsigned long long)arg1;
 - (void)_updateToolPreviewVisibility;
 - (void)_updateToolPreview;

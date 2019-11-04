@@ -20,6 +20,9 @@
     HMAudioControl *_audioControl;
     NSString *_routeUID;
     id <HMMediaSessionDelegate> _delegate;
+    int _shuffleState;
+    int _repeatState;
+    NSString *_mediaUniqueIdentifier;
     _HMMediaSession *_mediaSession;
     HMMediaProfile *_mediaProfile;
 }
@@ -27,6 +30,9 @@
 + (_Bool)supportsSecureCoding;
 @property __weak HMMediaProfile *mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 @property(retain, nonatomic) _HMMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
+@property(readonly, copy) NSString *mediaUniqueIdentifier; // @synthesize mediaUniqueIdentifier=_mediaUniqueIdentifier;
+@property(readonly) int repeatState; // @synthesize repeatState=_repeatState;
+@property(readonly) int shuffleState; // @synthesize shuffleState=_shuffleState;
 @property __weak id <HMMediaSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) HMAudioControl *audioControl; // @synthesize audioControl=_audioControl;
 - (void).cxx_destruct;
@@ -36,6 +42,7 @@
 @property(readonly) unsigned int hash;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdateRouteUID:(id)arg2;
+- (void)mediaSession:(id)arg1 didUpdateMediaState:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(int)arg2;
 - (void)refreshPlaybackStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)pauseWithCompletionHandler:(CDUnknownBlockType)arg1;

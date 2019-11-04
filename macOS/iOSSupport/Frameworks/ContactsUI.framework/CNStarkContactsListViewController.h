@@ -41,6 +41,7 @@
 - (id)createTableView;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 searchable:(BOOL)arg2 environment:(id)arg3 shouldUseLargeTitle:(BOOL)arg4;
+- (void)setupDataSource;
 - (id)initWithStyle:(long long)arg1;
 - (id)init;
 

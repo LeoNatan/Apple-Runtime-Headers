@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class NSString;
+@class FCCachePolicy, NSString;
 @protocol FCContentContext, FCFlintHelper;
 
 @interface FCOfflineIssueFetchOperation : FCOperation
@@ -20,8 +20,10 @@
     id <FCFlintHelper> _flintHelper;
     NSString *_issueID;
     id _resultHoldToken;
+    FCCachePolicy *_issueRecordCachePolicy;
 }
 
+@property(retain, nonatomic) FCCachePolicy *issueRecordCachePolicy; // @synthesize issueRecordCachePolicy=_issueRecordCachePolicy;
 @property(retain, nonatomic) id resultHoldToken; // @synthesize resultHoldToken=_resultHoldToken;
 @property(copy, nonatomic) NSString *issueID; // @synthesize issueID=_issueID;
 @property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
@@ -45,6 +47,9 @@
 - (id)_promiseCoverImageForIssue:(id)arg1;
 - (id)_promiseMetadataForIssue:(id)arg1;
 - (id)_promiseIssue;
+- (void)resetForRetry;
+- (BOOL)canRetryWithError:(id)arg1 retryAfter:(id *)arg2;
+- (unsigned long long)maxRetries;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

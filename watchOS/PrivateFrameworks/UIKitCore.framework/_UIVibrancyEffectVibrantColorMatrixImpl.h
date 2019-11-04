@@ -6,19 +6,30 @@
 
 #import <UIKitCore/_UIVibrancyEffectImpl.h>
 
+@class UIColor;
+
 __attribute__((visibility("hidden")))
 @interface _UIVibrancyEffectVibrantColorMatrixImpl : _UIVibrancyEffectImpl
 {
-    struct CAColorMatrix _vibrantColorMatrix;
+    int _systemName;
+    struct CAColorMatrix _lightVibrantColorMatrix;
+    struct CAColorMatrix _darkVibrantColorMatrix;
+    UIColor *_reducedTransperancyColor;
     float _alpha;
+    _Bool _hasDarkVariant;
 }
 
+- (void).cxx_destruct;
 - (void)appendDescriptionTo:(id)arg1;
 - (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(int)arg3;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(int)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)implementationReplacingTintColor:(id)arg1;
+- (id)initWithLightCAColorMatrix:(struct CAColorMatrix)arg1 darkCAColorMatrix:(struct CAColorMatrix)arg2 alpha:(float)arg3;
 - (id)initWithCAColorMatrix:(struct CAColorMatrix)arg1 alpha:(float)arg2;
+- (id)initWithSystemName:(int)arg1;
 
 @end
 

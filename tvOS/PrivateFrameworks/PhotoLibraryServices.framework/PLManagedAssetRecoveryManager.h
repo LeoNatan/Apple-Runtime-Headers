@@ -44,7 +44,7 @@
 - (void)_recoverAsset:(id)arg1 usingCloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_setCloudRecoveryState:(unsigned long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultsFilterPredicate:(id)arg3;
 - (void)startRecoveryOfAssetsInInconsistentCloudStateUsingCloudPhotoLibraryManager:(id)arg1;
-- (void)identifyAssetsInInconsistentCloudState;
+- (void)identifyAssetsWithInconsistentCloudState;
 - (id)initWithLibraryServicesManager:(id)arg1;
 
 @end

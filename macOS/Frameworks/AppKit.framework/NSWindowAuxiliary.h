@@ -213,8 +213,7 @@
     NSMutableArray *childOrdering;
     NSMutableArray *_touchListeners;
     NSDictionary *_animationsDictionary;
-    struct __CFMachPort *clientSideDragPort;
-    struct __CFRunLoopSource *clientSideDragSource;
+    id clientSideDragMonitor;
     NSView *_latchedViewForScrollEvents;
     _NSWindowFullScreenContentController *_fullScreenContentController;
     _NSWindowTransformAnimation *_runningWindowTransformAnimation;

@@ -14,11 +14,11 @@
 
 @interface HMDCameraClipModelOperation : HMFOperation <HMFObject, HMFLogging>
 {
+    NSString *_logIdentifier;
     NSUUID *_clipModelID;
     HMBLocalZone *_localZone;
     HMCameraClipEncryptionManager *_encryptionManager;
     HMDCameraRecordingUploadOperationEvent *_uploadOperationEvent;
-    NSString *_logIdentifier;
     NSDate *_createDate;
     NSDate *_startDate;
     NSDate *_endDate;
@@ -32,18 +32,18 @@
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) NSDate *createDate; // @synthesize createDate=_createDate;
-@property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) HMDCameraRecordingUploadOperationEvent *uploadOperationEvent; // @synthesize uploadOperationEvent=_uploadOperationEvent;
 @property(retain) HMCameraClipEncryptionManager *encryptionManager; // @synthesize encryptionManager=_encryptionManager;
 @property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(readonly) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
+@property(readonly, copy) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *privateDescription;
 @property(readonly, copy) NSString *shortDescription;
 @property(readonly) double runTime;
-- (id)updateClipModel:(id)arg1 options:(id)arg2;
+- (id)updateClipModel:(id)arg1 shouldPerformDelegateCallbacks:(_Bool)arg2;
 - (id)updateClipModel:(id)arg1;
 - (id)fetchClipModel;
 - (void)_markEndDateAndSubmitUploadOperationEvent;

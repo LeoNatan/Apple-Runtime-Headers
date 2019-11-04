@@ -21,14 +21,17 @@
     UIColor *_secureTextColor;
     UIColor *_warningTextColor;
     UIColor *_annotationTextColor;
+    UIColor *_progressBarTintColor;
     UIColor *_platterTextColor;
     UIColor *_platterSecureTextColor;
     UIColor *_platterWarningTextColor;
     UIColor *_platterAnnotationTextColor;
     UIColor *_platterPlaceholderTextColor;
     UIColor *_platterSelectionColor;
+    UIColor *_platterProgressBarTintColor;
 }
 
+@property(readonly, nonatomic) UIColor *platterProgressBarTintColor; // @synthesize platterProgressBarTintColor=_platterProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *platterSelectionColor; // @synthesize platterSelectionColor=_platterSelectionColor;
 @property(readonly, nonatomic) UIColor *platterPlaceholderTextColor; // @synthesize platterPlaceholderTextColor=_platterPlaceholderTextColor;
 @property(readonly, nonatomic) UIColor *platterAnnotationTextColor; // @synthesize platterAnnotationTextColor=_platterAnnotationTextColor;
@@ -36,6 +39,7 @@
 @property(readonly, nonatomic) UIColor *platterSecureTextColor; // @synthesize platterSecureTextColor=_platterSecureTextColor;
 @property(readonly, nonatomic) UIColor *platterTextColor; // @synthesize platterTextColor=_platterTextColor;
 @property(readonly, nonatomic) _Bool platterBackdropIsDark; // @synthesize platterBackdropIsDark=_platterBackdropIsDark;
+@property(readonly, nonatomic) UIColor *progressBarTintColor; // @synthesize progressBarTintColor=_progressBarTintColor;
 @property(readonly, nonatomic) UIColor *annotationTextColor; // @synthesize annotationTextColor=_annotationTextColor;
 @property(readonly, nonatomic) UIColor *warningTextColor; // @synthesize warningTextColor=_warningTextColor;
 @property(readonly, nonatomic) UIColor *secureTextColor; // @synthesize secureTextColor=_secureTextColor;

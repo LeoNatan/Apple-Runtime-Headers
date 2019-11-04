@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OnBoardingKit/OBBaseWelcomeController.h>
+#import <UIKitCore/UIViewController.h>
 
 #import <SIMSetupSupport/AVCaptureMetadataOutputObjectsDelegate-Protocol.h>
 #import <SIMSetupSupport/TSSetupFlowItem-Protocol.h>
@@ -12,10 +12,10 @@
 #import <SIMSetupSupport/UITableViewDataSource-Protocol.h>
 #import <SIMSetupSupport/UITableViewDelegate-Protocol.h>
 
-@class CAShapeLayer, CTDisplayPlanList, NSArray, NSDate, NSDictionary, NSString, TSCellularPlanQRCodeScannerView, UIActivityIndicatorView, UIButton, UILabel, UITableView, UIView;
+@class CAShapeLayer, CTDisplayPlanList, NSArray, NSDate, NSString, TSCellularPlanQRCodeScannerView, UIActivityIndicatorView, UIButton, UILabel, UITableView, UIView;
 @protocol TSSIMSetupFlowDelegate;
 
-@interface TSCellularPlanScanTransferViewController : OBBaseWelcomeController <AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, TSSetupFlowItem>
+@interface TSCellularPlanScanTransferViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, TSSetupFlowItem>
 {
     _Bool _receivedPendingInstallItems;
     _Bool _receivedTransferItems;
@@ -29,14 +29,11 @@
     UIActivityIndicatorView *_activityView;
     _Bool _confirmationCodeRequired;
     _Bool _manualCardInfoEntry;
-    _Bool _isOneClickSupported;
-    _Bool _transferError;
+    _Bool _transferring;
     id <TSSIMSetupFlowDelegate> _delegate;
     NSString *_fauxCardData;
     UIView *_scanView;
     UIView *_cutoutView;
-    NSDictionary *_postdata;
-    NSString *_URL;
     UIActivityIndicatorView *_checkingAvailablePlansSpinner;
     UILabel *_checkingAvailablePlansLabel;
     UIButton *_enterDetailsManuallyButton;
@@ -51,10 +48,7 @@
 @property(nonatomic) __weak UIButton *enterDetailsManuallyButton; // @synthesize enterDetailsManuallyButton=_enterDetailsManuallyButton;
 @property(nonatomic) __weak UILabel *checkingAvailablePlansLabel; // @synthesize checkingAvailablePlansLabel=_checkingAvailablePlansLabel;
 @property(nonatomic) __weak UIActivityIndicatorView *checkingAvailablePlansSpinner; // @synthesize checkingAvailablePlansSpinner=_checkingAvailablePlansSpinner;
-@property(readonly) _Bool transferError; // @synthesize transferError=_transferError;
-@property(readonly) _Bool isOneClickSupported; // @synthesize isOneClickSupported=_isOneClickSupported;
-@property(readonly) NSString *URL; // @synthesize URL=_URL;
-@property(readonly) NSDictionary *postdata; // @synthesize postdata=_postdata;
+@property(readonly) _Bool transferring; // @synthesize transferring=_transferring;
 @property(nonatomic) __weak UIView *cutoutView; // @synthesize cutoutView=_cutoutView;
 @property(nonatomic) __weak UIView *scanView; // @synthesize scanView=_scanView;
 @property(readonly) _Bool manualCardInfoEntry; // @synthesize manualCardInfoEntry=_manualCardInfoEntry;
@@ -69,6 +63,8 @@
 - (id)_messageTextForActionSheet:(id)arg1 carrierName:(id)arg2 countryCode:(id)arg3;
 - (void)_presentActionSheetForPendingInstall:(id)arg1;
 - (void)_presentActionSheetForPlanTransfer:(id)arg1;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

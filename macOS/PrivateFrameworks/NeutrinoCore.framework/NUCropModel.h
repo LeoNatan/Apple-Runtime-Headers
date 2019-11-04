@@ -20,6 +20,7 @@
     unsigned long long _hitVertexID;
     CDStruct_d58201db _aspectRatio;
     struct CGRect _masterImageRect;
+    struct CGRect _stitchedImageRect;
 }
 
 + (double)defaultFocalLength;
@@ -28,6 +29,8 @@
 @property(nonatomic) BOOL isAutoCrop; // @synthesize isAutoCrop=_isAutoCrop;
 @property(readonly) unsigned long long hitVertexID; // @synthesize hitVertexID=_hitVertexID;
 @property(nonatomic) CDStruct_912cb5d2 aspectRatio; // @synthesize aspectRatio=_aspectRatio;
+@property(readonly, nonatomic) struct CGRect stitchedImageRect; // @synthesize stitchedImageRect=_stitchedImageRect;
+@property(readonly, nonatomic) double fovRadians; // @synthesize fovRadians=_fovRadians;
 @property(readonly, nonatomic) struct CGRect masterImageRect; // @synthesize masterImageRect=_masterImageRect;
 @property(readonly, nonatomic) double rollDegreeUI;
 @property(readonly, nonatomic) double yawDegreeUI;
@@ -52,7 +55,8 @@
 - (unsigned long long)constrainedMoveCropRectBy:(struct CGVector)arg1 strict:(BOOL)arg2 startRect:(struct CGRect)arg3;
 - (unsigned long long)constrainedMoveCropRectBy:(struct CGVector)arg1 strict:(BOOL)arg2;
 - (unsigned long long)constrainedMoveCropRectBy:(struct CGVector)arg1;
-- (struct CGRect)getCropRect:(struct CGRect)arg1 newCropRect:(struct CGRect)arg2 pitch:(double)arg3 yaw:(double)arg4 roll:(double)arg5 constrainWithAnchorPoint:(struct CGPoint)arg6 strict:(BOOL)arg7 hitVertexId:(unsigned long long *)arg8;
+- (struct CGRect)getCropRectThatCompletelyContainsMasterImageForPitch:(double)arg1 yaw:(double)arg2 roll:(double)arg3;
+- (struct CGRect)getCropRect:(struct CGRect)arg1 newCropRect:(struct CGRect)arg2 pitch:(double)arg3 yaw:(double)arg4 roll:(double)arg5 constrainWithAnchorPoint:(struct CGPoint)arg6 strict:(BOOL)arg7 aspectRatioIsFreeForm:(BOOL)arg8 hitVertexId:(unsigned long long *)arg9;
 - (struct CGRect)_expandedCropRectForZoom:(struct CGRect)arg1 candidateRect:(struct CGRect)arg2;
 - (unsigned long long)setForZoomCropRect:(struct CGRect)arg1 newCropRect:(struct CGRect)arg2;
 - (unsigned long long)setCropRect:(struct CGRect)arg1 newCropRect:(struct CGRect)arg2 constrainWithAnchorPoint:(struct CGPoint)arg3 strict:(BOOL)arg4;
@@ -85,9 +89,16 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToCropModel:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+@property(readonly, nonatomic) struct CGSize stitchedImageSize;
+@property(readonly) BOOL cropNeedsOvercapture;
+@property(readonly, nonatomic) BOOL hasOvercapture;
 @property(readonly, nonatomic) struct CGSize masterImageSize;
 @property(readonly) BOOL hasCrop;
 - (void)reset;
+- (id)copyWithMasterImageSize:(struct CGSize)arg1 fovRadians:(double)arg2;
+- (id)initWithMasterImageRect:(struct CGRect)arg1 stitchedImageRect:(struct CGRect)arg2;
+- (id)initWithMasterImageSize:(struct CGSize)arg1 stitchedImageSize:(struct CGSize)arg2;
+- (id)initWithMasterImageSize:(struct CGSize)arg1 fovRadians:(double)arg2;
 - (id)initWithMasterImageRect:(struct CGRect)arg1;
 - (id)initWithMasterImageSize:(struct CGSize)arg1;
 - (id)init;

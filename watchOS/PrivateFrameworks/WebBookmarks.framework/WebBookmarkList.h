@@ -18,10 +18,14 @@
 }
 
 - (void).cxx_destruct;
+- (id)differenceFromList:(id)arg1 withOptions:(unsigned int)arg2;
+- (void)_loadBookmarksForDifferenceFromList:(id)arg1;
+- (id)_arrayForDifferenceCalculation;
 @property(readonly, nonatomic) int folderID;
 - (id)bookmarkArrayRequestingCount:(unsigned int)arg1;
 - (id)bookmarkArray;
 - (unsigned int)bookmarkCount;
+- (id)_bookmarkAtIndex:(unsigned int)arg1 paginate:(_Bool)arg2;
 - (id)bookmarkAtIndex:(unsigned int)arg1;
 - (unsigned int)_reverseOrderIndex:(unsigned int)arg1;
 - (void)_moveBookmarkAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;

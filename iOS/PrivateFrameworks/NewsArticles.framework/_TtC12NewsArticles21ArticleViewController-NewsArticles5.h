@@ -6,16 +6,9 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles5)
-- (void)resetZoom;
-- (_Bool)canResetZoom;
-- (void)zoomOut;
-- (void)zoomIn;
-- (_Bool)canZoomOut;
-- (_Bool)canZoomIn;
-- (void)decreaseTextSize;
-- (void)increaseTextSize;
-- (_Bool)canDecreaseTextSize;
-- (_Bool)canIncreaseTextSize;
+#import <NewsArticles/UIScrollViewDelegate-Protocol.h>
+
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles5) <UIScrollViewDelegate>
+- (void)scrollViewDidScroll:(id)arg1;
 @end
 

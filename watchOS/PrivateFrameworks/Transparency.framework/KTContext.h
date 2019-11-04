@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class KTApplicationPublicKeyStore, KTContextVerifier, KTLogClient, NSString, TransparencyManagedDataStore;
+@class KTApplicationPublicKeyStore, KTContextVerifier, KTLogClient, NSString, TransparencyManagedDataStore, TransparencyTranscript;
 
 @interface KTContext : NSObject
 {
     NSString *_applicationID;
+    TransparencyTranscript *_transcript;
     KTApplicationPublicKeyStore *_applicationKeyStore;
     TransparencyManagedDataStore *_dataStore;
     KTLogClient *_logClient;
@@ -21,7 +22,8 @@
 @property(retain) KTLogClient *logClient; // @synthesize logClient=_logClient;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain) KTApplicationPublicKeyStore *applicationKeyStore; // @synthesize applicationKeyStore=_applicationKeyStore;
-@property(readonly) NSString *applicationID; // @synthesize applicationID=_applicationID;
+@property(retain) TransparencyTranscript *transcript; // @synthesize transcript=_transcript;
+@property(retain) NSString *applicationID; // @synthesize applicationID=_applicationID;
 - (void).cxx_destruct;
 - (id)copyState;
 - (_Bool)runDutyCycleForActivity:(id)arg1;
@@ -31,7 +33,7 @@
 - (void)handleURIsWithPendingSMTs:(id)arg1 error:(id *)arg2;
 - (void)handlePendingQueryRequests:(id)arg1 error:(id *)arg2;
 - (unsigned int)handleKTRequest:(id)arg1 queryResponse:(id)arg2 error:(id *)arg3;
-- (void)validateKTSMTsMerged:(id)arg1 uri:(id)arg2 accountId:(id)arg3;
+- (void)validateKTSMTsMerged:(id)arg1 uri:(id)arg2 uuid:(id)arg3 accountId:(id)arg4;
 - (void)clearState:(CDUnknownBlockType)arg1;
 - (unsigned int)validateEnrollmentWithAnalytics:(id)arg1 transparentData:(id *)arg2 error:(id *)arg3;
 - (unsigned int)validateEnrollment:(id)arg1 transparentData:(id *)arg2 error:(id *)arg3;
@@ -48,8 +50,11 @@
 - (unsigned int)validatePeer:(id)arg1 queryResponse:(id)arg2 transparentData:(id *)arg3 error:(id *)arg4;
 - (void)fetchQueryForKTRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned int)handleVerifyPeerResponse:(id)arg1 request:(id)arg2 transparentData:(id *)arg3 error:(id *)arg4;
-- (unsigned int)verifyDeviceWitnesses:(id)arg1 request:(id)arg2 loggableDatas:(id)arg3 error:(id *)arg4;
+- (unsigned int)verifyDeviceWitnesses:(id)arg1 request:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
 - (_Bool)ready:(id *)arg1;
+- (void)logFinishFailureEvent:(id)arg1 error:(id)arg2;
+- (void)logFinishSuccessEvent:(id)arg1;
+- (void)logStartEvent:(id)arg1;
 - (id)initWithApplicationKeyStore:(id)arg1 dataStore:(id)arg2 logClient:(id)arg3 applicationID:(id)arg4;
 
 @end

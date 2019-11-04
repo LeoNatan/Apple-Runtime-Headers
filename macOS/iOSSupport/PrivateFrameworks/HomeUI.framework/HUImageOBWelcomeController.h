@@ -19,6 +19,7 @@
 - (void)_viewDidUpdateContent;
 - (double)_contentAspectRatio;
 @property(retain, nonatomic) UIImage *contentImage;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3 contentView:(id)arg4;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3 contentImage:(id)arg4;

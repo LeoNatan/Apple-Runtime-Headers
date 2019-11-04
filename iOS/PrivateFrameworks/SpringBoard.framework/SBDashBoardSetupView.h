@@ -8,7 +8,7 @@
 
 #import <SpringBoard/CAAnimationDelegate-Protocol.h>
 
-@class CSHomeAffordanceView, NSObject, NSString, SBUICallToActionLabel, SBUILegibilityLabel, UIButton, UILabel, _UILegibilitySettings;
+@class CSHomeAffordanceView, NSArray, NSObject, NSString, SBUICallToActionLabel, SBUILegibilityLabel, UIButton, UILabel, _UILegibilitySettings;
 @protocol OS_dispatch_source;
 
 @interface SBDashBoardSetupView : UIView <CAAnimationDelegate>
@@ -21,6 +21,7 @@
     SBUILegibilityLabel *_homeAffordanceCallToActionLabel;
     SBUICallToActionLabel *_homeButtonCallToActionLabel;
     NSObject<OS_dispatch_source> *_homeButtonCallToActionTimer;
+    NSArray *_activationInfoViewConstraints;
     UIView *_activationInfoView;
     UIView *_regulatoryInfoView;
     _UILegibilitySettings *_legibilitySettings;
@@ -46,6 +47,7 @@
 - (void)_layoutHomeButtonCallToAction;
 - (void)_layoutActivationInfoView;
 - (void)_layoutRegulatoryInfo;
+- (void)_setupActivationInfoConstraintsIfNeeded;
 - (void)_setupConstraints;
 - (void)_addHomeAffordanceCallToAction;
 - (void)_addHomeAffordance;

@@ -22,6 +22,7 @@
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
 - (id)keyPrefix;
+- (id)cacheGroup;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <WeatherFoundation/NSCopying-Protocol.h>
 #import <WeatherFoundation/NSObject-Protocol.h>
 
 @class NSSet, NSString;
 
-@protocol WFSettings <NSObject>
+@protocol WFSettings <NSObject, NSCopying>
 @property(readonly, nonatomic) unsigned long long locationNumDecimalsOfPrecision;
 @property(readonly, nonatomic) unsigned long long networkSwitchExpirationTimeInSeconds;
 @property(readonly, nonatomic) unsigned long long networkFailedAttemptsLimit;

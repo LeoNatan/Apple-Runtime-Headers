@@ -25,7 +25,8 @@
     _Bool _cachedCoalescedResult;
     _Bool _cachedAssociatedResults;
     _Bool _isDefaultAction;
-    _Bool _companion;
+    _Bool _isCompanion;
+    _Bool _hasCompanion;
     int _hostApplication;
     NSObject<DDActionDelegate> *_delegate;
 }
@@ -44,9 +45,10 @@
 @property(retain) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) int hostApplication; // @synthesize hostApplication=_hostApplication;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-@property(nonatomic) _Bool companion; // @synthesize companion=_companion;
+@property(nonatomic) _Bool companion; // @synthesize companion=_isCompanion;
 @property(nonatomic) _Bool isDefaultAction; // @synthesize isDefaultAction=_isDefaultAction;
 - (void).cxx_destruct;
+- (void)setupPopoverPresentationController:(id)arg1 view:(id)arg2;
 - (id)displayNameForEmails:(id)arg1 phoneNumbers:(id)arg2;
 - (void)invalidate;
 - (void)adaptForPresentationInPopover:(_Bool)arg1;
@@ -68,6 +70,7 @@
 - (void)_copyStringOnly:(id)arg1;
 - (void)_copyURL:(id)arg1 andString:(id)arg2;
 @property(readonly, nonatomic) __weak DDAction *companionAction;
+- (void)_performFromView:(id)arg1 byOpeningURL:(id)arg2 disableAppLink:(_Bool)arg3;
 - (void)_performFromView:(id)arg1 byOpeningURL:(id)arg2;
 - (void)performFromView:(id)arg1;
 - (void)perform;

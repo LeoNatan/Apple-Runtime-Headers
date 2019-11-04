@@ -21,8 +21,8 @@
 @property(copy, nonatomic) NSSet *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 - (void).cxx_destruct;
-- (id)protobufferEncodableObject;
-- (id)initWithProtobufferDecodableObject:(id)arg1;
+- (id)protobufferEncodableObjectFromLibrary:(id)arg1;
+- (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

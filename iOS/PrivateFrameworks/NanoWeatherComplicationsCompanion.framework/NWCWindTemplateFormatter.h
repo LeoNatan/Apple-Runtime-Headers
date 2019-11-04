@@ -17,7 +17,6 @@
 + (id)sharedFormatter;
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 hourlyForecastedConditions:(id)arg2 timeZone:(id)arg3;
 - (id)_windUnit;
-- (id)_windSpeedWithUnitFromConditions:(id)arg1;
 - (id)_windSpeedFromConditions:(id)arg1;
 - (id)_windDirectionAbbreviationFromConditions:(id)arg1;
 - (id)switcherTemplateWithFamily:(long long)arg1;

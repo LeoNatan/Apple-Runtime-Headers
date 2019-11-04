@@ -22,6 +22,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)processData:(id)arg1;
+- (double)requiredTimeInterval;
 - (id)init;
 
 @end

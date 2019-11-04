@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSCandidateBarCompositeCandidate *_right1;
     NSCandidateBarCompositeCandidate *_right2;
     NSCandidateBarCompositeCandidate *_right3;
+    double _expandedWidth;
     BOOL _leftPressed;
     BOOL _middlePressed;
     BOOL _right1Pressed;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
     BOOL _isComplex;
 }
 
+@property double expandedWidth; // @synthesize expandedWidth=_expandedWidth;
 @property BOOL allowsCandidateVariation; // @synthesize allowsCandidateVariation=_allowsCandidateVariation;
 @property BOOL layoutDone; // @synthesize layoutDone=_layoutDone;
 @property BOOL allowsCollapsing; // @synthesize allowsCollapsing=_allowsCollapsing;

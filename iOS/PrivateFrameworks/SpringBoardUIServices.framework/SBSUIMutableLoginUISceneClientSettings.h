@@ -17,6 +17,7 @@
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) unsigned long long wallpaperMode;
 @property(nonatomic) long long rotationMode;
 @property(copy, nonatomic) NSString *statusBarUserNameOverride;
 @property(nonatomic) long long idleTimerMode;

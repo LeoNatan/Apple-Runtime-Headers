@@ -19,6 +19,8 @@
 + (id)sharedManager;
 - (void).cxx_destruct;
 - (void)checkPreflightForItemIdentifier:(id)arg1 atURL:(id)arg2 withReplyHandler:(CDUnknownBlockType)arg3;
+- (void)checkPendingQueue;
+- (void)checkAutomaticDownloadQueue;
 - (void)startPurchase:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (void)processPurchase:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (id)adoptableBundleIdentifiers;

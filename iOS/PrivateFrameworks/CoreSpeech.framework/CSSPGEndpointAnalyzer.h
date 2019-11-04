@@ -19,8 +19,10 @@
     id <CSSPGEndpointAnalyzerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
     EARCaesuraSilencePosteriorGenerator *_caesuraSPG;
+    double _lastSilencePosterior;
 }
 
+@property(nonatomic) double lastSilencePosterior; // @synthesize lastSilencePosterior=_lastSilencePosterior;
 @property(nonatomic) _Bool isAnalyzeMode; // @synthesize isAnalyzeMode=_isAnalyzeMode;
 @property(nonatomic) _Bool hasReported; // @synthesize hasReported=_hasReported;
 @property(nonatomic) float endpointThreshold; // @synthesize endpointThreshold=_endpointThreshold;

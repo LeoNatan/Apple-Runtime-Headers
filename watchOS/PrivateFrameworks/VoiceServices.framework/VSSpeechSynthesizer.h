@@ -94,6 +94,7 @@
 - (void)cleanUnusedAssets:(CDUnknownBlockType)arg1;
 - (void)endAudioPowerUpdate;
 - (void)beginAudioPowerUpdateWithReply:(CDUnknownBlockType)arg1;
+- (void)killDaemon;
 - (void)forwardStreamObject:(id)arg1;
 - (void)getTTSServerVoicesWithFilter:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)continueSpeakingWithError:(id *)arg1;

@@ -6,7 +6,7 @@
 
 #import <WorkflowKit/WFGalleryCollection.h>
 
-@class CKRecordID, NSArray, NSString;
+@class CKRecordID, NSArray, NSDate, NSString;
 
 @interface WFMutableGalleryCollection : WFGalleryCollection
 {
@@ -14,12 +14,16 @@
     NSString *name;
     NSString *collectionDescription;
     NSArray *workflows;
+    NSDate *modifiedAt;
     NSString *language;
     CKRecordID *base;
+    NSString *persistentIdentifier;
 }
 
+@property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 @property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
+@property(retain, nonatomic) NSDate *modifiedAt; // @synthesize modifiedAt;
 @property(copy, nonatomic) NSArray *workflows; // @synthesize workflows;
 @property(copy, nonatomic) NSString *collectionDescription; // @synthesize collectionDescription;
 @property(copy, nonatomic) NSString *name; // @synthesize name;

@@ -8,7 +8,6 @@
 
 @class ECSubject, EFMutableInt64Set, MFEmailSet, MFMailMessage, NSArray, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface MFMessageReferenceContext : NSObject
 {
     NSString *_sender;

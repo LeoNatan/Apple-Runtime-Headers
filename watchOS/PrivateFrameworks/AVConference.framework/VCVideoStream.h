@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
     VCRedundancyControllerVideo *_redundancyController;
     int _lastDisplayedFromImageQueueCount;
     int _lastDroppedFromImageQueueCount;
+    int _networkInterfaceType;
+    int _channelSequenceCountWithInactiveSlots;
 }
 
 + (id)capabilities;
@@ -110,10 +112,16 @@ __attribute__((visibility("hidden")))
 - (void)onPauseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStartWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)reportTransportInfo;
+- (void)initializeInterfaceType;
+- (void)initializeInterfaceTypeForSocket;
+- (void)initializeInterfaceTypeForNWConnection;
 - (void)setupReportingAgent;
+- (void)collectChannelSequenceMetrics:(id)arg1;
 - (void)collectImageQueuePerformanceMetrics:(struct __CFDictionary *)arg1;
 - (void)registerForVideoCapture;
 - (void)deregisterForVideoCapture;
+- (int)operatingModeForVideoStreamType:(int)arg1;
 - (_Bool)onConfigureStreamWithConfiguration:(id)arg1 error:(id *)arg2;
 - (void)onCallIDChanged;
 - (id)supportedPayloads;

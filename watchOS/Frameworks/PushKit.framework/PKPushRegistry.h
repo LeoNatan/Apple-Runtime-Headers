@@ -48,6 +48,7 @@
 - (void)_registerForPushType:(id)arg1;
 - (void)_noteIncomingCallReported;
 - (void)_terminateAppIfThereAreUnhandledVoIPPushes;
+- (_Bool)_selfTaskHasEntitlement:(struct __CFString *)arg1;
 - (void)remoteUserNotificationPayloadReceived:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)remoteUserNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
 - (void)fileProviderRegistrationFailed;

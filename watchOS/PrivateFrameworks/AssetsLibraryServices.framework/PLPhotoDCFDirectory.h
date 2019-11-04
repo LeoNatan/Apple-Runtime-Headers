@@ -6,12 +6,12 @@
 
 #import <AssetsLibraryServices/PLPhotoDCFObject.h>
 
-@class PLPhotoDCIMDirectory;
+@class NSMutableDictionary, PLPhotoDCIMDirectory;
 
 @interface PLPhotoDCFDirectory : PLPhotoDCFObject
 {
     PLPhotoDCIMDirectory *_dcimDirectory;
-    struct __CFDictionary *_fileGroupsByNumber;
+    NSMutableDictionary *_fileGroupsByNumber;
     int _maxFileGroupNumber;
     int _lastUsedFileGroupNumber;
     _Bool _considerInvalidFileGroups;
@@ -38,7 +38,6 @@
 - (_Bool)canAddFileGroupWithGroupNumber:(int)arg1;
 - (unsigned int)_calculateBaseDirectoryValue;
 - (id)dcimDirectory;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 number:(int)arg2 dcimDirectory:(id)arg3;
 - (id)_lastUsedFileGroupUserInfoKey;
 

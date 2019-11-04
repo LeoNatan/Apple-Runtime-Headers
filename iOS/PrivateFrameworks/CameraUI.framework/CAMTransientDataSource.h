@@ -8,7 +8,7 @@
 
 #import <CameraUI/PUTransientDataSource-Protocol.h>
 
-@class NSHashTable, NSMutableArray, NSMutableDictionary, NSString;
+@class NSHashTable, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 
 @interface CAMTransientDataSource : NSObject <PUTransientDataSource>
 {
@@ -41,6 +41,7 @@
 - (void)processPendingBurstAssets;
 - (void)enqueuePendingBurstAssetWithConvertible:(id)arg1;
 - (void)removeRepresentativeAssetForBurstIdentifier:(id)arg1;
+@property(readonly, nonatomic) NSSet *existingBurstIdentifiers;
 - (void)removeAssetWithUUID:(id)arg1;
 - (void)removeAllAssets;
 - (_Bool)_removeAssetWithUUID:(id)arg1;
@@ -48,6 +49,8 @@
 - (id)insertAssetWithConvertible:(id)arg1;
 - (id)existingRepresentativeAssetForBurstIdentifier:(id)arg1;
 - (id)existingAssetForUUID:(id)arg1;
+- (id)existingAssetUUIDs;
+@property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 @property(readonly, copy) NSString *description;
 - (id)init;
 

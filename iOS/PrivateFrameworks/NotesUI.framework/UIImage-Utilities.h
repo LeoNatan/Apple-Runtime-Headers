@@ -49,6 +49,7 @@
 - (id)ic_imageWithTextStyle:(id)arg1;
 - (id)ic_imageWithFont:(id)arg1 scale:(long long)arg2;
 - (id)ic_imageWithScale:(long long)arg1;
+- (id)ic_imageWithFont:(id)arg1 cappedToSize:(double)arg2;
 - (id)ic_imageWithFont:(id)arg1;
 @end
 

@@ -13,7 +13,6 @@
 @interface GEOClientCapabilities : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _supportedTransitFeatures;
     GEOAbAssignInfo *_abAssignInfo;
@@ -28,6 +27,9 @@
     GEOLocalizationCapabilities *_localizationCapabilities;
     GEOLocalTime *_requestTime;
     NSString *_userCurrentTimezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxFormatterSupported;
     int _maxManeuverTypeSupported;
     int _maxRouteIncidentSupported;
@@ -220,6 +222,8 @@
 @property(readonly, nonatomic) BOOL hasAppMajorVersion;
 - (void)_readAppMajorVersion;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -8,6 +8,8 @@
 
 @interface NSURL (dd_private)
 + (id)dd_URLWithPotentiallyInvalidURLString:(id)arg1;
+- (_Bool)dd_previewActionSupported;
+- (id)dd_productIdentifierFromAppleStoreScheme;
 - (id)dd_emailFromValidSchemes:(id)arg1;
 - (id)dd_phoneNumberFromValidSchemes:(id)arg1;
 - (id)dd_rdarLinkFromTelScheme;
@@ -17,6 +19,17 @@
 - (id)dd_emailFromMailtoScheme;
 - (id)dd_phoneNumberFromTelSchemeAndExtractBody:(id *)arg1;
 - (id)dd_phoneNumberFromTelScheme;
+- (_Bool)dd_isCloudLink;
+- (_Bool)dd_isAppleStore;
+- (_Bool)dd_isAppleTV;
+- (_Bool)dd_isApplePodcasts;
+- (_Bool)dd_isAppleMusic;
+- (_Bool)dd_isAppleBooks;
+- (_Bool)dd_isAppleApps;
+- (_Bool)dd_isAppleiTunesStore;
+- (id)dd_AppleOtherSchemes;
+- (id)dd_AppleiTunesSchemes;
+- (_Bool)dd_hasHosts:(id)arg1 filterKey:(id)arg2 filterValue:(id)arg3;
 - (_Bool)dd_isAnySimpleTelephonyScheme;
 - (_Bool)dd_isMaps:(_Bool)arg1 isDirections:(_Bool *)arg2;
 - (_Bool)dd_isMaps:(_Bool)arg1;

@@ -9,12 +9,13 @@
 #import <CoverSheet/CSModalViewDelegate-Protocol.h>
 #import <CoverSheet/CSTouchPassThroughContainerViewDelegate-Protocol.h>
 
-@class NSString, UIColor;
+@class CLInUseAssertion, NSString, UIColor;
 @protocol CSDNDBedtimeGreetingDelegate;
 
 @interface CSDNDBedtimeGreetingViewController : CSModalViewControllerBase <CSModalViewDelegate, CSTouchPassThroughContainerViewDelegate>
 {
     UIColor *_legibilityPrimaryColor;
+    CLInUseAssertion *_weatherInUseAssertion;
     id <CSDNDBedtimeGreetingDelegate> _delegate;
 }
 
@@ -25,6 +26,7 @@
 - (void)handleSecondaryActionForView:(id)arg1;
 - (void)aggregateAppearance:(id)arg1;
 - (void)loadView;
+- (void)dealloc;
 - (id)initWithLegibilityPrimaryColor:(id)arg1;
 
 // Remaining properties

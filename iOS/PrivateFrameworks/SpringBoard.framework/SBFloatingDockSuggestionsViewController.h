@@ -12,12 +12,12 @@
 #import <SpringBoard/SBIconViewQuerying-Protocol.h>
 #import <SpringBoard/SBLayoutStateTransitionObserver-Protocol.h>
 
-@class NSMapTable, NSMutableArray, NSSet, NSString, SBAppSuggestionManager, SBApplicationController, SBDockIconListView, SBFloatingDockSuggestionsModel, SBFloatingDockViewController, SBIconController, SBIconListModel, SBLayoutStateTransitionCoordinator, SBRecentDisplayItemsDataStore, SBRecentDisplayItemsDefaults;
+@class NSMutableArray, NSMutableDictionary, NSSet, NSString, SBAppSuggestionManager, SBApplicationController, SBDockIconListView, SBFloatingDockSuggestionsModel, SBFloatingDockViewController, SBIconController, SBIconListModel, SBLayoutStateTransitionCoordinator, SBRecentDisplayItemsDataStore, SBRecentDisplayItemsDefaults;
 @protocol SBFloatingDockSuggestionsViewControllerDelegate, SBIconViewProviding;
 
 @interface SBFloatingDockSuggestionsViewController : UIViewController <SBFloatingDockSuggestionsModelDelegate, SBLayoutStateTransitionObserver, SBIconViewProviding, SBFloatingDockSuggestionsViewProviding, SBIconViewQuerying>
 {
-    NSMapTable *_icons;
+    NSMutableDictionary *_icons;
     _Bool _visible;
     SBFloatingDockViewController *_floatingDockViewController;
     id <SBFloatingDockSuggestionsViewControllerDelegate> _delegate;
@@ -60,6 +60,7 @@
 - (_Bool)_onHomescreen;
 - (_Bool)_shouldDeferUpdateInvolvingContinuity:(_Bool)arg1;
 - (void)_loadAndPlaceIconsInViewForDisplayItems:(id)arg1;
+- (void)_pruneCachedIcons;
 - (id)_iconForDisplayItem:(id)arg1 createIfNecessary:(_Bool)arg2;
 - (void)configureIconView:(id)arg1 forIcon:(id)arg2;
 - (_Bool)isIconViewRecycled:(id)arg1;
@@ -84,6 +85,7 @@
 - (void)dockSuggestionsModel:(id)arg1 didInsertItem:(id)arg2 atIndex:(unsigned long long)arg3 involvesContinuity:(_Bool)arg4;
 - (void)_performOrDefer:(_Bool)arg1 iconUpdate:(CDUnknownBlockType)arg2;
 - (void)_emitPresentedEventInvolvingContinuity:(_Bool)arg1 fromModel:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
 - (void)_didChangeNumberOfIcons;
 - (void)_performDeferredIconUpdates;

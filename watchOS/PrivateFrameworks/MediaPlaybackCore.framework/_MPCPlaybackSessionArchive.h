@@ -26,6 +26,7 @@
 - (unsigned int)hash;
 - (_Bool)writeWithError:(id *)arg1;
 - (_Bool)saveWithError:(id *)arg1;
+- (id)description;
 - (id)initWithURL:(id)arg1 identifier:(id)arg2;
 - (id)initWithURL:(id)arg1;
 

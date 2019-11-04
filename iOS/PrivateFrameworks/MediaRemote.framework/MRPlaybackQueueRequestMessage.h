@@ -12,6 +12,7 @@
 {
 }
 
+- (unsigned long long)priority;
 - (unsigned long long)type;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property(readonly, nonatomic) _MRPlaybackQueueRequestProtobuf *request;

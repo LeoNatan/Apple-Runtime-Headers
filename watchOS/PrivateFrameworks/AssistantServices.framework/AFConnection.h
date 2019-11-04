@@ -12,7 +12,7 @@
 #import <AssistantServices/AFInterstitialProviderDelegate-Protocol.h>
 #import <AssistantServices/NSXPCListenerDelegate-Protocol.h>
 
-@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, AFWatchdogTimer, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
+@class AFAudioPowerUpdater, AFCallSiteInfo, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, AFWatchdogTimer, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
 @protocol AFAssistantUIService, AFSpeechDelegate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface AFConnection : NSObject <NSXPCListenerDelegate, AFAudioPowerUpdaterDelegate, AFAccessibilityListening, AFDeviceRingerSwitchListening, AFInterstitialProviderDelegate>
@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_targetQueue;
     NSString *_outstandingRequestClass;
     void *_clientID;
+    AFCallSiteInfo *_initiationCallSiteInfo;
     NSArray *_cachedBulletins;
     AFClockAlarmSnapshot *_cachedClockAlarmSnapshot;
     AFClockTimerSnapshot *_cachedClockTimerSnapshot;
@@ -29,6 +30,7 @@
     int _activeRequestUsefulUserResultType;
     AFWatchdogTimer *_requestTimeoutTimer;
     AFOneArgumentSafetyBlock *_requestCompletion;
+    int _activeRequestActivationEvent;
     int _activeRequestSpeechEvent;
     _Bool _activeRequestHasSpeechRecognition;
     _Bool _activeRequestIsDucking;
@@ -92,6 +94,7 @@
 - (void)setOverriddenApplicationContext:(id)arg1 withContext:(id)arg2;
 - (void)setApplicationContextForApplicationInfos:(id)arg1;
 - (void)setApplicationContextForApplicationInfos:(id)arg1 withRefId:(id)arg2;
+- (void)fetchAppicationContextForApplicationInfo:(id)arg1 supplementalContext:(id)arg2 refID:(id)arg3;
 - (void)setApplicationContext:(id)arg1;
 - (void)willSetApplicationContextWithRefId:(id)arg1;
 - (void)clearContext;
@@ -167,7 +170,7 @@
 - (void)_willFailRequestWithError:(id)arg1;
 - (void)_willCancelRequest;
 - (void)_willEndSession;
-- (void)_willStartRequestWithSpeech:(_Bool)arg1 speechRequestOptions:(id)arg2 analyticsEventProvider:(CDUnknownBlockType)arg3;
+- (void)_willStartRequestWithSpeech:(_Bool)arg1 speechRequestOptions:(id)arg2 requestInfo:(id)arg3 analyticsEventProvider:(CDUnknownBlockType)arg4;
 - (void)_updateClientConfiguration;
 - (void)_updateState;
 - (void)_updateStateIfNotInSync;
@@ -235,8 +238,8 @@
 - (void)_handleCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_startUIRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestDidEnd;
-- (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(_Bool)arg2 speechRequestOptions:(id)arg3 isBackgroundRequest:(_Bool)arg4 analyticsEventProvider:(CDUnknownBlockType)arg5;
-- (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(_Bool)arg2 speechRequestOptions:(id)arg3 analyticsEventProvider:(CDUnknownBlockType)arg4;
+- (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(_Bool)arg2 speechRequestOptions:(id)arg3 requestInfo:(id)arg4 isBackgroundRequest:(_Bool)arg5 analyticsEventProvider:(CDUnknownBlockType)arg6;
+- (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(_Bool)arg2 speechRequestOptions:(id)arg3 requestInfo:(id)arg4 analyticsEventProvider:(CDUnknownBlockType)arg5;
 - (void)_checkAndSetIsCapturingSpeech:(_Bool)arg1;
 - (void)dealloc;
 - (id)init;

@@ -25,6 +25,7 @@
 
 + (long long)orthogonalScrollingBehavior;
 + (Class)cellClass;
++ (id)indexingString;
 + (id)reuseIdentifier;
 + (id)sectionIdentifier;
 + (id)sectionTitle;
@@ -45,6 +46,7 @@
 @property(nonatomic) __weak id <CKSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)handleSelectionForResult:(id)arg1;
+- (void)didSelectResult:(id)arg1;
 - (id)_activityItemProviderForResult:(id)arg1;
 - (id)_pasteboardItemsForResult:(id)arg1;
 - (id)_additionalMenuActionsForResult:(id)arg1;
@@ -71,6 +73,8 @@
 - (_Bool)wantsHeaderSection;
 - (struct NSDirectionalEdgeInsets)additionalGroupInsets;
 - (double)interGroupSpacing;
+- (void)deleteAttachmentForResult:(id)arg1;
+- (void)saveAttachmentForResult:(id)arg1;
 - (id)initWithSectionIndex:(unsigned long long)arg1;
 - (_Bool)shouldStartMenuInteractionForResult:(id)arg1;
 - (id)rankingQueriesWithText:(id)arg1;

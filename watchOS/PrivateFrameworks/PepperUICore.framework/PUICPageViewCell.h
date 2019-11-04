@@ -15,8 +15,6 @@
 
 @property(nonatomic) __weak UIViewController *hostedController; // @synthesize hostedController=_hostedController;
 - (void).cxx_destruct;
-- (void)applyLayoutAttributes:(id)arg1;
-- (void)prepareForReuse;
 
 @end
 

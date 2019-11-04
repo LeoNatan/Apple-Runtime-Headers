@@ -58,7 +58,6 @@
     _Bool _needsEvaluatePrideAvailable;
     NTKUpNextUseMonitor *_upNextUseMonitor;
     UIView *_contentView;
-    UIView *_tritiumSensitiveUIShieldView;
     NTKTritiumAnimationController *_tritiumAnimationController;
     NTKTritiumViewController *_tritiumViewController;
     NTKTritiumToolController *_tritiumToolController;
@@ -91,7 +90,6 @@
 @property(readonly, nonatomic) UIView *wake_clockContentView;
 @property(readonly, nonatomic) UIViewController<NTKTritiumAnimationControllerViewProvider> *wake_viewProvider;
 @property(readonly, nonatomic) id <CSLSFlipbookFrameCoordinator> wake_frameCoordinator;
-@property(readonly, nonatomic) UIView *wake_sensitiveUIShieldView;
 @property(readonly, nonatomic) NTKTritiumAnimationController *wake_tritiumAnimationController;
 @property(readonly, nonatomic) NTKTritiumViewController *wake_tritiumViewController;
 - (struct CGRect)launchRectForComplicationApplicationIdentifier:(id)arg1;

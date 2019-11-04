@@ -11,6 +11,7 @@
 @protocol CSLPISystemSleepObserverDelegate <NSObject>
 
 @optional
+- (void)systemSleepObserverAbortSleepTasks:(CSLPISystemSleepObserver *)arg1;
 - (void)systemSleepObserverWillNotSleep:(CSLPISystemSleepObserver *)arg1;
 - (void)systemSleepObserver:(CSLPISystemSleepObserver *)arg1 willSleepWithCompletion:(void (^)(void))arg2;
 - (void)systemSleepObserver:(CSLPISystemSleepObserver *)arg1 canSleep:(void (^)(_Bool))arg2;

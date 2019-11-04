@@ -11,10 +11,11 @@
 @interface NTKCompanion3rdPartyApp : NTKCompanionApp
 {
     _Bool _installed;
+    _Bool _galleryBundlesLoaded;
     NSString *_complicationClientIdentifier;
-    NSURL *_urlToComplicationBundle;
     NSURL *_urlToWatchKitBundle;
     NRDevice *_device;
+    NSURL *_urlToComplicationBundle;
     NSArray *_supportedFamilies;
     NSString *_uniqueID;
 }
@@ -24,12 +25,13 @@
 + (_Bool)_isValidApplication:(id)arg1;
 + (id)_URLOfFirstItemWithExtension:(id)arg1 inDirectory:(id)arg2;
 + (id)companion3rdPartyRemoteApp:(id)arg1 device:(id)arg2;
+@property(nonatomic) _Bool galleryBundlesLoaded; // @synthesize galleryBundlesLoaded=_galleryBundlesLoaded;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) NSArray *supportedFamilies; // @synthesize supportedFamilies=_supportedFamilies;
+@property(retain, nonatomic) NSURL *urlToComplicationBundle; // @synthesize urlToComplicationBundle=_urlToComplicationBundle;
 @property(retain, nonatomic) NRDevice *device; // @synthesize device=_device;
 @property(nonatomic, getter=isInstalled) _Bool installed; // @synthesize installed=_installed;
 @property(retain, nonatomic) NSURL *urlToWatchKitBundle; // @synthesize urlToWatchKitBundle=_urlToWatchKitBundle;
-@property(retain, nonatomic) NSURL *urlToComplicationBundle; // @synthesize urlToComplicationBundle=_urlToComplicationBundle;
 @property(retain, nonatomic) NSString *complicationClientIdentifier; // @synthesize complicationClientIdentifier=_complicationClientIdentifier;
 - (void).cxx_destruct;
 - (_Bool)_installStateFromAppConduitInstallState:(long long)arg1;

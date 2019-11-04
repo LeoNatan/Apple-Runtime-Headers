@@ -14,6 +14,7 @@
 @interface CSSearchableItemAttributeSet : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _hasCodedCustomAttributes;
+    _Bool _hasKnownKeysDictionary;
     NSDictionary *_attributes;
     NSMutableDictionary *_mutableAttributes;
     NSMutableDictionary *_customAttributes;
@@ -29,6 +30,7 @@
 + (id)_allKeys;
 + (_Bool)supportsSecureCoding;
 + (id)_requiredAttributesForContentType:(id)arg1;
+@property(readonly, nonatomic) _Bool hasKnownKeysDictionary; // @synthesize hasKnownKeysDictionary=_hasKnownKeysDictionary;
 @property(readonly, nonatomic) _Bool hasCodedCustomAttributes; // @synthesize hasCodedCustomAttributes=_hasCodedCustomAttributes;
 @property(readonly, nonatomic) CDStruct_b7fac349 contentObj; // @synthesize contentObj=_contentObj;
 @property(readonly, nonatomic) CDStruct_b7fac349 codedCustomAttributes; // @synthesize codedCustomAttributes=_codedCustomAttributes;
@@ -79,6 +81,7 @@
 @property(readonly) NSMutableDictionary *mutableAttributes; // @synthesize mutableAttributes=_mutableAttributes;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithItemContentType:(id)arg1;
+- (id)initWithKnownKeysDictionary:(id)arg1;
 - (id)initWithMutableDictionary:(id)arg1;
 - (id)initWithAttributeSet:(id)arg1;
 - (id)init;
@@ -566,6 +569,7 @@
 @property(copy) NSString *ownerIdentifier;
 @property(copy) NSString *ownerName;
 @property(copy) NSString *parentFileItemID;
+@property(copy) NSString *FPFilename;
 @property(copy) NSString *fileItemID;
 @property(copy) NSString *fileProviderID;
 @property(copy) NSString *punchoutLabel;

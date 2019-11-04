@@ -25,7 +25,10 @@
 - (void)scaleBuffer:(float *)arg1 withFactor:(float)arg2;
 - (void)addBias:(float *)arg1;
 - (id)QIDWeightsWithMappedTopicIdentifier:(id)arg1;
-- (void)addTopicToBuffer:(float *)arg1 countNonZeroComponentsInBuffer:(unsigned int *)arg2 qid:(unsigned int)arg3 score:(float)arg4;
+- (void)addWeightedTopicScoreToBuffer:(float *)arg1 qid:(unsigned int)arg2 score:(float)arg3;
+- (void)addWeightedTopicScoreToBuffer:(float *)arg1 countNonZeroComponentsInBuffer:(unsigned short *)arg2 qid:(unsigned int)arg3 score:(float)arg4;
+- (void)_enumerateSparseColumnAtIndex:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
+- (void)_enumerateSparseRowAtIndex:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (id)payloadForTopic:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned long long outputTopicCount;
 - (id)init;

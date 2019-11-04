@@ -13,7 +13,6 @@
 + (id)_snapshotKeyForValue:(unsigned int)arg1 forDevice:(id)arg2;
 + (id)__orderedValuesForDevice:(id)arg1;
 + (id)_orderedValuesForDevice:(id)arg1;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 
 @end
 

@@ -126,8 +126,12 @@
         unsigned int delegateContextMenuConfigurationForItemAtIndexPath:1;
         unsigned int delegateContextMenuPreviewForHighlighting:1;
         unsigned int delegateContextMenuPreviewForDismissing:1;
-        unsigned int delegateContextMenuwillPerformPreviewActionForMenuWithConfiguration:1;
+        unsigned int delegateContextMenuwillPerformPreviewAction:1;
         unsigned int delegateContextMenuWillCommitMenuWithAnimator:1;
+        unsigned int delegateWillDisplayContextMenu:1;
+        unsigned int delegateWillEndContextMenuInteraction:1;
+        unsigned int delegateStyleForContextMenu:1;
+        unsigned int delegateAccessoriesForContextMenu:1;
         unsigned int dataSourceNumberOfSections:1;
         unsigned int dataSourceViewForSupplementaryElement:1;
         unsigned int dataSourceCanMoveItemAtIndexPathSPI:1;
@@ -146,6 +150,7 @@
         unsigned int prefetchDataSourceWasNonNil:1;
         unsigned int reloadSkippedDuringSuspension:1;
         unsigned int scheduledUpdateVisibleCells:1;
+        unsigned int allowDisablingContentOffsetAdjustmentForContentSizeChange:1;
         unsigned int scheduledUpdateVisibleCellLayoutAttributes:1;
         unsigned int allowsSelection:1;
         unsigned int allowsMultipleSelection:1;
@@ -187,6 +192,7 @@
         unsigned int skipAttributesApplication:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isAnimatingInteractiveMovementCompletion:1;
+        unsigned int shouldResetInitialLayoutOnDataSourceChange:1;
     } _collectionViewFlags;
     struct CGPoint _lastLayoutOffset;
     NSIndexPath *_cancellingToIndexPath;
@@ -207,6 +213,7 @@
     _Bool _hasUncommittedUpdates;
     _Bool _hasActiveDrag;
     _Bool _hasActiveDrop;
+    _Bool _searchFullPageOnFocusUpdate;
     _Bool _isMovingFocusFromHorizontalIndexTitleBarToContent;
     id <UICollectionViewDragDelegate> _dragDelegate;
     id <UICollectionViewDropDelegate> _dropDelegate;
@@ -231,6 +238,7 @@
 @property(retain, nonatomic) NSIndexPath *indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar; // @synthesize indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar=_indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar;
 @property(retain, nonatomic, getter=_horizontalIndexTitleBar, setter=_setHorizontalIndexTitleBar:) _UIHorizontalIndexTitleBar *horizontalIndexTitleBar; // @synthesize horizontalIndexTitleBar=_horizontalIndexTitleBar;
 @property(nonatomic, getter=_defaultLayoutMargins, setter=_setDefaultLayoutMargins:) struct UIEdgeInsets defaultLayoutMargins; // @synthesize defaultLayoutMargins=_defaultLayoutMargins;
+@property(nonatomic, getter=_searchFullPageOnFocusUpdate, setter=_setSearchFullPageOnFocusUpdate:) _Bool searchFullPageOnFocusUpdate; // @synthesize searchFullPageOnFocusUpdate=_searchFullPageOnFocusUpdate;
 @property(retain, nonatomic) _UIFocusFastScrollingIndexBarEntry *selectedIndexTitleEntry; // @synthesize selectedIndexTitleEntry=_selectedIndexTitleEntry;
 @property(copy, nonatomic, getter=_focusedCellElementKind, setter=_setFocusedCellElementKind:) NSString *focusedCellElementKind; // @synthesize focusedCellElementKind=_focusedCellElementKind;
 @property(retain, nonatomic, getter=_focusedCell, setter=_setFocusedCell:) UICollectionReusableView *focusedCell; // @synthesize focusedCell=_focusedCell;
@@ -334,6 +342,8 @@
 - (_Bool)_isMovingFocusFromHorizontalIndexBarToCellContent:(id)arg1;
 - (void)_cellBecameFocused:(id)arg1;
 - (_Bool)_cellCanBecomeFocused:(id)arg1;
+- (void)_focusMovementDidFailNotification:(id)arg1;
+- (id)_layoutAttributesForFailedMovementWithHeading:(unsigned int)arg1;
 - (id)_delegatePreferredIndexPath;
 - (id)preferredFocusedView;
 - (_Bool)canBecomeFocused;
@@ -453,6 +463,8 @@
 - (struct CGPoint)_adjustFocusContentOffset:(struct CGPoint)arg1 toShowFocusItemWithInfo:(id)arg2;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint)arg1 targetContentOffset:(inout struct CGPoint *)arg2;
 - (void)setContentOffset:(struct CGPoint)arg1;
+- (_Bool)_shouldResetInitialLayoutOnDataSourceChange;
+- (void)_setShouldResetInitialLayoutOnDataSourceChange:(_Bool)arg1;
 - (id)_customScrollAnimation;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
@@ -615,7 +627,9 @@
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 notifyDelegate:(_Bool)arg3;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned int)arg3;
+- (void)_selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned int)arg3 notifyDelegate:(_Bool)arg4 deselectPrevious:(_Bool)arg5;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned int)arg3 notifyDelegate:(_Bool)arg4;
+- (_Bool)_delegateAllowsSelectingItemAtIndexPath:(id)arg1;
 - (void)_deselectAllAnimated:(_Bool)arg1 notifyDelegate:(_Bool)arg2;
 - (id)_managedViews;
 - (_Bool)_removeCellFromVisibleCells:(id)arg1;

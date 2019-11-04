@@ -20,6 +20,7 @@
 + (id)recoverWithContextData:(id)arg1 bottleID:(id)arg2 escrowedEntropy:(id)arg3 error:(id *)arg4;
 + (id)findOptimalBottleIDsWithContextData:(id)arg1 error:(id *)arg2;
 + (id)performEscrowRecoveryWithContextData:(id)arg1 escrowArguments:(id)arg2 error:(id *)arg3;
++ (id)newFriendsWithContextData:(id)arg1 resetReason:(long long)arg2 error:(id *)arg3;
 + (id)newFriendsWithContextData:(id)arg1 error:(id *)arg2;
 + (_Bool)platformSupportsSOS;
 @property(retain, nonatomic) NSMutableDictionary *defaults; // @synthesize defaults=_defaults;
@@ -28,8 +29,8 @@
 - (void).cxx_destruct;
 - (void)performedSuccessfulCDPStateMachineRun:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)performedFailureCDPStateMachineRun:(id)arg1 error:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (_Bool)waitForOctagonUpgrade:(id *)arg1;
 - (void)performedCDPStateMachineRun:(id)arg1 success:(_Bool)arg2 error:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)performedCoreFollowUp:(id)arg1 error:(id)arg2;
 - (void)fetchEscrowContents:(CDUnknownBlockType)arg1;
 - (_Bool)accountUserKeyAvailable;
 - (_Bool)requestToJoinCircle:(id *)arg1;
@@ -49,12 +50,12 @@
 - (long long)cachedCliqueStatus:(_Bool)arg1 error:(id *)arg2;
 - (long long)fetchCliqueStatus:(id *)arg1;
 - (long long)fetchCliqueStatus:(id)arg1 error:(id *)arg2;
-- (long long)_fetchCliqueStatus:(id)arg1 cached:(_Bool)arg2 error:(id *)arg3;
+- (long long)_fetchCliqueStatus:(id)arg1 error:(id *)arg2;
 - (id)setupPairingChannelAsAcceptor:(id)arg1 error:(id *)arg2;
 - (id)setupPairingChannelAsAcceptor:(id)arg1;
 - (id)setupPairingChannelAsInitator:(id)arg1 error:(id *)arg2;
 - (id)setupPairingChannelAsInitiator:(id)arg1;
-- (_Bool)resetAndEstablish:(id *)arg1;
+- (_Bool)resetAndEstablish:(long long)arg1 error:(id *)arg2;
 - (_Bool)establish:(id *)arg1;
 - (id)makeOTControl:(id *)arg1;
 - (id)initWithContextData:(id)arg1 error:(id *)arg2;

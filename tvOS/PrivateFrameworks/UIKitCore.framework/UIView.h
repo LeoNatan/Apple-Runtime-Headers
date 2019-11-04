@@ -141,6 +141,7 @@
         unsigned int needsTraitCollectionDidChangePropagation:1;
         unsigned int isRootOfTraitCollectionDidChangePropagation:1;
         unsigned int implementsTraitCollectionForChildEnvironment:1;
+        unsigned int implementsBaselineOffsetsAtSize:1;
         unsigned int coloredViewBounds:1;
         unsigned int coloredAlignmentRects:1;
         unsigned int preservesSuperviewMargins:4;
@@ -704,6 +705,8 @@
 - (struct CGRect)_systemMarginsRelevantBounds;
 - (id)_frameLayoutItem;
 - (struct CGColor *)_backgroundCGColor;
+- (void)_prepareForWindowDealloc;
+- (void)_prepareDescendantsForWindowDealloc;
 @property(nonatomic) long long compositingMode;
 - (_Bool)_hasTransparentBackground;
 - (_Bool)_hasOpaqueBackground;
@@ -761,6 +764,8 @@
 - (id)_alignmentRectOriginCacheCreateIfNecessary:(_Bool)arg1;
 - (double)_baselineOffsetFromBottom;
 - (double)_firstBaselineOffsetFromTop;
+- (void)_invalidateBaselineConstraints;
+- (_Bool)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
 - (id)_constraintsArray;
@@ -841,10 +846,12 @@
 - (struct CGRect)_compatibleBounds;
 - (void)reduceWidth:(double)arg1;
 - (_Bool)_isKnownUISearchBarComponentContainer;
+@property(readonly, nonatomic) _Bool _wantsConstraintBasedLayout;
 - (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) unsigned long long _axesForDerivingIntrinsicContentSizeFromLayoutSize;
 @property(readonly, nonatomic) _Bool _layoutHeightDependsOnWidth;
 - (struct CGSize)_layoutSizeThatFits:(struct CGSize)arg1 fixedAxes:(unsigned long long)arg2;
+- (void)_measureViewWithSize:(struct CGSize)arg1 temporaryConstraints:(id)arg2 suspendingSystemConstraints:(_Bool)arg3 withOptimizedEngineBlock:(CDUnknownBlockType)arg4;
 - (id)textInputView;
 - (_Bool)_canBeReusedInPickerView;
 - (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
@@ -1117,6 +1124,7 @@
 - (_Bool)_hasLayoutEngine;
 - (struct CGPoint)_nsis_origin;
 - (struct CGRect)_nsis_bounds;
+- (struct CGRect)_nsis_layoutRectFromHostingViewInEngine:(id)arg1;
 - (struct CGRect)_nsis_compatibleBoundsInEngine:(id)arg1;
 - (struct CGSize)_nsis_layoutSizeInEngine:(id)arg1;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3 forLayoutGuide:(id)arg4;
@@ -1141,7 +1149,6 @@
 - (void)_setPotentiallyHasDanglyConstraints:(_Bool)arg1;
 - (_Bool)_subviewWantsAutolayout;
 - (void)_didInvalidateIntrinsicContentSize;
-@property(readonly, nonatomic) _Bool _wantsConstraintBasedLayout;
 - (_Bool)_wantsAutolayout;
 - (void)_setWantsAutolayout;
 - (void)_configureAutolayoutFlagsNeedingLayout:(_Bool)arg1;
@@ -1516,6 +1523,7 @@
 - (void)restoreUserActivityState:(id)arg1;
 - (void)updateUserActivityState:(id)arg1;
 @property(readonly, nonatomic) _Bool _shouldReverseLayoutDirection;
+- (_Bool)_subviewsNeedAxisFlipping;
 - (id)_layoutRect;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *lastBaselineAnchor;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *firstBaselineAnchor;

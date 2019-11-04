@@ -15,11 +15,13 @@
 {
     id <HFMediaValueSource> _mediaValueSource;
     id <HFMediaProfileContainer> _mediaProfileContainer;
+    long long _mediaAccessoryItemType;
     HFMediaActionSetting *_mediaActionSetting;
 }
 
 + (Class)valueClass;
 @property(retain, nonatomic) HFMediaActionSetting *mediaActionSetting; // @synthesize mediaActionSetting=_mediaActionSetting;
+@property(readonly, nonatomic) long long mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFMediaValueSource> mediaValueSource; // @synthesize mediaValueSource=_mediaValueSource;
 - (void).cxx_destruct;
@@ -36,7 +38,7 @@
 - (id)readValueAndPopulateStandardResults;
 - (id)copyWithCharacteristicOptions:(id)arg1 valueSource:(id)arg2;
 - (id)initWithValueSource:(id)arg1 characteristicOptions:(id)arg2 displayResults:(id)arg3;
-- (id)initWithValueSource:(id)arg1 mediaProfileContainer:(id)arg2 displayResults:(id)arg3;
+- (id)initWithValueSource:(id)arg1 mediaProfileContainer:(id)arg2 mediaAccessoryItemType:(long long)arg3 displayResults:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

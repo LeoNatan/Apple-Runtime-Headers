@@ -32,11 +32,13 @@
 - (float)scoreThresholdForTopic;
 - (float)scoreThresholdForNamedEntity;
 - (double)highLevelTopicScoreThreshold;
+- (double)highLevelTopicScoreAttenuationFactor;
 - (_Bool)safariDataDetectorsEnabledForHighMemoryDevices;
 - (_Bool)safariDonationTitleExtractionEnabled;
 - (_Bool)highLevelTopicExtractionEnabled;
 - (id)topicCalibrationTrie;
 - (id)portraitMusicDataCollectionAMPBundleIds;
+- (_Bool)portraitMusicDataCollectionCollectNonAMPNowPlaying;
 - (int)portraitMusicDataCollectionMaximumRecordsPerType;
 - (double)portraitMusicDataCollectionSamplingRateForAMP;
 - (double)portraitMusicDataCollectionSamplingRateForCTS;

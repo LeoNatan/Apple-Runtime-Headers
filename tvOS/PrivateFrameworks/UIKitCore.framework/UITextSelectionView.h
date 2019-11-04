@@ -102,14 +102,15 @@ __attribute__((visibility("hidden")))
 - (void)hideSelectionCommands;
 - (void)hideSelectionCommandsAfterDelay:(double)arg1;
 - (void)showReplacementsWithGenerator:(id)arg1 forDictation:(_Bool)arg2 afterDelay:(double)arg3;
-- (void)calculateAndShowReplacements:(id)arg1;
+- (void)calculateReplacementsWithGenerator:(id)arg1 andShowAfterDelay:(double)arg2;
 - (void)_showSelectionCommandsForContextMenu:(_Bool)arg1;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)showCalloutBarAfterDelay:(double)arg1;
 - (void)cancelDelayedCommandRequests;
 - (void)updateSelectionCommands;
-- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(_Bool)arg2 rectsToEvade:(id)arg3;
+- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(_Bool)arg2 forDictation:(_Bool)arg3 rectsToEvade:(id)arg4;
+- (void)_showCommandsWithReplacements:(id)arg1 forDictation:(_Bool)arg2 afterDelay:(double)arg3;
 - (void)showCommandsWithReplacements:(id)arg1;
 - (_Bool)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2 rectsToEvade:(id)arg3;
 @property(nonatomic) _Bool caretBlinks; // @synthesize caretBlinks=m_caretBlinks;
@@ -144,6 +145,7 @@ __attribute__((visibility("hidden")))
 - (void)viewAnimate:(id)arg1;
 - (void)inputModeDidChange:(id)arg1;
 - (void)windowDidResignOrBecomeKey;
+- (void)deactivateAndCollapseSelection:(_Bool)arg1;
 - (void)deactivate;
 - (void)activate;
 - (void)detach;

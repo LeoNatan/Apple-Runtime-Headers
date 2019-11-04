@@ -31,22 +31,31 @@
     PKDashboardBalanceSummaryItem *_paymentsSummaryItem;
     PKDashboardBalanceSummaryItem *_creditsSummaryItem;
     PKDashboardBalanceSummaryItem *_dailyCashSummaryItem;
+    PKDashboardBalanceSummaryItem *_installmentBalanceSummaryItem;
+    PKDashboardBalanceSummaryItem *_creditLimitSummaryItem;
+    PKDashboardBalanceSummaryItem *_totalBalanceSummaryItem;
+    PKDashboardBalanceSummaryItem *_availableCreditSummaryItem;
+    NSArray *_totalBalanceItems;
     NSArray *_usageItems;
-    PKDashboardBalanceSummaryItem *_statementDowloadSummaryItem;
+    PKDashboardBalanceSummaryItem *_statementDownloadSummaryItem;
+    PKDashboardBalanceSummaryItem *_exportTransactionDataSummaryItem;
+    NSArray *_buttonItems;
     PKBalanceSummary *_balanceSummary;
     NSArray *_statements;
     NSDictionary *_statementsByYear;
     NSArray *_sortedYears;
     NSDateFormatter *_monthYearFormatter;
     NSDateFormatter *_dateFormatter;
-    PKDashboardTitleHeaderView *_sampleView;
+    PKDashboardTitleHeaderView *_sampleHeaderView;
     PKDashboardFooterTextView *_sampleFooterView;
     NSArray *_sectionMap;
     unsigned int _numberOfStaticSections;
     int _style;
+    NSString *_pageTagForAnalyticsReporting;
 }
 
 - (void).cxx_destruct;
+- (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)statementsChangedForAccountIdentifier:(id)arg1;
 - (_Bool)_shouldInset;
@@ -60,6 +69,7 @@
 - (_Bool)_hasHeaderForSectionIndex:(unsigned int)arg1;
 - (id)_summaryItemForIndexPath:(id)arg1;
 - (unsigned int)_sectionForIndex:(unsigned int)arg1;
+- (void)showStatement:(id)arg1 style:(int)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
@@ -74,6 +84,8 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithStyle:(int)arg1 paymentPass:(id)arg2 webService:(id)arg3 account:(id)arg4 statement:(id)arg5 previousStatements:(id)arg6;
 

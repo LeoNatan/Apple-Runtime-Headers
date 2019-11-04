@@ -10,8 +10,8 @@
 
 @interface HKInteractiveChartDisplayType : HKDisplayType
 {
-    UIColor *_color;
     HKGraphSeries *_graphSeries;
+    UIColor *_color;
     NSString *_specifiedDisplayName;
     NSString *_specifiedUnitName;
     HKInteractiveChartDataFormatter *_specifiedValueFormatter;
@@ -20,8 +20,8 @@
 @property(readonly, nonatomic) HKInteractiveChartDataFormatter *specifiedValueFormatter; // @synthesize specifiedValueFormatter=_specifiedValueFormatter;
 @property(readonly, nonatomic) NSString *specifiedUnitName; // @synthesize specifiedUnitName=_specifiedUnitName;
 @property(readonly, nonatomic) NSString *specifiedDisplayName; // @synthesize specifiedDisplayName=_specifiedDisplayName;
-@property(readonly, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
+@property(readonly, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
 - (void).cxx_destruct;
 - (int)_internalDisplayTypeIdentifier;
 - (id)description;

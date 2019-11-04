@@ -17,8 +17,8 @@
     _Bool _isProposedTime;
     _Bool _isSelected;
     _Bool _isDimmed;
-    _Bool _usesSmallText;
     _Bool _isVibrant;
+    _Bool _usesSmallText;
     EKEvent *_occurrence;
     UIColor *_displayColor;
     UITraitCollection *_traitCollection;
@@ -39,6 +39,7 @@
 + (id)locationCache;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) struct CGRect textRect; // @synthesize textRect=_textRect;
+@property(nonatomic) _Bool usesSmallText; // @synthesize usesSmallText=_usesSmallText;
 @property(nonatomic) float topYBoundaryForText; // @synthesize topYBoundaryForText=_topYBoundaryForText;
 @property(nonatomic) float visibleHeight; // @synthesize visibleHeight=_visibleHeight;
 @property(nonatomic) float travelTimeHeight; // @synthesize travelTimeHeight=_travelTimeHeight;
@@ -47,7 +48,6 @@
 @property(nonatomic) double travelTime; // @synthesize travelTime=_travelTime;
 @property(nonatomic) int birthdayCount; // @synthesize birthdayCount=_birthdayCount;
 @property(nonatomic) _Bool isVibrant; // @synthesize isVibrant=_isVibrant;
-@property(nonatomic) _Bool usesSmallText; // @synthesize usesSmallText=_usesSmallText;
 @property(nonatomic) _Bool isDimmed; // @synthesize isDimmed=_isDimmed;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;

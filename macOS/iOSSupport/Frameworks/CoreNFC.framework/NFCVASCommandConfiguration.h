@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 - (id)initWithVASMode:(long long)arg1 passTypeIdentifier:(id)arg2 url:(id)arg3;
 - (id)init;
 - (void)dealloc;

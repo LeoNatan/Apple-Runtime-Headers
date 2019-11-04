@@ -10,13 +10,15 @@
 
 @interface HDQuantitySeriesManager : NSObject
 {
-    NSMutableDictionary *_observersByType;
+    NSMutableDictionary *_observerLock_observersByType;
+    struct os_unfair_lock_s _observerLock;
     HDProfile *_profile;
 }
 
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (void)_notifyForValues:(id)arg1 series:(id)arg2 anchor:(id)arg3 journaled:(_Bool)arg4;
+- (id)_observersForType:(id)arg1;
 - (void)removeObserver:(id)arg1 forType:(id)arg2;
 - (void)addObserver:(id)arg1 forType:(id)arg2 queue:(id)arg3;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;

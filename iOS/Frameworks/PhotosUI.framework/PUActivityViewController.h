@@ -29,6 +29,7 @@
     _Bool _isDismissed;
     _Bool _shouldUpdateVisibleItemsWhenReady;
     _Bool _isPreparingAssets;
+    _Bool _preparedAsCloudLink;
     PUSharingHeaderController *_sharingHeaderController;
     struct CGRect _lastSelectedActivityFrame;
     _Bool _readyForInteraction;
@@ -50,7 +51,6 @@
 + (_Bool)cmmAssetCountThresholdIsMetForAssetItems:(id)arg1;
 + (_Bool)cmmThresholdIsMetForAssetItems:(id)arg1;
 + (id)preparationErrorFromErrors:(id)arg1;
-+ (id)localizedStringKeyForMediaType:(long long)arg1 withPrefix:(id)arg2;
 + (id)new;
 + (_Bool)needsConfidentialityCheckForActivityType:(id)arg1;
 + (id)photosApplicationActivities;

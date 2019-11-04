@@ -8,34 +8,32 @@
 
 #import <Spotlight/NSPasteboardWriting-Protocol.h>
 
-@class CSSearchableItem, NSArray, NSNumber, NSString;
+@class CSSearchableItemAttributeSet, NSNumber, NSString;
 
 @interface SPCoreSpotlightResult : SFSearchResult_SpotlightExtras <NSPasteboardWriting>
 {
     // Error parsing type: T, name: _score
+    unsigned long long _hashValue;
     NSString *_section_header;
     NSNumber *_groupNumber;
-    NSArray *_rankingPatterns;
     NSString *_threadId;
-    NSArray *_rankingTerms;
-    CSSearchableItem *_item;
+    NSString *_sectionIdentifier;
+    CSSearchableItemAttributeSet *_attributeSet;
 }
 
-@property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
-@property(retain) NSArray *rankingTerms; // @synthesize rankingTerms=_rankingTerms;
+@property(readonly, nonatomic) CSSearchableItemAttributeSet *attributeSet; // @synthesize attributeSet=_attributeSet;
+@property(readonly, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(retain, nonatomic) NSString *threadId; // @synthesize threadId=_threadId;
 - (void).cxx_destruct;
+- (void)markAsUsed;
 - (id)quickLookItemForQueryString:(id)arg1;
 - (id)providerDataTypes;
 - (id)providerFileTypes;
 - (id)documentIdentifier;
 - (id)uniqueIdentifier;
 - (id)valueForAttribute:(id)arg1;
-@property(readonly, nonatomic) NSArray *contentTypeTree;
-- (id)contentType;
-- (id)initWithSearchableItem:(id)arg1 attributeDictionary:(id)arg2 fetchedAttributes:(id)arg3 ranker:(id)arg4 queryString:(id)arg5;
-- (void)setRankingQueries:(id)arg1;
-- (void)calculateScoreForResult;
+@property(readonly) unsigned long long hash;
+- (id)initWithAttributeSet:(id)arg1 fetchedAttributes:(id)arg2 ranker:(id)arg3 queryString:(id)arg4;
 - (id)previewItemURL;
 - (id)completion;
 - (BOOL)isFile;
@@ -48,7 +46,7 @@
 - (BOOL)isLocalApplicationResult;
 - (id)relatedIdentifier;
 - (id)section_header;
-@property(readonly, nonatomic) NSString *groupName;
+- (id)groupName;
 @property(readonly, nonatomic) NSNumber *groupNumber;
 @property(readonly, copy) NSString *description;
 -     // Error parsing type: T16@0:8, name: score
@@ -58,7 +56,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

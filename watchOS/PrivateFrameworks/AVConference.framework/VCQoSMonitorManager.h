@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_monitors;
     NSMutableDictionary *_sources;
     NSObject<OS_dispatch_queue> *_xpcCommandQueue;
+    int _reportingInterval;
     NSMutableArray *_moitors;
 }
 

@@ -58,7 +58,7 @@
 - (id)_loadBank:(id)arg1 toArrays:(unsigned int)arg2 allowNewKeys:(_Bool)arg3;
 - (id)getPipelineForProgramType:(unsigned int)arg1;
 - (void)_loadPrograms;
-- (void)_setupPipelineForType:(unsigned int)arg1 vertex:(id)arg2 fragment:(id)arg3 blending:(_Bool)arg4 inLibrary:(id)arg5;
+- (void)_setupPipelineForType:(unsigned int)arg1 vertex:(id)arg2 fragment:(id)arg3 blending:(_Bool)arg4 inLibrary:(id)arg5 librarySPI:(id)arg6;
 - (void)_loadMTLBufferData;
 - (void)removeClient;
 - (void)addClient;

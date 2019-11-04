@@ -16,9 +16,10 @@
     NSString *_serviceType;
 }
 
-+ (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 ruleDictionary:(struct NSDictionary *)arg8;
-+ (_Bool)__decodeFlags:(struct NSDictionary *)arg1 advertisingOnly:(_Bool *)arg2;
-+ (_Bool)__decodeAdvertisingProtocol:(struct NSDictionary *)arg1 advertisingProtocol:(unsigned char *)arg2;
++ (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(_Bool)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(_Bool)arg7 ruleDictionary:(struct NSDictionary *)arg8 error:(id *)arg9;
++ (_Bool)__decodeServiceType:(struct NSDictionary *)arg1 serviceType:(id *)arg2 error:(id *)arg3;
++ (_Bool)__decodeFlags:(struct NSDictionary *)arg1 advertisingOnly:(_Bool *)arg2 error:(id *)arg3;
++ (_Bool)__decodeAdvertisingProtocol:(struct NSDictionary *)arg1 advertisingProtocol:(unsigned char *)arg2 error:(id *)arg3;
 + (id)__advertisingProtocolToString:(unsigned char)arg1;
 @property(readonly, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, nonatomic, getter=isAdvertisingOnly) _Bool advertisingOnly; // @synthesize advertisingOnly=_advertisingOnly;

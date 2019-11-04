@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long preferredStatusBarUpdateAnimation;
 @property(readonly, nonatomic, getter=_preferredStatusBarHideAnimationParameters) UIStatusBarHideAnimationParameters *preferredStatusBarHideAnimationParameters;
 @property(readonly, nonatomic, getter=_preferredStatusBarStyleAnimationParameters) UIStatusBarStyleAnimationParameters *preferredStatusBarStyleAnimationParameters;
-- (BOOL)_inheritsPresentingViewControllerThemeLevel;
 - (BOOL)_mayChildGrabPresentedViewControllerView;
 - (BOOL)_isRootPresentation;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

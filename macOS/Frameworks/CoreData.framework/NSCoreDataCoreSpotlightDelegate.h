@@ -18,7 +18,7 @@
     NSString *_indexName;
     NSString *_bundleIdentifier;
     NSString *_protectionClass;
-    int _enabled;
+    BOOL _enabled;
     BOOL _supportsPersistentHistory;
     BOOL _usesSharedCoordinatorStack;
     BOOL _usesPrivateIndex;
@@ -35,7 +35,7 @@
 - (void)_doFullReimport;
 - (void)_importObjectsUpdatedSinceTransaction:(id)arg1;
 - (id)_processTransactionsStartingAt:(id)arg1;
-- (void)_reindexInstancesOf:(id)arg1 in:(id)arg2;
+- (void)_reindexInstancesOf:(id)arg1 inIndex:(id)arg2;
 - (void)_updateSpotlightIndexFromSaveRequest:(id)arg1;
 - (void)_updateSpotlightIndexForObjectsWithIDs:(id)arg1;
 - (id)_searchableItemForObject:(id)arg1;

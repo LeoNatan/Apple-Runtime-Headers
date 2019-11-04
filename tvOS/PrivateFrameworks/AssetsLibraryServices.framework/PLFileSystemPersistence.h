@@ -19,11 +19,12 @@
 + (void)persistUInt16:(unsigned short)arg1 forKey:(id)arg2 fileURL:(id)arg3;
 + (void)persistUUIDString:(id)arg1 forKey:(id)arg2 fileURL:(id)arg3;
 + (void)clearAllAttributesForFileAtUrl:(id)arg1;
-+ (id)persistedAttributesForFileAtURL:(id)arg1 exists:(_Bool *)arg2;
++ (id)persistedAttributesForFileAtURL:(id)arg1 exists:(_Bool *)arg2 includeUnknownAttributes:(_Bool)arg3;
 + (id)persistedAttributesForFileAtURL:(id)arg1;
 + (void)persistData:(id)arg1 forKey:(id)arg2 fileURL:(id)arg3;
 + (id)filesystemPersistenceBatchItemForFileAtURL:(id)arg1;
 + (id)sharedInstance;
++ (id)persistenceKeyTypes;
 - (void).cxx_destruct;
 - (void)_performOnWriterQueueWithIdentifier:(const char *)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_backgroundWriteData:(id)arg1 toFileAtURL:(id)arg2;

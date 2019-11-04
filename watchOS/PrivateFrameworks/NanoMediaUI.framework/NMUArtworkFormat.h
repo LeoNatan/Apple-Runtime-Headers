@@ -18,7 +18,6 @@
 + (id)largeCollectionHeaderArtworkFormat;
 + (id)collectionListArtworkFormat;
 + (id)itemListArtworkFormat;
-+ (id)listArtworkFormat;
 + (id)gridArtworkFormat;
 + (id)stackArtworkFormat;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;

@@ -44,6 +44,7 @@
 - (BOOL)performEscapeAction;
 - (void)performScrollToVisible;
 - (BOOL)_synthesizeMouseClick:(unsigned int)arg1;
+- (unsigned int)_windowContextId;
 - (id)_convertTranslatorResponse:(id)arg1 forAttribute:(unsigned long long)arg2;
 - (id)_convertTranslatorResponseForSubrole:(id)arg1;
 - (id)_convertTranslatorResponseForRole:(id)arg1;
@@ -55,12 +56,15 @@
 - (id)_accessibilityProcessImmediateAttributeResult:(id)arg1;
 - (id)_accessibilityTranslationRootParent;
 - (BOOL)accessibilitySupportsCustomElementData;
+- (BOOL)overridePresenterPid:(int *)arg1;
+- (BOOL)overrideElementPid:(int *)arg1;
 - (id)accessibilityCustomElementData;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)setAccessibilityValue:(id)arg1;
 - (id)accessibilityValue;
+- (id)accessibilityLabel;
 - (id)accessibilityTitle;
 - (id)accessibilityParent;
 - (struct CGRect)accessibilityFrame;

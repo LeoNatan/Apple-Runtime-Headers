@@ -14,6 +14,7 @@
 - (id)initialAggregationState;
 - (id)_startSeriesWithDatum:(id)arg1 device:(id)arg2;
 - (id)aggregateForState:(id)arg1 collector:(id)arg2 device:(id)arg3 requestedAggregationDate:(id)arg4 mode:(int)arg5 freezeSeries:(_Bool)arg6 error:(id *)arg7;
+- (id)_validatedState:(id)arg1;
 - (id)_codableDatumsFromData:(id)arg1;
 - (void)addDatum:(id)arg1 toAccumulatedData:(id)arg2;
 - (_Bool)requiresNewSeriesForDatum:(id)arg1 lastDatum:(id)arg2 seriesLength:(int)arg3 currentSeries:(id)arg4 configuration:(id)arg5 aggregationInterval:(double)arg6;

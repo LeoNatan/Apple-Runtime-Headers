@@ -63,6 +63,7 @@
 - (void)siriSessionDidChangeLockState:(unsigned long long)arg1;
 - (void)siriSessionDidChangeNetworkAvailability;
 - (void)siriSessionDidFinishAcousticIDRequestWithSuccess:(_Bool)arg1;
+- (void)siriSessionDidStartAcousticIDRequest;
 - (void)siriSessionAudioRecordingDidChangePowerLevel:(float)arg1;
 - (void)siriSessionDidFailToStartStarkNotificationRequestWithOptions:(SASRequestOptions *)arg1;
 - (void)siriSessionWillStartUIRequestWithText:(NSString *)arg1 completionHandler:(void (^)(_Bool))arg2;

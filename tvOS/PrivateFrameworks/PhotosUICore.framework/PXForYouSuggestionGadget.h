@@ -33,7 +33,6 @@
 
 + (id)fetchQueue;
 + (void)preloadResources;
-+ (id)placeholderFilters;
 @property(nonatomic) unsigned short suggestionType; // @synthesize suggestionType=_suggestionType;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

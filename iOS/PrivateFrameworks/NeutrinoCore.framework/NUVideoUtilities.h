@@ -28,9 +28,15 @@
 + (id)readerOutputForAsset:(id)arg1 outputSettings:(id)arg2 videoComposition:(id)arg3 error:(out id *)arg4;
 + (id)deepMutableCopyVideoComposition:(id)arg1;
 + (_Bool)updateVideoMetadataAtURL:(id)arg1 withItems:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 error:(out id *)arg4;
-+ (_Bool)readFromReader:(id)arg1 andWriteToWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 progress:(id)arg4 error:(out id *)arg5;
++ (_Bool)readFromReader:(id)arg1 andWriteToWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 createCustomMetadata:(_Bool)arg4 geometryTransform:(id)arg5 inputSize:(struct CGSize)arg6 outputSize:(struct CGSize)arg7 progress:(id)arg8 error:(out id *)arg9;
 + (CDStruct_1b6d18a9)readStillImageTimeFromVideoAsset:(id)arg1;
++ (id)metadataTrackWithStillImageDimensionsInLivePhotoAsset:(id)arg1;
++ (id)metadataTrackWithStillImageTransformInLivePhotoAsset:(id)arg1;
 + (id)metadataTrackWithStillImageDisplayTimeMarkerInLivePhotoAsset:(id)arg1;
++ (_Bool)isMetadataTrackWithStillImageDimensionsInLivePhoto:(id)arg1;
++ (_Bool)isMetadataTrackWithStillImageTransformInLivePhoto:(id)arg1;
++ (_Bool)isMetadataTrackStillImageDisplayTimeMarkerInLivePhoto:(id)arg1;
++ (_Bool)_metadataTrack:(id)arg1 containsIdentifier:(id)arg2;
 + (void)readNextSampleBuffer:(id)arg1 output:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (void)readNextPixelBuffer:(id)arg1 output:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (CDStruct_1b6d18a9)minimumFrameDurationForAssetTrack:(id)arg1;

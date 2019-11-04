@@ -18,6 +18,7 @@
 @property(readonly, nonatomic, getter=hasOptionalTerms) BOOL optionalTerms;
 @property(readonly, nonatomic, getter=isCloudDocsMigrated) BOOL cloudDocsMigrated;
 @property(readonly, nonatomic, getter=isSandboxAccount) BOOL sandboxAccount;
+@property(readonly, nonatomic, getter=isRemindersMigrated) BOOL remindersMigrated;
 @property(readonly, nonatomic, getter=isNotesMigrated) BOOL notesMigrated;
 @property(readonly, nonatomic, getter=isManagedAppleID) BOOL managedAppleID;
 @property(readonly, nonatomic) NSDictionary *regionInfo;

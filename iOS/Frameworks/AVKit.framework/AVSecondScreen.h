@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)_isWindowSceneAvailable;
 - (void)_updatePreferredDisplayCriteria;
+@property(readonly, nonatomic) struct CGRect sceneBounds;
 - (_Bool)isAvailable;
 - (void)setState:(long long)arg1;
 - (void)connectWithSecondScreenConnection:(id)arg1;

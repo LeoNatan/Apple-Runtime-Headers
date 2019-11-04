@@ -41,8 +41,9 @@
 + (id)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(_Bool)arg3 allowDissolve:(_Bool)arg4;
 + (void)disolveBurstForAssets:(id)arg1 permanently:(_Bool)arg2;
 + (_Bool)isValidBurstWithAssets:(id)arg1;
-+ (unsigned int)countForNonMPSAssetsWithAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
-+ (id)nonMPSAssetsWithAvalancheUUID:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)_savedAssetTypesUnsupportedForAvalanche;
++ (unsigned int)countForAssetsWithAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
++ (id)assetsWithAvalancheUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 @property(retain, nonatomic, setter=_setAnOldPick:) PLManagedAsset *_anOldPick; // @synthesize _anOldPick=__anOldPick;
 @property(retain, nonatomic, setter=_setANewPick:) PLManagedAsset *_aNewPick; // @synthesize _aNewPick=__aNewPick;

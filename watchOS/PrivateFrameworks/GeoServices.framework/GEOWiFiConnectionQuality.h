@@ -13,7 +13,6 @@
 @interface GEOWiFiConnectionQuality : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _authTraits;
     CDStruct_56d48c16 _traits;
     unsigned long long _bytesInActive;
@@ -43,6 +42,9 @@
     unsigned long long _timeOfDay;
     unsigned long long _timestamp;
     NSString *_uniqueID;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _apMode;
     int _associationLength;
     int _associationReason;
@@ -384,6 +386,8 @@
 @property(nonatomic) _Bool hasTimestamp;
 @property(nonatomic) unsigned long long timestamp;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

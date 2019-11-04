@@ -13,10 +13,12 @@
 @interface GEOResourceManifestDownload : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEODownloadMetadata *_metadata;
     GEOResources *_resources;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_metadata:1;
@@ -46,6 +48,8 @@
 @property(retain, nonatomic) GEOResources *resources;
 @property(readonly, nonatomic) BOOL hasResources;
 - (void)_readResources;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithResourceManifestData:(id)arg1;
 
 @end

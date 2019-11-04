@@ -56,7 +56,6 @@ __attribute__((visibility("hidden")))
 - (void)initAdaptiveLearningWithParameters:(id)arg1;
 - (void)flushCurrentSegment;
 - (unsigned int)RTPeriod;
-- (void)throwNotSupportedExceptionForMethod:(id)arg1;
 @property(readonly) id <VCAggregatorDelegate> delegate;
 - (void)setPeriodicAggregationOccuredHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

@@ -6,20 +6,25 @@
 
 #import <HomeKitBackingStore/HMBCloudStateModel.h>
 
-@class HMBCloudZone, HMBCloudZoneID, NSNumber;
+@class HMBCloudZone, HMBCloudZoneID, HMBCloudZoneRebuilderStatus, NSData, NSNumber, NSSet;
 
 @interface HMBCloudZoneStateModel : HMBCloudStateModel
 {
     HMBCloudZone *_cloudZone;
+    HMBCloudZoneRebuilderStatus *_rebuilderStatus;
 }
 
 + (id)hmbProperties;
-@property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
+@property(retain, nonatomic) HMBCloudZoneRebuilderStatus *rebuilderStatus; // @synthesize rebuilderStatus=_rebuilderStatus;
+@property __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *subscriptions;
 - (id)initWithModelID:(id)arg1 parentModelID:(id)arg2;
 
 // Remaining properties
 @property(retain, nonatomic) NSNumber *needsZoneCreation; // @dynamic needsZoneCreation;
+@property(retain, nonatomic) NSNumber *needsZoneDeletion; // @dynamic needsZoneDeletion;
+@property(retain, nonatomic) NSData *subscriptionsData; // @dynamic subscriptionsData;
 @property(retain, nonatomic) HMBCloudZoneID *zoneID; // @dynamic zoneID;
 
 @end

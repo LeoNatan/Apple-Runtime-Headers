@@ -8,9 +8,12 @@
 
 @interface FauxARView : UIView
 {
+    _Bool _enableRayTracedShadows;
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool enableRayTracedShadows; // @synthesize enableRayTracedShadows=_enableRayTracedShadows;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

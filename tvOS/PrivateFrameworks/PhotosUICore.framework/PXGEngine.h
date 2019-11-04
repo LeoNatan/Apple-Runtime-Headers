@@ -125,6 +125,7 @@
 @property(readonly, nonatomic) PXGAnimator *ppt_animator;
 @property(readonly, nonatomic) long long currentFrameTime;
 - (void)test_installRenderSnapshotHandler:(CDUnknownBlockType)arg1;
+- (void)handleScreensDidWakeNotification:(id)arg1;
 - (void)enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSpritesInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)dealloc;

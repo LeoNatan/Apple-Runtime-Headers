@@ -24,6 +24,8 @@
     unsigned long long _etaTransportType;
     double _etaTravelTime;
     _Bool _active;
+    _Bool _paused;
+    _Bool _inactiveInBackground;
     NSTimer *_refreshTimer;
     CLLocation *_currentLocation;
     id <MKETAProviderDelegate> _delegate;
@@ -75,7 +77,11 @@
 - (void)_cancelTimer;
 - (void)_startTimer;
 - (void)_refreshTimer;
+- (void)_willEnterForeground;
+- (void)_didEnterBackground;
 - (void)cancel;
+- (void)pause;
+- (void)restart;
 - (void)start;
 - (void)_commonInit;
 - (void)dealloc;

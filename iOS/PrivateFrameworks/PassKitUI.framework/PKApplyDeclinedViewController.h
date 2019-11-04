@@ -19,6 +19,7 @@
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)loadView;
 
 @end
 

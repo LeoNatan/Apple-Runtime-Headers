@@ -92,6 +92,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_imageLoadingQueueCompletionBlocks;
     UILongPressGestureRecognizer *__accessibilityLongPressGestureRecognizer;
     CEKBadgeTextView *_badgeView;
+    struct CGSize _minimumViewCropRectSizeForHandleGesture;
     struct CGSize _screenSize;
     CDStruct_1b6d18a9 _videoScrubberSeekTime;
     struct CGRect __initialHandlePanCropRect;
@@ -163,6 +164,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setInitialHandlePanCropRect:) struct CGRect _initialHandlePanCropRect; // @synthesize _initialHandlePanCropRect=__initialHandlePanCropRect;
 @property(retain, nonatomic, setter=_setInitialLocationsInHandlesByHandle:) NSMutableDictionary *_initialLocationsInHandlesByHandle; // @synthesize _initialLocationsInHandlesByHandle=__initialLocationsInHandlesByHandle;
 @property(retain, nonatomic) PUCropPerspectiveAdjustmentsDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) struct CGSize minimumViewCropRectSizeForHandleGesture; // @synthesize minimumViewCropRectSizeForHandleGesture=_minimumViewCropRectSizeForHandleGesture;
 @property(retain, nonatomic) PUCropAspectFlipperView *cropAspectFlipperView; // @synthesize cropAspectFlipperView=_cropAspectFlipperView;
 @property(retain, nonatomic) PUCropAspectViewController *cropAspectViewController; // @synthesize cropAspectViewController=_cropAspectViewController;
 @property(retain, nonatomic, setter=_setRotateSnapshotView:) UIView *_rotateSnapshotView; // @synthesize _rotateSnapshotView=__rotateSnapshotView;
@@ -189,7 +191,6 @@ __attribute__((visibility("hidden")))
 - (void)adjustmentsDataChanged:(id)arg1;
 - (void)cropAspectFlipperView:(id)arg1 cropOrientationSelected:(long long)arg2;
 - (void)cropAspectController:(id)arg1 cropAspectSelected:(id)arg2;
-- (void)invalidateTrashedStateForOvercaptureResources;
 - (void)_toggleOvercaptureSource;
 - (long long)toolControllerTag;
 - (void)_cropToggleTapped:(id)arg1;
@@ -263,6 +264,7 @@ __attribute__((visibility("hidden")))
 - (void)updateViewOrdering;
 - (void)_updateCropViewsForInteraction;
 - (void)_updateCropToggleButton;
+- (void)_updateOvercaptureSourceSwitchActivity;
 - (void)_updateCropActionButtons;
 - (_Bool)_hasPerspectiveSuggestion;
 - (void)_loadPerspectiveSuggestionIfNeeded;
@@ -306,6 +308,8 @@ __attribute__((visibility("hidden")))
 - (void)_loadImageIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_createRendererIfNeeded;
 - (void)_updateRendererWithCurrentComposition;
+- (_Bool)_overcaptureSourceUsed;
+- (_Bool)_forceOvercaptureSourceForCrop;
 - (void)_performLocalCropModelChanges:(CDUnknownBlockType)arg1;
 - (void)_performLocalModelChanges:(CDUnknownBlockType)arg1;
 - (void)setDelegate:(id)arg1;

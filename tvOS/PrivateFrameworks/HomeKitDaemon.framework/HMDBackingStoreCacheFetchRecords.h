@@ -10,6 +10,7 @@
 
 @interface HMDBackingStoreCacheFetchRecords : HMDBackingStoreOperation
 {
+    _Bool _recursive;
     HMDBackingStoreCacheGroup *_group;
     HMDBackingStoreCacheShareGroup *_share;
     CDUnknownBlockType _fetchResult;
@@ -24,6 +25,7 @@
 @property(copy, nonatomic) CDUnknownBlockType fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
+@property _Bool recursive; // @synthesize recursive=_recursive;
 - (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithGroup:(id)arg1 records:(id)arg2 fetchResult:(CDUnknownBlockType)arg3;

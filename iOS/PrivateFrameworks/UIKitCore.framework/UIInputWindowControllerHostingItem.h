@@ -46,8 +46,10 @@ __attribute__((visibility("hidden")))
     id <_UIRemoteKeyboardControllerDelegate> _controllerDelegate;
     UIInputSetHostView *_hostView;
     id <UIInputViewSetPlacementApplicator> _applicator;
+    UIView *_floatingKeyboardMaskView;
 }
 
+@property(retain, nonatomic) UIView *floatingKeyboardMaskView; // @synthesize floatingKeyboardMaskView=_floatingKeyboardMaskView;
 @property(retain, nonatomic) id <UIInputViewSetPlacementApplicator> applicator; // @synthesize applicator=_applicator;
 @property(retain, nonatomic) UIInputSetHostView *hostView; // @synthesize hostView=_hostView;
 @property(retain, nonatomic) id <_UIRemoteKeyboardControllerDelegate> controllerDelegate; // @synthesize controllerDelegate=_controllerDelegate;
@@ -70,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)resetVerticalConstraint;
 - (void)didFinishTranslationFromPlacement:(id)arg1 to:(id)arg2;
 - (void)willBeginTranslationFromPlacement:(id)arg1 to:(id)arg2;
+- (void)prepareTranslationFromPlacement:(id)arg1 to:(id)arg2;
 - (void)transitionDidFinish:(_Bool)arg1;
 - (void)setPlacement:(id)arg1 quietly:(_Bool)arg2 animated:(_Bool)arg3 generateSplitNotification:(_Bool)arg4;
 - (void)completeTransition:(id)arg1 withInfo:(id)arg2;

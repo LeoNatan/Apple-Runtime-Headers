@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface DS : NSObject
 {
     struct __CFBundle *_bundle;
@@ -39,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (struct TW_IDENTITY)identity;
 - (BOOL)supportedMatch:(struct TW_IDENTITY *)arg1;
 - (short)initDSEntry:(struct TW_IDENTITY *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1 appIdentity:(struct TW_IDENTITY *)arg2 icaInfo:(id)arg3;
 

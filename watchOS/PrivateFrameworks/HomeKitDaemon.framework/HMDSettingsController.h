@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMDSettingTransactionReceiverProtocol-Protocol.h>
 #import <HomeKitDaemon/HMDSettingsControllerProtocol-Protocol.h>
@@ -14,7 +14,7 @@
 @class NSArray, NSMapTable, NSString;
 @protocol HMDSettingGroupOwnerProtocol, HMDSettingsControllerDelegate, HMDSettingsControllerDependency, HMDSettingsMessageHandlerProtocol;
 
-@interface HMDSettingsController : NSObject <HMFLogging, HMDSettingsControllerProtocol, HMDSettingsMessageController, HMDSettingTransactionReceiverProtocol>
+@interface HMDSettingsController : HMFObject <HMFLogging, HMDSettingsControllerProtocol, HMDSettingsMessageController, HMDSettingTransactionReceiverProtocol>
 {
     id <HMDSettingsMessageHandlerProtocol> _messageHandler;
     id <HMDSettingsControllerDependency> _dependency;
@@ -54,6 +54,8 @@
 - (void)resetupMessageHandlersWithAddedGroups:(id)arg1 removedGroups:(id)arg2 addedSettings:(id)arg3 removedSettings:(id)arg4;
 - (void)handleAddedConstraintModel:(id)arg1 shouldNotify:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleAddedConstraintModel:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_flattenedSettingControllerRoot:(id)arg1 withCurrentPath:(id)arg2 andReturnDictionary:(id)arg3;
+- (id)settingValuesByKeyPathWithPrefix:(id)arg1;
 - (void)handleAddedSettingModel:(id)arg1 shouldNotify:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleAddedSettingModel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAddedGroupModel:(id)arg1 shouldNotify:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -62,6 +64,7 @@
 - (void)updateWithValue:(id)arg1 onSetting:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateWithValue:(id)arg1 onSettingIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateWithEncodedValue:(id)arg1 onSettingIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)settingForKeyPath:(id)arg1;
 - (id)settingForIdentifier:(id)arg1;
 - (id)settingGroupForIdentifier:(id)arg1;
 @property(readonly) NSArray *allObjectIdentifiers;
@@ -70,9 +73,13 @@
 - (id)initWithDependency:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly, copy) NSString *shortDescription;
 @property(readonly) Class superclass;
 
 @end

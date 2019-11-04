@@ -28,8 +28,9 @@
 - (void)intentExecutor:(id)arg1 showConfirmationForInteraction:(id)arg2 confirmationRequired:(_Bool)arg3 authenticationRequired:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)intentExecutorRequestsContinueInApp:(id)arg1;
 - (void)handleExecutorError:(id)arg1;
-- (id)errorFromExtensionError:(id)arg1;
+- (void)getErrorFromExtensionError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)errorThatLaunchesApp:(id)arg1;
+- (id)errorAttributedToApp:(id)arg1;
 - (id)errorFromHandleResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromConfirmResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
@@ -44,8 +45,10 @@
 - (void)finishRunningByContinuingInApp;
 - (_Bool)shouldOpenAppThroughSiriForIntent:(id)arg1 intentResponse:(id)arg2;
 - (void)populateIntent:(id)arg1 withInput:(id)arg2 processedParameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)executorWithIntent:(id)arg1;
+- (id)executorWithIntent:(id)arg1 groupIdentifier:(id)arg2;
 - (void)startExecutingIntent:(id)arg1;
+- (_Bool)shouldDonateIntent:(id)arg1;
+- (_Bool)isWorkflowInDatabase;
 - (void)accessBundleContentWithBlock:(CDUnknownBlockType)arg1;
 - (id)parameterForSlot:(id)arg1;
 - (void)generateShortcutRepresentation:(CDUnknownBlockType)arg1;

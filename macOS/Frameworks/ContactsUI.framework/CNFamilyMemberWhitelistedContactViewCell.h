@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNFamilyMemberEditControlsViewControllerDelegate-Protocol.h>
 
-@class CNContactCardViewController, CNUICoreFamilyMemberContactItem, NSButton, NSImageView, NSLayoutConstraint, NSPopover, NSTextField, NSTrackingArea;
+@class CNContactCardViewController, CNUICoreFamilyMemberContactItem, NSButton, NSImageView, NSLayoutConstraint, NSPopover, NSTextField;
 @protocol CNFamilyMemberWhitelistedContactViewCellDelegate;
 
 @interface CNFamilyMemberWhitelistedContactViewCell : NSTableCellView <CNFamilyMemberEditControlsViewControllerDelegate>
@@ -19,18 +19,16 @@
     NSTextField *_detailLabel;
     NSButton *_discosureButton;
     NSImageView *_warningImageView;
-    NSTrackingArea *_discosureButtonTrackingArea;
+    NSLayoutConstraint *_detailLabelCenterXConstraint;
     NSPopover *_discosurePopover;
     CNContactCardViewController *_contactViewController;
-    NSLayoutConstraint *_warningImageViewTrailingCostraint;
 }
 
 + (id)labelForContactType:(long long)arg1;
 + (id)localizedStringForString:(id)arg1;
-@property(retain, nonatomic) NSLayoutConstraint *warningImageViewTrailingCostraint; // @synthesize warningImageViewTrailingCostraint=_warningImageViewTrailingCostraint;
 @property(retain, nonatomic) CNContactCardViewController *contactViewController; // @synthesize contactViewController=_contactViewController;
 @property(retain, nonatomic) NSPopover *discosurePopover; // @synthesize discosurePopover=_discosurePopover;
-@property(retain, nonatomic) NSTrackingArea *discosureButtonTrackingArea; // @synthesize discosureButtonTrackingArea=_discosureButtonTrackingArea;
+@property(readonly, nonatomic) NSLayoutConstraint *detailLabelCenterXConstraint; // @synthesize detailLabelCenterXConstraint=_detailLabelCenterXConstraint;
 @property(readonly, nonatomic) NSImageView *warningImageView; // @synthesize warningImageView=_warningImageView;
 @property(readonly, nonatomic) NSButton *discosureButton; // @synthesize discosureButton=_discosureButton;
 @property(readonly, nonatomic) NSTextField *detailLabel; // @synthesize detailLabel=_detailLabel;
@@ -45,6 +43,12 @@
 - (void)prepareForReuse;
 - (void)discosurePressed:(id)arg1;
 - (void)presentContactViewController:(id)arg1;
+- (void)setupConstraints;
+- (void)setupViewHierarchy;
+- (void)setupWarningImageView;
+- (void)setupDiscosureButton;
+- (void)setupDetailLabel;
+- (void)setupLabel;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

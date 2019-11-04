@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDClientMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _knownClientResolvedTypeDeprecateds;
     CDStruct_95bda58d _knownClientResolvedTypes;
@@ -30,6 +29,9 @@ __attribute__((visibility("hidden")))
     NSString *_deviceSku;
     NSString *_deviceSpokenLanguage;
     GEOLocalizationCapabilities *_localizationCapabilities;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _clientRevision;
     unsigned int _dayOfWeek;
     unsigned int _hourOfDay;
@@ -187,6 +189,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasDeviceCountryCode;
 - (void)_readDeviceCountryCode;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithTraits:(id)arg1;
 - (void)clearLocations;
 

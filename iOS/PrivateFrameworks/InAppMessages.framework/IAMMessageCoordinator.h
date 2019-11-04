@@ -54,6 +54,8 @@
 - (void)updateMetadataOfMessageEntriesByRealKey:(id)arg1 forReceivedEvent:(id)arg2;
 - (id)allMessageEntriesWithoutDuplicates:(id)arg1;
 - (void)receiveEvent:(id)arg1;
+- (void)_updateLastDisplayTime;
+- (void)_reportMetricsEvent:(id)arg1;
 - (void)_updateMessagesByMonitoredKeys;
 - (void)_reevaluateMessages:(id)arg1;
 - (void)_calculateMessagesProximityAndDownloadResourcesIfNeeded:(id)arg1;

@@ -15,6 +15,7 @@
     NSString *_arrowImageName;
     long long _arrowDirection;
     id <TUICandidateViewStyle> _style;
+    UIView *_contentView;
     UIView *_highlightBackgroundView;
     UIView *_backgroundView;
     TUICandidateBackdropView *_backdropView;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) TUICandidateBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *highlightBackgroundView; // @synthesize highlightBackgroundView=_highlightBackgroundView;
+@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
 @property(nonatomic) long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
 @property(copy, nonatomic) NSString *arrowImageName; // @synthesize arrowImageName=_arrowImageName;

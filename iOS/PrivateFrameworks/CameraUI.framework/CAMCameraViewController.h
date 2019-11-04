@@ -71,8 +71,9 @@
 - (id)_mediaConversionOptionsForAdjustments:(id)arg1 mediaType:(long long)arg2;
 @property(readonly, nonatomic) PAVideoConversionServiceClient *_videoConversionClient; // @synthesize _videoConversionClient=__videoConversionClient;
 @property(readonly, nonatomic) PAImageConversionServiceClient *_imageConversionClient; // @synthesize _imageConversionClient=__imageConversionClient;
+- (void)stillImagePersistenceCoordinatorDidCompleteAllDispatches:(id)arg1;
 - (void)stillImagePersistenceCoordinator:(id)arg1 requestsDispatchForResultSpecifiers:(unsigned long long)arg2 photoProperties:(id)arg3 videoProperties:(id)arg4 unfilteredPhotoProperties:(id)arg5 unfilteredVideoProperties:(id)arg6 assetAdjustments:(id)arg7 error:(id)arg8;
-- (void)_resultQueue_removeStillImageResultCoordinatorForRequest:(id)arg1;
+- (void)_resultQueue_removeStillImageResultCoordinatorForIdentifier:(id)arg1;
 - (id)_resultQueue_getStillImageResultCoordinatorForRequest:(id)arg1;
 - (id)_resultQueue_getOrCreateStillImageResultCoordinatorForRequest:(id)arg1 captureTimeExpectedResultSpecifiers:(id)arg2 isExpectingPairedVideo:(_Bool)arg3 isDisablingMultipleCaptures:(_Bool)arg4 isGeneratingFilteredMedia:(_Bool)arg5;
 - (void)_resultQueue_forceCompletionIfPossibleForRequest:(id)arg1;

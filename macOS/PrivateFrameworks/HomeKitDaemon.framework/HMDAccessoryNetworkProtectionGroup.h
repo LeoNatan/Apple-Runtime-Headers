@@ -9,22 +9,20 @@
 #import <HomeKitDaemon/HMDBackingStoreObjectProtocol-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMAccessoryCategory, HMDHome, HMFUnfairLock, NSString, NSUUID;
+@class HMDHome, HMFUnfairLock, NSNumber, NSString, NSUUID;
 
 @interface HMDAccessoryNetworkProtectionGroup : NSObject <NSSecureCoding, HMDBackingStoreObjectProtocol>
 {
     HMFUnfairLock *_lock;
     long long _targetProtectionMode;
-    NSUUID *_uuid;
     NSString *_manufacturer;
-    HMAccessoryCategory *_category;
+    NSNumber *_category;
+    NSUUID *_uuid;
     HMDHome *_home;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) HMDHome *home; // @synthesize home=_home;
-@property(readonly) HMAccessoryCategory *category; // @synthesize category=_category;
-@property(readonly) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
@@ -33,6 +31,8 @@
 - (id)modelWithObjectChangeType:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(retain, nonatomic) NSNumber *category; // @synthesize category=_category;
+@property(retain, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(nonatomic) long long targetProtectionMode; // @synthesize targetProtectionMode=_targetProtectionMode;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;

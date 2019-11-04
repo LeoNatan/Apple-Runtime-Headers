@@ -15,6 +15,7 @@
 
 @interface WFEditableLibraryViewController : WFLibraryViewController <UIGestureRecognizerDelegate, UICollectionViewDragDelegate, UICollectionViewDropDelegate, WFEditableLibraryResultsControllerDelegate>
 {
+    _Bool _dropping;
     UIBarButtonItem *_createButtonItem;
     UIBarButtonItem *_deleteButtonItem;
     UIBarButtonItem *_duplicateButtonItem;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) UIBarButtonItem *duplicateButtonItem; // @synthesize duplicateButtonItem=_duplicateButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *deleteButtonItem; // @synthesize deleteButtonItem=_deleteButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *createButtonItem; // @synthesize createButtonItem=_createButtonItem;
+@property(readonly, nonatomic) _Bool dropping; // @synthesize dropping=_dropping;
 - (void).cxx_destruct;
 - (void)accessibilityAnnounceMovingWorkflowToIndexPath:(id)arg1;
 - (void)playReorderSound;
@@ -37,12 +39,16 @@
 - (id)collectionView:(id)arg1 dropPreviewParametersForItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 dropSessionDidUpdate:(id)arg2 withDestinationIndexPath:(id)arg3;
 - (_Bool)collectionView:(id)arg1 canHandleDropSession:(id)arg2;
+- (void)collectionView:(id)arg1 dropSessionDidEnd:(id)arg2;
+- (void)collectionView:(id)arg1 dropSessionDidEnter:(id)arg2;
 - (void)collectionView:(id)arg1 dragSessionDidEnd:(id)arg2;
 - (void)collectionView:(id)arg1 dragSessionWillBegin:(id)arg2;
 - (id)collectionView:(id)arg1 dragPreviewParametersForItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 itemsForAddingToDragSession:(id)arg2 atIndexPath:(id)arg3 point:(struct CGPoint)arg4;
 - (id)collectionView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (id)createDragItemForIndexPath:(id)arg1;
+- (void)collectionView:(id)arg1 didBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSpringLoadItemAtIndexPath:(id)arg2 withContext:(id)arg3;
 - (id)collectionView:(id)arg1 targetIndexPathForMoveFromItemAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;

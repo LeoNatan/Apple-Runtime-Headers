@@ -10,6 +10,7 @@
 
 @protocol CNAccountDescription <NSObject>
 @property(readonly, copy) NSArray *childAccounts;
+@property(readonly) BOOL isChildAccount;
 @property(readonly) ABCDContainer *containerRepresentation;
 @property(readonly) NSURL *persistentStoreURL;
 @property(readonly, copy) NSURL *baseURL;

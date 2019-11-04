@@ -13,7 +13,8 @@
 
 @interface VCVoiceShortcutClient : NSObject <INVCVoiceShortcutClient>
 {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_xpcQueue;
+    NSObject<OS_dispatch_queue> *_internalStateQueue;
     NSHashTable *_errorHandlers;
     NSXPCConnection *_xpcConnection;
     CDUnknownBlockType _creationBlock;
@@ -24,18 +25,20 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) NSHashTable *errorHandlers; // @synthesize errorHandlers=_errorHandlers;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalStateQueue; // @synthesize internalStateQueue=_internalStateQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 - (void).cxx_destruct;
 - (void)requestSyncToWatchWithForceReset:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unsafeSetupXPCConnection;
-- (void)unsafeHandleXPCConnectionInvalidation;
-- (void)unsafeHandleXPCConnectionInterruption;
-- (void)unsafeRunConnectionErrorHandlersIsInvalidation:(_Bool)arg1;
+- (void)handleXPCConnectionInvalidation;
+- (void)handleXPCConnectionInterruption;
+- (id)unsafePopConnectionErrorHandlers;
 - (void)callErrorHandlerIfNeeded:(CDUnknownBlockType)arg1 withError:(id)arg2;
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2;
 - (id)synchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
-- (_Bool)hasRunEventsInTheLast30DaysWithError:(id *)arg1;
+- (void)obliterateShortcuts:(CDUnknownBlockType)arg1;
+- (_Bool)hasRunEventsInTheLast5DaysWithError:(id *)arg1;
 - (void)runShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runShortcutWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -43,6 +46,7 @@
 - (void)checkTriggerStateWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fireTriggerWithIdentifier:(id)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getConfiguredTriggerDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)unregisterTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)refreshTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -50,6 +54,7 @@
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;
 - (void)generateSingleUseTokenForWorkflowIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)generateSingleUseTokenForWorkflowReference:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 resolvedActivityItems:(id)arg2 hostBundleIdentifier:(id)arg3 error:(id *)arg4;
 - (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 error:(id *)arg3;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

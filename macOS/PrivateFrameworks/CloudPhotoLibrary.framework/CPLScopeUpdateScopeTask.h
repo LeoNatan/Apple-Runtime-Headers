@@ -15,6 +15,7 @@
     id <CPLEngineTransportGetLibraryInfoTask> _getLibraryInfo;
     id <CPLEngineTransportFetchTransportScopeTask> _fetchTransportScope;
     NSData *_fetchedTransportScope;
+    BOOL _retryingFetchingTransportScope;
 }
 
 - (void).cxx_destruct;
@@ -24,6 +25,7 @@
 - (void)launch;
 - (void)_fetchTransportScope;
 - (void)_getLibraryInfo;
+- (void)_markScopeHasBadTransportScopeWithError:(id)arg1;
 - (void)_markScopeAsFeatureDisabledWithFlags:(id)arg1;
 - (void)_markScopeAsDeletedAndSucceedTaskWithFlags:(id)arg1;
 - (id)initWithEngineLibrary:(id)arg1 session:(id)arg2 clientCacheIdentifier:(id)arg3 scope:(id)arg4 transportScope:(id)arg5;

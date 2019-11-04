@@ -33,7 +33,6 @@
 @property(readonly, nonatomic) _Bool hasCompletedSync;
 - (_Bool)hasCompletedInitialOrMigrationSync;
 @property(readonly, nonatomic) _Bool hasCompletedInitialSync;
-- (id)initWithPairingID:(id)arg1;
 - (id)initWithPairingID:(id)arg1 syncState:(unsigned long long)arg2;
 
 @end

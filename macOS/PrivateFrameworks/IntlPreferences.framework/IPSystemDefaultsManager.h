@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)updateNVRAM;
 - (void)updatePreboot;
-- (BOOL)setSystemLanguages:(id)arg1 locale:(id)arg2 isRightToLeft:(BOOL)arg3;
+- (BOOL)setSystemLanguages:(id)arg1 locale:(id)arg2 isRightToLeft:(BOOL)arg3 interactionAllowed:(BOOL)arg4;
 
 @end
 

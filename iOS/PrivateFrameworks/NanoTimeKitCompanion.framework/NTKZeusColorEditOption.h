@@ -18,7 +18,7 @@
 + (id)_orderedBeginningValuesRestrictedByDevice:(id)arg1;
 + (id)optionWithColor:(unsigned long long)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
+- (_Bool)optionExistsInDevice:(id)arg1;
 @property(readonly, nonatomic) unsigned long long color;
 - (long long)swatchStyle;
 

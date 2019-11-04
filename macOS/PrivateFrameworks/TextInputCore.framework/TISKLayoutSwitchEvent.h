@@ -16,6 +16,8 @@
 @property(retain, nonatomic) TIKeyboardLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
 - (id)description;
+- (double)touchUpTimestamp;
+- (double)touchDownTimestamp;
 - (id)init:(double)arg1 layout:(id)arg2 order:(long long)arg3;
 
 @end

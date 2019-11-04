@@ -26,6 +26,7 @@
     struct CGPoint _targetIconCenter;
 }
 
++ (_Bool)validateAnimationContainer:(id)arg1 targetIcon:(id)arg2;
 @property(readonly, nonatomic) struct CGPoint targetIconCenter; // @synthesize targetIconCenter=_targetIconCenter;
 @property(readonly, nonatomic) struct CGPoint zoomedTargetIconCenter; // @synthesize zoomedTargetIconCenter=_zoomedTargetIconCenter;
 @property(readonly, nonatomic) struct CGPoint zoomScaleDimension; // @synthesize zoomScaleDimension=_zoomScaleDimension;

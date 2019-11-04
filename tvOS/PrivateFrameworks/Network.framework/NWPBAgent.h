@@ -16,11 +16,11 @@
     NSData *_agentData;
     NSString *_agentDescription;
     NSString *_agentIdentifier;
-    BOOL _active;
-    BOOL _networkProvider;
-    BOOL _nexusProvider;
-    BOOL _userActivated;
-    BOOL _voluntary;
+    _Bool _active;
+    _Bool _networkProvider;
+    _Bool _nexusProvider;
+    _Bool _userActivated;
+    _Bool _voluntary;
     struct {
         unsigned int active:1;
         unsigned int networkProvider:1;
@@ -31,33 +31,33 @@
 }
 
 @property(retain, nonatomic) NSData *agentData; // @synthesize agentData=_agentData;
-@property(nonatomic) BOOL nexusProvider; // @synthesize nexusProvider=_nexusProvider;
-@property(nonatomic) BOOL networkProvider; // @synthesize networkProvider=_networkProvider;
-@property(nonatomic) BOOL voluntary; // @synthesize voluntary=_voluntary;
-@property(nonatomic) BOOL userActivated; // @synthesize userActivated=_userActivated;
-@property(nonatomic) BOOL active; // @synthesize active=_active;
+@property(nonatomic) _Bool nexusProvider; // @synthesize nexusProvider=_nexusProvider;
+@property(nonatomic) _Bool networkProvider; // @synthesize networkProvider=_networkProvider;
+@property(nonatomic) _Bool voluntary; // @synthesize voluntary=_voluntary;
+@property(nonatomic) _Bool userActivated; // @synthesize userActivated=_userActivated;
+@property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) NSString *agentDescription; // @synthesize agentDescription=_agentDescription;
 @property(retain, nonatomic) NSString *agentIdentifier; // @synthesize agentIdentifier=_agentIdentifier;
 @property(retain, nonatomic) NWPBAgentClass *agentClass; // @synthesize agentClass=_agentClass;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) BOOL hasAgentData;
-@property(nonatomic) BOOL hasNexusProvider;
-@property(nonatomic) BOOL hasNetworkProvider;
-@property(nonatomic) BOOL hasVoluntary;
-@property(nonatomic) BOOL hasUserActivated;
-@property(nonatomic) BOOL hasActive;
-@property(readonly, nonatomic) BOOL hasAgentDescription;
-@property(readonly, nonatomic) BOOL hasAgentIdentifier;
-@property(readonly, nonatomic) BOOL hasAgentClass;
+@property(readonly, nonatomic) _Bool hasAgentData;
+@property(nonatomic) _Bool hasNexusProvider;
+@property(nonatomic) _Bool hasNetworkProvider;
+@property(nonatomic) _Bool hasVoluntary;
+@property(nonatomic) _Bool hasUserActivated;
+@property(nonatomic) _Bool hasActive;
+@property(readonly, nonatomic) _Bool hasAgentDescription;
+@property(readonly, nonatomic) _Bool hasAgentIdentifier;
+@property(readonly, nonatomic) _Bool hasAgentClass;
 
 @end
 

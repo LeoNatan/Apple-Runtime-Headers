@@ -23,10 +23,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_activityContinuationDictionaryWithAction:(id)arg1;
-+ (id)_getCanvasRestorationUserActivityForCanvasIdentifier:(id)arg1 error:(id *)arg2;
++ (id)_getRestorationUserActivityForPersistentIdentifier:(id)arg1 error:(id *)arg2;
 + (id)_getUserInfoForSceneIdentifier:(id)arg1 error:(id *)arg2;
++ (void)_scheduleDataSaveForSceneSession:(id)arg1 saveRestorationActivity:(_Bool)arg2;
 + (void)_saveRestorationStateForScene:(id)arg1;
-+ (_Bool)_restorationUserActivityAvailableForCanvasIdentifier:(id)arg1;
++ (_Bool)_restorationUserActivityAvailableForSceneIdentifier:(id)arg1;
 + (id)_fetchSceneSessionWithPersistentIdentifier:(id)arg1;
 + (id)_knownSceneSessionMap;
 + (void)_deleteSceneSessionsWithPersistentIdentifiers:(id)arg1;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_performCanvasRestoration;
 - (void)_setupCanvasRestorationState;
 - (void)_saveSceneRestorationState;
+- (void)_saveOrClearRestorationDictionary:(id)arg1 forScene:(id)arg2;
 - (void)_checkActivityContinuationAndBecomeCurrentIfNeeded;
 - (void)activityContinuationManager:(id)arg1 didUpdateUserActivity:(id)arg2;
 - (void)activityContinuationManager:(id)arg1 didFailToContinueUserActivityWithType:(id)arg2 error:(id)arg3;

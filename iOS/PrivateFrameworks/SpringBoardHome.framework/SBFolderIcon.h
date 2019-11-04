@@ -22,6 +22,7 @@
     SBFolder *_folder;
 }
 
++ (_Bool)hasIconImage;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) SBFolder *folder; // @synthesize folder=_folder;
@@ -65,6 +66,8 @@
 - (long long)progressState;
 - (void)_updateProgress;
 - (void)_updateBadgeValue;
+- (void)_performDelayedIconUpdates;
+- (id)badgeNumberOrString;
 - (void)updateLabel;
 @property(readonly, copy) NSString *description;
 - (void)localeChanged;

@@ -26,10 +26,10 @@
 + (id)_equivalentBundleIDsMapping;
 + (id)_equivalentBundleIDsMappingForWatchOSBundleID:(id)arg1;
 + (id)itemWith:(id)arg1 platform:(id)arg2 array:(id)arg3;
-+ (id)canonicalBundleIdentifierFor:(id)arg1 platform:(id)arg2;
 + (id)equivalentIdentifiersForBundleID:(id)arg1;
++ (id)_schemeRemovedEquivalentBundleIDsMapping:(id)arg1;
 + (id)_getequivalentBundleIdentifiers:(id)arg1;
-+ (void)_identifierUsingContextKit:(id)arg1 response:(CDUnknownBlockType)arg2;
++ (id)_identifierUsingContextKit:(id)arg1 error:(id *)arg2 relatedItems:(id *)arg3;
 + (void)_lookupAppStoreUsing:(id)arg1 platform:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (id)_DHToAppStoreCategoriesMap;
 + (id)_DHIDtoPrimaryCategoriesMap;
@@ -68,7 +68,8 @@
 @property(readonly, copy, nonatomic) NSString *primaryIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)_ctCategoryCommonInitWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5;
+- (void)_ctCategoryCommonInitWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5 canonicalBundleIdentifier:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5 canonicalBundleIdentifier:(id)arg6;
 - (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4 primaryWebDomain:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 webDomains:(id)arg2 bundleIdentifier:(id)arg3 primaryWebDomain:(id)arg4;
 - (id)initWithIdentifier:(id)arg1 equivalentBundleIdentifiers:(id)arg2 webDomains:(id)arg3 bundleIdentifier:(id)arg4;

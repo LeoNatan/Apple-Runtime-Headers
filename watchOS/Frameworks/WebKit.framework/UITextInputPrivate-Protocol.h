@@ -20,6 +20,7 @@
 - (UITextInputTraits *)textInputTraits;
 
 @optional
+@property(readonly, nonatomic) _Bool supportsImagePaste;
 @property(readonly, nonatomic) RTIInputSystemSourceSession *_rtiSourceSession;
 @property(nonatomic) int _textInputSource;
 @property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;

@@ -12,9 +12,11 @@
 {
     unsigned long long _numberOfSimilarWidthCandidates;
     BOOL _secondaryCandidatesShowChevron;
+    double _surfaceWidth;
     NSViewController *_viewController;
 }
 
+@property(nonatomic) double surfaceWidth; // @synthesize surfaceWidth=_surfaceWidth;
 @property(nonatomic) BOOL secondaryCandidatesShowChevron; // @synthesize secondaryCandidatesShowChevron=_secondaryCandidatesShowChevron;
 @property(nonatomic) unsigned long long numberOfSimilarWidthCandidates; // @synthesize numberOfSimilarWidthCandidates=_numberOfSimilarWidthCandidates;
 - (void)touchesEndedOutsideView;

@@ -8,14 +8,14 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDHAPAccessory, HMDService, NSDictionary, NSMutableDictionary, NSNumber, NSObject, NSString;
+@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDHAPAccessory, HMDService, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSObject, NSString;
 @protocol HMDCameraRecordingSettingsControlDelegate, OS_dispatch_queue;
 
 @interface HMDCameraRecordingSettingsControl : HMFObject <HMFLogging>
 {
     BOOL _configureCameraInProgress;
     BOOL _canConfigureCameraForRecording;
-    NSString *_logIdentifier;
+    BOOL _didTriggerABCForConfigure;
     id <HMDCameraRecordingSettingsControlDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDHAPAccessory *_accessory;
@@ -26,6 +26,8 @@
     HMDCameraRecordingSupportedAudioConfiguration *_supportedAudioConfiguration;
     NSMutableDictionary *_characteristicByType;
     HMDCameraRecordingSelectedConfiguration *_currentSelectedConfiguration;
+    NSString *_clientIdentifier;
+    NSDate *_configureStartDate;
 }
 
 + (id)logCategory;
@@ -38,7 +40,9 @@
 + (BOOL)isSupportedVideoCodec:(id)arg1;
 + (id)audioConfigurationsByPreferenceOrder;
 + (id)videoConfigurationsByPreferenceOrder;
-+ (id)clientIdentifier;
+@property BOOL didTriggerABCForConfigure; // @synthesize didTriggerABCForConfigure=_didTriggerABCForConfigure;
+@property(retain) NSDate *configureStartDate; // @synthesize configureStartDate=_configureStartDate;
+@property(readonly, copy) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain) HMDCameraRecordingSelectedConfiguration *currentSelectedConfiguration; // @synthesize currentSelectedConfiguration=_currentSelectedConfiguration;
 @property BOOL canConfigureCameraForRecording; // @synthesize canConfigureCameraForRecording=_canConfigureCameraForRecording;
 @property BOOL configureCameraInProgress; // @synthesize configureCameraInProgress=_configureCameraInProgress;
@@ -51,8 +55,9 @@
 @property(readonly) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property __weak id <HMDCameraRecordingSettingsControlDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
+- (id)logIdentifier;
+@property(readonly) double configuredPrebufferDuration;
 @property(readonly) double configuredFragmentDuration;
 @property(readonly, getter=isCameraConfiguredForRecording) BOOL cameraConfiguredForRecording;
 - (void)_setSelectedRecordingConfiguration:(id)arg1;
@@ -69,6 +74,7 @@
 - (void)_selectedConfigurationDidUpdateTo:(id)arg1;
 - (void)_configureCameraRecordingSettings;
 - (void)configureCameraRecordingSettings;
+- (void)triggerABCForConfigure;
 - (void)dealloc;
 - (void)updateCanConfigureCameraForRecording;
 - (id)_recordingAudioConfiguration;
@@ -79,7 +85,7 @@
 - (void)handleCameraProfileSettingsDidWriteToAccessory:(id)arg1;
 - (void)handleCharacteristicValueUpdated:(id)arg1;
 - (void)handleCharacteristicsUpdated:(id)arg1;
-- (void)handleAccessoryReachable:(id)arg1;
+- (void)handleAccessoryConfigured:(id)arg1;
 - (void)handleAccessoryUnreachable:(id)arg1;
 - (void)start;
 @property(readonly, copy) NSNumber *configuredImageHeight;

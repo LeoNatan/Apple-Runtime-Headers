@@ -163,7 +163,7 @@
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)handleOperationStatistics:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
-- (void)cancelOperationID:(id)arg1;
+- (void)discretionarySuspensionForOperationID:(id)arg1;
 - (id)discretionaryDaemonWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)daemonSynchronous:(_Bool)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
 - (id)synchronousDaemonWithErrorHandler:(CDUnknownBlockType)arg1;

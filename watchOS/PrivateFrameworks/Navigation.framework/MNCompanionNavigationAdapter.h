@@ -43,6 +43,7 @@
 
 @property(nonatomic) __weak id <MNCompanionNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_handleNavigationServiceStopped;
 - (void)_reloadRouteFromNavigationService:(id)arg1;
 - (void)navigationService:(id)arg1 didReceiveRealtimeUpdates:(id)arg2;
 - (void)navigationService:(id)arg1 didEnableGuidancePrompts:(_Bool)arg2;
@@ -58,6 +59,7 @@
 - (void)navigationService:(id)arg1 didUpdateMatchedLocation:(id)arg2;
 - (void)navigationService:(id)arg1 didChangeNavigationState:(int)arg2;
 - (void)navigationService:(id)arg1 didChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
+- (void)navigationServiceDidSynchronize:(id)arg1;
 - (void)navigationSession:(id)arg1 didEnableGuidancePrompts:(_Bool)arg2;
 - (void)navigationSession:(id)arg1 displayManeuverAlertForAnnouncementStage:(unsigned int)arg2;
 - (void)navigationSession:(id)arg1 triggerHaptics:(int)arg2;

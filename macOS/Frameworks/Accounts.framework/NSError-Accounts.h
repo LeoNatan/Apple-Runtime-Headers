@@ -9,6 +9,7 @@
 @interface NSError (Accounts)
 - (id)ac_secureCodingError;
 - (id)_sanitizeObject:(id)arg1;
+@property(readonly, nonatomic, getter=ac_isDiskFullSQLError) BOOL ac_diskFullSQLError;
 @property(readonly, nonatomic, getter=ac_isUnrecoverableDatabaseError) BOOL ac_unrecoverableDatabaseError;
 @end
 

@@ -92,6 +92,7 @@
 @optional
 @property(readonly, nonatomic) UIView<UITextInputPrivate> *_textSelectingContainer;
 - (void)_setInternalGestureRecognizers;
+- (BOOL)_shouldSuppressSelectionHandles;
 - (BOOL)_isInteractiveTextSelectionDisabled;
 - (struct CGRect)_lastRectForRange:(UITextRange *)arg1;
 @end

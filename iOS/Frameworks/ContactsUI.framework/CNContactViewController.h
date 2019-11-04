@@ -136,6 +136,9 @@
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)loadView;
 @property(readonly, nonatomic) id <CNContactViewControllerPrivateDelegate> privateDelegate;
+- (id)confirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
+- (void)presentConfirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
+- (void)presentCancelConfirmationAlert;
 - (void)presentationControllerDidAttemptToDismiss:(id)arg1;
 - (_Bool)presentationControllerShouldDismiss:(id)arg1;
 - (_Bool)isModalInPresentation;

@@ -8,5 +8,6 @@
 
 @interface UIScreen (IBCTTUIScreenIntegration)
 - (_Bool)ibSwizzled_supportsFocus;
+- (void)ibApplyTraitCollectionWithInterfaceStyle:(long long)arg1;
 @end
 

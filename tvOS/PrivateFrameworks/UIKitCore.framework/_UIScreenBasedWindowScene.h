@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)shouldAllowComponents;
 + (_Bool)alwaysKeepContexts;
 - (void).cxx_destruct;
+- (_Bool)_shouldAllowFencing;
 - (void)_openURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setDelegate:(id)arg1;
 - (id)_displayInfoProvider;

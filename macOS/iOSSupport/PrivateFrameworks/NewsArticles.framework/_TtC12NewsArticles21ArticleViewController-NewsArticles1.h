@@ -6,9 +6,7 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-#import <NewsArticles/NULoadingDelegate-Protocol.h>
-
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles1) <NULoadingDelegate>
-- (void)loadingDidFinishWithError:(id)arg1;
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles1)
+- (void)tabBarSplitViewDidChangeFocusToFocus:(long long)arg1 action:(long long)arg2;
 @end
 

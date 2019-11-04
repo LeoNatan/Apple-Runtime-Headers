@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDLinkedPlace : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_center;
     unsigned long long _featureId;
     GEOPDMapsIdentifier *_mapsId;
     NSString *_name;
     GEOStyleAttributes *_styleAttributes;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_featureId:1;
         unsigned int read_unknownFields:1;
@@ -65,6 +67,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
 @property(readonly, nonatomic) _Bool hasMapsId;
 - (void)_readMapsId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

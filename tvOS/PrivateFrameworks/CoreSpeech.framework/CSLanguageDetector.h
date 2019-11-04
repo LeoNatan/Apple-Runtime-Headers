@@ -16,8 +16,12 @@
 @property(nonatomic) __weak id <CSLanguageDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)endAudio;
-- (void)addSamples:(void *)arg1 numSamples:(unsigned long long)arg2;
+- (void)addSamples:(id)arg1 numSamples:(unsigned long long)arg2;
 - (void)resetForNewRequest:(id)arg1;
+- (void)cancelCurrentRequest;
+- (void)setInteractionIDforCurrentRequest:(id)arg1;
+- (void)setMostRecentRecognitionLanguage:(id)arg1;
+- (void)recordRecognitionLanguage:(id)arg1;
 
 @end
 

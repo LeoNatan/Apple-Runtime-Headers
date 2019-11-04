@@ -42,8 +42,8 @@
 - (void)_queue_reload;
 - (void)_queue_removeElement:(id)arg1;
 - (void)_queue_refreshElement:(id)arg1;
+- (_Bool)_queue_reloadElement:(id)arg1 withElement:(id)arg2;
 - (void)_queue_reloadElement:(id)arg1;
-- (id)_interactionForElement:(id)arg1;
 - (void)_queue_addElement:(id)arg1 toSection:(id)arg2;
 - (void)dataSource:(id)arg1 didFinishActivity:(id)arg2;
 - (void)dataSource:(id)arg1 didBeginActivity:(id)arg2;

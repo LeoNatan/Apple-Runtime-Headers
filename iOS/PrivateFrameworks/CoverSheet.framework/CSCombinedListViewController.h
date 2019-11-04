@@ -50,11 +50,12 @@
     CSDNDBedtimeGreetingViewController *_dndBedtimeGreetingViewController;
     _UILegibilitySettings *_legibilitySettings;
     _Bool _confirmedNotInPocket;
+    _Bool _shouldPadBottomSpacingWhileDragging;
     id <SBUIBiometricResource> _biometricResource;
     id <BSInvalidatable> _faceDetectWantedAssertion;
     _Bool _faceInView;
     _Bool _screenOn;
-    _Bool _coverSheetWasPulledDown;
+    _Bool _coverSheetWasDismissed;
     _Bool _dndNotificationDeliveryDelayActive;
     _Bool _dndDrivingModeActive;
     _Bool _disableScrolling;
@@ -190,6 +191,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (double)defaultRestingOffsetExcludingAdjunct;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)notificationStructuredListViewController:(id)arg1 didEndUserInteractionWithNotificationViewController:(id)arg2;
 - (void)notificationStructuredListViewController:(id)arg1 didBeginUserInteractionWithNotificationViewController:(id)arg2;
 - (void)notificationStructuredListViewControllerDidSignificantUserInteraction:(id)arg1;

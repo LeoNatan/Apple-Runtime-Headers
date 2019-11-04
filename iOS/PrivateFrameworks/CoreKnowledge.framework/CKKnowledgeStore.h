@@ -31,46 +31,6 @@
 @property(nonatomic, readonly) NSURL *filePathURL;
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, retain) id <CKKnowledgeStoreDelegate> delegate; // @synthesize delegate;
-- (void)disableSyncAndDeleteCloudDataWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (_Bool)removeAllValuesAndReturnError:(id *)arg1;
-- (void)removeAllValuesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (_Bool)removeValuesMatching:(id)arg1 error:(id *)arg2;
-- (void)removeValuesMatching:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)removeValuesForKeys:(id)arg1 error:(id *)arg2;
-- (void)removeValuesForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)removeValueForKey:(id)arg1 error:(id *)arg2;
-- (void)removeValueForKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)removeEntity:(id)arg1 error:(id *)arg2;
-- (void)removeEntity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)importTriplesFromFileAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setValue:(id)arg1 forKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)writeBatch;
-- (void)sparqlResultsForQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)triplesMatching:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)triplesMatching:(id)arg1 error:(id *)arg2;
-- (id)entitiesAndReturnError:(id *)arg1;
-- (void)entitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)entityWithIdentifier:(id)arg1;
-- (id)valuesForKeysMatching:(id)arg1 error:(id *)arg2;
-- (void)valuesForKeysMatching:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)valuesForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)valueForKey:(id)arg1;
-- (void)valueForKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)valuesAndReturnError:(id *)arg1;
-- (void)valuesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)keysMatching:(id)arg1 error:(id *)arg2;
-- (void)keysMatching:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)keysAndReturnError:(id *)arg1;
-- (void)keysWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)dictionaryRepresentationForKeysMatching:(id)arg1 error:(id *)arg2;
-- (void)dictionaryRepresentationForKeysMatching:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)dictionaryRepresentationAndReturnError:(id *)arg1;
-- (void)dictionaryRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)importContentsOfJSONLDAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)subgraphWithEntities:(id)arg1;
-- (void)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 error:(id *)arg4;
 
 @end
 

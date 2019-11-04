@@ -12,6 +12,7 @@
     // Error parsing type: , name: savedStateProvider
     // Error parsing type: , name: offensiveStateProvider
     // Error parsing type: , name: draggableStateProvider
+    // Error parsing type: , name: paidAccessChecker
 }
 
 @end

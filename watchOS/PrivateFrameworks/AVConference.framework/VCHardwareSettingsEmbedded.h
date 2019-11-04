@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (int)deviceClass;
 + (id)sharedInstance;
+@property(readonly, nonatomic) _Bool isSecondDisplaySupportEnabled;
 @property(readonly, nonatomic) unsigned int audioPacketLossConcealmentAlgorithmAACELD;
 @property(readonly, nonatomic) _Bool supportsHEIFEncoding;
 @property(readonly, nonatomic) _Bool hasAppleNeuralEngine;

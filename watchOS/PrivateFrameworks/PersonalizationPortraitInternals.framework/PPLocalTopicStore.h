@@ -21,7 +21,6 @@
     PPTopicStorage *_storage;
 }
 
-+ (id)getScoredTopicsFeaturesWithTopicId:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(_Bool)arg5 scoreInterpreter:(id)arg6;
 + (_Bool)_yesWithProbability:(double)arg1;
 + (id)ppFeedbackItemToPPPBFeedbackItem:(id)arg1;
 + (float)resolvedPerRecordDecayRateForRecord:(id)arg1 perRecordDecayRate:(float)arg2;
@@ -35,6 +34,7 @@
 + (id)defaultStore;
 @property(readonly, nonatomic) PPTopicStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+- (id)getScoredTopicsFeaturesWithTopicId:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(_Bool)arg5 scoreInterpreter:(id)arg6;
 - (_Bool)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
 - (void)processFeedback:(id)arg1;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;

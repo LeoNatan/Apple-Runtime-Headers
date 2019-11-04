@@ -41,6 +41,7 @@
 - (id)CHRRoomApplicationItems;
 - (id)_displayTypeForTypeIdentifier:(id)arg1;
 - (int)_resolvedTimeScopeForTypeIdentifier:(id)arg1 displayDateInterval:(id)arg2;
+- (id)activityChartForDisplayDate:(id)arg1;
 - (id)interactiveChartForTypeIdentifier:(id)arg1 secondaryTypeIdentifier:(id)arg2 displayDateInterval:(id)arg3;
 - (id)chartForTypeIdentifier:(id)arg1 dateRange:(id)arg2 minimumSize:(struct CGSize)arg3 disableXAxis:(_Bool)arg4;
 - (id)chartForTypeIdentifier:(id)arg1 dateRange:(id)arg2 minimumSize:(struct CGSize)arg3;

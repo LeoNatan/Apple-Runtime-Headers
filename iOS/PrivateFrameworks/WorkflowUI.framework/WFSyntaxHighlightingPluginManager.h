@@ -14,13 +14,14 @@
     NSMutableArray *_tokenLines;
     unsigned long long _minimumChangedLine;
     unsigned long long _maxChangedLine;
-    JSManagedValue *_configurationFile;
     JSManagedValue *_colorScheme;
     JSManagedValue *_highlightingPlugin;
     JSManagedValue *_syntaxPlugin;
     unsigned long long _syntaxHighlightingType;
+    unsigned long long _syntaxHighlightingAppearance;
 }
 
+@property(nonatomic) unsigned long long syntaxHighlightingAppearance; // @synthesize syntaxHighlightingAppearance=_syntaxHighlightingAppearance;
 @property(nonatomic) unsigned long long syntaxHighlightingType; // @synthesize syntaxHighlightingType=_syntaxHighlightingType;
 - (void).cxx_destruct;
 - (id)defaultForegroundColor;
@@ -28,18 +29,18 @@
 - (void)loadSyntaxPlugin;
 - (void)loadHighlightingPlugin;
 - (void)loadColorSchemePlugin;
-- (id)loadPluginUsingConfigWithCallback:(id)arg1 moduleName:(id)arg2 module:(id)arg3;
-- (void)loadConfigurationFile;
+- (id)loadPluginUsingConfigWithModuleName:(id)arg1 module:(id)arg2;
 - (void)unloadPlugins;
 - (void)reloadPlugins;
 - (void)loadPlugins;
-- (void)highlightUpdatedTokensWithCallback:(CDUnknownBlockType)arg1;
+- (void)highlightAllTokensWithCallback:(CDUnknownBlockType)arg1;
 - (void)discardManagedReferencesForLineNumber:(unsigned long long)arg1;
 - (_Bool)didChangeLine:(unsigned long long)arg1 string:(id)arg2;
 - (void)didRemoveLineAtIndex:(unsigned long long)arg1;
 - (void)didAddLineAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)configurationFilesForAppearance:(unsigned long long)arg1;
 
 @end
 

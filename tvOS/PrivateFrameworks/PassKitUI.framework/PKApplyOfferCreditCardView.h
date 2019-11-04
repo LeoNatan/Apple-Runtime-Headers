@@ -31,6 +31,7 @@
 @property(retain, nonatomic) UILabel *aprForPurchaseTitleLabel; // @synthesize aprForPurchaseTitleLabel=_aprForPurchaseTitleLabel;
 @property(retain, nonatomic) UILabel *creditLimitTitleLabel; // @synthesize creditLimitTitleLabel=_creditLimitTitleLabel;
 - (void).cxx_destruct;
+- (_Bool)showSchumerBox;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)init;

@@ -22,14 +22,17 @@ __attribute__((visibility("hidden")))
     id <AVTouchBarMediaSelectionControlling><AVTouchBarPlaybackControlsControllingInternal><AVTouchBarTrackControlling><AVTimeControlling> _playerController;
     AVPlayerView *_playerView;
     NSCustomTouchBarItem *_playbackControlsTouchBarItem;
+    NSPopoverTouchBarItem *_compactTouchBarScrubberItem;
     AVTouchBarPlaybackControlsViewController *_touchBarPlaybackControlsViewController;
     NSPopoverTouchBarItem *_mediaSelectionButtonTouchBarItem;
     NSCustomTouchBarItem *_mediaSelectionOptionsTouchBarItem;
     AVTouchBarMediaSelectionButtonViewController *_touchBarMediaSelectionButtonViewController;
     AVTouchBarMediaSelectionViewController *_touchBarMediaSelectionViewController;
+    BOOL _prefersCompactTouchBarScrubber;
 }
 
 + (void)initialize;
+@property(nonatomic) BOOL prefersCompactTouchBarScrubber; // @synthesize prefersCompactTouchBarScrubber=_prefersCompactTouchBarScrubber;
 - (void).cxx_destruct;
 - (void)updateTouchBarItemIdentifiersForTouchBar:(id)arg1;
 - (BOOL)isTouchBarPlaybackControlsViewControllerLoaded;

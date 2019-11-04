@@ -18,6 +18,7 @@
     BOOL _interrupted;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_xpcQueue;
+    NSObject<OS_dispatch_queue> *_xpcEventQueue;
     NSXPCConnection *_xpcConnection;
     NSXPCListenerEndpoint *_endpoint;
     NSMutableDictionary *_keyPathToValues;
@@ -43,6 +44,7 @@
 @property(nonatomic) BOOL interrupted; // @synthesize interrupted=_interrupted;
 @property(retain, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *xpcEventQueue; // @synthesize xpcEventQueue=_xpcEventQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;

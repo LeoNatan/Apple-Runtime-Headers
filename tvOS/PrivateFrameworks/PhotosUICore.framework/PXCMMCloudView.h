@@ -22,8 +22,10 @@
     UIImageView *_graphicImageView;
     UILabel *_bodyLabel;
     UIButton *_learnMoreButton;
+    unsigned long long _style;
 }
 
+@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(readonly, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(readonly, nonatomic) UIImageView *graphicImageView; // @synthesize graphicImageView=_graphicImageView;
@@ -41,7 +43,7 @@
 - (id)_constrainedFontForTextStyle:(id)arg1 maximumContentSizeCategory:(id)arg2;
 @property(nonatomic) _Bool disableDismissAction;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 style:(unsigned long long)arg2;
 
 @end
 

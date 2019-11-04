@@ -136,7 +136,8 @@
 - (void)zoomToScale:(double)arg1 animated:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)dictionaryWithCroppedImageForRect:(struct CGRect)arg1 minimalCropDimension:(double)arg2 withOptions:(int)arg3;
 - (id)_newImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 cropRect:(struct CGRect)arg3 fullSize:(struct CGSize)arg4;
-- (id)newImageWithCropRect:(struct CGRect)arg1 minimalCropDimension:(double)arg2 croppedImageData:(id *)arg3 fullScreenImageData:(id *)arg4 fullScreenImage:(struct CGImage **)arg5 imageCropRect:(struct CGRect *)arg6 intersectCropWithFullRect:(_Bool)arg7;
+- (void)_getFullScreenImageData:(id *)arg1 forImage:(id)arg2 fullSize:(struct CGSize)arg3 imageView:(id)arg4 screenScaleTransform:(struct CGAffineTransform)arg5;
+- (id)newImageWithCropRect:(struct CGRect)arg1 minimalCropDimension:(double)arg2 croppedImageData:(id *)arg3 fullScreenImageData:(id *)arg4 imageCropRect:(struct CGRect *)arg5 intersectCropWithFullRect:(_Bool)arg6;
 - (void)_handleDoubleTap:(id)arg1;
 - (void)_handleFullSizeImageRequestResult:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3;
 - (void)_requestFullSizeImage;

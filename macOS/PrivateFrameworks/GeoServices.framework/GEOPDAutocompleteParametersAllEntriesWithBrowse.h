@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersAllEntriesWithBrowse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _supportedAutocompleteResultCellTypes;
     CDStruct_95bda58d _supportedListTypes;
@@ -25,12 +24,16 @@ __attribute__((visibility("hidden")))
     GEOPDRetainedSearchMetadata *_retainedSearch;
     GEOPDVenueIdentifier *_venueIdentifier;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxQueryBuilderSuggestions;
     int _maxResults;
     BOOL _highlightDiff;
     BOOL _interleaveCategorySuggestions;
     BOOL _supportClientRankingFeatureMetadata;
     BOOL _supportDirectionIntentSuggestions;
+    BOOL _supportRapAffordance;
     BOOL _supportSectionHeader;
     BOOL _supportUnresolvedDirectionIntent;
     struct {
@@ -40,6 +43,7 @@ __attribute__((visibility("hidden")))
         unsigned int has_interleaveCategorySuggestions:1;
         unsigned int has_supportClientRankingFeatureMetadata:1;
         unsigned int has_supportDirectionIntentSuggestions:1;
+        unsigned int has_supportRapAffordance:1;
         unsigned int has_supportSectionHeader:1;
         unsigned int has_supportUnresolvedDirectionIntent:1;
         unsigned int read_unknownFields:1;
@@ -68,6 +72,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_interleaveCategorySuggestions:1;
         unsigned int wrote_supportClientRankingFeatureMetadata:1;
         unsigned int wrote_supportDirectionIntentSuggestions:1;
+        unsigned int wrote_supportRapAffordance:1;
         unsigned int wrote_supportSectionHeader:1;
         unsigned int wrote_supportUnresolvedDirectionIntent:1;
     } _flags;
@@ -88,6 +93,8 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasSupportRapAffordance;
+@property(nonatomic) BOOL supportRapAffordance;
 - (int)StringAsSupportedAutocompleteResultCellTypes:(id)arg1;
 - (id)supportedAutocompleteResultCellTypesAsString:(int)arg1;
 - (void)setSupportedAutocompleteResultCellTypes:(int *)arg1 count:(unsigned long long)arg2;
@@ -146,6 +153,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasQuery;
 - (void)_readQuery;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

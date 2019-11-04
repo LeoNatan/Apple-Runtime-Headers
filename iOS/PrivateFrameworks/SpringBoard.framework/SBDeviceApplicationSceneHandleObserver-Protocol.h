@@ -13,6 +13,7 @@
 @optional
 - (void)sceneHandle:(SBDeviceApplicationSceneHandle *)arg1 didChangeActivationConditionsData:(NSData *)arg2;
 - (void)sceneHandle:(SBDeviceApplicationSceneHandle *)arg1 didChangeSceneTitle:(NSString *)arg2;
+- (void)sceneHandle:(SBDeviceApplicationSceneHandle *)arg1 didChangeStatusBarAvoidanceFrame:(struct CGRect)arg2;
 - (void)sceneHandle:(SBDeviceApplicationSceneHandle *)arg1 didChangeStatusBarParts:(long long)arg2;
 - (void)sceneHandle:(SBDeviceApplicationSceneHandle *)arg1 didChangeEffectiveForegroundness:(_Bool)arg2;
 @end

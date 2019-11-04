@@ -18,6 +18,7 @@
     HDAssertion *_preparedDatabaseAccessibilityAssertion;
     int _minimumSeriesSize;
     int _maximumSeriesSize;
+    int _deletedSamplesThreshold;
     HDProfile *_profile;
     _HDWorkoutCondenserAnalyticsAccumulator *_analyticsAccumulator;
 }
@@ -56,6 +57,7 @@
 - (_Bool)_queue_condenseWorkoutsWithAccessibilityAssertion:(id)arg1 batchLimit:(int)arg2 analyticsAccumulator:(id)arg3 error:(id *)arg4;
 - (_Bool)_queue_condenseWorkoutsWithBatchLimit:(int)arg1 analyticsAccumulator:(id)arg2 error:(id *)arg3;
 - (void)_queue_didPerformCondensationForReason:(int)arg1 success:(_Bool)arg2 error:(id)arg3;
+- (void)setDeletedSamplesThreshold:(int)arg1;
 - (void)setMaximumSeriesSize:(int)arg1;
 - (void)setMinimumSeriesSize:(int)arg1;
 - (id)condensableWorkoutsWithError:(id *)arg1;

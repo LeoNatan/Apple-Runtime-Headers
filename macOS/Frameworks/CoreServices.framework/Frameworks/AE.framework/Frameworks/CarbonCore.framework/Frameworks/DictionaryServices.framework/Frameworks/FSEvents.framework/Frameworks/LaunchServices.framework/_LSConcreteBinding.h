@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long badge;
 @property(readonly) unsigned long long variantFlags;
 - (struct OpaqueIconRef *)copyIconRef;
+- (BOOL)getUpdatedDatabaseUUID:(id *)arg1 sequenceNumber:(unsigned long long *)arg2;
 @property(readonly) BOOL selectedVariant;
 @property(readonly) BOOL templateVariant;
 - (BOOL)providesTemplateResources;

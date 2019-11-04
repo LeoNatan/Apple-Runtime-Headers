@@ -36,6 +36,7 @@
     _Bool _forceShowSetupLaterButton;
     _Bool _hideTitleText;
     id <PKExplanationViewDelegate> _delegate;
+    double _titleHyphenationFactor;
     UIImage *_image;
     UIView *_heroView;
     UIColor *_topBackgroundColor;
@@ -46,6 +47,7 @@
     NSAttributedString *_attributedBodyText;
     NSAttributedString *_attributedSecondaryBodyText;
     NSString *_bodyButtonText;
+    long long _bodyButtonNumberOfLines;
     UIView *_bodyView;
     long long _bodyTextAlignment;
     unsigned long long _bodyDataDetectorTypes;
@@ -63,6 +65,7 @@
 @property(nonatomic) unsigned long long bodyDataDetectorTypes; // @synthesize bodyDataDetectorTypes=_bodyDataDetectorTypes;
 @property(nonatomic) long long bodyTextAlignment; // @synthesize bodyTextAlignment=_bodyTextAlignment;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
+@property(nonatomic) long long bodyButtonNumberOfLines; // @synthesize bodyButtonNumberOfLines=_bodyButtonNumberOfLines;
 @property(copy, nonatomic) NSString *bodyButtonText; // @synthesize bodyButtonText=_bodyButtonText;
 @property(copy, nonatomic) NSAttributedString *attributedSecondaryBodyText; // @synthesize attributedSecondaryBodyText=_attributedSecondaryBodyText;
 @property(copy, nonatomic) NSAttributedString *attributedBodyText; // @synthesize attributedBodyText=_attributedBodyText;
@@ -75,6 +78,7 @@
 @property(retain, nonatomic) UIColor *topBackgroundColor; // @synthesize topBackgroundColor=_topBackgroundColor;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(nonatomic) double titleHyphenationFactor; // @synthesize titleHyphenationFactor=_titleHyphenationFactor;
 @property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
 @property(nonatomic) _Bool forceShowSetupLaterButton; // @synthesize forceShowSetupLaterButton=_forceShowSetupLaterButton;
 @property(nonatomic) _Bool showPrivacyView; // @synthesize showPrivacyView=_showPrivacyView;

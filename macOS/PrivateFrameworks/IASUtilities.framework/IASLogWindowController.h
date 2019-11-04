@@ -9,13 +9,12 @@
 #import <IASUtilities/NSTextFieldDelegate-Protocol.h>
 #import <IASUtilities/NSToolbarDelegate-Protocol.h>
 
-@class IASLogDataSource, NSArray, NSBundle, NSMutableDictionary, NSPanel, NSPopUpButton, NSSearchField, NSString, NSTableView, NSTextField, NSWindow;
+@class IASLogDataSource, NSArray, NSBundle, NSMutableDictionary, NSPopUpButton, NSSearchField, NSString, NSTableView, NSTextField, NSWindow;
 
 @interface IASLogWindowController : NSWindowController <NSToolbarDelegate, NSTextFieldDelegate>
 {
     NSWindow *window;
     NSTableView *uiLogView;
-    NSPanel *sendLogSheet;
     NSTextField *sendLogCommentTxt;
     NSTextField *sendLogContactTxt;
     NSBundle *_resourcesBundle;
@@ -28,8 +27,6 @@
     IASLogDataSource *_logDataSource;
 }
 
-+ (void)autoSendLogIfEnabled;
-+ (id)_autoSendHostIfEnabled;
 + (void)_sendLogViaHost:(id)arg1;
 - (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
@@ -37,11 +34,8 @@
 - (void)_setDefaultLogWindowFrame;
 - (void)saveDocument:(id)arg1;
 - (BOOL)writeLogToFile:(id)arg1;
-- (void)sendLogToApple:(id)arg1;
 - (void)_sendLogViaCrashReporter;
-- (void)cancelSendLogToApple:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
-- (void)showLogCommentSheet:(id)arg1;
 - (void)printInstallerDocument:(id)arg1;
 - (void)searchFieldTextChanged:(id)arg1;
 - (void)keyDown:(id)arg1;

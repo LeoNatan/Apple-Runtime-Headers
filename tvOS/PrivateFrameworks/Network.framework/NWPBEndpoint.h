@@ -27,18 +27,18 @@
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) BOOL hasTxtRecord;
-@property(readonly, nonatomic) BOOL hasInterface;
-@property(readonly, nonatomic) BOOL hasService;
-@property(readonly, nonatomic) BOOL hasHost;
-@property(readonly, nonatomic) BOOL hasAddress;
+@property(readonly, nonatomic) _Bool hasTxtRecord;
+@property(readonly, nonatomic) _Bool hasInterface;
+@property(readonly, nonatomic) _Bool hasService;
+@property(readonly, nonatomic) _Bool hasHost;
+@property(readonly, nonatomic) _Bool hasAddress;
 
 @end
 

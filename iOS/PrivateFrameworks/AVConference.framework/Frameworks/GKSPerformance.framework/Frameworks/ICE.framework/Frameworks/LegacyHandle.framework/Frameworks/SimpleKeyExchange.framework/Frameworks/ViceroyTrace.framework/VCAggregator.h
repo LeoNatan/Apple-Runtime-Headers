@@ -21,12 +21,14 @@ __attribute__((visibility("hidden")))
     unsigned int _switchIntoDupCount;
     unsigned int _direction;
     NSNumber *_streamToken;
+    NSString *_sessionID;
     NSObject<OS_dispatch_queue> *_stateQueue;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     id <VCAggregatorDelegate> _delegate;
     CDUnknownBlockType _periodicAggregationOccuredHandler;
 }
 
+@property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly) unsigned int direction; // @synthesize direction=_direction;
 @property(readonly) NSNumber *streamToken; // @synthesize streamToken=_streamToken;
 - (_Bool)didUpdateStringFrom:(id *)arg1 toString:(id)arg2;
@@ -54,7 +56,6 @@ __attribute__((visibility("hidden")))
 - (void)initAdaptiveLearningWithParameters:(id)arg1;
 - (void)flushCurrentSegment;
 - (unsigned int)RTPeriod;
-- (void)throwNotSupportedExceptionForMethod:(id)arg1;
 @property(readonly) id <VCAggregatorDelegate> delegate;
 - (void)setPeriodicAggregationOccuredHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

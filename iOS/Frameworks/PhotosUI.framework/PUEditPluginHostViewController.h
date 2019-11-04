@@ -6,17 +6,19 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <PhotosUI/PUEditingExtensionUndoButtonHost-Protocol.h>
 #import <PhotosUI/PXForcedDismissableViewController-Protocol.h>
 
-@class NSNumber, NSString, PUEditPlugin;
+@class NSNumber, NSString, PUEditPlugin, PUEditingExtensionUndoProxyHostSide, UIBarButtonItem;
 @protocol NSCopying, PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PUEditPluginHostViewController : UIViewController <PXForcedDismissableViewController>
+@interface PUEditPluginHostViewController : UIViewController <PXForcedDismissableViewController, PUEditingExtensionUndoButtonHost>
 {
     _Bool __extensionDidBeginContentEditing;
     _Bool __didHandleCancel;
     _Bool __didHandleDone;
+    _Bool _showUndoRedoButtons;
     PUEditPlugin *_plugin;
     id <PUEditPluginHostViewControllerDataSource> _dataSource;
     id <PUEditPluginHostViewControllerDelegate> _delegate;
@@ -24,8 +26,15 @@ __attribute__((visibility("hidden")))
     id <NSCopying> __request;
     id __disablingIdleTimerToken;
     NSNumber *__allowsFullScreen;
+    PUEditingExtensionUndoProxyHostSide *_undoProxy;
+    UIBarButtonItem *_undoBarButtonItem;
+    UIBarButtonItem *_redoBarButtonItem;
 }
 
+@property(nonatomic) _Bool showUndoRedoButtons; // @synthesize showUndoRedoButtons=_showUndoRedoButtons;
+@property(nonatomic) __weak UIBarButtonItem *redoBarButtonItem; // @synthesize redoBarButtonItem=_redoBarButtonItem;
+@property(nonatomic) __weak UIBarButtonItem *undoBarButtonItem; // @synthesize undoBarButtonItem=_undoBarButtonItem;
+@property(retain, nonatomic) PUEditingExtensionUndoProxyHostSide *undoProxy; // @synthesize undoProxy=_undoProxy;
 @property(retain, nonatomic, setter=_setAllowsFullScreen:) NSNumber *_allowsFullScreen; // @synthesize _allowsFullScreen=__allowsFullScreen;
 @property(retain, nonatomic, setter=_setDisablingIdleTimerToken:) id _disablingIdleTimerToken; // @synthesize _disablingIdleTimerToken=__disablingIdleTimerToken;
 @property(nonatomic, setter=_setDidHandleDone:) _Bool _didHandleDone; // @synthesize _didHandleDone=__didHandleDone;
@@ -37,12 +46,18 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUEditPluginHostViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) PUEditPlugin *plugin; // @synthesize plugin=_plugin;
 - (void).cxx_destruct;
+- (void)handleRedoButton:(id)arg1;
+- (void)handleUndoButton:(id)arg1;
+- (void)setUndoEnabled:(_Bool)arg1 redoEnabled:(_Bool)arg2;
+- (void)setShowUndoRedo:(_Bool)arg1;
+- (void)_setupUndoProxy;
 - (void)_endDisablingIdleTimerIfNecessary;
 - (void)_beginDisablingIdleTimer;
 - (void)_handleDoneButton:(id)arg1;
 - (void)_handleCancel;
 - (void)_handleCancelButton:(id)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
+- (void)_updateBarButtonsWithUndoRedoVisible:(_Bool)arg1;
 - (void)_dismiss;
 - (id)_extensionVendorProxy;
 - (id)_hostContext;

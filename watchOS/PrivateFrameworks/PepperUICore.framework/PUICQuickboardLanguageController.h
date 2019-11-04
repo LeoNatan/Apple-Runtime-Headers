@@ -18,9 +18,11 @@
     NSString *_inputContextIdentifier;
     UIViewController<PUICQuickboardLanguageControllerDelegate> *_presentingDelegate;
     _Bool _presentingLanguagesForDictation;
+    _Bool _includeCannedResponseOnlyLanguages;
 }
 
 + (id)supportedLanguageInputModes;
++ (_Bool)isDictationInputSupportedFor:(id)arg1;
 - (void).cxx_destruct;
 - (void)actionContentControllerCancel:(id)arg1;
 - (void)notifyOfDictationLanguageChange;
@@ -29,12 +31,14 @@
 - (void)updateCurrentInputMode:(id)arg1;
 - (void)showDictationLanguageList;
 - (void)showLanguageList;
+- (id)_languageSelectionActionItemForViewController:(id)arg1 forDictationOnly:(_Bool)arg2;
 - (id)dictationLanguageSelectionActionItemForViewController:(id)arg1;
 - (id)languageSelectionActionItemForViewController:(id)arg1;
 @property(readonly, nonatomic) NSString *inputContextIdentifier;
 @property(readonly, nonatomic) NSString *primaryDictationLanguage;
 @property(readonly, nonatomic) NSString *primaryLanguage;
 - (void)languageDefaultsChanged;
+- (id)initWithInputContextIdentifier:(id)arg1 allowCannedResponseOnlyLanguages:(_Bool)arg2;
 - (id)initWithInputContextIdentifier:(id)arg1;
 - (id)init;
 - (void)dealloc;

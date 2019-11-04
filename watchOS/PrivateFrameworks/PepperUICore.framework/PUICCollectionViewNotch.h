@@ -8,6 +8,7 @@
 
 @interface PUICCollectionViewNotch : NSObject
 {
+    _Bool _shouldIgnoreNotch;
     float _start;
     float _end;
     unsigned int _startEdgeType;
@@ -15,14 +16,19 @@
     float _restingPosition;
 }
 
+@property(nonatomic) _Bool shouldIgnoreNotch; // @synthesize shouldIgnoreNotch=_shouldIgnoreNotch;
 @property(nonatomic) float restingPosition; // @synthesize restingPosition=_restingPosition;
 @property(nonatomic) unsigned int endEdgeType; // @synthesize endEdgeType=_endEdgeType;
 @property(nonatomic) unsigned int startEdgeType; // @synthesize startEdgeType=_startEdgeType;
 @property(nonatomic) float end; // @synthesize end=_end;
 @property(nonatomic) float start; // @synthesize start=_start;
 - (id)description;
-- (CDStruct_b31d0695)puicNotch;
-- (id)initWitRestingPosition:(float)arg1 length:(float)arg2 restingLocation:(int)arg3;
+- (id)rangeDescription;
+- (_Bool)hasSoftEdge;
+- (_Bool)overlapsWithNotch:(id)arg1;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)initWitRestingPosition:(float)arg1 radius:(float)arg2 restingLocation:(int)arg3;
 - (id)initWithCenter:(float)arg1 radius:(float)arg2 startEdgeType:(unsigned int)arg3 endEdgeType:(unsigned int)arg4;
 - (id)initWithCenter:(float)arg1 radius:(float)arg2;
 

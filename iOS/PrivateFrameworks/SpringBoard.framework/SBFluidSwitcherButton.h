@@ -6,27 +6,37 @@
 
 #import <UIKit/UIControl.h>
 
-@class MTMaterialView, NSString, UIImage, UIImageView, UIView;
+@class NSString, UIImage, UIImageView, UIView;
 
 @interface SBFluidSwitcherButton : UIControl
 {
-    MTMaterialView *_materialView;
+    UIView *_backgroundView;
     UIImageView *_glyphImageView;
     UIImageView *_xPlusDView;
     UIView *_highlightView;
     UIImage *_image;
+    NSString *_backdropGroupName;
+    long long _buttonStyle;
     struct UIEdgeInsets _extendedEdgeInsets;
 }
 
+@property(nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;
+@property(retain, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(nonatomic) struct UIEdgeInsets extendedEdgeInsets; // @synthesize extendedEdgeInsets=_extendedEdgeInsets;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+- (void)_configureGlyphImageViewIfNecessaryForStyle:(long long)arg1;
+- (void)_configureXPlusDViewIfNecessaryForStyle:(long long)arg1;
+- (void)_invalidateXPlusDView;
+- (void)_configureBackgroundViewIfNecessaryForStyle:(long long)arg1;
+- (void)_invalidateBackgroundView;
+- (id)_backgroundMaterialView;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_addHighlightViewIfNecessary;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)didMoveToSuperview;
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
-@property(retain, nonatomic) NSString *backdropGroupName;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

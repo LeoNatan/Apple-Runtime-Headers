@@ -60,10 +60,11 @@
 + (void)setSpeechJobFinishedUnitTestBlock:(CDUnknownBlockType)arg1;
 + (id)availableLanguageCodes;
 + (id)availableVoicesForLanguageCode:(id)arg1;
++ (void)setTestingAvailableVoicesForLanguageCode:(id)arg1;
 + (id)voiceAccessQueue;
 + (id)allAvailableVoices;
-+ (void)refreshAllAvailableVoices:(_Bool)arg1;
-+ (void)refreshAllAvailableVoices;
++ (id)refreshAllAvailableVoices:(_Bool)arg1;
++ (id)refreshAllAvailableVoices;
 + (id)synthesizerForSynthesizerID:(unsigned long long)arg1;
 + (id)voiceAssetsForTesting;
 + (void)setVoiceAssetsForTesting:(id)arg1;

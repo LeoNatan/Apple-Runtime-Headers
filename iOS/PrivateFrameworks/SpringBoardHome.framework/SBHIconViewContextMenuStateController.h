@@ -28,7 +28,7 @@
 - (void)floatyFolderViewDidScrollHiddenIconViewAway:(id)arg1;
 - (void)iconViewDidAnimateContextMenu:(id)arg1;
 - (void)iconViewWillAnimateContextMenu:(id)arg1;
-- (void)iconViewDidDismissContextMenu:(id)arg1;
+- (void)iconViewWillDismissContextMenu:(id)arg1;
 - (void)iconViewWillPresentContextMenu:(id)arg1;
 - (void)unregisterIconView:(id)arg1;
 - (void)registerIconView:(id)arg1;

@@ -13,10 +13,12 @@
 @interface GEOOriginalRoute : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSData *_originalDirectionsResponseID;
     NSData *_routeHandle;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _originalRoutePurpose;
     unsigned int _routeIndex;
     struct {
@@ -59,6 +61,8 @@
 - (id)originalRoutePurposeAsString:(int)arg1;
 @property(nonatomic) _Bool hasOriginalRoutePurpose;
 @property(nonatomic) int originalRoutePurpose;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

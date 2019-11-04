@@ -13,10 +13,12 @@
 @interface GEOWiFiQualityServiceRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOPDClientMetadata *_clientMetadata;
     NSMutableArray *_locationSearches;
     NSMutableArray *_networkSearches;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_clientMetadata:1;
         unsigned int read_locationSearches:1;
@@ -60,6 +62,8 @@
 @property(retain, nonatomic) GEOPDClientMetadata *clientMetadata;
 @property(readonly, nonatomic) BOOL hasClientMetadata;
 - (void)_readClientMetadata;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (void)_handleSourceDisplayOrderUpdated:(id)arg1;
 - (void)_notifyDelegateOfUpdatedSourceDisplayOrder:(id)arg1;
 - (void)updateMediaSourceDisplayOrder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)messageReceiveQueue;
 - (id)messageDestination;
 - (id)messageTargetUUID;

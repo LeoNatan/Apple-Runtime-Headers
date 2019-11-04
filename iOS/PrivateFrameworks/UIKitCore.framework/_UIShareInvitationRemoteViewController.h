@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_dismissForActivityRepresentation:(CDUnknownBlockType)arg1;
 - (void)_dismissAndRepresentForActivity:(CDUnknownBlockType)arg1;
 - (void)_performHeaderActionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_cloudSharingControllerDidActivateShowSharedFolder;
 - (void)_cloudSharingControllerDidModifySecondarySwitch:(_Bool)arg1;
 - (void)_cloudSharingControllerDidModifyPrimarySwitch:(_Bool)arg1;
 - (void)_performAuxiliaryActionWithCompletion:(CDUnknownBlockType)arg1;

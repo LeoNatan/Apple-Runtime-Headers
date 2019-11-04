@@ -13,14 +13,17 @@
 @interface GEOTileSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_baseURL;
     NSMutableArray *_countryRegionWhitelists;
+    NSMutableArray *_deviceSKUWhitelists;
     NSString *_localizationURL;
     NSString *_multiTileURL;
     NSMutableArray *_supportedLanguages;
     NSMutableArray *_validVersions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _alternativeMultipathTCPPort;
     int _checksumType;
     unsigned int _dataSet;
@@ -44,6 +47,7 @@
         unsigned int read_unknownFields:1;
         unsigned int read_baseURL:1;
         unsigned int read_countryRegionWhitelists:1;
+        unsigned int read_deviceSKUWhitelists:1;
         unsigned int read_localizationURL:1;
         unsigned int read_multiTileURL:1;
         unsigned int read_supportedLanguages:1;
@@ -51,6 +55,7 @@
         unsigned int wrote_unknownFields:1;
         unsigned int wrote_baseURL:1;
         unsigned int wrote_countryRegionWhitelists:1;
+        unsigned int wrote_deviceSKUWhitelists:1;
         unsigned int wrote_localizationURL:1;
         unsigned int wrote_multiTileURL:1;
         unsigned int wrote_supportedLanguages:1;
@@ -70,6 +75,7 @@
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)deviceSKUWhitelistType;
 + (Class)countryRegionWhitelistType;
 + (Class)supportedLanguageType;
 + (Class)validVersionType;
@@ -86,6 +92,13 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)deviceSKUWhitelistAtIndex:(unsigned int)arg1;
+- (unsigned int)deviceSKUWhitelistsCount;
+- (void)_addNoFlagsDeviceSKUWhitelist:(id)arg1;
+- (void)addDeviceSKUWhitelist:(id)arg1;
+- (void)clearDeviceSKUWhitelists;
+@property(retain, nonatomic) NSMutableArray *deviceSKUWhitelists;
+- (void)_readDeviceSKUWhitelists;
 @property(nonatomic) _Bool hasAlternativeMultipathTCPPort;
 @property(nonatomic) unsigned int alternativeMultipathTCPPort;
 @property(nonatomic) _Bool hasSupportsMultipathTCP;
@@ -147,6 +160,8 @@
 @property(retain, nonatomic) NSString *baseURL;
 @property(readonly, nonatomic) _Bool hasBaseURL;
 - (void)_readBaseURL;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

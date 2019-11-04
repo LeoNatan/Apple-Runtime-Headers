@@ -17,6 +17,7 @@
     UIImageView *_pillImageView;
 }
 
++ (struct CGRect)sideButtonFrameAtView:(id)arg1;
 + (struct CGRect)sideButtonFrame;
 + (id)_contentStackViewWithSubviews:(id)arg1;
 + (id)_pillImageViewWithImage:(id)arg1;
@@ -31,8 +32,8 @@
 @property(retain, nonatomic) UILayoutGuide *topAscenderLayoutGuide; // @synthesize topAscenderLayoutGuide=_topAscenderLayoutGuide;
 - (void).cxx_destruct;
 - (int)_stackViewAlignmentFromContentAlignment:(unsigned int)arg1;
+- (void)_stopBounceAnimationIfNecessary;
 - (void)stopBounceAnimationIfNecessary;
-- (void)stopBounceAnimation;
 - (void)startBounceAnimation;
 - (void)_setUpTopAscenderLayoutGuide;
 @property(copy, nonatomic) NSString *instructionText;

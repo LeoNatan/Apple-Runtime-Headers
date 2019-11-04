@@ -93,8 +93,6 @@
     UITableViewCell *_swipeToDeleteCell;
     _UIIndexPathIdentityTracker *_identityTracker;
     long long _updateCount;
-    long long _shadowUpdateCount;
-    long long _revertingShadowUpdateCount;
     NSIndexPath *_displayingCellContentStringIndexPath;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UILongPressGestureRecognizer *_upArrowLongPressGestureRecognizer;
@@ -330,6 +328,8 @@
         unsigned int dragInteractionEnabled:1;
         unsigned int insetsContentViewsToSafeArea:1;
         unsigned int generatingDescriptionWithDataSource:1;
+        unsigned int isPerformingShadowUpdates:1;
+        unsigned int isPerformingRevertingShadowUpdates:1;
         unsigned int dataSourceIsDiffableDataSource:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isUpdatingVisibleCells:1;

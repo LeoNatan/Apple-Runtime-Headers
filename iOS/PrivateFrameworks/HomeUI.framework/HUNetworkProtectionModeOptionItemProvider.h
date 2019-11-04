@@ -6,23 +6,22 @@
 
 #import <Home/HFItemProvider.h>
 
-@class NSMutableSet, NSSet;
+@class HMAccessoryNetworkProtectionGroup, NSMutableSet;
 
 @interface HUNetworkProtectionModeOptionItemProvider : HFItemProvider
 {
-    NSSet *_networkConfigurationProfiles;
+    HMAccessoryNetworkProtectionGroup *_group;
     NSMutableSet *_networkProtectionModeOptionItems;
 }
 
 @property(retain, nonatomic) NSMutableSet *networkProtectionModeOptionItems; // @synthesize networkProtectionModeOptionItems=_networkProtectionModeOptionItems;
-@property(readonly, copy, nonatomic) NSSet *networkConfigurationProfiles; // @synthesize networkConfigurationProfiles=_networkConfigurationProfiles;
+@property(readonly, copy, nonatomic) HMAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
 - (void).cxx_destruct;
-- (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
-- (id)initWithNetworkConfigurationProfiles:(id)arg1;
+- (id)initWithGroup:(id)arg1;
 
 @end
 

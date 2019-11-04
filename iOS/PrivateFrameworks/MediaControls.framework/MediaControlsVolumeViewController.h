@@ -12,14 +12,14 @@
 #import <MediaControls/MediaControlsVolumeControllerObserver-Protocol.h>
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CALayer, MediaControlsVolumeController, MediaControlsVolumeSliderView, NSArray, NSString, UIImageView, UIViewPropertyAnimator, UIWindowScene;
+@class CALayer, MediaControlsVolumeController, MediaControlsVolumeSliderView, NSArray, NSString, UIViewPropertyAnimator, UIWindowScene;
 @protocol MediaControlsVolumeViewControllerDelegate;
 
 @interface MediaControlsVolumeViewController : UIViewController <MediaControlsVolumeControllerObserver, MPVolumeDisplaying, CCUIGroupRendering, UIGestureRecognizerDelegate, CCUIContentModuleContentViewController>
 {
     MediaControlsVolumeSliderView *_primarySlider;
     MediaControlsVolumeSliderView *_secondarySlider;
-    UIImageView *_affordanceImageView;
+    NSString *_packageName;
     _Bool _isExpanded;
     id <MediaControlsVolumeViewControllerDelegate> _delegate;
     MediaControlsVolumeController *_volumeController;
@@ -28,13 +28,14 @@
 @property(retain, nonatomic) MediaControlsVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(nonatomic) __weak id <MediaControlsVolumeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)_glyphStateForVolumeLevel:(double)arg1;
 - (void)_dismissMediaControlsVolumeViewController;
 - (void)_performWithoutAnimationWhileHidden:(CDUnknownBlockType)arg1;
+- (void)_updateVisibility;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_secondarySliderValueDidChange:(id)arg1;
 - (void)_primarySliderValueDidChange:(id)arg1;
 - (void)mediaControlsVolumeController:(id)arg1 didChangeVolumeAvailable:(_Bool)arg2 effectiveVolume:(float)arg3 forRoute:(unsigned long long)arg4;
+- (void)mediaControlsVolumeController:(id)arg1 didChangeUserInteractionEnabled:(_Bool)arg2 forRoute:(unsigned long long)arg3;
 - (void)mediaControlsVolumeController:(id)arg1 didUpdateSplitRoute:(_Bool)arg2;
 @property(readonly, nonatomic) NSString *volumeAudioCategory;
 @property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;

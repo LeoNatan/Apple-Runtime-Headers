@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
 - (void)executionEnvironmentRunningStateDidChange:(id)arg1;
 - (id)hu_preloadContent;
+- (void)itemManagerDidFinishUpdate:(id)arg1;
 - (void)itemManager:(id)arg1 didChangeSourceItem:(id)arg2;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
 - (void)itemManager:(id)arg1 didChangeOverallLoadingState:(unsigned long long)arg2;

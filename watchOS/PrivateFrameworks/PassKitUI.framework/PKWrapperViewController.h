@@ -19,10 +19,12 @@
 - (_Bool)extendedLayoutIncludesOpaqueBars;
 - (unsigned int)edgesForExtendedLayout;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)_updatePreferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (id)initWithWrappedViewController:(id)arg1 type:(int)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

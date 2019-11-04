@@ -61,6 +61,7 @@
 - (void)setGreyedOut:(_Bool)arg1;
 - (void)reloadImagesForCurrentCharacter;
 - (id)initForCharacter:(unsigned int)arg1;
+@property(readonly, nonatomic) UIColor *highlightedButtonColor;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,10 +13,12 @@
 @interface GEORegionalResourceTileData : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributions;
     NSMutableArray *_icons;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_attributions:1;
@@ -57,6 +59,8 @@
 - (void)clearIcons;
 @property(retain, nonatomic) NSMutableArray *icons;
 - (void)_readIcons;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

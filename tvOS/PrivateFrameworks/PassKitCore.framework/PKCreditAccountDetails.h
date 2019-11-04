@@ -6,7 +6,7 @@
 
 #import <PassKitCore/PKAccountDetails.h>
 
-@class NSDate, NSSet, NSString, NSTimeZone, NSURL, PKCreditAccountRates, PKCreditAccountSummary;
+@class NSDate, NSSet, NSString, NSTimeZone, NSURL, PKCreditAccountRates, PKCreditAccountSummary, PKCurrencyAmount;
 
 @interface PKCreditAccountDetails : PKAccountDetails
 {
@@ -26,9 +26,11 @@
     long long _cardType;
     PKCreditAccountSummary *_accountSummary;
     PKCreditAccountRates *_rates;
+    NSSet *_installmentPlans;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSSet *installmentPlans; // @synthesize installmentPlans=_installmentPlans;
 @property(retain, nonatomic) PKCreditAccountRates *rates; // @synthesize rates=_rates;
 @property(retain, nonatomic) PKCreditAccountSummary *accountSummary; // @synthesize accountSummary=_accountSummary;
 @property(nonatomic) long long cardType; // @synthesize cardType=_cardType;
@@ -46,6 +48,10 @@
 @property(copy, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(copy, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
 - (void).cxx_destruct;
+- (long long)numberOfActiveStatementedInstallments;
+- (long long)numberOfActiveInstallments;
+@property(readonly, copy, nonatomic) PKCurrencyAmount *totalBalance;
+@property(readonly, copy, nonatomic) PKCurrencyAmount *cardBalance;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;
@@ -56,6 +62,7 @@
 - (id)virtualCardWithIdentifier:(id)arg1;
 - (void)removeVirtualCard:(id)arg1;
 - (void)addOrUpdateVirtualCard:(id)arg1;
+- (id)installmentPlanWithIdentifier:(id)arg1;
 - (void)ingestExtendedAccountDetails:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

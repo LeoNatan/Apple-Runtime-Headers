@@ -19,7 +19,6 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (BOOL)isPhotosTCCAccessRestricted;
-- (void)photoAccessPowersActive;
 - (int)photosTCCAccessStatus;
 - (BOOL)isPhotosTCCAccessNotAllowed;
 - (BOOL)isPhotosTCCAccessAllowed;

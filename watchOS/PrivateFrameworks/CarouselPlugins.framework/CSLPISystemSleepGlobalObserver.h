@@ -31,6 +31,7 @@
 - (void)_stopObserving;
 - (void)_startObserving;
 - (void)_observeWithAction:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)abortAllSleepTasks;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 @property(readonly, copy) NSString *description;

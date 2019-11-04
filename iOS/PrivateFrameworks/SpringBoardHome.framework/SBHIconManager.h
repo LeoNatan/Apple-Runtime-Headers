@@ -161,7 +161,7 @@
 - (id)nestingViewController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (void)rootFolderController:(id)arg1 didEndOverscrollOnFirstPageWithVelocity:(double)arg2;
 - (void)rootFolderController:(id)arg1 didOverscrollOnFirstPageByAmount:(double)arg2;
-- (_Bool)rootFolderControllerShouldAllowOverscrollOnFirstPage:(id)arg1;
+- (void)rootFolderController:(id)arg1 didChangeEffectiveSidebarVisibilityProgress:(double)arg2;
 - (void)rootFolderController:(id)arg1 didChangeSidebarVisibilityProgress:(double)arg2;
 - (id)externalDockIconListViewForRootFolderController:(id)arg1;
 - (void)rootFolderController:(id)arg1 willUsePropertyAnimator:(id)arg2 toTransitionToState:(long long)arg3;
@@ -225,10 +225,10 @@
 - (id)iconViewForIcon:(id)arg1 location:(id)arg2;
 - (void)enumerateIconViewQueryableChildrenUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)viewMap:(id)arg1 shouldRecycleView:(id)arg2;
+- (id)viewMap:(id)arg1 makeNewViewOfClass:(Class)arg2;
 - (id)recycledViewsContainerProviderForViewMap:(id)arg1;
 - (unsigned long long)viewMap:(id)arg1 maxRecycledViewsOfClass:(Class)arg2;
 - (void)iconViewWasRecycled:(id)arg1;
-- (id)parallaxSettingsForShortcutsPresentationWithIconView:(id)arg1;
 - (_Bool)iconView:(id)arg1 shouldActivateApplicationShortcutItem:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)iconView:(id)arg1 applicationShortcutItemsWithProposedItems:(id)arg2;
 - (id)applicationShortcutWidgetBundleIdentifierForShortcutsWithIconView:(id)arg1;
@@ -286,6 +286,9 @@
 - (void)presentStatistics;
 @property(readonly, copy, nonatomic) NSString *statisticsSummary;
 - (void)getStatistics:(struct SBHIconManagerStatistics *)arg1;
+@property(readonly, nonatomic, getter=isSidebarVisibilityGestureActive) _Bool sidebarVisibilityGestureActive;
+@property(readonly, nonatomic, getter=isSidebarEffectivelyVisible) _Bool sidebarEffectivelyVisible;
+@property(readonly, nonatomic, getter=isSidebarVisible) _Bool sidebarVisible;
 @property(readonly, nonatomic, getter=isTransitioningHomeScreenState) _Bool transitioningHomeScreenState;
 - (_Bool)_isShowingOrTransitioningToSearchableTodayView;
 - (_Bool)_isShowingSearchableTodayView;
@@ -350,6 +353,7 @@
 - (void)cancelAllDrags;
 @property(readonly, nonatomic, getter=isIconDragging) _Bool iconDragging;
 @property(readonly, copy) NSString *description;
+- (void)organizeAllIconsIntoFolders;
 - (void)runDownloadingIconTest;
 - (_Bool)resetIconLayoutWithOptions:(unsigned long long)arg1;
 - (id)accessibilityTintColorForScreenRect:(struct CGRect)arg1;
@@ -360,6 +364,7 @@
 - (void)setIdleModeText:(id)arg1;
 @property(readonly, nonatomic, getter=isIconContentPossiblyVisibleOverApplication) _Bool iconContentPossiblyVisibleOverApplication;
 @property(readonly, nonatomic, getter=isRootFolderContentVisible) _Bool rootFolderContentVisible;
+- (_Bool)shouldRecycleIconView:(id)arg1;
 @property(readonly, nonatomic) SBHIconImageCache *iconImageCache;
 @property(readonly, nonatomic) SBFolderIconImageCache *folderIconImageCache;
 - (id)iconLabelImageCache;
@@ -403,6 +408,7 @@
 - (id)dockListView;
 - (id)rootIconListAtIndex:(long long)arg1;
 - (id)currentRootIconList;
+- (void)clearHighlightedIcon:(id)arg1;
 - (void)clearHighlightedIcon;
 - (void)highlightIconView:(id)arg1;
 - (_Bool)shouldHighlightTouchedIconView:(id)arg1;

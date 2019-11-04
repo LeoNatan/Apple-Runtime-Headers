@@ -9,7 +9,7 @@
 #import <ShareSheet/UIActivityExtensionItemDataSource-Protocol.h>
 #import <ShareSheet/UIActivityExtensionItemDataTarget-Protocol.h>
 
-@class NSDate, NSExtension, NSExtensionItem, NSString, UIViewController, _UIActivityBundleHelper;
+@class NSDate, NSExtension, NSExtensionItem, NSString, UISUIActivityExtensionItemDataRequest, UIViewController, _UIActivityBundleHelper;
 
 @interface UIApplicationExtensionActivity : UIActivity <UIActivityExtensionItemDataSource, UIActivityExtensionItemDataTarget>
 {
@@ -22,12 +22,14 @@
     _UIActivityBundleHelper *_activityBundleHelper;
     CDUnknownBlockType _extensionRequestCleanupCompletion;
     NSDate *_installationDate;
+    UISUIActivityExtensionItemDataRequest *_extensionItemDataRequest;
 }
 
 + (id)preparedActivityExtensionItemDataForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (id)_activityExtensionItemsForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (long long)activityCategory;
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
+@property(retain, nonatomic) UISUIActivityExtensionItemDataRequest *extensionItemDataRequest; // @synthesize extensionItemDataRequest=_extensionItemDataRequest;
 @property(readonly, nonatomic) NSDate *installationDate; // @synthesize installationDate=_installationDate;
 @property(copy, nonatomic) CDUnknownBlockType extensionRequestCleanupCompletion; // @synthesize extensionRequestCleanupCompletion=_extensionRequestCleanupCompletion;
 @property(retain, nonatomic) _UIActivityBundleHelper *activityBundleHelper; // @synthesize activityBundleHelper=_activityBundleHelper;
@@ -55,6 +57,7 @@
 - (id)activityTitle;
 - (long long)_defaultSortGroup;
 - (id)activityType;
+@property(readonly, nonatomic) NSString *containingAppBundleIdentifier;
 - (void)_injectedJavaScriptResult:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;

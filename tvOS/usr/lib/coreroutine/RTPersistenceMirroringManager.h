@@ -18,7 +18,6 @@
 @interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringMetricsDelegate, RTPersistenceMirroringRequestDelegate, RTPersistenceMirroringDelegate, RTPurgable, RTDiagnosticProvider>
 {
     RTDefaultsManager *_defaultsManager;
-    RTInvocationDispatcher *_dispatcher;
     RTTimerManager *_timerManager;
     RTAccountManager *_accountManager;
     RTReachabilityManager *_reachabilityManager;
@@ -37,9 +36,10 @@
     RTXPCActivityManager *_xpcActivityManager;
     RTPlatform *_platform;
     RTPersistenceCloudDeletionEnforcer *_persistenceCloudDeletionEnforcer;
+    RTInvocationDispatcher *_dispatcher;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) RTPersistenceCloudDeletionEnforcer *persistenceCloudDeletionEnforcer; // @synthesize persistenceCloudDeletionEnforcer=_persistenceCloudDeletionEnforcer;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;

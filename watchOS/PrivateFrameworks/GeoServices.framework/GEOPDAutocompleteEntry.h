@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAutocompleteEntryAddress *_address;
     GEOPDAutocompleteEntryBrandProfile *_brandProfile;
@@ -30,6 +29,9 @@ __attribute__((visibility("hidden")))
     GEOPDAutocompleteEntryQuery *_query;
     GEOPDRetainedSearchMetadata *_retainSearch;
     GEOPDServerResultScoreMetadata *_serverResultScoreMetadata;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _autocompleteResultCellType;
     int _sortPriority;
     int _type;
@@ -145,6 +147,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDAutocompleteEntryHighlightLine *highlightMain;
 @property(readonly, nonatomic) _Bool hasHighlightMain;
 - (void)_readHighlightMain;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -13,12 +13,14 @@
 @interface GEORPFeedbackUserInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSData *_devicePushToken;
     NSString *_preferredEmail;
     GEORPUserCredentials *_userCredentials;
     NSString *_userEmail;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_devicePushToken:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) GEORPUserCredentials *userCredentials;
 @property(readonly, nonatomic) _Bool hasUserCredentials;
 - (void)_readUserCredentials;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

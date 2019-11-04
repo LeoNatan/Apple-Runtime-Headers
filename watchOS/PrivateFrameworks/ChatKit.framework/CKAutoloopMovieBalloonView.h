@@ -14,6 +14,7 @@
 {
     _Bool _isJellyfishVideo;
     _Bool _isMuted;
+    _Bool _isListeningToVideoPlayer;
     CKMovieMediaObject *_mediaObject;
     ISVideoPlayerUIView *_videoPlayer;
     ISWrappedAVPlayer *_avPlayer;
@@ -25,7 +26,9 @@
 + (id)_autoloopAVAudioSessionQueue;
 + (_Bool)isEnabled;
 + (Class)VideoPlayerUIViewClass;
++ (Class)AVPlayerLayerClass;
 + (Class)AVPlayerClass;
+@property(nonatomic) _Bool isListeningToVideoPlayer; // @synthesize isListeningToVideoPlayer=_isListeningToVideoPlayer;
 @property(nonatomic) float playbackRateWhenPlayerIsReady; // @synthesize playbackRateWhenPlayerIsReady=_playbackRateWhenPlayerIsReady;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(nonatomic) _Bool isMuted; // @synthesize isMuted=_isMuted;
@@ -49,10 +52,16 @@
 - (_Bool)_applicationStateAcceptableForLooping;
 - (void)_thermalStateDidChange:(id)arg1;
 - (_Bool)_thermalStateAcceptableForLooping;
+- (void)prepareForAcknowledgementDismissal;
+- (void)prepareForAcknowledgementDisplay;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)stopListeningToVideoPlayer;
+- (void)startListeningToVideoPlayer;
 - (void)layoutSubviews;
 @property(readonly, copy) NSString *description;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) _Bool isPlaying;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;

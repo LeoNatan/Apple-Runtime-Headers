@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOETAResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPlaceSearchResponse *_placeSearchResponse;
     NSMutableArray *_sortedETAs;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distance;
     unsigned int _historicTravelTime;
     unsigned int _liveTravelTime;
@@ -76,6 +78,8 @@ __attribute__((visibility("hidden")))
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
 @property(nonatomic) int status;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

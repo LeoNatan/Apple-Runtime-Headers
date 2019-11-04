@@ -9,7 +9,7 @@
 #import <HomeUI/HFCameraPlaybackEngineObserver-Protocol.h>
 #import <HomeUI/HFPosterFrameImageObserver-Protocol.h>
 
-@class HFCameraPlaybackEngine, HMCameraClip, HMCameraClipManager, NSString, UIImageView;
+@class HFCameraPlaybackEngine, HMCameraClip, NSString, UIImageView;
 
 @interface HUCameraPlayerPlaceholderContentViewController : UIViewController <HFCameraPlaybackEngineObserver, HFPosterFrameImageObserver>
 {
@@ -24,7 +24,7 @@
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(nonatomic) BOOL cameraPlayerHasContentToShow; // @synthesize cameraPlayerHasContentToShow=_cameraPlayerHasContentToShow;
 - (void).cxx_destruct;
-- (void)manager:(id)arg1 didUpdateImage:(id)arg2 withTimeOffset:(double)arg3 fromClip:(id)arg4;
+- (void)manager:(id)arg1 didFindImage:(id)arg2 atTimeOffset:(double)arg3 forClip:(id)arg4;
 - (BOOL)_shouldHidePlaceholderContentForCurrentAccessMode;
 - (void)_animateState:(BOOL)arg1 placeholderImage:(id)arg2;
 - (void)_updateStateAnimated:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -37,7 +37,6 @@
 - (id)initWithPlaybackEngine:(id)arg1;
 
 // Remaining properties
-@property(readonly, nonatomic) HMCameraClipManager *clipManager;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

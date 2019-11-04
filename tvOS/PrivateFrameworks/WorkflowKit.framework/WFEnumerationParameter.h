@@ -33,6 +33,7 @@
 - (id)localizedLabelForPossibleState:(id)arg1 inMultipleState:(id)arg2;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (id)localizedTitleForButtonWithState:(id)arg1;
+@property(readonly, nonatomic) NSArray *possibleStatesForLocalization;
 @property(readonly, nonatomic) NSArray *possibleStates;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

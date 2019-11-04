@@ -7,12 +7,10 @@
 #import <CoreNFC/NFCReaderSession.h>
 
 @class NFTimer, NSArray;
-@protocol NFTag;
 
 @interface NFCVASReaderSession : NFCReaderSession
 {
     NFTimer *_presenceCheckTimer;
-    id <NFTag> _targetTag;
     NSArray *_vasConfig;
 }
 
@@ -23,6 +21,7 @@
 - (BOOL)_selectOSE;
 - (void)_callbackDidBecomeActive;
 - (void)_callbackDidInvalidateWithError:(id)arg1;
+- (void)beginSession;
 - (void)dealloc;
 - (id)initWithVASCommandConfigurations:(id)arg1 delegate:(id)arg2 queue:(id)arg3;
 - (id)initWithDelegate:(id)arg1 sessionDelegateType:(long long)arg2 queue:(id)arg3 pollMethod:(unsigned long long)arg4 sessionConfig:(unsigned long long)arg5;

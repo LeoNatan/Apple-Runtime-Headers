@@ -60,7 +60,7 @@
     struct _NSRange _ttEditedRange;
 }
 
-+ (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange)arg2 forPlainText:(_Bool)arg3 forStandardizedText:(_Bool)arg4 fixAttachments:(_Bool)arg5;
++ (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange)arg2 forPlainText:(_Bool)arg3 forStandardizedText:(_Bool)arg4 fixAttachments:(_Bool)arg5 insertListMarkers:(_Bool)arg6;
 + (void)fixAttachmentsForRenderingInAttributedString:(id)arg1 forPlainText:(_Bool)arg2 forStandardizedText:(_Bool)arg3;
 + (id)removeTextAttachmentsForAttributedString:(id)arg1 translateTTFont:(_Bool)arg2;
 + (id)removeDataDetectorLinksForAttributedString:(id)arg1;
@@ -113,7 +113,9 @@
 - (struct _NSRange)safeCharacterRangeForRange:(struct _NSRange)arg1;
 - (id)attributedSubstringFromRange:(struct _NSRange)arg1;
 - (id)filteredAttributedSubstringFromRange:(struct _NSRange)arg1;
+- (id)filteredAttributedSubstringFromRange:(struct _NSRange)arg1 insertListMarkers:(_Bool)arg2;
 - (id)dataFromRange:(struct _NSRange)arg1 documentAttributes:(id)arg2 error:(id *)arg3;
+- (id)standardizedAttributedStringFixingTextAttachmentsForRange:(struct _NSRange)arg1 styler:(id)arg2;
 - (id)standardizedAttributedStringFixingTextAttachmentsForRange:(struct _NSRange)arg1;
 - (id)standardizedAttributedStringFixingTextAttachments;
 - (void)styleTextInRange:(struct _NSRange)arg1;

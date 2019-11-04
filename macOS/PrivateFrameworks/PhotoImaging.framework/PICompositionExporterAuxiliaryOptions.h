@@ -6,15 +6,21 @@
 
 #import <PhotoImaging/PICompositionExporterOptions.h>
 
-@class NSURL;
+@class NSURL, NUAdjustment;
 
 @interface PICompositionExporterAuxiliaryOptions : PICompositionExporterOptions
 {
+    BOOL _renderCompanionResources;
     NSURL *_primaryURL;
     NSURL *_videoComplementURL;
     NSURL *_videoPosterFrameURL;
+    NUAdjustment *_reframeCropAdjustment;
+    NUAdjustment *_reframeVideoAdjustment;
 }
 
+@property(retain) NUAdjustment *reframeVideoAdjustment; // @synthesize reframeVideoAdjustment=_reframeVideoAdjustment;
+@property(retain) NUAdjustment *reframeCropAdjustment; // @synthesize reframeCropAdjustment=_reframeCropAdjustment;
+@property BOOL renderCompanionResources; // @synthesize renderCompanionResources=_renderCompanionResources;
 @property(retain) NSURL *videoPosterFrameURL; // @synthesize videoPosterFrameURL=_videoPosterFrameURL;
 @property(retain) NSURL *videoComplementURL; // @synthesize videoComplementURL=_videoComplementURL;
 @property(retain) NSURL *primaryURL; // @synthesize primaryURL=_primaryURL;

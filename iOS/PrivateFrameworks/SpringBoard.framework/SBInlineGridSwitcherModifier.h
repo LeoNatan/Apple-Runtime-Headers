@@ -19,13 +19,16 @@
     struct CGSize _initialCardSize;
     double _initialCardScale;
     _Bool _hasScrolledToInitialAppLayoutForTransitionIntoSwitcher;
+    unsigned long long _ongoingAppLayoutRemovals;
     _Bool _floating;
     _Bool _overlay;
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
+    NSString *_bundleIdentifier;
 }
 
 @property(readonly, nonatomic, getter=isOverlay) _Bool overlay; // @synthesize overlay=_overlay;
 @property(readonly, nonatomic, getter=isFloating) _Bool floating; // @synthesize floating=_floating;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
@@ -34,12 +37,15 @@
 @property(readonly, nonatomic) unsigned long long scrollAxis;
 - (double)effectiveHorizontalSpacing;
 - (unsigned long long)numberOfRows;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
+- (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (id)handleTapOutsideToDismissEvent:(id)arg1;
 - (id)handleTapAppLayoutEvent:(id)arg1;
+- (id)handleRemovalEvent:(id)arg1;
 - (id)handleInlineTransitionEvent:(id)arg1;
 - (id)gridLayoutModifier;
 - (void)didMoveToParentModifier:(id)arg1;
-- (id)initWithScrollAxis:(unsigned long long)arg1 fixedCardSize:(struct CGSize)arg2 cardScale:(double)arg3 floating:(_Bool)arg4 overlay:(_Bool)arg5;
+- (id)initWithBundleIdentifier:(id)arg1 scrollAxis:(unsigned long long)arg2 fixedCardSize:(struct CGSize)arg3 cardScale:(double)arg4 floating:(_Bool)arg5 overlay:(_Bool)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

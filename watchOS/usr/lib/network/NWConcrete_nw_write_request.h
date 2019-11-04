@@ -8,7 +8,7 @@
 
 #import <network/OS_nw_write_request-Protocol.h>
 
-@class NSString;
+@class NSString, NWConcrete_nw_connection;
 @protocol OS_dispatch_data, OS_nw_content_context;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 {
     NWConcrete_nw_write_request *next;
     CDUnknownBlockType completion;
+    NWConcrete_nw_connection *connection;
+    unsigned int qos_class;
     NSObject<OS_dispatch_data> *data;
     NSObject<OS_nw_content_context> *context;
     NSObject<OS_nw_content_context> *original_message;

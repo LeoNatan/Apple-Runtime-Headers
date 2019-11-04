@@ -29,6 +29,7 @@
     BOOL _forcePortraitBias;
     BOOL _useSquareSharedAlbumActivity;
     BOOL _disableSharedAlbumTopMargin;
+    BOOL _alwaysShowSuggestionRenderingOverlay;
     BOOL _showFeaturedPhotosBadges;
     BOOL _delayEditRenders;
     BOOL _useCachedEditRenders;
@@ -43,6 +44,7 @@
 @property(nonatomic) BOOL useCachedEditRenders; // @synthesize useCachedEditRenders=_useCachedEditRenders;
 @property(nonatomic) BOOL delayEditRenders; // @synthesize delayEditRenders=_delayEditRenders;
 @property(nonatomic) BOOL showFeaturedPhotosBadges; // @synthesize showFeaturedPhotosBadges=_showFeaturedPhotosBadges;
+@property(nonatomic) BOOL alwaysShowSuggestionRenderingOverlay; // @synthesize alwaysShowSuggestionRenderingOverlay=_alwaysShowSuggestionRenderingOverlay;
 @property(nonatomic) BOOL disableSharedAlbumTopMargin; // @synthesize disableSharedAlbumTopMargin=_disableSharedAlbumTopMargin;
 @property(nonatomic) BOOL useSquareSharedAlbumActivity; // @synthesize useSquareSharedAlbumActivity=_useSquareSharedAlbumActivity;
 @property(nonatomic) BOOL forcePortraitBias; // @synthesize forcePortraitBias=_forcePortraitBias;

@@ -23,6 +23,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSNumber *needsZoneCreation; // @dynamic needsZoneCreation;
+@property(retain, nonatomic) NSNumber *needsZoneDeletion; // @dynamic needsZoneDeletion;
 @property(retain, nonatomic) NSData *subscriptionsData; // @dynamic subscriptionsData;
 @property(retain, nonatomic) HMBCloudZoneID *zoneID; // @dynamic zoneID;
 

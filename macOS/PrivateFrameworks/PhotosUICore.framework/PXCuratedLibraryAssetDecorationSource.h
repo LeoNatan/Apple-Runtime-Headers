@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 #import <PhotosUICore/PXGAssetBadgeDecorationSource-Protocol.h>
+#import <PhotosUICore/PXGCaptionDecorationSource-Protocol.h>
 #import <PhotosUICore/PXGDebugDecorationSource-Protocol.h>
 #import <PhotosUICore/PXGDisplayAssetRequestObserver-Protocol.h>
 #import <PhotosUICore/PXGDragDecorationSource-Protocol.h>
@@ -14,7 +15,7 @@
 
 @class NSIndexSet, NSMutableSet, NSSet, NSString, PXAssetBadgeManager, PXAssetsDataSource, PXGLayout, PXSelectionSnapshot;
 
-@interface PXCuratedLibraryAssetDecorationSource : NSObject <PXGAssetBadgeDecorationSource, PXGSelectionDecorationSource, PXGDragDecorationSource, PXGDebugDecorationSource, PXGDisplayAssetRequestObserver>
+@interface PXCuratedLibraryAssetDecorationSource : NSObject <PXGAssetBadgeDecorationSource, PXGCaptionDecorationSource, PXGSelectionDecorationSource, PXGDragDecorationSource, PXGDebugDecorationSource, PXGDisplayAssetRequestObserver>
 {
     CDStruct_5f1286c4 _updateFlags;
     NSIndexSet *_draggedItems;
@@ -48,6 +49,7 @@
 - (struct PXAssetBadgeInfo)assetBadgeInfoForAsset:(id)arg1 atSpriteIndex:(unsigned int)arg2 inLayout:(id)arg3;
 - (BOOL)wantsAssetBadgeDecorationsInLayout:(id)arg1;
 - (id)draggingSpriteIndexesInLayout:(id)arg1;
+- (BOOL)wantsCaptionDecorationsInLayout:(id)arg1;
 - (id)selectedSpriteIndexesInLayout:(id)arg1;
 - (long long)selectionDecorationStyleInLayout:(id)arg1;
 - (void)_updateDragDecoration;

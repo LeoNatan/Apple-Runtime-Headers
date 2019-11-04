@@ -72,6 +72,8 @@
     double _iconFlyInTension;
     double _iconFlyInFriction;
     SBHomeGestureParticipant *_homeGestureParticipant;
+    id <BSInvalidatable> _suspendWallpaperAnimationAssertion;
+    id <BSInvalidatable> _requireWallpaperAssertion;
     CDUnknownBlockType _ppt_transitionBeginsCallback;
     CDUnknownBlockType _ppt_transitionEndsCallback;
     SBCoverSheetSlidingViewController *_coverSheetSlidingViewController;
@@ -81,6 +83,8 @@
 @property(retain, nonatomic) SBCoverSheetSlidingViewController *coverSheetSlidingViewController; // @synthesize coverSheetSlidingViewController=_coverSheetSlidingViewController;
 @property(copy, nonatomic) CDUnknownBlockType ppt_transitionEndsCallback; // @synthesize ppt_transitionEndsCallback=_ppt_transitionEndsCallback;
 @property(copy, nonatomic) CDUnknownBlockType ppt_transitionBeginsCallback; // @synthesize ppt_transitionBeginsCallback=_ppt_transitionBeginsCallback;
+@property(retain, nonatomic) id <BSInvalidatable> requireWallpaperAssertion; // @synthesize requireWallpaperAssertion=_requireWallpaperAssertion;
+@property(retain, nonatomic) id <BSInvalidatable> suspendWallpaperAnimationAssertion; // @synthesize suspendWallpaperAnimationAssertion=_suspendWallpaperAnimationAssertion;
 @property(retain, nonatomic) SBHomeGestureParticipant *homeGestureParticipant; // @synthesize homeGestureParticipant=_homeGestureParticipant;
 @property(nonatomic) _Bool iconAnimatorNeedsAnimating; // @synthesize iconAnimatorNeedsAnimating=_iconAnimatorNeedsAnimating;
 @property(nonatomic) double iconFlyInFriction; // @synthesize iconFlyInFriction=_iconFlyInFriction;

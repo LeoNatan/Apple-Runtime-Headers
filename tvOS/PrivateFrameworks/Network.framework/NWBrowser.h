@@ -17,7 +17,7 @@
     NSSet *_internalDiscoveredEndpoints;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(retain) NSSet *internalDiscoveredEndpoints; // @synthesize internalDiscoveredEndpoints=_internalDiscoveredEndpoints;
 @property(readonly) NSObject<OS_nw_browser> *internalBrowser; // @synthesize internalBrowser=_internalBrowser;
 @property(readonly) NWParameters *parameters; // @synthesize parameters=_parameters;

@@ -28,10 +28,12 @@
     IMKCandidate *_selectedCandidate;
     BOOL _showsChevron;
     long long _style;
+    double _surfaceWidth;
     IMKUIScrubberView *_view;
     NSViewController *_viewController;
 }
 
+@property(nonatomic) double surfaceWidth; // @synthesize surfaceWidth=_surfaceWidth;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) BOOL showsChevron; // @synthesize showsChevron=_showsChevron;
 @property(retain, nonatomic) IMKUIScrubberView *scrubberView; // @synthesize scrubberView=_scrubberView;
@@ -62,6 +64,7 @@
 - (void)updateLayout;
 - (void)willShowCandidates;
 - (void)showCandidates;
+- (void)updateLayoutConstraints;
 - (struct CGRect)scrubberFrame;
 - (id)init;
 

@@ -14,7 +14,11 @@
 + (_Bool)wantsStatisticsShown;
 + (_Bool)wantsDebugVisualizationEnabled;
 + (_Bool)wantsSTAREnabled;
++ (_Bool)forceDisableRayTracedAmbientOcclusion;
 + (_Bool)wantsRayTracedAmbientOcclusionEnabled;
++ (_Bool)wantsOpenInObjectMode;
++ (id)defaultPlanePosition;
++ (_Bool)wantsObjectPlacedWithoutPlane;
 + (_Bool)wants2DOverlayControlsHidden;
 + (_Bool)wantsStatusBarHidden;
 + (_Bool)wantsAnimationDisabled;

@@ -13,6 +13,7 @@
 {
     BOOL _enabled;
     NSString *_name;
+    NSString *_displayName;
     HFTriggerActionSetsBuilder *_triggerActionSets;
     id <HFTriggerBuilderContextProviding> _context;
     HFConditionCollection *_conditionCollection;
@@ -26,6 +27,7 @@
 @property(retain, nonatomic) id <HFTriggerBuilderContextProviding> context; // @synthesize context=_context;
 @property(retain, nonatomic) HFTriggerActionSetsBuilder *triggerActionSets; // @synthesize triggerActionSets=_triggerActionSets;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
+@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)_deleteTrigger:(id)arg1 fromHome:(id)arg2;

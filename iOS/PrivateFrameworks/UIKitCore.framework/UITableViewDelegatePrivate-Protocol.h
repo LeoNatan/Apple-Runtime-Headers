@@ -8,11 +8,12 @@
 #import <UIKitCore/UITableViewFocusDelegateLegacy-Protocol.h>
 
 @class NSArray, NSIndexPath, NSString, UIColor, UITableView, UITableViewCell, UIView, _UITableViewCellActionButton;
-@protocol UISpringLoadedInteractionContext;
+@protocol UIContextMenuInteractionCommitAnimating, UISpringLoadedInteractionContext;
 
 @protocol UITableViewDelegatePrivate <UITableViewDelegate, UITableViewFocusDelegateLegacy>
 
 @optional
+- (void)tableView:(UITableView *)arg1 willCommitMenuWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg2;
 - (void)tableView:(UITableView *)arg1 didEndSwipingRowAtIndexPath:(NSIndexPath *)arg2;
 - (void)tableView:(UITableView *)arg1 willBeginSwipingRowAtIndexPath:(NSIndexPath *)arg2;
 - (_Bool)tableView:(UITableView *)arg1 shouldHaveFullLengthBottomSeparatorForSection:(long long)arg2;

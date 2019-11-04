@@ -13,9 +13,11 @@
 @interface GEOWalletCategoryMapping : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOStyleAttributes *_stylesAttributes;
     NSString *_walletCategory;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_stylesAttributes:1;
         unsigned int read_walletCategory:1;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) NSString *walletCategory;
 @property(readonly, nonatomic) _Bool hasWalletCategory;
 - (void)_readWalletCategory;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

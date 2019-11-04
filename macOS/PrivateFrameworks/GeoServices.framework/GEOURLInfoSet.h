@@ -13,7 +13,6 @@
 @interface GEOURLInfoSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOURLInfo *_abExperimentURL;
     GEOURLInfo *_addressCorrectionInitURL;
@@ -55,6 +54,9 @@
     GEOURLInfo *_wifiConnectionQualityProbeURL;
     GEOURLInfo *_wifiQualityTileURL;
     GEOURLInfo *_wifiQualityURL;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _dataSet;
     struct {
         unsigned int has_dataSet:1;
@@ -280,6 +282,8 @@
 - (void)_readResourcesURL;
 @property(nonatomic) BOOL hasDataSet;
 @property(nonatomic) unsigned int dataSet;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSURL *resourcesProxyURL;
 
 @end

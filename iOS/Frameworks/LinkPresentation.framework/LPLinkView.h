@@ -96,7 +96,7 @@
 @property(nonatomic, setter=_setNeedsMessagesTranscriptPushCounterAnimation:) _Bool _needsMessagesTranscriptPushCounterAnimation; // @synthesize _needsMessagesTranscriptPushCounterAnimation;
 @property(nonatomic, setter=_setDisableAnimations:) _Bool _disableAnimations; // @synthesize _disableAnimations;
 - (void).cxx_destruct;
-- (void)contextMenuInteractionWillPresent:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (void)_uninstallPreviewGestureRecognizer;
 - (void)_installPreviewGestureRecognizer;
@@ -143,8 +143,6 @@
 - (unsigned long long)_edgesPropagatingSafeAreaInsetsToDescendants;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (void)layoutMarginsDidChange;
-- (struct UIEdgeInsets)_effectiveContentInset;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) long long _style;
 - (void)_setPresentationProperties:(id)arg1;
@@ -161,6 +159,8 @@
 - (void)_setupView;
 - (void)_fetchMetadata;
 - (id)_fetchMetadataForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)_shouldClipAnimationView;
+- (_Bool)_shouldApplyCornerRadius;
 - (void)_commonInitWithURL:(id)arg1;
 - (id)initWithPresentationProperties:(id)arg1 URL:(id)arg2;
 - (id)initWithPresentationProperties:(id)arg1;

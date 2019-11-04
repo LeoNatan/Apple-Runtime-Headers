@@ -28,6 +28,7 @@
 + (_Bool)isConcreteEntity;
 + (_Bool)isBackedByTable;
 + (int)preferredEntityType;
++ (int)compareForReplacmentWithObject:(id)arg1 existingObject:(id)arg2;
 + (id)mergeDataObject:(id)arg1 provenance:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5 insertHandler:(CDUnknownBlockType)arg6;
 + (_Bool)supportsObjectMerging;
 + (struct _HDDeleteObjectDataDefn)_deleteInfoForObjectWithUUID:(id)arg1 database:(id)arg2 error:(id *)arg3;
@@ -55,7 +56,6 @@
 + (id)objectWithUUID:(id)arg1 encodingOptions:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)predicateForObjectsFromLocalSourceWithBundleIdentifier:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)predicateForObjectsFromAppleWatchSources:(_Bool)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (id)predicateForObjectsWithSourcePredicate:(id)arg1 matchSource:(_Bool)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)sourceIDForObjectID:(id)arg1 type:(int)arg2 profile:(id)arg3 errorOut:(id *)arg4;
 + (id)sourceIDsForObjectsOfType:(int)arg1 profile:(id)arg2 predicate:(id)arg3 error:(id *)arg4;
 + (id)entityEnumeratorWithProfile:(id)arg1;
@@ -65,9 +65,10 @@
 + (_Bool)journalObjects:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (void)insertDataObjects:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (_Bool)_validateObjectsToInsert:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 error:(id *)arg4;
++ (_Bool)replaceExistingObject:(id)arg1 existingObjectID:(id)arg2 replacementObject:(id)arg3 replacementObjectID:(id)arg4 profile:(id)arg5 database:(id)arg6 error:(id *)arg7;
 + (_Bool)_insertDataObject:(id)arg1 insertionContext:(id)arg2 provenanceEntityID:(long long)arg3 profile:(id)arg4 database:(id)arg5 insertedEntityID:(id *)arg6 error:(id *)arg7;
 + (int)shouldInsertObject:(id)arg1 sourceID:(id)arg2 profile:(id)arg3 database:(id)arg4 objectToReplace:(id *)arg5 objectID:(id *)arg6 error:(id *)arg7;
-+ (_Bool)_shouldReplaceExistingObject:(id)arg1 withObject:(id)arg2;
++ (_Bool)_shouldReplaceExistingObject:(id)arg1 withObject:(id)arg2 dataEntityClass:(Class)arg3;
 + (id)_primitiveInsertDataObject:(id)arg1 insertionContext:(id)arg2 entityClass:(Class)arg3 provenanceEntityID:(long long)arg4 profile:(id)arg5 database:(id)arg6 error:(id *)arg7;
 
 // Remaining properties

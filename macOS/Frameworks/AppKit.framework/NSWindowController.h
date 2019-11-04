@@ -8,7 +8,7 @@
 
 #import <AppKit/NSSeguePerforming-Protocol.h>
 
-@class NSArray, NSDocument, NSString, NSViewController, NSWindow;
+@class NSArray, NSDocument, NSString, NSViewController, NSWindow, NSWindowControllerMoreIVars;
 
 @interface NSWindowController : NSResponder <NSSeguePerforming>
 {
@@ -29,7 +29,7 @@
         unsigned int RESERVED:24;
     } _wcFlags;
     NSString *_frameAutosaveName;
-    id _moreVars;
+    NSWindowControllerMoreIVars *_moreVars;
 }
 
 + (void)_doneWithLocations;

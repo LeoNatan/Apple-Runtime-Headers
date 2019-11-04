@@ -70,7 +70,8 @@
 - (void)_synchronizeDataStoreWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_noteDirtied;
 - (id)_allSnapshotGroups;
-- (id)_createSnapshotWithGroupID:(id)arg1 newSnapshotCreator:(CDUnknownBlockType)arg2;
+- (void)_access_addSnapshotToGroup:(id)arg1;
+- (void)_addSnapshotToGroup:(id)arg1;
 - (id)_createSnapshotWithGroupID:(id)arg1 generationContext:(id)arg2;
 - (id)_generatableSnapshotForGroupID:(id)arg1 generationContext:(id)arg2;
 - (_Bool)_invalidate;

@@ -65,9 +65,11 @@
     BOOL _hasMoreRecentMessagesToLoad;
     BOOL _isCurrentlyDownloadingPurgedAssets;
     BOOL _hasSurfRequest;
+    BOOL _allowedByScreenTime;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
     NSString *_groupChatIdentifierUppercase;
+    NSString *_hashOfParticipantIDs;
     double _latestTypingIndicatorTimeInterval;
     IMOrderingTools *_orderingTools;
     NSString *_currentLocationGUID;
@@ -86,9 +88,11 @@
 + (BOOL)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
+@property(nonatomic) BOOL allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
+@property(copy, nonatomic) NSString *hashOfParticipantIDs; // @synthesize hashOfParticipantIDs=_hashOfParticipantIDs;
 @property(retain, nonatomic) NSString *groupChatIdentifierUppercase; // @synthesize groupChatIdentifierUppercase=_groupChatIdentifierUppercase;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
@@ -250,6 +254,7 @@
 - (BOOL)allParticipantsAreContacts;
 - (BOOL)hasKnownParticipants;
 - (void)loadParticipantContactsIfNecessary;
+- (void)updateIsBlackholed:(BOOL)arg1;
 - (void)updateIsFiltered:(BOOL)arg1;
 @property(nonatomic) BOOL isFiltered; // @dynamic isFiltered;
 - (void)autoReportSpam;

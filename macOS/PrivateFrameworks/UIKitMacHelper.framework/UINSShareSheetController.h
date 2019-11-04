@@ -8,12 +8,14 @@
 
 #import <UIKitMacHelper/NSSharingServiceDelegate-Protocol.h>
 #import <UIKitMacHelper/NSSharingServicePickerDelegate-Protocol.h>
+#import <UIKitMacHelper/NSSharingServicePickerToolbarItemDelegate-Protocol.h>
 #import <UIKitMacHelper/UINSShareSheetController-Protocol.h>
 
 @class NSArray, NSDictionary, NSSharingServicePicker, NSString;
+@protocol UINSActivityItemsConfigurationReading;
 
 __attribute__((visibility("hidden")))
-@interface UINSShareSheetController : NSObject <UINSShareSheetController, NSSharingServicePickerDelegate, NSSharingServiceDelegate>
+@interface UINSShareSheetController : NSObject <UINSShareSheetController, NSSharingServicePickerDelegate, NSSharingServiceDelegate, NSSharingServicePickerToolbarItemDelegate>
 {
     CDUnknownBlockType activitySelectedHandler;
     NSArray *applicationActivities;
@@ -22,9 +24,11 @@ __attribute__((visibility("hidden")))
     NSSharingServicePicker *sharingServicePicker;
     long long sharingStyle;
     NSDictionary *shareKitInfo;
+    id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration;
 }
 
 + (id)sharedShareSheetController;
+@property(retain, nonatomic) id <UINSActivityItemsConfigurationReading> activityItemsConfiguration; // @synthesize activityItemsConfiguration=_activityItemsConfiguration;
 @property(copy, nonatomic) NSDictionary *shareKitInfo; // @synthesize shareKitInfo;
 @property(nonatomic) long long sharingStyle; // @synthesize sharingStyle;
 @property(retain) NSSharingServicePicker *sharingServicePicker; // @synthesize sharingServicePicker;
@@ -33,11 +37,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *applicationActivities; // @synthesize applicationActivities;
 @property(copy, nonatomic) CDUnknownBlockType activitySelectedHandler; // @synthesize activitySelectedHandler;
 - (void).cxx_destruct;
+- (id)itemsForSharingServicePickerToolbarItem:(id)arg1;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;
 - (void)sharingService:(id)arg1 didShareItems:(id)arg2;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
+- (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
+@property(readonly, copy, nonatomic) NSArray *applicationServices;
 - (void)presentShareSheetWithItems:(id)arg1 atUIWindowRect:(struct CGRect)arg2;
 - (struct CGRect)convertRectFromUIWindow:(struct CGRect)arg1;
 - (struct CGRect)shareToolbarItemRect;

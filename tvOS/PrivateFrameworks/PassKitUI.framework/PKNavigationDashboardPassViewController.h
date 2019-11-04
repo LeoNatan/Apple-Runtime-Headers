@@ -96,6 +96,7 @@
 - (void)deleteAnimationControllerWillBeginDeleteAnimation:(id)arg1;
 - (_Bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (void)groupView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
+- (void)presentInstallmentPlan:(id)arg1;
 - (void)presentTransaction:(id)arg1 forPaymentPass:(id)arg2;
 - (id)_barcodePassDetailsViewControllerForBarcodePass:(id)arg1;
 - (id)_paymentPassDetailsViewControllerForPaymentPass:(id)arg1;
@@ -139,6 +140,7 @@
 - (void)_updatePassFooterViewIfNecessaryAnimated:(_Bool)arg1;
 - (long long)_footerStateForPassView:(id)arg1;
 - (_Bool)_canShowPassFooterWithFooterState:(long long)arg1;
+- (void)groupView:(id)arg1 faceViewFrameDidChangeForFrontmostPassView:(id)arg2;
 - (void)groupView:(id)arg1 frontmostPassViewDidChange:(id)arg2 withContext:(id)arg3;
 - (void)groupView:(id)arg1 didUpdatePassView:(id)arg2;
 - (unsigned long long)groupViewPassesSuppressedContent:(id)arg1;

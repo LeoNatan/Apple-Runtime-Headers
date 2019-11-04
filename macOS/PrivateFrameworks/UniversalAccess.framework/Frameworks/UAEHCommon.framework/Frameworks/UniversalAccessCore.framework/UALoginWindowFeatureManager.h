@@ -26,6 +26,7 @@
 - (id)_currentLoginWindowPreferences;
 - (void)_migrateVoiceOverEnabledKeyIfNeeded;
 - (void)transferLoginWindowFeaturesToCurrentUser;
+- (void)_updateVoiceOverAtEFI:(BOOL)arg1;
 - (void)updateLoginWindowFeatures:(id)arg1;
 - (void)_setLoginWindowFeatureType:(long long)arg1 isEnabled:(BOOL)arg2;
 @property(readonly, nonatomic) NSArray *allAvailableFeatures;

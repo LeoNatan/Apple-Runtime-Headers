@@ -16,6 +16,7 @@
 {
     NSString *_appIdentifier;
     int _intentCategory;
+    NSString *_localizedName;
     NSString *_className;
     NSString *_bundleIdentifier;
     INSchema *_schema;
@@ -28,6 +29,7 @@
 @property(readonly, copy, nonatomic) INSchema *schema; // @synthesize schema=_schema;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *className; // @synthesize className=_className;
+@property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (int)intentCategory;
 - (void).cxx_destruct;
 - (void)dynamicResolveParameterDidEndResolutionSession:(id)arg1;
@@ -40,6 +42,7 @@
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
 - (void)loadPossibleStatesForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadDefaultSerializedRepresentationForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)startExecutingIntent:(id)arg1;
 - (id)parameterKeysIgnoredForParameterSummary;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 @property(readonly, copy, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;

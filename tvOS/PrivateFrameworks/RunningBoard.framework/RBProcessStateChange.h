@@ -19,7 +19,7 @@
 @property(readonly, nonatomic) RBProcessState *originalState; // @synthesize originalState=_originalState;
 @property(readonly, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 - (void).cxx_destruct;
-- (void)setUpdatedState:(id)arg1;
+- (id)changeByApplyingChange:(id)arg1;
 - (id)initWithIdentity:(id)arg1 originalState:(id)arg2 updatedState:(id)arg3;
 
 @end

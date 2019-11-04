@@ -8,6 +8,7 @@
 
 @interface HKPointLabelEngine : NSObject
 {
+    _Bool _isLabelShiftingEnabled;
     _Bool _lastRenderOverlapped;
     CDUnknownBlockType _sizeForValue;
     int _state;
@@ -29,6 +30,7 @@
 @property(nonatomic) struct CGPoint previousTransformedPoint; // @synthesize previousTransformedPoint=_previousTransformedPoint;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) CDUnknownBlockType sizeForValue; // @synthesize sizeForValue=_sizeForValue;
+@property(nonatomic) _Bool isLabelShiftingEnabled; // @synthesize isLabelShiftingEnabled=_isLabelShiftingEnabled;
 @property(readonly, nonatomic) struct CGRect boundingRegion; // @synthesize boundingRegion=_boundingRegion;
 - (void).cxx_destruct;
 - (CDStruct_2660488d)_computeRenderingDataForValue:(float)arg1 transformedPoint:(struct CGPoint)arg2 previousSlope:(int)arg3 nextSlope:(int)arg4 previousOptions:(int)arg5;
@@ -36,7 +38,7 @@
 - (CDStruct_2660488d)renderingData;
 - (_Bool)processLastPoint;
 - (_Bool)processTransformedPoint:(struct CGPoint)arg1 untransformedPoint:(struct CGPoint)arg2;
-- (id)initWithBoundingRegion:(struct CGRect)arg1 labelSizeBlock:(CDUnknownBlockType)arg2;
+- (id)initWithBoundingRegion:(struct CGRect)arg1 isLabelShiftingEnabled:(_Bool)arg2 labelSizeBlock:(CDUnknownBlockType)arg3;
 
 @end
 

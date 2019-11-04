@@ -27,9 +27,7 @@
 - (void)serviceDataChanged:(id)arg1;
 - (void)accountDataChanged:(id)arg1;
 - (void)tosDeniedFailed:(id)arg1;
-- (void)signOutFailed:(id)arg1;
 - (void)signInFailed:(id)arg1;
-- (void)signOutCompleted:(id)arg1;
 - (void)refreshCompleted:(id)arg1;
 - (void)signInCompleted:(id)arg1;
 - (void)signInAccount:(id)arg1 withPassword:(id)arg2 context:(id)arg3;

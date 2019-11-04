@@ -18,6 +18,7 @@
     } _delegateRespondsTo;
     unsigned long long _frameNum;
     unsigned int _debugId;
+    _Bool _singleBufferMode;
     id <CLKUIQuadViewDelegate> _delegate;
     NSString *_debugIdentifier;
 }
@@ -25,13 +26,13 @@
 + (id)quadViewWithFrame:(struct CGRect)arg1;
 + (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2;
 + (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2 colorSpace:(int)arg3;
-@property(retain, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
+@property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
+@property(nonatomic) _Bool singleBufferMode; // @synthesize singleBufferMode=_singleBufferMode;
 @property(nonatomic) __weak id <CLKUIQuadViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)discardContents;
 - (void)_handleQuadArrayChange:(id)arg1;
 - (_Bool)_displayAndCheckForDrawable:(_Bool)arg1 WithCompletion:(CDUnknownBlockType)arg2;
-- (id)_snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
 - (id)snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
 - (void)_prerenderForTime:(double)arg1;
 - (void)removeAllQuads;

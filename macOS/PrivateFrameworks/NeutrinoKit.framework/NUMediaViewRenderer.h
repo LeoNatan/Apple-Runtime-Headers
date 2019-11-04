@@ -82,6 +82,7 @@
 - (void)pause;
 - (void)play;
 - (void)stepByCount:(long long)arg1;
+- (void)seekToTime:(CDStruct_198678f7)arg1 exact:(BOOL)arg2;
 - (void)seekToTime:(CDStruct_198678f7)arg1;
 @property(readonly, nonatomic) CDStruct_198678f7 currentTime;
 - (long long)_playbackStateFromPlayerStatus:(long long)arg1 rate:(float)arg2;

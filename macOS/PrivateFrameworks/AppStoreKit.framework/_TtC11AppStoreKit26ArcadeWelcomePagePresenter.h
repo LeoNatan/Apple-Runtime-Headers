@@ -10,10 +10,8 @@
 {
     // Error parsing type: , name: view
     // Error parsing type: , name: url
-    // Error parsing type: , name: model
-    // Error parsing type: , name: accountManager
-    // Error parsing type: , name: accountManagerDelegate
-    // Error parsing type: , name: familyStatus
+    // Error parsing type: , name: contentType
+    // Error parsing type: , name: welcomePage
 }
 
 @end

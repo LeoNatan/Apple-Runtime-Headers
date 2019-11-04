@@ -27,6 +27,7 @@
 - (void)dequeueObject:(id)arg1;
 - (id)dequeue;
 - (id)peek;
+- (void)enqueue:(id)arg1 replaceIfExists:(BOOL)arg2;
 - (void)enqueue:(id)arg1;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)description;

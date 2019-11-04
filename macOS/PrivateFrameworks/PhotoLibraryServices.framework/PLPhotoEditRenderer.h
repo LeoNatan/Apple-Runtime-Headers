@@ -25,6 +25,7 @@
     NURenderContext *_geometryContext;
     NURenderContext *_smartToneAutoCalculatorContext;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     long long _smartFiltersCubeSize;
 }
 
@@ -32,9 +33,11 @@
 + (void)updateComposition:(id)arg1 fromPortraitMetadata:(id)arg2;
 + (BOOL)currentDeviceShouldAllowLocalLight;
 + (id)newImageDataFromCGImage:(struct CGImage *)arg1 withCompressionQuality:(double)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(BOOL)arg4;
++ (id)compositionWithController:(id)arg1 source:(id)arg2 overcaptureSource:(id)arg3;
 + (id)compositionWithController:(id)arg1 source:(id)arg2;
 + (void)configureNeutrinoCacheDirectoryIfNeeded;
 @property(nonatomic) long long smartFiltersCubeSize; // @synthesize smartFiltersCubeSize=_smartFiltersCubeSize;
+@property(retain, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 - (void)applySourceChangesToCompositionController:(id)arg1 source:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
@@ -72,8 +75,8 @@
 - (id)newVideoExporterOptions;
 - (id)newImageExporterOptions;
 - (id)newExporter;
-- (id)initWithEditSource:(id)arg1 renderPriority:(long long)arg2;
-- (id)initWithEditSource:(id)arg1;
+- (id)initWithEditSource:(id)arg1 overcaptureEditSource:(id)arg2 renderPriority:(long long)arg3;
+- (id)initWithEditSource:(id)arg1 overcaptureEditSource:(id)arg2;
 
 @end
 

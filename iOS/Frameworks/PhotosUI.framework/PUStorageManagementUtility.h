@@ -29,9 +29,7 @@
 + (id)_assetsInTrash;
 + (_Bool)shouldHideCPL;
 + (_Bool)isCPLEnabled;
-+ (id)_sizeForLibraryKind:(unsigned long long)arg1;
-+ (id)originalSizeInLibrary;
-+ (id)purgeableSizeInLibrary;
++ (void)purgeableSizeAndOriginalsInLibrary:(CDUnknownBlockType)arg1;
 
 @end
 

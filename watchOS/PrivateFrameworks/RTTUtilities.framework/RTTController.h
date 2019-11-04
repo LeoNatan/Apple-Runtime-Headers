@@ -17,11 +17,14 @@
     NSObject<OS_dispatch_queue> *_workerQueue;
     NSMutableDictionary *_localSettingsCache;
     AXDispatchTimer *_preferredRelayCoalescer;
+    AXDispatchTimer *_callUpdateCoalescer;
     NSMutableArray *_rttCalls;
     id <HCHeardControllerProtocol> _delegate;
+    CDUnknownBlockType _serverInvalidateCallback;
 }
 
 + (id)sharedController;
+@property(copy, nonatomic) CDUnknownBlockType serverInvalidateCallback; // @synthesize serverInvalidateCallback=_serverInvalidateCallback;
 @property(nonatomic) __weak id <HCHeardControllerProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *rttCalls; // @synthesize rttCalls=_rttCalls;
 - (void).cxx_destruct;
@@ -33,6 +36,7 @@
 - (id)handleSettingsRequest:(id)arg1;
 - (id)handleDictionaryRequest:(id)arg1;
 - (id)handleDatabaseRequest:(id)arg1;
+- (id)handleMediaAction:(id)arg1;
 - (void)dealloc;
 - (void)displayRTTFirstUseAlert;
 - (void)dismissRTTFirstUseAlert;
@@ -43,7 +47,7 @@
 - (void)_refreshCurrentCallList;
 - (void)callDidConnect:(id)arg1;
 - (void)didChangeTelephonyCallingSupport;
-- (void)invalidateServerCaches:(id)arg1;
+- (_Bool)invalidateServerCaches:(id)arg1;
 - (void)_handlePreferredRelayNumberUpdate;
 - (id)init;
 

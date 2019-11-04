@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface WFTextInputParameter (WFModuleSummarySupporting) <WFModuleSummarySupporting>
++ (id)askVariableName;
 - (id)defaultStateForNewArrayElement;
 - (id)moduleSummarySlotForState:(id)arg1;
 

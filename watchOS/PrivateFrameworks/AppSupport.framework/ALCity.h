@@ -24,8 +24,10 @@
     NSString *_unlocalizedCountryOverride;
     NSString *_identifierForCPCity;
     _Bool _localizationAttempted;
+    _Bool _displayNameIncludingCountryShowsOnlyCountry;
 }
 
+@property(nonatomic) _Bool displayNameIncludingCountryShowsOnlyCountry; // @synthesize displayNameIncludingCountryShowsOnlyCountry=_displayNameIncludingCountryShowsOnlyCountry;
 @property(retain, nonatomic) NSString *unlocalizedCountryOverride; // @synthesize unlocalizedCountryOverride=_unlocalizedCountryOverride;
 @property(retain, nonatomic) NSString *yahooCode; // @synthesize yahooCode=_yahooCode;
 @property(nonatomic) float latitude; // @synthesize latitude=_latitude;

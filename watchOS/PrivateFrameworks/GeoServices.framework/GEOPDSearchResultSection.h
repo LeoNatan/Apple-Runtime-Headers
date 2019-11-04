@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSearchResultSection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_resolvedItems;
     NSString *_sectionHeaderDisplayName;
     NSString *_sectionSubHeaderDisplayName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _searchResultSectionCellType;
     int _searchResultSectionType;
     struct {
@@ -73,6 +75,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *sectionHeaderDisplayName;
 @property(readonly, nonatomic) _Bool hasSectionHeaderDisplayName;
 - (void)_readSectionHeaderDisplayName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

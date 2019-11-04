@@ -56,6 +56,7 @@
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isBlackBackground;
 - (_Bool)isEqual:(id)arg1;
 - (id)circularDialFillColor;
 - (id)circularDialTickColor;

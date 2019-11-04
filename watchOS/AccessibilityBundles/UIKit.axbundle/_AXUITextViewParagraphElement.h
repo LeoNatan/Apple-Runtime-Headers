@@ -21,10 +21,12 @@
 - (void).cxx_destruct;
 - (_Bool)accessibilityActivate;
 - (struct CGRect)accessibilityFrame;
+- (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_accessibilityUserTestingChildren;
 - (id)accessibilityHint;
 - (id)accessibilityLabel:(id)arg1;
 - (struct CGRect)accessibilityFrame:(id)arg1;
+- (struct CGPoint)accessibilityActivationPoint:(id)arg1;
 - (_Bool)accessibilityRespondsToUserInteraction;
 - (id)initWithAccessibilityContainer:(id)arg1 textRange:(struct _NSRange)arg2 links:(id)arg3;
 

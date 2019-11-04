@@ -42,13 +42,13 @@
 - (void)webViewControllerDidChangeURL:(id)arg1;
 - (void)webViewController:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
-- (_Bool)_isURLOutOfScope:(id)arg1;
+- (_Bool)_isURLOutOfScope:(id)arg1 withLoginURLExempted:(_Bool)arg2;
+- (_Bool)_isURLOutOfLegacyScope:(id)arg1 withLoginURLExempted:(_Bool)arg2;
 - (_Bool)_isURLOutOfManifestScope:(id)arg1;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
 - (void)_hostApplicationDidEnterBackground;
-- (_Bool)_shouldCacheWebViewController;
 - (void)setNeedsStatusBarAppearanceUpdate;
 - (int)preferredStatusBarStyle;
 - (void)viewDidLoad;

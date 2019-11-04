@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSpatialEventLookupParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _categoryFilters;
     GEOLatLng *_center;
     struct GEOPDTimeRange _timeRange;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _count;
     int _radius;
     struct {
@@ -71,6 +73,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasCenter;
 - (void)_readCenter;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

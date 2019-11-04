@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDNetworkRouterFirewallRuleWAN, NSString;
+@class HMDNetworkRouterFirewallRuleWAN, NSSet, NSString;
 
 @interface HMDAccessoryAllowedHost : HMFObject <NSSecureCoding>
 {
@@ -19,13 +19,14 @@
 + (id)allowedHostsFromJSONFirewallWANRules:(id)arg1;
 @property(readonly) NSString *jsonWANRule; // @synthesize jsonWANRule=_jsonWANRule;
 - (void).cxx_destruct;
+- (id)attributeDescriptions;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)_encodeForSPIEntitledXPCTransportWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly) unsigned long long purpose;
-@property(readonly) NSString *address;
+@property(readonly) NSSet *addresses;
 @property(readonly) NSString *name;
 @property(readonly, nonatomic) HMDNetworkRouterFirewallRuleWAN *wanRule;
 - (id)initWithJSONFirewallWANRule:(id)arg1;

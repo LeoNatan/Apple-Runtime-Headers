@@ -13,16 +13,18 @@
 
 @interface _MLBatchDataSource : NSObject <ETDataProvider>
 {
+    _Bool _useForPrediction;
     id <MLBatchProvider> _batchProvider;
     MLNeuralNetworkEngine *_nnEngine;
 }
 
+@property(readonly, nonatomic) _Bool useForPrediction; // @synthesize useForPrediction=_useForPrediction;
 @property(readonly, nonatomic) MLNeuralNetworkEngine *nnEngine; // @synthesize nnEngine=_nnEngine;
 @property(readonly, nonatomic) id <MLBatchProvider> batchProvider; // @synthesize batchProvider=_batchProvider;
 - (void).cxx_destruct;
 - (unsigned int)numberOfDataPoints;
 - (id)dataPointAtIndex:(unsigned int)arg1 error:(id *)arg2;
-- (id)initWithMLBatchProvider:(id)arg1 neuralNetworkEngine:(id)arg2 error:(id *)arg3;
+- (id)initWithMLBatchProvider:(id)arg1 forPrediction:(_Bool)arg2 neuralNetworkEngine:(id)arg3 error:(id *)arg4;
 
 @end
 

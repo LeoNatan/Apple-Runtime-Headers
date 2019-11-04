@@ -13,7 +13,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMAccessoryCategory, HMDAccessoryNetworkAccessViolation, HMDAccessoryVersion, HMDApplicationData, HMDHome, HMDRoom, HMDVendorModelEntry, HMFMessageDispatcher, NSArray, NSData, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSUUID;
+@class HMAccessoryCategory, HMDAccessoryNetworkAccessViolation, HMDAccessoryVersion, HMDApplicationData, HMDHome, HMDRoom, HMDVendorModelEntry, HMFMessageDispatcher, HMFVersion, NSArray, NSData, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSUUID;
 @protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDAccessory : HMFObject <HMDBulletinIdentifiers, NSSecureCoding, HMDHomeMessageReceiver, HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging>
@@ -31,7 +31,9 @@
     NSString *_identifier;
     HMDRoom *_room;
     NSString *_model;
+    NSString *_initialModel;
     NSString *_manufacturer;
+    NSString *_initialManufacturer;
     HMDAccessoryVersion *_firmwareVersion;
     NSString *_serialNumber;
     HMDApplicationData *_appData;
@@ -39,12 +41,16 @@
     unsigned long long _configNumber;
     NSNumber *_networkClientIdentifier;
     NSUUID *_networkRouterUUID;
-    long long _targetNetworkProtectionMode;
+    long long _deprecatedTargetNetworkProtectionMode;
     long long _currentNetworkProtectionMode;
     long long _networkClientLAN;
     long long _wiFiCredentialType;
     NSArray *_allowedHosts;
     NSData *_wiFiUniquePreSharedKey;
+    NSUUID *_configuredNetworkProtectionGroupUUID;
+    NSUUID *_defaultNetworkProtectionGroupUUID;
+    HMFVersion *_primaryProfileVersion;
+    NSNumber *_initialCategoryIdentifier;
     NSUUID *_uuid;
     HMAccessoryCategory *_category;
     HMDHome *_home;
@@ -62,6 +68,7 @@
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (_Bool)splitProductDataIntoProductGroupAndProductNumber:(id)arg1 productGroup:(id *)arg2 productNumber:(id *)arg3;
++ (_Bool)validateProductData:(id)arg1;
 @property(nonatomic) _Bool custom1WoWLAN; // @synthesize custom1WoWLAN=_custom1WoWLAN;
 @property(nonatomic) _Bool custom1WoBLE; // @synthesize custom1WoBLE=_custom1WoBLE;
 @property(nonatomic) unsigned long long accessoryReprovisionState; // @synthesize accessoryReprovisionState=_accessoryReprovisionState;
@@ -88,6 +95,7 @@
 - (_Bool)providesHashRouteID;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)_shouldFilterAccessoryProfile:(id)arg1;
+@property(readonly, nonatomic) _Bool supportsCompanionInitiatedRestart;
 @property(readonly, nonatomic) _Bool supportsMultiUser;
 @property(readonly, nonatomic) _Bool supportsTargetControl;
 @property(readonly, nonatomic) _Bool supportsTargetController;
@@ -108,6 +116,9 @@
 - (_Bool)shouldEnableDaemonRelaunch;
 - (void)logDuetRoomEvent;
 - (void)didEncounterError:(id)arg1;
+@property(retain, nonatomic) NSUUID *configuredNetworkProtectionGroupUUID; // @synthesize configuredNetworkProtectionGroupUUID=_configuredNetworkProtectionGroupUUID;
+@property(readonly, nonatomic) NSUUID *defaultNetworkProtectionGroupUUID; // @synthesize defaultNetworkProtectionGroupUUID=_defaultNetworkProtectionGroupUUID;
+- (id)networkProtectionGroupUUID;
 - (void)saveNetworkAccessViolation:(id)arg1;
 - (void)saveWiFiUniquePreSharedKey:(id)arg1 credentialType:(long long)arg2;
 @property(retain, nonatomic) NSData *wiFiUniquePreSharedKey; // @synthesize wiFiUniquePreSharedKey=_wiFiUniquePreSharedKey;
@@ -117,11 +128,13 @@
 - (void)saveCurrentNetworkProtectionMode:(long long)arg1 assignedLAN:(long long)arg2 appliedFirewallWANRules:(id)arg3;
 @property(nonatomic) long long networkClientLAN; // @synthesize networkClientLAN=_networkClientLAN;
 @property(nonatomic) long long currentNetworkProtectionMode; // @synthesize currentNetworkProtectionMode=_currentNetworkProtectionMode;
-@property(nonatomic) long long targetNetworkProtectionMode; // @synthesize targetNetworkProtectionMode=_targetNetworkProtectionMode;
+- (long long)targetNetworkProtectionMode;
+@property(nonatomic) long long deprecatedTargetNetworkProtectionMode; // @synthesize deprecatedTargetNetworkProtectionMode=_deprecatedTargetNetworkProtectionMode;
 - (void)saveNetworkClientIdentifier:(id)arg1 networkRouterUUID:(id)arg2;
 @property(retain, nonatomic) NSUUID *networkRouterUUID; // @synthesize networkRouterUUID=_networkRouterUUID;
 @property(retain, nonatomic) NSNumber *networkClientIdentifier; // @synthesize networkClientIdentifier=_networkClientIdentifier;
 - (_Bool)supportsNetworkProtection;
+@property(retain, nonatomic) HMFVersion *primaryProfileVersion; // @synthesize primaryProfileVersion=_primaryProfileVersion;
 - (void)setAccessoryProfiles:(id)arg1;
 - (void)removeAccessoryProfile:(id)arg1;
 - (void)addAccessoryProfile:(id)arg1;
@@ -150,31 +163,38 @@
 - (void)updateMediaSession:(id)arg1;
 - (void)updateManufacturer:(id)arg1 model:(id)arg2 firmwareVersion:(id)arg3 serialNumber:(id)arg4;
 @property(readonly, copy, nonatomic) HMDVendorModelEntry *vendorInfo;
-- (id)findProductData;
+@property(readonly, nonatomic) NSString *productGroup;
 - (void)setProductData:(id)arg1;
 @property(readonly, nonatomic) NSString *productData; // @synthesize productData=_productData;
 - (void)setSerialNumber:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 - (void)setFirmwareVersion:(id)arg1;
 @property(readonly, copy, nonatomic) HMDAccessoryVersion *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
+- (void)setInitialManufacturer:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *initialManufacturer; // @synthesize initialManufacturer=_initialManufacturer;
 - (void)setManufacturer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
+- (void)setInitialModel:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *initialModel; // @synthesize initialModel=_initialModel;
 - (void)setModel:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
 - (void)__handleRename:(id)arg1;
 - (void)updateProvidedName:(id)arg1;
 - (id)getConfiguredName;
-- (void)handleUpdatedName:(id)arg1;
+- (void)_handleUpdatedName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *name;
 - (void)__handleGetAccessoryAdvertisingParams:(id)arg1;
+- (void)setInitialCategoryIdentifier:(id)arg1;
+@property(readonly, nonatomic) NSNumber *initialCategoryIdentifier; // @synthesize initialCategoryIdentifier=_initialCategoryIdentifier;
 - (id)_updateCategory:(id)arg1 notifyClients:(_Bool)arg2;
 - (void)updateCategory:(id)arg1;
-- (_Bool)_updateRoom:(id)arg1 error:(id *)arg2;
+- (_Bool)_updateRoom:(id)arg1;
 - (void)__handleUpdateRoom:(id)arg1;
 - (id)modelWithUpdatedRoom:(id)arg1;
 - (void)updateRoom:(id)arg1;
 @property(retain, nonatomic) HMDRoom *room; // @synthesize room=_room;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)removeCloudData;
 - (void)unconfigure;
 - (void)configureWithHome:(id)arg1 msgDispatcher:(id)arg2 configurationTracker:(id)arg3;
 - (void)registerForMessagesWithNewUUID:(id)arg1;

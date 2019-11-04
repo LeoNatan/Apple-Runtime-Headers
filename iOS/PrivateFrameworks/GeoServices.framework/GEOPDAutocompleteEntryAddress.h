@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntryAddress : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_center;
     double _disambiguationRadiusMeters;
     double _distance;
     GEOPDMapsIdentifier *_mapsId;
     unsigned long long _opaqueGeoId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _placeType;
     struct {
         unsigned int has_disambiguationRadiusMeters:1;
@@ -70,6 +72,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) _Bool hasCenter;
 - (void)_readCenter;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

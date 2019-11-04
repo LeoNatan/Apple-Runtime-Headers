@@ -14,6 +14,8 @@
     BOOL _previewAccessory;
     BOOL _alwaysShowGroup;
     BOOL _wantsSeparateSectionPerGroup;
+    BOOL _showInSeperateSection;
+    BOOL _isSoftwareVersionNeeded;
     NSString *_keyPath;
     NSString *_sortKey;
     NSString *_localizedHeader;
@@ -29,6 +31,8 @@
 }
 
 + (id)settingsAtURL:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) BOOL isSoftwareVersionNeeded; // @synthesize isSoftwareVersionNeeded=_isSoftwareVersionNeeded;
+@property(readonly, nonatomic) BOOL showInSeperateSection; // @synthesize showInSeperateSection=_showInSeperateSection;
 @property(readonly, copy, nonatomic) NSString *adapterIdentifier; // @synthesize adapterIdentifier=_adapterIdentifier;
 @property(readonly, nonatomic) BOOL wantsSeparateSectionPerGroup; // @synthesize wantsSeparateSectionPerGroup=_wantsSeparateSectionPerGroup;
 @property(readonly, nonatomic) BOOL alwaysShowGroup; // @synthesize alwaysShowGroup=_alwaysShowGroup;

@@ -14,7 +14,6 @@
 @interface GEOTransitSuggestedRoute : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _routeBadges;
     GEOTransitRouteDisplayStrings *_displayStrings;
@@ -25,6 +24,9 @@
     NSMutableArray *_sections;
     NSMutableArray *_steps;
     GEOPBTransitRoutingIncidentMessage *_transitIncidentMessage;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _absEndTime;
     unsigned int _absStartTime;
     unsigned int _rank;
@@ -148,6 +150,8 @@
 @property(nonatomic) _Bool hasAbsStartTime;
 @property(nonatomic) unsigned int absStartTime;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)instanceCompatibleWithProtocolVersion:(unsigned int)arg1;
 @property(readonly, nonatomic, getter=isWalkingOnlyRoute) _Bool walkingOnlyRoute;
 

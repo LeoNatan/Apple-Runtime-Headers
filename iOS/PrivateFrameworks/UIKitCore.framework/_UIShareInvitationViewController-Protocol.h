@@ -9,6 +9,10 @@
 @class CKContainerID, CKContainerSetupInfo, CKShare, FPSandboxingURLWrapper, NSData, NSDictionary, NSString, UIColor, UIImage, UITraitCollection;
 
 @protocol _UIShareInvitationViewController <NSObject>
+- (void)_setHeaderSecondaryImage:(UIImage *)arg1;
+- (void)_setHeaderPrimaryImage:(UIImage *)arg1;
+- (void)_setFolderSubitemName:(NSString *)arg1;
+- (void)_setRootFolderTitle:(NSString *)arg1;
 - (void)_setSecondaryAuxiliarySwitchState:(_Bool)arg1;
 - (void)_setSecondaryAuxiliarySwitchTitle:(NSString *)arg1;
 - (void)_setPrimaryAuxiliarySwitchState:(_Bool)arg1;

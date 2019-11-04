@@ -8,12 +8,12 @@
 
 #import <HomeAI/HMFLogging-Protocol.h>
 
-@class HMFUnfairLock, HMIAnalysisService, HMICameraVideoAnalyzerConfiguration, HMICameraVideoAnalyzerScheduler, NSArray, NSMutableArray, NSObject, NSString, NSUUID;
+@class HMFUnfairLock, HMIAnalysisService, HMICameraVideoAnalyzerConfiguration, HMICameraVideoAnalyzerHistory, HMICameraVideoAnalyzerScheduler, NSArray, NSDate, NSMutableArray, NSObject, NSString, NSUUID;
 @protocol HMICameraVideoAnalyzerDelegate, OS_dispatch_queue;
 
 @interface HMICameraVideoAnalyzer : HMFObject <HMFLogging>
 {
-    int _flagCounts[6];
+    int _flagCounts[7];
     int _outcomeCounts[3];
     _Bool _skipSequentialMediaIntegrityCheck;
     _Bool _analysisInProgress;
@@ -26,6 +26,8 @@
     NSUUID *_identifier;
     HMFUnfairLock *_lock;
     NSMutableArray *_internalPendingRequests;
+    NSDate *_lastRequestSubmissionTime;
+    HMICameraVideoAnalyzerHistory *_history;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMICameraVideoAnalyzerScheduler *_scheduler;
     unsigned long long _mediaIntegritySequenceNumber;
@@ -48,6 +50,8 @@
 @property unsigned long long mediaIntegritySequenceNumber; // @synthesize mediaIntegritySequenceNumber=_mediaIntegritySequenceNumber;
 @property(readonly) HMICameraVideoAnalyzerScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(readonly) HMICameraVideoAnalyzerHistory *history; // @synthesize history=_history;
+@property(retain) NSDate *lastRequestSubmissionTime; // @synthesize lastRequestSubmissionTime=_lastRequestSubmissionTime;
 @property(readonly) NSMutableArray *internalPendingRequests; // @synthesize internalPendingRequests=_internalPendingRequests;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
@@ -78,6 +82,7 @@
 - (void)_handleDidNotAnalyzeRequest:(id)arg1 resultCode:(long long)arg2;
 - (void)_handleDidAnalyzeRequest:(id)arg1 withResult:(id)arg2;
 - (void)_handleDidAnalyzeRequest:(id)arg1;
+- (void)_predictRequest:(id)arg1;
 - (void)_willAnalyzeRequest:(id)arg1;
 - (void)_analyzeRequestLocally:(id)arg1;
 - (void)_analyzeRequestRemotely:(id)arg1 retryOnConnectionInterruption:(_Bool)arg2;
@@ -87,6 +92,7 @@
 - (_Bool)_checkRequest:(id)arg1;
 - (void)clearPendingFragments;
 @property(readonly) NSArray *pendingRequests;
+@property(readonly) _Bool isActive;
 - (void)_scheduleRequest:(id)arg1;
 - (void)analyzeFragment:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 identifier:(id)arg2;

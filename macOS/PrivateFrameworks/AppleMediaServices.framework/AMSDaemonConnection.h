@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleInterruption;
 - (id)_connectionProxyForAsync:(BOOL)arg1 accessBlock:(CDUnknownBlockType)arg2;
 - (id)securityServiceProxyWithDelegate:(id)arg1;
+- (id)pushNotificationService;
 - (id)deviceMessengerProxyWithDelegate:(id)arg1;
 - (void)addInterruptionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

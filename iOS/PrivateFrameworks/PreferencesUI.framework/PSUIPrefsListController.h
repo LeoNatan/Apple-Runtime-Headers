@@ -71,16 +71,22 @@
     CoreTelephonyClient *_coreTelephonyClient;
     _Bool skipSelectingDefaultCategoryOnLaunch;
     _Bool _deferredURLLoadForThirdPartyApp;
+    _Bool __cellularDataSettingInitialized;
+    _Bool __cellularDataSetting;
     NSString *_bluetoothString;
     NSArray *_followupSpecifiers;
     PSKeyboardNavigationSearchController *_spotlightSearchController;
     SUIKSearchResultsCollectionViewController *_searchResultsController;
     NSString *_wifiString;
+    struct __CTServerConnection *__ctConnection;
 }
 
 + (void)setAirplaneMode:(_Bool)arg1;
 + (_Bool)airplaneMode;
 + (id)radiosPreferences;
+@property(nonatomic) struct __CTServerConnection *_ctConnection; // @synthesize _ctConnection=__ctConnection;
+@property(nonatomic) _Bool _cellularDataSetting; // @synthesize _cellularDataSetting=__cellularDataSetting;
+@property(nonatomic) _Bool _cellularDataSettingInitialized; // @synthesize _cellularDataSettingInitialized=__cellularDataSettingInitialized;
 @property(nonatomic) _Bool deferredURLLoadForThirdPartyApp; // @synthesize deferredURLLoadForThirdPartyApp=_deferredURLLoadForThirdPartyApp;
 @property(copy, nonatomic) NSString *wifiString; // @synthesize wifiString=_wifiString;
 @property(retain, nonatomic) SUIKSearchResultsCollectionViewController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
@@ -89,6 +95,8 @@
 @property(copy, nonatomic) NSString *bluetoothString; // @synthesize bluetoothString=_bluetoothString;
 @property(nonatomic) _Bool skipSelectingDefaultCategoryOnLaunch; // @synthesize skipSelectingDefaultCategoryOnLaunch;
 - (void).cxx_destruct;
+- (_Bool)isCellularDataEnabled;
+- (void)fetchCellularDataEnabled;
 - (void)_configureImageViewForRow:(id)arg1;
 - (void)didDismissSearchController:(id)arg1;
 - (_Bool)searchBarShouldEndEditing:(id)arg1;
@@ -209,6 +217,7 @@
 - (void)_showControllerFromSpecifier:(id)arg1;
 - (id)_sidebarSpecifierForCategoryController;
 - (void)showPINSheet:(id)arg1;
+- (void)didSelectRowAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

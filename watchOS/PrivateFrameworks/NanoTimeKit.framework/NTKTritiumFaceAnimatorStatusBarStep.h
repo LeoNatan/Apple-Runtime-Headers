@@ -6,22 +6,28 @@
 
 #import <NanoTimeKit/NTKTritiumFaceAnimatorBaseStep.h>
 
+#import <NanoTimeKit/NTKClockStatusBarViewControllerStatusObserver-Protocol.h>
+
 @class UIViewController;
 @protocol NTKClockStatusBarViewController;
 
-@interface NTKTritiumFaceAnimatorStatusBarStep : NTKTritiumFaceAnimatorBaseStep
+@interface NTKTritiumFaceAnimatorStatusBarStep : NTKTritiumFaceAnimatorBaseStep <NTKClockStatusBarViewControllerStatusObserver>
 {
     UIViewController<NTKClockStatusBarViewController> *_activeStatusBarViewController;
     UIViewController<NTKClockStatusBarViewController> *_tritiumStatusBarViewController;
     _Bool _needsToFade;
+    _Bool _wantsActiveStatusBarHidden;
 }
 
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2;
 - (void).cxx_destruct;
+- (void)statusBarDidChange;
 - (void)didTransitionToTritiumOffFromFaceView:(id)arg1;
 - (void)didTransitionToTritiumOnFromFaceView:(id)arg1;
-- (void)setIsTritiumOn:(_Bool)arg1 progress:(float)arg2 faceView:(id)arg3;
 - (void)prepareForTransitionToTritiumOff;
+- (void)setIsTritiumOn:(_Bool)arg1 progress:(float)arg2 faceView:(id)arg3;
+- (void)_setWantsActiveStatusBarHidden:(_Bool)arg1;
+- (void)_updateStatusBarViewControllersHiddenStates;
 - (void)prepareForTransitionToTritiumOn;
 - (void)updateReferencesWithActiveStatusBarViewController:(id)arg1 tritiumStatusBarViewController:(id)arg2;
 

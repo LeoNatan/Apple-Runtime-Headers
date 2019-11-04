@@ -26,11 +26,13 @@
 @property(nonatomic) BOOL isFavorite; // @synthesize isFavorite=_isFavorite;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)_deleteActionSet:(id)arg1 fromHome:(id)arg2;
 - (id)_lazilyUpdateIcon;
 - (id)_lazilyUpdateActions;
 - (id)_lazilyUpdateFavorite;
 - (id)commitItem;
 - (id)_performValidation;
+- (id)deleteActionSet;
 @property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaAction;
 @property(readonly, nonatomic, getter=isAffectedByEndEvents) BOOL affectedByEndEvents;
 @property(readonly, nonatomic) BOOL requiresDeviceUnlock;

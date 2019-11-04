@@ -16,6 +16,7 @@
 @interface HMFMessageDispatcher : HMFObject <HMFLogging, HMFTimerDelegate, HMFMessageTransportDelegate>
 {
     id <HMFLocking> _lock;
+    NSObject<OS_dispatch_queue> *_queue;
     NSMutableOrderedSet *_handlers;
     HMFTimer *_indexWatchdog;
     NSMutableArray *_indexOperations;
@@ -35,6 +36,7 @@
 - (void)timerDidFire:(id)arg1;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)sendMessage:(id)arg1;
 - (void)dispatchMessage:(id)arg1;
 - (void)deregisterReceiver:(id)arg1;
 - (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;

@@ -23,11 +23,6 @@
 
 + (_Bool)isValid:(id)arg1;
 + (Class)logMsgEventType;
-+ (id)logMsgSettings;
-+ (id)logMessagesForEvent:(id)arg1;
-+ (_Bool)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
-+ (id)acceptedLogMsgEventsForLogMessageType:(int)arg1;
-+ (id)acceptedLogMsgEvents;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool hasGroupRetryCount;
 @property(nonatomic) unsigned int groupRetryCount;
@@ -50,14 +45,6 @@
 - (void)addLogMsgEvent:(id)arg1;
 - (void)clearLogMsgEvents;
 @property(retain, nonatomic) NSMutableArray *logMsgEvents;
-- (void)removeUnsupportedStatesFromEvent;
-- (unsigned int)allowedSessionType;
-- (unsigned int)groupItemIdHash;
-- (long long)groupItemQueuedTime;
-- (unsigned int)groupItemCount;
-- (unsigned int)groupSequenceNumber;
-- (id)groupIdentifier;
-- (_Bool)acceptsLogMsgEvent:(id)arg1;
 
 @end
 

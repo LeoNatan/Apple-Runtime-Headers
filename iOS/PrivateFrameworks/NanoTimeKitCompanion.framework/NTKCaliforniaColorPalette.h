@@ -35,7 +35,15 @@
 + (id)paletteForColor:(unsigned long long)arg1;
 - (void).cxx_destruct;
 - (id)swatchImage;
+@property(readonly, nonatomic) UIColor *worldClockNighttimeHandsDotColors;
+@property(readonly, nonatomic) UIColor *worldClockNighttimeHandsColors;
+@property(readonly, nonatomic) UIColor *worldClockNighttimeBackgrounColor;
+@property(readonly, nonatomic) UIColor *worldClockDaytimeHandsDotColors;
+@property(readonly, nonatomic) UIColor *worldClockDaytimeHandsColors;
+@property(readonly, nonatomic) UIColor *worldClockDaytimeBackgrounColor;
+- (_Bool)isLightColor;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) _Bool isBlackBackground;
 - (id)circularDialFillColor;
 - (id)circularDialSubtickColor;
 - (id)circularDialTickColor;

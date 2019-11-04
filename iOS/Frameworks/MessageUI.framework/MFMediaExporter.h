@@ -10,7 +10,9 @@
 {
 }
 
-+ (void)exportAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)setConversionTimers:(id)arg1;
++ (id)conversionTimers;
++ (int)exportAsset:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
 

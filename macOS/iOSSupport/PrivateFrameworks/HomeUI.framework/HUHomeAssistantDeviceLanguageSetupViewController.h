@@ -10,7 +10,7 @@
 #import <HomeUI/HUOnboardingWarningPresenter-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
 
-@class HUPersonalRequestsEditorItemManager, NSArray, NSString, OBLinkTrayButton, OBTrayButton;
+@class HMHome, HUPersonalRequestsEditorItemManager, NSArray, NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
 @interface HUHomeAssistantDeviceLanguageSetupViewController : HUImageOBWelcomeController <HUOnboardingWarningPresenter, HUConfigurationViewController, HUPreloadableViewController>
@@ -23,10 +23,12 @@
     HUPersonalRequestsEditorItemManager *_prEditorItemManager;
     NSArray *_supportedMultiUserLanguages;
     NSArray *_homeAssistantDevicesHavingLanguageMismatch;
+    HMHome *_home;
 }
 
 @property(nonatomic) BOOL shouldSetMultiUserIsEnabled; // @synthesize shouldSetMultiUserIsEnabled=_shouldSetMultiUserIsEnabled;
 @property(nonatomic) BOOL maxNumberOfVoicesReached; // @synthesize maxNumberOfVoicesReached=_maxNumberOfVoicesReached;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSArray *homeAssistantDevicesHavingLanguageMismatch; // @synthesize homeAssistantDevicesHavingLanguageMismatch=_homeAssistantDevicesHavingLanguageMismatch;
 @property(retain, nonatomic) NSArray *supportedMultiUserLanguages; // @synthesize supportedMultiUserLanguages=_supportedMultiUserLanguages;
 @property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
@@ -45,7 +47,7 @@
 - (void)_cancelLanguageSetupWithoutWarningUser;
 - (void)_cancelLanguageSetup;
 - (id)hu_preloadContent;
-- (id)init;
+- (id)initWithHome:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

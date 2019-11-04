@@ -13,7 +13,7 @@
     FBSOpenApplicationService *_openAppService;
 }
 
-+ (id)settingsForDocumentCapture:(_Bool)arg1;
++ (id)settingsForDocumentCapture:(_Bool)arg1 elementIdentifier:(id)arg2;
 - (void).cxx_destruct;
 - (void)_sendRequestForEnvironmentElement:(id)arg1 info:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)captureDocumentForEnvironmentElement:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

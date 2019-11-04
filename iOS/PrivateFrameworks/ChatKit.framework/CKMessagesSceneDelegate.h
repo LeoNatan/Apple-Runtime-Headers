@@ -28,6 +28,8 @@
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
 - (void).cxx_destruct;
+- (id)_oldInputContextIdentifiers;
+- (void)_clearOldInputContextIdentifiersIfNeeded;
 - (id)sharedConversationList;
 - (void)messagesController:(id)arg1 didUpdateCurrentConversation:(id)arg2;
 - (id)canActivatePredicate;

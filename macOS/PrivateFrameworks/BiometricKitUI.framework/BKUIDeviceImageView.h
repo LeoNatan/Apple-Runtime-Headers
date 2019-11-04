@@ -29,7 +29,7 @@
 @property(retain) CALayer *viewLayer; // @synthesize viewLayer=_viewLayer;
 @property(retain, nonatomic) NSString *dfrLabel; // @synthesize dfrLabel=_dfrLabel;
 - (void).cxx_destruct;
-- (BOOL)isJ140;
+- (BOOL)hasTouchBar;
 - (id)_getDeviceImagePathWithName:(id)arg1 withType:(id)arg2;
 - (id)_getDeviceColorImageName;
 - (void)_initTouchIDIntroView;

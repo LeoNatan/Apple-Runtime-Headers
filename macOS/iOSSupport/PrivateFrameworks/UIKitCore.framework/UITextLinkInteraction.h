@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)alloc;
-- (BOOL)_presentActionsForTextInteractableItem:(id)arg1;
 
 @end
 

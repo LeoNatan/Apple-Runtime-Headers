@@ -17,6 +17,7 @@
     BOOL _batteryLevelAvailable;
     BOOL _allowsSyncingClock;
     BOOL _beingEjected;
+    CDUnknownBlockType _ptpEventHandler;
     ICCameraProperties *_cameraProperties;
     double _timeOffset;
     unsigned long long _batteryLevel;
@@ -40,7 +41,8 @@
 @property(nonatomic, getter=isLocked) BOOL locked; // @synthesize locked=_locked;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(nonatomic, getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice; // @synthesize accessRestrictedAppleDevice=_accessRestrictedAppleDevice;
-@property(nonatomic) ICCameraProperties *cameraProperties; // @synthesize cameraProperties=_cameraProperties;
+@property(retain, nonatomic) ICCameraProperties *cameraProperties; // @synthesize cameraProperties=_cameraProperties;
+@property(copy, nonatomic) CDUnknownBlockType ptpEventHandler; // @synthesize ptpEventHandler=_ptpEventHandler;
 @property(nonatomic, getter=isEjectable) BOOL ejectable; // @synthesize ejectable=_ejectable;
 - (void)finishedSerializedOperation;
 - (char *)operationName:(unsigned long long)arg1;
@@ -93,7 +95,7 @@
 - (void)requestOpenSessionWithOptions:(id)arg1;
 - (void)requestOpenSession;
 - (void)updateMediaPresentationPreference:(id)arg1;
-- (void)handleImageCaptureEventNotification:(id)arg1;
+- (void)handleImageCaptureEventNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)relateMedia:(id)arg1;
 - (id)relateGroupedMedia:(id)arg1;
 - (id)relateLegacyMedia:(id)arg1;

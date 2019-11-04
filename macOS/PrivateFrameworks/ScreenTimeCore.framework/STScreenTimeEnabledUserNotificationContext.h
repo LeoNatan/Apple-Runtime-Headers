@@ -11,6 +11,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id)notificationBundleIdentifier;
 - (void)customizeNotificationContent:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

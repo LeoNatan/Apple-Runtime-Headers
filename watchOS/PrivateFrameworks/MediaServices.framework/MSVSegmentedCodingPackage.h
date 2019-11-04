@@ -26,7 +26,7 @@
 - (_Bool)deleteWithError:(id *)arg1;
 - (_Bool)saveWithError:(id *)arg1;
 @property(readonly, nonatomic) NSDictionary *allVersions;
-- (id)decoders;
+- (id)decodersWithError:(id *)arg1;
 - (id)encoderForSegment:(id)arg1 version:(int)arg2;
 - (_Bool)writeWithError:(id *)arg1;
 - (void)setNeedsInfoDictionaryUpdate;

@@ -16,6 +16,7 @@
     _Bool _cache;
     _Bool _dynamic;
     CDUnknownBlockType _migrationBlock;
+    CDUnknownBlockType _shouldCompactOnLaunch;
     RLMSchema *_customSchema;
     NSString *_pathOnDisk;
 }
@@ -36,9 +37,12 @@
 @property(copy, nonatomic) RLMSchema *customSchema; // @synthesize customSchema=_customSchema;
 @property(nonatomic) _Bool dynamic; // @synthesize dynamic=_dynamic;
 @property(nonatomic) _Bool cache; // @synthesize cache=_cache;
+@property(copy, nonatomic) CDUnknownBlockType shouldCompactOnLaunch; // @synthesize shouldCompactOnLaunch=_shouldCompactOnLaunch;
 @property(copy, nonatomic) CDUnknownBlockType migrationBlock; // @synthesize migrationBlock=_migrationBlock;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)syncConfiguration;
+- (void)setCustomSchemaWithoutCopying:(id)arg1;
 - (void)setSchemaMode:(unsigned char)arg1;
 - (unsigned char)schemaMode;
 @property(nonatomic) _Bool disableFormatUpgrade;

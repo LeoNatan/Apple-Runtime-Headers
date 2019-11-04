@@ -6,7 +6,7 @@
 
 #import <EventKitUI/EKEventEditItem.h>
 
-@class UITableViewCell;
+@class UITableViewCell, UIView;
 
 @interface EKEventDeleteButtonEditItem : EKEventEditItem
 {
@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *sourceViewForPopover;
 - (void)editor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
 - (_Bool)shouldAppearWithVisibility:(int)arg1;
 - (void)setDeleteButtonTarget:(id)arg1 action:(SEL)arg2;

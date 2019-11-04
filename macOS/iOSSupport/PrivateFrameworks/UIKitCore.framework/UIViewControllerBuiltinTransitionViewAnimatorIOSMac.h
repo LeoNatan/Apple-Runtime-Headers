@@ -9,7 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface UIViewControllerBuiltinTransitionViewAnimatorIOSMac : UIViewControllerBuiltinTransitionViewAnimator
 {
+    BOOL _presenting;
 }
+
+@property(nonatomic, getter=isPresenting) BOOL presenting; // @synthesize presenting=_presenting;
+- (void)animateTransition:(id)arg1;
+- (double)durationForTransition:(int)arg1;
 
 @end
 

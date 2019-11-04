@@ -84,6 +84,7 @@
 - (void)_commitNewDataSource:(id)arg1 withViewUpdates:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_reloadViewUpdatesForDiffUpdate:(id)arg1 dataSource:(id)arg2 ignoreInvalidItems:(_Bool)arg3;
 - (id)_reloadViewUpdatesForDiffUpdate:(id)arg1;
+- (void)_commitUpdate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_commitUpdate:(id)arg1;
 - (id)_pendingReloadUpdatesForDataSource:(id)arg1;
 @property(nonatomic) int tableViewDefaultRowAnimation;

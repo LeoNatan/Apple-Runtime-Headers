@@ -10,7 +10,6 @@ __attribute__((visibility("hidden")))
 @interface RBXMLRecorder_DisplayList : RBDisplayList
 {
     struct Tree _tree;
-    int _ignoreDrawing;
 }
 
 - (id).cxx_construct;

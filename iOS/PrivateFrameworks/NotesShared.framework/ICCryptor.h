@@ -11,6 +11,9 @@
 }
 
 + (void)rewrapAndDivergeKeyForObject:(id)arg1 usingPassphrase:(id)arg2;
++ (void)removeAccountFromBiometricID:(id)arg1 andRemoveNotes:(_Bool)arg2;
++ (void)removeNoteFromBiometricID:(id)arg1;
++ (void)removeAllFromBiometricID;
 + (void)removeItemFromBiometricID:(id)arg1;
 + (void)removePassphraseForNotesInAccount:(id)arg1;
 + (void)removePassphraseForAccount:(id)arg1;

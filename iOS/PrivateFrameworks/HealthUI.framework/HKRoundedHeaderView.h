@@ -10,7 +10,6 @@
 
 @interface HKRoundedHeaderView : UIView
 {
-    _Bool _textLabelTruncated;
     HKGradient *_gradient;
     UIColor *_color;
     UIImage *_image;
@@ -44,7 +43,6 @@
 + (id)_textFont;
 + (id)_accessibilityContentSizeCategory;
 + (double)estimatedHeight;
-@property(nonatomic) _Bool textLabelTruncated; // @synthesize textLabelTruncated=_textLabelTruncated;
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *largeTextChevronCenterYConstraint; // @synthesize largeTextChevronCenterYConstraint=_largeTextChevronCenterYConstraint;
@@ -78,7 +76,6 @@
 - (void)_setupConstraints;
 - (void)_setupUI;
 - (_Bool)_isTextLabelTruncated;
-- (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) double textHorizontalInset;
 @property(copy, nonatomic) NSString *detailText;

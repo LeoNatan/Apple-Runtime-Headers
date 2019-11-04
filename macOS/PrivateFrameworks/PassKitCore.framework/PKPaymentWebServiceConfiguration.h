@@ -27,7 +27,6 @@
 - (id)_queue_region:(id)arg1;
 - (id)_queue_regions;
 - (BOOL)_queue_supportedForOSVersion:(id)arg1 inRegion:(id)arg2 deviceClass:(id)arg3 platform:(id)arg4;
-- (id)maximumTransitLocationAccuracyPerRegion;
 - (BOOL)shouldPaymentSetupFeaturesUseStrictProductsCheckForRegion:(id)arg1;
 - (BOOL)deviceCheckInDisabledForRegion:(id)arg1;
 - (double)deviceCheckInIntervalForRegion:(id)arg1;

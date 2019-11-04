@@ -55,6 +55,7 @@
 - (void)_loadLayoutRules;
 - (struct CGRect)_upperComplicationFrameForStyle:(unsigned int)arg1;
 - (struct CGRect)_lowerComplicationFrameForStyle:(unsigned int)arg1;
+- (_Bool)_needsForegroundContainerView;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;

@@ -15,7 +15,14 @@
 + (id)safeCategoryTargetClassName;
 - (id)_axLongLookView;
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_axNotifyDidEndUserInteraction;
+- (void)_axNotifyWillBeginUserInteraction:(_Bool)arg1;
+- (void)_axHandleAnnouncementFinished;
 - (void)_axAnnounceNotification;
+- (void)_axSetHasFinishedAnnouncement:(_Bool)arg1;
+- (_Bool)_axHasFinishedAnnouncement;
+- (void)_axSetHasSentAnnouncement:(_Bool)arg1;
+- (_Bool)_axHasSentAnnouncement;
 - (void)viewDidAppear:(_Bool)arg1;
 - (_Bool)_accessibilityShouldPostScreenChangedOnPresentation;
 - (_Bool)_accessibilityAppearanceAnnouncementHandledByEnclosingEntity;

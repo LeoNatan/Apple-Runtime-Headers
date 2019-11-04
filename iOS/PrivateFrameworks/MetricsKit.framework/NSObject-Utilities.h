@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (Utilities)
-- (id)nullableValueForKey:(id)arg1;
-- (id)nullableValueForKeyPath:(id)arg1;
+- (id)mt_nullableValueForKey:(id)arg1;
+- (id)mt_nullableValueForKeyPath:(id)arg1;
 @end
 

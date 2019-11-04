@@ -60,6 +60,7 @@
 - (void).cxx_destruct;
 - (void)_migrateNotificationsFromList:(id)arg1 toList:(id)arg2 passingTest:(CDUnknownBlockType)arg3 hideToList:(_Bool)arg4 clearRequests:(_Bool)arg5;
 - (void)_insertNotificationRequest:(id)arg1;
+- (void)_sortNotificationGroupsIfNecessary;
 - (void)_regroupAllNotificationGroups;
 - (id)_sectionForNotificationRequest:(id)arg1;
 - (_Bool)_shouldDNDDelayDeliveryOfNotificationRequest:(id)arg1;
@@ -88,6 +89,7 @@
 - (_Bool)notificationListViewIsGroup:(id)arg1;
 - (id)notificationListView:(id)arg1 viewForItemAtIndex:(unsigned long long)arg2;
 - (double)notificationListView:(id)arg1 heightForItemAtIndex:(unsigned long long)arg2;
+- (_Bool)notificationStructuredSectionList:(id)arg1 shouldScrollToTopForGroupList:(id)arg2;
 - (void)notificationStructuredSectionList:(id)arg1 requestsScrollingToContentOffset:(double)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (_Bool)notificationStructuredSectionList:(id)arg1 shouldFilterNotificationRequest:(id)arg2;
 - (id)notificationStructuredSectionList:(id)arg1 requestsAuxiliaryOptionsContentProviderForNotificationRequest:(id)arg2 isLongLook:(_Bool)arg3;

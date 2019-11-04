@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (id)extractNearestNeighborsForMapsQueryResult:(id)arg1 andNeighbors:(id)arg2 frequencyOnly:(_Bool)arg3;
 - (id)featuresFromMapsFeedbackEvents:(id)arg1;
+- (id)mapsShareEtaDefaultKnnSuggestions:(id)arg1 maxSuggestions:(unsigned int)arg2;
 - (id)rankedMapsShareEtaSuggestions:(id)arg1 maxSuggestions:(unsigned int)arg2;
 - (unsigned int)indexToInsertNeighbor:(id)arg1 array:(id)arg2;
 - (id)neighborsFromTrainingData:(id)arg1 k:(unsigned int)arg2 queryPoint:(id)arg3;
@@ -43,7 +44,7 @@
 - (id)featureVectorFromPredictionDate:(id)arg1 bundleId:(id)arg2;
 - (id)targetBundleIdsForFilterBundlesIds:(id)arg1;
 - (id)filterShareInteractions:(id)arg1 minimumOccurences:(unsigned int)arg2;
-- (id)splitShareLabels:(id)arg1 filterOnRecency:(unsigned int)arg2 suggestionDate:(id)arg3;
+- (id)splitShareLabels:(id)arg1 suggestionDate:(id)arg2 contextBundleId:(id)arg3;
 - (id)interactionLabelsForQueryResult:(id)arg1 queryPoint:(id)arg2 rankerType:(int)arg3 frequencyOnly:(_Bool)arg4 contactsOnly:(_Bool)arg5;
 - (id)suggestionProxiesWithPredictionContext:(id)arg1;
 - (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned int)arg2 contactsOnly:(_Bool)arg3 interactions:(id)arg4 contactIdsCurrentlyInStore:(id)arg5;

@@ -21,6 +21,7 @@
 - (_Bool)resetWithError:(id *)arg1;
 - (_Bool)executeUsingBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (_Bool)executeWithIndexedBindings:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (_Bool)executeWithNamedBindings:(id)arg1 rowsChanged:(unsigned long long *)arg2 error:(id *)arg3;
 - (_Bool)executeWithNamedBindings:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) _Bool isFinalized;
 @property(readonly, nonatomic) struct sqlite3_stmt *compiled;

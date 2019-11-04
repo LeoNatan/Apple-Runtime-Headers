@@ -21,7 +21,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)_waitUntilListeingForContext:(id)arg1 timeoutInterval:(double)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_waitUntilListeningForContext:(id)arg1 timeoutInterval:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)notifyObserver:(id)arg1 didChangeStateFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
 - (_Bool)handleContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithConnection:(id)arg1;

@@ -35,6 +35,8 @@
 - (id)lowEndHardwareModifier;
 - (id)insertionModifierForInsertionEvent:(id)arg1;
 - (id)appExposeModifierForAppExposeEvent:(id)arg1;
+- (id)tetheredInsertionModifierFortetheredInsertionEvent:(id)arg1;
+- (id)tetheredRemovalModifierForTetheredRemovalEvent:(id)arg1;
 - (id)reduceMotionModifierForReduceMotionChangedEvent:(id)arg1;
 - (id)transitionModifierForInlineTransitionEvent:(id)arg1;
 - (id)transitionModifierForMainTransitionEvent:(id)arg1;

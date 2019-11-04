@@ -88,6 +88,7 @@
 - (id)_invalidationReasonsForAddedOrRemovedAccessory:(id)arg1;
 - (id)_itemsToUpdateForTelevisionProfiles:(id)arg1;
 - (id)_itemsToUpdateForModifiedNetworkRouterProfiles:(id)arg1;
+- (id)_itemsToUpdateForModifiedNetworkProtectionGroups:(id)arg1;
 - (id)_itemsToUpdateForModifiedNetworkConfigurationProfiles:(id)arg1;
 - (id)_itemsToUpdateForModifiedSoftwareUpdates:(id)arg1;
 - (id)_itemsToUpdateForModifiedSoftwareUpdateControllers:(id)arg1;
@@ -127,6 +128,7 @@
 - (_Bool)_isUsingOnlyItemModules;
 - (id)_allSuppressedCharacteristics;
 - (_Bool)_shouldHideServiceItem:(id)arg1 containedInServiceGroupItem:(id)arg2;
+- (id)_accessoryItemsToHideInSet:(id)arg1;
 - (id)_serviceItemsToHideInSet:(id)arg1 allServiceGroupItems:(id)arg2;
 - (id)_itemsToHideInSet:(id)arg1;
 - (void)_notifyDelegateOfItemOperations:(id)arg1 logger:(id)arg2;
@@ -214,6 +216,7 @@
 - (void)settingsDidUpdate:(id)arg1;
 - (void)mediaObject:(id)arg1 didUpdateSettings:(id)arg2;
 - (void)mediaObject:(id)arg1 didUpdateMediaSession:(id)arg2;
+- (void)mediaSessionDidUpdate:(id)arg1;
 - (void)mediaSession:(id)arg1 failedToUpdatePlaybackStateWithError:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(long long)arg2;
 - (void)mediaSession:(id)arg1 willUpdatePlaybackState:(long long)arg2;
@@ -233,9 +236,7 @@
 - (void)profileDidUpdateWiFiCredentialType:(id)arg1;
 - (void)profileDidUpdateWiFiReconfigurationSupport:(id)arg1;
 - (void)profileDidUpdateAccessViolation:(id)arg1;
-- (void)profilesDidUpdateAllowedHosts:(id)arg1;
 - (void)profileDidUpdateAllowedHosts:(id)arg1;
-- (void)profilesDidUpdateNetworkProtectionMode:(id)arg1;
 - (void)profileDidUpdateNetworkProtectionMode:(id)arg1;
 - (void)fixSessionDidChangeForAccessory:(id)arg1;
 - (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
@@ -290,6 +291,9 @@
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
 - (void)accessoryDidUpdateName:(id)arg1;
+- (void)home:(id)arg1 didUpdateAccessoryNetworkProtectionGroup:(id)arg2;
+- (void)home:(id)arg1 didRemoveAccessoryNetworkProtectionGroup:(id)arg2;
+- (void)home:(id)arg1 didAddAccessoryNetworkProtectionGroup:(id)arg2;
 - (void)home:(id)arg1 remoteAccessStateDidChange:(unsigned long long)arg2;
 - (void)home:(id)arg1 didRemoveResidentDevice:(id)arg2;
 - (void)home:(id)arg1 didAddResidentDevice:(id)arg2;

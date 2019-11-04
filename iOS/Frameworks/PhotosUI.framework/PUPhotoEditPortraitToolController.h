@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @interface PUPhotoEditPortraitToolController : PUPhotoEditToolController <PUPhotoEditApertureToolbarDelegate, CEKLightingControlDelegate, CEKSliderDelegate, PXChangeObserver>
 {
     CEKApertureButton *_apertureButton;
+    UIView *_apertureButtonContainer;
     UIButton *_lightingIntensityButton;
     UIView *_lightingContainer;
     UIView *_apertureContainer;

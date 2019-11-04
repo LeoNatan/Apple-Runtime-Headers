@@ -18,9 +18,9 @@
 @property(readonly, nonatomic) NSString *name;
 @property(nonatomic) struct CATransform3D transform3D;
 @property(nonatomic) struct CGAffineTransform transform;
-@property(nonatomic) struct CGPoint center;
-@property(nonatomic, getter=isHidden) BOOL hidden;
-@property(nonatomic) long long zIndex;
-@property(nonatomic) double alpha;
+@property struct CGPoint center;
+@property(getter=isHidden) BOOL hidden;
+@property long long zIndex;
+@property double alpha;
 @end
 

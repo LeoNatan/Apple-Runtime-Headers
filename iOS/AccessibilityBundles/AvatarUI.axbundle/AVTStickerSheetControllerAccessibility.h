@@ -13,7 +13,13 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_axMarkupCell:(id)arg1 indexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)_accessibilityLoadAccessibilityInformation;
+- (void)_axSetCurrentAvatarRecord:(id)arg1;
+- (id)_axGetCurrentAvatarRecord;
+- (void)_axSetCurrentAvatarDescription:(id)arg1;
+- (id)_axGetCurrentAvatarDescription;
 
 @end
 

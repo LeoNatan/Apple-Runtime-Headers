@@ -30,7 +30,7 @@
 - (id)hk_firstSortedObjectWithComparison:(CDUnknownBlockType)arg1;
 - (id)hk_firstObjectWithMinimumValueUsingEvaluationBlock:(CDUnknownBlockType)arg1;
 - (id)hk_firstObjectWithMaximumValueUsingEvaluationBlock:(CDUnknownBlockType)arg1;
-- (double)hk_sumUsingEvaulationBlock:(CDUnknownBlockType)arg1;
+- (double)hk_sumUsingEvaluationBlock:(CDUnknownBlockType)arg1;
 - (id)hk_averageUsingEvaluationBlock:(CDUnknownBlockType)arg1;
 - (id)hk_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)hk_foldRightFrom:(id)arg1 with:(CDUnknownBlockType)arg2;

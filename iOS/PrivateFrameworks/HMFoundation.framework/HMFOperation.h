@@ -36,6 +36,7 @@
 - (void)finish;
 - (void)cancelWithError:(id)arg1;
 - (void)cancel;
+- (void)main;
 - (void)start;
 - (void)setQualityOfService:(long long)arg1;
 @property(readonly, copy) NSDate *timeoutDate;

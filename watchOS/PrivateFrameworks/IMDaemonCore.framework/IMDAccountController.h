@@ -17,10 +17,12 @@
     NSSet *_operationalAccountsCache;
     _Bool _isLoading;
     _Bool _isFirstLoad;
+    _Bool _networkDataAvailable;
 }
 
 + (id)sharedAccountController;
 + (id)sharedInstance;
+@property(nonatomic) _Bool networkDataAvailable; // @synthesize networkDataAvailable=_networkDataAvailable;
 @property(readonly, nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 - (void)account:(id)arg1 isActiveChanged:(_Bool)arg2;
 - (id)_nicknameController;

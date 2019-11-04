@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VSCredentialEntryPicker *picker; // @synthesize picker=_picker;
 @property(retain, nonatomic) NSArray *credentialEntryFields; // @synthesize credentialEntryFields=_credentialEntryFields;
 - (void).cxx_destruct;
+- (void)clearFieldsAfterUsername;
 - (void)pickerDidSelectRow:(unsigned long long)arg1;
 - (void)buttonTappedAtIndex:(unsigned long long)arg1;
 - (void)validateCredentialEntryFields;

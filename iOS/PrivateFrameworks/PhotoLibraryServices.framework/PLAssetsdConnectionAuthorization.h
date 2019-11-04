@@ -25,6 +25,7 @@
     _Bool _photoKitEntitled;
     int _clientProcessIdentifier;
     NSString *_trustedCallerBundleID;
+    NSString *_trustedCallerDisplayName;
 }
 
 @property(readonly, nonatomic) _Bool photoKitEntitled; // @synthesize photoKitEntitled=_photoKitEntitled;
@@ -33,6 +34,7 @@
 - (void).cxx_destruct;
 - (void)handleInvalidation;
 - (_Bool)photoKitEntitledFor:(id)arg1;
+@property(readonly, nonatomic) NSString *trustedCallerDisplayName; // @synthesize trustedCallerDisplayName=_trustedCallerDisplayName;
 - (void)_handleDuetReportIsForground:(_Bool)arg1;
 - (_Bool)_shouldTrackDKEventForBundle:(id)arg1;
 - (void)_trackDKEventIfNecessary;

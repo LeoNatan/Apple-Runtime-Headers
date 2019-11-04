@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)_readingIntentWithURL:(id)arg1 materializeOption:(unsigned long long)arg2;
 - (void)coordinateForCopyingFromURL:(id)arg1 toURL:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)coordinateAtURL:(id)arg1 recursively:(_Bool)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)resolveItemOrURL:(id)arg1 recursively:(_Bool)arg2 coordinateIfExport:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)resolveItemOrURL:(id)arg1 recursively:(_Bool)arg2 andCoordinateWithHandler:(CDUnknownBlockType)arg3;
 - (void)resolveItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveItem:(id)arg1 recursively:(_Bool)arg2 andCoordinateWithHandler:(CDUnknownBlockType)arg3;

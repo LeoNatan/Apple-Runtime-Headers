@@ -20,22 +20,20 @@
     NSString *_localizedName;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     NSString *_logID;
+    HMDMediaBrowser *_browser;
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMDMediaBrowser *_mediaBrowser;
     NSMutableArray *_pendingBlocks;
 }
 
 + (id)logCategory;
 @property(retain, nonatomic) NSMutableArray *pendingBlocks; // @synthesize pendingBlocks=_pendingBlocks;
-@property(readonly, nonatomic) __weak HMDMediaBrowser *mediaBrowser; // @synthesize mediaBrowser=_mediaBrowser;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property __weak HMDMediaBrowser *browser; // @synthesize browser=_browser;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 - (void).cxx_destruct;
-- (BOOL)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
 - (id)logIdentifier;
 @property(readonly, copy) NSString *description;
 - (void)_setPlaybackState:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -57,13 +55,15 @@
 @property(readonly, nonatomic, getter=isConnected) BOOL connected;
 @property(retain, nonatomic) NSSet *outputDeviceIdentifiers; // @synthesize outputDeviceIdentifiers=_outputDeviceIdentifiers;
 @property(nonatomic) unsigned int connectionState; // @synthesize connectionState=_connectionState;
-- (void)updateEndpoint:(void *)arg1;
+- (void)updateWithEndpoint:(id)arg1;
 - (void)_updateOutputDeviceIdentifiers;
-- (BOOL)isEqualToEndpoint:(void *)arg1;
 - (void)setRetainedEndpoint:(void *)arg1;
 @property(readonly) void *retainedEndpoint; // @synthesize retainedEndpoint=_retainedEndpoint;
+- (BOOL)isEqualToEndpoint:(void *)arg1;
+- (BOOL)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 - (void)dealloc;
-- (id)initWithEndpoint:(void *)arg1 mediaBrowser:(id)arg2;
+- (id)initWithEndpoint:(void *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

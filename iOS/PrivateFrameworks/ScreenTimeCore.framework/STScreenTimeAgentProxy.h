@@ -10,6 +10,8 @@
 {
 }
 
++ (id)newContactsServiceInterface;
++ (id)newContactsServiceConnection;
 + (id)newInterface;
 + (id)newConnection;
 

@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (struct CGPoint)convertFromMagnifierPoint:(struct CGPoint)arg1;
 - (struct CGPoint)magnifierPoint;
+- (void)_cancelGrabberTransitionOutAnimations:(id)arg1;
 - (void)updateGrabbers;
 - (_Bool)_endIsHorizontal;
 - (_Bool)_startIsHorizontal;

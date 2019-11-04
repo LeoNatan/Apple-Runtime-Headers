@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PXAlertController *progressController; // @synthesize progressController=_progressController;
 @property(retain, nonatomic) UIViewController *presenterViewController; // @synthesize presenterViewController=_presenterViewController;
 - (void).cxx_destruct;
+- (void)_finishWithSuccess:(_Bool)arg1 cancelled:(_Bool)arg2;
 - (void)_sucessfullyFinishedSaving:(_Bool)arg1 error:(id)arg2;
 - (void)_exportGeneratedVideo;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

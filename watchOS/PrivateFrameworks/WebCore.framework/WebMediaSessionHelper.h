@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _Bool _startMonitoringAirPlayRoutesPending;
 }
 
+- (void)activeAudioRouteDidChange:(id)arg1;
 - (void)carPlayIsConnectedDidChange:(id)arg1;
 - (void)carPlayServerDied:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;

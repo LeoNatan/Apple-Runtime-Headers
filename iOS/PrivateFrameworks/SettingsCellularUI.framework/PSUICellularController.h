@@ -21,6 +21,7 @@
     _Bool _ignoreNextEntitlementStatusChange;
     PSSpecifier *_personalHotspotSpecifier;
     PSSpecifier *_fauxCardSpecifier;
+    _Bool _shouldCalculateDataUsage;
     PSUICellularDataSpecifier *_cellularDataSpecifier;
     PSUICellularDataOptionsController *_cellularDataOptionsController;
     PSUICellularDataPlanSetupGroup *_cellularDataPlanSetupGroup;
@@ -70,6 +71,8 @@
 - (void)handleURL:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)prefetchResourcesFor:(id)arg1;
+- (id)activeDataPlanLabel;
+- (id)appUsageGroupTitle;
 - (id)specifiers;
 - (void)turnOnLocationServicesPressed:(id)arg1;
 - (void)retryCarrierListFetch:(id)arg1;

@@ -10,6 +10,8 @@
 @protocol OS_xpc_object;
 
 @protocol PLChangePublisher <NSObject>
+- (void)unpauseLaunchEventNotifications;
+- (void)pauseLaunchEventNotifications;
 - (PLClientServerTransaction *)publishChangeEvent:(NSObject<OS_xpc_object> *)arg1 delayedSaveActionsDetail:(PLDelayedSaveActionsDetail *)arg2 transaction:(PLClientServerTransaction *)arg3;
 @end
 

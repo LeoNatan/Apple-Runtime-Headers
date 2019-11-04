@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDClientRankingFeatureMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDClientRankingFeatureTypeResult *_featureTypeResult;
     GEOPDClientRankingFeatureTypeSource *_featureTypeSource;
     GEOPDClientRankingFeatureFunctionTypeDiscrete *_functionTypeDiscrete;
     GEOPDClientRankingFeatureFunctionTypeLinear *_functionTypeLinear;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _featureType;
     int _functionType;
     struct {
@@ -74,6 +76,8 @@ __attribute__((visibility("hidden")))
 - (id)featureTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasFeatureType;
 @property(nonatomic) int featureType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

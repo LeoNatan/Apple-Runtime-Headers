@@ -13,7 +13,8 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (_Bool)accessibilityPerformEscape;
+- (void)layoutSubviews;
+- (void)_accessibilityLoadAccessibilityInformation;
 
 @end
 

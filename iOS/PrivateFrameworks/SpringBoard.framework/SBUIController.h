@@ -15,7 +15,7 @@
 #import <SpringBoard/UIInteractionProgressObserver-Protocol.h>
 #import <SpringBoard/UIWindowDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, SBAppStatusBarSettingsAssertion, SBAppSwitcherSettings, SBDismissOnlyAlertItem, SBHUDController, SBHomeScreenBackdropViewBase, SBHomeScreenWindow, SBIconContentView, SBIconController, SBMainScreenActiveInterfaceOrientationWindow, SBVolumeControl, SBWallpaperEffectView, SBWindow, UIForceStageInteractionProgress, UIStatusBar, UIView;
+@class NSMutableDictionary, NSMutableSet, NSString, SBAppStatusBarSettingsAssertion, SBAppSwitcherSettings, SBDismissOnlyAlertItem, SBHUDController, SBHomeScreenBackdropViewBase, SBHomeScreenWindow, SBIconContentView, SBIconController, SBMainScreenActiveInterfaceOrientationWindow, SBVolumeControl, SBWallpaperEffectView, SBWindow, UIForceStageInteractionProgress, UIStatusBar, UIView;
 
 @interface SBUIController : NSObject <SBWallpaperObserver, PTSettingsKeyObserver, UIInteractionProgressObserver, SBWallpaperOrientationProvider, SBReachabilityObserver, SBHomeScreenBackdropViewBaseDelegate, UIWindowDelegate, CSPowerStatusProviding>
 {
@@ -42,10 +42,13 @@
     float _batteryCapacity;
     _Bool _supportsDetailedBatteryCapacity;
     _Bool _disableAppSwitchForcePressDueToHomeButtonForce;
+    int _powerStateUpdateToken;
+    NSMutableDictionary *_powerSourceHasChimed;
     int _batteryLoggingStartCapacity;
     SBDismissOnlyAlertItem *_unsupportedChargerAlert;
     SBAppSwitcherSettings *_switcherSettings;
     NSMutableSet *_contentRequiringReasons;
+    _Bool _chargingChimeEnabled;
     SBIconController *_iconController;
 }
 
@@ -58,6 +61,7 @@
 + (struct CGRect)statusBarFrameForDeviceApplicationSceneHandle:(id)arg1 displayConfiguration:(id)arg2 interfaceOrientation:(long long)arg3 statusBarStyleRequest:(id)arg4 withinBounds:(struct CGRect)arg5 inReferenceSpace:(_Bool)arg6;
 + (struct CGRect)statusBarFrameForSnapshotFrame:(struct CGRect)arg1 remainderFrame:(struct CGRect *)arg2 orientation:(long long)arg3 statusBarStyleRequest:(id)arg4 hidden:(_Bool)arg5;
 + (struct CGRect)statusBarFrameForSnapshotFrame:(struct CGRect)arg1 orientation:(long long)arg2 statusBarStyleRequest:(id)arg3 hidden:(_Bool)arg4;
+@property(nonatomic) _Bool chargingChimeEnabled; // @synthesize chargingChimeEnabled=_chargingChimeEnabled;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
 - (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
@@ -103,7 +107,10 @@
 - (_Bool)isBatteryCharging;
 - (int)batteryCapacityAsPercentage;
 - (float)batteryCapacity;
-- (void)playConnectedToPowerSoundIfNecessary;
+- (void)playChargingChimeIfAppropriate;
+- (void)suppressChimeForConnectedPowerSources;
+- (_Bool)_powerSourceWantsToPlayChime;
+- (void)_enumeratePowerSourcesWithBlock:(CDUnknownBlockType)arg1;
 - (void)updateBatteryState:(id)arg1;
 - (void)cancelVolumeEvent;
 - (void)handleVolumeButtonWithType:(long long)arg1 down:(_Bool)arg2;
@@ -115,7 +122,6 @@
 - (_Bool)dissmissAlertItemsAndSheetsIfPossible;
 - (_Bool)hasVisibleAlertItemOrSheet:(out _Bool *)arg1;
 - (void)_switchToHomeScreenWallpaperAnimated:(_Bool)arg1;
-- (void)stopRestoringIconList;
 - (void)cancelInProcessAnimations;
 - (void)endRequiringLiveBackdropViewForReason:(id)arg1;
 - (void)endRequiringBackdropViewForReason:(id)arg1;
@@ -137,7 +143,6 @@
 - (void)activateApplication:(id)arg1 fromIcon:(id)arg2 location:(id)arg3 activationSettings:(id)arg4 actions:(id)arg5;
 - (long long)transitionSourceForIconLocation:(id)arg1;
 - (id)alertItemForPreventingLaunchOfApp:(id)arg1;
-- (void)launchIcon:(id)arg1 fromLocation:(id)arg2 context:(id)arg3 activationSettings:(id)arg4 actions:(id)arg5;
 - (void)getRotationContentSettings:(CDStruct_e950349b *)arg1 forWindow:(id)arg2;
 - (void)_setupHomeScreenContentBackdropView;
 - (void)_setupHomeScreenDimmingWindow;

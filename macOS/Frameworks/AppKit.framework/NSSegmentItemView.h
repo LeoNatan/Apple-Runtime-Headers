@@ -86,8 +86,12 @@ __attribute__((visibility("hidden")))
 - (double)lastBaselineOffsetFromBottom;
 - (double)_availableTruncationWidth;
 - (struct CGSize)_preferredSegmentSize;
+- (struct CGSize)_preferredSegmentSizeWithOptions:(id)arg1;
 - (struct CGSize)_minimumSegmentSize;
 - (struct CGSize)_minimumSegmentSizeWithOptions:(id)arg1;
+- (double)_minimumContentWidthWithOptions:(id)arg1;
+- (double)_contentWidthWithOptions:(id)arg1;
+- (CDStruct_6a12c974)_segmentMetricsWithCompressionOptions:(id)arg1;
 - (double)minimumLabelWidth;
 - (double)contentPadding;
 - (double)contentSpacing;

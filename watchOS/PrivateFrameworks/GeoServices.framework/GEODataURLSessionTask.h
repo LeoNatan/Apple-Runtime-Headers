@@ -10,7 +10,7 @@
 #import <GeoServices/GEODataSessionUpdatableTask-Protocol.h>
 #import <GeoServices/GEOStateCapturing-Protocol.h>
 
-@class GEOClientMetrics, GEODataRequest, NSData, NSError, NSHTTPURLResponse, NSMutableData, NSString, NSURL, NSURLRequest, NSURLSessionTask, NSURLSessionTaskMetrics;
+@class GEOClientMetrics, GEODataRequest, NSData, NSDate, NSError, NSHTTPURLResponse, NSMutableData, NSString, NSURL, NSURLRequest, NSURLSessionTask, NSURLSessionTaskMetrics;
 @protocol GEODataSessionTaskDelegate, GEORequestCounterTicket, NSObject, OS_dispatch_queue, OS_os_activity, OS_voucher;
 
 @interface GEODataURLSessionTask : NSObject <GEOStateCapturing, GEODataSessionTask, GEODataSessionUpdatableTask>
@@ -39,6 +39,7 @@
     NSObject<OS_os_activity> *_activity;
     NSObject<OS_voucher> *_voucher;
     id <NSObject> _parsedResponse;
+    NSDate *_originalStartDate;
 }
 
 @property(nonatomic) _Bool receivedRNFNotification; // @synthesize receivedRNFNotification=_receivedRNFNotification;
@@ -74,6 +75,7 @@
 @property(readonly, nonatomic) NSData *receivedData;
 @property(readonly, nonatomic) _Bool protocolBufferHasPreamble;
 @property float priority;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (void)cancel;
 - (void)_prepareForRestart;
@@ -106,7 +108,6 @@
 @property(readonly, nonatomic) NSString *entityTag;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

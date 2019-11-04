@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <Intents/INFileURLEnumerable-Protocol.h>
+#import <Intents/INFileEnumerable-Protocol.h>
 #import <Intents/INGenericIntent-Protocol.h>
 #import <Intents/INImageProxyInjecting-Protocol.h>
 #import <Intents/INIntentExport-Protocol.h>
@@ -18,20 +18,24 @@
 
 @class INImage, INIntentCodableDescription, INIntentKeyParameter, INParameterContexts, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSOrderedSet, NSString, NSUUID, PBCodable, _INPBIntentMetadata;
 
-@interface INIntent : NSObject <INImageProxyInjecting, INIntentSlotComposing, INFileURLEnumerable, INKeyImageProducing, INIntentExport, INGenericIntent, INRuntimeObject, NSCopying, NSSecureCoding>
+@interface INIntent : NSObject <INImageProxyInjecting, INIntentSlotComposing, INKeyImageProducing, INFileEnumerable, INIntentExport, INGenericIntent, INRuntimeObject, NSCopying, NSSecureCoding>
 {
     NSMutableDictionary *_intentInstanceDescriptionMapping;
     NSArray *_parameterImages;
+    _Bool _hasLoadedKeyParameter;
+    struct os_unfair_lock_s _keyParameterLock;
     _Bool _shouldForwardToAppOnSucccess;
     NSDictionary *_parameterCombinations;
     NSDictionary *_configurableParameterCombinations;
     INParameterContexts *_parameterContexts;
     unsigned long long _indexingHash;
+    INIntentKeyParameter *_keyParameter;
     NSString *_identifier;
     PBCodable *_backingStore;
     NSArray *_airPlayRouteIds;
     NSString *_recordRoute;
     NSUUID *_recordDeviceUID;
+    NSString *_recordDeviceIdentifier;
     long long __preferredInteractionDirection;
 }
 
@@ -44,6 +48,7 @@
 + (void)_setSharedExtensionContextUUID:(id)arg1 forIntentClassName:(id)arg2;
 + (id)_sharedExtensionContextUUIDForIntentClassName:(id)arg1;
 @property(readonly, nonatomic) long long _preferredInteractionDirection; // @synthesize _preferredInteractionDirection=__preferredInteractionDirection;
+@property(retain, nonatomic, setter=_setRecordDeviceIdentifier:) NSString *recordDeviceIdentifier; // @synthesize recordDeviceIdentifier=_recordDeviceIdentifier;
 @property(retain, nonatomic, setter=_setRecordDeviceUID:) NSUUID *recordDeviceUID; // @synthesize recordDeviceUID=_recordDeviceUID;
 @property(copy, nonatomic, setter=_setRecordRoute:) NSString *recordRoute; // @synthesize recordRoute=_recordRoute;
 @property(retain, nonatomic, setter=_setAirPlayRouteIds:) NSArray *airPlayRouteIds; // @synthesize airPlayRouteIds=_airPlayRouteIds;
@@ -64,7 +69,7 @@
 - (id)_inCodable;
 - (_Bool)_isValueValidForKey:(id)arg1 unsupportedReason:(id *)arg2;
 - (_Bool)_isValidKey:(id)arg1;
-@property(readonly, nonatomic) INIntentKeyParameter *_keyParameter;
+@property(readonly, nonatomic) INIntentKeyParameter *_keyParameter; // @synthesize _keyParameter;
 - (id)_className;
 - (id)_intentInstanceDescription;
 @property(readonly, nonatomic) INIntentCodableDescription *_codableDescription;
@@ -72,6 +77,7 @@
 @property(readonly, nonatomic) NSDictionary *_JSONDictionaryRepresentation;
 - (_Bool)isGenericIntent;
 @property(copy, nonatomic) NSDictionary *parametersByName;
+@property(copy, nonatomic, setter=_setParametersForcedToNeedsValue:) NSArray *_parametersForcedToNeedsValue;
 @property(copy, nonatomic) NSString *verb;
 @property(copy, nonatomic) NSString *domain;
 - (id)initWithDomain:(id)arg1 verb:(id)arg2 parametersByName:(id)arg3;
@@ -99,6 +105,7 @@
 - (id)_nonNilParameters;
 @property(readonly, nonatomic, getter=_isEligibleForSuggestions) _Bool _eligibleForSuggestions;
 @property(readonly, nonatomic, getter=_isConfigurable) _Bool _configurable;
+- (_Bool)_supportsBackgroundExecutionWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool _supportsBackgroundExecution;
 - (id)_validParameterCombinationsWithSchema:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *_validParameterCombinations;
@@ -149,7 +156,7 @@
 @property(readonly) long long _intents_toggleState;
 - (id)localizeValueOfSlotDescription:(id)arg1 forLanguage:(id)arg2;
 - (id)intentSlotDescriptions;
-- (id)_localizedCombinationStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 bundleURL:(id)arg4 language:(id)arg5;
+- (id)_localizedCombinationStringForKey:(id)arg1 value:(id)arg2 localizationTable:(id)arg3 bundleURL:(id)arg4 language:(id)arg5;
 @property(readonly, copy, nonatomic) NSString *_localizedVerb;
 - (id)_subtitleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
 - (id)_subtitleForLanguage:(id)arg1;
@@ -162,10 +169,12 @@
 - (id)_intents_bundleIdForLaunching;
 - (id)_intents_bestBundleIdentifier;
 - (id)_intents_launchIdForCurrentPlatform;
-- (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
 - (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 @property(readonly) INImage *_keyImage;
 - (id)_keyImageWithIntentDescriptionStrategy;
+- (void)_enumerateWithValueProcessingBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
+- (void)_intents_enumerateFileURLsWithBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
+- (void)_intents_enumerateFilesWithBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly) Class superclass;

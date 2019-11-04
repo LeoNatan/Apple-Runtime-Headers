@@ -30,8 +30,11 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *topicKey; // @synthesize topicKey;
 - (void)clearTransactionCacheForParticipant:(id)arg1;
 - (void)passMessage:(id)arg1 sequence:(int)arg2 fromParticipant:(id)arg3;
+- (void)purgeExpiredEntries:(double)arg1 messageHistory:(id)arg2 participantID:(id)arg3;
+- (_Bool)isDuplicateMessageID:(id)arg1 messageHistory:(id)arg2 participantID:(id)arg3;
 - (void)sendMessage:(id)arg1 participantID:(unsigned long long)arg2 withSequence:(long long)arg3 numRetries:(long long)arg4;
 - (void)sendMessage:(id)arg1 participantID:(unsigned long long)arg2;
+- (id)messageForCommand:(id)arg1;
 - (void)sendMessage:(id)arg1;
 - (_Bool)isStringAssociated:(id)arg1;
 - (void)dealloc;

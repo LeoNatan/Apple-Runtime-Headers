@@ -77,6 +77,8 @@
 @property(readonly, nonatomic) int displayGamut;
 @property(readonly, nonatomic) float displayScale;
 @property(readonly, nonatomic) int userInterfaceIdiom;
+- (_Bool)_changedLegibilityWeightFromTraitCollection:(id)arg1;
+- (_Bool)_changedContentSizeCategoryOrLegibilityWeightFromTraitCollection:(id)arg1;
 - (_Bool)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (id)_valueForTraitNamed:(id)arg1;
 - (id)_traitNamesOfIntersectionWithTraitCollection:(id)arg1;

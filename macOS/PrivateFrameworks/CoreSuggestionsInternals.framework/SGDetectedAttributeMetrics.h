@@ -18,13 +18,13 @@
 + (void)recordSentContactDetailWithEntity:(id)arg1 match:(id)arg2 found:(struct SGMContactDetailFoundIn_)arg3;
 + (id)tokenizeMessageContent:(id)arg1;
 + (id)nameForDataDetectorMatch:(id)arg1 withValue:(id)arg2;
-+ (void)recordBirthdayExtractionAccuracy:(unsigned char)arg1 isFromCongratulation:(unsigned char)arg2;
++ (void)recordBirthdayExtractionAccuracy:(unsigned char)arg1 withOffset:(id)arg2 withModelVersion:(id)arg3 isFromCongratulation:(unsigned char)arg4 didRegexTrigger:(unsigned char)arg5;
 + (void)recordExtractionOutcome:(struct SGMContactDetailExtractionOutcome_)arg1 fromEntity:(id)arg2;
 + (void)recordExtractionOutcome:(struct SGMContactDetailExtractionOutcome_)arg1 fromEntity:(id)arg2 foundInSignature:(BOOL)arg3 match:(id)arg4 foundInCNContact:(struct SGMContactDetailOwner_)arg5 modelVersion:(id)arg6 isUnlikelyPhone:(BOOL)arg7;
 + (void)recordExtractionOutcome:(struct SGMContactDetailExtractionOutcome_)arg1 fromEntity:(id)arg2 foundInSignature:(BOOL)arg3 match:(id)arg4 modelVersion:(id)arg5 isUnlikelyPhone:(BOOL)arg6;
 + (void)recordExtractionOutcome:(struct SGMContactDetailExtractionOutcome_)arg1 fromEntity:(id)arg2 foundInSignature:(BOOL)arg3 detection:(id)arg4;
 + (void)_recordExtractionOutcome:(struct SGMContactDetailExtractionOutcome_)arg1 detailType:(struct SGMContactDetailType_)arg2 fromEntity:(id)arg3 foundInSignature:(BOOL)arg4 detailType:(unsigned long long)arg5 detailValue:(id)arg6 modelVersion:(id)arg7 isUnlikelyPhone:(BOOL)arg8;
-+ (void)_recordExtractionEventFromSource:(struct SGMDocumentType_)arg1 foundInSignature:(BOOL)arg2 detailType:(struct SGMContactDetailType_)arg3 outcome:(struct SGMContactDetailExtractionOutcome_)arg4 foundInCNContact:(struct SGMContactDetailOwner_)arg5 modelVersion:(id)arg6 isUnlikelyPhone:(BOOL)arg7;
++ (void)_recordExtractionEventFromSource:(struct SGMDocumentType_)arg1 foundInSignature:(BOOL)arg2 detailType:(struct SGMContactDetailType_)arg3 outcome:(struct SGMContactDetailExtractionOutcome_)arg4 foundInCNContact:(struct SGMContactDetailOwner_)arg5 modelVersion:(id)arg6 isUnlikelyPhone:(BOOL)arg7 sigSource:(struct SGMContactDetailExtractionSignatureSource_)arg8;
 + (id)instance;
 @property(retain, nonatomic) PETEventTracker2 *pet2Tracker; // @synthesize pet2Tracker=_pet2Tracker;
 @property(retain, nonatomic) SGMContactDetailSent *contactDetailSent; // @synthesize contactDetailSent=_contactDetailSent;

@@ -6,19 +6,19 @@
 
 #import <MediaPlayer/MPModelLibraryRequest.h>
 
-#import <MediaPlaybackCore/MPCModelPlaybackRequesting-Protocol.h>
+#import <MediaPlaybackCore/MPCModelPlaybackRequest-Protocol.h>
 #import <MediaPlaybackCore/MPCModelRequestRTCReporting-Protocol.h>
 
-@class MPSectionedCollection, NSString;
+@class NSString;
 
-@interface MPModelLibraryRequest (MPCModelPlaybackAdditions) <MPCModelPlaybackRequesting, MPCModelRequestRTCReporting>
+@interface MPModelLibraryRequest (MPCModelPlaybackAdditions) <MPCModelRequestRTCReporting, MPCModelPlaybackRequest>
 @property(readonly, copy, nonatomic) NSString *rtcReportingPlayQueueSourceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) MPSectionedCollection *playbackSourceModelObjects;
+@property(nonatomic) _Bool shouldBatchResultsWithPlaceholderObjects;
 @property(readonly) Class superclass;
 @end
 

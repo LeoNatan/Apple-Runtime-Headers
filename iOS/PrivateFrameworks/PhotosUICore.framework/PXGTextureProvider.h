@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXImageDataSpecRegistration-Protocol.h>
 
-@class NSMutableIndexSet, NSString, PXGViewEnvironment;
+@class NSIndexSet, NSMutableIndexSet, NSString, PXGViewEnvironment;
 @protocol OS_dispatch_queue, PXGTextureProviderDelegate;
 
 @interface PXGTextureProvider : NSObject <PXImageDataSpecRegistration>
@@ -23,18 +23,23 @@
     long long _lastImageDataSpecIndex;
     NSMutableIndexSet *_requestIDsPendingCancellation;
     PXGViewEnvironment *_viewEnvironment;
+    NSIndexSet *_requestIDsInTargetRect;
     id <PXGTextureProviderDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_requestQueue;
+    NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    CDStruct_04522d6a _interactionState;
+    CDStruct_93894d6c _interactionState;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(nonatomic) __weak id <PXGTextureProviderDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) CDStruct_04522d6a interactionState; // @synthesize interactionState=_interactionState;
+@property(copy, nonatomic) NSIndexSet *requestIDsInTargetRect; // @synthesize requestIDsInTargetRect=_requestIDsInTargetRect;
+@property(nonatomic) CDStruct_93894d6c interactionState; // @synthesize interactionState=_interactionState;
 @property(retain, nonatomic) PXGViewEnvironment *viewEnvironment; // @synthesize viewEnvironment=_viewEnvironment;
 - (void).cxx_destruct;
+- (void)clearTextureAtlasManagerCache;
 - (void)setTextureAtlasManager:(id)arg1 atSpecIndex:(long long)arg2;
 - (id)textureAtlasManagerAtSpecIndex:(long long)arg1;
 - (long long)requestQueue_indexForImageDataSpec:(CDStruct_1b544862)arg1;
@@ -57,7 +62,7 @@
 - (void)didFinishRequestingTextures;
 - (void)cancelTextureRequests:(id)arg1;
 - (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
-- (void)interactionStateDidChange:(CDStruct_04522d6a)arg1;
+- (void)interactionStateDidChange:(CDStruct_93894d6c)arg1;
 - (void)viewEnvironmentDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;

@@ -21,6 +21,7 @@
     _Bool _photoKitEntitled;
     int _clientProcessIdentifier;
     NSString *_trustedCallerBundleID;
+    NSString *_trustedCallerDisplayName;
 }
 
 @property(readonly, nonatomic) _Bool photoKitEntitled; // @synthesize photoKitEntitled=_photoKitEntitled;
@@ -29,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)handleInvalidation;
 - (_Bool)photoKitEntitledFor:(id)arg1;
+@property(readonly, nonatomic) NSString *trustedCallerDisplayName; // @synthesize trustedCallerDisplayName=_trustedCallerDisplayName;
 - (void)setupFromConnection:(id)arg1;
 @property(readonly, nonatomic) CDStruct_4c969caf clientAuditToken;
 - (_Bool)isPhotosClient;

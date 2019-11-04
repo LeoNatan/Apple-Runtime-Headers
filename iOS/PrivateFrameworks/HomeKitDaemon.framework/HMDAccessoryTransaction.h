@@ -11,11 +11,13 @@
 
 @interface HMDAccessoryTransaction : HMDBackingStoreModelObject
 {
+    NSString *_configuredNetworkProtectionGroupUUIDString;
     NSObject<OS_dispatch_group> *_configurationTracker;
 }
 
 + (id)properties;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *configurationTracker; // @synthesize configurationTracker=_configurationTracker;
+@property(retain, nonatomic) NSString *configuredNetworkProtectionGroupUUIDString; // @synthesize configuredNetworkProtectionGroupUUIDString=_configuredNetworkProtectionGroupUUIDString;
 - (void).cxx_destruct;
 - (id)dependentUUIDs;
 
@@ -27,6 +29,9 @@
 @property(retain, nonatomic) NSNumber *currentNetworkProtectionMode; // @dynamic currentNetworkProtectionMode;
 @property(retain, nonatomic) NSString *firmwareVersion; // @dynamic firmwareVersion;
 @property(retain, nonatomic) NSString *identifier; // @dynamic identifier;
+@property(retain, nonatomic) NSNumber *initialCategoryIdentifier; // @dynamic initialCategoryIdentifier;
+@property(retain, nonatomic) NSString *initialManufacturer; // @dynamic initialManufacturer;
+@property(retain, nonatomic) NSString *initialModel; // @dynamic initialModel;
 @property(retain, nonatomic) NSNumber *lastNetworkAccessViolationOccurrenceSince1970; // @dynamic lastNetworkAccessViolationOccurrenceSince1970;
 @property(retain, nonatomic) NSNumber *lastNetworkAccessViolationResetSince1970; // @dynamic lastNetworkAccessViolationResetSince1970;
 @property(retain, nonatomic) NSString *manufacturer; // @dynamic manufacturer;
@@ -35,6 +40,7 @@
 @property(retain, nonatomic) NSNumber *networkClientIdentifier; // @dynamic networkClientIdentifier;
 @property(retain, nonatomic) NSNumber *networkClientLAN; // @dynamic networkClientLAN;
 @property(retain, nonatomic) NSString *networkRouterUUID; // @dynamic networkRouterUUID;
+@property(retain, nonatomic) NSString *primaryProfileVersion; // @dynamic primaryProfileVersion;
 @property(retain, nonatomic) NSString *productData; // @dynamic productData;
 @property(retain, nonatomic) NSString *providedName; // @dynamic providedName;
 @property(retain, nonatomic) NSString *roomUUID; // @dynamic roomUUID;

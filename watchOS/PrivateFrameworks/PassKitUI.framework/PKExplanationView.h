@@ -10,7 +10,7 @@
 #import <PassKitUI/UITextViewDelegate-Protocol.h>
 #import <PassKitUI/_PKUIKVisibilityBackdropViewDelegate-Protocol.h>
 
-@class NSAttributedString, NSString, PKCheckGlyphLayer, PKPaymentSetupDockView, UIActivityIndicatorView, UIButton, UIFont, UIImage, UIImageView, UILabel, UIScrollView, UITextView, _PKUIKVisibilityBackdropView;
+@class NSAttributedString, NSString, PKCheckGlyphLayer, PKPaymentSetupDockView, UIActivityIndicatorView, UIButton, UIColor, UIFont, UIImage, UIImageView, UILabel, UIScrollView, UITextView, _PKUIKVisibilityBackdropView;
 @protocol PKExplanationViewDelegate;
 
 @interface PKExplanationView : UIView <UIScrollViewDelegate, UITextViewDelegate, _PKUIKVisibilityBackdropViewDelegate>
@@ -32,11 +32,14 @@
     float _titleLabelLastLineDescent;
     UIButton *_bodyButton;
     UITextView *_secondaryBodyTextView;
+    UIView *_topBackgroundView;
     _Bool _forceShowSetupLaterButton;
     _Bool _hideTitleText;
     id <PKExplanationViewDelegate> _delegate;
+    float _titleHyphenationFactor;
     UIImage *_image;
     UIView *_heroView;
+    UIColor *_topBackgroundColor;
     UIImage *_titleImage;
     UIFont *_titleFont;
     int _titleTextAlignment;
@@ -44,6 +47,7 @@
     NSAttributedString *_attributedBodyText;
     NSAttributedString *_attributedSecondaryBodyText;
     NSString *_bodyButtonText;
+    int _bodyButtonNumberOfLines;
     UIView *_bodyView;
     int _bodyTextAlignment;
     unsigned int _bodyDataDetectorTypes;
@@ -61,6 +65,7 @@
 @property(nonatomic) unsigned int bodyDataDetectorTypes; // @synthesize bodyDataDetectorTypes=_bodyDataDetectorTypes;
 @property(nonatomic) int bodyTextAlignment; // @synthesize bodyTextAlignment=_bodyTextAlignment;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
+@property(nonatomic) int bodyButtonNumberOfLines; // @synthesize bodyButtonNumberOfLines=_bodyButtonNumberOfLines;
 @property(copy, nonatomic) NSString *bodyButtonText; // @synthesize bodyButtonText=_bodyButtonText;
 @property(copy, nonatomic) NSAttributedString *attributedSecondaryBodyText; // @synthesize attributedSecondaryBodyText=_attributedSecondaryBodyText;
 @property(copy, nonatomic) NSAttributedString *attributedBodyText; // @synthesize attributedBodyText=_attributedBodyText;
@@ -70,8 +75,10 @@
 @property(copy, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) UIImage *titleImage; // @synthesize titleImage=_titleImage;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(retain, nonatomic) UIColor *topBackgroundColor; // @synthesize topBackgroundColor=_topBackgroundColor;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(nonatomic) float titleHyphenationFactor; // @synthesize titleHyphenationFactor=_titleHyphenationFactor;
 @property(nonatomic) float topMargin; // @synthesize topMargin=_topMargin;
 @property(nonatomic) _Bool forceShowSetupLaterButton; // @synthesize forceShowSetupLaterButton=_forceShowSetupLaterButton;
 @property(nonatomic) _Bool showPrivacyView; // @synthesize showPrivacyView=_showPrivacyView;

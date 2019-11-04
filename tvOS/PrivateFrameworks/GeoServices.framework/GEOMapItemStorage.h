@@ -15,7 +15,6 @@
 @interface GEOMapItemStorage : PBCodable <GEOMapItemPrivate, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOMapItemClientAttributes *_clientAttributes;
     GEOPDResultDetourInfo *_internalDetourInfo;
@@ -25,6 +24,9 @@
     GEOPlaceResult *_placeResult;
     GEOPlace *_place;
     GEOMapItemStorageUserValues *_userValues;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_clientAttributes:1;

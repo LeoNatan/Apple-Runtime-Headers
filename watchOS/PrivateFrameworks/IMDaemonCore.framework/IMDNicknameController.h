@@ -27,7 +27,6 @@
     double _lastMeContactStoreSync;
 }
 
-+ (id)ckQueue;
 + (id)sharedInstance;
 @property(nonatomic) _Bool nicknameIsUploadingToCK; // @synthesize nicknameIsUploadingToCK=_nicknameIsUploadingToCK;
 @property(retain, nonatomic) NSMutableArray *chatsToSendNicknameInfoTo; // @synthesize chatsToSendNicknameInfoTo=_chatsToSendNicknameInfoTo;
@@ -43,6 +42,7 @@
 @property(retain, nonatomic) IDSKVStore *kvStore; // @synthesize kvStore=_kvStore;
 @property(retain, nonatomic) IMNickname *personalNickname; // @synthesize personalNickname=_personalNickname;
 - (void)systemDidLeaveFirstDataProtectionLock;
+- (id)transferServicesController;
 - (id)substringRecordIDForNickname:(id)arg1;
 - (id)nicknameForHandle:(id)arg1;
 - (id)nicknameForHandleURI:(id)arg1;
@@ -50,16 +50,22 @@
 - (id)nicknameForRecordID:(id)arg1;
 - (id)allNicknames;
 - (void)_deleteAvatarForNickname:(id)arg1;
+- (id)pendingPersonalNickname;
 - (id)storedPersonalNickname;
 - (id)nickNameRecordID;
 - (id)nickNameDecryptionKey;
 - (void)_deletePublicNicknameLocationAndKey;
+- (void)_deletePendingNicknameForUpload;
+- (id)_getPendingNicknameForUpload;
+- (void)_storePendingNicknameForUpload:(id)arg1;
 - (void)_storePublicNickname:(id)arg1 nicknameLocation:(id)arg2 encryptionKey:(id)arg3;
 - (_Bool)_populateNicknameDictionary:(id)arg1 forKVStore:(id)arg2 limitToLoad:(unsigned int)arg3;
 - (void)loadSharingHandlesPrefs;
 - (void)loadHandledNicknamesAndPendingUpdates;
 - (void)loadPersonalNicknameIfNeeded;
 - (void)_loadAllInfoFromDiskIfAble;
+- (void)_setUnderScrutiny:(_Bool)arg1;
+- (_Bool)_isUnderScrutiny;
 - (_Bool)_deviceUnderFirstUnlock;
 - (void)cleanUpNicknameForID:(id)arg1;
 - (void)_deleteHandleIDFromHandledMap:(id)arg1;
@@ -72,6 +78,7 @@
 - (_Bool)replacedNicknameForHandleIDInHandledMapIfNeeded:(id)arg1 nickname:(id)arg2;
 - (void)addNicknameToPendingUpdates:(id)arg1;
 - (void)_broadcastPendingMapChanged;
+- (void)ignorePendingNicknameForHandleID:(id)arg1;
 - (void)clearPendingNicknameForHandleID:(id)arg1;
 - (void)saveNicknameForRecordID:(id)arg1 handleID:(id)arg2 userNickname:(id)arg3;
 - (void)_updatePendingNicknameVersion;
@@ -101,22 +108,15 @@
 - (void)_updateMessageDictionaryWithPendingNicknameUpdates:(id)arg1;
 - (void)_updateSharingPreferencesIfNeededFromMadridMessage:(id)arg1;
 - (void)deleteAllPersonalNicknames:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_getNicknameRecordFromPublicDBWithRecordName:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)NicknameWithRecordID:(id)arg1 URI:(id)arg2 decryptionKey:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
+- (void)getNicknameWithRecordID:(id)arg1 decryptionKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)currentPersonalNicknameWithRecordID:(id)arg1 decryptionKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)currentPersonalNicknamewithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)fetchAllNicknamesForCurrentUser:(CDUnknownBlockType)arg1;
-- (double)_retryIntervalForRetryCount:(unsigned int)arg1;
-- (void)cloudKitOperationWithRetryCount:(unsigned int)arg1 withError:(id)arg2 operation:(CDUnknownBlockType)arg3;
-- (void)performCloudKitOperation:(CDUnknownBlockType)arg1 withError:(id)arg2;
-- (void)_handleSaveNicknameError:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
-- (void)_updateEncryptedPersonalNicknameToPublicCloudKitDBSavingRecord:(id)arg1 deletingRecordIDs:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
-- (void)_updateEncryptedPersonalNicknameToPublicCloudKitDBSavingRecord:(id)arg1 deletingRecordID:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)_resetHandleSharingList;
+- (void)_uploadPendingNicknameIfNecessary;
 - (void)setPersonalNickname:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_endNicknameUpload;
-- (void)_beginNicknameUpload;
-- (void)_incrementMeCardVersion;
+- (void)_beginNicknameUpload:(id)arg1;
 - (void)verifyTruncatedRecordIDMatchesPersonalNickname:(id)arg1 forChat:(id)arg2;
 - (void)deviceSignedOutOfiMessage;
 - (void)_newDeviceDidSignIntoiMessageWithRetryCount:(unsigned int)arg1;
@@ -131,9 +131,6 @@
 - (void)_ckAccountChanged:(id)arg1;
 - (_Bool)_nicknameFeatureEnabled;
 - (id)defaults;
-- (id)_nickNameFetchConfiguration;
-- (id)_nickNameSaveConfiguration;
-- (id)_nickNamePublicDB;
 - (void)dealloc;
 - (id)init;
 

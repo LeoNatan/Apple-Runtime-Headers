@@ -25,6 +25,7 @@
 @property(retain, nonatomic) CSSearchableIndex *prefsSearchableIndex; // @synthesize prefsSearchableIndex=_prefsSearchableIndex;
 @property(nonatomic) _Bool skipManifests; // @synthesize skipManifests=_skipManifests;
 - (void).cxx_destruct;
+- (void)performYukonManifestMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)indexThirdPartyAppsWithPrefix:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_urlsFromManifestForSpecifier:(id)arg1 bundle:(id)arg2;
 - (id)_urlForSpecifier:(id)arg1 identifier:(id)arg2 category:(id)arg3 childCategory:(id *)arg4 prefix:(id)arg5 path:(id *)arg6 baseURL:(id)arg7 shouldLinkToRow:(_Bool)arg8;

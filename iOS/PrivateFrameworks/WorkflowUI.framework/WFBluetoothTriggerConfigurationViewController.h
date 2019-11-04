@@ -10,24 +10,25 @@
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 #import <WorkflowUI/WFTriggerTableViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSOrderedSet, NSString, UITableView;
+@class NSArray, NSString, UITableView;
 
 @interface WFBluetoothTriggerConfigurationViewController : WFTriggerConfigurationViewController <WFTriggerTableViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
-    NSOrderedSet *_allDevices;
+    NSArray *_allDevices;
     UITableView *_tableView;
     NSArray *_sections;
 }
 
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(copy, nonatomic) NSOrderedSet *allDevices; // @synthesize allDevices=_allDevices;
+@property(copy, nonatomic) NSArray *allDevices; // @synthesize allDevices=_allDevices;
 - (void).cxx_destruct;
 - (void)triggerTableViewControllerDidCancel:(id)arg1;
-- (void)triggerTableViewController:(id)arg1 didSelectOptions:(id)arg2;
+- (void)triggerTableViewController:(id)arg1 didFinishWithAnySelected:(_Bool)arg2 orSelectedOptions:(id)arg3;
 - (void)presentNavControllerWithRootViewController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

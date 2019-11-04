@@ -13,7 +13,6 @@
 @interface GEOPlaceFormattedString : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_contactHome;
     GEOFormattedString *_contactOther;
@@ -24,6 +23,9 @@
     GEOFormattedString *_streetAddress;
     GEOFormattedString *_unknown;
     GEOFormattedString *_work;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_contactHome:1;
@@ -89,6 +91,8 @@
 @property(retain, nonatomic) GEOFormattedString *home;
 @property(readonly, nonatomic) _Bool hasHome;
 - (void)_readHome;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

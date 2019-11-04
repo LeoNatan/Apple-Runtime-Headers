@@ -35,6 +35,7 @@
     id <MPNowPlayingInfoLyricsDelegate> _lyricsDelegate;
     struct {
         void *createPlaybackQueue;
+        void *createContentItem;
         void *createChildItem;
         void *metadata;
         void *artwork;
@@ -43,6 +44,7 @@
         void *lyrics;
     } _callbacks;
     void *_fallbackActivity;
+    unsigned long long _stateHandle;
     MPMRNowPlayingPlayerPathWrapper *_playerPath;
     id <MPNowPlayingPlaybackQueueDelegate> _playbackQueueDelegate;
     NSString *_playerID;
@@ -66,7 +68,7 @@
 - (void)_onQueue_clearPlaybackQueueDataSourceCallbacks;
 - (void)_onDataSourceQueue_getContentItemIDsInRange:(struct _MSVSignedRange)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_onDataSourceQueue_artworkCatalogForContentItem:(id)arg1;
-- (void)_invalidatePlaybackQueueImmediately;
+- (void)_invalidatePlaybackQueueImmediatelyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_getTransportablePlaybackSessionRepresentationWithIdentifier:(id)arg1 preferredSessionType:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_getMetadataForContentItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void *)_createPlaybackQueueForRequest:(void *)arg1;
@@ -79,6 +81,7 @@
 @property(readonly, nonatomic) _Bool supportsArtworkCatalogLoading;
 - (CDUnknownBlockType)artworkCatalogBlockForContentItem:(id)arg1;
 @property(retain, nonatomic) MPNowPlayingContentItem *nowPlayingContentItem;
+- (void)invalidatePlaybackQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)invalidatePlaybackQueue;
 @property(nonatomic) __weak id <MPNowPlayingInfoLyricsDelegate> lyricsDelegate;
 @property(nonatomic) __weak id <MPNowPlayingPlaybackQueueDataSource> playbackQueueDataSource;

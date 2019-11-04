@@ -8,10 +8,12 @@
 
 @interface MPModelGenericObject (MPCModelPlaybackIntentDataSourceAdditions)
 + (id)mpc_remotePlaybackQueueRequiredProperties;
-+ (id)mqf_requiredPlaybackProperties;
++ (id)mqf_requiredSectionPlaybackProperties;
++ (id)mqf_requiredItemPlaybackProperties;
 - (id)mpc_protoItemRepresentation;
 - (id)mpc_protoContainerRepresentation;
 - (id)MPC_modelObjectWithStoreFrontLocalEquivalentModelObject:(id)arg1;
 - (id)mqf_playbackItemMetadataModelObject;
+- (id)mpc_radioContentReference;
 @end
 

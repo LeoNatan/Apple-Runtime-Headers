@@ -17,6 +17,5 @@
 
 @optional
 - (BOOL)_allowHighlightForTextInteractableItem:(_UITextInteractableItem *)arg1;
-- (BOOL)_presentActionsForTextInteractableItem:(_UITextInteractableItem *)arg1;
 @end
 

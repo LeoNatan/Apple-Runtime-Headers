@@ -48,10 +48,10 @@ struct OpaqueAudioQueue;
 typedef struct {
     struct OpaqueAudioQueue *_field1;
     struct AudioStreamBasicDescription _field2;
-    struct AudioQueueBuffer *_field3[10];
+    struct AudioQueueBuffer *_field3[100];
     struct OpaqueAudioFileID *_field4;
     unsigned int _field5;
     long long _field6;
-    _Bool _field7;
-} CDStruct_ad6583bf;
+    int _field7;
+} CDStruct_f128470a;
 

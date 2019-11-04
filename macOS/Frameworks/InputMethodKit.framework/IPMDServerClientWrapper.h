@@ -22,6 +22,7 @@
     BOOL _inserting;
     unsigned long long _markedCharacterCount;
     long long _documentIDCache;
+    struct CGRect _touchBarAvailableFrameCache;
     NSString *_markedTextCache;
     BOOL _currentAttributesCacheValid;
     BOOL _currentIndexZeroAttributeCacheValid;
@@ -44,6 +45,7 @@
 @property(nonatomic) BOOL currentIndexZeroAttributeCacheValid; // @synthesize currentIndexZeroAttributeCacheValid=_currentIndexZeroAttributeCacheValid;
 @property(nonatomic) BOOL currentAttributesCacheValid; // @synthesize currentAttributesCacheValid=_currentAttributesCacheValid;
 @property(readonly, nonatomic) NSMutableDictionary *attributes_Cache; // @synthesize attributes_Cache=_attributes_Cache;
+@property(nonatomic) struct CGRect touchBarAvailableFrameCache; // @synthesize touchBarAvailableFrameCache=_touchBarAvailableFrameCache;
 @property(nonatomic) long long documentIDCache; // @synthesize documentIDCache=_documentIDCache;
 - (void)invalidateAttributesCacheForAllIndex:(BOOL)arg1;
 - (void)setAttributes_Cache:(id)arg1 forIndex:(unsigned long long)arg2;
@@ -93,6 +95,9 @@
 - (id)currentInputSourceBundleID;
 - (void)selectInputMode:(id)arg1;
 - (id)bundleIdentifier;
+- (double)touchBarTotalWidth;
+- (struct CGRect)touchBarAvailableFrame;
+- (BOOL)shouldSuppressCandidates;
 - (BOOL)isSecureMode;
 - (long long)spellCheckerDocumentTag;
 - (int)processIdentifier;

@@ -50,7 +50,7 @@
 - (BOOL)discardUncommittedFileWithIdentity:(id)arg1 error:(id *)arg2;
 - (BOOL)commitFileWithIdentity:(id)arg1 error:(id *)arg2;
 - (BOOL)storeData:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 needsCommit:(char *)arg4 error:(id *)arg5;
-- (BOOL)storeFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 needsCommit:(char *)arg4 error:(id *)arg5;
+- (BOOL)storeFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 moveIfPossible:(BOOL)arg4 needsCommit:(char *)arg5 error:(id *)arg6;
 - (BOOL)_fixupIdentity:(id)arg1 fileURL:(id)arg2 data:(id)arg3 error:(id *)arg4;
 - (void)_removeIdentityFromUncommittedFiles:(id)arg1;
 - (void)_addIdentityToUncommittedFiles:(id)arg1;

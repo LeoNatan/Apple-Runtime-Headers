@@ -32,10 +32,17 @@
 - (void).cxx_destruct;
 - (void)logLocalStoreWithReason:(id)arg1;
 - (BOOL)saveWithError:(id *)arg1;
+- (BOOL)consolidateVisitsToLoisWithKnownPlaceTypesWithError:(id *)arg1;
+- (id)filteredVisitMOs:(id)arg1 referenceLocation:(id)arg2 error:(id *)arg3;
 - (BOOL)fixUnconcreteLOIs:(id *)arg1;
 - (BOOL)combineSequentialVisitsWithError:(id *)arg1;
 - (BOOL)cleanUpCombinedPairs:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (BOOL)combineEarlierVisitMO:(id)arg1 withLaterVisitMO:(id)arg2 error:(id *)arg3;
+- (BOOL)dedupeLOIsWithError:(id *)arg1;
+- (id)loiToMoveToFromConnectedComponent:(id)arg1;
+- (id)connectedComponentForLoiMO:(id)arg1 encounteredIdentifiers:(id)arg2 error:(id *)arg3;
+- (id)dedupableLOIsNearLocation:(id)arg1 mapItem:(id)arg2 error:(id *)arg3;
+- (BOOL)moveVisitMOs:(id)arg1 toLOIMO:(id)arg2 error:(id *)arg3;
 - (BOOL)iterativelyCollapseOverlappingRevGeoLOIsWithError:(id *)arg1;
 - (BOOL)cleanUpWithError:(id *)arg1;
 - (BOOL)combineOverlappingRevGeoLOIsStabilized:(char *)arg1 error:(id *)arg2;

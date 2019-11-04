@@ -56,14 +56,14 @@
 - (void).cxx_destruct;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
-- (void)suggestionsViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2;
+- (void)suggestionsViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2 title:(id)arg3;
 - (void)suggestionsViewControllerViewControllerDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryApps:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)suggestionsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)searchResultsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
-- (void)searchResultsViewController:(id)arg1 didSelectSection:(id)arg2;
+- (void)searchResultsViewController:(id)arg1 didSelectAppWithBundleIdentifier:(id)arg2;
 - (void)searchResultsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)resultsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)resultsViewController:(id)arg1 didSelectAction:(id)arg2;

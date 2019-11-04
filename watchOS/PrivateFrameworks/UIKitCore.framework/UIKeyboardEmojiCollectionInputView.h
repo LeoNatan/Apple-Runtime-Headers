@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldRetryFetchingAnimojiRecents;
     _Bool _useWideAnimojiCell;
     _Bool _hasShownAnimojiCell;
+    float _frameInset;
     CDUnknownBlockType _completionBlock;
     UIResponder<UIKBEmojiHitTestResponder> *_hitTestResponder;
 }
@@ -42,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)updateToCategory:(int)arg1;
 - (void)didMoveToWindow;
 - (int)indexForPrettyCategoryDisplay:(id)arg1;
-- (float)snappedXOffsetForOffset:(float)arg1;
+- (float)snappedXOffsetForOffset:(float)arg1 scrubbing:(_Bool)arg2;
 - (float)_recentlyUsedMediaRoundedOffset:(float)arg1 recentlyUsedMediaCellWidth:(float)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (id)firstFullyVisibleHeader;
@@ -65,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (id)selectedChildSkinToneEmoji:(id)arg1;
 - (_Bool)genderEmojiBaseStringNeedVariantSelector:(id)arg1;
 - (id)subTreeHitTest:(struct CGPoint)arg1;
+- (_Bool)baseStringIsCoupleEmoji:(id)arg1;
 - (_Bool)skinToneWasUsedForEmoji:(id)arg1;
 - (id)emojiBaseString:(id)arg1;
 - (id)emojiBaseFirstCharacterString:(id)arg1;

@@ -85,6 +85,7 @@
 - (void)_reorderGestureDidBegin:(id)arg1;
 - (void)_handleReorderGesture:(id)arg1;
 - (void)_updateReorderingGestureRecognizer;
+- (BOOL)allowsPresentationWithOnlySettings;
 - (void)setExecutionFuture:(id)arg1 forActionSet:(id)arg2;
 - (void)setContentColorStyle:(unsigned long long)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

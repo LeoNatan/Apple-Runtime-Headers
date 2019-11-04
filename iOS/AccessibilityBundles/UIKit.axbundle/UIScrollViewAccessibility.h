@@ -49,6 +49,7 @@
 - (struct UIEdgeInsets)_accessibilityVisibleContentInset;
 - (void)_accessibilitySetStoredVisibleContentInset:(id)arg1;
 - (id)_accessibilityStoredVisibleContentInset;
+- (_Bool)_accessibilityShouldUseFallbackForVisibleContentInset;
 - (struct UIEdgeInsets)_accessibilityContentInset;
 - (struct CGRect)_accessibilityContentFrame;
 - (struct CGRect)accessibilityFrame;

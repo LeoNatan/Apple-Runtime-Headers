@@ -63,7 +63,7 @@
 - (void)suggestionsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)suggestionsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)searchResultsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
-- (void)searchResultsViewController:(id)arg1 didSelectSection:(id)arg2;
+- (void)searchResultsViewController:(id)arg1 didSelectAppWithBundleIdentifier:(id)arg2;
 - (void)searchResultsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)resultsViewController:(id)arg1 didSelectDocumentationForAction:(id)arg2 fromView:(id)arg3;
 - (void)resultsViewController:(id)arg1 didSelectAction:(id)arg2;

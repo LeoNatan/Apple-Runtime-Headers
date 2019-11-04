@@ -33,6 +33,10 @@
 - (void)configureError:(id)arg1;
 - (void)configureResults:(struct NSArray *)arg1;
 - (void)setChangeHandler:(CDUnknownBlockType)arg1;
+- (_Bool)moveShortcutToFront:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)moveShortcutToBack:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)moveShortcut:(id)arg1 beforeShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)moveShortcut:(id)arg1 afterShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;

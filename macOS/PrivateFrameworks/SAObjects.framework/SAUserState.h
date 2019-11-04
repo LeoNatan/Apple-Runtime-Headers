@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSString *xpAbCookie;
 @property(copy, nonatomic) NSString *userToken;
 @property(copy, nonatomic) NSNumber *userHistoryUnmodifiable;
+@property(copy, nonatomic) NSString *syncSharedUserId;
 @property(copy, nonatomic) NSString *status;
 @property(copy, nonatomic) NSString *sharedUserId;
 @property(nonatomic) BOOL ageVerificationRequired;

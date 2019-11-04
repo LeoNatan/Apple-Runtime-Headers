@@ -18,6 +18,7 @@
 
 @property __weak id <HMTelevisionProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)televisionProfileDidUpdateSourceDisplayOrder:(id)arg1;
 - (void)updateMediaSourceDisplayOrder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) _Bool mediaSourceDisplayOrderModifiable;

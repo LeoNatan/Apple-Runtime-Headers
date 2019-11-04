@@ -20,7 +20,7 @@
 @property(retain, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
 - (void).cxx_destruct;
 - (id)commitItem;
-- (id)_performValidation;
+- (id)performValidation;
 - (_Bool)hasSameTargetAsAction:(id)arg1;
 - (id)createNewAction;
 - (_Bool)requiresDeviceUnlock;

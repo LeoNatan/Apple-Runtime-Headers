@@ -10,7 +10,7 @@
 #import <MediaPlaybackCore/MSVLRUDictionaryDelegate-Protocol.h>
 
 @class MPCFuture, MPCPlayerPath, MSVLRUDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
-@protocol MPArtworkDataSource, MPCSupportedCommands, OS_dispatch_queue;
+@protocol MPArtworkDataSource, OS_dispatch_queue;
 
 @interface MPCMediaRemoteController : NSObject <MSVLRUDictionaryDelegate, MPMediaRemoteEntityArtworkGenerator>
 {
@@ -20,7 +20,6 @@
     long long _playbackStateCacheState;
     MPCFuture *_supportedCommandsFuture;
     long long _supportedCommandsCacheState;
-    id <MPCSupportedCommands> _supportedCommands;
     MPCFuture *_playingItemIdentifierFuture;
     long long _playingIdentifierCacheState;
     NSString *_playingItemIdentifier;
@@ -38,6 +37,7 @@
     NSMapTable *_contentItemIDsFutures;
     NSMapTable *_contentItemFutures;
     NSMutableDictionary *_contentItemArtworkFutures;
+    unsigned long long _stateHandle;
     id <MPArtworkDataSource> _mediaRemoteArtworkDataSource;
     MPCPlayerPath *_resolvedPlayerPath;
     id _invalidationToken;

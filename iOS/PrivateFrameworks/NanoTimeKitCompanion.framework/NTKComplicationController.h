@@ -47,7 +47,7 @@
 @property(readonly, nonatomic) long long complicationFamily; // @synthesize complicationFamily=_complicationFamily;
 @property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
 - (void).cxx_destruct;
-- (void)notifyDelegateOnTimelineChange;
+- (void)notifyDelegateOnTimelineChangeWithTritiumUpdatePriority:(long long)arg1;
 - (id)complicationApplicationIdentifier;
 - (void)performBackgroundDataRefresh;
 - (void)_openApp:(id)arg1 withURL:(id)arg2 result:(CDUnknownBlockType)arg3;

@@ -20,7 +20,7 @@
 + (struct CGSize)sizeForSwatchStyle:(long long)arg1;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
+- (_Bool)optionExistsInDevice:(id)arg1;
 - (_Bool)isValidOption;
 - (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
 - (id)JSONObjectRepresentation;

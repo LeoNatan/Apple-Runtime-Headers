@@ -123,6 +123,10 @@
 - (_Bool)allowAllBuiltInDataSources;
 - (_Bool)setRecordingFromRemoteInput:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)recordingFromRemoteInput;
+- (_Bool)setParticipatesInNowPlayingAppPolicy:(_Bool)arg1 error:(id *)arg2;
+- (_Bool)participatesInNowPlayingAppPolicy;
+- (_Bool)setAllowMixableAudioWhileRecording:(_Bool)arg1 error:(id *)arg2;
+- (_Bool)allowMixableAudioWhileRecording;
 - (_Bool)setRequiresNoAudioResources:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)requiresNoAudioResources;
 - (_Bool)setUsingLongFormAudio:(_Bool)arg1 error:(id *)arg2;

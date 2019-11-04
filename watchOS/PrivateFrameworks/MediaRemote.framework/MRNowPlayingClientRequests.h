@@ -9,12 +9,10 @@
 #import <MediaRemote/MRNowPlayingClientState-Protocol.h>
 
 @class NSArray, NSMutableArray, _MRNowPlayingClientProtobuf;
-@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface MRNowPlayingClientRequests : NSObject <MRNowPlayingClientState>
 {
-    NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableArray *_playerClients;
     _MRNowPlayingClientProtobuf *_client;
     NSArray *_nowPlayingClients;

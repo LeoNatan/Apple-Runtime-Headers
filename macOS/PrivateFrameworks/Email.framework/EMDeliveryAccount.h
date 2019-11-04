@@ -12,6 +12,7 @@
 
 @interface EMDeliveryAccount : EMAccount <EMDeliveryAccountBuilder>
 {
+    BOOL _primaryiCloudAccount;
     NSString *_name;
     NSString *_username;
     NSString *_hostname;
@@ -20,6 +21,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property unsigned long long maximumMessageBytes; // @synthesize maximumMessageBytes=_maximumMessageBytes;
+@property(getter=isPrimaryiCloudAccount) BOOL primaryiCloudAccount; // @synthesize primaryiCloudAccount=_primaryiCloudAccount;
 @property(copy) NSString *hostname; // @synthesize hostname=_hostname;
 @property(copy) NSString *username; // @synthesize username=_username;
 - (id)name;

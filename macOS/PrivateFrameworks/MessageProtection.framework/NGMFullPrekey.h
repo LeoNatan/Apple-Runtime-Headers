@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (BOOL)delete;
 - (id)description;
-- (id)debugDescription;
 - (id)pbDevicePrekey;
 - (id)initWithPBPrekey:(id)arg1 error:(id *)arg2;
 - (id)initWithPrekeySignedBy:(id)arg1 error:(id *)arg2;

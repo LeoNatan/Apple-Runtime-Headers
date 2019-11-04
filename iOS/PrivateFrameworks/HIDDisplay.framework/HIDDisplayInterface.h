@@ -33,6 +33,7 @@
 - (id)initWithMatching:(id)arg1;
 - (id)initWithService:(unsigned int)arg1;
 - (id)initWithContainerID:(id)arg1;
+- (id)description;
 
 @end
 

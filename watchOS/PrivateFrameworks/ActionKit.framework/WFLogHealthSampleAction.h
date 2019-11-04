@@ -28,6 +28,7 @@
 - (id)dateForParameterValueWithKey:(id)arg1 error:(id *)arg2;
 - (void)handleWithQuantityType:(id)arg1;
 - (void)handleWithCategoryType:(id)arg1;
+- (id)accessResourcesToBeAuthorizedImplicitlyForUpdatedParameterState:(id)arg1 forParameter:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end

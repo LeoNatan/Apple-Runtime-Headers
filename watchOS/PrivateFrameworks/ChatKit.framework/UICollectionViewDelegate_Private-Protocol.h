@@ -8,10 +8,12 @@
 #import <ChatKit/UICollectionViewFocusDelegate_Legacy-Protocol.h>
 
 @class NSIndexPath, NSString, UICollectionView, UICollectionViewCell, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar;
+@protocol UIContextMenuInteractionCommitAnimating;
 
 @protocol UICollectionViewDelegate_Private <UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy>
 
 @optional
+- (void)collectionView:(UICollectionView *)arg1 willCommitMenuWithAnimator:(id <UIContextMenuInteractionCommitAnimating>)arg2;
 - (void)_collectionView:(UICollectionView *)arg1 horizontalIndexTitleBar:(_UIHorizontalIndexTitleBar *)arg2 selectedEntry:(_UIFocusFastScrollingIndexBarEntry *)arg3;
 - (void)_collectionView:(UICollectionView *)arg1 willLayoutCell:(UICollectionViewCell *)arg2 usingTemplateLayoutCell:(UICollectionViewCell *)arg3 forItemAtIndexPath:(NSIndexPath *)arg4;
 - (UICollectionViewCell *)_collectionView:(UICollectionView *)arg1 templateLayoutCellForCellsWithReuseIdentifier:(NSString *)arg2;

@@ -68,6 +68,9 @@
 - (id)slotIdentifierForAttachmentInteraction:(id)arg1 characterRange:(struct _NSRange)arg2;
 - (void)handleLongPressGesture:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (void)slotTemplateTypingTextViewDidPaste:(id)arg1 withOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateTypingTextViewDidCopy:(id)arg1 withOriginalBlock:(CDUnknownBlockType)arg2;
+- (void)slotTemplateTypingTextViewDidCut:(id)arg1 withOriginalBlock:(CDUnknownBlockType)arg2;
 - (void)slotTemplateTypingTextViewDidDelete:(id)arg1;
 - (void)slotTemplateStorageDidInvalidateDisplay:(id)arg1;
 - (void)tintColorDidChange;
@@ -97,6 +100,9 @@
 - (BOOL)hasSlotWithIdentifier:(id)arg1;
 - (void)setContents:(id)arg1 animated:(BOOL)arg2;
 @property(nonatomic) BOOL extendSlotBackgroundOffEdges;
+- (void)setDisabledSlotTitleColor:(id)arg1 backgroundColor:(id)arg2 animated:(BOOL)arg3;
+@property(readonly, nonatomic) UIColor *disabledSlotBackgroundColor;
+@property(readonly, nonatomic) UIColor *disabledSlotTitleColor;
 - (id)typingParagraphStyleForParagraphStyle:(id)arg1;
 @property(copy, nonatomic) NSParagraphStyle *paragraphStyle;
 @property(retain, nonatomic) UIColor *textColor;

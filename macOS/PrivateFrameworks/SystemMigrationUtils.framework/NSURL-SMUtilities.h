@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (SMUtilities)
+- (id)SM_fileChecksum;
 - (id)pathMountPoint;
 - (BOOL)pathIsBundle;
 - (id)SM_URLByStandardizingPathAndFullyExpandSymlinks:(BOOL)arg1;

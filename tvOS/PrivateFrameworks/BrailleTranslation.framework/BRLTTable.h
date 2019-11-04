@@ -36,6 +36,7 @@
 @property(readonly, nonatomic) NSString *tableIdentifier;
 @property(readonly, nonatomic) NSString *identifier;
 - (id)initWithServiceIdentifier:(id)arg1 language:(id)arg2 variant:(id)arg3;
+- (id)initWithServiceIdentifier:(id)arg1 tableIdentifier:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

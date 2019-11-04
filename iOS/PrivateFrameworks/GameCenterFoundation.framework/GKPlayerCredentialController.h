@@ -34,6 +34,7 @@
 - (void)replaceCredential:(id)arg1 withCredential:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)removeCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllCredentialsForEnvironment:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getAltDSIDFromIDMSForCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setPrimaryCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)accountStoreEmailDidChange:(id)arg1;

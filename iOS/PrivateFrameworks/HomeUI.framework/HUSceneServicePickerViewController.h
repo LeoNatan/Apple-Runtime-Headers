@@ -18,7 +18,6 @@
 @property(readonly, nonatomic) HFActionSetBuilder *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
 @property(nonatomic) __weak id <HUSceneServicePickerViewControllerDelegate> servicePickerDelegate; // @synthesize servicePickerDelegate=_servicePickerDelegate;
 - (void).cxx_destruct;
-- (_Bool)serviceGridItemManager:(id)arg1 shouldHideItem:(id)arg2;
 - (id)_updateActionSetBuilder;
 - (_Bool)_canSelectMediaAccessoryItem:(id)arg1;
 - (void)_presentUnsupportedAlertWithTitle:(id)arg1 message:(id)arg2;

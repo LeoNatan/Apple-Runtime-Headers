@@ -19,6 +19,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property id <WKProcessGroupDelegate> delegate;
+- (id)initWithInjectedBundleURL:(id)arg1 andCustomClassesForParameterCoder:(id)arg2;
 - (id)initWithInjectedBundleURL:(id)arg1;
 - (id)init;
 @property(readonly) WKGeolocationProviderIOS *_geolocationProvider;

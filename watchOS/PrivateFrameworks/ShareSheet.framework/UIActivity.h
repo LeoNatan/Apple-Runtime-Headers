@@ -9,7 +9,7 @@
 #import <ShareSheet/UIActivityExtensionItemDataProviding-Protocol.h>
 #import <ShareSheet/UIActivityExtensionItemDataReceiving-Protocol.h>
 
-@class NSExtension, NSString, NSUUID, UIImage, UIViewController, _UIActivityResourceLoader;
+@class NSArray, NSExtension, NSString, NSUUID, UIImage, UIViewController, _UIActivityResourceLoader;
 
 @interface UIActivity : NSObject <UIActivityExtensionItemDataProviding, UIActivityExtensionItemDataReceiving>
 {
@@ -20,6 +20,7 @@
     CDUnknownBlockType _didFinishPerformingActivityHandler;
     int _maxPreviews;
     NSString *_contentSizeCategory;
+    NSArray *_preferredLocalizations;
     unsigned int _indexInApplicationDefinedActivities;
     NSUUID *_activityUUID;
 }
@@ -28,6 +29,7 @@
 + (id)preparedActivityExtensionItemDataForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (id)_activityExtensionItemsForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (id)_actionImageForActionRepresentationImage:(id)arg1 contentSizeCategory:(id)arg2;
++ (id)_stringFromActivityCategory:(int)arg1;
 + (void)_loadItemProvidersFromActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (float)imageWidthForContentSizeCategory:(id)arg1;
 + (void)_performAfterActivityImageLoadingCompletes:(CDUnknownBlockType)arg1;
@@ -46,6 +48,7 @@
 + (unsigned int)_xpcAttributes;
 @property(readonly, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(nonatomic) unsigned int indexInApplicationDefinedActivities; // @synthesize indexInApplicationDefinedActivities=_indexInApplicationDefinedActivities;
+@property(retain, nonatomic) NSArray *preferredLocalizations; // @synthesize preferredLocalizations=_preferredLocalizations;
 @property(retain, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) int maxPreviews; // @synthesize maxPreviews=_maxPreviews;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPerformingActivityHandler; // @synthesize didFinishPerformingActivityHandler=_didFinishPerformingActivityHandler;

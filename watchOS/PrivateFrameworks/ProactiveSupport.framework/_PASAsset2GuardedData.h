@@ -15,6 +15,7 @@
     unsigned int _bestAvailableVersion;
     unsigned int _bestAssetVersionObserved;
     MAAsset *_bestAvailableAsset;
+    _Bool _purgeObsoleteInstalledAssets;
     NSMutableDictionary *_overrides;
 }
 

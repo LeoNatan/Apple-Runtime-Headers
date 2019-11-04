@@ -6,24 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreKnowledge/CKEphemeralReadableEventSequence-Protocol.h>
-#import <CoreKnowledge/CKEphemeralWritableEventSequence-Protocol.h>
-
-@interface CKEphemeralEventSequence : NSObject <CKEphemeralReadableEventSequence, CKEphemeralWritableEventSequence>
+@interface CKEphemeralEventSequence : NSObject
 {
     // Error parsing type: , name: queue
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)last;
-- (id)first;
-- (id)eventsWithIdentifier:(id)arg1;
-- (id)eventsBetween:(id)arg1 and:(id)arg2;
-- (void)writeEventsToKnowledgeStreamNamed:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)appendEvent:(id)arg1;
-- (void)removeAllEventsSavedInKnowledgeStreamNamed:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)loadFromKnowledgeStreamNamed:(id)arg1 between:(id)arg2 and:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end
 

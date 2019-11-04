@@ -84,6 +84,7 @@
 - (_Bool)supportsMultiTouchSelection;
 - (id)coordinatesForBlock:(id)arg1 blockPath:(CDStruct_48c31d0d)arg2 xAxis:(id)arg3 yAxis:(id)arg4;
 - (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect)arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform)arg4 renderContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
+- (void)clearCaches;
 - (id)_dataBlockForBlockPath:(CDStruct_48c31d0d)arg1;
 - (id)_coordinatesForBlockPath:(CDStruct_48c31d0d)arg1 xAxis:(id)arg2;
 - (void)_cacheCoordinates:(id)arg1 forBlockPath:(CDStruct_48c31d0d)arg2;

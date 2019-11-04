@@ -13,11 +13,13 @@
 @interface GEOLogMsgStateExperiments : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOAbAssignInfo *_abAssignInfo;
     GEOABClientConfig *_clientAbExperimentAssignment;
     GEOPDDatasetABStatus *_datasetAbStatus;
     GEOABExperimentAssignment *_tilesAbExperimentAssignment;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_abAssignInfo:1;
         unsigned int read_clientAbExperimentAssignment:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 @property(readonly, nonatomic) _Bool hasTilesAbExperimentAssignment;
 - (void)_readTilesAbExperimentAssignment;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

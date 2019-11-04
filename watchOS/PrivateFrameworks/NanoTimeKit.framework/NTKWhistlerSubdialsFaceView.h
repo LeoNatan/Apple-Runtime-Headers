@@ -24,7 +24,7 @@
 - (void)tritium_willTransitionToTritiumOn;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (id)tritium_animationToCurrentDateFromDate:(id)arg1;
 - (void)rectangularViewDidEndInteractive:(id)arg1;
 - (void)rectangularViewDidBecomeInteractive:(id)arg1;

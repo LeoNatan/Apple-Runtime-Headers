@@ -10,6 +10,8 @@
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: isEnabled
+    // Error parsing type: , name: isTransitioning
+    // Error parsing type: , name: trackingPollTimer
     // Error parsing type: , name: scrollView
     // Error parsing type: , name: scrollLock
 }

@@ -6,13 +6,17 @@
 
 #import <ImageCaptureCore/ICCameraItem.h>
 
-@class NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSProgress, NSString;
+@class NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSProgress, NSString;
 
 @interface ICCameraFile : ICCameraItem
 {
     struct CGImage *_originalThumbnail;
     struct CGImage *_thumbnail;
     NSMutableDictionary *_metadata;
+    NSString *_debugType;
+    NSString *_debugBadge;
+    NSNumber *_fileIsJPEG;
+    NSNumber *_fileIsHEIC;
     _Bool _highFramerate;
     _Bool _timeLapse;
     _Bool _firstPicked;
@@ -31,7 +35,6 @@
     NSString *_originalFilename;
     NSString *_createdFilename;
     long long _fileSize;
-    unsigned long long _orientation;
     double _duration;
     NSString *_originatingAssetID;
     NSString *_groupUUID;
@@ -43,6 +46,7 @@
     NSDate *_fileModificationDate;
     NSDate *_exifCreationDate;
     NSDate *_exifModificationDate;
+    unsigned long long _imgOrientation;
     NSString *_imgSpatialOverCaptureGroupID;
     NSMutableArray *_sidecarFiles;
     unsigned long long _mediaMetadata;
@@ -71,6 +75,7 @@
 @property(nonatomic) unsigned long long mediaMetadata; // @synthesize mediaMetadata=_mediaMetadata;
 @property(retain, nonatomic) NSMutableArray *sidecarFiles; // @synthesize sidecarFiles=_sidecarFiles;
 @property(copy, nonatomic) NSString *imgSpatialOverCaptureGroupID; // @synthesize imgSpatialOverCaptureGroupID=_imgSpatialOverCaptureGroupID;
+@property(nonatomic) unsigned long long imgOrientation; // @synthesize imgOrientation=_imgOrientation;
 @property(nonatomic) _Bool imgHasMetadata; // @synthesize imgHasMetadata=_imgHasMetadata;
 @property(nonatomic) _Bool imgHasThumbnail; // @synthesize imgHasThumbnail=_imgHasThumbnail;
 @property(copy, nonatomic) NSDate *exifModificationDate; // @synthesize exifModificationDate=_exifModificationDate;
@@ -89,12 +94,12 @@
 @property(nonatomic) _Bool timeLapse; // @synthesize timeLapse=_timeLapse;
 @property(nonatomic) _Bool highFramerate; // @synthesize highFramerate=_highFramerate;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-@property(nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *createdFilename; // @synthesize createdFilename=_createdFilename;
 @property(copy, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;
 @property(nonatomic) long long height; // @synthesize height=_height;
 @property(nonatomic) long long width; // @synthesize width=_width;
+- (_Bool)isHEIC;
 - (_Bool)isJPEG;
 - (_Bool)isData;
 - (_Bool)isAudio;
@@ -122,26 +127,28 @@
 - (void)flushThumbnailCache;
 - (long long)compareDate:(id)arg1;
 - (long long)compareUUID:(id)arg1;
-- (void)requestMetadata;
+- (void)requestReadDataAtOffset:(long long)arg1 length:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestMetadataWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestMetadataDictionaryWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)requestMetadataWithOptions:(id)arg1;
-- (void)requestThumbnail;
+- (void)requestMetadata;
 - (void)requestThumbnailWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestThumbnailDataWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestThumbnail;
+@property(nonatomic) unsigned long long orientation;
 - (id)requestDownloadWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)flagMediaMetadata:(unsigned long long)arg1;
 @property(readonly) NSString *mediaBase;
 - (void)setKeywordPropertiesFromMetadata;
 - (_Bool)setMetadata:(id)arg1;
-- (_Bool)setThumbnailData:(struct __CFData *)arg1 withOrientation:(id)arg2;
+- (void)cacheThumbnailData:(id)arg1;
+- (id)thumbnailDataUsingOrientation:(id)arg1 andSourceThumbnailData:(id)arg2;
 - (void)handleCommandCompletionNotification:(id)arg1;
-- (void)overrideOrientation:(unsigned long long)arg1;
 - (void)setUTI:(id)arg1;
 - (id)modificationDate;
 - (id)creationDate;
 - (id)debugIdentity;
-- (id)debugMediaMetadata;
+- (id)debugType;
+- (id)debugBadge;
 - (id)description;
 - (void)addSidecarFile:(id)arg1;
 @property(readonly, nonatomic) NSString *spatialOverCaptureGroupID;
@@ -154,7 +161,6 @@
 - (_Bool)hasMetadata;
 - (void)setHasThumbnail:(_Bool)arg1;
 - (void)setHasMetadata:(_Bool)arg1;
-- (void)setThumbnail:(struct CGImage *)arg1;
 - (id)metadata;
 - (struct CGImage *)thumbnail;
 - (void)dealloc;

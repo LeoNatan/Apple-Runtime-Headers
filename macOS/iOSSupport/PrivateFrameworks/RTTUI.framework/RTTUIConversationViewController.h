@@ -26,6 +26,7 @@
     AXDispatchTimer *_voAnnouncementTimer;
     NSMutableString *_voAnnouncementBuffer;
     BOOL _serviceMessageVisible;
+    AXDispatchTimer *_arouetQuickCoalescer;
     RTTConversation *_conversation;
     NSString *_currentServiceMessage;
     UITableView *_tableView;

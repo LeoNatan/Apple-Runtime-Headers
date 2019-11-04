@@ -8,13 +8,14 @@
 
 #import <HomeUI/HUFeatureOnboardingFlow-Protocol.h>
 
-@class HFUserItem, NAFuture, NSString, UIViewController;
+@class HFUserItem, HMHome, NAFuture, NSString, UIViewController;
 @protocol HUConfigurationViewController;
 
 @interface HUCameraRecordingOnboardingFlow : NSObject <HUFeatureOnboardingFlow>
 {
     BOOL _shouldAbortThisOnboardingFlowGroup;
     BOOL _shouldAbortAllOnboarding;
+    HMHome *_home;
     NAFuture *_onboardingFuture;
     UIViewController<HUConfigurationViewController> *_initialViewController;
     HFUserItem *_userItem;
@@ -25,12 +26,13 @@
 @property(nonatomic) BOOL shouldAbortThisOnboardingFlowGroup; // @synthesize shouldAbortThisOnboardingFlowGroup=_shouldAbortThisOnboardingFlowGroup;
 @property(retain, nonatomic) UIViewController<HUConfigurationViewController> *initialViewController; // @synthesize initialViewController=_initialViewController;
 @property(retain, nonatomic) NAFuture *onboardingFuture; // @synthesize onboardingFuture=_onboardingFuture;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (id)processUserInput:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)_determineInitialViewController;
 - (void)_setThisUserDismissedCameraOnboardingAndReminder;
-- (id)initWithUsageOptions:(id)arg1;
+- (id)initWithUsageOptions:(id)arg1 home:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

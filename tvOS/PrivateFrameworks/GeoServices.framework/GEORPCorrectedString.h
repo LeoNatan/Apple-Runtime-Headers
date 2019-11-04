@@ -13,10 +13,12 @@
 @interface GEORPCorrectedString : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_correctedValue;
     NSString *_originalValue;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_correctedValue:1;
@@ -47,6 +49,8 @@
 @property(retain, nonatomic) NSString *originalValue;
 @property(readonly, nonatomic) _Bool hasOriginalValue;
 - (void)_readOriginalValue;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

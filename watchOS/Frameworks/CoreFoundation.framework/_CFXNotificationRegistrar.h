@@ -24,9 +24,10 @@ __attribute__((visibility("hidden")))
 - (id)acquireWildcardObject:(struct __CFString *)arg1;
 - (id)acquireWildcardName:(void *)arg1;
 - (id)acquireDoubleWildcard:(void *)arg1 options:(unsigned long)arg2;
-- (void)removeChild:(id)arg1;
+- (void)removeChild:(id)arg1 token:(unsigned long long)arg2;
 - (void)addChild:(id)arg1;
 - (void)match:(struct __CFString *)arg1 object:(void *)arg2 observer:(void *)arg3 enumerator:(CDUnknownBlockType)arg4;
+- (id)invalidate:(unsigned long long)arg1;
 - (void)remove:(unsigned long long)arg1;
 - (id)find:(unsigned long long)arg1;
 - (void)find:(struct __CFString *)arg1 object:(void *)arg2 observer:(void *)arg3 enumerator:(CDUnknownBlockType)arg4;

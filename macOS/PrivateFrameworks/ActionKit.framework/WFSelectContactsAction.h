@@ -12,8 +12,7 @@
 {
 }
 
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (BOOL)selectMultiple;
+@property(readonly, nonatomic) BOOL selectMultiple;
 - (void)outputContacts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *contactPropertyIDs;
 

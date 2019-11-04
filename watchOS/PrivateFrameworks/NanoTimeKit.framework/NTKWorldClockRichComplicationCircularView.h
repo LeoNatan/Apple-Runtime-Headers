@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKRichComplicationCircularBaseView.h>
 
-@class NTKRichComplicationDialView, NTKWorldClockRichComplicationHandsView, UILabel, WorldClockCity;
+@class NTKRichComplicationDialView, NTKWorldClockRichComplicationHandsView, UIColor, UILabel, WorldClockCity;
 
 @interface NTKWorldClockRichComplicationCircularView : NTKRichComplicationCircularBaseView
 {
@@ -24,12 +24,24 @@
     WorldClockCity *_city;
     struct NSNumber *_clockTimerToken;
     _Bool _positionLabelNorthSide;
+    UIColor *_daytimeBackgroundColor;
+    UIColor *_daytimeHandsColor;
+    UIColor *_daytimeHandsDotColor;
+    UIColor *_nighttimeBackgroundColor;
+    UIColor *_nighttimeHandsColor;
+    UIColor *_nighttimeHandsDotColor;
 }
 
 - (void).cxx_destruct;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)updateMonochromeColor;
 - (_Bool)_shouldUseDaytimeColoring;
+@property(retain, nonatomic) UIColor *nighttimeHandsDotColor; // @synthesize nighttimeHandsDotColor=_nighttimeHandsDotColor;
+@property(retain, nonatomic) UIColor *nighttimeHandsColor; // @synthesize nighttimeHandsColor=_nighttimeHandsColor;
+@property(retain, nonatomic) UIColor *nighttimeBackgroundColor; // @synthesize nighttimeBackgroundColor=_nighttimeBackgroundColor;
+@property(retain, nonatomic) UIColor *daytimeHandsDotColor; // @synthesize daytimeHandsDotColor=_daytimeHandsDotColor;
+@property(retain, nonatomic) UIColor *daytimeHandsColor; // @synthesize daytimeHandsColor=_daytimeHandsColor;
+@property(retain, nonatomic) UIColor *daytimeBackgroundColor; // @synthesize daytimeBackgroundColor=_daytimeBackgroundColor;
 - (void)_updateUI;
 - (void)_stopClockUpdates;
 - (void)_startClockUpdates;

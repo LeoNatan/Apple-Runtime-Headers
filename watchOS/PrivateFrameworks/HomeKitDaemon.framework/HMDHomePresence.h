@@ -29,17 +29,17 @@
 - (_Bool)isUserAtHome:(id)arg1;
 - (_Bool)isAnyUserAtHome;
 - (_Bool)isNoUserAtHome;
+@property(readonly) unsigned int hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)serializedIdentifierDictionary;
 - (id)serializedUUIDDictionary;
 @property(readonly, nonatomic) NSArray *authorizedUsers;
-- (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (id)initWithHome:(id)arg1 userPresenceMap:(id)arg2 lastUpdateByDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 @end

@@ -34,6 +34,7 @@
 - (void)_updatePhysicalCards;
 - (void)nextViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)orderFlowViewControllerForReason:(unsigned long long)arg1 content:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) _Bool physicalCardBlocked;
 @property(readonly, nonatomic) _Bool primaryPhysicalCardEnabled;
 @property(readonly, nonatomic) _Bool canReplacePhysicalCard;
 @property(readonly, nonatomic) _Bool canRequestPhysicalCard;

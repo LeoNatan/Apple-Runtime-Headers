@@ -16,6 +16,7 @@
 + (void)initialize;
 - (id)videoDevice;
 - (void)performFigCaptureSessionOperationSafelyUsingBlock:(CDUnknownBlockType)arg1;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;

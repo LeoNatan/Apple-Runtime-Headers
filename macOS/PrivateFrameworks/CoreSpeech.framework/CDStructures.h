@@ -41,10 +41,6 @@ struct CSAudioCircularBufferImpl<unsigned char>;
 
 struct CSAudioZeroFilterImpl<float>;
 
-struct ComponentInstanceRecord {
-    long long _field1[1];
-};
-
 struct SmartSiriVolume;
 
 struct unique_ptr<BatchBeepCanceller, std::__1::default_delete<BatchBeepCanceller>> {

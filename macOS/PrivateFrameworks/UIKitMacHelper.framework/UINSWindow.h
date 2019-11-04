@@ -33,9 +33,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _startLiveResizeHandler;
     CDUnknownBlockType _liveResizeDidEndHandler;
     UIWindow *_uiWindow;
+    struct CGPoint _lastMouseDownLocation;
 }
 
++ (struct CGSize)_sizeFromAutosaveName:(id)arg1 defaultSize:(struct CGSize)arg2;
 + (id)keyPathsForValuesAffectingContentLayoutGuide;
+@property(nonatomic) struct CGPoint lastMouseDownLocation; // @synthesize lastMouseDownLocation=_lastMouseDownLocation;
 @property(retain, nonatomic) UIWindow *uiWindow; // @synthesize uiWindow=_uiWindow;
 @property(copy, nonatomic) CDUnknownBlockType liveResizeDidEndHandler; // @synthesize liveResizeDidEndHandler=_liveResizeDidEndHandler;
 @property(copy, nonatomic) CDUnknownBlockType startLiveResizeHandler; // @synthesize startLiveResizeHandler=_startLiveResizeHandler;
@@ -80,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)markTouchBarAsDirty;
 - (void)toolbarCreatingIfNeeded:(BOOL)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)acceptKeyViewHandoff:(BOOL)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)makeInputViewFirstResponder;
 - (void)noteFocusRingMaskChanged:(id)arg1;
 - (void)activeSpaceDidChange:(id)arg1;
 - (void)applicationDidChangeHidden:(id)arg1;
@@ -96,6 +100,7 @@ __attribute__((visibility("hidden")))
 - (id)_prioritySupplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (id)_responderProxyForAction:(SEL)arg1 sender:(id)arg2;
+- (void)setInitialSceneContentSize:(struct CGSize)arg1;
 @property(nonatomic) struct CGSize contentMinSize;
 @property(retain, nonatomic) NSToolbar *toolbar;
 @property(nonatomic, getter=isTitlebarTransparent) BOOL titlebarTransparent;

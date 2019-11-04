@@ -20,6 +20,7 @@
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (id)processIdentities;
 - (id)processStateChangeForIdentity:(id)arg1;
+- (void)applyChanges:(id)arg1;
 @property(readonly, nonatomic) _Bool hasChanges;
 - (id)initWithOriginalStatesByIdentity:(id)arg1 updatedStatesByIdentity:(id)arg2;
 - (id)initWithChanges:(id)arg1;

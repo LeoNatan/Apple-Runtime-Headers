@@ -10,9 +10,9 @@
 {
     unsigned char _cellularPowerCostDownload;
     unsigned char _cellularPowerCostUpload;
-    BOOL _cellularKnownGood;
+    _Bool _cellularKnownGood;
     unsigned char _cellularRadioTechnology;
-    BOOL _wifiKnownGood;
+    _Bool _wifiKnownGood;
     unsigned char _wifiRadioTechnology;
     int _cellularLQM;
     int _wifiLQM;
@@ -20,11 +20,11 @@
 }
 
 @property(nonatomic) unsigned char wifiRadioTechnology; // @synthesize wifiRadioTechnology=_wifiRadioTechnology;
-@property(nonatomic) BOOL wifiKnownGood; // @synthesize wifiKnownGood=_wifiKnownGood;
+@property(nonatomic) _Bool wifiKnownGood; // @synthesize wifiKnownGood=_wifiKnownGood;
 @property(nonatomic) int wifiRSSI; // @synthesize wifiRSSI=_wifiRSSI;
 @property(nonatomic) int wifiLQM; // @synthesize wifiLQM=_wifiLQM;
 @property(nonatomic) unsigned char cellularRadioTechnology; // @synthesize cellularRadioTechnology=_cellularRadioTechnology;
-@property(nonatomic) BOOL cellularKnownGood; // @synthesize cellularKnownGood=_cellularKnownGood;
+@property(nonatomic) _Bool cellularKnownGood; // @synthesize cellularKnownGood=_cellularKnownGood;
 @property(nonatomic) unsigned char cellularPowerCostUpload; // @synthesize cellularPowerCostUpload=_cellularPowerCostUpload;
 @property(nonatomic) unsigned char cellularPowerCostDownload; // @synthesize cellularPowerCostDownload=_cellularPowerCostDownload;
 @property(nonatomic) int cellularLQM; // @synthesize cellularLQM=_cellularLQM;

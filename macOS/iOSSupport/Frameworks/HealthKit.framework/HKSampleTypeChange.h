@@ -13,6 +13,7 @@
 @interface HKSampleTypeChange : NSObject <NSSecureCoding>
 {
     BOOL _samplesWereDeleted;
+    BOOL _hasUnfrozenSeries;
     HKSampleType *_sampleType;
     double _startTime;
     double _endTime;
@@ -20,10 +21,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)sampleTypeChangeWithSampleType:(id)arg1 dateInterval:(id)arg2 samplesWereDeleted:(BOOL)arg3;
++ (id)sampleTypeChangeWithSampleType:(id)arg1 dateInterval:(id)arg2 samplesWereDeleted:(BOOL)arg3 hasUnfrozenSeries:(BOOL)arg4;
 @property(readonly, nonatomic) long long queryStrategy; // @synthesize queryStrategy=_queryStrategy;
 @property(readonly, nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(readonly, nonatomic) BOOL hasUnfrozenSeries; // @synthesize hasUnfrozenSeries=_hasUnfrozenSeries;
 @property(readonly, nonatomic) BOOL samplesWereDeleted; // @synthesize samplesWereDeleted=_samplesWereDeleted;
 @property(readonly, copy, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
 - (void).cxx_destruct;
@@ -33,7 +35,7 @@
 - (id)description;
 - (void)_extendDateIntervalWithSample:(id)arg1;
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval;
-- (id)_initWithSampleType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 deletions:(BOOL)arg4 queryStrategy:(long long)arg5;
+- (id)_initWithSampleType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 deletions:(BOOL)arg4 hasUnfrozenSeries:(BOOL)arg5 queryStrategy:(long long)arg6;
 
 @end
 

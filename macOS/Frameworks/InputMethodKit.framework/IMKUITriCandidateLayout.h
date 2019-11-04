@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class IMKCandidate;
 
 @interface IMKUITriCandidateLayout : NSObject
 {
-    NSString *_left;
-    NSString *_middle;
-    NSString *_right;
+    IMKCandidate *_left;
+    IMKCandidate *_middle;
+    IMKCandidate *_right;
 }
 
-@property(readonly) NSString *rightCandidate; // @synthesize rightCandidate=_right;
-@property(readonly) NSString *middleCandiate; // @synthesize middleCandiate=_middle;
-@property(readonly) NSString *leftCandidate; // @synthesize leftCandidate=_left;
+@property(readonly) IMKCandidate *rightCandidate; // @synthesize rightCandidate=_right;
+@property(readonly) IMKCandidate *middleCandiate; // @synthesize middleCandiate=_middle;
+@property(readonly) IMKCandidate *leftCandidate; // @synthesize leftCandidate=_left;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -16,7 +16,6 @@
 }
 
 - (id)_presentNetworkConfigurationSettingsMismatchViewController;
-- (id)_presentNetworkConfigurationSettingsMismatchAlert;
 - (void)tappableTextView:(id)arg1 tappedAtIndex:(unsigned long long)arg2 withAttributes:(id)arg3;
 - (void)networkConfigurationSettingsModuleUpdateDidTimeout:(id)arg1;
 - (unsigned long long)didSelectItem:(id)arg1;

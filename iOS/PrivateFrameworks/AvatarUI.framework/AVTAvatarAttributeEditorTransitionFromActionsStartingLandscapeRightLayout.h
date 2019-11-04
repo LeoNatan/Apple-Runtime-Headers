@@ -12,7 +12,6 @@
 }
 
 - (struct CGRect)avatarContainerFrame;
-- (id)backgroundColor;
 - (struct UIEdgeInsets)attributesContentViewScrollIndicatorInsets;
 - (struct UIEdgeInsets)attributesContentViewInsets;
 - (struct CGRect)verticalRuleFrame;

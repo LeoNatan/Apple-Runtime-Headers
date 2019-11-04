@@ -20,6 +20,7 @@
     NPSDomainAccessor *_domainAccessor;
 }
 
++ (id)supportedLanguages;
 + (_Bool)supportsEnhancedEditing;
 - (void).cxx_destruct;
 - (void)handleStoreChange;

@@ -8,14 +8,14 @@
 
 #import <SensorKit/SRSensorKitServiceClientAuthorizationListening-Protocol.h>
 
-@class NSDictionary, NSHashTable, NSSet, NSString, NSXPCConnection;
+@class NSDictionary, NSMapTable, NSSet, NSString, NSXPCConnection;
 
 @interface SRAuthorizationClient : NSObject <SRSensorKitServiceClientAuthorizationListening>
 {
     _Bool _prerequisiteMet;
     int _registrationToken;
     NSXPCConnection *_connection;
-    NSHashTable *_listeners;
+    NSMapTable *_listeners;
     NSSet *_actualAuthorizedServices;
 }
 
@@ -24,10 +24,10 @@
 @property int registrationToken; // @synthesize registrationToken=_registrationToken;
 @property _Bool prerequisiteMet; // @synthesize prerequisiteMet=_prerequisiteMet;
 @property(copy) NSSet *actualAuthorizedServices; // @synthesize actualAuthorizedServices=_actualAuthorizedServices;
-@property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
+@property(retain, nonatomic) NSMapTable *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void)authorizedServicesDidChange:(id)arg1;
-- (void)notifyAuthorizationChange;
+- (void)authorizedServicesDidChange:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)notifyAuthorizationChangeForBundleIdentifier:(id)arg1;
 - (void)removeFromBundlePathMap:(id)arg1;
 - (void)addToBundlePathMap:(id)arg1;
 @property(readonly, copy) NSDictionary *bundlePathMap;
@@ -37,6 +37,7 @@
 - (void)addBundle:(id)arg1 toPendingAuthorizations:(id)arg2;
 @property(readonly, copy) NSDictionary *bundleIdentifiersPendingAuthorization;
 - (void)removeListener:(id)arg1;
+- (void)addListener:(id)arg1 forBundleId:(id)arg2;
 - (void)addListener:(id)arg1;
 @property(nonatomic) _Bool requiredOnboardingCompleted;
 @property(readonly, copy, nonatomic) NSString *requiredAppStudiesDeepLinkIdentifier;
@@ -50,8 +51,7 @@
 - (void)registerForPrerequisitesUpdated;
 - (void)dealloc;
 - (void)invalidate;
-- (id)initWithEffectiveBundleId:(id)arg1 connection:(id)arg2;
-- (id)initWithEffectiveBundleId:(id)arg1;
+- (id)initWithConnection:(id)arg1;
 - (id)init;
 
 @end

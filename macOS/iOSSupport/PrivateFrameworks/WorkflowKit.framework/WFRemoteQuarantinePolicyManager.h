@@ -24,7 +24,6 @@
 - (BOOL)deleteAssetBundlesExceptAssetWithIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)persistAssetToDisk:(id)arg1 error:(id *)arg2;
 - (BOOL)processAsset:(id)arg1 error:(id *)arg2;
-- (void)scheduleRegularPolicyUpdates;
 - (void)updatePolicyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)policyStringForBundleIfValid:(id)arg1;
 - (id)latestRemotePolicyAssetBundle;

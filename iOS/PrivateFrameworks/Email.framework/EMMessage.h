@@ -13,7 +13,7 @@
 #import <Email/EMMessageListItem-Protocol.h>
 #import <Email/EMMutableMessageListItem-Protocol.h>
 
-@class ECMessageFlags, ECSubject, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString, NSUUID;
+@class ECMessageFlags, ECSubject, EMMailDropMetadata, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString, NSUUID;
 @protocol ECEmailAddressConvertible, EMCollectionItemID;
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
@@ -39,8 +39,9 @@
     NSArray *_ccList;
     long long _dataTransferByteCount;
     long long _storageByteCount;
-    NSDate *_expiryDate;
+    EMMailDropMetadata *_mailDropMetadata;
     CDUnknownBlockType _loaderBlock;
+    long long __internalID;
     id <ECEmailAddressConvertible> _senderAddress;
     NSArray *_bccList;
     NSUUID *_documentID;
@@ -58,16 +59,18 @@
 + (id)predicateForExcludingMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForExcludingMessageWithObjectID:(id)arg1;
 + (id)predicateForMessagesWithObjectIDs:(id)arg1;
++ (id)predicateForMessageWithInternalID:(long long)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
 @property(copy, nonatomic) NSUUID *documentID; // @synthesize documentID=_documentID;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
+@property long long _internalID; // @synthesize _internalID=__internalID;
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
 - (void)setExchangeEventUID:(int)arg1;
 @property(readonly, nonatomic) int exchangeEventUID;
-- (void)setExpiryDate:(id)arg1;
-@property(readonly, nonatomic) NSDate *expiryDate;
+- (void)setMailDropMetadata:(id)arg1;
+@property(readonly, copy, nonatomic) EMMailDropMetadata *mailDropMetadata;
 - (void)setStorageByteCount:(long long)arg1;
 @property(readonly, nonatomic) long long storageByteCount;
 - (void)setDataTransferByteCount:(long long)arg1;

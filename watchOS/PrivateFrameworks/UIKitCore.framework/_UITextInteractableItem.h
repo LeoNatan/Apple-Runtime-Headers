@@ -30,14 +30,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint location; // @synthesize location=_location;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGRect bounds;
 - (void)unhighlight;
 - (void)highlight;
 - (_Bool)_allowHighlight;
 - (_Bool)isEqual:(id)arg1;
 - (void)_warnForInvalidAction;
 - (_Bool)_allowInteraction:(int)arg1;
-- (_Bool)presentActions;
 - (void)invokeDefaultAction;
+- (_Bool)canInvokeDefaultAction;
 - (_Bool)isAttachment;
 - (_Bool)isLink;
 - (void)dealloc;

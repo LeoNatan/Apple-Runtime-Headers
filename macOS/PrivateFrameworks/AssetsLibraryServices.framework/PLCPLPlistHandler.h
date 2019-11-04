@@ -14,6 +14,7 @@
 + (void)saveCPLPlistObject:(id)arg1 forKey:(id)arg2 pathManager:(id)arg3;
 + (id)readCPLPlistObjectWithKey:(id)arg1 pathManager:(id)arg2;
 + (id)_readCPLPlistWithPathManager:(id)arg1 error:(id *)arg2;
++ (BOOL)CPLPlistFileExistsWithPathManager:(id)arg1;
 + (void)initialize;
 
 @end

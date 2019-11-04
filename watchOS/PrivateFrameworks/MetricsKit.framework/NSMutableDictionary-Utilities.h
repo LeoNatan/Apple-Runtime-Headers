@@ -7,6 +7,6 @@
 #import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (Utilities)
-- (void)removeNaNValues;
+- (void)mt_removeNaNValues;
 @end
 

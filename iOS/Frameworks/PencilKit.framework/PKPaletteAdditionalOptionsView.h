@@ -58,7 +58,6 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)_didSelectEllipsisButton:(id)arg1;
 - (void)_didSelectPlusButton:(id)arg1;
-- (void)layoutSubviews;
 - (void)_updateUI;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccountStore, NSDictionary, NSMutableDictionary, NSMutableSet;
+@class ACAccountStore, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet;
+@protocol OS_dispatch_queue;
 
 @interface AXHASettings : NSObject
 {
@@ -14,14 +15,19 @@
     NSMutableSet *_registeredNotifications;
     NSMutableSet *_synchronizePreferences;
     NSMutableDictionary *_updateBlocks;
+    NSObject<OS_dispatch_queue> *_icloudInitializationQueue;
 }
 
 + (id)sharedInstance;
 + (void)initialize;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *icloudInitializationQueue; // @synthesize icloudInitializationQueue=_icloudInitializationQueue;
 @property(retain, nonatomic) NSMutableDictionary *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(retain, nonatomic) NSMutableSet *synchronizePreferences; // @synthesize synchronizePreferences=_synchronizePreferences;
 @property(retain, nonatomic) NSMutableSet *registeredNotifications; // @synthesize registeredNotifications=_registeredNotifications;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *detectableUltronTypes;
+@property(nonatomic) _Bool ultronIsRunning;
+@property(nonatomic) _Bool ultronSupportEnabled;
 - (_Bool)isDeviceIDOnCloudBlacklist:(id)arg1;
 - (void)removeDeviceIDFromCloudBlacklist:(id)arg1;
 - (void)addDeviceIDToCloudBlacklist:(id)arg1;

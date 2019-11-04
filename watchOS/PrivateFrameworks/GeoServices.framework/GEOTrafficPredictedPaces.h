@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficPredictedPaces : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_084d6ede _encodedPaces;
     CDStruct_084d6ede _secondsInFutures;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_encodedPaces:1;
         unsigned int read_secondsInFutures:1;
@@ -54,6 +56,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int secondsInFuturesCount;
 - (void)_readSecondsInFutures;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

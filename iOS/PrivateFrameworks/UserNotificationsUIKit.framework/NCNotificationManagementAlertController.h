@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NCNotificationRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <NCNotificationManagementControllerSettingsDelegate> settingsDelegate; // @synthesize settingsDelegate=_settingsDelegate;
 - (void).cxx_destruct;
+- (_Bool)shouldAutorotate;
 - (void)_configureView;
 - (void)viewDidLoad;
 - (id)initWithRequest:(id)arg1 withPresentingView:(id)arg2 settingsDelegate:(id)arg3;

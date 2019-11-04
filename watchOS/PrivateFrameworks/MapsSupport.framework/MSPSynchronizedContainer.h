@@ -19,7 +19,6 @@
     MSPCloudContainer *_cloudContainer;
 }
 
-@property(nonatomic) _Bool requiresMerge; // @synthesize requiresMerge=_requiresMerge;
 @property(retain, nonatomic) MSPCloudContainer *cloudContainer; // @synthesize cloudContainer=_cloudContainer;
 @property(retain, nonatomic) MSPContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) MSPCloudSynchronizer *synchronizer; // @synthesize synchronizer=_synchronizer;
@@ -28,8 +27,10 @@
 - (void)containerDidEraseContents:(id)arg1 fromStorageTypes:(unsigned int)arg2;
 - (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(int)arg4 context:(id)arg5;
 @property(readonly, copy) NSString *description;
+- (void)cancelMergeWithError:(id)arg1;
 - (void)mergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)prepareCloudWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(nonatomic) _Bool requiresMerge; // @synthesize requiresMerge=_requiresMerge;
 - (void)setRequiresMerge:(_Bool)arg1 withReason:(unsigned int)arg2;
 - (id)initWithContainer:(id)arg1 synchronizer:(id)arg2;
 

@@ -35,6 +35,8 @@
 @property(copy, nonatomic) ECSubject *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSDate *dateSent; // @synthesize dateSent=_dateSent;
 - (void).cxx_destruct;
+- (_Bool)_flagsChangedInModel:(id)arg1;
+- (id)updatedModelWithMessage:(id)arg1;
 - (id)updatedFlagsModelWithBuilder:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) EFObservable *modelObservable;
 - (id)copyWithZone:(struct _NSZone *)arg1;

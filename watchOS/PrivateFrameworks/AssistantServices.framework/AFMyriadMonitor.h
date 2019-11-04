@@ -20,20 +20,26 @@
     AFNotifyObserver *_beginObserver;
     AFNotifyObserver *_wonObserver;
     AFNotifyObserver *_lostObserver;
+    AFNotifyObserver *_repostedWonObserver;
     double _myriadEventMonitorTimeout;
     _Bool _isRegisteredForMyriadEventNotification;
     _Bool _ignoreMyriadEvents;
+    _Bool _didRequestCurrentDecisionResult;
+    _Bool _ignoreRepostMyriadNotification;
 }
 
 + (id)sharedMonitor;
 - (void).cxx_destruct;
+- (void)_ignoreRepostMyriadNotification:(_Bool)arg1;
 - (void)_resultSeenWithValue:(_Bool)arg1;
 - (void)_flushCompletions:(_Bool)arg1;
 - (void)_clear;
 - (void)_dequeueBlocksWithSignal:(int)arg1;
 - (void)_setDecisionIsPending;
 - (void)notifyObserver:(id)arg1 didReceiveNotificationWithToken:(int)arg2;
+- (void)_deregisterFromRepostedDecisionResultsObservers;
 - (void)_deregisterFromMyriadEventNotifications;
+- (void)_fetchCurrentMyraidDecision;
 - (void)_registerForMyriadEvents;
 - (id)_myriadStateToString:(int)arg1;
 - (void)dealloc;

@@ -6,17 +6,23 @@
 
 #import <ChatKit/CKMessagePartChatItem.h>
 
-@class IMTranscriptPluginChatItem, NSString, UIView, UIViewController;
+@class IMTranscriptPluginChatItem, NSArray, NSString, UIView, UIViewController;
 @protocol CKTranscriptBalloonPluginController, CKTranscriptPluginView;
 
 @interface CKTranscriptPluginChatItem : CKMessagePartChatItem
 {
     _Bool _isAppearing;
     _Bool _isHandwriting;
+    _Bool _isBusiness;
     id <CKTranscriptBalloonPluginController> _balloonController;
     IMTranscriptPluginChatItem *_imTranscriptPluginChatItem;
+    NSString *_conversationID;
+    NSArray *_recipients;
 }
 
+@property(nonatomic) _Bool isBusiness; // @synthesize isBusiness=_isBusiness;
+@property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(retain, nonatomic) NSString *conversationID; // @synthesize conversationID=_conversationID;
 @property(readonly, nonatomic) _Bool isHandwriting; // @synthesize isHandwriting=_isHandwriting;
 @property(retain, nonatomic) IMTranscriptPluginChatItem *imTranscriptPluginChatItem; // @synthesize imTranscriptPluginChatItem=_imTranscriptPluginChatItem;
 @property(nonatomic) __weak id <CKTranscriptBalloonPluginController> balloonController; // @synthesize balloonController=_balloonController;
@@ -56,6 +62,8 @@
 - (_Bool)canCopy;
 @property(readonly, nonatomic) NSString *bundleIdentifier;
 - (_Bool)handlePresentationAction;
+- (void)_cacheConversationID:(id)arg1 recipients:(id)arg2 isBusiness:(_Bool)arg3;
+- (void)_configureBalloonController:(id)arg1 conversationID:(id)arg2 recipients:(id)arg3 isBusiness:(_Bool)arg4;
 - (void)configureWithConversationID:(id)arg1 recipients:(id)arg2 isBusiness:(_Bool)arg3;
 @property(readonly, nonatomic) UIViewController *contentViewController;
 @property(readonly, nonatomic) UIViewController *extensibleViewController;

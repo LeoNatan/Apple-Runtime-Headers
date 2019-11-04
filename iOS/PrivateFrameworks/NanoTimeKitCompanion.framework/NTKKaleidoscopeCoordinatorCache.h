@@ -27,7 +27,7 @@
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned long long)arg3;
-- (id)provideAtlasBacking:(id)arg1 uuid:(id)arg2;
+- (id)provideAtlasBacking:(id)arg1 uuid:(id)arg2 uuidLuma:(id)arg3 uuidChroma:(id)arg4;
 - (void)setLibraryCollection:(id)arg1;
 
 // Remaining properties

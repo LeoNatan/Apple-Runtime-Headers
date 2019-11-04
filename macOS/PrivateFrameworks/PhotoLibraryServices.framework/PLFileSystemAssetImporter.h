@@ -11,7 +11,7 @@
 @interface PLFileSystemAssetImporter : NSObject
 {
     PLPhotoLibrary *_photoLibrary;
-    NSString *_mediaDirectoryPath;
+    NSString *_libraryBundlePath;
     NSString *_photoLibraryStoreUUID;
     NSMutableIndexSet *_thumbIndexes;
     BOOL _hasProcessedAnyAssets;
@@ -37,10 +37,10 @@
 - (BOOL)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1 hasVideoComplementResource:(BOOL)arg2;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
 - (id)addAssetWithURLs:(id)arg1 assetPayload:(id)arg2 forceInsert:(BOOL)arg3 forceUpdate:(BOOL)arg4 fixAddedDate:(BOOL)arg5;
-- (id)assetURLisInDatabase:(id)arg1;
+- (id)assetURLisInDatabase:(id)arg1 deferredPreviewURL:(id)arg2;
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2 isPlaceholder:(BOOL)arg3;
 - (void)dealloc;
-- (id)mediaDirectoryPathWithPhotoLibrary:(id)arg1;
+- (id)libraryBundlePathWithPhotoLibrary:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 
 @end

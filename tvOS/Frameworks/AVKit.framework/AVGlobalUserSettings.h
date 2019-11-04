@@ -6,16 +6,24 @@
 
 #import <objc/NSObject.h>
 
+@class NSObservation, NSUserDefaults;
+
 __attribute__((visibility("hidden")))
 @interface AVGlobalUserSettings : NSObject
 {
+    NSUserDefaults *_uikitUserDefaults;
+    NSObservation *_experimentalScrubbingMomentumCurveSettingObservation;
+    _Bool _experimentalScrubbingMomentumCurveEnabled;
     long long _surroundSound;
 }
 
 + (id)shared;
 + (void)initialize;
+@property(readonly, nonatomic, getter=isExperimentalScrubbingMomentumCurveEnabled) _Bool experimentalScrubbingMomentumCurveEnabled; // @synthesize experimentalScrubbingMomentumCurveEnabled=_experimentalScrubbingMomentumCurveEnabled;
 @property(readonly, nonatomic) long long surroundSound; // @synthesize surroundSound=_surroundSound;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAtmosDisabled) _Bool atmosDisabled;
+- (id)init;
 
 @end
 

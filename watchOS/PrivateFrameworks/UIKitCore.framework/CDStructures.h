@@ -276,6 +276,30 @@ struct vector<CGRect, std::__1::allocator<CGRect>> {
     } __end_cap_;
 };
 
+struct vector<UICollectionViewLayoutAttributes *, std::__1::allocator<UICollectionViewLayoutAttributes *>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<UICollectionViewLayoutAttributes *__strong *, std::__1::allocator<UICollectionViewLayoutAttributes *>> {
+        id *__value_;
+    } __end_cap_;
+};
+
+struct vector<_NSRange, std::__1::allocator<_NSRange>> {
+    struct _NSRange *__begin_;
+    struct _NSRange *__end_;
+    struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange>> {
+        struct _NSRange *__value_;
+    } __end_cap_;
+};
+
+struct vector<int, std::__1::allocator<int>> {
+    int *__begin_;
+    int *__end_;
+    struct __compressed_pair<int *, std::__1::allocator<int>> {
+        int *__value_;
+    } __end_cap_;
+};
+
 struct work_interval_instance {
     unsigned long long _field1;
     unsigned long long _field2;

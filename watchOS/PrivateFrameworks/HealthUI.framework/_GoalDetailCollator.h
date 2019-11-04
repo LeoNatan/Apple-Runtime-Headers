@@ -14,7 +14,7 @@
 }
 
 - (id)detailStringWithTimeScope:(int)arg1;
-- (id)activitySummaryDetailStringWithActivitySummary:(id)arg1 unitPreferenceController:(id)arg2 activityValue:(int)arg3;
+- (id)activitySummaryDetailStringWithActivitySummary:(id)arg1 unitPreferenceController:(id)arg2 activityValue:(int)arg3 displayTypeController:(id)arg4;
 - (void)processCoordinateUserInfo:(id)arg1;
 - (id)init;
 

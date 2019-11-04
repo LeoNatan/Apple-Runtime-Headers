@@ -4,42 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <IntentsCore/INCExecutionInfo.h>
 
-#import <IntentsCore/NSCopying-Protocol.h>
+@class NSArray, NSString;
 
-@class INAppInfo, LSApplicationProxy, NSArray, NSString, NSURL;
-
-@interface INCIntentExecutionInfo : NSObject <NSCopying>
+@interface INCIntentExecutionInfo : INCExecutionInfo
 {
     NSArray *_extensions;
     NSArray *_uiExtensions;
-    INAppInfo *_appInfo;
     NSString *_intentClassName;
-    NSString *_launchableAppBundleId;
-    NSString *_displayableAppBundleId;
     NSString *_extensionBundleId;
     NSString *_uiExtensionBundleId;
-    NSURL *_containingAppBundleURL;
 }
 
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSURL *containingAppBundleURL; // @synthesize containingAppBundleURL=_containingAppBundleURL;
 @property(readonly, copy, nonatomic) NSString *uiExtensionBundleId; // @synthesize uiExtensionBundleId=_uiExtensionBundleId;
 @property(readonly, copy, nonatomic) NSString *extensionBundleId; // @synthesize extensionBundleId=_extensionBundleId;
-@property(readonly, copy, nonatomic) NSString *displayableAppBundleId; // @synthesize displayableAppBundleId=_displayableAppBundleId;
-@property(readonly, copy, nonatomic) NSString *launchableAppBundleId; // @synthesize launchableAppBundleId=_launchableAppBundleId;
 @property(readonly, copy, nonatomic) NSString *intentClassName; // @synthesize intentClassName=_intentClassName;
 - (void).cxx_destruct;
-- (BOOL)hasCustomUIExtension;
+- (id)_uiExtensionsWithError:(id *)arg1;
+- (id)_extensionsWithError:(id *)arg1;
+- (id)_matchingAttributesForExtensionPoint:(id)arg1 error:(id *)arg2;
 - (BOOL)canRunOnLocalDevice;
-- (id)uiExtensionsWithError:(id *)arg1;
-- (id)extensionsWithError:(id *)arg1;
-- (id)matchingAttributesForExtensionPoint:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) INAppInfo *appInfo; // @synthesize appInfo=_appInfo;
-@property(readonly, nonatomic) LSApplicationProxy *applicationProxy;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithIntentClassName:(id)arg1 launchableAppBundleId:(id)arg2 displayableAppBundleId:(id)arg3 extensionBundleId:(id)arg4 uiExtensionBundleId:(id)arg5 containingAppBundleURL:(id)arg6;
+@property(readonly, nonatomic) BOOL hasCustomUIExtension;
+- (id)_initWithIntentClassName:(id)arg1 launchableAppBundleId:(id)arg2 displayableAppBundleId:(id)arg3 extensionBundleId:(id)arg4 uiExtensionBundleId:(id)arg5 containingAppBundleURL:(id)arg6;
 - (id)initWithIntentClassName:(id)arg1 launchableAppBundleId:(id)arg2;
 - (id)initWithIntentTypeName:(id)arg1;
 - (id)initWithIntent:(id)arg1;

@@ -7,27 +7,26 @@
 #import <objc/NSObject.h>
 
 @class CSLPIFlipbookFrame, NSMutableArray;
-@protocol CSLFlipbookInvalidationDelegate;
+@protocol CSLFlipbookTelemetryDelegate;
 
 @interface CSLPIFlipbookFrameStore : NSObject
 {
     CSLPIFlipbookFrame *_invalidatedOnScreenFrame;
     NSMutableArray *_flipbookFrames;
-    id <CSLFlipbookInvalidationDelegate> _invalidationDelegate;
+    id <CSLFlipbookTelemetryDelegate> _telemetryDelegate;
 }
 
 - (void).cxx_destruct;
-- (unsigned int)_insertionIndexForPresentationTime:(id)arg1;
-- (id)removeFramesOnOrAfterPresentationTime:(id)arg1 leeway:(double)arg2 forReason:(int)arg3;
-- (id)frameOnScreenAtPresentationTime:(id)arg1;
-- (void)removeAllFramesForReason:(int)arg1;
-- (id)logInvalidatedFramesInRange:(struct _NSRange)arg1 forReason:(int)arg2;
+- (unsigned int)_insertionIndexForMachContinousTime:(unsigned long long)arg1;
+- (id)frameOnScreenAtMachContinousTime:(unsigned long long)arg1;
+- (id)removeAllFramesForReason:(int)arg1 reasonStr:(id)arg2;
+- (id)logInvalidatedFramesInRange:(struct _NSRange)arg1 forReason:(int)arg2 reasonStr:(id)arg3;
 - (void)removeExpiredFrames;
 - (void)addFrame:(id)arg1;
 @property(readonly, nonatomic) CSLPIFlipbookFrame *nextFrame;
 @property(readonly, nonatomic) CSLPIFlipbookFrame *lastFrame;
 @property(readonly, nonatomic) unsigned int count;
-- (id)initWithInvalidationDelegate:(id)arg1;
+- (id)initWithTelemetryDelegate:(id)arg1;
 
 @end
 

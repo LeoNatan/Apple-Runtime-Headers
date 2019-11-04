@@ -35,12 +35,15 @@
 - (void)shareOnlyUpdateCloudRecord:(id)arg1;
 - (void)deleteCloudRecord:(id)arg1;
 - (void)deleteCloudRecordNames:(id)arg1;
+- (void)updateCloudRecord:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateCloudRecord:(id)arg1;
 - (void)addCloudRecord:(id)arg1;
 - (id)cloudRecordWithObjectID:(id)arg1;
 - (id)cloudRecordWithName:(id)arg1;
 - (BOOL)isRootRecord:(id)arg1;
+- (void)allDescendentsCloudRecordsForParentID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cloudRecordsForParentID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_cloudRecordsForParentIDs:(id)arg1 recursive:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)cloudRecordWithObjectID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cloudRecordWithObjectIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cloudRecordWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

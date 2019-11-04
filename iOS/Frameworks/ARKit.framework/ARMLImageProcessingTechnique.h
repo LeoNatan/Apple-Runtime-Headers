@@ -8,7 +8,7 @@
 
 #import <ARKit/ARTechniqueBusyState-Protocol.h>
 
-@class NSArray, NSObject, NSString;
+@class AREspressoInputBuffer, NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface ARMLImageProcessingTechnique : ARImageBasedTechnique <ARTechniqueBusyState>
@@ -16,6 +16,8 @@
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_semaphore> *_processingSemaphore;
     struct os_unfair_lock_s _prepLock;
+    AREspressoInputBuffer *_espressoInputBuffer_t;
+    struct os_unfair_lock_s _espressoInputBufferLock;
     void *_espressoContext;
     void *_espressoPlan;
     CDStruct_2bc666a5 _espressoNetwork;
@@ -59,6 +61,8 @@
 - (id)_resampleImage:(id)arg1 rotationOfResultTensor:(long long)arg2 networkInputSize:(struct CGSize)arg3;
 - (void)_asynchronousProcessEspressoTensor:(id)arg1;
 - (id)runNeuralNetworkWithImageData:(id)arg1 originalImageData:(id)arg2 regionOfInterest:(struct CGSize)arg3 rotationOfResultTensor:(long long)arg4;
+- (void)_runNeuralNetworkAndPushResult:(id)arg1 originalImageData:(id)arg2 regionOfInterest:(struct CGSize)arg3 rotationOfResultTensor:(long long)arg4;
+- (id)_getAREspressoInputBuffer;
 - (void)_asynchronousProcessDownSampledImage:(id)arg1;
 - (id)processData:(id)arg1;
 - (void)prepare;

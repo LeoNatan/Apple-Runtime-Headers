@@ -8,15 +8,27 @@
 
 #import <WorkflowKit/ICAppInstallStatusObserver-Protocol.h>
 
-@class ICApp, NSString;
+@class ICApp, NSObject, NSString, WFiTunesSessionManager;
+@protocol OS_dispatch_queue;
 
 @interface WFAppInstalledResource : WFResource <ICAppInstallStatusObserver>
 {
+    _Bool _skipLookup;
+    NSString *_appName;
+    WFiTunesSessionManager *_currentAppNameLookupSessionManager;
+    NSObject<OS_dispatch_queue> *_stateQueue;
 }
 
 + (_Bool)refreshesAvailabilityOnApplicationResume;
 + (_Bool)mustBeAvailableForDisplay;
+@property(nonatomic) _Bool skipLookup; // @synthesize skipLookup=_skipLookup;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
+@property(retain, nonatomic) WFiTunesSessionManager *currentAppNameLookupSessionManager; // @synthesize currentAppNameLookupSessionManager=_currentAppNameLookupSessionManager;
+@property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
+- (void).cxx_destruct;
 - (void)appRegistry:(id)arg1 installStatusChangedForApp:(id)arg2;
+- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 userInterface:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)appNotInstalledError;
 - (void)refreshAvailability;
 - (id)eventDictionary;
 - (void)dealloc;

@@ -41,6 +41,7 @@
 - (void)enumerateContentLineRangesInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateParagraphsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (BOOL)ic_containsAlphanumericCharacters;
+- (BOOL)ic_containsNonWhitespaceAndAttachmentCharacters;
 - (BOOL)ic_containsNonWhitespaceCharacters;
 - (id)ic_uniqueWordsWithMinLength:(unsigned long long)arg1;
 - (unsigned long long)numberOfLines;

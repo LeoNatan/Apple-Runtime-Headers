@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     CNCDPersistenceStack *_persistenceStack;
 }
 
++ (BOOL)contextHasPersistentStores:(id)arg1;
 @property(readonly, nonatomic) CNCDPersistenceStack *persistenceStack; // @synthesize persistenceStack=_persistenceStack;
 - (void).cxx_destruct;
 - (id)resultWithManagedObjectContext:(CDUnknownBlockType)arg1;

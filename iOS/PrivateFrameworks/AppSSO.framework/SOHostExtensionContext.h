@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)authorizationDidCompleteWithCredential:(id)arg1 error:(id)arg2;
 - (void)presentAuthorizationViewControllerWithHints:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)canOpenURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)remoteContextWithError:(id *)arg1;
 
 // Remaining properties

@@ -18,7 +18,7 @@
 - (id)_downloadOptionsWithUserInitiation:(_Bool)arg1;
 - (void)_downloadAsset:(id)arg1 userInitiated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_executeQueries:(id)arg1 currentIndex:(unsigned int)arg2 userInitiated:(_Bool)arg3 sortDescriptors:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)_retrieveAssetWithQueries:(id)arg1 userInitiated:(_Bool)arg2 sortDescriptors:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_retrieveAssetWithQueries:(id)arg1 latestCompatibilityVersion:(unsigned int)arg2 userInitiated:(_Bool)arg3 sortDescriptors:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_compatibleVersionsWithMinimumVersion:(unsigned int)arg1 maximumVersion:(unsigned int)arg2;
 - (id)_queriesForCityCodeStationProvider:(id)arg1;
 - (id)_queriesForMarketIdentifer:(id)arg1;

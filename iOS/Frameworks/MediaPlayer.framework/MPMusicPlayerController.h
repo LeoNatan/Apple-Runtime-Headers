@@ -47,7 +47,6 @@
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (void)_preflightRequestIfNeeded;
-- (id)_mediaItemFromSong:(id)arg1;
 - (void)setVolumePrivate:(float)arg1;
 @property(nonatomic) float volume;
 - (id)queueAsQuery;

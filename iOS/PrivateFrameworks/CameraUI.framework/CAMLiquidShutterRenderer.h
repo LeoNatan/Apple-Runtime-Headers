@@ -12,6 +12,7 @@
 {
     _Bool _showDragHandle;
     _Bool _needsRender;
+    _Bool __backgrounded;
     double _blurRadius;
     id <MTLDevice> __device;
     id <MTLCommandQueue> __commandQueue;
@@ -20,6 +21,7 @@
     CDStruct_361c14a1 _dragHandleShape;
 }
 
+@property(nonatomic, setter=_setBackgrounded:) _Bool _backgrounded; // @synthesize _backgrounded=__backgrounded;
 @property(readonly, nonatomic) id <MTLRenderPipelineState> _renderPipelineState; // @synthesize _renderPipelineState=__renderPipelineState;
 @property(readonly, nonatomic) id <MTLCommandQueue> _commandQueue; // @synthesize _commandQueue=__commandQueue;
 @property(readonly, nonatomic) id <MTLDevice> _device; // @synthesize _device=__device;

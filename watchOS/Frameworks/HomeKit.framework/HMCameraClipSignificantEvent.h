@@ -17,10 +17,12 @@
     unsigned int _reason;
     NSDate *_dateOfOccurrence;
     unsigned int _confidenceLevel;
+    double _timeOffsetWithinClip;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly) unsigned int confidenceLevel; // @synthesize confidenceLevel=_confidenceLevel;
+@property(readonly) double timeOffsetWithinClip; // @synthesize timeOffsetWithinClip=_timeOffsetWithinClip;
 @property(readonly, copy) NSDate *dateOfOccurrence; // @synthesize dateOfOccurrence=_dateOfOccurrence;
 @property(readonly) unsigned int reason; // @synthesize reason=_reason;
 @property(readonly, copy) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
@@ -31,6 +33,8 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+@property(readonly) _Bool canAskForUserFeedback;
+- (id)initWithUniqueIdentifier:(id)arg1 reason:(unsigned int)arg2 timeOffsetWithinClip:(double)arg3 dateOfOccurrence:(id)arg4 confidenceLevel:(unsigned int)arg5;
 - (id)initWithUniqueIdentifier:(id)arg1 reason:(unsigned int)arg2 dateOfOccurrence:(id)arg3 confidenceLevel:(unsigned int)arg4;
 
 @end

@@ -19,9 +19,11 @@
     IDSXPCConnection *_rootConnection;
     id <NSXPCProxyCreating> _remoteObject;
     CDUnknownBlockType _invalidationHandler;
+    _Bool _forSyncMessaging;
 }
 
 + (id)errorForMissingEntitlement:(id)arg1;
+@property(nonatomic) _Bool forSyncMessaging; // @synthesize forSyncMessaging=_forSyncMessaging;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) id <NSXPCProxyCreating> remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(retain, nonatomic) IDSXPCConnection *rootConnection; // @synthesize rootConnection=_rootConnection;
@@ -38,7 +40,9 @@
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithRemoteObject:(id)arg1 rootConnection:(id)arg2;
+- (id)_initWithQueue:(id)arg1 takingOverAndResumingConnection:(id)arg2 forSyncMessaging:(_Bool)arg3;
 - (id)initWithQueue:(id)arg1 takingOverAndResumingConnection:(id)arg2;
+- (id)initForSyncMessagingWithQueue:(id)arg1 takingOverAndResumingConnection:(id)arg2;
 - (id)initWithQueue:(id)arg1 remoteObject:(id)arg2;
 
 // Remaining properties

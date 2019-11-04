@@ -15,17 +15,14 @@
 {
     NSString *_name;
     int _roleId;
-    int _timeShift;
-    int _clockDrift;
+    NSString *_emoji;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) int clockDrift; // @synthesize clockDrift=_clockDrift;
-@property(readonly, nonatomic) int timeShift; // @synthesize timeShift=_timeShift;
-@property(readonly, nonatomic) int roleId; // @synthesize roleId=_roleId;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSString *emoji; // @synthesize emoji=_emoji;
+@property(nonatomic) int roleId; // @synthesize roleId=_roleId;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)initWithTimeShift:(int)arg1 clockDrift:(int)arg2 name:(id)arg3 roleId:(int)arg4;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

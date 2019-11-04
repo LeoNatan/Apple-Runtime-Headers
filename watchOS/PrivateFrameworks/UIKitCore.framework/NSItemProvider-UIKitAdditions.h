@@ -9,9 +9,11 @@
 @class NSData;
 
 @interface NSItemProvider (UIKitAdditions)
+- (id)_loadObjectOfClass:(Class)arg1 userInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (Class)_highestFidelityClassForLoading:(id)arg1;
 @property(nonatomic) int preferredPresentationStyle;
 @property(nonatomic) struct CGSize preferredPresentationSize;
 @property(copy, nonatomic) NSData *teamData;
+- (void)_addFileURLRepresentationIfPossible;
 @end
 

@@ -7,7 +7,7 @@
 #import <ClockKitUI/CLKUIQuadView.h>
 
 @class CAMetalLayer, MTLRenderPassDescriptor, NSArray;
-@protocol MTLCommandQueue;
+@protocol MTLCommandQueue, MTLComputePipelineState;
 
 @interface CLKUIMetalQuadView : CLKUIQuadView
 {
@@ -17,6 +17,7 @@
     struct CLKUIQuadSize _quadSize;
     CAMetalLayer *_metalLayer;
     NSArray *_quads;
+    id <MTLComputePipelineState> _aplPipelineState;
     unsigned int _colorPixelFormat;
 }
 
@@ -26,9 +27,14 @@
 - (id)_newRenderPassDescriptor;
 - (id)metalLayer;
 - (void)discardContents;
+- (float)computeAPLAndSnapshot:(id *)arg1;
+- (float)computeAPL;
 - (_Bool)_displayAndCheckForDrawable:(_Bool)arg1 WithCompletion:(CDUnknownBlockType)arg2;
-- (id)_snapshotTexture:(id)arg1 scale:(float)arg2;
-- (id)_snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
+- (id)_textureToImage:(id)arg1 scale:(float)arg2;
+- (id)_snapshotTextureInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3 withAdditionalPasses:(CDUnknownBlockType)arg4;
+- (id)snapshotTextureInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
+- (id)snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
+- (void)setSingleBufferMode:(_Bool)arg1;
 - (void)_handleQuadArrayChange:(id)arg1;
 - (void)setOpaque:(_Bool)arg1;
 - (void)layoutSubviews;

@@ -13,6 +13,8 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_overridingPreferredFocusEnvironment;
+- (_Bool)_accessibilityIsFKARunningForFocusItem;
 - (void)viewDidLoad;
 - (void)_setAccessibilityDidLoadAccessibilityInformation:(_Bool)arg1;
 - (_Bool)_accessibilityDidLoadAccessibilityInformation;

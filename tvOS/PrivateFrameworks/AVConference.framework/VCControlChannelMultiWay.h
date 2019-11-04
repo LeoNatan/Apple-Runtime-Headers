@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
 - (void)broadcastUnreliableMessage:(id)arg1;
 - (void)sendUnreliableMessage:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)sendReliableMessage:(id)arg1 participantID:(unsigned long long)arg2;
+- (_Bool)sendReliableMessage:(id)arg1 participantID:(unsigned long long)arg2 timeout:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)sendReliableMessageAndWait:(id)arg1 participantID:(unsigned long long)arg2 timeout:(id)arg3;
 - (_Bool)sendReliableMessageAndWait:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)messageReceived:(id)arg1 participantInfo:(CDStruct_94aa5fb4 *)arg2;
 - (id)processEncryptedPayload:(id)arg1 isData:(_Bool)arg2 sequenceNumber:(id)arg3 MKIData:(id)arg4 participantID:(id)arg5;

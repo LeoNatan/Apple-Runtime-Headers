@@ -12,6 +12,7 @@
 }
 
 + (_Bool)stringHasDatesOrTimes:(id)arg1;
++ (void)resetUnusedScannersForTesting;
 + (void)initialize;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)detectionsInPlainText:(id)arg1 withEligibleRegions:(id)arg2 ddSignature:(struct __DDResult **)arg3;

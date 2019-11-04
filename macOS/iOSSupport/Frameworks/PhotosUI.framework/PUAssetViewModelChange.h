@@ -25,11 +25,15 @@
     BOOL _accessoryViewVisibilityChanged;
     BOOL _contentOffsetChanged;
     BOOL _isInEditModeChanged;
+    BOOL _toggleCTMChanged;
+    BOOL _flippingFullSizeRenderStateChanged;
     PUBrowsingVideoPlayerChange *_videoPlayerChange;
     PUBrowsingIrisPlayerChange *_irisPlayerChange;
     PUBrowsingAnimatedImagePlayerChange *_animatedImageChange;
 }
 
+@property(nonatomic, setter=_setFlippingFullSizeRenderStateChanged:) BOOL flippingFullSizeRenderStateChanged; // @synthesize flippingFullSizeRenderStateChanged=_flippingFullSizeRenderStateChanged;
+@property(nonatomic, setter=_setToggleCTMChanged:) BOOL toggleCTMChanged; // @synthesize toggleCTMChanged=_toggleCTMChanged;
 @property(nonatomic, setter=_setIsInEditModeChanged:) BOOL isInEditModeChanged; // @synthesize isInEditModeChanged=_isInEditModeChanged;
 @property(nonatomic, setter=_setContentOffsetChanged:) BOOL contentOffsetChanged; // @synthesize contentOffsetChanged=_contentOffsetChanged;
 @property(nonatomic, setter=_setAccessoryViewVisibilityChanged:) BOOL accessoryViewVisibilityChanged; // @synthesize accessoryViewVisibilityChanged=_accessoryViewVisibilityChanged;

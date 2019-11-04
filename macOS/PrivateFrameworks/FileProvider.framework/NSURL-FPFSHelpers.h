@@ -32,7 +32,9 @@
 - (BOOL)fp_moveUnderFolder:(id)arg1 withNewName:(id)arg2 coordinationOptions:(unsigned long long)arg3 allowBounce:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)fp_moveUnderFolder:(id)arg1 withNewName:(id)arg2 allowBounce:(BOOL)arg3 moveHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)fp_moveUnderFolder:(id)arg1 withNewName:(id)arg2 allowBounce:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)fp_existingURLOfChildWithName:(id)arg1 notMatchingFileID:(id)arg2;
+- (id)fp_existingURLOfChildWithName:(id)arg1 notMatchingFileID:(id)arg2 maximumBounceNumber:(id *)arg3 forceFetchingBounceNumber:(BOOL)arg4;
+- (id)_fp_scanForURLOfChildWithName:(id)arg1 notMatchingFileID:(id)arg2 maximumBounceNumber:(id *)arg3;
+- (id)_fp_lookupURLOfChildWithName:(id)arg1 notMatchingFileID:(id)arg2;
 - (id)fp_existingURLOfChildWithName:(id)arg1;
 - (CDUnknownBlockType)fp_defaultMoverBlock;
 - (id)fp_matchesUbiquitousHeuristics;
@@ -56,6 +58,7 @@
 - (BOOL)fp_associateThumbnailFromDocumentAtURL:(id)arg1 error:(id *)arg2;
 - (void)fp_attachSecurityScopeFromURL:(id)arg1;
 - (id)fp_addDocumentTrackingWithError:(id *)arg1;
+- (BOOL)fp_checkSandboxFileMetadataRead;
 - (BOOL)fp_makeWritableWithError:(id *)arg1;
 - (void)fp_hideExtension:(BOOL)arg1;
 - (BOOL)fp_isPackage;

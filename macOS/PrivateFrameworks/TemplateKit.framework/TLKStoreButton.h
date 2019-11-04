@@ -6,21 +6,26 @@
 
 #import <TemplateKit/TLKSButton.h>
 
-@class TLKLabel, TLKProminenceView;
+@class NSView, TLKLabel, TLKProminenceView;
 
 @interface TLKStoreButton : TLKSButton
 {
+    BOOL _isEmphasized;
     TLKLabel *_label;
+    NSView *_backgroundView;
     TLKProminenceView *_highlightView;
 }
 
 + (Class)cellClass;
+@property BOOL isEmphasized; // @synthesize isEmphasized=_isEmphasized;
 @property(retain) TLKProminenceView *highlightView; // @synthesize highlightView=_highlightView;
+@property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) TLKLabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (id)accessibilityTitle;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)allowsVibrancy;
+- (void)setBackgroundStyle:(long long)arg1;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewDidChangeEffectiveAppearance;

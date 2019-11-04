@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     struct WeakObjCPtr<id<WKActionSheetAssistantDelegate>> _delegate;
     struct RetainPtr<WKActionSheet> _interactionSheet;
     RetainPtr_5a40b48a _elementInfo;
-    Optional_2b0652bb _positionInformation;
+    Optional_d40c49cf _positionInformation;
     struct WeakObjCPtr<UIView> _view;
     _Bool _needsLinkIndicator;
     _Bool _isPresentingDDUserInterface;
@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (long long)_presentationStyleForPositionInfo:(const struct InteractionInformationAtPosition *)arg1 elementInfo:(id)arg2;
 - (void)showImageSheet;
 - (void)_createSheetWithElementActions:(id)arg1 defaultTitle:(id)arg2 showLinkTitle:(_Bool)arg3;
-- (Optional_2b0652bb)currentPositionInformation;
+- (Optional_d40c49cf)currentPositionInformation;
 - (id)currentAvailableActionTitles;
 - (void)interactionDidStartWithPositionInformation:(const struct InteractionInformationAtPosition *)arg1;
 - (_Bool)isShowingSheet;

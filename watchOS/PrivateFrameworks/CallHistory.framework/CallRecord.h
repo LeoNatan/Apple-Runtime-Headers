@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSNumber *disconnected_cause; // @dynamic disconnected_cause;
 @property(copy, nonatomic) NSNumber *duration; // @dynamic duration;
 @property(copy, nonatomic) NSNumber *face_time_data; // @dynamic face_time_data;
+@property(copy, nonatomic) NSNumber *filtered_out_reason; // @dynamic filtered_out_reason;
 @property(copy, nonatomic) NSNumber *handle_type; // @dynamic handle_type;
 @property(copy, nonatomic) NSString *iso_country_code; // @dynamic iso_country_code;
 @property(copy, nonatomic) NSUUID *localParticipantUUID; // @dynamic localParticipantUUID;

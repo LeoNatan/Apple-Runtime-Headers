@@ -19,6 +19,7 @@
     _Bool _sharingCollapsed;
     _Bool _photosLandscapeMode;
     _Bool _contentInstalled;
+    _Bool _ignorePersonTap;
     id <UIActivityContentDelegate> _delegate;
     UIViewController *_photosCarouselViewController;
     NSArray *_applicationActivities;
@@ -40,15 +41,20 @@
     NSArray *_shareProxies;
     NSArray *_actionProxies;
     NSNumber *_nearbyCountSlotID;
+    NSMutableDictionary *_peopleSlots;
     NSMutableDictionary *_shareSlots;
     NSMutableDictionary *_actionSlots;
     UIVisualEffectView *_backgroundView;
+    NSUUID *_airDropUUID;
 }
 
+@property(nonatomic) _Bool ignorePersonTap; // @synthesize ignorePersonTap=_ignorePersonTap;
+@property(retain, nonatomic) NSUUID *airDropUUID; // @synthesize airDropUUID=_airDropUUID;
 @property(nonatomic) _Bool contentInstalled; // @synthesize contentInstalled=_contentInstalled;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSMutableDictionary *actionSlots; // @synthesize actionSlots=_actionSlots;
 @property(retain, nonatomic) NSMutableDictionary *shareSlots; // @synthesize shareSlots=_shareSlots;
+@property(retain, nonatomic) NSMutableDictionary *peopleSlots; // @synthesize peopleSlots=_peopleSlots;
 @property(retain, nonatomic) NSNumber *nearbyCountSlotID; // @synthesize nearbyCountSlotID=_nearbyCountSlotID;
 @property(retain, nonatomic) NSArray *actionProxies; // @synthesize actionProxies=_actionProxies;
 @property(retain, nonatomic) NSArray *shareProxies; // @synthesize shareProxies=_shareProxies;
@@ -92,12 +98,14 @@
 - (void)updateContentWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 activitiesByUUID:(id)arg4 nearbyCountSlotID:(id)arg5 animated:(_Bool)arg6;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureCollectionViewIfNeeded;
+- (void)overrideLayoutConfigurationWithSafeAreaInsets:(_Bool)arg1;
 - (id)activityCollectionViewLayout;
 @property(readonly, nonatomic) LPLinkMetadata *headerMetadata;
 - (void)updateHeaderSize;
 - (void)updateHeaderMetadata;
 - (void)configureHeaderViewIfNeeded;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)init;
 

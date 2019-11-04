@@ -8,7 +8,7 @@
 
 #import <MediaServices/MSVSegmentedSubEncoder-Protocol.h>
 
-@class NSData, NSMapTable, NSMutableArray, NSString;
+@class NSData, NSDictionary, NSMapTable, NSMutableArray, NSString;
 
 @interface MSVOPACKEncoder : NSCoder <MSVSegmentedSubEncoder>
 {
@@ -17,9 +17,12 @@
     NSMutableArray *_objects;
     NSMapTable *_objectLookupTable;
     NSMutableArray *_wrapperStack;
+    NSDictionary *_userInfo;
 }
 
++ (id)encodedDataWithRootObject:(id)arg1 userInfo:(id)arg2 error:(id *)arg3;
 + (id)encodedDataWithRootObject:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSMutableArray *wrapperStack; // @synthesize wrapperStack=_wrapperStack;
 @property(readonly, nonatomic) NSMapTable *objectLookupTable; // @synthesize objectLookupTable=_objectLookupTable;
 @property(readonly, nonatomic) NSMutableArray *objects; // @synthesize objects=_objects;
@@ -28,6 +31,8 @@
 - (id)_convertObject:(id)arg1;
 - (id)_convertNumber:(id)arg1;
 - (void)_encodeNumber:(id)arg1 forKey:(id)arg2;
+- (void)msv_setUserInfo:(id)arg1;
+- (id)msv_userInfo;
 - (void)finishEncodingPartialTopLevelObject;
 - (void)beginEncodingPartialTopLevelObject:(id)arg1;
 @property(readonly, nonatomic) BOOL hasTopLevelData;
@@ -42,7 +47,9 @@
 - (void)encodeRootObject:(id)arg1;
 - (BOOL)allowsKeyedCoding;
 - (BOOL)requiresSecureCoding;
+- (id)encodedDataWithError:(id *)arg1;
 @property(readonly, nonatomic) NSData *encodedData; // @synthesize encodedData=_encodedData;
+- (void)finishEncodingWithError:(id *)arg1;
 - (void)finishEncoding;
 - (id)init;
 

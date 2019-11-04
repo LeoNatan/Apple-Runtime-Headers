@@ -16,14 +16,17 @@
     int _style;
     float _glyphViewPadding;
     float _labelTopPadding;
+    _Bool _didLayout;
     _Bool _biometricsUnavailableHint;
     _Bool _touchRecognizingHint;
     _Bool _persistentEmulationHint;
     _Bool _accessPass;
     int _state;
+    int _layoutState;
     PKGlyphView *_glyph;
     UILabel *_label;
     UILabel *_debugLabel;
+    float _labelStateBottomInset;
     float _labelAlpha;
     id <PKPassPaymentPayStateViewDelegate> _delegate;
 }
@@ -34,9 +37,11 @@
 @property(nonatomic) _Bool touchRecognizingHint; // @synthesize touchRecognizingHint=_touchRecognizingHint;
 @property(nonatomic) _Bool biometricsUnavailableHint; // @synthesize biometricsUnavailableHint=_biometricsUnavailableHint;
 @property(nonatomic) float labelAlpha; // @synthesize labelAlpha=_labelAlpha;
+@property(nonatomic) float labelStateBottomInset; // @synthesize labelStateBottomInset=_labelStateBottomInset;
 @property(readonly, nonatomic) UILabel *debugLabel; // @synthesize debugLabel=_debugLabel;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) PKGlyphView *glyph; // @synthesize glyph=_glyph;
+@property(readonly, nonatomic) int layoutState; // @synthesize layoutState=_layoutState;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)glyphView:(id)arg1 revealingCheckmark:(_Bool)arg2;
@@ -54,6 +59,7 @@
 - (_Bool)_canPreserveGlyphForState:(int)arg1;
 - (int)_defaultGlyphStateForState:(int)arg1;
 - (void)layoutSubviews;
+- (void)_resolveLayout;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
 

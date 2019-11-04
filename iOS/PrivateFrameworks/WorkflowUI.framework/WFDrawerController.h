@@ -16,6 +16,7 @@
     _Bool _inTransition;
     id <WFDrawerControllerDelegate> _delegate;
     NSArray *_viewControllers;
+    double _bottomInset;
     NSArray *_paneContainers;
     NSMapTable *_paneContainersByViewControllers;
     UIViewController *_initializationViewController;
@@ -29,6 +30,7 @@
 @property(readonly, nonatomic) UIViewController *initializationViewController; // @synthesize initializationViewController=_initializationViewController;
 @property(readonly, nonatomic) NSMapTable *paneContainersByViewControllers; // @synthesize paneContainersByViewControllers=_paneContainersByViewControllers;
 @property(readonly, nonatomic) NSArray *paneContainers; // @synthesize paneContainers=_paneContainers;
+@property(nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;
 @property(nonatomic) __weak id <WFDrawerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (double)heightForVisibility:(unsigned long long)arg1;
@@ -44,6 +46,7 @@
 - (id)mutablePaneControllers;
 - (id)drawerPaneWithViewController:(id)arg1;
 - (void)drawerPaneContainer:(id)arg1 didTransitionToVisibility:(unsigned long long)arg2;
+- (double)bottomInsetForPaneContainer:(id)arg1;
 - (void)drawerPaneContainer:(id)arg1 willTransitionToVisibility:(unsigned long long)arg2;
 - (id)scrollViewOccludingDrawerPaneInsideContainer:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;

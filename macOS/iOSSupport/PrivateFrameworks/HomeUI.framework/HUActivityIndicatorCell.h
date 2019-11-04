@@ -8,7 +8,7 @@
 
 #import <HomeUI/HUDisableableCellProtocol-Protocol.h>
 
-@class HUTitleDescriptionContentView, NSString, UIActivityIndicatorView;
+@class HUTitleDescriptionContentView, NSString, UIActivityIndicatorView, UIImage, UIImageView;
 @protocol HFStringGenerator;
 
 @interface HUActivityIndicatorCell : UITableViewCell <HUDisableableCellProtocol>
@@ -16,17 +16,21 @@
     BOOL _disabled;
     BOOL _animating;
     HUTitleDescriptionContentView *_titleDescriptionView;
+    UIImageView *_iconImageView;
     UIActivityIndicatorView *_activityIndicatorView;
 }
 
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
+@property(readonly, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(readonly, nonatomic) HUTitleDescriptionContentView *titleDescriptionView; // @synthesize titleDescriptionView=_titleDescriptionView;
 @property(nonatomic, getter=isAnimating) BOOL animating; // @synthesize animating=_animating;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 - (void).cxx_destruct;
 - (void)_setupConstraints;
+@property(retain, nonatomic) UIImage *icon;
 @property(retain, nonatomic) id <HFStringGenerator> descriptionText;
 @property(retain, nonatomic) id <HFStringGenerator> titleText;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

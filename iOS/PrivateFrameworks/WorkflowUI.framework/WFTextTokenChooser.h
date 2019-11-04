@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSIndexSet, NSSet, NSString, UIColor, WFAlert, WFVariable;
+@class NSArray, NSIndexSet, NSSet, NSString, WFAlert, WFVariable;
+@protocol WFUIKitUserInterface;
 
 @interface WFTextTokenChooser : NSObject
 {
@@ -18,22 +19,22 @@
     NSString *_noChoicesMessage;
     NSSet *_allowedVariableTypes;
     NSArray *_additionalButtons;
-    UIColor *_tintColor;
     WFVariable *_selectedVariable;
     NSIndexSet *_selectedButtonIndexes;
     CDUnknownBlockType _choiceHandler;
     CDUnknownBlockType _cancelHandler;
     WFAlert *_presentedAlert;
     NSArray *_auxiliaryButtons;
+    id <WFUIKitUserInterface> _userInterface;
 }
 
+@property(nonatomic) __weak id <WFUIKitUserInterface> userInterface; // @synthesize userInterface=_userInterface;
 @property(copy, nonatomic) NSArray *auxiliaryButtons; // @synthesize auxiliaryButtons=_auxiliaryButtons;
 @property(retain, nonatomic) WFAlert *presentedAlert; // @synthesize presentedAlert=_presentedAlert;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 @property(copy, nonatomic) CDUnknownBlockType choiceHandler; // @synthesize choiceHandler=_choiceHandler;
 @property(retain, nonatomic) NSIndexSet *selectedButtonIndexes; // @synthesize selectedButtonIndexes=_selectedButtonIndexes;
 @property(retain, nonatomic) WFVariable *selectedVariable; // @synthesize selectedVariable=_selectedVariable;
-@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) _Bool prefersItemPickerSheetPresentation; // @synthesize prefersItemPickerSheetPresentation=_prefersItemPickerSheetPresentation;
 @property(nonatomic) _Bool showsDoneButton; // @synthesize showsDoneButton=_showsDoneButton;
 @property(nonatomic) _Bool showsClearButton; // @synthesize showsClearButton=_showsClearButton;

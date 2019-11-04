@@ -6,10 +6,11 @@
 
 #import <PhotosUICore/PXActionManager.h>
 
-@class NSDictionary, PXCuratedLibraryViewModel;
+@class NSDictionary, PXCuratedLibraryFilterActionPerformer, PXCuratedLibraryViewModel;
 
 @interface PXCuratedLibraryActionManager : PXActionManager
 {
+    PXCuratedLibraryFilterActionPerformer *_filterActionPerformer;
     NSDictionary *_actionPerformersByType;
     NSDictionary *_assetCollectionActionPerformersByType;
     NSDictionary *_constructorSpecificActionPerformersByType;
@@ -27,6 +28,7 @@
 - (id)tapToRadarPerformerAssetCollectionReference:(id)arg1 diagnosticLayout:(id)arg2;
 - (id)showMapPerformerWithAssetCollectionReference:(id)arg1 fetchResult:(id)arg2;
 - (id)toggleAspectFitPerformerWithLayout:(id)arg1;
+@property(readonly) PXCuratedLibraryFilterActionPerformer *filterActionPerformer; // @synthesize filterActionPerformer=_filterActionPerformer;
 - (id)ellipsisButtonActionPerformerWithAssetCollectionReference:(id)arg1;
 - (id)showAllActionPerformerWithAssetCollectionReference:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1 withAssetCollectionReference:(id)arg2;

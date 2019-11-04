@@ -28,6 +28,9 @@
 + (BOOL)requiresConstraintBasedLayout;
 + (id)gridViewWithViews:(id)arg1;
 + (id)gridViewWithNumberOfColumns:(long long)arg1 rows:(long long)arg2;
+- (BOOL)_hasBaselineOffsetsAtSize;
+- (id)_viewForLastBaselineLayout;
+- (id)_viewForFirstBaselineLayout;
 - (void)_mergeCellsInRect:(struct CGRect)arg1;
 - (struct CGRect)_expandMergeBoundsIfNeeded:(struct CGRect)arg1;
 - (BOOL)_expandMergeBounds:(struct CGRect *)arg1 ifNeededForColumnAtIndex:(long long)arg2;

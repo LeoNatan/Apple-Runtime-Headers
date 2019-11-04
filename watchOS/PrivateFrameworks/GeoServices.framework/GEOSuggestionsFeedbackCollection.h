@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     struct GEOSessionID _sessionID;
     NSData *_suggestionEntryMetadata;
     GEOPDAutocompleteEntry *_suggestionEntry;
     NSData *_suggestionMetadata;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _suggestionEntryIndex;
     int _suggestionsEntryListIndex;
     struct {
@@ -64,6 +66,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int suggestionsEntryListIndex;
 @property(nonatomic) _Bool hasSessionID;
 @property(nonatomic) struct GEOSessionID sessionID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

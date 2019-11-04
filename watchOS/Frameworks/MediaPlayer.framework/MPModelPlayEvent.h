@@ -17,6 +17,7 @@
 + (id)__artist_KEY;
 + (id)__album_KEY;
 + (id)__datePlayed_KEY;
+- (id)genericObjectRepresentation;
 - (int)itemType;
 - (id)contentItemCollectionInfo;
 

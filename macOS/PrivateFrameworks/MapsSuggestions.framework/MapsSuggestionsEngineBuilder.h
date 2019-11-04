@@ -64,6 +64,7 @@
 @property(retain, nonatomic) id <MapsSuggestionsStrategy> strategy; // @synthesize strategy=_strategy;
 - (void).cxx_destruct;
 - (id)withManagerStyle:(long long)arg1;
+- (id)buildWithoutStoring;
 - (id)build;
 - (id)withTitleFormatter:(id)arg1 forType:(long long)arg2;
 - (id)withSourceClasses:(id)arg1;

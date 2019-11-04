@@ -27,6 +27,8 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 @property(copy) NSString *proxiedBundleIdentifier;
+@property(copy) NSArray *alternativeResults;
+@property(copy) NSArray *audioSearchResults;
 @property(copy) NSArray *hashedRouteUIDs;
 - (void)setMediaSearch:(id)arg1;
 @property(readonly, copy) INMediaSearch *mediaSearch;

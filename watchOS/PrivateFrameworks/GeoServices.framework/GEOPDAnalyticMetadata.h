@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAnalyticMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOSessionID _sessionId;
     GEOAbAssignInfo *_abAssignInfo;
@@ -28,6 +27,9 @@ __attribute__((visibility("hidden")))
     double _relativeTimestamp;
     GEOLocalTime *_requestTime;
     NSMutableArray *_serviceTags;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _requestSource;
     unsigned int _sequenceNumber;
     _Bool _isFromApi;
@@ -138,6 +140,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *appIdentifier;
 @property(readonly, nonatomic) _Bool hasAppIdentifier;
 - (void)_readAppIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithTraits:(id)arg1;
 
 @end

@@ -11,6 +11,7 @@
 @protocol HMMediaSessionDelegate <NSObject>
 
 @optional
+- (void)mediaSessionDidUpdate:(HMMediaSession *)arg1;
 - (void)mediaSession:(HMMediaSession *)arg1 didUpdatePlaybackState:(int)arg2;
 @end
 

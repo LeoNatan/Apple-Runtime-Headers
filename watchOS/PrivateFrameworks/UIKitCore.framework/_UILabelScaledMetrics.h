@@ -17,10 +17,14 @@ __attribute__((visibility("hidden")))
     float _scaledLineHeight;
     int _measuredNumberOfLines;
     NSAttributedString *_scaledAttributedText;
+    float _unscaledFirstBaselineOffset;
     struct CGSize _targetSize;
     struct CGSize _scaledSize;
+    struct CGSize _unscaledAndPossiblyTooLargeSize;
 }
 
+@property(nonatomic) float unscaledFirstBaselineOffset; // @synthesize unscaledFirstBaselineOffset=_unscaledFirstBaselineOffset;
+@property(nonatomic) struct CGSize unscaledAndPossiblyTooLargeSize; // @synthesize unscaledAndPossiblyTooLargeSize=_unscaledAndPossiblyTooLargeSize;
 @property(retain, nonatomic) NSAttributedString *scaledAttributedText; // @synthesize scaledAttributedText=_scaledAttributedText;
 @property(nonatomic) int measuredNumberOfLines; // @synthesize measuredNumberOfLines=_measuredNumberOfLines;
 @property(nonatomic) float scaledLineHeight; // @synthesize scaledLineHeight=_scaledLineHeight;

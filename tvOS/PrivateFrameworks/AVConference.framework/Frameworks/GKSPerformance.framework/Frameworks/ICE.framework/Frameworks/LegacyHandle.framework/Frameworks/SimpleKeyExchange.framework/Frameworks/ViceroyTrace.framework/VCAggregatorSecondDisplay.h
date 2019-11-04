@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
     unsigned int _decodedVideoFrameEnqueueCounter;
     unsigned int _videoFrameReceivedCounter;
     unsigned int _videoFrameExpectedCounter;
+    unsigned int _rtcpTimeoutCount;
     VCHistogram *_RBR;
     VCHistogram *_TBR;
     VCHistogram *_SBR;

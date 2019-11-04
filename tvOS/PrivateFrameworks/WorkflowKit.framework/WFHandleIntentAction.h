@@ -28,8 +28,9 @@
 - (void)intentExecutor:(id)arg1 showConfirmationForInteraction:(id)arg2 confirmationRequired:(_Bool)arg3 authenticationRequired:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)intentExecutorRequestsContinueInApp:(id)arg1;
 - (void)handleExecutorError:(id)arg1;
-- (id)errorFromExtensionError:(id)arg1;
+- (void)getErrorFromExtensionError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)errorThatLaunchesApp:(id)arg1;
+- (id)errorAttributedToApp:(id)arg1;
 - (id)errorFromHandleResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromConfirmResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;

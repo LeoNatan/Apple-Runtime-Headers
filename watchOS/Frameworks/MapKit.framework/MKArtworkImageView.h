@@ -24,6 +24,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) UIImageView *badgeView;
 - (void)_updateImageView;
+- (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

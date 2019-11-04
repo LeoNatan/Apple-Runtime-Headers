@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <WorkflowUI/WFModuleIndentationProvider-Protocol.h>
+@class NSCountedSet, NSLock, WFWorkflow;
 
-@class NSCountedSet, NSLock, NSString, WFWorkflow;
-
-@interface WFWorkflowModuleIndentationCache : NSObject <WFModuleIndentationProvider>
+@interface WFWorkflowModuleIndentationCache : NSObject
 {
     WFWorkflow *_workflow;
     NSLock *_lock;
@@ -21,16 +19,10 @@
 @property(readonly, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
-- (unsigned long long)indentationLevelForModule:(id)arg1 withAction:(id)arg2;
+- (unsigned long long)indentationLevelForAction:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithWorkflow:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

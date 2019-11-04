@@ -12,6 +12,7 @@
 
 + (id)participationStatusParameterFromCode:(int)arg1;
 + (id)participationStatusParameterFromICSString:(id)arg1;
+- (Class)classForCoder;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 
 @end

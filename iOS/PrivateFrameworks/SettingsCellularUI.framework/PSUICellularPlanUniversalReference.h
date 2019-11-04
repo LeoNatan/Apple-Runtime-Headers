@@ -16,6 +16,7 @@
     NSString *_iccid;
 }
 
++ (id)referenceFromCellularPlanPendingTransfer:(id)arg1;
 + (id)referenceFromDanglingPlanItem:(id)arg1;
 + (id)referenceFromPlanItem:(id)arg1;
 @property(retain, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;

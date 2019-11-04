@@ -14,7 +14,9 @@ __attribute__((visibility("hidden")))
     LPImage *_image;
     LPImagePresentationProperties *_properties;
     LPImageViewStyle *_style;
+    LPImageViewStyle *_originalStyle;
     long long _currentScalingMode;
+    long long _platterReason;
     UIImageView *_imageView;
     UIView *_overlayView;
     UIView *_backgroundView;
@@ -30,7 +32,9 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)imageSizeThatFits:(struct CGSize)arg1;
 - (long long)scalingModeForSize:(struct CGSize)arg1;
 - (void)installDarkeningView;
+- (_Bool)shouldApplyBackground;
 - (void)layoutComponentView;
+- (void)updateShadowPath;
 - (void)setCornerRadius:(double)arg1 continuous:(_Bool)arg2;
 - (void)componentViewDidMoveToWindow;
 - (long long)_filter;

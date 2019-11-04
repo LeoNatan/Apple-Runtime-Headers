@@ -50,6 +50,7 @@
 - (id)initWithMeContact:(id)arg1;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 avatar:(id)arg3;
 - (id)init;
+- (_Bool)isEqual:(id)arg1;
 
 @end
 

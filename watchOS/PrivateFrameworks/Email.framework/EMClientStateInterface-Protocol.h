@@ -11,6 +11,6 @@
 @protocol EMClientStateInterface <NSObject>
 - (NSProgress *)giveBoostWithCompletionBlock:(void (^)(void))arg1;
 - (void)setClientIsInForeground:(_Bool)arg1;
-- (void)setCurrentlyVisibleMailboxes:(NSArray *)arg1;
+- (void)setCurrentlyVisibleMailboxObjectIDs:(NSArray *)arg1;
 @end
 

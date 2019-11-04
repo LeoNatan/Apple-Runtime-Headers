@@ -14,26 +14,31 @@ __attribute__((visibility("hidden")))
     BOOL _disabled;
     BOOL _destructive;
     UIStackView *_labelStackView;
-    UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIImageView *_imageView;
     NSLayoutConstraint *_topToFirstBaseline;
     NSLayoutConstraint *_lastBaselineToBottom;
-    NSLayoutConstraint *_imageCenterXToTrailing;
-    NSLayoutConstraint *_labelStackViewTrailingToImageCenterX;
+    NSLayoutConstraint *_trailingViewCenterXToTrailing;
+    NSLayoutConstraint *_labelStackViewTrailingToTrailingViewCenterX;
+    NSLayoutConstraint *_nonSymbolImageWidth;
+    NSLayoutConstraint *_nonSymbolImageHeight;
+    UILabel *_titleLabel;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *labelStackViewTrailingToImageCenterX; // @synthesize labelStackViewTrailingToImageCenterX=_labelStackViewTrailingToImageCenterX;
-@property(retain, nonatomic) NSLayoutConstraint *imageCenterXToTrailing; // @synthesize imageCenterXToTrailing=_imageCenterXToTrailing;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) NSLayoutConstraint *nonSymbolImageHeight; // @synthesize nonSymbolImageHeight=_nonSymbolImageHeight;
+@property(retain, nonatomic) NSLayoutConstraint *nonSymbolImageWidth; // @synthesize nonSymbolImageWidth=_nonSymbolImageWidth;
+@property(retain, nonatomic) NSLayoutConstraint *labelStackViewTrailingToTrailingViewCenterX; // @synthesize labelStackViewTrailingToTrailingViewCenterX=_labelStackViewTrailingToTrailingViewCenterX;
+@property(retain, nonatomic) NSLayoutConstraint *trailingViewCenterXToTrailing; // @synthesize trailingViewCenterXToTrailing=_trailingViewCenterXToTrailing;
 @property(retain, nonatomic) NSLayoutConstraint *lastBaselineToBottom; // @synthesize lastBaselineToBottom=_lastBaselineToBottom;
 @property(retain, nonatomic) NSLayoutConstraint *topToFirstBaseline; // @synthesize topToFirstBaseline=_topToFirstBaseline;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIStackView *labelStackView; // @synthesize labelStackView=_labelStackView;
 @property(nonatomic) BOOL destructive; // @synthesize destructive=_destructive;
 @property(nonatomic) BOOL disabled; // @synthesize disabled=_disabled;
 - (void).cxx_destruct;
+- (struct CGSize)_maxImageSize;
 - (id)_imageTintColor;
 - (id)_subtitleTextColor;
 - (id)_colorReflectingActionStateForColor:(id)arg1;
@@ -45,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (id)_subtitleLabel;
 - (id)_primaryTitleLabel;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+@property(readonly, nonatomic) UIView *trailingView;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 image:(id)arg3;
 
 @end

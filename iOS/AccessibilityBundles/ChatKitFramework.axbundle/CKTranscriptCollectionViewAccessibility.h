@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_accessibilityElementToFocusForAppearanceScreenChange;
 - (_Bool)_accessibilityOpaqueElementScrollsContentIntoView;
 - (void)_accessibilityScrollOpaqueElementIntoView:(long long)arg1 previousScroller:(id)arg2;
 - (void)_accessibilityEnsureViewsAroundAreLoaded;

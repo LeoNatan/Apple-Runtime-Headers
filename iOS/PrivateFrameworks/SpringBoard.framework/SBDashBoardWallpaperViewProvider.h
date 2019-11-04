@@ -17,8 +17,7 @@
 - (void)wallpaperClientDidRotateFromInterfaceOrientation:(long long)arg1;
 - (void)wallpaperClientWillAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)wallpaperClientWillRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
-- (void)resumeWallpaperAnimationForReason:(id)arg1;
-- (void)suspendWallpaperAnimationForReason:(id)arg1;
+- (id)suspendWallpaperAnimationForReason:(id)arg1;
 - (id)createCoverSheetWallpaperViewWithTransformOptions:(unsigned long long)arg1;
 - (id)createCoverSheetWallpaperView;
 

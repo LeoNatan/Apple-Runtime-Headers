@@ -6,14 +6,9 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/WFReferenceLibraryViewControllerDelegate-Protocol.h>
-
-@interface WFShowDefinitionAction : WFAction <WFReferenceLibraryViewControllerDelegate>
+@interface WFShowDefinitionAction : WFAction
 {
 }
-
-- (void)libraryControllerDidDismiss:(id)arg1;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 
 @end
 

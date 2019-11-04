@@ -15,10 +15,12 @@
     NSString *_contextID;
     NSString *_siriRecommendationID;
     NSString *_siriAssetInfo;
+    NSString *_featureName;
     NSDictionary *_siriWHAMetricsInfo;
 }
 
 @property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
+@property(copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
 @property(copy, nonatomic) NSString *siriRecommendationID; // @synthesize siriRecommendationID=_siriRecommendationID;
 @property(nonatomic) BOOL shouldImmediatelyStartPlayback; // @synthesize shouldImmediatelyStartPlayback=_shouldImmediatelyStartPlayback;

@@ -6,11 +6,11 @@
 
 #import <WorkflowKit/WFHandleSystemIntentAction.h>
 
-@class UIImage;
+@class WFImage;
 
 @interface WFHandlePaymentIntentAction : WFHandleSystemIntentAction
 {
-    UIImage *_icon;
+    WFImage *_icon;
 }
 
 - (void).cxx_destruct;

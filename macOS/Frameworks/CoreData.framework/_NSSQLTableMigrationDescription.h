@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (id)createDefaultValuePopulationStatementsForAddedColumnsEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (id)createInsertStatementForEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (id)createDeleteStatementForEntityMigrations:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
+- (void)appendDefaultValueStatementsToCompleteMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToCompleteMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToPerformMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToCreateOrDropTables:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;

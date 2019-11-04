@@ -110,6 +110,7 @@
 - (id)recordingWithUniqueID:(id)arg1;
 - (id)mostRecentRecording;
 - (id)_recordingsWithUniqueID:(id)arg1 templateName:(id)arg2;
+- (id)recordingWithPath:(id)arg1;
 - (id)recordingWithITunesPersistentID:(long long)arg1;
 - (id)recordingWithURIRepresentation:(id)arg1;
 - (id)recordingWithID:(id)arg1;

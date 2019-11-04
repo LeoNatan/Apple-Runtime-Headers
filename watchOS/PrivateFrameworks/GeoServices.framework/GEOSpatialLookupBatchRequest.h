@@ -8,12 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOSpatialLookupBatchRequest : PBRequest <NSCopying>
 {
+    PBDataReader *_reader;
+    NSString *_deviceCountryCode;
+    NSString *_deviceSku;
     NSMutableArray *_requests;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
+    struct {
+        unsigned int read_deviceCountryCode:1;
+        unsigned int read_deviceSku:1;
+        unsigned int read_requests:1;
+        unsigned int wrote_deviceCountryCode:1;
+        unsigned int wrote_deviceSku:1;
+        unsigned int wrote_requests:1;
+    } _flags;
 }
 
 + (_Bool)isValid:(id)arg1;
@@ -31,11 +45,21 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *deviceSku;
+@property(readonly, nonatomic) _Bool hasDeviceSku;
+- (void)_readDeviceSku;
+@property(retain, nonatomic) NSString *deviceCountryCode;
+@property(readonly, nonatomic) _Bool hasDeviceCountryCode;
+- (void)_readDeviceCountryCode;
 - (id)requestAtIndex:(unsigned int)arg1;
 - (unsigned int)requestsCount;
+- (void)_addNoFlagsRequest:(id)arg1;
 - (void)addRequest:(id)arg1;
 - (void)clearRequests;
 @property(retain, nonatomic) NSMutableArray *requests;
+- (void)_readRequests;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

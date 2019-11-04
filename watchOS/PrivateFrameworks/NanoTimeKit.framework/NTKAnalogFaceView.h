@@ -38,7 +38,7 @@
 - (int)_backgroundedTimeViewEditModes;
 - (struct CGPoint)_contentCenterOffset;
 - (void)_configureTimeView:(id)arg1;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;
 - (void)tritium_transitionToFrameSpecifier:(id)arg1;

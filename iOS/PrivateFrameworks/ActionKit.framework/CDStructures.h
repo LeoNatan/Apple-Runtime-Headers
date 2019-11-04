@@ -12,27 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CC_SHA1state_st {
-    unsigned int h0;
-    unsigned int h1;
-    unsigned int h2;
-    unsigned int h3;
-    unsigned int h4;
-    unsigned int Nl;
-    unsigned int Nh;
-    unsigned int data[16];
-    int num;
-};
-
-struct CGAffineTransform {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
-};
-
 struct CGPoint {
     double x;
     double y;
@@ -46,18 +25,6 @@ struct CGRect {
 struct CGSize {
     double width;
     double height;
-};
-
-struct NSString {
-    Class _field1;
-};
-
-struct _FileHashComputationContext {
-    CDUnknownFunctionPointerType _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-    unsigned long long _field4;
-    char **_field5;
 };
 
 struct _LIBSSH2_SFTP_ATTRIBUTES {

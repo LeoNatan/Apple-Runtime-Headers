@@ -41,11 +41,13 @@ __attribute__((visibility("hidden")))
 - (id)generateThumbnailImageDataIfNeeded;
 - (id)thumbnailImageData;
 - (id)imageData;
+- (id)variantIdentifier;
 - (id)localizedVariantsTitle;
 - (BOOL)isDefaultMonogramItem;
 - (BOOL)allowsMoveAndScale;
 - (BOOL)allowsEditing;
 - (BOOL)shouldShowCaption;
+- (unsigned long long)imageType;
 - (BOOL)allowsVariants;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithImageData:(id)arg1 thumbnailImageData:(id)arg2 fullscreenImageData:(id)arg3 cropRect:(struct CGRect)arg4 renderingScope:(id)arg5 avatarRenderer:(id)arg6 isVariantOptionItem:(BOOL)arg7;

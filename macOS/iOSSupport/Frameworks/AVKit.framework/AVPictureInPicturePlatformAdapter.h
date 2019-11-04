@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)pipControllerWillStopImmediately:(id)arg1;
 - (void)pipControllerWillStopAfterRestoringUserInterface:(id)arg1;
 - (void)pipControllerDidStop:(id)arg1;
-- (void)pipControllerMuteButtonTapped:(id)arg1;
+- (void)pipControllerMicrophoneMuteButtonTapped:(id)arg1;
 - (void)pipControllerActionButtonTapped:(id)arg1;
 - (void)pipController:(id)arg1 restoreUserInterface:(CDUnknownBlockType)arg2;
 - (void)updateLayoutDependentBehaviors;

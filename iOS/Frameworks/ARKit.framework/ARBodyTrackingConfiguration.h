@@ -6,7 +6,7 @@
 
 #import <ARKit/ARConfiguration.h>
 
-@class ARWorldMap, NSSet;
+@class ARImageSensorSettings, ARWorldMap, NSSet;
 
 @interface ARBodyTrackingConfiguration : ARConfiguration
 {
@@ -20,6 +20,7 @@
     long long _maximumNumberOfTrackedImages;
 }
 
++ (id)supportedVideoFormatsForSuperWide;
 + (id)new;
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
 + (id)supportedVideoFormats;
@@ -37,7 +38,12 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (id)_trackingOptions;
 - (id)imageSensorSettings;
+- (_Bool)shouldUseSuperWide;
+@property(readonly, nonatomic) ARImageSensorSettings *imageSensorSettingsForSuperWide;
+- (_Bool)shouldEnableVisionDataForImageSensorSettings:(id)arg1;
+- (id)parentImageSensorSettings;
 - (id)init;
 
 // Remaining properties

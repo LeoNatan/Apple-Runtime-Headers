@@ -16,6 +16,7 @@
 {
     BOOL _microphoneEnabled;
     BOOL _streamAudioEnabled;
+    BOOL _startStreamingAfterStop;
     float _streamAudioVolume;
     id <HFCameraLiveStreamControllerDelegate> _delegate;
     HMCameraSource *_liveCameraSource;
@@ -23,8 +24,11 @@
     HMHome *_home;
     HMCameraProfile *_cameraProfile;
     HFCameraAudioManager *_audioManager;
+    unsigned long long _inferredStreamState;
 }
 
+@property(nonatomic) BOOL startStreamingAfterStop; // @synthesize startStreamingAfterStop=_startStreamingAfterStop;
+@property(nonatomic) unsigned long long inferredStreamState; // @synthesize inferredStreamState=_inferredStreamState;
 @property(retain, nonatomic) HFCameraAudioManager *audioManager; // @synthesize audioManager=_audioManager;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
@@ -33,6 +37,8 @@
 @property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(nonatomic) __weak id <HFCameraLiveStreamControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)cameraStreamControl:(id)arg1 didStopStreamWithError:(id)arg2;
+- (void)cameraStreamControlDidStartStream:(id)arg1;
 - (void)cameraSnapshotControlDidUpdateMostRecentSnapshot:(id)arg1;
 - (void)cameraStreamControlDidUpdateManagerState:(id)arg1;
 - (void)cameraStreamControlDidUpdateStreamState:(id)arg1;

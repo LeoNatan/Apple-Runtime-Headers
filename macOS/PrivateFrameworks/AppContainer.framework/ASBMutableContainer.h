@@ -23,6 +23,7 @@
 + (id)containerForApplicationAtURL:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
 + (id)containerForApplicationAtURL:(id)arg1 error:(id *)arg2;
 + (id)containerForCodeIdentity:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
++ (void)synchronizedContainerForSigningId:(id)arg1 andHomeDirectory:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (void)synchronizedContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
 @property(readonly) BOOL isNewlyCreatedContainer; // @synthesize isNewlyCreatedContainer=_created;
 @property(readonly) CodeIdentity *ownerCode; // @synthesize ownerCode=_owner;
@@ -42,6 +43,7 @@
 - (id)initWithApplicationAtURL:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)initWithCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)initWithFakeContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
+- (id)initWithExistingContainerForSigningId:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
 - (id)initWithNewContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 ignoringMigrationFailures:(BOOL)arg3 error:(id *)arg4;
 - (id)initWithCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
 - (id)initWithHomeDirectory:(id)arg1 andContainerPath:(id)arg2 codeIdentity:(id)arg3 error:(id *)arg4;

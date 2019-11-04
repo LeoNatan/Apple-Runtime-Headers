@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSubscriptionRequired) _Bool subscriptionRequired;
 @property(readonly, nonatomic) int subtype;
 @property(readonly, nonatomic) int type;
 @property(readonly, copy, nonatomic) NSString *attributionLabel;

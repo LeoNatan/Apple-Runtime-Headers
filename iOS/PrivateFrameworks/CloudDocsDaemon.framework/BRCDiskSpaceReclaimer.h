@@ -24,10 +24,12 @@ __attribute__((visibility("hidden")))
 + (double)onDiskAccessTimeDeltaForUrgency:(int)arg1;
 + (double)accessTimeDeltaForUrgency:(int)arg1;
 + (int)urgencyForCacheDeleteUrgency:(int)arg1;
++ (int)simpleUrgencyForCacheDeleteUrgency:(int)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (_Bool)performOptimizeStorageWithTimeDelta:(double)arg1 onDiskAccessTimeDelta:(double)arg2 error:(id *)arg3;
 - (void)requestPurgeSpace;
+- (long long)cachedPurgeableSpaceForUrgency:(int)arg1;
 - (void)_requestPurgeSpace;
 - (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(_Bool)arg2;
 - (_Bool)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;

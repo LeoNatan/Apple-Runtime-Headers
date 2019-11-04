@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSHashTable;
+@class NSArray, NSDictionary, NSHashTable, NSMapTable;
 
 __attribute__((visibility("hidden")))
 @interface FPStitchingManager : NSObject
 {
     NSHashTable *_stitchingSessions;
+    NSMapTable *_bouncedItems;
 }
 
++ (id)parentIdNameKeyForItem:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
 @property(readonly, nonatomic) NSArray *allPlaceholderReplacementsIDs;
-@property(readonly, nonatomic) NSArray *allPlaceholderItems;
+@property(readonly, nonatomic) NSDictionary *allPlaceholderItemsByParentIdentifierAndName;
+- (void)removeBouncedItemsWithIDs:(id)arg1;
+- (void)addBouncedItem:(id)arg1;
 - (void)registerStitchingSession:(id)arg1;
 - (id)init;
 

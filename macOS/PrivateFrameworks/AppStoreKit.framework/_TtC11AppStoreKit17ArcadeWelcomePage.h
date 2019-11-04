@@ -8,8 +8,8 @@
 
 @interface _TtC11AppStoreKit17ArcadeWelcomePage : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: individualContent
-    // Error parsing type: , name: familyMemberContent
+    // Error parsing type: , name: createNewFamilyContent
+    // Error parsing type: , name: familyOrganizerContent
     // Error parsing type: , name: pageMetrics
 }
 

@@ -175,6 +175,8 @@
 - (void)recordRejectedAutocorrectionForAcceptedText:(id)arg1 fromPredictiveInputBar:(_Bool)arg2;
 - (void)recordAcceptedAutocorrection:(id)arg1 fromPredictiveInputBar:(_Bool)arg2;
 - (id)revisionListFromAutocorrectionList:(id)arg1 afterAcceptingCandidate:(id)arg2;
+- (id)originatingAutocorrectionListForCandidate:(id)arg1;
+- (_Bool)isContinuousPathCandidate:(id)arg1 replacementForOriginalConversion:(id)arg2;
 - (void)recordSuggestedAutocorrectionList:(id)arg1;
 - (void)candidateRejected:(id)arg1;
 - (_Bool)shouldExpectSentenceBoundaryAfterContext:(const struct TITokenID *)arg1 contextLength:(unsigned long long)arg2;

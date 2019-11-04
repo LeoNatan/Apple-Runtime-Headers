@@ -6,7 +6,7 @@
 
 #import <UIKitCore/_UIButtonBarButtonVisualProvider.h>
 
-@class NSArray, NSLayoutConstraint, NSMutableDictionary, UIButton, UIImageView, _UIBackButtonContainerView, _UIModernBarButton;
+@class NSArray, NSLayoutConstraint, NSMutableDictionary, UIButton, UIColor, UIImageView, _UIBackButtonContainerView, _UIModernBarButton;
 @protocol _UIButtonBarAppearanceDelegate;
 
 __attribute__((visibility("hidden")))
@@ -21,13 +21,14 @@ __attribute__((visibility("hidden")))
     UIImageView *_backgroundImage;
     UIImageView *_selectedImage;
     id <_UIButtonBarAppearanceDelegate> _appearanceDelegate;
-    NSArray *_titleAttributes;
+    NSArray *_barButtonTitleAttributes;
+    NSArray *_finalTitleAttributes;
+    UIColor *_tintColor;
     NSMutableDictionary *_backgroundImages;
     NSArray *_titleContent;
     NSMutableDictionary *_titleLookup;
     NSLayoutConstraint *_backButtonTitleMaxWidthConstraint;
     struct {
-        unsigned int skipAttributedTitle:1;
         unsigned int imageHasBaseline:1;
         unsigned int style:3;
     } _flags;
@@ -35,6 +36,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)buttonLayoutSubviews:(id)arg1 baseImplementation:(CDUnknownBlockType)arg2;
+- (void)button:(id)arg1 traitCollectionDidChange:(id)arg2;
+- (void)updateButton:(id)arg1 appearance:(id)arg2;
 - (void)configureButton:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)_setupAlternateTitlesFromBarButtonItem:(id)arg1;
 - (id)_titleContentForTitle:(id)arg1;
@@ -60,9 +63,8 @@ __attribute__((visibility("hidden")))
 - (void)_configureImageOrTitleFromBarButtonItem:(id)arg1 compact:(_Bool)arg2;
 - (void)_removeTitleButton;
 - (void)_setTitle:(id)arg1;
+- (void)_computeTextAttributes;
 - (void)_computeTextAttributesForBarButtonItem:(id)arg1;
-- (id)_titleAttributesForState:(unsigned int)arg1;
-- (id)_defaultTitleAttributesForState:(unsigned int)arg1 style:(int)arg2;
 - (id)contentView;
 - (id)backIndicatorView;
 - (_Bool)supportsBackButtons;
@@ -86,7 +88,6 @@ __attribute__((visibility("hidden")))
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 compact:(_Bool)arg2;
 - (id)backgroundImageForState:(unsigned int)arg1 compact:(_Bool)arg2;
 - (id)symbolConfigurationCompact:(_Bool)arg1;
-- (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)backgroundImageView;
 - (id)imageButton;
 - (id)textButton;

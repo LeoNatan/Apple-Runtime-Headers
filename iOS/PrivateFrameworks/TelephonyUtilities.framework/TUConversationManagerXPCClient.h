@@ -51,6 +51,7 @@
 - (void)updateConversationWithUUID:(id)arg1 participantPresentationContexts:(id)arg2;
 - (void)invalidate;
 - (void)registerWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setDownlinkMuted:(_Bool)arg1 forRemoteParticipantsInConversation:(id)arg2;
 - (void)buzzMember:(id)arg1 conversation:(id)arg2;
 - (void)addRemoteMembers:(id)arg1 toConversation:(id)arg2;
 - (void)dealloc;

@@ -14,10 +14,21 @@
 
 @interface _MPCQueueControllerDataSourceState : NSObject <MPShuffleableSectionedIdentifierListDataSource, NSSecureCoding>
 {
+    struct {
+        unsigned int dataSourcePlaceholderItemForLoadingAdditionalItemsInSection:1;
+        unsigned int dataSourceSupplementalPlaybackContextWithReason:1;
+        unsigned int dataSourceSupplementalPlaybackContextBehavior:1;
+        unsigned int dataSourceCanSkipItem:1;
+        unsigned int dataSourceFirstItemIntersectingIdentifierSet:1;
+        unsigned int dataSourceItemDidBeginPlayback:1;
+        unsigned int dataSourceShouldRequestAdditionalItemsWhenReachingTailOfSection:1;
+        unsigned int dataSourceShouldUsePlaceholderForItemInSection:1;
+        unsigned int dataSourceSectionShouldShuffleExcludeItem:1;
+        unsigned int dataSourceUpdatedPlaybackContext:1;
+    } _supportedMethods;
     BOOL _frozen;
-    BOOL _supportsCustomPlaceholder;
     struct os_unfair_lock_s _stateLock;
-    MPPlaceholderAVItem *_placeholderItem;
+    MPPlaceholderAVItem *_tailPlaceholderItem;
     id <MPCQueueControllerDataSource><MPCQueueControllerDataSourceStateRestoring> _dataSource;
     MPPlaybackContext *_playbackContext;
     MPPlaybackContext *_originalPlaybackContext;
@@ -31,7 +42,6 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) MPPlaybackContext *supplementalPlaybackContext; // @synthesize supplementalPlaybackContext=_supplementalPlaybackContext;
 @property(readonly, nonatomic) long long supplementalPlaybackContextBehavior; // @synthesize supplementalPlaybackContextBehavior=_supplementalPlaybackContextBehavior;
-@property(readonly, nonatomic) BOOL supportsCustomPlaceholder; // @synthesize supportsCustomPlaceholder=_supportsCustomPlaceholder;
 @property(readonly, nonatomic) struct os_unfair_lock_s stateLock; // @synthesize stateLock=_stateLock;
 @property(readonly, nonatomic) NSString *preferredStartItemIdentifier; // @synthesize preferredStartItemIdentifier=_preferredStartItemIdentifier;
 @property(readonly, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
@@ -46,12 +56,18 @@
 - (BOOL)section:(id)arg1 shouldShuffleExcludeItem:(id)arg2;
 - (BOOL)section:(id)arg1 supportsShuffleType:(long long)arg2;
 - (void)reloadSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) MPPlaceholderAVItem *placeholderItem; // @synthesize placeholderItem=_placeholderItem;
+- (void)updatePlaybackContext;
+@property(readonly, nonatomic) MPPlaceholderAVItem *tailPlaceholderItem; // @synthesize tailPlaceholderItem=_tailPlaceholderItem;
 - (void)loadAdditionalItemsIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+- (BOOL)shouldUsePlaceholderForItem:(id)arg1 inSection:(id)arg2;
 - (BOOL)shouldShowPlaceholderAtTail;
 - (BOOL)shouldRequestAdditionalItemsAtTail;
-@property(readonly, nonatomic) BOOL containsLiveStream;
 @property(readonly, nonatomic) BOOL shouldAddOriginalPlaybackContextAfterReplacement;
+- (id)itemForItem:(id)arg1 inSection:(id)arg2;
+- (void)itemDidBeginPlayback:(id)arg1;
+- (id)firstItemIntersectingIdentifierSet:(id)arg1;
+@property(readonly, nonatomic) BOOL containsLiveStream;
+- (BOOL)canSkipItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPlaybackContext:(id)arg1;

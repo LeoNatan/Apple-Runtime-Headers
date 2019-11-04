@@ -16,7 +16,6 @@
 + (_Bool)isWakeGestureOverrideEnabled;
 + (_Bool)isWakeGestureAvailable;
 + (id)sharedManager;
-+ (id)stringForGestureState:(long long)arg1;
 @property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)logAssert;
 - (void)forceDetected;
@@ -24,6 +23,7 @@
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;
 - (void)startWakeGestureUpdates;
+- (id)initWithQueue:(id)arg1;
 
 @end
 

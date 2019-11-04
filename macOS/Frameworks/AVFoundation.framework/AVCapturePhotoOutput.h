@@ -58,9 +58,12 @@
 @property(readonly, nonatomic, getter=isAutoRedEyeReductionSupported) BOOL autoRedEyeReductionSupported;
 @property(readonly, nonatomic) NSArray *supportedFlashModes;
 @property(readonly, nonatomic, getter=isCameraCalibrationDataDeliverySupported) BOOL cameraCalibrationDataDeliverySupported;
+@property(nonatomic, getter=isVirtualDeviceConstituentPhotoDeliveryEnabled) BOOL virtualDeviceConstituentPhotoDeliveryEnabled;
 @property(nonatomic, getter=isDualCameraDualPhotoDeliveryEnabled) BOOL dualCameraDualPhotoDeliveryEnabled;
 @property(readonly, nonatomic, getter=isDualCameraDualPhotoDeliverySupported) BOOL dualCameraDualPhotoDeliverySupported;
+@property(readonly, nonatomic, getter=isVirtualDeviceConstituentPhotoDeliverySupported) BOOL virtualDeviceConstituentPhotoDeliverySupported;
 @property(readonly, nonatomic, getter=isDualCameraFusionSupported) BOOL dualCameraFusionSupported;
+@property(readonly, nonatomic, getter=isVirtualDeviceFusionSupported) BOOL virtualDeviceFusionSupported;
 @property(readonly, nonatomic) BOOL isStillImageStabilizationScene;
 @property(readonly, nonatomic, getter=isStillImageStabilizationSupported) BOOL stillImageStabilizationSupported;
 @property(nonatomic) long long maxPhotoQualityPrioritization;

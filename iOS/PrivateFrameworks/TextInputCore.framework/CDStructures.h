@@ -204,7 +204,7 @@ struct TIInputManager {
     RefPtr_9bddf3b2 _field12;
     shared_ptr_e9f752ce _field13;
     unsigned int _field14;
-    struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> _field15;
+    Vector_edffb8f6 _field15;
     _Bool _field16;
     struct String _field17;
     RefPtr_54d74a7c _field18;
@@ -393,8 +393,8 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    float _field1;
-} CDStruct_37a3040a;
+    double _field1;
+} CDStruct_2418a849;
 
 typedef struct CDStruct_183601bc;
 
@@ -420,6 +420,11 @@ typedef struct RefPtr<TI::Favonius::CMTouchHistory> {
 typedef struct RefPtr<TI::Favonius::KeyboardLayout> {
     struct KeyboardLayout *m_ptr;
 } RefPtr_54d74a7c;
+
+typedef struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> {
+    unsigned long long _field1;
+    struct VectorBuffer<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> _field2;
+} Vector_edffb8f6;
 
 typedef struct shared_ptr<KB::LanguageModel> {
     struct LanguageModel *__ptr_;

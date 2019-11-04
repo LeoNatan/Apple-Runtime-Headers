@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationBarInvalidatedResolvedLayoutMargins;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
+- (void)traitCollectionDidChangeOnSubtree:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setBackButtonVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setupTopNavigationItem;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double backgroundAlpha;
 @property(nonatomic) BOOL useInlineBackgroundHeightWhenLarge;
 @property(readonly, nonatomic) BOOL wantsLargeTitleDisplayed;
+- (struct CGSize)sizeForRestoringFromCancelledTransition;
 - (void)recordBarSize:(struct CGSize)arg1;
 - (void)updateTopNavigationItemTitleView;
 - (void)updateTopNavigationItemAnimated:(BOOL)arg1;

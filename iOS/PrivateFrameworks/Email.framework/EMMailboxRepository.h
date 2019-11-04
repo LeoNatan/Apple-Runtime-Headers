@@ -34,9 +34,12 @@
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 @property(readonly) NSOrderedSet *mailboxesIfAvailable;
+- (id)_mailboxesFuture;
 - (void)mailboxListChanged:(id)arg1;
 - (id)_filterIDsFromMailbox:(id)arg1 withQuery:(id)arg2;
+- (long long)_remoteMailboxTypeForMailboxObjectID:(id)arg1;
 - (long long)mailboxTypeForMailboxObjectID:(id)arg1;
+- (id)_remoteMailboxObjectIDsForMailboxType:(long long)arg1;
 - (id)mailboxObjectIDsForMailboxType:(long long)arg1;
 - (id)performMailboxChangeAction:(id)arg1;
 - (void)refreshMailboxList;

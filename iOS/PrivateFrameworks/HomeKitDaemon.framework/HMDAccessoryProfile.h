@@ -40,6 +40,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)findServiceWithType:(id)arg1;
 - (id)runtimeState;
+- (void)removeCloudData;
 - (void)unconfigure;
 - (void)configureWithMessageDispatcher:(id)arg1 configurationTracker:(id)arg2;
 - (void)handleInitialState;

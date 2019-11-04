@@ -43,6 +43,7 @@
     NSString *_nanoLaunchId;
     NSString *_systemExtensionBundleId;
     NSString *_systemUIExtensionBundleId;
+    NSArray *_forceNeedsValueForParameters;
     NSString *_intentDescription;
     NSString *_intentId;
     NSString *_originatingDeviceIdsIdentifier;
@@ -55,6 +56,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)parameterImagesType;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *userUtterance; // @synthesize userUtterance=_userUtterance;
 @property(nonatomic) _Bool userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
@@ -69,6 +71,7 @@
 @property(copy, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
 @property(copy, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
 @property(nonatomic) int idiom; // @synthesize idiom=_idiom;
+@property(copy, nonatomic) NSArray *forceNeedsValueForParameters; // @synthesize forceNeedsValueForParameters=_forceNeedsValueForParameters;
 @property(nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic) _Bool backgroundLaunch; // @synthesize backgroundLaunch=_backgroundLaunch;
 @property(copy, nonatomic) NSString *systemUIExtensionBundleId; // @synthesize systemUIExtensionBundleId=_systemUIExtensionBundleId;
@@ -109,6 +112,10 @@
 - (int)StringAsIdiom:(id)arg1;
 - (id)idiomAsString:(int)arg1;
 @property(nonatomic) _Bool hasIdiom;
+- (id)forceNeedsValueForParameterAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long forceNeedsValueForParametersCount;
+- (void)addForceNeedsValueForParameter:(id)arg1;
+- (void)clearForceNeedsValueForParameters;
 @property(nonatomic) _Bool hasConfirmed;
 @property(nonatomic) _Bool hasBackgroundLaunch;
 @property(readonly, nonatomic) _Bool hasSystemUIExtensionBundleId;

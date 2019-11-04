@@ -33,6 +33,9 @@
 - (void)_dispatchResponsesForAppIconForIdentifier:(id)arg1 appImage:(id)arg2;
 - (_Bool)_fetchIconFromLaunchServicesWithIdentifier:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)loadAppIconForIdentifier:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
+- (id)loadResearchStudyIconForSource:(id)arg1;
+- (void)cacheAppIcon:(id)arg1 forIdentifier:(id)arg2;
+- (id)cachedIconForIdentifier:(id)arg1;
 - (void)clearImageCache;
 @property(readonly) UIImage *defaultAppIconTableUI;
 - (id)defaultAppIcon;

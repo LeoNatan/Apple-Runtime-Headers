@@ -51,12 +51,11 @@
 - (double)_cachedWidthForItem:(id)arg1 options:(id)arg2;
 - (id)_prioritizedAndSanitizedCompressionOptionsForOptions:(id)arg1;
 - (void)invalidateMeasurementsOfItems;
-- (void)_invalidateMeasurementsOfItem:(id)arg1;
+- (void)invalidateMeasurementsOfItem:(id)arg1;
 - (id)_itemsExcludingSpaces;
 - (BOOL)_customOptionOrderAllowsOption:(id)arg1;
 - (id)_compoundedCompressionOptions;
 - (void)dealloc;
-@property(readonly) BOOL _requiresReducedMetricAppearance;
 @property BOOL groupHasAlertStyle;
 @property(copy) NSSet *items;
 @property(readonly) NSUserInterfaceCompressionOptions *effectiveCompressionOptions;

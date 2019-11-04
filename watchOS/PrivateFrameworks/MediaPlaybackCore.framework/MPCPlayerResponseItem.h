@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlaybackCore/_MPCStateDumpPropertyListTransformable-Protocol.h>
+
 @class MPCPlayerResponse, MPModelGenericObject, NSArray, NSIndexPath, NSString;
 
-@interface MPCPlayerResponseItem : NSObject
+@interface MPCPlayerResponseItem : NSObject <_MPCStateDumpPropertyListTransformable>
 {
     unsigned int _seekSupport;
     _Bool _placeholder;
@@ -35,6 +37,7 @@
 - (id)_feedbackCommandWithMediaRemoteCommand:(unsigned int)arg1;
 - (id)_buildLanguageOptionGroups:(id)arg1 currentLanguageOptions:(id)arg2;
 - (unsigned int)_determineSeekSupport;
+- (id)_stateDumpObject;
 - (id)startPictureInPicture;
 - (id)remove;
 - (id)rateCommand;
@@ -44,6 +47,12 @@
 - (id)playbackRateCommand;
 - (id)seekCommand;
 - (id)initWithModelGenericObject:(id)arg1 indexPath:(id)arg2 response:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

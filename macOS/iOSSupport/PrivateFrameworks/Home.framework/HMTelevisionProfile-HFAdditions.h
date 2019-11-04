@@ -7,6 +7,7 @@
 #import <HomeKit/HMTelevisionProfile.h>
 
 @interface HMTelevisionProfile (HFAdditions)
+- (BOOL)hf_offersAutomation;
 - (CDUnknownBlockType)hf_mediaSourceComparator;
 @end
 

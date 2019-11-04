@@ -6,14 +6,16 @@
 
 #import <AppKit/NSView.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CPKSkintoneItemView : NSView
 {
     NSString *_emojiString;
+    NSArray *_emojiImages;
 }
 
+@property(copy) NSArray *emojiImages; // @synthesize emojiImages=_emojiImages;
 @property(copy) NSString *emojiString; // @synthesize emojiString=_emojiString;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;

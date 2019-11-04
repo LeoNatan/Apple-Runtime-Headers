@@ -88,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long)vpOperationModeForConferenceOperatingMode:(int)arg1 deviceRole:(int)arg2;
 - (void)_cleanupDeadClients;
 - (_Bool)removeClient:(id)arg1;
+- (void)waitIdleForClient:(id)arg1;
 - (_Bool)addClient:(id)arg1;
 - (void)removeAllClientsForIO:(struct _VCAudioIOControllerIOState *)arg1;
 - (void)flushEventQueue:(struct opaqueCMSimpleQueue *)arg1;

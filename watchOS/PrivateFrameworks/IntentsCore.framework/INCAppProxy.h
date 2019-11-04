@@ -18,7 +18,7 @@
 @property(readonly, nonatomic) __weak INCExtensionConnection *_connection; // @synthesize _connection;
 - (void).cxx_destruct;
 - (id)_initWithConnection:(id)arg1;
-- (void)launchAppInBackground:(_Bool)arg1 userActivityIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)launchAppInBackground:(_Bool)arg1 restrictAppsToCarPlay:(_Bool)arg2 userActivityIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)launchAppInBackground:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

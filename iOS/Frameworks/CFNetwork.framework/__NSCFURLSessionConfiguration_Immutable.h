@@ -15,7 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (_Bool)isEqual:(id)arg1;
 - (struct _CFHSTSPolicy *)copyHSTSPolicy;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct HTTPConnectionCacheLimits)getConnectionCacheLimits;
 - (void *)_copyAttribute:(struct __CFString *)arg1;

@@ -12,9 +12,7 @@ __attribute__((visibility("hidden")))
 @interface NACOriginIdentifierMessage : PBCodable <NSCopying>
 {
     int _originIdentifier;
-    struct {
-        unsigned int originIdentifier:1;
-    } _has;
+    CDStruct_7fce75b2 _has;
 }
 
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;

@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) long long eraserType;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

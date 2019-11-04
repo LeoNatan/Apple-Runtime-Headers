@@ -9,17 +9,21 @@
 #import <SpringBoardHome/SBIconListLayoutProvider-Protocol.h>
 
 @class NSDictionary;
+@protocol SBIconListLayout;
 
 @interface SBHCustomIconListLayoutProvider : NSObject <SBIconListLayoutProvider>
 {
     NSDictionary *_listLayouts;
+    id <SBIconListLayout> _defaultLayout;
 }
 
+@property(readonly, nonatomic) id <SBIconListLayout> defaultLayout; // @synthesize defaultLayout=_defaultLayout;
 @property(readonly, copy, nonatomic) NSDictionary *listLayouts; // @synthesize listLayouts=_listLayouts;
 - (void).cxx_destruct;
 - (id)layoutForIconLocation:(id)arg1;
 - (id)init;
 - (id)initWithListLayouts:(id)arg1;
+- (id)initWithListLayouts:(id)arg1 defaultLayout:(id)arg2;
 
 @end
 

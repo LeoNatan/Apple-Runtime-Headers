@@ -7,15 +7,17 @@
 #import <HomeKitDaemon/HMDMediaAccessory.h>
 
 #import <HomeKitDaemon/HMDAccessoryUserManagement-Protocol.h>
+#import <HomeKitDaemon/HMDDeviceControllerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDAccessorySettingGroup, HMDAccessorySymptomHandler, HMDDevice, HMDRemoteLoginHandler, HMDSoftwareUpdate, HMDTargetControlManager, HMFPairingIdentity, HMFSoftwareVersion, HMFWiFiNetworkInfo, NSString;
+@class HMDAccessorySettingGroup, HMDAccessorySymptomHandler, HMDDevice, HMDDeviceController, HMDRemoteLoginHandler, HMDSoftwareUpdate, HMDTargetControlManager, HMFPairingIdentity, HMFSoftwareVersion, HMFWiFiNetworkInfo, NSArray, NSString;
 
-@interface HMDAppleMediaAccessory : HMDMediaAccessory <HMDAccessoryUserManagement, HMFLogging>
+@interface HMDAppleMediaAccessory : HMDMediaAccessory <HMDDeviceControllerDelegate, HMDAccessoryUserManagement, HMFLogging>
 {
+    HMDDevice *_device;
+    HMDDeviceController *_deviceController;
     _Bool _deviceReachable;
     _Bool _fixedPairingIdentityInCloud;
-    HMDDevice *_device;
     HMFPairingIdentity *_pairingIdentity;
     HMDAccessorySettingGroup *_rootSettings;
     HMDRemoteLoginHandler *_remoteLoginHandler;
@@ -24,24 +26,31 @@
     HMDSoftwareUpdate *_softwareUpdate;
     HMFWiFiNetworkInfo *_wifiNetworkInfo;
     HMDTargetControlManager *_targetControlManager;
+    NSArray *_supportedMultiUserLanguageCodes;
     HMFPairingIdentity *_lastCreatedPairingIdentity;
+    CDUnknownBlockType _settingsConnectionFactory;
 }
 
++ (id)logCategory;
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasMessageReceiverChildren;
 + (id)__deviceMediaRouteIdentifier;
 + (_Bool)shouldAcceptMessage:(id)arg1 home:(id)arg2 privilege:(unsigned int)arg3;
+@property(copy) CDUnknownBlockType settingsConnectionFactory; // @synthesize settingsConnectionFactory=_settingsConnectionFactory;
 @property(retain, nonatomic) HMFPairingIdentity *lastCreatedPairingIdentity; // @synthesize lastCreatedPairingIdentity=_lastCreatedPairingIdentity;
 @property(nonatomic) _Bool fixedPairingIdentityInCloud; // @synthesize fixedPairingIdentityInCloud=_fixedPairingIdentityInCloud;
+@property(retain) NSArray *supportedMultiUserLanguageCodes; // @synthesize supportedMultiUserLanguageCodes=_supportedMultiUserLanguageCodes;
 @property(retain, nonatomic) HMDTargetControlManager *targetControlManager; // @synthesize targetControlManager=_targetControlManager;
 @property(readonly) HMDAccessorySymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
 @property(readonly) HMDRemoteLoginHandler *remoteLoginHandler; // @synthesize remoteLoginHandler=_remoteLoginHandler;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (id)dumpSimpleState;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
+- (void)deviceController:(id)arg1 didUpdateDevice:(id)arg2;
 - (void)handleRemovedSoftwareUpdateModel:(id)arg1 message:(id)arg2;
 - (void)handleAddedSoftwareUpdateModel:(id)arg1 message:(id)arg2;
 - (void)handleAddedRootSettingsModel:(id)arg1 message:(id)arg2;
@@ -57,6 +66,7 @@
 - (void)updateWiFiNetworkInfo;
 - (void)setWifiNetworkInfo:(id)arg1;
 @property(readonly) HMFWiFiNetworkInfo *wifiNetworkInfo; // @synthesize wifiNetworkInfo=_wifiNetworkInfo;
+- (void)handleDeleteSiriHistoryRequest:(id)arg1;
 - (void)_startUpdate:(id)arg1;
 - (void)_fetchAvailableUpdate:(id)arg1;
 - (void)updateSoftwareUpdate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -78,6 +88,7 @@
 @property(readonly, copy) HMFPairingIdentity *pairingIdentity; // @synthesize pairingIdentity=_pairingIdentity;
 - (void)setRootSettings:(id)arg1;
 @property(readonly) HMDAccessorySettingGroup *rootSettings; // @synthesize rootSettings=_rootSettings;
+- (void)_handleUpdatedName:(id)arg1;
 - (id)runtimeState;
 - (int)reachableTransports;
 - (void)setRemotelyReachable:(_Bool)arg1;
@@ -88,21 +99,20 @@
 - (id)deviceMonitor;
 @property(nonatomic, getter=isDeviceReachable) _Bool deviceReachable; // @synthesize deviceReachable=_deviceReachable;
 - (void)handleCurrentDeviceUpdated:(id)arg1;
-- (void)handleCurrentDeviceChanged:(id)arg1;
 - (_Bool)shouldUpdateWithDevice:(id)arg1;
-- (void)__updateDeviceWithDeviceIdentifier:(id)arg1;
 - (void)updateWithDevice:(id)arg1;
-- (void)setDevice:(id)arg1;
-@property(readonly) HMDDevice *device; // @synthesize device=_device;
+@property(readonly) HMDDevice *device;
 - (_Bool)supportsPersonalRequests;
 - (_Bool)supportsMediaContentProfile;
 - (_Bool)requiresHomeAppForManagement;
+- (_Bool)supportsCompanionInitiatedRestart;
 - (_Bool)supportsMultiUser;
 - (_Bool)supportsTargetControl;
 - (_Bool)isCurrentAccessory;
 - (void)reconfigureOnMediaSystemDisolve;
 - (void)autoConfigureTargetControllers;
 - (void)_fixCloudKeyIfNeeded;
+- (void)_fetchMultiUserLanguages;
 - (void)configureWithHome:(id)arg1 msgDispatcher:(id)arg2 configurationTracker:(id)arg3;
 - (void)_registerForMessages;
 @property(readonly, copy) NSString *description;

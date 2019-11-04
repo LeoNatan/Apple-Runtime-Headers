@@ -13,11 +13,13 @@
 @interface GEOTrafficRerouteFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSData *_oldRouteID;
     NSMutableArray *_oldRouteIncidents;
     NSData *_reroutedRouteID;
     NSData *_responseId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _actionType;
     int _alertType;
     unsigned int _oldRouteHistoricTravelTime;
@@ -105,6 +107,8 @@
 @property(nonatomic) unsigned int reroutedRouteTravelTime;
 @property(nonatomic) _Bool hasOldRouteTravelTime;
 @property(nonatomic) unsigned int oldRouteTravelTime;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -28,9 +28,11 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setCompassViewSize:(long long)arg1 style:(long long)arg2;
 - (void)_adaptCompassStyleToUserInterfaceStyle;
+- (void)_updateStyle;
 - (void)layoutSubviews;
 - (void)updateLocale:(id)arg1;
 - (void)dealloc;
+- (void)movedToWindow:(id)arg1;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -15,6 +15,7 @@
 #import <HomeUI/HUControlPanelControllerDelegate-Protocol.h>
 #import <HomeUI/HUDetailsPresentationDelegateHost-Protocol.h>
 #import <HomeUI/HUEditRoomViewControllerPresentationDelegate-Protocol.h>
+#import <HomeUI/HUHomeAssistantDeviceSplitAccountActionDelegate-Protocol.h>
 #import <HomeUI/HUMediaSystemEditorViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUPickerCellDelegate-Protocol.h>
 #import <HomeUI/HUPresentationDelegate-Protocol.h>
@@ -25,11 +26,12 @@
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 #import <HomeUI/HUTriggerEditorDelegate-Protocol.h>
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
+#import <HomeUI/UINavigationControllerDelegate-Protocol.h>
 
-@class HFItem, HFNamingComponents, HMHome, HUAccessorySettingsItemModuleController, HUAssociatedSceneAndTriggerModuleController, HUCameraSettingsModuleController, HUChildServiceItemModuleController, HUControlPanelController, HUNameItemModuleController, HUQuickControlSummaryNavigationBarTitleView, HUServiceDetailsItemManager, HUServiceDetailsTextViewDelegate, HUSoftwareUpdateItemModuleController, HUTelevisionSettingsItemModuleController, NSHashTable, NSString, UILongPressGestureRecognizer;
+@class HFItem, HFNamingComponents, HMHome, HUAccessorySettingsItemModuleController, HUAssociatedSceneAndTriggerModuleController, HUCameraSettingsModuleController, HUChildServiceItemModuleController, HUControlPanelController, HUNameItemModuleController, HUQuickControlSummaryNavigationBarTitleView, HUServiceDetailsItemManager, HUServiceDetailsTextViewDelegate, HUSoftwareUpdateItemModuleController, HUTelevisionSettingsItemModuleController, NAFuture, NSHashTable, NSString, UIButton, UILongPressGestureRecognizer;
 @protocol HFServiceLikeItem, HUPresentationDelegate;
 
-@interface HUServiceDetailsViewController : HUItemTableViewController <HUControlPanelControllerDelegate, HUPresentationDelegate, HUServiceDetailsItemManagerDelegate, HUSwitchCellDelegate, HUServiceGroupEditorViewControllerDelegate, HUContainedServiceGridViewControllerDelegate, HUEditRoomViewControllerPresentationDelegate, HUTriggerEditorDelegate, HFAccessoryObserver, UIGestureRecognizerDelegate, HUAccessorySettingsItemModuleControllerDelegate, HUSoftwareUpdateItemModuleControllerDelegate, HUMediaSystemEditorViewControllerDelegate, HUContainedMediaAccessoriesGridViewControllerDelegate, HUChildServiceModuleControllerDelegate, HFHomeObserver, HUPickerCellDelegate, HUDetailsPresentationDelegateHost, HUServiceLikeItemDetailsViewControllerProtocol>
+@interface HUServiceDetailsViewController : HUItemTableViewController <HUControlPanelControllerDelegate, HUPresentationDelegate, HUServiceDetailsItemManagerDelegate, HUSwitchCellDelegate, HUServiceGroupEditorViewControllerDelegate, HUContainedServiceGridViewControllerDelegate, HUEditRoomViewControllerPresentationDelegate, HUTriggerEditorDelegate, HFAccessoryObserver, UIGestureRecognizerDelegate, HUAccessorySettingsItemModuleControllerDelegate, HUSoftwareUpdateItemModuleControllerDelegate, HUMediaSystemEditorViewControllerDelegate, HUContainedMediaAccessoriesGridViewControllerDelegate, HUChildServiceModuleControllerDelegate, HFHomeObserver, HUPickerCellDelegate, HUHomeAssistantDeviceSplitAccountActionDelegate, UINavigationControllerDelegate, HUDetailsPresentationDelegateHost, HUServiceLikeItemDetailsViewControllerProtocol>
 {
     _Bool _requiresPresentingViewControllerDismissal;
     _Bool _isMultiServiceAccessory;
@@ -55,9 +57,13 @@
     HUServiceDetailsTextViewDelegate *_textViewDelegate;
     HFNamingComponents *_namingComponent;
     HUQuickControlSummaryNavigationBarTitleView *_navigationBarTitleView;
+    UIButton *_closeButton;
+    NAFuture *_accountFuture;
 }
 
 + (id)acceptableItemClasses;
+@property(retain, nonatomic) NAFuture *accountFuture; // @synthesize accountFuture=_accountFuture;
+@property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) _Bool isPresentingRoomsList; // @synthesize isPresentingRoomsList=_isPresentingRoomsList;
 @property(nonatomic) _Bool shouldTrackProgrammableSwitchActivations; // @synthesize shouldTrackProgrammableSwitchActivations=_shouldTrackProgrammableSwitchActivations;
 @property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
@@ -83,16 +89,19 @@
 @property(nonatomic) _Bool requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
+- (void)_setDismissedHomePodHasNonMemberMediaAccountWarning:(_Bool)arg1;
+- (void)didSelectHomeAssistantDeviceSplitAccountAction:(unsigned long long)arg1;
 - (void)_didRemoveHomeKitObject:(id)arg1;
 - (void)accessoryDidUpdateServices:(id)arg1;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (void)home:(id)arg1 didRemoveServiceGroup:(id)arg2;
 - (void)home:(id)arg1 didRemoveMediaSystem:(id)arg2;
 - (id)_recoverItemBuilder:(id)arg1 fromError:(id)arg2;
-- (void)didSelectHeaderWarningAction;
+- (void)didSelectHeaderWarningAction:(id)arg1;
 - (void)_executeSilentSoftwareUpdateCheck;
 - (void)_notifyOfHomePodPairingIfNecessary;
 - (void)_didSelectRoomItem:(id)arg1;
+- (void)_separateOrUnifyTile;
 - (void)_presentGroupPicker;
 - (void)_presentContainedItems;
 - (id)childServiceEditorModuleController:(id)arg1 didSelectItem:(id)arg2;
@@ -107,8 +116,8 @@
 - (void)_presentTriggerEditorForProgrammableSwitchEventOptionItem:(id)arg1;
 - (void)_presentRemoveRouterConfirmation;
 - (_Bool)_shouldPresentRemoveRouterConfirmation;
-- (void)_presentRemoveConfirmation;
-- (void)_presentResetHomePodConfirmation;
+- (void)_presentRemoveConfirmation:(id)arg1;
+- (void)_presentResetHomePodConfirmation:(id)arg1;
 - (void)_restartGroupedHomePodAccessory;
 - (void)checkForAccessoriesNeedingReprovisioning;
 - (_Bool)_shouldShowAddButtonForOptionItem:(id)arg1;
@@ -141,6 +150,7 @@
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (_Bool)_isCameraItem;
 - (void)dismissPrivacyController;
 - (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
@@ -156,6 +166,7 @@
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)itemModuleControllers;
 - (id)buildItemModuleControllerForModule:(id)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (id)_secondaryStatusTextForLatestResults:(id)arg1;
 - (id)_primaryStatusTextForLatestResults:(id)arg1 showingSecondaryStatus:(_Bool)arg2;
 - (void)_updateIconDescriptorAnimated:(_Bool)arg1;
@@ -173,6 +184,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithServiceLikeItem:(id)arg1;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
 

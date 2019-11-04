@@ -31,7 +31,7 @@
 - (void).cxx_destruct;
 - (id)initWithNWActivityReport:(struct nw_activity_report_s *)arg1 length:(unsigned long long)arg2;
 @property(readonly, nonatomic) unsigned long long investigation_identifier;
-@property(readonly, nonatomic) BOOL retry;
+@property(readonly, nonatomic) _Bool retry;
 @property(readonly, nonatomic) unsigned int label;
 @property(readonly, nonatomic) unsigned int domain;
 

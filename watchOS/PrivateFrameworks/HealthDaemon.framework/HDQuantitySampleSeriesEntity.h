@@ -37,11 +37,12 @@
 + (id)additionalPredicateForEnumeration;
 + (_Bool)enumerateDataWithIdentifier:(id)arg1 transaction:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
 + (_Bool)enumerateDataWithIdentifier:(id)arg1 profile:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
-+ (_Bool)_updateFrozenEntityToMatchReplacedUnfrozenEntity:(id)arg1 unfrozenSeriesUUID:(id)arg2 unfrozenSeriesHFDKey:(long long)arg3 transaction:(id)arg4 error:(id *)arg5;
++ (_Bool)_updateFrozenEntityToMatchReplacedUnfrozenEntity:(id)arg1 unfrozenSeriesUUID:(id)arg2 unfrozenSeriesHFDKey:(long long)arg3 database:(id)arg4 error:(id *)arg5;
 + (void)_setStatistics:(id)arg1 cumulativeQuantitySeriesSample:(id)arg2;
 + (void)_setStatistics:(id)arg1 discreteQuantitySeriesSample:(id)arg2;
 + (id)_statisticsWithHFDKey:(long long)arg1 statisticsCalculator:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
 + (_Bool)_setStatisticsForQuantitySample:(id)arg1 HFDKey:(long long)arg2 transaction:(id)arg3 error:(id *)arg4;
++ (_Bool)replaceExistingObject:(id)arg1 existingObjectID:(id)arg2 replacementObject:(id)arg3 replacementObjectID:(id)arg4 profile:(id)arg5 database:(id)arg6 error:(id *)arg7;
 + (_Bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 deleteOriginalHFDData:(_Bool)arg3 profile:(id)arg4 database:(id)arg5 error:(id *)arg6;
 + (_Bool)deleteSeriesWithID:(id)arg1 deleteHFDData:(_Bool)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
 + (id)quantitySampleSeriesEntitiesForAutoFreezeSQL;
@@ -86,7 +87,7 @@
 - (id)_frozenUUIDForUnfrozenQuantitySample:(id)arg1 HFDKey:(long long)arg2 endDate:(id)arg3 transaction:(id)arg4 profile:(id)arg5 error:(id *)arg6;
 - (id)freezeWithEndDate:(id)arg1 transaction:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 - (_Bool)_insertValues:(id)arg1 database:(id)arg2 error:(id *)arg3;
-- (_Bool)_setHFDKey:(long long)arg1 transaction:(id)arg2 error:(id *)arg3;
+- (_Bool)_setHFDKey:(long long)arg1 database:(id)arg2 error:(id *)arg3;
 - (id)HFDKeyWithDatabase:(id)arg1 error:(id *)arg2;
 - (int)_canAddDatumInDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)insertValues:(id)arg1 transaction:(id)arg2 error:(id *)arg3;

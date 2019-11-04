@@ -10,8 +10,6 @@
 {
     // Error parsing type: , name: selectedFriend
     // Error parsing type: , name: tapContexts
-    // Error parsing type: , name: isInit
-    // Error parsing type: , name: firstInit
 }
 
 @end

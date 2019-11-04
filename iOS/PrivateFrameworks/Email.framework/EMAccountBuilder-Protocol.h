@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol EMAccountBuilder <NSObject>
+@property(nonatomic, getter=isPrimaryiCloudAccount) _Bool primaryiCloudAccount;
 @property(copy, nonatomic) NSString *hostname;
 @property(copy, nonatomic) NSString *username;
 @end

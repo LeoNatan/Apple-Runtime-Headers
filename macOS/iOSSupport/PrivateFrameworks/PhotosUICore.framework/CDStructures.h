@@ -51,6 +51,15 @@ struct NSString {
     Class _field1;
 };
 
+struct PHAssetResourceTableDataSpecification {
+    int width;
+    int height;
+    int bytesPerRow;
+    int dataWidth;
+    int dataHeight;
+    int imageDataOffset;
+};
+
 struct PXAssetBadgeInfo {
     unsigned long long badges;
     double duration;
@@ -228,6 +237,10 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTile
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTileIdentifier, unsigned long>, void *>*> *__next_;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTileIdentifier, unsigned long>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTileIdentifier, unsigned long>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTileIdentifier, unsigned long>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTileIdentifier, unsigned long>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<PXTileIdentifier, unsigned long>, void *>*> **__value_;
@@ -257,6 +270,12 @@ struct unordered_map<PXTileIdentifier, unsigned long, std::__1::hash<PXTileIdent
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+} CDStruct_14f26992;
+
+typedef struct {
     unsigned long long needsUpdate;
     unsigned long long updated;
     char isPerformingUpdate;
@@ -268,6 +287,11 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned long long _field1;
+    long long _field2;
+} CDStruct_3f164e09;
 
 typedef struct {
     double minValue;

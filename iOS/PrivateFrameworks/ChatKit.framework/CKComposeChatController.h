@@ -9,7 +9,7 @@
 #import <ChatKit/CKBusinessInfoViewDelegate-Protocol.h>
 #import <ChatKit/CKComposeRecipientSelectionControllerDelegate-Protocol.h>
 
-@class CKBusinessInfoView, CKComposeNavbarManager, CKComposeRecipientSelectionController, CKComposition, NSArray, NSDictionary, NSString, UIBarButtonItem;
+@class CKBusinessInfoView, CKComposeNavbarManager, CKComposeRecipientSelectionController, CKComposition, CKTranscriptMultilineLabelCell, NSArray, NSDictionary, NSString, OBWelcomeController, UIBarButtonItem;
 @protocol CKComposeChatControllerDelegate;
 
 @interface CKComposeChatController : CKChatController <CKComposeRecipientSelectionControllerDelegate, CKBusinessInfoViewDelegate>
@@ -24,11 +24,15 @@
     CKComposeNavbarManager *_navbarManager;
     NSDictionary *_bizIntent;
     CKBusinessInfoView *_businessInfoView;
+    OBWelcomeController *_businessChatController;
+    CKTranscriptMultilineLabelCell *_blackholeAlertView;
     CDUnknownBlockType _deferredSendAnimationBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType deferredSendAnimationBlock; // @synthesize deferredSendAnimationBlock=_deferredSendAnimationBlock;
 @property(nonatomic) _Bool sendingViaCardUI; // @synthesize sendingViaCardUI=_sendingViaCardUI;
+@property(retain, nonatomic) CKTranscriptMultilineLabelCell *blackholeAlertView; // @synthesize blackholeAlertView=_blackholeAlertView;
+@property(retain, nonatomic) OBWelcomeController *businessChatController; // @synthesize businessChatController=_businessChatController;
 @property(retain, nonatomic) CKBusinessInfoView *businessInfoView; // @synthesize businessInfoView=_businessInfoView;
 @property(retain, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(retain, nonatomic) CKComposeNavbarManager *navbarManager; // @synthesize navbarManager=_navbarManager;
@@ -39,10 +43,23 @@
 @property(nonatomic) _Bool ignoreKeyboardNotifications; // @synthesize ignoreKeyboardNotifications=_ignoreKeyboardNotifications;
 @property(retain, nonatomic) CKComposeRecipientSelectionController *composeRecipientSelectionController; // @synthesize composeRecipientSelectionController=_composeRecipientSelectionController;
 - (void).cxx_destruct;
+- (_Bool)shouldPresentBlockingDowntimeViewController;
 - (void)handleAddressBookChange:(id)arg1;
+- (id)_businessChatController;
+- (void)aboutLinkTapped;
+- (void)handleCancelAction:(id)arg1;
+- (void)presentBusinessChatOnboarding;
+- (void)displayBusinessChatPrivacyAndSkipDefaultsCheck:(_Bool)arg1;
+- (void)completedOnboardingWithCompletion:(CDUnknownBlockType)arg1;
+- (void)completedOnboarding;
+- (void)setPrivacyPageHasBeenDisplayed:(_Bool)arg1;
+- (_Bool)privacyPageHasBeenDisplayed;
+- (void)displayBusinessChatPrivacyIfNecessary;
 - (void)businessInfoView:(id)arg1 infoButtonTapped:(id)arg2;
 - (void)layoutBusinessInfoViewIfNecessary;
 - (void)setBusinessInfoViewInfoIfNecessary;
+- (_Bool)_isNewBusinessConversation;
+- (void)_updateBlackholeAlertView;
 - (void)_triggerRecipientFinalization;
 - (void)chatInputWillUpdateInputViewShowingBrowser;
 - (void)_showNicknameBannerIfNeeded;
@@ -60,7 +77,11 @@
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerDidChangeSize:(id)arg1;
 - (void)recipientSelectionControllerDidBecomeFirstResponder:(id)arg1;
-- (void)recipientSelectionController:(id)arg1 didSelectConversation:(id)arg2;
+- (id)chatForIMHandle:(id)arg1;
+- (id)handleForRecipientNormalizedAddress:(id)arg1;
+- (_Bool)shouldForceToSMSForConversation:(id)arg1 forRecipient:(id)arg2;
+- (void)recipientSelectionController:(id)arg1 didSelectConversation:(id)arg2 isiMessagable:(_Bool)arg3;
+- (void)recipientSelectionControllerDidLoadPillView;
 - (void)sendAnimationManagerWillStartAnimation:(id)arg1 context:(id)arg2;
 - (_Bool)becomeFirstResponder;
 - (id)textViewOnscreenWithEntryView;
@@ -81,6 +102,7 @@
 - (_Bool)shouldUseNavigationBarCanvasView;
 - (_Bool)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
+- (_Bool)transcriptCollectionViewControllerShouldForceOpaqueMask:(id)arg1;
 - (void)_updateTitleAnimated:(_Bool)arg1;
 - (void)keyboardWillShowOrHide:(id)arg1;
 - (double)topInsetPadding;
@@ -90,9 +112,8 @@
 - (_Bool)_isWhitelistedBusinessRecipient;
 - (void)_processBizIntentIfNeeded;
 - (void)addBizIntentToConversation:(id)arg1;
-- (id)traitCollection;
+- (void)invalidateChatItemLayoutForTraitCollectionChangeIfNeeded:(id)arg1;
 - (void)_prepareForSendFromCardIfNecessaryAndSend:(CDUnknownBlockType)arg1;
-- (id)_currentPresentationController;
 - (void)sendComposition:(id)arg1;
 - (_Bool)_shouldSetToFieldAsFirstResponder;
 - (void)_setConversationDeferredSetup;
@@ -101,6 +122,7 @@
 @property(readonly, nonatomic) NSArray *proposedRecipients;
 - (void)viewLayoutMarginsDidChange;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

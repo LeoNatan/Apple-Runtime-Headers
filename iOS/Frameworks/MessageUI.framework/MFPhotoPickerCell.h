@@ -8,7 +8,7 @@
 
 #import <MessageUI/MFReusableIdentifiable-Protocol.h>
 
-@class NSString, UIImage, UIImageView;
+@class MFRoundProgressView, NSString, UIImage, UIImageView;
 
 @interface MFPhotoPickerCell : UICollectionViewCell <MFReusableIdentifiable>
 {
@@ -18,9 +18,11 @@
     UIImageView *_imageView;
     UIImageView *_mediaTypeBadgeView;
     UIImageView *_selectedBadgeView;
+    MFRoundProgressView *_progressView;
 }
 
 + (id)reusableIdentifier;
+@property(retain, nonatomic) MFRoundProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIImageView *selectedBadgeView; // @synthesize selectedBadgeView=_selectedBadgeView;
 @property(retain, nonatomic) UIImageView *mediaTypeBadgeView; // @synthesize mediaTypeBadgeView=_mediaTypeBadgeView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -30,6 +32,8 @@
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1;
+- (void)resetProgress;
+- (void)setProgress:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

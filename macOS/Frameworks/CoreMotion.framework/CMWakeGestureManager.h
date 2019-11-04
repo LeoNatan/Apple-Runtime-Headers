@@ -18,9 +18,12 @@
 + (id)sharedManager;
 @property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)logAssert;
+- (void)forceDetected;
+- (void)simulateGesture:(long long)arg1 after:(double)arg2;
 - (BOOL)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;
 - (void)startWakeGestureUpdates;
+- (id)initWithQueue:(id)arg1;
 
 @end
 

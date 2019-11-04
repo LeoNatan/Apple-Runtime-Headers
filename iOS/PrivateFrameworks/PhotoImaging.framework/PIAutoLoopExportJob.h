@@ -12,7 +12,7 @@
 
 + (id)metalRenderer;
 + (_Bool)shouldUseMetalRenderer;
-- (id)renderer;
+- (id)renderer:(out id *)arg1;
 - (id)autoLoopExportRequest;
 - (id)initWithVideoExportRequest:(id)arg1;
 - (id)initWithAutoLoopExportRequest:(id)arg1;

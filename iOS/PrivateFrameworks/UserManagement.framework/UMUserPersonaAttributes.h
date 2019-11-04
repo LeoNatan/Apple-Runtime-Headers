@@ -17,11 +17,13 @@
     _Bool _isUniversalPersona;
     _Bool _isSystemPersona;
     _Bool _isDefaultPersona;
+    _Bool _isDisabled;
     unsigned int _userPersona_id;
     NSString *_userPersonaUniqueString;
     unsigned long long _userPersonaType;
     NSURL *_personaLayoutPathURL;
     NSArray *_userPersonaBundleIDList;
+    NSString *_userPersonaDisplayName;
     NSDate *_creationDate;
     NSDate *_lastLoginDate;
     NSDate *_lastDisableDate;
@@ -38,7 +40,9 @@
 @property(copy, nonatomic) NSDate *lastDisableDate; // @synthesize lastDisableDate=_lastDisableDate;
 @property(copy, nonatomic) NSDate *lastLoginDate; // @synthesize lastLoginDate=_lastLoginDate;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(copy, nonatomic) NSString *userPersonaDisplayName; // @synthesize userPersonaDisplayName=_userPersonaDisplayName;
 @property(copy, nonatomic) NSArray *userPersonaBundleIDList; // @synthesize userPersonaBundleIDList=_userPersonaBundleIDList;
+@property(nonatomic) _Bool isDisabled; // @synthesize isDisabled=_isDisabled;
 @property(nonatomic) _Bool isDefaultPersona; // @synthesize isDefaultPersona=_isDefaultPersona;
 @property(nonatomic) _Bool isSystemPersona; // @synthesize isSystemPersona=_isSystemPersona;
 @property(nonatomic) _Bool isUniversalPersona; // @synthesize isUniversalPersona=_isUniversalPersona;

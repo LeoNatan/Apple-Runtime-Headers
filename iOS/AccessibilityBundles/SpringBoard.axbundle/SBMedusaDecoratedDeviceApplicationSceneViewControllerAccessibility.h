@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (id)_axNubViewContainer;
 - (id)_axNubView;
+- (struct CGRect)_accessibilityViewSpaceAccessibilityFrameForNubView;
 - (void)_axLoadNubViewAccessibilityInformation;
 - (id)_axInlineExposeViewController;
 - (void)_axSetUpExposeViewController;

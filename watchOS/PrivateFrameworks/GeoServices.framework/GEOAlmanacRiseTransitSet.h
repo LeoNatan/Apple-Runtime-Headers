@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (_Bool)isCompatibleWith:(id)arg1;
 - (int)compareToDate:(id)arg1;
 @property(readonly, nonatomic) NSDate *lastEventDate;

@@ -28,7 +28,7 @@
 #import <UIKitCore/_UITextViewContentPaddingDelegate-Protocol.h>
 #import <UIKitCore/_UIViewBaselineSpacing-Protocol.h>
 
-@class CUICatalog, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIDragInteraction, UIDropInteraction, UIFont, UIImage, UIInputContextHistory, UILabel, UILayoutManagerBasedDraggableGeometry, UIPasteConfiguration, UITextInputController, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UITextContainerView, _UITextItemDiscoverer, _UITextSizeCache, _UITextViewContentPadding, _UITextViewRestorableScrollPosition, _UITextViewVisualStyle;
+@class CUICatalog, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIDragInteraction, UIDropInteraction, UIFont, UIImage, UIInputContextHistory, UILabel, UILayoutManagerBasedDraggableGeometry, UIPasteConfiguration, UITextInputController, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UITextContainerView, _UITextItemDiscoverer, _UITextLayoutView, _UITextSizeCache, _UITextViewContentPadding, _UITextViewRestorableScrollPosition, _UITextViewVisualStyle;
 @protocol UICoordinateSpace, UITextDragDelegate, UITextDragDropSupport, UITextDropDelegate, UITextInputDelegate, UITextInputTokenizer, UITextPasteDelegate, UITextViewDelegate;
 
 @interface UITextView : UIScrollView <_UIViewBaselineSpacing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UIViewGhostedRangeSupporting, _UITextItemInteracting, UITextPasteConfigurationSupporting_Internal, UITextDragSupporting, UITextDropSupporting, _UITextContent, _UITextItemDiscoverable, UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting, UITextInput, UIContentSizeCategoryAdjusting>
@@ -37,6 +37,7 @@
     NSTextContainer *_textContainer;
     NSLayoutManager *_layoutManager;
     _UITextContainerView *_containerView;
+    _UITextLayoutView *_layoutView;
     id _inputDelegate;
     id <UITextInputTokenizer> _tokenizer;
     UITextInputController *_inputController;
@@ -126,17 +127,17 @@
 @property(readonly, nonatomic) UIDropInteraction *textDropInteraction;
 @property(readonly, nonatomic) UIDragInteraction *textDragInteraction;
 - (_Bool)_allowHighlightForTextInteractableItem:(id)arg1;
+- (_Bool)_interactionPossibleWithAttachment:(id)arg1;
 - (id)_textInteractableItemAtPoint:(struct CGPoint)arg1;
 - (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)startInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
-- (_Bool)_presentActionsForTextInteractableItem:(id)arg1;
 - (_Bool)_mightHaveInteractableItems;
 - (_Bool)_allowInteraction:(long long)arg1 forTextInteractableItem:(id)arg2;
 - (void)_setDefaultTextPreviewOptions:(long long)arg1;
 - (long long)_defaultTextPreviewOptions;
-- (id)_targetedPreviewForTextInteractableItem:(id)arg1;
+- (id)_targetedPreviewForTextInteractableItem:(id)arg1 dismissing:(_Bool)arg2;
 - (void)_applyOptionsToGeometry;
 - (id)_textGeometry;
 - (void)_updateSelectionGestures;
@@ -407,12 +408,14 @@
 - (double)_currentPreferredMaxLayoutWidth;
 - (id)_layoutDebuggingTitle;
 - (struct CGSize)intrinsicContentSize;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (struct CGSize)_containerSizeForBoundsSize:(struct CGSize)arg1 allowingOverflow:(_Bool)arg2;
 - (void)_performLayoutCalculation:(CDUnknownBlockType)arg1 inSize:(struct CGSize)arg2;
-- (void)_baselineOffsetDidChange;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
+- (_Bool)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (_Bool)_hasBaseline;
 - (double)_baselineOffsetFromBottom;
 - (double)_firstBaselineOffsetFromTop;
@@ -431,6 +434,9 @@
 - (void)_scrollToCaretIfNeeded;
 - (void)_invalidateContainerViewSize;
 - (void)layoutSubviews;
+- (void)_layoutText;
+- (void)_setNeedsTextLayout;
+- (void)setNeedsLayout;
 - (void)adjustedContentInsetDidChange;
 - (void)_resyncContainerFrameForNonAutolayoutDeferringSizeToFit:(_Bool)arg1;
 - (void)_resyncContainerFrameForNonAutolayout;

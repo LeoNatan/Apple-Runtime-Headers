@@ -15,7 +15,7 @@
 - (unsigned long long)type;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property(readonly, nonatomic) _MRPlaybackSessionRequestProtobuf *request;
-- (id)initWithRequest:(struct _MRPlaybackSessionRequestProtobuf *)arg1 forPlayerPath:(struct _MRNowPlayingPlayerPathProtobuf *)arg2;
+- (id)initWithRequest:(id)arg1 forPlayerPath:(id)arg2;
 
 @end
 

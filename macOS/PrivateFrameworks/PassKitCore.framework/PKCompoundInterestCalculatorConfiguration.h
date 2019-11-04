@@ -20,6 +20,8 @@
     NSDate *_periodEndDate;
     NSDecimalNumber *_periodStartingBalance;
     NSDecimalNumber *_remainingPeriodStartingBalance;
+    NSDecimalNumber *_remainingPeriodMinimumPayment;
+    NSDecimalNumber *_remainingPeriodMinimumPaymentExcludedFromInterestCalculation;
     NSDecimalNumber *_currentBalance;
     NSDecimalNumber *_unpostedInterest;
     NSDate *_unpostedInterestTimestamp;
@@ -37,6 +39,8 @@
 @property(nonatomic) BOOL isInDisasterRecovery; // @synthesize isInDisasterRecovery=_isInDisasterRecovery;
 @property(nonatomic) BOOL inGrace; // @synthesize inGrace=_inGrace;
 @property(retain, nonatomic) NSDecimalNumber *currentBalance; // @synthesize currentBalance=_currentBalance;
+@property(retain, nonatomic) NSDecimalNumber *remainingPeriodMinimumPaymentExcludedFromInterestCalculation; // @synthesize remainingPeriodMinimumPaymentExcludedFromInterestCalculation=_remainingPeriodMinimumPaymentExcludedFromInterestCalculation;
+@property(retain, nonatomic) NSDecimalNumber *remainingPeriodMinimumPayment; // @synthesize remainingPeriodMinimumPayment=_remainingPeriodMinimumPayment;
 @property(retain, nonatomic) NSDecimalNumber *remainingPeriodStartingBalance; // @synthesize remainingPeriodStartingBalance=_remainingPeriodStartingBalance;
 @property(retain, nonatomic) NSDecimalNumber *periodStartingBalance; // @synthesize periodStartingBalance=_periodStartingBalance;
 @property(retain, nonatomic) NSDate *periodEndDate; // @synthesize periodEndDate=_periodEndDate;

@@ -10,7 +10,6 @@
 
 @interface SBHClockApplicationIconImageView : SBLiveIconImageView
 {
-    SBHClockIconVisualConfiguration *_configuration;
     CALayer *_seconds;
     CALayer *_minutes;
     CALayer *_hours;
@@ -20,6 +19,7 @@
     UIImage *_mappedContentsImage;
     UIImage *_squareMappedContentsImage;
     NSString *_currentNumberingSystem;
+    SBHClockIconVisualConfiguration *_visualConfiguration;
 }
 
 + (id)systemNumberingSystem;
@@ -31,6 +31,7 @@
 + (id)overrideDate;
 + (id)defaultConfiguration;
 + (void)initialize;
+@property(copy, nonatomic) SBHClockIconVisualConfiguration *visualConfiguration; // @synthesize visualConfiguration=_visualConfiguration;
 @property(copy, nonatomic) NSString *currentNumberingSystem; // @synthesize currentNumberingSystem=_currentNumberingSystem;
 - (void).cxx_destruct;
 - (void)localeDidChange:(id)arg1;

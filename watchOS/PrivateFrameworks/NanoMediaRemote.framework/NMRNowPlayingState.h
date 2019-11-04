@@ -37,7 +37,6 @@
 @property(readonly, nonatomic, getter=isLikedActive) _Bool likedActive;
 @property(readonly, nonatomic, getter=isLikeCommandEnabled) _Bool likeCommandEnabled;
 @property(readonly, nonatomic, getter=isLikeCommandSupported) _Bool likeCommandSupported;
-@property(readonly, nonatomic) _Bool hasSupportedPlaybackRates;
 @property(readonly, nonatomic, getter=isPlaybackRateCommandSupported) _Bool playbackRateCommandSupported;
 @property(readonly, nonatomic) int shuffleMode;
 @property(readonly, nonatomic, getter=isShuffleModeCommandSupported) _Bool shuffleModeCommandSupported;

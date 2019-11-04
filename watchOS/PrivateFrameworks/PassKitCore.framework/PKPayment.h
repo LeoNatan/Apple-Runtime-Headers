@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSData, NSMutableDictionary, PKContact, PKPaymentToken, PKShippingMethod;
+@class NSData, NSMutableDictionary, NSString, PKContact, PKPaymentToken, PKShippingMethod;
 
 @interface PKPayment : NSObject <NSSecureCoding>
 {
@@ -19,11 +19,13 @@
     NSData *_credential;
     NSMutableDictionary *_authKitAuthenticationResults;
     int _biometricAuthorizationAttempts;
+    NSString *_installmentAuthorizationToken;
 }
 
 + (_Bool)supportsSecureCoding;
 + (int)version;
 + (id)paymentWithProtobuf:(id)arg1;
+@property(copy, nonatomic) NSString *installmentAuthorizationToken; // @synthesize installmentAuthorizationToken=_installmentAuthorizationToken;
 @property(nonatomic) int biometricAuthorizationAttempts; // @synthesize biometricAuthorizationAttempts=_biometricAuthorizationAttempts;
 @property(retain, nonatomic) NSMutableDictionary *authKitAuthenticationResults; // @synthesize authKitAuthenticationResults=_authKitAuthenticationResults;
 @property(retain, nonatomic) NSData *credential; // @synthesize credential=_credential;

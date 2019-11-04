@@ -22,6 +22,8 @@
 - (id)folderImage;
 - (id)backgroundImage;
 @property(readonly, nonatomic) _Bool isBackgroundImageFullScreen;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 - (id)initWithApplicationProxy:(id)arg1;
 

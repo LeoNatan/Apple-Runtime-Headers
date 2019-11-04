@@ -13,8 +13,11 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)_accessibilityLoadAccessibilityInformation;
+- (id)nextControlItem;
 - (void)viewDidLoad;
+- (_Bool)accessibilityPerformEscape;
+- (void)_axLoadAccessibilityInformationForDayOrTimeLabel:(id)arg1;
+- (void)_accessibilityLoadAccessibilityInformation;
 
 @end
 

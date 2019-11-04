@@ -27,6 +27,10 @@ __attribute__((visibility("hidden")))
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
 - (void)endObservingAudioRoutesForCategory:(id)arg1;
 - (void)beginObservingAudioRoutesForCategory:(id)arg1;
+- (void)_handleListeningModesDidChange:(id)arg1;
+- (void)setCurrentListeningMode:(id)arg1 forTarget:(id)arg2;
+- (void)endObservingListeningModesForTarget:(id)arg1;
+- (void)beginObservingListeningModesForTarget:(id)arg1;
 - (void)_handleHapticStateDidChange:(id)arg1;
 - (void)_handleProminentHapticStateDidChange:(id)arg1;
 - (void)_handleSystemMutedStatedDidChange:(id)arg1;
@@ -43,8 +47,8 @@ __attribute__((visibility("hidden")))
 - (void)setHapticState:(int)arg1;
 - (void)setProminentHapticEnabled:(_Bool)arg1;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setMuted:(_Bool)arg1 target:(id)arg2;
-- (void)setVolumeValue:(float)arg1 target:(id)arg2;
+- (void)setMuted:(_Bool)arg1 forTarget:(id)arg2;
+- (void)setVolumeValue:(float)arg1 forTarget:(id)arg2;
 - (void)endObservingVolumeForTarget:(id)arg1;
 - (void)beginObservingVolumeForTarget:(id)arg1;
 - (id)init;

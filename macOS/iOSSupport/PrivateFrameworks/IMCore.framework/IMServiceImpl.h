@@ -14,7 +14,6 @@
     NSString *_localizedName;
     NSString *_localizedShortName;
     NSMutableDictionary *_cardMap;
-    NSDictionary *_personToIDMap;
     NSString *_countryCode;
     IMAccount *_bestAccount;
     NSDictionary *_serviceDefaults;

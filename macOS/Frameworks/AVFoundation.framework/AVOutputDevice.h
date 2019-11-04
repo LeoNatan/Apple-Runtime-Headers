@@ -27,6 +27,7 @@
 - (void)updateFrecencyScore;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)setCurrentBluetoothListeningMode:(id)arg1 error:(id *)arg2;
 - (void)setCurrentBluetoothListeningMode:(id)arg1;
 - (id)currentBluetoothListeningMode;
 - (id)availableBluetoothListeningModes;

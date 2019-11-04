@@ -13,7 +13,7 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 #import <ContactsUI/UITextFieldDelegate-Protocol.h>
 
-@class CNContact, CNContactImage, CNContactStore, CNMeCardSharingAudienceDataSource, CNMeCardSharingContactAvatarProvider, CNMeCardSharingEnabledDataSource, CNMeCardSharingLogger, CNMeCardSharingPickerLayoutAttributes, CNMeCardSharingSettingsHeaderViewController, CNMeCardSharingSettingsNameDataSource, CNMutableContact, CNPhotoPickerViewController, NSArray, NSString, UISwitch, UITableView, UITextField;
+@class CNContact, CNContactImage, CNContactStore, CNMeCardSharingAudienceDataSource, CNMeCardSharingContactAvatarProvider, CNMeCardSharingEnabledDataSource, CNMeCardSharingPickerLayoutAttributes, CNMeCardSharingSettingsHeaderViewController, CNMeCardSharingSettingsNameDataSource, CNMutableContact, CNPhotoPickerViewController, CNSharingProfileLogger, NSArray, NSString, UISwitch, UITableView, UITextField;
 @protocol CNMeCardSharingAvatarProvider, CNMeCardSharingNameProvider, CNMeCardSharingSettingsViewControllerDelegate;
 
 @interface CNMeCardSharingSettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CNMeCardSharingSettingsHeaderViewControllerDelegate, CNMeCardSharingEnabledDelegate, CNPhotoPickerViewControllerDelegate>
@@ -41,13 +41,13 @@
     UITextField *_givenNameField;
     UITextField *_familyNameField;
     CNMeCardSharingContactAvatarProvider *_editingContactAvatarProvider;
-    CNMeCardSharingLogger *_logger;
+    CNSharingProfileLogger *_logger;
     double _keyboardHeight;
 }
 
 + (id)descriptorForRequiredKeys;
 @property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
-@property(readonly, nonatomic) CNMeCardSharingLogger *logger; // @synthesize logger=_logger;
+@property(readonly, nonatomic) CNSharingProfileLogger *logger; // @synthesize logger=_logger;
 @property(nonatomic) _Bool shouldSetAsMeContact; // @synthesize shouldSetAsMeContact=_shouldSetAsMeContact;
 @property(retain, nonatomic) CNMeCardSharingContactAvatarProvider *editingContactAvatarProvider; // @synthesize editingContactAvatarProvider=_editingContactAvatarProvider;
 @property(retain, nonatomic) UITextField *familyNameField; // @synthesize familyNameField=_familyNameField;
@@ -102,6 +102,7 @@
 - (void)familyNameDidChange:(id)arg1;
 - (void)givenNameDidChange:(id)arg1;
 - (void)notifyDelegateOfChangesWithDidSaveToMeCard:(_Bool)arg1;
+- (void)presentErrorAlertForEmptyPhotoIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

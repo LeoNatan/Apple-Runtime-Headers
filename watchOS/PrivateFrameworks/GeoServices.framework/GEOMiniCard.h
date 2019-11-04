@@ -13,11 +13,13 @@
 @interface GEOMiniCard : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_buttonText;
     GEOFormattedString *_detail;
     GEOFormattedString *_title;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _shouldEmphasize;
     struct {
         unsigned int has_shouldEmphasize:1;
@@ -58,6 +60,8 @@
 @property(retain, nonatomic) GEOFormattedString *title;
 @property(readonly, nonatomic) _Bool hasTitle;
 - (void)_readTitle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -27,8 +27,8 @@
 
 @property(nonatomic) BOOL forceLocationMetadataBaking; // @synthesize forceLocationMetadataBaking=_forceLocationMetadataBaking;
 @property(nonatomic) BOOL forceDateTimeMetadataBaking; // @synthesize forceDateTimeMetadataBaking=_forceDateTimeMetadataBaking;
-@property(nonatomic) BOOL disableMetadataCorrections; // @synthesize disableMetadataCorrections=_disableMetadataCorrections;
 @property(nonatomic) long long locationComparisonStrategy; // @synthesize locationComparisonStrategy=_locationComparisonStrategy;
+@property(nonatomic) BOOL disableMetadataCorrections; // @synthesize disableMetadataCorrections=_disableMetadataCorrections;
 @property(copy, nonatomic) NSString *videoExportFileType; // @synthesize videoExportFileType=_videoExportFileType;
 @property(copy, nonatomic) NSString *videoExportPreset; // @synthesize videoExportPreset=_videoExportPreset;
 @property(nonatomic) BOOL ensureSRGBCompatibleColorSpace; // @synthesize ensureSRGBCompatibleColorSpace=_ensureSRGBCompatibleColorSpace;

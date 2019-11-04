@@ -390,6 +390,8 @@
 @property(readonly, nonatomic) BOOL canGoBack;
 - (void)takeStringURLFrom:(id)arg1;
 - (void)addVisitedLinks:(id)arg1;
+- (void)resumeAllMediaPlayback;
+- (void)suspendAllMediaPlayback;
 - (float)mediaVolume;
 - (void)setMediaVolume:(float)arg1;
 - (void)resetPageZoom:(id)arg1;

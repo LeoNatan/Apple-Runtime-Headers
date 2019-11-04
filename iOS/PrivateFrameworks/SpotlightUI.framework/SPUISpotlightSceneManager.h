@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class BSTimer, FBSDisplayLayoutMonitor, NSHashTable, RBSAssertion, RBSProcessHandle, SPUIAppService;
+@protocol OS_dispatch_queue;
 
 @interface SPUISpotlightSceneManager : NSObject
 {
@@ -17,9 +18,11 @@
     BSTimer *_watchdogTimer;
     RBSProcessHandle *_spotlightProcessHandle;
     RBSAssertion *_initializationAssertions;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedManager;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) RBSAssertion *initializationAssertions; // @synthesize initializationAssertions=_initializationAssertions;
 @property(retain) RBSProcessHandle *spotlightProcessHandle; // @synthesize spotlightProcessHandle=_spotlightProcessHandle;
 @property(retain) BSTimer *watchdogTimer; // @synthesize watchdogTimer=_watchdogTimer;

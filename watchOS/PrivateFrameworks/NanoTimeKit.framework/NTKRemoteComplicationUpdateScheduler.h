@@ -14,7 +14,7 @@
     NSMutableDictionary *_clientIdentifierToRequestDate;
     NTKTaskScheduler *_taskScheduler;
     PCPersistentTimer *_checkForNextUpdateTimer;
-    struct NSNumber *_scheduledTaskToken;
+    struct NSString *_scheduledTaskToken;
     double _minimumTimeIntervalBetweenUpdates;
     unsigned int _coalesceUpdatesToMinute;
     NSObject<NTKRemoteComplicationUpdateSchedulerDelegate> *_delegate;

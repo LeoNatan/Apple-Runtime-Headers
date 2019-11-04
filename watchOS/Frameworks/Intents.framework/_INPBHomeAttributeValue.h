@@ -10,7 +10,7 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBHomeAttributeValue-Protocol.h>
 
-@class NSString;
+@class NSString, _INPBHomeAttributeRange;
 
 @interface _INPBHomeAttributeValue : PBCodable <_INPBHomeAttributeValue, NSSecureCoding, NSCopying>
 {
@@ -26,6 +26,7 @@
     _Bool __encodeLegacyGloryData;
     int _integerValue;
     int _limitValue;
+    _INPBHomeAttributeRange *_rangeValue;
     NSString *_stringValue;
     int _unit;
     int _valueType;
@@ -37,6 +38,7 @@
 @property(nonatomic) int valueType; // @synthesize valueType=_valueType;
 @property(nonatomic) int unit; // @synthesize unit=_unit;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
+@property(retain, nonatomic) _INPBHomeAttributeRange *rangeValue; // @synthesize rangeValue=_rangeValue;
 @property(nonatomic) int limitValue; // @synthesize limitValue=_limitValue;
 @property(nonatomic) int integerValue; // @synthesize integerValue=_integerValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
@@ -57,6 +59,7 @@
 - (id)unitAsString:(int)arg1;
 @property(nonatomic) _Bool hasUnit;
 @property(readonly, nonatomic) _Bool hasStringValue;
+@property(readonly, nonatomic) _Bool hasRangeValue;
 - (int)StringAsLimitValue:(id)arg1;
 - (id)limitValueAsString:(int)arg1;
 @property(nonatomic) _Bool hasLimitValue;

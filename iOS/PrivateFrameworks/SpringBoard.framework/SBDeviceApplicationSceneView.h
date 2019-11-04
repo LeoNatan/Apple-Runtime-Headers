@@ -23,27 +23,24 @@
     SBHomeGrabberRotationView *_grabberRotationView;
     SBFHomeGrabberSettings *_grabberSettings;
     long long _lastStableOverlayOrientation;
-    long long _rotationStartOrientation;
-    long long _rotationEndOrientation;
     SBDeviceApplicationSceneClassicAccessoryView *_classicAccessoryView;
     UIView *_classicWrapperView;
     UIView *_classicPositioningView;
     UIView<UIScenePresentation> *_wrappedHostView;
     _Bool _active;
     _Bool _visible;
-    _Bool _sceneOverlayNeedsCounterRotation;
+    _Bool _counterRotationViewTransformUpdatesPaused;
     double _statusBarAlpha;
     UIView *_appOverlayView;
 }
 
-@property(nonatomic) _Bool sceneOverlayNeedsCounterRotation; // @synthesize sceneOverlayNeedsCounterRotation=_sceneOverlayNeedsCounterRotation;
+@property(nonatomic) _Bool counterRotationViewTransformUpdatesPaused; // @synthesize counterRotationViewTransformUpdatesPaused=_counterRotationViewTransformUpdatesPaused;
 @property(retain, nonatomic) UIView *appOverlayView; // @synthesize appOverlayView=_appOverlayView;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) double statusBarAlpha; // @synthesize statusBarAlpha=_statusBarAlpha;
 @property(retain, nonatomic) SBApplicationSceneViewStatusBarDescriptor *statusBarDescriptor; // @synthesize statusBarDescriptor=_statusBarDescriptor;
 - (void).cxx_destruct;
-- (void)_noteRotationAnimationCompleted;
 - (void)_maybeStartTrackingRotationForOverlay;
 - (void)_updateReferenceSize:(struct CGSize)arg1 andOrientation:(long long)arg2;
 - (void)_updateEdgeProtectAndAutoHideOnHomeGrabberView;
@@ -72,6 +69,7 @@
 - (id)initWithSceneHandle:(id)arg1 referenceSize:(struct CGSize)arg2 orientation:(long long)arg3 hostRequester:(id)arg4;
 - (void)_layoutLiveHostView:(id)arg1;
 - (id)_transitionViewForHostView;
+- (void)_invalidateSceneLiveHostView:(id)arg1;
 - (void)_configureSceneLiveHostView:(id)arg1;
 - (void)_createClassicWrapperViewIfNecessaryForHostView:(id)arg1;
 - (struct CGRect)_effectiveSceneBounds;

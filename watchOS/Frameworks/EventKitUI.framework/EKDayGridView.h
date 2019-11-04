@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateTimeMarker;
 - (id)timeDotImage;
 - (void)updateMarkerPosition;
+- (void)updateHourHeight;
 @property(readonly, nonatomic) float hourHeight;
 @property(readonly, nonatomic) float timeInset;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

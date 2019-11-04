@@ -97,6 +97,9 @@
 - (void)_setRecordingStartedOnRoute:(_Bool)arg1;
 - (_Bool)_recordingStartedOnRoute;
 - (void)updateToPresentationWithIdentifier:(id)arg1 presentationProperties:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)updateSettingsOnRemoteSceneForInterfaceOrientationChange:(long long)arg1 willAnimationWithDuration:(double)arg2;
+- (void)handlePunchoutCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)shouldNonLocalDelegateHandlePunchouts;
 - (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
 - (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)siriSessionDidFinishRequestWithError:(id)arg1;
@@ -193,8 +196,7 @@
 - (void)siriWillActivateFromSource:(long long)arg1;
 - (void)preheat;
 - (void)defrost;
-- (void)viewWillAppearFinishedForSiriRemoteViewController:(id)arg1;
-- (void)showPasscodeUnlockScreenThen:(CDUnknownBlockType)arg1;
+- (void)showPasscodeUnlockScreenForRequest:(id)arg1 unlockCompletion:(CDUnknownBlockType)arg2;
 - (void)handlePasscodeUnlockAndCancelRequest:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handlePasscodeUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleSiriDidActivateFromSource:(long long)arg1;
@@ -210,6 +212,7 @@
 - (void)_setShowKeyboardIfTextInputEnabled:(_Bool)arg1;
 - (void)_setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)_setStatusViewHidden:(_Bool)arg1;
+- (void)siriRemoteViewController:(id)arg1 didUpdateAudioCategoriesDisablingVolumeHUD:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 presentedIntentWithBundleId:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 requestsDismissal:(CDUnknownBlockType)arg2;
 - (void)siriRemoteViewController:(id)arg1 requestsPresentation:(CDUnknownBlockType)arg2;
@@ -247,7 +250,6 @@
 - (void)siriRemoteViewController:(id)arg1 setStatusViewUserInteractionEnabled:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setStatusViewDisabled:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setCarDisplaySnippetMode:(long long)arg2;
-- (void)siriRemoteViewController:(id)arg1 setCarDisplaySnippetVisible:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setTypeToSiriViewHidden:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setStatusViewHidden:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 siriIdleAndQuietStatusDidChange:(_Bool)arg2;
@@ -258,9 +260,8 @@
 - (void)startGuidedAccessForRemoteViewController:(id)arg1;
 - (void)extendCurrentTTSRequested;
 - (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(_Bool)arg2 userInfo:(id)arg3;
-- (void)siriRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (long long)siriRemoteViewControllerRequestsActivationSource:(id)arg1;
-- (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 invalidatedForReason:(unsigned long long)arg2 explanation:(id)arg3;
 - (void)siriRemoteViewControllerDidFinishDismissing:(id)arg1;
 - (unsigned long long)lockStateForSiriRemoteViewController:(id)arg1;
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;

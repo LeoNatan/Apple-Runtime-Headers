@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class RPPerson;
+@class CURangingMeasurement, NSString, RPPerson;
 
 @protocol RPPeopleXPCClientInterface
+- (void)xpcPersonID:(NSString *)arg1 deviceID:(NSString *)arg2 updatedMeasurement:(CURangingMeasurement *)arg3;
 - (void)xpcPersonChanged:(RPPerson *)arg1 changes:(unsigned int)arg2;
 - (void)xpcPersonLost:(RPPerson *)arg1;
 - (void)xpcPersonFound:(RPPerson *)arg1;
+- (void)xpcPeopleStatusChanged:(unsigned int)arg1;
 @end
 

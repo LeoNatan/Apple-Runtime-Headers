@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface MediaControlsHeaderView : UIView
 {
     _Bool _transitioning;
+    _Bool _showPlaceholderString;
     _Bool _marqueeEnabled;
     _Bool _routing;
     _Bool _shouldUseOverrideSize;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
     MPRouteLabel *_routeLabel;
     NSString *_primaryString;
     NSString *_secondaryString;
+    NSString *_placeholderString;
     MediaControlsRoutingButtonView *_routingButton;
     MPButton *_doneButton;
     UIButton *_launchNowPlayingAppButton;
@@ -33,10 +35,12 @@ __attribute__((visibility("hidden")))
     UILabel *_primaryLabel;
     MPUMarqueeView *_secondaryMarqueeView;
     UILabel *_secondaryLabel;
+    UILabel *_placeholderLabel;
     struct CGSize _overrideSize;
 }
 
 @property(nonatomic) _Bool shouldUseOverrideSize; // @synthesize shouldUseOverrideSize=_shouldUseOverrideSize;
+@property(retain, nonatomic) UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) MPUMarqueeView *secondaryMarqueeView; // @synthesize secondaryMarqueeView=_secondaryMarqueeView;
 @property(retain, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
@@ -51,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIButton *launchNowPlayingAppButton; // @synthesize launchNowPlayingAppButton=_launchNowPlayingAppButton;
 @property(retain, nonatomic) MPButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) MediaControlsRoutingButtonView *routingButton; // @synthesize routingButton=_routingButton;
+@property(nonatomic) _Bool showPlaceholderString; // @synthesize showPlaceholderString=_showPlaceholderString;
+@property(copy, nonatomic) NSString *placeholderString; // @synthesize placeholderString=_placeholderString;
 @property(copy, nonatomic) NSString *secondaryString; // @synthesize secondaryString=_secondaryString;
 @property(copy, nonatomic) NSString *primaryString; // @synthesize primaryString=_primaryString;
 @property(retain, nonatomic) MPRouteLabel *routeLabel; // @synthesize routeLabel=_routeLabel;

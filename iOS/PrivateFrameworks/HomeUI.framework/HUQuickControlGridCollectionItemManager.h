@@ -26,7 +26,7 @@
 + (CDUnknownBlockType)serviceItemComparator;
 + (unsigned long long)specialCaseSectionSortingForControlItem:(id)arg1 viewController:(id)arg2 fromControlItems:(id)arg3 primaryServiceType:(id)arg4;
 + (_Bool)isPrimaryOrBinaryStateControlItem:(id)arg1;
-+ (unsigned long long)preferredControlForControlItem:(id)arg1 allControlItems:(id)arg2;
++ (unsigned long long)preferredControlForControlItem:(id)arg1 allControlItems:(id)arg2 isSupplementary:(_Bool)arg3;
 @property(retain, nonatomic) NSMapTable *controlItemToViewControllerTable; // @synthesize controlItemToViewControllerTable=_controlItemToViewControllerTable;
 @property(retain, nonatomic) HFItemProvider *controlItemProvider; // @synthesize controlItemProvider=_controlItemProvider;
 @property(retain, nonatomic) HFServiceItemProvider *serviceItemProvider; // @synthesize serviceItemProvider=_serviceItemProvider;

@@ -13,12 +13,14 @@
 @interface GEOSharedNavSenderInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_fromDisplayName;
     NSString *_fromIdentifier;
     NSString *_localContactIdentifier;
     NSString *_localName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_fromDisplayName:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSString *localName;
 @property(readonly, nonatomic) _Bool hasLocalName;
 - (void)_readLocalName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

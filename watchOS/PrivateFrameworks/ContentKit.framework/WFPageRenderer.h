@@ -4,20 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIPrintPageRenderer.h>
+#import <objc/NSObject.h>
 
-@interface WFPageRenderer : UIPrintPageRenderer
+@class UIPrintPageRenderer;
+
+@interface WFPageRenderer : NSObject
 {
     _Bool _matchInputSize;
     _Bool _includeMargin;
+    UIPrintPageRenderer *_renderer;
     struct CGSize _inputSize;
 }
 
 @property(nonatomic) _Bool includeMargin; // @synthesize includeMargin=_includeMargin;
-@property(nonatomic) struct CGSize inputSize; // @synthesize inputSize=_inputSize;
 @property(nonatomic) _Bool matchInputSize; // @synthesize matchInputSize=_matchInputSize;
-- (struct CGRect)printableRect;
-- (struct CGRect)paperRect;
+@property(nonatomic) struct CGSize inputSize; // @synthesize inputSize=_inputSize;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) float margin;
+- (void)updateRendererSize;
+@property(readonly, nonatomic) UIPrintPageRenderer *renderer; // @synthesize renderer=_renderer;
 - (id)renderToImage;
 - (void)renderPDFPageIndex:(int)arg1 pages:(int)arg2 measuredIndicesByFormatter:(id)arg3 drawnIndicesByFormatter:(id)arg4 linkMetricsByWebView:(id)arg5 y:(float)arg6 paperSize:(struct CGSize)arg7 shouldDrawPageAtIndexHandler:(CDUnknownBlockType)arg8 completionHandler:(CDUnknownBlockType)arg9;
 - (void)_renderToPDF:(id)arg1 startingAtPage:(int)arg2 endingAtPage:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -130,6 +130,7 @@
 - (void)resetThemeConstants;
 - (void)buildModel;
 @property long long targetPlatform;
+- (void)_updateDeviceTraits;
 - (void)setArtworkFormat:(id)arg1;
 - (id)artworkFormat;
 - (unsigned int)checksum;

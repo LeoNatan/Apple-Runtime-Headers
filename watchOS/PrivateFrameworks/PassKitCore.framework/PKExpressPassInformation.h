@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) NSString *passUniqueIdentifier; // @synthesize passUniqueIdentifier=_passUniqueIdentifier;
 @property(readonly, nonatomic) int cardType; // @synthesize cardType=_cardType;
 - (void).cxx_destruct;
+- (id)description;
 - (void)enumerateCriteriaWithHandler:(CDUnknownBlockType)arg1;
 - (id)criteriaForPaymentApplicationIdentifier:(id)arg1;
 - (id)paymentApplicationIdentifiers;

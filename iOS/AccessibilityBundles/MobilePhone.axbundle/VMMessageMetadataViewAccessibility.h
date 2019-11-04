@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (_Bool)_axIsVoiceMailUnread;
 - (id)accessibilityLabel;
+- (long long)_accessibilityExpandedStatus;
 - (_Bool)isAccessibilityElement;
 
 @end

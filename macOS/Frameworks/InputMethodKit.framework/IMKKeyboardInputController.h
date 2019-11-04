@@ -32,6 +32,7 @@
 - (void)activateServer:(id)arg1;
 - (void)setupCandidateEngineForSender:(id)arg1;
 - (void)setupDocumentForSender:(id)arg1;
+- (void)setRemotePropertyAccess:(BOOL)arg1;
 - (void)setupForSender:(id)arg1 onlyForNewSenders:(BOOL)arg2;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDMerchantBrandLookupResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_62a50c50 _childBrandMuids;
     CDStruct_62a50c50 _variantBrandMuids;
@@ -22,6 +21,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _muid;
     unsigned long long _relatedGlobalBrandMuid;
     NSString *_scope;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _isPrimaryVariant;
     struct {
         unsigned int has_muid:1;
@@ -91,6 +93,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasMuid;
 @property(nonatomic) unsigned long long muid;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -21,6 +21,7 @@
 - (void)deviceMetadataWithFields:(unsigned int)arg1 completion:(void (^)(PKPaymentDeviceMetadata *))arg2;
 - (void)featureApplicationsForProvisioningWithCompletion:(void (^)(NSArray *))arg1;
 - (void)updatedAccountsForProvisioningWithCompletion:(void (^)(NSArray *, NSArray *))arg1;
+- (void)supportedFeatureIdentifiersForAccountProvisioningWithCompletion:(void (^)(NSSet *))arg1;
 - (void)supportedFeatureIdentifiersWithCompletion:(void (^)(NSSet *))arg1;
 - (void)supportsAccountsWithCompletion:(void (^)(_Bool))arg1;
 - (void)updateAccountWithIdentifier:(NSString *)arg1 completion:(void (^)(PKAccount *, NSError *))arg2;
@@ -30,6 +31,7 @@
 - (void)notePasscodeUpgradeFlowDidEnd;
 - (void)notePasscodeUpgradeFlowWillBeginWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(NSString *)arg1;
+- (void)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)appleAccountInformationWithCompletion:(void (^)(PKAppleAccountInformation *))arg1;
 - (void)renewAppleAccountWithCompletionHandler:(void (^)(int, PKAppleAccountInformation *))arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(void (^)(_Bool))arg1;

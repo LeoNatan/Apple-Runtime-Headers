@@ -13,13 +13,13 @@
 @interface GEOClientCapabilities : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _supportedTransitFeatures;
     GEOAbAssignInfo *_abAssignInfo;
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
     NSString *_deviceCountryCode;
+    NSString *_deviceSku;
     NSMutableArray *_displayLanguages;
     NSString *_displayRegion;
     GEOFormattedStringClientCapabilities *_formattedStringClientCapabilities;
@@ -27,6 +27,9 @@
     GEOLocalizationCapabilities *_localizationCapabilities;
     GEOLocalTime *_requestTime;
     NSString *_userCurrentTimezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxFormatterSupported;
     int _maxManeuverTypeSupported;
     int _maxRouteIncidentSupported;
@@ -70,6 +73,7 @@
         unsigned int read_appMajorVersion:1;
         unsigned int read_appMinorVersion:1;
         unsigned int read_deviceCountryCode:1;
+        unsigned int read_deviceSku:1;
         unsigned int read_displayLanguages:1;
         unsigned int read_displayRegion:1;
         unsigned int read_formattedStringClientCapabilities:1;
@@ -83,6 +87,7 @@
         unsigned int wrote_appMajorVersion:1;
         unsigned int wrote_appMinorVersion:1;
         unsigned int wrote_deviceCountryCode:1;
+        unsigned int wrote_deviceSku:1;
         unsigned int wrote_displayLanguages:1;
         unsigned int wrote_displayRegion:1;
         unsigned int wrote_formattedStringClientCapabilities:1;
@@ -126,6 +131,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *deviceSku;
+@property(readonly, nonatomic) _Bool hasDeviceSku;
+- (void)_readDeviceSku;
 @property(retain, nonatomic) GEOLocalizationCapabilities *localizationCapabilities;
 @property(readonly, nonatomic) _Bool hasLocalizationCapabilities;
 - (void)_readLocalizationCapabilities;
@@ -214,6 +222,8 @@
 @property(readonly, nonatomic) _Bool hasAppMajorVersion;
 - (void)_readAppMajorVersion;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

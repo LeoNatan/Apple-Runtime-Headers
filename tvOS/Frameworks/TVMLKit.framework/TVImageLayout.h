@@ -6,7 +6,7 @@
 
 #import <TVMLKit/TVViewLayout.h>
 
-@class IKColor, IKFourTuple, NSShadow, NSString, UIColor;
+@class IKColor, IKFourTuple, NSShadow, NSString, UIColor, UIImageSymbolConfiguration;
 
 @interface TVImageLayout : TVViewLayout
 {
@@ -22,6 +22,7 @@
     NSShadow *_shadow;
     NSString *_placeholderArtworkName;
     NSString *_cropCode;
+    UIImageSymbolConfiguration *_imageSymbolConfiguration;
     NSString *_imageTreatment;
     IKFourTuple *_ikBorderRadius;
     NSString *_inlineTitle;
@@ -36,6 +37,7 @@
 @property(copy, nonatomic) NSString *inlineTitle; // @synthesize inlineTitle=_inlineTitle;
 @property(retain, nonatomic) IKFourTuple *ikBorderRadius; // @synthesize ikBorderRadius=_ikBorderRadius;
 @property(copy, nonatomic) NSString *imageTreatment; // @synthesize imageTreatment=_imageTreatment;
+@property(retain, nonatomic) UIImageSymbolConfiguration *imageSymbolConfiguration; // @synthesize imageSymbolConfiguration=_imageSymbolConfiguration;
 @property(copy, nonatomic) NSString *cropCode; // @synthesize cropCode=_cropCode;
 @property(copy, nonatomic) NSString *placeholderArtworkName; // @synthesize placeholderArtworkName=_placeholderArtworkName;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;

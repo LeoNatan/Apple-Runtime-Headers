@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <EmailDaemon/EDMessageRepositoryQueryHandler-Protocol.h>
 #import <EmailDaemon/EFCancelable-Protocol.h>
 
 @class EDMessagePersistence, EDPersistenceHookRegistry, EFQuery, EMObjectID, NSMapTable, NSSet, NSString;
 @protocol EMMessageListItemQueryResultsObserver;
 
-@interface EDMessageRepositoryQueryHandler : NSObject <EFCancelable>
+@interface EDMessageRepositoryQueryHandler : NSObject <EFCancelable, EDMessageRepositoryQueryHandler>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _didStart
     NSSet *_mailboxes;
@@ -34,10 +35,12 @@
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, copy, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+- (id)_distinctObjectIDs:(id)arg1 queryHandlerLog:(id)arg2;
 - (void)requestSummaryForMessageObjectID:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *mailboxes; // @synthesize mailboxes=_mailboxes;
 - (void)cancel;
 - (void)start;
+- (void)tearDown;
 - (void)dealloc;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
 

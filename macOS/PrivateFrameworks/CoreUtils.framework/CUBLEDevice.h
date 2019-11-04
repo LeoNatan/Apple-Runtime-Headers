@@ -34,12 +34,16 @@
     NSData *_nearbyAuthTag;
     NSData *_objectDiscoveryNearOwnerID;
     NSData *_objectDiscoveryPublicKeyData;
+    NSString *_objectSetupFontCode;
+    NSString *_objectSetupMessage;
 }
 
 @property(readonly, nonatomic) unsigned int scanFlags; // @synthesize scanFlags=_scanFlags;
 @property(readonly, nonatomic) int rawRSSI; // @synthesize rawRSSI=_rawRSSI;
 @property(readonly, nonatomic) int proximityPairingSubType; // @synthesize proximityPairingSubType=_proximityPairingSubType;
 @property(readonly, nonatomic) unsigned short proximityPairingProductID; // @synthesize proximityPairingProductID=_proximityPairingProductID;
+@property(readonly, copy, nonatomic) NSString *objectSetupMessage; // @synthesize objectSetupMessage=_objectSetupMessage;
+@property(readonly, copy, nonatomic) NSString *objectSetupFontCode; // @synthesize objectSetupFontCode=_objectSetupFontCode;
 @property(readonly, nonatomic) unsigned int objectSetupFlags; // @synthesize objectSetupFlags=_objectSetupFlags;
 @property(readonly, nonatomic) unsigned char objectSetupColorCode; // @synthesize objectSetupColorCode=_objectSetupColorCode;
 @property(readonly, nonatomic) unsigned char objectSetupBatteryState; // @synthesize objectSetupBatteryState=_objectSetupBatteryState;

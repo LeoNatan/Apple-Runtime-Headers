@@ -18,8 +18,10 @@
     _Bool _primaryCaptureRectModificationEnabled;
     double _primaryCaptureRectAspectRatio;
     struct CGPoint _primaryCaptureRectCenter;
+    long long _primaryCaptureRectUniqueID;
 }
 
+@property(nonatomic) long long primaryCaptureRectUniqueID; // @synthesize primaryCaptureRectUniqueID=_primaryCaptureRectUniqueID;
 @property(nonatomic) struct CGPoint primaryCaptureRectCenter; // @synthesize primaryCaptureRectCenter=_primaryCaptureRectCenter;
 @property(nonatomic) double primaryCaptureRectAspectRatio; // @synthesize primaryCaptureRectAspectRatio=_primaryCaptureRectAspectRatio;
 @property(nonatomic) _Bool primaryCaptureRectModificationEnabled; // @synthesize primaryCaptureRectModificationEnabled=_primaryCaptureRectModificationEnabled;

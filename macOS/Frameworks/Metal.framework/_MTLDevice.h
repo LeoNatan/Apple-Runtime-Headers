@@ -90,6 +90,9 @@
 - (void)_decrementCommandQueueCount;
 - (void)_incrementCommandQueueCount;
 @property(readonly) unsigned long long maxArgumentBufferSamplerCount;
+- (unsigned long long)requiredLinearTextureBytesPerRowForDescriptor:(id)arg1;
+- (unsigned long long)minLinearTexturePitchAlignmentForDescriptor:(id)arg1 mustMatchExactly:(unsigned long long *)arg2;
+- (unsigned long long)minLinearTextureBaseAddressAlignmentForDescriptor:(id)arg1;
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;

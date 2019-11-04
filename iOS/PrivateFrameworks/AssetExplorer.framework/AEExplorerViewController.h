@@ -21,7 +21,7 @@
 #import <AssetExplorer/UINavigationControllerDelegate-Protocol.h>
 #import <AssetExplorer/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class AECameraAssetPackageGenerator, AEPackageTransport, AEProgressViewModel, CAMCameraReviewAdapter, NSArray, NSIndexSet, NSMutableIndexSet, NSMutableSet, NSString, PUAssetExplorerReviewScreenViewController, PXAssetsScene, PXBasicUIViewTileAnimator, PXMediaProvider, PXPhotoKitAssetsDataSourceManager, PXTilingController, PXUIScrollViewController, UIPopoverPresentationController, UIView;
+@class AECameraAssetPackageGenerator, AEPackageTransport, AEProgressViewModel, CAMCameraReviewAdapter, NSArray, NSIndexSet, NSMutableSet, NSString, PUAssetExplorerReviewScreenViewController, PXAssetsScene, PXBasicUIViewTileAnimator, PXMediaProvider, PXPhotoKitAssetsDataSourceManager, PXTilingController, PXUIScrollViewController, UIPopoverPresentationController, UIView;
 @protocol AEExplorerViewControllerDelegate, AEHostStatisticsManager;
 
 @interface AEExplorerViewController : UIViewController <PXChangeObserver, PXTileSource, PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PUAssetExplorerReviewScreenViewControllerDelegate, UIPopoverPresentationControllerDelegate, AEBrowserLayoutDelegate, PXPhotoLibraryPresenting>
@@ -34,9 +34,6 @@
     PXMediaProvider *__mediaProvider;
     id <AEHostStatisticsManager> __statisticsManager;
     NSArray *__clientGestureRecognizers;
-    NSIndexSet *__requiringDownloadAssetIndexes;
-    NSIndexSet *__pendingCloudAssetIndexes;
-    NSMutableIndexSet *__recentlyDownloadedAssetIndexes;
     NSIndexSet *__missingThumbnailAssetIndexes;
     NSIndexSet *__pendingMissingThumbnailAssetIndexes;
     PXBasicUIViewTileAnimator *__tileAnimator;
@@ -69,9 +66,6 @@
 @property(readonly, nonatomic) PXBasicUIViewTileAnimator *_tileAnimator; // @synthesize _tileAnimator=__tileAnimator;
 @property(retain, nonatomic, setter=_setPendingMissingThumbnailAssetIndexes:) NSIndexSet *_pendingMissingThumbnailAssetIndexes; // @synthesize _pendingMissingThumbnailAssetIndexes=__pendingMissingThumbnailAssetIndexes;
 @property(retain, nonatomic, setter=_setMissingThumbnailAssetIndexes:) NSIndexSet *_missingThumbnailAssetIndexes; // @synthesize _missingThumbnailAssetIndexes=__missingThumbnailAssetIndexes;
-@property(readonly, nonatomic) NSMutableIndexSet *_recentlyDownloadedAssetIndexes; // @synthesize _recentlyDownloadedAssetIndexes=__recentlyDownloadedAssetIndexes;
-@property(retain, nonatomic, setter=_setPendingCloudAssetIndexes:) NSIndexSet *_pendingCloudAssetIndexes; // @synthesize _pendingCloudAssetIndexes=__pendingCloudAssetIndexes;
-@property(retain, nonatomic, setter=_setRequiringDownloadAssetIndexes:) NSIndexSet *_requiringDownloadAssetIndexes; // @synthesize _requiringDownloadAssetIndexes=__requiringDownloadAssetIndexes;
 @property(readonly) NSArray *_clientGestureRecognizers; // @synthesize _clientGestureRecognizers=__clientGestureRecognizers;
 @property(readonly, nonatomic) id <AEHostStatisticsManager> _statisticsManager; // @synthesize _statisticsManager=__statisticsManager;
 @property(readonly, nonatomic) PXMediaProvider *_mediaProvider; // @synthesize _mediaProvider=__mediaProvider;
@@ -89,9 +83,8 @@
 - (_Bool)layout:(id)arg1 shouldShowVideoDecorationAtIndexPath:(struct PXSimpleIndexPath)arg2;
 - (void)_computeInitialResourcesIndexSetAsync;
 - (void)_addThumbnailIndexes:(id)arg1;
-- (void)_addCloudIndexes:(id)arg1;
 - (id)_thumbnailResourcesIndexSetForAssets:(id)arg1;
-- (id)_cloudResourcesIndexSetForAssets:(id)arg1;
+- (_Bool)_isDownloadRequiredForAsset:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)assetsScene:(id)arg1 didTransitionToDataSource:(id)arg2;
 - (void)assetsScene:(id)arg1 willTransitionToDataSource:(id)arg2;

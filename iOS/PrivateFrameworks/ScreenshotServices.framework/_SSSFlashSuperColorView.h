@@ -12,6 +12,8 @@
 }
 
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
+- (void)_updateBackgroundColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

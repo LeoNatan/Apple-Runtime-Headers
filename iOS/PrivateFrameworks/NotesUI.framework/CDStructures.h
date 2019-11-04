@@ -39,6 +39,10 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
+struct ICBaseTextView {
+    Class _field1;
+};
+
 struct ICDeviceHardwareInfo {
     unsigned long long modelName;
     long long version;
@@ -197,6 +201,10 @@ struct ICDrawingVelocityCalculationFilter {
 };
 
 struct ICSmoothingPoint;
+
+struct ICTextView {
+    Class _field1;
+};
 
 struct NSCache {
     Class _field1;

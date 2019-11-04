@@ -23,8 +23,8 @@
 - (long long)_openStrategyForAppLink:(id)arg1;
 - (id)_synchronouslyFetchAppLinkWithError:(id *)arg1;
 - (void)_getAppLinkWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)disableWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)disable;
-- (void)openInSafari;
 - (void)openExternally;
 - (void)openExternallyWithWebBrowserState:(id)arg1 referrerURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getAppLinkLabel:(id *)arg1 name:(id *)arg2 icon:(id *)arg3;

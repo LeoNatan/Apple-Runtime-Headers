@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     NSSegmentedControl *_attributeValueAddRemoveSegmented;
     NSPopUpButton *_attributeValueTypePopUp;
     NSSegmentedControl *_attributeValueTypeSegmented;
-    NSTextView *_attributeDataHintMessageTextView;
+    NSTextField *_attributeDataHintMessageTextField;
     NSPanel *_newAttributeSheet;
     NSPopUpButton *_newAttributeSheetAttrPopup;
     NSTextField *_newAttributeSheetNativeTextField;

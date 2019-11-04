@@ -19,6 +19,7 @@
 + (void)initializeJSContext:(id)arg1;
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 - (id)description;
+- (id)applyScale:(double)arg1;
 - (id)max:(double)arg1:(double)arg2;
 - (id)min:(double)arg1:(double)arg2;
 - (id)integral;

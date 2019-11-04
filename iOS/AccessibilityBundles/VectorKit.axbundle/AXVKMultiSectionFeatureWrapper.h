@@ -15,10 +15,10 @@
 @property(nonatomic) double creationTime; // @synthesize creationTime=_creationTime;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)featureName;
 @property(nonatomic) CDStruct_123780e2 *feature;
+- (void)dealloc;
 - (id)initWithFeature:(CDStruct_123780e2 *)arg1;
 
 @end

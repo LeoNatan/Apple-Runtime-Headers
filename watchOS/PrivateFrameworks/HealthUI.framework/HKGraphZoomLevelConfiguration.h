@@ -25,9 +25,9 @@
 }
 
 + (id)_axisSpanDateComponentsWithTimeScope:(int)arg1;
-+ (id)_snappingStartDateWithStartDate:(id)arg1 velocity:(struct CGPoint)arg2 calendar:(id)arg3 timeScope:(int)arg4;
++ (id)_snappingStartDateWithStartDate:(id)arg1 velocity:(struct CGPoint)arg2 calendar:(id)arg3 timeScope:(int)arg4 options:(int)arg5;
 + (id)activeRangeFromCadenceRange:(id)arg1 timeScope:(int)arg2 axisRange:(id)arg3 calendar:(id)arg4;
-+ (id)snappingRangeForRange:(id)arg1 axisRange:(id)arg2 timeScope:(int)arg3 velocity:(struct CGPoint)arg4 calendar:(id)arg5;
++ (id)snappingRangeForRange:(id)arg1 axisRange:(id)arg2 timeScope:(int)arg3 velocity:(struct CGPoint)arg4 calendar:(id)arg5 options:(int)arg6;
 + (id)chartVisibleRangeForTimeScope:(int)arg1 anchorDate:(id)arg2 alignment:(int)arg3 dataRange:(id)arg4 calendar:(id)arg5 firstWeekday:(int)arg6 cadence:(int)arg7;
 + (id)_fitRange:(id)arg1 toDateRange:(id)arg2 timeScope:(int)arg3 alignment:(int)arg4 calendar:(id)arg5 firstWeekday:(int)arg6 cadence:(int)arg7;
 + (id)_startDateForTimeScope:(int)arg1 forDate:(id)arg2 alignment:(int)arg3;

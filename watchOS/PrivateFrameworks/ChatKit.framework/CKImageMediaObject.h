@@ -6,7 +6,7 @@
 
 #import <ChatKit/CKMediaObject.h>
 
-@class CKImageData, NSString, NSURL, UIImage;
+@class CKImageData, NSString, NSURL, PHLivePhoto, UIImage;
 
 @interface CKImageMediaObject : CKMediaObject
 {
@@ -16,6 +16,7 @@
     struct CGSize _originalSize;
     NSString *_irisVideoPath;
     _Bool _isSticker;
+    PHLivePhoto *_livePhoto;
     UIImage *_thumbnail;
 }
 
@@ -27,13 +28,13 @@
 @property(readonly, nonatomic) _Bool isSticker; // @synthesize isSticker=_isSticker;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 - (struct CGSize)originalSize;
 @property(readonly, nonatomic) CKImageData *imageData;
 - (id)previewItemTitle;
 - (id)previewItemURL;
 - (_Bool)canShareItem;
 - (id)pasteboardItem;
-- (id)_getIrisBundleURL;
 - (id)_getIrisBundleLocation;
 - (id)calculateIrisVideoPath;
 - (id)getIrisVideoPath;

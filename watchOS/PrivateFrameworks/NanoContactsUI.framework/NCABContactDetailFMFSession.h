@@ -25,6 +25,7 @@
     CLLocation *_location;
 }
 
++ (id)locationDot;
 + (id)sharedInstance;
 + (void)initialize;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
@@ -38,6 +39,7 @@
 - (void)_setShouldTrackContact:(_Bool)arg1 withIdentifier:(id)arg2;
 - (void)_updateFollowedHandles:(id)arg1;
 - (void)_fetchFollowedHandles;
+- (_Bool)_processHasRequiredEntitlements;
 - (_Bool)_shouldCreateFMFSession;
 - (void)didStopAbilityToGetLocationForHandle:(id)arg1;
 - (void)didStartAbilityToGetLocationForHandle:(id)arg1;

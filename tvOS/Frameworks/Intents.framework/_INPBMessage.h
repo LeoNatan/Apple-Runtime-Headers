@@ -36,6 +36,7 @@
     NSArray *_recipients;
     _INPBMessage *_referencedMessage;
     _INPBContact *_sender;
+    NSString *_serviceName;
     _INPBDataString *_speakableGroupName;
 }
 
@@ -44,6 +45,7 @@
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
+@property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) _INPBContact *sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) _INPBMessage *referencedMessage; // @synthesize referencedMessage=_referencedMessage;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
@@ -73,6 +75,7 @@
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
 @property(readonly, nonatomic) _Bool hasSpeakableGroupName;
+@property(readonly, nonatomic) _Bool hasServiceName;
 @property(readonly, nonatomic) _Bool hasSender;
 @property(readonly, nonatomic) _Bool hasReferencedMessage;
 - (id)recipientAtIndex:(unsigned long long)arg1;

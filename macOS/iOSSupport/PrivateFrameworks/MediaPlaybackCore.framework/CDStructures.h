@@ -108,6 +108,17 @@ typedef struct {
 } CDStruct_198678f7;
 
 typedef struct {
+    long long _field1;
+    long long _field2;
+    long long _field3;
+    long long _field4;
+    long long _field5;
+    long long _field6;
+    long long _field7;
+    long long _field8;
+} CDStruct_4a9aa5a8;
+
+typedef struct {
     long long reverseCount;
     long long forwardCount;
 } CDStruct_339ad95e;

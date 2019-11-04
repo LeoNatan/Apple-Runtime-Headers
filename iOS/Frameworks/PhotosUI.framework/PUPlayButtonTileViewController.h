@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @interface PUPlayButtonTileViewController : PUTileViewController <PUBrowsingViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver, PUAssetViewModelChangeObserver>
 {
     struct {
+        _Bool respondsToShouldShowPauseButton;
         _Bool respondsToDidTapButton;
         _Bool respondsToDelayForButtonAnimation;
     } _delegateFlags;
@@ -42,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_setShouldShowPlayButton:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateButtonAnimated:(_Bool)arg1;
 - (void)_playButtonTapped:(id)arg1;
-- (_Bool)_canPause;
+@property(readonly, nonatomic) _Bool canShowPauseButton;
 - (void)becomeReusable;
 - (void)dealloc;
 - (id)loadView;

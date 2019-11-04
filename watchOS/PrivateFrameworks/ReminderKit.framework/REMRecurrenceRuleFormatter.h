@@ -10,6 +10,7 @@
 {
 }
 
++ (id)localizedEveryStringForFrequency:(int)arg1;
 + (id)localizedDescriptionForRepeatType:(int)arg1;
 + (int)repeatTypeForFrequency:(int)arg1 interval:(int)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9 recurrenceDate:(id)arg10 recurrenceTimeZone:(id)arg11 getRepeatEnd:(out id *)arg12;
 + (int)repeatTypeForRecurrenceRules:(id)arg1 recurrenceDate:(id)arg2 recurrenceTimeZone:(id)arg3 getRepeatEnd:(out id *)arg4;

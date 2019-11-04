@@ -7,90 +7,38 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeAI/HMFLogging-Protocol.h>
+#import <HomeAI/HMICameraVideoFrameSamplerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@class HMICameraVideoFrameSampler, NSArray, NSMutableArray, NSString;
+@protocol HMICameraVideoFrameSelectorDelegate, HMIMotionDetector;
 
-@interface HMICameraVideoFrameSelector : HMFObject <HMFLogging>
+@interface HMICameraVideoFrameSelector : HMFObject <HMICameraVideoFrameSamplerDelegate, HMFLogging>
 {
-    _Bool _enableOpticalFlow;
-    int _maxOpticalFlowCalculations;
-    int _targetSelectionInterval;
-    int _referenceSelectionInterval;
-    float _numberFramesToAdvance;
-    float _nextFrameToSelectForAnalysis;
-    float _actualAnalysisFPS;
-    int _refFrameNumber;
-    int _targetFrameNumber;
-    int _numOpticalFlowCalculations;
-    NSArray *_frames;
-    NSString *_logIdentifier;
-    double _analysisFPS;
+    id <HMICameraVideoFrameSelectorDelegate> _delegate;
+    HMICameraVideoFrameSampler *_sampler;
     NSMutableArray *_framesInternal;
-    unsigned long long _totalNumberOfFramesInFragment;
-    unsigned long long _currentFrameNumber;
-    unsigned long long _numberFramesToSelect;
-    NSMutableDictionary *_minRows;
-    NSMutableDictionary *_maxRows;
-    NSMutableDictionary *_minCols;
-    NSMutableDictionary *_maxCols;
-    float *_flowArray;
-    NSMutableArray *_quantizedFrames;
-    NSMutableArray *_connectedComponentsMap;
-    NSMutableArray *_framesScore;
-    unsigned long long _frameWidth;
-    unsigned long long _frameHeight;
-    struct __CVBuffer *_opticalFlowReferenceImage;
+    long long _maxFrameCount;
+    NSMutableArray *_predictedFrames;
+    id <HMIMotionDetector> _detector;
+    CDStruct_1b6d18a9 _sampleRate;
 }
 
 + (id)logCategory;
-@property int numOpticalFlowCalculations; // @synthesize numOpticalFlowCalculations=_numOpticalFlowCalculations;
-@property int targetFrameNumber; // @synthesize targetFrameNumber=_targetFrameNumber;
-@property int refFrameNumber; // @synthesize refFrameNumber=_refFrameNumber;
-@property struct __CVBuffer *opticalFlowReferenceImage; // @synthesize opticalFlowReferenceImage=_opticalFlowReferenceImage;
-@property float actualAnalysisFPS; // @synthesize actualAnalysisFPS=_actualAnalysisFPS;
-@property unsigned long long frameHeight; // @synthesize frameHeight=_frameHeight;
-@property unsigned long long frameWidth; // @synthesize frameWidth=_frameWidth;
-@property(retain) NSMutableArray *framesScore; // @synthesize framesScore=_framesScore;
-@property(retain) NSMutableArray *connectedComponentsMap; // @synthesize connectedComponentsMap=_connectedComponentsMap;
-@property(retain) NSMutableArray *quantizedFrames; // @synthesize quantizedFrames=_quantizedFrames;
-@property float *flowArray; // @synthesize flowArray=_flowArray;
-@property(retain) NSMutableDictionary *maxCols; // @synthesize maxCols=_maxCols;
-@property(retain) NSMutableDictionary *minCols; // @synthesize minCols=_minCols;
-@property(retain) NSMutableDictionary *maxRows; // @synthesize maxRows=_maxRows;
-@property(retain) NSMutableDictionary *minRows; // @synthesize minRows=_minRows;
-@property _Bool enableOpticalFlow; // @synthesize enableOpticalFlow=_enableOpticalFlow;
-@property unsigned long long numberFramesToSelect; // @synthesize numberFramesToSelect=_numberFramesToSelect;
-@property unsigned long long currentFrameNumber; // @synthesize currentFrameNumber=_currentFrameNumber;
-@property float nextFrameToSelectForAnalysis; // @synthesize nextFrameToSelectForAnalysis=_nextFrameToSelectForAnalysis;
-@property float numberFramesToAdvance; // @synthesize numberFramesToAdvance=_numberFramesToAdvance;
-@property unsigned long long totalNumberOfFramesInFragment; // @synthesize totalNumberOfFramesInFragment=_totalNumberOfFramesInFragment;
-@property(retain) NSMutableArray *framesInternal; // @synthesize framesInternal=_framesInternal;
-@property int referenceSelectionInterval; // @synthesize referenceSelectionInterval=_referenceSelectionInterval;
-@property int targetSelectionInterval; // @synthesize targetSelectionInterval=_targetSelectionInterval;
-@property int maxOpticalFlowCalculations; // @synthesize maxOpticalFlowCalculations=_maxOpticalFlowCalculations;
-@property(readonly) double analysisFPS; // @synthesize analysisFPS=_analysisFPS;
-@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
+@property(readonly) id <HMIMotionDetector> detector; // @synthesize detector=_detector;
+@property(readonly) NSMutableArray *predictedFrames; // @synthesize predictedFrames=_predictedFrames;
+@property(readonly) long long maxFrameCount; // @synthesize maxFrameCount=_maxFrameCount;
+@property(readonly) NSMutableArray *framesInternal; // @synthesize framesInternal=_framesInternal;
+@property(readonly) CDStruct_1b6d18a9 sampleRate; // @synthesize sampleRate=_sampleRate;
+@property(readonly) HMICameraVideoFrameSampler *sampler; // @synthesize sampler=_sampler;
+@property __weak id <HMICameraVideoFrameSelectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (float)calculateReferenceFrameSelectionFactor;
-- (int)calculateOpticalFlowInterval:(float)arg1;
-- (long long)getScaledFrameHeight;
-- (long long)getScaledFrameWidth;
-- (float)getScaleFactorHeight;
-- (float)getScaleFactorWidth;
-- (id)connectedComponents;
-- (_Bool)quantizedAndBinarizeFrame:(unsigned long long)arg1 frame_height:(unsigned long long)arg2 error:(id *)arg3;
-- (_Bool)willHandleFrames;
-- (void)unionTheRegoins;
-- (struct CGRect)applyPaddingIndex:(id)arg1;
-- (float)computeFlowMagnitudeMatrixFromOriginal:(struct __CVBuffer *)arg1 error:(id *)arg2;
+- (void)finish;
+- (_Bool)isFinishedEarly;
 - (_Bool)handleVideoFrame:(id)arg1 error:(id *)arg2;
-- (void)startHandlingFramesFromVideoResource:(id)arg1 fragmentSequenceNumber:(unsigned long long)arg2 frameWidth:(unsigned long long)arg3 frameHeight:(unsigned long long)arg4;
-- (_Bool)getOpticalFlowBackgroundProcessingPreference;
-- (_Bool)getOpticalFlowLowPriorityPreference;
-- (_Bool)getEnableOpticalFlowPreference;
-- (id)initWithAnalysisFPS:(double)arg1 logIdentifier:(id)arg2;
-- (void)dealloc;
-@property(readonly) NSArray *frames; // @synthesize frames=_frames;
+- (void)sampler:(id)arg1 didDiscardFrame:(id)arg2;
+- (void)sampler:(id)arg1 didFindSample:(id)arg2 target:(id)arg3;
+@property(readonly) NSArray *frames;
+- (id)initWithResourceAttributes:(id)arg1 sampleRate:(CDStruct_1b6d18a9)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

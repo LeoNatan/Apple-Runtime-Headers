@@ -8,7 +8,7 @@
 
 #import <Photos/NSCopying-Protocol.h>
 
-@class NSArray, NSMutableSet, NSNumber, NSPredicate, NSSet, NSString, PHPhotoLibrary;
+@class NSArray, NSMutableSet, NSNumber, NSPredicate, NSSet, NSString, PHPhotoLibrary, PHQueryChangeDetectionCriteria;
 
 @interface PHFetchOptions : NSObject <NSCopying>
 {
@@ -53,6 +53,7 @@
     NSPredicate *_predicate;
     NSArray *_sortDescriptors;
     NSArray *_customObjectIDSortOrder;
+    PHQueryChangeDetectionCriteria *_changeDetectionCriteria;
     NSString *_transientIdentifier;
     NSPredicate *_internalPredicate;
     NSArray *_internalSortDescriptors;
@@ -72,6 +73,7 @@
 @property(retain, nonatomic) NSArray *internalSortDescriptors; // @synthesize internalSortDescriptors=_internalSortDescriptors;
 @property(retain, nonatomic) NSPredicate *internalPredicate; // @synthesize internalPredicate=_internalPredicate;
 @property(retain, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
+@property(copy) PHQueryChangeDetectionCriteria *changeDetectionCriteria; // @synthesize changeDetectionCriteria=_changeDetectionCriteria;
 @property(retain, nonatomic) NSArray *customObjectIDSortOrder; // @synthesize customObjectIDSortOrder=_customObjectIDSortOrder;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;

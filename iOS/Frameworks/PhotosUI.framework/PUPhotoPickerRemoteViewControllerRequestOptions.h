@@ -24,7 +24,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long sourceType;
 @property(readonly, nonatomic) long long modalPresentationStyle;
-@property(readonly, nonatomic) struct CGSize preferredViewSize;
 @property(readonly, nonatomic) _Bool convertAutoloopsToGIF;
 @property(readonly, nonatomic) _Bool showsPrompt;
 @property(readonly, nonatomic) _Bool showsFileSizePicker;

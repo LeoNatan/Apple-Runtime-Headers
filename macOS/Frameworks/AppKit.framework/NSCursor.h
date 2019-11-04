@@ -98,8 +98,8 @@
 - (void)set;
 - (void)_reallySet;
 - (id)_cgImageRefs;
-@property(readonly, getter=isSetOnMouseEntered) BOOL setOnMouseEntered;
-@property(readonly, getter=isSetOnMouseExited) BOOL setOnMouseExited;
+- (BOOL)isSetOnMouseEntered;
+- (BOOL)isSetOnMouseExited;
 - (void)setOnMouseEntered:(BOOL)arg1;
 - (void)setOnMouseExited:(BOOL)arg1;
 @property(readonly) struct CGPoint hotSpot;

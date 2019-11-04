@@ -14,9 +14,11 @@
 {
     long long _status;
     NSArray *_paymentSummaryItems;
+    NSArray *_contentItems;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
 @property(copy, nonatomic) NSArray *paymentSummaryItems; // @synthesize paymentSummaryItems=_paymentSummaryItems;
 @property(nonatomic) long long status; // @synthesize status=_status;
 - (void).cxx_destruct;

@@ -17,6 +17,7 @@
     _Bool _showLevelIndicator;
     _Bool _showResetToolButton;
     _Bool _allowAnyPlugin;
+    _Bool _attemptEditExtensionUndoAutoSetup;
     _Bool _cropMaskBlurred;
     _Bool _autoCropEnabled;
     _Bool _perspectiveViewDebugCropEnabled;
@@ -105,6 +106,7 @@
 @property(nonatomic) _Bool cropMaskBlurred; // @synthesize cropMaskBlurred=_cropMaskBlurred;
 @property(nonatomic) double cropWheelSize; // @synthesize cropWheelSize=_cropWheelSize;
 @property(nonatomic) double cropSideMargins; // @synthesize cropSideMargins=_cropSideMargins;
+@property(nonatomic) _Bool attemptEditExtensionUndoAutoSetup; // @synthesize attemptEditExtensionUndoAutoSetup=_attemptEditExtensionUndoAutoSetup;
 @property(nonatomic) _Bool allowAnyPlugin; // @synthesize allowAnyPlugin=_allowAnyPlugin;
 @property(nonatomic) _Bool showResetToolButton; // @synthesize showResetToolButton=_showResetToolButton;
 @property(nonatomic) _Bool showLevelIndicator; // @synthesize showLevelIndicator=_showLevelIndicator;

@@ -6,22 +6,26 @@
 
 #import <objc/NSObject.h>
 
+#import <WorkflowKit/NSMutableCopying-Protocol.h>
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 #import <WorkflowKit/WFLoggableObject-Protocol.h>
+#import <WorkflowKit/WFSortableGalleryObject-Protocol.h>
 
 @class CKRecordID, NSDate, NSDictionary, NSNumber, NSString, WFFileRepresentation, WFWorkflowIcon, WFWorkflowRecord;
 
-@interface WFGalleryWorkflow : NSObject <WFCloudKitItem, WFLoggableObject>
+@interface WFGalleryWorkflow : NSObject <WFCloudKitItem, WFLoggableObject, WFSortableGalleryObject, NSMutableCopying>
 {
     WFWorkflowRecord *_workflowRecord;
     CKRecordID *_identifier;
     NSString *_name;
     NSString *_shortDescription;
     NSString *_longDescription;
-    NSDate *_createdAt;
     NSNumber *_searchable;
+    NSDate *_createdAt;
+    NSDate *_modifiedAt;
     NSString *_language;
     CKRecordID *_base;
+    NSString *_persistentIdentifier;
     WFFileRepresentation *_shortcutFile;
     WFFileRepresentation *_iconFile;
     NSNumber *_iconColor;
@@ -32,12 +36,14 @@
 + (id)recordType;
 @property(retain, nonatomic) NSNumber *iconGlyph; // @synthesize iconGlyph=_iconGlyph;
 @property(retain, nonatomic) NSNumber *iconColor; // @synthesize iconColor=_iconColor;
-@property(retain, nonatomic) WFFileRepresentation *iconFile; // @synthesize iconFile=_iconFile;
-@property(retain, nonatomic) WFFileRepresentation *shortcutFile; // @synthesize shortcutFile=_shortcutFile;
+@property(readonly, nonatomic) WFFileRepresentation *iconFile; // @synthesize iconFile=_iconFile;
+@property(readonly, nonatomic) WFFileRepresentation *shortcutFile; // @synthesize shortcutFile=_shortcutFile;
+@property(readonly, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(readonly, nonatomic) CKRecordID *base; // @synthesize base=_base;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
-@property(readonly, nonatomic) NSNumber *searchable; // @synthesize searchable=_searchable;
+@property(readonly, nonatomic) NSDate *modifiedAt; // @synthesize modifiedAt=_modifiedAt;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
+@property(readonly, nonatomic) NSNumber *searchable; // @synthesize searchable=_searchable;
 @property(readonly, nonatomic) NSString *longDescription; // @synthesize longDescription=_longDescription;
 @property(readonly, nonatomic) NSString *shortDescription; // @synthesize shortDescription=_shortDescription;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;

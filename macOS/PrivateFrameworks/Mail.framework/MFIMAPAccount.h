@@ -8,7 +8,7 @@
 
 #import <Mail/IMAPAccount-Protocol.h>
 
-@class ACAccount, ECAuthScheme, ECIMAPAccount, IMAPTaskManager, MFLibraryIMAPStore, MFMailbox, NSArray, NSDictionary, NSError, NSLock, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
+@class ACAccount, ECAuthScheme, ECIMAPAccount, IMAPTaskManager, MFLibraryIMAPStore, MFMailbox, NSArray, NSDate, NSDictionary, NSError, NSLock, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
 
 @interface MFIMAPAccount : MFRemoteStoreAccount <IMAPAccount>
 {
@@ -231,6 +231,7 @@
 @property(readonly, copy) NSString *description;
 @property(copy) NSString *displayName;
 @property(readonly, copy) NSArray *emailAddressStrings;
+@property(readonly, copy, nonatomic) NSDate *expiryDate;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *hostname;
@@ -244,6 +245,7 @@
 @property(readonly, copy) NSString *password;
 @property long long portNumber;
 @property(retain) ECAuthScheme *preferredAuthScheme;
+@property(readonly) BOOL primaryiCloudAccount;
 @property long long securityLayerType;
 @property(readonly) BOOL shouldMoveDeletedMessagesToTrash;
 @property BOOL shouldUseAuthentication;

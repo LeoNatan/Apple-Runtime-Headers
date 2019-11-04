@@ -198,6 +198,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateControlInclusion;
 - (void)updateControlsInclusion;
 - (void)_updateSkipButtonsEnableLongPress;
+- (_Bool)_wantsRouteDetectionEnabled;
 - (void)_startObservingPotentiallyUnimplementedPlayerControllerProperties;
 - (void)_startObservingForPlaybackViewUpdates;
 - (void)_updatePlaybackControlsVisibleAndObservingUpdates;

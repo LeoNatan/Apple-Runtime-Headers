@@ -49,6 +49,7 @@
 - (void)setVideoPlayerResizeGravity:(long long)arg1;
 - (void)setVideoPlayerInset:(struct UIEdgeInsets)arg1;
 - (void)setVideoPlayerTransform:(struct CGAffineTransform)arg1;
+- (void)_fadeFromPosterImageAndCurtainViewIfVisible;
 - (void)_fadeFromCurtainViewIfVisible;
 - (void)_fadeToCurtainView:(CDUnknownBlockType)arg1;
 - (void)_hideCurtainView;

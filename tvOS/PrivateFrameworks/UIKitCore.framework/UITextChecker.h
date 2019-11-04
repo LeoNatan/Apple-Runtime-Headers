@@ -27,6 +27,8 @@
 + (_Bool)_forgetWord:(id)arg1 inDictionary:(id)arg2;
 + (_Bool)_learnWord:(id)arg1 inDictionary:(id)arg2;
 + (id)dictionaryInfo:(id)arg1;
++ (void)_setDictionaryEntry:(id)arg1 forName:(id)arg2;
++ (id)_dictionaryEntryForName:(id)arg1;
 + (id)openUserDictionary:(id)arg1;
 + (struct __CFSet *)createDictHashTable:(_Bool)arg1;
 + (id)bestLanguageForString:(id)arg1 fromAlternatives:(id)arg2 currentLanguage:(id)arg3;

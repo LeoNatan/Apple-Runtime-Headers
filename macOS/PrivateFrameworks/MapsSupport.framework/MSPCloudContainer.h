@@ -8,12 +8,13 @@
 
 #import <MapsSupport/MSPCloudNotificationReceiver-Protocol.h>
 
-@class CKContainer, MSPCloudContainerCache, MSPCloudKitAccountAccess, MSPContainer, MSPJournal, NSHashTable;
+@class CKContainer, MSPCloudContainerCache, MSPCloudKitAccountAccess, MSPContainer, MSPJournal, NSError, NSHashTable, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface MSPCloudContainer : NSObject <MSPCloudNotificationReceiver>
 {
     BOOL _requiresRemoteFetch;
+    BOOL _canceled;
     BOOL _hasActiveSubscription;
     BOOL _useSecureContainer;
     MSPContainer *_container;
@@ -22,6 +23,8 @@
     NSObject<OS_dispatch_queue> *_observerQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     MSPJournal *_journal;
+    NSMutableDictionary *_pendingOperations;
+    NSError *_cancelError;
     NSHashTable *_observers;
     unsigned long long _operationBatchSize;
 }
@@ -29,6 +32,8 @@
 @property(nonatomic) unsigned long long operationBatchSize; // @synthesize operationBatchSize=_operationBatchSize;
 @property(nonatomic) BOOL useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(copy, nonatomic) NSError *cancelError; // @synthesize cancelError=_cancelError;
+@property(retain, nonatomic) NSMutableDictionary *pendingOperations; // @synthesize pendingOperations=_pendingOperations;
 @property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
 @property(nonatomic) BOOL hasActiveSubscription; // @synthesize hasActiveSubscription=_hasActiveSubscription;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
@@ -36,6 +41,7 @@
 @property(retain, nonatomic) MSPCloudContainerCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) MSPCloudKitAccountAccess *access; // @synthesize access=_access;
 @property(retain, nonatomic) MSPContainer *container; // @synthesize container=_container;
+@property(nonatomic) BOOL canceled; // @synthesize canceled=_canceled;
 - (void).cxx_destruct;
 - (id)zoneSubscriptionName;
 - (BOOL)useZoneWidePCS;
@@ -46,6 +52,7 @@
 - (id)mergeOptionsForEarliestKnownSyncDate:(id)arg1;
 - (Class)replicaRecordClass;
 - (void)containerDidEraseContents;
+- (void)cancelMergeWithError:(id)arg1;
 - (void)mergeLocalChangesFromReplica:(id)arg1 withAppliedRemoteChanges:(id)arg2 group:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)mergeRemoteChanges:(id)arg1 withGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)mergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -58,6 +65,10 @@
 - (void)removeCloudContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupCloudContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didReceiveRemoteNotification:(id)arg1;
+- (BOOL)isCanceled;
+- (void)cancelPendingOperationsWithError:(id)arg1;
+- (void)removePendingOperationWithID:(id)arg1;
+- (void)addCKOperation:(id)arg1;
 - (void)_forEachObserver:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

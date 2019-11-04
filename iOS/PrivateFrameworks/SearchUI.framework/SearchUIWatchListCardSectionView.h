@@ -20,8 +20,6 @@
 @property(retain, nonatomic) TLKSimpleRowView *rowView; // @synthesize rowView=_rowView;
 @property(retain, nonatomic) SearchUIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
-- (void)buttonPressed;
-- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updateText:(id)arg1 image:(id)arg2 buttonState:(long long)arg3;
 - (void)didUpdateRowModel:(id)arg1 animate:(_Bool)arg2;
 - (void)updateWithRowModel:(id)arg1;

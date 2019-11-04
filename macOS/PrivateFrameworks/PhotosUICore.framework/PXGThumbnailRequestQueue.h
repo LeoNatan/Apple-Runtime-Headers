@@ -17,7 +17,7 @@
 @property(nonatomic) long long count; // @synthesize count=_count;
 - (void)removeAllRequests;
 - (void)sortRequests;
-- (void)enqueueRequestsWithSpriteIndexRange:(struct _PXGSpriteIndexRange)arg1 textureRequestIDs:(struct _NSRange)arg2 displayAssetFetchResult:(id)arg3 targetSize:(struct CGSize)arg4;
+- (void)enqueueRequestsWithItemRange:(struct _NSRange)arg1 textureRequestIDs:(struct _NSRange)arg2 displayAssetFetchResult:(id)arg3 targetSize:(struct CGSize)arg4;
 - (id)description;
 - (void)dealloc;
 - (id)init;

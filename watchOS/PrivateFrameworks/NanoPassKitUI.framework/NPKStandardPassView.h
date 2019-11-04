@@ -9,7 +9,7 @@
 #import <NanoPassKitUI/NPKPassAccessoryViewControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NPKPassDetailView, NPKPassHeaderView, NPKUIAssertion, NSString, PKPaymentService, PUICButton, UIImageView, UILabel, UIView;
+@class NPKPassDetailView, NPKPassHeaderView, NPKUIAssertion, NSString, PKPaymentService, PUICButton, UIImage, UIImageView, UILabel, UIView;
 @protocol NPKStandardPassViewDelegate;
 
 @interface NPKStandardPassView : NPKPassView <NPKPassAccessoryViewControllerDelegate, PKPaymentServiceDelegate>
@@ -21,6 +21,7 @@
     id <NPKStandardPassViewDelegate> _standardPassViewDelegate;
     UIImageView *_backgroundView;
     UIImageView *_eventTicketBackgroundView;
+    UIImage *_eventTicketBackgroundBlurredImage;
     UIImageView *_logoImageView;
     UILabel *_logoTextLabel;
     UIView *_logoBackgroundView;
@@ -56,6 +57,7 @@
 @property(retain, nonatomic) UIView *logoBackgroundView; // @synthesize logoBackgroundView=_logoBackgroundView;
 @property(retain, nonatomic) UILabel *logoTextLabel; // @synthesize logoTextLabel=_logoTextLabel;
 @property(retain, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
+@property(retain, nonatomic) UIImage *eventTicketBackgroundBlurredImage; // @synthesize eventTicketBackgroundBlurredImage=_eventTicketBackgroundBlurredImage;
 @property(retain, nonatomic) UIImageView *eventTicketBackgroundView; // @synthesize eventTicketBackgroundView=_eventTicketBackgroundView;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak id <NPKStandardPassViewDelegate> standardPassViewDelegate; // @synthesize standardPassViewDelegate=_standardPassViewDelegate;

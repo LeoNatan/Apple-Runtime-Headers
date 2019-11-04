@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteResultSection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_entries;
     NSString *_name;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _numVisibleResults;
     int _suggestionType;
     int _type;
@@ -83,6 +85,8 @@ __attribute__((visibility("hidden")))
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
 @property(nonatomic) int type;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

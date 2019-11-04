@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary;
 
 @interface HKAccessibilityData : NSObject
 {
-    float _horizontalScreenCoordinate;
-    NSString *_horizontalTimeCoordinate;
-    NSArray *_values;
+    NSArray *_accessibilityPointData;
+    NSDictionary *_accessibilitySpans;
 }
 
-@property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
-@property(copy, nonatomic) NSString *horizontalTimeCoordinate; // @synthesize horizontalTimeCoordinate=_horizontalTimeCoordinate;
-@property(nonatomic) float horizontalScreenCoordinate; // @synthesize horizontalScreenCoordinate=_horizontalScreenCoordinate;
+@property(readonly, nonatomic) NSDictionary *accessibilitySpans; // @synthesize accessibilitySpans=_accessibilitySpans;
+@property(readonly, nonatomic) NSArray *accessibilityPointData; // @synthesize accessibilityPointData=_accessibilityPointData;
 - (void).cxx_destruct;
+- (id)description;
+- (id)initWithPointData:(id)arg1 accessibilitySpans:(id)arg2;
 
 @end
 

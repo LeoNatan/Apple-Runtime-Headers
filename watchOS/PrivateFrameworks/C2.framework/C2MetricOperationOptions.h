@@ -6,19 +6,27 @@
 
 #import <objc/NSObject.h>
 
+#import <C2/NSSecureCoding-Protocol.h>
+
 @class C2MetricOperationGroupOptions, NSString;
 
-@interface C2MetricOperationOptions : NSObject
+@interface C2MetricOperationOptions : NSObject <NSSecureCoding>
 {
     C2MetricOperationGroupOptions *_operationGroup;
     NSString *_operationId;
     NSString *_operationType;
 }
 
-@property(retain, nonatomic) NSString *operationType; // @synthesize operationType=_operationType;
-@property(retain, nonatomic) NSString *operationId; // @synthesize operationId=_operationId;
-@property(retain, nonatomic) C2MetricOperationGroupOptions *operationGroup; // @synthesize operationGroup=_operationGroup;
++ (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *operationType; // @synthesize operationType=_operationType;
+@property(copy, nonatomic) NSString *operationId; // @synthesize operationId=_operationId;
+@property(copy, nonatomic) C2MetricOperationGroupOptions *operationGroup; // @synthesize operationGroup=_operationGroup;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

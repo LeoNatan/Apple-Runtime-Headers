@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPCModelStorePlaybackItemsRequest, MPMutableSectionedCollection, MPSectionedCollection, MPStoreModelGenericObjectBuilder, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class ICUserIdentity, MPCModelStorePlaybackItemsRequest, MPMutableSectionedCollection, MPSectionedCollection, MPStoreModelGenericObjectBuilder, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary;
 
 @interface MPCModelStorePlaybackItemsRequestAccumulator : NSObject
 {
@@ -24,6 +24,7 @@
     NSMutableDictionary *_sectionIndexToDeletedIndexSet;
     NSMutableDictionary *_storeIDToIndexPathReference;
     int _unknownEndpointLibraryPersonalizationStyle;
+    ICUserIdentity *_userIdentity;
     _Bool _allowsExplicitContent;
     _Bool _shouldLibraryPersonalize;
     int _batchSize;
@@ -39,6 +40,7 @@
 @property(nonatomic) int batchSize; // @synthesize batchSize=_batchSize;
 @property(readonly, nonatomic) _Bool allowsExplicitContent; // @synthesize allowsExplicitContent=_allowsExplicitContent;
 - (void).cxx_destruct;
+- (id)_userIdentityWithRequest:(id)arg1;
 - (_Bool)_shouldUsePlaylistEntriesForSectionAtIndex:(int)arg1;
 - (void)_removeItemAtOriginalIndexPath:(id)arg1;
 - (id)_originalIndexPathsForStoreID:(id)arg1;

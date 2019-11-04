@@ -10,7 +10,7 @@
 #import <ChatKit/CKDetailsSearchResultsFooterCellDelegate-Protocol.h>
 #import <ChatKit/QLPreviewControllerDelegate-Protocol.h>
 
-@class CKConversation, CKDetailsSearchResultsFooterCell, CKDetailsSearchResultsTitleHeaderCell, CKQLPreviewController, NSArray, NSString;
+@class CKConversation, CKDetailsSearchResultsFooterCell, CKDetailsSearchResultsTitleHeaderCell, CKQLPreviewController, CKSearchIndexingFooterCell, NSArray, NSString, UIBarButtonItem;
 @protocol CKDetailsSearchControllerDelegate;
 
 @interface CKDetailsSearchViewController : CKSearchViewController <CKContainerSearchControllerDelegate, QLPreviewControllerDelegate, CKDetailsSearchResultsFooterCellDelegate>
@@ -22,9 +22,21 @@
     CKQLPreviewController *_previewController;
     CKDetailsSearchResultsTitleHeaderCell *_titleSizingCell;
     CKDetailsSearchResultsFooterCell *_footerSizingCell;
+    CKSearchIndexingFooterCell *_sizingIndexingFooterCell;
+    UIBarButtonItem *_selectButton;
+    UIBarButtonItem *_cancelButton;
+    UIBarButtonItem *_flexibleItem;
+    UIBarButtonItem *_saveButton;
+    UIBarButtonItem *_deleteButton;
 }
 
+@property(retain, nonatomic) UIBarButtonItem *deleteButton; // @synthesize deleteButton=_deleteButton;
+@property(retain, nonatomic) UIBarButtonItem *saveButton; // @synthesize saveButton=_saveButton;
+@property(retain, nonatomic) UIBarButtonItem *flexibleItem; // @synthesize flexibleItem=_flexibleItem;
+@property(retain, nonatomic) UIBarButtonItem *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(retain, nonatomic) UIBarButtonItem *selectButton; // @synthesize selectButton=_selectButton;
 @property(nonatomic) _Bool searchComplete; // @synthesize searchComplete=_searchComplete;
+@property(retain, nonatomic) CKSearchIndexingFooterCell *sizingIndexingFooterCell; // @synthesize sizingIndexingFooterCell=_sizingIndexingFooterCell;
 @property(retain, nonatomic) CKDetailsSearchResultsFooterCell *footerSizingCell; // @synthesize footerSizingCell=_footerSizingCell;
 @property(retain, nonatomic) CKDetailsSearchResultsTitleHeaderCell *titleSizingCell; // @synthesize titleSizingCell=_titleSizingCell;
 @property(retain, nonatomic) CKQLPreviewController *previewController; // @synthesize previewController=_previewController;
@@ -32,7 +44,17 @@
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKDetailsSearchControllerDelegate> detailsDelegate; // @synthesize detailsDelegate=_detailsDelegate;
 - (void).cxx_destruct;
+- (id)_searchControllerForIndexPath:(id)arg1;
+- (void)_deleteAttachmentsAtIndexPaths:(id)arg1;
+- (void)_deleteSelectedAttachments:(id)arg1;
+- (void)_saveSelectedAttachments:(id)arg1;
+- (void)_cancelEditing:(id)arg1;
+- (void)_selectButtonTapped:(id)arg1;
+- (void)_updateToolbar;
+- (id)_selectedIndexPaths;
+- (void)setEditing:(_Bool)arg1;
 - (id)searchControllerChatGUIDsForDetailsSearch:(id)arg1;
+- (void)searchController:(id)arg1 requestsItemDeletionAtIndexPath:(id)arg2;
 - (void)searchViewController:(id)arg1 requestsPushOfSearchController:(id)arg2;
 - (void)searchControllerDidBeginDragging:(id)arg1;
 - (void)searchController:(id)arg1 didSelectItem:(id)arg2 inChat:(id)arg3;
@@ -43,15 +65,21 @@
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
 - (Class)_searchResultsHeaderClass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)_configureIndexingCell:(id)arg1;
+- (id)globalLayoutConfiguration;
 - (id)footerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)headerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)_newSnapshotForCurrentControllerState;
 - (void)_registerCells;
 - (void)searchControllerContentsDidChange:(id)arg1;
 - (void)searchWithText:(id)arg1;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)reloadData;
 - (void)rekickZKWSearchForAttachmentBatchUpdate;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (id)initWithSearchControllerClasses:(id)arg1;

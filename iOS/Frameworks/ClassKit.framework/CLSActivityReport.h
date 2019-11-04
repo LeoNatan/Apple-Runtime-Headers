@@ -21,9 +21,11 @@
     CLSAggregatedValue *_progress;
     CLSActivityReportItem *_primaryReportItem;
     NSArray *_additionalReportItems;
+    NSString *_contextStableObjectID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *contextStableObjectID; // @synthesize contextStableObjectID=_contextStableObjectID;
 @property(copy, nonatomic) NSArray *additionalReportItems; // @synthesize additionalReportItems=_additionalReportItems;
 @property(copy, nonatomic) CLSActivityReportItem *primaryReportItem; // @synthesize primaryReportItem=_primaryReportItem;
 @property(copy, nonatomic) CLSAggregatedValue *progress; // @synthesize progress=_progress;

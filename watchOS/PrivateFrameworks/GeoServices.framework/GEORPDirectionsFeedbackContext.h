@@ -13,13 +13,15 @@
 @interface GEORPDirectionsFeedbackContext : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_directionsRequests;
     NSMutableArray *_directionsResponses;
     NSMutableArray *_directionsWaypointPlaceInfos;
     GEORPUserSearchInput *_endWaypoint;
     GEORPUserSearchInput *_startWaypoint;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_directionsRequests:1;
@@ -80,6 +82,8 @@
 - (void)clearDirectionsRequests;
 @property(retain, nonatomic) NSMutableArray *directionsRequests;
 - (void)_readDirectionsRequests;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

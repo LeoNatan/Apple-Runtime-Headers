@@ -10,6 +10,8 @@
 {
 }
 
+- (id)parameterSummary;
+- (id)localizedAttribution;
 - (id)localizedDescriptionSummary;
 - (id)localizedName;
 

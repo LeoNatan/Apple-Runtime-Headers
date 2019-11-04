@@ -13,13 +13,15 @@
 @interface GEODrivingWalkingSpokenInstruction : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_continueStage;
     NSMutableArray *_executionStages;
     GEOFormattedString *_initialStage;
     GEOFormattedString *_preparationStage;
     GEOFormattedString *_proceedStage;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _shortChainedInstructionIndex;
     struct {
         unsigned int has_shortChainedInstructionIndex:1;
@@ -75,6 +77,8 @@
 @property(retain, nonatomic) GEOFormattedString *proceedStage;
 @property(readonly, nonatomic) BOOL hasProceedStage;
 - (void)_readProceedStage;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

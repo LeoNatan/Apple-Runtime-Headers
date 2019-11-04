@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDateFormatter, NSDecimalNumber, NSMutableDictionary, PKAccount;
+@class NSArray, NSDateFormatter, NSDecimalNumber, NSMutableArray, NSMutableDictionary, PKAccount, PKAccountServiceAccountResolutionCofiguration;
 
 @interface PKBillPaymentSuggestedAmountController : NSObject
 {
@@ -21,6 +21,10 @@
     BOOL _currentStatementIsLastMonthsStatement;
     BOOL _isMonthZero;
     BOOL _isMonthOne;
+    PKAccountServiceAccountResolutionCofiguration *_configuration;
+    long long _numberOfActiveInstallments;
+    long long _numberOfActiveStatementedInstallments;
+    NSMutableArray *_differentialPrivacyFeatures;
     PKAccount *_account;
     NSArray *_currentStatementSelectedSuggestedAmountEvents;
     NSArray *_previousStatementSelectedSuggestedAmountEvents;
@@ -38,7 +42,7 @@
 + (void)approvedTransactionsPurchasesForPreviousStatementForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)approvedTransactionsBillPaymentForPreviousStatementForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)approvedTransactionsBillPaymentSinceStatementForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)defaultControllerForAccount:(id)arg1 paymentPass:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)defaultControllerForAccount:(id)arg1 paymentPass:(id)arg2 configuration:(id)arg3 completion:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) NSArray *approvedTransactionsBillPaymentForPreviousStatement; // @synthesize approvedTransactionsBillPaymentForPreviousStatement=_approvedTransactionsBillPaymentForPreviousStatement;
 @property(readonly, nonatomic) NSArray *approvedTransactionsPurchasesForPreviousStatement; // @synthesize approvedTransactionsPurchasesForPreviousStatement=_approvedTransactionsPurchasesForPreviousStatement;
 @property(readonly, nonatomic) NSArray *approvedTransactionsBillPaymentSinceStatement; // @synthesize approvedTransactionsBillPaymentSinceStatement=_approvedTransactionsBillPaymentSinceStatement;
@@ -47,6 +51,10 @@
 @property(readonly, nonatomic) NSArray *currentStatementSelectedSuggestedAmountEvents; // @synthesize currentStatementSelectedSuggestedAmountEvents=_currentStatementSelectedSuggestedAmountEvents;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (id)differentialPrivacyFeaturesAsString;
+- (void)recordPaymentActionWithDifferentialPrivacy:(unsigned long long)arg1;
+- (void)_setDifferentialPrivacyFeature:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
+- (void)_initializeDifferentialPrivacy:(id)arg1 accountSummary:(id)arg2;
 - (BOOL)_calculateCurrentStatementIsLastMonthsStatement;
 - (id)_filterSuggestions:(id)arg1 belowThreshold:(id)arg2;
 - (id)_planCompletionTitleString;
@@ -69,7 +77,7 @@
 - (void)_generateAmountSuggestionListUsingTransactionHistoryForList:(id)arg1;
 - (id)generateAmountSuggestionList;
 - (id)_createDefaultAmountSuggestionListFromAccount;
-- (id)initWithAccount:(id)arg1 currentStatementSelectedSuggestedAmountEvents:(id)arg2 previousStatementSelectedSuggestedAmountEvents:(id)arg3 approvedTransactionsPurchasesSinceStatement:(id)arg4 approvedTransactionsPurchasesForPreviousStatement:(id)arg5 approvedTransactionsBillPaymentSinceStatement:(id)arg6 approvedTransactionsBillPaymentForPreviousStatement:(id)arg7;
+- (id)initWithAccount:(id)arg1 currentStatementSelectedSuggestedAmountEvents:(id)arg2 previousStatementSelectedSuggestedAmountEvents:(id)arg3 approvedTransactionsPurchasesSinceStatement:(id)arg4 approvedTransactionsPurchasesForPreviousStatement:(id)arg5 approvedTransactionsBillPaymentSinceStatement:(id)arg6 approvedTransactionsBillPaymentForPreviousStatement:(id)arg7 configuration:(id)arg8;
 
 @end
 

@@ -19,7 +19,7 @@
 - (void)performQuery:(id)arg1 limit:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)verifyExpectations;
 - (void)expectChangeActionWithValidationBlock:(CDUnknownBlockType)arg1;
-- (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3;
+- (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3 blockedSenderManager:(id)arg4;
 
 @end
 

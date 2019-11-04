@@ -29,6 +29,8 @@
 @property(nonatomic) BOOL shouldDelayActivatingSelectionView; // @synthesize shouldDelayActivatingSelectionView=_shouldDelayActivatingSelectionView;
 @property(nonatomic) struct CGRect caretBeforeTap; // @synthesize caretBeforeTap=_caretBeforeTap;
 @property(retain, nonatomic) NSString *wordBeforeTap; // @synthesize wordBeforeTap=_wordBeforeTap;
+- (void)didEndScrollingOverflow;
+- (void)willStartScrollingOverflow;
 - (BOOL)shouldEnqueueObserverUpdates;
 - (void)lookup:(id)arg1 fromRect:(struct CGRect)arg2;
 - (void)lookup:(id)arg1 withRange:(struct _NSRange)arg2 fromRect:(struct CGRect)arg3;

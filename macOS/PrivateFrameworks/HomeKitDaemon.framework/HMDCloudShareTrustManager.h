@@ -56,7 +56,10 @@
 - (void)_startRequestInviteTimer;
 - (id)attributeDescriptions;
 - (id)logIdentifier;
+- (void)_didRemoveZone;
 - (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2;
+- (void)_didCreateZone;
+- (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (BOOL)canUseUntrustedAccountHandlesForParticipantManager:(id)arg1;
 - (void)manager:(id)arg1 didRequestSendForInvitation:(id)arg2 toUser:(id)arg3;
 - (BOOL)manager:(id)arg1 shouldShareWithUser:(id)arg2;

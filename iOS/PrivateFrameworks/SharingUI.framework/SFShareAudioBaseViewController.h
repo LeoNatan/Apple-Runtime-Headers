@@ -14,12 +14,15 @@ __attribute__((visibility("hidden")))
     SFShareAudioViewController *_mainController;
     UILabel *_titleLabel;
     UIView *_cardView;
+    _Bool _viewActive;
 }
 
+@property(nonatomic) _Bool viewActive; // @synthesize viewActive=_viewActive;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) SFShareAudioViewController *mainController; // @synthesize mainController=_mainController;
 - (void).cxx_destruct;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 
 @end

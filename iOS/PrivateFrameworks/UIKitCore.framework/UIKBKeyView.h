@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIKBTree *keyplane; // @synthesize keyplane=m_keyplane;
 - (void)changeBackgroundToActiveIfNecessary;
 - (void)changeBackgroundToEnabled;
+- (void)configureBackdropView:(id)arg1 forRenderConfig:(id)arg2;
 - (id)_generateBackdropMaskImage;
 - (_Bool)_canDrawContent;
 - (void)drawContentsOfRenderers:(id)arg1;

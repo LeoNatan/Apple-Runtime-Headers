@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/NSProgressReporting-Protocol.h>
 
-@class CKShareParticipant, HDCloudSyncOperationConfiguration, HDCloudSyncZone, NSDate, NSMutableArray, NSMutableDictionary, NSProgress, NSSet, NSString, NSUUID;
+@class CKShareParticipant, HDCloudSyncOperationConfiguration, HDCloudSyncZone, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSProgress, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HDCloudSyncFetchOperation : NSObject <NSProgressReporting>
@@ -27,6 +27,7 @@
     CKShareParticipant *_sourceParticipant;
     NSMutableDictionary *_zonesByIdentifier;
     NSMutableArray *_zonesPendingDeletion;
+    NSMutableSet *_zonesRequiringRemoval;
     HDCloudSyncZone *_primaryPushZone;
     NSMutableArray *_pendingFetchDatabaseChangesOperations;
     NSMutableArray *_pendingFetchRecordsOperations;
@@ -63,6 +64,7 @@
 - (void)_verifySequenceForPushStore:(id)arg1 inContainer:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_queue_checkForHeaderValidationCompletion;
 - (void)_queue_validateFetchedZones;
+- (void)_queue_discardRemovedZones;
 - (int)_queue_validatePushZone:(id)arg1 inContainer:(id)arg2 error:(id *)arg3;
 - (void)_queue_verifySequenceForPushZone:(id)arg1 container:(id)arg2 store:(id)arg3;
 - (int)_queue_validateAnchorRangesForPushZone:(id)arg1 error:(id *)arg2;

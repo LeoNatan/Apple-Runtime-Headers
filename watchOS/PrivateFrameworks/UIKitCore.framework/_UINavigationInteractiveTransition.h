@@ -6,11 +6,11 @@
 
 #import <UIKitCore/_UINavigationInteractiveTransitionBase.h>
 
-@class UIScreenEdgePanGestureRecognizer;
+@class UIScreenEdgePanGestureRecognizer, _UIParallaxTransitionPanGestureRecognizer;
 
 @interface _UINavigationInteractiveTransition : _UINavigationInteractiveTransitionBase
 {
-    UIScreenEdgePanGestureRecognizer *_edgePanRecognizer;
+    _UIParallaxTransitionPanGestureRecognizer *_edgePanRecognizer;
 }
 
 - (void).cxx_destruct;

@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOSpatialLookupRequest : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _categorys;
     GEOLatLng *_center;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxResults;
     int _radius;
     struct {
@@ -60,6 +62,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOLatLng *center;
 - (void)_readCenter;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

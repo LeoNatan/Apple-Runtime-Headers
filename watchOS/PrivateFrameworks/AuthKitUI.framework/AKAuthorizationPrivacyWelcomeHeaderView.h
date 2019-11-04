@@ -23,7 +23,7 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <AKAuthorizationPrivacyWelcomeHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_handleLearMoreTapped:(id)arg1;
+- (void)_handleLearnMoreTapped:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

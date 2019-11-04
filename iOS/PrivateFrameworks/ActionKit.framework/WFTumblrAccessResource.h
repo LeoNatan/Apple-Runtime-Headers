@@ -6,42 +6,28 @@
 
 #import <WorkflowKit/WFAccessResource.h>
 
-#import <ActionKit/WFTumblrViewControllerDelegate-Protocol.h>
-
 @class NSString;
 
-@interface WFTumblrAccessResource : WFAccessResource <WFTumblrViewControllerDelegate>
+@interface WFTumblrAccessResource : WFAccessResource
 {
-    CDUnknownBlockType _completionHandler;
     NSString *_OAuthToken;
     NSString *_OAuthTokenSecret;
 }
 
-+ (void)removeTumblrOAuthTokenSecret;
-+ (void)removeTumblrOAuthToken;
++ (void)setTumblrOAuthTokenSecret:(id)arg1;
 + (id)tumblrOAuthTokenSecret;
++ (void)setTumblrOAuthToken:(id)arg1;
 + (id)tumblrOAuthToken;
 @property(copy, nonatomic) NSString *OAuthTokenSecret; // @synthesize OAuthTokenSecret=_OAuthTokenSecret;
 @property(copy, nonatomic) NSString *OAuthToken; // @synthesize OAuthToken=_OAuthToken;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (void)logOut;
 - (_Bool)canLogOut;
 - (id)username;
 - (id)resourceName;
-- (void)tumblrViewControllerDidCancel:(id)arg1;
-- (void)tumblrViewController:(id)arg1 didFailWithError:(id)arg2;
-- (void)tumblrViewController:(id)arg1 didSucceedWithOAuthToken:(id)arg2 OAuthTokenSecret:(id)arg3;
-- (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
 - (id)protectedResourceDescription;
 - (id)associatedAppIdentifier;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

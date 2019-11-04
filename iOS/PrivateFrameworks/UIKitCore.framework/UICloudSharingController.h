@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIRemoteViewControllerContaining-Protocol.h>
 #import <UIKitCore/_UISharingPublicController-Protocol.h>
 
-@class CKContainer, CKContainerSetupInfo, CKShare, NSDictionary, NSObject, NSString, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController, _UIShareInvitationRemoteViewController;
+@class CKContainer, CKContainerSetupInfo, CKShare, NSDictionary, NSObject, NSString, UIImage, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController, _UIShareInvitationRemoteViewController;
 @protocol OS_dispatch_semaphore, UICloudSharingControllerDelegate, _UICloudSharingControllerDelegate_Internal;
 
 @interface UICloudSharingController : UIViewController <_UISharingPublicController, UIActionSheetPresentationControllerDelegate, _UIRemoteViewControllerContaining>
@@ -33,10 +33,18 @@
     UIViewController *_strongReferenceToOurself;
     NSString *_primaryAuxiliarySwitchTitle;
     NSString *_secondaryAuxiliarySwitchTitle;
+    NSString *_rootFolderTitle;
+    NSString *_folderSubitemName;
+    UIImage *_headerPrimaryImage;
+    UIImage *_headerSecondaryImage;
     id <_UICloudSharingControllerDelegate_Internal> _internalDelegate;
 }
 
 @property(nonatomic) __weak id <_UICloudSharingControllerDelegate_Internal> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
+@property(retain, nonatomic, getter=_headerSecondaryImage, setter=_setHeaderSecondaryImage:) UIImage *headerSecondaryImage; // @synthesize headerSecondaryImage=_headerSecondaryImage;
+@property(retain, nonatomic, getter=_headerPrimaryImage, setter=_setHeaderPrimaryImage:) UIImage *headerPrimaryImage; // @synthesize headerPrimaryImage=_headerPrimaryImage;
+@property(retain, nonatomic, getter=_folderSubitemName, setter=_setFolderSubitemName:) NSString *folderSubitemName; // @synthesize folderSubitemName=_folderSubitemName;
+@property(retain, nonatomic, getter=_rootFolderTitle, setter=_setRootFolderTitle:) NSString *rootFolderTitle; // @synthesize rootFolderTitle=_rootFolderTitle;
 @property(nonatomic, getter=_secondaryAuxiliarySwitchState, setter=_setSecondaryAuxiliarySwitchState:) _Bool secondaryAuxiliarySwitchState; // @synthesize secondaryAuxiliarySwitchState=_secondaryAuxiliarySwitchState;
 @property(retain, nonatomic, getter=_secondaryAuxiliarySwitchTitle, setter=_setSecondaryAuxiliarySwitchTitle:) NSString *secondaryAuxiliarySwitchTitle; // @synthesize secondaryAuxiliarySwitchTitle=_secondaryAuxiliarySwitchTitle;
 @property(nonatomic, getter=_primaryAuxiliarySwitchState, setter=_setPrimaryAuxiliarySwitchState:) _Bool primaryAuxiliarySwitchState; // @synthesize primaryAuxiliarySwitchState=_primaryAuxiliarySwitchState;
@@ -60,6 +68,7 @@
 - (void)_sendDidStopSharingDelegate;
 - (void)_shareWasMadePrivate;
 - (void)_shareDidChange:(id)arg1;
+- (void)_cloudSharingControllerDidActivateShowSharedFolder;
 - (void)_cloudSharingControllerDidModifySecondarySwitch:(_Bool)arg1;
 - (void)_cloudSharingControllerDidModifyPrimarySwitch:(_Bool)arg1;
 - (void)_representFullscreenAfterActivityDismissal:(CDUnknownBlockType)arg1;

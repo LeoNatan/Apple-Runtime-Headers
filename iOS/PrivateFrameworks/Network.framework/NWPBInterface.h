@@ -19,7 +19,7 @@
     NSString *_name;
     int _subtype;
     int _type;
-    BOOL _expensive;
+    _Bool _expensive;
     struct {
         unsigned int delegateIndex:1;
         unsigned int generation:1;
@@ -31,7 +31,7 @@
     } _has;
 }
 
-@property(nonatomic) BOOL expensive; // @synthesize expensive=_expensive;
+@property(nonatomic) _Bool expensive; // @synthesize expensive=_expensive;
 @property(nonatomic) unsigned int mtu; // @synthesize mtu=_mtu;
 @property(nonatomic) unsigned int delegateIndex; // @synthesize delegateIndex=_delegateIndex;
 @property(nonatomic) unsigned int generation; // @synthesize generation=_generation;
@@ -40,26 +40,26 @@
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) BOOL hasExpensive;
-@property(nonatomic) BOOL hasMtu;
-@property(nonatomic) BOOL hasDelegateIndex;
-@property(nonatomic) BOOL hasGeneration;
-@property(nonatomic) BOOL hasIndex;
-@property(readonly, nonatomic) BOOL hasName;
+@property(nonatomic) _Bool hasExpensive;
+@property(nonatomic) _Bool hasMtu;
+@property(nonatomic) _Bool hasDelegateIndex;
+@property(nonatomic) _Bool hasGeneration;
+@property(nonatomic) _Bool hasIndex;
+@property(readonly, nonatomic) _Bool hasName;
 - (int)StringAsSubtype:(id)arg1;
 - (id)subtypeAsString:(int)arg1;
-@property(nonatomic) BOOL hasSubtype;
+@property(nonatomic) _Bool hasSubtype;
 @property(nonatomic) int subtype; // @synthesize subtype=_subtype;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
-@property(nonatomic) BOOL hasType;
+@property(nonatomic) _Bool hasType;
 @property(nonatomic) int type; // @synthesize type=_type;
 
 @end

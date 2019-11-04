@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, SDRDiagnosticReporter;
 @protocol OS_dispatch_queue, OS_os_log;
 
 __attribute__((visibility("hidden")))
@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _callID;
     NSString *_loggingDirectory;
+    SDRDiagnosticReporter *_diagnosticReporter;
     NSObject<OS_os_log> *_osLogNetworkingHandle;
     NSObject<OS_dispatch_queue> *_reportingQueue;
     CDUnknownFunctionPointerType _symptomReporterCallback;
@@ -26,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (int)reportSymptomWithDictionary:(id)arg1;
 - (int)reportSymptomWithIDSDestination:(id)arg1 sessionID:(id)arg2 type:(id)arg3 subType:(id)arg4 context:(id)arg5;
 - (int)reportSymptomWithType:(id)arg1 subType:(id)arg2 context:(id)arg3 actions:(id)arg4;
+- (int)reportInactiveSlotsInChannelSequence;
+- (int)reportInvalidTransportType;
 - (int)reportUnexpectedHighRTT;
 - (int)reportHighTargetQueueSize;
 - (int)reportHighConsecutiveAudioErasures;

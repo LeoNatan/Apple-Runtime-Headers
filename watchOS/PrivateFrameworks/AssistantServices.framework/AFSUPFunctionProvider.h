@@ -23,6 +23,13 @@
 - (id)_callFunction:(id)arg1 withArguments:(id)arg2;
 - (id)_speechRecognitionUsageDescription:(id)arg1;
 - (id)_siriUsageDescription:(id)arg1;
+- (id)_meCardIdentifier:(id)arg1;
+- (id)_userNickName:(id)arg1;
+- (id)_userLastName:(id)arg1;
+- (id)_userMiddleName:(id)arg1;
+- (id)_userFirstName:(id)arg1;
+- (id)_userFullName:(id)arg1;
+- (id)_meCard;
 - (id)_deviceModel;
 - (id)_lowercaseString:(id)arg1;
 - (id)_tempInWeatherUnits:(id)arg1;

@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (void)callDelegate:(id)arg1;
+- (void)updateWithAdditionalModel:(id)arg1;
 - (void)update;
 - (void)saveLocally:(unsigned int)arg1;
 - (id)_processMessage:(id)arg1 setting:(id)arg2;

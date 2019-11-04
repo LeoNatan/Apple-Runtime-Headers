@@ -20,6 +20,7 @@
 - (id)extraLargeTemplateForConditions:(id)arg1;
 - (id)circularSmallTemplateForConditions:(id)arg1;
 - (id)circularMediumTemplateForConditions:(id)arg1;
+- (id)utilitarianSmallTemplateForConditions:(id)arg1;
 
 @end
 

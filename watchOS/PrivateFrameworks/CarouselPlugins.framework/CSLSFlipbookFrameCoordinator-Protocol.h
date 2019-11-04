@@ -12,5 +12,7 @@
 @protocol CSLSFlipbookFrameCoordinator <NSObject>
 - (void)invalidateFramesOnOrAfterPresentationTime:(NSDate *)arg1 forReason:(NSString *)arg2;
 - (id <CSLSFrameSpecifier>)frameSpecifierOnScreenAtPresentationTime:(NSDate *)arg1;
+- (void)invalidateAllFramesForReason:(NSString *)arg1;
+- (id <CSLSFrameSpecifier>)frameSpecifierOnScreenNow;
 @end
 

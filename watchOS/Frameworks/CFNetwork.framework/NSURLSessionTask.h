@@ -27,6 +27,8 @@
 @property(retain) NSObject<OS_nw_activity> *_nw_activity; // @synthesize _nw_activity=_nw_activity_ivar;
 @property(retain) __CFN_TaskMetrics *_metrics; // @synthesize _metrics=_metrics_ivar;
 @property(copy) NSDate *earliestBeginDate; // @synthesize earliestBeginDate;
+- (void)_didSendMetrics;
+- (_Bool)_needSendingMetrics;
 - (void)_onqueue_adoptEffectiveConfiguration:(id)arg1;
 - (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
 @property(readonly, nonatomic) _Bool _isAVAssetTask; // @dynamic _isAVAssetTask;

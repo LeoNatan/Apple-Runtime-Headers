@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     NSKeyValueDependencyContext *NSCurrentKeyValueDependencyContext;
     NSMutableArray *NSKeyValueDependencyContextStack;
     unsigned int NSCriticalWaitTimer;
+    BOOL NSAutoreleasePoolIsInstalled;
 }
 
 - (id)init;

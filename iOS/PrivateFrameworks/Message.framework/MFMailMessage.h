@@ -55,7 +55,7 @@
 - (id)copyMessageInfo;
 - (_Bool)shouldSetSummary;
 - (void)setSummary:(id)arg1;
-- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 summary:(id)arg8 withOptions:(unsigned int)arg9;
 - (void)setMutableInfoFromMessage:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfAttachments;
 - (id)globalMessageURL;
@@ -83,6 +83,7 @@
 - (void)setPriorityFromHeaders:(id)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long messageFlags;
+@property(readonly, nonatomic) _Bool isServerSearchResult;
 @property(readonly, nonatomic) EMMessageObjectID *objectID;
 @property unsigned long long modSequenceNumber;
 - (id)mailMessageStore;

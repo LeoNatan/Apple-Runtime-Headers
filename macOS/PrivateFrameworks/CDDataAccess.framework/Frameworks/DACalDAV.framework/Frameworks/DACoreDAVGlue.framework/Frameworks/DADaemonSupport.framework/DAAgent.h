@@ -18,6 +18,7 @@
     CDUnknownBlockType _networkReachableBlock;
 }
 
++ (id)launchingAgentWithAccount:(id)arg1;
 @property(nonatomic) BOOL isWaitingForPassword; // @synthesize isWaitingForPassword=_isWaitingForPassword;
 @property(copy, nonatomic) CDUnknownBlockType networkReachableBlock; // @synthesize networkReachableBlock=_networkReachableBlock;
 @property(nonatomic) BOOL syncWhenReachable; // @synthesize syncWhenReachable=_syncWhenReachable;

@@ -31,7 +31,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCalendarTitle:(id)arg1 identifier:(id)arg2 rgbaValue:(id)arg3;
+- (id)initWithCalendarTitle:(id)arg1 identifier:(id)arg2 RGBAValue:(id)arg3;
 - (id)initWithAllCalendars;
 
 @end

@@ -7,7 +7,7 @@
 #import <PhotoLibraryServices/PLMomentProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLMomentRefreshable-Protocol.h>
 
-@class CLLocation, NSArray, NSDate, NSObject, NSOrderedSet, NSString;
+@class CLLocation, NSArray, NSDate, NSObject, NSSet, NSString;
 @protocol NSCopying, PLMomentAssetData, PLMomentListData, PLPhotosHighlightData;
 
 @protocol PLMomentData <PLMomentRefreshable, PLMomentProtocol>
@@ -20,7 +20,7 @@
 @property(retain, nonatomic) id <PLMomentListData> yearMomentList;
 @property(readonly, nonatomic) id <PLPhotosHighlightData> highlight;
 @property(readonly, retain, nonatomic) NSArray *batchedAssets;
-@property(retain, nonatomic) NSOrderedSet *assets;
+@property(retain, nonatomic) NSSet *assets;
 @property(nonatomic) float aggregationScore;
 @property(nonatomic) unsigned short processedLocation;
 @property(retain, nonatomic) CLLocation *approximateLocation;
@@ -33,8 +33,8 @@
 @property(nonatomic) int timeZoneOffset;
 @property(retain, nonatomic) NSDate *endDate;
 @property(retain, nonatomic) NSDate *startDate;
+- (void)insertAssetData:(id <PLMomentAssetData>)arg1;
 - (void)removeAssetData:(id <PLMomentAssetData>)arg1;
-- (void)replaceAssetDataAtIndex:(unsigned long long)arg1 withAssetData:(id <PLMomentAssetData>)arg2;
 - (void)delete;
 - (_Bool)isDeleted;
 

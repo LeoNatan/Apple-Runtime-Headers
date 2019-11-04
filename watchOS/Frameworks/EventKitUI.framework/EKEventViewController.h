@@ -110,6 +110,7 @@
 - (void)_performEditKeyCommand;
 - (void)_setUpkeyCommands;
 - (void)editButtonPressed;
+- (_Bool)_shouldShowInlineButtonFromDelegate;
 - (_Bool)shouldShowEditButtonInline;
 - (void)detailItem:(id)arg1 wantsIndexPathsScrolledToVisible:(id)arg2;
 - (void)detailItem:(id)arg1 wantsRowInsertions:(id)arg2 rowDeletions:(id)arg3 rowReloads:(id)arg4;
@@ -149,7 +150,7 @@
 - (void)_deleteSuggestionTapped:(id)arg1;
 - (void)_addToCalendarClicked:(id)arg1;
 - (void)_deleteClicked:(id)arg1;
-- (void)_saveStatus:(int)arg1;
+- (void)_saveStatus:(int)arg1 sourceViewForPopover:(id)arg2;
 - (void)_joinMeeting;
 - (void)_emailOrganizer;
 - (void)_contactOrganizer;
@@ -157,9 +158,9 @@
 - (_Bool)_canEmailOrganizer;
 - (void)_cancelProposedTime;
 - (void)_rejectProposedTime;
-- (void)_acceptProposedTime;
+- (void)_acceptProposedTimeWithSourceViewForPopover:(id)arg1;
 - (id)_proposedDate;
-- (void)invokeAction:(int)arg1;
+- (void)invokeAction:(int)arg1 eventStatusButtonsView:(id)arg2;
 - (void)_prepareEventForEdit;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)_dismissEditor:(_Bool)arg1 deleted:(_Bool)arg2;
@@ -168,7 +169,9 @@
 - (void)eventItemDidSave:(id)arg1;
 - (void)eventItemDidStartEditing:(id)arg1;
 - (void)eventDetailItemWantsRefeshForHeightChange;
-- (void)_presentDetachSheet;
+- (CDUnknownBlockType)_detachSheetHandler;
+- (void)_presentDetachSheetFromView:(id)arg1;
+- (void)_presentDetachSheetFromBarButtonItem:(id)arg1;
 @property(nonatomic) __weak UIViewController *presentationSourceViewController;
 - (void)viewLayoutMarginsDidChange;
 - (struct CGSize)preferredContentSize;
@@ -181,6 +184,7 @@
 - (void)setActiveEventEditor:(id)arg1;
 - (id)activeEventEditor;
 - (void)editEvent;
+- (void)_doneButtonPressed:(id)arg1;
 - (void)doneButtonPressed;
 - (void)_notifyDetailItemsOfVisibilityOnScreen;
 - (void)_updateStatusButtonsActions;

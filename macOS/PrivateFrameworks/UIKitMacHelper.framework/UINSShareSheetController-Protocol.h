@@ -10,6 +10,7 @@
 @property(copy, nonatomic) NSDictionary *shareKitInfo;
 @property(nonatomic) long long sharingStyle;
 @property(retain, nonatomic) NSArray *excludedActivityTypes;
+@property(readonly, copy, nonatomic) NSArray *applicationServices;
 @property(retain, nonatomic) NSArray *applicationActivities;
 @property(copy, nonatomic) CDUnknownBlockType activitySelectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionWithItemsHandler;

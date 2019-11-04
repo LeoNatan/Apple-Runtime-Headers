@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, PKAuthenticatorDelegate;
+@protocol PKAuthenticatorDelegate;
 
 @interface PKAuthenticator : NSObject
 {
     unsigned int _authenticationIdentifier;
-    NSObject<OS_dispatch_queue> *_contextMutationQueue;
+    struct os_unfair_lock_s _lock;
     _Bool _invalidated;
     id <PKAuthenticatorDelegate> _delegate;
     double _fingerPresentTimeout;
@@ -20,6 +20,7 @@
 + (id)viewServiceBundleID;
 + (unsigned int)cachedStateForPolicy:(int)arg1;
 + (unsigned int)_currentStateForMechanisms:(id)arg1;
++ (_Bool)canPerformPSD2StyleBuyForAccessControlRef:(struct __SecAccessControl *)arg1;
 + (unsigned int)currentStateForAccessControl:(struct __SecAccessControl *)arg1;
 + (unsigned int)currentStateForPolicy:(int)arg1;
 + (void)resetSharedRootContextWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,13 +6,14 @@
 
 #import <HomeKitDaemon/HMDActionModel.h>
 
-@class NSData, NSNumber, NSSet;
+@class MPPlaybackArchive, NSNumber, NSSet;
 
 @interface HMDMediaPlaybackActionModel : HMDActionModel
 {
 }
 
 + (id)properties;
++ (id)schemaHashRoot;
 - (id)dependentUUIDs;
 - (id)validate;
 - (_Bool)validForStorage;
@@ -20,7 +21,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *accessories; // @dynamic accessories;
-@property(retain, nonatomic) NSData *encodedPlaybackArchive; // @dynamic encodedPlaybackArchive;
+@property(retain, nonatomic) MPPlaybackArchive *encodedPlaybackArchive; // @dynamic encodedPlaybackArchive;
 @property(retain, nonatomic) NSSet *profiles; // @dynamic profiles;
 @property(retain, nonatomic) NSNumber *state; // @dynamic state;
 @property(retain, nonatomic) NSNumber *volume; // @dynamic volume;

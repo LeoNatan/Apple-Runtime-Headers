@@ -80,6 +80,7 @@
 - (void)releaseRelinquishables;
 - (void)setupRelinquishables;
 - (void)teardown;
+- (void)unregisterFromUndoManager:(id)arg1;
 - (id)initForTesting;
 - (id)_initWithController:(id)arg1 andPageModelController:(id)arg2;
 

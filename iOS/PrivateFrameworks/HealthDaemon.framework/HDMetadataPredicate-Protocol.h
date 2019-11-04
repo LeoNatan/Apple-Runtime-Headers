@@ -6,11 +6,11 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class NSSet, NSString;
+@class HDSQLitePredicate, NSSet, NSString;
 
 @protocol HDMetadataPredicate <NSObject>
-+ (id)predicateWithMetadataKey:(NSString *)arg1 exists:(_Bool)arg2;
-+ (id)predicateWithMetadataKey:(NSString *)arg1 value:(id)arg2 operatorType:(unsigned long long)arg3;
-+ (id)predicateWithMetadataKey:(NSString *)arg1 allowedValues:(NSSet *)arg2;
++ (HDSQLitePredicate *)predicateWithMetadataKey:(NSString *)arg1 exists:(_Bool)arg2;
++ (HDSQLitePredicate *)predicateWithMetadataKey:(NSString *)arg1 value:(id)arg2 operatorType:(unsigned long long)arg3;
++ (HDSQLitePredicate *)predicateWithMetadataKey:(NSString *)arg1 allowedValues:(NSSet *)arg2;
 @end
 

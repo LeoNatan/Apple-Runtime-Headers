@@ -6,12 +6,18 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class NSTimeZone, PKAccountPayment, UIColor;
+@class NSTimeZone, PKAccountPayment, UIColor, UILabel, UITableViewCellLayoutManager;
 
 @interface PKAccountScheduledPaymentCell : UITableViewCell
 {
+    UILabel *_frequencyLabel;
+    UILabel *_statusLabel;
+    UILabel *_amountLabel;
+    UITableViewCellLayoutManager *_layoutManager;
     NSTimeZone *_timeZone;
     _Bool _hasPaymentDueDate;
+    _Bool _sizing;
+    _Bool _useStackedLayout;
     _Bool _onHold;
     PKAccountPayment *_payment;
     UIColor *_titleColor;
@@ -24,14 +30,18 @@
 @property(nonatomic) __weak PKAccountPayment *payment; // @synthesize payment=_payment;
 - (void).cxx_destruct;
 - (id)_dateString;
+- (id)_amountAttributedString;
 - (id)_amountString;
-- (id)_title;
-- (id)_titleText;
-- (id)_detailText;
-- (id)_text;
+- (id)_frequencyString;
+- (id)_statusAttributedString;
+- (id)_frequencyAttributedString;
 - (void)prepareForReuse;
 - (void)setPayment:(id)arg1 forAccount:(id)arg2;
+- (struct UIEdgeInsets)_effectiveLayoutMargins;
+- (_Bool)_useStackedLayoutForUsableWidth:(float)arg1;
+- (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

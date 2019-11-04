@@ -69,6 +69,8 @@
 - (_Bool)supportsRedeemRewards;
 - (id)requestPhysicalCardFeatureDescriptor;
 - (_Bool)supportsRequestPhysicalCard;
+- (id)exportTransactionDataFeatureDescriptor;
+- (_Bool)supportsExportTransactionData;
 - (id)requestStatementFeatureDescriptor;
 - (_Bool)supportsRequestStatement;
 - (id)viewStatementFeatureDescriptor;

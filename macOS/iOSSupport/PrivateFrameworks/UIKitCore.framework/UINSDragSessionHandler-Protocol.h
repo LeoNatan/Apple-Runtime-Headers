@@ -13,6 +13,7 @@
 - (void)dragFailed;
 - (void)dragEndedWithOperation:(unsigned long long)arg1;
 - (NSString *)fileNameForItemIndex:(unsigned long long)arg1 type:(NSString *)arg2;
+- (BOOL)loadFileRepresentationForItemIndex:(unsigned long long)arg1 type:(NSString *)arg2 handler:(void (^)(NSURL *, NSError *))arg3;
 - (id)pasteboardObjectForItemIndex:(unsigned long long)arg1 type:(NSString *)arg2 class:(Class)arg3;
 - (NSData *)dataForItemIndex:(unsigned long long)arg1 type:(NSString *)arg2;
 - (void)imageForItemIndex:(unsigned long long)arg1 completionHandler:(void (^)(id <UINSDragImage>))arg2;

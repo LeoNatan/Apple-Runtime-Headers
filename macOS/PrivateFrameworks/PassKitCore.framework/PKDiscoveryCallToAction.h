@@ -44,13 +44,15 @@
 @property(readonly, nonatomic) NSString *subtitleKey; // @synthesize subtitleKey=_subtitleKey;
 @property(readonly, nonatomic) NSString *titleKey; // @synthesize titleKey=_titleKey;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)description;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *transitNetworkIdentifier;
 @property(readonly, nonatomic) NSSet *allowedFeatureIdentifiers;
 @property(readonly, nonatomic) long long paymentSetupMode;
 @property(readonly, nonatomic) NSString *referrerIdentifier;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)description;
 - (void)localizeWithBundle:(id)arg1 table:(id)arg2;
 - (void)localizeWithBundle:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

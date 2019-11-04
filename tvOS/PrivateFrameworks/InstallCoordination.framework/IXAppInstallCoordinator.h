@@ -51,6 +51,7 @@
 + (id)_coordinatorForAppWithBundleID:(id)arg1 withClientID:(unsigned long long)arg2 intent:(unsigned long long)arg3 createIfNotExisting:(_Bool)arg4 created:(_Bool *)arg5 error:(id *)arg6;
 + (_Bool)setTestModeForIdentifierPrefix:(id)arg1 testMode:(unsigned long long)arg2;
 + (_Bool)setTestingEnabled:(_Bool)arg1;
++ (_Bool)postNSCurrentLocaleDidChangeNotification;
 + (int)daemonPid;
 + (_Bool)killDaemonForTesting;
 + (_Bool)purgeAllCoordinatorsAndPromisesForCreator:(unsigned long long)arg1;

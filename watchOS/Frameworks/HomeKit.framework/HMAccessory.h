@@ -33,6 +33,7 @@
     _Bool _supportsTargetController;
     _Bool _targetControllerHardwareSupport;
     _Bool _supportsMultiUser;
+    _Bool _supportsCompanionInitiatedRestart;
     _Bool _suspendCapable;
     _Bool _paired;
     NSUUID *_uniqueIdentifier;
@@ -63,6 +64,7 @@
     HMFWiFiNetworkInfo *_wifiNetworkInfo;
     NSArray *_controlTargetUUIDs;
     HMSymptomsHandler *_symptomsHandler;
+    NSUUID *_networkProtectionGroupUUID;
     _HMContext *_context;
     int _reachableTransports;
     HMMutableArray *_currentServices;
@@ -96,6 +98,10 @@
 @property(nonatomic) unsigned int transportTypes; // @synthesize transportTypes=_transportTypes;
 @property(nonatomic) _Bool firmwareUpdateAvailable; // @synthesize firmwareUpdateAvailable=_firmwareUpdateAvailable;
 - (void).cxx_destruct;
+- (void)setNetworkProtectionGroupUUID:(id)arg1;
+@property(readonly) NSUUID *networkProtectionGroupUUID; // @synthesize networkProtectionGroupUUID=_networkProtectionGroupUUID;
+- (void)_handleSupportsCompanionInitiatedRestartUpdatedMessage:(id)arg1;
+- (void)_notifyClientsOfSupportsCompanionInitiatedRestartUpdate;
 - (void)_handleMultiUserSupportUpdatedMessage:(id)arg1;
 - (void)_notifyClientsOfMultiUserSupportUpdate;
 - (void)_handleTargetControlSupportUpdatedMessage:(id)arg1;
@@ -128,6 +134,8 @@
 - (void)_handleServiceTypeAssociated:(id)arg1;
 - (void)_handleServiceDefaultNameUpdate:(id)arg1;
 - (void)_handleServiceRenamed:(id)arg1;
+- (void)_deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_listPairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_updateFromAccessory:(id)arg1;
 - (void)_identifyWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -205,6 +213,7 @@
 - (void)removeControlTargetUUIDs:(id)arg1;
 - (void)addControlTargetUUIDs:(id)arg1;
 @property(copy, nonatomic) NSArray *controlTargetUUIDs; // @synthesize controlTargetUUIDs=_controlTargetUUIDs;
+@property(nonatomic) _Bool supportsCompanionInitiatedRestart; // @synthesize supportsCompanionInitiatedRestart=_supportsCompanionInitiatedRestart;
 @property(nonatomic) _Bool supportsMultiUser; // @synthesize supportsMultiUser=_supportsMultiUser;
 @property(nonatomic) _Bool targetControllerHardwareSupport; // @synthesize targetControllerHardwareSupport=_targetControllerHardwareSupport;
 @property(nonatomic) _Bool supportsTargetController; // @synthesize supportsTargetController=_supportsTargetController;

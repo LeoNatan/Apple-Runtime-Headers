@@ -35,13 +35,13 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSString *_trace;
 - (unsigned int)CAPort;
 - (void)invalidate;
 @property(readonly, nonatomic, getter=isUsable) _Bool usable;
 @property(readonly, nonatomic) unsigned long long fenceName;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithFence:(id)arg1;
 - (id)_initWithFenceName:(unsigned long long)arg1 fence:(id)arg2 preFence:(id)arg3 preFenceTrigger:(id)arg4 shouldTrace:(_Bool)arg5;
 
 // Remaining properties

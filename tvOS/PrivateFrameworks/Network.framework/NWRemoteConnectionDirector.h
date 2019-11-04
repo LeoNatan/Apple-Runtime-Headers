@@ -32,7 +32,7 @@
 - (struct nw_protocol *)outputHandlerForFlowID:(id)arg1;
 - (unsigned long long)dataModeForFlowID:(id)arg1;
 @property(readonly, nonatomic) struct nw_protocol *protocol;
-- (BOOL)receiveRemoteReply:(id)arg1;
+- (_Bool)receiveRemoteReply:(id)arg1;
 - (id)createSendDataMessageForClientID:(id)arg1 data:(id)arg2 receiveWindow:(unsigned int)arg3;
 - (id)createStopBrowseMessageForClientID:(id)arg1;
 - (id)createStartBrowseMessageForClientID:(id)arg1 descriptor:(id)arg2 parameters:(id)arg3;

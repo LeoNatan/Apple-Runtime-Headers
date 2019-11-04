@@ -10,7 +10,7 @@
 
 @protocol DNDSBackingStore <NSObject>
 @property(nonatomic) __weak id <DNDSBackingStoreDelegate> delegate;
-- (_Bool)writeRecord:(id <DNDSBackingStoreRecord>)arg1 error:(id *)arg2;
+- (unsigned long long)writeRecord:(id <DNDSBackingStoreRecord>)arg1 error:(id *)arg2;
 - (id)readRecordWithError:(id *)arg1;
 @end
 

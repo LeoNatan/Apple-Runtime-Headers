@@ -12,6 +12,7 @@
 
 @interface RTMetric : NSObject <RTMetricProtocol>
 {
+    _Bool _loggingEnabled;
     _Bool _submitted;
     NSMutableDictionary *_metrics;
 }
@@ -22,12 +23,14 @@
 + (id)supportedMetricKeys;
 + (CDStruct_b8464340)event;
 @property(nonatomic) _Bool submitted; // @synthesize submitted=_submitted;
+@property(nonatomic) _Bool loggingEnabled; // @synthesize loggingEnabled=_loggingEnabled;
 @property(readonly, nonatomic) NSMutableDictionary *metrics; // @synthesize metrics=_metrics;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)setAllMetrics:(id)arg1 error:(id *)arg2;
 - (_Bool)submitMetricsWithError:(id *)arg1;
 - (id)init;
+- (id)initWithLoggingEnabled:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

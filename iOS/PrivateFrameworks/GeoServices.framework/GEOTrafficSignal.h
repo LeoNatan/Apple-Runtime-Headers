@@ -13,10 +13,12 @@
 @interface GEOTrafficSignal : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_identifier;
     GEOLatLng *_position;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _type;
     struct {
         unsigned int has_type:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 - (void)_readIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

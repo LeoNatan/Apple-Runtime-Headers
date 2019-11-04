@@ -11,6 +11,7 @@
 @interface MPQueueFeeder : NSObject
 {
     MPQueueFeederIdentifierRegistry *_identifierRegistry;
+    struct os_unfair_lock_s _identifierRegistryLock;
     NSString *_uniqueIdentifier;
     NSString *_playActivityFeatureName;
     NSData *_playActivityRecommendationData;
@@ -25,14 +26,18 @@
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;
 @property(copy, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-@property(retain, nonatomic) MPQueueFeederIdentifierRegistry *identifierRegistry; // @synthesize identifierRegistry=_identifierRegistry;
 - (void).cxx_destruct;
 - (id)playbackInfoForItem:(id)arg1;
 - (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)errorResolverForItem:(id)arg1;
 - (void)getRepresentativeMetadataForPlaybackContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)supplementalPlaybackContext;
+- (id)supplementalPlaybackContextWithReason:(int)arg1;
 - (int)supplementalPlaybackContextBehavior;
+- (int)identifierRegistryWithExclusiveAccessReturningInteger:(CDUnknownBlockType)arg1;
+- (_Bool)identifierRegistryWithExclusiveAccessReturningBOOL:(CDUnknownBlockType)arg1;
+- (id)identifierRegistryWithExclusiveAccessReturningObject:(CDUnknownBlockType)arg1;
+- (void)identifierRegistryWithExclusiveAccess:(CDUnknownBlockType)arg1;
+- (void)replaceIdentifierRegistry:(id)arg1;
 - (id)init;
 
 @end

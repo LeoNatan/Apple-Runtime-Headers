@@ -6,8 +6,6 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSAttributedString, NSString, UIBezierPath;
-
 @interface _TtC11NanoTimerUI20AccessibilityElement : NSObject
 {
     // Error parsing type: , name: isModifier
@@ -19,33 +17,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (_Bool)_accessibilityScrollToVisible;
-- (_Bool)accessibilityScroll:(int)arg1;
-- (void)accessibilityElementDidLoseFocus;
-- (void)accessibilityElementDidBecomeFocused;
-- (_Bool)accessibilityPerformMagicTap;
-- (_Bool)accessibilityPerformEscape;
-- (_Bool)accessibilityActivate;
-@property(nonatomic, copy) NSArray *accessibilityCustomActions;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-@property(nonatomic, retain) UIBezierPath *accessibilityPath;
-@property(nonatomic) _Bool shouldGroupAccessibilityChildren;
-@property(nonatomic) _Bool accessibilityElementsHidden;
-@property(nonatomic) _Bool accessibilityViewIsModal;
-@property(nonatomic) struct CGPoint accessibilityActivationPoint;
-@property(nonatomic, copy) NSArray *accessibilityElements;
-@property(nonatomic) struct CGRect accessibilityFrame;
-@property(nonatomic, copy) NSString *accessibilityLanguage;
-@property(nonatomic, retain) NSAttributedString *accessibilityAttributedHint;
-@property(nonatomic, retain) NSAttributedString *accessibilityAttributedValue;
-@property(nonatomic, retain) NSAttributedString *accessibilityAttributedLabel;
-@property(nonatomic, copy) NSString *accessibilityHint;
-@property(nonatomic, copy) NSString *accessibilityValue;
-@property(nonatomic, copy) NSString *accessibilityLabel;
-@property(nonatomic) unsigned long long accessibilityTraits;
-@property(nonatomic) _Bool isAccessibilityElement;
-- (_Bool)_internal_handleCustomActionWithUiAction:(id)arg1;
 
 @end
 

@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <Intents/INFileURLEnumerable-Protocol.h>
+#import <Intents/INFileEnumerable-Protocol.h>
 #import <Intents/INJSONSerializable-Protocol.h>
 
 @class NSData, NSString, NSURL;
 
-@interface INFile : NSObject <INFileURLEnumerable, INJSONSerializable>
+@interface INFile : NSObject <INFileEnumerable, INJSONSerializable>
 {
     NSData *_memoryMappedFileData;
+    _Bool _deletesFileOnDeallocationIfNeeded;
     NSData *_data;
     NSString *_filename;
     NSURL *_fileURL;
@@ -23,10 +24,16 @@
 + (_Bool)supportsSecureCoding;
 + (id)fileWithFileURL:(id)arg1 filename:(id)arg2 typeIdentifier:(id)arg3;
 + (id)fileWithData:(id)arg1 filename:(id)arg2 typeIdentifier:(id)arg3;
++ (void)initialize;
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 @property(readonly, copy, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
+@property(nonatomic, setter=_setDeletesFileOnDeallocationIfNeeded:) _Bool _deletesFileOnDeallocationIfNeeded; // @synthesize _deletesFileOnDeallocationIfNeeded;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
+- (void)_setAssociatedAuditToken:(CDStruct_6ad76789)arg1;
+- (_Bool)_associatedAuditTokenIsEqualToAuditToken:(CDStruct_6ad76789)arg1;
+@property(nonatomic, getter=_isMarkedForDeletionOnDeallocation, setter=_setMarkedForDeletionOnDeallocation:) _Bool _markedForDeletionOnDeallocation;
+@property(readonly, nonatomic) _Bool _hasAssociatedAuditToken;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -34,11 +41,13 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool _isFileURLBased;
+- (void)dealloc;
 - (id)_initWithData:(id)arg1 filename:(id)arg2 fileURL:(id)arg3 typeIdentifier:(id)arg4;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
-- (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
+- (void)_intents_enumerateFileURLsWithBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
+- (void)_intents_enumerateFilesWithBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
 - (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 
 // Remaining properties

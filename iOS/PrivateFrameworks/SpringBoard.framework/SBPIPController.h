@@ -18,6 +18,7 @@
     PGPictureInPictureController *_pictureInPictureController;
     SBPIPWindow *_pictureInPictureWindow;
     struct UIEdgeInsets _pictureInPictureWindowMargin;
+    _Bool _expectKeyboardVisible;
     NSMutableSet *_pictureInPictureWindowHiddenReasons;
     NSMutableDictionary *_pictureInPictureInsetsForSource;
     NSMutableSet *_pictureInPictureMorphAnimatorControllers;
@@ -42,7 +43,7 @@
 - (void)_updateFloatingDockInsets;
 - (void)_bulletinWillDismiss:(id)arg1;
 - (void)_bulletinWillPresent:(id)arg1;
-- (void)_keyboardWillDisappear:(id)arg1;
+- (void)_keyboardWillShowOrHide:(id)arg1;
 - (void)_keyboardWillRotate:(id)arg1;
 - (void)_keyboardWillChangeFrame:(id)arg1;
 - (void)_adjustPIPInsetsForKeyboardFrameChangeNotification:(id)arg1;
@@ -70,6 +71,7 @@
 - (void)applyPictureInPictureInsets:(struct UIEdgeInsets)arg1 fromSource:(long long)arg2 duration:(double)arg3;
 - (void)pictureInPictureInterruptionEnded;
 - (void)pictureInPictureInterruptionBegan;
+- (void)cancelPictureInPictureForApplicationWithProcessIdentifierEnteringBackground:(int)arg1 scenePersistenceIdentifier:(id)arg2;
 - (void)startPictureInPictureForApplicationWithProcessIdentifierEnteringBackground:(int)arg1 scenePersistenceIdentifier:(id)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)shouldStartPictureInPictureForApplicationWithProcessIdentifierEnteringBackground:(int)arg1 scenePersistenceIdentifier:(id)arg2;
 - (_Bool)isPictureInPictureWindowVisible;

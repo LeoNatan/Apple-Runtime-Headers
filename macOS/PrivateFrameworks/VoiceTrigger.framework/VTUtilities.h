@@ -22,7 +22,7 @@
 + (BOOL)isAlwaysOn;
 + (BOOL)supportExternalPhraseSpotter;
 + (BOOL)supportTTS;
-+ (BOOL)VTRunsPremium;
++ (BOOL)VTIsHorseman;
 + (BOOL)isNano;
 + (double)systemUpTime;
 + (double)_round:(double)arg1 withPlaces:(int)arg2;

@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) id <REMChangeTrackingClientIdentifying> changeTrackingClientID; // @synthesize changeTrackingClientID=_changeTrackingClientID;
 - (void).cxx_destruct;
 - (id)changeSetByFilteringTransactionAuthorKeysToExcludeFromChangeSet:(id)arg1;
-- (void)_performChangeTrackingWithBlock:(CDUnknownBlockType)arg1 xpcErrorHandler:(CDUnknownBlockType)arg2;
+- (void)_performChangeTrackingWithReason:(id)arg1 block:(CDUnknownBlockType)arg2 xpcErrorHandler:(CDUnknownBlockType)arg3;
 - (id)persistenceStoreIDForAccountID:(id)arg1 error:(id *)arg2;
 - (void)deleteHistoryBeforeDate:(id)arg1 error:(id *)arg2;
 - (void)deleteHistoryBeforeToken:(id)arg1 error:(id *)arg2;

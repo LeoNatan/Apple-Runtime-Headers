@@ -38,7 +38,6 @@
     _Bool _overviewTrimHandleStyle;
     _Bool _playBarOnly;
     _Bool _isOverView;
-    _Bool _changeAXValue;
     id <RCWaveformSelectionOverlayDelegate> _delegate;
     double _selectedTimeRangeMinimumDuration;
     double _selectedTimeRangeMaximumDuration;
@@ -57,7 +56,6 @@
 
 @property(retain, nonatomic) UIButton *resetRegionButton; // @synthesize resetRegionButton=_resetRegionButton;
 @property(nonatomic) double trackedAssetCurrentTime; // @synthesize trackedAssetCurrentTime=_trackedAssetCurrentTime;
-@property(nonatomic) _Bool changeAXValue; // @synthesize changeAXValue=_changeAXValue;
 @property(nonatomic) __weak UIView *selectionBackgroundView; // @synthesize selectionBackgroundView=_selectionBackgroundView;
 @property(nonatomic) long long selectionMode; // @synthesize selectionMode=_selectionMode;
 @property(nonatomic) _Bool isOverView; // @synthesize isOverView=_isOverView;
@@ -91,6 +89,7 @@
 - (id)accessibilityElements;
 - (_Bool)isAccessibilityElement;
 - (_Bool)_axIsShowingSelectionBars;
+- (_Bool)changeAXValue;
 - (struct CGRect)_alternateEndTimeRectWithSizedTextLayer:(id)arg1;
 - (struct CGRect)_endTimeRectWithSizedTextLayer:(id)arg1 isOffsetForThumb:(_Bool *)arg2;
 - (_Bool)_shouldDisplayEndTimeText;

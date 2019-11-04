@@ -5,6 +5,7 @@
 //
 
 @protocol IMKTextInputTouchBarHostViewControllerProtocol
+- (void)handleCloseButtonOfCharacterPickerFunctionRowItem;
 - (void)setAllowsCollapsingCandidateList:(BOOL)arg1;
 @end
 

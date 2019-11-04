@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIAlertControllerShimPresenterWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)_createWindowIfNecessary;
+- (void)_createWindowIfNecessaryWithScene:(id)arg1;
 - (void)_tearDownInPopoverViewController;
 @property(nonatomic) __weak id <UIPopoverControllerDelegate> popoverDelegate;
 - (id)_popoverController;
@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_presentAlertControllerFromRect:(struct CGRect)arg1 inView:(id)arg2 direction:(unsigned long long)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentAlertControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentAlertControllerAnimated:(_Bool)arg1 hostingScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

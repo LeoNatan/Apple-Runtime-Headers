@@ -32,7 +32,8 @@
 - (id)createAddDataViewController:(id)arg1 with:(id)arg2;
 - (id)createDataSourcesTableViewController:(id)arg1;
 - (id)createListViewController:(id)arg1;
-- (id)createElectrocardiogramDataMetadataViewControllerWithElectrocardiogram:(id)arg1;
+- (id)createElectrocardiogramDataMetadataViewControllerWithElectrocardiogram:(id)arg1 dataProvider:(id)arg2;
+- (id)createElectrocardiogramListDataProvider;
 - (id)createUnitPreferencesController:(id)arg1;
 - (id)createDetailViewControllerForType:(id)arg1 displayDate:(id)arg2;
 - (id)createDetailViewControllerForType:(id)arg1;
@@ -41,6 +42,8 @@
 - (id)createInteractiveChartForType:(id)arg1 secondaryTypeIdentifier:(id)arg2 displayDate:(id)arg3;
 - (id)createChartForTypeIdentifier:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 minimumSize:(struct CGSize)arg4 disableXAxis:(_Bool)arg5;
 - (id)createDeletedSourceMessageViewControllerForSource:(id)arg1;
+- (id)createResearchStudySourcesViewControllerUsingInsetStyling:(_Bool)arg1 restorationStudyBundleIdentifier:(id)arg2;
+- (id)createContactConsolidationControllerInViewController:(id)arg1;
 - (id)createDeviceSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
 - (id)createAppSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
 - (id)createSourcesViewControllerUsingInsetStyling:(_Bool)arg1;

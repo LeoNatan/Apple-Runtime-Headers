@@ -6,10 +6,10 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class ASPasswordCredential, _ASPasswordCredentialAuthenticationViewController;
+@class ASPasswordCredential, NSError, _ASPasswordCredentialAuthenticationViewController;
 
 @protocol _ASPasswordCredentialAuthenticationViewControllerDelegate <NSObject>
-- (void)passwordCredentialAuthenticationViewController:(_ASPasswordCredentialAuthenticationViewController *)arg1 didFinishWithCredential:(ASPasswordCredential *)arg2 completion:(void (^)(void))arg3;
+- (void)passwordCredentialAuthenticationViewController:(_ASPasswordCredentialAuthenticationViewController *)arg1 didFinishWithCredential:(ASPasswordCredential *)arg2 error:(NSError *)arg3 completion:(void (^)(void))arg4;
 - (void)presentUIForPasswordCredentialAuthenticationViewController:(_ASPasswordCredentialAuthenticationViewController *)arg1;
 @end
 

@@ -45,6 +45,8 @@
 @property(nonatomic) float rivenSizeFactor; // @synthesize rivenSizeFactor=_rivenSizeFactor;
 @property(readonly, nonatomic) NSArray *segmentTraits; // @synthesize segmentTraits=_segmentTraits;
 @property(retain, nonatomic) UIKBRenderingContext *renderingContext; // @synthesize renderingContext=_renderingContext;
+- (Class)contentViewClassForPopupKey:(id)arg1;
+- (_Bool)popupKeyUsesCustomKeyContentView:(id)arg1;
 - (int)glyphSelectorForDisplayString:(id)arg1;
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)thinTextFontName;

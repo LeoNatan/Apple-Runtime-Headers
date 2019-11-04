@@ -7,18 +7,20 @@
 #import <PhotosUICore/PXGLayout.h>
 
 @class NSMutableIndexSet;
-@protocol PXGAssetBadgeDecorationSource, PXGDebugDecorationSource, PXGDragDecorationSource, PXGHighlightDecorationSource, PXGLayoutContentSource, PXGSelectionDecorationSource;
+@protocol PXGAssetBadgeDecorationSource, PXGCaptionDecorationSource, PXGDebugDecorationSource, PXGDragDecorationSource, PXGHighlightDecorationSource, PXGLayoutContentSource, PXGSelectionDecorationSource;
 
 @interface PXGDecoratingLayout : PXGLayout
 {
     CDStruct_5f1286c4 _updateFlags;
     BOOL _isUpdatingDecoratedLayout;
     NSMutableIndexSet *_invalidatedDecoratedSpriteIndexes;
+    BOOL _wantsCaptionDecorations;
     long long _selectionDecorationStyle;
     unsigned int _numberOfDecoratingSpritesPerDecoratedSprite;
     PXGLayout *_decoratedLayout;
     id <PXGLayoutContentSource> _decorationSource;
     id <PXGAssetBadgeDecorationSource> _assetBadgeDecorationSource;
+    id <PXGCaptionDecorationSource> _captionDecorationSource;
     id <PXGSelectionDecorationSource> _selectionDecorationSource;
     id <PXGHighlightDecorationSource> _highlightDecorationSource;
     id <PXGDragDecorationSource> _dragDecorationSource;
@@ -29,6 +31,7 @@
 @property(readonly, nonatomic) __weak id <PXGDragDecorationSource> dragDecorationSource; // @synthesize dragDecorationSource=_dragDecorationSource;
 @property(readonly, nonatomic) __weak id <PXGHighlightDecorationSource> highlightDecorationSource; // @synthesize highlightDecorationSource=_highlightDecorationSource;
 @property(readonly, nonatomic) __weak id <PXGSelectionDecorationSource> selectionDecorationSource; // @synthesize selectionDecorationSource=_selectionDecorationSource;
+@property(readonly, nonatomic) __weak id <PXGCaptionDecorationSource> captionDecorationSource; // @synthesize captionDecorationSource=_captionDecorationSource;
 @property(readonly, nonatomic) __weak id <PXGAssetBadgeDecorationSource> assetBadgeDecorationSource; // @synthesize assetBadgeDecorationSource=_assetBadgeDecorationSource;
 @property(readonly, nonatomic) unsigned int numberOfDecoratingSpritesPerDecoratedSprite; // @synthesize numberOfDecoratingSpritesPerDecoratedSprite=_numberOfDecoratingSpritesPerDecoratedSprite;
 @property(nonatomic) __weak id <PXGLayoutContentSource> decorationSource; // @synthesize decorationSource=_decorationSource;

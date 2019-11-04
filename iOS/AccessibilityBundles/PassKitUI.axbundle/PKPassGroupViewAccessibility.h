@@ -17,7 +17,7 @@
 - (_Bool)accessibilityScroll:(long long)arg1;
 - (_Bool)_axIsBackFacing;
 - (_Bool)accessibilityPerformEscape;
-- (void)_accessibilityDismissModalGroup;
+- (_Bool)_accessibilityDismissModalGroup;
 - (_Bool)shouldGroupAccessibilityChildren;
 - (id)accessibilityValue;
 - (_Bool)_axMoveCardDown:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <Photos/PHMediaRequestContext.h>
 
-@class NSProgress, PHImageRequest, PHImageRequestOptions, PHMediaResourceRequest;
+@class NSProgress, PHCompositeMediaResult, PHImageRequest, PHImageRequestOptions, PHMediaResourceRequest;
 
 @interface PHImageRequestContext : PHMediaRequestContext
 {
@@ -15,8 +15,9 @@
     PHImageRequest *_intermediateRequest;
     PHImageRequest *_finalRequest;
     PHMediaResourceRequest *_resourceRequest;
-    // Error parsing type: AB, name: _finalImageRequestStarted
-    // Error parsing type: AB, name: _finalImageReceived
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _firstNonFastResultWasObserved
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _finalResultSent
+    PHCompositeMediaResult *_delayedFinalInvalidDataResult;
     PHImageRequestOptions *_imageOptions;
 }
 

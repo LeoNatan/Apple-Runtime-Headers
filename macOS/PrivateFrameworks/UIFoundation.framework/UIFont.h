@@ -73,7 +73,8 @@
 - (id)_fontScaledByScaleFactor:(double)arg1;
 - (id)htmlMarkupDescription;
 - (id)markupDescription;
-- (id)familyNameForCSSFontFamilyValue;
+- (id)markupDescriptionForWebKit:(BOOL)arg1 pointSize:(float)arg2 sizeUnit:(id)arg3;
+- (id)familyNameForCSSFontFamilyValueForWebKit:(BOOL)arg1;
 - (id)initWithMarkupDescription:(id)arg1;
 - (id)initWithFamilyName:(id)arg1 traits:(int)arg2 size:(double)arg3;
 - (id)initWithName:(id)arg1 size:(double)arg2;

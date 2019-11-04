@@ -10,7 +10,5 @@
 {
 }
 
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-
 @end
 

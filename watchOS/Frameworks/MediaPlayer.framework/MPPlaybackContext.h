@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlayer/NSCopying-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
 
 @class MPAVItem, NSData, NSDictionary, NSString;
 
-@interface MPPlaybackContext : NSObject <NSSecureCoding>
+@interface MPPlaybackContext : NSObject <NSSecureCoding, NSCopying>
 {
     MPAVItem *_playerCurrentItem;
-    int _startIndex;
+    _Bool _supportsAccountRectification;
     int _actionAfterQueueLoad;
     int _shuffleType;
     int _repeatType;
@@ -22,10 +23,13 @@
     NSString *_siriAssetInfo;
     NSString *_siriReferenceIdentifier;
     NSDictionary *_siriWHAMetricsInfo;
+    NSString *_sessionIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)queueFeederClass;
+@property(nonatomic) _Bool supportsAccountRectification; // @synthesize supportsAccountRectification=_supportsAccountRectification;
+@property(copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
 @property(copy, nonatomic) NSString *siriReferenceIdentifier; // @synthesize siriReferenceIdentifier=_siriReferenceIdentifier;
 @property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
@@ -34,16 +38,16 @@
 @property(nonatomic) int repeatType; // @synthesize repeatType=_repeatType;
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(nonatomic) int actionAfterQueueLoad; // @synthesize actionAfterQueueLoad=_actionAfterQueueLoad;
-@property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
 - (void).cxx_destruct;
+- (void)clearStartItem;
 @property(readonly, nonatomic, getter=isSupported) _Bool supported;
 @property(readonly, nonatomic) _Bool containsRestorableContent;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldBecomeActive;
-@property(readonly, nonatomic) _Bool containsTransportableContent;
 - (id)init;
 
 @end

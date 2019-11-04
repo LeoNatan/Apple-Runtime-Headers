@@ -36,8 +36,8 @@
 @property(readonly, nonatomic) MPPropertySet *requestedItemPropertySet; // @synthesize requestedItemPropertySet=_requestedItemPropertySet;
 @property(readonly, nonatomic) MPPropertySet *requestedGroupPropertySet; // @synthesize requestedGroupPropertySet=_requestedGroupPropertySet;
 - (void).cxx_destruct;
-- (id)modelObjectForRecommendationDictionary:(id)arg1;
-- (id)modelObjectForRecentlyPlayedArray:(id)arg1;
+- (id)modelObjectForRecommendationDictionary:(id)arg1 userIdentity:(id)arg2;
+- (id)modelObjectForRecentlyPlayedArray:(id)arg1 userIdentity:(id)arg2;
 - (void)initializeRequestedGroupProperties;
 - (id)initWithRequestedGroupPropertySet:(id)arg1 requestedItemPropertySet:(id)arg2 storeItemMetadataResults:(id)arg3 flatSectionedItems:(id)arg4 storeBagDictionary:(id)arg5;
 

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class _UIBackdropView;
+@class UIVisualEffectView;
 @protocol CKInlineNotificationViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,13 +17,13 @@ __attribute__((visibility("hidden")))
     id <CKInlineNotificationViewDelegate> _delegate;
     UIView *_clippingView;
     UIView *_containerView;
-    _UIBackdropView *_backdropView;
+    UIVisualEffectView *_backdropView;
     UIView *_bottomLineView;
 }
 
 @property(nonatomic) _Bool animatingVisibility; // @synthesize animatingVisibility=_animatingVisibility;
 @property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
-@property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
+@property(retain, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
 @property(nonatomic) __weak id <CKInlineNotificationViewDelegate> delegate; // @synthesize delegate=_delegate;

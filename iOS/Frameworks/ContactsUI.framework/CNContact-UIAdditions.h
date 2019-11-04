@@ -14,6 +14,7 @@
 + (id)contactWithStateRestorationCoder:(id)arg1 store:(id)arg2 keys:(id)arg3;
 + (id)multiValuePropertiesSupportingPredicateValidation;
 + (id)descriptorForAllUIKeys;
++ (_Bool)nameAndPhotoSharingDebugUIEnabled;
 + (_Bool)downtimeWhitelistUIEnabled;
 + (_Bool)settableMeCardEnabled;
 + (_Bool)contactRemindersEnabled;

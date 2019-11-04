@@ -6,6 +6,8 @@
 
 #import <EventKit/EKFrozenReminderObject.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface EKFrozenReminderStructuredLocation : EKFrozenReminderObject
 {
@@ -26,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)updatedStructuredLocation;
 - (id)_structuredLocation;
 - (id)remObjectID;
-- (id)uniqueIdentifier;
+@property(readonly) NSString *uniqueIdentifier;
 - (id)initWithAlternateUniverseObject:(EKPersistentObject_556b3b22 *)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 
 @end

@@ -151,6 +151,7 @@
 - (void)didReceiveMemoryWarning;
 - (unsigned int)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
+- (id)childViewControllerForStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
 - (int)preferredStatusBarStyle;
 - (void)viewDidDisappear:(_Bool)arg1;

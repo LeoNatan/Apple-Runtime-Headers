@@ -29,12 +29,10 @@
 @property(nonatomic) BOOL shouldPreroll; // @synthesize shouldPreroll=_shouldPreroll;
 - (void).cxx_destruct;
 - (id)_defaultSettings;
-- (double)minimumDurationForColorMismatch;
 - (double)maximumDelayBeforePlayback;
 - (double)minimumVisibilityFactor;
 - (double)endTimeOffset;
 - (double)playbackRate;
-- (double)minimumColorAdjustedPhotoTransitionDuration;
 - (double)minimumPhotoTransitionDuration;
 - (double)postDuration;
 - (double)preDuration;

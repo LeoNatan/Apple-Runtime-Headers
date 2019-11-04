@@ -201,6 +201,7 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (void)dealloc;
+@property(readonly, copy) NSString *description;
 - (void)setTextFieldsCanBecomeFirstResponder:(_Bool)arg1;
 - (void)_didParentTextFieldViewController;
 - (void)_willParentTextFieldViewController;
@@ -232,7 +233,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

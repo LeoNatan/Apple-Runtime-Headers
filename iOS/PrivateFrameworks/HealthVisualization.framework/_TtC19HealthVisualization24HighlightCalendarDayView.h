@@ -4,25 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppSupportUI/NUIContainerBoxView.h>
+#import <UIKit/UIView.h>
 
 @class NSDate, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC19HealthVisualization24HighlightCalendarDayView : NUIContainerBoxView
+@interface _TtC19HealthVisualization24HighlightCalendarDayView : UIView
 {
     // Error parsing type: , name: model
-    // Error parsing type: , name: $__lazy_storage_$_circleView
-    // Error parsing type: , name: $__lazy_storage_$_todayIndicatorView
-    // Error parsing type: , name: $__lazy_storage_$_dayLabel
+    // Error parsing type: , name: dayLabel
+    // Error parsing type: , name: todayIndicatorLayer
     // Error parsing type: , name: ringsRenderer
-    // Error parsing type: , name: $__lazy_storage_$_activityRingsView
+    // Error parsing type: , name: activityRingsView
 }
 
 - (void).cxx_destruct;
-- (id)initWithArrangedSubviews:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)layoutSublayersOfLayer:(id)arg1;
+- (void)layoutSubviews;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) long long axCircleState;
 @property(nonatomic, readonly) NSString *axProjectionKind;

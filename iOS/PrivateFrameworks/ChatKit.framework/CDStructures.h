@@ -153,6 +153,11 @@ typedef struct {
 } CDStruct_e950349b;
 
 typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+} CDStruct_4bcfbbae;
+
+typedef struct {
     long long value;
     int timescale;
     unsigned int flags;

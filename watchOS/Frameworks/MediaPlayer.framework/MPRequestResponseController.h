@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class NSError;
 @protocol MPRequestCancellationToken, MPRequestResponseControllerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface MPRequestResponseController : NSObject
@@ -17,6 +18,9 @@
     id <MPRequestCancellationToken> _cancelToken;
     double _retryInterval;
     NSObject<OS_dispatch_source> *_retryTimer;
+    NSError *_lastError;
+    id _pendingResponse;
+    unsigned long long _stateHandle;
     id _request;
     id _response;
     id <MPRequestResponseControllerDelegate> _delegate;
@@ -38,6 +42,7 @@
 - (void)beginAutomaticResponseLoading;
 @property(retain, nonatomic) id response; // @synthesize response=_response;
 @property(retain, nonatomic) id request; // @synthesize request=_request;
+- (void)dealloc;
 - (id)init;
 
 @end

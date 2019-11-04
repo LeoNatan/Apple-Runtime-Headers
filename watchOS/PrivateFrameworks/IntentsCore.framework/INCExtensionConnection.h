@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class INCAppProxy, INCDisplayLayoutMonitorObserver, INCExtensionTransaction, INIntent, INWatchdogTimer, NSArray;
+@class CLInUseAssertion, INCAppProxy, INCDisplayLayoutMonitorObserver, INCExtensionTransaction, INIntent, INWatchdogTimer, NSArray;
 @protocol OS_dispatch_queue;
 
 @interface INCExtensionConnection : NSObject
 {
     INCDisplayLayoutMonitorObserver *_layoutObserver;
     INWatchdogTimer *_requestTimer;
+    CLInUseAssertion *_inUseAssertion;
     _Bool _shouldObserveLayout;
     NSObject<OS_dispatch_queue> *_queue;
     INCExtensionTransaction *_transaction;
@@ -37,6 +38,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue;
 @property(nonatomic, setter=_setShouldObserveLayout:) _Bool _shouldObserveLayout; // @synthesize _shouldObserveLayout;
 - (void).cxx_destruct;
+- (void)_invalidateInUseAssertion;
+- (void)_takeInUseAssertionForBundleIdentifier:(id)arg1 withReason:(id)arg2;
 - (_Bool)_cancelRequestTimer;
 - (double)_timeoutIntervalForTransactionState:(id)arg1;
 - (void)_startRequestTimerWithExtensionProxy:(id)arg1;
@@ -44,6 +47,7 @@
 - (void)resumeWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool requiresTCC;
 @property(retain, nonatomic) INIntent *intent;
+- (id)initWithIntent:(id)arg1 supportedExtensionTypes:(int)arg2 donateInteraction:(_Bool)arg3 groupIdentifier:(id)arg4 remoteProxyProvider:(CDUnknownBlockType)arg5;
 - (id)initWithIntent:(id)arg1 supportedExtensionTypes:(int)arg2 remoteProxyProvider:(CDUnknownBlockType)arg3;
 - (id)initWithIntent:(id)arg1 remoteProxyProvider:(CDUnknownBlockType)arg2;
 - (id)initWithIntent:(id)arg1;

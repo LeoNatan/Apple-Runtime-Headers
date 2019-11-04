@@ -85,6 +85,7 @@
 - (_Bool)_isTypeToSiriPermittedAndEnabledForRequestOptions;
 - (_Bool)isHTTRequestSource;
 @property(readonly, nonatomic, getter=isMessagesDirectAction) _Bool messagesDirectAction;
+- (_Bool)isB288Activation;
 @property(readonly, nonatomic, getter=isForStark) _Bool forStark;
 @property(readonly, nonatomic, getter=isForSpeechRequest) _Bool forSpeechRequest;
 - (id)description;

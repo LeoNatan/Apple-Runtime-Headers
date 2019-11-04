@@ -15,6 +15,7 @@
     _Bool _isExplorer;
     _Bool _hasRichMediaComplications;
     _Bool _supportsUrsa;
+    unsigned int _version;
     unsigned int _sizeClass;
     float _screenScale;
     float _screenCornerRadius;
@@ -45,6 +46,7 @@
 @property(readonly, nonatomic) _Bool isLocked;
 - (_Bool)_queryAndCacheNanoRegistryDeviceCapabilities;
 @property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
+@property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 - (void)_loadDeviceInfo;
 - (id)_init;
 

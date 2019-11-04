@@ -9,15 +9,17 @@
 __attribute__((visibility("hidden")))
 @interface HMBModelFieldOptionQueryable : HMBModelFieldOption
 {
-    CDUnknownBlockType _encodeBlock;
-    CDUnknownBlockType _decodeBlock;
+    CDUnknownBlockType _encodingBlock;
+    CDUnknownBlockType _decodingBlock;
+    CDUnknownBlockType _descriptionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType decodeBlock; // @synthesize decodeBlock=_decodeBlock;
-@property(copy, nonatomic) CDUnknownBlockType encodeBlock; // @synthesize encodeBlock=_encodeBlock;
+@property(copy, nonatomic) CDUnknownBlockType descriptionBlock; // @synthesize descriptionBlock=_descriptionBlock;
+@property(copy, nonatomic) CDUnknownBlockType decodingBlock; // @synthesize decodingBlock=_decodingBlock;
+@property(copy, nonatomic) CDUnknownBlockType encodingBlock; // @synthesize encodingBlock=_encodingBlock;
 - (void).cxx_destruct;
 - (void)applyTo:(id)arg1;
-- (id)initWithEncodeBlock:(CDUnknownBlockType)arg1 decodeBlock:(CDUnknownBlockType)arg2;
+- (id)initWithEncodingBlock:(CDUnknownBlockType)arg1 decodingBlock:(CDUnknownBlockType)arg2 descriptionBlock:(CDUnknownBlockType)arg3;
 
 @end
 

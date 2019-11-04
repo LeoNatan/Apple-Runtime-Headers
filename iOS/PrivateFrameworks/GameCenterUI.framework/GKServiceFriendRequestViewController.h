@@ -28,6 +28,8 @@
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (void)constructPrivateViewController;
 - (void)setInitialState:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)_useBackdropViewForWindowBackground;
 - (id)init;
 
 // Remaining properties

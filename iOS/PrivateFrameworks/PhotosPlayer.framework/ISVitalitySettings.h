@@ -29,13 +29,12 @@
 @property(nonatomic) _Bool useLegacyBehavior; // @synthesize useLegacyBehavior=_useLegacyBehavior;
 @property(nonatomic) _Bool shouldPreroll; // @synthesize shouldPreroll=_shouldPreroll;
 - (void).cxx_destruct;
+- (double)maxVitalityDelay;
 - (id)_defaultSettings;
-- (double)minimumDurationForColorMismatch;
 - (double)maximumDelayBeforePlayback;
 - (double)minimumVisibilityFactor;
 - (double)endTimeOffset;
 - (double)playbackRate;
-- (double)minimumColorAdjustedPhotoTransitionDuration;
 - (double)minimumPhotoTransitionDuration;
 - (double)postDuration;
 - (double)preDuration;

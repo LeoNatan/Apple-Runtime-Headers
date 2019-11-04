@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (id)uniquedExtensions:(id)arg1;
 - (id)extensionsByID:(id)arg1;
 - (void)migrateEnabledStateIfNecessary:(id)arg1;
+- (void)reconnectProviderForURLIfNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadProvidersAndMonitorWithUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)_garbageCollectRemovedProvidersForInstalledProviderIdentifiers:(id)arg1;
 - (void)garbageCollectDomainOwnedDirectoriesAtURL:(id)arg1 isUserData:(_Bool)arg2 installedProviderIdentifiers:(id)arg3;

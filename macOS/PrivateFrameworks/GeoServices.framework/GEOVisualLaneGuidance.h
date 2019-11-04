@@ -13,11 +13,13 @@
 @interface GEOVisualLaneGuidance : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_instructions;
     NSMutableArray *_laneInfos;
     NSMutableArray *_titles;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_instructions:1;
@@ -68,6 +70,8 @@
 - (void)clearLaneInfos;
 @property(retain, nonatomic) NSMutableArray *laneInfos;
 - (void)_readLaneInfos;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

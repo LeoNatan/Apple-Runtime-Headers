@@ -39,7 +39,6 @@
 - (_Bool)isLikedActive;
 - (_Bool)isLikeCommandEnabled;
 - (_Bool)isLikeCommandSupported;
-- (_Bool)hasSupportedPlaybackRates;
 - (_Bool)isPlaybackRateCommandSupported;
 - (int)shuffleMode;
 - (_Bool)isShuffleModeCommandSupported;

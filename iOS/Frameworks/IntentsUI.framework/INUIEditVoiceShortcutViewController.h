@@ -16,9 +16,11 @@
 {
     id <INUIEditVoiceShortcutViewControllerDelegate> _delegate;
     INUIVoiceShortcutHostViewController *_remoteHostViewController;
+    UIViewController *_currentChildViewController;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) UIViewController *currentChildViewController; // @synthesize currentChildViewController=_currentChildViewController;
 @property(retain, nonatomic, getter=_remoteHostViewController, setter=_setRemoteHostViewController:) INUIVoiceShortcutHostViewController *remoteHostViewController; // @synthesize remoteHostViewController=_remoteHostViewController;
 @property(nonatomic) __weak id <INUIEditVoiceShortcutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -26,6 +28,7 @@
 - (void)remoteViewControllerDidCancel;
 - (void)remoteViewControllerDidDeleteVoiceShortcutWithIdentifier:(id)arg1;
 - (void)remoteViewControllerDidUpdateVoiceShortcut:(id)arg1 error:(id)arg2;
+- (void)setChildViewController:(id)arg1;
 - (void)loadView;
 - (id)initWithVoiceShortcut:(id)arg1;
 

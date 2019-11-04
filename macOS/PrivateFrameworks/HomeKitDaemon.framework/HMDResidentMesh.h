@@ -62,7 +62,7 @@
 - (id)bestResidentForAccessory:(id)arg1;
 - (void)_handleMeshUpdateMessage:(id)arg1;
 - (void)_handleMeshUpdateRequestMessage:(id)arg1;
-- (void)_sendMessage:(id)arg1 payload:(id)arg2 target:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
+- (void)_sendMessage:(id)arg1 payload:(id)arg2 target:(id)arg3 force:(BOOL)arg4 responseHandler:(CDUnknownBlockType)arg5;
 - (void)_removeConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(BOOL)arg2;
 - (void)_addConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(BOOL)arg2;
 - (BOOL)_checkReachabilityWithTimerActivation:(BOOL)arg1;

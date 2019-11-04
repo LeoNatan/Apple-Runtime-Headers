@@ -89,6 +89,8 @@
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)viewDidLoad;
 - (void)_adjustContentOffsetToInsideContent:(_Bool)arg1;
+- (void)_enableTouchesOnAllWidgets;
+- (void)_disableTouchesOnAllWidgets;
 - (void)_invalidateAllCancelTouchesAssertions;
 - (void)_cancelTouchesForWidget:(id)arg1;
 - (void)_cancelTouchesForHitWidgetIfNecessaryAndDisableTouchesOnAllWidgets;

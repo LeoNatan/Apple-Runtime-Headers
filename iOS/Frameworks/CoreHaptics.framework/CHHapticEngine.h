@@ -52,6 +52,8 @@
 - (id)init;
 - (_Bool)doInit;
 - (void)dealloc;
+- (void)setMetricsTestModeEnabled:(_Bool)arg1;
+- (id)getMetricsForPlayer:(id)arg1;
 @property(nonatomic) _Bool highPriority;
 @property(nonatomic) _Bool muteAudioOnRingerOff;
 @property(nonatomic) _Bool activateAudioSessionOnStart;

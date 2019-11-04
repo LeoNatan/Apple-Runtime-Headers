@@ -6,9 +6,9 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-#import <NewsArticles/UIScrollViewDelegate-Protocol.h>
+#import <NewsArticles/NUArticleViewControllerLoadingListener-Protocol.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles3) <UIScrollViewDelegate>
-- (void)scrollViewDidScroll:(id)arg1;
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles3) <NUArticleViewControllerLoadingListener>
+- (void)didLoadArticle:(id)arg1 withContext:(id)arg2;
 @end
 

@@ -7,13 +7,13 @@
 #import <NanoTimeKit/NTKTimelineComplicationController.h>
 
 #import <NanoTimeKit/CLKCComplicationDataSourceDelegate-Protocol.h>
+#import <NanoTimeKit/CLKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 #import <NanoTimeKit/NTKComplicationTimelineDelegate-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
-#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
 @class CLKCComplicationDataSource, CLKComplicationTemplate, NSDate, NSMutableSet, NSString, NTKComplicationTimeline, NTKTimelineDataOperation;
 
-@interface NTKLocalTimelineComplicationController : NTKTimelineComplicationController <CLKCComplicationDataSourceDelegate, NTKComplicationTimelineDelegate, NTKTimeTravel, NTKTritiumRandomizedComplicationEntryProvider>
+@interface NTKLocalTimelineComplicationController : NTKTimelineComplicationController <CLKCComplicationDataSourceDelegate, NTKComplicationTimelineDelegate, NTKTimeTravel, CLKTritiumRandomizedComplicationEntryProvider>
 {
     CLKCComplicationDataSource *_dataSource;
     NSDate *_timeTravelDate;
@@ -59,15 +59,17 @@
 - (void)_startExtendOperationIfNecessaryForWindow:(id)arg1 withDate:(id)arg2 minBuffer:(double)arg3;
 - (void)_extendTimelineIfNecessaryAndPossible;
 - (id)alwaysOnTemplate;
-- (void)_startSetupOperationIfPossible;
-- (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 currentEntry:(id)arg4;
-- (void)entriesDidChangeInTimeline:(id)arg1;
+- (void)_startSetupOperationIfPossibleWithPriority:(int)arg1;
+- (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 currentEntry:(id)arg4 priority:(int)arg5;
+- (void)entriesDidChangeInTimeline:(id)arg1 withTritiumUpdatePriority:(int)arg2;
 - (void)timeTravelEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)invalidateSwitcherTemplate;
+- (void)appendEntries:(id)arg1 withTritiumUpdatePriority:(int)arg2;
 - (void)appendEntries:(id)arg1;
 - (void)setTimelineEndDate:(id)arg1;
 - (void)setTimelineStartDate:(id)arg1;
+- (void)invalidateEntriesWithTritiumUpdatePriority:(int)arg1;
 - (void)invalidateEntries;
 - (double)minimumIntervalBetweenTimelineEntries;
 - (void)setCurrentTemplate:(id)arg1 reason:(int)arg2 animation:(unsigned int)arg3;

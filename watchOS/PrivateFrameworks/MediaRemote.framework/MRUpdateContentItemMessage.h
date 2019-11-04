@@ -12,6 +12,7 @@
 {
 }
 
+- (unsigned int)priority;
 - (unsigned int)type;
 @property(readonly, nonatomic) NSArray *contentItems;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath;

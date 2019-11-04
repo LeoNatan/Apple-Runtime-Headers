@@ -47,10 +47,11 @@
 - (id)_getPremiumVoiceAsset;
 - (void)_speakTime:(id)arg1 preferredVoice:(unsigned int)arg2;
 - (void)stopOutput;
+- (void)outputTime:(id)arg1 preferredVoice:(unsigned int)arg2 withGesture:(unsigned int)arg3;
 - (void)outputTime:(id)arg1 preferredVoice:(unsigned int)arg2;
 - (void)outputTime:(id)arg1;
 - (_Bool)_canTapticTime;
-- (_Bool)_canSpeakTimeForPreferredVoice:(unsigned int)arg1;
+- (_Bool)_canSpeakTimeForVoice:(unsigned int)arg1 andGesture:(unsigned int)arg2;
 - (void)_ringerStateChanged;
 - (void)_unregisterForNotifications;
 - (void)_registerForNotifications;

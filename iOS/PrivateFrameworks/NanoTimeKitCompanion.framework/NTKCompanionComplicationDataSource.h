@@ -32,7 +32,6 @@
 - (id)_city;
 - (id)_currentEntryModel;
 - (id)_worldClockTemplate;
-- (id)_alarmBaseTemplateWithDate:(id)arg1 utilitarianSmallImageProviderBlock:(CDUnknownBlockType)arg2 modularSmallImageProviderBlock:(CDUnknownBlockType)arg3 extraLargeImageProviderBlock:(CDUnknownBlockType)arg4 familyModularLargeTextFormat:(id)arg5 utilitarianLargeImageProviderBlock:(CDUnknownBlockType)arg6 familyGraphicCornerImageProviderBlock:(CDUnknownBlockType)arg7 familyGraphicCornerImageTintColor:(id)arg8 familyGraphicCornerTextFormat:(id)arg9;
 - (id)_alarmTemplate;
 - (id)_stopwatchTemplate;
 - (id)_timerTemplate;

@@ -53,6 +53,7 @@
 - (void)toggleActivityHiddenForRowAtIndexPath:(id)arg1;
 - (void)toggleActivityHiddenForControl:(id)arg1;
 - (id)activityForRowAtIndexPath:(id)arg1;
+- (id)cellForItemIdentifier:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
@@ -70,6 +71,7 @@
 - (void)doneEditingUserDefaults;
 - (void)editUserDefaults;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)configureSwitchForCell:(id)arg1 activityProxy:(id)arg2;
 - (void)updateUserDefaultsAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithFavoritesProxies:(id)arg1 suggestionProxies:(id)arg2 activitiesByUUID:(id)arg3 applicationActivities:(id)arg4 orderedUUIDs:(id)arg5 activityCategory:(int)arg6;

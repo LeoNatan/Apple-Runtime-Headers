@@ -45,6 +45,7 @@
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 requestsClearingNotificationRequests:(NSSet *)arg2;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 requestsClearingNotificationRequestsInSections:(NSSet *)arg2;
 - (void)notificationListComponentRequestsClearingAllNotificationRequests:(id <NCNotificationListComponent>)arg1;
+- (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 willDismissLongLookForCancelActionForViewController:(NCNotificationViewController *)arg2;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 requestPermissionToExecuteAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3 withParameters:(NSDictionary *)arg4 completion:(void (^)(_Bool))arg5;
 - (void)notificationListComponent:(id <NCNotificationListComponent>)arg1 requestsExecuteAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3 requestAuthentication:(_Bool)arg4 withParameters:(NSDictionary *)arg5 completion:(void (^)(_Bool))arg6;
 @end

@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CALayer, CAReplicatorLayer, CLKDevice, NSArray, NSCalendar, NSDate, NSString, NTKAnalogHandsView, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle;
+@class CALayer, CAReplicatorLayer, CLKDevice, CLKFont, NSArray, NSCalendar, NSDate, NSString, NTKAnalogHandsView, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle;
 
 @interface NTKDualTimeView : UIView <NTKTimeView>
 {
@@ -21,6 +21,7 @@
     CALayer *_digitalTicksContainer;
     NSArray *_digitalTicks;
     NTKDigitalTimeLabelStyle *_digitalStyle;
+    CLKFont *_digitalLabelFont;
     _Bool _frozen;
     _Bool _editing;
     _Bool _hideActiveTicks;
@@ -74,6 +75,7 @@
 - (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3 ignoreTimeView:(_Bool)arg4;
 - (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3;
 - (id)_activeTimeView;
+- (void)_updateDigitalLabelFont;
 - (id)_digitalLabelFont;
 - (void)_colorizeDigitalTicksWithActiveColor:(id)arg1 inactiveColor:(id)arg2 now:(id)arg3 secondFraction:(double)arg4;
 - (void)_refreshDigitalTicksWithNow:(id)arg1 secondFraction:(double)arg2;

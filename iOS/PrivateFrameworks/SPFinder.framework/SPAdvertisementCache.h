@@ -25,7 +25,6 @@
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
 - (void).cxx_destruct;
-- (void)postNewBeaconsDarwinNotification;
 - (void)clearCacheWithCompletion:(CDUnknownBlockType)arg1;
 - (void)beaconAdvertisementAtFileURL:(id)arg1 beaconIdentifier:(id)arg2 scanDate:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)markBeaconPayloadsProcessed:(id)arg1 completion:(CDUnknownBlockType)arg2;

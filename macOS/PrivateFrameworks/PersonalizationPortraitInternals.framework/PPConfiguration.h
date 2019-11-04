@@ -32,6 +32,7 @@
 - (float)scoreThresholdForTopic;
 - (float)scoreThresholdForNamedEntity;
 - (double)highLevelTopicScoreThreshold;
+- (double)highLevelTopicScoreAttenuationFactor;
 - (BOOL)safariDataDetectorsEnabledForHighMemoryDevices;
 - (BOOL)safariDonationTitleExtractionEnabled;
 - (BOOL)highLevelTopicExtractionEnabled;

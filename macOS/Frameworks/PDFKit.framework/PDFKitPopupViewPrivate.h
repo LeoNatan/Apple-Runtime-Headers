@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSScrollView, NSString, NSTextView, PDFAnnotation, PDFPageView, PDFView;
+@class NSScrollView, NSString, NSTextView, NSUndoManager, PDFAnnotation, PDFPageView, PDFView;
 
 __attribute__((visibility("hidden")))
 @interface PDFKitPopupViewPrivate : NSObject
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     PDFPageView *pageView;
     PDFView *view;
     NSTextView *popupTextView;
+    NSUndoManager *popupTextViewUndoManager;
     NSScrollView *popupScrollView;
     NSString *contents;
     _Bool deviceIsiPhone;

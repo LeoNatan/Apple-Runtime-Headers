@@ -36,6 +36,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VUITextLayout *headerTextLayout; // @synthesize headerTextLayout=_headerTextLayout;
 - (void).cxx_destruct;
 - (void)_setupLayouts;
+@property(readonly, nonatomic) double verticalSpacing;
+@property(readonly, nonatomic) double bottomPadding;
 @property(readonly, nonatomic) _Bool isTVOS;
 @property(readonly, nonatomic) _Bool isDynamicTextEnabled;
 @property(readonly, nonatomic) _Bool isHorizontal;

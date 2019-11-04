@@ -32,7 +32,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_unloadContentViews;
 - (void)tritium_loadContentViews;

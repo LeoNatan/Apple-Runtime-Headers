@@ -17,6 +17,7 @@
 {
     PKTableHeaderView *_headerView;
     _Bool _hasScrolledToShowFields;
+    _Bool _cellsAreEnabled;
     PKPaymentSetupFieldsModel *_fieldsModel;
     NSMapTable *_fieldIdentifierToCellMap;
     id _currentNextActionBlock;
@@ -26,10 +27,12 @@
     _Bool _rightBarButtonItemsEnabled;
     _Bool _hidesBackButton;
     _Bool _showingActivitySpinner;
+    _Bool _performingNextActionLoop;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     PKPaymentWebService *_webService;
 }
 
+@property(readonly, nonatomic, getter=isPerformingNextActionLoop) _Bool performingNextActionLoop; // @synthesize performingNextActionLoop=_performingNextActionLoop;
 @property(readonly, nonatomic, getter=isShowingActivitySpinner) _Bool showingActivitySpinner; // @synthesize showingActivitySpinner=_showingActivitySpinner;
 @property(retain, nonatomic) PKPaymentSetupFieldsModel *fieldsModel; // @synthesize fieldsModel=_fieldsModel;
 @property(retain, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
@@ -49,6 +52,7 @@
 - (id)nextResponderCellForCurrentIdentifier:(id)arg1;
 - (id)cellForIdentifier:(id)arg1;
 - (id)fieldForIdentifier:(id)arg1;
+- (void)_setCellsEnabled:(_Bool)arg1;
 - (void)noteFieldIdentifiersChanged;
 - (id)readonlyFieldIdentifiers;
 - (id)visibleFieldIdentifiers;
@@ -69,6 +73,7 @@
 - (void)showActivitySpinnerWithTitle:(id)arg1 subtitle:(id)arg2;
 - (void)handleNextActionError:(id)arg1 shouldContinue:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)handleNextActionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_continueNextActionLoop:(_Bool)arg1;
 - (void)_triggerNextActionLoop:(_Bool)arg1;
 - (void)triggerNextActionLoop;
 - (void)handleNextButtonTapped:(id)arg1;

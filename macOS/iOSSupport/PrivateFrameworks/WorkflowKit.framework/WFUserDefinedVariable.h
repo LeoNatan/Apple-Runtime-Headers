@@ -21,6 +21,7 @@
 - (id)possibleContentClassesWithContext:(id)arg1;
 @property(readonly, nonatomic) NSString *name;
 - (id)UUID;
+- (id)icon;
 - (BOOL)requiresModernVariableSupport;
 - (BOOL)isAvailable;
 - (id)initWithDictionary:(id)arg1 variableProvider:(id)arg2;

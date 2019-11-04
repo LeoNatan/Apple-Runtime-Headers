@@ -4,11 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString, UIColor;
+@class NSString;
 
 @protocol AVTAvatarAttributeEditorLayout
 @property(readonly, nonatomic) unsigned long long supportedLayoutOrientation;
-@property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewScrollIndicatorInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewInsets;
 @property(readonly, nonatomic) struct CGRect verticalRuleFrame;
@@ -18,6 +17,7 @@
 @property(readonly, nonatomic) struct CGRect userInfoFrame;
 @property(readonly, nonatomic) struct CGRect attributesContentViewFrame;
 @property(readonly, nonatomic) struct CGRect groupDialContainerFrame;
+@property(readonly, nonatomic) double avatarContainerAlpha;
 @property(readonly, nonatomic) struct CGRect avatarContainerFrame;
 @property(readonly, copy, nonatomic) NSString *contentSizeCategory;
 @property(readonly, nonatomic) double screenScale;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSString, NSXPCConnection, NSXPCListenerEndpoint, _AKAppleIDAuthenticationContextManager;
+@class AKAppleIDAuthenticationContextManager, NSLock, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 @protocol AKAppleIDAuthenticationDelegate;
 
 @interface AKAppleIDAuthenticationController : NSObject
@@ -14,7 +14,7 @@
     NSString *_serviceID;
     NSXPCListenerEndpoint *_daemonXPCEndpoint;
     NSXPCConnection *_authenticationServiceConnection;
-    _AKAppleIDAuthenticationContextManager *_contextManager;
+    AKAppleIDAuthenticationContextManager *_contextManager;
     NSLock *_connectionLock;
     CDUnknownBlockType _deallocHandler;
 }

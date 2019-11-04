@@ -12,29 +12,24 @@
 __attribute__((visibility("hidden")))
 @interface FullKey : NSObject
 {
-    _Bool _isPersistent;
     int _keyStore;
-    NSString *_keyTag;
     id <P256PrivateKeyProtocol> _key;
-    NSString *_keyLabel;
-    NSString *_access;
+    NSString *_keychainTag;
 }
 
-+ (id)generateNewKeyWithAccess:(id)arg1 label:(id)arg2 tag:(id)arg3 persist:(_Bool)arg4 forceNoSEP:(_Bool)arg5 error:(id *)arg6;
-+ (id)generateNewKeyWithAccess:(id)arg1 label:(id)arg2 tag:(id)arg3 error:(id *)arg4;
-@property(retain) NSString *access; // @synthesize access=_access;
-@property(retain) NSString *keyLabel; // @synthesize keyLabel=_keyLabel;
-@property(readonly) _Bool isPersistent; // @synthesize isPersistent=_isPersistent;
++ (id)generateNewKeyWithAccess:(id)arg1 forceNoSEP:(_Bool)arg2 error:(id *)arg3;
++ (id)generateNewKeyWithAccess:(id)arg1 error:(id *)arg2;
+@property(retain) NSString *keychainTag; // @synthesize keychainTag=_keychainTag;
 @property(readonly) int keyStore; // @synthesize keyStore=_keyStore;
 @property(readonly) id <P256PrivateKeyProtocol> key; // @synthesize key=_key;
-@property(readonly, nonatomic) NSString *keyTag; // @synthesize keyTag=_keyTag;
 - (void).cxx_destruct;
+- (id)protobuffer;
 - (id)description;
-- (_Bool)eraseFromKeychain:(id *)arg1;
-- (_Bool)isInKeychain;
-- (id)initWithDataRepresentation:(id)arg1 keyStore:(int)arg2 error:(id *)arg3;
-- (_Bool)persistWithError:(id *)arg1;
-- (id)initWithKey:(id)arg1 access:(id)arg2 label:(id)arg3 tag:(id)arg4 persist:(_Bool)arg5 error:(id *)arg6;
+- (id)keyIdentifier;
+- (id)initWithKeychainTag:(id)arg1 error:(id *)arg2;
+- (id)initWithCTKTokenOID:(id)arg1 error:(id *)arg2;
+- (id)initWithProtobufferData:(id)arg1 error:(id *)arg2;
+- (id)initWithKey:(id)arg1 error:(id *)arg2;
 
 @end
 

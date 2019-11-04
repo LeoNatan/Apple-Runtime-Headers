@@ -27,6 +27,7 @@
 - (void)flushDynamicData;
 - (void)resetRegisteredResponses;
 - (void)prunePersonalizedUserDatabase:(id)arg1;
+- (_Bool)usePersonalizedRanking;
 - (id)getRankLearner;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 metadata:(id)arg3 withLanguage:(id)arg4;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withEffectiveDate:(id)arg4 withLanguage:(id)arg5;

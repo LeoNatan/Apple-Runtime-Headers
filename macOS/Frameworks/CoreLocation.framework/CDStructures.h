@@ -156,6 +156,7 @@ typedef struct {
     _Bool notifyOnEntry;
     _Bool notifyOnExit;
     _Bool conservativeEntry;
+    _Bool emergency;
     union {
         struct {
             char proximityUUID[512];
@@ -171,8 +172,14 @@ typedef struct {
             int referenceFrame;
             _Bool allowMonitoringWhileNearby;
         } circularAttributes;
+        struct {
+            CDStruct_2c43369c vertices[101];
+            int verticesCount;
+            int referenceFrame;
+            _Bool allowMonitoringWhileNearby;
+        } polygonalAttributes;
     } ;
-} CDStruct_5652eb1b;
+} CDStruct_4c505072;
 
 // Ambiguous groups
 typedef struct {

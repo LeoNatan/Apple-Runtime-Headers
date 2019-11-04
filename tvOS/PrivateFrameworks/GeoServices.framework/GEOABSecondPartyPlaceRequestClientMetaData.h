@@ -13,11 +13,13 @@
 @interface GEOABSecondPartyPlaceRequestClientMetaData : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_clientConfigs;
     GEOPDABClientDatasetMetadata *_clientDatasetMetadata;
     NSMutableArray *_serverAbAssignments;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_clientConfigs:1;
@@ -63,6 +65,8 @@
 - (void)clearServerAbAssignments;
 @property(retain, nonatomic) NSMutableArray *serverAbAssignments;
 - (void)_readServerAbAssignments;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

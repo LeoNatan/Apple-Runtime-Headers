@@ -27,8 +27,6 @@
 + (BOOL)supportsKeepLocalStatusObservation;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredStoreLibraryPersonalizationProperties;
-+ (BOOL)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
-+ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (long long)type;
 - (id)anyObject;
 - (id)humanDescription;
@@ -39,8 +37,6 @@
 - (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
 - (id)relativeModelObjectForStoreLibraryPersonalization;
 - (id)personalizationScopedPropertiesForProperties:(id)arg1;
-- (BOOL)storeItemMetadataRequestNeedsPersonalization;
-- (id)storeItemMetadataRequestItemIdentifier;
 
 // Remaining properties
 @property(retain, nonatomic) MPArtworkCatalog *_artworkCatalog; // @dynamic _artworkCatalog;

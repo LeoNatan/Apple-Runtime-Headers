@@ -13,7 +13,6 @@
 @interface GEOTFTrafficSnapshot : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_compactSpeeds;
     NSString *_feedId;
     unsigned long long _feedPublishTime;
@@ -22,6 +21,9 @@
     NSMutableArray *_regions;
     NSString *_snapshotId;
     NSMutableArray *_speeds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _trafficVersion;
     struct {
         unsigned int has_feedPublishTime:1;
@@ -101,6 +103,8 @@
 - (void)clearRegions;
 @property(retain, nonatomic) NSMutableArray *regions;
 - (void)_readRegions;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

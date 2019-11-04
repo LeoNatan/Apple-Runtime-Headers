@@ -24,6 +24,9 @@
     NSConditionLock *_isDirtyStateLock;
     NSConditionLock *_obsoleteMessageKeysLock;
     NSMutableSet *_obsoleteMessageKeys;
+    NSMutableSet *_restartingUnreadCountQueryMailboxes;
+    double _lastUnreadCountQueryRestartTime;
+    double _restartDelay;
     BOOL _suspendSmartMailboxUnreadCountCalculations;
     double _lastModificationToUpdate;
     long long _unreadQueryCount;
@@ -81,7 +84,7 @@
 - (void)_updateSmartMailboxUnreadCountUsingSpotlight:(id)arg1;
 - (BOOL)_canCreateQuery;
 - (void)_updateSmartMailboxUnreadCountUsingSearchableIndexForMailbox:(id)arg1;
-- (BOOL)_shouldRestartQueryForError:(id)arg1;
+- (double)_restartQueryDelayForError:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

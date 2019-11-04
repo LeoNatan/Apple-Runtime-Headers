@@ -15,16 +15,22 @@
 - (id)hf_findClipPositionForDate:(id)arg1 options:(unsigned long long)arg2;
 - (id)hf_findClipPositionForDate:(id)arg1;
 - (id)hf_findClipForDate:(id)arg1;
+- (void)_prepareDatesContainingClips;
+- (id)hf_datesContainingClips;
 - (void)hf_deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_playableClipsFromArray:(id)arg1;
-- (void)hf_reloadForUpdatedClips:(id)arg1 removedClipUUIDs:(id)arg2;
+- (BOOL)_isClipDisplayable:(id)arg1;
+- (void)hf_reloadForRemovedClips:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)hf_reloadForUpdatedClips:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hf_prepareForDismissal;
 - (id)_firstOfTheDayClips;
-- (id)_internalClipIndexByClipUUID;
 - (id)_internalClips;
+- (void)updateFirstOfTheDayClips:(id)arg1 withClip:(id)arg2 previousClip:(id)arg3;
 - (void)_prepareInternalClipCache:(id)arg1;
 - (void)hf_setDemoClipsForCameraProfile:(id)arg1;
 - (void)hmf_setClips:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *hf_clips;
+- (BOOL)hf_shouldBypassResourceLoading;
+- (void)hf_shouldBypassResourceLoading:(BOOL)arg1;
 @end
 

@@ -90,6 +90,7 @@
 - (_Bool)folderController:(id)arg1 canChangeCurrentPageIndexToIndex:(long long)arg2;
 - (Class)controllerClassForFolder:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
+@property(readonly, nonatomic) _Bool shouldAnimateFirstTwoViewsAsOne;
 @property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
 @property(readonly, nonatomic) UIView *extraViewsContainer;
 - (id)targetIconContainerView;
@@ -181,6 +182,7 @@
 @property(readonly, nonatomic) double maximumDockContinuousCornerRadius;
 @property(readonly, nonatomic) double translationFromFullyPresentedFrame;
 - (double)minimumVerticalMarginForFrame:(struct CGRect)arg1;
+@property(nonatomic) double requestedVerticalMargin;
 @property(readonly, nonatomic) double preferredVerticalMargin;
 - (double)contentHeightForFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) double contentHeight;

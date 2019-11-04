@@ -35,9 +35,14 @@
 - (void)_unloadCoordinatorIfNeeded;
 - (void)_beginLoadingDataForEngine:(id)arg1;
 - (void)_loadCoordinatorIfNeeded;
-- (_Bool)_faceCollectionContainsFaceNeedingElementCoordinator:(id)arg1;
+- (_Bool)_faceCollectionNeedsLiveElementCoordinator:(id)arg1;
+- (_Bool)_faceCollectionContainsSiriFace:(id)arg1;
 - (_Bool)_needsLiveElementCoordinator;
 - (_Bool)_faceNeedsElementCoordinator:(id)arg1;
+- (void)_refreshLiveCoordinator;
+- (void)faceCollectionDidReset:(id)arg1;
+- (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)faceCollectionDidReorderFaces:(id)arg1;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned long long)arg3;

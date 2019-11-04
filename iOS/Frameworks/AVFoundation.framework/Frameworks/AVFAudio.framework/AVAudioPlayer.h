@@ -52,9 +52,12 @@
 - (id)initWithData:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (void)finalize;
+- (id)init;
 - (void)endInterruption;
 - (void)endInterruptionWithFlags:(id)arg1;
 - (void)beginInterruption;
+- (void)handleInterruption:(id)arg1;
+- (void)privRemoveSessionListener;
 - (void)decodeError:(id)arg1;
 - (void)finishedPlaying:(id)arg1;
 - (id)initBase;

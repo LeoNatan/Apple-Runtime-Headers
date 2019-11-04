@@ -13,7 +13,6 @@
 @interface GEOTransitRouteUpdateResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTimepoint _timepointUsed;
     GEOPDDatasetABStatus *_datasetAbStatus;
@@ -21,6 +20,9 @@
     GEOTransitRouteUpdateConfiguration *_routeUpdateConfiguration;
     NSMutableArray *_routeUpdates;
     NSString *_transitDataVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _status;
     struct {
         unsigned int has_timepointUsed:1;
@@ -82,6 +84,8 @@
 - (void)clearRouteUpdates;
 @property(retain, nonatomic) NSMutableArray *routeUpdates;
 - (void)_readRouteUpdates;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <HomeKitBackingStore/HMBModelProperties-Protocol.h>
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class HMBModelContainer, HMFVersion, NSDictionary, NSMutableDictionary, NSSet, NSString, NSUUID;
+@class HMBModelContainer, HMFVersion, NSMutableDictionary, NSSet, NSString, NSUUID;
 
 @interface HMBModel : HMFObject <HMFLogging, HMBModelProperties>
 {
@@ -34,6 +34,8 @@
 + (id)hmbReadOnlyBefore;
 + (id)hmbExternalRecordType;
 + (id)hmbSchemaHashRoot;
++ (id)hmbQueries;
++ (id)hmbPropertyNames;
 + (id)hmbProperties;
 + (id)properties;
 + (void)setHmbShouldLogPrivateInformation:(BOOL)arg1;
@@ -53,7 +55,6 @@
 @property(readonly, nonatomic) NSString *hmbDescription;
 - (void)dumpDebug;
 - (void)dumpDebug:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *hmbQueryableProperties;
 - (BOOL)hmbPropertyIsExternal:(id)arg1;
 @property(nonatomic) BOOL hmbExternallyFetched;
 - (id)copy;
@@ -64,13 +65,12 @@
 - (id)hmbPropertyNamed:(id)arg1;
 - (id)hmbDefaultValueForPropertyNamed:(id)arg1;
 - (id)hmbPropertyNamed:(id)arg1 isSet:(char *)arg2;
-- (void)hmbSetPropertyIfNotNil:(id)arg1 named:(id)arg2;
+- (void)hmbUnsetPropertyNamed:(id)arg1;
 - (void)hmbSetProperty:(id)arg1 named:(id)arg2;
 @property(readonly, nonatomic) BOOL hmbIgnoreModel;
 @property(retain, nonatomic) HMFVersion *hmbIgnoredBefore;
-- (BOOL)hmbDiff:(id)arg1 differingFields:(id *)arg2;
-- (id)hmbMerge:(id)arg1 fromStorageLocation:(unsigned long long)arg2;
-- (void)hmbMergeMetadataFromModel:(id)arg1 fromStorageLocation:(unsigned long long)arg2;
+- (BOOL)hmbIsDifferentFromModel:(id)arg1 differingFields:(id *)arg2;
+- (id)hmbMerge:(id)arg1 isFromCloud:(BOOL)arg2;
 - (BOOL)hmbValidForStorage:(id)arg1;
 - (BOOL)hmbPropertyIsAvailable:(id)arg1;
 - (BOOL)hmbPropertyIsReadOnly:(id)arg1;
@@ -81,7 +81,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)prepareForStorageLocation:(unsigned long long)arg1 using:(id)arg2 updatedModelIDs:(id)arg3 error:(id *)arg4;
-- (id)hmbPrepareFor:(unsigned long long)arg1;
+- (id)hmbPrepareForStorageLocation:(unsigned long long)arg1;
 - (id)validateType:(id)arg1 path:(id)arg2;
 - (BOOL)_validateType:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSSet *hmbDependentUUIDs;

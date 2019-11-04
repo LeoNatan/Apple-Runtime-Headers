@@ -27,6 +27,7 @@
 + (id)iconWithData:(id)arg1 scale:(double)arg2;
 - (void).cxx_destruct;
 - (_Bool)_shouldMaskImage;
+- (id)_applicationProxyForBundleID:(id)arg1;
 - (_Bool)_hasInstalledApplicationWithBundleID:(id)arg1;
 - (struct CGImage *)_CGImageForImage:(id)arg1;
 - (id)_dataForImage:(id)arg1;
@@ -34,8 +35,7 @@
 - (id)_iconWithImage:(id)arg1;
 - (id)_imageWithName:(id)arg1 size:(struct CGSize)arg2 masked:(_Bool)arg3;
 - (id)_imageWithBundleID:(id)arg1 size:(struct CGSize)arg2 masked:(_Bool)arg3;
-- (id)_unmaskedImageWithData:(id)arg1 scale:(double)arg2;
-- (id)_maskedImageWithData:(id)arg1 scale:(double)arg2;
+- (id)_imageWithData:(id)arg1 scale:(double)arg2 masked:(_Bool)arg3;
 - (id)_catalogueImageWithName:(id)arg1;
 - (unsigned long long)iconType;
 - (id)automaskedImageData;

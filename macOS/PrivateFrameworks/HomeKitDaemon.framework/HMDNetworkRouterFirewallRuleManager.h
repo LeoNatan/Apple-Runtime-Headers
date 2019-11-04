@@ -10,20 +10,21 @@
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerDebug-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSNotificationCenter, NSObject, NSSet, NSString;
-@protocol HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator, HMFLocking, OS_dispatch_queue;
+@class HMFUnfairLock, NSCountedSet, NSMutableArray, NSNotificationCenter, NSObject, NSSet, NSString;
+@protocol HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator, HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinatorFactory, OS_dispatch_queue;
 
 @interface HMDNetworkRouterFirewallRuleManager : HMFObject <HMFLogging, HMDNetworkRouterFirewallRuleManager, HMDNetworkRouterFirewallRuleManagerDebug>
 {
     id <HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator> _coordinator;
     NSMutableArray *_startupCompletions;
     NSMutableArray *_shutdownCompletions;
+    NSCountedSet *_interestedAccessoriesSet;
     unsigned long long _operationsInProgressCount;
     NSNotificationCenter *_notificationCenter;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
-    id <HMFLocking> _propertyLock;
-    NSMutableDictionary *_interestedAccessoriesRefcountDictionary;
+    id <HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinatorFactory> _coordinatorFactory;
+    HMFUnfairLock *_propertyLock;
 }
 
 + (double)defaultCloudFetchRetryInterval;
@@ -31,16 +32,15 @@
 + (double)_intervalPreferenceForKey:(id)arg1 defaultValue:(double)arg2;
 + (id)sharedInstance;
 + (id)logCategory;
-@property(readonly, nonatomic) NSMutableDictionary *interestedAccessoriesRefcountDictionary; // @synthesize interestedAccessoriesRefcountDictionary=_interestedAccessoriesRefcountDictionary;
-@property(readonly, nonatomic) id <HMFLocking> propertyLock; // @synthesize propertyLock=_propertyLock;
+@property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
+@property(readonly, nonatomic) id <HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinatorFactory> coordinatorFactory; // @synthesize coordinatorFactory=_coordinatorFactory;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
-@property(nonatomic) unsigned long long operationsInProgressCount; // @synthesize operationsInProgressCount=_operationsInProgressCount;
 @property(retain, nonatomic) NSMutableArray *shutdownCompletions; // @synthesize shutdownCompletions=_shutdownCompletions;
 @property(retain, nonatomic) NSMutableArray *startupCompletions; // @synthesize startupCompletions=_startupCompletions;
 - (void).cxx_destruct;
-- (void)fetchCloudChangesAndForceChangesFoundWithCompletion:(CDUnknownBlockType)arg1;
+- (void)forceFetchCloudChangesAndForceChangeNotifications:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeOverridesForProductGroup:(id)arg1 productNumber:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeAllOverridesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_removeOverridesForProductGroup:(id)arg1 productNumber:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -57,7 +57,7 @@
 - (void)listCloudRecordsForProductGroup:(id)arg1 rawOutput:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchRulesForAccessories:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchRulesForAccessories:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_fetchCloudChangesAndForceChangeNotifications:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_fetchCloudChangesIgnoringLastFetchedAccessories:(BOOL)arg1 forceChangeNotifications:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchCloudChangesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)__finishOperationWithCallbackBlock:(CDUnknownBlockType)arg1;
 - (void)__beginOperationWithBlock:(CDUnknownBlockType)arg1;
@@ -70,15 +70,18 @@
 - (void)__dispatchStartupCompletionsWithError:(id)arg1;
 - (void)__dispatchCompletionsWithError:(id)arg1 isStartup:(BOOL)arg2;
 - (void)__shutdown;
+- (void)_shutdownWithCompletion:(CDUnknownBlockType)arg1;
 - (void)shutdownWithCompletion:(CDUnknownBlockType)arg1;
-- (void)__startupWithCoordinator:(id)arg1;
 - (void)__startup;
+- (void)_startupWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startupWithCompletion:(CDUnknownBlockType)arg1;
+@property(nonatomic) unsigned long long operationsInProgressCount; // @synthesize operationsInProgressCount=_operationsInProgressCount;
+@property(readonly, nonatomic) NSCountedSet *interestedAccessoriesSet; // @synthesize interestedAccessoriesSet=_interestedAccessoriesSet;
 @property(readonly, nonatomic, getter=isRunning) BOOL running;
 @property(retain, nonatomic) id <HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinator> coordinator; // @synthesize coordinator=_coordinator;
 - (void)dealloc;
 - (id)init;
-- (id)initWithNotificationCenter:(id)arg1 workQueue:(id)arg2;
+- (id)initWithNotificationCenter:(id)arg1 workQueue:(id)arg2 coordinatorFactory:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

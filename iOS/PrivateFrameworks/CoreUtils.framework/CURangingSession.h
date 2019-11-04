@@ -23,6 +23,7 @@
     PRSharingSession *_prRangingSession;
     struct LogCategory *_ucat;
     unsigned int _flags;
+    unsigned int _statusFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _invalidationHandler;
@@ -30,8 +31,11 @@
     CDUnknownBlockType _measurementHandler;
     CDUnknownBlockType _measurementHandlerEx;
     NSArray *_peers;
+    CDUnknownBlockType _statusChangedHandler;
 }
 
+@property(readonly, nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
+@property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(copy, nonatomic) NSArray *peers; // @synthesize peers=_peers;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandlerEx; // @synthesize measurementHandlerEx=_measurementHandlerEx;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandler; // @synthesize measurementHandler=_measurementHandler;
@@ -41,6 +45,7 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)session:(id)arg1 didChangeProximitySensorState:(unsigned long long)arg2;
 - (void)session:(id)arg1 didFailwithError:(id)arg2;
 - (void)session:(id)arg1 didEstimateScores:(id)arg2;
 - (void)_updatePeers;

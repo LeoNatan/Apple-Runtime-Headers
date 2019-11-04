@@ -22,8 +22,6 @@
     _Bool _ivarQueue_reversesMoreVideoFramesInMemory;
     _Bool _ivarQueue_decodesAllFramesDuringOrdinaryPlayback;
     _Bool _ivarQueue_contentSupportsVitality;
-    CDStruct_1b6d18a9 _ivarQueue_prePhotoTime;
-    CDStruct_1b6d18a9 _ivarQueue_postPhotoTime;
     CDStruct_1b6d18a9 _ivarQueue_playerItemPhotoTime;
     CDStruct_1b6d18a9 _ivarQueue_playerItemDuration;
     ISPlayerContent *_ivarQueue_playerContent;
@@ -68,8 +66,8 @@
 - (_Bool)_isPlayerContentValid;
 - (void)_invalidatePlayerContent;
 - (id)_videoPlayerItem;
-- (void)_setVideoPlayerItem:(id)arg1 prePhotoTime:(CDStruct_1b6d18a9)arg2 postPhotoTime:(CDStruct_1b6d18a9)arg3 videoDuration:(CDStruct_1b6d18a9)arg4;
-- (void)_handleVideoPlayerItemLoadResultWithSuccess:(_Bool)arg1 playerItem:(id)arg2 prePhotoTime:(CDStruct_1b6d18a9)arg3 postPhotoTime:(CDStruct_1b6d18a9)arg4 videoDuration:(CDStruct_1b6d18a9)arg5 error:(id)arg6;
+- (void)_setVideoPlayerItem:(id)arg1 videoDuration:(CDStruct_1b6d18a9)arg2;
+- (void)_handleVideoPlayerItemLoadResultWithSuccess:(_Bool)arg1 playerItem:(id)arg2 videoDuration:(CDStruct_1b6d18a9)arg3 error:(id)arg4;
 - (void)_updateVideoPlayerItemIfNeeded;
 - (_Bool)_isVideoPlayerItemValid;
 - (void)_invalidateVideoPlayerItem;

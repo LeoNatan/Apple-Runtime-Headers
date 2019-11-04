@@ -13,6 +13,7 @@
     UIBlurEffect *_backgroundBlurEffect;
     _Bool _didUpdateTranslucentAppearanceAtLeastOnce;
     _Bool _didHaveTranslucentAppearance;
+    _Bool _updatePreferredContentSizeAfterNextLayout;
     double _preferredContentWidth;
 }
 
@@ -29,6 +30,7 @@
 - (_Bool)_needsTranslucentAppearanceUpdate;
 - (void)_updateTranslucentAppearanceIfNeeded;
 - (double)tableViewSpacingForExtraSeparators:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;

@@ -83,6 +83,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)userDidCancel;
 - (void)userDidSelect;
+- (void)resetTransferState;
 - (void)setSecondLabelText:(id)arg1 withTextColor:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)updateNameLabel;
 - (void)updatePersonIconView;

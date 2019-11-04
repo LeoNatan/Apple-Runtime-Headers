@@ -51,6 +51,8 @@
 - (_Bool)_thermalStateAcceptableForLooping;
 - (void)tapGestureRecognized:(id)arg1;
 - (void)didMoveToWindow;
+- (void)prepareForAcknowledgementDismissal;
+- (void)prepareForAcknowledgementDisplay;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

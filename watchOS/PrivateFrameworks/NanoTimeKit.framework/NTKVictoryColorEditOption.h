@@ -16,7 +16,6 @@
 + (id)_orderedValuesForDevice:(id)arg1;
 + (id)optionWithVictoryColor:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int victoryColor;
 
 @end

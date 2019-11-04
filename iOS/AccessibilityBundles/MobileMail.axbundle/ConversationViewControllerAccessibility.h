@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_updateFooterViewFrameForCell:(id)arg1 atIndexPath:(id)arg2;
 - (id)_accessibilityTitleForLeadingActionWithCell:(id)arg1;
 - (void)scheduleAutomaticMarkAsReadForMessage:(id)arg1;
 - (void)_axCancelMarkAsReadTimer;

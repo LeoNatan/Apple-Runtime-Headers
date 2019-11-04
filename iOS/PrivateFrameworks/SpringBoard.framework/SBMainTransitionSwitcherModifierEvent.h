@@ -19,8 +19,7 @@
     _Bool _breadcrumbTransition;
     _Bool _inlineAppExposeTransition;
     _Bool _morphToPiPTransition;
-    long long _fromInterfaceOrientation;
-    long long _toInterfaceOrientation;
+    _Bool _continuityTransition;
     SBAppLayout *_fromFloatingAppLayout;
     long long _fromFloatingConfiguration;
     SBAppLayout *_toFloatingAppLayout;
@@ -32,6 +31,7 @@
     unsigned long long _toInlineAppExposeRoles;
 }
 
+@property(nonatomic, getter=isContinuityTransition) _Bool continuityTransition; // @synthesize continuityTransition=_continuityTransition;
 @property(nonatomic, getter=isMorphToPiPTransition) _Bool morphToPiPTransition; // @synthesize morphToPiPTransition=_morphToPiPTransition;
 @property(nonatomic, getter=isInlineAppExposeTransition) _Bool inlineAppExposeTransition; // @synthesize inlineAppExposeTransition=_inlineAppExposeTransition;
 @property(nonatomic, getter=isBreadcrumbTransition) _Bool breadcrumbTransition; // @synthesize breadcrumbTransition=_breadcrumbTransition;
@@ -50,8 +50,6 @@
 @property(retain, nonatomic) SBAppLayout *fromFloatingAppLayout; // @synthesize fromFloatingAppLayout=_fromFloatingAppLayout;
 @property(nonatomic) _Bool toAppLayoutWantsExclusiveForeground; // @synthesize toAppLayoutWantsExclusiveForeground=_toAppLayoutWantsExclusiveForeground;
 @property(nonatomic) _Bool fromAppLayoutWantsExclusiveForeground; // @synthesize fromAppLayoutWantsExclusiveForeground=_fromAppLayoutWantsExclusiveForeground;
-@property(nonatomic) long long toInterfaceOrientation; // @synthesize toInterfaceOrientation=_toInterfaceOrientation;
-@property(nonatomic) long long fromInterfaceOrientation; // @synthesize fromInterfaceOrientation=_fromInterfaceOrientation;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (long long)type;

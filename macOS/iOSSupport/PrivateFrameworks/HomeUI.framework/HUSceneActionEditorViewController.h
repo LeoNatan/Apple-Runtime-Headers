@@ -14,7 +14,7 @@
 #import <HomeUI/HUServiceGridViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 
-@class HUSceneActionEditorItemManager, NSMutableDictionary, NSSet, NSString;
+@class HUQuickControlSummaryNavigationBarTitleView, HUSceneActionEditorItemManager, NSMutableDictionary, NSSet, NSString;
 @protocol HUPresentationDelegate, HUSceneEditorDelegate;
 
 @interface HUSceneActionEditorViewController : HUItemTableViewController <HUSwitchCellDelegate, HUSceneServicePickerViewControllerDelegate, HUNameAndIconEditorCellDelegate, HUIconPickerViewControllerDelegate, HUServiceGridViewControllerDelegate, HUMediaSelectionViewControllerDelegate, HUDetailsPresentationDelegateHost>
@@ -25,6 +25,7 @@
     id <HUPresentationDelegate> _presentationDelegate;
     unsigned long long _mode;
     id <HUSceneEditorDelegate> _sceneEditorDelegate;
+    HUQuickControlSummaryNavigationBarTitleView *_navigationBarTitleView;
     NSString *_editingName;
     NSMutableDictionary *_actionGridViewControllersByEditorType;
 }
@@ -33,6 +34,7 @@
 @property(nonatomic) BOOL hasViewEverAppeared; // @synthesize hasViewEverAppeared=_hasViewEverAppeared;
 @property(readonly, nonatomic) NSMutableDictionary *actionGridViewControllersByEditorType; // @synthesize actionGridViewControllersByEditorType=_actionGridViewControllersByEditorType;
 @property(copy, nonatomic) NSString *editingName; // @synthesize editingName=_editingName;
+@property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(nonatomic) __weak id <HUSceneEditorDelegate> sceneEditorDelegate; // @synthesize sceneEditorDelegate=_sceneEditorDelegate;
 @property(nonatomic) BOOL showCancelButton; // @synthesize showCancelButton=_showCancelButton;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -67,11 +69,11 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)_testScene:(id)arg1;
-- (void)_deleteScene:(id)arg1;
+- (void)_deleteScene:(id)arg1 indexPath:(id)arg2;
 - (void)_changeServices:(id)arg1;
 - (void)_cancel:(id)arg1;
 - (void)_done:(id)arg1;
-- (void)commitChanges;
+- (id)commitChanges;
 - (id)_actionGridViewControllerForEditorType:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *savedName;
 @property(copy, nonatomic) NSSet *prioritizedServices;

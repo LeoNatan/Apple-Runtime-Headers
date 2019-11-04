@@ -99,6 +99,7 @@
     _Bool _allowHaptics;
     _Bool _allowHapticsOnConfigurationTaps;
     _Bool _topBarInvertedForModernPhone;
+    _Bool __forceAllowTripleCamera;
     _Bool _hasFilteringEntitlement;
     _Bool _ctmSupportSuppressed;
     _Bool _deviceSupportsCTM;
@@ -137,6 +138,7 @@
 @property(readonly, nonatomic) _Bool deviceSupportsCTM; // @synthesize deviceSupportsCTM=_deviceSupportsCTM;
 @property(readonly, nonatomic, getter=isCTMSupportSupressed) _Bool ctmSupportSuppressed; // @synthesize ctmSupportSuppressed=_ctmSupportSuppressed;
 @property(readonly, nonatomic) _Bool hasFilteringEntitlement; // @synthesize hasFilteringEntitlement=_hasFilteringEntitlement;
+@property(readonly, nonatomic) _Bool _forceAllowTripleCamera; // @synthesize _forceAllowTripleCamera=__forceAllowTripleCamera;
 @property(readonly, nonatomic) long long _forcedBackCamera; // @synthesize _forcedBackCamera=__forcedBackCamera;
 @property(readonly, nonatomic, getter=isTopBarInvertedForModernPhone) _Bool topBarInvertedForModernPhone; // @synthesize topBarInvertedForModernPhone=_topBarInvertedForModernPhone;
 @property(readonly, nonatomic) double _frontCaptureInterval; // @synthesize _frontCaptureInterval=__frontCaptureInterval;
@@ -257,7 +259,6 @@
 @property(readonly, nonatomic, getter=isBackCameraSupported) _Bool backCameraSupported; // @synthesize backCameraSupported=_backCameraSupported;
 - (long long)resolvedDeviceForDesiredDevice:(long long)arg1 mode:(long long)arg2 videoConfiguration:(long long)arg3;
 - (long long)preferredDeviceForPosition:(long long)arg1 mode:(long long)arg2 videoConfiguration:(long long)arg3;
-- (long long)maxSupportedPhotoQualityPrioritizationForMode:(long long)arg1;
 - (double)defaultZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3 captureOrientation:(long long)arg4;
 - (double)maximumZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isZoomAllowedForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
@@ -279,7 +280,7 @@
 - (_Bool)isWideDualSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isWideDualSupportedForDevicePosition:(long long)arg1;
 @property(readonly, nonatomic, getter=isWideDualSupported) _Bool wideDualSupported;
-- (_Bool)_isSuperWideSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
+- (_Bool)isSuperWideSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isSuperWideSupportedForDevicePosition:(long long)arg1;
 @property(readonly, nonatomic, getter=isSuperWideSupported) _Bool superWideSupported;
 - (double)dualCameraSwitchOverZoomFactorForDevicePosition:(long long)arg1;
@@ -289,10 +290,10 @@
 @property(readonly, nonatomic, getter=isDualSupported) _Bool dualSupported;
 - (_Bool)shouldAllowCameraToggleForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)shouldAllowTelephotoToggleForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
-- (_Bool)_isTelephotoSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
+- (_Bool)isTelephotoSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isTelephotoSupportedForDevicePosition:(long long)arg1;
-- (_Bool)_isWideSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
-- (_Bool)_isWideSupportedForDevicePosition:(long long)arg1;
+- (_Bool)isWideSupportedForMode:(long long)arg1 devicePosition:(long long)arg2 videoConfiguration:(long long)arg3;
+- (_Bool)isWideSupportedForDevicePosition:(long long)arg1;
 - (_Bool)isStereoAudioRecordingSupportedForMode:(long long)arg1;
 - (_Bool)isAutoLowLightVideoSupportedForMode:(long long)arg1 videoConfiguration:(long long)arg2;
 - (_Bool)isFlashOrTorchSupportedForMode:(long long)arg1 devicePosition:(long long)arg2;
@@ -305,6 +306,7 @@
 - (_Bool)_isSpatialOverCaptureSupportedForMode:(long long)arg1;
 - (_Bool)isSpatialOverCaptureSupportedForDevice:(long long)arg1;
 @property(readonly, nonatomic, getter=isSpatialOverCaptureSupported) _Bool spatialOverCaptureSupported;
+- (_Bool)isAspectRatioCropSupportedForMode:(long long)arg1;
 - (_Bool)isPortraitModeSupportedForDevice:(long long)arg1;
 - (_Bool)isPortraitModeSupportedForDevicePosition:(long long)arg1;
 @property(readonly, nonatomic, getter=isPortraitModeSupported) _Bool portraitModeSupported;

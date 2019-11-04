@@ -506,7 +506,8 @@ typedef struct {
     unsigned int identifiers:1;
     unsigned int text:1;
     unsigned int hasStoreLyrics:1;
-} CDStruct_99cfb959;
+    unsigned int hasTimeSyncedLyrics:1;
+} CDStruct_78b3e931;
 
 typedef struct {
     unsigned int identifiers:1;

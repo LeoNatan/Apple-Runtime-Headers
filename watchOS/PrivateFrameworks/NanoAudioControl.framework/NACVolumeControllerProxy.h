@@ -8,7 +8,7 @@
 
 #import <NanoAudioControl/NACVolumeController-Protocol.h>
 
-@class NACEventThrottler, NACProxyVolumeControlTarget, NACXPCClient, NSNumber, NSString;
+@class NACEventThrottler, NACProxyVolumeControlTarget, NACXPCClient, NSNumber, NSOrderedSet, NSString;
 @protocol NACVolumeControllerDelegate, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -22,13 +22,16 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_setProminentHapticTimer;
     NSObject<OS_dispatch_source> *_setHapticStateTimer;
     NACXPCClient *_xpcClient;
-    _Bool _isObserving;
+    _Bool _observingVolume;
     float _lastReceivedVolumeValue;
     float _lastRecievedHapticIntensity;
     _Bool _lastReceivedProminentHapticEnabled;
     int _lastReceivedHapticState;
     NSNumber *_volumeValue;
     NSNumber *_hapticIntensity;
+    NSOrderedSet *_availableListeningModes;
+    NSString *_currentListeningMode;
+    _Bool _observingListeningModes;
     _Bool _volumeControlAvailable;
     _Bool _volumeWarningEnabled;
     _Bool _muted;
@@ -62,6 +65,9 @@ __attribute__((visibility("hidden")))
 - (void)_notifyDelegateSystemMutedStateChanged;
 - (void)_notifyDelegateHapticChanged;
 - (void)_notifyDelegateVolumeChanged;
+- (void)_handleFailedToSetCurrentListeningModeNotification:(id)arg1;
+- (void)_currentListeningModeDidChange;
+- (void)_availableListeningModesDidChange;
 - (void)_volumeWarningDidChange;
 - (void)_EUVolumeLimitDidChange;
 - (void)_systemMutedStateDidChange;
@@ -71,6 +77,8 @@ __attribute__((visibility("hidden")))
 - (void)_mutedStateDidChange;
 - (void)_volumeControlAvailabilityDidChange;
 - (void)_volumeValueDidChange;
+@property(retain, nonatomic) NSString *currentListeningMode;
+@property(readonly, nonatomic) NSOrderedSet *availableListeningModes;
 - (void)allowUserToExceedEUVolumeLimit;
 - (void)_hapticStateTimeout;
 - (void)_hapticTimeout;
@@ -85,6 +93,8 @@ __attribute__((visibility("hidden")))
 - (void)setVolumeValue:(float)arg1;
 @property(readonly, nonatomic) float volumeValue;
 - (void)setVolumeValue:(float)arg1 muted:(_Bool)arg2 overrideEULimit:(_Bool)arg3;
+- (void)endObservingListeningModes;
+- (void)beginObservingListeningModes;
 - (void)endObservingVolume;
 - (void)beginObservingVolume;
 - (void)dealloc;

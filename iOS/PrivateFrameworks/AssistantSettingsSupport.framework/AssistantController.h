@@ -6,13 +6,14 @@
 
 #import <Preferences/PSListController.h>
 
+#import <AssistantSettingsSupport/AssistantHistoryDelegate-Protocol.h>
 #import <AssistantSettingsSupport/AssistantVoiceSettingsConnectionProvider-Protocol.h>
 #import <AssistantSettingsSupport/CNContactPickerDelegate-Protocol.h>
 #import <AssistantSettingsSupport/DevicePINControllerDelegate-Protocol.h>
 
 @class AFSettingsConnection, CNContactPickerViewController, CNContactStore, NSArray, NSMutableSet, NSSet, NSString, PSSpecifier, SUICAssistantVoiceSettingsConnection;
 
-@interface AssistantController : PSListController <CNContactPickerDelegate, AssistantVoiceSettingsConnectionProvider, DevicePINControllerDelegate>
+@interface AssistantController : PSListController <CNContactPickerDelegate, AssistantVoiceSettingsConnectionProvider, DevicePINControllerDelegate, AssistantHistoryDelegate>
 {
     NSArray *_assistantSettings;
     SUICAssistantVoiceSettingsConnection *_settingsConnection;
@@ -38,6 +39,8 @@
 + (id)bundle;
 @property(readonly, nonatomic) SUICAssistantVoiceSettingsConnection *settingsConnection; // @synthesize settingsConnection=_settingsConnection;
 - (void).cxx_destruct;
+- (void)deleteHistorySuccessfulFromViewController:(id)arg1;
+- (void)showAssistantHistoryViewController:(id)arg1;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -63,8 +66,11 @@
 - (void)_setAssistantLanguageCancelled:(id)arg1;
 - (void)_setAssistantLanguageConfirmed:(id)arg1;
 - (void)_setAssistantLanguageHeySiriDisableConfirmed:(id)arg1;
+- (id)_confirmationPromptDisableHeySiri:(_Bool)arg1 disableMultiUser:(_Bool)arg2 disableSpokenFeedback:(_Bool)arg3;
 - (void)_setAssistantLanguageWatchMismatchConfirmed:(id)arg1;
-- (void)_showWillDisableHeySiriAlert;
+- (_Bool)_pairedWithSiriSpeaksEnabledNanoHardware;
+- (id)confirmationSpecifierWillDisableHeySiri:(_Bool)arg1 disableMultiUser:(_Bool)arg2 disableSpokenFeedbackOnWatch:(_Bool)arg3;
+- (void)_showWillDisableAlertWillDisableHeySiri:(_Bool)arg1 disableMultiUser:(_Bool)arg2 disableSpokenFeedbackOnWatch:(_Bool)arg3;
 - (void)_showIncompatibleWatchLanguageAlert;
 - (_Bool)_isHeySiriAlwaysOn;
 - (_Bool)_languageWillDisableHeySiri:(id)arg1;

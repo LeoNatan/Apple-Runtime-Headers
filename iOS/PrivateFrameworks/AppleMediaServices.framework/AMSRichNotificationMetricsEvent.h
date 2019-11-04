@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_centerForBundleId:(id)arg1;
-+ (id)eventFromNotificationCenterSettings:(id)arg1;
++ (id)eventFromNotificationCenterSettings:(id)arg1 centerBundleId:(id)arg2;
 + (id)eventFromMetricsDictionary:(id)arg1 centerBundleId:(id)arg2;
 @property(nonatomic) _Bool postedSuccessfully;
 @property(retain, nonatomic) NSString *errorDescription;
-- (id)initWithTopic:(id)arg1 settings:(id)arg2;
+- (id)initWithTopic:(id)arg1 settings:(id)arg2 centerBundleId:(id)arg3;
 
 @end
 

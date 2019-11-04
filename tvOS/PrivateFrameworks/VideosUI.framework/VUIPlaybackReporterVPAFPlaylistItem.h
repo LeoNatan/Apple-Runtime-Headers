@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long startOverallPosition;
+@property(readonly, nonatomic) long long startPosition;
 @property(readonly) Class superclass;
 
 @end

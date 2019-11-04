@@ -28,6 +28,7 @@
     NSFileHandle *_fileHandle;
     NSFileHandle *_chunklistHandle;
     IASChunklist *_chunklist;
+    NSData *_chunklistHash;
     NSData *_fileResumeData;
     NSData *_chunklistResumeData;
 }
@@ -37,6 +38,7 @@
 + (BOOL)canDownloadURL:(id)arg1;
 @property(retain) NSData *chunklistResumeData; // @synthesize chunklistResumeData=_chunklistResumeData;
 @property(retain) NSData *fileResumeData; // @synthesize fileResumeData=_fileResumeData;
+@property(retain, nonatomic) NSData *chunklistHash; // @synthesize chunklistHash=_chunklistHash;
 @property(retain, nonatomic) IASChunklist *chunklist; // @synthesize chunklist=_chunklist;
 @property(retain, nonatomic) NSFileHandle *chunklistHandle; // @synthesize chunklistHandle=_chunklistHandle;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
@@ -83,7 +85,7 @@
 - (void)_startAsyncFileDownload;
 - (void)_asyncDownloadChunklist;
 - (id)_localPathFromRemoteURL:(id)arg1 appendingExtension:(BOOL)arg2;
-- (id)_validateChunklistIntegrityAndReturnChunklistForHandle:(id)arg1 withError:(id *)arg2;
+- (id)_validateChunklistIntegrityAndReturnChunklistForHandle:(id)arg1 withOutHash:(id *)arg2 withError:(id *)arg3;
 - (void)dealloc;
 - (id)initWithResumeData:(id)arg1 destination:(id)arg2 delegate:(id)arg3;
 - (id)initWithURL:(id)arg1 withChunklistURL:(id)arg2 withChunklistSize:(id)arg3 delegate:(id)arg4;

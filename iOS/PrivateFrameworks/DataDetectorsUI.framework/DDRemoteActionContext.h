@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}, name: _result
     NSDictionary *_context;
     NSArray *_associatedResults;
+    NSString *_hostApplicationIdentifier;
     NSString *_actionClass;
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isClassAllowedFromString:(id)arg1;
 @property(retain) NSString *actionClass; // @synthesize actionClass=_actionClass;
+@property(copy) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(retain) NSArray *associatedResults; // @synthesize associatedResults=_associatedResults;
 @property(retain) NSDictionary *context; // @synthesize context=_context;
 // Error parsing type for property result:

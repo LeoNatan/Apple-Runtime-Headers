@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
         unsigned int depthLevel:1;
         unsigned int bottomAttached:1;
         unsigned int percentFullScreen:1;
+        unsigned int effectiveKeyboardFrame:1;
         unsigned int floatingUntransformedFrame:1;
         unsigned int bottomAttachedUntransformedFrame:1;
         unsigned int fullHeightUntransformedFrame:1;
@@ -79,6 +80,7 @@ __attribute__((visibility("hidden")))
     double __alpha;
     double __grabberAlpha;
     double __magicShadowOpacity;
+    double __rimTreatmentAlpha;
     NSArray *__dimmedPassthroughViews;
     UIViewController *__presentingViewController;
     UIViewController *__presentedViewController;
@@ -99,6 +101,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *__mutableActiveDetentValues;
     NSMutableArray *__mutableActiveReversedDetentIndexes;
     struct CGSize __preferredSize;
+    struct CGRect __effectiveKeyboardFrame;
     struct CGRect __floatingUntransformedFrame;
     struct CGRect __bottomAttachedUntransformedFrame;
     struct CGRect __fullHeightUntransformedFrame;
@@ -157,6 +160,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double _grabberAlpha; // @synthesize _grabberAlpha=__grabberAlpha;
 @property(readonly, nonatomic) double _alpha; // @synthesize _alpha=__alpha;
 @property(readonly, nonatomic) double _shadowOpacity; // @synthesize _shadowOpacity=__shadowOpacity;
+@property(readonly, nonatomic) double _rimTreatmentAlpha; // @synthesize _rimTreatmentAlpha=__rimTreatmentAlpha;
 @property(readonly, nonatomic) double _magicShadowOpacity; // @synthesize _magicShadowOpacity=__magicShadowOpacity;
 @property(readonly, nonatomic) double _confinedPercentDimmed; // @synthesize _confinedPercentDimmed=__confinedPercentDimmed;
 @property(readonly, nonatomic) double _percentDimmed; // @synthesize _percentDimmed=__percentDimmed;
@@ -181,6 +185,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect _fullHeightUntransformedFrame; // @synthesize _fullHeightUntransformedFrame=__fullHeightUntransformedFrame;
 @property(readonly, nonatomic) struct CGRect _bottomAttachedUntransformedFrame; // @synthesize _bottomAttachedUntransformedFrame=__bottomAttachedUntransformedFrame;
 @property(readonly, nonatomic) struct CGRect _floatingUntransformedFrame; // @synthesize _floatingUntransformedFrame=__floatingUntransformedFrame;
+@property(readonly, nonatomic) struct CGRect _effectiveKeyboardFrame; // @synthesize _effectiveKeyboardFrame=__effectiveKeyboardFrame;
 @property(readonly, nonatomic) double _percentFullScreen; // @synthesize _percentFullScreen=__percentFullScreen;
 @property(readonly, nonatomic, getter=_isBottomAttached) BOOL _bottomAttached; // @synthesize _bottomAttached=__bottomAttached;
 @property(readonly, nonatomic) BOOL _scalesDownBehindDescendants;

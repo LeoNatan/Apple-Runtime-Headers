@@ -15,6 +15,7 @@
 @interface LPImage : NSObject <LPAsynchronousResource, NSSecureCoding>
 {
     UIImage *_originalPlatformImage;
+    UIImage *_decodedPlatformImage;
     NSData *_data;
     NSString *_MIMEType;
     LPImageProperties *_properties;
@@ -22,6 +23,10 @@
     LPImage *_imageLoadedFromItemProvider;
     NSObject<OS_dispatch_group> *_itemProviderLoadGroup;
     NSObject<OS_dispatch_group> *_asynchronousLoadGroup;
+    struct CGSize _pixelSize;
+    _Bool _hasComputedPixelSize;
+    _Bool _hasTransparency;
+    _Bool _hasComputedHasTransparency;
     _Bool _fallbackIcon;
     NSArray *_remoteURLsForEmailCompatibleOutput;
     LPImage *_darkInterfaceAlternativeImage;
@@ -40,6 +45,7 @@
 @property(retain, nonatomic) NSArray *_remoteURLsForEmailCompatibleOutput; // @synthesize _remoteURLsForEmailCompatibleOutput;
 @property(nonatomic, getter=_isFallbackIcon) _Bool _fallbackIcon; // @synthesize _fallbackIcon;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool _hasTransparency;
 - (id)_asTemplate;
 @property(readonly, retain, nonatomic) NSItemProvider *_itemProvider;
 - (void)loadAsynchronouslyWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -55,6 +61,7 @@
 @property(readonly, copy, nonatomic) NSString *MIMEType;
 @property(readonly, copy, nonatomic) NSData *data;
 - (void)_preparePlatformImageWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_synchronouslyDecodePlatformImageWithMaximumSize:(struct CGSize)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_waitForAsynchronouslyLoadedImageIfNeeded;

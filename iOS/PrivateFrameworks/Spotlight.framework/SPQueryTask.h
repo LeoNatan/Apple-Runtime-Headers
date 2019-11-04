@@ -58,6 +58,7 @@
 @property(readonly) NSString *searchString;
 - (void)clear;
 - (void)cancel;
+- (void)startAtUIPriority;
 - (void)start;
 - (id)init;
 

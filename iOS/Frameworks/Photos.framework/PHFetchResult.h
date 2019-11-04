@@ -78,6 +78,7 @@
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (unsigned long long)possibleChangesForChange:(id)arg1;
+- (unsigned long long)_possibleChangesFromDetectionCriteriaForChange:(id)arg1;
 - (void)setRegisteredForChangeNotificationDeltas:(_Bool)arg1;
 - (_Bool)isRegisteredForChangeNotificationDeltas;
 - (void)updateRegistrationForChangeNotificationDeltas;

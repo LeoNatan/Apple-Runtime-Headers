@@ -24,6 +24,7 @@
     BOOL _collectAnonymousData;
     BOOL _collectScores;
     BOOL _use2LayerRanking;
+    BOOL _bagEnabled;
     BOOL _resourceMetadataNeedsWrite;
     id <PRSSessionController> _client;
     long long _status;
@@ -54,6 +55,7 @@
 @property(nonatomic) BOOL resourceMetadataNeedsWrite; // @synthesize resourceMetadataNeedsWrite=_resourceMetadataNeedsWrite;
 @property(retain, nonatomic) NSMutableDictionary *resourceMetadata; // @synthesize resourceMetadata=_resourceMetadata;
 @property(readonly) GEOUserSessionEntity *geoUserSessionEntity; // @synthesize geoUserSessionEntity=_geoUserSessionEntity;
+@property(readonly, nonatomic, getter=isBagEnabled) BOOL bagEnabled; // @synthesize bagEnabled=_bagEnabled;
 @property(readonly, nonatomic) NSString *lookupFirstUseLearnMore; // @synthesize lookupFirstUseLearnMore=_lookupFirstUseLearnMore;
 @property(readonly, nonatomic) NSString *lookupFirstUseDescription2; // @synthesize lookupFirstUseDescription2=_lookupFirstUseDescription2;
 @property(readonly, nonatomic) NSString *lookupFirstUseDescription1; // @synthesize lookupFirstUseDescription1=_lookupFirstUseDescription1;
@@ -83,7 +85,6 @@
 - (void)updateFromSession:(id)arg1 bag:(id)arg2 forClient:(id)arg3 error:(id)arg4;
 - (void)fetchModifiedResourceFromSession:(id)arg1 resource:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateWithBagDictionary:(id)arg1 error:(id)arg2;
-- (BOOL)isBagEnabled;
 - (BOOL)isLocaleSupported:(id)arg1;
 - (id)supportedServices;
 - (BOOL)sessionReady;

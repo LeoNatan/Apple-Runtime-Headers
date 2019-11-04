@@ -201,11 +201,13 @@
 - (BOOL)isIntensive;
 - (void)setConstraintsWithXPCDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forUserInfoKey:(id)arg2;
+@property(nonatomic) BOOL beforeApplicationLaunch;
 @property(retain, nonatomic) NSDate *clientProvidedStartDate;
 @property(retain, nonatomic) NSString *clientProvidedIdentifier;
 @property(nonatomic) BOOL requestsNewsstandLaunch;
 - (BOOL)isSilentPush;
 @property(nonatomic) BOOL userRequestedBackupTask;
+@property(nonatomic) BOOL allowsCompanionExpensiveNetworking;
 @property(nonatomic) BOOL hasMagneticSensitivity;
 @property(nonatomic) BOOL requiresSignificantUserInactivity;
 @property(nonatomic) unsigned long long transferSize;

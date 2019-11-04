@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDDirectionIntent : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDResolvedItem *_destination;
     GEOPDResolvedItem *_origin;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _transportType;
     struct {
         unsigned int has_transportType:1;
@@ -55,6 +57,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDResolvedItem *origin;
 @property(readonly, nonatomic) BOOL hasOrigin;
 - (void)_readOrigin;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

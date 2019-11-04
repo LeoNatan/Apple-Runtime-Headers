@@ -8,15 +8,19 @@
 
 @interface SBMoveFloatingConfigurationFloatingSwitcherModifier : SBTransitionSwitcherModifier
 {
+    long long _fromFloatingConfiguration;
+    long long _toFloatingConfiguration;
 }
 
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (id)layoutSettings;
 - (double)opacityForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (id)transitionWillBegin;
+- (id)initWithTransitionID:(id)arg1 fromFloatingConfiguration:(long long)arg2 toFloatingConfiguration:(long long)arg3;
 
 @end
 

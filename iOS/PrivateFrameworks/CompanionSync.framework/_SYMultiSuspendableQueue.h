@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSString;
+#import <CompanionSync/SYStateLoggable-Protocol.h>
+
+@class NSMutableArray, NSString, PBCodable;
 @protocol OS_dispatch_queue;
 
-@interface _SYMultiSuspendableQueue : NSObject
+@interface _SYMultiSuspendableQueue : NSObject <SYStateLoggable>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_targetQueue;
@@ -21,6 +23,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PBCodable *stateForLogging;
 - (void)barrierAsync:(CDUnknownBlockType)arg1;
 - (void)barrierSync:(CDUnknownBlockType)arg1;
 - (void)async:(CDUnknownBlockType)arg1;
@@ -36,6 +39,12 @@
 - (id)initWithName:(id)arg1 qosClass:(unsigned int)arg2 serial:(_Bool)arg3 target:(id)arg4;
 - (id)initWithName:(id)arg1 qosClass:(unsigned int)arg2 serial:(_Bool)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

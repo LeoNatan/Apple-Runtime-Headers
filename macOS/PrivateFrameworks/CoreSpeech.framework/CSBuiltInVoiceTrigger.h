@@ -9,17 +9,15 @@
 #import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
-#import <CoreSpeech/CSBluetoothWirelessSplitterMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSSelfTriggerDetectorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
 @class CSAsset, CSAudioProvider, CSAudioStream, CSOSTransaction, CSPolicy, CSVoiceTriggerSecondPass, NSDictionary, NSMutableArray, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_group, OS_dispatch_queue;
 
-@interface CSBuiltInVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSActivationEventNotifierDelegate, CSStateMachineDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSBluetoothWirelessSplitterMonitorDelegate, CSSelfTriggerDetectorDelegate, CSVoiceTriggerXPCServiceDelegate>
+@interface CSBuiltInVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSActivationEventNotifierDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSSelfTriggerDetectorDelegate, CSVoiceTriggerXPCServiceDelegate>
 {
     BOOL _voiceTriggerEnabled;
     BOOL _hasTriggerPending;

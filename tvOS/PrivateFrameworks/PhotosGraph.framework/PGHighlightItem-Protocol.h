@@ -10,6 +10,7 @@
 
 @protocol PGHighlightItem <NSObject>
 @property(readonly, nonatomic) id modelObject;
+@property(readonly, nonatomic) unsigned short enrichmentState;
 @property(readonly, nonatomic) unsigned short visibilityState;
 @property(readonly, nonatomic) unsigned short kind;
 @property(readonly, nonatomic) unsigned short type;

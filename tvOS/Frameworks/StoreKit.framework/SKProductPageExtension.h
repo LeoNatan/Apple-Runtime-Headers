@@ -37,6 +37,7 @@
 - (void)clientLookupItemDidLoad:(id)arg1 parameters:(id)arg2;
 - (void)setupWithClientBundleID:(id)arg1 bagType:(long long)arg2;
 - (void)setupWithClientBundleID:(id)arg1;
+- (void)setPreview:(id)arg1;
 - (void)setVisibleInClientWindow:(id)arg1;
 - (void)storeButtonPressed:(id)arg1;
 - (void)setupWithCustomNavigationItem:(id)arg1 promptString:(id)arg2 askToBuy:(_Bool)arg3;

@@ -10,6 +10,7 @@
 
 @interface PKApplyWebServiceApplyRequest : PKApplyWebServiceRequest
 {
+    _Bool _isInstallment;
     NSString *_applicationIdentifier;
     unsigned long long _featureIdentifier;
     NSArray *_certificates;
@@ -20,6 +21,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool isInstallment; // @synthesize isInstallment=_isInstallment;
 @property(copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(copy, nonatomic) NSString *previousContextIdentifier; // @synthesize previousContextIdentifier=_previousContextIdentifier;
 @property(copy, nonatomic) NSString *coreIDVNextStepToken; // @synthesize coreIDVNextStepToken=_coreIDVNextStepToken;

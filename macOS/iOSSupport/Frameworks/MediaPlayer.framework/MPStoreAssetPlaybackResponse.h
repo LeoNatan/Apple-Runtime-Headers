@@ -17,10 +17,16 @@
     NSDate *_expirationDate;
     NSArray *_fileAssetInfoList;
     MPStoreHLSAssetInfo *_hlsAssetInfo;
+    BOOL _liveRadioStream;
+    NSArray *_radioStreamAssetInfoList;
     id _suzeLeaseID;
+    BOOL _subscriptionRequired;
 }
 
+@property(readonly, nonatomic, getter=isSubscriptionRequired) BOOL subscriptionRequired; // @synthesize subscriptionRequired=_subscriptionRequired;
 @property(readonly, nonatomic) id suzeLeaseID; // @synthesize suzeLeaseID=_suzeLeaseID;
+@property(readonly, copy, nonatomic) NSArray *radioStreamAssetInfoList; // @synthesize radioStreamAssetInfoList=_radioStreamAssetInfoList;
+@property(readonly, nonatomic, getter=isLiveRadioStream) BOOL liveRadioStream; // @synthesize liveRadioStream=_liveRadioStream;
 @property(readonly, nonatomic) MPStoreHLSAssetInfo *hlsAssetInfo; // @synthesize hlsAssetInfo=_hlsAssetInfo;
 @property(readonly, copy, nonatomic) NSArray *fileAssetInfoList; // @synthesize fileAssetInfoList=_fileAssetInfoList;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;

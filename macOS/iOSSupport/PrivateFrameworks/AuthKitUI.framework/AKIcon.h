@@ -27,6 +27,7 @@
 + (id)iconWithData:(id)arg1 scale:(double)arg2;
 - (void).cxx_destruct;
 - (BOOL)_shouldMaskImage;
+- (id)_applicationProxyForBundleID:(id)arg1;
 - (BOOL)_hasInstalledApplicationWithBundleID:(id)arg1;
 - (struct CGImage *)_CGImageForImage:(id)arg1;
 - (id)_dataForImage:(id)arg1;

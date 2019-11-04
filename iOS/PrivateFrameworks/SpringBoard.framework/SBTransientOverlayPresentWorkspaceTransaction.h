@@ -18,9 +18,12 @@
 
 - (void).cxx_destruct;
 - (void)_performStandardPresentationAnimated:(_Bool)arg1;
+- (void)_logForInterruptAttemptReason:(id)arg1;
 - (void)animationControllerDidFinishAnimation:(id)arg1;
+- (_Bool)canInterruptForTransitionRequest:(id)arg1;
 - (void)_willBegin;
 - (void)_didComplete;
+- (_Bool)_canBeInterrupted;
 - (void)_begin;
 - (id)initWithTransitionRequest:(id)arg1;
 

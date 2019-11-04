@@ -176,6 +176,7 @@
 @property(nonatomic) double sceneTime;
 @property(nonatomic) double currentTime;
 - (BOOL)isOpaque;
+- (void)layout;
 @property(copy, nonatomic) NSColor *backgroundColor;
 - (void)_updateOpacity;
 - (void)_backgroundDidChange;

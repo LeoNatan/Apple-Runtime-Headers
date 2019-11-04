@@ -6,19 +6,19 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class NSString, UIImage, UILabel, WFActionDrawerImageView;
+@class NSString, UIImage, UILabel, WFCircularImageView;
 
 @interface WFActionDrawerAppsCollectionViewCell : UICollectionViewCell
 {
     NSString *_title;
     UIImage *_appIconImage;
-    WFActionDrawerImageView *_imageView;
+    WFCircularImageView *_imageView;
     UILabel *_titleLabel;
 }
 
 + (struct CGSize)preferredSize;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(nonatomic) __weak WFActionDrawerImageView *imageView; // @synthesize imageView=_imageView;
+@property(nonatomic) __weak WFCircularImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIImage *appIconImage; // @synthesize appIconImage=_appIconImage;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;

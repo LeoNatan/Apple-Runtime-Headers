@@ -6,12 +6,11 @@
 
 #import <AVConference/VCConnectionManager.h>
 
-@class NSMutableArray, VCSessionBitrateArbiter;
+@class VCSessionBitrateArbiter;
 
 __attribute__((visibility("hidden")))
 @interface VCConnectionManagerIDS : VCConnectionManager
 {
-    NSMutableArray *_connectionArray;
     double _lastTimestampForRemoteSendingFromNonPrimary;
     double _lastTimestampPreferredRemoteInterfaceUpdated;
     unsigned int _sentPacketCount[256];

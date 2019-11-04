@@ -13,19 +13,21 @@
 {
     long long _type;
     UIColor *_cellBackgroundColor;
-    double _preferredWidth;
     NSArray *_buttonTitles;
     NSArray *_allCells;
     id <EKUIDividedGridViewControllerDelegate> _delegate;
     NSArray *_weekViews;
+    double _preferredWidth;
+    double _preferredInset;
 }
 
 + (id)dividerColor;
+@property(nonatomic) double preferredInset; // @synthesize preferredInset=_preferredInset;
+@property(nonatomic) double preferredWidth; // @synthesize preferredWidth=_preferredWidth;
 @property(retain) NSArray *weekViews; // @synthesize weekViews=_weekViews;
 @property __weak id <EKUIDividedGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *allCells; // @synthesize allCells=_allCells;
 @property(retain, nonatomic) NSArray *buttonTitles; // @synthesize buttonTitles=_buttonTitles;
-@property(nonatomic) double preferredWidth; // @synthesize preferredWidth=_preferredWidth;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (double)_rowHeightForWidth:(double)arg1;
@@ -33,7 +35,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)cellTapped:(id)arg1;
-- (double)_defaultButtonWidthForButtonAtIndex:(long long)arg1;
 - (id)_newDividerView;
 - (void)loadView;
 - (id)initWithType:(long long)arg1 buttonTitles:(id)arg2 cellBackgroundColor:(id)arg3;

@@ -124,6 +124,7 @@
 - (id)makeXMLHTTPRequest;
 @property(readonly) id loggingEnabled;
 @property(readonly, getter=isWalletAvailable) id walletAvailable;
+@property(readonly, getter=isFinanceInterruption) id financeInterruption;
 @property(readonly, getter=isApplePayAvailable) id applePayAvailable;
 @property(readonly) NSString *gsToken;
 @property(readonly) id globalRootObject;
@@ -162,6 +163,7 @@
 - (void)perfLog:(id)arg1;
 - (void)paymentSetupFeatureSupported:(id)arg1 callback:(id)arg2;
 - (void)openWallet;
+- (id)minimumAttestationVersionForAction:(unsigned long long)arg1;
 - (id)machineGUID;
 - (void)log:(id)arg1;
 - (void)handleDialogPropertyListString:(id)arg1;
@@ -175,6 +177,7 @@
 - (void)openFamilyCircleSetupWithClientName:(id)arg1 completionFunction:(id)arg2;
 - (void)_finishCreditCardReaderWithOutput:(id)arg1 callback:(id)arg2;
 - (void)openCreditCardReaderWithCompletionFunction:(id)arg1;
+- (id)currentAttestationVersion;
 - (void)addiTunesPassWithCompletionFunction:(id)arg1;
 - (void)acknowledgePrivacyLinkWithIdentifier:(id)arg1;
 - (id)parentViewController;

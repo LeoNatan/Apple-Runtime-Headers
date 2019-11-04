@@ -14,6 +14,7 @@
     struct os_unfair_lock_s _lock;
 }
 
++ (id)getMetadataForAsset:(id)arg1;
 - (void).cxx_destruct;
 - (BOOL)processPairingForGroupIDs:(id)arg1 inContext:(id)arg2 duplicateDetection:(BOOL)arg3 error:(id *)arg4;
 - (id)init;

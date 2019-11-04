@@ -18,9 +18,11 @@
     NSArray *_detections;
     unsigned long long _frameWidth;
     unsigned long long _frameHeight;
+    struct CGRect _regionOfInterest;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly) struct CGRect regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
 @property(readonly) unsigned long long frameHeight; // @synthesize frameHeight=_frameHeight;
 @property(readonly) unsigned long long frameWidth; // @synthesize frameWidth=_frameWidth;
 @property(readonly) NSArray *detections; // @synthesize detections=_detections;
@@ -28,7 +30,7 @@
 @property(readonly) NSDictionary *annotationScores; // @synthesize annotationScores=_annotationScores;
 @property(readonly) unsigned long long frameId; // @synthesize frameId=_frameId;
 - (void).cxx_destruct;
-- (id)initWithFrameId:(unsigned long long)arg1 events:(long long)arg2 annotationScores:(id)arg3 detections:(id)arg4 frameWidth:(unsigned long long)arg5 frameHeight:(unsigned long long)arg6;
+- (id)initWithFrameId:(unsigned long long)arg1 events:(long long)arg2 annotationScores:(id)arg3 detections:(id)arg4 regionOfInterest:(struct CGRect)arg5 frameWidth:(unsigned long long)arg6 frameHeight:(unsigned long long)arg7;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

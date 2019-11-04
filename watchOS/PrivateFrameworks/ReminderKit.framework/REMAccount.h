@@ -60,6 +60,7 @@
 @property(readonly, nonatomic) _Bool daWasMigrated; // @dynamic daWasMigrated;
 @property(readonly, nonatomic) _Bool didChooseToMigrate; // @dynamic didChooseToMigrate;
 @property(readonly, nonatomic) _Bool didFinishMigration; // @dynamic didFinishMigration;
+@property(retain, nonatomic) NSString *displayName; // @dynamic displayName;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(readonly, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
 @property(readonly, nonatomic) _Bool inactive; // @dynamic inactive;

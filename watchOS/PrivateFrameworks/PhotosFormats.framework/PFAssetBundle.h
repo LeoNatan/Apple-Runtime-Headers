@@ -70,6 +70,7 @@
 - (id)urlsByPathKey;
 - (_Bool)writeToBundleAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)linkOrCopyURL:(id)arg1 toURL:(id)arg2 forceCopy:(_Bool)arg3 error:(id *)arg4;
+@property(nonatomic) _Bool spatialOvercaptureResourcesPurgeable;
 @property(retain, nonatomic) id libraryLocation;
 @property(copy, nonatomic) NSDate *libraryCreationDate;
 @property(copy, nonatomic) NSString *assetTitle;

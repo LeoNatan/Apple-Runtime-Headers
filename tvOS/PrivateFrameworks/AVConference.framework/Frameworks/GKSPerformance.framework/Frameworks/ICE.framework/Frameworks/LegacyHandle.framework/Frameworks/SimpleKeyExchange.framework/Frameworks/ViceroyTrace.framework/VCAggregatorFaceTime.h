@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSString *_relayServer;
     int _relayType;
     NSString *_accessToken;
+    NSString *_remoteOSBuild;
     CallSegment *_currentSegment;
     unsigned int _currentWidth;
     _Bool _currentDegradedVideoState;
@@ -88,20 +89,23 @@ __attribute__((visibility("hidden")))
     unsigned int _captureVideoFrameCounter;
     unsigned int _negotiatedSwitches;
     unsigned int _remoteSwitches;
-    unsigned int _callTotalCellDupTxDataBytes;
-    unsigned int _callTotalCellDupRxDataBytes;
-    unsigned int _callTotalUsedCellBudgetTxDataBytes;
-    unsigned int _callTotalUsedCellBudgetRxDataBytes;
+    unsigned int _lastReportedTotalCellDupTxDataBytes;
+    unsigned int _lastReportedTotalCellDupRxDataBytes;
+    unsigned int _lastReportedTotalUsedCellBudgetTxDataBytes;
+    unsigned int _lastReportedTotalUsedCellBudgetRxDataBytes;
+    unsigned int _lastReportedMBLRampDownCount;
+    unsigned int _lastReportedSuddenBandwidthDropCount;
     unsigned char _duplicationType;
-    unsigned long long _callTotalCellTxDataBytes;
-    unsigned long long _callTotalCellRxDataBytes;
-    unsigned long long _callTotalWifiTxDataBytes;
-    unsigned long long _callTotalWifiRxDataBytes;
-    unsigned int _callTotalDuplicationDuration;
+    unsigned long long _lastReportedTotalCellTxDataBytes;
+    unsigned long long _lastReportedTotalCellRxDataBytes;
+    unsigned long long _lastReportedTotalWifiTxDataBytes;
+    unsigned long long _lastReportedTotalWifiRxDataBytes;
+    unsigned int _totalDuplicationDuration;
     unsigned int _wifiToCellHandoverCount;
     unsigned int _cellToWifiHandoverCount;
     _Bool _isDuplicationEnabled;
     _Bool _remoteFaceTimeSwitchesAvailable;
+    double _duplicationStartTime;
     VCHistogram *_callVideoSwitchPeriodHistogram;
     VCAdaptiveLearning *_adaptiveLearning;
 }
@@ -129,7 +133,7 @@ __attribute__((visibility("hidden")))
 - (void)updateConnectionTimes:(id)arg1;
 - (void)updateRelayInfo:(id)arg1;
 - (void)updateNoRemoteState:(_Bool)arg1;
-- (void)updateRedState:(id)arg1 wifiAssistState:(id)arg2;
+- (void)updateConnectionTelemetry:(id)arg1;
 - (void)updateErrorCode:(id)arg1;
 - (void)updateRoleModeTransport:(unsigned short)arg1 deviceRole:(unsigned short)arg2 transportType:(unsigned short)arg3;
 - (void)updatePauseVideo:(_Bool)arg1;
@@ -137,7 +141,6 @@ __attribute__((visibility("hidden")))
 - (void)updateVideoFECStats:(id)arg1;
 - (void)updateRTStats:(id)arg1;
 - (void)startNewSegment;
-- (_Bool)isDuplicationEnabledForSegment:(id)arg1;
 - (id)duplicationIndicator;
 - (_Bool)isLocalInterfaceTypeForSegment:(id)arg1 equalTo:(id)arg2;
 - (void)reset;

@@ -42,6 +42,7 @@
 - (unsigned long long)_executeCacheStep;
 - (unsigned long long)_executeRekeyStep;
 - (unsigned long long)_executePrepareStep;
+- (unsigned long long)__executeVacuumStepWithStore:(id)arg1 coordinator:(id)arg2 delegate:(id)arg3 vacuumDate:(id)arg4;
 - (unsigned long long)_executeVacuumStep;
 - (unsigned long long)_executeOpenStep;
 - (void)_executeSingleMigrationStep;

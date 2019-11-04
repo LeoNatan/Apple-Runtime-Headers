@@ -38,7 +38,7 @@
 - (id)_updateReduceMotionAxisIfNecessaryWithEvent:(id)arg1;
 - (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)wantsMinificationFilter;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;

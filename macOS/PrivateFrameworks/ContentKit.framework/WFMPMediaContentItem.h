@@ -34,6 +34,9 @@
 - (id)additionalRepresentationsForSerialization;
 - (id)assetURL;
 @property(readonly, nonatomic) MPMediaItem *mediaItem;
+- (BOOL)getListThumbnail:(CDUnknownBlockType)arg1 forSize:(struct CGSize)arg2;
+- (BOOL)getListAltText:(CDUnknownBlockType)arg1;
+- (BOOL)getListSubtitle:(CDUnknownBlockType)arg1;
 
 @end
 

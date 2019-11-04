@@ -11,8 +11,10 @@ __attribute__((visibility("hidden")))
 {
     NSView *_itemView;
     struct CGSize _preferredSize;
+    BOOL _isSystemCloseButton;
 }
 
+@property BOOL isSystemCloseButton; // @synthesize isSystemCloseButton=_isSystemCloseButton;
 @property(readonly) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 - (void)dealloc;
 - (void)_subview:(id)arg1 valueOfVariable:(id)arg2 didChangeInEngine:(id)arg3;

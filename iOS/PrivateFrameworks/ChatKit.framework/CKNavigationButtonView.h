@@ -12,6 +12,7 @@
 {
     _Bool _wantsLongPress;
     _Bool _buttonEnabled;
+    _Bool _wantsVibrancy;
     CDUnknownBlockType _buttonTappedCallback;
     CDUnknownBlockType _buttonLongPressCallback;
     long long _joinButtonStyle;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) UIImage *disabledImage; // @synthesize disabledImage=_disabledImage;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(nonatomic) _Bool wantsVibrancy; // @synthesize wantsVibrancy=_wantsVibrancy;
 @property(nonatomic, getter=isButtonEnabled) _Bool buttonEnabled; // @synthesize buttonEnabled=_buttonEnabled;
 @property(nonatomic) _Bool wantsLongPress; // @synthesize wantsLongPress=_wantsLongPress;
 @property(nonatomic) long long joinButtonStyle; // @synthesize joinButtonStyle=_joinButtonStyle;

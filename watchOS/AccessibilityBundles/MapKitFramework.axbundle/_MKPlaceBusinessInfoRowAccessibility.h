@@ -13,7 +13,10 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)accessibilityLabel;
+- (void)setItems:(id)arg1;
+- (_Bool)isAccessibilityElement;
+- (void)_accessibilityLoadAccessibilityInformation;
+- (void)_axAnnotateLabels;
 
 @end
 

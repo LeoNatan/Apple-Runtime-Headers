@@ -10,6 +10,8 @@
 {
 }
 
++ (id)rendererForRingGroupControllers:(id)arg1;
++ (id)rendererForRingGroupController:(id)arg1;
 - (id)renderPipelineFactoryWithDevice:(id)arg1 library:(id)arg2;
 - (id)renderPipelineFactoryWithDeviceSPI:(id)arg1 librarySPI:(id)arg2;
 

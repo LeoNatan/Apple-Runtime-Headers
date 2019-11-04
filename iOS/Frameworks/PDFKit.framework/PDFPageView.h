@@ -84,7 +84,6 @@ __attribute__((visibility("hidden")))
 - (void)forceTileUpdate;
 - (_Bool)enablesTileUpdates;
 - (void)setEnableTileUpdates:(_Bool)arg1;
-- (void)_setPageLayerEffectForID:(id)arg1 hidden:(_Bool)arg2;
 - (void)scalePageLayerEffects:(double)arg1;
 - (struct CGAffineTransform)layerEffectTransform;
 - (void)updatePageLayerEffects;

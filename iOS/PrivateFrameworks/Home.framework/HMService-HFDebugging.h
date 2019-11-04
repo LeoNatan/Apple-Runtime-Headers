@@ -40,13 +40,13 @@
 - (_Bool)_hf_isDirectlyOrIndirectlyLinkedToService:(id)arg1;
 - (id)hf_childServices;
 - (id)hf_childServicesOfType:(id)arg1;
+- (_Bool)hf_isChildService;
 - (_Bool)hf_isTelevision;
 - (_Bool)hf_isVisible;
 - (_Bool)hf_isLegacyService;
 - (_Bool)hf_isInGroup;
 - (_Bool)hf_supportsGroups;
 - (id)hf_updateIconDescriptor:(id)arg1;
-- (id)hf_shiftedIconDescriptor;
 - (id)hf_iconDescriptor;
 - (id)hf_effectiveServiceType;
 - (id)hf_serviceDescriptor;

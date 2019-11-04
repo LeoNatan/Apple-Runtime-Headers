@@ -13,6 +13,8 @@
 {
     NSMutableSet *_assertions;
     NSMutableSet *_touchedAssertions;
+    NSMutableSet *_lostStartTimeDefining;
+    NSMutableSet *_gainedStartTimeDefining;
     NSMutableSet *_targetsPendingResolution;
     RBProcessMap *_resolvedState;
     RBProcessMap *_originatorInheritances;
@@ -30,6 +32,8 @@
 @property(readonly, nonatomic) NSSet *touchedAssertions; // @synthesize touchedAssertions=_touchedAssertions;
 @property(readonly, nonatomic) RBSystemState *systemState; // @synthesize systemState=_systemState;
 @property(readonly, nonatomic) RBProcessStateChangeSet *changeSet; // @synthesize changeSet=_changeSet;
+@property(readonly, nonatomic) NSSet *gainedStartTimeDefining; // @synthesize gainedStartTimeDefining=_gainedStartTimeDefining;
+@property(readonly, nonatomic) NSSet *lostStartTimeDefining; // @synthesize lostStartTimeDefining=_lostStartTimeDefining;
 @property(retain, nonatomic) id <RBEntitlementManaging> entitlementManager; // @synthesize entitlementManager=_entitlementManager;
 @property(retain, nonatomic) id <RBBundlePropertiesManaging> bundlePropertiesManager; // @synthesize bundlePropertiesManager=_bundlePropertiesManager;
 @property(retain, nonatomic) id <RBDomainAttributeManaging> domainAttributeManager; // @synthesize domainAttributeManager=_domainAttributeManager;

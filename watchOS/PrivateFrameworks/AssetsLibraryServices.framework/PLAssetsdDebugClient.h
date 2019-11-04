@@ -41,6 +41,7 @@
 - (_Bool)rebuildMomentsDeletingExistingMoments:(_Bool)arg1 error:(id *)arg2;
 - (id)momentGenerationStatus;
 - (void)recoverAssetsInInconsistentCloudState;
+- (void)identifyAssetsWithInconsistentCloudState;
 - (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)getStatus;
 

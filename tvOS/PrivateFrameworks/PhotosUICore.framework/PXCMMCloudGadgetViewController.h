@@ -44,7 +44,7 @@
 @property(nonatomic) _Bool disableDismissAction;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)viewDidLoad;
-- (id)init;
+- (id)initWithSourceType:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;

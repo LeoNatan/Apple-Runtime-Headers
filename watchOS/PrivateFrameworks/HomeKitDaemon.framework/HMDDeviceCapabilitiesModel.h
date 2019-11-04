@@ -13,6 +13,7 @@
 }
 
 + (id)properties;
++ (id)schemaHashRoot;
 
 // Remaining properties
 @property(copy, nonatomic) NSNumber *remoteGatewayCapable; // @dynamic remoteGatewayCapable;
@@ -20,6 +21,7 @@
 @property(copy, nonatomic) NSNumber *supportsAssistantAccessControl; // @dynamic supportsAssistantAccessControl;
 @property(copy, nonatomic) NSNumber *supportsCameraRecording; // @dynamic supportsCameraRecording;
 @property(copy, nonatomic) NSNumber *supportsCloudDataSync; // @dynamic supportsCloudDataSync;
+@property(copy, nonatomic) NSNumber *supportsCompanionInitiatedRestart; // @dynamic supportsCompanionInitiatedRestart;
 @property(copy, nonatomic) NSNumber *supportsDeviceSetup; // @dynamic supportsDeviceSetup;
 @property(copy, nonatomic) NSNumber *supportsHomeInvitation; // @dynamic supportsHomeInvitation;
 @property(copy, nonatomic) NSNumber *supportsKeyTransferClient; // @dynamic supportsKeyTransferClient;

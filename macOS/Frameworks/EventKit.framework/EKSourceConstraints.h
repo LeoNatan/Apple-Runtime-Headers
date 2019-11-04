@@ -11,10 +11,10 @@
     BOOL _shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
     int _maxAlarmsAllowed;
     int _maxRecurrencesAllowed;
-    CDStruct_a60c0deb _flags;
+    CDStruct_cb5e306c _flags;
 }
 
-@property CDStruct_a60c0deb flags; // @synthesize flags=_flags;
+@property CDStruct_cb5e306c flags; // @synthesize flags=_flags;
 @property(nonatomic) BOOL shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars; // @synthesize shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars=_shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
 @property(nonatomic) int maxRecurrencesAllowed; // @synthesize maxRecurrencesAllowed=_maxRecurrencesAllowed;
 @property(nonatomic) int maxAlarmsAllowed; // @synthesize maxAlarmsAllowed=_maxAlarmsAllowed;
@@ -58,7 +58,7 @@
 @property(nonatomic) BOOL shouldDeclineDeletedInvitations;
 @property(nonatomic) BOOL shouldCancelDeletedEvents;
 @property(nonatomic) BOOL requiresMSFormattedUID;
-@property(nonatomic) BOOL eventAvalabilityLimited;
+@property(nonatomic) BOOL eventAvailabilityLimited;
 @property(nonatomic) BOOL canSetAvailability;
 @property(nonatomic) BOOL mustAcknowledgeMasterEvent;
 @property(nonatomic) BOOL requiresAttendeeSearchInSingleAccount;

@@ -25,6 +25,7 @@
     NSArray *_recipients;
     INSpeakableString *_groupName;
     int _messageType;
+    NSString *_serviceName;
     NSDate *_dateMessageWasLastRead;
     NSNumber *_numberOfAttachments;
     int _messageEffectType;
@@ -44,6 +45,7 @@
 @property(readonly, nonatomic) int messageEffectType; // @synthesize messageEffectType=_messageEffectType;
 @property(readonly, copy, nonatomic) NSNumber *numberOfAttachments; // @synthesize numberOfAttachments=_numberOfAttachments;
 @property(readonly, copy, nonatomic) NSDate *dateMessageWasLastRead; // @synthesize dateMessageWasLastRead=_dateMessageWasLastRead;
+@property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, nonatomic) int messageType; // @synthesize messageType=_messageType;
 @property(readonly, copy, nonatomic) INSpeakableString *groupName; // @synthesize groupName=_groupName;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
@@ -64,9 +66,11 @@
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 dateSent:(id)arg3 sender:(id)arg4 recipients:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 messageType:(int)arg7;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 dateMessageWasLastRead:(id)arg7 numberOfAttachments:(id)arg8 messageType:(int)arg9 messageEffectType:(int)arg10;
+- (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 messageType:(int)arg8 serviceName:(id)arg9;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 messageType:(int)arg8;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 dateMessageWasLastRead:(id)arg8 numberOfAttachments:(id)arg9 messageType:(int)arg10 messageEffectType:(int)arg11;
 - (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 dateMessageWasLastRead:(id)arg8 numberOfAttachments:(id)arg9 messageType:(int)arg10 messageEffectType:(int)arg11 referencedMessage:(id)arg12;
+- (id)initWithIdentifier:(id)arg1 conversationIdentifier:(id)arg2 content:(id)arg3 dateSent:(id)arg4 sender:(id)arg5 recipients:(id)arg6 groupName:(id)arg7 dateMessageWasLastRead:(id)arg8 numberOfAttachments:(id)arg9 messageType:(int)arg10 messageEffectType:(int)arg11 referencedMessage:(id)arg12 serviceName:(id)arg13;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

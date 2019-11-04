@@ -8,10 +8,11 @@
 
 #import <MediaPlaybackCore/MPCPlayerResponseBuilder-Protocol.h>
 #import <MediaPlaybackCore/MPMiddleware-Protocol.h>
+#import <MediaPlaybackCore/_MPCStateDumpPropertyListTransformable-Protocol.h>
 
 @class MPModelGenericObject, NSArray, NSIndexPath, NSString;
 
-@interface MPCStoreFrontLocalEquivalencyMiddleware : NSObject <MPCPlayerResponseBuilder, MPMiddleware>
+@interface MPCStoreFrontLocalEquivalencyMiddleware : NSObject <MPCPlayerResponseBuilder, _MPCStateDumpPropertyListTransformable, MPMiddleware>
 {
     NSArray *_invalidationObservers;
     MPModelGenericObject *_overridePlayingItem;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) MPModelGenericObject *overridePlayingItem; // @synthesize overridePlayingItem=_overridePlayingItem;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;
 - (id)playerModelObject:(id)arg1 propertySet:(id)arg2 atIndexPath:(id)arg3 chain:(id)arg4;

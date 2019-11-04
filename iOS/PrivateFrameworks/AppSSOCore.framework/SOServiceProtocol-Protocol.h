@@ -9,6 +9,7 @@
 @class NSURL, SOAuthorizationRequestParametersCore;
 
 @protocol SOServiceProtocol <NSObject>
+- (void)isExtensionProcessWithAuditToken:(CDStruct_6ad76789)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)debugHintsWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)realmsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)configurationWithCompletion:(void (^)(SOConfiguration *, NSError *))arg1;

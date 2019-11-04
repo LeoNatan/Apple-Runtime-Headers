@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class ICApp, NSString, UIImage, WFAccessResource;
+@class ICApp, NSString, WFAccessResource, WFImage;
 
 @interface WFGalleryService : NSObject
 {
     NSString *_name;
-    UIImage *_icon;
+    WFImage *_icon;
     ICApp *_app;
     WFAccessResource *_accessResource;
 }
@@ -21,7 +21,7 @@
 + (id)servicesForWorkflow:(id)arg1;
 @property(readonly, nonatomic) WFAccessResource *accessResource; // @synthesize accessResource=_accessResource;
 @property(readonly, nonatomic) ICApp *app; // @synthesize app=_app;
-@property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
+@property(readonly, nonatomic) WFImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;

@@ -9,15 +9,17 @@
 #import <CoreSpeech/CSAudioRouteChangeMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
+#import <CoreSpeech/CSFirstUnlockMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSPhraseSpotterEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSSiriEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
-@class CSAsset, CSAudioProvider, CSAudioStream, CSKeywordAnalyzerNDAPI, CSPolicy, NSDictionary, NSMutableArray, NSString;
+@class CSAsset, CSAudioProvider, CSAudioStream, CSKeywordAnalyzerNDAPI, CSOSTransaction, CSPolicy, NSDictionary, NSMutableArray, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSBuiltInVoiceTriggerWatch : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSPhraseSpotterEnabledMonitorDelegate, CSAudioRouteChangeMonitorDelegate, CSVoiceTriggerXPCServiceDelegate>
+@interface CSBuiltInVoiceTriggerWatch : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSPhraseSpotterEnabledMonitorDelegate, CSAudioRouteChangeMonitorDelegate, CSSiriEnabledMonitorDelegate, CSFirstUnlockMonitorDelegate, CSVoiceTriggerXPCServiceDelegate>
 {
     BOOL _listeningEnabled;
     BOOL _voiceTriggerEnabled;
@@ -51,6 +53,7 @@
     unsigned long long _earlyDetectFiredMachTime;
     unsigned long long _analyzerStartSampleCount;
     NSString *_audioProviderUUID;
+    CSOSTransaction *_osTransaction;
     double _lastAggTime;
     double _cumulativeUptime;
     double _cumulativeDowntime;
@@ -59,6 +62,7 @@
 @property(nonatomic) double cumulativeDowntime; // @synthesize cumulativeDowntime=_cumulativeDowntime;
 @property(nonatomic) double cumulativeUptime; // @synthesize cumulativeUptime=_cumulativeUptime;
 @property(nonatomic) double lastAggTime; // @synthesize lastAggTime=_lastAggTime;
+@property(retain, nonatomic) CSOSTransaction *osTransaction; // @synthesize osTransaction=_osTransaction;
 @property(nonatomic) BOOL isExternalPhraseSpotterRunning; // @synthesize isExternalPhraseSpotterRunning=_isExternalPhraseSpotterRunning;
 @property(nonatomic) BOOL isPhraseSpotterBypassed; // @synthesize isPhraseSpotterBypassed=_isPhraseSpotterBypassed;
 @property(retain, nonatomic) NSString *audioProviderUUID; // @synthesize audioProviderUUID=_audioProviderUUID;
@@ -97,6 +101,8 @@
 - (void)_resetStartAnalyzeTime;
 - (void)_resetUpTime;
 - (void)_logUptimeWithVTSwitchChanged:(BOOL)arg1 VTEnabled:(BOOL)arg2;
+- (void)CSFirstUnlockMonitor:(id)arg1 didReceiveFirstUnlock:(BOOL)arg2;
+- (void)CSSiriEnabledMonitor:(id)arg1 didReceiveEnabled:(BOOL)arg2;
 - (void)_receivedHearstConnectionEvent:(BOOL)arg1;
 - (void)CSAudioRouteChangeMonitor:(id)arg1 didReceiveAudioRouteChangeEvent:(long long)arg2;
 - (void)voiceTriggerXPCService:(id)arg1 setPhraseSpotterBypassing:(BOOL)arg2;
@@ -127,6 +133,7 @@
 - (void)_transitListeningStatus:(BOOL)arg1;
 - (void)_setAsset:(id)arg1;
 - (void)setAsset:(id)arg1;
+- (void)_resetVoiceTrigger;
 - (void)_reset;
 - (void)reset;
 - (void)handleListenStartPolicyChange:(BOOL)arg1;

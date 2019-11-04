@@ -9,6 +9,6 @@
 @class QLFileThumbnailRequest;
 
 @protocol QLThumbnailServiceSurfaceGeneratorProtocol <NSObject>
-- (void)ioSurfaceForRequest:(QLFileThumbnailRequest *)arg1 withSize:(struct CGSize)arg2 completion:(void (^)(IOSurface *))arg3;
+- (void)ioSurfaceForRequest:(QLFileThumbnailRequest *)arg1 withSize:(struct CGSize)arg2 completion:(void (^)(IOSurface *, NSError *))arg3;
 @end
 

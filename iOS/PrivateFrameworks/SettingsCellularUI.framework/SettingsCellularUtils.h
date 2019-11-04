@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (_Bool)supportsWiFiCalling:(id)arg1;
 + (id)formattedPhoneNumber:(id)arg1;
 
 @end

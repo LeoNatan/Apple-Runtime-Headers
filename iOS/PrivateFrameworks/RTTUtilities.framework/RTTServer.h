@@ -32,6 +32,7 @@
 - (void)registerForRemoteUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
 - (void)registerForUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
 - (void)sendString:(id)arg1 forCallUID:(id)arg2;
+- (void)setSystemOutputAudioMuted:(_Bool)arg1 withCallID:(id)arg2;
 - (void)findConversationForCallUID:(id)arg1 andResult:(CDUnknownBlockType)arg2;
 - (void)registerResponseBlock:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
 - (void)setShouldSuppressIncomingNotification:(_Bool)arg1;

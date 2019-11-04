@@ -33,6 +33,7 @@
 - (id)_untrustedInvitationContextForUser:(id)arg1 shouldGrantWriteAccess:(BOOL)arg2;
 - (id)fetchInvitationContextForUser:(id)arg1 shouldGrantWriteAccess:(BOOL)arg2;
 - (id)fetchInvitationToUser:(id)arg1 shouldGrantWriteAccess:(BOOL)arg2;
+- (void)clearParticipants;
 - (void)updateShareParticipants;
 - (void)configure;
 @property(readonly) NSSet *participatingUsers;

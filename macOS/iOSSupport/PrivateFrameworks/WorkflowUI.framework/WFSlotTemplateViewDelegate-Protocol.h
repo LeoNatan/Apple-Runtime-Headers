@@ -15,6 +15,9 @@
 - (void)slotTemplateViewDidInvalidateSize:(WFSlotTemplateView *)arg1;
 - (void)slotTemplateView:(WFSlotTemplateView *)arg1 deletePressedOnUnpopulatedSlotWithIdentifier:(WFSlotIdentifier *)arg2;
 - (void)slotTemplateView:(WFSlotTemplateView *)arg1 didEndTypingInSlotWithIdentifier:(WFSlotIdentifier *)arg2;
+- (void)slotTemplateView:(WFSlotTemplateView *)arg1 typingDidPasteWithOriginalBlock:(void (^)(void))arg2;
+- (void)slotTemplateView:(WFSlotTemplateView *)arg1 typingDidCopyWithOriginalBlock:(void (^)(void))arg2;
+- (void)slotTemplateView:(WFSlotTemplateView *)arg1 typingDidCutWithOriginalBlock:(void (^)(void))arg2;
 - (void)slotTemplateView:(WFSlotTemplateView *)arg1 didChangeText:(NSAttributedString *)arg2 forSlotWithIdentifier:(WFSlotIdentifier *)arg3;
 - (BOOL)slotTemplateView:(WFSlotTemplateView *)arg1 shouldChangeText:(NSAttributedString *)arg2 forSlotWithIdentifier:(WFSlotIdentifier *)arg3;
 - (void)slotTemplateView:(WFSlotTemplateView *)arg1 willBeginTypingInSlotWithIdentifier:(WFSlotIdentifier *)arg2 usingTextEntry:(UIView<WFSlotTemplateTextEntry> *)arg3 allowMultipleLines:(char *)arg4;

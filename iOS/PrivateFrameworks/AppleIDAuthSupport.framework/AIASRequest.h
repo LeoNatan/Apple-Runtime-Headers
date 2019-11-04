@@ -23,8 +23,10 @@ __attribute__((visibility("hidden")))
     NSURLSession *_session;
     NSURLSessionDataTask *_task;
     NSError *_error;
+    NSString *_networkTaskDescription;
 }
 
+@property(retain) NSString *networkTaskDescription; // @synthesize networkTaskDescription=_networkTaskDescription;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSURLSessionDataTask *task; // @synthesize task=_task;
 @property(retain) NSURLSession *session; // @synthesize session=_session;

@@ -28,10 +28,12 @@
     UIColor *_complicationPlatterColor;
     double _lastComplicationUpdateTime;
     struct CGColorSpace *_extendedSRGBcolorSpace;
-    CLKUITexture *_userTexture;
+    CLKUITexture *_userTextureLuma;
+    CLKUITexture *_userTextureChroma;
     UIImage *_userImage;
     NTKPhoto *_userPhoto;
-    NSString *_userUuid;
+    NSString *_userUuidLuma;
+    NSString *_userUuidChroma;
     NTKKaleidoscopePathfinder *_userPathfinder;
     CLKUIResourceProviderKey *_resourceProviderKey;
     float _crownTurnsPerRotation;
@@ -68,10 +70,11 @@
 - (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
 - (void)tritium_didTransitionToTritiumOn;
 - (void)tritium_willTransitionToTritiumOn;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (_Bool)_wantsConstantSpeedZoom;
 - (id)_quadWithStyle:(unsigned int)arg1 asset:(unsigned int)arg2;
-- (id)_textureForAsset:(unsigned int)arg1;
+- (id)_textureChromaForAsset:(unsigned int)arg1;
+- (id)_textureLumaForAsset:(unsigned int)arg1;
 - (id)_pathfinderForAsset:(unsigned int)arg1;
 - (id)_imageForAsset:(unsigned int)arg1;
 - (void)_updateComplications;
@@ -138,6 +141,7 @@
 - (void)_applyDataMode;
 - (void)_applyFrozen;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_updateWithAsset:(unsigned int)arg1;

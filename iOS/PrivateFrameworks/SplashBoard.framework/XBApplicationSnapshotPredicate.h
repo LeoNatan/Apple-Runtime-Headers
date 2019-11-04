@@ -8,7 +8,7 @@
 
 #import <SplashBoard/BSDescriptionProviding-Protocol.h>
 
-@class BSMutableSettings, NSString;
+@class BSMutableSettings, NSString, XBDisplayEdgeInsetsWrapper;
 
 @interface XBApplicationSnapshotPredicate : NSObject <BSDescriptionProviding>
 {
@@ -25,6 +25,7 @@
 - (_Bool)_hasClientObjectForKey:(unsigned long long)arg1;
 - (void)_removeClientObjectForKey:(unsigned long long)arg1;
 - (void)_setClientObject:(id)arg1 forKey:(unsigned long long)arg2;
+@property(copy, nonatomic) XBDisplayEdgeInsetsWrapper *customSafeAreaInsets;
 @property(nonatomic) long long userInterfaceStyle;
 @property(nonatomic) unsigned long long statusBarStateMask;
 @property(nonatomic) unsigned long long statusBarState;

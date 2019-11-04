@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_originalItems;
     NSMutableDictionary *_stitchedItems;
     NSMutableDictionary *_stitchedPlaceholders;
+    NSMutableDictionary *_placeholderReplacements;
     NSMutableDictionary *_deletedItems;
     _Bool _started;
     _Bool _finished;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)finish;
 - (void)start;
 @property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
+@property(readonly, nonatomic) NSArray *placeholderReplacementsIDs;
 @property(readonly, nonatomic) NSArray *placeholderItems;
 - (void)dealloc;
 - (id)init;

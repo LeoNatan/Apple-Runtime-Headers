@@ -16,6 +16,7 @@
     int _userInputInsertionIndex;
 }
 
++ (Class)processingValueClass;
 @property(readonly, nonatomic) int userInputInsertionIndex; // @synthesize userInputInsertionIndex=_userInputInsertionIndex;
 @property(readonly, copy, nonatomic) WFVariableString *variableString; // @synthesize variableString=_variableString;
 - (void).cxx_destruct;

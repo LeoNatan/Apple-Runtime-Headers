@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOUsageCollection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     struct GEOTileUsage *_tileUsages;
     unsigned int _tileUsagesCount;
     unsigned int _tileUsagesSpace;
@@ -25,6 +24,9 @@ __attribute__((visibility("hidden")))
     NSString *_requestErrorDescription;
     NSString *_requestErrorDomain;
     double _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _cellWifi;
     int _geoService;
     int _placeRequestType;
@@ -125,6 +127,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasGeoService;
 @property(nonatomic) int geoService;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

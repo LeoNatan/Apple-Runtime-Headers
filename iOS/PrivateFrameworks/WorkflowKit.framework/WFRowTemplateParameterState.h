@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/WFParameterState-Protocol.h>
 
-@class NSArray, NSString, WFBooleanSubstitutableState, WFByteCountUnitSubstitutableState, WFCalendarUnitSubstitutableState, WFContentProperty, WFDateSubstitutableState, WFNumberSubstitutableState, WFVariableStringParameterState, WFVariableSubstitutableParameterState;
+@class NSArray, NSString, WFBooleanSubstitutableState, WFByteCountUnitSubstitutableState, WFCalendarUnitSubstitutableState, WFContentProperty, WFDateSubstitutableState, WFNumberStringSubstitutableState, WFVariableStringParameterState, WFVariableSubstitutableParameterState;
 
 @interface WFRowTemplateParameterState : NSObject <WFParameterState>
 {
@@ -24,7 +24,7 @@
     WFVariableSubstitutableParameterState *_enumerationValue;
     WFVariableStringParameterState *_stringValue;
     WFBooleanSubstitutableState *_booleanValue;
-    WFNumberSubstitutableState *_numberValue;
+    WFNumberStringSubstitutableState *_numberValue;
     WFVariableStringParameterState *_phoneValue;
     WFVariableStringParameterState *_emailValue;
     WFCalendarUnitSubstitutableState *_calendarUnitValue;
@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) WFCalendarUnitSubstitutableState *calendarUnitValue; // @synthesize calendarUnitValue=_calendarUnitValue;
 @property(readonly, nonatomic) WFVariableStringParameterState *emailValue; // @synthesize emailValue=_emailValue;
 @property(readonly, nonatomic) WFVariableStringParameterState *phoneValue; // @synthesize phoneValue=_phoneValue;
-@property(readonly, nonatomic) WFNumberSubstitutableState *numberValue; // @synthesize numberValue=_numberValue;
+@property(readonly, nonatomic) WFNumberStringSubstitutableState *numberValue; // @synthesize numberValue=_numberValue;
 @property(readonly, nonatomic) WFBooleanSubstitutableState *booleanValue; // @synthesize booleanValue=_booleanValue;
 @property(readonly, nonatomic) WFVariableStringParameterState *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, nonatomic) WFVariableSubstitutableParameterState *enumerationValue; // @synthesize enumerationValue=_enumerationValue;

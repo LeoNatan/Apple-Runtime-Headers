@@ -48,6 +48,7 @@
 @property(retain, nonatomic) HKQuantity *activeEnergyGoal; // @synthesize activeEnergyGoal=_activeEnergyGoal;
 @property(retain, nonatomic) HKQuantity *activeEnergyTotal; // @synthesize activeEnergyTotal=_activeEnergyTotal;
 - (void).cxx_destruct;
+- (id)loggingString;
 - (id)date;
 - (void)setDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

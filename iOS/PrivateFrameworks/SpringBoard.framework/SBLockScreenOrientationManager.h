@@ -8,12 +8,17 @@
 
 #import <SpringBoard/SBAssistantObserver-Protocol.h>
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface SBLockScreenOrientationManager : NSObject <SBAssistantObserver>
 {
+    NSDate *_updateForAmbiguousOrientationsAfterDate;
+    _Bool _wasUILocked;
 }
 
+- (void).cxx_destruct;
+- (void)_updateDeviceOrientationIfNeededForPhoneUnlockToOrientation:(long long)arg1;
+- (void)_lockStateChanged:(id)arg1;
 - (void)updateInterfaceOrientationWithRequestedOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)assistantDidAppear:(id)arg1;
 - (id)init;

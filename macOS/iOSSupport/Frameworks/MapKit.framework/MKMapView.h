@@ -542,6 +542,7 @@
 - (id)_annotationAtPoint:(struct CGPoint)arg1 avoidCurrent:(BOOL)arg2;
 - (void)_updateShowHeadingIndicator;
 @property(nonatomic, getter=_alwaysShowHeadingIndicator, setter=_setAlwaysShowHeadingIndicatorIfSupported:) BOOL alwaysShowHeadingIndicator;
+- (BOOL)_shouldSupportAlwaysShowHeadingIndicator;
 @property(nonatomic, getter=_showHeadingIndicatorForStepping, setter=_setShowHeadingIndicatorForStepping:) BOOL showHeadingIndicatorForStepping;
 - (BOOL)postsMapViewInitialRenderingNotification;
 - (void)_setUserTrackingMode:(long long)arg1 animated:(BOOL)arg2 fromTrackingButton:(BOOL)arg3;

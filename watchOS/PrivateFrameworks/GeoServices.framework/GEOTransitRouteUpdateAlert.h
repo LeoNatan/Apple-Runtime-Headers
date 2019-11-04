@@ -13,11 +13,13 @@
 @interface GEOTransitRouteUpdateAlert : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_content;
     NSData *_identifier;
     GEOFormattedString *_title;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_content:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) GEOFormattedString *title;
 @property(readonly, nonatomic) _Bool hasTitle;
 - (void)_readTitle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

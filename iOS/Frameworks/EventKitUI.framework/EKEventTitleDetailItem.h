@@ -8,13 +8,13 @@
 
 #import <EventKitUI/EKEventDetailTitleCellDelegate-Protocol.h>
 
-@class NSDate, NSObject, UIColor, UITableViewCell;
+@class EKEventDetailTitleCell, NSDate, NSObject, UIColor, UIView;
 @protocol EKEventTitleDetailItemDelegate;
 
 __attribute__((visibility("hidden")))
 @interface EKEventTitleDetailItem : EKEventDetailItem <EKEventDetailTitleCellDelegate>
 {
-    UITableViewCell *_cell;
+    EKEventDetailTitleCell *_cell;
     UIColor *_color;
     _Bool _showDot;
     _Bool _cellNeedsUpdate;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;
 @property(nonatomic) _Bool hidesSeparator; // @synthesize hidesSeparator=_hidesSeparator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *sourceViewForPopover;
 - (_Bool)minimalMode;
 - (void)predictionWasActedOn;
 - (_Bool)shouldShowEditButtonInline;

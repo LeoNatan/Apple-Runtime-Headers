@@ -64,7 +64,7 @@
 - (void)frameCountEntered:(id)arg1;
 - (void)timecodeEntered:(id)arg1;
 - (void)timecodeButtonLeftClicked:(id)arg1;
-- (void)_updateTimeDisplayStyle;
+- (void)updateTimeDisplayStyle;
 @property(nonatomic) long long userPreferredTimeDisplayStyle;
 @property(readonly) BOOL playPauseButtonEnabled;
 - (void)playPauseButtonPressed:(id)arg1;

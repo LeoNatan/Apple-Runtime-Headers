@@ -6,7 +6,10 @@
 
 #import <SPOwner/NSObject-Protocol.h>
 
+@class NSString;
+
 @protocol SPPowerStateMonitor <NSObject>
+- (void)claimWakeWithReason:(NSString *)arg1;
 - (void)stopMonitoring;
 - (void)startMonitoring;
 - (unsigned long long)state;

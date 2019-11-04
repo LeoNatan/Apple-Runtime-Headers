@@ -14,12 +14,14 @@
 @interface GEOPBTransitStation : PBCodable <GEOTransitNamedItem, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_location;
     unsigned long long _muid;
     NSString *_nameDisplayString;
     NSMutableArray *_zoomNames;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _stationIndex;
     int _structureType;
     struct {
@@ -76,6 +78,8 @@
 @property(nonatomic) unsigned long long muid;
 @property(nonatomic) BOOL hasStationIndex;
 @property(nonatomic) unsigned int stationIndex;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)identifier;
 - (id)bestName;
 

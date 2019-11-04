@@ -87,6 +87,7 @@
 - (void)cut:(id)arg1;
 - (void)toggleEditMenu;
 - (BOOL)canBecomeFirstResponder;
+- (long long)editingInteractionConfiguration;
 - (BOOL)lassoContainsPoint:(struct CGPoint)arg1;
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)addAnimationsToSelectionLayer:(id)arg1 whiteLayer:(id)arg2;

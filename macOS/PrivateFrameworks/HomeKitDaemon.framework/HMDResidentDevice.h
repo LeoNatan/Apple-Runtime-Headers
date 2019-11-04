@@ -7,20 +7,22 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMDBackingStoreObjectProtocol-Protocol.h>
+#import <HomeKitDaemon/HMDDeviceControllerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFDumpState-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDDevice, HMDHome, HMDResidentDeviceManager, HMFUnfairLock, NSString, NSUUID;
+@class HMDDevice, HMDDeviceController, HMDHome, HMDResidentDeviceManager, HMFUnfairLock, NSString, NSUUID;
 
-@interface HMDResidentDevice : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding>
+@interface HMDResidentDevice : HMFObject <HMDDeviceControllerDelegate, HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding>
 {
     HMFUnfairLock *__lock;
+    HMDDevice *_device;
+    HMDDeviceController *_deviceController;
     BOOL _enabled;
     BOOL _confirmed;
     BOOL _reachable;
     BOOL _lowBattery;
-    HMDDevice *_device;
     NSUUID *_identifier;
     long long _batteryState;
     HMDHome *_home;
@@ -33,18 +35,19 @@
 + (id)shortDescription;
 @property(nonatomic) __weak HMDResidentDeviceManager *residentDeviceManager; // @synthesize residentDeviceManager=_residentDeviceManager;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
+@property(retain, nonatomic) HMDDevice *device; // @synthesize device=_device;
 @property(nonatomic, getter=isLowBattery) BOOL lowBattery; // @synthesize lowBattery=_lowBattery;
 @property(nonatomic) long long batteryState; // @synthesize batteryState=_batteryState;
 @property(nonatomic, getter=isReachable) BOOL reachable; // @synthesize reachable=_reachable;
 @property(nonatomic, getter=isConfirmed) BOOL confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) HMDDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;
 - (id)dumpState;
+- (void)deviceController:(id)arg1 didUpdateDevice:(id)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (void)_handleResidentDeviceUpdateConfirmed:(BOOL)arg1;
 - (void)_handleResidentDeviceUpdateEnabled:(BOOL)arg1;
@@ -52,8 +55,7 @@
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)__deviceUpdated:(id)arg1;
-- (void)__deviceAdded:(id)arg1;
-- (void)__accountAdded:(id)arg1;
+- (id)deviceController;
 - (id)runtimeState;
 @property(readonly, nonatomic) BOOL supportsShortcutActions;
 @property(readonly, nonatomic) BOOL supportsMediaActions;
@@ -70,6 +72,7 @@
 @property(readonly, getter=isBlocked) BOOL blocked;
 - (void)configureWithHome:(id)arg1;
 - (void)dealloc;
+- (id)__initWithDeviceController:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)init;

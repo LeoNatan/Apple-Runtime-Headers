@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) float bottomBarOffset; // @synthesize bottomBarOffset=_bottomBarOffset;
 @property(readonly, nonatomic) float topBarHeight; // @synthesize topBarHeight=_topBarHeight;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
+@property(readonly, nonatomic, getter=isTrackingDrag) _Bool trackingDrag; // @synthesize trackingDrag=_dragging;
 - (void).cxx_destruct;
 - (void)setBottomBarOffset:(float)arg1 forState:(int)arg2;
 - (void)setTopBarHeight:(float)arg1 forState:(int)arg2;

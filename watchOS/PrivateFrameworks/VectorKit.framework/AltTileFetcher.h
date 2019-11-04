@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOTileLoader, GEOVectorTileDecoder, NSString;
+@class GEOApplicationAuditToken, GEOTileLoader, GEOVectorTileDecoder, NSString;
 
 __attribute__((visibility("hidden")))
 @interface AltTileFetcher : NSObject
@@ -18,6 +18,12 @@ __attribute__((visibility("hidden")))
         struct _retain_objc _retain;
         struct _release_objc _release;
     } _vectorTileDecoder;
+    struct _retain_ptr<GEOApplicationAuditToken *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
+        CDUnknownFunctionPointerType *_vptr$_retain_ptr;
+        GEOApplicationAuditToken *_obj;
+        struct _retain_objc _retain;
+        struct _release_objc _release;
+    } _auditToken;
     struct unordered_map<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>, GEOTileKeyHashFunc, GEOTileKeyEqualsFunc, std::__1::allocator<std::__1::pair<const _GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>>>> _keyToJobMap;
     struct Mutex _mutex;
     unsigned int _numDownloads;
@@ -34,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)fetchDataForJob:(shared_ptr_97fa0047 *)arg1;
 - (shared_ptr_97fa0047)getJobForKey:(const struct _GEOTileKey *)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithToken:(id)arg1;
 
 @end
 

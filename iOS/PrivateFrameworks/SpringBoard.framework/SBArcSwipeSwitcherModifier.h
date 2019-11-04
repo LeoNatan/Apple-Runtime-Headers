@@ -15,9 +15,10 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (id)layoutSettings;
 - (struct UIRectCornerRadii)cardCornerRadiiForIndex:(unsigned long long)arg1;
 - (struct _NSRange)fullSizeSnapshotsRange;
@@ -31,8 +32,7 @@
 - (long long)backdropBlurType;
 - (double)opacityForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
-- (long long)layoutUpdateMode;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)transitionWillBegin;
 - (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3;
 

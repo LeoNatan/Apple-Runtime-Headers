@@ -6,13 +6,13 @@
 
 #import <PhotoLibraryServices/PLBackgroundJobWorker.h>
 
-@class NSProgress;
-@protocol PLResourceGeneratorConversionClient;
+@class NSProgress, PAImageConversionServiceClient, PAVideoConversionServiceClient;
 
 @interface PLBackgroundJobResourceAvailabilityWorker : PLBackgroundJobWorker
 {
     NSProgress *_progressForCurrentAsset;
-    id <PLResourceGeneratorConversionClient> _conversionClient;
+    PAImageConversionServiceClient *_imageConversionClient;
+    PAVideoConversionServiceClient *_videoConversionClient;
 }
 
 + (id)workerWithLibrary:(id)arg1;
@@ -20,7 +20,8 @@
 - (void)performWorkOnManagedObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)managedObjectIDsNeedingProcessing;
 - (_Bool)hasPendingJobs;
-- (id)conversionClient;
+- (id)videoConversionClient;
+- (id)imageConversionClient;
 - (id)_predicateToFetchResourcesAwaitingProcessing;
 
 @end

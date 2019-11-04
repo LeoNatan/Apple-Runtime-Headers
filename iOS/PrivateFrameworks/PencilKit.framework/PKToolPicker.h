@@ -38,8 +38,7 @@
 @property(nonatomic, getter=_isBackgroundMaterialUpdatingPaused, setter=_setBackgroundMaterialUpdatingPaused:) _Bool _backgroundMaterialUpdatingPaused;
 - (_Bool)_wantsPaletteToStayVisibleForPopovers;
 - (void)inputResponderController:(id)arg1 inputViewSetVisibilityDidChange:(_Bool)arg2 includedReset:(_Bool)arg3;
-- (void)visibilityDidChange:(_Bool)arg1;
-- (id)_colorPickerPopoverPresentationSourceView:(id)arg1;
+- (id)paletteViewColorPickerPopoverPresentationSourceView:(id)arg1;
 - (struct CGRect)paletteViewColorPickerPopoverPresentationSourceRect:(id)arg1;
 - (void)paletteView:(id)arg1 didChangeColor:(id)arg2;
 - (void)paletteViewDidChangePosition:(id)arg1;
@@ -54,13 +53,10 @@
 @property(readonly, nonatomic) _Bool isVisible;
 @property(nonatomic, getter=isRulerActive) _Bool rulerActive;
 @property(retain, nonatomic) PKTool *selectedTool;
-- (long long)_colorUserInterfaceStyle;
-- (id)_convertTool:(id)arg1 from:(long long)arg2 to:(long long)arg3;
 - (id)_paletteView;
 - (void)_updateVisibilityForFirstResponder:(id)arg1;
 - (void)setVisible:(_Bool)arg1 forFirstResponder:(id)arg2;
 - (void)_saveStateIfNecessary;
-- (void)_forceSetVisible:(_Bool)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (_Bool)_currentFirstResponderWantsToolPickerVisible;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ASAuthorizationProviderExtensionAuthorizationRequest, NSData, NSDate, NSString, NSUUID, SOKerberosExtensionData, SOKerberosRealmSettings, SONetworkIdentity, SORealmSettingManager, SOSiteCode;
+@class ASAuthorizationProviderExtensionAuthorizationRequest, NSData, NSDate, NSString, NSUUID, SOKerberosExtensionData, SOKerberosExtensionUserData, SOKerberosRealmSettings, SONetworkIdentity, SORealmSettingManager, SOSiteCode;
 @protocol OS_dispatch_group;
 
 @interface SOKerberosContext : NSObject
@@ -22,8 +22,10 @@
     NSString *_userName;
     NSString *_realm;
     SOKerberosExtensionData *_extensionData;
+    SOKerberosExtensionUserData *_extensionUserData;
     NSString *_hostName;
     NSString *_servicePrincipalName;
+    NSString *_serviceName;
     NSString *_password;
     NSString *_changedPassword;
     NSUUID *_credentialUUID;
@@ -63,8 +65,10 @@
 @property(nonatomic) BOOL userNameIsReadOnly; // @synthesize userNameIsReadOnly=_userNameIsReadOnly;
 @property(retain, nonatomic) NSString *changedPassword; // @synthesize changedPassword=_changedPassword;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
+@property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSString *servicePrincipalName; // @synthesize servicePrincipalName=_servicePrincipalName;
 @property(retain, nonatomic) NSString *hostName; // @synthesize hostName=_hostName;
+@property(retain, nonatomic) SOKerberosExtensionUserData *extensionUserData; // @synthesize extensionUserData=_extensionUserData;
 @property(retain, nonatomic) SOKerberosExtensionData *extensionData; // @synthesize extensionData=_extensionData;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;

@@ -10,6 +10,8 @@
 {
 }
 
++ (id)originalCropKey;
++ (id)smartKey;
 + (id)yawKey;
 + (id)pitchKey;
 + (id)angleKey;
@@ -19,6 +21,8 @@
 + (id)widthKey;
 + (id)yOriginKey;
 + (id)xOriginKey;
+@property(nonatomic, getter=isOriginalCrop) BOOL originalCrop;
+@property(nonatomic, getter=isSmart) BOOL smart;
 - (BOOL)isSettingEqual:(id)arg1 forKey:(id)arg2;
 @property(nonatomic) BOOL autoCropped;
 @property(nonatomic) double yawRadians;

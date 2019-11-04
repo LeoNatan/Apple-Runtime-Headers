@@ -6,12 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
-@class NSArray, NSURL, _SFURLTextPreviewView, _WKActivatedElementInfo;
+@class NSArray, NSURL, _SFLinkPreviewHeader, _SFURLTextPreviewView, _WKActivatedElementInfo;
 
 @interface _SFURLTextPreviewViewController : UIViewController
 {
     NSArray *_linkActions;
     _WKActivatedElementInfo *_activatedElementInfo;
+    _SFLinkPreviewHeader *_previewHeader;
     NSURL *_URL;
     _SFURLTextPreviewView *_previewView;
 }
@@ -20,6 +21,7 @@
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (id)previewActionItems;
+- (id)_previewHeader;
 - (id)_activatedElementInfo;
 - (void)_setActivatedElementInfo:(id)arg1;
 - (id)_linkActions;

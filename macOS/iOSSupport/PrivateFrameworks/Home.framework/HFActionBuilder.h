@@ -14,6 +14,7 @@
 
 + (id)actionBuilderForAction:(id)arg1 inHome:(id)arg2;
 + (Class)homeKitRepresentationClass;
+- (id)performValidation;
 - (BOOL)hasSameTargetAsAction:(id)arg1;
 - (BOOL)isEquivalentToAction:(id)arg1;
 @property(readonly, nonatomic, getter=isAffectedByEndEvents) BOOL affectedByEndEvents;

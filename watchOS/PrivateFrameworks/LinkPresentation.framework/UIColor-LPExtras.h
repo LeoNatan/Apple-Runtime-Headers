@@ -14,6 +14,8 @@
 - (id)_lp_HTMLAttributeText;
 - (id)_lp_colorForcingUserInterfaceStyle:(int)arg1;
 - (id)_lp_CSSTextWithAlternatePropertiesForName:(id)arg1;
+- (id)_lp_CSSTextHexFormatForcingUserInterfaceStyle:(int)arg1;
+- (id)_lp_CSSTextForcingUserInterfaceStyle:(int)arg1;
 - (id)_lp_CSSTextHexFormat;
 - (id)_lp_CSSText;
 @end

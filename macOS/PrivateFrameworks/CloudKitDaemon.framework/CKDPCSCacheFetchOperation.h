@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _fetchOptions;
     CKDPCSData *_pcsData;
     NSError *_fetchError;
+    NSError *_dependentPCSFetchError;
     CKDRecordPCSData *_parentPCSData;
 }
 
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldRetry; // @synthesize shouldRetry=_shouldRetry;
 @property(nonatomic) int numRetries; // @synthesize numRetries=_numRetries;
 @property(nonatomic) BOOL wasFetchedFromCache; // @synthesize wasFetchedFromCache=_wasFetchedFromCache;
+@property(retain, nonatomic) NSError *dependentPCSFetchError; // @synthesize dependentPCSFetchError=_dependentPCSFetchError;
 @property(retain, nonatomic) NSError *fetchError; // @synthesize fetchError=_fetchError;
 @property(nonatomic) BOOL didFetchData; // @synthesize didFetchData=_didFetchData;
 @property(nonatomic) BOOL willRetryFetchSuperCalled; // @synthesize willRetryFetchSuperCalled=_willRetryFetchSuperCalled;

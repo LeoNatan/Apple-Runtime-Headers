@@ -28,7 +28,7 @@
 - (void)switchCell:(id)arg1 didTurnOn:(BOOL)arg2;
 - (id)_musicAppURL;
 - (void)_presentMediaPickerUnavailablePromptWithReason:(long long)arg1 storeKitErrorObject:(id)arg2;
-- (void)_presentMediaPicker;
+- (void)_presentMediaPickerWithOptionsShowsLibraryContent:(BOOL)arg1 pickingForExternalPlayer:(BOOL)arg2;
 - (BOOL)_allowRowInteractionForIndexPath:(id)arg1;
 - (void)applyAccessory:(long long)arg1 toItem:(id)arg2 onTableView:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

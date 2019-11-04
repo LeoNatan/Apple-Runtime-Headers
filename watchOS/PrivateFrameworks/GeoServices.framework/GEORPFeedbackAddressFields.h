@@ -13,12 +13,14 @@
 @interface GEORPFeedbackAddressFields : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_addressBasic;
     NSString *_addressBuilding;
     NSString *_addressFloor;
     NSString *_addressUnit;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_addressBasic:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSString *addressBasic;
 @property(readonly, nonatomic) _Bool hasAddressBasic;
 - (void)_readAddressBasic;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)_changePolicyToCurrentWithBundleIdentifier:(id)arg1;
 - (void)_changePolicyToCurrentWithCategoryIdentifier:(id)arg1;
 @property(readonly) _Bool shouldAllowOneMoreMinute;
+@property(readonly) _Bool needsToSetRestrictionsPasscode;
 - (_Bool)_isRestrictionsPasscodeSet;
 - (_Bool)_shouldRequestMoreTime;
 - (void)_updateAllowedByScreenTime:(_Bool)arg1 applicationCurrentlyLimited:(_Bool)arg2;

@@ -1178,11 +1178,6 @@ typedef struct {
 } CDStruct_79c5c966;
 
 typedef struct {
-    unsigned long long pos;
-    unsigned long long length;
-} CDStruct_158f0f88;
-
-typedef struct {
     unsigned long long _field1;
     id *_field2;
     unsigned long long *_field3;
@@ -1680,6 +1675,15 @@ typedef struct {
     unsigned int wrote_sourceVersion:1;
     unsigned int wrote_targetVersion:1;
 } CDStruct_2c11db96;
+
+typedef struct {
+    unsigned int read_unknownFields:1;
+    unsigned int read_context:1;
+    unsigned int read_corrections:1;
+    unsigned int wrote_unknownFields:1;
+    unsigned int wrote_context:1;
+    unsigned int wrote_corrections:1;
+} CDStruct_5bb8e4f8;
 
 typedef struct {
     unsigned int read_unknownFields:1;

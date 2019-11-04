@@ -27,6 +27,7 @@
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 toCoordinateSpace:(id)arg2;
 - (_Bool)_usesWindowServerHitTesting;
 - (id)_hitTest:(struct CGPoint)arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (void)setFrame:(struct CGRect)arg1;
 @property(nonatomic) __weak UIViewController *deviceApplicationSceneViewController; // @synthesize deviceApplicationSceneViewController=_deviceApplicationSceneViewController;
 - (_Bool)_canBecomeKeyWindow;
 - (void)setRootViewController:(id)arg1;

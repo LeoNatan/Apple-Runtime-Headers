@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSpatialEventLookupResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _categorys;
     GEOLatLng *_center;
@@ -22,6 +21,9 @@ __attribute__((visibility("hidden")))
     GEOPDMapsIdentifier *_eventId;
     GEOPDMapsIdentifier *_poiId;
     GEOTimezone *_timezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_categorys:1;
@@ -85,6 +87,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasEventId;
 - (void)_readEventId;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

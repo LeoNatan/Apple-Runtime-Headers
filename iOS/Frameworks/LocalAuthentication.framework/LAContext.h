@@ -32,6 +32,10 @@
 - (void)setOptionAuthenticationTitle:(id)arg1;
 - (id)optionAuthenticationTitle;
 @property(copy, nonatomic) NSString *localizedReason;
+- (void)setOptionMatchForUnlock:(id)arg1;
+- (id)optionMatchForUnlock;
+- (void)setOptionCallerIconBundlePath:(id)arg1;
+- (id)optionCallerIconBundlePath;
 - (void)setOptionPhysicalButtonTitle:(id)arg1;
 - (id)optionPhysicalButtonTitle;
 - (void)setOptionFingerMustBeOff:(id)arg1;

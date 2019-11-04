@@ -72,7 +72,6 @@
 @property(nonatomic) _Bool showOpaqueBackgroundView;
 - (void)showStatusBarAnimated:(_Bool)arg1;
 - (void)didSelectPass;
-- (void)willSelectPass;
 - (void)didScrollToPass;
 - (void)didScrollAwayFromPass;
 - (void)scrollToBarcode;

@@ -13,6 +13,7 @@
     NSButton *_inEarDetectionEnabledCB;
 }
 
++ (_Bool)deviceHasViews:(id)arg1;
 @property NSButton *inEarDetectionEnabledCB; // @synthesize inEarDetectionEnabledCB=_inEarDetectionEnabledCB;
 - (void)handleInEarDetection:(id)arg1;
 - (void)loadPrefs;

@@ -6,13 +6,13 @@
 
 #import <ShareSheet/SDXPCDaemonProtocol-Protocol.h>
 
-@class NSArray, NSString, NSUUID, UISUIActivityViewControllerConfiguration, _UIActivityDiscoveryContext;
+@class NSArray, NSDictionary, NSString, NSUUID, UISUIActivityViewControllerConfiguration, _UIActivityDiscoveryContext;
 
 @protocol SDShareSheetSlotManagerProtocol <SDXPCDaemonProtocol>
 - (void)activityViewControllerPerformEditActionsWithSessionID:(NSString *)arg1;
 - (void)activityViewControllerWillEnterForegroundWithSessionID:(NSString *)arg1;
 - (void)activityViewControllerDidEnterBackgroundWithSessionID:(NSString *)arg1;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 performedActivityWithSuccess:(_Bool)arg2;
+- (void)activityViewControllerPerformedActivityWithInfoDictionary:(NSDictionary *)arg1;
 - (void)activityViewControllerWithSessionID:(NSString *)arg1 updatedFavoritesProxies:(NSArray *)arg2 activityCategory:(int)arg3;
 - (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedDefaultActivityWithIdentifier:(NSUUID *)arg2 activityCategory:(int)arg3;
 - (void)activityViewControllerWithSessionID:(NSString *)arg1 favoritedActivity:(_Bool)arg2 withIdentifier:(NSUUID *)arg3 activityCategory:(int)arg4;

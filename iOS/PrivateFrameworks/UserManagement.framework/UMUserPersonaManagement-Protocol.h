@@ -21,10 +21,13 @@
 - (void)setBundlesIdentifiers:(NSArray *)arg1 forUniquePersonaType:(int)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)setBundlesIdentifiers:(NSArray *)arg1 forPersonaWithPersonaUniqueString:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)setBundlesIdentifiers:(NSArray *)arg1 forUniquePersonaWithIDString:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)fetchAsidMapOfAllUsersWithCompletionHandler:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)fetchPersonaWithType:(int)arg1 CompletionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)fetchPersonaWithPersonaUniqueString:(NSString *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)fetchPersonaWithIDString:(NSString *)arg1 CompletionHandler:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)fetchAllPersonasForAllUsersWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
 - (void)fetchAllPersonasWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)disableUserPersonaWithProfileInfo:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)deleteUserPersonaWithType:(int)arg1 passcodeData:(NSData *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)deleteUserPersonaWithProfileInfo:(NSDictionary *)arg1 passcodeData:(NSData *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)deleteUserPersonaWithPersonaUniqueString:(NSString *)arg1 passcodeData:(NSData *)arg2 completionHandler:(void (^)(NSError *))arg3;

@@ -13,6 +13,16 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_accessibilityDataSeriesSupportsSonification;
+- (_Bool)_accessibilityDataSeriesSupportsSummarization;
+- (id)_accessibilityDataSeriesMinimumValueForAxis:(long long)arg1;
+- (id)_accessibilityDataSeriesMaximumValueForAxis:(long long)arg1;
+- (id)_accessibilityDataSeriesUnitLabelForAxis:(long long)arg1;
+- (id)_accessibilityDataSeriesTitleForAxis:(long long)arg1;
+- (long long)_accessibilityDataSeriesType;
+- (id)_accessibilityDataSeriesName;
+- (long long)accessibilityContainerType;
+- (id)_accessibilityDataSeriesValuesForAxis:(long long)arg1;
 - (unsigned long long)_accessibilityNumberOfSegmentsFrom:(id)arg1 toDate:(id)arg2;
 - (void)_accessibilityClearElements;
 - (void)_updateGraphViewConfigurationIfNecessary;

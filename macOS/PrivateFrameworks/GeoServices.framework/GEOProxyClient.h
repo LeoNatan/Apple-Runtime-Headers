@@ -27,6 +27,7 @@
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)initWithAuditToken:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1;
 
 @end

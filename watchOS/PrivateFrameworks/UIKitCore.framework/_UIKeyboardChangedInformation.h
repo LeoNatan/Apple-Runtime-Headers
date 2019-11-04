@@ -13,6 +13,7 @@
 
 @interface _UIKeyboardChangedInformation : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _avoidIntersectability;
     _Bool _keyboardOnScreen;
     _Bool _shouldTakeSnapshot;
     NSString *_sourceCanvasIdentifier;
@@ -31,6 +32,7 @@
 @property(readonly) struct CGRect keyboardPositionWithIAV; // @synthesize keyboardPositionWithIAV=_keyboardPositionWithIAV;
 @property(readonly) struct CGRect keyboardPosition; // @synthesize keyboardPosition=_keyboardPosition;
 @property(readonly, copy) BKSAnimationFenceHandle *animationFence; // @synthesize animationFence=_animationFence;
+@property(readonly) _Bool avoidIntersectability; // @synthesize avoidIntersectability=_avoidIntersectability;
 @property(copy, nonatomic) NSString *sourceDisplayIdentifier; // @synthesize sourceDisplayIdentifier=_sourceDisplayIdentifier;
 @property(copy, nonatomic) NSString *sourceCanvasIdentifier; // @synthesize sourceCanvasIdentifier=_sourceCanvasIdentifier;
 - (void).cxx_destruct;
@@ -40,6 +42,7 @@
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithIntersectability:(_Bool)arg1;
 - (id)copyWithoutFence;
 - (id)copyWithoutIAV;
 - (id)initWithKeyboardRect:(struct CGRect)arg1 iavPosition:(struct CGRect)arg2 onScreen:(_Bool)arg3 takeSnapshot:(_Bool)arg4 fence:(id)arg5;

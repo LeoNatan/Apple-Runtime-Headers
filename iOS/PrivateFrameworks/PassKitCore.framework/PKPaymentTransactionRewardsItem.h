@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
 @class NSDecimalNumber, NSString, PKCurrencyAmount;
 
-@interface PKPaymentTransactionRewardsItem : NSObject <NSSecureCoding>
+@interface PKPaymentTransactionRewardsItem : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_identifier;
     unsigned long long _type;
@@ -32,11 +33,12 @@
 - (_Bool)isEqualToRewardsItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)jsonDictionaryRepresentation;
 - (void)_initWithRewardsDictionary:(id)arg1;
-- (id)initWithRewardsDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 
 @end
 

@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)addMarkupWithStyle:(unsigned long long)arg1 forIndexSet:(id)arg2;
 - (void)_rotateActiveAnnotation;
 - (void)_didRotatePageNotification:(id)arg1;
-- (void)_setPageLayerEffectForID:(id)arg1 hidden:(_Bool)arg2;
 - (void)removeControlForAnnotation:(id)arg1;
 - (void)addControlForAnnotation:(id)arg1;
 - (id)activeAnnotation;

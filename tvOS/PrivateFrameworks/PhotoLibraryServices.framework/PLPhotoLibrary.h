@@ -78,6 +78,8 @@
 + (id)sharedPhotoLibrary;
 + (void)initialize;
 + (void)_context:(id)arg1 saveFailedWithError:(id)arg2;
++ (void)_contextSaveFailedDueToClientRequestedShutdown:(id)arg1;
++ (void)_contextSaveFailedDueToChangingSPL:(id)arg1;
 + (void)_contextSaveFailedWithNoPersistentStores:(id)arg1;
 + (void)_contextSaveFailedWithError:(id)arg1;
 + (void)_contextSaveFailedWithSQLiteError:(id)arg1;
@@ -126,7 +128,7 @@
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
 - (void)_applyAdjustmentFileInfo:(id)arg1 renderedContentFileInfo:(id)arg2 renderedVideoComplementFileInfo:(id)arg3 toAsset:(id)arg4 withMainFileURL:(id)arg5;
 - (void)_applySideCarFiles:(id)arg1 toAsset:(id)arg2 withMainFileURL:(id)arg3;
-- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject *)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(_Bool)arg6 previewImage:(struct NSObject *)arg7 thumbnailImage:(struct NSObject *)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 withUUID:(id)arg13 ignoreEmbeddedMetadata:(_Bool)arg14 isPlaceholder:(_Bool)arg15;
+- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject *)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(_Bool)arg6 previewImage:(struct NSObject *)arg7 thumbnailImage:(struct NSObject *)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 withUUID:(id)arg13 ignoreEmbeddedMetadata:(_Bool)arg14 isPlaceholder:(_Bool)arg15 placeholderFileURL:(id)arg16;
 - (void)modifyDCIMEntryForPhoto:(id)arg1;
 - (id)photoOutboundSharingTmpDirectoryURL;
 - (struct NSObject *)newImageForPhoto:(id)arg1 format:(unsigned short)arg2;
@@ -158,7 +160,8 @@
 - (id)_loadDatabaseContext:(id *)arg1;
 - (id)_loadServerDatabaseContext:(id *)arg1;
 - (id)_loadClientDatabaseContext:(id *)arg1;
-- (id)_loadClientDatabaseContextFastPath;
+- (id)_loadClientDatabaseContextFastPathAndReturnAbortAfterOpen:(_Bool *)arg1;
+- (_Bool)_shouldTryFastPath;
 - (void)cleanupIncompleteAssetsAfterOTARestore;
 - (void)dataMigratorSupportCleanupModelForDataMigrationPurgeMissingSharedAndSynced;
 - (id)_fetchCompleteAssetIDsWithSavedAssetType:(short)arg1 context:(id)arg2;

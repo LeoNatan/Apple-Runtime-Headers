@@ -26,6 +26,7 @@
     _Bool _isEditingBankInformation;
     _Bool _hasInteractedWithCell;
     _Bool _prefilledFromKeychain;
+    NSMutableDictionary *_cellHasPastedContent;
     PKAccount *_featureAccount;
     _Bool _offerKeychainPreFill;
     id <PKAddBankAccountInformationViewControllerDelegate> _delegate;
@@ -65,9 +66,13 @@
 - (_Bool)_isRoutingNumberCellValid;
 - (_Bool)_isAccountNumberCellValid;
 - (_Bool)_cellValuesAreValid;
+- (void)textFieldClearButtonPressed:(id)arg1;
 - (float)_minimumRequiredWidthForCellText:(id)arg1 withFont:(id)arg2;
 - (unsigned int)_rowWithTextField:(id)arg1;
 - (void)_setTableFooterView;
+- (_Bool)_allCellsHavePastedContent;
+- (void)_setCellHasPastedContent:(_Bool)arg1 forRow:(unsigned int)arg2;
+- (id)_cellHasPastedContent;
 - (void)next:(id)arg1;
 - (void)cancel:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

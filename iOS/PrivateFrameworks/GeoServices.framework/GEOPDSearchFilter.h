@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSearchFilter : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDBrandFilter *_brandFilter;
     GEOPDCategoryFilter *_categoryFilter;
     GEOPDPoiIconCategoryFilter *_poiIconCategoryFilter;
     GEOPDSearchVenueFilter *_venueFilter;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _searchIntentFilter;
     struct {
         unsigned int has_searchIntentFilter:1;
@@ -67,6 +69,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDSearchVenueFilter *venueFilter;
 @property(readonly, nonatomic) _Bool hasVenueFilter;
 - (void)_readVenueFilter;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

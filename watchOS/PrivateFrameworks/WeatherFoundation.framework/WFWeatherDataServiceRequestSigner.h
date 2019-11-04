@@ -10,6 +10,7 @@
 {
 }
 
++ (id)roundDate:(id)arg1 toMinutes:(unsigned int)arg2;
 + (id)buildAuthHeader:(id)arg1 withSecret:(id)arg2 andDate:(id)arg3;
 + (void)signRequest:(id)arg1 withSecret:(id)arg2 andDate:(id)arg3;
 + (void)signRequest:(id)arg1 withDate:(id)arg2;

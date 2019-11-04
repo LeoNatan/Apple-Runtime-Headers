@@ -9,7 +9,6 @@
 @class NSDictionary, NSString;
 
 @protocol MFComposeBodyFieldController <MSComposeBodyFieldController>
-- (void)clearSelection;
 - (void)setDirty:(_Bool)arg1 completionHandler:(void (^)(void))arg2;
 - (void)placeCaretAtStartOfBody;
 - (void)htmlStringsAttachmentURLsAndPlainTextAlternativeRemovingSignature:(_Bool)arg1 attachmentInfoByIdentifier:(NSDictionary *)arg2 completion:(void (^)(ECHTMLStringAndMIMECharset *, NSArray *, NSArray *))arg3;

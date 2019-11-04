@@ -54,7 +54,7 @@
 - (void)invalidateComposition;
 - (void)requestPlayerItemWithCompletion:(CDUnknownBlockType)arg1;
 - (void)applyTrimTimeRange:(CDStruct_e83c9415)arg1;
-- (void)seekToTime:(CDStruct_1b6d18a9)arg1 untrimmed:(BOOL)arg2;
+- (void)seekToTime:(CDStruct_1b6d18a9)arg1 untrimmed:(BOOL)arg2 exact:(BOOL)arg3;
 - (void)seekToTime:(CDStruct_1b6d18a9)arg1;
 - (void)_handleMediaPlayerObserverStatusChanged:(long long)arg1;
 - (void)_handleMediaPlayerObserverTimeChanged:(CDStruct_1b6d18a9)arg1;

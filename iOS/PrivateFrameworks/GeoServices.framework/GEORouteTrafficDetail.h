@@ -13,11 +13,13 @@
 @interface GEORouteTrafficDetail : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_spokenRouteName;
     NSString *_unabbreviatedRouteName;
     NSString *_writtenRouteName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _routeTrafficCondition;
     struct {
         unsigned int has_routeTrafficCondition:1;
@@ -60,6 +62,8 @@
 - (id)routeTrafficConditionAsString:(int)arg1;
 @property(nonatomic) _Bool hasRouteTrafficCondition;
 @property(nonatomic) int routeTrafficCondition;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

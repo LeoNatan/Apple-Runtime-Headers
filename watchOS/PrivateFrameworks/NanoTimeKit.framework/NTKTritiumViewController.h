@@ -12,7 +12,7 @@
 #import <NanoTimeKit/NTKFaceViewDelegate-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewTritiumDelegate-Protocol.h>
 
-@class NSCountedSet, NSMutableDictionary, NSString, NSTimer, NTKFace, NTKFaceView, UILabel, UIView;
+@class NSCountedSet, NSMutableDictionary, NSString, NSTimer, NTKColorCodeTimeView, NTKFace, NTKFaceView, UILabel, UIView;
 @protocol NTKClockStatusBarViewController, NTKTritiumFaceView, NTKTritiumViewControllerDelegate;
 
 @interface NTKTritiumViewController : UIViewController <NTKFaceObserver, NTKFaceViewDelegate, NTKComplicationControllerTritiumDelegate, NTKFaceViewTritiumDelegate, CSLSAOTViewController>
@@ -21,6 +21,7 @@
     _Bool _faceConfigurationsHaveChanged;
     UIView *_contentView;
     UIView *_debugOverlayView;
+    NTKColorCodeTimeView *_debugTimeView;
     UIView *_errorView;
     UILabel *_debugLabel;
     UIViewController<NTKClockStatusBarViewController> *_statusBarViewController;
@@ -40,7 +41,7 @@
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
 - (void).cxx_destruct;
 - (void)setNeedsInvalidateFramesOnFaceView:(id)arg1 withReason:(id)arg2;
-- (void)complicationControllerTimelineEntriesDidChange:(id)arg1;
+- (void)complicationController:(id)arg1 timelineEntriesDidChangeWithTritiumUpdatePriority:(int)arg2;
 - (id)faceViewComplicationForSlot:(id)arg1;
 - (id)faceViewComplicationAppIdentifierForSlot:(id)arg1;
 - (_Bool)faceViewShouldIgnoreSnapshotImages;
@@ -82,7 +83,8 @@
 - (void)prepareToEnterTritium;
 - (void)renderSynchronously;
 - (void)performTritiumToolSnapshotHack;
-- (_Bool)configureForBurnInStudyWithStartDate:(id)arg1 forceStatusBarHidden:(_Bool)arg2 content:(unsigned int)arg3 renderFaceActiveState:(_Bool)arg4 activeDigitalTimeLabelFontOverride:(id)arg5;
+- (_Bool)configureForBurnInStudyWithForceStatusBarHidden:(_Bool)arg1 content:(unsigned int)arg2 renderFaceActiveState:(_Bool)arg3 activeDigitalTimeLabelFontOverride:(id)arg4 frameSpecifier:(id)arg5;
+- (void)prepareToRandomizedComplicationDataWithStartDate:(id)arg1;
 - (void)teardown;
 - (void)faceConfigurationDidChange:(id)arg1;
 - (void)setNeedsChangeFaceConfigurations;

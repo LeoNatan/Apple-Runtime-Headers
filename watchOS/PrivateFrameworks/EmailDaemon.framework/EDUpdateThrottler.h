@@ -6,28 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableSet;
+@class NSDate, NSMutableArray, NSString;
 
 @interface EDUpdateThrottler : NSObject
 {
     struct os_unfair_lock_s _updatesLock;
-    NSMutableSet *_unacknowledgedUpdates;
+    NSMutableArray *_unacknowledgedUpdates;
     _Bool _hasChangesSinceLastUpdate;
+    NSString *_name;
     int _scalingFactor;
     NSDate *_lastUpdateDate;
     NSDate *_lastAcknowledgementDate;
+    int _updateCounter;
     double _delayInterval;
 }
 
++ (void)resetAllInstances;
++ (void)_registerInstance:(id)arg1;
++ (id)instances;
++ (struct os_unfair_lock_s)instanceLock;
+@property(nonatomic) int updateCounter; // @synthesize updateCounter=_updateCounter;
 @property(retain, nonatomic) NSDate *lastAcknowledgementDate; // @synthesize lastAcknowledgementDate=_lastAcknowledgementDate;
 @property(retain, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(nonatomic) _Bool hasChangesSinceLastUpdate; // @synthesize hasChangesSinceLastUpdate=_hasChangesSinceLastUpdate;
 @property(readonly, nonatomic) int scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(readonly, nonatomic) double delayInterval; // @synthesize delayInterval=_delayInterval;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)_reset;
 - (unsigned int)unacknowledgedUpdatesCountAndTimeSinceLastAcknowledgement:(double *)arg1;
 - (id)updateWithBlock:(CDUnknownBlockType)arg1 unacknowledgedUpdatesCount:(unsigned int *)arg2;
 - (id)initWithDelayInterval:(double)arg1 scalingFactor:(int)arg2;
+- (id)initWithName:(id)arg1 delayInterval:(double)arg2 scalingFactor:(int)arg3;
 
 @end
 

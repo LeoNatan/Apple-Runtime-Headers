@@ -14,7 +14,6 @@
 @interface AXUIServiceManager : NSObject <AXUIMessageSenderDelegate>
 {
     BSProcessDeathWatcher *_springBoardReaper;
-    _Bool _didEncounterError;
     _Bool _shouldAllowServicesToProcessMessages;
     AXUIDisplayManager *_displayManager;
     AXAccessQueue *_resumingConnectionsQueue;
@@ -36,7 +35,6 @@
 @property(retain, nonatomic) AXAccessQueue *servicesAccessQueue; // @synthesize servicesAccessQueue=_servicesAccessQueue;
 @property(retain, nonatomic) NSMutableArray *serviceContexts; // @synthesize serviceContexts=_serviceContexts;
 @property(retain, nonatomic) AXUIMessageSender *messageSender; // @synthesize messageSender=_messageSender;
-@property(nonatomic) _Bool didEncounterError; // @synthesize didEncounterError=_didEncounterError;
 @property(retain, nonatomic) NSMutableDictionary *entitlementsCheckers; // @synthesize entitlementsCheckers=_entitlementsCheckers;
 @property(retain, nonatomic) AXAccessQueue *entitlementsCheckersAccessQueue; // @synthesize entitlementsCheckersAccessQueue=_entitlementsCheckersAccessQueue;
 @property(retain, nonatomic) NSMutableArray *pausedConnections; // @synthesize pausedConnections=_pausedConnections;

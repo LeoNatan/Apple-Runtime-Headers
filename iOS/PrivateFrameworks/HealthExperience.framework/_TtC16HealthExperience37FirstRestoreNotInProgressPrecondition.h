@@ -6,16 +6,21 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
+@class NSString;
+
 @interface _TtC16HealthExperience37FirstRestoreNotInProgressPrecondition : NSObject
 {
-    // Error parsing type: , name: $__lazy_storage_$_cloudSyncObserver
+    // Error parsing type: , name: cloudSyncObserver
     // Error parsing type: , name: preconditionCompletion
     // Error parsing type: , name: healthStore
+    // Error parsing type: , name: waitUntilShouldProceed
+    // Error parsing type: , name: completionQueue
 }
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSString *description;
+- (void)dealloc;
 
 @end
 

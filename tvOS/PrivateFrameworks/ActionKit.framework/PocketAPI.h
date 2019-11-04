@@ -56,7 +56,6 @@
 - (unsigned long long)appID;
 - (_Bool)handleOpenURL:(id)arg1;
 - (void)dealloc;
-- (void)applicationDidEnterBackground:(id)arg1;
 @property(retain, nonatomic) NSString *URLScheme; // @synthesize URLScheme;
 - (id)init;
 - (id)pkt_getKeychainValueForKey:(id)arg1 serviceName:(id)arg2;

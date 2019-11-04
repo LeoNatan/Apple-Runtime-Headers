@@ -13,13 +13,15 @@
 @interface GEORPFeedbackConversationMessage : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_comments;
     GEORPTimestamp *_postedAt;
     GEORPPostedBy *_postedBy;
     NSMutableArray *_surveyResponses;
     NSString *_uuid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_comments:1;
@@ -70,6 +72,8 @@
 @property(retain, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) _Bool hasUuid;
 - (void)_readUuid;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

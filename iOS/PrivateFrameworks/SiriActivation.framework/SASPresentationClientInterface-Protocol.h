@@ -7,6 +7,8 @@
 @class AFBulletin, NSDictionary, NSError, NSNumber, NSString, SiriPresentationIdentifierTransport;
 
 @protocol SASPresentationClientInterface
+- (oneway void)speechRequestCancelledFromSiriOrb;
+- (oneway void)speechRequestStartedFromSiriOrb;
 - (oneway void)handleMarkBulletinWithIdentifier:(NSString *)arg1 asRead:(NSNumber *)arg2;
 - (AFBulletin *)bulletinForIdentifier:(NSString *)arg1;
 - (NSDictionary *)bulletinsOnLockScreen;
@@ -14,6 +16,7 @@
 - (oneway void)failedToPresentSiriWithError:(NSError *)arg1;
 - (oneway void)didPresentSiri;
 - (oneway void)didDismiss;
+- (oneway void)willDismiss;
 - (oneway void)unregisterPresentationIdentifier:(SiriPresentationIdentifierTransport *)arg1;
 - (oneway void)registerPresentationIdentifier:(SiriPresentationIdentifierTransport *)arg1;
 @end

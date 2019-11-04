@@ -6,7 +6,10 @@
 
 #import <AXCarouselServerInstance/AXSystemAppServer-Protocol.h>
 
+@class NSString;
+
 @protocol AXCarouselAppServer <AXSystemAppServer>
+- (NSString *)currentFaceClass;
 - (_Bool)showHearingDevicesControl:(_Bool)arg1;
 - (_Bool)showControlCenter:(_Bool)arg1;
 - (_Bool)canShowControlCenter;

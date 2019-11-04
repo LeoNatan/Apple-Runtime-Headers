@@ -8,6 +8,5 @@
 
 @interface MPPlaybackContext (MPCPlaybackQueue)
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic, getter=mpcReporting_isQuickPlay) BOOL mpcReporting_quickPlay;
 @end
 

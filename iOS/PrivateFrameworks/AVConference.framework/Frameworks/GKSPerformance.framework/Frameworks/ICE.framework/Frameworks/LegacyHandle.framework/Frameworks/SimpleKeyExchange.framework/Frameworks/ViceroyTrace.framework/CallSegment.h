@@ -63,6 +63,8 @@
     double _averageBWE;
     unsigned int _minBWE;
     unsigned int _maxBWE;
+    unsigned int _totalSuddenBandwidthDropCount;
+    unsigned int _totalMBLRampDownCount;
     double _averageRTT;
     unsigned int _poorConnectionFrequency;
     unsigned int _BBQueueTooLargeCount;
@@ -115,11 +117,15 @@
     int _frequency;
     NSString *_segmentName;
     NSString *_previousSegmentName;
+    NSString *_activeConnectionRegistry;
+    NSString *_suggestedLinkTypeCombo;
     id <VCAdaptiveLearningDelegate> _delegate;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
 }
 
++ (id)connectionCategoryForType:(id)arg1;
++ (id)interfaceCategoryForType:(id)arg1;
 + (id)newSegmentNameWithComponents:(id)arg1 remoteInterface:(id)arg2 connectionType:(id)arg3 duplicationIndicator:(id)arg4;
 @property(readonly) NSMutableDictionary *fecStatsDict; // @synthesize fecStatsDict=_fecStatsDict;
 @property double duplicationMaxRemoteNoRemotePacketTime; // @synthesize duplicationMaxRemoteNoRemotePacketTime=_duplicationMaxRemoteNoRemotePacketTime;
@@ -136,6 +142,8 @@
 @property(readonly) unsigned int callTransportType; // @synthesize callTransportType=_callTransportType;
 @property(readonly) unsigned int callDeviceRole; // @synthesize callDeviceRole=_callDeviceRole;
 @property(readonly) unsigned int callMode; // @synthesize callMode=_callMode;
+@property(copy) NSString *suggestedLinkTypeCombo; // @synthesize suggestedLinkTypeCombo=_suggestedLinkTypeCombo;
+@property(copy) NSString *activeConnectionRegistry; // @synthesize activeConnectionRegistry=_activeConnectionRegistry;
 @property(readonly) NSString *previousSegmentName; // @synthesize previousSegmentName=_previousSegmentName;
 @property(readonly) NSString *segmentName; // @synthesize segmentName=_segmentName;
 @property unsigned int captureVideoFrameCounter; // @synthesize captureVideoFrameCounter=_captureVideoFrameCounter;
@@ -163,6 +171,8 @@
 @property unsigned int BBQueueTooLargeCount; // @synthesize BBQueueTooLargeCount=_BBQueueTooLargeCount;
 @property unsigned int poorConnectionFrequency; // @synthesize poorConnectionFrequency=_poorConnectionFrequency;
 @property double averageRTT; // @synthesize averageRTT=_averageRTT;
+@property unsigned int totalMBLRampDownCount; // @synthesize totalMBLRampDownCount=_totalMBLRampDownCount;
+@property unsigned int totalSuddenBandwidthDropCount; // @synthesize totalSuddenBandwidthDropCount=_totalSuddenBandwidthDropCount;
 @property unsigned int maxBWE; // @synthesize maxBWE=_maxBWE;
 @property unsigned int minBWE; // @synthesize minBWE=_minBWE;
 @property double averageBWE; // @synthesize averageBWE=_averageBWE;

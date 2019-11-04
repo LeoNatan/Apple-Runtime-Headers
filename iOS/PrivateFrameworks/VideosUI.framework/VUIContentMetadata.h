@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *seasonTitle;
 @property(readonly, nonatomic) NSNumber *seasonNumber;
 @property(readonly, nonatomic) NSNumber *episodeNumber;
+@property(readonly, nonatomic) NSString *ratingDomain;
 @property(readonly, nonatomic) NSString *ratingSystem;
 @property(readonly, nonatomic) NSString *ratingName;
 @property(readonly, nonatomic) NSNumber *hasDolbyAtmos;

@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface DFRElement : NSObject
 {
+    unsigned long long _epoch;
     NSString *_name;
     NSString *_minimizedIdentifier;
     NSString *_systemIdentifier;
@@ -22,10 +23,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _bounds;
     _Bool _registered;
     _Bool _active;
-    _Bool _systemModal;
-    long long _colorTemperature;
-    double _bezelBrightness;
-    double _glyphBrightness;
+    // Error parsing type: Aq, name: _colorTemperature
+    // Error parsing type: Ad, name: _bezelBrightness
+    // Error parsing type: Ad, name: _glyphBrightness
 }
 
 - (void).cxx_destruct;

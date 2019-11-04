@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CNPersistentStoreBuilderEnvironment, CNPersistentStoreDescription, NSDictionary, NSError, NSPersistentStore, NSPersistentStoreCoordinator, NSURL;
+#import <ContactsPersistence/CNPersistentStoreBuilder-Protocol.h>
+
+@class CNPersistentStoreBuilderEnvironment, CNPersistentStoreDescription, NSDictionary, NSError, NSPersistentStore, NSPersistentStoreCoordinator, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
-@interface CNPersistentStoreBuilder : NSObject
+@interface CNPersistentStoreBuilder : NSObject <CNPersistentStoreBuilder>
 {
     NSPersistentStoreCoordinator *_coordinator;
     CNPersistentStoreDescription *_storeDescription;
@@ -72,6 +74,12 @@ __attribute__((visibility("hidden")))
 - (id)initWithStoreDescription:(id)arg1 readOnly:(BOOL)arg2 coordinator:(id)arg3 environment:(id)arg4;
 - (id)initWithStoreDescription:(id)arg1 readOnly:(BOOL)arg2 coordinator:(id)arg3;
 - (id)initWithStoreDescription:(id)arg1 readOnly:(BOOL)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

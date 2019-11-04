@@ -18,6 +18,7 @@
     NSString *_toolIdentifier;
     UIViewController *_attributeViewController;
     NSDictionary *_toolProperties;
+    long long _colorUserInterfaceStyle;
     UIView *_toolLargeShadowView;
     NSLayoutConstraint *_imageViewTopAnchorConstraint;
     NSLayoutConstraint *_imageViewBottomAnchorConstraint;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *imageViewBottomAnchorConstraint; // @synthesize imageViewBottomAnchorConstraint=_imageViewBottomAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewTopAnchorConstraint; // @synthesize imageViewTopAnchorConstraint=_imageViewTopAnchorConstraint;
 @property(retain, nonatomic) UIView *toolLargeShadowView; // @synthesize toolLargeShadowView=_toolLargeShadowView;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(copy, nonatomic) NSDictionary *toolProperties; // @synthesize toolProperties=_toolProperties;
 @property(readonly, nonatomic) UIViewController *attributeViewController; // @synthesize attributeViewController=_attributeViewController;
 @property(readonly, nonatomic) NSString *toolIdentifier; // @synthesize toolIdentifier=_toolIdentifier;

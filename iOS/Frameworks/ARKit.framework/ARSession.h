@@ -110,7 +110,6 @@
 - (void)_enforceThermalMitigationPolicyForDeviceCondition:(id)arg1;
 - (void)_updateTechniquesWithPerformanceLevel:(id)arg1;
 - (void)_configureInitialThermalPolicy;
-- (void)pushCollaborationData:(id)arg1;
 - (void)technique:(id)arg1 didOutputCollaborationData:(id)arg2;
 - (void)technique:(id)arg1 didChangeState:(long long)arg2;
 - (void)_presentation:(id)arg1 didTransitionToMode:(long long)arg2;
@@ -165,6 +164,7 @@
 - (id)_currentFrameContext;
 - (id)_stateQueue;
 - (void)_changePowerUsage:(unsigned long long)arg1 forced:(_Bool)arg2;
+- (_Bool)_shouldSkipAnchorCreationForData:(id)arg1;
 - (void)_changePowerUsage:(unsigned long long)arg1;
 - (void)_updatePowerUsageForced:(_Bool)arg1;
 - (void)_updatePowerUsage;

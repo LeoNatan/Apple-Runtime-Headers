@@ -13,11 +13,13 @@
 @interface GEOWiFiQualityLocationSearchResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_ess;
     GEOLocation *_location;
     unsigned long long _tileKey;
     NSMutableArray *_tiles;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _status;
     struct {
         unsigned int has_tileKey:1;
@@ -70,6 +72,8 @@
 @property(retain, nonatomic) GEOLocation *location;
 @property(readonly, nonatomic) BOOL hasLocation;
 - (void)_readLocation;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

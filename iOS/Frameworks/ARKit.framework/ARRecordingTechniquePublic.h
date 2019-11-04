@@ -31,7 +31,7 @@
 }
 
 + (_Bool)isSupported;
-+ (id)metadataIdentifierForARSensorDataClass:(Class)arg1;
++ (id)metadataIdentifierForARSensorDataClass:(Class)arg1 error:(id *)arg2;
 + (id)metadataIdentifierForARRecordableResultsClass:(Class)arg1;
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) ARParentImageSensorSettings *parentImageSensorSettings; // @synthesize parentImageSensorSettings=_parentImageSensorSettings;
@@ -53,6 +53,7 @@
 - (void)copyVideoToPhotoLibrary;
 - (_Bool)finished;
 - (_Bool)allowedToWrite;
+- (void)abortRecording;
 - (void)finishRecording;
 - (void)recordCustomData:(id)arg1 forTimestamp:(double)arg2;
 - (void)startRecording;

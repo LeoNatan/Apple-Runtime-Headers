@@ -8,10 +8,11 @@
 
 #import <MediaPlaybackCore/MPCPlayerResponseBuilder-Protocol.h>
 #import <MediaPlaybackCore/MPMiddleware-Protocol.h>
+#import <MediaPlaybackCore/_MPCStateDumpPropertyListTransformable-Protocol.h>
 
 @class MPCPlaybackEngine, NSArray, NSString;
 
-@interface MPCPlaybackEngineMiddleware : NSObject <MPCPlayerResponseBuilder, MPMiddleware>
+@interface MPCPlaybackEngineMiddleware : NSObject <MPCPlayerResponseBuilder, _MPCStateDumpPropertyListTransformable, MPMiddleware>
 {
     NSArray *_invalidationObservers;
     MPCPlaybackEngine *_playbackEngine;
@@ -20,6 +21,7 @@
 @property(retain, nonatomic) MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;
 - (id)playerVideoView:(id)arg1 chain:(id)arg2;

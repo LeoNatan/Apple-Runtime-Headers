@@ -26,6 +26,8 @@
 @property(readonly, nonatomic) HUTriggerActionEditorContentViewController *actionEditorContentViewController;
 - (void)_preloadShortcutHomeManager;
 - (void)_showShortcutsEditor;
+- (void)_informUserShortcutsAreNotSupportedInThisHome;
+- (void)_showShortcutsEditorIfPossible;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;

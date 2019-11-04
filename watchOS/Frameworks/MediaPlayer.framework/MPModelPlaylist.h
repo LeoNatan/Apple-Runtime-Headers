@@ -50,8 +50,6 @@
 + (_Bool)supportsKeepLocalStatusObservation;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredStoreLibraryPersonalizationProperties;
-+ (_Bool)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
-+ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (id)tracksTiledArtworkCatalogWithRows:(unsigned int)arg1 columns:(unsigned int)arg2;
 - (id)trackArtworkCatalogsWithCount:(int)arg1;
 - (id)editorialArtworkCatalog;

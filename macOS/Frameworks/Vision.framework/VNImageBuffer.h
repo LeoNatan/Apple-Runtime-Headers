@@ -12,6 +12,7 @@
 {
     struct __CVBuffer *_origPixelBuffer;
     struct __CFArray *_pixelBufferReps;
+    struct os_unfair_lock_s _pixelBufferRepsLock;
     CIImage *_origCIImage;
     CIContext *_passedInCIContext;
     VNImageSourceManager *_imageSourceManager;

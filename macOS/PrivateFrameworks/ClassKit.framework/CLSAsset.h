@@ -8,12 +8,14 @@
 
 #import <ClassKit/CLSRelationable-Protocol.h>
 
-@class NSString, NSURL;
+@class NSObject, NSString, NSURL;
+@protocol OS_dispatch_queue;
 
 @interface CLSAsset : CLSObject <CLSRelationable>
 {
     NSURL *_url;
     BOOL _uploaded;
+    NSObject<OS_dispatch_queue> *_shareQueue;
     BOOL _original;
     NSString *_ownerPersonID;
     NSString *_brItemID;
@@ -39,6 +41,7 @@
 - (void)deleteFileWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)deleteFile:(id *)arg1;
 - (BOOL)_deleteFileAtURL:(id)arg1 error:(id *)arg2;
+- (void)_createShareIfNeeded:(CDUnknownBlockType)arg1;
 - (void)createShareIfNeeded:(CDUnknownBlockType)arg1;
 - (void)fetchUsersAndAddToShare:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)uploadFileIfNeeded:(id *)arg1;

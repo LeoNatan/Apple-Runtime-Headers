@@ -22,6 +22,7 @@
 - (struct CGSize)sizeOfTitleLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)drawTextInRect:(struct CGRect)arg1;
+- (struct CGRect)rectToDrawTextInForRect:(struct CGRect)arg1;
 - (void)layoutSubviews;
 
 @end

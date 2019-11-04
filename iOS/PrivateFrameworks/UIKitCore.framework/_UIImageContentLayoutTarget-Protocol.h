@@ -11,7 +11,6 @@
 @protocol _UIImageContentLayoutTarget <NSObject>
 @property(readonly, nonatomic) _Bool _layoutShouldFlipHorizontalOrientations;
 @property(readonly, nonatomic) double preferredContentScaleFactor;
-@property(readonly, nonatomic) struct CGRect bounds;
 @property(readonly, nonatomic) _Bool _hasContentGravity;
 @property(readonly, nonatomic) long long contentMode;
 @property(readonly, nonatomic) long long semanticContentAttribute;

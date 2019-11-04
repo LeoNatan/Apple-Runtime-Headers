@@ -49,12 +49,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) QLErrorItemViewController *errorViewController; // @synthesize errorViewController=_errorViewController;
 @property(retain, nonatomic) QLItemViewController *previewProvider; // @synthesize previewProvider=_previewProvider;
 - (void).cxx_destruct;
+- (_Bool)_processIsEntitledToConfigureScreenTime;
 - (_Bool)_processIsEntitledToCheckScreenTimePolicy;
 - (_Bool)_shouldApplyScreenTimeMoviePolicyForItem:(id)arg1;
 - (id)screenTimePolicyBundleIdentifier;
 - (void)_hideScreenTimeViewControllerIfNeeded;
 - (void)_showScreenTimeViewController;
-- (void)_didReceiveNewScreenTimePolity:(long long)arg1;
+- (void)_didReceiveNewScreenTimePolicy:(long long)arg1;
 - (void)_didReceiveNewScreenTimeApplicationPolicies:(id)arg1 error:(id)arg2;
 - (void)_didReceiveNewScreenTimeCategoryPolicy:(id)arg1 error:(id)arg2;
 - (void)_queryScreenTimeCategoryPolicy;

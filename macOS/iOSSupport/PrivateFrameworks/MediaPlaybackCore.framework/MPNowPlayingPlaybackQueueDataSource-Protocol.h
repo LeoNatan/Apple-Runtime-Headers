@@ -6,7 +6,7 @@
 
 #import <MediaPlaybackCore/NSObject-Protocol.h>
 
-@class MPNowPlayingContentItem, MPNowPlayingInfoCenter, NSArray, NSProgress, NSString;
+@class MPNowPlayingContentItem, MPNowPlayingInfoCenter, NSArray, NSError, NSProgress, NSString;
 @protocol MPNowPlayingInfoTransportableSessionRequest;
 
 @protocol MPNowPlayingPlaybackQueueDataSource <NSObject>
@@ -15,6 +15,8 @@
 
 @optional
 - (MPNowPlayingContentItem *)contentItemForOffset:(long long)arg1;
+- (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 didEndMigrationWithIdentifier:(NSString *)arg2 error:(NSError *)arg3;
+- (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 willBeginSessionMigrationWithIdentifier:(NSString *)arg2;
 - (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 getTransportablePlaybackSessionRepresentationForRequest:(id <MPNowPlayingInfoTransportableSessionRequest>)arg2 completion:(void (^)(MPNowPlayingInfoTransportableSessionResponse *, NSError *))arg3;
 - (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg2;
 - (NSString *)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 childContentItemIDAtIndex:(long long)arg2 ofItem:(MPNowPlayingContentItem *)arg3;

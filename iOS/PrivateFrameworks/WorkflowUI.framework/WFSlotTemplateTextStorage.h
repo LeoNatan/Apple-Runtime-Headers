@@ -15,7 +15,10 @@
     UIFont *_font;
     UIFont *_unpopulatedFont;
     UIColor *_textColor;
+    UIColor *_tintColor;
     NSParagraphStyle *_paragraphStyle;
+    UIColor *_disabledSlotTitleColor;
+    UIColor *_disabledSlotBackgroundColor;
     NSArray *_contents;
     long long _contentsTextAlignment;
     NSTextStorage *_textStorage;
@@ -35,7 +38,7 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (void)enumerateContentInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (id)slotAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
+- (id)slotAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2 effectiveContentRange:(struct _NSRange *)arg3;
 - (struct _NSRange)characterRangeForSlot:(id)arg1 includingInsideSpacingOpportunities:(_Bool)arg2;
 - (unsigned long long)slotSpacingOpportunityAtCharacterIndex:(unsigned long long)arg1;
 - (id)stringForSlotSpacingOpportunity:(unsigned long long)arg1;
@@ -56,7 +59,11 @@
 - (void)didUnhighlightSlot:(id)arg1;
 - (void)didHighlightSlot:(id)arg1;
 @property(readonly, nonatomic) NSSet *highlightedSlots;
+- (void)setDisabledSlotTitleColor:(id)arg1 backgroundColor:(id)arg2;
+@property(readonly, nonatomic) UIColor *disabledSlotBackgroundColor; // @synthesize disabledSlotBackgroundColor=_disabledSlotBackgroundColor;
+@property(readonly, nonatomic) UIColor *disabledSlotTitleColor; // @synthesize disabledSlotTitleColor=_disabledSlotTitleColor;
 @property(copy, nonatomic) NSParagraphStyle *paragraphStyle; // @synthesize paragraphStyle=_paragraphStyle;
+@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIFont *unpopulatedFont; // @synthesize unpopulatedFont=_unpopulatedFont;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;

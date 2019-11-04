@@ -15,7 +15,7 @@
     BOOL _enabled;
 }
 
-+ (id)newWithIcon:(id)arg1 attributedTitle:(id)arg2 missing:(BOOL)arg3 enabled:(BOOL)arg4 action:(CKTypedComponentAction_789af415)arg5;
++ (id)newWithIcon:(id)arg1 attributedTitle:(id)arg2 enabled:(BOOL)arg3 action:(CKTypedComponentAction_789af415)arg4;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)componentTapped:(id)arg1;

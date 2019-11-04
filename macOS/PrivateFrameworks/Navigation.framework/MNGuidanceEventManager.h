@@ -22,10 +22,10 @@
     NSDictionary *_eventIndexes;
     NSUUID *_injectedUUID;
     id <MNAnnoucementStrategy> _announcementStrategy;
-    NSMutableDictionary *_announcementDurations;
     NSMutableDictionary *_announcementsSpoken;
     NSMutableSet *_exclusiveSetAnnouncementsSpoken;
     NSMutableDictionary *_hapticsTriggered;
+    NSMutableSet *_announcementsSynthesized;
     GEOComposedGuidanceEvent *_currentLaneGuidanceEvent;
     MNGuidanceSignInfo *_signInfo;
     GEOComposedGuidanceEvent *_pendingJunctionViewGuidanceEvent;
@@ -69,7 +69,6 @@
 - (id)_selectAnnouncementForEvent:(id)arg1 withTimeRemaining:(double)arg2 withMinIndex:(unsigned long long)arg3 selectedIndex:(out unsigned long long *)arg4;
 - (double)_timeRemainingForEvent:(id)arg1;
 - (void)_notifySpeechEvent:(id)arg1 variant:(unsigned long long)arg2 ignorePromptStyle:(BOOL)arg3;
-- (double)_calculateDurationToSpeakEvent:(id)arg1 announcementIndex:(unsigned long long)arg2 distance:(double)arg3;
 - (unsigned int)_trafficColorForRoute:(id)arg1 traffic:(id)arg2 distanceRemaining:(double)arg3;
 - (void)_notifyAnalyticsForNewEvents:(id)arg1 previousEvents:(id)arg2;
 - (void)_handleJunctionViewInfo:(id)arg1;
@@ -86,8 +85,10 @@
 @property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (void)_stepDidChange;
 - (void)updateGuidanceForLocation:(id)arg1 navigatorState:(int)arg2;
-- (void)_handleDuration:(double)arg1 forEventID:(id)arg2 index:(unsigned long long)arg3;
-- (void)_precalcuateDurations;
+- (void)_cacheAudioEventIfNecessary:(id)arg1;
+- (void)_cacheValidAudioEvents;
+- (void)_cacheEndingAudioEvents;
+- (void)_cacheStartingAudioEvents;
 - (double)durationOfEvent:(id)arg1 announcementIndex:(unsigned long long)arg2 distance:(double)arg3;
 - (double)timeUntilNextAnnouncement;
 - (double)timeSinceLastAnnouncement;

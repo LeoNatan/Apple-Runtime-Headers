@@ -10,7 +10,6 @@
 {
 }
 
-- (id)excludedActivityTypes;
 - (_Bool)usesExtensionItems;
 
 @end

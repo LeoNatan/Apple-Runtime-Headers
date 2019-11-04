@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)giveBoostWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setClientIsInForeground:(_Bool)arg1;
-- (void)setCurrentlyVisibleMailboxes:(id)arg1;
+- (void)setCurrentlyVisibleMailboxObjectIDs:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

@@ -18,7 +18,7 @@
 - (_Bool)_isActiveAppLayoutAtIndex:(unsigned long long)arg1;
 - (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
 - (_Bool)wantsMinificationFilter;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;
@@ -35,12 +35,15 @@
 - (unsigned long long)indexToScrollToAfterInsertingAtIndex:(unsigned long long)arg1;
 - (_Bool)shouldBringCardToFrontDuringInsertionOrRemoval;
 - (_Bool)shouldAnimateInsertionOrRemovalAtIndex:(unsigned long long)arg1;
+- (_Bool)shouldTetherTransitionCompletion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (_Bool)shouldPerformRotationAnimationForOrientationChange;
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
 - (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
+- (id)appLayoutToScrollToBeforeReopeningClosedWindows;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)topMostAppLayouts;
 - (id)cornerRadiusSettingsForIndex:(unsigned long long)arg1;
@@ -62,8 +65,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)containerStatusBarAnimationDuration;
 - (_Bool)isContainerStatusBarVisible;
-- (unsigned long long)insertionStyle;
-- (double)baseHysteresisForStartingKillGesture;
+- (unsigned long long)insertionStyleForInsertingAppLayout:(id)arg1;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;
 - (_Bool)itemContainersAllowContentViewTouches;
@@ -91,6 +93,9 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
+- (long long)plusButtonStyle;
+- (long long)appExposeAccessoryButtonsOverrideUserInterfaceStyle;
+- (double)reopenClosedWindowsButtonScale;
 - (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
 - (id)appExposeAccessoryButtonsBundleIdentifier;

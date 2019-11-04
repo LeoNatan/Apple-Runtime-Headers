@@ -17,18 +17,21 @@
 __attribute__((visibility("hidden")))
 @interface CNPhotoPickerVariantListController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CNPhotoPickerProviderItemDelegate>
 {
+    BOOL _wantsScrollingHeader;
     BOOL _showSelection;
     BOOL _showPreview;
     BOOL _shouldShowCaptions;
     id <CNPhotoPickerVariantListControllerDelegate> _delegate;
     CNPhotoPickerProviderItem *_originalItem;
+    UICollectionView *_collectionView;
+    UIView *_sectionHeaderView;
     CDUnknownBlockType _numberOfItemsPerRowProvider;
     unsigned long long _cellStyle;
     NSString *_rightBarButtonTitle;
-    UICollectionView *_collectionView;
     UIView *_headerView;
     UIImageView *_previewImageView;
     CNPhotoPickerPreviewView *_posePreview;
+    NSString *_selectedVariantIdentifier;
     NSArray *_providerItems;
     CNPhotoPickerVariantsManager *_variantsManager;
 }
@@ -38,15 +41,18 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldShowCaptions; // @synthesize shouldShowCaptions=_shouldShowCaptions;
 @property(retain, nonatomic) CNPhotoPickerVariantsManager *variantsManager; // @synthesize variantsManager=_variantsManager;
 @property(retain, nonatomic) NSArray *providerItems; // @synthesize providerItems=_providerItems;
+@property(retain, nonatomic) NSString *selectedVariantIdentifier; // @synthesize selectedVariantIdentifier=_selectedVariantIdentifier;
 @property(retain, nonatomic) CNPhotoPickerPreviewView *posePreview; // @synthesize posePreview=_posePreview;
 @property(retain, nonatomic) UIImageView *previewImageView; // @synthesize previewImageView=_previewImageView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
-@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) NSString *rightBarButtonTitle; // @synthesize rightBarButtonTitle=_rightBarButtonTitle;
 @property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
 @property(nonatomic) BOOL showPreview; // @synthesize showPreview=_showPreview;
 @property(nonatomic) BOOL showSelection; // @synthesize showSelection=_showSelection;
+@property(nonatomic) BOOL wantsScrollingHeader; // @synthesize wantsScrollingHeader=_wantsScrollingHeader;
 @property(copy, nonatomic) CDUnknownBlockType numberOfItemsPerRowProvider; // @synthesize numberOfItemsPerRowProvider=_numberOfItemsPerRowProvider;
+@property(retain, nonatomic) UIView *sectionHeaderView; // @synthesize sectionHeaderView=_sectionHeaderView;
+@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) CNPhotoPickerProviderItem *originalItem; // @synthesize originalItem=_originalItem;
 @property(nonatomic) __weak id <CNPhotoPickerVariantListControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -57,16 +63,21 @@ __attribute__((visibility("hidden")))
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)updatePreviewWithItem:(id)arg1;
-- (void)done;
+- (void)didFinishSelectingVariant;
 - (void)cancel:(id)arg1;
 - (void)generateProviderItems;
 - (void)updateFlowLayoutItemSize;
+- (id)scrollView;
+- (void)updateForNewOriginalItem:(id)arg1;
+@property(readonly, nonatomic) NSString *variantsDisplayTitle;
 - (void)viewDidLayoutSubviews;
 - (void)buildCollectionView;
 - (void)buildHeader;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (id)initWithVariantsManager:(id)arg1 originalItem:(id)arg2 selectedVariantIdentifier:(id)arg3;
 - (id)initWithVariantsManager:(id)arg1 originalItem:(id)arg2;
 
 // Remaining properties

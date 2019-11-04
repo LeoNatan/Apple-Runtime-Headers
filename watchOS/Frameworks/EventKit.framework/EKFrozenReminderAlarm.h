@@ -6,7 +6,7 @@
 
 #import <EventKit/EKFrozenReminderObject.h>
 
-@class NSArray, NSString, REMAlarm;
+@class EKFrozenReminderStructuredLocation, NSArray, NSString, REMAlarm;
 
 __attribute__((visibility("hidden")))
 @interface EKFrozenReminderAlarm : EKFrozenReminderObject
@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
     REMAlarm *_locationAlarm;
 }
 
++ (id)semanticIdentifierFromDateComponents:(id)arg1;
++ (id)semanticIdentifierFromREMAlarm:(id)arg1;
 + (id)uniqueIdentifierForREMObject:(id)arg1;
 + (id)triggersFromAbsoluteDate:(id)arg1 relativeOffset:(double)arg2 timeValuesRelevant:(_Bool)arg3 structuredLocation:(id)arg4 proximity:(int)arg5;
 + (int)ekAlarmProximityToEKAlarmProximity:(int)arg1;
@@ -33,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)_remStructuredLocation;
 @property(readonly) NSString *externalID;
 - (id)modifiedStructuredLocation;
-- (id)structuredLocation;
+@property(readonly) EKFrozenReminderStructuredLocation *structuredLocation;
 - (id)absoluteDate;
 - (double)relativeOffset;
 - (id)uniqueIdentifier;

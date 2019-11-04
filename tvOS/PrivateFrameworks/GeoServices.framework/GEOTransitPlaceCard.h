@@ -13,10 +13,12 @@
 @interface GEOTransitPlaceCard : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_incidentType;
     GEOTransitDepartureSequenceUsage *_transitDepartureSequenceUsage;
     NSString *_transitSystemName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _transitCategory;
     struct {
         unsigned int has_transitCategory:1;
@@ -55,6 +57,8 @@
 - (id)transitCategoryAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransitCategory;
 @property(nonatomic) int transitCategory;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

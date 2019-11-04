@@ -9,20 +9,22 @@
 #import <HomeUI/HFCameraPlaybackEngineObserver-Protocol.h>
 #import <HomeUI/HFPosterFrameImageObserver-Protocol.h>
 
-@class HFCameraPlaybackEngine, NSString, UIImageView;
+@class HFCameraPlaybackEngine, HMCameraClip, NSString, UIImageView;
 
 @interface HUCameraPlayerPlaceholderContentViewController : UIViewController <HFCameraPlaybackEngineObserver, HFPosterFrameImageObserver>
 {
     _Bool _cameraPlayerHasContentToShow;
     HFCameraPlaybackEngine *_playbackEngine;
     UIImageView *_placeholderImageView;
+    HMCameraClip *_lastRequestedClip;
 }
 
+@property(retain, nonatomic) HMCameraClip *lastRequestedClip; // @synthesize lastRequestedClip=_lastRequestedClip;
 @property(retain, nonatomic) UIImageView *placeholderImageView; // @synthesize placeholderImageView=_placeholderImageView;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(nonatomic) _Bool cameraPlayerHasContentToShow; // @synthesize cameraPlayerHasContentToShow=_cameraPlayerHasContentToShow;
 - (void).cxx_destruct;
-- (void)manager:(id)arg1 didUpdateImage:(id)arg2 withTimeOffset:(double)arg3 fromClip:(id)arg4;
+- (void)manager:(id)arg1 didFindImage:(id)arg2 atTimeOffset:(double)arg3 forClip:(id)arg4;
 - (_Bool)_shouldHidePlaceholderContentForCurrentAccessMode;
 - (void)_animateState:(_Bool)arg1 placeholderImage:(id)arg2;
 - (void)_updateStateAnimated:(_Bool)arg1 usingBlock:(CDUnknownBlockType)arg2;

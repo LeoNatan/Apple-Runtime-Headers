@@ -13,11 +13,13 @@
 @interface GEORPAccessPointCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_addeds;
     NSMutableArray *_editeds;
     NSMutableArray *_removeds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_addeds:1;
@@ -68,6 +70,8 @@
 - (void)clearAddeds;
 @property(retain, nonatomic) NSMutableArray *addeds;
 - (void)_readAddeds;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

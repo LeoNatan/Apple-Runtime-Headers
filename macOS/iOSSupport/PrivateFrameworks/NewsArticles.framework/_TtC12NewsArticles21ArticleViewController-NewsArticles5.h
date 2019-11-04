@@ -6,9 +6,9 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles5)
-- (BOOL)accessibilityShouldScroll:(id)arg1;
-- (BOOL)accessibilityShouldScroll:(id)arg1 defaultValue:(BOOL)arg2;
-- (BOOL)shouldOccludeAccessibilityElement:(id)arg1;
+#import <NewsArticles/UIScrollViewDelegate-Protocol.h>
+
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles5) <UIScrollViewDelegate>
+- (void)scrollViewDidScroll:(id)arg1;
 @end
 

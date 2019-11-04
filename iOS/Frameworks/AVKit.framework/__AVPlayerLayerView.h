@@ -12,6 +12,7 @@
 {
     AVPlayerController *_playerController;
     AVPictureInPicturePlayerLayerView *_pictureInPicturePlayerLayerView;
+    AVPlayerLayer *_playerLayer;
     AVPlayerLayer *_pictureInPicturePlayerLayer;
 }
 
@@ -21,9 +22,9 @@
 + (id)keyPathsForValuesAffectingVideoBounds;
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoLayerGravity;
-+ (id)keyPathsForValuesAffectingPlayerLayer;
 + (Class)layerClass;
 @property(retain, nonatomic) AVPlayerLayer *pictureInPicturePlayerLayer; // @synthesize pictureInPicturePlayerLayer=_pictureInPicturePlayerLayer;
+@property(readonly, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 - (void).cxx_destruct;
 - (void)stopRoutingVideoToPictureInPicturePlayerLayerView;
 - (void)startRoutingVideoToPictureInPicturePlayerLayerView;
@@ -35,7 +36,7 @@
 @property(readonly, nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay;
 @property(nonatomic) long long videoGravity;
 @property(retain, nonatomic) AVPlayerController *playerController;
-@property(readonly, nonatomic) AVPlayerLayer *playerLayer;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

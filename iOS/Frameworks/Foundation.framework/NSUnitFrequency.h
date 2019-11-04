@@ -23,6 +23,7 @@
 + (id)gigahertz;
 + (id)terahertz;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

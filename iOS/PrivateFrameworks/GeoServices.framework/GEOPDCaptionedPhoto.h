@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDCaptionedPhoto : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_author;
     NSString *_caption;
     NSString *_licenseDescription;
     NSString *_licenseUrl;
     GEOPDPhoto *_photo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _displayFullPhotoInline;
     _Bool _highQuality;
     _Bool _isBusinessOwned;
@@ -87,6 +89,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *caption;
 @property(readonly, nonatomic) _Bool hasCaption;
 - (void)_readCaption;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

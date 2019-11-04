@@ -13,10 +13,12 @@
 @interface GEOTransitSegmentArtworkSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _artworkIndexs;
     NSMutableArray *_clusters;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_artworkIndexs:1;
@@ -58,6 +60,8 @@
 @property(readonly, nonatomic) unsigned int artworkIndexsCount;
 - (void)_readArtworkIndexs;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

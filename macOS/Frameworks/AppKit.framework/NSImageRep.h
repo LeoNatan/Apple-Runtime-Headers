@@ -83,7 +83,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)_drawOnlyUsesOneDrawingOperation;
-- (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
+- (BOOL)_wantsToBeCached;
 @property long long pixelsHigh;
 @property long long pixelsWide;
 @property long long bitsPerSample;

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     struct NSDirectionalEdgeInsets _padding;
 }
 
-@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
-@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
 @property(nonatomic) int itemDistribution; // @synthesize itemDistribution=_itemDistribution;
 @property(nonatomic) struct NSDirectionalEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) _Bool compactMetrics; // @synthesize compactMetrics=_compactMetrics;
@@ -38,8 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_appearanceChanged;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)doneItemAppearanceChanged;
-- (void)plainItemAppearanceChanged;
 - (float)defaultTextPadding;
 - (float)defaultEdgeSpacing;
 - (float)absorptionForItem:(id)arg1;

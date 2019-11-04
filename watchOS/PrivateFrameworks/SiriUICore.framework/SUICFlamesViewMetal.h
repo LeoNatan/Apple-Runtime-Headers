@@ -65,6 +65,7 @@
     _Bool _reduceFrameRate;
     _Bool _reduceThinkingFramerate;
     _Bool _renderInBackground;
+    _Bool _flamesPaused;
     id <SUICFlamesViewProvidingDelegate> _flamesDelegate;
     int _state;
     UIColor *_dictationColor;
@@ -128,7 +129,7 @@
 - (void)_prewarmShaders;
 - (void)prewarmShadersForCurrentMode;
 - (void)setRenderingEnabled:(_Bool)arg1 forReason:(id)arg2;
-@property(nonatomic) _Bool paused;
+@property(nonatomic) _Bool flamesPaused; // @synthesize flamesPaused=_flamesPaused;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setHidden:(_Bool)arg1;

@@ -18,6 +18,7 @@
     MTVPAFKit *_vpafKit;
 }
 
++ (unsigned long long)startOverallPositionForItem:(id)arg1;
 @property(nonatomic) __weak MTVPAFKit *vpafKit; // @synthesize vpafKit=_vpafKit;
 @property(retain, nonatomic) MTMetricsData *stopMetricsData; // @synthesize stopMetricsData=_stopMetricsData;
 @property(retain, nonatomic) MTMetricsData *startMetricsData; // @synthesize startMetricsData=_startMetricsData;

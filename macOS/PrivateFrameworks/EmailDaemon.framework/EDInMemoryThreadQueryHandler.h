@@ -10,8 +10,8 @@
 #import <EmailDaemon/EFContentProtectionObserver-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessageQueryHelper, EDUpdateThrottler, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
-@protocol EFScheduler, EMMessageListItemQueryResultsObserver, OS_dispatch_queue;
+@class EDMessageQueryHelper, EDUpdateThrottler, EDVIPManager, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
+@protocol EDRemoteSearchProvider, EFScheduler, EMMessageListItemQueryResultsObserver, OS_dispatch_queue;
 
 @interface EDInMemoryThreadQueryHandler : EDThreadQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
@@ -24,6 +24,8 @@
     BOOL _isInitialized;
     BOOL _isPaused;
     BOOL _hasChangesWhilePaused;
+    EDVIPManager *_vipManager;
+    id <EDRemoteSearchProvider> _remoteSearchProvider;
     EDMessageQueryHelper *_messageQueryHelper;
     NSArray *_messageSortDescriptors;
     CDUnknownBlockType _comparator;
@@ -45,6 +47,8 @@
 @property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, copy, nonatomic) NSArray *messageSortDescriptors; // @synthesize messageSortDescriptors=_messageSortDescriptors;
 @property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
+@property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
+@property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
 - (void).cxx_destruct;
 - (BOOL)_messageListItemChangeAffectsSorting:(id)arg1;
 - (id)_inMemoryThreadSortDescriptorsForThreadSortDescriptors:(id)arg1;
@@ -68,7 +72,7 @@
 - (void)queryHelper:(id)arg1 conversationNotificationLevelDidChangeForConversation:(long long)arg2 conversationID:(long long)arg3;
 - (void)queryHelper:(id)arg1 conversationIDDidChangeForMessages:(id)arg2 fromConversationID:(long long)arg3;
 - (void)queryHelper:(id)arg1 didDeleteMessages:(id)arg2;
-- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3;
+- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3 oldConversationID:(long long)arg4;
 - (void)queryHelper:(id)arg1 didUpdateMessages:(id)arg2 forKeyPaths:(id)arg3;
 - (void)queryHelper:(id)arg1 messageFlagsDidChangeForMessages:(id)arg2;
 - (void)_messagesWereAdded:(id)arg1;
@@ -90,7 +94,8 @@
 @property(readonly, nonatomic) id <EMMessageListItemQueryResultsObserver> resultsObserverIfNotPaused;
 - (void)cancel;
 - (void)start;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
+- (void)tearDown;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

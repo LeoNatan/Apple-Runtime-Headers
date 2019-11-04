@@ -41,6 +41,9 @@ __attribute__((visibility("hidden")))
 - (struct _PCSIdentityData *)createRandomSharingIdentityWithError:(id *)arg1;
 - (struct _PCSPublicIdentityData *)createPublicSharingIdentityFromPublicKey:(id)arg1 error:(id *)arg2;
 - (struct _PCSIdentityData *)debugSharingIdentity;
+- (_Bool)serviceIsManatee:(id)arg1;
+@property(readonly, nonatomic) _Bool currentServiceIsManatee;
+- (_Bool)manateeIsAvailableWithError:(id *)arg1;
 - (struct _PCSIdentitySetData *)_copyTestAccountIdentitySetForService:(id)arg1 forBackingFakeAccount:(id)arg2 withError:(id *)arg3;
 - (struct _PCSIdentitySetData *)_createSpecialInMemorySetCombiningLiverpoolWithServiceNamed:(id)arg1 dsid:(id)arg2 error:(id *)arg3;
 - (id)_addIdentitiesFromServiceNamed:(id)arg1 dsid:(id)arg2 toMutableSet:(struct _PCSIdentitySetData *)arg3;

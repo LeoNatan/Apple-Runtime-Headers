@@ -25,6 +25,8 @@
 - (BOOL)_performMoveMailboxChangeAction:(id)arg1;
 - (BOOL)_performDeleteMailboxChangeAction:(id)arg1;
 - (BOOL)_performCreateMailboxChangeAction:(id)arg1;
+- (void)mailboxTypeForMailboxObjectID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)mailboxObjectIDsForMailboxType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)refreshMailboxList;
 - (void)performMailboxChangeAction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelObservation:(id)arg1;

@@ -97,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (id)cachedMeltedChildIdentifierToParentMap;
 - (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
-- (void)_emptyMeltedCacheForKey:(id)arg1;
+- (void)emptyMeltedCacheForKey:(id)arg1;
 - (void)emptyMeltedCache;
 - (void)_resetMeltedCache;
 - (void)updateMultiValueCacheForChangeSet:(id)arg1 preservingExistingAdds:(_Bool)arg2;

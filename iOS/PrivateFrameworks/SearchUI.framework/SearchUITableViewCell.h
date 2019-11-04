@@ -52,6 +52,7 @@
 - (_Bool)supportsRecycling;
 - (void)updateExpanded:(_Bool)arg1;
 - (void)updateWithResults:(id)arg1;
+- (void)_setAnimating:(_Bool)arg1 clippingAdjacentCells:(_Bool)arg2;
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(_Bool)arg2;
 - (void)_setSeparatorDrawsInVibrantLightMode:(_Bool)arg1;
 - (void)_setSeparatorBackdropOverlayBlendMode:(long long)arg1;

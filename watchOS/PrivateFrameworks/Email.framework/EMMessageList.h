@@ -11,7 +11,7 @@
 #import <Email/EMCollectionChangeObserver-Protocol.h>
 #import <Email/EMMessageListQueryResultsObserver-Protocol.h>
 
-@class EFLazyCache, EMMailboxScope, EMMessageRepository, EMObjectID, EMThreadScope, NSMapTable, NSMutableDictionary, NSObject, NSSet, NSString;
+@class EFLazyCache, EMMailboxScope, EMMessageListChangeObserverHelper, EMMessageRepository, EMObjectID, EMThreadScope, NSMapTable, NSMutableDictionary, NSObject, NSSet, NSString;
 @protocol EFScheduler, OS_dispatch_queue;
 
 @interface EMMessageList : EMCollection <EFContentProtectionObserver, EFLoggable, EMCollectionChangeObserver, EMMessageListQueryResultsObserver>
@@ -25,11 +25,13 @@
     id <EFScheduler> _observerScheduler;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     EMMessageList *_unfilteredMessageList;
+    EMMessageListChangeObserverHelper *_changeObserverHelper;
 }
 
 + (id)simpleMessageListForMailboxes:(id)arg1 withRepository:(id)arg2 shouldTrackOldestItems:(_Bool)arg3;
 + (id)threadedMessageListForMailboxes:(id)arg1 withRepository:(id)arg2 shouldTrackOldestItems:(_Bool)arg3;
 + (id)log;
+@property(retain, nonatomic) EMMessageListChangeObserverHelper *changeObserverHelper; // @synthesize changeObserverHelper=_changeObserverHelper;
 @property(retain, nonatomic) EMMessageList *unfilteredMessageList; // @synthesize unfilteredMessageList=_unfilteredMessageList;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
 @property(readonly, nonatomic) id <EFScheduler> observerScheduler; // @synthesize observerScheduler=_observerScheduler;
@@ -37,25 +39,28 @@
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 - (void).cxx_destruct;
+- (id)itemIDOfFirstMessageListItemMatchingPredicate:(id)arg1;
 - (id)_nextThreadItemIDAfterThreadItemID:(id)arg1;
 - (_Bool)_threadIsExpandedForItemID:(id)arg1;
 - (_Bool)_threadIsExpanded:(id)arg1;
 - (void)queryMatchedOldestItemsUpdatedForMailboxesObjectIDs:(id)arg1;
 - (id)_expandedObjectIDsForObjectIDs:(id)arg1;
-- (void)queryMatchedChangedObjectIDs:(id)arg1;
+- (void)queryMatchedChangesByObjectIDs:(id)arg1;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 after:(id)arg2;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 before:(id)arg2;
 - (void)collection:(id)arg1 replacedExistingItemID:(id)arg2 withNewItemID:(id)arg3;
 - (void)collectionDidFinishInitialLoad:(id)arg1;
 - (void)collection:(id)arg1 deletedItemIDs:(id)arg2;
+- (void)collection:(id)arg1 changedItemIDs:(id)arg2 itemIDsWithCountChanges:(id)arg3;
 - (void)collection:(id)arg1 changedItemIDs:(id)arg2;
-- (void)collection:(id)arg1 movedItemID:(id)arg2 after:(id)arg3;
-- (void)collection:(id)arg1 movedItemID:(id)arg2 before:(id)arg3;
+- (void)collection:(id)arg1 movedItemIDs:(id)arg2 after:(id)arg3;
+- (void)collection:(id)arg1 movedItemIDs:(id)arg2 before:(id)arg3;
 - (void)collection:(id)arg1 addedItemIDs:(id)arg2 after:(id)arg3;
 - (void)collection:(id)arg1 addedItemIDs:(id)arg2 before:(id)arg3;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (void)finishRecovery;
 - (id)itemIDOfMessageListItemWithDisplayMessage:(id)arg1;
+- (void)invalidateCacheForItemIDs:(id)arg1;
 - (void)_attemptToFinishRetryingPromisesByItemID:(id)arg1;
 - (id)_availableMessageListItemsForItemIDs:(id)arg1;
 - (id)messageListItemsForItemIDs:(id)arg1 ifAvailable:(_Bool)arg2;
@@ -69,6 +74,7 @@
 @property(readonly, copy) NSSet *expandedThreadItemIDs;
 @property(readonly, nonatomic) _Bool isThreaded;
 - (id)filteredMessageListWithPredicate:(id)arg1;
+- (void)notifyChangeObserverAboutChangesByItemIDs:(id)arg1;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 before:(id)arg2 extraInfo:(id)arg3;
 - (id)_unreadItemIDsFromExtraInfo:(id)arg1;

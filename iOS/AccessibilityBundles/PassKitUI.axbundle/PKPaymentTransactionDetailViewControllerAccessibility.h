@@ -14,6 +14,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (id)_tableView:(id)arg1 actionButtonCellForSection:(unsigned long long)arg2;
+- (id)_transactionIdentifierCellForTableView:(id)arg1;
 
 @end
 

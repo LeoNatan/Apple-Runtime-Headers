@@ -9,7 +9,7 @@
 #import <IDS/IDSAccountControllerDelegate-Protocol.h>
 #import <IDS/IDSAccountRegistrationDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableDictionary, NSString;
+@class IDSCTAdapter, NSMapTable, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, _IDSPasswordManager;
 
 @interface IDSSignInController : NSObject <IDSAccountRegistrationDelegate, IDSAccountControllerDelegate>
@@ -22,8 +22,10 @@
     id _passwordManager;
     double _signInTimeout;
     double _signInFuzz;
+    IDSCTAdapter *_CTAdapter;
 }
 
+@property(retain, nonatomic) IDSCTAdapter *CTAdapter; // @synthesize CTAdapter=_CTAdapter;
 @property(retain, nonatomic) NSMutableDictionary *initialStateByService; // @synthesize initialStateByService=_initialStateByService;
 @property(retain, nonatomic) NSMapTable *delegateByServiceType; // @synthesize delegateByServiceType=_delegateByServiceType;
 @property(nonatomic) double signInFuzz; // @synthesize signInFuzz=_signInFuzz;
@@ -62,7 +64,7 @@
 - (void)setDelegate:(id)arg1 forService:(unsigned int)arg2;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
-- (id)initWithPasswordManager:(id)arg1 signInTimeout:(double)arg2 signInFuzz:(double)arg3 queue:(id)arg4;
+- (id)initWithPasswordManager:(id)arg1 CTAdapter:(id)arg2 signInTimeout:(double)arg3 signInFuzz:(double)arg4 queue:(id)arg5;
 - (_Bool)_isServiceCurrentlyEnabled:(id)arg1;
 - (_Bool)isiMessageEnabled;
 - (_Bool)isFaceTimeEnabled;

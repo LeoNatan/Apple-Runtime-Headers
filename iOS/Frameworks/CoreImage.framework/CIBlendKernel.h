@@ -57,8 +57,16 @@
 + (id)componentAdd;
 - (id)applyWithForeground:(id)arg1 background:(id)arg2 colorSpace:(struct CGColorSpace *)arg3;
 - (id)applyWithForeground:(id)arg1 background:(id)arg2;
-- (void)setClearForegroundPreservesBackground:(_Bool)arg1;
-- (_Bool)clearForegroundPreservesBackground;
+- (void)setIsClearIfBackIsClear:(_Bool)arg1;
+- (void)setIsClearIfForeIsClear:(_Bool)arg1;
+- (void)setIsForeIfBackIsClear:(_Bool)arg1;
+- (void)setIsBackIfForeIsClear:(_Bool)arg1;
+- (_Bool)isClearIfBackIsClear;
+- (_Bool)isClearIfForeIsClear;
+- (_Bool)isForeIfBackIsClear;
+- (_Bool)isBackIfForeIsClear;
+- (void)setBlendBehaviorBit:(int)arg1 value:(_Bool)arg2;
+- (_Bool)getBlendBehaviorBit:(int)arg1;
 - (id)initWithString:(id)arg1 extentType:(int)arg2;
 - (id)initWithString:(id)arg1;
 

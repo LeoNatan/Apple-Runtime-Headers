@@ -16,7 +16,7 @@
 @property(retain, nonatomic) IMNickname *nickname; // @synthesize nickname=_nickname;
 - (void).cxx_destruct;
 - (struct CGSize)_expectedSize;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (id)initWithNickname:(id)arg1;
 

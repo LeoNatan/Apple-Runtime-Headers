@@ -45,8 +45,8 @@
 - (void)clearGestureRecognizers;
 - (id)initWithResponder:(id)arg1;
 - (BOOL)shouldEnqueueObserverUpdates;
-- (void)didEndScrollingOverflow;
-- (void)willStartScrollingOverflow;
+- (void)didEndScrollingOrZooming;
+- (void)willStartScrollingOrZooming;
 - (void)layoutChangedByScrolling:(BOOL)arg1;
 - (BOOL)swallowsDoubleTapWithScale:(double)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)hasReplacements;
@@ -104,6 +104,7 @@
 - (void)setWillHandoffLoupeMagnifier;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (void)scrollSelectionToVisible;
+- (void)setFirstResponderIfNecessaryActivatingSelection:(BOOL)arg1;
 - (void)setFirstResponderIfNecessary;
 - (void)addGestureRecognizersToView:(id)arg1;
 - (Class)loupeInteractionClass;

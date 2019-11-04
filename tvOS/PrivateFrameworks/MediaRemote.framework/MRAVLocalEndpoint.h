@@ -6,14 +6,12 @@
 
 #import <MediaRemote/MRAVConcreteEndpoint.h>
 
-#import <MediaRemote/MROutputContextDataSourceDelegate-Protocol.h>
 #import <MediaRemote/NSSecureCoding-Protocol.h>
 
 @class MRAVOutputContext, MROutputContextController, NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
-@interface MRAVLocalEndpoint : MRAVConcreteEndpoint <NSSecureCoding, MROutputContextDataSourceDelegate>
+@interface MRAVLocalEndpoint : MRAVConcreteEndpoint <NSSecureCoding>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
     MRAVOutputContext *_outputContext;
@@ -23,14 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)sharedLocalEndpointForRoutingContextWithUID:(id)arg1;
 - (void).cxx_destruct;
 - (void)_reloadOutputDevicesFromContext;
 - (void)_ouputDevicesForOutputDeviceUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_outputContextDevicesDidChangeNotification:(id)arg1;
-- (void)outputContextDataSource:(id)arg1 outputDevice:(id)arg2 didChangeVolumeControlCapabilities:(unsigned int)arg3;
-- (void)outputContextDataSource:(id)arg1 outputDevice:(id)arg2 didChangeVolume:(float)arg3;
-- (void)outputContextDataSource:(id)arg1 didRemoveOutputDevice:(id)arg2;
-- (void)outputContextDataSource:(id)arg1 didAddOutputDevice:(id)arg2;
+- (void)outputContextDataSourceOutputDeviceDidChangeVolumeControlCapabilities:(id)arg1;
+- (void)outputContextDataSourceOutputDeviceDidChangeVolume:(id)arg1;
 - (void)removeOutputDeviceFromParentGroup:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -39,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)removeOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)addOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)connectToExternalDeviceWithCompletion:(CDUnknownBlockType)arg1;
-- (struct _MROriginProtobuf *)origin;
+- (id)origin;
 - (_Bool)canModifyGroupMembership;
 - (_Bool)isProxyGroupPlayer;
 - (long long)connectionType;
@@ -49,14 +46,9 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (void)_registerForNotifications;
 - (id)initWithOutputDevices:(id)arg1;
 - (id)initWithOutputContext:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

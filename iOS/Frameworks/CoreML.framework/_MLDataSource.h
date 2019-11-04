@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)numberOfDataPoints;
 - (id)dataPointAtIndex:(unsigned long long)arg1 error:(id *)arg2;
-- (id)initWithMLFeatureProvider:(id)arg1 neuralNetworkEngine:(id)arg2 error:(id *)arg3;
+- (id)initWithMLFeatureProvider:(id)arg1 forPrediction:(_Bool)arg2 neuralNetworkEngine:(id)arg3 error:(id *)arg4;
 
 @end
 

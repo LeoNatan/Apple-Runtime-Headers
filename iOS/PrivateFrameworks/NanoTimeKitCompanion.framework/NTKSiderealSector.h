@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NTKSiderealSolarEvent;
+@class NSString, NTKSiderealSolarEvent;
 
 @interface NTKSiderealSector : NSObject
 {
+    NSString *_localizedName;
     unsigned long long _type;
     NTKSiderealSolarEvent *_startingEvent;
     NTKSiderealSolarEvent *_endingEvent;

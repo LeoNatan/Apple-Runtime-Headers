@@ -9,8 +9,10 @@
 @interface CAMDrawerLowLightButton : CAMControlDrawerCustomButton
 {
     _Bool _on;
+    _Bool _disabled;
 }
 
+@property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic, getter=isOn) _Bool on; // @synthesize on=_on;
 - (_Bool)adjustsImageWhenDisabled;
 - (_Bool)shouldUseActiveTintForCurrentState;

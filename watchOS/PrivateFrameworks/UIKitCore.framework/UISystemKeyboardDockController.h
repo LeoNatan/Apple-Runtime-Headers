@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_dictationDidBeginNotification:(id)arg1;
 - (void)setKeyboardDockItem;
 - (void)viewDidLoad;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)loadView;
 - (_Bool)_canShowWhileLocked;
 - (void)dealloc;

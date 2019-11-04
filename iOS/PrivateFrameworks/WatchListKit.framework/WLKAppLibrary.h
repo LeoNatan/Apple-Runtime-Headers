@@ -37,6 +37,7 @@
 - (void)beginIgnoringAppLibraryChanges;
 - (id)refresh;
 - (id)dictionaryRepresentation;
+- (_Bool)isTVAppInstalled;
 - (id)localizedNameForBundle:(id)arg1;
 - (id)subscriptionInfoForBundle:(id)arg1;
 - (id)allAppProxies;

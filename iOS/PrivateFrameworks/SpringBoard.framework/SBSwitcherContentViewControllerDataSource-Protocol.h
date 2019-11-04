@@ -18,6 +18,7 @@
 - (NSArray *)appLayoutsForSwitcherContentController:(id <SBSwitcherContentViewControlling>)arg1;
 
 @optional
+- (_Bool)switcherContentControllerReloadsSnapshotsForActiveInterfaceOrientationChange:(id <SBSwitcherContentViewControlling>)arg1;
 - (_Bool)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 isAppLayoutHigherPriorityInTetheredSwitcher:(SBAppLayout *)arg2;
 - (NSArray *)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 hiddenAppLayoutsForBundleIdentifier:(NSString *)arg2;
 - (_Bool)isInAppStatusBarRequestedHiddenForSwitcherContentController:(id <SBSwitcherContentViewControlling>)arg1;

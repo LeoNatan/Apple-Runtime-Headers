@@ -59,6 +59,7 @@
 - (void)start;
 @property float priority;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithSession:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3 requestKind:(CDStruct_d1a7ebee)arg4 requestCounterTicket:(id)arg5;
 - (BOOL)validateTileResponse:(BOOL)arg1 error:(id *)arg2;
@@ -77,7 +78,6 @@
 - (id)captureStateWithHints:(struct os_state_hints_s *)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

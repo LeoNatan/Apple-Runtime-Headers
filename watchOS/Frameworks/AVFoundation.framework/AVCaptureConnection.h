@@ -28,6 +28,7 @@
 - (int)changeSeed;
 - (id)figCaptureConnectionConfigurationForSessionPreset:(id)arg1 allConnections:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (_Bool)sourcesFromFrontFacingCamera;
 - (id)sourceDevice;
 - (void)setDebugMetadataSidecarFileEnabled:(_Bool)arg1;
@@ -40,7 +41,7 @@
 - (_Bool)isVideoRetainedBufferCountHintSupported;
 @property(nonatomic, getter=isCameraIntrinsicMatrixDeliveryEnabled) _Bool cameraIntrinsicMatrixDeliveryEnabled;
 @property(readonly, nonatomic, getter=isCameraIntrinsicMatrixDeliverySupported) _Bool cameraIntrinsicMatrixDeliverySupported;
-- (void)_updateCameraIntrinsicMatrixDeliverySupported;
+- (_Bool)_updateCameraIntrinsicMatrixDeliverySupported;
 @property(readonly, nonatomic) int activeVideoStabilizationMode;
 @property(nonatomic) int preferredVideoStabilizationMode;
 @property(nonatomic) _Bool enablesVideoStabilizationWhenAvailable;

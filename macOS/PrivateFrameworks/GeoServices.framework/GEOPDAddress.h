@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAddress : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_localizedAddress;
     NSMutableArray *_spokenNavigationAddress;
     NSMutableArray *_spokenStructuredAddress;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _knownAccuracy;
     struct {
         unsigned int has_knownAccuracy:1;
@@ -76,6 +78,8 @@ __attribute__((visibility("hidden")))
 - (void)clearLocalizedAddress;
 @property(retain, nonatomic) NSMutableArray *localizedAddress;
 - (void)_readLocalizedAddress;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

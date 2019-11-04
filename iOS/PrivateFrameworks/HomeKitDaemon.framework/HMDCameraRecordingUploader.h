@@ -13,7 +13,6 @@
 
 @interface HMDCameraRecordingUploader : HMFObject <HMFLogging>
 {
-    double _maximumClipDuration;
     unsigned long long _activeUploadOperationCount;
     NSData *_videoInitData;
     double _targetFragmentDuration;
@@ -41,7 +40,6 @@
 @property double targetFragmentDuration; // @synthesize targetFragmentDuration=_targetFragmentDuration;
 @property(copy) NSData *videoInitData; // @synthesize videoInitData=_videoInitData;
 @property(readonly) unsigned long long activeUploadOperationCount; // @synthesize activeUploadOperationCount=_activeUploadOperationCount;
-@property(readonly) double maximumClipDuration; // @synthesize maximumClipDuration=_maximumClipDuration;
 - (void).cxx_destruct;
 - (id)errorForCancel;
 - (_Bool)errorIsCancelled:(id)arg1;

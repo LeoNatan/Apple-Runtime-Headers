@@ -66,12 +66,19 @@
 - (_Bool)_isAlbumPinned:(id)arg1;
 - (void)_invalidateMediaCacheForAppIdentifiers:(unsigned int)arg1;
 - (void)_invalidateAddedItemsCache;
+- (_Bool)_shouldCalculateCachedIdentifiers;
 - (_Bool)_shouldSkipQuotaManagerEvaluation;
 - (id)_newAudiobooksGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (id)_newPodcastsGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (id)_newMusicGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (_Bool)_quotaManagerShouldFetchDownloadedItemsOnlyForBundleIdentifier:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
+- (void)_handleMediaPinningManagerAudiobooksIdentifiersDidChangeNotification:(id)arg1;
+- (void)_handleMediaPinningManagerPodcastsIdentifiersDidChangeNotification:(id)arg1;
+- (void)_handleMediaPinningManagerMusicIdentifiersDidChangeNotification:(id)arg1;
+- (void)_handleMediaPinningAudiobooksContentsInvalidatedNotification:(id)arg1;
+- (void)_handleMediaPinningPodcastsContentsInvalidatedNotification:(id)arg1;
+- (void)_handleMediaPinningMusicContentsInvalidatedNotification:(id)arg1;
 - (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)_handlePodcastSizeInfoDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryEntitiesAddedOrRemovedNotification:(id)arg1;
@@ -93,7 +100,8 @@
 @property(nonatomic, getter=isReadingNowEnabled) _Bool readingNowEnabled;
 @property(retain, nonatomic) NSOrderedSet *wantToReadAudiobooks;
 @property(nonatomic, getter=isWantToReadEnabled) _Bool wantToReadEnabled;
-- (void)_refreshAudiobookIdentifiersWithPath:(id)arg1;
+- (void)_refreshAudiobookIdentifiers;
+- (void)_fetchAudiobookIdentifiers;
 @property(readonly, nonatomic) NSArray *audiobookIdentifiers;
 - (void)invalidateAudiobooksCache;
 - (_Bool)isPodcastStationWithUUIDPinned:(id)arg1;
@@ -103,7 +111,8 @@
 - (void)unpinPodcastWithFeedURL:(id)arg1;
 - (void)pinPodcastWithFeedURL:(id)arg1;
 - (void)setListenNowPodcastFeedURLs:(id)arg1;
-- (void)_refreshPodcastFeedURLsWithPath:(id)arg1;
+- (void)_refreshPodcastFeedURLs;
+- (void)_fetchPodcastFeedURLs;
 @property(readonly, nonatomic) NSArray *podcastFeedURLs;
 - (unsigned int)episodeLimitForPodcastWithFeedURL:(id)arg1;
 - (void)setGizmoEpisodeLimit:(unsigned int)arg1 forPodcastWithFeedURL:(id)arg2;
@@ -122,14 +131,13 @@
 - (_Bool)isPlaylistPinned:(id)arg1;
 - (_Bool)isAlbumPinned:(id)arg1;
 @property(readonly, nonatomic) NSArray *pinnedPlaylists;
-- (void)_refreshPlaylistIdentifiersWithPath:(id)arg1;
 @property(readonly, nonatomic) NSArray *playlistIdentifiers;
 @property(readonly, nonatomic) NSArray *pinnedAlbums;
-- (void)_refreshAlbumIdentifiersWithPath:(id)arg1;
+- (void)_refreshMusicIdentifiers;
+- (void)_fetchMusicIdentifiers;
 @property(readonly, nonatomic) NSArray *albumIdentifiers;
 - (unsigned long long)nominatedSongsSize;
 - (unsigned long long)addedSongsSize;
-- (id)musicItemGroupForIdentifiers:(id)arg1;
 - (void)invalidateMusicCache;
 - (_Bool)isItemGroupWithinQuota:(id)arg1;
 - (id)downloadInfoForBundleIdentifier:(id)arg1;
@@ -137,12 +145,12 @@
 - (id)downloadInfoWithinAvailableSpace:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)init;
-- (_Bool)_modelObjectIsManuallyPinned:(id)arg1;
 - (void)_unpinModelObject:(id)arg1;
 - (void)_pinModelObject:(id)arg1;
 - (void)nms_unpinModelObject:(id)arg1;
 - (void)nms_pinModelObject:(id)arg1;
-- (void)nms_pinningStatusForModelObject:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)nms_modelObjectIsManuallyPinned:(id)arg1;
+- (void)nms_fetchPinningStatusForModelObject:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

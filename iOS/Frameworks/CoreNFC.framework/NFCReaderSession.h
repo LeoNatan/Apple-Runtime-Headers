@@ -55,11 +55,13 @@
 - (_Bool)connectTag:(id)arg1 error:(id *)arg2;
 - (void)connectTag:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) id <NFTag> connectedTag;
+- (void)_restartPollingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_stopPollingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_startPollingWithMethod:(unsigned long long)arg1 sessionConfig:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)validateDelegate:(id)arg1 expectedType:(long long)arg2;
 - (id)initWithDelegate:(id)arg1 sessionDelegateType:(long long)arg2 queue:(id)arg3 pollMethod:(unsigned long long)arg4 sessionConfig:(unsigned long long)arg5;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 pollMethod:(unsigned long long)arg3;
+- (void)beginSessionWithConfig:(id)arg1;
 - (void)beginSession;
 - (void)submitBlockOnDelegateQueue:(CDUnknownBlockType)arg1;
 - (void)submitBlockOnSessionQueue:(CDUnknownBlockType)arg1;

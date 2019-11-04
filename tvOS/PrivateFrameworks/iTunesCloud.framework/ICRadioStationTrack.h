@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) double startTime;
 @property(readonly, nonatomic) long long likeState;
 @property(readonly, nonatomic, getter=isSkippable) _Bool skippable;
+@property(readonly, copy, nonatomic) NSArray *radioStreamAssets;
 @property(readonly, copy, nonatomic) ICStoreHLSAssetInfo *hlsAsset;
 @property(readonly, nonatomic) _Bool hasStartTime;
 @property(readonly, copy, nonatomic) NSArray *fileAssets;

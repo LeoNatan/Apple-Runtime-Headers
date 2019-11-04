@@ -13,12 +13,14 @@
 @interface GEOCollectionPlace : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_address;
     GEOLatLng *_coordinate;
     unsigned long long _muid;
     NSString *_name;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _providerId;
     struct {
         unsigned int has_muid:1;
@@ -63,6 +65,8 @@
 @property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasProviderId;
 @property(nonatomic) int providerId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -16,6 +16,8 @@
 + (id)currentDevice;
 - (void).cxx_destruct;
 - (id)_deviceInfoForKey:(struct __CFString *)arg1;
+@property(readonly, nonatomic) long long chipID;
+@property(readonly, nonatomic) NSString *marketingName;
 @property(readonly, nonatomic) NSString *localizedWiFiDisplayName;
 - (BOOL)hasCapability:(id)arg1;
 @property(readonly, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;

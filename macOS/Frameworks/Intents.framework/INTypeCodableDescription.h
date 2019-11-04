@@ -10,6 +10,8 @@
 
 @interface INTypeCodableDescription : INCodableDescription
 {
+    NSString *_attributeKeyPrefix;
+    NSString *_attributesKeyPrefix;
     NSString *_displayName;
     NSString *_displayNameLocID;
 }

@@ -6,30 +6,15 @@
 
 #import <WorkflowKit/WFAction.h>
 
-#import <ActionKit/CNContactPickerDelegate-Protocol.h>
+@class NSArray;
 
-@class NSArray, NSString;
-
-@interface WFSelectContactsAction : WFAction <CNContactPickerDelegate>
+@interface WFSelectContactsAction : WFAction
 {
 }
 
-- (void)contactPicker:(id)arg1 didSelectContactProperties:(id)arg2;
-- (void)contactPicker:(id)arg1 didSelectContacts:(id)arg2;
-- (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
-- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
-- (void)contactPickerDidCancel:(id)arg1;
-- (_Bool)respondsToSelector:(SEL)arg1;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-- (_Bool)selectMultiple;
+@property(readonly, nonatomic) _Bool selectMultiple;
 - (void)outputContacts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *contactPropertyIDs;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

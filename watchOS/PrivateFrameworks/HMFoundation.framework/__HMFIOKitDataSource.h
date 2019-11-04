@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+@property(readonly, copy, nonatomic) NSString *modelIdentifier;
 @property(readonly, nonatomic) int productVariant;
 @property(readonly, nonatomic) int productClass;
 @property(readonly, nonatomic) int productPlatform;

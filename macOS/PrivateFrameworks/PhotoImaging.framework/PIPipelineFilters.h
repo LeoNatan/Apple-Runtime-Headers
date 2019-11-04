@@ -10,10 +10,14 @@
 {
 }
 
++ (id)spatialOvercaptureVideoSourceFilter;
++ (id)primarySourceFilter;
++ (id)overcaptureSourceFilter;
 + (id)autoloopStabilizedVideoFilter;
 + (id)applyOrientationFilter;
 + (id)stopAtTagIncludeOrientationFilter:(id)arg1;
 + (id)stopAtTagIncludeGeometryFilter:(id)arg1;
++ (id)inputToCropFilter;
 + (id)postGeometryFilter;
 + (id)preGeometryFilter;
 + (id)perspectiveStraightenWithoutCropFilter;
@@ -30,6 +34,7 @@
 + (id)rawFaceBalanceFilter;
 + (id)exifOrientationAndCropStraightenOnly;
 + (id)autoCropFilter;
++ (id)socPseudoColorFilter;
 
 @end
 

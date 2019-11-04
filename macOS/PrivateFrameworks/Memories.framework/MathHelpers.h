@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 + (struct CGPoint)endPointOfLineWithStartPoint:(struct CGPoint)arg1 slope:(struct CGPoint)arg2 distance:(double)arg3;
 + (struct CGRect)rectWithLongestWidthByComparingRect1:(struct CGRect)arg1 rect2:(struct CGRect)arg2;
 + (struct CGRect)rectWithShortestWidthByComparingRect1:(struct CGRect)arg1 rect2:(struct CGRect)arg2;
-+ (struct CGRect)rectWithAspectRatio:(double)arg1 thatFillsRectBiasedVertically:(struct CGRect)arg2;
++ (struct CGRect)rectWithAspectRatio:(double)arg1 thatFillsRectBiasedVertically:(struct CGRect)arg2 isTitle:(BOOL)arg3 sourceAspectRatio:(double)arg4;
 + (struct CGRect)rectWithAspectRatio:(double)arg1 thatFillsRect:(struct CGRect)arg2;
 + (struct CGRect)scaleRect:(struct CGRect)arg1 horizontalScale:(double)arg2 verticalScale:(double)arg3 maintainCenterPoint:(BOOL)arg4;
 + (struct CGRect)moveRectVertically:(struct CGRect)arg1 toKeepWithinRect:(struct CGRect)arg2;

@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(readonly, nonatomic) UIView *container; // @synthesize container=_container;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithContainer:(id)arg1 center:(struct CGPoint)arg2;

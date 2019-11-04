@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDVenueIdentifier : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_cb16bb10 _containedBys;
     CDStruct_cb16bb10 _sectionIds;
@@ -26,6 +25,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _unitId;
     unsigned long long _venueGeminiId;
     unsigned long long _venueId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _levelOrdinal;
     struct {
         unsigned int has_buildingId:1;
@@ -104,9 +106,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasVenueId;
 @property(nonatomic) unsigned long long venueId;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (id)initWithVenueID:(unsigned long long)arg1 businessID:(unsigned long long)arg2 componentIdentifier:(id)arg3;
-- (id)initWithVenueID:(unsigned long long)arg1 businessID:(unsigned long long)arg2;
+- (id)initWithVenueID:(unsigned long long)arg1 featureID:(unsigned long long)arg2 businessID:(unsigned long long)arg3 componentIdentifier:(id)arg4;
+- (id)initWithVenueID:(unsigned long long)arg1 featureID:(unsigned long long)arg2 businessID:(unsigned long long)arg3;
 
 @end
 

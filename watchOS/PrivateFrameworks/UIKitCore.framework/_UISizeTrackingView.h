@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     id _textEffectsOperatorProxy;
     struct CGSize _intrinsicContentSize;
     struct CGRect _formerTextEffectsContentFrame;
+    _Bool _observingTextEffectsWindowRotation;
     struct {
         unsigned int hasIntrinsicContentSize:1;
         unsigned int observingBoundingPathChanges:1;

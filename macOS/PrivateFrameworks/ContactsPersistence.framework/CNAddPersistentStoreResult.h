@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSPersistentStore, NSPersistentStoreCoordinator;
+#import <ContactsPersistence/CNAddPersistentStoreResult-Protocol.h>
+
+@class NSPersistentStore, NSPersistentStoreCoordinator, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNAddPersistentStoreResult : NSObject
+@interface CNAddPersistentStoreResult : NSObject <CNAddPersistentStoreResult>
 {
     NSPersistentStoreCoordinator *_coordinator;
     NSPersistentStore *_store;
@@ -24,8 +26,13 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSPersistentStore *store; // @synthesize store=_store;
 @property(readonly) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithCoordinator:(id)arg1 store:(id)arg2 pristineDatabase:(BOOL)arg3 shouldCache:(BOOL)arg4 didMigrate:(BOOL)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

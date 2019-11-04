@@ -17,6 +17,7 @@
 + (id)speechSynthesisVoiceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)speechSynthesisVoice;
 @property(nonatomic) BOOL useServer;
+@property(copy, nonatomic) NSString *type;
 @property(copy, nonatomic) NSString *quality;
 @property(copy, nonatomic) NSString *name;
 @property(copy, nonatomic) NSString *languageCode;

@@ -20,6 +20,8 @@
 - (id)_fitnessUIAssetsURLWithKey:(id)arg1 value:(id)arg2;
 - (id)_currentMonthlyChallengeAchievementForTemplate:(id)arg1 localizableSuffix:(id)arg2 goalValue:(int)arg3 progressValue:(int)arg4 isEarned:(_Bool)arg5;
 - (id)_achievementForTemplate:(id)arg1 earnedInstanceCount:(int)arg2 earnedInstanceOffset:(int)arg3 earnedInstanceValue:(int)arg4 goalValue:(int)arg5 progressValue:(int)arg6;
+- (void)stopFetching;
+- (void)startFetching;
 - (id)headerStringForSection:(int)arg1 isRecentAndRelevant:(_Bool)arg2;
 - (int)numberOfSections;
 - (int)numberOfItemsInSection:(int)arg1;

@@ -76,7 +76,7 @@
 - (void)_transitionToViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 @property(nonatomic) unsigned long long selectedIndex;
-- (void)setSelectedIndex:(unsigned long long)arg1 allowsCallbacks:(BOOL)arg2;
+- (void)setSelectedIndex:(unsigned long long)arg1 allowsCurrentTabReselectionCallback:(BOOL)arg2;
 - (void)keyDown:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)selectSegmentFromMenu:(id)arg1;

@@ -6,13 +6,14 @@
 
 #import <SiriInstrumentation/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSNumber, PBCodable, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, SISchemaClientEventMetadata, SISchemaClientFlow, SISchemaClientTransportEventMetadata, SISchemaConversationTrace, SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, SISchemaPunchOut, SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, SISchemaTextToSpeechEnd, SISchemaUIStateTransition, SISchemaUUFRPresented;
+@class NSData, NSDictionary, NSNumber, PBCodable, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, SISchemaClientEventMetadata, SISchemaClientFlow, SISchemaClientTransportEventMetadata, SISchemaConversationTrace, SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, SISchemaDialogOutput, SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, SISchemaPunchOut, SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, SISchemaTextToSpeechEnd, SISchemaUIStateTransition, SISchemaUUFRPresented;
 
 @protocol SISchemaClientEvent <NSObject>
 + (NSNumber *)getTagForEventTypeClass:(Class)arg1;
 + (Class)getEventTypeClassForTag:(int)arg1;
 @property(readonly, nonatomic) unsigned int whichEvent_Type;
 @property(readonly, nonatomic) NSData *jsonData;
+@property(retain, nonatomic) SISchemaDialogOutput *dialogOutput;
 @property(retain, nonatomic) SISchemaClientFlow *clientFlow;
 @property(retain, nonatomic) SISchemaUIStateTransition *uiStateTransition;
 @property(retain, nonatomic) SISchemaTextToSpeechEnd *textToSpeechEnd;

@@ -50,6 +50,7 @@
 - (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect)arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform)arg4 renderContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
 - (_Bool)supportsMultiTouchSelection;
 - (_Bool)shouldInvertAxis;
+- (void)clearCaches;
 
 @end
 

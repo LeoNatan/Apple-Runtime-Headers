@@ -6,9 +6,10 @@
 
 #import <ShareSheet/NSObject-Protocol.h>
 
-@class NSArray, NSNumber, NSURL, NSUUID;
+@class NSArray, NSNumber, NSString, NSURL, NSUUID;
 
 @protocol UIActivityContentDelegate <NSObject>
+- (NSString *)_titleForActivity:(NSString *)arg1;
 - (void)_editActionsTapped;
 - (NSURL *)fallbackURLForLinkPresentation;
 - (NSArray *)requestMetadataValues;

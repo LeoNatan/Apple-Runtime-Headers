@@ -9,12 +9,12 @@
 #import <Home/HFActionBuilderFactory-Protocol.h>
 #import <Home/HFMediaAccessoryLikeItem-Protocol.h>
 
-@class NSSet, NSString;
+@class HMHome, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject, HFHomeKitSettingsVendor, HFMediaProfileContainer, HFMediaValueSource;
 
 @interface HFMediaAccessoryItem : HFItem <HFMediaAccessoryLikeItem, HFActionBuilderFactory>
 {
-    BOOL _inServiceAction;
+    BOOL _isItemInActionBuilder;
     id <HFHomeKitObject> _homeKitObject;
     id <HFHomeKitSettingsVendor> _homeKitSettingsVendor;
     id <HFCharacteristicValueSource> _valueSource;
@@ -22,7 +22,7 @@
     long long _mediaAccessoryItemType;
 }
 
-@property(nonatomic) BOOL inServiceAction; // @synthesize inServiceAction=_inServiceAction;
+@property(nonatomic) BOOL isItemInActionBuilder; // @synthesize isItemInActionBuilder=_isItemInActionBuilder;
 @property(readonly, nonatomic) long long mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
@@ -32,7 +32,8 @@
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (BOOL)actionsMayRequireDeviceUnlock;
 - (BOOL)containsActions;
-- (id)iconDescriptor;
+- (unsigned long long)preferredActionOnTap:(id)arg1;
+- (id)iconDescriptor:(id)arg1;
 - (id)serviceNameComponents;
 - (BOOL)_isInstallingSoftwareUpdate;
 - (id)performStandardUpdateWithOptions:(id)arg1;
@@ -49,7 +50,8 @@
 - (BOOL)isAppleTV;
 - (BOOL)isContainedWithinMediaSystem;
 - (BOOL)isHomePodAndIsInMediaSystem;
-- (BOOL)isSingleHomePod;
+- (BOOL)isStandaloneHomePod;
+- (BOOL)supportsMultiUser;
 - (BOOL)isHomePod;
 - (BOOL)isHomePodMediaSystem;
 @property(readonly, nonatomic) BOOL supportsMediaAction;
@@ -63,6 +65,7 @@
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)accessories;
 @property(readonly, nonatomic) NSSet *services;
+@property(readonly, nonatomic) HMHome *home;
 - (unsigned long long)_effectiveLoadingStateForSuggestedLoadingState:(unsigned long long)arg1;
 - (id)copyWithValueSource:(id)arg1;
 - (id)settings;

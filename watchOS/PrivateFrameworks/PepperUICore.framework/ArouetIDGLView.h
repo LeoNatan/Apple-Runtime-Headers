@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CADisplayLink, EAGLContext;
+@class ArouetPrewarmer, CADisplayLink, EAGLContext;
 
 @interface ArouetIDGLView : UIView
 {
@@ -20,9 +20,11 @@
     unsigned int _depthRenderbuffer;
     CADisplayLink *_displayLink;
     int _animationFrameRate;
+    ArouetPrewarmer *_prewarmer;
 }
 
 + (Class)layerClass;
+@property(retain, nonatomic) ArouetPrewarmer *prewarmer; // @synthesize prewarmer=_prewarmer;
 @property(nonatomic) _Bool needsRebuildFrameBuffer; // @synthesize needsRebuildFrameBuffer=_needsRebuildFrameBuffer;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) int animationFrameRate; // @synthesize animationFrameRate=_animationFrameRate;
@@ -42,7 +44,7 @@
 - (void)destroyFramebuffer;
 - (_Bool)createFramebuffer;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 prewarmer:(id)arg2;
 
 @end
 

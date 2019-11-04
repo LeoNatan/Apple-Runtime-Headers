@@ -4,30 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HMFoundation/HMFOperation.h>
+#import <HMFoundation/__HMFLocationManagerOperation.h>
 
 #import <HMFoundation/HMFLogging-Protocol.h>
 
-@class HMFLocationAuthorization, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface __HMFLocationAuthorizationRequest : HMFOperation <HMFLogging>
+@interface __HMFLocationAuthorizationRequest : __HMFLocationManagerOperation <HMFLogging>
 {
     _Bool _requested;
     long long _type;
-    HMFLocationAuthorization *_authorization;
 }
 
 + (id)logCategory;
-+ (void)initialize;
-@property(readonly) HMFLocationAuthorization *authorization; // @synthesize authorization=_authorization;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)main;
 - (void)dealloc;
 - (id)initWithType:(long long)arg1 authorization:(id)arg2;
 - (id)initWithType:(long long)arg1;
+- (id)initWithAuthorization:(id)arg1;
 - (id)initWithTimeout:(double)arg1;
 
 // Remaining properties

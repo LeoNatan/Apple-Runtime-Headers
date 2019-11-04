@@ -77,6 +77,7 @@
 - (void)_setNavigationBarEnabled:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)hostApplicationDidEnterBackground;
+- (void)noteNavigationUserInterfaceDidDisappear;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

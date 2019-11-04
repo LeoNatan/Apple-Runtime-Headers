@@ -6,28 +6,31 @@
 
 #import <coreroutine/RTService.h>
 
+@class NWPathEvaluator;
+
 @interface RTReachabilityManager : RTService
 {
-    struct __SCNetworkReachability *_reachabilityRef;
+    _Bool _observingReachabilityChanges;
+    NWPathEvaluator *_pathEvaluator;
     long long _currentReachability;
 }
 
 + (id)reachabilityToString:(long long)arg1;
-+ (long long)_processReachabilityChange:(unsigned int)arg1;
-@property(readonly, nonatomic) long long currentReachability; // @synthesize currentReachability=_currentReachability;
-@property(nonatomic) struct __SCNetworkReachability *reachabilityRef; // @synthesize reachabilityRef=_reachabilityRef;
-- (_Bool)_getCurrentReachability:(unsigned int *)arg1;
+@property(nonatomic) long long currentReachability; // @synthesize currentReachability=_currentReachability;
+@property(retain, nonatomic) NWPathEvaluator *pathEvaluator; // @synthesize pathEvaluator=_pathEvaluator;
+- (void).cxx_destruct;
+- (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (long long)reachability;
 - (void)_fetchCurrentReachability:(CDUnknownBlockType)arg1;
 - (void)fetchCurrentReachability:(CDUnknownBlockType)arg1;
 - (id)currentReachabilityString;
-- (void)setCurrentReachability:(long long)arg1;
-- (void)processReachabilityChange:(unsigned int)arg1;
-- (id)description;
+- (void)_processReachabilityChange:(id)arg1;
 - (void)_shutdown;
-- (void)_stopMonitoringReachability;
-- (void)_startMonitoringReachability;
+- (void)dealloc;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
+- (id)initWithPathEvaluator:(id)arg1;
 - (id)init;
 
 @end

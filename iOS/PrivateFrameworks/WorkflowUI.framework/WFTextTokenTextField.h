@@ -55,6 +55,7 @@
 @property(copy, nonatomic) NSString *placeholder;
 - (struct CGRect)textRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)editingRectForBounds:(struct CGRect)arg1;
+- (void)tintColorDidChange;
 - (_Bool)resignFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (void)dealloc;

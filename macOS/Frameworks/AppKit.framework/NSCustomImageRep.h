@@ -18,7 +18,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)draw;
-- (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
+- (BOOL)_wantsToBeCached;
 @property(readonly) __weak id delegate;
 @property(readonly) SEL drawSelector;
 @property(readonly, copy) CDUnknownBlockType drawingHandler;

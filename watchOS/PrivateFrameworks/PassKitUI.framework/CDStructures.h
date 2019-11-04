@@ -94,6 +94,11 @@ typedef struct {
 } CDStruct_973bafd3;
 
 typedef struct {
+    _Bool _field1;
+    int _field2;
+} CDStruct_4b6112ef;
+
+typedef struct {
     unsigned int numberOfSections;
     unsigned int *indexToSection;
     unsigned int *sectionToIndex;

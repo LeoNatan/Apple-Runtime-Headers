@@ -25,6 +25,7 @@
 - (long long)_openStrategyForAppLink:(id)arg1;
 - (id)_synchronouslyFetchAppLinkWithError:(id *)arg1;
 - (void)_getAppLinkWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)disableWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)disable;
 - (void)openExternally;
 - (void)openExternallyWithWebBrowserState:(id)arg1 referrerURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

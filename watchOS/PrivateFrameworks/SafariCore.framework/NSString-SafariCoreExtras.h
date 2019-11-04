@@ -10,6 +10,7 @@
 + (id)safari_stringAsHexWithBuffer:(const char *)arg1 length:(unsigned long)arg2;
 + (id)safari_stringAsHexWithData:(id)arg1;
 + (void)safari_reverseEnumerateComponents:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (_Bool)safari_looksLikeWillRedirectToURLStringAfterLogin:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *safari_suggestedFilenameFromTitleString;
 - (id)safari_stringByRemovingWwwDotPrefix;
 - (int)safari_localizedCompareSortingEmptyStringAndNumericPrefixToEnd:(id)arg1;

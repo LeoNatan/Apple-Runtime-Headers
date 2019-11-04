@@ -17,6 +17,8 @@
     UIColor *_textColor;
     UIColor *_tintColor;
     NSParagraphStyle *_paragraphStyle;
+    UIColor *_disabledSlotTitleColor;
+    UIColor *_disabledSlotBackgroundColor;
     NSArray *_contents;
     long long _contentsTextAlignment;
     NSTextStorage *_textStorage;
@@ -57,6 +59,9 @@
 - (void)didUnhighlightSlot:(id)arg1;
 - (void)didHighlightSlot:(id)arg1;
 @property(readonly, nonatomic) NSSet *highlightedSlots;
+- (void)setDisabledSlotTitleColor:(id)arg1 backgroundColor:(id)arg2;
+@property(readonly, nonatomic) UIColor *disabledSlotBackgroundColor; // @synthesize disabledSlotBackgroundColor=_disabledSlotBackgroundColor;
+@property(readonly, nonatomic) UIColor *disabledSlotTitleColor; // @synthesize disabledSlotTitleColor=_disabledSlotTitleColor;
 @property(copy, nonatomic) NSParagraphStyle *paragraphStyle; // @synthesize paragraphStyle=_paragraphStyle;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

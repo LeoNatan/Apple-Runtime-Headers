@@ -12,14 +12,16 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)providerItemDidUpdate:(id)arg1;
+- (id)defaultMonogramItem;
+- (long long)removeProviderItem:(id)arg1;
 - (long long)addProviderItem:(id)arg1;
 - (unsigned long long)maxRecentsAndMonogramsCount;
 - (id)paddedDisplayItems:(id)arg1;
 - (id)providerItems:(id)arg1 withMaxRecentsAndMonogramsCount:(unsigned long long)arg2;
-- (id)removeDuplicateItemsFrom:(id)arg1 withMaxRecentsAndMonogramsCount:(unsigned long long)arg2;
 - (void)prepareDisplayItems:(id)arg1;
 - (id)addSymbolImageName;
 - (id)dedupedSuggestionItemsGroupedByProvider;
+- (id)itemsForProviderIdentifier:(id)arg1;
 - (long long)indexForDefaultMonogram;
 - (id)providerOfClass:(Class)arg1;
 - (id)initWithProviders:(id)arg1 environment:(id)arg2 allowAddItem:(_Bool)arg3;

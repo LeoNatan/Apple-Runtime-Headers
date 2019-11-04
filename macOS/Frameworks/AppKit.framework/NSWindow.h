@@ -217,6 +217,8 @@
 - (double)_toolbarTrailingSpace;
 - (double)_toolbarLeadingSpace;
 - (double)_minXTitlebarButtonsWidth;
+- (void)setTitlebarAppearsTransparentWhenFullscreen:(BOOL)arg1;
+- (BOOL)titlebarAppearsTransparentWhenFullscreen;
 @property BOOL titlebarAppearsTransparent;
 @property long long titleVisibility;
 - (long long)titleMode;

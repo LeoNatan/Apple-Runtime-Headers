@@ -20,7 +20,7 @@
 #import <SpringBoard/SBNotificationDestinationHomeButtonPressHandler-Protocol.h>
 #import <SpringBoard/SBNotificationHomeAffordanceControllerClient-Protocol.h>
 
-@class BSServiceConnectionEndpoint, BSSimpleAssertion, DNDEventBehaviorResolutionService, NCNotificationManagementViewPresenter, NCNotificationViewController, NSMutableArray, NSMutableSet, NSString, SBAppStatusBarSettingsAssertion, SBAssistantController, SBDashBoardLegibilityProvider, SBLockScreenManager, SBNotificationBannerWindow, SBNotificationLongLookBannerDestination, SBSetupManager, UIApplicationSceneDeactivationAssertion, UIView;
+@class BSServiceConnectionEndpoint, DNDEventBehaviorResolutionService, NCNotificationManagementViewPresenter, NCNotificationViewController, NSMutableArray, NSMutableSet, NSString, SBAppStatusBarSettingsAssertion, SBAssistantController, SBDashBoardLegibilityProvider, SBInAppStatusBarHiddenAssertion, SBLockScreenManager, SBNotificationBannerWindow, SBNotificationLongLookBannerDestination, SBSetupManager, UIApplicationSceneDeactivationAssertion, UIView;
 @protocol BSInvalidatable, NCNotificationAlertDestinationDelegate, NCNotificationDestinationDelegate, OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface SBNotificationBannerDestination : NSObject <NCNotificationViewControllerDelegatePrivate, CSExternalBehaviorProviding, SBFIdleTimerBehaviorProviding, SBFMotionGestureObserver, SBAssistantObserver, SBNotificationHomeAffordanceControllerClient, NCNotificationManagementContentProviderDelegate, NCNotificationManagementViewPresenterDelegate, NCNotificationAlertDestination, SBNotificationDestinationHomeButtonPressHandler, SBFNotificationExtensionVisibilityProviding, NCNotificationViewControllerDelegate, NCNotificationViewControllerObserving>
@@ -42,7 +42,7 @@
     NSObject<OS_dispatch_semaphore> *_pendingTransitionSemaphore;
     UIApplicationSceneDeactivationAssertion *_resignActiveAssertion;
     SBAppStatusBarSettingsAssertion *_systemStatusBarAssertion;
-    BSSimpleAssertion *_appsStatusBarAssertion;
+    SBInAppStatusBarHiddenAssertion *_appsStatusBarAssertion;
     SBNotificationLongLookBannerDestination *_longLookDestination;
     NSMutableSet *_destinationObservers;
     id <BSInvalidatable> _idleTimerDisableAssertion;
@@ -64,7 +64,7 @@
 @property(retain, nonatomic) id <BSInvalidatable> idleTimerDisableAssertion; // @synthesize idleTimerDisableAssertion=_idleTimerDisableAssertion;
 @property(retain, nonatomic) NSMutableSet *destinationObservers; // @synthesize destinationObservers=_destinationObservers;
 @property(retain, nonatomic) SBNotificationLongLookBannerDestination *longLookDestination; // @synthesize longLookDestination=_longLookDestination;
-@property(retain, nonatomic) BSSimpleAssertion *appsStatusBarAssertion; // @synthesize appsStatusBarAssertion=_appsStatusBarAssertion;
+@property(retain, nonatomic) SBInAppStatusBarHiddenAssertion *appsStatusBarAssertion; // @synthesize appsStatusBarAssertion=_appsStatusBarAssertion;
 @property(retain, nonatomic) SBAppStatusBarSettingsAssertion *systemStatusBarAssertion; // @synthesize systemStatusBarAssertion=_systemStatusBarAssertion;
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *resignActiveAssertion; // @synthesize resignActiveAssertion=_resignActiveAssertion;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *pendingTransitionSemaphore; // @synthesize pendingTransitionSemaphore=_pendingTransitionSemaphore;

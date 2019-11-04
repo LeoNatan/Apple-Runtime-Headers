@@ -7,12 +7,14 @@
 #import <SpringBoard/SBLayoutElementViewController.h>
 
 #import <SpringBoard/SBLayoutStateTransitionObserver-Protocol.h>
+#import <SpringBoard/SBMainDisplaySceneLayoutElementViewControlling-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSString, SBInlineAppExposeContainerViewController;
+@class BSCornerRadiusConfiguration, NSMutableSet, NSString, SBInlineAppExposeContainerViewController;
 
-@interface SBInlineAppExposeLayoutElementViewController : SBLayoutElementViewController <SBLayoutStateTransitionObserver>
+@interface SBInlineAppExposeLayoutElementViewController : SBLayoutElementViewController <SBLayoutStateTransitionObserver, SBMainDisplaySceneLayoutElementViewControlling>
 {
     SBInlineAppExposeContainerViewController *_inlineContainerViewController;
+    NSMutableSet *_maskDisplayCornersReasons;
 }
 
 - (void).cxx_destruct;
@@ -24,8 +26,13 @@
 - (void)configureWithWorkspaceEntity:(id)arg1 forLayoutElement:(id)arg2 layoutState:(id)arg3 referenceFrame:(struct CGRect)arg4;
 - (void)prepareForReuse;
 - (void)invalidate;
-- (id)relinquishInlineContainerViewController;
+- (id)animationControllerForTransitionRequest:(id)arg1;
+- (void)setShadowOffset:(double)arg1;
+- (void)setShadowOpacity:(double)arg1;
+- (void)setMaskDisplayCorners:(_Bool)arg1 forReason:(id)arg2;
 @property(retain, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
+- (_Bool)SB_conformsToMainDisplaySceneLayoutElementViewControlling;
+- (id)relinquishInlineContainerViewController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

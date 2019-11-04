@@ -26,7 +26,7 @@
 - (id)processInteraction:(id)arg1 bundleIdentifier:(id)arg2 protectionClass:(id)arg3;
 - (id)extractionsFromSearchableItem:(id)arg1;
 - (id)processSearchableItem:(id)arg1;
-- (void)extractAndDonateTopicsForText:(id)arg1 isPlainText:(_Bool)arg2 bundleId:(id)arg3 groupId:(id)arg4 documentId:(id)arg5 weight:(double)arg6;
+- (void)extractAndDonateTopicsForText:(id)arg1 isPlainText:(_Bool)arg2 bundleId:(id)arg3 groupId:(id)arg4 documentId:(id)arg5 weight:(double)arg6 isOutgoing:(_Bool)arg7;
 - (_Bool)_shouldDeferProcessingSearchableItem:(id)arg1;
 - (_Bool)interestedInSearchableItem:(id)arg1;
 - (id)setup;

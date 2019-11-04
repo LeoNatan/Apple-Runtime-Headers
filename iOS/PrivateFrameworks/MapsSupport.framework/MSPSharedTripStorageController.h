@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)removeSession:(id)arg1;
 - (void)addNewSession:(id)arg1 originator:(id)arg2 receivingHandle:(id)arg3 receivingAccountIdentifier:(id)arg4;
 - (id)groupSessionInfoForKey:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

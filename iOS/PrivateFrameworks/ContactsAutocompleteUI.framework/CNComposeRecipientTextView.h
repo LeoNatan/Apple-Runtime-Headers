@@ -37,12 +37,14 @@
     NSMutableArray *_recipientsBeingRemoved;
     NSUndoManager *_undoManager;
     struct CGRect _addButtonFrame;
-    _Bool _editable;
+    _Bool _usingActiveAppearance;
     _Bool _separatorHidden;
     _Bool _expanded;
     _Bool _didIgnoreFirstResponderResign;
     _Bool _showsAddButtonWhenExpanded;
     _Bool _expandRecipientsInNamedGroups;
+    _Bool _editable;
+    _Bool _enabled;
     int _hideLastAtomComma;
     UIFont *_baseFont;
     long long _maxRecipients;
@@ -54,8 +56,10 @@
 }
 
 + (id)defaultFont;
+@property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) UIView *atomContainerView; // @synthesize atomContainerView=_atomContainerView;
 @property(retain, nonatomic) _CNAtomTextAttachment *placeholderAttachment; // @synthesize placeholderAttachment=_placeholderAttachment;
+@property(nonatomic) _Bool editable; // @synthesize editable=_editable;
 @property(nonatomic) int hideLastAtomComma; // @synthesize hideLastAtomComma=_hideLastAtomComma;
 @property(nonatomic) double trailingButtonMidlineInsetFromLayoutMargin; // @synthesize trailingButtonMidlineInsetFromLayoutMargin=_trailingButtonMidlineInsetFromLayoutMargin;
 @property(retain, nonatomic) UIColor *typingTextColor; // @synthesize typingTextColor=_typingTextColor;
@@ -66,7 +70,7 @@
 @property(readonly, nonatomic) _Bool didIgnoreFirstResponderResign; // @synthesize didIgnoreFirstResponderResign=_didIgnoreFirstResponderResign;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
-@property(nonatomic) _Bool editable; // @synthesize editable=_editable;
+@property(nonatomic) _Bool usingActiveAppearance; // @synthesize usingActiveAppearance=_usingActiveAppearance;
 @property(nonatomic) _Bool indicatesUnsafeRecipientsWhenCollapsed; // @synthesize indicatesUnsafeRecipientsWhenCollapsed=_indicatesUnsafeRecipientsWhenCollapsed;
 - (void).cxx_destruct;
 - (void)composeRecipientAtomSelectNext:(id)arg1;
@@ -150,6 +154,7 @@
 - (_Bool)_hasUnsafeRecipients;
 - (void)_updateAddButtonVisibility;
 - (void)setEditable:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setUsingActiveAppearance:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, copy, nonatomic) NSArray *uncommentedAddresses;
 @property(copy, nonatomic) NSArray *addresses;
 - (void)_addButtonTapped:(id)arg1;

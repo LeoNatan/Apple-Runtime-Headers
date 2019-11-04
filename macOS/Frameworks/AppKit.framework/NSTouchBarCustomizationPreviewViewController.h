@@ -12,7 +12,7 @@
 #import <AppKit/NSTouchBarCustomizationPreviewInteractionCoordinatorDelegate-Protocol.h>
 #import <AppKit/NSTouchBarCustomizationPreviewMiniControlStripSectionLayoutDelegate-Protocol.h>
 
-@class NSArray, NSCollectionView, NSString, NSTouchBarCustomizationPreviewInteractionCoordinator, NSTouchBarItemTree, _NSFunctionRowCustomizationDFRItem;
+@class NSArray, NSCollectionView, NSFunctionRow, NSString, NSTouchBarCustomizationPreviewInteractionCoordinator, NSTouchBarItemTree, _NSFunctionRowCustomizationDFRItem;
 @protocol NSTouchBarCustomizationPreviewViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -22,9 +22,12 @@ __attribute__((visibility("hidden")))
     NSCollectionView *_customizationCollectionView;
     struct CGRect _escKeyRect;
     struct CGRect _applicationRect;
+    struct CGRect _miniControlStripRect;
+    struct CGRect _expandedControlStripRect;
     struct CGRect _systemTrayRect;
-    struct CGRect _systemBarRect;
     BOOL _animatedIn;
+    BOOL _forcesReducedMetricsCompression;
+    NSFunctionRow *_functionRow;
     long long _currentSection;
     NSTouchBarItemTree *_applicationItemTree;
     NSArray *_cachedApplicationPresentationItems;
@@ -44,19 +47,25 @@ __attribute__((visibility("hidden")))
     id _preCursorDraggedTree;
 }
 
-@property struct CGRect systemBarRect; // @synthesize systemBarRect=_systemBarRect;
-@property struct CGPoint cursorPoint; // @synthesize cursorPoint=_cursorPoint;
+@property BOOL forcesReducedMetricsCompression; // @synthesize forcesReducedMetricsCompression=_forcesReducedMetricsCompression;
 @property struct CGRect systemTrayRect; // @synthesize systemTrayRect=_systemTrayRect;
+@property struct CGRect expandedControlStripRect; // @synthesize expandedControlStripRect=_expandedControlStripRect;
+@property struct CGPoint cursorPoint; // @synthesize cursorPoint=_cursorPoint;
+@property struct CGRect miniControlStripRect; // @synthesize miniControlStripRect=_miniControlStripRect;
 @property struct CGRect applicationRect; // @synthesize applicationRect=_applicationRect;
 @property struct CGRect escKeyRect; // @synthesize escKeyRect=_escKeyRect;
+@property(retain) NSFunctionRow *functionRow; // @synthesize functionRow=_functionRow;
 @property __weak id <NSTouchBarCustomizationPreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)viewDidLayout;
+- (BOOL)shouldRemoveItemAtIndex:(long long)arg1 inSection:(long long)arg2 whenInRect:(struct CGRect)arg3;
+- (BOOL)isItemInRectInTrash:(struct CGRect)arg1;
 - (id)indexPathForInsertingItemWithFrame:(struct CGRect)arg1 withApproximateIndex:(id)arg2;
 - (BOOL)isItemAtIndexPathEditable:(id)arg1;
+- (BOOL)requiresCompressedMiniControlStripForLayout:(id)arg1;
 - (long long)controlStripGrabberStateInCollectionView:(id)arg1 layout:(id)arg2;
 - (BOOL)shouldShowDoneInCollectionView:(id)arg1 layout:(id)arg2;
 - (long long)deleteIconDisplayModeInCollectionView:(id)arg1 layout:(id)arg2;
+- (struct CGRect)closeButtonFrameForCollectionView:(id)arg1 layout:(id)arg2;
 - (struct CGRect)escapeKeyFrameForCollectionView:(id)arg1 layout:(id)arg2;
 - (double)visualCenterXOffsetForSectionLayout:(id)arg1;
 - (long long)sectionLayout:(id)arg1 itemStateForItemAtIndex:(long long)arg2 withFrame:(struct CGRect)arg3;
@@ -94,6 +103,7 @@ __attribute__((visibility("hidden")))
 - (id)_presentedMiniControlStripItems;
 - (id)_presentedApplicationItems;
 - (id)_presentedItemsInSection:(long long)arg1;
+- (void)updateModel:(CDUnknownBlockType)arg1 animated:(BOOL)arg2 animationDuration:(double)arg3;
 - (void)updateModel:(CDUnknownBlockType)arg1 animated:(BOOL)arg2;
 - (void)_setPendingItem:(id)arg1 inSection:(long long)arg2 reload:(BOOL)arg3;
 - (id)_pendingItemInSection:(long long)arg1;
@@ -118,6 +128,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)applicationSectionIsCustomizable;
 - (void)toggleGrabber:(id)arg1;
 - (void)done:(id)arg1;
+- (void)viewDidLayout;
 - (void)updateForAnimationOut;
 - (void)prepareToAnimateOut;
 - (void)updateForAnimationIn;

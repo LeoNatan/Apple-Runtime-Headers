@@ -9,6 +9,8 @@
 @interface _TtC7NewsUI237MyMagazinesSharingActivityItemFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: sharingActivityItemFactory
+    // Error parsing type: , name: bundleSubscriptionManager
+    // Error parsing type: , name: issueSubscriptionController
 }
 
 @end

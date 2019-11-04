@@ -19,6 +19,7 @@
     NSString *_part;
     _Bool _partial;
     _Bool _incomplete;
+    _Bool _relaxDataProtection;
 }
 
 - (void).cxx_destruct;
@@ -26,7 +27,7 @@
 - (void)done;
 - (int)appendData:(id)arg1;
 - (id)pathForStorage;
-- (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(_Bool)arg4 incomplete:(_Bool)arg5 compressionQueue:(id)arg6;
+- (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(_Bool)arg4 incomplete:(_Bool)arg5 relaxDataProtection:(_Bool)arg6 compressionQueue:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

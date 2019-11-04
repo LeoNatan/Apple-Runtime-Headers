@@ -95,6 +95,7 @@
 - (id)_removeProfile:(id)arg1;
 - (id)_installProfile:(id)arg1 accessRights:(int)arg2 installationType:(long long)arg3;
 - (id)_installProfile:(id)arg1 accessRights:(int)arg2;
+- (unsigned long long)_profileInstallationStyleForRequest:(id)arg1;
 - (id)_restrictions:(id)arg1 withProfileFilterFlags:(int)arg2;
 - (id)_restrictions:(id)arg1;
 - (id)_installedApplicationList:(id)arg1;

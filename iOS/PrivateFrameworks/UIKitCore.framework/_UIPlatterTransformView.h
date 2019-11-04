@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _UIPlatterTransformView : UIView
 {
     _Bool _hidesSourceView;
+    _Bool _forwardsHitTestingToSourceView;
     _Bool _matchesAlpha;
     _Bool _appliesMinificationFilter;
     _Bool _allowsUserInteraction;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsUserInteraction; // @synthesize allowsUserInteraction=_allowsUserInteraction;
 @property(nonatomic) _Bool appliesMinificationFilter; // @synthesize appliesMinificationFilter=_appliesMinificationFilter;
 @property(nonatomic) _Bool matchesAlpha; // @synthesize matchesAlpha=_matchesAlpha;
+@property(nonatomic) _Bool forwardsHitTestingToSourceView; // @synthesize forwardsHitTestingToSourceView=_forwardsHitTestingToSourceView;
 @property(nonatomic) _Bool hidesSourceView; // @synthesize hidesSourceView=_hidesSourceView;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

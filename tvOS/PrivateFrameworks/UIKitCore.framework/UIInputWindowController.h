@@ -88,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (void)beginFloatingTransitionFromPanGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) UIInputViewSetPlacement *expectedPlacement;
 @property(readonly, nonatomic) _Bool isTransitioningBetweenFloatingStates;
+- (void)updateKeyboardSizeClass;
 @property(readonly, nonatomic) _Bool isTransitioningBetweenKeyboardStates;
 @property(readonly, nonatomic) _Bool isTransitionStarted;
 @property(readonly, nonatomic) _Bool isTransitioning;
@@ -160,6 +161,7 @@ __attribute__((visibility("hidden")))
 - (void)popAnimationStyle;
 - (void)pushAnimationStyle:(id)arg1;
 - (void)updateForKeyplaneChangeWithContext:(id)arg1;
+- (void)setDisableUpdateMaskForSecureTextEntry:(_Bool)arg1;
 - (void)checkPlaceholdersForRemoteKeyboardsAndForceConstraintsUpdate:(_Bool)arg1 layoutSubviews:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (struct CGRect)convertRectFromContainerCoordinateSpaceToScreenSpace:(struct CGRect)arg1;
@@ -185,7 +187,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (void)updateSupportsDockViewController;
 - (struct UIEdgeInsets)_inputViewPadding;
-- (void)updateRootViewConstraintsForSceneFrame:(struct CGRect)arg1 bounds:(struct CGRect)arg2;
 - (void)updateViewConstraints;
 - (void)updateViewSizingConstraints;
 - (void)_presentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animationController:(id)arg4 interactionController:(id)arg5 completion:(CDUnknownBlockType)arg6;

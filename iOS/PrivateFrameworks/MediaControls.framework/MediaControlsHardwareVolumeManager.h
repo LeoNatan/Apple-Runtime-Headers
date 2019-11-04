@@ -7,10 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSMapTable;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface MediaControlsHardwareVolumeManager : NSObject
 {
+    NSObject<OS_dispatch_queue> *_avSystemControllerQueue;
     NSMapTable *_assertions;
     NSArray *_volumeButtonConsumerInvalidators;
 }

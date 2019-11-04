@@ -9,25 +9,25 @@
 #import <UIKitCore/UIActivityItemsConfigurationReading-Protocol.h>
 #import <UIKitCore/UINSActivityItemsConfigurationReading-Protocol.h>
 
-@class NSArray, NSPointerArray, NSString;
+@class NSArray, NSString, UIActivityViewController;
 
 @interface UIActivityItemsConfiguration : NSObject <UINSActivityItemsConfigurationReading, UIActivityItemsConfigurationReading>
 {
     NSArray *_itemProviders;
-    NSArray *_activityItemSources;
+    NSArray *_activityItems;
+    UIActivityViewController *_vc;
+    NSArray *_excludedActivityTypes;
     id _localObject;
     NSArray *_supportedInteractions;
     CDUnknownBlockType _metadataProvider;
     CDUnknownBlockType _perItemMetadataProvider;
     CDUnknownBlockType _previewProvider;
     CDUnknownBlockType _applicationActivitiesProvider;
-    NSPointerArray *__changeObservers;
 }
 
 + (id)_itemsForSystemSharingFromActivityItemsConfiguration:(id)arg1 wrapperBlock:(CDUnknownBlockType)arg2;
 + (id)activityItemsConfigurationWithItemProviders:(id)arg1;
 + (id)activityItemsConfigurationWithObjects:(id)arg1;
-@property(retain, nonatomic) NSPointerArray *_changeObservers; // @synthesize _changeObservers=__changeObservers;
 @property(copy, nonatomic) CDUnknownBlockType applicationActivitiesProvider; // @synthesize applicationActivitiesProvider=_applicationActivitiesProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) CDUnknownBlockType perItemMetadataProvider; // @synthesize perItemMetadataProvider=_perItemMetadataProvider;
@@ -35,6 +35,11 @@
 @property(copy, nonatomic) NSArray *supportedInteractions; // @synthesize supportedInteractions=_supportedInteractions;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *_uinsActivityItemSourceProxies;
+@property(readonly, nonatomic) NSArray *_uinsApplicationActivityProxies;
+@property(copy, nonatomic, setter=_setExcludedActivityTypes:) NSArray *_excludedActivityTypes;
+@property(readonly, copy, nonatomic) NSArray *_activityItems;
+@property(readonly, nonatomic) BOOL _hasItemsForActivityItemsConfiguration;
 @property(readonly, copy, nonatomic) NSArray *itemProvidersForActivityItemsConfiguration;
 @property(readonly, copy, nonatomic) NSArray *applicationActivitiesForActivityItemsConfiguration;
 - (id)activityItemsForSharing;
@@ -43,7 +48,7 @@
 - (id)activityItemsConfigurationMetadataForKey:(id)arg1;
 - (BOOL)activityItemsConfigurationSupportsInteraction:(id)arg1;
 - (id)itemProviders;
-@property(readonly, copy, nonatomic) NSArray *_activityItemSources;
+- (id)_initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
 - (id)_initWithActivityItemSources:(id)arg1;
 - (id)initWithItemProviders:(id)arg1;
 - (id)initWithObjects:(id)arg1;

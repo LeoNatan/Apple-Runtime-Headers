@@ -13,11 +13,13 @@
 @interface GEOLogMsgEventClientACSuggestions : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_entries;
     long long _overallLatencyInMs;
     NSMutableArray *_queryTokens;
     NSString *_query;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _keypressStatus;
     int _selectedIndex;
     int _selectedSectionIndex;
@@ -107,6 +109,8 @@
 @property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
 - (void)_readQuery;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

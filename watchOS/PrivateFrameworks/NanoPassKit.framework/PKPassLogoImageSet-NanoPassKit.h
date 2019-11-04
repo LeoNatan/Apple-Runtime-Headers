@@ -10,6 +10,7 @@
 - (_Bool)npkHasValidPaymentCardAssets;
 - (void)loadPDFArtFromBundle:(id)arg1 targetSize:(struct CGSize)arg2 scale:(float)arg3;
 - (void)loadPDFArtFromBundle:(id)arg1;
+- (void)memoryMapImageData;
 - (void)resizeWithScreenSize:(struct CGSize)arg1;
 @end
 

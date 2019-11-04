@@ -13,7 +13,6 @@
 @interface GEOPDPlaceResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOClientMetrics *_clientMetrics;
     GEOPDDatasetABStatus *_datasetAbStatus;
@@ -24,6 +23,9 @@
     GEOPDPlaceGlobalResult *_globalResult;
     NSMutableArray *_placeResults;
     NSMutableArray *_spokenLanguages;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _requestType;
     int _status;
     struct {
@@ -118,6 +120,8 @@
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
 @property(nonatomic) int status;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)_disambiguationLabels;
 - (id)initWithPlace:(id)arg1 forRequestType:(int)arg2;
 

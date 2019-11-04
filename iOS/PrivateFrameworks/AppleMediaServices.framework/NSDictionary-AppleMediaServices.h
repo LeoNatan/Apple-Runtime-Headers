@@ -15,6 +15,9 @@
 - (id)ams_objectForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)ams_objectForCaseInsensitiveKey:(id)arg1;
 - (id)ams_mapWithTransform:(CDUnknownBlockType)arg1;
+- (id)ams_firstObjectPassingTest:(CDUnknownBlockType)arg1;
+- (id)ams_firstKeyObjectPassingTest:(CDUnknownBlockType)arg1;
+- (id)ams_firstKeyPassingTest:(CDUnknownBlockType)arg1;
 - (id)ams_filterUsingTest:(CDUnknownBlockType)arg1;
 - (id)ams_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (id)ams_componentsJoinedByString:(id)arg1;

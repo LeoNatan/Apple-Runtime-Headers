@@ -38,6 +38,7 @@
     NSMutableArray *_inFlightTickets;
     NSMutableArray *_pendingTickets;
     _Bool _shouldDisplayNoResults;
+    _Bool _shouldEnableRAPForNoResults;
     _Bool _autocompleteTopSectionIsQuerySuggestions;
     _Bool _showAutocompleteClientSource;
     _Bool _shouldPreloadTransitInfo;
@@ -57,6 +58,7 @@
 @property(readonly, nonatomic, getter=_autocompleteTopSectionIsQuerySuggestions) _Bool autocompleteTopSectionIsQuerySuggestions; // @synthesize autocompleteTopSectionIsQuerySuggestions=_autocompleteTopSectionIsQuerySuggestions;
 @property(readonly, nonatomic, getter=_sortPriorityMapping) GEOSortPriorityMapping *sortPriorityMapping; // @synthesize sortPriorityMapping=_sortPriorityMapping;
 @property(readonly, nonatomic, getter=_clientRankingModel) GEOClientRankingModel *clientRankingModel; // @synthesize clientRankingModel=_clientRankingModel;
+@property(readonly, nonatomic, getter=_shouldEnableRAPForNoResults) _Bool shouldEnableRAPForNoResults; // @synthesize shouldEnableRAPForNoResults=_shouldEnableRAPForNoResults;
 @property(readonly, nonatomic, getter=_shouldDisplayNoResults) _Bool shouldDisplayNoResults; // @synthesize shouldDisplayNoResults=_shouldDisplayNoResults;
 @property(retain, nonatomic) id <MKAutocompleteAnalyticsProvider> analyticsProvider; // @synthesize analyticsProvider=_analyticsProvider;
 @property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
@@ -96,8 +98,8 @@
 - (id)_completionTicketForFilterTypeWithTraits:(id)arg1;
 - (void)_fireRequest;
 - (void)_handleError:(id)arg1 forTicket:(id)arg2;
-- (void)_notifyDelegatesWithResults:(id)arg1 sections:(id)arg2 shouldDisplayNoResults:(_Bool)arg3 ticket:(id)arg4;
-- (void)_handleCompletion:(id)arg1 shouldDisplayNoResults:(_Bool)arg2 forTicket:(id)arg3;
+- (void)_notifyDelegatesWithResults:(id)arg1 sections:(id)arg2 shouldDisplayNoResults:(_Bool)arg3 shouldEnableRAPForNoResults:(_Bool)arg4 ticket:(id)arg5;
+- (void)_handleCompletion:(id)arg1 shouldDisplayNoResults:(_Bool)arg2 shouldEnableRAPForNoResults:(_Bool)arg3 forTicket:(id)arg4;
 - (void)dealloc;
 - (id)init;
 

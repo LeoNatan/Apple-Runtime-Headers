@@ -4,15 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Home/HFAccessoryProfileGroupItem.h>
+#import <Home/HFItemGroupItem.h>
 
-@interface HFNetworkConfigurationGroupItem : HFAccessoryProfileGroupItem
+#import <Home/HFHomeKitItemProtocol-Protocol.h>
+
+@class HMAccessoryNetworkProtectionGroup, NSSet, NSString;
+@protocol HFCharacteristicValueSource, HFHomeKitObject;
+
+@interface HFNetworkConfigurationGroupItem : HFItemGroupItem <HFHomeKitItemProtocol>
 {
+    HMAccessoryNetworkProtectionGroup *_group;
+    id <HFCharacteristicValueSource> _valueSource;
 }
 
-+ (int)_groupCurrentProtectionModeForProfiles:(id)arg1;
-- (id)_buildProfileItems;
+@property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
+@property(readonly, nonatomic) HMAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
+- (void).cxx_destruct;
+- (id)copyWithValueSource:(id)arg1;
+@property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)_subclass_updateWithOptions:(id)arg1;
+@property(readonly, nonatomic) NSSet *profiles;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
+- (id)initWithGroup:(id)arg1 valueSource:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,17 +6,19 @@
 
 #import <ReminderKit/NSObject-Protocol.h>
 
+@class NSString;
 @protocol REMXPCChangeTrackingPerformer, REMXPCDebugPerformer, REMXPCIndexingPerformer, REMXPCStorePerformer, REMXPCSyncInterfacePerformer;
 
 @protocol REMDaemonController <NSObject>
 - (void)invalidate;
-- (void)asyncIndexingPerformerWithLoadHandler:(void (^)(id <REMXPCIndexingPerformer>))arg1 errorHandler:(void (^)(NSError *))arg2;
-- (id <REMXPCIndexingPerformer>)syncIndexingPerformerWithErrorHandler:(void (^)(NSError *))arg1;
-- (void)asyncSyncInterfacePerformerWithLoadHandler:(void (^)(id <REMXPCSyncInterfacePerformer>))arg1 errorHandler:(void (^)(NSError *))arg2;
-- (id <REMXPCSyncInterfacePerformer>)syncSyncInterfacePerformerWithErrorHandler:(void (^)(NSError *))arg1;
-- (void)asyncStorePerformerWithLoadHandler:(void (^)(id <REMXPCStorePerformer>))arg1 errorHandler:(void (^)(NSError *))arg2;
-- (id <REMXPCStorePerformer>)syncStorePerformerWithErrorHandler:(void (^)(NSError *))arg1;
+- (void)asyncIndexingPerformerWithReason:(NSString *)arg1 loadHandler:(void (^)(id <REMXPCIndexingPerformer>))arg2 errorHandler:(void (^)(NSError *))arg3;
+- (id <REMXPCIndexingPerformer>)syncIndexingPerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
+- (void)asyncSyncInterfacePerformerWithReason:(NSString *)arg1 loadHandler:(void (^)(id <REMXPCSyncInterfacePerformer>))arg2 errorHandler:(void (^)(NSError *))arg3;
+- (id <REMXPCSyncInterfacePerformer>)syncSyncInterfacePerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
+- (void)asyncStorePerformerWithReason:(NSString *)arg1 loadHandler:(void (^)(id <REMXPCStorePerformer>))arg2 errorHandler:(void (^)(NSError *))arg3;
+- (id <REMXPCStorePerformer>)syncStorePerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
 - (id <REMXPCDebugPerformer>)syncDebugPerformerWithErrorHandler:(void (^)(NSError *))arg1;
-- (id <REMXPCChangeTrackingPerformer>)syncChangeTrackingPerformerWithErrorHandler:(void (^)(NSError *))arg1;
+- (id <REMXPCDebugPerformer>)syncDebugPerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
+- (id <REMXPCChangeTrackingPerformer>)syncChangeTrackingPerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
 @end
 

@@ -17,7 +17,7 @@
 }
 
 @property(readonly, nonatomic) id <EDIndexableItem> referenceItem; // @synthesize referenceItem=_referenceItem;
-@property(copy, nonatomic) NSMutableArray *items; // @synthesize items=_items;
+@property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (unsigned long long)hash;

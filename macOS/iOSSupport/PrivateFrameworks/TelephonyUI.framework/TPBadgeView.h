@@ -16,24 +16,22 @@
     UILabel *_titleLabel;
     double _titleLabelFontSize;
     double _layerCornerRadius;
-    NSLayoutConstraint *_titleLabelFirstBaselineAnchorLayoutConstraint;
-    NSLayoutConstraint *_titleLabelLastBaselineAnchorLayoutConstraint;
+    NSLayoutConstraint *_heightAnchorLayoutConstraint;
+    NSLayoutConstraint *_widthAnchorLayoutConstraint;
     NSLayoutConstraint *_titleLabelLeadingAnchorLayoutConstraint;
     NSLayoutConstraint *_titleLabelTrailingAnchorLayoutConstraint;
-    double _titleLabelFirstBaselineAnchorLayoutConstraintConstant;
-    double _titleLabelLastBaselineAnchorLayoutConstraintConstant;
+    double _heightAnchorLayoutConstraintConstantFontMultiplier;
     double _titleLabelLeadingAnchorLayoutConstraintConstant;
     double _titleLabelTrailingAnchorLayoutConstraintConstant;
 }
 
 @property(nonatomic) double titleLabelTrailingAnchorLayoutConstraintConstant; // @synthesize titleLabelTrailingAnchorLayoutConstraintConstant=_titleLabelTrailingAnchorLayoutConstraintConstant;
 @property(nonatomic) double titleLabelLeadingAnchorLayoutConstraintConstant; // @synthesize titleLabelLeadingAnchorLayoutConstraintConstant=_titleLabelLeadingAnchorLayoutConstraintConstant;
-@property(nonatomic) double titleLabelLastBaselineAnchorLayoutConstraintConstant; // @synthesize titleLabelLastBaselineAnchorLayoutConstraintConstant=_titleLabelLastBaselineAnchorLayoutConstraintConstant;
-@property(nonatomic) double titleLabelFirstBaselineAnchorLayoutConstraintConstant; // @synthesize titleLabelFirstBaselineAnchorLayoutConstraintConstant=_titleLabelFirstBaselineAnchorLayoutConstraintConstant;
+@property(nonatomic) double heightAnchorLayoutConstraintConstantFontMultiplier; // @synthesize heightAnchorLayoutConstraintConstantFontMultiplier=_heightAnchorLayoutConstraintConstantFontMultiplier;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTrailingAnchorLayoutConstraint; // @synthesize titleLabelTrailingAnchorLayoutConstraint=_titleLabelTrailingAnchorLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelLeadingAnchorLayoutConstraint; // @synthesize titleLabelLeadingAnchorLayoutConstraint=_titleLabelLeadingAnchorLayoutConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *titleLabelLastBaselineAnchorLayoutConstraint; // @synthesize titleLabelLastBaselineAnchorLayoutConstraint=_titleLabelLastBaselineAnchorLayoutConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *titleLabelFirstBaselineAnchorLayoutConstraint; // @synthesize titleLabelFirstBaselineAnchorLayoutConstraint=_titleLabelFirstBaselineAnchorLayoutConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *widthAnchorLayoutConstraint; // @synthesize widthAnchorLayoutConstraint=_widthAnchorLayoutConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *heightAnchorLayoutConstraint; // @synthesize heightAnchorLayoutConstraint=_heightAnchorLayoutConstraint;
 @property(nonatomic) double layerCornerRadius; // @synthesize layerCornerRadius=_layerCornerRadius;
 @property(nonatomic) double titleLabelFontSize; // @synthesize titleLabelFontSize=_titleLabelFontSize;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -41,7 +39,9 @@
 @property(nonatomic) unsigned long long theme; // @synthesize theme=_theme;
 @property(nonatomic) unsigned long long sizeCategory; // @synthesize sizeCategory=_sizeCategory;
 - (void).cxx_destruct;
-- (struct CGSize)intrinsicContentSize;
+- (double)scaledLayoutValueForBaseValue:(double)arg1 shouldLowerBound:(BOOL)arg2;
+- (double)scaledLayoutValueForBaseValue:(double)arg1;
+- (void)updateActiveHorizontalConstraints;
 - (void)updateTheme;
 - (void)updateSizeCategory;
 - (void)updateFonts;

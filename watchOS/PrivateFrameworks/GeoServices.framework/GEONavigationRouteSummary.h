@@ -13,11 +13,13 @@
 @interface GEONavigationRouteSummary : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_destinationName;
     GEOComposedWaypoint *_destination;
     GEOComposedWaypoint *_origin;
     double _travelTime;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _transportType;
     struct {
         unsigned int has_travelTime:1;
@@ -60,6 +62,8 @@
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransportType;
 @property(nonatomic) int transportType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)setRoute:(id)arg1;
 - (id)initWithRoute:(id)arg1 destinationName:(id)arg2;
 

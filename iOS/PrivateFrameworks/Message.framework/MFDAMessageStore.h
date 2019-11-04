@@ -16,9 +16,6 @@
 
 @property(nonatomic) _Bool backedByVirtualAllSearchMailbox; // @synthesize backedByVirtualAllSearchMailbox=_backedByVirtualAllSearchMailbox;
 - (void).cxx_destruct;
-- (id)additionalHeadersForForwardOfMessage:(id)arg1;
-- (id)additionalHeadersForReplyOfMessage:(id)arg1;
-- (id)_additionalHeadersForAction:(int)arg1 ofMessage:(id)arg2;
 - (_Bool)messageCanBeTriaged:(id)arg1;
 - (unsigned long long)growFetchWindow;
 - (_Bool)shouldGrowFetchWindow;
@@ -46,12 +43,12 @@
 - (id)messageForRemoteID:(id)arg1;
 - (_Bool)allowsAppend;
 - (void)setFlagsForAllMessagesFromDictionary:(id)arg1;
-- (_Bool)replayFlagChange:(id)arg1 forRemoteIDs:(id)arg2 error:(id *)arg3;
+- (_Bool)replayFlagChange:(id)arg1 forRemoteIDs:(id)arg2 error:(id *)arg3 completed:(_Bool *)arg4;
 - (id)storeSearchResultMatchingSearchText:(id)arg1 criterion:(id)arg2 limit:(unsigned int)arg3 offset:(id)arg4 error:(id *)arg5;
 - (long long)fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
 - (void)_remoteIDsMatchingSearchText:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 offset:(id)arg4 filterByDate:(_Bool)arg5 handler:(CDUnknownBlockType)arg6;
 - (long long)fetchNumMessages:(unsigned long long)arg1 preservingUID:(id)arg2 options:(unsigned long long)arg3;
-- (id)_folderIDForFetching;
+- (id)folderIDForFetching;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(_Bool)arg2;
 
 @end

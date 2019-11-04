@@ -16,5 +16,6 @@
 - (id)__im_assistant_initWithContact:(id)arg1 imHandle:(id)arg2 type:(long long)arg3 label:(id)arg4;
 - (id)__im_assistant_initWithContact:(id)arg1 imHandle:(id)arg2;
 - (id)__im_assistant_initWithContact:(id)arg1 unformattedPersonHandle:(id)arg2 accountDataSource:(id)arg3;
+- (id)__im_assistant_initWithHandleFromContact:(id)arg1 accountDataSource:(id)arg2;
 @end
 

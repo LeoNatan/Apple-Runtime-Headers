@@ -41,8 +41,8 @@
 - (void)choiceTapped:(id)arg1;
 - (void)setHelpLinkTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setSecondChoiceTitle:(id)arg1;
-- (void)setFirstChoiceTitle:(id)arg1;
+- (void)setSecondChoiceTitle:(id)arg1 withColor:(id)arg2;
+- (void)setFirstChoiceTitle:(id)arg1 withColor:(id)arg2;
 @property(readonly, nonatomic) UIView<RUIHeader> *headerView;
 - (id)init;
 

@@ -42,6 +42,7 @@
 @property(retain, nonatomic) AXGestureRecorderStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) __weak id <AXGestureRecorderViewDelegate> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)hideStaticView;
 - (void)deleteAllFingerPaths;
 - (void)freezeAllDynamicFingerPathsWithInstantReplayOffset:(unsigned int)arg1;

@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOURLPresent : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_items;
     GEOURLOptions *_options;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_items:1;
         unsigned int read_options:1;
@@ -48,6 +50,8 @@ __attribute__((visibility("hidden")))
 - (void)clearItems;
 @property(retain, nonatomic) NSMutableArray *items;
 - (void)_readItems;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithDirectionsOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1;
 

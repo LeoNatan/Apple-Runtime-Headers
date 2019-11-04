@@ -42,8 +42,14 @@
 - (id)_currentDate;
 - (double)_prePlayAudioTimeInterval;
 - (double)_preWakeTimeInterval;
-- (_Bool)canActivateTapticChimes;
+- (_Bool)canPlayScheduledTapticChime;
+- (_Bool)canScheduleTapticChimes;
+- (_Bool)processIsAllowedToScheduleChimes;
+- (_Bool)canPlayTapticChime;
+- (void)_tapticChimesStateDidChange:(_Bool)arg1;
 - (void)dealloc;
+- (void)_unregisterForNotifications;
+- (void)_registerForNotifications;
 - (id)_init;
 
 // Remaining properties

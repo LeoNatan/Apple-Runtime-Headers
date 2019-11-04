@@ -14,6 +14,7 @@
 }
 
 + (void)initialize;
+- (_Bool)isDeepFusionSupported;
 - (_Bool)isDeferredPhotoProcessingSupported;
 - (_Bool)isNonDestructiveCropSupported;
 - (float)spatialOverCapturePercentage;

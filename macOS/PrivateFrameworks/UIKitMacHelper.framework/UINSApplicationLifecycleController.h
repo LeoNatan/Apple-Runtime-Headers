@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UINSApplicationDelegate *appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(nonatomic) BOOL isAttemptingTermination; // @synthesize isAttemptingTermination=_isAttemptingTermination;
 - (void).cxx_destruct;
+- (void)_setLSNextAppLaunchDelay;
 - (void)_setLSRestoreTypeToForeground:(BOOL)arg1;
 - (void)_endWindowOrderBatching;
 - (void)_startWindowOrderBatching;

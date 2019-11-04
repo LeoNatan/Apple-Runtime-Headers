@@ -18,10 +18,10 @@
 @property(nonatomic) unsigned long long networkStatus; // @synthesize networkStatus=_networkStatus;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleNetworkRouterSatelliteAddedOrRemoved:(id)arg1;
-- (void)handleAccessoryIsReachable:(id)arg1;
+- (void)handleAccessoryConfigured:(id)arg1;
 - (void)__notifyClientsOfUpdatedSatelliteProfiles;
 - (id)idenfifiersForSatelliteProfiles;
-- (void)__handleAccessoryIsReachable;
+- (void)__handleAccessoryConfigured;
 - (void)handleCharacteristicValuesChanged:(id)arg1;
 - (void)_handleCharacteristicChanges:(id)arg1;
 - (void)__handleNetworkAccessViolationUpdate:(id)arg1;

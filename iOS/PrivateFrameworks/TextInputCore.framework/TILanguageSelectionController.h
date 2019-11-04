@@ -30,6 +30,7 @@
 + (id)inputModesForLanguageIdentifiers:(id)arg1;
 + (id)inputModeForLanguageIdentifier:(id)arg1;
 + (id)inferInputModeForLanguage:(id)arg1 enabled:(id)arg2;
++ (id)inferSecondaryInputModeForPrimary:(id)arg1 enabled:(id)arg2 enabledExcludingPreferredLanguages:(id)arg3;
 + (id)inferSecondaryInputModeForPrimary:(id)arg1 enabled:(id)arg2;
 + (id)multilingualInputModesForInputModes:(id)arg1;
 + (id)sharedLanguageLikelihoodModel;
@@ -60,6 +61,7 @@
 - (void)appleKeyboardsInternalSettingsChanged:(id)arg1;
 - (void)appleKeyboardsPreferencesChanged:(id)arg1;
 - (id)fetchPreferredSecondaryInputMode;
+- (id)fetchUserEnabledInputModesExcludingPreferredLanguages;
 - (id)fetchUserEnabledInputModes;
 - (void)dealloc;
 - (id)initWithLanguageLikelihoodModel:(id)arg1 preferenceProvider:(id)arg2;

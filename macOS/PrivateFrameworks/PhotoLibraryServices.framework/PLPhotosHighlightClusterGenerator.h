@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDateInterval, PLFrequentLocationManager, PLLocalCreationDateCreator;
+@class NSArray, NSDateInterval, PLDateRangeTitleGenerator, PLFrequentLocationManager, PLLocalCreationDateCreator;
 
 @interface PLPhotosHighlightClusterGenerator : NSObject
 {
@@ -14,8 +14,10 @@
     PLFrequentLocationManager *_frequentLocationManager;
     NSDateInterval *_recentHighlightsDateInterval;
     PLLocalCreationDateCreator *_localCreationDateCreator;
+    PLDateRangeTitleGenerator *_dateRangeTitleGenerator;
 }
 
+@property(readonly, nonatomic) PLDateRangeTitleGenerator *dateRangeTitleGenerator; // @synthesize dateRangeTitleGenerator=_dateRangeTitleGenerator;
 @property(readonly, nonatomic) PLLocalCreationDateCreator *localCreationDateCreator; // @synthesize localCreationDateCreator=_localCreationDateCreator;
 @property(readonly, nonatomic) NSDateInterval *recentHighlightsDateInterval; // @synthesize recentHighlightsDateInterval=_recentHighlightsDateInterval;
 @property(readonly, nonatomic) PLFrequentLocationManager *frequentLocationManager; // @synthesize frequentLocationManager=_frequentLocationManager;
@@ -35,7 +37,7 @@
 - (BOOL)_isRecent:(id)arg1;
 - (id)_dayMomentClustersWithMomentsSortedByDate:(id)arg1 localCreationDateCreator:(id)arg2;
 - (id)highlightClustersIntersectingMoments:(id)arg1 includeAllTripHighlightClusters:(BOOL)arg2;
-- (id)initWithAllMoments:(id)arg1 frequentLocationManager:(id)arg2 recentHighlightDateInterval:(id)arg3 localCreationDateCreator:(id)arg4;
+- (id)initWithAllMoments:(id)arg1 frequentLocationManager:(id)arg2 recentHighlightDateInterval:(id)arg3 localCreationDateCreator:(id)arg4 dateRangeTitleGenerator:(id)arg5;
 
 @end
 

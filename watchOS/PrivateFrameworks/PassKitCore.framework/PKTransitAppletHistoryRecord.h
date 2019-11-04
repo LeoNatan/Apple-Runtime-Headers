@@ -13,6 +13,7 @@
 
 @interface PKTransitAppletHistoryRecord : NSObject <NSCopying, NSSecureCoding>
 {
+    unsigned int _transitModifiers;
     NSNumber *_historySequenceNumber;
     unsigned int _type;
     unsigned int _subtype;

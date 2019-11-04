@@ -9,7 +9,7 @@
 @class AVOutputDevice, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @protocol AVOutputDeviceImpl <NSObject>
-@property(copy, nonatomic) NSString *currentBluetoothListeningMode;
+@property(readonly, nonatomic) NSString *currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
 @property(readonly, nonatomic) _Bool supportsBluetoothSharing;
 @property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
@@ -55,6 +55,7 @@
 @property(readonly, copy, nonatomic) NSString *name;
 @property __weak AVOutputDevice *parentOutputDevice;
 - (void)configureUsingBlock:(void (^)(id <AVOutputDeviceConfigurationModification>))arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(int, id <AVOutputDeviceConfigurationRetrieval>, NSString *, NSError *))arg3;
+- (_Bool)setCurrentBluetoothListeningMode:(NSString *)arg1 error:(id *)arg2;
 - (void)setVolume:(float)arg1;
 - (void)setSecondDisplayEnabled:(_Bool)arg1;
 @end

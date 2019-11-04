@@ -26,7 +26,7 @@
 #import <MessageUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <MessageUI/VNDocumentCameraViewControllerDelegate-Protocol.h>
 
-@class CNComposeRecipient, CNComposeRecipientAtom, CNContactPickerViewController, CNContactViewController, CNRecentComposeRecipient, EFFuture, EMMailboxObjectID, EMMessageObjectID, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeDisplayMetrics, MFComposeImageSizeView, MFComposeSubjectView, MFLANHandoffAgent, MFLock, MFMailComposeRecipientTextView, MFMailComposeToField, MFMailPopoverManager, MFMailSignatureController, MFMessageContentProgressLayer, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFPhotoPickerController, MFSecureMIMECompositionManager, MSAutosaveSession, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIButton, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, VNDocumentCameraViewController, _MFMailCompositionContext;
+@class CNComposeRecipient, CNComposeRecipientAtom, CNContactPickerViewController, CNContactViewController, CNRecentComposeRecipient, EFFuture, EMMailboxObjectID, EMMessageObjectID, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeDisplayMetrics, MFComposeImageSizeView, MFComposeSubjectView, MFLANHandoffAgent, MFLock, MFMailComposeRecipientTextView, MFMailComposeToField, MFMailPopoverManager, MFMailSignatureController, MFMessageContentProgressLayer, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFPhotoPickerController, MFPhotoPickerProgressManager, MFSecureMIMECompositionManager, MSAutosaveSession, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIButton, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, VNDocumentCameraViewController, _MFMailCompositionContext;
 @protocol EFScheduler, MFComposeBodyField, MFMailAccountProxyGenerator, OS_dispatch_group;
 
 @interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactContentViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityHandoffOperationDelegate, MFPhotoPickerControllerDelegate, QLPreviewControllerDelegate, VNDocumentCameraViewControllerDelegate, MFMailComposeViewDelegate, CNComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, MFMailComposeRecipientTextViewDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, CNAutocompleteGroupDetailViewControllerDelegate, CNContactPickerDelegate>
@@ -142,6 +142,7 @@
     MSAutosaveSession *_autosaveSession;
     VNDocumentCameraViewController *_documentCameraViewController;
     MFComposeDisplayMetrics *_displayMetrics;
+    MFPhotoPickerProgressManager *_photoPickerProgressManager;
 }
 
 + (id)preferenceForKey:(id)arg1;
@@ -150,6 +151,7 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
 + (id)signpostLog;
+@property(retain, nonatomic) MFPhotoPickerProgressManager *photoPickerProgressManager; // @synthesize photoPickerProgressManager=_photoPickerProgressManager;
 @property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(nonatomic) __weak VNDocumentCameraViewController *documentCameraViewController; // @synthesize documentCameraViewController=_documentCameraViewController;
 @property(retain, nonatomic) MSAutosaveSession *autosaveSession; // @synthesize autosaveSession=_autosaveSession;
@@ -353,6 +355,7 @@
 - (void)_promptForMailDropIfNecessaryWithContinuation:(CDUnknownBlockType)arg1;
 - (void)_checkForUnencryptedWithContinuation:(CDUnknownBlockType)arg1;
 - (void)_checkForCanSendMailWithContinuation:(CDUnknownBlockType)arg1;
+- (void)_checkForInFlightAssetDownloadsWithContinuation:(CDUnknownBlockType)arg1;
 - (void)_checkForEmptySubjectWithContinuation:(CDUnknownBlockType)arg1;
 - (void)_checkForInvalidAddressesWithContinuation:(CDUnknownBlockType)arg1;
 - (void)send:(id)arg1;
@@ -462,11 +465,10 @@
 - (void)finalizeSignature:(CDUnknownBlockType)arg1;
 - (void)updateSignature;
 - (void)addSignature:(_Bool)arg1;
-- (void)previewController:(id)arg1 updatedContentsURL:(id)arg2 forEditedItem:(id)arg3;
+- (void)previewController:(id)arg1 didSaveEditedCopyOfPreviewItem:(id)arg2 atURL:(id)arg3;
 - (id)dismissActionsForPreviewController:(id)arg1;
 - (void)previewControllerDidDismiss:(id)arg1;
-- (_Bool)previewController:(id)arg1 shouldSaveEditedItem:(id)arg2;
-- (_Bool)previewController:(id)arg1 canEditItem:(id)arg2;
+- (long long)previewController:(id)arg1 editingModeForPreviewItem:(id)arg2;
 - (id)_backgroundColorForMarkupController;
 - (void)_documentCameraViewControllerDidFinish;
 - (void)documentCameraViewControllerDidCancel:(id)arg1;

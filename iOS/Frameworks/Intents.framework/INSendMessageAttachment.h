@@ -6,21 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <Intents/INFileURLEnumerable-Protocol.h>
+#import <Intents/INFileEnumerable-Protocol.h>
 #import <Intents/INJSONSerializable-Protocol.h>
 
-@class INFile, NSString;
+@class INFile, NSString, NSURL;
 
-@interface INSendMessageAttachment : NSObject <INJSONSerializable, INFileURLEnumerable>
+@interface INSendMessageAttachment : NSObject <INJSONSerializable, INFileEnumerable>
 {
     _Bool _currentLocation;
     INFile *_file;
+    NSURL *_speechDataURL;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)attachmentWithSpeechDataURL:(id)arg1;
 + (id)attachmentWithFile:(id)arg1;
 + (id)attachmentWithCurrentLocation;
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
+@property(readonly, copy, nonatomic) NSURL *speechDataURL; // @synthesize speechDataURL=_speechDataURL;
 @property(readonly, copy, nonatomic) INFile *file; // @synthesize file=_file;
 @property(readonly, nonatomic) _Bool currentLocation; // @synthesize currentLocation=_currentLocation;
 - (void).cxx_destruct;
@@ -30,9 +33,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)_initWithCurrentLocation:(_Bool)arg1 file:(id)arg2;
+- (id)_initWithCurrentLocation:(_Bool)arg1 file:(id)arg2 speechDataURL:(id)arg3;
 - (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
-- (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
+- (void)_intents_enumerateFileURLsWithBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
+- (void)_intents_enumerateFilesWithBlock:(CDUnknownBlockType)arg1 mutate:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

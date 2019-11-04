@@ -43,7 +43,7 @@
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
 - (id)availableBluetoothListeningModes;
-- (void)setCurrentBluetoothListeningMode:(id)arg1;
+- (BOOL)setCurrentBluetoothListeningMode:(id)arg1 error:(id *)arg2;
 - (id)currentBluetoothListeningMode;
 - (BOOL)isPickedOnPairedDevice;
 - (BOOL)isDeviceGroupable;

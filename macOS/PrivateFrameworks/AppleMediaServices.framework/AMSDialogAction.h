@@ -14,7 +14,6 @@
 {
     BOOL _inferLinkDestination;
     BOOL _shouldRetry;
-    BOOL _createAskPermissionRequest;
     NSURL *_deepLink;
     NSString *_identifier;
     AMSMetricsEvent *_metricsEvent;
@@ -28,11 +27,10 @@
 + (id)actionWithTitle:(id)arg1 identifier:(id)arg2;
 + (id)actionWithTitle:(id)arg1 style:(long long)arg2;
 + (id)actionWithTitle:(id)arg1;
-@property BOOL createAskPermissionRequest; // @synthesize createAskPermissionRequest=_createAskPermissionRequest;
+@property BOOL shouldRetry; // @synthesize shouldRetry=_shouldRetry;
 @property(copy) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property long long style; // @synthesize style=_style;
-@property BOOL shouldRetry; // @synthesize shouldRetry=_shouldRetry;
 @property(copy) NSURLRequest *request; // @synthesize request=_request;
 @property(copy) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
 @property BOOL inferLinkDestination; // @synthesize inferLinkDestination=_inferLinkDestination;

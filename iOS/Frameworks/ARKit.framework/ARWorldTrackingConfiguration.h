@@ -63,7 +63,6 @@
 - (id)secondaryTechniques;
 - (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
 - (_Bool)shouldEnableVisionDataForImageSensorSettings:(id)arg1;
-- (id)visionDataParametersForWorldTrackingOptions:(id)arg1;
 - (_Bool)shouldUseSuperWide;
 @property(readonly, nonatomic) ARImageSensorSettings *imageSensorSettingsForSuperWide;
 - (id)imageSensorSettingsForUserFaceTracking;

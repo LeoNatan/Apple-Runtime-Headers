@@ -32,7 +32,7 @@
 - (void)_clearState;
 - (void)applicationSceneViewController:(id)arg1 didUpdateStatusBarSettings:(id)arg2;
 - (void)sceneWithIdentifier:(id)arg1 didChangeSceneInterfaceOrientationTo:(long long)arg2;
-- (long long)_overrideStatusBarOrientation;
+- (long long)_overrideStatusBarOrientationGivenFallbackOrientation:(long long)arg1;
 - (id)_deviceApplicationSceneHandle;
 - (void)sceneHandle:(id)arg1 didUpdateContentState:(long long)arg2;
 - (void)sceneHandle:(id)arg1 didUpdatePairingStatusForExternalSceneIdentifiers:(id)arg2;

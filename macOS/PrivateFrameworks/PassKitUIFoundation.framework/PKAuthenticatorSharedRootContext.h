@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class LAContext, NSLock;
+@class LAContext;
 
 @interface PKAuthenticatorSharedRootContext : NSObject
 {
-    NSLock *_lock;
+    struct os_unfair_lock_s _lock;
     LAContext *_LAContext;
 }
 

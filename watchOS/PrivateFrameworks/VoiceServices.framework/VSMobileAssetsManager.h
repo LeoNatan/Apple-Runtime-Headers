@@ -18,7 +18,6 @@
 + (id)getLatestAssetFromArray:(id)arg1;
 + (id)pickCorrectAssetFromLocalAssets:(id)arg1;
 + (id)voiceResourceFromAsset:(id)arg1;
-+ (long)voiceTypeForBundleIdentifier:(id)arg1;
 + (id)bundleIdentifierForVoiceType:(long)arg1;
 + (id)_languagesFromAttributes:(id)arg1;
 + (id)selectVoiceResourceAssetForLanguage:(id)arg1;
@@ -26,8 +25,8 @@
 + (id)installedVoiceResources;
 + (id)installedAssetsForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5;
 + (void)amendVoiceWithDefaultSettings:(id)arg1;
-+ (id)queryForVoiceResourceAsset:(id)arg1;
-+ (id)queryForLanguage:(id)arg1 forType:(long)arg2 voicename:(id)arg3 gender:(long)arg4 footprint:(long)arg5;
++ (id)queryForVoiceResourceAsset:(id)arg1 returnTypes:(int)arg2;
++ (id)queryForLanguage:(id)arg1 forType:(long)arg2 voicename:(id)arg3 gender:(long)arg4 footprint:(long)arg5 returnTypes:(int)arg6;
 + (id)preinstallAssetsDirectory;
 + (id)sharedManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
@@ -42,7 +41,7 @@
 - (void)_downloadAsset:(id)arg1 options:(id)arg2 progress:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)downloadCatalog:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)downloadCatalog:(id)arg1 options:(id)arg2;
-- (id)_getVoiceAssetsForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5;
+- (id)_getVoiceAssetsForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5 returnTypes:(int)arg6;
 - (id)_getResults:(id)arg1;
 - (id)voiceAssetWithName:(id)arg1 localOnly:(_Bool)arg2 outError:(id *)arg3;
 - (void)removeVoiceResource:(id)arg1 completion:(CDUnknownBlockType)arg2;

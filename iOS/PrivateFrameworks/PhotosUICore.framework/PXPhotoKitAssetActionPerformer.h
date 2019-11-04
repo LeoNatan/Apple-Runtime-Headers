@@ -22,6 +22,7 @@
 + (id)createPreviewActionWithTitle:(id)arg1 image:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)createBarButtonItemWithTarget:(id)arg1 action:(SEL)arg2;
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
++ (_Bool)canPerformOnSubsetOfSelection;
 + (_Bool)canPerformWithActionManager:(id)arg1;
 @property(nonatomic) _Bool shouldSkipUserConfirmation; // @synthesize shouldSkipUserConfirmation=_shouldSkipUserConfirmation;
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;

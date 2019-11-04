@@ -104,6 +104,8 @@
 @property(readonly, nonatomic) long long displayGamut;
 @property(readonly, nonatomic) double displayScale;
 @property(readonly, nonatomic) long long userInterfaceIdiom;
+- (BOOL)_changedLegibilityWeightFromTraitCollection:(id)arg1;
+- (BOOL)_changedContentSizeCategoryOrLegibilityWeightFromTraitCollection:(id)arg1;
 - (BOOL)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (id)_valueForTraitNamed:(id)arg1;
 - (id)_traitNamesOfIntersectionWithTraitCollection:(id)arg1;

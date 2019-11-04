@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOCluster : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _indexs;
     GEOPlaceResult *_container;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_indexs:1;
         unsigned int read_container:1;
@@ -50,6 +52,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasContainer;
 - (void)_readContainer;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

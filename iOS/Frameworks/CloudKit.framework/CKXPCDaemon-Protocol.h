@@ -98,6 +98,6 @@
 - (void)importantUserIDsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)accountInfoWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(CKAccountInfo *, NSError *))arg2;
 - (void)accountStatusWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
-- (void)cancelOperationWithIdentifier:(NSString *)arg1;
+- (void)cancelOperationWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
 @end
 

@@ -36,7 +36,9 @@
 - (void)_volumeDidChangeForEndpointWithID:(struct __CFString *)arg1;
 @property(readonly) float volume;
 - (void)setSecondDisplayEnabled:(_Bool)arg1;
-@property(copy, nonatomic) NSString *currentBluetoothListeningMode;
+- (_Bool)setCurrentBluetoothListeningMode:(id)arg1 error:(id *)arg2;
+- (void)setCurrentBluetoothListeningMode:(id)arg1;
+@property(readonly, nonatomic) NSString *currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
 @property(readonly, nonatomic) _Bool supportsBluetoothSharing;
 @property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) __weak id <ICDocCamZoomablePageContentDelegate> pageContentDelegate; // @synthesize pageContentDelegate=_pageContentDelegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)pageContentViewDidPencilDown;
 - (_Bool)accessibilityPerformEscape;
 - (void)setupAccessibility;

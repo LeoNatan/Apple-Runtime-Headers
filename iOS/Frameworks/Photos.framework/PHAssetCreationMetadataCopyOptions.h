@@ -14,6 +14,7 @@
     _Bool _shouldCopySpatialOverCaptureResources;
 }
 
++ (id)metadataCopyOptionsForPublishingOriginals;
 @property(nonatomic) _Bool shouldCopySpatialOverCaptureResources; // @synthesize shouldCopySpatialOverCaptureResources=_shouldCopySpatialOverCaptureResources;
 @property(nonatomic) _Bool shouldCopyTitleDescriptionAndKeywords; // @synthesize shouldCopyTitleDescriptionAndKeywords=_shouldCopyTitleDescriptionAndKeywords;
 - (id)description;

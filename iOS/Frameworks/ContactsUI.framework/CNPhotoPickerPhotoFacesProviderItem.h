@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (unsigned long long)imageType;
 - (_Bool)allowsMoveAndScale;
 - (_Bool)allowsVariants;
 

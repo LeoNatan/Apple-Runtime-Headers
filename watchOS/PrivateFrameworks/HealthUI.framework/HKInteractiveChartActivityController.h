@@ -9,7 +9,7 @@
 #import <HealthUI/HKActivityBarSeriesDelegate-Protocol.h>
 #import <HealthUI/HKInteractiveChartViewObserver-Protocol.h>
 
-@class HKActivitySummaryAnnotationViewDataSource, HKActivitySummaryDataProvider, NSMapTable, NSString, _ActivityCurrentValueView, _HKWheelchairUseCharacteristicCache;
+@class HKActivitySummaryAnnotationViewDataSource, HKActivitySummaryDataProvider, HKInteractiveChartDisplayType, NSMapTable, NSString, _ActivityCurrentValueView, _HKWheelchairUseCharacteristicCache;
 @protocol HKInteractiveChartCurrentValueViewCallbacks;
 
 @interface HKInteractiveChartActivityController : HKInteractiveChartViewController <HKInteractiveChartViewObserver, HKActivityBarSeriesDelegate>
@@ -21,8 +21,20 @@
     _HKWheelchairUseCharacteristicCache *_wheelchairUseCharacteristicCache;
     _ActivityCurrentValueView *_activityCurrentValueView;
     id <HKInteractiveChartCurrentValueViewCallbacks> _activityCurrentValueViewCallbacks;
+    HKInteractiveChartDisplayType *_moveValueDisplayType;
+    HKInteractiveChartDisplayType *_moveGoalDisplayType;
+    HKInteractiveChartDisplayType *_exerciseValueDisplayType;
+    HKInteractiveChartDisplayType *_exerciseGoalDisplayType;
+    HKInteractiveChartDisplayType *_standValueDisplayType;
+    HKInteractiveChartDisplayType *_standGoalDisplayType;
 }
 
+@property(readonly, nonatomic) HKInteractiveChartDisplayType *standGoalDisplayType; // @synthesize standGoalDisplayType=_standGoalDisplayType;
+@property(readonly, nonatomic) HKInteractiveChartDisplayType *standValueDisplayType; // @synthesize standValueDisplayType=_standValueDisplayType;
+@property(readonly, nonatomic) HKInteractiveChartDisplayType *exerciseGoalDisplayType; // @synthesize exerciseGoalDisplayType=_exerciseGoalDisplayType;
+@property(readonly, nonatomic) HKInteractiveChartDisplayType *exerciseValueDisplayType; // @synthesize exerciseValueDisplayType=_exerciseValueDisplayType;
+@property(readonly, nonatomic) HKInteractiveChartDisplayType *moveGoalDisplayType; // @synthesize moveGoalDisplayType=_moveGoalDisplayType;
+@property(readonly, nonatomic) HKInteractiveChartDisplayType *moveValueDisplayType; // @synthesize moveValueDisplayType=_moveValueDisplayType;
 @property(nonatomic) __weak id <HKInteractiveChartCurrentValueViewCallbacks> activityCurrentValueViewCallbacks; // @synthesize activityCurrentValueViewCallbacks=_activityCurrentValueViewCallbacks;
 @property(retain, nonatomic) _ActivityCurrentValueView *activityCurrentValueView; // @synthesize activityCurrentValueView=_activityCurrentValueView;
 @property(readonly, nonatomic) _HKWheelchairUseCharacteristicCache *wheelchairUseCharacteristicCache; // @synthesize wheelchairUseCharacteristicCache=_wheelchairUseCharacteristicCache;
@@ -42,6 +54,9 @@
 - (void)updateCurrentValueView:(id)arg1 graphView:(id)arg2 timeScope:(int)arg3;
 - (id)makeCurrentValueView;
 - (id)descriptionForChartData:(id)arg1 timeScope:(int)arg2;
+- (id)_rangeValueAsNumber:(id)arg1;
+- (id)_spanForValueDisplayType:(id)arg1 title:(id)arg2;
+- (id)descriptionSpansForGraphView:(id)arg1;
 - (id)descriptionSeriesForGraphView:(id)arg1;
 - (id)lollipopExtensionColor;
 - (id)lollipopAnnotationColor;
@@ -50,10 +65,10 @@
 - (void)configureDisplayTypes:(id)arg1 timeScope:(int)arg2 stackOffset:(int)arg3;
 - (void)didUpdateFromDateZoom:(int)arg1 toDateZoom:(int)arg2 newVisibleRange:(id)arg3;
 - (id)_generateActivityGoalLineSeriesWithColor:(id)arg1;
-- (id)_generateActivityBarSeriesWithColor:(id)arg1 legendTitle:(id)arg2 metGoalFillStyle:(id)arg3 missedGoalFillStyle:(id)arg4 activityValue:(int)arg5 unitPreferenceController:(id)arg6;
+- (id)_generateActivityBarSeriesWithColor:(id)arg1 legendTitle:(id)arg2 metGoalFillStyle:(id)arg3 missedGoalFillStyle:(id)arg4 activityValue:(int)arg5 unitPreferenceController:(id)arg6 displayTypeController:(id)arg7;
 - (id)_activityYAxisForActivityValue:(int)arg1 zeroOnly:(_Bool)arg2 stackOffset:(int)arg3 bottomLabelPadding:(float)arg4 displayTypeController:(id)arg5 unitPreferenceController:(id)arg6;
 - (id)_zeroStringForActivityValue:(int)arg1 displayTypeController:(id)arg2 unitPreferenceController:(id)arg3;
-- (id)_activitySeriesForActivityValue:(int)arg1 wheelchairUseCharacteristicCache:(id)arg2 unitPreferenceController:(id)arg3;
+- (id)_activitySeriesForActivityValue:(int)arg1 wheelchairUseCharacteristicCache:(id)arg2 unitPreferenceController:(id)arg3 displayTypeController:(id)arg4;
 - (id)_displayTypeForActivityValue:(int)arg1 yAxis:(id)arg2 dataProvider:(id)arg3 displayTypeController:(id)arg4 unitPreferenceController:(id)arg5 wheelchairUseCharacteristicCache:(id)arg6;
 - (id)_unitForActivityValue:(int)arg1 displayTypeController:(id)arg2 unitPreferenceController:(id)arg3;
 - (int)_representativeDataTypeForActivityValue:(int)arg1;

@@ -12,7 +12,7 @@
 #import <ChatKit/CNComposeRecipientTextViewDelegate-Protocol.h>
 #import <ChatKit/CNContactPickerDelegate-Protocol.h>
 
-@class CKComposeRecipientView, CKManualUpdater, CKPendingConversation, CKRecipientSearchListController, CNComposeRecipient, CNContactPickerViewController, CNContactStore, NSMutableDictionary, NSString, UILabel, UIScrollView, UIView;
+@class CKComposeRecipientView, CKManualUpdater, CKPendingConversation, CKRecipientSearchListController, CNComposeRecipient, CNContactPickerViewController, CNContactStore, NSMutableDictionary, NSString, STConversationContext, UILabel, UIScrollView, UIView;
 @protocol CKRecipientSelectionControllerDelegate;
 
 @interface CKRecipientSelectionController : CKViewController <CNComposeRecipientTextViewDelegate, CKComposeRecipientViewDelegate, CKRecipientSearchListControllerDelegate, CNAutocompleteGroupDetailViewControllerDelegate, CNContactPickerDelegate>
@@ -21,6 +21,7 @@
     CNContactStore *_contactStore;
     _Bool _peoplePickerHidden;
     _Bool _editable;
+    _Bool _allowedByScreenTime;
     _Bool _forceMMS;
     _Bool _isDisambiguating;
     _Bool _preventAtomization;
@@ -32,6 +33,7 @@
     CKComposeRecipientView *_toField;
     UIView *_toFieldContainerView;
     CKRecipientSearchListController *_searchListController;
+    STConversationContext *_currentConversationContext;
     CDUnknownBlockType _gameCenterPickerBlock;
     UIScrollView *_toFieldScrollingView;
     UILabel *_toFieldPlaceholderLabel;
@@ -56,6 +58,8 @@
 @property(retain, nonatomic) UIScrollView *toFieldScrollingView; // @synthesize toFieldScrollingView=_toFieldScrollingView;
 @property(copy, nonatomic) CDUnknownBlockType gameCenterPickerBlock; // @synthesize gameCenterPickerBlock=_gameCenterPickerBlock;
 @property(nonatomic) _Bool forceMMS; // @synthesize forceMMS=_forceMMS;
+@property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
+@property(retain, nonatomic) STConversationContext *currentConversationContext; // @synthesize currentConversationContext=_currentConversationContext;
 @property(nonatomic, getter=isEditable) _Bool editable; // @synthesize editable=_editable;
 @property(nonatomic, getter=isPeoplePickerHidden) _Bool peoplePickerHidden; // @synthesize peoplePickerHidden=_peoplePickerHidden;
 @property(retain, nonatomic) CKRecipientSearchListController *searchListController; // @synthesize searchListController=_searchListController;
@@ -64,6 +68,9 @@
 @property(retain, nonatomic) CKPendingConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKRecipientSelectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)updateScreenTimePolicy;
+- (id)handlesForScreenTimePolicyCheck;
 - (struct CGPoint)scrollSearchListControllerToTopContentOffset;
 - (void)scrollSearchListControllerToTop:(_Bool)arg1;
 - (void)_updateAddressBookProperties;
@@ -134,7 +141,6 @@
 - (id)preferredRecipientForRecipients:(id)arg1 forServiceType:(BOOL)arg2;
 - (id)preferredRecipientForNewContact:(id)arg1;
 - (id)autocompleteResultsController:(id)arg1 preferredRecipientForRecipients:(id)arg2;
-- (void)autocompleteResultsController:(id)arg1 preferredRecipientForRecipients:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recipientIsDuetSuggestion:(id)arg1;
 - (void)autocompleteResultsController:(id)arg1 tintColorForRecipient:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)chatForIMHandle:(id)arg1;
@@ -144,7 +150,7 @@
 - (void)colorTypeForRecipient:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)hasEmailRecipientsInAddresses:(id)arg1;
 - (_Bool)lastSentMessageWasNotDeliveredForConversation:(id)arg1;
-- (id)conversationForAddresses:(id)arg1;
+- (id)conversationForRecipients:(id)arg1;
 - (BOOL)serviceColorForRecipientAddresses:(id)arg1;
 - (id)expandedRecipientsForGroupRecipient:(id)arg1;
 - (BOOL)serviceTypeForRecipient:(id)arg1;

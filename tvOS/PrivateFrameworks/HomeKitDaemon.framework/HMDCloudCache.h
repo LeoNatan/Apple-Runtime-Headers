@@ -6,29 +6,25 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class CKServerChangeToken, HMDBackingStore, HMDCloudHomeManagerZone, HMDCloudLegacyZone, HMDCloudMetadataZone, HMDCloudZone, NSMutableDictionary, NSObject;
+@class CKServerChangeToken, HMDBackingStore, HMDCloudHomeManagerZone, HMDCloudLegacyZone, HMDCloudMetadataZone, HMDCloudZone, HMFUnfairLock, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
 @interface HMDCloudCache : HMFObject
 {
-    HMDBackingStore *_backingStore;
+    HMFUnfairLock *_lock;
+    HMDCloudZone *_homeDataInformation;
     HMDCloudLegacyZone *_legacyZone;
     HMDCloudMetadataZone *_metadataZone;
     HMDCloudHomeManagerZone *_homeManagerZone;
-    HMDCloudZone *_homeDataInformation;
     NSMutableDictionary *_homeZones;
+    HMDBackingStore *_backingStore;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(retain, nonatomic) NSMutableDictionary *homeZones; // @synthesize homeZones=_homeZones;
-@property(readonly, nonatomic) HMDCloudZone *homeDataInformation; // @synthesize homeDataInformation=_homeDataInformation;
-@property(readonly, nonatomic) HMDCloudHomeManagerZone *homeManagerZone; // @synthesize homeManagerZone=_homeManagerZone;
-@property(readonly, nonatomic) HMDCloudMetadataZone *metadataZone; // @synthesize metadataZone=_metadataZone;
-@property(readonly, nonatomic) HMDCloudLegacyZone *legacyZone; // @synthesize legacyZone=_legacyZone;
 @property(nonatomic) __weak HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
+@property(retain, nonatomic) NSMutableDictionary *homeZones; // @synthesize homeZones=_homeZones;
 - (void).cxx_destruct;
-- (_Bool)areAllServerChangeTokenValid;
 @property(retain, nonatomic) CKServerChangeToken *databaseServerChangeToken;
 - (void)deleteHomeZoneWithName:(id)arg1;
 - (void)deleteAllZones;
@@ -38,6 +34,10 @@
 - (void)createAndFetchZonesFromBackingStore:(CDUnknownBlockType)arg1;
 - (void)_createZones:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_findStoreCacheZone:(id)arg1 byName:(id)arg2;
+@property(retain, nonatomic) HMDCloudHomeManagerZone *homeManagerZone; // @synthesize homeManagerZone=_homeManagerZone;
+@property(retain, nonatomic) HMDCloudMetadataZone *metadataZone; // @synthesize metadataZone=_metadataZone;
+@property(retain, nonatomic) HMDCloudLegacyZone *legacyZone; // @synthesize legacyZone=_legacyZone;
+@property(retain, nonatomic) HMDCloudZone *homeDataInformation; // @synthesize homeDataInformation=_homeDataInformation;
 - (id)initWithBackingStore:(id)arg1 workQueue:(id)arg2;
 - (id)init;
 

@@ -8,7 +8,7 @@
 
 #import <PepperUICore/PUICCollectionViewItemNotchProviderDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, PUICCollectionView;
+@class NSMutableSet, NSString, PUICCollectionView, PUICCollectionViewNotch;
 
 @interface PUICCollectionViewNotchProvider : PUICScrollViewNotchProvider <PUICCollectionViewItemNotchProviderDelegate>
 {
@@ -18,14 +18,16 @@
     } _collectionViewImplementedDelegateMethodsCache;
     _Bool _checkedCollectionViewDelegateMethods;
     _Bool _createdEdgeNotches;
+    _Bool _includesTallCells;
     PUICCollectionView *_sourceCollectionView;
+    PUICCollectionViewNotch *_startEdgeNotch;
     NSMutableSet *_notchRestingPositions;
-    CDStruct_b31d0695 _startEdgeNotch;
 }
 
 @property(retain, nonatomic) NSMutableSet *notchRestingPositions; // @synthesize notchRestingPositions=_notchRestingPositions;
+@property(nonatomic) _Bool includesTallCells; // @synthesize includesTallCells=_includesTallCells;
 @property(nonatomic) _Bool createdEdgeNotches; // @synthesize createdEdgeNotches=_createdEdgeNotches;
-@property(nonatomic) CDStruct_b31d0695 startEdgeNotch; // @synthesize startEdgeNotch=_startEdgeNotch;
+@property(retain, nonatomic) PUICCollectionViewNotch *startEdgeNotch; // @synthesize startEdgeNotch=_startEdgeNotch;
 @property(nonatomic) _Bool checkedCollectionViewDelegateMethods; // @synthesize checkedCollectionViewDelegateMethods=_checkedCollectionViewDelegateMethods;
 @property(nonatomic) __weak PUICCollectionView *sourceCollectionView; // @synthesize sourceCollectionView=_sourceCollectionView;
 - (void).cxx_destruct;
@@ -39,6 +41,8 @@
 - (float)firstValidNotchOffsetForCollectionViewItemNotchProvider:(id)arg1;
 - (void)resetNotches;
 - (void)reloadData;
+- (void)_sendNotchToCrownInputSequencer:(id)arg1;
+- (void)_sendNotchesToCrownSequencer:(id)arg1;
 - (void)processCellAtIndexPath:(id)arg1 notches:(id)arg2;
 - (void)generateNotches;
 - (float)calculateFirstValidOffsetForNotches;

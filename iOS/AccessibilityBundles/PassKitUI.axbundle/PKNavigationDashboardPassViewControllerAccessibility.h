@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (id)initWithPassGroupView:(id)arg1 groupViewReceiver:(id)arg2 context:(id)arg3;
 - (void)didMoveToWindow;
+- (_Bool)accessibilityPerformEscape;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

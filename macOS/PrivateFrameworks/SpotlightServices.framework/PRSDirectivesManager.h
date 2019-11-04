@@ -128,7 +128,6 @@
     double _weightY;
 }
 
-+ (id)descriptorsForModelInputScore;
 + (void)initialize;
 @property(nonatomic) double weightY; // @synthesize weightY=_weightY;
 @property(nonatomic) double weightX; // @synthesize weightX=_weightX;

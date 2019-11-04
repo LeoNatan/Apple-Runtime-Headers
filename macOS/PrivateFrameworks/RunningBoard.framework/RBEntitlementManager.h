@@ -19,9 +19,9 @@
     NSDictionary *_restrictedEntitlements;
 }
 
++ (id)_hardCodedEntitlements;
 - (void).cxx_destruct;
 - (BOOL)_secTask:(struct __SecTask *)arg1 hasEntitlement:(id)arg2;
-- (id)_hardCodedEntitlements;
 - (id)_entitlementsForProcess:(id)arg1;
 - (void)_removeRestrictedEntitlements:(id)arg1 forProcess:(id)arg2;
 - (id)captureState;

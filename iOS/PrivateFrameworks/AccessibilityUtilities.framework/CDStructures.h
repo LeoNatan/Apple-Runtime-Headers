@@ -93,6 +93,10 @@ struct __va_list_tag {
     void *_field4;
 };
 
+struct os_activity_scope_state_s {
+    unsigned long long opaque[2];
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

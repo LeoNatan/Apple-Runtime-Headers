@@ -9,7 +9,7 @@
 @class NSNumber;
 
 @interface UITableViewCell (HUCheckmarkAdditions)
-+ (id)_hu_emptyCheckmarkPlaceholderImage;
++ (id)hu_emptyCheckmarkPlaceholderImage;
 - (void)hu_configureCheckmarkForImageView:(id)arg1 checked:(_Bool)arg2;
 - (void)removeMargins;
 - (void)turnOffRounding;

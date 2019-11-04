@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDVenueContainer : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_62a50c50 _buildingIds;
     GEOPDVenueLabel *_label;
     unsigned long long _muid;
     unsigned long long _venueId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _browseType;
     struct {
         unsigned int has_muid:1;
@@ -71,6 +73,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasVenueId;
 @property(nonatomic) unsigned long long venueId;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

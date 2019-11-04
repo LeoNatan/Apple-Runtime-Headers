@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface BFFSetupAssistantDeviceToDeviceMigrationSuccess : PBCodable <NSCopying>
 {
+    unsigned long long _numberOfFilesTransferred;
     unsigned long long _restoreDuration;
     unsigned long long _size;
     unsigned long long _timestamp;
@@ -22,15 +23,20 @@ __attribute__((visibility("hidden")))
     NSString *_sourceDeviceProductVersion;
     NSString *_targetDeviceModel;
     NSString *_targetDeviceProductVersion;
+    _Bool _inAppleStore;
     struct {
+        unsigned int numberOfFilesTransferred:1;
         unsigned int restoreDuration:1;
         unsigned int size:1;
         unsigned int timestamp:1;
         unsigned int transferDuration:1;
         unsigned int connectionType:1;
+        unsigned int inAppleStore:1;
     } _has;
 }
 
+@property(nonatomic) unsigned long long numberOfFilesTransferred; // @synthesize numberOfFilesTransferred=_numberOfFilesTransferred;
+@property(nonatomic) _Bool inAppleStore; // @synthesize inAppleStore=_inAppleStore;
 @property(nonatomic) int connectionType; // @synthesize connectionType=_connectionType;
 @property(retain, nonatomic) NSString *targetDeviceProductVersion; // @synthesize targetDeviceProductVersion=_targetDeviceProductVersion;
 @property(retain, nonatomic) NSString *targetDeviceModel; // @synthesize targetDeviceModel=_targetDeviceModel;
@@ -50,6 +56,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasNumberOfFilesTransferred;
+@property(nonatomic) _Bool hasInAppleStore;
 @property(nonatomic) _Bool hasConnectionType;
 @property(readonly, nonatomic) _Bool hasTargetDeviceProductVersion;
 @property(readonly, nonatomic) _Bool hasTargetDeviceModel;

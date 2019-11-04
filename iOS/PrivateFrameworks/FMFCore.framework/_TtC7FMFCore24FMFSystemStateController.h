@@ -9,6 +9,7 @@
 @interface _TtC7FMFCore24FMFSystemStateController : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: refreshSerialQueue
     // Error parsing type: , name: isFMFRestricted
 }
 

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct nw_hash_table *connected_flow_handles;
     struct nw_hash_table *cache_entries;
     void *deactivation_timer;
+    unsigned int dry_run_count;
     unsigned int dormant:1;
     unsigned int in_force_update:1;
     unsigned int __pad_bits:6;

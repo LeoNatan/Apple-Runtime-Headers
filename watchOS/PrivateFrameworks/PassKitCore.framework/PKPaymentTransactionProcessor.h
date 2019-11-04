@@ -18,13 +18,14 @@
     NSMutableSet *_backgroundLocationUpdateItems;
     NSMutableArray *_reverseGeocodeItems;
     NSMutableSet *_stationsUpdateItems;
-    NSMutableSet *_merchantCleanupItems;
+    NSMutableArray *_merchantCleanupItems;
     CLLocationManager *_locationManager;
     CLLocationManager *_backgroundMerchantLocationManager;
     CLGeocoder *_geocoder;
     NSObject<OS_dispatch_source> *_locationUpdateTimeoutTimer;
     NSObject<OS_dispatch_source> *_backgroundLocationUpdateTimer;
     _Bool _active;
+    _Bool _processingMerchantCleanupItems;
     PKMerchantCategoryCodeMap *_categoryCodeMap;
     id <PKPaymentTransactionProcessorDelegate> _delegate;
     PKUsageNotificationServer *_usageNotificationServer;
@@ -38,6 +39,7 @@
 - (id)_pendingStationsUpdateItemForTransaction:(id)arg1;
 - (id)_pendingLocationUpdateItemForTransaction:(id)arg1;
 - (void)_processForLocalMCCLookup:(id)arg1;
+- (void)_beginMerchantCleanupIfPossible;
 - (void)_processItemForMerchantCleanup:(id)arg1 clearingAttempt:(_Bool)arg2;
 - (void)_processPaymentTransactionForMerchantCleanup:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 clearingAttempt:(_Bool)arg4;
 - (void)_processItemForStationsCleanup:(id)arg1;

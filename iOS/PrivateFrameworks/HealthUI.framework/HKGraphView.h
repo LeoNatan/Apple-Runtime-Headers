@@ -72,6 +72,7 @@
     HKValueRange *_effectiveVisibleRangeActive;
     long long _minimumDateZoom;
     long long _maximumDateZoom;
+    long long _scrollingOptions;
     HKMultiTouchPressGestureRecognizer *_multiTouchGestureRecognizer;
     double _zoomScale;
     UIView *_detailView;
@@ -136,6 +137,7 @@
 @property(readonly, nonatomic) HKMultiTouchPressGestureRecognizer *multiTouchGestureRecognizer; // @synthesize multiTouchGestureRecognizer=_multiTouchGestureRecognizer;
 @property(nonatomic) _Bool enableStickySelection; // @synthesize enableStickySelection=_enableStickySelection;
 @property(nonatomic) _Bool contentWidthFromTimeScope; // @synthesize contentWidthFromTimeScope=_contentWidthFromTimeScope;
+@property(nonatomic) long long scrollingOptions; // @synthesize scrollingOptions=_scrollingOptions;
 @property(nonatomic) long long maximumDateZoom; // @synthesize maximumDateZoom=_maximumDateZoom;
 @property(nonatomic) long long minimumDateZoom; // @synthesize minimumDateZoom=_minimumDateZoom;
 @property(readonly, nonatomic) HKValueRange *effectiveVisibleRangeActive; // @synthesize effectiveVisibleRangeActive=_effectiveVisibleRangeActive;

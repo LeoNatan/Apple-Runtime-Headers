@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersOfflineRegionSearch : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_query;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _maxResults;
     _Bool _highlightDiff;
     CDStruct_58fcab42 _flags;
@@ -47,6 +49,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
 - (void)_readQuery;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

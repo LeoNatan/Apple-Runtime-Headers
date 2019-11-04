@@ -10,7 +10,7 @@
 #import <CloudKit/NSCopying-Protocol.h>
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDate, NSString, NSURL;
+@class C2RequestOptions, NSData, NSDate, NSString, NSURL;
 
 @interface CKStreamingAsset : NSObject <CKRecordValue, NSSecureCoding, NSCopying>
 {
@@ -22,6 +22,7 @@
     NSURL *_uploadURL;
     NSDate *_uploadURLExpirationDate;
     unsigned long long _reservedSize;
+    C2RequestOptions *_requestOptions;
     NSURL *_downloadURL;
     NSDate *_downloadURLExpirationDate;
     unsigned long long _size;
@@ -34,6 +35,7 @@
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSDate *downloadURLExpirationDate; // @synthesize downloadURLExpirationDate=_downloadURLExpirationDate;
 @property(copy, nonatomic) NSURL *downloadURL; // @synthesize downloadURL=_downloadURL;
+@property(copy, nonatomic) C2RequestOptions *requestOptions; // @synthesize requestOptions=_requestOptions;
 @property(nonatomic) unsigned long long reservedSize; // @synthesize reservedSize=_reservedSize;
 @property(copy, nonatomic) NSDate *uploadURLExpirationDate; // @synthesize uploadURLExpirationDate=_uploadURLExpirationDate;
 @property(copy, nonatomic) NSURL *uploadURL; // @synthesize uploadURL=_uploadURL;

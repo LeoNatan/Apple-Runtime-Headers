@@ -75,7 +75,7 @@
 - (id)activeCanvas;
 - (void)softDealloc;
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize)arg1 scale:(float)arg2 homeQueue:(id)arg3 signpostId:(unsigned long long)arg4;
+- (id)initWithSize:(struct CGSize)arg1 scale:(float)arg2 homeQueue:(id)arg3 signpostId:(unsigned long long)arg4 auditToken:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

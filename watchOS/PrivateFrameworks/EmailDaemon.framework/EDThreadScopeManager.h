@@ -30,6 +30,7 @@
 - (void)_evictAtLeast:(unsigned int)arg1 upTo:(unsigned int)arg2 threadScopesFrom:(id)arg3;
 - (void)_initializeThreadScopesIfNeeded;
 - (void)removeThreadScopesForMailboxScope:(id)arg1;
+- (void)removeThreadScope:(id)arg1;
 - (void)removeAllThreadScopes;
 - (void)setLastViewedDate:(id)arg1 forThreadScope:(id)arg2;
 - (void)setNeedsUpdate:(_Bool)arg1 forThreadScope:(id)arg2;

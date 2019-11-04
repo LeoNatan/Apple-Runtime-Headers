@@ -46,7 +46,6 @@
 - (struct CGSize)_minimumViewSize;
 - (void)updateConstraints;
 - (void)_menuItemViewFrameChanged:(id)arg1;
-- (void)_setFrameFromHIViewFrame:(struct CGRect)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)_clearMenuItem;
 - (id)_menuItem;

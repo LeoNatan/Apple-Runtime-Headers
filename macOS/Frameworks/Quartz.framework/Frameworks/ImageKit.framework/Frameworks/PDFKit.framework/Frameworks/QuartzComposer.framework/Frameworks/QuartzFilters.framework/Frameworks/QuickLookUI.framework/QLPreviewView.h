@@ -119,8 +119,6 @@
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)backingScaleDidChange:(id)arg1;
 - (void)viewDidEndLiveResize;
-- (void)_appDidUnhide:(id)arg1;
-- (void)_appDidHide:(id)arg1;
 - (void)_windowWillClose:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;

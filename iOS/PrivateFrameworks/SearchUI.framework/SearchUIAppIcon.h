@@ -6,42 +6,26 @@
 
 #import <SpringBoardHome/SBLeafIcon.h>
 
-#import <SearchUI/SearchUIApplicationIconStateObserver-Protocol.h>
+@class SFSearchResult, SearchUIAppIconImage;
 
-@class LSApplicationProxy, NSArray, NSString, NSURL, SFSearchResult, SearchUIAppIconImage;
-
-@interface SearchUIAppIcon : SBLeafIcon <SearchUIApplicationIconStateObserver>
+@interface SearchUIAppIcon : SBLeafIcon
 {
     SFSearchResult *_searchResult;
+    unsigned long long _variant;
     SearchUIAppIconImage *_iconImage;
-    NSURL *_applicationBundleURL;
-    NSArray *_applicationShortcutItems;
-    NSString *_applicationShortcutWidgetBundleIdentifier;
-    LSApplicationProxy *_applicationProxy;
 }
 
 + (_Bool)isPlaceholderIcon;
 + (_Bool)canGenerateIconsInBackground;
-+ (id)sharedApplicationWorkspace;
-@property(retain, nonatomic) LSApplicationProxy *applicationProxy; // @synthesize applicationProxy=_applicationProxy;
-@property(copy, nonatomic) NSString *applicationShortcutWidgetBundleIdentifier; // @synthesize applicationShortcutWidgetBundleIdentifier=_applicationShortcutWidgetBundleIdentifier;
-@property(copy, nonatomic) NSArray *applicationShortcutItems; // @synthesize applicationShortcutItems=_applicationShortcutItems;
-@property(copy, nonatomic) NSURL *applicationBundleURL; // @synthesize applicationBundleURL=_applicationBundleURL;
 @property(retain, nonatomic) SearchUIAppIconImage *iconImage; // @synthesize iconImage=_iconImage;
+@property(readonly, nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 - (void).cxx_destruct;
 - (void)iconDidChange;
 - (void)applicationWithBundleIdentifierDidChangeIconAccessories:(id)arg1;
 - (id)uniqueIdentifier;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)initWithSearchResult:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithSearchResult:(id)arg1 variant:(unsigned long long)arg2;
 
 @end
 

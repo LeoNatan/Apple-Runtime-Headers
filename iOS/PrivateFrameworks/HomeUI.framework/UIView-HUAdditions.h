@@ -12,6 +12,7 @@
 
 @interface UIView (HUAdditions) <HULayoutAnchorProviding>
 + (void)hu_enableAnimations:(_Bool)arg1 forBlock:(CDUnknownBlockType)arg2;
+- (_Bool)hu_isDescendantOfPickerView;
 - (_Bool)hu_isHomeAffordancePresent;
 - (void)hu_autoSizeByConstrainingWidth:(double)arg1;
 - (void)hu_traverseViewHierarchy:(CDUnknownBlockType)arg1;

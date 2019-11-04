@@ -11,13 +11,13 @@
 @interface WFDatabaseAccessResourceState : NSObject
 {
     NSString *_persistentIdentifier;
-    NSData *_permissionStateData;
+    NSData *_perWorkflowStateData;
 }
 
-@property(readonly, nonatomic) NSData *permissionStateData; // @synthesize permissionStateData=_permissionStateData;
+@property(readonly, nonatomic) NSData *perWorkflowStateData; // @synthesize perWorkflowStateData=_perWorkflowStateData;
 @property(readonly, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 - (void).cxx_destruct;
-- (id)initWithPersistentIdentifier:(id)arg1 permissionStateData:(id)arg2;
+- (id)initWithPersistentIdentifier:(id)arg1 perWorkflowStateData:(id)arg2;
 
 @end
 

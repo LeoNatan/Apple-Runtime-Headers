@@ -8,19 +8,16 @@
 
 #import <SwiftUI/UIApplicationDelegate-Protocol.h>
 
-@class UIWindow;
-
 __attribute__((visibility("hidden")))
 @interface _TtC7SwiftUI24UIKitRendererAppDelegate : UIResponder <UIApplicationDelegate>
 {
-    // Error parsing type: , name: window
 }
 
 - (void).cxx_destruct;
 - (id)init;
 - (void)_application:(id)arg1 statusBarTouchesEnded:(id)arg2;
+- (id)application:(id)arg1 configurationForConnectingSceneSession:(id)arg2 options:(id)arg3;
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-@property(nonatomic, retain) UIWindow *window; // @synthesize window;
 
 @end
 

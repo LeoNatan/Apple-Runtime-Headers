@@ -107,9 +107,9 @@
 - (double)_getAngleFrom12OClockForValue:(double)arg1;
 - (double)_getSliderValueForPoint:(struct CGPoint)arg1;
 - (double)_getSliderValueForAngleFrom12OClock:(double)arg1;
-- (void)_actuateImpactTapticFeedbackIfAvailable;
-- (void)_actuateSelectionTapticFeedbackIfAvailable;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_actuateImpactTapticFeedback;
+- (void)_actuateSelectionTapticFeedback;
+- (void)_prepareForTapticFeedback;
 - (void)_updateLabelsSize;
 - (void)updatePrimaryLabelWithString:(id)arg1 fontSize:(double)arg2;
 - (void)updateSupplementaryLabelWithString:(id)arg1;

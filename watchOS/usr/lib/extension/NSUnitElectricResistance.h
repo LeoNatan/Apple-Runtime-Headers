@@ -19,6 +19,7 @@
 + (id)kiloohms;
 + (id)megaohms;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

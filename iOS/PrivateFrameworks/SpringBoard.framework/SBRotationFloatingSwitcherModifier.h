@@ -10,7 +10,7 @@
 {
 }
 
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
 - (_Bool)shouldPerformRotationAnimationForOrientationChange;

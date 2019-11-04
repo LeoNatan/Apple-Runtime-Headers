@@ -7,16 +7,17 @@
 #import <WorkflowKit/WFAction.h>
 
 #import <WorkflowKit/WFIntentExecutorDelegate-Protocol.h>
-#import <WorkflowKit/WFIntentPlatterViewControllerDelegate-Protocol.h>
+#import <WorkflowKit/WFIntentViewControllerDelegate-Protocol.h>
 #import <WorkflowKit/WFStandaloneShortcutAction-Protocol.h>
 
-@class INCExtensionConnection, INIntentDescription, NSArray, NSString, WFIntentExecutor, WFIntentPlatterViewController;
+@class INCExtensionConnection, INIntentDescription, NSArray, NSString, UIViewController, WFIntentExecutor;
+@protocol WFIntentViewController;
 
-@interface WFHandleIntentAction : WFAction <WFIntentExecutorDelegate, WFIntentPlatterViewControllerDelegate, WFStandaloneShortcutAction>
+@interface WFHandleIntentAction : WFAction <WFIntentExecutorDelegate, WFIntentViewControllerDelegate, WFStandaloneShortcutAction>
 {
     NSString *_inputParameterName;
     WFIntentExecutor *_executor;
-    WFIntentPlatterViewController *_intentViewController;
+    UIViewController<WFIntentViewController> *_intentViewController;
     CDUnknownBlockType _viewControllerCompletionHandler;
     INCExtensionConnection *_connection;
 }
@@ -25,7 +26,7 @@
 + (id)appIdentifierForIntent:(id)arg1;
 @property(retain, nonatomic) INCExtensionConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerCompletionHandler; // @synthesize viewControllerCompletionHandler=_viewControllerCompletionHandler;
-@property(retain, nonatomic) WFIntentPlatterViewController *intentViewController; // @synthesize intentViewController=_intentViewController;
+@property(retain, nonatomic) UIViewController<WFIntentViewController> *intentViewController; // @synthesize intentViewController=_intentViewController;
 @property(retain, nonatomic) WFIntentExecutor *executor; // @synthesize executor=_executor;
 @property(readonly, nonatomic) NSString *inputParameterName; // @synthesize inputParameterName=_inputParameterName;
 - (void).cxx_destruct;
@@ -33,8 +34,9 @@
 - (void)intentExecutor:(id)arg1 showConfirmationForInteraction:(id)arg2 confirmationRequired:(_Bool)arg3 authenticationRequired:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)intentExecutorRequestsContinueInApp:(id)arg1;
 - (void)handleExecutorError:(id)arg1;
-- (id)errorFromExtensionError:(id)arg1;
+- (void)getErrorFromExtensionError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)errorThatLaunchesApp:(id)arg1;
+- (id)errorAttributedToApp:(id)arg1;
 - (id)errorFromHandleResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromConfirmResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
@@ -48,13 +50,16 @@
 - (void)intentViewControllerWasTapped:(id)arg1;
 - (void)dismissViewControllerIfNecessary:(CDUnknownBlockType)arg1;
 - (void)showInteraction:(id)arg1 fromViewController:(id)arg2 sourceView:(id)arg3 requiringConfirmation:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)createIntentViewControllerWithInteraction:(id)arg1 requiresConfirmation:(_Bool)arg2;
 - (void)showInteractionIfNeeded:(id)arg1 inUserInterface:(id)arg2 requiringConfirmation:(_Bool)arg3 requiringAuthentication:(_Bool)arg4 executionStage:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)getOutputFromIntentResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)finishRunningByContinuingInApp;
 - (_Bool)shouldOpenAppThroughSiriForIntent:(id)arg1 intentResponse:(id)arg2;
 - (void)populateIntent:(id)arg1 withInput:(id)arg2 processedParameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)executorWithIntent:(id)arg1;
+- (id)executorWithIntent:(id)arg1 groupIdentifier:(id)arg2;
 - (void)startExecutingIntent:(id)arg1;
+- (_Bool)shouldDonateIntent:(id)arg1;
+- (_Bool)isWorkflowInDatabase;
 - (void)accessBundleContentWithBlock:(CDUnknownBlockType)arg1;
 - (id)parameterForSlot:(id)arg1;
 - (void)generateShortcutRepresentation:(CDUnknownBlockType)arg1;

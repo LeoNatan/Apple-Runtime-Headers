@@ -12,6 +12,7 @@
     int _pairingCompatibilityVersion;
     int _maxPairingCompatibilityVersion;
     int _minPairingCompatibilityVersion;
+    int _minPairingCompatibilityVersionWithChipID;
     int _minQuickSwitchCompatibilityVersion;
 }
 
@@ -20,6 +21,7 @@
 + (id)numberFromCFPrefs:(id)arg1;
 @property(nonatomic) _Bool isOverrideActive; // @synthesize isOverrideActive=_isOverrideActive;
 @property(nonatomic) int minQuickSwitchCompatibilityVersion; // @synthesize minQuickSwitchCompatibilityVersion=_minQuickSwitchCompatibilityVersion;
+@property(nonatomic) int minPairingCompatibilityVersionWithChipID; // @synthesize minPairingCompatibilityVersionWithChipID=_minPairingCompatibilityVersionWithChipID;
 @property(nonatomic) int minPairingCompatibilityVersion; // @synthesize minPairingCompatibilityVersion=_minPairingCompatibilityVersion;
 @property(nonatomic) int maxPairingCompatibilityVersion; // @synthesize maxPairingCompatibilityVersion=_maxPairingCompatibilityVersion;
 @property(nonatomic) int pairingCompatibilityVersion; // @synthesize pairingCompatibilityVersion=_pairingCompatibilityVersion;

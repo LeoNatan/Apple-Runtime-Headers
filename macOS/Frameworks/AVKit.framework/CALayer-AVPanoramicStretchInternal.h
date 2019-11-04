@@ -9,6 +9,7 @@
 @interface CALayer (AVPanoramicStretchInternal)
 + (id)keyPathsForValuesAffectingUsesPanoramicStretch;
 + (BOOL)automaticallyNotifiesObserversOfUsesPanoramicStretch;
+- (void)avkit_invalidatePanoramicStretchHelper;
 @property BOOL usesPanoramicStretch;
 
 // Remaining properties

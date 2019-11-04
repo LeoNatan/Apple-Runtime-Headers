@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)_textAttributes;
 - (struct CGRect)_imageRectWithRect:(struct CGRect *)arg1 allowImageScaling:(BOOL)arg2;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
-- (struct CGSize)_minCellSize;
+- (struct CGSize)_minCellSizeWithCompressionOptions:(id)arg1;
 - (void)performClick:(id)arg1;
 - (void)drawImage:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
 - (void)setFont:(id)arg1;

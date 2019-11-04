@@ -6,13 +6,15 @@
 
 #import <UIKit/UIView.h>
 
+#import <CameraUI/CAMAccessibilityHUDItemProvider-Protocol.h>
+#import <CameraUI/CAMBarsAccessibilityHUDManagerGestureProvider-Protocol.h>
 #import <CameraUI/CAMControlDrawerMenuButtonDelegate-Protocol.h>
 #import <CameraUI/UIScrollViewDelegate-Protocol.h>
 
 @class CAMControlDrawerButton, CAMDrawerApertureButton, CAMDrawerAspectRatioButton, CAMDrawerFilterButton, CAMDrawerFlashButton, CAMDrawerHDRButton, CAMDrawerIntensityButton, CAMDrawerLivePhotoButton, CAMDrawerLowLightButton, CAMDrawerTimerButton, CAMLowLightSlider, CEKApertureSlider, CEKSlider, CEKWheelScrubberView, NSArray, NSMutableDictionary, NSString, UIScrollView;
 @protocol CAMControlDrawerDelegate, CAMControlDrawerExpandableButton, CAMControlDrawerPresentationDelegate;
 
-@interface CAMControlDrawer : UIView <CAMControlDrawerMenuButtonDelegate, UIScrollViewDelegate>
+@interface CAMControlDrawer : UIView <CAMControlDrawerMenuButtonDelegate, UIScrollViewDelegate, CAMAccessibilityHUDItemProvider, CAMBarsAccessibilityHUDManagerGestureProvider>
 {
     long long _layoutStyle;
     id <CAMControlDrawerDelegate> _delegate;
@@ -43,6 +45,11 @@
 @property(nonatomic) __weak id <CAMControlDrawerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 - (void).cxx_destruct;
+- (_Bool)shouldAccessibilityGestureBeginForHUDManager:(id)arg1;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
+- (void)_iterateViewsForHUDManager:(id)arg1 withItemFoundBlock:(CDUnknownBlockType)arg2;
+- (id)touchingRecognizersToCancel;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)menuButtonDidSelectItem:(id)arg1;
 - (void)expandableButton:(id)arg1 willChangeExpanded:(_Bool)arg2;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_alwaysGetsContexts;
 - (_Bool)_shouldZoom;
 - (void)_updateTransformLayerForClassicPresentation;
+- (float)_adjustedWindowLevelFromLevel:(float)arg1;
 - (_Bool)_canActAsKeyWindowForScreen:(id)arg1;
 - (_Bool)_canBecomeKeyWindow;
 - (void)_setFirstResponder:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSPersistentStore, NSSet, NSString, PLGenericAlbum, PLKeywordManager, PLLibraryServicesManager, PLManagedObjectContext, PLPhotoLibraryBundle, PLPhotoLibraryOptions, PLPhotoLibraryPathManager, PLThumbnailIndexes, PLThumbnailManager;
+@class NSArray, NSMutableArray, NSPersistentStore, NSSet, NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient, PLGenericAlbum, PLKeywordManager, PLLibraryServicesManager, PLManagedObjectContext, PLPhotoLibraryBundle, PLPhotoLibraryOptions, PLPhotoLibraryPathManager, PLThumbnailIndexes, PLThumbnailManager;
 @protocol PLAlbumProtocol;
 
 @interface PLPhotoLibrary : NSObject
@@ -23,6 +23,8 @@
     struct os_unfair_lock_s _managedObjectContextLock;
     PLManagedObjectContext *_managedObjectContext;
     NSPersistentStore *_loadedPersistentStore;
+    PAImageConversionServiceClient *_imageConversionServiceClient;
+    PAVideoConversionServiceClient *_videoConversionServiceClient;
     PLPhotoLibraryPathManager *_pathManager;
     PLLibraryServicesManager *_libraryServicesManager;
     NSString *_name;
@@ -75,6 +77,7 @@
 + (id)sharedPhotoLibrary;
 + (void)initialize;
 + (void)_context:(id)arg1 saveFailedWithError:(id)arg2;
++ (void)_contextSaveFailedDueToClientRequestedShutdown:(id)arg1;
 + (void)_contextSaveFailedDueToChangingSPL:(id)arg1;
 + (void)_contextSaveFailedWithNoPersistentStores:(id)arg1;
 + (void)_contextSaveFailedWithError:(id)arg1;
@@ -123,7 +126,7 @@
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
 - (void)_applyAdjustmentFileInfo:(id)arg1 renderedContentFileInfo:(id)arg2 renderedVideoComplementFileInfo:(id)arg3 toAsset:(id)arg4 withMainFileURL:(id)arg5;
 - (void)_applySideCarFiles:(id)arg1 toAsset:(id)arg2 withMainFileURL:(id)arg3;
-- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject *)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(struct NSObject *)arg7 thumbnailImage:(struct NSObject *)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 withUUID:(id)arg13 ignoreEmbeddedMetadata:(BOOL)arg14 isPlaceholder:(BOOL)arg15;
+- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject *)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(struct NSObject *)arg7 thumbnailImage:(struct NSObject *)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 withUUID:(id)arg13 ignoreEmbeddedMetadata:(BOOL)arg14 isPlaceholder:(BOOL)arg15 placeholderFileURL:(id)arg16;
 - (void)modifyDCIMEntryForPhoto:(id)arg1;
 - (id)photoOutboundSharingTmpDirectoryURL;
 - (struct NSObject *)newImageForPhoto:(id)arg1 format:(unsigned short)arg2;
@@ -155,7 +158,8 @@
 - (id)_loadDatabaseContext:(id *)arg1;
 - (id)_loadServerDatabaseContext:(id *)arg1;
 - (id)_loadClientDatabaseContext:(id *)arg1;
-- (id)_loadClientDatabaseContextFastPath;
+- (id)_loadClientDatabaseContextFastPathAndReturnAbortAfterOpen:(char *)arg1;
+- (BOOL)_shouldTryFastPath;
 - (void)cleanupIncompleteAssetsAfterOTARestore;
 - (void)dataMigratorSupportCleanupModelForDataMigrationPurgeMissingSharedAndSynced;
 - (id)_fetchCompleteAssetIDsWithSavedAssetType:(short)arg1 context:(id)arg2;
@@ -222,6 +226,8 @@
 - (void)enableOpportunisticTasks;
 - (id)description;
 - (void)handlePossibleCoreDataError:(id)arg1;
+@property(readonly, nonatomic) PAVideoConversionServiceClient *videoConversionServiceClient;
+@property(readonly, nonatomic) PAImageConversionServiceClient *imageConversionServiceClient;
 @property(readonly, nonatomic) PLThumbnailIndexes *thumbnailIndexes;
 @property(readonly, nonatomic) PLThumbnailManager *thumbnailManager;
 - (id)libraryID;

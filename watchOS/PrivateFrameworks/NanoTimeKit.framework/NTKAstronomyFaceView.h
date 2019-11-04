@@ -60,6 +60,7 @@
 
 + (Class)tritium_frameSpecifierClass;
 - (void).cxx_destruct;
+- (void)tritium_willSnapshotForBurnInStudy;
 - (void)tritium_invalidateMetalContentForSnapshot;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -72,6 +73,7 @@
 - (void)tritium_loadContentViews;
 - (_Bool)_wantsMinorDetents;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;

@@ -18,12 +18,14 @@
 + (id)_URLComponentsForDestination:(unsigned long long)arg1;
 + (_Bool)isHomeAppURL:(id)arg1;
 + (id)symptomFromURL:(id)arg1 accessory:(id)arg2;
++ (id)aboutImproveSiriAndDictationURL;
 + (id)fixSymptomURLForAccessoryWithUUID:(id)arg1 symptom:(id)arg2;
 + (id)fixSymptomURLForAccessory:(id)arg1 symptom:(id)arg2;
 + (id)musicLoginURL;
 + (id)locationPrivacyURL;
 + (id)musicPrivacyURL;
 + (id)siriPrivacyURL;
++ (id)networkRoutersSettingsURL;
 + (id)aboutResidentDeviceURL;
 @property(readonly, nonatomic) HFHomeKitDispatcher *homeKitDispatcher; // @synthesize homeKitDispatcher=_homeKitDispatcher;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;

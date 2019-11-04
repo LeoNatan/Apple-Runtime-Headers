@@ -6,19 +6,20 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMBCloudZoneID, HMBLocalZone, HMBShareInvitation, HMDDatabaseFetchZonesResult, NAFuture, NSString;
+@class HMBCloudDatabase, HMBCloudZoneConfiguration, HMBCloudZoneID, HMBLocalDatabase, HMBLocalZone, HMBShareInvitation, HMDDatabaseFetchZonesResult, NAFuture, NSString;
 @protocol HMBLocalZoneDelegate><HMBCloudZoneDelegate, HMDDatabaseDelegate;
 
 @protocol HMDDatabase <NSObject>
-@property(readonly, copy) NSString *cloudContainerIdentifier;
+@property(readonly) HMBLocalDatabase *localDatabase;
+@property(readonly) HMBCloudDatabase *cloudDatabase;
 - (NAFuture *)declineInvitation:(HMBShareInvitation *)arg1;
 - (NAFuture *)acceptInvitation:(HMBShareInvitation *)arg1;
 - (NAFuture *)removeLocalAndCloudDataForLocalZone:(HMBLocalZone *)arg1;
 - (NAFuture *)removeSharedZonesWithName:(NSString *)arg1;
 - (NAFuture *)removeOwnedZonesWithName:(NSString *)arg1;
-- (HMDDatabaseFetchZonesResult *)sharedZonesWithID:(HMBCloudZoneID *)arg1 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg2 error:(id *)arg3;
+- (HMDDatabaseFetchZonesResult *)sharedZonesWithID:(HMBCloudZoneID *)arg1 configuration:(HMBCloudZoneConfiguration *)arg2 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg3 error:(id *)arg4;
 - (HMBCloudZoneID *)existingSharedZoneIDWithName:(NSString *)arg1;
-- (HMDDatabaseFetchZonesResult *)ownedZonesWithName:(NSString *)arg1 shouldRebuildOnManateeKeyLoss:(_Bool)arg2 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg3 error:(id *)arg4;
+- (HMDDatabaseFetchZonesResult *)ownedZonesWithName:(NSString *)arg1 configuration:(HMBCloudZoneConfiguration *)arg2 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg3 error:(id *)arg4;
 - (NAFuture *)unregisterSharedSubscriptionForExternalRecordType:(NSString *)arg1;
 - (NAFuture *)registerSharedSubscriptionForExternalRecordType:(NSString *)arg1;
 - (void)start;

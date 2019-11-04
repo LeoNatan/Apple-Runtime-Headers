@@ -110,7 +110,7 @@
 - (void)setNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 - (void)pollForSubscriptionUpdatesTriggeredByPushNotificationForPersonID:(id)arg1;
 - (id)personIDsListeningToPushNotification;
-- (void)deleteAlbumWithGUID:(id)arg1;
+- (void)deleteAlbumWithGUID:(id)arg1 inviterAddress:(id)arg2;
 - (void)addAlbum:(id)arg1;
 - (void)cancelActivitiesForPersonID:(id)arg1;
 - (void)stopAssetDownloadsForPersonID:(id)arg1;

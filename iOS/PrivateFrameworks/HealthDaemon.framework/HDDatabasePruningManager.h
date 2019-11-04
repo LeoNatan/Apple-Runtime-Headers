@@ -19,8 +19,12 @@
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_timerSource;
+    unsigned long long _prunedObjectLimit;
+    unsigned long long _prunedObjectTransactionLimit;
 }
 
+@property unsigned long long prunedObjectTransactionLimit; // @synthesize prunedObjectTransactionLimit=_prunedObjectTransactionLimit;
+@property unsigned long long prunedObjectLimit; // @synthesize prunedObjectLimit=_prunedObjectLimit;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timerSource; // @synthesize timerSource=_timerSource;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;

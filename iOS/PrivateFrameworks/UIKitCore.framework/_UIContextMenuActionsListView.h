@@ -29,13 +29,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_UIContextMenuActionsListViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_testing_tapAnAction;
-- (id)_imageSizedToFitWithinRow:(id)arg1;
+- (double)_clampedCornerRadiusForGroupView:(id)arg1;
 - (void)_performActionForPreviewAction:(id)arg1;
 - (id)_reversedActionGroupForActionGroup:(id)arg1;
+- (id)_loadingInterfaceAction;
 - (id)_interfaceActionGroupForActions:(id)arg1;
-- (void)setDisplayedMenu:(id)arg1 animated:(_Bool)arg2 alongsideAnimations:(CDUnknownBlockType)arg3;
+- (void)setDisplayedMenu:(id)arg1 withAnimationStyle:(unsigned long long)arg2 alongsideAnimations:(CDUnknownBlockType)arg3;
+- (void)layoutSubviews;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
-- (struct CGSize)maxImageSize;
 - (id)_labelFont;
 - (void)kickstartActionScrubbingWithGesture:(id)arg1;
 - (id)initWithMenu:(id)arg1;

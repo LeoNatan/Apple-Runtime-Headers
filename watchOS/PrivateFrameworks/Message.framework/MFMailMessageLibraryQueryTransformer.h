@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (unsigned int)optionsForQuery:(id)arg1;
 - (id)criterionForQuery:(id)arg1;
+- (id)mailAccountForIdentifier:(id)arg1;
 - (id)messageCriterionConverter:(id)arg1 expressionForConstantValue:(id)arg2 withCriterionType:(int)arg3;
 - (int)messageCriterionConverter:(id)arg1 criterionTypeForKey:(id)arg2;
 - (id)initWithMessagePersistence:(id)arg1;

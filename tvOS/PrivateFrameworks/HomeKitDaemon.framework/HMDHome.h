@@ -40,6 +40,7 @@
     _Bool _anyBTLEAccessoryReachable;
     _Bool _watchSkipVersionCheck;
     _Bool _ownerTrustZoneCapable;
+    _Bool _migrationNeeded;
     _Bool _multiUserEnabled;
     _Bool _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     _Bool _remoteAccessIsEnabled;
@@ -238,6 +239,7 @@
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) HMDHomeObjectLookup *lookup; // @synthesize lookup=_lookup;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property _Bool migrationNeeded; // @synthesize migrationNeeded=_migrationNeeded;
 @property(nonatomic, getter=isOwnerTrustZoneCapable) _Bool ownerTrustZoneCapable; // @synthesize ownerTrustZoneCapable=_ownerTrustZoneCapable;
 @property(readonly, nonatomic) NSMutableDictionary *newlyConfiguredAccessories; // @synthesize newlyConfiguredAccessories=_newlyConfiguredAccessories;
 @property(retain, nonatomic) HMDAccessoryNetworkProtectionGroupRegistry *networkProtectionGroupRegistry; // @synthesize networkProtectionGroupRegistry=_networkProtectionGroupRegistry;
@@ -327,6 +329,10 @@
 - (void)_configurePairedAccessoriesForServer:(id)arg1 reAddServices:(_Bool)arg2;
 - (void)_unconfigurePairedAccessoriesForServer:(id)arg1 updateReachability:(_Bool)arg2;
 - (void)_processUpdatedAccessoryServer:(id)arg1 reAddServices:(_Bool)arg2;
+- (void)_processUpdatedProductDataForAccessory:(id)arg1 hapAccessory:(id)arg2 transaction:(id)arg3;
+- (void)_processProductDataForNewlyAddedAccessory:(id)arg1 transaction:(id)arg2;
+- (id)_productDataFromHAPAccessory:(id)arg1;
+- (id)_vendorModelEntryForManufacturer:(id)arg1 model:(id)arg2 productData:(id)arg3;
 - (_Bool)getUpdateTransactionForAccessory:(id)arg1 hapAccessory:(id)arg2 accessoryTransaction:(id)arg3 addSvcTransactions:(id *)arg4 updateSvcTransactions:(id *)arg5 removeSvcTransactions:(id *)arg6;
 - (void)__updateServiceTransaction:(id)arg1 accessoryTransaction:(id)arg2 service:(id)arg3 accessory:(id)arg4 hapService:(id)arg5;
 - (void)_handleRemovedPairedAccessories:(id)arg1 bridgeAccessory:(id)arg2;
@@ -397,6 +403,7 @@
 @property(readonly, nonatomic) long long homeLocation; // @synthesize homeLocation=_homeLocation;
 @property(nonatomic) long long atHomeLevel; // @synthesize atHomeLevel=_atHomeLevel;
 - (void)_handleEnableNotifications:(id)arg1;
+- (void)_refreshCharacteristicValuesOnHomeNotificationEnable;
 - (void)_handleHasAnyUserAcknowledgedCameraRecordingOnboardingChange:(id)arg1 message:(id)arg2;
 - (void)_handleMultiUserEnabledChange:(id)arg1 message:(id)arg2;
 - (void)_handleSetHasAnyUserAcknowledgedCameraRecordingOnboardingRequest:(id)arg1;
@@ -789,7 +796,6 @@
 - (void)computeBridgedAccessoriesForAllBridges;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (void)takeOwnershipOfAccessories:(id)arg1;
-- (void)handleForegroundAppsNotification:(id)arg1;
 - (void)_handleAppTermination:(id)arg1;
 - (void)handleAppTermination:(id)arg1;
 - (void)handleHomeUIServiceTermination:(id)arg1;
@@ -822,9 +828,11 @@
 @property(readonly, copy, nonatomic) NSString *contextID;
 - (id)actionWithDictionaryRepresentation:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *mediaSystems;
+- (id)playbackArchiveWithSessionIdentifier:(id)arg1;
 - (id)assistantObject;
 - (id)url;
 - (id)assistantUniqueIdentifier;
+- (void)evaluateNetworkProtectionAndRouterManagement;
 - (_Bool)checkForNetworkRouterSupport:(unsigned long long)arg1 error:(id *)arg2;
 @property(readonly) HMDHAPAccessory *activeNetworkRouterAccessory;
 @property(readonly) NSArray *wiFiRouterAccessories;
@@ -832,6 +840,9 @@
 - (_Bool)_isNetworkRouterSupportEnabledForCurrentDevice;
 - (id)_currentDeviceCapabilities;
 - (void)_evaluateNetworkProtectionSupport;
+- (void)_requestRemoveClientConfigurationWithIdentifier:(id)arg1;
+- (void)_removeClientConfigurationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_removeClientConfigurationWithIdentifier:(id)arg1;
 - (void)_requestUniquePSKClientConfigurationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_createUniquePSKClientConfigurationWithRequestMessage:(id)arg1 pairingEvent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_evaluateNetworkProtectionAndRouterManagement;
@@ -839,6 +850,7 @@
 - (void)handleNetworkRouterProfileAdded:(id)arg1;
 - (void)_unconfigureNetworkRouterClientManager;
 - (void)_configureNetworkRouterClientManager:(id)arg1;
+- (void)_handleRemoveClientConfiguration:(id)arg1;
 - (void)_handleCreateUniquePSKClientConfiguration:(id)arg1;
 - (void)_handleSetMinHomeKitVersionForAccessoryNetworkProtectionChange:(id)arg1;
 - (void)_handleSetMinimumNetworkRouterHomeKitVersion:(id)arg1;

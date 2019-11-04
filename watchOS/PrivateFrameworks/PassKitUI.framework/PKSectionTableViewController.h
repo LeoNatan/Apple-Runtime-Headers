@@ -33,7 +33,7 @@
 - (void)reloadSection:(unsigned int)arg1;
 - (void)reloadSections:(id)arg1;
 - (_Bool)reloadData;
-- (_Bool)recomputeMappedSections;
+- (_Bool)recomputeMappedSectionsAndReloadSections:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 numberOfSections:(unsigned int)arg2;

@@ -13,9 +13,11 @@
 @interface GEORPAuxiliaryControl : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEORPCarPlayAuxiliaryControl *_car;
     GEORPWatchAuxiliaryControl *_watch;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_car:1;
         unsigned int read_watch:1;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) GEORPWatchAuxiliaryControl *watch;
 @property(readonly, nonatomic) _Bool hasWatch;
 - (void)_readWatch;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

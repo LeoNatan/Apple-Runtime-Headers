@@ -13,6 +13,7 @@
 
 @interface ARWorldTrackingOptions : NSObject <NSCopying>
 {
+    NSMutableDictionary *_activeVideoFormatsMap;
     NSObject<OS_dispatch_semaphore> *_activeVideoFormatsSemaphore;
     _Bool _relocalizationEnabled;
     _Bool _deterministicMode;
@@ -26,10 +27,8 @@
     NSString *_slamConfiguration;
     unsigned long long _planeDetection;
     double _minVergenceAngle;
-    NSMutableDictionary *_activeVideoFormatsMap;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *activeVideoFormatsMap; // @synthesize activeVideoFormatsMap=_activeVideoFormatsMap;
 @property(nonatomic, getter=isCollaborationEnabled) _Bool collaborationEnabled; // @synthesize collaborationEnabled=_collaborationEnabled;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
 @property(nonatomic) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
@@ -47,6 +46,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionary;
 - (unsigned int)cameraIdForCaptureDeviceType:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *activeVideoFormatsMap;
 - (void)updateCameraMap;
 - (_Bool)shouldUseSuperWide;
 - (id)initWithImageSensorSettings:(id)arg1;

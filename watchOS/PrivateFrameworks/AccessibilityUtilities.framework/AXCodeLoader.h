@@ -49,7 +49,7 @@
 - (id)_accessibilityBundleMapURLs;
 - (void)_associateAccessibilityCodeItemsWithAllTrackedCodeItems;
 - (void)_associateAccessibilityCodeItemWithLoadedCodeItem:(id)arg1;
-- (id)_accessibilityCodeItemMatchingName:(id)arg1 type:(int)arg2;
+- (id)_accessibilityCodeItemMatchingName:(id)arg1 type:(int)arg2 path:(id)arg3;
 - (id)_platformKeyForPlatform:(unsigned int)arg1;
 - (void)_reconcileTrackedCodeItemsWithAccessibilityCodeItemDefinitions;
 - (void)_updateAccessibilityCodeItemDefinitionsIfNeeded;

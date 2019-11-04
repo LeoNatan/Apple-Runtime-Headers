@@ -9,7 +9,8 @@
 @class INShortcut, NSArray, NSString;
 
 @protocol VCVoiceShortcutManagerXPCInterface <NSObject>
-- (void)hasRunEventsInTheLast30DaysWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)obliterateShortcuts:(void (^)(NSError *))arg1;
+- (void)hasRunEventsInTheLast5DaysWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)runShortcutWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)runShortcutWithName:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)deleteTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
@@ -17,11 +18,12 @@
 - (void)checkTriggerStateWithIdentifier:(NSString *)arg1 completion:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)fireTriggerWithIdentifier:(NSString *)arg1 force:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)getConfiguredTriggerDescriptionsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
+- (void)unregisterTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)refreshTriggerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(void (^)(NSSecurityScopedURLWrapper *, NSError *))arg1;
 - (void)setInteger:(int)arg1 forKey:(NSString *)arg2 inDomain:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)generateSingleUseTokenForWorkflowIdentifier:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
-- (void)getShareSheetWorkflowsForTypeIdentifiers:(NSArray *)arg1 hostBundleIdentifier:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (void)getShareSheetWorkflowsForExtensionMatchingDictionaries:(NSArray *)arg1 hostBundleIdentifier:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)setShortcutSuggestions:(NSArray *)arg1 forAppWithBundleIdentifier:(NSString *)arg2;

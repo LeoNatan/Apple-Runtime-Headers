@@ -23,6 +23,7 @@
 @property(retain, nonatomic) SBLockStateAggregator *lockStateAggregator; // @synthesize lockStateAggregator=_lockStateAggregator;
 @property(retain, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 - (void).cxx_destruct;
+- (void)_lockStateChanged:(id)arg1;
 - (void)_hardwareButtonPressed:(id)arg1;
 - (_Bool)_isDeviceUILocked;
 - (void)_killSounds;

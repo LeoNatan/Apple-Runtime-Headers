@@ -37,6 +37,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue;
 @property(nonatomic, setter=_setShouldObserveLayout:) BOOL _shouldObserveLayout; // @synthesize _shouldObserveLayout;
 - (void).cxx_destruct;
+- (void)_invalidateInUseAssertion;
+- (void)_takeInUseAssertionForBundleIdentifier:(id)arg1 withReason:(id)arg2;
 - (BOOL)_cancelRequestTimer;
 - (double)_timeoutIntervalForTransactionState:(id)arg1;
 - (void)_startRequestTimerWithExtensionProxy:(id)arg1;

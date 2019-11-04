@@ -8,8 +8,10 @@
 
 @interface EKGeneralLookupPredicate : EKPredicate
 {
+    long long _faultingOption;
 }
 
+@property(nonatomic) long long faultingOption; // @synthesize faultingOption=_faultingOption;
 - (id)predicateForCoreData;
 
 @end

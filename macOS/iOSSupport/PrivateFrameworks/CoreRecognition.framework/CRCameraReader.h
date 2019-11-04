@@ -170,6 +170,7 @@
 @property BOOL hidePlacementText; // @synthesize hidePlacementText=_hidePlacementText;
 @property __weak id <CRCameraReaderDelegate> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 - (void).cxx_destruct;
+- (void)mergeInfo:(id)arg1 intoFindInfo:(id)arg2;
 - (void)updateContactsCache:(id)arg1;
 - (void)reportAcceptedString:(id)arg1 forOutput:(id)arg2 withClientID:(id)arg3;
 - (id)generateStringFromDate:(id)arg1;
@@ -194,6 +195,7 @@
 - (void)removeLayerTree;
 - (id)findCCExpDateInImageEmbossed:(id)arg1;
 - (id)findCCNameInImageEmbossed:(id)arg1;
+- (id)findCCNumberInImageEmbossed:(id)arg1 withFinalDigit:(id)arg2;
 - (id)findCCNumberInImageEmbossed:(id)arg1;
 - (id)findCCResultsInImageFlat:(id)arg1 usingTextFeatures:(id)arg2 invert:(BOOL)arg3;
 - (id)findCCObjectsEmbossed:(id)arg1 inImage:(id)arg2 numberRects:(id)arg3 nameRects:(id)arg4 dateRects:(id)arg5;

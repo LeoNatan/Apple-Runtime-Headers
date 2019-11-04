@@ -12,8 +12,8 @@
 {
 }
 
-+ (id)pickupDetailItemsForCountedItems:(id)arg1;
-+ (id)notificationDetailItemsForCountedItems:(id)arg1;
++ (id)pickupItemsExcludingSystemHiddenApplications:(id)arg1;
++ (id)notificationItemsExcludingSystemHiddenApplications:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) STUsageBlock *block; // @dynamic block;

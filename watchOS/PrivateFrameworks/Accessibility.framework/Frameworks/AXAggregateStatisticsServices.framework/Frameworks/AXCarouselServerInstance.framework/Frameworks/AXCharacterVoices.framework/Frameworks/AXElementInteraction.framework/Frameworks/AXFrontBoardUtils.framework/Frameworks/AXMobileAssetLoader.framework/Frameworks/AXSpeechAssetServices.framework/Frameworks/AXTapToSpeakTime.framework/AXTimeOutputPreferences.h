@@ -50,10 +50,12 @@
 - (int)tapToSpeakTimeAvailability;
 - (void)setTapToSpeakTimeEnabled:(_Bool)arg1;
 - (_Bool)tapToSpeakTimeEnabled;
+- (_Bool)_voiceOverIsInTripleClick;
 - (_Bool)_voiceOverIsEnabled;
 - (int)_npsIntegerValueForPreferenceKey:(id)arg1 defaultValue:(int)arg2;
 - (_Bool)_npsBoolValueForPreferenceKey:(id)arg1 defaultValue:(_Bool)arg2;
 - (void)_setNPSValue:(id)arg1 preferenceKey:(id)arg2;
+- (id)_npsValueForPreferenceKey:(id)arg1 expectedClass:(Class)arg2;
 - (id)_npsValueForPreferenceKey:(id)arg1;
 @property(readonly, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
 

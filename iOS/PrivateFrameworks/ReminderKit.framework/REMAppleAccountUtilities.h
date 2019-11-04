@@ -15,6 +15,7 @@
     ACAccountStore *_accountStore;
 }
 
++ (id)accountDescriptionWithACAccount:(id)arg1;
 + (id)getAppleIDSession;
 + (id)sharedInstance;
 @property(nonatomic) _Bool primaryICloudACAccountIsValid; // @synthesize primaryICloudACAccountIsValid=_primaryICloudACAccountIsValid;

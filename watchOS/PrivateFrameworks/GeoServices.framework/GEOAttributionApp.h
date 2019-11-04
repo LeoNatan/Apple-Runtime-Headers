@@ -13,9 +13,11 @@
 @interface GEOAttributionApp : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_appBundleIdentifier;
     NSMutableArray *_handledSchemes;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _restaurantReservationExtensionSupport;
     _Bool _supportsRestaurantQueueing;
     _Bool _supportsRestaurantReservations;
@@ -63,6 +65,8 @@
 - (void)_readHandledSchemes;
 @property(retain, nonatomic) NSString *appBundleIdentifier;
 - (void)_readAppBundleIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

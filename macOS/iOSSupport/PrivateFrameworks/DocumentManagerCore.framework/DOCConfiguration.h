@@ -18,6 +18,7 @@
     BOOL _forPickingDocuments;
     BOOL _forPickingFolders;
     BOOL _supportsRemovableFileProviders;
+    BOOL _forPickingDownloadsFolder;
     BOOL _isContentManaged;
     BOOL _neverCreateBookmarkForOpenInPlace;
     BOOL _pickingItemsShouldBumpLastOpenDate;
@@ -84,6 +85,7 @@
 @property BOOL pickingItemsShouldBumpLastOpenDate; // @synthesize pickingItemsShouldBumpLastOpenDate=_pickingItemsShouldBumpLastOpenDate;
 @property BOOL neverCreateBookmarkForOpenInPlace; // @synthesize neverCreateBookmarkForOpenInPlace=_neverCreateBookmarkForOpenInPlace;
 @property(nonatomic) BOOL isContentManaged; // @synthesize isContentManaged=_isContentManaged;
+@property BOOL forPickingDownloadsFolder; // @synthesize forPickingDownloadsFolder=_forPickingDownloadsFolder;
 @property BOOL supportsRemovableFileProviders; // @synthesize supportsRemovableFileProviders=_supportsRemovableFileProviders;
 @property BOOL forPickingFolders; // @synthesize forPickingFolders=_forPickingFolders;
 @property BOOL forPickingDocuments; // @synthesize forPickingDocuments=_forPickingDocuments;

@@ -28,10 +28,11 @@
 - (void)_resourceURLReceivedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;
+- (void)abortClientSide;
 - (void)runDaemonSide;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
-- (id)initWithAssetObjectID:(id)arg1 size:(struct CGSize)arg2 behaviorSpec:(id)arg3;
+- (id)initWithTaskIdentifier:(id)arg1 assetObjectID:(id)arg2 size:(struct CGSize)arg3 behaviorSpec:(id)arg4;
 
 @end
 

@@ -7,6 +7,7 @@
 @class NSString, SFNotificationInfo, SFProximityClient;
 
 @protocol SDXPCProximityClientInterface
+- (void)proximityClientRequestScannerTimerReset;
 - (void)proximityClientUpdateContent:(SFNotificationInfo *)arg1 forDevice:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)proximityClientProvideContent:(SFNotificationInfo *)arg1 forDevice:(NSString *)arg2 force:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
 - (void)proximityClientDismissContentForDevice:(NSString *)arg1 completion:(void (^)(NSError *))arg2;

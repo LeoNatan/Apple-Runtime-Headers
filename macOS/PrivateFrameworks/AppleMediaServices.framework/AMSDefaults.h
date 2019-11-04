@@ -33,10 +33,12 @@
 + (void)setSharedDatabaseChangeToken:(id)arg1;
 + (void)setReversePushEnabled:(long long)arg1;
 + (void)setQAMode:(BOOL)arg1;
++ (void)setPushEnvironment:(long long)arg1;
 + (void)setPrimaryBiometricACLVersion:(id)arg1;
 + (void)setPerfomedDeviceOfferSetup:(BOOL)arg1;
 + (void)setMigratedToNewCookieStorage:(BOOL)arg1;
 + (void)setMigratedToNewAccountStore:(BOOL)arg1;
++ (void)setMigratedDeviceOffers:(BOOL)arg1;
 + (void)setMetricsTimingWindowStartTime:(id)arg1;
 + (void)setMetricsCanaryIdentifier:(id)arg1;
 + (void)setMescalCertExpiration:(id)arg1;
@@ -73,11 +75,13 @@
 + (id)sharedDatabaseChangeToken;
 + (long long)reversePushEnabled;
 + (BOOL)QAMode;
++ (long long)pushEnvironment;
 + (id)primaryBiometricACLVersion;
 + (BOOL)perfomedDeviceOfferSetup;
 + (id)multiUserContainerID;
 + (BOOL)migratedToNewCookieStorage;
 + (BOOL)migratedToNewAccountStore;
++ (BOOL)migratedDeviceOffers;
 + (id)metricsTimingWindowStartTime;
 + (id)metricsCanaryIdentifier;
 + (id)mescalCertExpiration;

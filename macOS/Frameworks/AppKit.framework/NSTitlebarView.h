@@ -21,7 +21,9 @@ __attribute__((visibility("hidden")))
 - (void)layout;
 - (id)_titleTextFieldView;
 - (id)menuForEvent:(id)arg1;
+- (void)mouseDragged:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
+- (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)_shouldBeTreatedAsInkEventInInactiveWindow:(id)arg1;

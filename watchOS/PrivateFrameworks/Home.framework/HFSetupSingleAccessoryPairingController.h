@@ -9,17 +9,15 @@
 #import <Home/HFHomeObserver-Protocol.h>
 #import <Home/HFSetupPairingController-Protocol.h>
 
-@class HFDiscoveredAccessory, HFSetupAccessoryResult, HMAccessorySetupCompletedInfo, HMHome, HMSetupAccessoryDescription, NAFuture, NSDate, NSHashTable, NSSet, NSString;
-@protocol HMSetupRemoteService;
+@class HFDiscoveredAccessory, HFSetupAccessoryResult, HFSetupPairingContext, HMAccessorySetupCompletedInfo, HMHome, NAFuture, NSDate, NSHashTable, NSSet, NSString;
 
 @interface HFSetupSingleAccessoryPairingController : NSObject <HFHomeObserver, HFSetupPairingController>
 {
     _Bool _accessoryRequiresCode;
+    HFSetupPairingContext *_context;
     HFSetupAccessoryResult *_setupResult;
     HMAccessorySetupCompletedInfo *_completedInfo;
     HFDiscoveredAccessory *_discoveredAccessoryToPair;
-    id <HMSetupRemoteService> _setupRemoteService;
-    HMSetupAccessoryDescription *_setupAccessoryDescription;
     unsigned int _phase;
     NSString *_statusTitle;
     NSString *_statusDescription;
@@ -40,11 +38,10 @@
 @property(retain, nonatomic) NSString *statusDescription; // @synthesize statusDescription=_statusDescription;
 @property(retain, nonatomic) NSString *statusTitle; // @synthesize statusTitle=_statusTitle;
 @property(nonatomic) unsigned int phase; // @synthesize phase=_phase;
-@property(readonly, nonatomic) HMSetupAccessoryDescription *setupAccessoryDescription; // @synthesize setupAccessoryDescription=_setupAccessoryDescription;
-@property(nonatomic) __weak id <HMSetupRemoteService> setupRemoteService; // @synthesize setupRemoteService=_setupRemoteService;
 @property(readonly, nonatomic) HFDiscoveredAccessory *discoveredAccessoryToPair; // @synthesize discoveredAccessoryToPair=_discoveredAccessoryToPair;
 @property(readonly, nonatomic) HMAccessorySetupCompletedInfo *completedInfo; // @synthesize completedInfo=_completedInfo;
 @property(retain, nonatomic) HFSetupAccessoryResult *setupResult; // @synthesize setupResult=_setupResult;
+@property(readonly, nonatomic) HFSetupPairingContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)_assertValidTransitionFromPhase:(unsigned int)arg1 toPhase:(unsigned int)arg2;
 - (void)_failPairingWithDiscoveredAccessory:(id)arg1 error:(id)arg2;
@@ -56,7 +53,7 @@
 - (void)startWithHome:(id)arg1;
 - (void)removePairingObserver:(id)arg1;
 - (void)addPairingObserver:(id)arg1;
-- (id)initWithDiscoveredAccessory:(id)arg1 setupRemoteService:(id)arg2 setupAccessoryDescription:(id)arg3;
+- (id)initWithContext:(id)arg1 discoveredAccessory:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

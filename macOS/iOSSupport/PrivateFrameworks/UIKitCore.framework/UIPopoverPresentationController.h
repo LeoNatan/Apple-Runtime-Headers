@@ -70,6 +70,8 @@
     BOOL __shouldHideArrow;
     BOOL _shouldDisableInteractionDuringTransitions;
     BOOL __ignoreBarButtonItemSiblings;
+    BOOL __softAssertWhenNoSourceViewOrBarButtonItemSpecified;
+    BOOL __allowsSourceViewInDifferentWindowThanInitialPresentationViewController;
     unsigned long long _permittedArrowDirections;
     unsigned long long _popoverArrowDirection;
     UIView *_sourceOverlayView;
@@ -86,6 +88,8 @@
 + (struct UIEdgeInsets)_defaultPopoverLayoutMarginsForPopoverControllerStyle:(long long)arg1 andContentViewController:(id)arg2;
 + (Class)_popoverViewClass;
 + (BOOL)_showTargetRectPref;
+@property(nonatomic, setter=_setAllowsSourceViewInDifferentWindowThanInitialPresentationViewController:) BOOL _allowsSourceViewInDifferentWindowThanInitialPresentationViewController; // @synthesize _allowsSourceViewInDifferentWindowThanInitialPresentationViewController=__allowsSourceViewInDifferentWindowThanInitialPresentationViewController;
+@property(nonatomic, setter=_setSoftAssertWhenNoSourceViewOrBarButtonItemSpecified:) BOOL _softAssertWhenNoSourceViewOrBarButtonItemSpecified; // @synthesize _softAssertWhenNoSourceViewOrBarButtonItemSpecified=__softAssertWhenNoSourceViewOrBarButtonItemSpecified;
 @property(nonatomic, setter=_setIgnoreBarButtonItemSiblings:) BOOL _ignoreBarButtonItemSiblings; // @synthesize _ignoreBarButtonItemSiblings=__ignoreBarButtonItemSiblings;
 @property(nonatomic, getter=_shouldDisableInteractionDuringTransitions, setter=_setShouldDisableInteractionDuringTransitions:) BOOL shouldDisableInteractionDuringTransitions; // @synthesize shouldDisableInteractionDuringTransitions=_shouldDisableInteractionDuringTransitions;
 @property(nonatomic, setter=_setDimmingViewTopEdgeInset:) double _dimmingViewTopEdgeInset; // @synthesize _dimmingViewTopEdgeInset=__dimmingViewTopEdgeInset;
@@ -117,7 +121,7 @@
 - (BOOL)_forcesPreferredAnimationControllers;
 - (long long)_defaultPresentationStyleForTraitCollection:(id)arg1;
 - (BOOL)_shouldKeepCurrentFirstResponder;
-- (void)containerViewDidLayoutSubviews;
+- (void)containerViewWillLayoutSubviews;
 - (void)_updateSourceOverlayViewConstraints;
 - (void)_updateShadowFrame;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -194,7 +198,6 @@
 - (BOOL)_isShimmingPopoverControllerPresentation;
 - (id)_backgroundView;
 - (id)popoverView;
-- (void)_commonPresentPopoverFromRect:(struct CGRect)arg1 inView:(id)arg2 permittedArrowDirections:(unsigned long long)arg3 animated:(BOOL)arg4;
 - (struct CGPoint)_centerPointForScale:(double)arg1 frame:(struct CGRect)arg2 anchor:(struct CGPoint)arg3;
 - (void)_invalidateLayoutInfo;
 - (void)_resetSlideTransitionCount;

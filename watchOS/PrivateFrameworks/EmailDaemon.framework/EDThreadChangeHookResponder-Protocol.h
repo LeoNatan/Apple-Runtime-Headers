@@ -6,16 +6,17 @@
 
 #import <EmailDaemon/NSObject-Protocol.h>
 
-@class EMThreadObjectID, NSArray;
+@class EDPersistenceDatabaseGenerationWindow, EMThreadObjectID, EMThreadScope, NSArray;
 
 @protocol EDThreadChangeHookResponder <NSObject>
 
 @optional
+- (void)persistenceWillResetThreadScope:(EMThreadScope *)arg1 denyBlock:(void (^)(_Bool))arg2;
 - (void)persistenceDidFinishThreadUpdates;
-- (void)persistenceIsDeletingThreadWithObjectID:(EMThreadObjectID *)arg1;
-- (void)persistenceIsChangingThreadWithObjectID:(EMThreadObjectID *)arg1 changedKeyPaths:(NSArray *)arg2;
-- (void)persistenceIsReconcilingJournaledThreadWithObjectID:(EMThreadObjectID *)arg1;
-- (void)persistenceIsMarkingThreadAsJournaledWithObjectID:(EMThreadObjectID *)arg1;
-- (void)persistenceIsAddingThreadWithObjectID:(EMThreadObjectID *)arg1 journaled:(_Bool)arg2;
+- (void)persistenceIsDeletingThreadWithObjectID:(EMThreadObjectID *)arg1 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg2;
+- (void)persistenceIsChangingThreadWithObjectID:(EMThreadObjectID *)arg1 changedKeyPaths:(NSArray *)arg2 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg3;
+- (void)persistenceIsReconcilingJournaledThreadsWithObjectIDs:(NSArray *)arg1 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg2;
+- (void)persistenceIsMarkingThreadAsJournaledWithObjectID:(EMThreadObjectID *)arg1 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg2;
+- (void)persistenceIsAddingThreadWithObjectID:(EMThreadObjectID *)arg1 journaled:(_Bool)arg2 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg3;
 @end
 

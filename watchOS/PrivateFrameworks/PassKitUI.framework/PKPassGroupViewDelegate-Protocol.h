@@ -15,6 +15,7 @@
 - (int)groupViewContentModeForFrontmostPassWhenStacked:(PKPassGroupView *)arg1;
 - (PKReusablePassViewQueue *)groupViewReusablePassViewQueue:(PKPassGroupView *)arg1;
 - (unsigned int)groupViewPassesSuppressedContent:(PKPassGroupView *)arg1;
+- (void)groupView:(PKPassGroupView *)arg1 faceViewFrameDidChangeForFrontmostPassView:(PKPassView *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 frontmostPassViewDidChange:(PKPassView *)arg2 withContext:(PKPassPresentationContext *)arg3;
 - (_Bool)groupView:(PKPassGroupView *)arg1 deleteButtonEnabledForPass:(PKPass *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 deleteButtonPressedForPass:(PKPass *)arg2;

@@ -12,12 +12,15 @@ __attribute__((visibility("hidden")))
 @interface FI_TButton : NSButton
 {
     struct TNSRef<NSColor, void> _titleColor;
+    struct TNSRef<NSColor, void> _alternateTitleColor;
     struct CGSize _maxSize;
     struct CGSize _minSize;
     BOOL _acceptsFirstMouse;
     struct TriStateBool _isEnabledCacheWhenNotKey;
     _Bool _isInsideWindowChangedKeyState;
     struct TNSRef<FI_TTargetActionFunctor, void> _glue;
+    unique_ptr_c12ab926 _bestFitTitleSelector;
+    unique_ptr_c12ab926 _bestFitAlternateTitleSelector;
 }
 
 + (Class)cellClass;
@@ -25,6 +28,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setAlternateTitleStringSet:(const unordered_set_66d0470b *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
+- (void)setTitleStringSet:(const unordered_set_66d0470b *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
+- (unique_ptr_c12ab926)bestFitSelectorForStringSet:(const unordered_set_66d0470b *)arg1 attributes:(id)arg2 extraContentInsets:(const struct NSEdgeInsets *)arg3;
+- (struct CGSize)intrinsicContentSize;
 - (void)setAccessibilityElement:(BOOL)arg1;
 - (void)_windowChangedKeyState;
 - (void)setEnabled:(BOOL)arg1;
@@ -35,6 +42,10 @@ __attribute__((visibility("hidden")))
 - (id)copyButton;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 @property BOOL acceptsFirstMouse; // @dynamic acceptsFirstMouse;
+- (void)setAttributedAlternateTitle:(id)arg1;
+- (void)setAlternateTitle:(id)arg1;
+@property(retain, nonatomic) NSColor *alternateTitleColor;
+- (void)updateAlternateTitleColor;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setObjectValue:(id)arg1;

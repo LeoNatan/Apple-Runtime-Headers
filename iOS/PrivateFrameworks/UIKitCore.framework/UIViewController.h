@@ -341,6 +341,7 @@
 - (id)_effectiveStatusBarHiddenViewController;
 - (id)_effectiveStatusBarStyleViewController;
 - (void)setNeedsStatusBarAppearanceUpdate;
+- (void)_setNeedsStatusBarAppearanceUpdateWithAnimationParameters:(id)arg1;
 @property(readonly, nonatomic, getter=_preferredStatusBarHideAnimationParameters) UIStatusBarHideAnimationParameters *preferredStatusBarHideAnimationParameters;
 @property(readonly, nonatomic, getter=_preferredStatusBarStyleAnimationParameters) UIStatusBarStyleAnimationParameters *preferredStatusBarStyleAnimationParameters;
 @property(readonly, nonatomic) long long preferredStatusBarUpdateAnimation;
@@ -656,6 +657,7 @@
 @property(readonly, nonatomic, getter=_window) UIWindow *window;
 - (_Bool)_isPresentingInWindow:(id)arg1;
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
+- (_Bool)_allowsUserInteractionWhenPreviewedInContextMenu;
 - (id)_rootAncestorViewController;
 - (id)_nonModalAncestorViewController;
 - (id)_nonModalAncestorViewControllerStopAtIsPresentationContext:(_Bool)arg1;

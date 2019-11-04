@@ -18,12 +18,14 @@
 
 + (id)placeholderContact;
 + (id)contactForPhoneNumber:(id)arg1 email:(id)arg2;
-+ (id)contactDescriptorKeys;
++ (id)viewControllerDescriptorKeys;
++ (id)resultTableContactDescriptorKeys;
 + (id)sharedStore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *contactFetchingQueue; // @synthesize contactFetchingQueue=_contactFetchingQueue;
 @property(retain, nonatomic) NSCache *contactCache; // @synthesize contactCache=_contactCache;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+- (id)contactsForIdentifiers:(id)arg1 withKeys:(id)arg2;
 - (id)contactForIdentifier:(id)arg1;
 - (void)fetchContactsForIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchContactForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

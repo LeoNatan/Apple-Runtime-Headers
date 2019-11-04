@@ -45,7 +45,7 @@
 - (void)clearAllEvents;
 - (void)stop;
 - (void)speak:(id)arg1 fallbackPrompt:(unsigned int)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)exactDurationToSpeak:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)cacheAnnouncement:(id)arg1;
 - (double)_estimateDurationToSpeak:(id)arg1;
 - (double)durationToSpeak:(id)arg1;
 - (void)_setGender;

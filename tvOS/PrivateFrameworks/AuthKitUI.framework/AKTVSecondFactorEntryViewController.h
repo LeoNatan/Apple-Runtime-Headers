@@ -8,7 +8,7 @@
 
 #import <AuthKitUI/_TVDigitEntryViewControllerDelegate-Protocol.h>
 
-@class NSString, _TVDigitEntryViewController;
+@class NSString, TVActivityIndicatorViewController, _TVDigitEntryViewController;
 
 @interface AKTVSecondFactorEntryViewController : UIViewController <_TVDigitEntryViewControllerDelegate>
 {
@@ -17,11 +17,13 @@
     CDUnknownBlockType _ak_regenerateCodeAction;
     CDUnknownBlockType _ak_codeEnteredAction;
     _TVDigitEntryViewController *_pinViewController;
-    id _codeEntryObserver;
+    TVActivityIndicatorViewController *_spinnerController;
+    unsigned long long _state;
 }
 
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
-@property(retain, nonatomic) id codeEntryObserver; // @synthesize codeEntryObserver=_codeEntryObserver;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
+@property(readonly, nonatomic) TVActivityIndicatorViewController *spinnerController; // @synthesize spinnerController=_spinnerController;
 @property(readonly, nonatomic) _TVDigitEntryViewController *pinViewController; // @synthesize pinViewController=_pinViewController;
 @property(copy, nonatomic) CDUnknownBlockType ak_codeEnteredAction; // @synthesize ak_codeEnteredAction=_ak_codeEnteredAction;
 @property(copy, nonatomic) CDUnknownBlockType ak_regenerateCodeAction; // @synthesize ak_regenerateCodeAction=_ak_regenerateCodeAction;
@@ -33,11 +35,14 @@
 - (void)digitEntryViewControllerDidFinish:(id)arg1;
 - (void)digitEntryViewControllerDidCancel:(id)arg1;
 - (void)_resendCode:(id)arg1;
+- (struct CGPoint)_spinnerCenterForViewBounds:(struct CGRect)arg1;
+- (void)_stopSpinner;
+- (void)_startSpinner;
+- (void)_configureSpinnerForState:(unsigned long long)arg1;
 - (void)jiggleDigitField;
 @property(copy, nonatomic) NSString *reason;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
-- (void)dealloc;
 - (void)loadView;
 
 // Remaining properties

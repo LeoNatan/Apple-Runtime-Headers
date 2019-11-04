@@ -14,10 +14,12 @@
 @interface GEOTransitBaseFare : PBCodable <GEOTransitFare, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOTransitPrice *_price;
     NSMutableArray *_supportedPaymentMethods;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _numberOfLegs;
     int _paymentType;
     _Bool _cashOnly;
@@ -70,6 +72,8 @@
 @property(retain, nonatomic) GEOTransitPrice *price;
 @property(readonly, nonatomic) _Bool hasPrice;
 - (void)_readPrice;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSArray *supportedICCardProviders;
 @property(readonly, nonatomic) int type;
 @property(readonly, copy, nonatomic) NSString *currencyCode;

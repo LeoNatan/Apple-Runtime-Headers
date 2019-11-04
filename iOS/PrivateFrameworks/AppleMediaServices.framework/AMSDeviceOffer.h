@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+#import <AppleMediaServices/AMSBagConsumer_Project-Protocol.h>
 
 @class NSNumber, NSSet, NSString;
 
-@interface AMSDeviceOffer : NSObject <AMSBagConsumer>
+@interface AMSDeviceOffer : NSObject <AMSBagConsumer_Project, AMSBagConsumer>
 {
     _Bool _downgrading;
     _Bool _subscribed;

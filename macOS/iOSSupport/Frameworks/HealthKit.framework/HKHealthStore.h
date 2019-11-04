@@ -39,12 +39,14 @@
     NSString *_writeAuthorizationUsageDescriptionOverride;
     NSString *_readAuthorizationUsageDescriptionOverride;
     NSString *_clinicalReadAuthorizationUsageDescriptionOverride;
+    NSString *_researchStudyUsageDescriptionOverride;
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
 + (BOOL)_applicationHasRunningWorkout;
 + (BOOL)isHealthDataAvailable;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(copy, nonatomic) NSString *researchStudyUsageDescriptionOverride; // @synthesize researchStudyUsageDescriptionOverride=_researchStudyUsageDescriptionOverride;
 @property(copy, nonatomic) NSString *clinicalReadAuthorizationUsageDescriptionOverride; // @synthesize clinicalReadAuthorizationUsageDescriptionOverride=_clinicalReadAuthorizationUsageDescriptionOverride;
 @property(copy, nonatomic) NSString *readAuthorizationUsageDescriptionOverride; // @synthesize readAuthorizationUsageDescriptionOverride=_readAuthorizationUsageDescriptionOverride;
 @property(copy, nonatomic) NSString *writeAuthorizationUsageDescriptionOverride; // @synthesize writeAuthorizationUsageDescriptionOverride=_writeAuthorizationUsageDescriptionOverride;
@@ -173,6 +175,7 @@
 - (void)handleAuthorizationForExtensionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_validateHealthDataPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
 - (void)_validateClinicalHealthRecordsPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
+- (id)_researchStudyUsageDescription;
 - (id)_clientClinicalReadAuthorizationUsageDescription;
 - (id)_clientReadAuthorizationUsageDescription;
 - (id)_clientWriteAuthorizationUsageDescription;

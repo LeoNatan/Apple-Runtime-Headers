@@ -49,9 +49,11 @@
 - (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deletePaymentTransactionWithIdentifier:(id)arg1 forPassWithUniqueIdentifier:(id)arg2;
 - (void)mapsMerchantsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)installmentPlansWithTransactionReferenceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submitTransactionAnswerForTransaction:(id)arg1 questionType:(unsigned int)arg2 answer:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)transactionsRequiringReviewForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cashbackByPeriodFromPassUniqueIdentifier:(id)arg1 withStartDate:(id)arg2 endDate:(id)arg3 calendar:(id)arg4 calendarUnit:(unsigned int)arg5 type:(int)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)installmentTransactionsForInstallmentPlanIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionWithReferenceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionWithServiceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionCountByPeriodForPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 calendar:(id)arg4 calendarUnit:(unsigned int)arg5 includePurchaseTotal:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;

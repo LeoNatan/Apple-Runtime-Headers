@@ -16,10 +16,9 @@
 - (id)homeName;
 - (id)home;
 - (id)localizedDefaultOutputName;
-- (id)outputMeasurementUnit;
+- (id)outputMeasurementUnitType;
 - (id)outputContentClasses;
 - (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
-- (id)localizedFooter;
 - (id)localizedAttribution;
 - (id)localizedDescriptionSummary;
 - (id)localizedName;

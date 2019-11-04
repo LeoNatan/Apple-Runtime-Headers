@@ -111,7 +111,7 @@
 - (void)runAppleIDOptOut:(JSValue *)arg1 __JS_EXPORT_AS__runAppleIDOptOut:(id)arg2;
 - (void)obtainAuthRight:(JSValue *)arg1 __JS_EXPORT_AS__obtainAuthRight:(id)arg2;
 - (void)authenticateUser:(NSString *)arg1 password:(NSString *)arg2 title:(NSString *)arg3 message:(NSString *)arg4 defaultButtonTitle:(NSString *)arg5 cancelButtonTitle:(NSString *)arg6 shouldPromptForPasswordOnly:(BOOL)arg7 isEphemeral:(BOOL)arg8 callback:(JSValue *)arg9 __JS_EXPORT_AS__authenticateUser:(id)arg10;
-- (void)validateLocalPasswordWithTitle:(NSString *)arg1 forcingReprompt:(BOOL)arg2 callback:(JSValue *)arg3 __JS_EXPORT_AS__validateLocalPassword:(id)arg4;
+- (void)validateLocalPasswordWithTitle:(NSString *)arg1 forcingReprompt:(BOOL)arg2 callback:(JSValue *)arg3 __JS_EXPORT_AS__validateLocalPasswordWithTitle:(id)arg4;
 - (void)validateLocalPassword:(JSValue *)arg1 __JS_EXPORT_AS__validateLocalPassword:(id)arg2;
 - (void)showSpinnerWithLabelOnNativeScreen:(NSString *)arg1 __JS_EXPORT_AS__showSpinnerWithLabelOnNativeScreen:(id)arg2;
 - (void)openHelp:(NSString *)arg1 __JS_EXPORT_AS__openHelp:(id)arg2;

@@ -23,7 +23,6 @@
 @property(readonly, nonatomic, getter=isForeground) _Bool foreground;
 @property(readonly, nonatomic) EFObservable *appStateObservable;
 - (id)initWithBundleId:(id)arg1;
-- (id)init;
 - (void)dealloc;
 
 @end

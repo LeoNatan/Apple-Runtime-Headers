@@ -6,9 +6,9 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-#import <NewsArticles/NUArticleViewControllerLoadingListener-Protocol.h>
+#import <NewsArticles/NULoadingDelegate-Protocol.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles2) <NUArticleViewControllerLoadingListener>
-- (void)didLoadArticle:(id)arg1 withContext:(id)arg2;
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles2) <NULoadingDelegate>
+- (void)loadingDidFinishWithError:(id)arg1;
 @end
 

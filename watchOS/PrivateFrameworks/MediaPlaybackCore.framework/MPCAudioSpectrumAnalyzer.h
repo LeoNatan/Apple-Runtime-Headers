@@ -39,6 +39,7 @@
 - (void)reset;
 - (void)configurePlayerItem:(id)arg1;
 - (void)dealloc;
+- (id)init;
 
 @end
 

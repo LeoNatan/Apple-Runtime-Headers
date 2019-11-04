@@ -56,6 +56,7 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (_Bool)_isAnalog;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_applyRubberBandingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_applyShowsCanonicalContent;
 - (void)_applyDataMode;
@@ -84,6 +85,7 @@
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_needsForegroundContainerView;
 - (void)_stopOutputtingTime;
+- (void)_legacyOutputTime:(id)arg1;
 - (void)_outputTime:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;

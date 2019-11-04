@@ -26,8 +26,10 @@
 - (id)_renderBackgroundViewSwatchImageForBlackcombDialColor:(unsigned long long)arg1;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (void)applyToForegroundZoomFraction:(double)arg1 faceScale:(double)arg2;
+- (_Bool)_wantsConstantSpeedZoom;
 - (void)layoutSubviews;
 - (void)_prepareForStatusChange:(_Bool)arg1;
+- (_Bool)_wantsStatusBarIconShadow;
 - (double)_verticalPaddingForStatusBar;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (long long)_keylineStyleForComplicationSlot:(id)arg1;

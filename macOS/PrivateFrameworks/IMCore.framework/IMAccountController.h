@@ -18,11 +18,13 @@
     NSMutableDictionary *_serviceToAccountsMap;
     NSMutableDictionary *_serviceToConnectedAccountsMap;
     NSMutableDictionary *_serviceToOperationalAccountsMap;
+    BOOL _networkDataAvailable;
     NSArray *_accounts;
 }
 
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
+@property(nonatomic) BOOL networkDataAvailable; // @synthesize networkDataAvailable=_networkDataAvailable;
 @property(copy) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
 - (void)_rebuildOperationalAccountsCache:(BOOL)arg1;
@@ -87,6 +89,9 @@
 @property(readonly, nonatomic) int numberOfAccounts;
 - (id)accountAtIndex:(int)arg1;
 - (id)accountForUniqueID:(id)arg1;
+- (void)deferredSetup;
+- (void)_requestNetworkDataAvailability;
+- (BOOL)_shouldPerformDeferredSetup;
 - (void)dealloc;
 - (id)init;
 - (void)autoLogin;

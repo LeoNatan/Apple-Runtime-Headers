@@ -13,12 +13,12 @@
 #import <HomeUI/HUQuickControlContentHosting-Protocol.h>
 #import <HomeUI/HUQuickControlTouchContinuing-Protocol.h>
 #import <HomeUI/HUQuickControlViewControllerCoordinatorDelegate-Protocol.h>
-#import <HomeUI/HUViewControllerCustomDissmissing-Protocol.h>
+#import <HomeUI/HUViewControllerCustomDismissing-Protocol.h>
 
 @class HFItem, HMHome, HUAnimationApplier, HUQuickControlContainerView, HUQuickControlViewController, HUQuickControlViewControllerCoordinator, NSString, UILayoutGuide, UIPanGestureRecognizer, UITapGestureRecognizer;
 @protocol HUOpenURLHandling, HUPresentationDelegate, HUQuickControlContainerViewControllerDelegate, NSCopying;
 
-@interface HUQuickControlContainerViewController : UIViewController <HUPresentationDelegate, HUQuickControlContainerViewDelegate, HUQuickControlViewControllerCoordinatorDelegate, HUQuickControlContentHosting, HUItemPresentationContainer, HUPresentationDelegateHost, HUViewControllerCustomDissmissing, HUQuickControlTouchContinuing>
+@interface HUQuickControlContainerViewController : UIViewController <HUPresentationDelegate, HUQuickControlContainerViewDelegate, HUQuickControlViewControllerCoordinatorDelegate, HUQuickControlContentHosting, HUItemPresentationContainer, HUPresentationDelegateHost, HUViewControllerCustomDismissing, HUQuickControlTouchContinuing>
 {
     BOOL _presentedDetailView;
     id <HUPresentationDelegate> presentationDelegate;

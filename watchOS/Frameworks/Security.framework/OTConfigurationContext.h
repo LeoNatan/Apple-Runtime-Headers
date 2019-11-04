@@ -25,6 +25,7 @@
 @property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(copy, nonatomic) NSString *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (id)makeOTControl:(id *)arg1;
 
 @end
 

@@ -11,5 +11,8 @@
 @protocol CAMAccessibilityHUDItemProvider <NSObject>
 - (void)selectedByAccessibilityHUDManager:(CAMBarsAccessibilityHUDManager *)arg1;
 - (UIAccessibilityHUDItem *)hudItemForAccessibilityHUDManager:(CAMBarsAccessibilityHUDManager *)arg1;
+
+@optional
+- (_Bool)shouldAccessibilityGestureBeginForHUDManager:(CAMBarsAccessibilityHUDManager *)arg1;
 @end
 

@@ -42,6 +42,10 @@
 - (id)initWithSharedObjects:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *_excludedActivityTypes;
+@property(readonly, nonatomic) BOOL _hasItemsForActivityItemsConfiguration;
+@property(readonly, copy, nonatomic) NSArray *_uinsActivityItemSourceProxies;
+@property(readonly, copy, nonatomic) NSArray *_uinsApplicationActivityProxies;
 @property(readonly, copy, nonatomic) NSArray *applicationActivitiesForActivityItemsConfiguration;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

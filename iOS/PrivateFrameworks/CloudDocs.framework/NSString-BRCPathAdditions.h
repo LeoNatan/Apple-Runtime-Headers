@@ -29,6 +29,7 @@
 - (const char *)br_fileSystemRepresentation;
 - (_Bool)br_isAbsolutePath;
 - (id)br_pathRelativeToPath:(id)arg1;
+- (id)removingROSPPrefix;
 - (id)br_pathRelativeToPackageRoot;
 - (id)br_pathOfPackageRoot;
 - (_Bool)br_isPackageRoot;

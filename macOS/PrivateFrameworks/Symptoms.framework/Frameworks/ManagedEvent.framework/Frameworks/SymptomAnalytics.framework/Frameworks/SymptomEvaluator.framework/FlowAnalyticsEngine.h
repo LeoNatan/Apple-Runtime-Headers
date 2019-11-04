@@ -11,7 +11,6 @@
 @class AppAnalytics, CoreTelephonyShim, NSDate, NSMutableDictionary, NSObject, NSString, NWUsageManager, NWUsageTargetSelector, NetworkAnalyticsStateRelay, ObjectAnalytics, ProcessAnalytics, UsageAnalytics;
 @protocol OS_dispatch_source;
 
-__attribute__((visibility("hidden")))
 @interface FlowAnalyticsEngine : AnalyticsEngineCore <NWUsageManagerDelegate>
 {
     UsageAnalytics *uspace;

@@ -12,6 +12,9 @@
 
 + (_Bool)isInternalBuild;
 + (_Bool)isSeedBuild;
++ (_Bool)isNeuralTTSPlatform;
++ (_Bool)hasAMX;
++ (_Bool)hasANE;
 + (_Bool)isWatch;
 + (_Bool)isAudioAccessory;
 + (id)hardwarePlatform;

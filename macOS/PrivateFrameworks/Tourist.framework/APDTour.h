@@ -54,6 +54,7 @@
 + (void)persistCacheDictionary:(id)arg1;
 + (id)cachePath;
 + (void)clearCachedConfig;
++ (void)removeCachedConfig;
 + (id)getCachedTour:(id)arg1;
 + (void)cacheTour:(id)arg1 index:(unsigned long long)arg2 tourCount:(unsigned long long)arg3;
 + (id)cachedTours;

@@ -40,7 +40,9 @@
 - (id)homeNamed:(id)arg1;
 - (void)updateHomesWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *homesToWhichWeCanAddHomeAutomations;
+@property(readonly, nonatomic) NSArray *homesToWhichWeHaveAdminAccess;
 @property(readonly, nonatomic) NSArray *homes; // @synthesize homes=_homes;
+@property(readonly, nonatomic) unsigned int status;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
 - (void)reloadData;

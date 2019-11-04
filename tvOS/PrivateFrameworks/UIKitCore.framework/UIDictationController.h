@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
     NSString *_fallbackDictationLanguage;
     unsigned long long _dictationSourceType;
     NSString *_currentKeyboardPrimaryLanguage;
+    unsigned long long _stateHandler;
     struct _NSRange _insertionRange;
 }
 
@@ -129,6 +130,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)usingServerManualEndpointingThreshold;
 + (id)_dictationLog;
 @property(nonatomic) _Bool ignoreFinalizePhrases; // @synthesize ignoreFinalizePhrases=_ignoreFinalizePhrases;
+@property(nonatomic) unsigned long long stateHandler; // @synthesize stateHandler=_stateHandler;
 @property(nonatomic) unsigned short initialCharacterAfterSelectionForAsyncDelegate; // @synthesize initialCharacterAfterSelectionForAsyncDelegate=_initialCharacterAfterSelectionForAsyncDelegate;
 @property(nonatomic) unsigned short initialPreviousCharacterForAsyncDelegate; // @synthesize initialPreviousCharacterForAsyncDelegate=_initialPreviousCharacterForAsyncDelegate;
 @property(nonatomic) _Bool selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate; // @synthesize selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate=_selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate;
@@ -160,6 +162,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *pendingEdits; // @synthesize pendingEdits=_pendingEdits;
 @property(copy) NSString *smartLanguageSelectionOverrideLanguage; // @synthesize smartLanguageSelectionOverrideLanguage=_smartLanguageSelectionOverrideLanguage;
 @property(copy, nonatomic) NSString *activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
+- (id)dictationUIState;
 - (void)keyboardDismissed:(id)arg1;
 - (_Bool)smartLanguageSelectionOverridden;
 - (void)endSmartLanguageSelectionOverride;
@@ -227,14 +230,16 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)_getRangeOfString:(id)arg1 inDocumentText:(id)arg2;
 - (void)switchToDictationInputMode;
 - (void)_touchPhaseChangedForTouch:(id)arg1;
+- (void)_handleDataSharingSheetDecision;
 - (void)_handlePrivacySheetDismissal;
 - (void)dictationPrivacySheetControllerDidFinish:(id)arg1;
 - (void)presentationControllerDidDismiss:(id)arg1;
-- (void)_presentPrivacySheetWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_presentOptInAlertForDictationInputMode;
+- (void)_presentPrivacySheetForType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentAlertForDictationInputModeOfType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_presentDataSharingOptInAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentOptInAlertWithCompletion:(CDUnknownBlockType)arg1;
-- (void)presentOptInAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)shouldPresentOptInAlert;
+- (void)presentAlertOfType:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_endEnableDictationPromptAnimated:(_Bool)arg1;
 - (void)_beginEnableDictationPrompt;
 - (void)_createDictationPresenterWindowIfNecessary;
@@ -256,7 +261,7 @@ __attribute__((visibility("hidden")))
 - (void)setupForStreamingDictationStart;
 - (void)dismissDictationView:(id)arg1;
 - (_Bool)dictationSearchFieldUISupportsTraitCollection:(id)arg1;
-- (_Bool)_allowsMicsInSearchFieldForLocales:(id)arg1;
+- (_Bool)_allowsMicsInSearchFieldForLanguageIdentifiers:(id)arg1;
 - (_Bool)dictationSearchFieldUIEnabled;
 - (_Bool)currentViewModeSupportsDictationMics;
 - (_Bool)dictationEnabled;

@@ -28,11 +28,9 @@
 @property(readonly) HMDBulletinBoard *bulletinBoard; // @synthesize bulletinBoard=_bulletinBoard;
 - (void).cxx_destruct;
 - (void)removeEventNotificationForClipWithUUID:(id)arg1;
-- (void)_postClipSignificantEventNotification:(id)arg1 postedNotificationUUIDs:(id)arg2;
-- (unsigned int)_reasonForSignificantEventNotification:(id)arg1;
-- (void)postClipSignificantEventNotification:(id)arg1;
-- (void)postSignificantEventNotification:(id)arg1;
-- (id)_writeHeroFrameDataToFileForNotification:(id)arg1;
+- (void)postSignificantEventNotification:(id)arg1 forCameraProfile:(id)arg2;
+- (unsigned int)_effectiveReasonForSignificantEvent:(id)arg1;
+- (id)_copyHeroFrameAtURL:(id)arg1;
 - (void)_removeFile:(id)arg1;
 - (_Bool)_createDirectoryAtPathIfNonExistent:(id)arg1;
 - (id)initWithBulletinBoard:(id)arg1 fileManager:(id)arg2 dataSource:(id)arg3 workQueue:(id)arg4;

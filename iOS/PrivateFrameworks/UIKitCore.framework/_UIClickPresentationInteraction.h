@@ -12,7 +12,7 @@
 #import <UIKitCore/_UIClickInteractionDelegateInternal-Protocol.h>
 #import <UIKitCore/_UIDragInteractionPresentationDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIDragInteraction, UIGestureRecognizer, UIView, _UIClickFeedbackGenerator, _UIClickInteraction, _UIClickPresentation, _UIRelationshipGestureRecognizer, _UIStateMachine;
+@class NSMutableArray, NSString, UIDragInteraction, UIGestureRecognizer, UIView, _UIClickInteraction, _UIClickPresentation, _UIClickPresentationFeedbackGenerator, _UIRelationshipGestureRecognizer, _UIStateMachine;
 @protocol UIInteractionEffect, _UIClickPresentationAssisting, _UIClickPresentationInteractionDelegate;
 
 @interface _UIClickPresentationInteraction : NSObject <_UIClickInteractionDelegateInternal, UIInteraction_Private, UIGestureRecognizerDelegate, _UIDragInteractionPresentationDelegate, UIInteraction>
@@ -33,6 +33,7 @@
     } _delegateImplements;
     _Bool _unableToClick;
     long long _statsPresentation;
+    _Bool _activatedFeedbackGeneratorForClick;
     _Bool _allowSimultaneousRecognition;
     id <_UIClickPresentationInteractionDelegate> _delegate;
     UIView *_view;
@@ -44,17 +45,21 @@
     _UIRelationshipGestureRecognizer *_failureRelationshipGestureRecognizer;
     id <_UIClickPresentationAssisting> _presentationAssistant;
     _UIClickPresentation *_pendingPresentation;
-    _UIClickFeedbackGenerator *_feedbackGenerator;
+    _UIClickPresentationFeedbackGenerator *_feedbackGenerator;
     UIDragInteraction *_latentAssociatedDragInteraction;
+    NSMutableArray *_activeInteractionEffects;
     UIDragInteraction *_associatedDragInteraction;
     NSString *_debugIdentifier;
+    NSString *_presentationTypeDebugString;
     struct CGPoint _initialLocation;
 }
 
+@property(copy, nonatomic) NSString *presentationTypeDebugString; // @synthesize presentationTypeDebugString=_presentationTypeDebugString;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
+@property(retain, nonatomic) NSMutableArray *activeInteractionEffects; // @synthesize activeInteractionEffects=_activeInteractionEffects;
 @property(retain, nonatomic) UIDragInteraction *latentAssociatedDragInteraction; // @synthesize latentAssociatedDragInteraction=_latentAssociatedDragInteraction;
-@property(retain, nonatomic) _UIClickFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
+@property(retain, nonatomic) _UIClickPresentationFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(nonatomic) struct CGPoint initialLocation; // @synthesize initialLocation=_initialLocation;
 @property(retain, nonatomic) _UIClickPresentation *pendingPresentation; // @synthesize pendingPresentation=_pendingPresentation;
 @property(retain, nonatomic) id <_UIClickPresentationAssisting> presentationAssistant; // @synthesize presentationAssistant=_presentationAssistant;
@@ -78,6 +83,7 @@
 - (_Bool)_isControlledByCC;
 - (void)_endInteractionEffectIfNeeded;
 - (id)_clickDriverTouch;
+- (id)_activeEffectForPreview:(id)arg1;
 - (void)_prepareInteractionEffect;
 - (void)_endInteractionWithContext:(id)arg1;
 - (void)_endInteractionDidComplete:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -105,7 +111,6 @@
 - (void)clickInteractionDidClickDown:(id)arg1;
 - (id)highlightEffectForClickInteraction:(id)arg1;
 - (void)clickInteractionDidEnd:(id)arg1;
-- (_Bool)clickInteractionShouldBegin:(id)arg1;
 - (void)_clickInteraction:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
 - (void)_performPresentation;
 - (_Bool)_canPerformPresentation;
@@ -117,6 +122,8 @@
 @property(readonly, nonatomic, getter=_reachedForceThreshold) _Bool reachedForceThreshold;
 - (struct CGPoint)locationInView:(id)arg1;
 - (void)beginDragWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
+- (void)endPanInteraction;
+- (void)beginPanInteraction;
 - (void)cancelInteraction;
 - (void)present;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;

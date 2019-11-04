@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UITargetedPreview, UIVisualEffectView, _UIPlatterSoftShadowView, _UIPlatterTransformView;
+@class UITargetedPreview, UIViewFloatAnimatableProperty, _UIPlatterSoftShadowView, _UIPlatterTransformView, _UIRoundedRectShadowView;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterView : UIView
@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     _Bool _hideChromeWhenCollapsed;
     _Bool _alwaysCompact;
     _Bool _preventPreviewRasterization;
+    _Bool _shouldMorphContents;
     _Bool _frozen;
     _Bool _contentSizeDidChange;
+    int _preferredMorphingAxis;
     UITargetedPreview *_collapsedPreview;
     UITargetedPreview *_expandedPreview;
     UIView *_collapsedClippingView;
@@ -25,17 +27,33 @@ __attribute__((visibility("hidden")))
     UIView *_expandedClippingView;
     _UIPlatterTransformView *_expandedTransformView;
     _UIPlatterSoftShadowView *_pathShadowView;
-    UIVisualEffectView *_rectangularShadowView;
+    _UIRoundedRectShadowView *_rectangularShadowView;
+    UIViewFloatAnimatableProperty *_expansionProgress;
+    UIViewFloatAnimatableProperty *_platterWidth;
+    UIViewFloatAnimatableProperty *_platterHeight;
+    UIViewFloatAnimatableProperty *_collapsedContentWidth;
+    UIViewFloatAnimatableProperty *_collapsedContentHeight;
+    UIViewFloatAnimatableProperty *_expandedContentWidth;
+    UIViewFloatAnimatableProperty *_expandedContentHeight;
 }
 
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *expandedContentHeight; // @synthesize expandedContentHeight=_expandedContentHeight;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *expandedContentWidth; // @synthesize expandedContentWidth=_expandedContentWidth;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *collapsedContentHeight; // @synthesize collapsedContentHeight=_collapsedContentHeight;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *collapsedContentWidth; // @synthesize collapsedContentWidth=_collapsedContentWidth;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *platterHeight; // @synthesize platterHeight=_platterHeight;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *platterWidth; // @synthesize platterWidth=_platterWidth;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *expansionProgress; // @synthesize expansionProgress=_expansionProgress;
+@property(nonatomic) int preferredMorphingAxis; // @synthesize preferredMorphingAxis=_preferredMorphingAxis;
 @property(nonatomic) _Bool contentSizeDidChange; // @synthesize contentSizeDidChange=_contentSizeDidChange;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
-@property(retain, nonatomic) UIVisualEffectView *rectangularShadowView; // @synthesize rectangularShadowView=_rectangularShadowView;
+@property(retain, nonatomic) _UIRoundedRectShadowView *rectangularShadowView; // @synthesize rectangularShadowView=_rectangularShadowView;
 @property(retain, nonatomic) _UIPlatterSoftShadowView *pathShadowView; // @synthesize pathShadowView=_pathShadowView;
 @property(retain, nonatomic) _UIPlatterTransformView *expandedTransformView; // @synthesize expandedTransformView=_expandedTransformView;
 @property(retain, nonatomic) UIView *expandedClippingView; // @synthesize expandedClippingView=_expandedClippingView;
 @property(retain, nonatomic) _UIPlatterTransformView *collapsedTransformView; // @synthesize collapsedTransformView=_collapsedTransformView;
 @property(retain, nonatomic) UIView *collapsedClippingView; // @synthesize collapsedClippingView=_collapsedClippingView;
+@property(nonatomic) _Bool shouldMorphContents; // @synthesize shouldMorphContents=_shouldMorphContents;
 @property(nonatomic) _Bool preventPreviewRasterization; // @synthesize preventPreviewRasterization=_preventPreviewRasterization;
 @property(nonatomic) _Bool alwaysCompact; // @synthesize alwaysCompact=_alwaysCompact;
 @property(nonatomic) _Bool hideChromeWhenCollapsed; // @synthesize hideChromeWhenCollapsed=_hideChromeWhenCollapsed;
@@ -49,10 +67,15 @@ __attribute__((visibility("hidden")))
 - (void)_updateCollapsedChrome;
 - (void)_updatePathShadow;
 - (_Bool)_previewIsLikelyOpaque:(id)arg1;
+@property(readonly, nonatomic) _Bool bothViewsAreLikelyOpaque;
 - (void)didTearOffForDrag;
 - (void)freezeExpandedPreview;
 - (void)_updateClippingViews;
-- (void)_updateShadows;
+- (double)_pathShadowAlphaForExpansionProgress:(double)arg1;
+- (double)_rectangularShadowAlphaForExpansionProgress:(double)arg1;
+- (void)_updatePathShadowTransform;
+- (void)_prepareAnimatableProperties;
+- (void)_modelUpdates;
 - (void)layoutSubviews;
 @property(nonatomic) _Bool allowsUserInteractionInExpandedPreview;
 - (id)initWithFrame:(struct CGRect)arg1;

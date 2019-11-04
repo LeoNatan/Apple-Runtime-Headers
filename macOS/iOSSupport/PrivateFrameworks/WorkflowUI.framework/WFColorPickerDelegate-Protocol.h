@@ -6,11 +6,11 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class UIColor, WFColorPicker;
+@class WFColor, WFColorPicker;
 
 @protocol WFColorPickerDelegate <NSObject>
 
 @optional
-- (void)colorPicker:(WFColorPicker *)arg1 didSelectColor:(UIColor *)arg2;
+- (void)colorPicker:(WFColorPicker *)arg1 didSelectColor:(WFColor *)arg2;
 @end
 

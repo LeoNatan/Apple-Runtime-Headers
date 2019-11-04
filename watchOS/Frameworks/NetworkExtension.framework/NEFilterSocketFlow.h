@@ -15,6 +15,7 @@
 {
     struct sockaddr_storage _lastLocalAddress;
     struct sockaddr_storage _lastRemoteAddress;
+    long _generateIdentifierOnce;
     NWEndpoint *_remoteEndpoint;
     NWEndpoint *_localEndpoint;
     int _socketFamily;
@@ -22,10 +23,12 @@
     int _socketProtocol;
     NSUUID *_uuid;
     NSUUID *_euuid;
+    NSUUID *_socketUUID;
     unsigned long long _socketID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly) NSUUID *socketUUID; // @synthesize socketUUID=_socketUUID;
 @property unsigned long long socketID; // @synthesize socketID=_socketID;
 @property(copy, nonatomic) NSUUID *euuid; // @synthesize euuid=_euuid;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
@@ -35,6 +38,7 @@
 @property(copy) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
 @property(copy) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
 - (void).cxx_destruct;
+- (id)identifier;
 - (id)description;
 - (void)lastLocalAddress:(struct sockaddr *)arg1;
 - (void)lastRemoteAddress:(struct sockaddr *)arg1;

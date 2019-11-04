@@ -15,6 +15,7 @@
     id _sizeChangeObserver;
     _Bool _revealed;
     _Bool _visuallyRevealed;
+    _Bool _visuallyRevealedPriorToEditingIcons;
     _Bool _footerVisible;
     double _revealProgress;
     double _dismissProgress;
@@ -32,6 +33,7 @@
 @property(nonatomic, getter=isFooterVisible) _Bool footerVisible; // @synthesize footerVisible=_footerVisible;
 @property(retain, nonatomic) NSMutableDictionary *catchupTimers; // @synthesize catchupTimers=_catchupTimers;
 @property(retain, nonatomic) NSMutableDictionary *catchupProperties; // @synthesize catchupProperties=_catchupProperties;
+@property(nonatomic) _Bool visuallyRevealedPriorToEditingIcons; // @synthesize visuallyRevealedPriorToEditingIcons=_visuallyRevealedPriorToEditingIcons;
 @property(nonatomic, getter=isVisuallyRevealed) _Bool visuallyRevealed; // @synthesize visuallyRevealed=_visuallyRevealed;
 @property(nonatomic) double dismissProgress; // @synthesize dismissProgress=_dismissProgress;
 @property(nonatomic) double revealProgress; // @synthesize revealProgress=_revealProgress;
@@ -68,6 +70,7 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)_updateCarouselAndRevealState;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setEditingIcons:(_Bool)arg1;
 - (void)setHeaderVisible:(_Bool)arg1;
 - (_Bool)headerVisible;
 - (void)setContainerView:(id)arg1;
@@ -78,6 +81,8 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (_Bool)shouldAnimateFirstTwoViewsAsOne;
+- (id)extraViews;
 - (void)resizeWidgetWrapperView:(id)arg1 toSize:(struct CGSize)arg2 withTransitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_didUpdateStackViewArrangedSubviews;
 - (unsigned long long)_insertionIndexofListItem:(id)arg1 intoWidgetViews:(id)arg2 withOrderedIdentifiers:(id)arg3;

@@ -38,6 +38,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)_contentSize;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_checkOldBounds:(struct CGRect)arg1 forContentOffsetChangeWithNewBounds:(struct CGRect)arg2;
 - (void)setSecondaryViewVisible:(_Bool)arg1 withAnimationType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

@@ -6,15 +6,19 @@
 
 #import <UIKit/UIButton.h>
 
-@class NSString, TLKLabel, TLKProminenceView;
+@class NSString, TLKLabel, TLKProminenceView, UIView;
 
 @interface TLKStoreButton : UIButton
 {
+    _Bool _isEmphasized;
     TLKLabel *_label;
+    UIView *_backgroundView;
     TLKProminenceView *_highlightView;
 }
 
+@property _Bool isEmphasized; // @synthesize isEmphasized=_isEmphasized;
 @property(retain) TLKProminenceView *highlightView; // @synthesize highlightView=_highlightView;
+@property(retain) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) TLKLabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)tlk_updateForAppearance:(id)arg1;

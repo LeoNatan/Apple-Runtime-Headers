@@ -22,7 +22,6 @@
     _Bool _deviceAuthenticated;
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _grouped;
-    _Bool _persistentGroup;
     _Bool _clockNotificationGroup;
     _Bool _longLookDismissalFinalFrameCalculatedWithoutWindow;
     NSString *_logDescription;
@@ -64,7 +63,6 @@
 @property(nonatomic, getter=isClockNotificationGroup) _Bool clockNotificationGroup; // @synthesize clockNotificationGroup=_clockNotificationGroup;
 @property(nonatomic) double horizontalMarginInset; // @synthesize horizontalMarginInset=_horizontalMarginInset;
 @property(retain, nonatomic) NCNotificationSectionSettings *notificationSectionSettings; // @synthesize notificationSectionSettings=_notificationSectionSettings;
-@property(nonatomic, getter=isPersistentGroup) _Bool persistentGroup; // @synthesize persistentGroup=_persistentGroup;
 @property(nonatomic, getter=isGrouped) _Bool grouped; // @synthesize grouped=_grouped;
 @property(readonly, nonatomic) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(readonly, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
@@ -141,6 +139,7 @@
 - (_Bool)notificationViewControllerIsCoalescedBundle:(id)arg1;
 - (_Bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(id)arg1;
 - (void)notificationViewController:(id)arg1 requestsExpandingCoalescedBundleForNotificationRequest:(id)arg2;
+- (void)notificationViewControllerWillDismissForCancelAction:(id)arg1;
 - (void)notificationViewController:(id)arg1 requestPermissionToExecuteAction:(id)arg2 withParameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)notificationViewController:(id)arg1 executeAction:(id)arg2 withParameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)recycleView:(id)arg1;
@@ -161,10 +160,13 @@
 @property(readonly, nonatomic) unsigned long long count;
 - (_Bool)isLeadingNotificationRequest:(id)arg1;
 - (_Bool)isGroupForNotificationRequest:(id)arg1;
+@property(readonly, nonatomic) _Bool containsNonPersistentNotificationRequests;
 - (void)setGrouped:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)mergeNotificationRequests:(id)arg1;
 - (_Bool)matchesGroup:(id)arg1;
 - (long long)compare:(id)arg1;
+@property(readonly, nonatomic) NSArray *criticalAlerts;
+@property(readonly, nonatomic) NSArray *persistentNotificationRequests;
 @property(readonly, nonatomic) NSArray *allNotificationRequests;
 - (id)initWithSectionIdentifier:(id)arg1 threadIdentifier:(id)arg2;
 

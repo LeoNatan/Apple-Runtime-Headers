@@ -25,6 +25,7 @@
     // Error parsing type: AB, name: _isStarted
     // Error parsing type: AB, name: _isPaused
     _Bool _firstTimeInit;
+    _Bool _firstTimeApplyChanges;
     NSCondition *_renderPausedCondition;
     NSTimer *_longPressTimer;
     id <MTLDevice> _metalDevice;
@@ -35,7 +36,7 @@
     unsigned long long _eyeCount;
     ARSession *_session;
     id <MTLCaptureScope> _compositorScope;
-    id <MTLCaptureScope> _renderScope;
+    id <MTLCaptureScope> _presentCaptureScope;
     ARPresentationOverrides *_overrides;
     CADisplayLink *_compositorDisplayLink;
     ARRunLoop *_compositorRunLoop;
@@ -77,6 +78,9 @@
     double _lastNewPresentationFrameCallTime;
     ARPredictionStats *_predictionStats;
     _Bool _isSceneKitBasedView;
+    double _lastPresentedTime;
+    long long _preferredFramesPerSecond;
+    long long _actualFramesPerSecond;
     _Bool _willUpdateSettings;
     _Bool _updatingSettings;
     _Bool _isARSessionStateIgnored;
@@ -94,6 +98,7 @@
 
 + (_Bool)supportsPresentationMode:(long long)arg1;
 + (_Bool)isWornModeSupported;
++ (_Bool)compositorPlistKeysEnabled;
 + (_Bool)isCompositorEnabled;
 + (_Bool)wornModeForceDisabled;
 + (void)setWornModeForceDisabled:(_Bool)arg1;
@@ -108,6 +113,8 @@
 // Property attributes: T{?=[4]},V_headLockedTransform
 
 @property _Bool headLocked; // @synthesize headLocked=_headLocked;
+@property(nonatomic) long long actualFramesPerSecond; // @synthesize actualFramesPerSecond=_actualFramesPerSecond;
+@property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
 @property(nonatomic) __weak id <ARPresentationInternalObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) NSThread *renderThread; // @synthesize renderThread=_renderThread;
 @property _Bool isARSessionStateIgnored; // @synthesize isARSessionStateIgnored=_isARSessionStateIgnored;

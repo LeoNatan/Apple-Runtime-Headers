@@ -187,13 +187,13 @@
 - (id)dataModelEnrichmentJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)backgroundMemoryGenerationJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)shutdownAndWaitForGraphManager;
-- (void)setupGraphManager;
+- (void)setupGraphManagerWithProgressBlock:(CDUnknownBlockType)arg1;
 - (BOOL)_graphShouldBeConnected;
 - (BOOL)canRunWhenGraphIsLoaded;
 - (void)shutdown;
 - (void)cooldown;
 - (void)callAndClearPendingReadyCallbacksWithResult:(BOOL)arg1 error:(id)arg2;
-- (void)warmup;
+- (void)warmupWithProgressBlock:(CDUnknownBlockType)arg1;
 - (BOOL)retryStartup;
 - (BOOL)checkForWritablePersistentStorageDirectoryURL;
 - (void)startup;

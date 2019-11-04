@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/NSObject-Protocol.h>
+#import <HomeKitDaemon/AWDHMDSettingsControllerProtocol-Protocol.h>
+#import <HomeKitDaemon/HMFObject-Protocol.h>
 
 @class NSArray, NSCoder;
 @protocol HMDSettingGroupProtocol;
 
-@protocol HMDSettingsControllerProtocol <NSObject>
+@protocol HMDSettingsControllerProtocol <HMFObject, AWDHMDSettingsControllerProtocol>
 @property(readonly) id <HMDSettingGroupProtocol> rootGroup;
 @property(readonly) NSArray *allObjectIdentifiers;
 - (void)loadWithModels:(NSArray *)arg1;

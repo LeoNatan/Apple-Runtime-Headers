@@ -45,6 +45,7 @@
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
 - (long long)numberOfComponentsInPickerView:(id)arg1;
 - (void)updateVariableBlock;
+- (void)tintColorDidChange;
 - (_Bool)resignFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;

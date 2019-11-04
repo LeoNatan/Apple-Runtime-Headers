@@ -13,13 +13,16 @@
     NSArray *_requiredVisibleParameterKeys;
     NSDictionary *_requiredValues;
     NSString *_summaryString;
+    NSString *_key;
 }
 
 + (id)parenthesisRegularExpression;
+@property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, copy, nonatomic) NSString *summaryString; // @synthesize summaryString=_summaryString;
 @property(readonly, copy, nonatomic) NSDictionary *requiredValues; // @synthesize requiredValues=_requiredValues;
 @property(readonly, copy, nonatomic) NSArray *requiredVisibleParameterKeys; // @synthesize requiredVisibleParameterKeys=_requiredVisibleParameterKeys;
 - (void).cxx_destruct;
+- (id)mapPossibleValuesToKeys:(id)arg1;
 - (void)explodeKeys:(id)arg1 currentKeyIndex:(unsigned int)arg2 possibleValuesPerKey:(id)arg3 currentCombination:(id)arg4 results:(id)arg5;
 - (id)explodedKeysWithPossibleValuesInAction:(id)arg1;
 - (_Bool)matchesVisibleParameterKeys:(id)arg1 checkingRequiredValuesInAction:(id)arg2;

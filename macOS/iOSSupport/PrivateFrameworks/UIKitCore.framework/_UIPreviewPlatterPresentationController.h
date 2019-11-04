@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIContextMenuActionsListViewDelegate-Protocol.h>
 #import <UIKitCore/_UIPreviewPlatterPanControllerDelegate-Protocol.h>
 
-@class NSString, UIPanGestureRecognizer, UITapGestureRecognizer, UITargetedPreview, UIView, UIVisualEffectView, _UIContextMenuActionsListView, _UIContextMenuStyle, _UIFulfilledContextMenuConfiguration, _UIPreviewPlatterLayoutArbiter, _UIPreviewPlatterPanController, _UIPreviewPlatterView;
+@class NSArray, NSString, UIPanGestureRecognizer, UITapGestureRecognizer, UITargetedPreview, UIView, UIVisualEffectView, _UIContextMenuActionsListView, _UIContextMenuStyle, _UIFulfilledContextMenuConfiguration, _UIPreviewPlatterLayoutArbiter, _UIPreviewPlatterPanController, _UIPreviewPlatterView;
 @protocol _UIPreviewPlatterPresentationControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _UIPreviewPlatterView *_contentPlatterView;
     _UIContextMenuActionsListView *_actionsView;
     _UIFulfilledContextMenuConfiguration *_displayedConfiguration;
+    NSArray *_accessoryViews;
     UITapGestureRecognizer *_platterActionTapGestureRecognizer;
     UITapGestureRecognizer *_dismissalTapGestureRecognizer;
     UIPanGestureRecognizer *_actionScrubbingHandoffGestureRecognizer;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIPanGestureRecognizer *actionScrubbingHandoffGestureRecognizer; // @synthesize actionScrubbingHandoffGestureRecognizer=_actionScrubbingHandoffGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *dismissalTapGestureRecognizer; // @synthesize dismissalTapGestureRecognizer=_dismissalTapGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *platterActionTapGestureRecognizer; // @synthesize platterActionTapGestureRecognizer=_platterActionTapGestureRecognizer;
+@property(readonly, nonatomic) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
 @property(nonatomic) BOOL isAnimatingPresentation; // @synthesize isAnimatingPresentation=_isAnimatingPresentation;
 @property(retain, nonatomic) _UIFulfilledContextMenuConfiguration *displayedConfiguration; // @synthesize displayedConfiguration=_displayedConfiguration;
 @property(readonly, nonatomic) _UIContextMenuActionsListView *actionsView; // @synthesize actionsView=_actionsView;
@@ -53,6 +55,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *platterContainerView; // @synthesize platterContainerView=_platterContainerView;
 @property(readonly, nonatomic) UIView *platterTransitionView; // @synthesize platterTransitionView=_platterTransitionView;
 @property(readonly, nonatomic) _UIPreviewPlatterView *contentPlatterView; // @synthesize contentPlatterView=_contentPlatterView;
+- (void)setDisplayedMenu:(id)arg1 withAnimationStyle:(unsigned long long)arg2;
 - (void)previewActionsView:(id)arg1 didSelectAction:(id)arg2;
 - (id)_actionsOnlyViewControllerForSourcePreview:(id)arg1;
 - (void)_createActionsViewIfNecessary;
@@ -60,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)_updatePresentedViewFrame;
 - (void)_updatePlatterContentSizeWithPreferredContentSize:(struct CGSize)arg1;
 - (CDStruct_6f807b77)layoutAnchor;
+- (void)_didCompleteLayout;
 - (void)initialPlatterFrame:(inout struct CGRect *)arg1 actionViewFrame:(inout struct CGRect *)arg2 updateAttachment:(BOOL)arg3;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;

@@ -35,8 +35,6 @@
 - (void).cxx_destruct;
 - (id)modelBackedObjects;
 - (id)currentDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
-- (id)locallyTrackedDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
-- (id)locallyTrackedAccountHandleModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 @property(readonly, copy, nonatomic) NSUUID *modelParentIdentifier;
@@ -50,7 +48,6 @@
 - (_Bool)shouldMergeObject:(id)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)logIdentifier;
-- (void)__notifyDelegateUpdatedDevice:(id)arg1;
 - (void)removeDevice:(id)arg1;
 - (void)addDevice:(id)arg1;
 - (id)deviceWithModelIdentifier:(id)arg1;

@@ -22,6 +22,7 @@
     SBFramewiseInteractiveTransitionAnimator *_currentTransitionAnimator;
     SBPercentPassthroughInteractiveTransition *_currentTransitionInteractor;
     NSHashTable *_pageStateObservers;
+    NSHashTable *_sidebarViewControllerAppearStateOverrideAssertions;
     _Bool _showsDoneButtonWhileEditing;
     _Bool _spotlightTransitioningFromBreadcrumb;
     _Bool _managesStatusBarWidth;
@@ -31,6 +32,7 @@
     UIViewController<SBHSidebarProvider> *_sidebarViewController;
     SBSearchGesture *_searchGesture;
     id <SBRootFolderControllerAccessoryViewControllerDelegate> _accessoryViewControllerDelegate;
+    double _effectiveSidebarVisibilityProgress;
     _SBRootFolderDockAnimationViewControllerWindow *_dockAnimationWindow;
     _SBRootFolderPageTransitionHandle *_currentTransitionHandle;
     id <SBRootFolderPageTransition> _searchGestureTransition;
@@ -50,6 +52,7 @@
 @property(retain, nonatomic) _SBRootFolderPageTransitionHandle *currentTransitionHandle; // @synthesize currentTransitionHandle=_currentTransitionHandle;
 @property(nonatomic) _Bool managesStatusBarWidth; // @synthesize managesStatusBarWidth=_managesStatusBarWidth;
 @property(retain, nonatomic) _SBRootFolderDockAnimationViewControllerWindow *dockAnimationWindow; // @synthesize dockAnimationWindow=_dockAnimationWindow;
+@property(nonatomic) double effectiveSidebarVisibilityProgress; // @synthesize effectiveSidebarVisibilityProgress=_effectiveSidebarVisibilityProgress;
 @property(nonatomic, getter=isSpotlightTransitioningFromBreadcrumb) _Bool spotlightTransitioningFromBreadcrumb; // @synthesize spotlightTransitioningFromBreadcrumb=_spotlightTransitioningFromBreadcrumb;
 @property(nonatomic) __weak id <SBRootFolderControllerAccessoryViewControllerDelegate> accessoryViewControllerDelegate; // @synthesize accessoryViewControllerDelegate=_accessoryViewControllerDelegate;
 @property(retain, nonatomic) SBSearchGesture *searchGesture; // @synthesize searchGesture=_searchGesture;
@@ -62,6 +65,7 @@
 - (void)_setupDebugTapGestureRecognizerForDockIconListView:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)extraViews;
+- (_Bool)shouldAnimateFirstTwoViewsAsOne;
 - (_Bool)shouldAnimateLastTwoViewsAsOne;
 - (id)extraViewsContainer;
 - (id)dockIconListView;
@@ -123,8 +127,7 @@
 - (void)_reduceTransparencyChanged;
 - (void)rootFolderView:(id)arg1 didEndOverscrollOnFirstPageWithVelocity:(double)arg2;
 - (void)rootFolderView:(id)arg1 didOverscrollOnFirstPageByAmount:(double)arg2;
-- (_Bool)rootFolderViewShouldAllowOverscrollOnFirstPage:(id)arg1;
-- (void)rootFolderViewDidChangeSidebarPinned:(id)arg1;
+- (void)rootFolderView:(id)arg1 didChangeEffectiveSidebarVisibilityProgress:(double)arg2;
 - (void)rootFolderView:(id)arg1 didChangeSidebarVisibilityProgress:(double)arg2;
 - (id)backgroundViewForEditingDoneButtonForRootFolderView:(id)arg1;
 - (id)backgroundViewForDockForRootFolderView:(id)arg1;
@@ -138,6 +141,9 @@
 - (void)folderView:(id)arg1 willAnimateScrollToPageIndex:(long long)arg2;
 - (void)folderViewDidEndScrolling:(id)arg1;
 - (void)folderViewDidScroll:(id)arg1;
+- (void)folderViewWillEndDragging:(id)arg1;
+- (void)folderViewWillBeginDragging:(id)arg1;
+- (void)folderViewWillBeginScrolling:(id)arg1;
 - (void)folderViewWillUpdatePageDuringScrolling:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)_todayViewPageIsVisibleForOrientation:(long long)arg1;
@@ -155,9 +161,14 @@
 - (_Bool)_shouldUseDockAnimationWindowForRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (_Bool)_shouldSlideDockOutDuringRotationFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (_Bool)_isDockSwitchedForOrientation:(long long)arg1;
+- (void)_removeSidebarViewControllerAppearStateOverrideAssertion:(id)arg1;
+- (id)beginOverridingSidebarViewControllerAppearanceStateToRemainDisappearedForReason:(id)arg1;
+@property(readonly, nonatomic, getter=isSidebarVisibilityGestureActive) _Bool sidebarVisibilityGestureActive;
 @property(nonatomic, getter=isSidebarPinned) _Bool sidebarPinned;
+@property(readonly, nonatomic, getter=isSidebarEffectivelyVisible) _Bool sidebarEffectivelyVisible;
 @property(readonly, nonatomic, getter=isSidebarVisible) _Bool sidebarVisible;
 @property(nonatomic) double sidebarVisibilityProgress;
+@property(readonly, nonatomic) long long sidebarPageIndex;
 @property(readonly, nonatomic) long long todayViewPageIndex;
 - (void)setParallaxDisabled:(_Bool)arg1 forReason:(id)arg2;
 @property(readonly, nonatomic) SBFParallaxSettings *parallaxSettings;

@@ -13,11 +13,13 @@
 @interface GEOPDBusinessClaim : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_buttonLabel;
     NSString *_descriptionText;
     NSString *_titleText;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _buttonEnabled;
     struct {
         unsigned int has_buttonEnabled:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSString *buttonLabel;
 @property(readonly, nonatomic) _Bool hasButtonLabel;
 - (void)_readButtonLabel;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

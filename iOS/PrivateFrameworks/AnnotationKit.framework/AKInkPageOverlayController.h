@@ -58,7 +58,7 @@
 - (void)inputViewDidBeginStroke:(id)arg1;
 - (_Bool)inputViewCanBeginDrawing:(id)arg1 withTouch:(id)arg2;
 @property(retain) AKInkOverlayView *inkOverlayView; // @synthesize inkOverlayView=_inkOverlayView;
-- (void)annotationEditingDidEnd;
+- (void)annotationEditingDidEndWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_partialTeardown;
 - (void)teardown;
 - (void)_fullSetup;

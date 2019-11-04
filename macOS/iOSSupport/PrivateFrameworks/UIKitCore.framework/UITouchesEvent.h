@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)_windows;
 - (void)_touchesForGesture:(id)arg1 withPhase:(long long)arg2 intoSet:(id)arg3;
 - (id)_touchesForGesture:(id)arg1 withPhase:(long long)arg2;
+- (void)_gestureRecognizerNoLongerNeedsSendEvent:(id)arg1;
 - (BOOL)_sendEventToGestureRecognizer:(id)arg1;
 - (id)_touchesForView:(id)arg1 withPhase:(long long)arg2;
 - (void)_clearTouches;

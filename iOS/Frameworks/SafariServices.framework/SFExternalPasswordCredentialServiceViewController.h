@@ -19,14 +19,19 @@ __attribute__((visibility("hidden")))
 {
     _SFAuthenticationContext *_authenticationContext;
     _ASPasswordCredentialAuthenticationViewController *_extensionController;
+    long long _completionAction;
+    CDUnknownBlockType _getCredentialCompletion;
 }
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
 - (void).cxx_destruct;
-- (void)passwordCredentialAuthenticationViewController:(id)arg1 didFinishWithCredential:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)passwordCredentialAuthenticationViewController:(id)arg1 didFinishWithCredential:(id)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentUIForPasswordCredentialAuthenticationViewController:(id)arg1;
 - (void)credentialProviderExtensionManagerExtensionListDidChange:(id)arg1;
+- (void)_finishRequestToReturnCredential:(id)arg1 extensionShowedUI:(_Bool)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)getCredentialForCredentialIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_finishRequestToAutoFillCredential:(id)arg1 extensionShowedUI:(_Bool)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)autoFillWithCredentialIdentity:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (_Bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;

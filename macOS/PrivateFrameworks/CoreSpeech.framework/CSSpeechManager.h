@@ -10,21 +10,20 @@
 #import <CoreSpeech/CSAudioProviderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSSiriEnabledMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerAssetHandlerDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerXPCServiceDelegate-Protocol.h>
 
-@class CSAudioRecorder, CSBuiltInVoiceTrigger, CSKeywordDetector, CSMyriadPHash, CSMyriadSelfTriggerCoordinator, CSOpportuneSpeakListnerTestService, CSSelfTriggerDetector, CSSmartSiriVolume, CSSpIdImplicitTraining, CSVoiceProfileRetrainManager, CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPassHearst, CSVoiceTriggerFirstPassJarvis, NSMutableDictionary, NSString;
+@class CSAudioRecorder, CSBuiltInVoiceTrigger, CSFallbackAudioSessionReleaseProvider, CSKeywordDetector, CSMyriadPHash, CSMyriadSelfTriggerCoordinator, CSOpportuneSpeakListnerTestService, CSSelfTriggerDetector, CSSmartSiriVolume, CSSpIdImplicitTraining, CSVoiceProfileRetrainManager, CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPassHearst, CSVoiceTriggerFirstPassJarvis, NSMutableDictionary, NSString;
 @protocol CSSmartSiriVolumeDelegate, CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSStateMachineDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate, CSVoiceTriggerXPCServiceDelegate, CSAudioProviderDelegate>
+@interface CSSpeechManager : NSObject <CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate, CSVoiceTriggerXPCServiceDelegate, CSAudioProviderDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     CSSmartSiriVolume *_smartSiriVolume;
     NSObject<OS_dispatch_queue> *_assetQueryQueue;
     CSAudioRecorder *_audioRecorder;
     NSMutableDictionary *_audioProviders;
+    CSFallbackAudioSessionReleaseProvider *_fallbackAudioSessionReleaseProvider;
     id <CSSpeechManagerDelegate> _clientController;
     id <CSSmartSiriVolumeDelegate> _volumeClientController;
     NSObject<OS_dispatch_queue> *_voiceTriggerQueue;
@@ -65,6 +64,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *voiceTriggerQueue; // @synthesize voiceTriggerQueue=_voiceTriggerQueue;
 @property(nonatomic) __weak id <CSSmartSiriVolumeDelegate> volumeClientController; // @synthesize volumeClientController=_volumeClientController;
 @property(nonatomic) __weak id <CSSpeechManagerDelegate> clientController; // @synthesize clientController=_clientController;
+@property(retain, nonatomic) CSFallbackAudioSessionReleaseProvider *fallbackAudioSessionReleaseProvider; // @synthesize fallbackAudioSessionReleaseProvider=_fallbackAudioSessionReleaseProvider;
 @property(retain, nonatomic) NSMutableDictionary *audioProviders; // @synthesize audioProviders=_audioProviders;
 @property(retain, nonatomic) CSAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
@@ -90,6 +90,7 @@
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
 - (void)audioProviderInvalidated:(id)arg1 streamHandleId:(unsigned long long)arg2;
 - (id)_getAudioRecorderWithError:(id *)arg1;
+- (id)fetchFallbackAudioSessionReleaseProvider;
 - (id)audioProviderWithStreamID:(unsigned long long)arg1;
 - (id)audioProviderWithContext:(id)arg1 error:(id *)arg2;
 - (id)audioProviderWithUUID:(id)arg1;

@@ -13,9 +13,11 @@
 @interface GEORPUpdatedLabel : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_center;
     NSString *_localizedText;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_center:1;
         unsigned int read_localizedText:1;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) NSString *localizedText;
 @property(readonly, nonatomic) BOOL hasLocalizedText;
 - (void)_readLocalizedText;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

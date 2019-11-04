@@ -21,6 +21,7 @@
 @property(readonly, copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
 - (void)updateLikeness:(id)arg1 contact:(id)arg2;
+- (void)removeDelegates:(id)arg1;
 - (void)addDelegate:(id)arg1;
 - (id)description;
 - (id)initWithContact:(id)arg1 cache:(id)arg2;

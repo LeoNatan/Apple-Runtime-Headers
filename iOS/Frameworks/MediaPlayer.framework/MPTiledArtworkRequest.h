@@ -9,11 +9,11 @@
 #import <MediaPlayer/NSCopying-Protocol.h>
 
 @class NSArray;
-@protocol NSCopying, OS_dispatch_queue;
+@protocol NSCopying;
 
 @interface MPTiledArtworkRequest : NSObject <NSCopying>
 {
-    NSObject<OS_dispatch_queue> *_accessQueue;
+    struct os_unfair_lock_s _cacheLock;
     NSArray *_artworkCatalogsCache;
     long long _artworkCatalogsCacheCount;
     _Bool _allowsSynchronousArtworkCatalogsBlockExecution;

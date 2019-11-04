@@ -9,7 +9,7 @@
 #import <ScreenTimeUI/NSAnimationDelegate-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
 
-@class NSAnimation, NSButton, NSObject, NSString, NSTextField, NSVisualEffectView, STHourglassView, STLockoutAlertController, STLockoutPolicyController;
+@class NSAnimation, NSButton, NSObject, NSString, NSTextField, STBlockingBackdropView, STHourglassView, STLockoutAlertController, STLockoutPolicyController;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
 @interface STLockoutViewController : NSViewController <NSAnimationDelegate, STLockoutPolicyControllerDelegate>
@@ -125,11 +125,13 @@
 - (void)setDidFinishDismissing:(BOOL)arg1;
 @property(copy, nonatomic) NSString *bundleIdentifier;
 - (void)_setupCommon;
-@property(retain) NSVisualEffectView *view;
+@property(retain) STBlockingBackdropView *view;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
+- (void)setNextResponder:(id)arg1;
+- (id)nextResponder;
 - (void)setBundleIdentifier:(id)arg1 contactsHandles:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties

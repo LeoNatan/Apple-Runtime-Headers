@@ -15,8 +15,8 @@
 
 @property(retain, nonatomic) REMXPCDaemonController *daemonController; // @synthesize daemonController=_daemonController;
 - (void).cxx_destruct;
-- (void)restartCloudKitSyncWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)syncCloudKitWithWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)restartCloudKitSyncWithReason:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)syncCloudKitWithReason:(id)arg1 discretionary:(_Bool)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithDaemonController:(id)arg1;
 - (id)init;
 

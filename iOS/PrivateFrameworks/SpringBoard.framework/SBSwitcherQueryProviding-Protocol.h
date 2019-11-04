@@ -11,7 +11,7 @@
 @protocol SBSwitcherQueryProviding <SBChainableModifierQuery>
 - (_Bool)wantsMinificationFilter;
 - (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;
@@ -23,18 +23,20 @@
 - (_Bool)wantsDockBehaviorAssertion;
 - (_Bool)shouldConfigureInAppDockHiddenAssertion;
 - (NSArray *)appLayoutsForInsertionOrRemoval;
-- (unsigned long long)insertionStyle;
-- (double)baseHysteresisForStartingKillGesture;
+- (unsigned long long)insertionStyleForInsertingAppLayout:(SBAppLayout *)arg1;
 - (unsigned long long)indexToScrollToAfterInsertingAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexToScrollToAfterRemovingIndex:(unsigned long long)arg1;
 - (_Bool)shouldBringCardToFrontDuringInsertionOrRemoval;
 - (_Bool)shouldAnimateInsertionOrRemovalAtIndex:(unsigned long long)arg1;
 - (_Bool)isIndexKillable:(unsigned long long)arg1;
+- (_Bool)shouldTetherTransitionCompletion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
 - (_Bool)shouldPerformRotationAnimationForOrientationChange;
 - (_Bool)shouldTruncateAnimationsUponTransitionCompletion;
 - (_Bool)shouldFireTransitionCompletionInDefaultRunLoopMode;
 - (_Bool)shouldWaitForLayoutAndStyleUpdatesForTransactionCompletion;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
+- (SBAppLayout *)appLayoutToScrollToBeforeReopeningClosedWindows;
 - (SBAppLayout *)appLayoutToScrollToBeforeTransitioning;
 - (NSArray *)topMostAppLayouts;
 - (SBFFluidBehaviorSettings *)cornerRadiusSettingsForIndex:(unsigned long long)arg1;
@@ -49,6 +51,9 @@
 - (unsigned long long)numberOfDefaultAppLayoutsToCacheSnapshots;
 - (_Bool)isSwitcherWindowUserInteractionEnabled;
 - (_Bool)isSwitcherWindowVisible;
+- (long long)plusButtonStyle;
+- (long long)appExposeAccessoryButtonsOverrideUserInterfaceStyle;
+- (double)reopenClosedWindowsButtonScale;
 - (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
 - (NSString *)appExposeAccessoryButtonsBundleIdentifier;

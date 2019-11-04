@@ -16,7 +16,7 @@
     UIViewController *_viewController;
 }
 
-@property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
+@property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(readonly, nonatomic) __weak id <_SFBrowserContentController> browserContentController; // @synthesize browserContentController=_browserContentController;
 - (void).cxx_destruct;
 - (id)_sitePreferencesAlertItem;

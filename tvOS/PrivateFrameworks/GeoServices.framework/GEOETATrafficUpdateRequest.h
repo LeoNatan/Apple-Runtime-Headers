@@ -13,7 +13,6 @@
 @interface GEOETATrafficUpdateRequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTimepoint _clientTimepoint;
     struct GEOSessionID _sessionID;
@@ -35,6 +34,9 @@
     GEOTFTrafficSnapshot *_trafficSnapshot;
     NSData *_tripID;
     NSString *_xpcUuid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _maxAlternateRouteCount;
     unsigned int _previouslyRejectedRerouteSavings;
     int _rerouteStatus;
@@ -212,6 +214,8 @@
 @property(retain, nonatomic) GEOLocation *currentUserLocation;
 @property(readonly, nonatomic) _Bool hasCurrentUserLocation;
 - (void)_readCurrentUserLocation;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

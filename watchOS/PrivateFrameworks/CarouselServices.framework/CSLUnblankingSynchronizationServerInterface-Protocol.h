@@ -7,7 +7,7 @@
 #import <CarouselServices/NSObject-Protocol.h>
 
 @protocol CSLUnblankingSynchronizationServerInterface <NSObject>
-- (void)readyForUnblank:(unsigned int)arg1;
+- (void)readyForUnblank:(unsigned int)arg1 completion:(void (^)(void))arg2;
 - (void)enableUnblankingSynchronization:(_Bool)arg1;
 @end
 

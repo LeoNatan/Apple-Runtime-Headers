@@ -6,7 +6,7 @@
 
 #import <InputMethodKit/IMKAbstractTextDocument.h>
 
-@class IMKTextDocument, NSMutableSet, NSNumber;
+@class IMKTextDocument, IMKTextDocumentTraits, NSMutableSet, NSNumber;
 @protocol IMKTextInput;
 
 @interface IMKTextDocumentTextInputAdaptor : IMKAbstractTextDocument
@@ -28,9 +28,12 @@
     BOOL _alwaysShowsComposingTextAsMarkedText;
     BOOL _hasComposingTextChanges;
     BOOL _recomposing;
+    BOOL _allowClientQueries;
+    IMKTextDocumentTraits *_clientTraits;
 }
 
 + (id)appsWithUnreliableTextInputImplementation;
+@property(nonatomic) BOOL allowClientQueries; // @synthesize allowClientQueries=_allowClientQueries;
 @property(nonatomic, getter=isRecomposing) BOOL recomposing; // @synthesize recomposing=_recomposing;
 @property(readonly, nonatomic) BOOL alwaysShowsComposingTextAsMarkedText; // @synthesize alwaysShowsComposingTextAsMarkedText=_alwaysShowsComposingTextAsMarkedText;
 @property(nonatomic) unsigned long long dereferenceCount; // @synthesize dereferenceCount=_dereferenceCount;
@@ -47,6 +50,7 @@
 @property(nonatomic) CDStruct_231eade1 textInputReliability; // @synthesize textInputReliability=_textInputReliability;
 @property(readonly, nonatomic) NSMutableSet *unreliableApps; // @synthesize unreliableApps=_unreliableApps;
 @property(readonly, nonatomic) __weak id <IMKTextInput> textInput; // @synthesize textInput=_textInput;
+@property(readonly, nonatomic) IMKTextDocumentTraits *clientTraits; // @synthesize clientTraits=_clientTraits;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_substringFromRange:(struct _NSRange)arg1;
@@ -88,6 +92,7 @@
 - (BOOL)isAppTextInputImplementationUnreliable:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)traits;
 - (id)initWithTextInputToAdapt:(id)arg1 traits:(id)arg2 candidateMenu:(id)arg3 unreliableTextInputApps:(id)arg4 alwaysShowsComposingTextAsMarkedText:(BOOL)arg5;
 - (id)initWithTextInputToAdapt:(id)arg1 traits:(id)arg2 candidateMenu:(id)arg3 unreliableTextInputApps:(id)arg4;
 - (id)initWithTextInputToAdapt:(id)arg1 unreliableTextInputApps:(id)arg2;

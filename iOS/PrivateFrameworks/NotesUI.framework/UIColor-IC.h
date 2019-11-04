@@ -20,6 +20,7 @@
 + (id)ic_tertiaryLabelColor;
 + (id)ic_secondaryLabelColor;
 + (id)ic_labelColor;
++ (struct UIColor *)ICListTitleTextColor;
 + (struct UIColor *)ICSearchHeaderBackgroundColor;
 + (struct UIColor *)ICSearchHeaderTextColor;
 + (struct UIColor *)ICDefaultFindBarColor;

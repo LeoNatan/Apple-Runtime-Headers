@@ -54,7 +54,6 @@
     NSString *_fbr;
 }
 
-+ (id)sortedArray:(id)arg1;
 + (void)initialize;
 + (id)convertSFSearchResult:(id)arg1;
 + (id)createGenericResultFromSearchFoundation:(id)arg1;

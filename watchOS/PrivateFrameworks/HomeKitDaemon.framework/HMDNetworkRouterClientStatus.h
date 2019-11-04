@@ -16,7 +16,6 @@
     HMDTLVUnsignedNumberValue *_clientIdentifier;
     NSData *_macAddress;
     HMDNetworkRouterIPAddressList *_ipAddressList;
-    HMDTLVUnsignedNumberValue *_interfaceIdentifier;
     HMDTLVUnsignedNumberValue *_lanIdentifier;
     NSString *_name;
     HMDTLVSignedNumberValue *_rssi;
@@ -26,7 +25,6 @@
 @property(retain, nonatomic) HMDTLVSignedNumberValue *rssi; // @synthesize rssi=_rssi;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *lanIdentifier; // @synthesize lanIdentifier=_lanIdentifier;
-@property(retain, nonatomic) HMDTLVUnsignedNumberValue *interfaceIdentifier; // @synthesize interfaceIdentifier=_interfaceIdentifier;
 @property(retain, nonatomic) HMDNetworkRouterIPAddressList *ipAddressList; // @synthesize ipAddressList=_ipAddressList;
 @property(retain, nonatomic) NSData *macAddress; // @synthesize macAddress=_macAddress;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
@@ -36,7 +34,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializeWithError:(id *)arg1;
 - (_Bool)parseFromData:(id)arg1 error:(id *)arg2;
-- (id)initWithClientIdentifier:(id)arg1 macAddress:(id)arg2 ipAddressList:(id)arg3 interfaceIdentifier:(id)arg4 lanIdentifier:(id)arg5 name:(id)arg6 rssi:(id)arg7;
+- (id)initWithClientIdentifier:(id)arg1 macAddress:(id)arg2 ipAddressList:(id)arg3 lanIdentifier:(id)arg4 name:(id)arg5 rssi:(id)arg6;
 - (id)init;
 
 // Remaining properties

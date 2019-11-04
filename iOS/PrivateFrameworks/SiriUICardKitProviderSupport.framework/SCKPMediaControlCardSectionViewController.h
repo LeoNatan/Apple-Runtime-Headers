@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_updatePlatterForRouteUID:(id)arg1;
 - (void)_updatePlatterForHashedRouteUID:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 - (id)initWithMediaRemoteControlCardSection:(id)arg1;
 

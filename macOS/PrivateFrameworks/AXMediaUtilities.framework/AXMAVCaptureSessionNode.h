@@ -9,12 +9,13 @@
 #import <AXMediaUtilities/AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h>
 #import <AXMediaUtilities/AXMAVCaptureSessionNodeFrameDelegate-Protocol.h>
 
-@class AVCaptureSession, AXMVisionAnalysisOptions, NSObject, NSString;
+@class AVCaptureSession, AXMCaptureVideoDataOutput, AXMVisionAnalysisOptions, NSObject, NSString;
 @protocol AXMAVCaptureSessionNodeDelegate, AXMAVCaptureSessionNodeFrameDelegate, OS_dispatch_queue;
 
 @interface AXMAVCaptureSessionNode : AXMSourceNode <AVCaptureVideoDataOutputSampleBufferDelegate, AXMAVCaptureSessionNodeFrameDelegate>
 {
     NSObject<OS_dispatch_queue> *_autotrigger_queue;
+    AXMCaptureVideoDataOutput *_axVideoDataOutput;
     id <AXMAVCaptureSessionNodeDelegate> _captureSessionNodeDelegate;
     id <AXMAVCaptureSessionNodeFrameDelegate> _frameDelegate;
     AVCaptureSession *_captureSession;
@@ -28,6 +29,7 @@
 @property(nonatomic) __weak AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(nonatomic) __weak id <AXMAVCaptureSessionNodeFrameDelegate> frameDelegate; // @synthesize frameDelegate=_frameDelegate;
 @property(nonatomic) __weak id <AXMAVCaptureSessionNodeDelegate> captureSessionNodeDelegate; // @synthesize captureSessionNodeDelegate=_captureSessionNodeDelegate;
+@property(retain, nonatomic) AXMCaptureVideoDataOutput *axVideoDataOutput; // @synthesize axVideoDataOutput=_axVideoDataOutput;
 - (void).cxx_destruct;
 - (void)captureSessionNode:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
@@ -36,6 +38,7 @@
 - (void)endVideoFrameEvents;
 - (void)endAutoTriggerOfVideoFrameEvents;
 - (void)beginFrameEventsWithAVCaptureSession:(id)arg1 delegate:(id)arg2 queue:(id)arg3;
+- (void)addVideoDataOutputWithAVCaptureSession:(id)arg1 queue:(id)arg2;
 - (void)autoTriggerVideoFrameEventsWithAVCaptureSession:(id)arg1 options:(id)arg2 delegate:(id)arg3;
 - (void)nodeInitialize;
 - (void)produceImage:(id)arg1;

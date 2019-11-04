@@ -24,6 +24,9 @@
 - (void)initializeSpeechServerInstance:(unsigned long long)arg1;
 
 @optional
+- (_Bool)isNashvilleService;
+- (_Bool)isSiriService;
+- (NSString *)serviceIdentifier;
 - (NSDictionary *)audioFileSettingsForVoice:(TTSSpeechVoice *)arg1;
 - (NSString *)embeddedVolumeMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 volume:(double)arg3;
 - (NSString *)embeddedPitchMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 pitch:(double)arg3;
@@ -35,5 +38,6 @@
 - (NSString *)phonemesFromIPA:(NSString *)arg1 language:(NSString *)arg2;
 - (NSString *)lhPhonemesFromIPA:(NSString *)arg1 language:(NSString *)arg2;
 - (_Bool)employSpeechMarkupForType:(long long)arg1 language:(NSString *)arg2;
+- (oneway void)getVoicesForLanguage:(NSString *)arg1 queryingMobileAssets:(_Bool)arg2 reply:(void (^)(NSArray *))arg3;
 @end
 

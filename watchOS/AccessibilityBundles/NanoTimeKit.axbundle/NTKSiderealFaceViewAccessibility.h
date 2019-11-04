@@ -14,7 +14,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (void)crownInputSequencerIdleDidChange:(id)arg1;
-- (void)_loadSolarViews;
+- (void)_loadUI;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     _Bool m_isSuspended;
     int m_showingCommandsCounterForRotate;
     _Bool m_forceRangeView;
+    _Bool m_isInstalledInSelectionContainerView;
     _Bool _isIndirectFloatingCaret;
     struct CGRect _stashedCaretRect;
     struct CGRect _previousGhostCaretRect;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect previousGhostCaretRect; // @synthesize previousGhostCaretRect=_previousGhostCaretRect;
 @property(nonatomic) _Bool isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
 @property(nonatomic) struct CGRect stashedCaretRect; // @synthesize stashedCaretRect=_stashedCaretRect;
+@property(readonly, nonatomic) _Bool isInstalledInSelectionContainerView; // @synthesize isInstalledInSelectionContainerView=m_isInstalledInSelectionContainerView;
 @property(retain, nonatomic) NSArray *replacements; // @synthesize replacements=m_replacements;
 @property(nonatomic) _Bool forceRangeView; // @synthesize forceRangeView=m_forceRangeView;
 @property(readonly, nonatomic) __weak UITextInteractionAssistant *interactionAssistant; // @synthesize interactionAssistant=m_interactionAssistant;
@@ -100,14 +102,15 @@ __attribute__((visibility("hidden")))
 - (void)hideSelectionCommands;
 - (void)hideSelectionCommandsAfterDelay:(double)arg1;
 - (void)showReplacementsWithGenerator:(id)arg1 forDictation:(_Bool)arg2 afterDelay:(double)arg3;
-- (void)calculateAndShowReplacements:(id)arg1;
+- (void)calculateReplacementsWithGenerator:(id)arg1 andShowAfterDelay:(double)arg2;
 - (void)_showSelectionCommandsForContextMenu:(_Bool)arg1;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)showCalloutBarAfterDelay:(double)arg1;
 - (void)cancelDelayedCommandRequests;
 - (void)updateSelectionCommands;
-- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(_Bool)arg2 rectsToEvade:(id)arg3;
+- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(_Bool)arg2 forDictation:(_Bool)arg3 rectsToEvade:(id)arg4;
+- (void)_showCommandsWithReplacements:(id)arg1 forDictation:(_Bool)arg2 afterDelay:(double)arg3;
 - (void)showCommandsWithReplacements:(id)arg1;
 - (_Bool)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2 rectsToEvade:(id)arg3;
 @property(nonatomic) _Bool caretBlinks; // @synthesize caretBlinks=m_caretBlinks;
@@ -142,6 +145,7 @@ __attribute__((visibility("hidden")))
 - (void)viewAnimate:(id)arg1;
 - (void)inputModeDidChange:(id)arg1;
 - (void)windowDidResignOrBecomeKey;
+- (void)deactivateAndCollapseSelection:(_Bool)arg1;
 - (void)deactivate;
 - (void)activate;
 - (void)detach;

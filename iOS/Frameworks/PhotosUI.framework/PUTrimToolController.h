@@ -154,7 +154,7 @@ __attribute__((visibility("hidden")))
 - (void)trimScrubber:(id)arg1 didBeginInteractivelyEditingElement:(long long)arg2;
 - (_Bool)trimScrubber:(id)arg1 canBeginInteractivelyEditingElement:(long long)arg2;
 - (void)trimScrubber:(id)arg1 didTapElement:(long long)arg2;
-- (void)_seekToTimeForElement:(long long)arg1;
+- (void)_seekToTimeForElement:(long long)arg1 exact:(_Bool)arg2;
 @property(nonatomic) CDStruct_1b6d18a9 playheadTime;
 - (id)_playPauseButtonIfLoaded;
 @property(readonly, nonatomic) UIButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;

@@ -16,13 +16,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDDeparture : PBCodable <GEOTransitDeparture, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _absDepartureTime;
     double _absLiveDepartureTime;
     GEOFormattedString *_realTimeStatus;
     unsigned long long _referenceTripId;
     NSString *_vehicleNumber;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _isCanceled;
     struct {
         unsigned int has_absDepartureTime:1;
@@ -70,6 +72,8 @@ __attribute__((visibility("hidden")))
 - (void)_readVehicleNumber;
 @property(nonatomic) BOOL hasAbsDepartureTime;
 @property(nonatomic) double absDepartureTime;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (BOOL)isPastDepartureRelativeToDate:(id)arg1 usingGracePeriod:(BOOL)arg2;
 @property(readonly, nonatomic) BOOL isPastDeparture;
 @property(readonly, nonatomic) unsigned long long tripIdentifier;

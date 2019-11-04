@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     UIBezierPath *_actionScrubPath;
     double _currentDistanceToActionScrubPath;
     struct CGPoint _initialLocationInsidePreview;
+    BOOL _actionsViewIsVisible;
     BOOL _enabled;
     UIViewSpringAnimationBehavior *_animationBehavior;
     id <_UIPreviewPlatterPanControllerDelegate> _delegate;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSArray *_detents;
     unsigned long long _initialDetentIndex;
     unsigned long long _rubberbandingEdges;
+    NSArray *_accessoryViews;
     UIView *_containerView;
     UIView *_platterView;
     UIView *_actionsView;
@@ -39,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *actionsView; // @synthesize actionsView=_actionsView;
 @property(nonatomic) __weak UIView *platterView; // @synthesize platterView=_platterView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
 @property(nonatomic) unsigned long long rubberbandingEdges; // @synthesize rubberbandingEdges=_rubberbandingEdges;
 @property(nonatomic) CDStruct_6f807b77 menuAnchor; // @synthesize menuAnchor=_menuAnchor;
 @property(nonatomic) struct CGPoint originalActionsCenter; // @synthesize originalActionsCenter=_originalActionsCenter;
@@ -52,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_updatePlatterGestureDebugUIWithGesture:(id)arg1;
 - (struct CGPoint)_rubberBandedTranslationForGestureTranslation:(struct CGPoint)arg1;
 - (BOOL)_initialPointInPlatterIsValid;
+- (void)_animationsForAnyAttachedAccessoryViews;
 - (void)_animationsForActionsStyleWithLocation:(struct CGPoint)arg1 ended:(BOOL)arg2;
 - (void)_animationsForPreviewPlusActionsStyleWithTranslation:(struct CGPoint)arg1 location:(struct CGPoint)arg2;
 @property(readonly, nonatomic) UIViewSpringAnimationBehavior *animationBehavior; // @synthesize animationBehavior=_animationBehavior;

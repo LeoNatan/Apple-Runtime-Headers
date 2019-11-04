@@ -21,6 +21,8 @@
     CDUnknownBlockType _waitingActivityCompletion;
     NSString *_errorCountUserDefaultsKey;
     NSString *_minimumIntervalDefaultsKey;
+    _Bool _unitTest_shouldDeferOverride;
+    _Bool _hasUpdatedCriteria;
     NSString *_name;
     NSObject<OS_os_log> *_loggingCategory;
     double _interval;
@@ -52,9 +54,11 @@
 - (void)_performActivity:(id)arg1;
 - (void)_handleXPCActivityCallback:(id)arg1;
 - (void)_registerActivity;
+@property(readonly, nonatomic) _Bool shouldDefer;
 - (_Bool)_requiresProtectedData;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)daemonReady:(id)arg1;
+- (void)unitTest_setShouldDefer:(_Bool)arg1;
 - (_Bool)isWaitingToRun;
 - (void)synthesizeActivityFire;
 - (void)reset;

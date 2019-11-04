@@ -21,10 +21,12 @@
 @property(retain, nonatomic) NSMutableDictionary *objectIDsToMoveByBeforeObjectID; // @synthesize objectIDsToMoveByBeforeObjectID=_objectIDsToMoveByBeforeObjectID;
 @property(retain, nonatomic) NSMutableDictionary *objectIDsToAddByBeforeObjectID; // @synthesize objectIDsToAddByBeforeObjectID=_objectIDsToAddByBeforeObjectID;
 - (void).cxx_destruct;
+- (BOOL)isDeletingObjectID:(id)arg1;
 - (BOOL)_isMovingObjectID:(id)arg1;
 - (BOOL)isAddingObjectID:(id)arg1;
-- (BOOL)addThreadObjectIDToMove:(id)arg1 before:(id)arg2;
-- (BOOL)addThreadObjectIDToAdd:(id)arg1 before:(id)arg2;
+- (void)addObjectIDToDelete:(id)arg1;
+- (BOOL)addObjectIDToMove:(id)arg1 before:(id)arg2;
+- (BOOL)addObjectIDToAdd:(id)arg1 before:(id)arg2;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

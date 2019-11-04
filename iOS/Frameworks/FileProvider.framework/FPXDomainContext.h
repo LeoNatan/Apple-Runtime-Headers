@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak FPXExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(readonly, nonatomic) unsigned long long extensionCapabilities; // @synthesize extensionCapabilities=_extensionCapabilities;
 - (void).cxx_destruct;
+- (void)invalidate;
 - (id)itemIDsFromVendorItemIDs:(id)arg1;
 - (id)itemsFromVendorItems:(id)arg1;
 - (id)itemIDFromVendorItemID:(id)arg1;

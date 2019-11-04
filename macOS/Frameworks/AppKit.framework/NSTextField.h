@@ -53,6 +53,7 @@
 - (long long)accessibilityLineForIndex:(long long)arg1;
 - (id)accessibilityStringForRange:(struct _NSRange)arg1;
 - (BOOL)_shouldPrintByCallingDrawRect;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (double)baselineOffsetFromBottom;
 - (double)firstBaselineOffsetFromTop;
 - (void)setAttributedStringValue:(id)arg1;

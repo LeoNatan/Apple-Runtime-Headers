@@ -26,6 +26,7 @@
 @property(retain, nonatomic, setter=_setCodableQuantitySample:) HDCodableQuantitySample *codableQuantitySample; // @synthesize codableQuantitySample=_codableQuantitySample;
 @property(readonly) long long count; // @synthesize count=_count;
 - (void).cxx_destruct;
+- (long long)_compareFreezeStateWithSample:(id)arg1;
 - (void)_setCount:(long long)arg1;
 - (void)_setFreezing;
 @property(nonatomic, getter=_frozen, setter=_setFrozen:) _Bool frozen;

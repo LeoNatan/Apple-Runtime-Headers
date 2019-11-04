@@ -8,7 +8,7 @@
 
 #import <AvatarUI/AVTAvatarAttributeEditorLayout-Protocol.h>
 
-@class NSString, UIColor;
+@class NSString;
 
 @interface AVTAvatarAttributeEditorLayout : NSObject <AVTAvatarAttributeEditorLayout>
 {
@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (void)raiseExceptionForPropertyString:(id)arg1;
 @property(readonly, nonatomic) unsigned long long supportedLayoutOrientation;
-@property(readonly, nonatomic) UIColor *backgroundColor;
+- (id)backgroundColor;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewScrollIndicatorInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewInsets;
 @property(readonly, nonatomic) struct CGRect verticalRuleFrame;
@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) struct CGRect userInfoFrame;
 @property(readonly, nonatomic) struct CGRect attributesContentViewFrame;
 @property(readonly, nonatomic) struct CGRect groupDialContainerFrame;
+@property(readonly, nonatomic) double avatarContainerAlpha;
 @property(readonly, nonatomic) struct CGRect avatarContainerFrame;
 - (id)initWithContainerSize:(struct CGSize)arg1 insets:(struct UIEdgeInsets)arg2 screenScale:(double)arg3;
 

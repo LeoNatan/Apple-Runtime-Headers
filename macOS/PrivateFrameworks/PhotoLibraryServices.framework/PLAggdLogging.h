@@ -13,6 +13,7 @@
 + (void)performLibraryStatisticsLoggingForLibrary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)performCMMSummaryLogging:(id)arg1 cloudPhotoLibraryEnabled:(BOOL)arg2;
 + (void)performPersistentHistorySummaryLogging:(id)arg1;
++ (void)performCTMLibrarySummaryLogging:(id)arg1;
 + (void)performLibrarySummaryLogging:(id)arg1 cloudPhotoLibraryEnabled:(BOOL)arg2;
 + (id)_performMedianCalculation:(id)arg1;
 + (double)_getDateMedian:(id)arg1 fromStartDate:(id)arg2 forCameraCapture:(BOOL)arg3;

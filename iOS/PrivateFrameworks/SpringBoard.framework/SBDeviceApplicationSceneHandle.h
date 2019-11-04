@@ -53,6 +53,7 @@
 - (id)newScenePlaceholderContentContextWithActivationSettings:(id)arg1;
 - (id)newSceneViewWithReferenceSize:(struct CGSize)arg1 orientation:(long long)arg2 hostRequester:(id)arg3;
 - (_Bool)isDeviceApplicationSceneHandle;
+- (void)_updateSceneHostingInfoForSnapshottingWithView:(id)arg1;
 - (void)_modifyApplicationTransitionContext:(id)arg1 fromRequestContext:(id)arg2 entity:(id)arg3;
 - (void)_modifyApplicationSceneClientSettings:(id)arg1 fromRequestContext:(id)arg2 entity:(id)arg3 initialSceneSettings:(id)arg4;
 - (id)_sceneCornerRadiusConfigurationFromRequestContext:(id)arg1 forEntity:(id)arg2;
@@ -64,6 +65,7 @@
 - (void)_didUpdateClientSettingsWithDiff:(id)arg1 transitionContext:(id)arg2;
 - (void)_didDestroyScene:(id)arg1;
 - (void)_didCreateScene:(id)arg1;
+- (void)_populateSettingsWithDefaultStatusBarHeight:(id)arg1;
 - (long long)_initialMainSceneCompabilityMode:(id)arg1;
 - (void)_noteMainSceneBackgroundStyleChanged;
 - (void)_noteActivationConditionsChanged;
@@ -83,6 +85,7 @@
 @property(readonly, copy, nonatomic) NSData *activationConditionsData;
 @property(readonly, nonatomic) long long activationBias;
 @property(readonly, copy, nonatomic) NSString *sceneTitle;
+- (id)displayEdgeInfoForForLayoutEnvironment:(long long)arg1 classicMode:(long long)arg2 isInsetForHomeAffordance:(_Bool)arg3;
 - (_Bool)wantsDeviceOrientationEventsEnabled;
 - (long long)activationInterfaceOrientationForOrientation:(long long)arg1;
 - (long long)activationInterfaceOrientationForCurrentOrientation;

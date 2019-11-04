@@ -13,7 +13,6 @@
 @interface GEOCompanionStep : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOCompanionDriveStep *_driveStep;
     GEOCompanionFerryStep *_ferryStep;
     NSMutableArray *_guidanceEvents;
@@ -22,6 +21,9 @@
     NSString *_roadName;
     NSData *_updateID;
     GEOCompanionWalkStep *_walkStep;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distance;
     unsigned int _endCoordinateIndex;
     unsigned int _maneuverStartCoordinateIndex;
@@ -118,6 +120,8 @@
 @property(nonatomic) unsigned int distance;
 @property(nonatomic) _Bool hasStepID;
 @property(nonatomic) unsigned int stepID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)geoStep;
 - (id)maneuverStep;
 - (id)initWithStep:(id)arg1 route:(id)arg2 stringFormatter:(id)arg3;

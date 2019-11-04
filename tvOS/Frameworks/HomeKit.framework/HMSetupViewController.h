@@ -7,10 +7,11 @@
 #import <UIKit/UIViewController.h>
 
 #import <HomeKit/HMSetupRemoteHost-Protocol.h>
+#import <HomeKit/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class HMHome, HMSetupAccessoryDescription, HMSetupRemoteViewController, _UIAsyncInvocation;
+@class HMHome, HMSetupAccessoryDescription, HMSetupRemoteViewController, NSString, _UIAsyncInvocation, _UIRemoteViewController;
 
-@interface HMSetupViewController : UIViewController <HMSetupRemoteHost>
+@interface HMSetupViewController : UIViewController <HMSetupRemoteHost, _UIRemoteViewControllerContaining>
 {
     _Bool _cancelling;
     _Bool _disconnected;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (void)_presentAsTopmostViewController;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)accessorySetupDidFinishWithInfo:(id)arg1 error:(id)arg2;
 - (void)accessorySetupDidFinishWithError:(id)arg1;
 - (void)accessorySetupDidFinishPairing;
@@ -49,6 +51,12 @@
 - (void)presentWhenLoaded;
 - (id)initWithHome:(id)arg1 accessoryDescription:(id)arg2 loadHandler:(CDUnknownBlockType)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

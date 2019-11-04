@@ -9,6 +9,7 @@
 @class NSSet, NSString;
 
 @interface NSXPCConnection (CX)
+- (_Bool)cx_clientSandboxCanAccessFileURL:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *cx_capabilities;
 @property(readonly, copy, nonatomic) NSString *cx_processName;
 @property(readonly, copy, nonatomic) NSString *cx_developerTeamIdentifier;

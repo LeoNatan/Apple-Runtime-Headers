@@ -31,7 +31,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)commit;
+- (void)preCompletionHandlers;
 - (id)sampledFragmentRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned int)arg3;
 - (id)fragmentRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(CDStruct_4af8c268 *)arg1 capacity:(unsigned int)arg2;

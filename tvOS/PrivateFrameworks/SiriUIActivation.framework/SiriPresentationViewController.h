@@ -126,6 +126,8 @@
 - (id)contextAppInfosForSiriViewController:(id)arg1;
 - (unsigned long long)lockStateForSiriViewController:(id)arg1;
 - (id)siriViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
+- (void)siriViewControllerSpeechRequestCancelledFromSiriOrb;
+- (void)siriViewControllerSpeechRequestStartedFromSiriOrb;
 - (void)siriViewController:(id)arg1 didUpdateAudioCategoriesDisablingVolumeHUD:(id)arg2;
 - (id)bulletinsForSiriViewController:(id)arg1;
 - (void)userRelevantEventDidOccurInSiriViewController:(id)arg1;
@@ -151,6 +153,7 @@
 - (void)siriViewController:(id)arg1 didEncounterUnexpectedError:(id)arg2;
 - (void)siriViewControllerSessionDidResetContext:(id)arg1;
 - (void)siriViewControllerDidFinishDismissing:(id)arg1;
+- (void)_dismissDueToUnexpectedError:(id)arg1;
 - (void)_enableSpringBoardIdleTimer;
 - (_Bool)_isDeviceButton:(long long)arg1;
 - (_Bool)_releaseExistingTrigger;
@@ -165,7 +168,7 @@
 - (void)_processConnectionHouseKeeping;
 - (void)_scheduleConnectionHouseKeepingAfterDelay:(double)arg1;
 - (_Bool)siriViewControllerConfigured;
-- (id)siriViewControllerWithRequestSource:(long long)arg1;
+- (id)_createSiriViewControllerWithRequestOptions:(id)arg1;
 - (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
 - (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)bulletinManagerDidChangeBulletins;
@@ -192,7 +195,7 @@
 - (void)_updateActivePresentationPropertiesForPresentationIdentifier:(id)arg1;
 - (id)_uiPresentationIdentifier;
 - (void)activateWithSource:(long long)arg1 requestOptions:(id)arg2 timestamp:(id)arg3;
-- (void)_setSiriViewModeForRequestOptions:(id)arg1;
+- (long long)viewModeForRequestOptions:(id)arg1;
 - (void)activateWithSource:(long long)arg1 timestamp:(id)arg2;
 - (void)activateWithRequestOptions:(id)arg1;
 - (oneway void)handleRequestWithOptions:(id)arg1;

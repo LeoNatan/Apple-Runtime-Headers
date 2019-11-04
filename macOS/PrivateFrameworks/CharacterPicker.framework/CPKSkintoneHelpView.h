@@ -6,20 +6,13 @@
 
 #import <AppKit/NSView.h>
 
-@class NSImageView;
-
 __attribute__((visibility("hidden")))
 @interface CPKSkintoneHelpView : NSView
 {
-    NSImageView *_popupImageView;
 }
 
-- (id)_bestMatchImage;
 - (void)scrollWheel:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

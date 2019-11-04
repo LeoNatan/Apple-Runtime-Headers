@@ -9,6 +9,7 @@
 @class NSNumber, NSProgress;
 
 @protocol BDSNBPinningManagerService <NSObject>
+- (void)performInitialUpdateOfAutomaticPinningListsWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)updateBitrateForItemWithAdamID:(NSNumber *)arg1 completion:(void (^)(NSError *))arg2;
 - (NSProgress *)updateReadingNowWithCompletion:(void (^)(NSError *))arg1;
 - (NSProgress *)updateWantToReadWithCompletion:(void (^)(NSError *))arg1;

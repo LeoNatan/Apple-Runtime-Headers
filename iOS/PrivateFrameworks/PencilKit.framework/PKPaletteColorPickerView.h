@@ -25,6 +25,7 @@
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate> _delegate;
+    long long _colorUserInterfaceStyle;
     long long _colorPickerMode;
     UICollectionView *_collectionView;
     NSArray *_swatches;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) NSArray *swatches; // @synthesize swatches=_swatches;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) long long colorPickerMode; // @synthesize colorPickerMode=_colorPickerMode;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
@@ -50,8 +52,8 @@
 - (void)_reloadSwatchColorsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
-- (id)popoverPresentingSourceview;
-- (struct CGRect)popoverPresentingSourceRect;
+- (id)_popoverPresentingSourceview;
+- (struct CGRect)_popoverPresentingSourceRect;
 - (void)_showColorSelectionPopover;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
@@ -62,6 +64,9 @@
 - (id)_multicolorSwatch;
 - (id)_selectedSwatch;
 @property(retain, nonatomic) UIColor *selectedColor;
+- (_Bool)_colorPickerAllowsColorSelection;
+- (_Bool)_isSwatchMulticolorSwatch:(id)arg1;
+- (_Bool)_shouldDisplayExtendedColorPickerPopoverFromColorSwatch:(id)arg1;
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -71,7 +76,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_swatchLongPressHandler:(id)arg1;
 - (struct CGSize)swatchSize;
-- (id)_swatchColorsForTraitCollection:(id)arg1 userInterfaceStyle:(long long)arg2;
+- (id)_swatchColorsForTraitCollection:(id)arg1;
 - (void)_enableOrDisableLongPressGesture;
 - (void)didChangePreferredContentSize:(id)arg1;
 - (void)dealloc;

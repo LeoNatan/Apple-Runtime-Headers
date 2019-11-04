@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _UISearchControllerATVSearchBarAnimator : _UISearchControllerAnimator
 {
+    _Bool _shouldLayoutTabBar;
 }
 
 - (void)willFocusOffscreenViewForController:(id)arg1 withHeading:(unsigned int)arg2;
@@ -16,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (void)didFocusSearchBarForController:(id)arg1;
 - (void)didRelayoutSearchBarForController:(id)arg1;
 - (void)animateTransition:(id)arg1;
+- (id)init;
 
 @end
 

@@ -13,7 +13,6 @@
 @interface GEORouteIncident : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_crossStreet;
     long long _endTime;
@@ -23,6 +22,9 @@
     long long _startTime;
     NSString *_street;
     long long _updateTime;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _laneClosureCount;
     int _laneClosureType;
     int _significance;
@@ -111,6 +113,8 @@
 @property(retain, nonatomic) GEOLatLng *position;
 @property(readonly, nonatomic) _Bool hasPosition;
 - (void)_readPosition;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

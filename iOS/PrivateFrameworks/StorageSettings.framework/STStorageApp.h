@@ -13,14 +13,17 @@
     long long _purgeableSize;
     _Bool _isDeleting;
     _Bool _isDemoting;
+    _Bool _isApple;
     _Bool _isUserApp;
     _Bool _isSystemApp;
     _Bool _isInternalApp;
     _Bool _isDocumentApp;
     _Bool _specialSizePending;
     _Bool _isPseudoApp;
-    LSApplicationProxy *_appProxy;
+    NSString *_appIdentifier;
     FPProviderDomain *_fpDomain;
+    NSString *_name;
+    NSString *_bundleIdentifier;
     PSUsageBundleApp *_usageBundleApp;
     NSArray *_mediaTypes;
     long long _externalDataSize;
@@ -44,8 +47,10 @@
 @property _Bool isInternalApp; // @synthesize isInternalApp=_isInternalApp;
 @property _Bool isSystemApp; // @synthesize isSystemApp=_isSystemApp;
 @property _Bool isUserApp; // @synthesize isUserApp=_isUserApp;
+@property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) FPProviderDomain *fpDomain; // @synthesize fpDomain=_fpDomain;
-@property(retain, nonatomic) LSApplicationProxy *appProxy; // @synthesize appProxy=_appProxy;
+@property(retain) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 - (void).cxx_destruct;
 - (void)updateSpecialSize;
 @property(readonly) NSDate *installDate;
@@ -64,12 +69,10 @@
 @property(readonly) NSString *bundleVersion;
 @property(readonly) NSString *versionString;
 @property(readonly) NSString *vendorName;
-@property(readonly) NSString *appIdentifier;
-@property(readonly) NSString *bundleIdentifier;
-@property(readonly) NSString *name;
-- (_Bool)valueForBooleanInfoKey:(id)arg1;
+@property(readonly, nonatomic) LSApplicationProxy *appProxy;
 - (void)reloadProxy;
 - (id)initWithApplicationProxy:(id)arg1;
+- (id)initWithApplicationIdentifier:(id)arg1;
 
 @end
 

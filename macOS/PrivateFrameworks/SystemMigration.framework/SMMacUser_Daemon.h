@@ -22,6 +22,7 @@
     BOOL _homeDirToBeCopiedByMigration;
     BOOL _needsAttention;
     BOOL isAdminUser;
+    BOOL _secureTokenAuth;
     BOOL _isAutoLoginUser;
     BOOL _shouldUseAlternateFileVaultHomeDirPath;
     SMSystem_Daemon *sourceSystem;
@@ -39,6 +40,7 @@
 @property(retain) NSMutableArray *allOtherFilesInDirectory; // @synthesize allOtherFilesInDirectory=_allOtherFilesInDirectory;
 @property BOOL shouldUseAlternateFileVaultHomeDirPath; // @synthesize shouldUseAlternateFileVaultHomeDirPath=_shouldUseAlternateFileVaultHomeDirPath;
 @property BOOL isAutoLoginUser; // @synthesize isAutoLoginUser=_isAutoLoginUser;
+@property(readonly, getter=isSecureTokenAuth) BOOL secureTokenAuth; // @synthesize secureTokenAuth=_secureTokenAuth;
 @property(retain) NSMutableDictionary *supportedPathListSizes; // @synthesize supportedPathListSizes=_supportedPathListSizes;
 @property(retain) SMDBEntry *backing; // @synthesize backing=_backing;
 @property(retain) SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem;
@@ -72,7 +74,6 @@
 - (id)UUID;
 - (unsigned int)gid;
 - (unsigned int)uid;
-@property(readonly, getter=isSecureTokenAuth) BOOL secureTokenAuth;
 @property(readonly, getter=isDisabled) BOOL disabled;
 - (BOOL)isRoleUser;
 - (BOOL)portableHomeUser;

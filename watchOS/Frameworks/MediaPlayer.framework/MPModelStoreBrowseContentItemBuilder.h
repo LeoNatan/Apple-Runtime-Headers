@@ -49,7 +49,7 @@
 @property(nonatomic) _Bool allowsVideoContent; // @synthesize allowsVideoContent=_allowsVideoContent;
 @property(nonatomic) _Bool allowsRadioStations; // @synthesize allowsRadioStations=_allowsRadioStations;
 - (void).cxx_destruct;
-- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2 userIdentity:(id)arg3;
 - (int)contentItemTypeForMusicAPIType:(id)arg1;
 - (int)contentItemTypeForStoreItemMetadata:(id)arg1;
 - (int)contentItemTypeForRawResponseKindIdentifiers:(id)arg1;

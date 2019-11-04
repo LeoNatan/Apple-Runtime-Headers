@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _contentsTransform;
 }
 
-+ (id)layoutForSource:(id)arg1 inTarget:(id)arg2;
++ (id)layoutForSource:(id)arg1 inTarget:(id)arg2 withSize:(struct CGSize)arg3;
 @property(readonly, nonatomic) float baselineOffsetFromBottom; // @synthesize baselineOffsetFromBottom=_baselineOffsetFromBottom;
 @property(readonly, nonatomic) float baselineOffsetFromTop; // @synthesize baselineOffsetFromTop=_baselineOffsetFromTop;
 @property(readonly, nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id contents;
 - (void)_materializeContentsIfNeeded;
 - (void)_prepareContentOfSize:(struct CGSize)arg1 source:(id)arg2 target:(id)arg3;
-- (id)initWithSource:(id)arg1 target:(id)arg2;
+- (id)initWithSource:(id)arg1 target:(id)arg2 withSize:(struct CGSize)arg3;
 
 @end
 

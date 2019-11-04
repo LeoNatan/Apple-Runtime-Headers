@@ -190,6 +190,7 @@
 - (double)_heightForAuxContactCellAtindexPath:(id)arg1;
 - (double)_heightForContactCellAtIndexPath:(id)arg1;
 - (unsigned long long)_countOfContactViewModels;
+- (id)labelForChat;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

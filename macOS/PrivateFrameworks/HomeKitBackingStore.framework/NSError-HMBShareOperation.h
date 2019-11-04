@@ -6,18 +6,14 @@
 
 #import <Foundation/NSError.h>
 
-@class CKRecord, CKShare;
-
 @interface NSError (HMBShareOperation)
-+ (id)hmbRetryShareOperationErrorWithUpdatedShare:(id)arg1 updatedShareParticipantRecord:(id)arg2;
++ (id)hmbRetryShareOperationError;
 + (id)hmbErrorWithSQLite3Status:(int)arg1;
 + (id)hmbErrorWithSQLite3Statement:(struct sqlite3_stmt *)arg1;
 + (id)hmbErrorWithSQLite3Context:(struct sqlite3 *)arg1 statement:(const char *)arg2;
 + (id)hmbErrorWithSQLite3Context:(struct sqlite3 *)arg1;
 + (id)hmbErrorWithSQLContext:(id)arg1 statement:(const char *)arg2;
 + (id)hmbErrorWithSQLContext:(id)arg1;
-@property(readonly, copy) CKRecord *hmbRetryShareOperationUpdatedShareParticipantRecord;
-@property(readonly) CKShare *hmbRetryShareOperationUpdatedShare;
 @property(readonly, getter=hmbIsRetryShareOperationError) BOOL hmbRetryShareOperationError;
 - (id)hmbConciseCKError;
 @property(readonly) BOOL hmbIsCKManateeUnavailableError;

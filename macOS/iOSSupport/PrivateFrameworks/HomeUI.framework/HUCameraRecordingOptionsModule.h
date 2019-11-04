@@ -8,21 +8,26 @@
 
 #import <HomeUI/HUCameraSettingsModule-Protocol.h>
 
-@class HUCameraCloudStorageSettingsModule, HUCameraSmartDetectionSettingsModule, NSSet, NSString, UIViewController;
+@class HFStaticItem, HFStaticItemProvider, HUCameraCloudStorageSettingsModule, HUCameraSmartDetectionSettingsModule, NSSet, NSString, UIViewController;
 
 @interface HUCameraRecordingOptionsModule : HFItemModule <HUCameraSettingsModule>
 {
     NSSet *_itemProviders;
     HUCameraSmartDetectionSettingsModule *_smartDetectionModule;
     HUCameraCloudStorageSettingsModule *_cloudStorageModule;
+    HFStaticItem *_recordAudioItem;
     NSSet *_cameraProfiles;
+    HFStaticItemProvider *_recordAudioItemProvider;
 }
 
+@property(retain, nonatomic) HFStaticItemProvider *recordAudioItemProvider; // @synthesize recordAudioItemProvider=_recordAudioItemProvider;
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
+@property(retain, nonatomic) HFStaticItem *recordAudioItem; // @synthesize recordAudioItem=_recordAudioItem;
 @property(readonly, nonatomic) HUCameraCloudStorageSettingsModule *cloudStorageModule; // @synthesize cloudStorageModule=_cloudStorageModule;
 @property(readonly, nonatomic) HUCameraSmartDetectionSettingsModule *smartDetectionModule; // @synthesize smartDetectionModule=_smartDetectionModule;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (void).cxx_destruct;
+- (void)updateRecordAudioValue:(BOOL)arg1;
 - (id)didSelectItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (void)_buildItemProviders;

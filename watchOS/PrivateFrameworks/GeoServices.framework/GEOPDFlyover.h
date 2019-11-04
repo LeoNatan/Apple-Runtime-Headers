@@ -13,7 +13,6 @@
 @interface GEOPDFlyover : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     struct GEOPDCameraPathFrame *_cameraPaths;
     unsigned int _cameraPathsCount;
     unsigned int _cameraPathsSpace;
@@ -22,6 +21,9 @@
     unsigned int _labelFramesSpace;
     NSMutableArray *_labels;
     NSMutableArray *_notificationMessages;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _useSplines;
     struct {
         unsigned int has_useSplines:1;
@@ -85,6 +87,8 @@
 @property(readonly, nonatomic) unsigned int cameraPathsCount;
 - (void)_readCameraPaths;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)bestLocalizedAnnouncementMessage;
 - (id)bestLocalizedLabelAtIndex:(unsigned int)arg1;
 

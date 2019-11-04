@@ -13,11 +13,13 @@
 @interface GEODirectionsFeedbackLogMessage : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     struct GEONavigationAudioFeedback _navigationAudioFeedback;
     NSMutableArray *_directionsFeedbacks;
     double _durationOfTrip;
     GEOLocation *_finalLocation;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _arrivedAtDestination;
     CDStruct_57366784 _flags;
 }
@@ -51,6 +53,8 @@
 - (void)clearDirectionsFeedbacks;
 @property(retain, nonatomic) NSMutableArray *directionsFeedbacks;
 - (void)_readDirectionsFeedbacks;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

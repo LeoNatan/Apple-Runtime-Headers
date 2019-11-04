@@ -60,6 +60,7 @@
 - (id)ancillaryModels;
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id *)arg3;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id *)arg4;
+- (void)_rebuildIndiciesSynchronously:(BOOL)arg1;
 - (id)currentChangeToken;
 - (id)reopenQueryGenerationWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;

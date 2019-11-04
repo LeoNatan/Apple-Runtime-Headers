@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class RTMapServiceManager;
+@class RTMapServiceManager, RTTimerManager;
 @protocol OS_dispatch_queue;
 
 @interface RTMapsSupportManager : NSObject
 {
     RTMapServiceManager *_mapServiceManager;
     NSObject<OS_dispatch_queue> *_queue;
+    RTTimerManager *_timerManager;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) RTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 - (void).cxx_destruct;
@@ -33,6 +35,7 @@
 - (void)clearParkedCarBulletin;
 - (void)showParkedCarReplacementBulletinForEvent:(id)arg1 replacingEvent:(id)arg2;
 - (void)showParkedCarBulletinForEvent:(id)arg1;
+- (id)initWithMapServiceManager:(id)arg1 timerManager:(id)arg2;
 - (id)initWithMapServiceManager:(id)arg1;
 - (id)init;
 

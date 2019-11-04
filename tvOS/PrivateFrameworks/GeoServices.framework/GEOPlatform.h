@@ -24,6 +24,8 @@
 - (_Bool)supportsRealisticTiles;
 - (_Bool)mapsFeatureFreedomEnabled;
 - (_Bool)_deviceSupportsNavigation;
+- (id)deviceCountrySKUForServiceRequests;
+- (id)deviceCountrySKU;
 - (id)hardwareModel;
 - (id)hardwareIdentifier;
 - (id)osAndBuildVersion;

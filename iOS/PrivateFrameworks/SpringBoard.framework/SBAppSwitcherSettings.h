@@ -40,6 +40,7 @@
     double _mDarkening;
     double _bDarkening;
     double _maxDarkening;
+    double _tetheredInsertionRemovalInsetForDeterminingVisibility;
     long long _selectionHighlightStyle;
     double _highlightSquishyScale;
     double _highlightDimOpacity;
@@ -149,6 +150,7 @@
 @property double highlightDimOpacity; // @synthesize highlightDimOpacity=_highlightDimOpacity;
 @property double highlightSquishyScale; // @synthesize highlightSquishyScale=_highlightSquishyScale;
 @property long long selectionHighlightStyle; // @synthesize selectionHighlightStyle=_selectionHighlightStyle;
+@property double tetheredInsertionRemovalInsetForDeterminingVisibility; // @synthesize tetheredInsertionRemovalInsetForDeterminingVisibility=_tetheredInsertionRemovalInsetForDeterminingVisibility;
 @property double maxDarkening; // @synthesize maxDarkening=_maxDarkening;
 @property double bDarkening; // @synthesize bDarkening=_bDarkening;
 @property double mDarkening; // @synthesize mDarkening=_mDarkening;

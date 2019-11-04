@@ -135,6 +135,7 @@
 - (id)_accessibilityUserTestingVisibleCells;
 - (struct CGPoint)_accessibilityMaxScrubberPosition;
 - (struct CGPoint)_accessibilityMinScrubberPosition;
+- (double)_accessibilityNumberValue;
 - (_Bool)_accessibilityDismissAlternativeKeyPicker;
 - (_Bool)_accessibilityDispatchKeyboardAction:(id)arg1;
 - (_Bool)_accessibilityActivateKeyboardDeleteKey;
@@ -159,9 +160,9 @@
 - (id)_accessibilityHandwritingAttributes;
 - (_Bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityTextHandlingAncestorMatchingBlock:(CDUnknownBlockType)arg1;
-- (id)_accessibilityHandwritingAncestor;
+- (id)_accessibilityHandwritingElement;
 - (_Bool)_accessibilityCanAppearInContextMenuPreview;
-- (id)_accessibilityContextMenuActionForElement:(id)arg1;
+- (_Bool)_accessibilityShowContextMenuForElement:(id)arg1 targetPointValue:(id)arg2;
 - (_Bool)_accessibilityDelegateCanShowContextMenuForInteraction:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (_Bool)_accessibilityCanShowContextMenuForInteraction:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (id)_accessibilityElementForTextInsertionAndDeletion;
@@ -173,6 +174,7 @@
 - (void)_accessibilityPostValueChangedNotificationWithChangeType:(struct __CFString *)arg1 insertedText:(id)arg2;
 - (id)_accessibilityAttributedValueForRange:(struct _NSRange *)arg1;
 - (void)_accessibilityAddMispellingsToAttributedString:(id)arg1;
+- (struct UIEdgeInsets)_accessibilityNavigationControllerInset;
 - (void)_accessibilitySetNavigationControllerInset:(struct UIEdgeInsets)arg1;
 - (void)_accessibilityConvertStyleAttributesToAccessibility:(id)arg1;
 - (void)_accessibilitySetValue:(id)arg1;
@@ -321,6 +323,7 @@
 - (_Bool)_accessibilityOnlyComparesByXAxis;
 - (struct CGRect)_accessibilityContentFrame;
 - (void)_accessibilitySetVisibleContentInset:(struct UIEdgeInsets)arg1;
+- (_Bool)_accessibilityShouldUseFallbackForVisibleContentInset;
 - (struct UIEdgeInsets)_accessibilityVisibleContentInset;
 - (struct CGAffineTransform)_accessibilityJailTransform;
 - (id)_accessibilityCirclePathBasedOnBoundsWidth;
@@ -436,6 +439,7 @@
 - (long long)_accessibilityDataSeriesType;
 - (id)_accessibilityDataSeriesValuesForAxis:(long long)arg1;
 - (id)_accessibilityDataSeriesName;
+- (id)_accessibilityElementToFocusForAppearanceScreenChange;
 - (void)_fkaMoveRight;
 - (void)_fkaMoveLeft;
 - (void)_fkaMoveDown;
@@ -520,6 +524,7 @@
 - (id)accessibilityElementForRow:(unsigned long long)arg1 andColumn:(unsigned long long)arg2;
 - (void)_accessibilitySetContextDescriptors:(id)arg1;
 - (id)_accessibilityContextDescriptors;
+- (_Bool)_accessibilityShouldIncludeMediaDescriptionsRotor;
 - (id)_accessibilityAllContextDescriptors;
 - (_Bool)_accessibilityCanBeFirstResponder;
 - (_Bool)_accessibilityCanBeFirstResponderWhenNotAnElement;
@@ -611,6 +616,7 @@
 - (_Bool)_accessibilityIsStarkElement;
 - (_Bool)_accessibilityIsVisibleByCompleteHitTest;
 - (struct CGPoint)_accessibilityVisiblePointHitTestingAnyElement:(_Bool)arg1;
+- (void)_accessibilityMarkElementForVisiblePointHitTest:(_Bool)arg1;
 - (struct CGPoint)_accessibilityVisiblePoint;
 - (struct CGRect)accessibilityVisibleContentRect;
 - (_Bool)_accessibilityVisiblePointHonorsScreenBounds;
@@ -763,7 +769,7 @@
 - (_Bool)_accessibilityViewControllerShouldPreventScrollToVisibleForElement:(id)arg1;
 - (_Bool)_accessibilityScrollToVisible;
 - (_Bool)_accessibilityScrollToVisibleForNextElementRetrieval:(long long)arg1;
-- (_Bool)_accessibilityShowContextMenu;
+- (_Bool)_accessibilityShowContextMenuWithTargetPointValue:(id)arg1;
 - (struct CGPoint)_accessibilityContentOffset;
 - (_Bool)_accessibilityCanScrollInAtLeastOneDirection;
 - (id)_accessibilityTabBarAncestor;
@@ -817,6 +823,7 @@
 - (_Bool)accessibilityScrollDownPage;
 - (_Bool)accessibilityScrollUpPage;
 - (struct CGRect)accessibilityFrameForScrolling;
+- (_Bool)_accessibilityIgnoresStatusBarFrame;
 - (struct _NSRange)_accessibilityRawRangeForUITextRange:(id)arg1;
 - (id)_accessibilityTextRangeFromNSRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilityTextInputElementRangeAsNSRange;

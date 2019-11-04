@@ -6,12 +6,12 @@
 
 #import <AnnotationKit/AKDFRAnnotationPropertiesController.h>
 
-@class NSSlider, NSStackView, NSTouchBarItem;
+@class NSStackView, NSStepperTouchBarItem, NSTouchBarItem;
 
 @interface AKDFRShapeController : AKDFRAnnotationPropertiesController
 {
     NSTouchBarItem *_lineStyleItem;
-    NSSlider *_lineWidthSlider;
+    NSStepperTouchBarItem *_lineWidthStepperItem;
     NSStackView *_lineStyleView;
 }
 
@@ -19,12 +19,13 @@
 + (id)_accessibilityLabelFromTag:(long long)arg1;
 + (id)_imageFromTag:(long long)arg1;
 @property(retain) NSStackView *lineStyleView; // @synthesize lineStyleView=_lineStyleView;
-@property(retain) NSSlider *lineWidthSlider; // @synthesize lineWidthSlider=_lineWidthSlider;
+@property(retain) NSStepperTouchBarItem *lineWidthStepperItem; // @synthesize lineWidthStepperItem=_lineWidthStepperItem;
 @property(retain) NSTouchBarItem *lineStyleItem; // @synthesize lineStyleItem=_lineStyleItem;
 - (void).cxx_destruct;
 - (id)_createButtonWithTag:(long long)arg1;
-- (id)_createLineWidthSlider;
 - (void)_initializeLineStyleView;
+- (void)_lineWidthDidChange;
+- (void)_createLineWidthStepperItem;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)itemIdentifiers;
 - (id)initWithIdentifier:(id)arg1 delegate:(id)arg2;

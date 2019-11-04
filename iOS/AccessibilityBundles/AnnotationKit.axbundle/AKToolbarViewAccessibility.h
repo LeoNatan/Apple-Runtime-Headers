@@ -17,6 +17,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)shouldGroupAccessibilityChildren;
 - (_Bool)_accessibilityOnlyComparesByXAxis;
+- (_Bool)_accessibilityUseAccessibilityFrameForHittest;
 
 @end
 

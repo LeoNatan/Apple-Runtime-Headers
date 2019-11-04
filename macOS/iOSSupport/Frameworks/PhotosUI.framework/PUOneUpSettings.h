@@ -27,6 +27,7 @@
     BOOL _showFacesRect;
     BOOL _showPaddedFacesRect;
     BOOL _showBestSquareRect;
+    BOOL _showToggleCTMButton;
     BOOL _hideToolbarWhenShowingAccessoryView;
     BOOL _useGlobalDetailsVisibility;
     BOOL _useGlobalCommentsVisibility;
@@ -49,6 +50,7 @@
     BOOL _livePhotoScrubberShowForPlayback;
     BOOL _shouldMergeOverlappingLivePhotos;
     BOOL _showOffBadgeForDisabledLivePhotos;
+    BOOL _showReframedBadge;
     BOOL _allowGIFPlayback;
     BOOL _showGIFLoadingDelays;
     BOOL _useDebuggingColors;
@@ -92,6 +94,7 @@
     double _livePhotoInteractionThreshold;
     double _livePhotoMinimumOverlappingDuration;
     unsigned long long _overlappingLivePhotosCountLimit;
+    double _vitalityMaskBlur;
     unsigned long long _viewModelCacheCountLimit;
     double _visibilityDurationForEnteringQuickPagingRegime;
     double _visibilityDurationForExitingQuickPagingRegime;
@@ -138,6 +141,8 @@
 @property(nonatomic) double visibilityDurationForExitingQuickPagingRegime; // @synthesize visibilityDurationForExitingQuickPagingRegime=_visibilityDurationForExitingQuickPagingRegime;
 @property(nonatomic) double visibilityDurationForEnteringQuickPagingRegime; // @synthesize visibilityDurationForEnteringQuickPagingRegime=_visibilityDurationForEnteringQuickPagingRegime;
 @property(nonatomic) unsigned long long viewModelCacheCountLimit; // @synthesize viewModelCacheCountLimit=_viewModelCacheCountLimit;
+@property(nonatomic) BOOL showReframedBadge; // @synthesize showReframedBadge=_showReframedBadge;
+@property(nonatomic) double vitalityMaskBlur; // @synthesize vitalityMaskBlur=_vitalityMaskBlur;
 @property(nonatomic) BOOL showOffBadgeForDisabledLivePhotos; // @synthesize showOffBadgeForDisabledLivePhotos=_showOffBadgeForDisabledLivePhotos;
 @property(nonatomic) unsigned long long overlappingLivePhotosCountLimit; // @synthesize overlappingLivePhotosCountLimit=_overlappingLivePhotosCountLimit;
 @property(nonatomic) double livePhotoMinimumOverlappingDuration; // @synthesize livePhotoMinimumOverlappingDuration=_livePhotoMinimumOverlappingDuration;
@@ -188,6 +193,7 @@
 @property(nonatomic) double minimumVisibleCommentedContentHeight; // @synthesize minimumVisibleCommentedContentHeight=_minimumVisibleCommentedContentHeight;
 @property(nonatomic) double minimumVisibleContentHeight; // @synthesize minimumVisibleContentHeight=_minimumVisibleContentHeight;
 @property(nonatomic) double accessoryInitialTopPosition; // @synthesize accessoryInitialTopPosition=_accessoryInitialTopPosition;
+@property(nonatomic) BOOL showToggleCTMButton; // @synthesize showToggleCTMButton=_showToggleCTMButton;
 @property(nonatomic) BOOL showBestSquareRect; // @synthesize showBestSquareRect=_showBestSquareRect;
 @property(nonatomic) BOOL showPaddedFacesRect; // @synthesize showPaddedFacesRect=_showPaddedFacesRect;
 @property(nonatomic) BOOL showFacesRect; // @synthesize showFacesRect=_showFacesRect;

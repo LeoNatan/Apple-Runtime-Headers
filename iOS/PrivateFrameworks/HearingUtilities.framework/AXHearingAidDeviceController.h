@@ -17,7 +17,6 @@
     CBCentralManager *_bluetoothManager;
     NSLock *_centralRequestsLock;
     _Bool _isScanning;
-    _Bool _isResetting;
     _Bool _centralIsOn;
     NSObject<OS_dispatch_queue> *_bluetoothCentralQueue;
     NSMutableArray *_availableSearchBlocks;
@@ -47,6 +46,7 @@
 @property(retain) NSMutableArray *loadedDevices; // @synthesize loadedDevices=_loadedDevices;
 @property(retain, nonatomic) NSMutableArray *availablePeripherals; // @synthesize availablePeripherals=_availablePeripherals;
 - (void).cxx_destruct;
+- (_Bool)representsLocalDevices;
 - (id)valueForProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (void)pairedHearingAidsDidChange;
 - (void)persistPairedHearingAids;

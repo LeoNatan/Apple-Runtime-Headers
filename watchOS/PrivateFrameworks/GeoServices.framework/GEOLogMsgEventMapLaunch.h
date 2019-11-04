@@ -13,10 +13,12 @@
 @interface GEOLogMsgEventMapLaunch : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_launchUri;
     NSString *_sourceAppId;
     GEOTimeToLeaveMapLaunch *_timeToLeave;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_launchUri:1;
         unsigned int read_sourceAppId:1;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) NSString *sourceAppId;
 @property(readonly, nonatomic) _Bool hasSourceAppId;
 - (void)_readSourceAppId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

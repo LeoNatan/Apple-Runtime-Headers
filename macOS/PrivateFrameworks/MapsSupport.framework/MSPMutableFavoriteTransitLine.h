@@ -19,6 +19,7 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
+- (BOOL)isUserVisibleDuplicateOfFavorite:(id)arg1;
 @property(retain, nonatomic) id <GEOTransitLine> transitLine;
 @property(readonly, nonatomic) MSPTransitLineBookmark *transitLineBookmark;
 - (id)transferToImmutableIfValidWithError:(out id *)arg1;

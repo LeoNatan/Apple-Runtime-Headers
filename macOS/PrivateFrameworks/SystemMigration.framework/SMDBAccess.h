@@ -17,6 +17,7 @@
 + (id)rawODDBWithPath:(id)arg1;
 + (id)remoteDBWithPath:(id)arg1;
 + (id)localDB;
+- (BOOL)userIsASecureTokenHolder:(id)arg1;
 - (BOOL)deleteEntryAtPath:(id)arg1;
 - (BOOL)createEntry:(id)arg1 atPath:(id)arg2 error:(id *)arg3;
 - (BOOL)addMemberRecord:(id)arg1 ofType:(id)arg2 atPath:(id)arg3;

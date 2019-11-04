@@ -11,7 +11,6 @@
 @class FPDActionOperationQueue, FPDMoveOperation, FPDMoveWriter, FPMoveInfo, NSError, NSMutableSet;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface FPDMoveReader : NSObject <FPCancellable>
 {
     FPDMoveOperation *_operation;
@@ -35,6 +34,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _errorBlock;
 }
 
++ (BOOL)_hasDiskWriterSupportForDomain:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType errorBlock; // @synthesize errorBlock=_errorBlock;
 @property(copy, nonatomic) CDUnknownBlockType startDownloadBlock; // @synthesize startDownloadBlock=_startDownloadBlock;
 @property(copy, nonatomic) CDUnknownBlockType preflightCompletionBlock; // @synthesize preflightCompletionBlock=_preflightCompletionBlock;

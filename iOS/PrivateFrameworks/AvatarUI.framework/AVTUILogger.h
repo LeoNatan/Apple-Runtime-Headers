@@ -50,7 +50,7 @@
 - (void)logCarouselChangingToMultiMode;
 - (void)logCarouselChangingToSingleMode;
 - (void)logRenderingStickerEnd:(id)arg1;
-- (void)logRenderingStickerStart:(id)arg1;
+- (void)logRenderingStickerStart:(id)arg1 forRecord:(id)arg2;
 - (void)logPaddleViewVideoPlayerFailed:(id)arg1;
 - (void)logStickerGeneratorPoolDidntHaveAvailableGenerator:(long long)arg1 maxCount:(long long)arg2;
 - (void)logDeduplicateRecordWithIdentifier:(id)arg1 toNewRecordWithIdentifier:(id)arg2;
@@ -80,6 +80,7 @@
 - (void)logErrorMergingCopiedAsideContent:(id)arg1;
 - (void)logErrorCopyingStorageAside:(id)arg1;
 - (void)logResetSyncReason:(unsigned long long)arg1;
+- (void)logPersistentChangeNotOfInterest:(id)arg1;
 - (void)logMissingTombstonedIdentifier;
 - (void)logMissingResetSyncReasonKey;
 - (void)logStartObservingResetSync;
@@ -119,7 +120,7 @@
 - (void)logChangesRequireExport;
 - (void)logNotificationDoesntContainChangeHistoryToken;
 - (void)logErrorFetchingChangeHistory:(id)arg1;
-- (void)logDispatchingRemoteChangeWithTransactionCount:(unsigned long long)arg1;
+- (void)logDispatchingRemoteChangeWithTransactionCount:(unsigned long long)arg1 handlersCount:(unsigned long long)arg2;
 - (void)logReceivedRemoteChange:(id)arg1;
 - (void)logStartObservingRemoteChangeNotificationFrom:(id)arg1;
 - (void)processingRemoteChangeNotification:(CDUnknownBlockType)arg1;

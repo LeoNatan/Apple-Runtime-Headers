@@ -27,6 +27,7 @@
     UIBarButtonItem *_backBarButtonItem;
     UIBarButtonItem *_forwardBarButtonItem;
     NSLayoutConstraint *_loadingViewTopConstraint;
+    _Bool _supportsDarkMode;
     _Bool _displayHelpTopicsOnly;
     _Bool _hideDoneButton;
     _Bool _showTopicNameAsTitle;
@@ -57,6 +58,7 @@
 @property(nonatomic) _Bool showTopicNameAsTitle; // @synthesize showTopicNameAsTitle=_showTopicNameAsTitle;
 @property(nonatomic) _Bool hideDoneButton; // @synthesize hideDoneButton=_hideDoneButton;
 @property(nonatomic) _Bool displayHelpTopicsOnly; // @synthesize displayHelpTopicsOnly=_displayHelpTopicsOnly;
+@property(nonatomic) _Bool supportsDarkMode; // @synthesize supportsDarkMode=_supportsDarkMode;
 @property(nonatomic) __weak id <HLPHelpTopicViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;
@@ -87,6 +89,7 @@
 - (void)backButtonTapped;
 - (void)updateDoneButton;
 - (void)contentSizeCategoryDidChange:(id)arg1;
+- (void)updateBackgroundColor;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

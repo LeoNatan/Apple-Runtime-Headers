@@ -10,6 +10,7 @@
 {
 }
 
+- (unsigned long long)getResetSyncStatusWithError:(id *)arg1;
 - (void)queryParticipantsWithEmails:(id)arg1 phoneNumbers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)forceSyncMomentShare:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)acceptMomentShare:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

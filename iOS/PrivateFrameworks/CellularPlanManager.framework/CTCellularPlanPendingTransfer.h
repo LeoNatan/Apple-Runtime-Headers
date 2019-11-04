@@ -27,9 +27,9 @@
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
 @property(retain, nonatomic) NSString *sourceIccid; // @synthesize sourceIccid=_sourceIccid;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 

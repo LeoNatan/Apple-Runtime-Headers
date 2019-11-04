@@ -14,7 +14,6 @@
 @interface GEOCompanionRouteDetails : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_82f37d05 _coordinates;
     CDStruct_9f2792e4 _trafficColorOffsets;
     CDStruct_9f2792e4 _trafficColors;
@@ -32,6 +31,9 @@
     NSData *_routeID;
     NSMutableArray *_steps;
     NSString *_trafficDescription;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distance;
     unsigned int _historicalDuration;
     unsigned int _originalDuration;
@@ -197,6 +199,8 @@
 @property(readonly, nonatomic) _Bool hasDestinationName;
 - (void)_readDestinationName;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)instanceCompatibleWithProtocolVersion:(unsigned long long)arg1;
 - (id)stepWithID:(unsigned long long)arg1;
 - (unsigned long long)stepIndexWithID:(unsigned long long)arg1;

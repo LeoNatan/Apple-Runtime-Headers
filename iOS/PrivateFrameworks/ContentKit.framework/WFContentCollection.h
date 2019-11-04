@@ -8,11 +8,10 @@
 
 #import <ContentKit/NSCopying-Protocol.h>
 #import <ContentKit/NSSecureCoding-Protocol.h>
-#import <ContentKit/QLPreviewControllerDataSource-Protocol.h>
 
 @class NSArray, NSLock, NSMutableArray, WFCoercionOptions;
 
-@interface WFContentCollection : NSObject <QLPreviewControllerDataSource, NSCopying, NSSecureCoding>
+@interface WFContentCollection : NSObject <NSCopying, NSSecureCoding>
 {
     WFCoercionOptions *_defaultCoercionOptions;
     NSMutableArray *_mutableItems;
@@ -67,9 +66,6 @@
 - (id)init;
 - (id)minimalExtensionItems;
 - (id)extensionItems;
-- (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
-- (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (void)generatePreviewControllerDataSource:(CDUnknownBlockType)arg1;
 - (void)copyToPasteboard:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end

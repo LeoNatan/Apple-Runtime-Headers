@@ -19,7 +19,7 @@
     long long _state;
 }
 
-+ (long long)getNewStateFromPathMatch:(BOOL)arg1 oldState:(long long)arg2 probeExists:(BOOL)arg3;
++ (long long)getNewStateFromPathMatch:(_Bool)arg1 oldState:(long long)arg2 probeExists:(_Bool)arg3;
 @property long long state; // @synthesize state=_state;
 @property(copy) NSURL *probeURL; // @synthesize probeURL=_probeURL;
 @property long long roamingPreference; // @synthesize roamingPreference=_roamingPreference;
@@ -29,13 +29,13 @@
 @property(copy) NSSet *interfaceTypeOptions; // @synthesize interfaceTypeOptions=_interfaceTypeOptions;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (void)updateStateWithPath:(id)arg1;
-- (BOOL)matchesPath:(id)arg1;
+- (_Bool)matchesPath:(id)arg1;
 
 @end
 

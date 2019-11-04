@@ -9,6 +9,7 @@
 @class LSAppLink, NSNumber, NSString, NSURL;
 
 @protocol SFRemoteViewControllerProtocol <NSObject>
+- (void)didDecideShouldShowLinkPreviews:(_Bool)arg1;
 - (void)didResolveRedirectionWithURL:(NSURL *)arg1 appLink:(LSAppLink *)arg2;
 - (void)didChangeFullScreen:(_Bool)arg1;
 - (void)initialLoadDidRedirectToURL:(NSURL *)arg1;

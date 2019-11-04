@@ -25,10 +25,6 @@
 @property(readonly) __weak HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
 @property long long shareID; // @synthesize shareID=_shareID;
 - (void).cxx_destruct;
-- (void)markAsMigrated:(CDUnknownBlockType)arg1;
-- (void)fetchAllObjects:(CDUnknownBlockType)arg1;
-- (void)fetchMigratedObjects:(CDUnknownBlockType)arg1;
-- (void)_fetchObjects:(_Bool)arg1 migration:(_Bool)arg2 result:(CDUnknownBlockType)arg3;
 - (id)dumpDebug;
 - (id)initWithShareID:(long long)arg1 group:(id)arg2 rootRecord:(id)arg3 targetOwner:(id)arg4 share:(id)arg5 users:(id)arg6;
 

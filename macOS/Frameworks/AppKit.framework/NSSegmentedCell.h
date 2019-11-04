@@ -113,7 +113,7 @@
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (void)_setCompressibleOptions:(id)arg1 forControlView:(id)arg2;
 - (id)_compressibleOptionsForControlView:(id)arg1;
-- (struct CGSize)_minimumCellSizeWithOptions:(id)arg1 forBounds:(struct CGRect)arg2;
+- (struct CGSize)_cellSizeWithOptions:(id)arg1 forBounds:(struct CGRect)arg2;
 - (struct CGSize)minimumCellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)_cellSizeForBounds:(struct CGRect)arg1 distribution:(long long)arg2;
@@ -138,6 +138,7 @@
 - (long long)_segmentShowingRollover;
 - (void)setControlView:(id)arg1;
 - (void)_controlViewDidChangeEffectiveAppearance:(id)arg1;
+- (BOOL)_inTouchBar;
 - (void)_invalidateSegmentSizes;
 - (void)setControlSize:(unsigned long long)arg1;
 - (void)setFont:(id)arg1;

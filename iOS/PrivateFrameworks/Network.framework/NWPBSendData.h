@@ -26,16 +26,16 @@
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) BOOL hasReceiveWindow;
-@property(readonly, nonatomic) BOOL hasMessageData;
-@property(readonly, nonatomic) BOOL hasClientUUID;
+@property(nonatomic) _Bool hasReceiveWindow;
+@property(readonly, nonatomic) _Bool hasMessageData;
+@property(readonly, nonatomic) _Bool hasClientUUID;
 
 @end
 

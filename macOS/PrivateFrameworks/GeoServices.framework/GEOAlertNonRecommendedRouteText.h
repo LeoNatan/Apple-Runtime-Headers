@@ -13,12 +13,14 @@
 @interface GEOAlertNonRecommendedRouteText : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPlaceFormattedString *_body;
     GEOFormattedString *_responseAlertPrimary;
     GEOFormattedString *_responseAlertSecondary;
     GEOPlaceFormattedString *_title;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_body:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) GEOFormattedString *responseAlertPrimary;
 @property(readonly, nonatomic) BOOL hasResponseAlertPrimary;
 - (void)_readResponseAlertPrimary;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

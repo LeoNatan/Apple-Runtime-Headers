@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKAccountFlowControllerDelegate-Protocol.h>
 
-@class CLLocationManager, NSString, PKAccountFlowController, UIView, UIViewController;
+@class CLInUseAssertion, CLLocationManager, NSString, PKAccountFlowController, UIViewController;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKAccountPassActivationResultViewController : PKExplanationViewController <PKAccountFlowControllerDelegate>
@@ -18,8 +18,8 @@
     unsigned int _featureIdentifier;
     int _setupContext;
     UIViewController *_nextViewController;
+    CLInUseAssertion *_inUseAssertion;
     CLLocationManager *_locationManager;
-    UIView *_topBackgroundView;
     _Bool _didAddToAmp;
     _Bool _didMakeAccountPassDefault;
     _Bool _showingLoadingIndicator;
@@ -30,7 +30,7 @@
 @property(nonatomic) _Bool didAddToAmp; // @synthesize didAddToAmp=_didAddToAmp;
 - (void).cxx_destruct;
 - (id)_setupLaterBodyString;
-- (id)_localizedStringKeyForPerformedOperations;
+- (id)_localizedStringKeyForPerformedOperationsAndMadeDefault:(_Bool)arg1;
 - (void)_terminateSetupFlow;
 - (void)_presentDisplayableError:(id)arg1;
 - (void)_presentViewController:(id)arg1;
@@ -43,10 +43,11 @@
 - (void)_updateUI;
 - (void)accountFlowController:(id)arg1 requestsPresentationOfDisplayableError:(id)arg2;
 - (void)accountFlowController:(id)arg1 requestsPresentationOfViewController:(id)arg2;
-- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithAccountFlowController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
 
 // Remaining properties

@@ -6,38 +6,32 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <AppSSOUI/UIViewControllerTransitioningDelegate-Protocol.h>
+#import <AppSSOUI/UIGestureRecognizerDelegate-Protocol.h>
+#import <AppSSOUI/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class NSDictionary, NSString, UINavigationBar, UIView;
+@class NSString, _UIRemoteViewController;
 @protocol SOUIAuthorizationViewControllerDelegate;
 
-@interface SOUIAuthorizationViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@interface SOUIAuthorizationViewController : UIViewController <_UIRemoteViewControllerContaining, UIGestureRecognizerDelegate>
 {
     UIViewController *_extensionViewController;
-    NSDictionary *_hints;
-    double _sheetHeight;
     id <SOUIAuthorizationViewControllerDelegate> _delegate;
-    UINavigationBar *_navigationBar;
-    UIView *_extensionViewContainer;
 }
 
-@property(nonatomic) __weak UIView *extensionViewContainer; // @synthesize extensionViewContainer=_extensionViewContainer;
-@property(nonatomic) __weak UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property __weak id <SOUIAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (void)_cancel;
-- (void)cancelButtonClicked:(id)arg1;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (unsigned long long)supportedInterfaceOrientations;
+- (_Bool)shouldAutorotate;
 - (void)loadView;
 - (id)initWithExtensionViewController:(id)arg1 hints:(id)arg2;
-- (id)nibName;
-- (id)nibBundle;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

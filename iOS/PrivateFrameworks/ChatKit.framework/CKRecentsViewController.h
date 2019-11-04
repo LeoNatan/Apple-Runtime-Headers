@@ -51,6 +51,7 @@
 - (id)stickerBrowserView:(id)arg1 stickerAtIndex:(long long)arg2;
 - (long long)numberOfStickersInStickerBrowserView:(id)arg1;
 - (_Bool)shouldShowChatChrome;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

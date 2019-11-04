@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficRerouteFeedbackCollection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSData *_directionResponseID;
     NSData *_oldRouteID;
     NSMutableArray *_oldRouteIncidents;
     NSData *_reroutedRouteID;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _oldRouteHistoricTravelTime;
     unsigned int _oldRouteTravelTime;
     unsigned int _reroutedRouteHistoricTravelTime;
@@ -85,6 +87,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int reroutedRouteTravelTime;
 @property(nonatomic) _Bool hasOldRouteTravelTime;
 @property(nonatomic) unsigned int oldRouteTravelTime;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

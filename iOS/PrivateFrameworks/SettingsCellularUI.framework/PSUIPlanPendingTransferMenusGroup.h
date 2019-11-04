@@ -7,37 +7,37 @@
 #import <objc/NSObject.h>
 
 #import <SettingsCellularUI/PSSpecifierGroup-Protocol.h>
-#import <SettingsCellularUI/TSSIMSetupDelegate-Protocol.h>
 
-@class CTCellularPlanManager, NSString, PSListController, PSSpecifier, TSSIMSetupFlow, UINavigationController;
+@class CTCellularPlanManager, CTCellularPlanPendingTransfer, NSString, PSListController, PSSpecifier, PSUICellularPlanManagerCache;
 
 __attribute__((visibility("hidden")))
-@interface PSUIPlanPendingTransferMenusGroup : NSObject <TSSIMSetupDelegate, PSSpecifierGroup>
+@interface PSUIPlanPendingTransferMenusGroup : NSObject <PSSpecifierGroup>
 {
     PSSpecifier *_parentSpecifier;
+    CTCellularPlanPendingTransfer *_planPendingTransfer;
     PSSpecifier *_groupSpecifier;
     PSListController *_listController;
-    UINavigationController *_navigationController;
     CTCellularPlanManager *_cellularPlanManager;
-    TSSIMSetupFlow *_flow;
+    PSUICellularPlanManagerCache *_planManagerCache;
 }
 
-@property(retain) TSSIMSetupFlow *flow; // @synthesize flow=_flow;
+@property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
-@property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
+@property(retain, nonatomic) CTCellularPlanPendingTransfer *planPendingTransfer; // @synthesize planPendingTransfer=_planPendingTransfer;
 @property(retain, nonatomic) PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 - (void).cxx_destruct;
+- (void)addSpecifierForHeaderString:(id)arg1;
+- (id)cancelConsentRequestSpecifier;
+- (id)activatePlanSpecifier;
+- (id)planActivationInfo;
 - (id)planPendingTransferNumber:(id)arg1;
 - (id)planPendingTransferLabel:(id)arg1;
 - (void)removePlanPendingTransfer:(id)arg1;
-- (void)simSetupFlowCompleted;
-- (void)launchWebSheetWithURL:(id)arg1 andRequestBody:(id)arg2;
-- (void)activatePlanPendingTransfer:(id)arg1;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
 - (id)specifiers;
-- (id)initWithHostController:(id)arg1 parentSpecifier:(id)arg2 groupSpecifier:(id)arg3;
+- (id)initWithHostController:(id)arg1 parentSpecifier:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

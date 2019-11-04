@@ -6,18 +6,11 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSSet, NSString;
-
 @interface _TtC16HealthExperience7Keyword : NSManagedObject
 {
 }
 
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
-
-// Remaining properties
-@property(nonatomic, copy) NSSet *feedItems; // @dynamic feedItems;
-@property(nonatomic, copy) NSString *identifier; // @dynamic identifier;
-@property(nonatomic) long long sortOrder; // @dynamic sortOrder;
 
 @end
 

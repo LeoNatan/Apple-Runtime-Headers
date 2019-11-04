@@ -69,10 +69,13 @@
     BOOL _hasEarlierMessagesToLoad;
     BOOL _hasMoreRecentMessagesToLoad;
     BOOL _isCurrentlyDownloadingPurgedAssets;
+    BOOL _allowedByScreenTime;
     BOOL _hasSurfRequest;
+    NSString *_participantIDsHash;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
     NSString *_groupChatIdentifierUppercase;
+    NSString *_hashOfParticipantIDs;
     double _latestTypingIndicatorTimeInterval;
     IMOrderingTools *_orderingTools;
     NSString *_currentLocationGUID;
@@ -93,6 +96,7 @@
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
+@property(copy, nonatomic) NSString *hashOfParticipantIDs; // @synthesize hashOfParticipantIDs=_hashOfParticipantIDs;
 @property(retain, nonatomic) NSString *groupChatIdentifierUppercase; // @synthesize groupChatIdentifierUppercase=_groupChatIdentifierUppercase;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
@@ -238,6 +242,8 @@
 - (void)_unwatchHandleStatusChangedForHandle:(id)arg1;
 - (void)_watchHandleStatusChangedForHandle:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
+@property(nonatomic) BOOL allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
+@property(readonly, copy, nonatomic) NSString *participantIDsHash; // @synthesize participantIDsHash=_participantIDsHash;
 - (void)_recomputeOverallChatStatusQuietly:(BOOL)arg1;
 - (void)didUnregisterFromRegistry:(id)arg1;
 - (void)clear;
@@ -257,6 +263,7 @@
 - (BOOL)allParticipantsAreContacts;
 - (BOOL)hasKnownParticipants;
 - (void)loadParticipantContactsIfNecessary;
+- (void)updateIsBlackholed:(BOOL)arg1;
 - (void)updateIsFiltered:(BOOL)arg1;
 @property(nonatomic) BOOL isFiltered; // @dynamic isFiltered;
 - (void)autoReportSpam;
@@ -304,7 +311,8 @@
 @property(readonly) NSString *vocabularyIdentifier;
 @property(readonly) NSString *pronunciationHint;
 @property(readonly) NSString *spokenPhrase;
-- (void)allowedToShowConversation:(CDUnknownBlockType)arg1;
+- (id)conversationContext;
+- (BOOL)allowedToShowConversationSync;
 - (BOOL)allowedToShowConversation;
 - (long long)_compareChat:(id)arg1 withDate:(id)arg2 withDate:(id)arg3;
 - (id)_tuDateForChat:(id)arg1;

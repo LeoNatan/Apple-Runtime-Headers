@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOSearchAttributionManifest : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_actionComponentMapEntries;
     NSMutableArray *_searchAttributionSources;
     NSString *_sourceURL;
     double _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_timestamp:1;
         unsigned int read_actionComponentMapEntries:1;
@@ -64,6 +66,8 @@ __attribute__((visibility("hidden")))
 - (void)clearSearchAttributionSources;
 @property(retain, nonatomic) NSMutableArray *searchAttributionSources;
 - (void)_readSearchAttributionSources;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

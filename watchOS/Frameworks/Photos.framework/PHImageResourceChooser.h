@@ -21,6 +21,7 @@
     int _policy;
     unsigned int _loadingOptions;
     int _requestVersion;
+    float _minimumTableThumbnailLongSide;
     id _context;
     NSString *_loggingPrefix;
     CDUnknownBlockType _resourceHandler;
@@ -31,6 +32,7 @@
 @property(copy, nonatomic) CDUnknownBlockType resourceHandler; // @synthesize resourceHandler=_resourceHandler;
 @property(retain, nonatomic) NSString *loggingPrefix; // @synthesize loggingPrefix=_loggingPrefix;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
+@property(nonatomic) float minimumTableThumbnailLongSide; // @synthesize minimumTableThumbnailLongSide=_minimumTableThumbnailLongSide;
 @property(nonatomic) _Bool onlyUseFetchedAssetPropertiesDuringChoosing; // @synthesize onlyUseFetchedAssetPropertiesDuringChoosing=_onlyUseFetchedAssetPropertiesDuringChoosing;
 @property(nonatomic) _Bool allowHints; // @synthesize allowHints=_allowHints;
 @property(nonatomic) _Bool isCloudSharedMode; // @synthesize isCloudSharedMode=_isCloudSharedMode;

@@ -45,11 +45,11 @@
 - (id)initWithString:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *address; // @dynamic address;
 @property(readonly, copy) NSString *displayName; // @dynamic displayName;
 @property(readonly, copy) NSString *domain; // @dynamic domain;
 @property(readonly, copy) NSString *idnaAddress; // @dynamic idnaAddress;
 @property(readonly, copy) NSString *localPart; // @dynamic localPart;
+@property(readonly, copy) NSString *simpleAddress; // @dynamic simpleAddress;
 @property(readonly) Class superclass;
 
 @end

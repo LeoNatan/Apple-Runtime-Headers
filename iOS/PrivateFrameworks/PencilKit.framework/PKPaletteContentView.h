@@ -24,7 +24,6 @@
     UIView *_contextualEditingView;
     id <PKPaletteViewStateObservable> _paletteViewState;
     UIStackView *_stackView;
-    PKPaletteToolPickerAndColorPickerView *_toolAndColorPickerContainerView;
     NSLayoutConstraint *_stackViewTopConstraint;
     NSLayoutConstraint *_stackViewBottomConstraint;
     NSLayoutConstraint *_stackViewLeftConstraint;
@@ -32,9 +31,15 @@
     NSLayoutConstraint *_stackViewCenterXConstraint;
     NSLayoutConstraint *_stackViewCompactLeftConstraint;
     NSLayoutConstraint *_stackViewCompactRightConstraint;
+    PKPaletteToolPickerAndColorPickerView *_toolAndColorPickerContainerView;
+    NSLayoutConstraint *_toolAndColorPickerContainerViewHeightConstraint;
+    NSLayoutConstraint *_toolAndColorPickerContainerViewWidthConstraint;
 }
 
 @property(nonatomic, getter=isUsingSmallestSupportedWidth) _Bool usingSmallestSupportedWidth; // @synthesize usingSmallestSupportedWidth=_usingSmallestSupportedWidth;
+@property(retain, nonatomic) NSLayoutConstraint *toolAndColorPickerContainerViewWidthConstraint; // @synthesize toolAndColorPickerContainerViewWidthConstraint=_toolAndColorPickerContainerViewWidthConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *toolAndColorPickerContainerViewHeightConstraint; // @synthesize toolAndColorPickerContainerViewHeightConstraint=_toolAndColorPickerContainerViewHeightConstraint;
+@property(retain, nonatomic) PKPaletteToolPickerAndColorPickerView *toolAndColorPickerContainerView; // @synthesize toolAndColorPickerContainerView=_toolAndColorPickerContainerView;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewCompactRightConstraint; // @synthesize stackViewCompactRightConstraint=_stackViewCompactRightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewCompactLeftConstraint; // @synthesize stackViewCompactLeftConstraint=_stackViewCompactLeftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewCenterXConstraint; // @synthesize stackViewCenterXConstraint=_stackViewCenterXConstraint;
@@ -42,7 +47,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeftConstraint; // @synthesize stackViewLeftConstraint=_stackViewLeftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewTopConstraint; // @synthesize stackViewTopConstraint=_stackViewTopConstraint;
-@property(retain, nonatomic) PKPaletteToolPickerAndColorPickerView *toolAndColorPickerContainerView; // @synthesize toolAndColorPickerContainerView=_toolAndColorPickerContainerView;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak id <PKPaletteViewStateObservable> paletteViewState; // @synthesize paletteViewState=_paletteViewState;
 @property(retain, nonatomic) UIView *contextualEditingView; // @synthesize contextualEditingView=_contextualEditingView;

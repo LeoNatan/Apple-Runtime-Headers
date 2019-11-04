@@ -71,7 +71,6 @@
 - (id)_messageGroupsDescription;
 - (id)_socialGroupsDescription;
 - (id)description;
-- (id)_stringForGenderMatch;
 - (id)_stringsForRelationshipMatch;
 - (void)registerMessageFrequencyPenaltyNewScore:(double)arg1;
 - (void)registerGenderMatch:(unsigned long long)arg1;

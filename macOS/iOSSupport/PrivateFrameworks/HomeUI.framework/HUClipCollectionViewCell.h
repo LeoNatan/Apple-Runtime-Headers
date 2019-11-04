@@ -6,29 +6,34 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-#import <HomeUI/HFPosterFrameImageObserver-Protocol.h>
+@class CALayer, HMCameraClip, UIView;
 
-@class CALayer, HMCameraClip, HMCameraClipManager;
-
-@interface HUClipCollectionViewCell : UICollectionViewCell <HFPosterFrameImageObserver>
+@interface HUClipCollectionViewCell : UICollectionViewCell
 {
     unsigned long long _displayMode;
     HMCameraClip *_clip;
-    HMCameraClipManager *_clipManager;
     CALayer *_badgeLayer;
+    UIView *_posterFramesContainerView;
+    UIView *_dayBoundaryView;
 }
 
 + (id)backgroundColor;
+@property(retain, nonatomic) UIView *dayBoundaryView; // @synthesize dayBoundaryView=_dayBoundaryView;
+@property(retain, nonatomic) UIView *posterFramesContainerView; // @synthesize posterFramesContainerView=_posterFramesContainerView;
 @property(retain, nonatomic) CALayer *badgeLayer; // @synthesize badgeLayer=_badgeLayer;
-@property(nonatomic) __weak HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(nonatomic) __weak HMCameraClip *clip; // @synthesize clip=_clip;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 - (void).cxx_destruct;
-- (void)manager:(id)arg1 didUpdateImage:(id)arg2 withTimeOffset:(double)arg3 fromClip:(id)arg4;
-- (void)updateWithClip:(id)arg1 clipManager:(id)arg2 mode:(unsigned long long)arg3;
-- (id)_badgeImageForEvents:(id)arg1;
+- (void)prepareForReuse;
+- (void)preparePosterFrameViewsForReuse;
+- (void)_drawEventMarkers;
+- (void)_synchronizeLoadingIndicators;
+- (void)_addDayBoundaryIfNeeded;
+- (void)_addPosterFrameViews;
+- (void)updateWithClip:(id)arg1 mode:(unsigned long long)arg2;
+- (id)_badgeImageForSignificantEventReasons:(id)arg1;
 - (void)_updateBadgeLayerWithImage:(id)arg1 inRect:(struct CGRect)arg2;
-- (void)drawRect:(struct CGRect)arg1;
+- (void)_updateBadgeLayerWithEvents:(id)arg1 inRect:(struct CGRect)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

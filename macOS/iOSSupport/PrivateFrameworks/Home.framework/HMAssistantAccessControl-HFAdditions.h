@@ -7,6 +7,6 @@
 #import <HomeKit/HMAssistantAccessControl.h>
 
 @interface HMAssistantAccessControl (HFAdditions)
-@property(readonly, nonatomic) BOOL hf_effectivelyEnabled;
+- (BOOL)hf_effectivelyEnabledForSupportedMultiuserLanguages:(id)arg1 currentUserIsOwner:(BOOL)arg2;
 @end
 

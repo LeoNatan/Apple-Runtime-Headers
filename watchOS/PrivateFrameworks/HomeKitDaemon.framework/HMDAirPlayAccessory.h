@@ -52,7 +52,7 @@
 - (void)handleUpdatedMinimumUserPrivilege:(int)arg1;
 - (_Bool)supportsMinimumUserPrivilege;
 - (void)setReachable:(_Bool)arg1;
-- (void)handleUpdatedName:(id)arg1;
+- (void)_handleUpdatedName:(id)arg1;
 - (void)handleUpdatedAdvertisement:(id)arg1;
 - (void)setAdvertisement:(id)arg1;
 - (id)advertisement;

@@ -28,7 +28,9 @@
 - (void)folderViewDidEndScrolling:(SBFolderView *)arg1;
 - (void)folderViewDidScroll:(SBFolderView *)arg1;
 - (void)folderViewWillUpdatePageDuringScrolling:(SBFolderView *)arg1;
+- (void)folderViewWillEndDragging:(SBFolderView *)arg1;
 - (void)folderViewWillBeginScrolling:(SBFolderView *)arg1;
+- (void)folderViewWillBeginDragging:(SBFolderView *)arg1;
 - (void)folderView:(SBFolderView *)arg1 currentPageIndexDidChange:(long long)arg2;
 - (void)folderView:(SBFolderView *)arg1 currentPageIndexWillChange:(long long)arg2;
 - (_Bool)folderView:(SBFolderView *)arg1 canChangeCurrentPageIndexToIndex:(long long)arg2;

@@ -22,17 +22,19 @@
 - (void)networkConfigurationProfileDidUpdateWiFiReconfigurationSupport:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateAccessViolation:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateAllowedHosts:(id)arg1;
-- (void)networkConfigurationProfileDidUpdateProtectionMode:(id)arg1 accessModeChanged:(_Bool)arg2;
+- (void)networkConfigurationProfileDidUpdateNetworkAccessMode:(id)arg1;
+- (void)networkConfigurationProfileDidUpdateProtectionMode:(id)arg1;
 @property(readonly, nonatomic, getter=isNetworkAccessRestricted) _Bool networkAccessRestricted;
 - (void)reconfigureWiFiWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateProtectionMode:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 @property(readonly) long long credentialType;
 @property(readonly) _Bool supportsWiFiReconfiguration;
 @property(readonly) HMAccessoryNetworkAccessViolation *accessViolation;
 @property(readonly) NSArray *allowedHosts;
 @property(readonly) long long targetProtectionMode;
 @property(readonly) long long currentProtectionMode;
-- (id)initWithAccessoryIdentifier:(id)arg1 targetProtection:(long long)arg2 currentProtection:(long long)arg3 allowedHosts:(id)arg4 accessViolation:(id)arg5 supportsWiFiReconfiguration:(_Bool)arg6 credentialType:(long long)arg7;
+- (id)initWithAccessoryIdentifier:(id)arg1 targetProtection:(long long)arg2 currentProtection:(long long)arg3 networkAccessRestricted:(_Bool)arg4 allowedHosts:(id)arg5 accessViolation:(id)arg6 supportsWiFiReconfiguration:(_Bool)arg7 credentialType:(long long)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

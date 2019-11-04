@@ -46,7 +46,7 @@
 - (void)performImportMirroringRequestWithQualityOfService:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performMirroringRequestOfType:(long long)arg1 qualityOfService:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)persistenceContextShouldExecute:(id)arg1;
-- (void)persistenceContextPerformedSave:(id)arg1;
+- (BOOL)persistenceContextPerformedSave:(id)arg1 error:(id *)arg2;
 - (void)persistenceContext:(id)arg1 encounteredError:(id)arg2;
 - (id)modelNamed:(id)arg1;
 - (id)urlForModelWithName:(id)arg1;

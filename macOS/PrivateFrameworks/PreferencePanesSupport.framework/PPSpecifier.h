@@ -16,6 +16,7 @@
     BOOL _enabled;
     NSArray *searchKeywords;
     id <PPSpecifierDelegate> delegate;
+    unsigned long long titleLineBreakMode;
     unsigned long long _type;
     NSImage *_icon;
     NSString *_title;
@@ -45,6 +46,7 @@
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property unsigned long long type; // @synthesize type=_type;
+@property unsigned long long titleLineBreakMode; // @synthesize titleLineBreakMode;
 @property __weak id <PPSpecifierDelegate> delegate; // @synthesize delegate;
 @property(retain) NSArray *searchKeywords; // @synthesize searchKeywords;
 - (void).cxx_destruct;

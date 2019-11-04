@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (id)extractNearestNeighborsForMapsQueryResult:(id)arg1 andNeighbors:(id)arg2 frequencyOnly:(_Bool)arg3;
 - (id)featuresFromMapsFeedbackEvents:(id)arg1;
+- (id)mapsShareEtaDefaultKnnSuggestions:(id)arg1 maxSuggestions:(unsigned long long)arg2;
 - (id)rankedMapsShareEtaSuggestions:(id)arg1 maxSuggestions:(unsigned long long)arg2;
 - (unsigned long long)indexToInsertNeighbor:(id)arg1 array:(id)arg2;
 - (id)neighborsFromTrainingData:(id)arg1 k:(unsigned long long)arg2 queryPoint:(id)arg3;

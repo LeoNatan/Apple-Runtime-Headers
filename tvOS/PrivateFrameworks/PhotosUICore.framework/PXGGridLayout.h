@@ -22,7 +22,6 @@
     _Bool _canHandleVisibleRectRejection;
     _Bool _enableBestCropRect;
     unsigned char _mediaFlags;
-    _Bool _fillSafeAreaTopInset;
     _Bool _hideIncompleteLastRow;
     _Bool _mediaTargetSizeIgnoresSpacing;
     _Bool _loadItemsOutsideAnchorViewport;
@@ -32,6 +31,7 @@
     long long _contentMode;
     long long _numberOfColumns;
     double _interItemSpacing;
+    double _itemCaptionSpacing;
     double _itemAspectRatio;
     double _aspectRatioLimit;
     long long _visualItemShift;
@@ -52,13 +52,13 @@
 @property(nonatomic) _Bool mediaTargetSizeIgnoresSpacing; // @synthesize mediaTargetSizeIgnoresSpacing=_mediaTargetSizeIgnoresSpacing;
 @property(nonatomic) _Bool hideIncompleteLastRow; // @synthesize hideIncompleteLastRow=_hideIncompleteLastRow;
 @property(nonatomic) long long visualItemShift; // @synthesize visualItemShift=_visualItemShift;
-@property(nonatomic) _Bool fillSafeAreaTopInset; // @synthesize fillSafeAreaTopInset=_fillSafeAreaTopInset;
 @property(nonatomic) int presentationType; // @synthesize presentationType=_presentationType;
 @property(nonatomic) unsigned char mediaFlags; // @synthesize mediaFlags=_mediaFlags;
 @property(nonatomic) int mediaKind; // @synthesize mediaKind=_mediaKind;
 @property(nonatomic) double aspectRatioLimit; // @synthesize aspectRatioLimit=_aspectRatioLimit;
 @property(nonatomic) _Bool enableBestCropRect; // @synthesize enableBestCropRect=_enableBestCropRect;
 @property(nonatomic) double itemAspectRatio; // @synthesize itemAspectRatio=_itemAspectRatio;
+@property(nonatomic) double itemCaptionSpacing; // @synthesize itemCaptionSpacing=_itemCaptionSpacing;
 @property(nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
@@ -73,7 +73,6 @@
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;
 - (void)loadedItemsDidChange;
-- (void)safeAreaInsetsDidChange;
 - (void)visibleRectDidChange;
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
@@ -110,6 +109,7 @@
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (_Bool)shiftItem:(long long)arg1 toColumn:(long long)arg2 hideIncompleteRows:(_Bool)arg3;
+@property(readonly, nonatomic) _Bool itemCaptionsVisible;
 @property(readonly, nonatomic) _Bool supportsContentMode;
 
 // Remaining properties

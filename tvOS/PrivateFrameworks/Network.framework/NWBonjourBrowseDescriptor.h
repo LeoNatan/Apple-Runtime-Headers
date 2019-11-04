@@ -16,7 +16,7 @@
 + (unsigned int)descriptorType;
 @property(readonly, nonatomic) NSString *domain;
 @property(readonly, nonatomic) NSString *type;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 
 @end
 

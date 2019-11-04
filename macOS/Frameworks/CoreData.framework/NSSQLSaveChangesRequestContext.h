@@ -6,7 +6,7 @@
 
 #import <CoreData/NSSQLStoreRequestContext.h>
 
-@class NSDictionary, NSFaultHandler, NSMutableDictionary, NSSQLModel, NSSQLSavePlan, NSSaveChangesRequest, NSSet, NSString;
+@class NSDictionary, NSFaultHandler, NSMutableDictionary, NSSQLModel, NSSQLRowCache, NSSQLSavePlan, NSSaveChangesRequest, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLSaveChangesRequestContext : NSSQLStoreRequestContext
@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
     NSString *_externalDataReferencesDirectory;
     NSString *_externalDataLinksDirectory;
     NSString *_fileBackedFuturesDirectory;
+    NSSQLRowCache *_primaryRowCache;
+    NSSQLRowCache *_contextGenerationRowCache;
 }
 
 @property(readonly, nonatomic) NSMutableDictionary *originalCachedRows; // @synthesize originalCachedRows=_originalCachedRows;
@@ -39,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)executeEpilogue;
 - (void)executePrologue;
 - (BOOL)isWritingRequest;
+- (id)contextRowCache;
 - (id)rowCache;
 @property(readonly, nonatomic) NSSaveChangesRequest *request;
 @property(readonly, nonatomic) NSSQLModel *model;

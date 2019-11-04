@@ -13,11 +13,13 @@
 @interface GEOMapItemAddressBookAttributes : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_addressIdentifier;
     NSString *_name;
     NSString *_spokenName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _addressType;
     _Bool _isMe;
     struct {
@@ -65,6 +67,8 @@
 - (id)addressTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasAddressType;
 @property(nonatomic) int addressType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

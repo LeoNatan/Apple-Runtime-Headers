@@ -9,18 +9,18 @@
 @interface AVVCStartRecordSettings : NSObject
 {
     unsigned int _streamID;
-    unsigned int _startHostTime;
     int _startAlert;
     int _stopAlert;
     int _stopOnErrorAlert;
+    unsigned long long _startHostTime;
 }
 
 @property(nonatomic) int stopOnErrorAlert; // @synthesize stopOnErrorAlert=_stopOnErrorAlert;
 @property(nonatomic) int stopAlert; // @synthesize stopAlert=_stopAlert;
 @property(nonatomic) int startAlert; // @synthesize startAlert=_startAlert;
-@property(nonatomic) unsigned int startHostTime; // @synthesize startHostTime=_startHostTime;
+@property(nonatomic) unsigned long long startHostTime; // @synthesize startHostTime=_startHostTime;
 @property(nonatomic) unsigned int streamID; // @synthesize streamID=_streamID;
-- (id)initWithStreamID:(unsigned int)arg1 atStartHostTime:(unsigned int)arg2;
+- (id)initWithStreamID:(unsigned int)arg1 atStartHostTime:(unsigned long long)arg2;
 
 @end
 

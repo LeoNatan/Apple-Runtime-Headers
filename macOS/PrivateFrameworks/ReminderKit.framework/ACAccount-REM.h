@@ -10,5 +10,7 @@
 - (BOOL)rem_isPrimaryAppleAccount;
 - (BOOL)rem_isRemindersMigrated;
 - (BOOL)rem_isManagedAppleID;
+- (BOOL)rem_didFinishMigration;
+- (BOOL)rem_didChooseToMigrate;
 @end
 

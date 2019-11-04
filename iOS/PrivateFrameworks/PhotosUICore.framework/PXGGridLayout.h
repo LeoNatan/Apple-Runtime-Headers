@@ -8,10 +8,11 @@
 
 #import <PhotosUICore/PXCuratedLibraryAllPhotosBodyLayout-Protocol.h>
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
+#import <PhotosUICore/PXGItemsGeometry-Protocol.h>
 
 @class NSString;
 
-@interface PXGGridLayout : PXGItemsLayout <PXCuratedLibraryAllPhotosBodyLayout, PXGDiagnosticsProvider>
+@interface PXGGridLayout : PXGItemsLayout <PXCuratedLibraryAllPhotosBodyLayout, PXGItemsGeometry, PXGDiagnosticsProvider>
 {
     CDStruct_d97c9657 _updateFlags;
     _Bool _isUpdating;
@@ -31,6 +32,7 @@
     long long _contentMode;
     long long _numberOfColumns;
     double _interItemSpacing;
+    double _itemCaptionSpacing;
     double _itemAspectRatio;
     double _aspectRatioLimit;
     long long _visualItemShift;
@@ -58,6 +60,7 @@
 @property(nonatomic) double aspectRatioLimit; // @synthesize aspectRatioLimit=_aspectRatioLimit;
 @property(nonatomic) _Bool enableBestCropRect; // @synthesize enableBestCropRect=_enableBestCropRect;
 @property(nonatomic) double itemAspectRatio; // @synthesize itemAspectRatio=_itemAspectRatio;
+@property(nonatomic) double itemCaptionSpacing; // @synthesize itemCaptionSpacing=_itemCaptionSpacing;
 @property(nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
@@ -66,6 +69,9 @@
 @property(nonatomic) _Bool canHandleVisibleRectRejection; // @synthesize canHandleVisibleRectRejection=_canHandleVisibleRectRejection;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
+- (id)itemsInRect:(struct CGRect)arg1 inLayout:(id)arg2;
+- (id)itemsBetweenItem:(long long)arg1 andItem:(long long)arg2;
+- (long long)itemClosestToItem:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;
 - (void)loadedItemsDidChange;
@@ -76,6 +82,7 @@
 - (void)referenceSizeDidChange;
 - (_Bool)shouldUpdateDecorationMediaTargetSizes;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
+- (id)itemsGeometry;
 - (struct _NSRange)itemsToLoad;
 - (struct CGRect)_pageAlignedRectForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)_itemsToLoadForVisibleRect:(struct CGRect)arg1;
@@ -105,6 +112,7 @@
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (_Bool)shiftItem:(long long)arg1 toColumn:(long long)arg2 hideIncompleteRows:(_Bool)arg3;
+@property(readonly, nonatomic) _Bool itemCaptionsVisible;
 @property(readonly, nonatomic) _Bool supportsContentMode;
 
 // Remaining properties

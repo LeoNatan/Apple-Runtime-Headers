@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <C2/NSCopying-Protocol.h>
+#import <C2/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSString, NSURL;
 
-@interface C2MetricOptions : NSObject
+@interface C2MetricOptions : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _anonymous;
     _Bool _pushTrigger;
-    unsigned int _randomValue;
+    unsigned int _reportFrequencyRandomValue;
     NSURL *_c2MetricsEndpoint;
     unsigned long long _reportFrequency;
     unsigned long long _reportFrequencyBase;
@@ -30,30 +33,37 @@
     CDUnknownBlockType _testBehavior_reportMetric;
 }
 
-@property(nonatomic) unsigned int randomValue; // @synthesize randomValue=_randomValue;
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_reportMetric; // @synthesize testBehavior_reportMetric=_testBehavior_reportMetric;
+@property(nonatomic) unsigned int reportFrequencyRandomValue; // @synthesize reportFrequencyRandomValue=_reportFrequencyRandomValue;
 @property(copy, nonatomic) CDUnknownBlockType didCompleteWithError; // @synthesize didCompleteWithError=_didCompleteWithError;
 @property(nonatomic) _Bool pushTrigger; // @synthesize pushTrigger=_pushTrigger;
-@property(retain, nonatomic) NSArray *clientOperations; // @synthesize clientOperations=_clientOperations;
-@property(retain, nonatomic) NSArray *operationGroups; // @synthesize operationGroups=_operationGroups;
+@property(copy, nonatomic) NSArray *clientOperations; // @synthesize clientOperations=_clientOperations;
+@property(copy, nonatomic) NSArray *operationGroups; // @synthesize operationGroups=_operationGroups;
 @property(nonatomic) _Bool anonymous; // @synthesize anonymous=_anonymous;
-@property(retain, nonatomic) NSString *environment; // @synthesize environment=_environment;
-@property(retain, nonatomic) NSString *container; // @synthesize container=_container;
-@property(retain, nonatomic) NSString *clientProcessBundleId; // @synthesize clientProcessBundleId=_clientProcessBundleId;
-@property(retain, nonatomic) NSString *clientProcessVersion; // @synthesize clientProcessVersion=_clientProcessVersion;
+@property(copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
+@property(copy, nonatomic) NSString *container; // @synthesize container=_container;
+@property(copy, nonatomic) NSString *clientProcessBundleId; // @synthesize clientProcessBundleId=_clientProcessBundleId;
+@property(copy, nonatomic) NSString *clientProcessVersion; // @synthesize clientProcessVersion=_clientProcessVersion;
 @property(nonatomic) unsigned long long reportOperationGroupFrequencyBase; // @synthesize reportOperationGroupFrequencyBase=_reportOperationGroupFrequencyBase;
 @property(nonatomic) unsigned long long reportOperationGroupFrequency; // @synthesize reportOperationGroupFrequency=_reportOperationGroupFrequency;
 @property(nonatomic) unsigned long long reportClientOperationFrequencyBase; // @synthesize reportClientOperationFrequencyBase=_reportClientOperationFrequencyBase;
 @property(nonatomic) unsigned long long reportClientOperationFrequency; // @synthesize reportClientOperationFrequency=_reportClientOperationFrequency;
 @property(nonatomic) unsigned long long reportFrequencyBase; // @synthesize reportFrequencyBase=_reportFrequencyBase;
 @property(nonatomic) unsigned long long reportFrequency; // @synthesize reportFrequency=_reportFrequency;
-@property(retain, nonatomic) NSURL *c2MetricsEndpoint; // @synthesize c2MetricsEndpoint=_c2MetricsEndpoint;
+@property(copy, nonatomic) NSURL *c2MetricsEndpoint; // @synthesize c2MetricsEndpoint=_c2MetricsEndpoint;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)operationGroupTriggered:(id)arg1;
 - (_Bool)clientOperationTriggered:(id)arg1;
 @property(readonly, nonatomic) NSString *headerValueForTriggers;
 - (int)generateTriggerWithResponseHeader:(unsigned char)arg1;
 - (id)generateCloudKitInfo;
+- (void)rollReportFrequencyRandomValue;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 
 @end

@@ -28,7 +28,8 @@ __attribute__((visibility("hidden")))
 - (void)decrementValue:(id)arg1;
 - (void)incrementValue:(id)arg1;
 - (void)prepareStepper:(id)arg1;
-- (id)initWithDocument:(id)arg1;
+- (void)dealloc;
+- (id)initWithDocument:(id)arg1 preferenceManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

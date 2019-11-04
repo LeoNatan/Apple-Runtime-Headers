@@ -16,6 +16,7 @@
     _Bool _shouldPerformServerSearch;
     NSString *_scopeFragment;
     NSString *_scopedToItemIdentifierBundleId;
+    NSString *_keyboardLanguage;
     NSString *_providerDomainID;
     NSSet *_cachedExtensions;
     unsigned long long _trashedItemsMembership;
@@ -38,6 +39,7 @@
 - (id)toSpotlightQueryString;
 @property(nonatomic) _Bool includesTrashedItems;
 @property(nonatomic) unsigned long long trashedItemsMembership;
+@property(copy, nonatomic) NSString *keyboardLanguage;
 @property(nonatomic) _Bool shouldPerformServerSearch;
 @property(copy, nonatomic) NSString *content;
 @property(copy, nonatomic) NSString *searchString;

@@ -41,6 +41,7 @@
 @property(readonly, getter=isRunningInStoreDemoMode) id runningInStoreDemoMode;
 @property(readonly, getter=isDelayingTerminate) id delayingTerminate;
 @property(readonly) NSString *identifier;
+- (id)hostIdentifier;
 - (void)showNewsstand;
 - (void)setStatusBarStyle:(long long)arg1 animated:(_Bool)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 withAnimation:(long long)arg2;

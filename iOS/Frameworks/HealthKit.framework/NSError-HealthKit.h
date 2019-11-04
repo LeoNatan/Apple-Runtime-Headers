@@ -10,9 +10,11 @@
 + (_Bool)hk_assignError:(id *)arg1 code:(long long)arg2 format:(id)arg3;
 + (_Bool)hk_assignError:(id *)arg1 code:(long long)arg2 description:(id)arg3 underlyingError:(id)arg4;
 + (_Bool)hk_assignError:(id *)arg1 code:(long long)arg2 description:(id)arg3;
++ (id)hk_databaseSchemaRolledBackError;
 + (id)hk_invalidProfileError;
 + (id)hk_featureUnavailableForProfileError;
 + (id)hk_protectedDataInaccessibilityError;
++ (id)hk_databaseInaccessibleBeforeFirstUnlockError;
 + (id)hk_healthDataUnavailableError;
 + (id)hk_error:(long long)arg1 format:(id)arg2;
 + (id)hk_error:(long long)arg1 description:(id)arg2 underlyingError:(id)arg3;
@@ -42,6 +44,7 @@
 - (_Bool)hk_isAuthorizationNotDeterminedError;
 - (_Bool)hk_isAuthorizationDeniedError;
 - (_Bool)hk_isServiceDeviceNotFoundError;
+- (_Bool)hk_isDatabaseSchemaRolledBackError;
 - (_Bool)hk_isDatabaseTransactionError;
 - (_Bool)hk_isDatabaseAccessibilityError;
 - (_Bool)hk_isHealthKitErrorWithCode:(long long)arg1;

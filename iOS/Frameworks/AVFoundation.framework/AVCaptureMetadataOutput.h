@@ -25,6 +25,10 @@
 - (void)setOfflineVideoStabilizationMotionMetadataObjectTypesAvailable:(_Bool)arg1;
 - (_Bool)isOfflineVideoStabilizationMotionMetadataObjectTypesAvailable;
 - (_Bool)isOfflineVideoStabilizationMotionMetadataSupported;
+- (_Bool)isFaceTrackingUsesFaceRecognition;
+- (void)setFaceTrackingUsesFaceRecognition:(_Bool)arg1;
+- (long long)faceTrackingMaxFaces;
+- (void)setFaceTrackingMaxFaces:(long long)arg1;
 - (void)setFaceTrackingMetadataObjectTypesAvailable:(_Bool)arg1;
 - (_Bool)isFaceTrackingMetadataObjectTypesAvailable;
 - (_Bool)isFaceTrackingSupported;

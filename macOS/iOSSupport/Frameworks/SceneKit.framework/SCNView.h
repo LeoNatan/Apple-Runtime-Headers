@@ -25,6 +25,7 @@
     unsigned int _firstDrawDone:1;
     unsigned int _drawOnMainThreadPending:1;
     unsigned int _viewIsOffscreen:1;
+    unsigned int _appChangedColorAppearance:1;
     unsigned int _appIsDeactivated:1;
     unsigned int _autoPausedScene:1;
     unsigned int _inRenderQueueForLayerBackedGLRendering:1;
@@ -150,6 +151,7 @@
 @property(nonatomic) BOOL autoenablesDefaultLighting;
 @property(nonatomic) double sceneTime;
 - (BOOL)isOpaque;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_updateOpacity;

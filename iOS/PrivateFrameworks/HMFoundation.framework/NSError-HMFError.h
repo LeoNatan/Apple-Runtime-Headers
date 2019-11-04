@@ -17,6 +17,7 @@
 + (id)hmfErrorWithCode:(long long)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmfErrorWithCode:(long long)arg1 reason:(id)arg2 suggestion:(id)arg3 underlyingError:(id)arg4;
 + (id)hmfErrorWithCode:(long long)arg1 reason:(id)arg2 suggestion:(id)arg3;
++ (id)hmf_errorWithException:(id)arg1;
 + (id)shortDescription;
 + (id)hmf_unarchiveFromData:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic, getter=isHMFError) _Bool hmfError;

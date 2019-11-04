@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _transform;
     id _transformAnalyzer;
     _Bool _hasFailedOnOtherDominantMotion;
+    unsigned int _numberOfTouchesRequired;
+    _Bool _multitouchTimerEnabled;
     _Bool _tooMuchSingleMovement;
     float _beginPerimeter;
     NSMutableArray *_activeTouches;
@@ -24,12 +26,14 @@ __attribute__((visibility("hidden")))
     double _beginPinchTimestamp;
     double _beforeReductionTimeInterval;
     struct CGPoint _beginCentroid;
+    double _allowableElapsedTimeForAllRequiredTouches;
 }
 
 @property(nonatomic) _Bool tooMuchSingleMovement; // @synthesize tooMuchSingleMovement=_tooMuchSingleMovement;
 @property(retain, nonatomic) NSMutableDictionary *beginTouchLocations; // @synthesize beginTouchLocations=_beginTouchLocations;
 @property(readonly, nonatomic) float avgTouchesToCentroidDistance; // @synthesize avgTouchesToCentroidDistance=_avgTouchesToCentroidDistance;
 @property(readonly, nonatomic) int pinchDirection; // @synthesize pinchDirection=_pinchDirection;
+@property(nonatomic) double allowableElapsedTimeForAllRequiredTouches; // @synthesize allowableElapsedTimeForAllRequiredTouches=_allowableElapsedTimeForAllRequiredTouches;
 @property(retain, nonatomic) NSMutableArray *activeTouches; // @synthesize activeTouches=_activeTouches;
 @property(nonatomic) struct CGPoint beginCentroid; // @synthesize beginCentroid=_beginCentroid;
 @property(nonatomic) float beginPerimeter; // @synthesize beginPerimeter=_beginPerimeter;
@@ -45,6 +49,9 @@ __attribute__((visibility("hidden")))
 - (void)_updateTransformAnalyzerWeights;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)multitouchExpired:(id)arg1;
+- (void)startMultitouchTimer:(double)arg1;
+- (void)clearMultitouchTimer;
 - (void)reset;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

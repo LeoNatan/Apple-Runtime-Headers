@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HFCharacteristicValueDisplayError, HFServiceState, NSString;
+@class HFCharacteristicValueDisplayError, HFServiceState, NAFuture, NSString;
 
 @interface HFCharacteristicValueDisplayMetadata : NSObject
 {
@@ -16,13 +16,17 @@
     long long _transitioningPrimaryState;
     HFCharacteristicValueDisplayError *_error;
     HFServiceState *_serviceState;
+    NAFuture *_splitAccountFuture;
 }
 
 + (id)_errorForSymptomHandler:(id)arg1 isFixingCurrently:(BOOL)arg2 withContextProvider:(id)arg3;
 + (long long)_unknownStatePriorityForServiceType:(id)arg1;
++ (void)_populateSplitMediaAccountErrorForMedatadata:(id)arg1 withContextProvider:(id)arg2;
++ (void)_displayAppleIDSplitErrorForMediaProfile:(id)arg1 havingMetadata:(id)arg2 withContextProvider:(id)arg3;
 + (id)displayMetadataForMediaProfile:(id)arg1 withContextProvider:(id)arg2;
 + (id)displayMetadataForAccessory:(id)arg1 withContextProvider:(id)arg2;
 + (id)displayMetadataForServiceDescriptor:(id)arg1 characteristicReadResponse:(id)arg2;
+@property(retain, nonatomic) NAFuture *splitAccountFuture; // @synthesize splitAccountFuture=_splitAccountFuture;
 @property(retain, nonatomic) HFServiceState *serviceState; // @synthesize serviceState=_serviceState;
 @property(retain, nonatomic) HFCharacteristicValueDisplayError *error; // @synthesize error=_error;
 @property(nonatomic) long long transitioningPrimaryState; // @synthesize transitioningPrimaryState=_transitioningPrimaryState;
@@ -42,6 +46,7 @@
 - (void)parseSecuritySystemResponse:(id)arg1;
 - (void)parseLockMechanismResponse:(id)arg1;
 - (void)parseGarageDoorOpenerResponse:(id)arg1;
+- (void)dealloc;
 
 @end
 

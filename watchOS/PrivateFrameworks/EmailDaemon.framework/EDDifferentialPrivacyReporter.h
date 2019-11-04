@@ -32,7 +32,7 @@
 - (void)_recordSenders:(id)arg1;
 - (_Bool)_isUserAccountDomain:(id)arg1;
 - (_Bool)_shouldRecordMailbox:(id)arg1;
-- (void)persistenceDidAddMessages:(id)arg1;
+- (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (void)reportSenderDomainForMessages:(id)arg1;
 - (id)initWithUserProfileProvider:(id)arg1;
 

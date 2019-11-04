@@ -18,20 +18,25 @@
     BOOL _reachabilityEnabled;
     CUReachabilityMonitor *_reachabilityMonitor;
     unsigned long long _startTicks;
+    unsigned long long _startBonjourTestTicks;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     int _bonjourTestState;
     unsigned int _repairFlags;
     unsigned int _setupFlags;
     CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    double _metricSeconds;
+    double _metricBonjourTestSeconds;
+    double _metricTotalSeconds;
+    double _metricWiFiSetupSeconds;
     SFSession *_sfSession;
 }
 
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
 @property(nonatomic) unsigned int setupFlags; // @synthesize setupFlags=_setupFlags;
 @property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
-@property(readonly, nonatomic) double metricSeconds; // @synthesize metricSeconds=_metricSeconds;
+@property(readonly, nonatomic) double metricWiFiSetupSeconds; // @synthesize metricWiFiSetupSeconds=_metricWiFiSetupSeconds;
+@property(readonly, nonatomic) double metricTotalSeconds; // @synthesize metricTotalSeconds=_metricTotalSeconds;
+@property(readonly, nonatomic) double metricBonjourTestSeconds; // @synthesize metricBonjourTestSeconds=_metricBonjourTestSeconds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) int bonjourTestState; // @synthesize bonjourTestState=_bonjourTestState;

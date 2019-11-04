@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOTFCompactRoadSpeeds : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_5df41632 _geoIds;
     NSData *_openlr;
     NSMutableArray *_predictedSpeeds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _color;
     float _confidence;
     unsigned int _decayTimeWindowInMinutes;
@@ -97,6 +99,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long geoIdsCount;
 - (void)_readGeoIds;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

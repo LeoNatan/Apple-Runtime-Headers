@@ -17,7 +17,7 @@
     NSMutableSet *_activeCollections;
 }
 
-+ (void)_promoteItemToToAppLibraryIfNeeded:(id)arg1;
++ (void)_promoteItemToAppLibraryIfNeeded:(id)arg1;
 + (_Bool)isAnyDocumentRecentlyUsed:(id)arg1 excludedFileTypes:(id)arg2 allowedFileProviderIdentifiers:(id)arg3;
 + (id)defaultManager;
 - (void).cxx_destruct;

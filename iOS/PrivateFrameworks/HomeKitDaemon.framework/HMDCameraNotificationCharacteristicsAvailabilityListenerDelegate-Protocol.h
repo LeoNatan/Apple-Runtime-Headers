@@ -7,6 +7,6 @@
 @class HMDCameraNotificationCharacteristicsAvailabilityListener, NSSet;
 
 @protocol HMDCameraNotificationCharacteristicsAvailabilityListenerDelegate
-- (void)listener:(HMDCameraNotificationCharacteristicsAvailabilityListener *)arg1 didUpdateAvailableCharacteristics:(NSSet *)arg2 previousCharacteristics:(NSSet *)arg3;
+- (void)listener:(HMDCameraNotificationCharacteristicsAvailabilityListener *)arg1 didUpdateAvailableCharacteristics:(NSSet *)arg2;
 @end
 

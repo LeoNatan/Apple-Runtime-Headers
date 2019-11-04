@@ -42,6 +42,8 @@
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) float contentGap; // @synthesize contentGap=_contentGap;
 - (void).cxx_destruct;
+- (void)sceneWillEnterForegroundNotification:(id)arg1;
+- (void)sceneDidEnterBackgroundNotification:(id)arg1;
 - (double)_duration;
 - (void)_tearDownMarqueeAnimation;
 - (void)_createMarqueeAnimationIfNeededWithMaximumDuration:(double)arg1 beginTime:(double)arg2;

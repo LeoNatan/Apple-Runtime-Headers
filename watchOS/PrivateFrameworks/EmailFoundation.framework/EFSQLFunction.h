@@ -16,6 +16,8 @@
     NSArray *_arguments;
 }
 
++ (id)unlikely:(id)arg1;
++ (id)likely:(id)arg1;
 + (id)upper:(id)arg1;
 + (id)typeOf:(id)arg1;
 + (id)trim:(id)arg1 pattern:(id)arg2;

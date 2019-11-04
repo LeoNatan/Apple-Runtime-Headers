@@ -43,7 +43,6 @@
 - (void)clearAllHidden;
 - (void)setScanDisabled:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1 forProductKeys:(id)arg2;
-- (void)markFirmwareProductKeysAsWaiting:(id)arg1;
 - (BOOL)checkForChangeInCatalogURL;
 - (void)markRampedUpdatesAsSeen;
 - (void)_clearCriticalUpdateNotificationDateIfAppropriate;

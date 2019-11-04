@@ -25,7 +25,7 @@
 - (id)_timeoutEndDateForAttemptNumber:(long long)arg1;
 - (_Bool)_authenticateWithPIN:(id)arg1 forUser:(id)arg2 error:(id *)arg3;
 - (void)authenticateWithPIN:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (long long)authenticateWithPIN:(id)arg1 error:(id *)arg2;
+- (_Bool)authenticateWithPIN:(id)arg1 error:(id *)arg2;
 - (void)_setNewPIN:(id)arg1 currentPIN:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_isPINValid:(id)arg1;
 - (void)removePIN:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -9,23 +9,24 @@
 #import <CarouselServices/CSLSSessionServiceClientInterface-Protocol.h>
 #import <CarouselServices/CSLSSessionServiceInterface-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString, NSXPCConnection, NSXPCInterface;
+@class NSMutableDictionary, NSString, NSXPCConnection, NSXPCInterface;
 
 @interface CSLSSessionService : NSObject <CSLSSessionServiceClientInterface, CSLSSessionServiceInterface>
 {
-    NSMutableSet *_runningSessions;
+    NSMutableDictionary *_runningSessions;
     NSMutableDictionary *_scheduledSessions;
     NSXPCConnection *_connection;
     NSXPCInterface *_remoteInterface;
     NSXPCInterface *_exportedInterface;
     NSMutableDictionary *_serviceObserversPerAppBundleID;
     _Bool _invalidated;
-    struct os_unfair_recursive_lock_s _lock;
+    struct os_unfair_recursive_lock_s _recursiveLock;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)sessionStarted:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_addRunningSession:(id)arg1;
 - (void)sessionWithUUIDEnded:(id)arg1 bundleID:(id)arg2 startWasScheduled:(_Bool)arg3 error:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)fetchStickyCapableApps:(CDUnknownBlockType)arg1;
 - (void)defaultSession:(CDUnknownBlockType)arg1;
@@ -47,7 +48,7 @@
 - (void)_handleInvalidation;
 - (void)_startConnection;
 - (void)_connectIfNecessary;
-- (void)_withLock:(CDUnknownBlockType)arg1;
+- (void)_withRecursiveLock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

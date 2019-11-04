@@ -93,6 +93,7 @@
 - (void)_remote_removabilityForAppWithBundleID:(NSString *)arg1 completion:(void (^)(unsigned long long, NSError *))arg2;
 - (void)_remote_setTestModeForIdentifierPrefix:(NSString *)arg1 testMode:(unsigned long long)arg2 completion:(void (^)(NSError *))arg3;
 - (void)_remote_setTestingEnabled:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
+- (void)_remote_postNSCurrentLocaleDidChangeNotification:(void (^)(NSError *))arg1;
 - (void)_remote_pingDaemonWithCompletion:(void (^)(int, NSError *))arg1;
 - (void)_remote_killDaemonForTestingWithCompletion:(void (^)(NSError *))arg1;
 - (void)_remote_purgeRegisteredCoordinatorsAndPromisesForCreator:(unsigned long long)arg1 completion:(void (^)(NSError *))arg2;

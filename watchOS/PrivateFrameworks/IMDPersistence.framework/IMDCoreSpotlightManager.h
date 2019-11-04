@@ -6,11 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableSet;
+
 @interface IMDCoreSpotlightManager : NSObject
 {
+    NSMutableSet *_blacklistMessageGUIDs;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSMutableSet *blacklistMessageGUIDs; // @synthesize blacklistMessageGUIDs=_blacklistMessageGUIDs;
 - (void)indexNextMessageBatchIfNeeded:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)indexChats;
 - (void)_sanitizeIndexesForCurrentVersionIfNeeded:(CDUnknownBlockType)arg1;
@@ -21,6 +25,7 @@
 - (void)_geocodeItems:(id)arg1;
 - (id)newSearchableItemsForMessage:(struct _IMDMessageRecordStruct *)arg1 reindexing:(_Bool)arg2;
 - (id)newSearchableItemsForMessageGUID:(id)arg1 reindexing:(_Bool)arg2;
+- (void)dealloc;
 
 @end
 

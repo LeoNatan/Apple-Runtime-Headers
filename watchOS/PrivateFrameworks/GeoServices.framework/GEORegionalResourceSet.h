@@ -13,12 +13,14 @@
 @interface GEORegionalResourceSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_regions;
     unsigned int _regionsCount;
     unsigned int _regionsSpace;
     NSMutableArray *_resources;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_regions:1;
@@ -60,6 +62,8 @@
 @property(readonly, nonatomic) unsigned int regionsCount;
 - (void)_readRegions;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

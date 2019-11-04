@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface MRPendingMessageQueue : NSObject
 {
     NSMutableArray *_messages;
+    NSMutableArray *_delayableMessages;
     unsigned int _lowPriorityMessagesCount;
     unsigned int _maxLowPriorityMessagesAllowed;
 }

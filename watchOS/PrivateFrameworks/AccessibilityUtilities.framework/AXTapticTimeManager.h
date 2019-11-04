@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSDate, NSHashTable, NSLocale, NSMutableArray, NSMutableDictionary, NSNumber;
+@protocol OS_os_activity;
 
 @interface AXTapticTimeManager : NSObject
 {
@@ -21,6 +22,8 @@
     _Bool _is24Hour;
     NSNumber *_cachedSpeed;
     int _currentSsid;
+    NSObject<OS_os_activity> *_activity;
+    struct os_activity_scope_state_s _scopeState;
     _Bool _isCurrentlyOutputting;
     unsigned int _assertionID;
     CDUnknownBlockType _testingQueueCallback;

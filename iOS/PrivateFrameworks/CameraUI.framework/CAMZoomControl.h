@@ -8,7 +8,7 @@
 
 #import <CameraUI/CAMZoomButtonDelegate-Protocol.h>
 
-@class CAMFeedbackController, CAMZoomButton, CAMZoomButtonPlatter, CAMZoomControlButtonMaskView, CAMZoomDial, NSArray, NSDate, NSString, NSTimer, UIView;
+@class CAMFeedbackController, CAMZoomButton, CAMZoomButtonPlatter, CAMZoomControlButtonMaskView, CAMZoomDial, NSArray, NSDate, NSSet, NSString, NSTimer, UIView;
 @protocol CAMZoomControlDelegate;
 
 @interface CAMZoomControl : UIControl <CAMZoomButtonDelegate>
@@ -17,6 +17,7 @@
         _Bool respondsToDidChangeZoomFactor;
         _Bool respondsToCanToggleBetweenZoomFactors;
         _Bool respondsToToggleBetweenZoomFactors;
+        _Bool respondsToCanPlayHaptics;
     } _delegateFlags;
     _Bool __zoomDialEnabled;
     _Bool __shouldShowZoomDial;
@@ -39,11 +40,15 @@
     double __previousTouchTime;
     NSTimer *__zoomDialVisibilityTimer;
     NSDate *__startTimeForHideAnimationInProgress;
+    double __hideAnimationInProgressDuration;
     CAMZoomButton *__highlightedZoomButton;
     CAMFeedbackController *__feedbackController;
     NSArray *__significantHapticDisplayValues;
     NSArray *__significantHapticDisplayValueEpsilons;
+    NSSet *__significantHapticDisplayValueSwitchOverIndexes;
     long long __lastHapticZone;
+    double __snappedZoomFactor;
+    double __unsnappingProgress;
     double _leftMargin;
     double _zoomButtonMaxYWhenContracted;
     double _zoomDialRadius;
@@ -56,11 +61,15 @@
 @property(nonatomic) double zoomButtonMaxYWhenContracted; // @synthesize zoomButtonMaxYWhenContracted=_zoomButtonMaxYWhenContracted;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
+@property(nonatomic, setter=_setUnsnappingProgress:) double _unsnappingProgress; // @synthesize _unsnappingProgress=__unsnappingProgress;
+@property(nonatomic, setter=_setSnappedZoomFactor:) double _snappedZoomFactor; // @synthesize _snappedZoomFactor=__snappedZoomFactor;
 @property(nonatomic) long long _lastHapticZone; // @synthesize _lastHapticZone=__lastHapticZone;
-@property(retain, nonatomic) NSArray *_significantHapticDisplayValueEpsilons; // @synthesize _significantHapticDisplayValueEpsilons=__significantHapticDisplayValueEpsilons;
+@property(retain, nonatomic, setter=_setSignificantHapticDisplayValueSwitchOverIndexes:) NSSet *_significantHapticDisplayValueSwitchOverIndexes; // @synthesize _significantHapticDisplayValueSwitchOverIndexes=__significantHapticDisplayValueSwitchOverIndexes;
+@property(retain, nonatomic, setter=_setSignificantHapticDisplayValueEpsilons:) NSArray *_significantHapticDisplayValueEpsilons; // @synthesize _significantHapticDisplayValueEpsilons=__significantHapticDisplayValueEpsilons;
 @property(retain, nonatomic, setter=_setSignificantHapticDisplayValues:) NSArray *_significantHapticDisplayValues; // @synthesize _significantHapticDisplayValues=__significantHapticDisplayValues;
 @property(readonly, nonatomic) CAMFeedbackController *_feedbackController; // @synthesize _feedbackController=__feedbackController;
 @property(retain, nonatomic, setter=_setHighlightedZoomButton:) CAMZoomButton *_highlightedZoomButton; // @synthesize _highlightedZoomButton=__highlightedZoomButton;
+@property(nonatomic, setter=_setHideAnimationInProgressDuration:) double _hideAnimationInProgressDuration; // @synthesize _hideAnimationInProgressDuration=__hideAnimationInProgressDuration;
 @property(retain, nonatomic, setter=_setStartTimeForHideAnimationInProgress:) NSDate *_startTimeForHideAnimationInProgress; // @synthesize _startTimeForHideAnimationInProgress=__startTimeForHideAnimationInProgress;
 @property(retain, nonatomic, setter=_setZoomDialVisibilityTimer:) NSTimer *_zoomDialVisibilityTimer; // @synthesize _zoomDialVisibilityTimer=__zoomDialVisibilityTimer;
 @property(nonatomic, getter=_isEligibleForSwipeDownToDismiss, setter=_setEligibleForSwipeDownToDismiss:) _Bool _eligibleForSwipeDownToDismiss; // @synthesize _eligibleForSwipeDownToDismiss=__eligibleForSwipeDownToDismiss;
@@ -104,6 +113,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_resetSnapping;
 - (_Bool)_isWithinZoomButtonBoundsWithTouch:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)_shouldInterceptTouchesForHidingZoomDial;
@@ -140,6 +150,8 @@
 - (double)_displayZoomValueForZoomFactor:(double)arg1;
 @property(readonly, nonatomic) double _displayZoomValue;
 - (void)_updateDisplayedValuesAnimated:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool _shouldSnapDialToSwitchOverZoomFactors;
+@property(readonly, nonatomic) NSArray *_switchOverZoomFactors;
 @property(readonly, nonatomic) double _displayMaximumZoomFactor;
 @property(readonly, nonatomic) double _displayMinimumZoomFactor;
 @property(readonly, nonatomic) double maximumZoomFactor;

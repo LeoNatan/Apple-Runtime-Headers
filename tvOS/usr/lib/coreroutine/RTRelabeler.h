@@ -38,11 +38,11 @@
 - (id)createProbabilityVectorForNonRevGeoCandidate:(struct RTPair *)arg1 uniqueNonRevGeoMapItems:(id)arg2 hallucinatedUUIDs:(id)arg3 placeholderUUID:(id)arg4 placeholderWeight:(double)arg5 error:(id *)arg6;
 - (_Bool)dedupeRelabelingCandidate:(struct RTPair *)arg1 nonRevGeoCandidates:(id)arg2 deduper:(id)arg3 inferredMapItemDeduperState:(id *)arg4 dedupedRelabelingCandidate:(struct RTPair **)arg5 dedupedNonRevGeoCandidates:(id *)arg6 error:(id *)arg7;
 - (_Bool)partitionCandidates:(id)arg1 intoNonRevGeoCandidates:(id *)arg2 revGeoCandidates:(id *)arg3 error:(id *)arg4;
-- (id)preprocessContextCandidates:(id)arg1 referenceLocation:(id)arg2 error:(id *)arg3;
+- (id)preprocessContextCandidates:(id)arg1 relabelingCandidate:(struct RTPair *)arg2 error:(id *)arg3;
 - (id)convertLowConfidenceCandidates:(id)arg1 error:(id *)arg2;
 - (id)filterFarCandidates:(id)arg1 referenceLocation:(id)arg2 error:(id *)arg3;
 - (id)filterAoiCandidates:(id)arg1 error:(id *)arg2;
-- (id)filterOldCandidates:(id)arg1 error:(id *)arg2;
+- (id)filterOldCandidates:(id)arg1 referenceDate:(id)arg2 error:(id *)arg3;
 - (_Bool)placeholderCandidate:(struct RTPair *)arg1;
 - (void)enableLogging:(_Bool)arg1;
 - (double)contextDistanceThreshold;

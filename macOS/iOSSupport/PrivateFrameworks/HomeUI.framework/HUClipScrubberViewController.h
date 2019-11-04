@@ -11,7 +11,7 @@
 #import <HomeUI/HUFeedbackConsentViewControllerDelegate-Protocol.h>
 #import <HomeUI/NSURLSessionDelegate-Protocol.h>
 
-@class CADisplayLink, HFCameraPlaybackEngine, HUClipScrubberDataSource, HUClipScrubberScrollDelegate, HUClipScrubberView, NSLayoutConstraint, NSString, UIButton, UIView;
+@class CADisplayLink, HFCameraPlaybackEngine, HMCameraClipFetchVideoAssetContextOperation, HUClipScrubberDataSource, HUClipScrubberScrollDelegate, HUClipScrubberView, NSLayoutConstraint, NSString, UIButton, UIView;
 
 @interface HUClipScrubberViewController : UIViewController <NSURLSessionDelegate, HUFeedbackConsentViewControllerDelegate, HUCameraPlayerScrubbing, HFCameraPlaybackEngineObserver>
 {
@@ -37,8 +37,10 @@
     NSLayoutConstraint *_selectionPlatterTopAnchorConstraint;
     CADisplayLink *_scrubberUpdateDisplayLink;
     unsigned long long _lastEngineMode;
+    HMCameraClipFetchVideoAssetContextOperation *_exportDownloadOperation;
 }
 
+@property(nonatomic) __weak HMCameraClipFetchVideoAssetContextOperation *exportDownloadOperation; // @synthesize exportDownloadOperation=_exportDownloadOperation;
 @property(nonatomic) unsigned long long lastEngineMode; // @synthesize lastEngineMode=_lastEngineMode;
 @property(nonatomic) BOOL isVisible; // @synthesize isVisible=_isVisible;
 @property(retain, nonatomic) CADisplayLink *scrubberUpdateDisplayLink; // @synthesize scrubberUpdateDisplayLink=_scrubberUpdateDisplayLink;
@@ -96,6 +98,7 @@
 - (void)togglePlayPause;
 - (void)_addConstraints;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)updateScrubberViewAndAssociatedConstraints;

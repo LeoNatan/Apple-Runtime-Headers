@@ -11,7 +11,6 @@
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) _Bool isUberLayoutActive;
 - (void)setBannerOpacity:(double)arg1;
-- (void)setTransitionBannerOpacity:(double)arg1;
 - (void)setUberImageOffset:(double)arg1;
 @end
 

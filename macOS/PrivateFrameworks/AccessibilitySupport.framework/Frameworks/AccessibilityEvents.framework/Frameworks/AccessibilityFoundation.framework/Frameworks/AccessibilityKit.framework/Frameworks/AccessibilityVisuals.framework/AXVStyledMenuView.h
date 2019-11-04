@@ -10,15 +10,15 @@
 
 @interface AXVStyledMenuView : AXVView
 {
-    BOOL _showTarget;
     NSArray *_menuItems;
     long long _displayStyle;
     AXVStyledMenuTargetView *__targetView;
     struct CGSize _menuItemSize;
+    struct CGPoint _menuTargetOrigin;
 }
 
 @property(retain, nonatomic) AXVStyledMenuTargetView *_targetView; // @synthesize _targetView=__targetView;
-@property(nonatomic) BOOL showTarget; // @synthesize showTarget=_showTarget;
+@property(nonatomic) struct CGPoint menuTargetOrigin; // @synthesize menuTargetOrigin=_menuTargetOrigin;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) struct CGSize menuItemSize; // @synthesize menuItemSize=_menuItemSize;
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (void)_updateListLayout;
 - (void)_updateCircularLayout;
 - (void)_updateLayout;
-- (void)_setupTargetView;
+- (void)_setupTargetViewIfNeeded;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 
 @end

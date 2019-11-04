@@ -15,24 +15,24 @@
     int _videoWidth;
     int _dpiFactor;
     unsigned char _deviceRole;
-    NSData *_offer;
-    NSData *_answer;
-    VCMediaNegotiator *_mediaNegotiator;
     NSData *_mediaBlobCompressed;
+    NSData *_mediaBlobNegotiated;
     NSString *_dataSessionID;
     int _mediaStreamMode;
+    VCMediaNegotiator *_mediaNegotiator;
+    NSData *_remoteCallInfoBlob;
+    NSData *_offer;
+    NSData *_answer;
 }
 
-@property(readonly, nonatomic) int mediaStreamMode; // @synthesize mediaStreamMode=_mediaStreamMode;
-@property(readonly, nonatomic) NSString *dataSessionID; // @synthesize dataSessionID=_dataSessionID;
-@property(readonly, nonatomic) NSData *mediaBlobCompressed; // @synthesize mediaBlobCompressed=_mediaBlobCompressed;
-@property unsigned char deviceRole; // @synthesize deviceRole=_deviceRole;
-@property(readonly, nonatomic) VCMediaNegotiator *mediaNegotiator; // @synthesize mediaNegotiator=_mediaNegotiator;
 @property(readonly, nonatomic) NSData *answer; // @synthesize answer=_answer;
 @property(readonly, nonatomic) NSData *offer; // @synthesize offer=_offer;
 - (id)generateMediaStreamInitOptionsWithError:(id *)arg1;
+- (_Bool)addLocalCallInfoBlobToOutgoingDictionary:(id)arg1;
 - (id)generateMediaStreamConfigurationWithError:(id *)arg1;
 - (_Bool)setAnswer:(id)arg1 withError:(id *)arg2;
+- (_Bool)processAnswerWithError:(id *)arg1 errorReason:(id *)arg2;
+- (_Bool)createAnswer;
 - (id)initWithOffer:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithOffer:(id)arg1 error:(id *)arg2;
 - (_Bool)processInitOptions:(id)arg1 error:(id *)arg2 errorReason:(id *)arg3;

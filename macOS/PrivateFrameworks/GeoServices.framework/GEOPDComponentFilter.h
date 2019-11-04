@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDComponentFilter : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDRoadAccessInfoFilter *_accessInfoFilter;
     GEOPDAddressFilter *_addressFilter;
@@ -77,6 +76,9 @@ __attribute__((visibility("hidden")))
     GEOPDVenueInfoFilter *_venueInfoFilter;
     GEOPDWalletCategoryInformationFilter *_walletCategoryInformationFilter;
     GEOPDWifiFingerprintFilter *_wifiFingerprintFilter;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_accessInfoFilter:1;
@@ -402,6 +404,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDEntityFilter *entityFilter;
 @property(readonly, nonatomic) BOOL hasEntityFilter;
 - (void)_readEntityFilter;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initAddressObjectFilterWithLibraryVersion:(id)arg1;
 - (id)initTransitTripStopTimeFilterWithTraits:(id)arg1;
 - (id)initTransitScheduleFilterWithTraits:(id)arg1;

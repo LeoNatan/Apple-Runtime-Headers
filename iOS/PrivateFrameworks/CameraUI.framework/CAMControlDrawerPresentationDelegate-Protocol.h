@@ -9,6 +9,6 @@
 @class CAMControlDrawer;
 
 @protocol CAMControlDrawerPresentationDelegate <NSObject>
-- (void)controlDrawer:(CAMControlDrawer *)arg1 didChangeExpanded:(_Bool)arg2 forControlType:(long long)arg3;
+- (void)controlDrawer:(CAMControlDrawer *)arg1 didChangeExpanded:(_Bool)arg2 forControlType:(long long)arg3 animated:(_Bool)arg4;
 @end
 

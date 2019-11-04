@@ -8,7 +8,7 @@
 
 #import <network/OS_nw_read_request-Protocol.h>
 
-@class NSString;
+@class NSString, NWConcrete_nw_connection;
 @protocol OS_dispatch_data, OS_nw_array, OS_nw_content_context, OS_nw_error;
 
 __attribute__((visibility("hidden")))
@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType data_completion;
     CDUnknownBlockType data_multiple_completion;
     CDUnknownBlockType buffer_completion;
+    NWConcrete_nw_connection *connection;
+    unsigned int qos_class;
     int variant;
     unsigned long min;
     unsigned long max;

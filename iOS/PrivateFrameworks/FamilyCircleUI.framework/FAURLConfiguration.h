@@ -10,19 +10,8 @@
 {
 }
 
-+ (id)urlForKey:(id)arg1 error:(id *)arg2;
-+ (id)familyRepairURL;
-+ (id)getFamilyInvitationsUIURL;
-+ (id)addFamilyMemberInlineV2URL;
-+ (id)familyMemberDetailsUIV2URL;
-+ (id)inviteViaMessagesURL;
-+ (id)addChildAccountV2URL;
-+ (id)addFamilyMemberV2URL;
-+ (id)acceptFamilyInviteV2URL;
-+ (id)fetchFamilyInviteV2URL;
-+ (id)familyInviteSentV2URL;
-+ (id)startFamilyInviteV2URL;
-+ (id)initiateFamilyV2URL;
++ (void)fetchAAURLConfigurationWithCompletion:(CDUnknownBlockType)arg1;
++ (void)URLForEndpoint:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (id)new;
 - (id)init;
 

@@ -51,6 +51,7 @@
 - (void)_updateTrackedAccountChangeItem:(id)arg1 withObjectID:(id)arg2;
 - (void)_trackAccountChangeItem:(id)arg1;
 - (id)_trackedAccountChangeItemForObjectID:(id)arg1;
+- (id)performRecurrenceClone;
 - (void)performPreSaveActions;
 - (void)_prepareSave:(CDUnknownBlockType)arg1;
 - (_Bool)saveSynchronouslyWithError:(id *)arg1;

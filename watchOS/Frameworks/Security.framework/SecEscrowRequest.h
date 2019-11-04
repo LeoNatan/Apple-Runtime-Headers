@@ -26,6 +26,7 @@
 - (id)fetchPrerecord:(id)arg1 error:(id *)arg2;
 - (_Bool)cachePrerecord:(id)arg1 serializedPrerecord:(id)arg2 error:(id *)arg3;
 - (_Bool)triggerEscrowUpdate:(id)arg1 error:(id *)arg2;
+- (void)dealloc;
 - (id)initWithConnection:(id)arg1;
 
 // Remaining properties

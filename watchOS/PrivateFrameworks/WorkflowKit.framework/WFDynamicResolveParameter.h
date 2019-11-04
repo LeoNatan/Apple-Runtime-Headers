@@ -16,10 +16,8 @@
     INCodableAttribute *_codableAttribute;
     id <WFDynamicResolveParameterDataSource> _dataSource;
     id <WFDynamicResolveParameterDelegate> _delegate;
-    NSString *_placeholder;
 }
 
-@property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) __weak id <WFDynamicResolveParameterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WFDynamicResolveParameterDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;

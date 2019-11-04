@@ -19,9 +19,12 @@
     NSObject<OS_dispatch_queue> *_pruneStatsQueue;
     _CPLPruneRequestCounter *_pruneRequests;
     _CPLPruneRequestCounter *_purgeabilityCheckRequests;
+    _Bool _shouldCreateTempFolder;
+    _Bool _shouldCheckFilesForUpload;
     CPLEngineFileStorage *_fileStorage;
 }
 
+@property(nonatomic) _Bool shouldCheckFilesForUpload; // @synthesize shouldCheckFilesForUpload=_shouldCheckFilesForUpload;
 @property(readonly, nonatomic) CPLEngineFileStorage *fileStorage; // @synthesize fileStorage=_fileStorage;
 - (void).cxx_destruct;
 - (void)notePruningRequestForResource:(id)arg1 realPrune:(_Bool)arg2 successful:(_Bool)arg3;
@@ -42,9 +45,10 @@
 - (unsigned long long)sizeOfResourcesToUpload;
 - (_Bool)dropResourceForUpload:(id)arg1 error:(id *)arg2;
 - (_Bool)storeResourceCopyForUpload:(id)arg1 error:(id *)arg2;
-- (_Bool)storeResourceForUpload:(id)arg1 error:(id *)arg2;
+- (_Bool)storeResourceForUpload:(id)arg1 shouldCheckResource:(_Bool)arg2 error:(id *)arg3;
 - (unsigned int)scopeType;
 - (_Bool)openWithError:(id *)arg1;
+- (_Bool)_clearAndCreateTempFolderIfNecessaryWithError:(id *)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 
 // Remaining properties

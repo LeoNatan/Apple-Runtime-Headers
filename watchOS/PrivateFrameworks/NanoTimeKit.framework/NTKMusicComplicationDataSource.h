@@ -6,44 +6,51 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-#import <NanoTimeKit/_NTKMusicComplicationSharedDataSourceObserver-Protocol.h>
+#import <NanoTimeKit/NMRNowPlayingControllerDelegate-Protocol.h>
+#import <NanoTimeKit/NMROriginObserverDelegate-Protocol.h>
 
-@class CLKComplicationTemplate, _NTKMusicComplicationSharedDataSource;
+@class CLKComplicationTemplate, CLKComplicationTimelineEntry, NMRNowPlayingController, NSNumber, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
-@interface NTKMusicComplicationDataSource : NTKComplicationDataSource <_NTKMusicComplicationSharedDataSourceObserver>
+@interface NTKMusicComplicationDataSource : NTKComplicationDataSource <NMROriginObserverDelegate, NMRNowPlayingControllerDelegate>
 {
-    _NTKMusicComplicationSharedDataSource *_dataSource;
+    NMRNowPlayingController *_musicController;
+    CLKComplicationTimelineEntry *_musicEntry;
+    NSNumber *_activeOriginIdentifier;
+    _Bool _needsInvalidation;
+    NSObject<OS_dispatch_queue> *_queue;
     CLKComplicationTemplate *_currentSwitcherTemplate;
     _Bool _isPaused;
     _Bool _needsInvalidate;
 }
 
-+ (_Bool)_timetravelEnabledForFamily:(int)arg1;
++ (_Bool)wantsToSkipPauseWhenEnteringTritium;
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
-- (id)_nowPlayingURL;
+- (void)activeNowPlayingOriginDidUpdateForController:(id)arg1;
+- (void)originObserver:(id)arg1 didUpdateNowPlayingInfoForOrigin:(id)arg2;
+- (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;
+- (void)_updateWithOrigin:(id)arg1;
 - (void)_invalidateIfNeeded;
-- (void)sharedDataSourceDidChange;
 - (id)complicationApplicationIdentifier;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)resume;
 - (void)pause;
-- (void)becomeInactive;
-- (void)becomeActive;
-- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
-- (id)_temporaryEmptyStateSwitcherTemplate;
+- (id)_defaultTimelineEntry;
 - (id)currentSwitcherTemplate;
 - (unsigned int)timelineAnimationBehavior;
 - (_Bool)supportsTapAction;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

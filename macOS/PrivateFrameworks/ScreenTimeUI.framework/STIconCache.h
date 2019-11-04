@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (id)blankSpaceImageWithSize:(struct CGSize)arg1;
 - (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
-- (id)_iconForCacheKey:(id)arg1 categoryIdentifier:(id)arg2;
 - (id)imageForCategoryIdentifier:(id)arg1;
 - (void)_handleiTunesResponseForAppInfo:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)_fetchImageForAppInfoIfNeeded:(id)arg1;

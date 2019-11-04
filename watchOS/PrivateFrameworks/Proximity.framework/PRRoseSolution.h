@@ -14,6 +14,7 @@
     _Bool _mach_continuous_time_valid;
     _Bool _az_valid;
     _Bool _el_valid;
+    _Bool _soi_rssi_valid;
     int _variant;
     int _antenna_type;
     unsigned long long _mac_addr;
@@ -26,10 +27,13 @@
     double _az_unc_deg;
     double _el_unc_deg;
     double _fov_confidence;
+    double _soi_rssi_dbm;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) int antenna_type; // @synthesize antenna_type=_antenna_type;
+@property(readonly, nonatomic) double soi_rssi_dbm; // @synthesize soi_rssi_dbm=_soi_rssi_dbm;
+@property(readonly, nonatomic) _Bool soi_rssi_valid; // @synthesize soi_rssi_valid=_soi_rssi_valid;
 @property(readonly, nonatomic) double fov_confidence; // @synthesize fov_confidence=_fov_confidence;
 @property(readonly, nonatomic) double el_unc_deg; // @synthesize el_unc_deg=_el_unc_deg;
 @property(readonly, nonatomic) double az_unc_deg; // @synthesize az_unc_deg=_az_unc_deg;
@@ -49,7 +53,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithVariant:(int)arg1 macAddr:(unsigned long long)arg2 machAbsTime_sec:(double)arg3 machContTimeValid:(_Bool)arg4 machContTime_sec:(double)arg5 range_m:(double)arg6 rangeUnc_m:(double)arg7 azValid:(_Bool)arg8 elValid:(_Bool)arg9 az_deg:(double)arg10 el_deg:(double)arg11 azUnc_deg:(double)arg12 elUnc_deg:(double)arg13 fovConfidence:(double)arg14 antennaType:(int)arg15;
+- (id)initWithVariant:(int)arg1 macAddr:(unsigned long long)arg2 machAbsTime_sec:(double)arg3 machContTimeValid:(_Bool)arg4 machContTime_sec:(double)arg5 range_m:(double)arg6 rangeUnc_m:(double)arg7 azValid:(_Bool)arg8 elValid:(_Bool)arg9 az_deg:(double)arg10 el_deg:(double)arg11 azUnc_deg:(double)arg12 elUnc_deg:(double)arg13 fovConfidence:(double)arg14 soiRssiValid:(_Bool)arg15 soiRssi_dBm:(double)arg16 antennaType:(int)arg17;
 
 @end
 

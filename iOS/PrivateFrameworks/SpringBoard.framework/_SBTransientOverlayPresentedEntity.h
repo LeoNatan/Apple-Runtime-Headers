@@ -14,12 +14,14 @@
     _Bool _rotating;
     _Bool _dismissing;
     _Bool _hasFinishedWindowInitialization;
+    _Bool _hasPreservedInputViews;
     double _baseWindowLevel;
     SBTransientOverlayViewController *_viewController;
     SBTransientOverlayBackgroundWindow *_backgroundWindow;
     SBTransientOverlayWindow *_window;
     id <BSInvalidatable> _disableAutoUnlockAssertion;
     id <BSInvalidatable> _proximityEnabledAssertion;
+    id <BSInvalidatable> _wallpaperAnimationSuspensionAssertion;
     SBFluidDismissalState *_fluidDismissalState;
     UIView *_fluidDismissalDimmingView;
     SBPresentationObservationToken *_bannerLongLookPresentationObservationToken;
@@ -38,8 +40,10 @@
 @property(retain, nonatomic) SBPresentationObservationToken *bannerLongLookPresentationObservationToken; // @synthesize bannerLongLookPresentationObservationToken=_bannerLongLookPresentationObservationToken;
 @property(retain, nonatomic) UIView *fluidDismissalDimmingView; // @synthesize fluidDismissalDimmingView=_fluidDismissalDimmingView;
 @property(retain, nonatomic) SBFluidDismissalState *fluidDismissalState; // @synthesize fluidDismissalState=_fluidDismissalState;
+@property(retain, nonatomic) id <BSInvalidatable> wallpaperAnimationSuspensionAssertion; // @synthesize wallpaperAnimationSuspensionAssertion=_wallpaperAnimationSuspensionAssertion;
 @property(retain, nonatomic) id <BSInvalidatable> proximityEnabledAssertion; // @synthesize proximityEnabledAssertion=_proximityEnabledAssertion;
 @property(retain, nonatomic) id <BSInvalidatable> disableAutoUnlockAssertion; // @synthesize disableAutoUnlockAssertion=_disableAutoUnlockAssertion;
+@property(nonatomic) _Bool hasPreservedInputViews; // @synthesize hasPreservedInputViews=_hasPreservedInputViews;
 @property(nonatomic) _Bool hasFinishedWindowInitialization; // @synthesize hasFinishedWindowInitialization=_hasFinishedWindowInitialization;
 @property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
 @property(readonly, nonatomic) SBTransientOverlayWindow *window; // @synthesize window=_window;

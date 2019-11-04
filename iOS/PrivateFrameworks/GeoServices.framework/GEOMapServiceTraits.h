@@ -13,7 +13,6 @@
 @interface GEOMapServiceTraits : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _engineTypes;
     CDStruct_95bda58d _knownClientResolvedTypes;
@@ -48,6 +47,9 @@
     GEOTraitsTransitScheduleFilter *_transitTripStopTimeFilter;
     GEOPDVenueIdentifier *_venueIdentifier;
     GEOWalkingOptions *_walkingOptions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _carHeadunitConnectionType;
     int _carHeadunitInteractionModel;
     int _deviceBatteryState;
@@ -70,6 +72,7 @@
     _Bool _isRefund;
     _Bool _isSettlement;
     _Bool _navigating;
+    _Bool _supportAutocompleteRapAffordance;
     _Bool _supportChildItems;
     _Bool _supportClientRankingFeatureMetadata;
     _Bool _supportDirectionIntentAutocomplete;
@@ -107,6 +110,7 @@
         unsigned int has_isRefund:1;
         unsigned int has_isSettlement:1;
         unsigned int has_navigating:1;
+        unsigned int has_supportAutocompleteRapAffordance:1;
         unsigned int has_supportChildItems:1;
         unsigned int has_supportClientRankingFeatureMetadata:1;
         unsigned int has_supportDirectionIntentAutocomplete:1;
@@ -201,6 +205,7 @@
         unsigned int wrote_isRefund:1;
         unsigned int wrote_isSettlement:1;
         unsigned int wrote_navigating:1;
+        unsigned int wrote_supportAutocompleteRapAffordance:1;
         unsigned int wrote_supportChildItems:1;
         unsigned int wrote_supportClientRankingFeatureMetadata:1;
         unsigned int wrote_supportDirectionIntentAutocomplete:1;
@@ -232,6 +237,8 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasSupportAutocompleteRapAffordance;
+@property(nonatomic) _Bool supportAutocompleteRapAffordance;
 - (int)StringAsSupportedAutocompleteResultCellTypes:(id)arg1;
 - (id)supportedAutocompleteResultCellTypesAsString:(int)arg1;
 - (void)setSupportedAutocompleteResultCellTypes:(int *)arg1 count:(unsigned long long)arg2;
@@ -461,6 +468,8 @@
 @property(nonatomic) _Bool hasSessionId;
 @property(nonatomic) struct GEOSessionID sessionId;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)updateAnalyticsShortSession;
 - (void)_internal_incrementSessionCounters;
 - (id)copyByIncrementingSessionCounters;

@@ -23,10 +23,13 @@
 - (void).cxx_destruct;
 - (void)_inkAttributesPickerViewUserDidEndDraggingSlider:(id)arg1;
 - (void)_inkAttributesPickerViewUserDidStartDraggingSlider:(id)arg1;
-- (void)selectedInkDidChange:(id)arg1;
+- (void)inkAttributesPickerViewDidChangeInkOpacity:(id)arg1;
+- (void)inkAttributesPickerViewDidChangeInkThickness:(id)arg1;
+- (void)_notifyInkAttributesPickerDidChangeInk;
 @property(nonatomic) unsigned long long displayMode;
 - (void)setSelectedInk:(id)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) PKInk *selectedInk;
+@property(nonatomic) long long colorUserInterfaceStyle;
 - (void)viewWillLayoutSubviews;
 - (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;

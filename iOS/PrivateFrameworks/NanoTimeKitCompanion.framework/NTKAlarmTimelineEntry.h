@@ -16,6 +16,7 @@
     NSDate *_snoozeDate;
 }
 
++ (id)companionModel;
 @property(retain, nonatomic) NSDate *snoozeDate; // @synthesize snoozeDate=_snoozeDate;
 @property(retain, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(retain, nonatomic) NSString *alarmLabel; // @synthesize alarmLabel=_alarmLabel;
@@ -37,7 +38,7 @@
 - (id)_newSmallFlatUtilityTemplate;
 - (id)_newCircularMediumTemplate;
 - (id)_newCircularSmallTemplate;
-- (void)_makeAlarmStackTextTimeProvider:(id *)arg1 designatorProvider:(id *)arg2 designatorLeads:(_Bool *)arg3;
+- (void)_makeAlarmStackTextTimeProvider:(id *)arg1 designatorProvider:(id *)arg2 designatorExists:(_Bool *)arg3 designatorLeads:(_Bool *)arg4;
 - (id)_circularTemplateForAlarm:(_Bool)arg1;
 - (id)_newLargeModularTemplate;
 - (id)_newSmallModularTemplate;

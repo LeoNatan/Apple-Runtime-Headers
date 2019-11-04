@@ -50,7 +50,10 @@ __attribute__((visibility("hidden")))
     struct __SCDynamicStore *_scDynamicStore;
     NSMutableArray *_scInitialKeys;
     NSString *_scKeySystemName;
+    NSString *_scPatternNetInterfaceIPv4;
+    NSString *_scPatternNetInterfaceIPv6;
     NSArray *_scNotificationKeys;
+    NSArray *_scNotificationPatterns;
     NSString *_systemName;
     CUWiFiManager *_wifiManager;
     unsigned int _wifiFlags;
@@ -64,6 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)_firstUnlockMonitorStop;
 - (void)_firstUnlockMonitorStart;
 - (void)_systemConfigSystemNameChanged:(_Bool)arg1;
+- (void)_systemConfigNetInterfaceChanged:(id)arg1 initial:(_Bool)arg2;
 - (void)_systemConfigChanged:(id)arg1 initial:(_Bool)arg2;
 - (void)_systemConfigUpdateNotifications;
 - (void)_systemConfigUpdateKeyPtr:(id *)arg1 name:(id)arg2 enabled:(_Bool)arg3 creator:(CDUnknownBlockType)arg4;

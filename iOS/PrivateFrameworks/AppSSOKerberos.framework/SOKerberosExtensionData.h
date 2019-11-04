@@ -30,9 +30,11 @@
     NSNumber *_pwReqMinAge;
     NSNumber *_pwReqHistory;
     NSString *_pwReqText;
+    NSNumber *_replicationTime;
 }
 
 @property _Bool syncLocalPassword; // @synthesize syncLocalPassword=_syncLocalPassword;
+@property(retain, nonatomic) NSNumber *replicationTime; // @synthesize replicationTime=_replicationTime;
 @property(retain, nonatomic) NSString *pwReqText; // @synthesize pwReqText=_pwReqText;
 @property(retain, nonatomic) NSNumber *pwReqHistory; // @synthesize pwReqHistory=_pwReqHistory;
 @property(retain, nonatomic) NSNumber *pwReqMinAge; // @synthesize pwReqMinAge=_pwReqMinAge;

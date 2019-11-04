@@ -158,6 +158,7 @@
 - (void)knowledgeStorage:(id)arg1 didHaveInsertsAndDeletesWithCount:(unsigned int)arg2;
 @property(readonly, nonatomic) _DKSyncType *syncType;
 - (id)deletedEventIDsSinceDate:(id)arg1 streamNames:(id)arg2 limit:(unsigned int)arg3 endDate:(id *)arg4 error:(id *)arg5;
+- (id)sortedEventsFromSyncWindows:(id)arg1 streamNames:(id)arg2 compatibility:(id)arg3 limit:(unsigned int)arg4 fetchOrder:(int)arg5 error:(id *)arg6;
 - (id)sortedEventsFromSyncWindows:(id)arg1 streamNames:(id)arg2 limit:(unsigned int)arg3 fetchOrder:(int)arg4 error:(id *)arg5;
 
 // Remaining properties

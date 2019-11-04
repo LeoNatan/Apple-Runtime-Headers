@@ -20,9 +20,11 @@
     BOOL _debugResolution;
     BOOL _debugColorTransform;
     BOOL _colorCopiedImages;
+    BOOL _colorCachedThumbnails;
     BOOL _requestThumbnailsOnly;
     BOOL _requestMasterThumbsOnly;
     BOOL _disableLowResThumbnails;
+    BOOL _loadThumbnailsAsync;
     BOOL _allowBlockingDuringScrolling;
     BOOL _allowBlockingDueToFences;
     BOOL _wantsOrthogonalProjection;
@@ -44,6 +46,8 @@
     BOOL _shouldShowBoundariesOfTextTextures;
     BOOL _shouldIncludeSpecialCharactersInTextTextures;
     long long _sampleCount;
+    long long _thumbnailCacheSize;
+    double _opportunisticPreheatRequiredIdleTime;
     double _blockingWhileScrollingTimeout;
     double _blockingWhileScrubbingTimeout;
     long long _blockOnMissingThumbnailsAtSpeedRegime;
@@ -88,9 +92,13 @@
 @property(nonatomic) double blockingWhileScrubbingTimeout; // @synthesize blockingWhileScrubbingTimeout=_blockingWhileScrubbingTimeout;
 @property(nonatomic) double blockingWhileScrollingTimeout; // @synthesize blockingWhileScrollingTimeout=_blockingWhileScrollingTimeout;
 @property(nonatomic) BOOL allowBlockingDuringScrolling; // @synthesize allowBlockingDuringScrolling=_allowBlockingDuringScrolling;
+@property(nonatomic) double opportunisticPreheatRequiredIdleTime; // @synthesize opportunisticPreheatRequiredIdleTime=_opportunisticPreheatRequiredIdleTime;
+@property(nonatomic) long long thumbnailCacheSize; // @synthesize thumbnailCacheSize=_thumbnailCacheSize;
+@property(nonatomic) BOOL loadThumbnailsAsync; // @synthesize loadThumbnailsAsync=_loadThumbnailsAsync;
 @property(nonatomic) BOOL disableLowResThumbnails; // @synthesize disableLowResThumbnails=_disableLowResThumbnails;
 @property(nonatomic) BOOL requestMasterThumbsOnly; // @synthesize requestMasterThumbsOnly=_requestMasterThumbsOnly;
 @property(nonatomic) BOOL requestThumbnailsOnly; // @synthesize requestThumbnailsOnly=_requestThumbnailsOnly;
+@property(nonatomic) BOOL colorCachedThumbnails; // @synthesize colorCachedThumbnails=_colorCachedThumbnails;
 @property(nonatomic) BOOL colorCopiedImages; // @synthesize colorCopiedImages=_colorCopiedImages;
 @property(nonatomic) BOOL debugColorTransform; // @synthesize debugColorTransform=_debugColorTransform;
 @property(nonatomic) BOOL debugResolution; // @synthesize debugResolution=_debugResolution;

@@ -14,12 +14,18 @@
 }
 
 + (id)NewlyAddedEmoji;
++ (id)MultiPersonFamilySkinToneEmoji;
++ (id)CoupleMultiSkinToneEmoji;
++ (id)ProfessionWithoutSkinToneEmoji;
 + (id)ProfessionEmoji;
 + (id)GenderEmoji;
 + (id)SkinToneEmoji;
 + (id)NoneVariantEmoji;
 + (id)DingbatsVariantEmoji;
 + (BOOL)_isNewlyAddedEmoji:(id)arg1;
++ (BOOL)_isMultiPersonFamilySkinToneEmoji:(id)arg1;
++ (BOOL)_isComposedCoupleMultiSkinToneEmoji:(id)arg1;
++ (BOOL)_isCoupleMultiSkinToneEmoji:(id)arg1;
 + (BOOL)_isFlagEmoji:(id)arg1;
 + (BOOL)_isProfessionEmoji:(id)arg1;
 + (BOOL)_isGenderEmoji:(id)arg1;

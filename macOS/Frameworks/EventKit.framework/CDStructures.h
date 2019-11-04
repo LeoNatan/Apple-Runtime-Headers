@@ -14,6 +14,10 @@ struct NSObject {
     Class _field1;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -47,7 +51,7 @@ typedef struct {
     unsigned int requiresAttendeeSearchInSingleAccount:1;
     unsigned int mustAcknowledgeMasterEvent:1;
     unsigned int canSetAvailability:1;
-    unsigned int eventAvalabilityLimited:1;
+    unsigned int eventAvailabilityLimited:1;
     unsigned int requiresMSFormattedUID:1;
     unsigned int shouldCancelDeletedEvents:1;
     unsigned int shouldDeclineDeletedInvitations:1;
@@ -88,5 +92,5 @@ typedef struct {
     unsigned int supportsDelegation:1;
     unsigned int supportsDelegateEnumeration:1;
     unsigned int supportsRecurrenceSplit:1;
-} CDStruct_a60c0deb;
+} CDStruct_cb5e306c;
 

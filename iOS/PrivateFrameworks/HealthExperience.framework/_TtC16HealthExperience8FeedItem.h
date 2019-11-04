@@ -6,44 +6,12 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSData, NSDate, NSSet, NSString, _TtC16HealthExperience11FeedSection;
-
 @interface _TtC16HealthExperience8FeedItem : NSManagedObject
 {
 }
 
 - (void).cxx_construct;
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
-
-// Remaining properties
-@property(nonatomic, copy) NSDate *boundingEndDate; // @dynamic boundingEndDate;
-@property(nonatomic, copy) NSDate *boundingStartDate; // @dynamic boundingStartDate;
-@property(nonatomic, copy) NSString *contentKindRawValue; // @dynamic contentKindRawValue;
-@property(nonatomic, copy) NSSet *dataTypes; // @dynamic dataTypes;
-@property(nonatomic, copy) NSDate *dateSubmitted; // @dynamic dateSubmitted;
-@property(nonatomic, copy) NSSet *featureTags; // @dynamic featureTags;
-@property(nonatomic, retain) _TtC16HealthExperience11FeedSection *feedSection; // @dynamic feedSection;
-@property(nonatomic) _Bool hideInDiscover; // @dynamic hideInDiscover;
-@property(nonatomic) _Bool indexForSearch; // @dynamic indexForSearch;
-@property(nonatomic) _Bool isFavorite; // @dynamic isFavorite;
-@property(nonatomic, copy) NSSet *keywords; // @dynamic keywords;
-@property(nonatomic, copy) NSString *localizedDescription; // @dynamic localizedDescription;
-@property(nonatomic, copy) NSString *localizedTitle; // @dynamic localizedTitle;
-@property(nonatomic, copy) NSString *pluginPackage; // @dynamic pluginPackage;
-@property(nonatomic, copy) NSDate *relevantEndDate; // @dynamic relevantEndDate;
-@property(nonatomic) double relevantRampDownTime; // @dynamic relevantRampDownTime;
-@property(nonatomic) double relevantRampUpTime; // @dynamic relevantRampUpTime;
-@property(nonatomic, copy) NSDate *relevantStartDate; // @dynamic relevantStartDate;
-@property(nonatomic) short searchSectionHintRawValue; // @dynamic searchSectionHintRawValue;
-@property(nonatomic) short searchSectionRawValue; // @dynamic searchSectionRawValue;
-@property(nonatomic) long long sectionSortOrder; // @dynamic sectionSortOrder;
-@property(nonatomic) long long sortHint; // @dynamic sortHint;
-@property(nonatomic) long long sortOrder; // @dynamic sortOrder;
-@property(nonatomic, copy) NSString *storyboardIdentifier; // @dynamic storyboardIdentifier;
-@property(nonatomic) double suggestionRelevanceScore; // @dynamic suggestionRelevanceScore;
-@property(nonatomic, copy) NSString *uniqueIdentifier; // @dynamic uniqueIdentifier;
-@property(nonatomic, copy) NSData *userData; // @dynamic userData;
-@property(nonatomic, copy) NSString *viewControllerClassName; // @dynamic viewControllerClassName;
 
 @end
 

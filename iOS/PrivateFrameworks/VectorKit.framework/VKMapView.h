@@ -62,7 +62,6 @@
 @property(nonatomic) id <VKMapViewDelegate> mapDelegate; // @synthesize mapDelegate=_mapDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct AnalyticsState)analyticsState;
 - (id)navigationPuck;
 @property(readonly, nonatomic) VKSceneConfiguration *sceneConfiguration;
 - (void)puckAnimator:(id)arg1 updatedTargetPosition:(const Coordinate3D_bc242218 *)arg2;
@@ -230,7 +229,7 @@
 - (void)renderInContext:(struct CGContext *)arg1;
 - (void)setContentsScale:(double)arg1;
 - (void)dealloc;
-- (id)initShouldRasterize:(_Bool)arg1 inBackground:(_Bool)arg2 contentScale:(double)arg3;
+- (id)initShouldRasterize:(_Bool)arg1 inBackground:(_Bool)arg2 contentScale:(double)arg3 auditToken:(id)arg4;
 - (void)activateInternalSettings;
 @property(nonatomic) _Bool allowDatelineWraparound;
 - (void)setCenterCoordinate:(CDStruct_c3b9c2ee)arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
@@ -248,8 +247,6 @@
 - (void)setMapDisplayStyle:(CDStruct_80aa614a)arg1 animated:(_Bool)arg2;
 @property(nonatomic) CDStruct_80aa614a mapDisplayStyle;
 - (void)_updateBackgroundColor;
-- (void)_clearAnalytics;
-- (void)_updateAnalytics:(_Bool)arg1;
 - (void)setMapType:(int)arg1 animated:(_Bool)arg2;
 @property(nonatomic) int mapType;
 - (_Bool)supportsNightMode;

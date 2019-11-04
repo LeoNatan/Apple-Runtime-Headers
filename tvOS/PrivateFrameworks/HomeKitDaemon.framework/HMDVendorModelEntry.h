@@ -6,34 +6,31 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMDAccessoryVersion, NSString;
+@class HMDAccessoryVersion, NSArray, NSString;
 
 @interface HMDVendorModelEntry : HMFObject
 {
-    NSString *_modelName;
+    NSString *_model;
     NSString *_manufacturer;
-    NSString *_category;
-    NSString *_certificationStatus;
-    NSString *_ppid;
     NSString *_appBundleID;
     NSString *_appStoreID;
     HMDAccessoryVersion *_firmwareVersion;
     NSString *_productData;
+    NSArray *_productDataAlternates;
 }
 
+@property(readonly, nonatomic) NSArray *productDataAlternates; // @synthesize productDataAlternates=_productDataAlternates;
 @property(readonly, nonatomic) NSString *productData; // @synthesize productData=_productData;
 @property(readonly, nonatomic) HMDAccessoryVersion *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
 @property(readonly, nonatomic) NSString *appStoreID; // @synthesize appStoreID=_appStoreID;
 @property(readonly, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
-@property(readonly, nonatomic) NSString *ppid; // @synthesize ppid=_ppid;
-@property(readonly, nonatomic) NSString *certificationStatus; // @synthesize certificationStatus=_certificationStatus;
-@property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
-@property(readonly, nonatomic) NSString *modelName; // @synthesize modelName=_modelName;
+@property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)description;
-- (id)initWithModelName:(id)arg1 manufacturer:(id)arg2 category:(id)arg3 certificationStatus:(id)arg4 ppid:(id)arg5 appBundleID:(id)arg6 appStoreID:(id)arg7 firmwareVersion:(id)arg8 productData:(id)arg9;
+- (id)attributeDescriptions;
+- (id)initWithManufacturer:(id)arg1 model:(id)arg2 appBundleID:(id)arg3 appStoreID:(id)arg4 firmwareVersion:(id)arg5 productData:(id)arg6 productDataAlternates:(id)arg7;
 
 @end
 

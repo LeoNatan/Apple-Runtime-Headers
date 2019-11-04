@@ -29,10 +29,10 @@
     _Bool _forcePortraitBias;
     _Bool _useSquareSharedAlbumActivity;
     _Bool _disableSharedAlbumTopMargin;
+    _Bool _alwaysShowSuggestionRenderingOverlay;
     _Bool _showFeaturedPhotosBadges;
     _Bool _delayEditRenders;
     _Bool _useCachedEditRenders;
-    _Bool _allowSharingEditSuggestions;
     unsigned long long _maxSimultaneousVideoCount;
     double _minimumVisibilityForVideoPlayback;
     long long _sortingAlgorithm;
@@ -44,10 +44,10 @@
 + (id)settingsControllerModule;
 @property(nonatomic) unsigned long long maxMemoriesToFetch; // @synthesize maxMemoriesToFetch=_maxMemoriesToFetch;
 @property(nonatomic) long long sortingAlgorithm; // @synthesize sortingAlgorithm=_sortingAlgorithm;
-@property(nonatomic) _Bool allowSharingEditSuggestions; // @synthesize allowSharingEditSuggestions=_allowSharingEditSuggestions;
 @property(nonatomic) _Bool useCachedEditRenders; // @synthesize useCachedEditRenders=_useCachedEditRenders;
 @property(nonatomic) _Bool delayEditRenders; // @synthesize delayEditRenders=_delayEditRenders;
 @property(nonatomic) _Bool showFeaturedPhotosBadges; // @synthesize showFeaturedPhotosBadges=_showFeaturedPhotosBadges;
+@property(nonatomic) _Bool alwaysShowSuggestionRenderingOverlay; // @synthesize alwaysShowSuggestionRenderingOverlay=_alwaysShowSuggestionRenderingOverlay;
 @property(nonatomic) _Bool disableSharedAlbumTopMargin; // @synthesize disableSharedAlbumTopMargin=_disableSharedAlbumTopMargin;
 @property(nonatomic) _Bool useSquareSharedAlbumActivity; // @synthesize useSquareSharedAlbumActivity=_useSquareSharedAlbumActivity;
 @property(nonatomic) _Bool forcePortraitBias; // @synthesize forcePortraitBias=_forcePortraitBias;

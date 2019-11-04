@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class NSSet, NSString;
 
 @protocol SRAppHelperProtocol
+- (void)authorizationRequestStatusForBundleId:(NSString *)arg1 sensors:(NSSet *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)bundlesAuthorizedToUseSensorKitWithReply:(void (^)(NSSet *, NSSet *, NSError *))arg1;
 - (void)resetAuthorizationsForBundlePath:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 @end

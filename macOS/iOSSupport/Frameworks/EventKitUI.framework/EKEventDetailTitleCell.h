@@ -9,7 +9,7 @@
 #import <EventKitUI/EKEventDetailPredictedLocationCellDelegate-Protocol.h>
 #import <EventKitUI/UITextViewDelegate-Protocol.h>
 
-@class EKEventDetailPredictedLocationCell, NSMutableArray, NSObject, NSString, UIButton, UILabel;
+@class EKEventDetailPredictedLocationCell, NSMutableArray, NSObject, NSString, UIButton, UILabel, UIView;
 @protocol EKEventDetailTitleCellDelegate;
 
 @interface EKEventDetailTitleCell : EKEventDetailCell <UITextViewDelegate, EKEventDetailPredictedLocationCellDelegate>
@@ -47,7 +47,7 @@
 - (void)_saveEventWithSpan:(long long)arg1;
 - (void)eventDetailPredictedLocationCellRejectedPrediction:(id)arg1;
 - (void)eventDetailPredictedLocationCellAcceptedPrediction:(id)arg1 disambiguatedLocation:(id)arg2;
-- (void)_promptForSpanWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_promptForSpanWithSourceView:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)layoutForWidth:(double)arg1 position:(int)arg2;
 - (double)_layoutForWidth:(double)arg1;
 - (void)layoutSubviews;
@@ -72,6 +72,7 @@
 - (void)setTravelTimeString:(id)arg1;
 - (void)_setDateTimeString:(id)arg1 line:(unsigned long long)arg2;
 - (void)setTitle:(id)arg1;
+@property(readonly, nonatomic) UIView *sourceViewForPopover;
 - (BOOL)_useLargeFonts;
 - (void)layoutMarginsDidChange;
 - (id)initAsRejectionReasonCellWithEvent:(id)arg1;

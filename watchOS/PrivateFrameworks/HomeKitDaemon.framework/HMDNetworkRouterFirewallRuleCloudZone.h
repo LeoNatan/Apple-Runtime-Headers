@@ -42,7 +42,7 @@
 @property(retain, nonatomic) NSSet *modifiedRecordIDsFromLastPull; // @synthesize modifiedRecordIDsFromLastPull=_modifiedRecordIDsFromLastPull;
 - (id)attributeDescriptions;
 - (id)initWithCloudDatabase:(id)arg1 state:(id)arg2 useAnonymousRequests:(_Bool)arg3 watchedRecordIDs:(id)arg4 signatureVerificationPublicKeys:(id)arg5;
-- (id)decodeModelFrom:(id)arg1 fullyPopulatedRecord:(_Bool)arg2 error:(id *)arg3;
+- (id)decodeModelFrom:(id)arg1 recordSource:(unsigned int)arg2 error:(id *)arg3;
 - (_Bool)__verifyNetworkDeclarationsFromRecord:(id)arg1 baseAccessoryIdentifier:(id *)arg2 networkDeclarationsData:(id *)arg3 error:(id *)arg4;
 - (id)__getNetworkDeclarationsDataFromRecord:(id)arg1 error:(id *)arg2;
 - (_Bool)__verifyNetworkDeclarationsDigestAgainstSignatureFromRecord:(id)arg1 digestData:(id)arg2 signatureData:(id)arg3 error:(id *)arg4;

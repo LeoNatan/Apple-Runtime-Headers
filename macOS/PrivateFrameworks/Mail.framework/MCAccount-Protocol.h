@@ -7,7 +7,7 @@
 #import <Mail/ECAuthenticationCredentials-Protocol.h>
 #import <Mail/EDAccount-Protocol.h>
 
-@class ECAuthScheme, MCConnection, NSArray, NSString;
+@class ECAuthScheme, MCConnection, NSArray, NSDate, NSDictionary, NSString;
 
 @protocol MCAccount <ECAuthenticationCredentials, EDAccount>
 + (void)saveAccountInfoToDefaults;
@@ -15,6 +15,7 @@
 @property BOOL usesSSL;
 @property BOOL shouldUseAuthentication;
 @property(readonly, nonatomic) BOOL requiresAuthentication;
+@property(readonly, copy, nonatomic) NSDate *expiryDate;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *clientInfo;
 @property(readonly, copy) NSString *oneTimePassword;
@@ -38,6 +39,7 @@
 @property(readonly, copy) NSString *identifier;
 @property(readonly) BOOL isYahooAccount;
 @property(readonly, copy) NSString *accountTypeString;
+- (void)renewCredentialsWithOptions:(NSDictionary *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
 - (BOOL)canAuthenticateWithScheme:(ECAuthScheme *)arg1;
 - (MCConnection *)authenticatedConnection;
 - (MCConnection *)newConnectedConnectionDiscoveringBestSettings:(BOOL)arg1 withConnectTimeout:(double)arg2 readWriteTimeout:(double)arg3;

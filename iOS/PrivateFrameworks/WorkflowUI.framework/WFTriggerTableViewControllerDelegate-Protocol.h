@@ -6,10 +6,10 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class NSOrderedSet, WFTriggerTableViewController;
+@class NSArray, WFTriggerTableViewController;
 
 @protocol WFTriggerTableViewControllerDelegate <NSObject>
 - (void)triggerTableViewControllerDidCancel:(WFTriggerTableViewController *)arg1;
-- (void)triggerTableViewController:(WFTriggerTableViewController *)arg1 didSelectOptions:(NSOrderedSet *)arg2;
+- (void)triggerTableViewController:(WFTriggerTableViewController *)arg1 didFinishWithAnySelected:(_Bool)arg2 orSelectedOptions:(NSArray *)arg3;
 @end
 

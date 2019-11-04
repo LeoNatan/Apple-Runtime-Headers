@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 @class FPDDomain, FPDExtension, NSDate, NSError, NSString, NSURL;
-@protocol FPDDomainIndexerDelegate, OS_dispatch_group, OS_dispatch_queue;
+@protocol FPDDomainIndexerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface FPDDomainIndexer : NSObject
 {
     NSString *_domainIdentifier;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_source> *_timerSource;
     NSURL *_stateURL;
     NSURL *_needsAuthURL;
     BOOL _needsIndexing;
@@ -20,14 +21,11 @@
     BOOL _enabled;
     BOOL _invalidated;
     BOOL _isStarted;
-    BOOL _hasConsumedAllItemsBeforeScatching;
     unsigned long long _batchIndexedCount;
     unsigned long long _batchIndexedCountSinceLastIndexing;
     unsigned long long _consecutiveBatchErrorCount;
-    unsigned long long _consecutiveCrashCount;
     NSDate *_lastIndexingStartDate;
     NSError *_lastError;
-    NSObject<OS_dispatch_group> *_barrierGroup;
     BOOL _needsAuthentication;
     id <FPDDomainIndexerDelegate> _delegate;
     FPDDomain *_domain;
@@ -41,11 +39,12 @@
 @property(nonatomic) BOOL needsAuthentication; // @synthesize needsAuthentication=_needsAuthentication;
 - (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1;
-- (void)barrier;
 - (void)setIndexingEnabled:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)signalChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_signalChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)dropIndexWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)dropIndexWithError:(id *)arg1;
+- (id)localSpotlightIndexer;
 - (void)signalNeedsReindexFromScratchWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)canContinueIndexing;
 - (void)indexOneBatchWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -59,6 +58,7 @@
 - (void)clearNeedsIndexingOnDisk;
 - (void)persistNeedsIndexingOnDisk;
 - (void)invalidate;
+- (void)_cancelTimer;
 - (void)startWithSyncAnchor:(id)arg1;
 - (id)description;
 - (id)initWithExtension:(id)arg1 domain:(id)arg2 enabled:(BOOL)arg3;

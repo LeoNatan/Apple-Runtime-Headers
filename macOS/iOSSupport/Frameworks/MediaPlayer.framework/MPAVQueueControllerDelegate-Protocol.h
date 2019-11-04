@@ -6,10 +6,11 @@
 
 #import <MediaPlayer/NSObject-Protocol.h>
 
-@class MPAVItem, MPPlaybackContext;
+@class MPAVItem, MPPlaybackContext, NSString;
 @protocol MPAVQueueController;
 
 @protocol MPAVQueueControllerDelegate <NSObject>
+- (void)queueController:(id <MPAVQueueController>)arg1 didIncrementVersionForSegment:(NSString *)arg2;
 - (void)queueController:(id <MPAVQueueController>)arg1 didChangeShuffleType:(long long)arg2;
 - (void)queueController:(id <MPAVQueueController>)arg1 didChangeRepeatType:(long long)arg2;
 - (void)queueController:(id <MPAVQueueController>)arg1 didChangeContentsWithReplacementPlaybackContext:(MPPlaybackContext *)arg2;

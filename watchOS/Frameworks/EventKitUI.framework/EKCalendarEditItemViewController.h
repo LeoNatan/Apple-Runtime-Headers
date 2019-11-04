@@ -18,8 +18,10 @@ __attribute__((visibility("hidden")))
     EKCalendar *_selectedCalendar;
     unsigned int _entityType;
     _Bool _limitToSource;
+    _Bool _onlyShowUnmanagedSources;
 }
 
+@property(nonatomic) _Bool onlyShowUnmanagedSources; // @synthesize onlyShowUnmanagedSources=_onlyShowUnmanagedSources;
 @property(nonatomic) _Bool limitToSource; // @synthesize limitToSource=_limitToSource;
 - (void).cxx_destruct;
 - (void)calendarChooserSelectionDidChange:(id)arg1;

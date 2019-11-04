@@ -6,22 +6,26 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UIStackView, WFRowOfIconsView;
+@class HUTriggerIconView, UIImageView, UIStackView, WFRowOfIconsView;
 
 @interface WFAutomationSummaryIconsView : UIView
 {
     UIStackView *_stackView;
     UIImageView *_triggerIconView;
+    HUTriggerIconView *_homeTriggerIconView;
     UIImageView *_arrowImageView;
     WFRowOfIconsView *_actionsIconsView;
 }
 
 @property(readonly, nonatomic) WFRowOfIconsView *actionsIconsView; // @synthesize actionsIconsView=_actionsIconsView;
 @property(readonly, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
-@property(readonly, nonatomic) UIImageView *triggerIconView; // @synthesize triggerIconView=_triggerIconView;
+@property(retain, nonatomic) HUTriggerIconView *homeTriggerIconView; // @synthesize homeTriggerIconView=_homeTriggerIconView;
+@property(retain, nonatomic) UIImageView *triggerIconView; // @synthesize triggerIconView=_triggerIconView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
+- (void)setHomeActionIcons:(id)arg1;
 - (void)setActionIcons:(id)arg1;
+- (void)setHomeTriggerIcon:(id)arg1;
 - (void)setTriggerIcon:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;

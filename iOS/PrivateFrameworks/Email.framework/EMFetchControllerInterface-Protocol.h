@@ -9,6 +9,7 @@
 @class NSArray, NSSet, NSString;
 
 @protocol EMFetchControllerInterface <NSObject>
+- (NSString *)diagnosticInformation;
 - (void)setCurrentSuppressionContexts:(NSSet *)arg1 suppressedContexts:(NSSet *)arg2;
 - (void)resetPushStateWithCompletion:(void (^)(_Bool, _Bool, int, NSError *))arg1;
 - (void)downloadMessageBodiesWithCompletion:(void (^)(NSError *))arg1;

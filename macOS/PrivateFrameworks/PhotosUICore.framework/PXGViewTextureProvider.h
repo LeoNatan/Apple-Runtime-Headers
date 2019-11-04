@@ -15,7 +15,8 @@
 
 @property(nonatomic) __weak id <PXGViewSource> fallbackViewSource; // @synthesize fallbackViewSource=_fallbackViewSource;
 - (void).cxx_destruct;
-- (void)_requestTextureViewClass:(Class)arg1 userData:(id)arg2 requestID:(int)arg3;
+- (void)_requestTextureForViewClass:(Class)arg1 userData:(id)arg2 requestID:(int)arg3;
+- (void)_requestTextureWithDecorationOptions:(unsigned long long)arg1 viewClass:(Class)arg2 userData:(id)arg3 requestID:(int)arg4;
 - (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
 
 @end

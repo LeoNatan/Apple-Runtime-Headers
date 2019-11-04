@@ -17,10 +17,12 @@
 
 @property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+- (void)didFinishPersistenceDidAddMessages:(id)arg1;
+- (void)willStartPersistenceDidAddMessages:(id)arg1;
 - (_Bool)mailboxPartOfAllMail:(id)arg1;
 - (_Bool)mailboxIsAllMail:(id)arg1;
 - (id)accountForMailboxURL:(id)arg1;
-- (id)iterateMessagesInMailboxURL:(id)arg1 excludingMessages:(id)arg2 batchSize:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
+- (id)iterateMessagesInMailboxURLs:(id)arg1 excludingMessages:(id)arg2 batchSize:(unsigned long long)arg3 returnMessagesForFlagChange:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)messagesForRemoteIDs:(id)arg1 mailboxURL:(id)arg2;
 - (id)messageForDatabaseID:(long long)arg1;
 - (id)addLabels:(id)arg1 removeLabels:(id)arg2 toMessagesInDatabase:(id)arg3;

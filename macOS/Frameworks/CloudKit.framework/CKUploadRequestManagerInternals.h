@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)dispatchEvent:(long long)arg1 synchronously:(BOOL)arg2;
 - (void)manuallyTriggerUploadRequests;
 - (void)fetchServerChanges:(CDUnknownBlockType)arg1;
+- (id)createDatabase;
 @property(retain, nonatomic) CKUploadRequestManagerStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 - (id)repairZoneID;
 @property(copy) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;

@@ -11,45 +11,41 @@
 #import <HomeUI/UICollectionViewDelegate-Protocol.h>
 #import <HomeUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class HFColorPalette, HFColorPaletteColor, HUQuickControlColorViewProfile, NSArray, NSIndexPath, NSNumber, NSString, UICollectionView, UICollectionViewFlowLayout;
+@class HFColorPalette, HFColorPaletteColor, HUQuickControlColorViewProfile, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol HUQuickControlColorPaletteViewInteractionDelegate;
 
 @interface HUColorLinearPaletteView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HUQuickControlInteractiveView>
 {
     BOOL _userInteractionActive;
-    BOOL _colorPaletteHasChanged;
     HUQuickControlColorViewProfile *_profile;
     id <HUQuickControlColorPaletteViewInteractionDelegate> _interactionDelegate;
     unsigned long long _reachabilityState;
-    HFColorPalette *_colorPalette;
+    unsigned long long _mode;
     NSIndexPath *_selectedColorIndexPath;
-    NSArray *_colorSwatchViews;
+    HFColorPalette *_colorPalette;
     HFColorPalette *_calibratedColorPalette;
     HFColorPaletteColor *_selectedColor;
-    NSNumber *_selectedColorBiasIndex;
+    NSIndexPath *_prevSelectedColorIndexPath;
     UICollectionView *_colorSwatchCollectionView;
     UICollectionViewFlowLayout *_collectionViewFlowLayout;
-    NSIndexPath *_prevSelectedColorIndexPath;
 }
 
-@property(retain, nonatomic) NSIndexPath *prevSelectedColorIndexPath; // @synthesize prevSelectedColorIndexPath=_prevSelectedColorIndexPath;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewFlowLayout; // @synthesize collectionViewFlowLayout=_collectionViewFlowLayout;
 @property(retain, nonatomic) UICollectionView *colorSwatchCollectionView; // @synthesize colorSwatchCollectionView=_colorSwatchCollectionView;
-@property(nonatomic) BOOL colorPaletteHasChanged; // @synthesize colorPaletteHasChanged=_colorPaletteHasChanged;
-@property(retain, nonatomic) NSNumber *selectedColorBiasIndex; // @synthesize selectedColorBiasIndex=_selectedColorBiasIndex;
+@property(retain, nonatomic) NSIndexPath *prevSelectedColorIndexPath; // @synthesize prevSelectedColorIndexPath=_prevSelectedColorIndexPath;
 @property(retain, nonatomic) HFColorPaletteColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(retain, nonatomic) HFColorPalette *calibratedColorPalette; // @synthesize calibratedColorPalette=_calibratedColorPalette;
-@property(copy, nonatomic) NSArray *colorSwatchViews; // @synthesize colorSwatchViews=_colorSwatchViews;
+@property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(retain, nonatomic) NSIndexPath *selectedColorIndexPath; // @synthesize selectedColorIndexPath=_selectedColorIndexPath;
 @property(nonatomic, getter=isUserInteractionActive) BOOL userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
-@property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
+@property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlColorPaletteViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (void)_actuateImpactTapticFeedbackIfAvailable;
-- (void)_actuateSelectionTapticFeedbackIfAvailable;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_actuateImpactTapticFeedback;
+- (void)_actuateSelectionTapticFeedback;
+- (void)_prepareForTapticFeedback;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
@@ -62,8 +58,9 @@
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 @property(retain, nonatomic) id value;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
+- (void)updateSelectedColorIndexPathToIndexPath:(id)arg1;
 - (unsigned long long)_indexForSelectedColor:(id)arg1 includeBias:(BOOL)arg2;
-- (void)_setSelectedColor:(id)arg1 notifyDelegate:(BOOL)arg2 updateSelectionState:(BOOL)arg3;
+- (void)_setSelectedColor:(id)arg1 notifyDelegate:(BOOL)arg2 selectionChanged:(BOOL)arg3;
 - (void)_updateCalibratedColorPalette;
 - (void)_setColorPalette:(id)arg1 notifyDelegate:(BOOL)arg2;
 - (id)initWithProfile:(id)arg1 colorPalette:(id)arg2;

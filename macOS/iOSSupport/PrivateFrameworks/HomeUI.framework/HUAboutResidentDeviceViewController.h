@@ -47,9 +47,11 @@
 - (void).cxx_destruct;
 - (void)_setNavigationBarVisibility;
 - (void)updateViewsAndConstraints;
+- (void)updateViews;
 - (id)_defaultLayoutOptionsForViewSize:(struct CGSize)arg1;
 - (void)_createSubviews;
 - (id)_backgroundColor;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;

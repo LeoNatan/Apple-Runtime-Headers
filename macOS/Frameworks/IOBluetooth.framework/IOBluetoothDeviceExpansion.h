@@ -57,11 +57,21 @@
     NSXPCConnection *xpcConnection;
     id mTarget;
     NSUUID *identifier;
+    unsigned char singleClickMode;
+    unsigned char doubleClickMode;
+    unsigned char leftClickHoldMode;
+    unsigned char rightClickHoldMode;
+    unsigned int listeningModeConfigs;
 }
 
 @property NSUUID *identifier; // @synthesize identifier;
 @property(retain) id mTarget; // @synthesize mTarget;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection;
+@property unsigned int listeningModeConfigs; // @synthesize listeningModeConfigs;
+@property unsigned char rightClickHoldMode; // @synthesize rightClickHoldMode;
+@property unsigned char leftClickHoldMode; // @synthesize leftClickHoldMode;
+@property unsigned char doubleClickMode; // @synthesize doubleClickMode;
+@property unsigned char singleClickMode; // @synthesize singleClickMode;
 @property(retain) NSString *accessoryFWVersion; // @synthesize accessoryFWVersion;
 @property BOOL heySiriEnabled; // @synthesize heySiriEnabled;
 @property BOOL switchControlEnabled; // @synthesize switchControlEnabled;

@@ -9,6 +9,8 @@
 @class NSArray, NSString, _INPBDateTime;
 
 @protocol _INPBMessageLinkMetadata <NSObject>
+@property(readonly, nonatomic) BOOL hasTvShowName;
+@property(copy, nonatomic) NSString *tvShowName;
 @property(readonly, nonatomic) BOOL hasTvSeasonName;
 @property(copy, nonatomic) NSString *tvSeasonName;
 @property(readonly, nonatomic) BOOL hasTvSeasonGenre;
@@ -67,6 +69,10 @@
 @property(copy, nonatomic) NSString *movieName;
 @property(readonly, nonatomic) BOOL hasMovieGenre;
 @property(copy, nonatomic) NSString *movieGenre;
+@property(readonly, nonatomic) BOOL hasMovieBundleName;
+@property(copy, nonatomic) NSString *movieBundleName;
+@property(readonly, nonatomic) BOOL hasMovieBundleGenre;
+@property(copy, nonatomic) NSString *movieBundleGenre;
 @property(nonatomic) BOOL hasLinkMediaType;
 @property(nonatomic) int linkMediaType;
 @property(readonly, nonatomic) BOOL hasItemType;
@@ -95,6 +101,10 @@
 @property(copy, nonatomic) NSString *artistName;
 @property(readonly, nonatomic) BOOL hasArtistGenre;
 @property(copy, nonatomic) NSString *artistGenre;
+@property(readonly, nonatomic) BOOL hasAppleTvTitle;
+@property(copy, nonatomic) NSString *appleTvTitle;
+@property(readonly, nonatomic) BOOL hasAppleTvSubtitle;
+@property(copy, nonatomic) NSString *appleTvSubtitle;
 @property(readonly, nonatomic) BOOL hasAlbumName;
 @property(copy, nonatomic) NSString *albumName;
 @property(readonly, nonatomic) BOOL hasAlbumArtist;

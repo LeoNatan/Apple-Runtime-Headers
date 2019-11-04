@@ -28,6 +28,8 @@
 @property(retain) NSData *clientData; // @synthesize clientData=_clientData;
 @property(copy) NSData *deviceID; // @synthesize deviceID=_deviceID;
 - (void).cxx_destruct;
+- (id)description;
+- (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOURLItem : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     GEOMapItemStorage *_mapItemStorage;
     GEOPlace *_place;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _currentLocation;
     struct {
         unsigned int has_currentLocation:1;
@@ -48,6 +50,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPlace *place;
 @property(readonly, nonatomic) _Bool hasPlace;
 - (void)_readPlace;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
 

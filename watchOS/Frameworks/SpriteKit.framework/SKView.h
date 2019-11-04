@@ -153,6 +153,7 @@
 - (_Bool)_usesAsyncUpdateQueue;
 - (void)set_usesAsyncUpdateQueue:(_Bool)arg1;
 @property(nonatomic, getter=isAsynchronous) _Bool asynchronous;
+- (void)overrideMetalCommandQueue:(id)arg1;
 - (void)_dispatchRenderToIOSurfaceID:(unsigned int)arg1 async:(_Bool)arg2 onQueue:(id)arg3 waitOnFence:(_Bool)arg4 preRender:(CDUnknownBlockType)arg5 postRender:(CDUnknownBlockType)arg6;
 - (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(_Bool)arg3 waitOnFence:(_Bool)arg4 preRender:(CDUnknownBlockType)arg5 postRender:(CDUnknownBlockType)arg6;
 - (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(_Bool)arg3 preRender:(CDUnknownBlockType)arg4 postRender:(CDUnknownBlockType)arg5;

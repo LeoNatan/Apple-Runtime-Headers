@@ -11,5 +11,6 @@
 - (struct CGRect)_overrideReferenceBounds;
 - (void)ib_setReferenceBounds:(struct CGRect)arg1;
 - (_Bool)ibSwizzled_supportsFocus;
+- (void)ibApplyTraitCollectionWithInterfaceStyle:(long long)arg1;
 @end
 

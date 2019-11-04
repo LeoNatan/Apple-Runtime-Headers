@@ -7,6 +7,6 @@
 #import <QuickLookThumbnailing/NSObject-Protocol.h>
 
 @protocol QLThumbnailHost <NSObject>
-- (void)ioSurfaceWithSize:(struct CGSize)arg1 completion:(void (^)(IOSurface *))arg2;
+- (void)ioSurfaceWithSize:(struct CGSize)arg1 completion:(void (^)(IOSurface *, NSError *))arg2;
 @end
 

@@ -19,6 +19,7 @@
 - (void)_axUpdateAccessibleElements;
 - (void)_axSetUpScrubberView;
 - (void)_axApplyContentOffset:(id)arg1 contentOffset:(struct CGPoint)arg2;
+- (void)_accessibilityLoadAccessibilityInformation;
 
 @end
 

@@ -28,7 +28,7 @@
 - (void)operationWillStart:(id)arg1;
 - (void)handleOperation:(id)arg1;
 - (void)_endGraphOperation;
-- (void)_beginGraphOperation;
+- (void)_beginGraphOperation:(id)arg1;
 - (_Bool)wantsGraphUpdateNotifications;
 - (_Bool)wantsLiveGraphUpdates;
 - (id)phaGraphManager;

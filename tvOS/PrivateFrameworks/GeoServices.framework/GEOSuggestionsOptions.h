@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOSuggestionsOptions : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSData *_suggestionEntryMetadata;
     NSData *_suggestionMetadata;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _entriesType;
     int _listType;
     _Bool _includeRankingFeatures;
@@ -72,6 +74,8 @@ __attribute__((visibility("hidden")))
 - (id)listTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasListType;
 @property(nonatomic) int listType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

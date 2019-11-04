@@ -8,7 +8,7 @@
 
 #import <DataDetectorsUI/UIActionSheetDelegate-Protocol.h>
 
-@class DDActionController, NSMapTable, NSOperationQueue, NSString;
+@class BCSBusinessQueryService, DDActionController, NSMapTable, NSOperationQueue, NSString;
 @protocol DDDetectionControllerDelegate, OS_dispatch_queue;
 
 @interface DDDetectionController : NSObject <UIActionSheetDelegate>
@@ -20,6 +20,7 @@
     NSMapTable *_containerToResultsTable;
     NSMapTable *_containerToContextsTable;
     DDActionController *_actionController;
+    BCSBusinessQueryService *_bizService;
     NSObject<DDDetectionControllerDelegate> *_delegate;
 }
 
@@ -29,10 +30,13 @@
 + (void)setMessagesActionHandler:(CDUnknownBlockType)arg1;
 + (id)tapAndHoldSchemes;
 + (id)sharedController;
++ (id)updateContext:(id)arg1 forResult:(struct __DDResult *)arg2 atIndex:(unsigned long long)arg3 ofStorage:(id)arg4;
 @property(nonatomic) __weak NSObject<DDDetectionControllerDelegate> *delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) BCSBusinessQueryService *_bizService; // @synthesize _bizService;
 - (void).cxx_destruct;
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodePreviewActionForContext:URL:result:contact:ics:
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodeActionsForContext:URL:result:contact:ics:
+- (id)_businessItemForNumber:(id)arg1 messageable:(_Bool *)arg2;
 - (_Bool)_phoneNumberIsABusinessNumber:(id)arg1 messageable:(_Bool *)arg2;
 -     // Error parsing type: @24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _phoneNumberFromResult:
 -     // Error parsing type: B32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16^B24, name: _checkIfBusinessWithResult:messageable:

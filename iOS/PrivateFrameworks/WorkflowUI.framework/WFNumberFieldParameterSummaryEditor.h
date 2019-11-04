@@ -19,7 +19,6 @@
     id <WFParameterState> _stagedState;
 }
 
-+ (_Bool)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) _Bool isPickingMagicVariable; // @synthesize isPickingMagicVariable=_isPickingMagicVariable;
 @property(nonatomic) _Bool hasChangedText; // @synthesize hasChangedText=_hasChangedText;
 @property(retain, nonatomic) id <WFParameterState> stagedState; // @synthesize stagedState=_stagedState;
@@ -27,19 +26,19 @@
 - (void).cxx_destruct;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
 - (void)showActionOutputPickerFromSourceResponder:(id)arg1 allowExtensionInput:(_Bool)arg2 variableProvider:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)sourceViewTintColorDidChange;
 - (void)textEntryDidFinish;
 - (void)textEntryTextDidChange:(id)arg1;
 - (_Bool)textEntryShouldChangeText:(id)arg1;
 - (void)negateText;
 - (id)stateForVariable:(id)arg1;
 - (id)stateForEnteredText:(id)arg1;
-- (id)variableStateForVariablePicker;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(_Bool *)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)setVariableUIDelegate:(id)arg1;
 - (void)setVariableProvider:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -16,7 +16,7 @@
 }
 
 + (id)eventWithType:(int)arg1 degree:(float)arg2;
-+ (id)eventWithType:(int)arg1 time:(id)arg2;
++ (id)eventWithType:(int)arg1 time:(id)arg2 degree:(float)arg3;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 - (void).cxx_destruct;

@@ -15,6 +15,7 @@
 }
 
 + (id)server;
+- (id)currentFaceClass;
 - (_Bool)showHearingDevicesControl:(_Bool)arg1;
 - (_Bool)showControlCenter:(_Bool)arg1;
 - (_Bool)canShowControlCenter;

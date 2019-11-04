@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) double x;
 - (TMLRect *)integral;
 - (TMLRect *)applyAffineTransform:(TMLAffineTransform *)arg1;
+- (TMLRect *)applyScale:(double)arg1;
 - (TMLRect *)max:(double)arg1:(double)arg2;
 - (TMLRect *)min:(double)arg1:(double)arg2;
 - (TMLRect *)atOrigin:(TMLPoint *)arg1;

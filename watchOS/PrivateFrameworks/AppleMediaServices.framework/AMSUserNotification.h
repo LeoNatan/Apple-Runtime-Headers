@@ -13,6 +13,7 @@
 @interface AMSUserNotification : NSObject <AMSBagConsumer>
 {
     _Bool _explicitContent;
+    _Bool _shouldSuppressDefaultAction;
     ACAccount *_account;
     NSURL *_artworkUrl;
     NSURL *_videoUrl;
@@ -34,7 +35,7 @@
 + (id)handleNotificationResponse:(id)arg1 bagContract:(id)arg2;
 + (id)_cachedImagePathForIdentifier:(id)arg1 assetURL:(id)arg2;
 + (id)_downloadAssetAtUrl:(id)arg1 withIdentifier:(id)arg2 logKey:(id)arg3 bag:(id)arg4;
-+ (_Bool)_canParseNotificationWithIdentifier:(id)arg1;
++ (_Bool)_canParseNotificationWithIdentifier:(id)arg1 userInfo:(id)arg2;
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
@@ -43,10 +44,13 @@
 + (_Bool)shouldHandleNotificationResponse:(id)arg1;
 + (id)notificationCenter:(id)arg1 openSettingsForNotification:(id)arg2 bag:(id)arg3;
 + (id)notificationCenter:(id)arg1 didChangeSettings:(id)arg2 bag:(id)arg3;
++ (void)openAppUsingBundleIdentifier:(id)arg1;
 + (void)handleServiceExtensionNotificationRequest:(id)arg1 bag:(id)arg2 withContentHandler:(CDUnknownBlockType)arg3;
 + (id)handleNotificationResponse:(id)arg1 bag:(id)arg2;
++ (int)explicitEnabledForCenterBundleID:(id)arg1;
 + (id)notificationWithPayload:(id)arg1 andConfig:(id)arg2;
 @property(retain, nonatomic) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
+@property(nonatomic) _Bool shouldSuppressDefaultAction; // @synthesize shouldSuppressDefaultAction=_shouldSuppressDefaultAction;
 @property(retain, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(nonatomic) int intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;

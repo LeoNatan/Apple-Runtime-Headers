@@ -6,7 +6,7 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class BSAnimationSettings, NSString, SBAppStatusBarSettings, SBPresentationObservationToken, SBTransientOverlayPresentationManager, SBTransientOverlayViewController, UIApplicationSceneDeactivationAssertion, UIWindow;
+@class BSAnimationSettings, NSString, SBAppStatusBarSettings, SBInAppStatusBarHiddenAssertion, SBPresentationObservationToken, SBTransientOverlayPresentationManager, SBTransientOverlayViewController, UIApplicationSceneDeactivationAssertion, UIWindow;
 @protocol BSInvalidatable, CSExternalBehaviorProviding;
 
 @protocol SBTransientOverlayPresentationManagerDelegate <NSObject>
@@ -18,7 +18,7 @@
 - (void)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 registerCoverSheetExternalBehaviorProvider:(id <CSExternalBehaviorProviding>)arg2;
 - (UIApplicationSceneDeactivationAssertion *)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 newSceneDeactivationAssertionWithReason:(long long)arg2;
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireDeviceOrientationUpdateDeferralAssertionWithReason:(NSString *)arg2;
-- (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireHideAppStatusBarAssertionWithReason:(NSString *)arg2;
+- (SBInAppStatusBarHiddenAssertion *)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireHideAppStatusBarAssertionWithReason:(NSString *)arg2 animated:(_Bool)arg3;
 - (SBAppStatusBarSettings *)currentStatusBarSettingsForTransientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1;
 - (void)transientOverlayPresentationManagerRequestsSiriDismissal:(SBTransientOverlayPresentationManager *)arg1 animated:(_Bool)arg2;
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireSiriWindowLevelAssertionWithReason:(NSString *)arg2 windowLevel:(double)arg3;
@@ -32,6 +32,7 @@
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireInteractiveScreenshotGestureDisabledAssertionWithReason:(NSString *)arg2;
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireProximitySensorEnabledAssertionWithReason:(NSString *)arg2;
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireDisableAutoUnlockAssertionWithReason:(NSString *)arg2;
+- (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireWallpaperAnimationSuspensionAssertionWithReason:(NSString *)arg2;
 - (void)transientOverlayPresentationManagerRequestsAppIconForceTouchDismissal:(SBTransientOverlayPresentationManager *)arg1 animated:(_Bool)arg2;
 - (_Bool)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 shouldRestoreFirstResponderForKeyWindow:(UIWindow *)arg2;
 - (_Bool)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 shouldResignFirstResponderForKeyWindow:(UIWindow *)arg2;

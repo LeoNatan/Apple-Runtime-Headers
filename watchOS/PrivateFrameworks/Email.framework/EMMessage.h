@@ -13,7 +13,7 @@
 #import <Email/EMMessageListItem-Protocol.h>
 #import <Email/EMMutableMessageListItem-Protocol.h>
 
-@class ECMessageFlags, ECSubject, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString, NSUUID;
+@class ECMessageFlags, ECSubject, EMMailDropMetadata, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString, NSUUID;
 @protocol ECEmailAddressConvertible, EMCollectionItemID;
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
@@ -35,7 +35,7 @@
     int _conversationNotificationLevel;
     NSArray *_toList;
     NSArray *_ccList;
-    NSDate *_expiryDate;
+    EMMailDropMetadata *_mailDropMetadata;
     int _exchangeEventUID;
     CDUnknownBlockType _loaderBlock;
     id <ECEmailAddressConvertible> _senderAddress;
@@ -66,8 +66,8 @@
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
 - (void)setExchangeEventUID:(int)arg1;
 @property(readonly, nonatomic) int exchangeEventUID;
-- (void)setExpiryDate:(id)arg1;
-@property(readonly, nonatomic) NSDate *expiryDate;
+- (void)setMailDropMetadata:(id)arg1;
+@property(readonly, copy, nonatomic) EMMailDropMetadata *mailDropMetadata;
 - (void)setStorageByteCount:(long long)arg1;
 @property(readonly, nonatomic) long long storageByteCount;
 - (void)setDataTransferByteCount:(long long)arg1;

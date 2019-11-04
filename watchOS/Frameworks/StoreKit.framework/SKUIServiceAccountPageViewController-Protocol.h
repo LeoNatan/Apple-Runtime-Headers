@@ -17,6 +17,7 @@
 - (void)bridgedRightButtonPressed;
 - (void)setPresentationBounds:(struct CGRect)arg1;
 - (void)setType:(int)arg1;
+- (void)setReferrer:(NSString *)arg1;
 - (void)setAccount:(ACAccount *)arg1;
 - (void)performRedeemOperationWithCode:(NSString *)arg1 cameraRecognized:(_Bool)arg2 completion:(void (^)(SKUIRedeem *, NSError *))arg3;
 - (void)applicationDidEnterBackground;

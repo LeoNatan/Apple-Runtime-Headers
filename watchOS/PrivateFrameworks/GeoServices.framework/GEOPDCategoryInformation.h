@@ -13,12 +13,14 @@
 @interface GEOPDCategoryInformation : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLocalizedString *_localizedMapsCategoryName;
     NSString *_mapsCategoryId;
     GEOStyleAttributes *_mapsCategoryStyleAttributes;
     NSString *_walletCategoryId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_localizedMapsCategoryName:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSString *walletCategoryId;
 @property(readonly, nonatomic) _Bool hasWalletCategoryId;
 - (void)_readWalletCategoryId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

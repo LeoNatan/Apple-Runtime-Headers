@@ -79,6 +79,7 @@
 - (void)createTransitionImageViewIfNeeded;
 - (void)applyLayout:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)rebuildLayout;
 - (void)viewDidLayoutSubviews;
 - (void)configureUserInfoLabel;
 - (void)beginUsingAVTViewFromSession:(id)arg1;

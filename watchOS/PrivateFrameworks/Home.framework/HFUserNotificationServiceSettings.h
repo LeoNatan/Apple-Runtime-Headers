@@ -15,6 +15,7 @@
 {
     _Bool _notificationsEnabled;
     _Bool _doorbellNotificationsEnabled;
+    _Bool _motionNotificationsEnabled;
     _Bool _smartDetectionNotificationsEnabled;
     NSPredicate *_notificationCondition;
     NSPredicate *_smartCameraNotificationCondition;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSPredicate *smartCameraNotificationCondition; // @synthesize smartCameraNotificationCondition=_smartCameraNotificationCondition;
 @property(retain, nonatomic) NSPredicate *notificationCondition; // @synthesize notificationCondition=_notificationCondition;
 @property(nonatomic, getter=areSmartDetectionNotificationsEnabled) _Bool smartDetectionNotificationsEnabled; // @synthesize smartDetectionNotificationsEnabled=_smartDetectionNotificationsEnabled;
+@property(nonatomic, getter=areMotionNotificationsEnabled) _Bool motionNotificationsEnabled; // @synthesize motionNotificationsEnabled=_motionNotificationsEnabled;
 @property(nonatomic, getter=areDoorbellNotificationsEnabled) _Bool doorbellNotificationsEnabled; // @synthesize doorbellNotificationsEnabled=_doorbellNotificationsEnabled;
 @property(nonatomic, getter=areNotificationsEnabled) _Bool notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
 - (void).cxx_destruct;

@@ -12,6 +12,7 @@
 - (long long)controlStripGrabberStateInCollectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2;
 - (BOOL)shouldShowDoneInCollectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2;
 - (long long)deleteIconDisplayModeInCollectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2;
+- (struct CGRect)closeButtonFrameForCollectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2;
 - (struct CGRect)escapeKeyFrameForCollectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2;
 - (BOOL)contentIsAnimatedInCollectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2;
 - (BOOL)collectionView:(NSCollectionView *)arg1 layout:(NSTouchBarCustomizationPreviewLayout *)arg2 shouldDisplayBackgroundForSection:(long long)arg3 withRect:(struct CGRect *)arg4;

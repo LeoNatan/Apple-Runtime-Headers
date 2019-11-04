@@ -16,6 +16,8 @@
 - (_Bool)_axHasMultipleViews;
 - (id)_accessibilityListCell;
 - (_Bool)_axShouldForwardToListCell;
+- (_Bool)accessibilityScrollToVisibleWithChild:(id)arg1;
+- (id)_accessibilitySupplementaryFooterViews;
 - (id)_accessibilityUserTestingChildren;
 - (id)accessibilityIdentifier;
 - (_Bool)isAccessibilityElement;

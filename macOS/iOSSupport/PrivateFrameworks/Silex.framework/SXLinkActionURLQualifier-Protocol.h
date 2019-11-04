@@ -9,6 +9,7 @@
 @class NSURL;
 
 @protocol SXLinkActionURLQualifier <NSObject>
+- (BOOL)allowCopyingOfURL:(NSURL *)arg1;
 - (BOOL)allowOpenInSafariForURL:(NSURL *)arg1;
 @end
 

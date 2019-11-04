@@ -22,6 +22,7 @@
     ISBasePlayer *_player;
     UIView *_customPhotoView;
     UIImage *_overrideImage;
+    CDUnknownBlockType _videoLayerReadyForDisplayChangeHandler;
     UIImageView *__photoView;
     ISVideoPlayerUIView *__videoView;
     UIView *__containerView;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
 @property(readonly, nonatomic) ISVideoPlayerUIView *_videoView; // @synthesize _videoView=__videoView;
 @property(readonly, nonatomic) UIImageView *_photoView; // @synthesize _photoView=__photoView;
+@property(copy, nonatomic) CDUnknownBlockType videoLayerReadyForDisplayChangeHandler; // @synthesize videoLayerReadyForDisplayChangeHandler=_videoLayerReadyForDisplayChangeHandler;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(retain, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
 @property(retain, nonatomic) UIView *customPhotoView; // @synthesize customPhotoView=_customPhotoView;
@@ -54,6 +56,8 @@
 - (void)_signalChange:(unsigned long long)arg1 withAnimationDuration:(double)arg2;
 - (void)_updatePlayerAudioSession;
 - (void)playerDidChange;
+- (void)_videoViewReadyForDisplayDidChange;
+@property(readonly, nonatomic) _Bool isVideoReadyForDisplay;
 - (void)_performCommonInitialization;
 - (void)audioSessionDidChange;
 - (void)setContentMode:(long long)arg1;

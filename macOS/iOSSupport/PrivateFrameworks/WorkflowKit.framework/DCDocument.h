@@ -4,27 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIDocumentInteractionController.h>
+#import <objc/NSObject.h>
 
-#import <WorkflowKit/LSOpenResourceOperationDelegate-Protocol.h>
+@class NSURL;
 
-@class NSString;
-
-@interface DCDocument : UIDocumentInteractionController <LSOpenResourceOperationDelegate>
+@interface DCDocument : NSObject
 {
-    CDUnknownBlockType _openedHandler;
+    NSURL *_fileURL;
+    id _annotation;
 }
 
++ (id)documentWithURL:(id)arg1 annotation:(id)arg2;
 + (id)documentWithURL:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType openedHandler; // @synthesize openedHandler=_openedHandler;
+@property(readonly, copy, nonatomic) id annotation; // @synthesize annotation=_annotation;
+@property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
 - (void)openWithAppBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithURL:(id)arg1 annotation:(id)arg2;
 
 @end
 

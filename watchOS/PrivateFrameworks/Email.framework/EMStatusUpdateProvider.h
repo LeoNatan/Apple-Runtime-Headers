@@ -20,8 +20,8 @@
 - (id)_statusUpdatedOnDayWithDate:(id)arg1;
 - (id)_statusUpdatedAtTimeWithDate:(id)arg1;
 - (id)_statusUpdatedMinutesAgoWithDate:(id)arg1 now:(id)arg2;
-- (unsigned int)_statusUpdateWithDate:(id)arg1 now:(id)arg2;
-- (id)statusUpdateStringWithDate:(id)arg1 now:(id)arg2;
+- (unsigned int)statusUpdateWithDate:(id)arg1 now:(id)arg2 nextTransition:(id *)arg3;
+- (id)statusUpdateStringWithDate:(id)arg1 now:(id)arg2 nextTransition:(id *)arg3;
 
 @end
 

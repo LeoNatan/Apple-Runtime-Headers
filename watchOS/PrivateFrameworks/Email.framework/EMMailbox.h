@@ -70,8 +70,7 @@
 @property(readonly, nonatomic) EMMailboxObjectID *parentID; // @synthesize parentID=_parentID;
 - (void)setParentFromMailboxes:(id)arg1;
 @property(readonly, nonatomic) EMReceivingAccount *account;
-- (void)setRepository:(id)arg1;
-@property(readonly, nonatomic) EMMailboxRepository *repository;
+@property(retain, nonatomic) EMMailboxRepository *repository;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_commonInitName:(id)arg1 accountIdentifier:(id)arg2 type:(int)arg3 canContainMessages:(_Bool)arg4 children:(id)arg5 parentID:(id)arg6 builder:(CDUnknownBlockType)arg7;
 - (id)initWithObjectID:(id)arg1 name:(id)arg2 accountIdentifier:(id)arg3 type:(int)arg4 builder:(CDUnknownBlockType)arg5;

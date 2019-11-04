@@ -33,8 +33,6 @@
 + (id)_diddlyDoViewLineColor;
 + (id)_foregroundColor;
 + (id)_backgroundColor;
-+ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
-+ (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (_Bool)dictionaryHasDefinitionForTerm:(id)arg1;
 + (_Bool)_shouldShowDefineForTermOfLength:(int)arg1;
 + (_Bool)_shouldShowDefineForTerm:(id)arg1;

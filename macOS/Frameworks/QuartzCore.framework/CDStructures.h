@@ -366,6 +366,7 @@ struct Display {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
+    unsigned int :1;
 };
 
 struct DisplayLink;
@@ -571,7 +572,6 @@ struct Server {
     double _field20;
     double _field21;
     unsigned int _field22;
-    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

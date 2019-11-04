@@ -28,10 +28,10 @@
 - (BOOL)verifyInclusionProof:(id)arg1 mapLeaf:(id *)arg2 error:(id *)arg3;
 - (BOOL)verifyResponseAccountId:(id)arg1 requestAccountId:(id)arg2 error:(id *)arg3;
 - (BOOL)verifyUriWitness:(id)arg1 uri:(id)arg2 error:(id *)arg3;
-- (BOOL)verifyDeviceWitnesses:(id)arg1 requestDevices:(id)arg2 loggableDatas:(id)arg3 error:(id *)arg4;
-- (BOOL)verifyDeviceWitness:(id)arg1 deviceId:(id)arg2 error:(id *)arg3;
-- (BOOL)verifyClientDataWitnesses:(id)arg1 clientDatas:(id)arg2 loggableDatas:(id)arg3 error:(id *)arg4;
-- (BOOL)verifyClientDataWitness:(id)arg1 clientData:(id)arg2 error:(id *)arg3;
+- (BOOL)verifyDeviceWitnesses:(id)arg1 requestDevices:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
+- (BOOL)verifyDeviceWitness:(id)arg1 deviceId:(id)arg2 uriVRFOutput:(id)arg3 error:(id *)arg4;
+- (BOOL)verifyClientDataWitnesses:(id)arg1 clientDatas:(id)arg2 loggableDatas:(id)arg3 uriVRFOutput:(id)arg4 error:(id *)arg5;
+- (BOOL)verifyClientDataWitness:(id)arg1 clientData:(id)arg2 uriVRFOutput:(id)arg3 error:(id *)arg4;
 - (void)verifyKTSMTsMerged:(id)arg1 queryResponse:(id)arg2 uri:(id)arg3 accountId:(id)arg4;
 - (void)verifyKTSMTs:(id)arg1;
 - (void)deleteSMT:(id)arg1 error:(id)arg2;

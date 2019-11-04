@@ -31,6 +31,7 @@
 - (void)hideMenu;
 - (void)hideMenuFromView:(id)arg1;
 - (void)showMenuFromView:(id)arg1 rect:(struct CGRect)arg2;
+- (void)_reparentCalloutBarIfNeeded;
 - (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_hideMenuAnimated:(BOOL)arg1;
 - (void)_showMenuAnimated:(BOOL)arg1;

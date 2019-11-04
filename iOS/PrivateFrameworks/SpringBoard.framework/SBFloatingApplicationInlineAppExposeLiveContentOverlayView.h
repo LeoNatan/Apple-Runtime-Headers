@@ -19,13 +19,14 @@
 - (void).cxx_destruct;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 animator:(CDUnknownBlockType)arg3;
-- (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
+- (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;
 - (void)setHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 @property(readonly, nonatomic) UIView *contentOverlayView;
 - (void)invalidate;
-- (_Bool)rendersAsynchronously;
-- (void)setAsynchronousRenderingDisabled:(_Bool)arg1;
+- (void)disableAsynchronousRenderingForNextCommit;
+- (long long)rasterizationStyle;
+- (void)setLiveContentRasterizationDisabled:(_Bool)arg1;
 - (void)configureWithWorkspaceEntity:(id)arg1 referenceFrame:(struct CGRect)arg2 interfaceOrientation:(long long)arg3;
 - (id)contentViewController;
 

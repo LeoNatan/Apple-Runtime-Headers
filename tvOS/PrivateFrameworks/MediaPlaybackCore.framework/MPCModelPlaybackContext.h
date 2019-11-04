@@ -38,10 +38,11 @@
 @property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (void)setPrivateListeningOverride:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)clearStartItem;
 - (_Bool)isSupported;
-- (_Bool)containsTransportableContent;
 - (_Bool)containsRestorableContent;
 - (id)descriptionComponents;
 - (id)init;

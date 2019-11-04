@@ -34,6 +34,7 @@
 - (void)pixelAlignForContentScale:(double)arg1 enclosingScrollView:(id)arg2;
 - (void)updateFrameForTextContainer;
 - (void)fingerDrawingEnabledDidChange;
+- (void)drawingDidEraseStrokes;
 - (void)drawingDidChange;
 - (void)drawingWillBegin;
 - (_Bool)hitByTouchLocation:(struct CGPoint)arg1 bounds:(struct CGRect)arg2;

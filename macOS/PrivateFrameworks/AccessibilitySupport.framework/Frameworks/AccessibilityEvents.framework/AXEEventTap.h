@@ -28,6 +28,7 @@
     long long __eventTapID;
 }
 
++ (void)_runBlock:(CDUnknownBlockType)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)_setEventTap:(id)arg1 eventTapID:(long long)arg2;
 + (id)_eventTapForEventTapID:(long long)arg1;
@@ -57,6 +58,7 @@
 - (void)_continueReconnectOnMainThread;
 - (void)_reconnectOnEventTapThread;
 - (void)_performOnEventTapThreadAndWait:(SEL)arg1;
+- (void)_performBlockOnEventTapThread:(CDUnknownBlockType)arg1;
 - (void)_performBlockOnMainThreadAfterDelay:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_performBlockOnMainThread:(CDUnknownBlockType)arg1;
 - (struct __CGEvent *)_handleEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;

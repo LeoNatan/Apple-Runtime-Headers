@@ -23,6 +23,7 @@
 - (_Bool)_accessibilityDisableAutoSpeak;
 - (_Bool)_accessibilityEnableAutoSpeak;
 - (_Bool)_accessibilitySelectedComplicationHasAutoSpeakEnabled;
+- (_Bool)_accessibilityFocusedElementIsPrimaryTimeView;
 - (_Bool)_accessibilityFocusedElementIsComplication;
 - (_Bool)_accessibilityCustomActionShowNotificationCenter;
 - (_Bool)_accessibilityCustomActionShowControlCenter;

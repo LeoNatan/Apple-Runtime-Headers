@@ -48,6 +48,7 @@
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 - (void).cxx_destruct;
+- (id)_supplementaryElementKindsAssociatedWithItemIndexPath:(id)arg1;
 - (BOOL)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
 - (BOOL)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
 - (BOOL)_shouldOrthogonalScrollingSectionSupplementaryScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;

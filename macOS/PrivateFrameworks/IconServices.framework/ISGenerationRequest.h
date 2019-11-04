@@ -19,11 +19,15 @@
     BOOL _allowValidationCheck;
     struct _LSBinding *_binding;
     NSUUID *_resourceUUID;
+    NSUUID *_lsDatabaseUUID;
+    unsigned long long _lsDatabaseSequenceNumber;
 }
 
 + (id)generationRequestWithBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3;
 + (id)generationRequestWithBinding:(struct _LSBinding *)arg1 size:(struct CGSize)arg2 scale:(unsigned int)arg3 options:(id)arg4;
 + (BOOL)supportsSecureCoding;
+@property unsigned long long lsDatabaseSequenceNumber; // @synthesize lsDatabaseSequenceNumber=_lsDatabaseSequenceNumber;
+@property(retain) NSUUID *lsDatabaseUUID; // @synthesize lsDatabaseUUID=_lsDatabaseUUID;
 @property(copy) NSArray *decorations; // @synthesize decorations=_decorations;
 @property(readonly) struct _LSBinding *binding; // @synthesize binding=_binding;
 @property BOOL allowValidationCheck; // @synthesize allowValidationCheck=_allowValidationCheck;

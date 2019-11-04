@@ -9,7 +9,7 @@
 #import <WorkflowKit/WFSiriUserInterface-Protocol.h>
 #import <WorkflowKit/WFWorkflowControllerDelegate-Protocol.h>
 
-@class INIntentResponse, NSArray, NSProgress, NSString, WFWorkflow, WFWorkflowController;
+@class INInteraction, NSArray, NSProgress, NSString, WFWorkflow, WFWorkflowController;
 @protocol WFLWorkflowControllerDelegate;
 
 @interface WFLWorkflowController : NSObject <WFWorkflowControllerDelegate, WFSiriUserInterface>
@@ -18,10 +18,10 @@
     id <WFLWorkflowControllerDelegate> _delegate;
     long long _executionContext;
     WFWorkflowController *_controller;
-    INIntentResponse *_lastIntentResponse;
+    INInteraction *_lastInteraction;
 }
 
-@property(retain, nonatomic) INIntentResponse *lastIntentResponse; // @synthesize lastIntentResponse=_lastIntentResponse;
+@property(retain, nonatomic) INInteraction *lastInteraction; // @synthesize lastInteraction=_lastInteraction;
 @property(readonly, nonatomic) WFWorkflowController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long executionContext; // @synthesize executionContext=_executionContext;
 @property(nonatomic) __weak id <WFLWorkflowControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -42,6 +42,7 @@
 - (void)workflowControllerWillRun:(id)arg1;
 - (void)launchAppWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stop;
+- (id)runSource;
 - (void)runWithInput:(id)arg1;
 @property(readonly, nonatomic) WFWorkflow *workflow;
 @property(readonly, nonatomic) NSProgress *progress;

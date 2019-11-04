@@ -9,12 +9,10 @@
 #import <MediaRemote/MRNowPlayingClientState-Protocol.h>
 
 @class NSArray, NSMutableArray, _MRNowPlayingClientProtobuf, _MRNowPlayingPlayerPathProtobuf, _MRNowPlayingPlayerProtobuf;
-@protocol OS_dispatch_queue;
 
 @interface MRNowPlayingClient : NSObject <MRNowPlayingClientState>
 {
     _MRNowPlayingPlayerProtobuf *_activePlayer;
-    NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableArray *_playerClients;
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
 }

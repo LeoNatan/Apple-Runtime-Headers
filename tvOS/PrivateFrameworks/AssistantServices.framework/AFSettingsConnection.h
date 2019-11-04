@@ -16,10 +16,21 @@
     NSArray *_voices;
     AFVoiceInfo *_selectedVoice;
     id <AFSettingsDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)siriDesignModeIsEnabled:(CDUnknownBlockType)arg1;
+- (void)setSiriDesignModeEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)deleteSiriHistoryWithContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)shouldSuppressSiriDataSharingOptInAlert:(CDUnknownBlockType)arg1;
+- (void)setSiriDataSharingOptInAlertPresented:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getSiriDataSharingOptInStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setSiriDataSharingOptInStatus:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)siriGradingIsEnabled:(CDUnknownBlockType)arg1;
+- (void)setSiriGradingEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showMultiUsers:(CDUnknownBlockType)arg1;
 - (void)removeMultiUserWithSharedUserID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeMultiUserUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -43,6 +54,7 @@
 - (void)resetAnalyticsStoreWithCompletion:(CDUnknownBlockType)arg1;
 - (void)purgeAnalyticsStoreWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchEventRecordsFromAnalyticsStoreAtPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setNanoSiriDataSharingOptInStatus:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setNanoCrownActivationEnabled:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setNanoLanguage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setNanoOutputVoice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -54,6 +66,7 @@
 - (void)setNanoAssistantEnabled:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)getStereoPairState:(CDUnknownBlockType)arg1;
 - (void)getStereoPartnerLastMyriadWinDate:(CDUnknownBlockType)arg1;
+- (void)getMeCard:(CDUnknownBlockType)arg1;
 - (void)setHorsemanSupplementalLanguageDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHorsemanSupplementalLanguageDictionary:(CDUnknownBlockType)arg1;
 - (void)getSupplementalLanguagesForProduct:(id)arg1 forBuildVersion:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -91,7 +104,10 @@
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
 - (id)_voices;
 - (void)_setVoices:(id)arg1;
+- (void)homeOnboardingFlowInvoked:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchMultiUserVoiceIdentificationSetting:(CDUnknownBlockType)arg1;
+- (void)clearOpportuneSpeakingEdgeDetectorSignalOverride;
+- (void)setOpportuneSpeakingEdgeDetectorSignalOverride:(long long)arg1;
 - (void)setSpokenNotificationShouldSkipTriggerlessReplies:(_Bool)arg1;
 - (void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setSpokenNotificationShouldAlwaysSpeakNotifications:(_Bool)arg1;
@@ -108,6 +124,7 @@
 - (void)getDevicesWithAvailablePHSAssetsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)disableAndDeleteCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)barrier;
+- (void)shutdownSessionIfIdle;
 - (void)killDaemon;
 - (void)setAssistantLoggingEnabled:(_Bool)arg1;
 - (void)setDictationEnabled:(_Bool)arg1;
@@ -124,6 +141,7 @@
 - (id)_connection;
 - (void)_clearConnection;
 - (void)dealloc;
+- (void)setXPCConnectionManagementQueue:(id)arg1;
 - (id)init;
 - (void)_tellDelegateServerVerificationReport:(id)arg1;
 - (void)_tellDelegatePartialVerificationResult:(id)arg1;

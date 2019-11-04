@@ -7,7 +7,6 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (AuthKitUI)
-+ (id)iconForData:(id)arg1 scale:(double)arg2;
 + (id)ak_imageWithColor:(id)arg1;
 - (id)copyScaledToSize:(struct CGSize)arg1;
 @end

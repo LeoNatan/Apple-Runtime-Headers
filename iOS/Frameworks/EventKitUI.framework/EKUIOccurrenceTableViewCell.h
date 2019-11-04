@@ -6,7 +6,7 @@
 
 #import <EventKitUI/EKUITableViewCellWithPrimaryAndSecondaryFonts.h>
 
-@class ColorBarView, EKCalendarDate, EKUIOccurrenceTableViewCellLabel, NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSObject, NSString, UIColor, UIImageView, UIView, UIVisualEffect, UIVisualEffectView;
+@class ColorBarView, ColoredBackgroundView, EKCalendarDate, EKUIOccurrenceTableViewCellLabel, NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSMutableArray, NSObject, NSString, UIColor, UIImageView, UIVisualEffect;
 @protocol OS_dispatch_source;
 
 @interface EKUIOccurrenceTableViewCell : EKUITableViewCellWithPrimaryAndSecondaryFonts
@@ -20,6 +20,7 @@
     EKUIOccurrenceTableViewCellLabel *_countdownLabel;
     ColorBarView *_colorBarView;
     ColorBarView *_travelTimeColorBarView;
+    ColoredBackgroundView *_coloredBackgroundView;
     UIImageView *_angleStripeBackgroundView;
     UIImageView *_accessoryImageView;
     NSArray *_ekUIOccurrenceTableViewCellConstraints;
@@ -27,8 +28,8 @@
     _Bool _carplayMode;
     _Bool _includesTopTimeLabel;
     struct CGSize _sizeWhenLayerLastCalculated;
-    UIVisualEffectView *_primaryVisualEffectParentView;
-    UIVisualEffectView *_secondaryVisualEffectParentView;
+    NSMutableArray *_primaryVisualEffectViews;
+    NSMutableArray *_secondaryVisualEffectViews;
     _Bool _travelTimeTemplate;
     _Bool _invitationTemplate;
     NSLayoutConstraint *_contentTop_to_travelTextBaseline_Constraint;
@@ -76,7 +77,6 @@
     _Bool _isTemplateCell;
     _Bool _isFakeInvitation;
     UIColor *_eventCalendarColor;
-    UIView *_coloredBackgroundView;
     EKCalendarDate *_eventStartDate;
     UIVisualEffect *_primaryVisualEffect;
     UIVisualEffect *_secondaryVisualEffect;
@@ -108,7 +108,6 @@
 @property(retain, nonatomic) UIVisualEffect *primaryVisualEffect; // @synthesize primaryVisualEffect=_primaryVisualEffect;
 @property(nonatomic) _Bool isFakeInvitation; // @synthesize isFakeInvitation=_isFakeInvitation;
 @property(readonly, nonatomic) EKCalendarDate *eventStartDate; // @synthesize eventStartDate=_eventStartDate;
-@property(retain, nonatomic) UIView *coloredBackgroundView; // @synthesize coloredBackgroundView=_coloredBackgroundView;
 @property(retain, nonatomic) UIColor *eventCalendarColor; // @synthesize eventCalendarColor=_eventCalendarColor;
 @property(nonatomic) _Bool isTemplateCell; // @synthesize isTemplateCell=_isTemplateCell;
 @property(nonatomic) _Bool doesNotUseTemplate; // @synthesize doesNotUseTemplate=_doesNotUseTemplate;
@@ -139,7 +138,6 @@
 - (void)_updatePrimaryTextLabel;
 - (void)_updateNumberOfLinesForLabel:(id)arg1 isRightAlignedInStandardLayout:(_Bool)arg2;
 - (void)_updateColoredBackgroundViewColor;
-- (id)_coloredBackgroundViewLayer;
 - (void)updateAngleBackgroundColor;
 - (void)_updateColorBarColor;
 - (id)_setUpLargeTextConstraints;
@@ -156,6 +154,8 @@
 - (void)updateConstraints;
 - (void)layoutSubviews;
 - (void)contentCategorySizeChanged;
+- (void)_addVibrantSubview:(id)arg1 usingPrimaryEffect:(_Bool)arg2;
+- (void)_addSubview:(id)arg1 forVibrancy:(_Bool)arg2 usingPrimaryEffect:(_Bool)arg3;
 - (id)_createParentVisualEffectViewWithVisualEffect:(id)arg1;
 - (void)_createViewsForReuseIdentifier:(id)arg1;
 - (void)forceUpdateOfAllElements;

@@ -13,11 +13,13 @@
 @interface GEORPFeedbackComponentValue : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPFeedbackConversation *_conversation;
     GEORPFeedbackNotification *_notification;
     GEORPFeedbackOverview *_overview;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_conversation:1;
@@ -53,6 +55,8 @@
 @property(retain, nonatomic) GEORPFeedbackNotification *notification;
 @property(readonly, nonatomic) BOOL hasNotification;
 - (void)_readNotification;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

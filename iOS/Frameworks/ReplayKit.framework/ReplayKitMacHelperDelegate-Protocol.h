@@ -15,6 +15,7 @@
 - (void)extensionDidFinishWithLaunchURL:(NSURL *)arg1 broadcastURL:(NSURL *)arg2 extensionBundleID:(NSString *)arg3 cancelled:(_Bool)arg4;
 - (void)macApplicationDidBecomeActive;
 - (void)macApplicationDidResignActive;
+- (void)userDidStopRecordingFromWindowClose;
 - (void)userDidStopRecordingFromStatusBar;
 - (void)replayKitMacHelper:(id <ReplayKitMacHelper>)arg1 didDismissVideoEditorSheetWithActivityTypes:(NSArray *)arg2;
 @end

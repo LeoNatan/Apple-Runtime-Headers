@@ -28,6 +28,7 @@
 - (void)activate;
 - (void)_reinitializeAndActivateIfNecessary;
 - (void)_withLock:(CDUnknownBlockType)arg1;
+- (void)dealloc;
 - (id)init;
 - (id)initWithButtons:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 

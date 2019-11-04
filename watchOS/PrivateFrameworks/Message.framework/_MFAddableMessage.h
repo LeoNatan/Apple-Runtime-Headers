@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (_Bool)isKindOfClass:(Class)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+@property(readonly, nonatomic) _Bool isServerSearchResult;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)bestAlternativePart:(_Bool *)arg1;
 @property(readonly, nonatomic) id <ECMailbox> mailbox; // @dynamic mailbox;

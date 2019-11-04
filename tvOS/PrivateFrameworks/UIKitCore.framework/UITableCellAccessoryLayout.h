@@ -42,9 +42,9 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)finalFrameForAccessory:(id)arg1;
 - (struct CGRect)initialFrameForAccessory:(id)arg1;
 - (void)prepareLayoutForAccessories:(id)arg1 previousAccessories:(id)arg2 configurationIdentifier:(id)arg3;
-- (id)_framesForAccessories:(id)arg1 totalFrame:(struct CGRect *)arg2;
-- (struct CGRect)_frameForAccessoryAtIndex:(unsigned long long)arg1 inAccessories:(id)arg2 withXOrigin:(double *)arg3;
-- (double)_totalWidthForAccessories:(id)arg1;
+- (id)_framesForAccessories:(id)arg1 withContainerSize:(struct CGSize)arg2 outTotalFrame:(struct CGRect *)arg3;
+- (struct CGRect)_frameForAccessoryAtIndex:(unsigned long long)arg1 inAccessories:(id)arg2 containerSize:(struct CGSize)arg3 withXOrigin:(double *)arg4;
+- (double)_totalWidthForAccessories:(id)arg1 withContainerSize:(struct CGSize)arg2;
 - (id)init;
 
 // Remaining properties

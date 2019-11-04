@@ -26,10 +26,11 @@
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 ofType:(id)arg2;
 + (id)_fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1;
 + (id)fetchRequestMatchingUnexpiredOneMoreMinuteBlueprints;
-+ (id)fetchRequestMatchingDeletedBlueprints;
++ (id)fetchRequestMatchingOrphanedBlueprints;
 + (id)fetchRequestMatchingExpiredBlueprints;
 + (id)defaultAlwaysAllowBundleIDs;
 + (_Bool)saveAlwaysAllowListForUser:(id)arg1 withBundleIDs:(id)arg2 error:(id *)arg3;
++ (id)simpleScheduleTimeRangeWithStartTimeComponents:(id)arg1 endTimeComponents:(id)arg2;
 + (id)customScheduleTimeRangeWithLocale:(id)arg1 startTimeComponents:(id)arg2 endTimeComponents:(id)arg3;
 + (id)keyPathsForValuesAffectingDowntimeScheduleText;
 + (id)defaultEndTime;

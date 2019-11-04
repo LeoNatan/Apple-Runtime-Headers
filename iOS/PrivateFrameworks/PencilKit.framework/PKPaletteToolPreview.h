@@ -21,6 +21,7 @@
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPreviewDelegate> _delegate;
+    long long _colorUserInterfaceStyle;
     PKPaletteToolView *_tool;
     PKColorPicker *_colorPickerPopover;
     NSLayoutConstraint *_toolViewTopAnchor;
@@ -42,6 +43,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *toolViewTopAnchor; // @synthesize toolViewTopAnchor=_toolViewTopAnchor;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) PKPaletteToolView *tool; // @synthesize tool=_tool;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPreviewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
@@ -50,8 +52,8 @@
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
-- (id)popoverPresentingSourceview;
-- (struct CGRect)popoverPresentingSourceRect;
+- (id)_popoverPresentingSourceview;
+- (struct CGRect)_popoverPresentingSourceRect;
 - (void)_showColorSelectionPopover;
 - (void)toggleColorSelectionPopover;
 @property(readonly, nonatomic) UIColor *toolColor;
@@ -61,6 +63,7 @@
 - (void)_replaceCurrentToolWithToolWithInkIdentifier:(id)arg1;
 - (void)_updateLayoutGuideConstraints;
 - (void)_animateToolViewToVisible:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)showPreviewForToolWithInk:(id)arg1 animated:(_Bool)arg2;
 - (void)showPreviewForToolWithInk:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

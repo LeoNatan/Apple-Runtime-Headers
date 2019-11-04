@@ -12,7 +12,7 @@
 #import <PassKitUI/UINavigationControllerDelegate-Protocol.h>
 #import <PassKitUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSString, PKCompactNavigationContainedNavigationController, UITapGestureRecognizer, UIView;
+@class NSString, PKCompactNavigationContainedNavigationController, PKWrapperViewController, UITapGestureRecognizer, UIView;
 @protocol PKCompactNavigationContainerControllerDelegate, UICoordinateSpace;
 
 @interface PKCompactNavigationContainerController : UIViewController <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, PKContentContainerObserver, PKViewWindowObserver>
@@ -23,10 +23,17 @@
     _Bool _requiresMasking;
     UIView *_maskingContainerView;
     struct CGRect _maximumModalPresentationFrame;
-    UIViewController *_presentationContextVC;
+    PKWrapperViewController *_presentationContextVC;
     CDStruct_47050b7f _topVCInfo;
     struct CGRect _statusBarFrame;
+    unsigned short _layoutGroupCounter;
+    unsigned short _contentSizeUpdateDeferralCounter;
+    _Bool _deferredContentSizeUpdate;
+    _Bool _deferredContentSizeUpdateIsAnimated;
+    _Bool _deferredContentSizeUpdateIsForced;
     UIViewController *_topVC;
+    _Bool _topVCIsExpectedClass;
+    _Bool _topVCIsInInitialLayout;
     UIViewController *_pendingTopVC;
     unsigned long long _pendingTopVCIdentifier;
     unsigned long long _updateChildViewControllerSizeCounter;
@@ -78,7 +85,8 @@
 - (CDStruct_47050b7f)_infoForViewController:(id)arg1;
 - (void)_updateTopViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateTopViewControllerAsync:(id)arg1 animated:(_Bool)arg2;
-- (_Bool)updateChildViewControllerSizeAnimated:(_Bool)arg1;
+- (void)updateChildViewControllerSizeAnimated:(_Bool)arg1 forceUpdate:(_Bool)arg2;
+- (void)updateChildViewControllerSizeAnimated:(_Bool)arg1;
 - (id)_backgroundColor;
 - (void)setExclusionRect:(struct CGRect)arg1 withCoordinateSpace:(id)arg2;
 - (void)setSupportedInterfaceOrientations:(unsigned long long)arg1;
@@ -88,7 +96,10 @@
 - (struct CGSize)navigationControllerSizeForChildViewControllerPreferredContentSize:(struct CGSize)arg1 isRoot:(_Bool)arg2;
 - (struct CGSize)childViewControllerPreferredContentSizeForSize:(struct CGSize)arg1 isRoot:(_Bool)arg2;
 - (void)insertBackgroundLevelView:(id)arg1;
+- (void)_endLayoutGroup;
+- (void)_beginLayoutGroup;
 - (struct CGRect)_targetNavigationControllerFrameForInfo:(CDStruct_47050b7f)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

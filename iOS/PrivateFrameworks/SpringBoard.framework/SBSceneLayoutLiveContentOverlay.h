@@ -12,10 +12,10 @@
 
 @interface SBSceneLayoutLiveContentOverlay : NSObject <SBSwitcherLiveContentOverlay>
 {
-    _Bool _rendersAsynchronously;
     _Bool _wantsMinificationFilter;
     _Bool _asynchronousRenderingTemporarilyDisabled;
     long long _containerOrientation;
+    long long _rasterizationStyle;
     SBMainDisplaySceneLayoutViewController *_sceneLayoutViewController;
     SBWindowSelfHostWrapper *_sceneLayoutWindowHostWrapper;
     SBOrientationTransformWrapperView *_sceneLayoutOrientationWrapperView;
@@ -30,13 +30,12 @@
 @property(readonly, nonatomic) SBOrientationTransformWrapperView *sceneLayoutOrientationWrapperView; // @synthesize sceneLayoutOrientationWrapperView=_sceneLayoutOrientationWrapperView;
 @property(readonly, nonatomic) SBWindowSelfHostWrapper *sceneLayoutWindowHostWrapper; // @synthesize sceneLayoutWindowHostWrapper=_sceneLayoutWindowHostWrapper;
 @property(readonly, nonatomic) __weak SBMainDisplaySceneLayoutViewController *sceneLayoutViewController; // @synthesize sceneLayoutViewController=_sceneLayoutViewController;
-@property(readonly, nonatomic) _Bool rendersAsynchronously; // @synthesize rendersAsynchronously=_rendersAsynchronously;
+@property(readonly, nonatomic) long long rasterizationStyle; // @synthesize rasterizationStyle=_rasterizationStyle;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 - (void).cxx_destruct;
 - (void)_evaluateAsynchronousRenderingEnablement;
 - (void)disableAsynchronousRenderingForNextCommit;
-- (void)setRendersAsynchronously:(_Bool)arg1 withMinificationFilterEnabled:(_Bool)arg2;
-- (void)setRendersAsynchronously:(_Bool)arg1;
+- (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setHomeGrabberHidden:(_Bool)arg1 animated:(_Bool)arg2;

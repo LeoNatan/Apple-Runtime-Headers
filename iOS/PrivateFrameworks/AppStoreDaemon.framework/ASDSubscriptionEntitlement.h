@@ -30,6 +30,7 @@
 @property(readonly, copy) NSString *offerID;
 @property(readonly, getter=isNewsAppPurchase) _Bool newsAppPurchase;
 @property(readonly) _Bool isPurchaser;
+@property(readonly) _Bool isOfferPeriod;
 @property(readonly) _Bool isTrialPeriod;
 @property(readonly, copy) NSString *inAppVersion;
 @property(readonly, copy) NSNumber *inAppAdamID;

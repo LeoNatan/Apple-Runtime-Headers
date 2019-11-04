@@ -6,33 +6,12 @@
 
 #import <AppKit/NSView.h>
 
-@protocol _PXScrollDocumentViewAccessibilityDelegate;
-
 @interface _PXScrollDocumentView : NSView
 {
-    BOOL _acceptsFirstResponder;
-    id <_PXScrollDocumentViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
-@property(nonatomic) __weak id <_PXScrollDocumentViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
-@property(nonatomic) BOOL acceptsFirstResponder; // @synthesize acceptsFirstResponder=_acceptsFirstResponder;
-- (void).cxx_destruct;
-- (id)accessibilityHitTest:(struct CGPoint)arg1;
-- (id)accessibilityFocusedUIElement;
-- (struct CGRect)accessibilityFrameInParentSpace;
-- (void)setAccessibilitySelectedCells:(id)arg1;
-- (id)accessibilitySelectedCells;
-- (void)setAccessibilitySelectedChildren:(id)arg1;
-- (id)accessibilitySelectedChildren;
-- (id)accessibilityVisibleChildren;
-- (id)accessibilityChildren;
-- (id)accessibilityRoleDescription;
-- (id)accessibilitySubrole;
-- (id)accessibilityRole;
-- (BOOL)isAccessibilityElement;
-- (id)description;
-- (BOOL)clipsToBounds;
 - (BOOL)isFlipped;
+- (BOOL)acceptsFirstResponder;
 
 @end
 

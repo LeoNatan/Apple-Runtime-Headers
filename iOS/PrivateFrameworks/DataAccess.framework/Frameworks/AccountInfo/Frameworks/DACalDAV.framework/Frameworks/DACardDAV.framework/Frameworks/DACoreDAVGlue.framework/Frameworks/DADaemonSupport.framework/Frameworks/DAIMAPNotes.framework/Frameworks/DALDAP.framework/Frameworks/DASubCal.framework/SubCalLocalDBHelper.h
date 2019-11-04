@@ -11,6 +11,8 @@
 }
 
 + (id)_makeCalendarWithExternalId:(id)arg1 inStore:(id)arg2 error:(id *)arg3;
++ (id)_relativePathFromCalDAVExternalID:(id)arg1;
++ (id)_existingCalendarInCalDAVSourceWithExternalID:(id)arg1 inSource:(id)arg2;
 + (id)initializeCalendarWithExternalId:(id)arg1 inSource:(id)arg2 needsSave:(_Bool *)arg3 error:(id *)arg4;
 + (_Bool)_updateConstraintsIfNecessaryForSource:(id)arg1;
 + (id)initializeSourceWithExternalId:(id)arg1 inStore:(id)arg2 needsSave:(_Bool *)arg3 error:(id *)arg4;

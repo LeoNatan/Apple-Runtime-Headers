@@ -7,6 +7,6 @@
 #import <MediaPlayer/MPModelMediaClip.h>
 
 @interface MPModelMediaClip (MPCModelQueueFeederAdditions)
-+ (id)mqf_requiredPlaybackProperties;
++ (id)mqf_requiredItemPlaybackProperties;
 @end
 

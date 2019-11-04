@@ -136,6 +136,7 @@
 - (void)locationTracker:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)locationTracker:(id)arg1 didReroute:(id)arg2 newAlternateRoutes:(id)arg3 rerouteReason:(unsigned long long)arg4 request:(id)arg5 response:(id)arg6;
 - (void)locationTrackerDidCancelReroute:(id)arg1;
+- (void)locationTracker:(id)arg1 didSuppressReroute:(id)arg2;
 - (void)locationTrackerWillReroute:(id)arg1;
 - (void)locationTracker:(id)arg1 didUpdateETAForRoute:(id)arg2;
 - (void)locationTracker:(id)arg1 matchedToStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;

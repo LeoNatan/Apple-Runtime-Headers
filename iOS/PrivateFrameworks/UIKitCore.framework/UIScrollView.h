@@ -107,7 +107,8 @@
     _Bool _deferredUpdateTargetIsValid;
     struct CGPoint _deferredUpdateTargetContentOffset;
     struct CGSize _deferredUpdateTargetContentSize;
-    NSTimer *_scrollIndicatorHideDelayTimer;
+    NSTimer *_verticalScrollIndicatorHideDelayTimer;
+    NSTimer *_horizontalScrollIndicatorHideDelayTimer;
     _UIScrollViewScrollIndicator *_verticalScrollIndicator;
     _UIScrollViewScrollIndicator *_horizontalScrollIndicator;
     double _knobLastFadeTime;
@@ -452,6 +453,7 @@
 - (void)_layoutHorizontalScrollIndicatorWithBounds:(struct CGRect)arg1 effectiveInset:(struct UIEdgeInsets)arg2 contentOffset:(struct CGPoint)arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(_Bool)arg7 recalcSize:(_Bool)arg8 verticalIndicatorFrame:(struct CGRect)arg9;
 - (struct CGRect)_layoutVerticalScrollIndicatorWithBounds:(struct CGRect)arg1 effectiveInset:(struct UIEdgeInsets)arg2 contentOffset:(struct CGPoint)arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(_Bool)arg7 recalcSize:(_Bool)arg8;
 - (void)_adjustScrollerIndicators:(_Bool)arg1 alwaysShowingThem:(_Bool)arg2;
+- (_Bool)_shouldReverseLayoutDirectionConsideringFlippedHorizontalAxis;
 - (double)_scrollIndicatorAdditionalInset;
 - (double)_horizontalScrollIndicatorHeight;
 - (double)_verticalScrollIndicatorWidth;

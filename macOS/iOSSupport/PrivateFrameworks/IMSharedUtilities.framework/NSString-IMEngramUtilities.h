@@ -8,9 +8,11 @@
 
 @interface NSString (IMEngramUtilities)
 - (id)__im_engramDataRepresentation;
+- (id)im_lastPathComponent;
 - (id)im_stripSpamLabel;
 - (BOOL)isArchivable_im;
 - (id)__im_apfsCompatibleFilename;
+- (id)__im_stringBySafelyAppendingPathComponent:(id)arg1;
 - (id)__im_filePathWithVariant:(id)arg1;
 @end
 

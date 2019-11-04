@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString, STConversationContext;
+@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString;
 
 @interface CKConversation : NSObject
 {
@@ -27,7 +27,6 @@
     NSString *_selectedLastAddressedSIMID;
     NSSet *_pendingRecipients;
     NSAttributedString *_groupName;
-    STConversationContext *_screenTimeConversationContext;
     NSString *_previewText;
     NSNumber *_businessConversation;
     NSDate *_dateLastViewed;
@@ -60,7 +59,6 @@
 @property(nonatomic) _Bool hasLoadedAllMessages; // @synthesize hasLoadedAllMessages=_hasLoadedAllMessages;
 @property(copy, nonatomic) NSString *previewText; // @synthesize previewText=_previewText;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
-@property(nonatomic) __weak STConversationContext *screenTimeConversationContext; // @synthesize screenTimeConversationContext=_screenTimeConversationContext;
 @property(readonly, nonatomic) NSAttributedString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) NSSet *pendingRecipients; // @synthesize pendingRecipients=_pendingRecipients;
 @property(retain, nonatomic) NSString *selectedLastAddressedSIMID; // @synthesize selectedLastAddressedSIMID=_selectedLastAddressedSIMID;
@@ -103,6 +101,7 @@
 - (double)maxTrimDurationForMediaType:(int)arg1;
 - (_Bool)canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;
 - (_Bool)canSendComposition:(id)arg1 error:(id *)arg2;
+- (_Bool)_allowedByScreenTime;
 - (_Bool)canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
 @property(readonly, nonatomic, getter=isPending) _Bool pending;
 @property(readonly, copy, nonatomic) NSArray *recipientStrings;
@@ -195,7 +194,6 @@
 - (id)initWithChat:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)summaryTextForBlockedConversation;
 - (_Bool)_iMessage_canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;
 - (_Bool)_iMessage_supportsCharacterCountForAddresses:(id)arg1;
 - (_Bool)_sms_canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;

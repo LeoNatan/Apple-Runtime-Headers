@@ -22,6 +22,9 @@
 + (_Bool)associateThumbnailsForDocumentAtURL:(id)arg1 withImmutableDocument:(_Bool)arg2 atURL:(id)arg3 error:(id *)arg4;
 + (_Bool)associateThumbnailsForDocumentAtURL:(id)arg1 withDocumentAtURL:(id)arg2 error:(id *)arg3;
 + (_Bool)setThumbnailsDictionary:(id)arg1 forURL:(id)arg2 error:(id *)arg3;
++ (void)fpfsDownloadOrGenerateThumbnailAtTaggedURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)preFPFSDownloadOrGenerateThumbnailAtTaggedURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)preFPFSDownloadThumbnailAtTaggedURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)downloadOrGenerateThumbnailAtTaggedURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)downloadOrGenerateThumbnailAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)downloadOrGenerateThumbnailAtURL:(id)arg1;

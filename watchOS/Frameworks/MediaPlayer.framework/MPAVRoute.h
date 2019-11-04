@@ -67,6 +67,7 @@
 - (unsigned int)hash;
 @property(readonly, nonatomic) _Bool supportsWirelessDisplay;
 @property(readonly, nonatomic, getter=isLowLatencyRoute) _Bool lowLatencyRoute;
+@property(readonly, nonatomic, getter=isB419Route) _Bool b419Route;
 @property(readonly, nonatomic, getter=isB444Route) _Bool b444Route;
 @property(readonly, nonatomic, getter=isW2Route) _Bool w2Route;
 @property(readonly, nonatomic, getter=isH1Route) _Bool h1Route;
@@ -81,6 +82,7 @@
 @property(readonly, nonatomic, getter=isBeatsStudioRoute) _Bool beatsStudioRoute;
 @property(readonly, nonatomic, getter=isBeatsSoloRoute) _Bool beatsSoloRoute;
 @property(readonly, nonatomic, getter=isPowerbeatsRoute) _Bool powerbeatsRoute;
+@property(readonly, nonatomic, getter=isB298Route) _Bool b298Route;
 @property(readonly, nonatomic, getter=isAirpodsRoute) _Bool airpodsRoute;
 @property(readonly, nonatomic, getter=isHeadphonesRoute) _Bool headphonesRoute;
 @property(readonly, nonatomic, getter=isShareableRoute) _Bool shareableRoute;

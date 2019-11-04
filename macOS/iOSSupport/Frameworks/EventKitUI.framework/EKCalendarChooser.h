@@ -162,6 +162,7 @@
 @property(nonatomic) BOOL allowsRotation;
 - (void)setShowAll:(BOOL)arg1;
 - (struct CGSize)preferredContentSize;
+- (void)viewDidLayoutSubviews;
 - (id)_tableHeaderView;
 - (id)_viewModeTitle;
 - (void)viewDidAppear:(BOOL)arg1;

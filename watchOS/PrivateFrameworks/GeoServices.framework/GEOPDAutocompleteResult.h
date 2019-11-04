@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_clientRankingFeatureMetadatas;
     NSMutableArray *_sections;
     NSMutableArray *_sortPriorityMappings;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _retainSearchTime;
     _Bool _enableRap;
     _Bool _isNoResultFromNegativeCache;
@@ -100,6 +102,8 @@ __attribute__((visibility("hidden")))
 - (void)clearSections;
 @property(retain, nonatomic) NSMutableArray *sections;
 - (void)_readSections;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

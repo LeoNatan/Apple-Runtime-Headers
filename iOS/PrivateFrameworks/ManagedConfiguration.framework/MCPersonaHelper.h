@@ -15,8 +15,10 @@
 + (void)untrackDirtyPersona:(id)arg1;
 + (void)trackDirtyPersona:(id)arg1;
 + (_Bool)personaWithUniqueIdentifierExists:(id)arg1;
++ (_Bool)isCurrentPersonaEnterprise;
 + (id)currentPersonaID;
 + (id)performBlockUnderPersona:(id)arg1 block:(CDUnknownBlockType)arg2;
++ (id)performBlockUnderPersonalPersona:(CDUnknownBlockType)arg1;
 + (id)appleAccountWithPersonaID:(id)arg1;
 + (id)updateAccountDescriptionName:(id)arg1 forAppleAccountWithPersonaID:(id)arg2;
 + (id)accountIdentifierForAppleAccountWithPersonaID:(id)arg1;

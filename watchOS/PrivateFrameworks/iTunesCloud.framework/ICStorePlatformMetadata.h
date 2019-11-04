@@ -37,6 +37,7 @@
 @property(readonly, copy, nonatomic) NSString *movementName;
 @property(readonly, nonatomic) int movementCount;
 @property(readonly, copy, nonatomic) NSString *kind;
+@property(readonly, nonatomic) _Bool hasTimeSyncedLyrics;
 @property(readonly, nonatomic) _Bool hasLyrics;
 @property(readonly, copy, nonatomic) NSArray *genreNames;
 @property(readonly, nonatomic) int explicitRating;

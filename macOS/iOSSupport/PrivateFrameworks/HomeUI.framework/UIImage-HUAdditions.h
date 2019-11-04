@@ -7,6 +7,8 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (HUAdditions)
++ (id)hu_standardSymbolConfiguration;
++ (id)hu_cellCheckmarkImage;
 + (id)hu_cameraErrorImage;
 + (id)hu_smallQRBadgeTemplateImage;
 + (id)hu_largeQRBadgeTemplateImage;

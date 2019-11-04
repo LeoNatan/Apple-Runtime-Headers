@@ -9,7 +9,7 @@
 #import <SiriInstrumentation/NSSecureCoding-Protocol.h>
 #import <SiriInstrumentation/SISchemaClientEvent-Protocol.h>
 
-@class NSData, NSString, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, SISchemaClientEventMetadata, SISchemaClientFlow, SISchemaClientTransportEventMetadata, SISchemaConversationTrace, SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, SISchemaPunchOut, SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, SISchemaTextToSpeechEnd, SISchemaUIStateTransition, SISchemaUUFRPresented;
+@class NSData, NSString, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, SISchemaClientEventMetadata, SISchemaClientFlow, SISchemaClientTransportEventMetadata, SISchemaConversationTrace, SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, SISchemaDialogOutput, SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, SISchemaPunchOut, SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, SISchemaTextToSpeechEnd, SISchemaUIStateTransition, SISchemaUUFRPresented;
 
 @interface SISchemaClientEvent : PBCodable <SISchemaClientEvent, NSSecureCoding>
 {
@@ -31,6 +31,7 @@
     SISchemaTextToSpeechEnd *_textToSpeechEnd;
     SISchemaUIStateTransition *_uiStateTransition;
     SISchemaClientFlow *_clientFlow;
+    SISchemaDialogOutput *_dialogOutput;
     unsigned long long _whichEvent_Type;
 }
 
@@ -49,6 +50,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+@property(retain, nonatomic) SISchemaDialogOutput *dialogOutput; // @synthesize dialogOutput=_dialogOutput;
 @property(retain, nonatomic) SISchemaClientFlow *clientFlow; // @synthesize clientFlow=_clientFlow;
 @property(retain, nonatomic) SISchemaUIStateTransition *uiStateTransition; // @synthesize uiStateTransition=_uiStateTransition;
 @property(retain, nonatomic) SISchemaTextToSpeechEnd *textToSpeechEnd; // @synthesize textToSpeechEnd=_textToSpeechEnd;

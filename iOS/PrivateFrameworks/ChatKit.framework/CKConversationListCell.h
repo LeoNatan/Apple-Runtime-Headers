@@ -8,13 +8,14 @@
 
 #import <ChatKit/CKConversationListCell-Protocol.h>
 
-@class CKAvatarView, CKConversation, CKLabel, NSDate, NSObject, NSString, STConversationContext, UIDateLabel, UIImageView, UILabel;
+@class CKAvatarView, CKConversation, CKLabel, NSDate, NSObject, NSString, UIDateLabel, UIImageView, UILabel;
 @protocol CKConversationListCellDelegate;
 
 @interface CKConversationListCell : UITableViewCell <CKConversationListCell>
 {
     UIDateLabel *_dateLabel;
     UILabel *_summaryLabel;
+    UILabel *_summaryBlockedLabel;
     UIImageView *_chevronImageView;
     CKLabel *_fromLabel;
     _Bool _isPlaceholder;
@@ -22,30 +23,28 @@
     NSString *_searchMessageGUID;
     NSDate *_searchMessageDate;
     _Bool _verified;
-    _Bool _allowedByScreenTime;
+    _Bool _shouldHidePreviewSummary;
     NSObject<CKConversationListCellDelegate> *_delegate;
-    STConversationContext *_screentimeConversationContext;
     CKConversation *_conversation;
 }
 
 + (double)cellHeight;
 + (id)identifierForConversation:(id)arg1;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
-@property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
-@property(nonatomic) __weak STConversationContext *screentimeConversationContext; // @synthesize screentimeConversationContext=_screentimeConversationContext;
 @property(nonatomic) __weak NSObject<CKConversationListCellDelegate> *delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool shouldHidePreviewSummary; // @synthesize shouldHidePreviewSummary=_shouldHidePreviewSummary;
 @property(nonatomic) _Bool verified; // @synthesize verified=_verified;
 @property(copy, nonatomic) NSString *searchSummaryText; // @synthesize searchSummaryText=_searchSummaryText;
 @property(retain, nonatomic) NSDate *searchMessageDate; // @synthesize searchMessageDate=_searchMessageDate;
 @property(copy, nonatomic) NSString *searchMessageGUID; // @synthesize searchMessageGUID=_searchMessageGUID;
 - (void).cxx_destruct;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)updateBlockedSummaryLabelIfNeeded;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)updateForEditing:(_Bool)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateWithSearchResult:(id)arg1;
 - (id)_makeSummaryAttributedStringWithText:(id)arg1;
-- (void)updateSummaryTextForConversation:(id)arg1 fastPreview:(_Bool)arg2 blockedForDowntime:(_Bool)arg3;
+- (id)summaryAttributedTextForBlockedConversationWithIcon:(_Bool)arg1;
 - (void)updateSummaryTextForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1;

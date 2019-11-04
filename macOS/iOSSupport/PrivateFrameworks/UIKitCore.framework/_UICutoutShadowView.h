@@ -4,22 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/_UIShadowView.h>
+#import <UIKitCore/_UIRoundedRectShadowView.h>
 
 __attribute__((visibility("hidden")))
-@interface _UICutoutShadowView : _UIShadowView
+@interface _UICutoutShadowView : _UIRoundedRectShadowView
 {
-    struct UIEdgeInsets _shadowOutsets;
-    double _maskCornerRadius;
 }
 
-+ (struct UIEdgeInsets)_expansionInsetForShadowImage;
-@property(readonly, nonatomic) double maskCornerRadius; // @synthesize maskCornerRadius=_maskCornerRadius;
-- (void)_loadImageIfNecessary;
-- (void)_updateShadowOutsetsIfNecessary;
-- (void)layoutSubviews;
-- (struct CGRect)frameWithContentWithFrame:(struct CGRect)arg1;
-- (id)initWithCornerRadius:(double)arg1;
++ (BOOL)_shouldCutoutShadow;
 
 @end
 

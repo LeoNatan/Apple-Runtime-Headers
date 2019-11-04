@@ -6,9 +6,10 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles4)
-- (_Bool)accessibilityShouldScroll:(id)arg1;
-- (_Bool)accessibilityShouldScroll:(id)arg1 defaultValue:(_Bool)arg2;
-- (_Bool)shouldOccludeAccessibilityElement:(id)arg1;
+#import <NewsArticles/NUArticleHardPaywallPresentationReporting-Protocol.h>
+
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles4) <NUArticleHardPaywallPresentationReporting>
+- (_Bool)isPreviewing;
+- (_Bool)isShowingHardPaywall;
 @end
 

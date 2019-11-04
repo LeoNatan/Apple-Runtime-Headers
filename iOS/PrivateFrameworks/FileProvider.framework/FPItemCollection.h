@@ -80,7 +80,8 @@
 - (id)_reorderWithPlaceholdersLast:(id)arg1;
 - (id)indexPathsFromIndexSet:(id)arg1;
 - (id)indexPathFromIndex:(long long)arg1;
-- (void)_receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2 forceFlush:(_Bool)arg3;
+- (void)_receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2 forceFlush:(_Bool)arg3 dropForReplacedPlaceholders:(_Bool)arg4;
+- (void)_receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2 dropForReplacedPlaceholders:(_Bool)arg3;
 - (void)_receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2;
 - (void)receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2;
 - (void)receivedBatchWithUpdatedItems:(id)arg1 deletedItemsIdentifiers:(id)arg2 hasMoreChanges:(_Bool)arg3;
@@ -104,6 +105,7 @@
 - (void)resumeUpdates;
 - (void)suspendUpdates;
 - (void)stopObserving;
+- (_Bool)dataSourceShouldAlwaysReplaceContents:(id)arg1;
 - (void)dataSource:(id)arg1 wasInvalidatedWithError:(id)arg2;
 - (void)dataSource:(id)arg1 receivedUpdatedItems:(id)arg2 deletedItems:(id)arg3 hasMoreChanges:(_Bool)arg4;
 - (void)dataSource:(id)arg1 replaceContentsWithItems:(id)arg2 hasMoreChanges:(_Bool)arg3;

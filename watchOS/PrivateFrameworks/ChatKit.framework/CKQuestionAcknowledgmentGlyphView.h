@@ -6,17 +6,17 @@
 
 #import <ChatKit/CKAcknowledgmentGlyphView.h>
 
-@class UIImageView;
+@class CKAcknowledgmentGlyphImageView;
 
 __attribute__((visibility("hidden")))
 @interface CKQuestionAcknowledgmentGlyphView : CKAcknowledgmentGlyphView
 {
-    UIImageView *_glyph;
-    UIImageView *_dot;
+    CKAcknowledgmentGlyphImageView *_glyph;
+    CKAcknowledgmentGlyphImageView *_dot;
 }
 
-@property(retain, nonatomic) UIImageView *dot; // @synthesize dot=_dot;
-@property(retain, nonatomic) UIImageView *glyph; // @synthesize glyph=_glyph;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *dot; // @synthesize dot=_dot;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *glyph; // @synthesize glyph=_glyph;
 - (void).cxx_destruct;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;

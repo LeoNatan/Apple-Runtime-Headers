@@ -6,13 +6,15 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMBCloudZone, HMDCloudShareParticipantsManager, HMDUserSettingsBackingStoreController, NSUUID;
+@class HMBCloudZone, HMDCloudShareParticipantsManager, HMDUser, HMDUserSettingsBackingStoreController, NSUUID;
 
 @protocol HMDUserSettingsBackingStoreControllerDelegate <NSObject>
 @property(readonly) BOOL isCurrentUser;
 @property(readonly) BOOL isRunningOnHomeOwnersDevice;
 @property(readonly) NSUUID *userUUID;
+- (HMDUser *)ownerForUserSettingsBackingStoreController:(HMDUserSettingsBackingStoreController *)arg1;
 - (HMDCloudShareParticipantsManager *)backingStoreController:(HMDUserSettingsBackingStoreController *)arg1 createParticipantManagerForCloudZone:(HMBCloudZone *)arg2;
+- (void)didStopBackingStoreController:(HMDUserSettingsBackingStoreController *)arg1;
 - (void)didStartBackingStoreController:(HMDUserSettingsBackingStoreController *)arg1;
 @end
 

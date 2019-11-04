@@ -13,9 +13,11 @@
 @interface GEOLogMsgEventTileCacheAnalytic : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOCacheHit *_cacheHit;
     GEOCacheMiss *_cacheMiss;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_cacheHit:1;
         unsigned int read_cacheMiss:1;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) GEOCacheHit *cacheHit;
 @property(readonly, nonatomic) BOOL hasCacheHit;
 - (void)_readCacheHit;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

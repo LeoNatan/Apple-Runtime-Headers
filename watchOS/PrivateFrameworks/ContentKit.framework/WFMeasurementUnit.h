@@ -11,6 +11,7 @@
 }
 
 + (id)unitFromString:(id)arg1;
++ (id)unitFromString:(id)arg1 unitType:(id)arg2 caseSensitive:(_Bool)arg3;
 + (id)defaultUnitForUnitType:(id)arg1;
 + (_Bool)usesMetricSystemForUnitType:(id)arg1;
 + (id)availableUnitsForUnitType:(id)arg1 cacheResult:(_Bool)arg2;

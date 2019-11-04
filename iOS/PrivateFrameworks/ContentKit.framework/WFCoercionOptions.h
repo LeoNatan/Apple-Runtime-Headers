@@ -25,6 +25,8 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (_Bool)coercionPathIsDisallowed:(id)arg1;
+- (id)preferredTypes;
+- (id)itemClassPrioritizationType;
 - (void)makeRemoteServerAccessResourceAvailableIfNeededWithURLs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)makeContactAccessResourceAvailableIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
 

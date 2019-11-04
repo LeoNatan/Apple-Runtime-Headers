@@ -24,7 +24,6 @@
 - (id)init;
 - (void)appQuery:(id)arg1 resultsDidChange:(id)arg2;
 - (void)dealloc;
-- (void)didReceiveUpdateFromProductPage:(id)arg1;
 
 @end
 

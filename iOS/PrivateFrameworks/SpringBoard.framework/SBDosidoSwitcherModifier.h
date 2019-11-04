@@ -28,7 +28,7 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (id)transitionWillUpdate;
 - (id)transitionWillBegin;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3;
 
 @end

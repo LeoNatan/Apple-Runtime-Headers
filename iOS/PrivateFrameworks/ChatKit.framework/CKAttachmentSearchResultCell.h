@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <ChatKit/CKEditableSearchResultCell.h>
 
 #import <ChatKit/CKSearchResultCell-Protocol.h>
 
 @class CKSearchAvatarSupplementryView, NSString, UIDateLabel, UIImageView, UILabel;
 
-@interface CKAttachmentSearchResultCell : UICollectionViewCell <CKSearchResultCell>
+@interface CKAttachmentSearchResultCell : CKEditableSearchResultCell <CKSearchResultCell>
 {
     _Bool _suppressAvatars;
     UIImageView *_imageView;
@@ -36,6 +36,7 @@
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) double editModeHorizontalOffset;
 @property(readonly, nonatomic) struct CGPoint avatarOffsetRTL;
 @property(readonly, nonatomic) struct CGPoint avatarOffsetLTR;
 - (id)initWithFrame:(struct CGRect)arg1;
@@ -43,6 +44,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isEditing) _Bool editing;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

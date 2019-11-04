@@ -31,6 +31,7 @@
 - (id)_containerViewController;
 - (struct CGSize)_pageViewSizeForAppLayout:(id)arg1;
 - (long long)_interfaceOrientation;
+- (long long)_preferredContentInterfaceOrientationForViewController:(id)arg1 preferredInterfaceOrientation:(long long)arg2;
 - (void)appSwitcherTransientOverlayPageContentViewDidChangeContainerOrientation:(id)arg1;
 - (void)appSwitcherTransientOverlayPageContentViewDidChangeActive:(id)arg1;
 - (void)relinquishTransientOverlayViewController:(id)arg1;

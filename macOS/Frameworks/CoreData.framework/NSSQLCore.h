@@ -174,6 +174,7 @@ __attribute__((visibility("hidden")))
 - (id)fileBackedFuturesDirectory;
 - (id)_supportDirectoryPath;
 - (void)setConnectionsAreLocal:(BOOL)arg1;
+- (void)_rebuildIndiciesSynchronously:(BOOL)arg1;
 - (void)_disconnectAllConnections;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;

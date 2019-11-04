@@ -24,6 +24,8 @@
 - (double)weightUsingCriterion:(long long)arg1;
 @property(readonly, nonatomic) double weight;
 @property(readonly, nonatomic) struct CGSize size;
+- (id)_imageProccessingFlagsWithMainFileURL:(id)arg1;
+- (id)_deferredProcessingStringWithEnum:(unsigned short)arg1;
 - (id)_junkClassificationStringWithClassifications:(id)arg1;
 - (id)_sceneClassificationStringWithClassifications:(id)arg1;
 - (id)stringMinutesTimeRangeFromTimeRange:(CDStruct_e83c9415)arg1;

@@ -6,26 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSPredicate, PLDatabaseContext, PLPhotoLibrary;
+@class NSPredicate;
 
 @interface PLPairing : NSObject
 {
-    PLDatabaseContext *_context;
     NSPredicate *_locatedInUsersPhotoLibrary;
-    PLPhotoLibrary *_photolibrary;
+    struct os_unfair_lock_s _lock;
 }
 
-+ (id)processPairingForLibrary:(id)arg1 duplicateDetection:(_Bool)arg2 error:(id *)arg3;
-@property(retain) PLPhotoLibrary *photolibrary; // @synthesize photolibrary=_photolibrary;
++ (id)getMetadataForAsset:(id)arg1;
 - (void).cxx_destruct;
-- (id)_fetchRequestForSortedSpatialOverCaptureGroupIDs:(id)arg1;
-- (void)_combineCTMPairs:(id)arg1 synchronousResult:(CDUnknownBlockType)arg2;
-- (void)_firstSocPairFromAssets:(id)arg1 synchronousResult:(CDUnknownBlockType)arg2;
-- (id)_processPairingForLibrary:(id)arg1 spatialOverCaptureGroupIDs:(id)arg2 duplicateDetection:(_Bool)arg3 error:(id *)arg4;
-- (id)processPairingForSpatialOverCaptureGroupIDs:(id)arg1 duplicateDetection:(_Bool)arg2 error:(id *)arg3;
-- (void)initializeInternalProperties;
-- (id)initWithDatabaseContext:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1;
+- (_Bool)processPairingForGroupIDs:(id)arg1 inContext:(id)arg2 duplicateDetection:(_Bool)arg3 error:(id *)arg4;
+- (id)init;
 
 @end
 

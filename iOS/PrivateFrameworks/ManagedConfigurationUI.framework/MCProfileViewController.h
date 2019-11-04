@@ -13,7 +13,7 @@
 
 @interface MCProfileViewController : UITableViewController <PSStateRestoration>
 {
-    _Bool _wasSwizzled;
+    _Bool _installingFromPurgatory;
     _Bool _installComplete;
     _Bool _profileOffersReenroll;
     _Bool _profileRemovable;
@@ -26,7 +26,7 @@
 @property(nonatomic) _Bool profileOffersReenroll; // @synthesize profileOffersReenroll=_profileOffersReenroll;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
 @property(nonatomic) _Bool installComplete; // @synthesize installComplete=_installComplete;
-@property(nonatomic) _Bool wasSwizzled; // @synthesize wasSwizzled=_wasSwizzled;
+@property(nonatomic) _Bool installingFromPurgatory; // @synthesize installingFromPurgatory=_installingFromPurgatory;
 @property(nonatomic) long long profileViewMode; // @synthesize profileViewMode=_profileViewMode;
 @property(nonatomic) __weak id <MCProfileViewControllerDelegate> profileViewControllerDelegate; // @synthesize profileViewControllerDelegate=_profileViewControllerDelegate;
 - (void).cxx_destruct;

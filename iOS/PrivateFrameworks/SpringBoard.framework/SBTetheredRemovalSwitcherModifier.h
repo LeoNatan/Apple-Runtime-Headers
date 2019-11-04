@@ -11,16 +11,16 @@
 @interface SBTetheredRemovalSwitcherModifier : SBSwitcherModifier
 {
     NSUUID *_tetheredRemovalID;
+    _Bool _isFloating;
     unsigned long long _phase;
-    _Bool _simulatingPostRemovalState;
+    unsigned long long _indexToScrollAfterInsertion;
 }
 
 - (void).cxx_destruct;
-- (void)_performBlockWhileSimulatingPostRemovalAppLayoutState:(CDUnknownBlockType)arg1;
+- (long long)layoutUpdateMode;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
-- (struct CGRect)switcherViewBounds;
 - (id)handleTetheredRemovalEvent:(id)arg1;
-- (id)initWithTetheredRemovalID:(id)arg1;
+- (id)initWithTetheredRemovalID:(id)arg1 floating:(_Bool)arg2;
 
 @end
 

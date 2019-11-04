@@ -13,11 +13,13 @@
 @interface GEOWiFiQualityHours : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _days;
     struct GEOWiFiQualityTimeRange *_timeRanges;
     unsigned long long _timeRangesCount;
     unsigned long long _timeRangesSpace;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_days:1;
         unsigned int read_timeRanges:1;
@@ -57,6 +59,8 @@
 @property(readonly, nonatomic) unsigned long long daysCount;
 - (void)_readDays;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

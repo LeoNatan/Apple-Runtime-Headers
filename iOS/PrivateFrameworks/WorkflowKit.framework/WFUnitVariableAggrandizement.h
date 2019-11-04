@@ -6,7 +6,7 @@
 
 #import <WorkflowKit/WFVariableAggrandizement.h>
 
-@class NSUnit;
+@class NSString, NSUnit;
 
 @interface WFUnitVariableAggrandizement : WFVariableAggrandizement
 {
@@ -18,7 +18,8 @@
 - (id)processedContentClasses:(id)arg1;
 - (id)availableUnits;
 @property(readonly, nonatomic) NSUnit *unit; // @synthesize unit=_unit;
-- (id)initWithUnit:(id)arg1;
+@property(readonly, nonatomic) NSString *unitType;
+- (id)initWithUnit:(id)arg1 unitType:(id)arg2;
 
 @end
 

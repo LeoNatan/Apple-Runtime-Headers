@@ -31,6 +31,7 @@
 + (int)_createFigPlayerWithType:(long long)arg1 options:(const struct __CFDictionary *)arg2 player:(struct OpaqueFigPlayer **)arg3;
 + (BOOL)automaticallyNotifiesObserversOfCurrentItem;
 + (id)playerWithFigPlayer:(struct OpaqueFigPlayer *)arg1;
++ (BOOL)worksAroundConcurrentKVOCrash;
 + (id)playerWithPlayerItem:(id)arg1;
 + (id)playerWithURL:(id)arg1;
 + (void)initialize;
@@ -176,7 +177,7 @@
 - (BOOL)_cachedNonForcedSubtitleDisplayEnabledForCurrentItem;
 - (void)_noteNewPresentationSizeForPlayerItem:(id)arg1;
 - (struct CGSize)_cachedPresentationSizeOfCurrentItem;
-- (void)_runOnIvarAccessQueueOperationThatMayChangeCurrentItemWithPreflightBlock:(CDUnknownBlockType)arg1 modificationBlock:(CDUnknownBlockType)arg2;
+- (BOOL)_runOnIvarAccessQueueOperationThatMayChangeCurrentItemWithPreflightBlock:(CDUnknownBlockType)arg1 modificationBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (void)_updateProxyTimebaseFromNewCurrentItem;
 - (id)_synchronizeWithNewCurrentItem;
 - (void)_setCurrentItem:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, SASLockStateMonitor, SUICApplicationStateHelper;
+@class AFNotifyObserver, NSHashTable, SASLockStateMonitor, SUICApplicationStateHelper;
 
 @interface SASSystemState : NSObject
 {
@@ -16,9 +16,14 @@
     SASLockStateMonitor *_lockStateMonitor;
     SUICApplicationStateHelper *_applicationStateHelper;
     NSHashTable *_listeners;
+    AFNotifyObserver *_observerWirelessSplitter;
+    AFNotifyObserver *_observerBluetoothGuestConnected;
 }
 
++ (id)new;
 + (id)sharedSystemState;
+@property(retain, nonatomic) AFNotifyObserver *observerBluetoothGuestConnected; // @synthesize observerBluetoothGuestConnected=_observerBluetoothGuestConnected;
+@property(retain, nonatomic) AFNotifyObserver *observerWirelessSplitter; // @synthesize observerWirelessSplitter=_observerWirelessSplitter;
 @property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) SUICApplicationStateHelper *applicationStateHelper; // @synthesize applicationStateHelper=_applicationStateHelper;
@@ -36,6 +41,8 @@
 - (_Bool)isConnectedToCarPlay;
 - (void)monitorCarSessions;
 - (_Bool)carDNDActive;
+- (_Bool)isGuestConnected;
+- (_Bool)isWirelessSplitterOn;
 - (_Bool)isInActiveCall;
 - (id)foregroundAppInfosForPresentationIdentifier:(long long)arg1;
 - (_Bool)deviceIsPasscodeLocked;

@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long titleType; // @synthesize titleType=_titleType;
 - (void).cxx_destruct;
+- (void)adoptNewLayout;
 - (void)adoptLayout:(id)arg1;
 - (void)clearTransitionContext;
 - (void)finalizeStateFromTransition:(id)arg1;

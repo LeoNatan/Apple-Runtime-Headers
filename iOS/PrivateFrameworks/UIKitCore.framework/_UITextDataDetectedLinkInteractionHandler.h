@@ -8,25 +8,26 @@
 
 #import <UIKitCore/_UITextItemInteractionHandler-Protocol.h>
 
-@class NSString, UIView;
+@class NSString, UIAction, UIView;
 @protocol _UITextContent;
 
 __attribute__((visibility("hidden")))
 @interface _UITextDataDetectedLinkInteractionHandler : NSObject <_UITextItemInteractionHandler>
 {
     struct _NSRange _range;
+    struct CGRect _rect;
     UIView<_UITextContent> *_view;
+    UIAction *_defaultAction;
 }
 
 - (void).cxx_destruct;
 - (unsigned long long)preferredContextMenuLayout;
 - (id)contextMenuConfiguration;
-- (id)actionSheetActionsForAlertController:(id)arg1;
 - (id)actionSheetTitle;
-- (_Bool)shouldShowActionSheet;
 - (id)_defaultDDAction;
+- (id)_defaultAction;
 - (id)defaultAction;
-- (id)initWithRange:(struct _NSRange)arg1 textContentView:(id)arg2;
+- (id)initWithRange:(struct _NSRange)arg1 rect:(struct CGRect)arg2 inTextContentView:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

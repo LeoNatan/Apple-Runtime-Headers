@@ -13,10 +13,12 @@
 @interface GEOAdditionalEnabledMarkets : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_offlineMarkets;
     NSMutableArray *_transitMarkets;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_offlineMarkets:1;
@@ -59,6 +61,8 @@
 - (void)clearTransitMarkets;
 @property(retain, nonatomic) NSMutableArray *transitMarkets;
 - (void)_readTransitMarkets;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSArray *queryItems;
 @property(readonly, nonatomic) NSDictionary *queryParameters;
 - (void)reload;

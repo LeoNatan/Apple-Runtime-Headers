@@ -165,6 +165,7 @@
 - (_Bool)_resultsControllerWillLayoutVisibleUnderContainerView;
 - (void)_resizeResultsControllerWithDelta:(struct CGSize)arg1;
 - (id)_createAnimationCoordinator;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

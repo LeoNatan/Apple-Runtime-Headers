@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSString, UIView;
+@class NSMutableArray, NSString, UIView, WKInterfaceController;
 
 @interface WKInterfaceObject : NSObject
 {
     NSString *_interfaceProperty;
     NSMutableArray *_deferredValuesToSet;
+    WKInterfaceController *_interfaceController;
     UIView *__interfaceView;
     NSString *_viewControllerID;
     NSString *_propertyIndex;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSString *propertyIndex; // @synthesize propertyIndex=_propertyIndex;
 @property(copy, nonatomic) NSString *viewControllerID; // @synthesize viewControllerID=_viewControllerID;
 @property(retain, nonatomic) UIView *_interfaceView; // @synthesize _interfaceView=__interfaceView;
+@property(nonatomic) __weak WKInterfaceController *interfaceController; // @synthesize interfaceController=_interfaceController;
 @property(retain, nonatomic) NSMutableArray *deferredValuesToSet; // @synthesize deferredValuesToSet=_deferredValuesToSet;
 @property(copy, nonatomic) NSString *interfaceProperty; // @synthesize interfaceProperty=_interfaceProperty;
 - (void).cxx_destruct;
@@ -46,6 +48,7 @@
 - (void)_setImage:(id)arg1 forProperty:(id)arg2;
 - (void)_setImageReference:(id)arg1 forProperty:(id)arg2;
 - (void)didRegisterWithRemoteInterface;
+- (void)dismantleInterfaceObject;
 - (void)_setInterfaceController:(id)arg1;
 - (void)_setupWithDescription:(id)arg1 forController:(id)arg2;
 - (id)_initForDynamicCreationWithInterfaceProperty:(id)arg1;

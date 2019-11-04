@@ -16,7 +16,6 @@
     UIViewController *_presentedViewController;
 }
 
-+ (_Bool)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
@@ -24,9 +23,8 @@
 - (void)dynamicResolverViewController:(id)arg1 didFailToResolveWithError:(id)arg2;
 - (void)dynamicResolverViewController:(id)arg1 didFinishResolvingWithObject:(id)arg2;
 - (void)finishAndDismiss:(_Bool)arg1;
-- (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

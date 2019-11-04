@@ -68,9 +68,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)canBecomeFirstResponder;
 - (void)_performCloseKeyCommand;
 - (void)_setUpKeyCommands;
-- (void)_presentDetachSheet;
+- (void)_presentDetachSheetForEvent:(id)arg1 saveAttachments:(BOOL)arg2;
+- (void)_presentAttachmentRecurrenceSheetForEvent:(id)arg1;
 - (id)_viewForSheet;
 - (id)_nameForDeleteButton;
+- (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)_performSave:(long long)arg1 animated:(BOOL)arg2;
 - (void)_performDelete:(long long)arg1;
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
@@ -139,6 +141,9 @@ __attribute__((visibility("hidden")))
 - (id)defaultAlertTitle;
 - (void)setupDeleteButton;
 - (id)preferredTitle;
+- (BOOL)hasAttachmentChanges;
+- (id)attachmentsModifiedEvent;
+- (BOOL)attachmentsModifiedOnRecurrence;
 - (BOOL)saveCalendarItemWithSpan:(long long)arg1 error:(id *)arg2;
 - (void)prepareEditItems;
 - (void)_setCalendarItemOnEditItems;

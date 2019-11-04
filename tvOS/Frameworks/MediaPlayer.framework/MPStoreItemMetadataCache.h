@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)removeExpiredMetadata;
+- (id)metadataForItemIdentifier:(id)arg1 ignoreExpiration:(_Bool)arg2;
 - (id)metadataForItemIdentifier:(id)arg1;
 @property(readonly, nonatomic) long long count;
 - (id)addMetadata:(id)arg1 forItemIdentifier:(id)arg2;

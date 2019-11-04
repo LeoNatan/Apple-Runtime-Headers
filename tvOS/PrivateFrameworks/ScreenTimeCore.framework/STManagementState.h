@@ -37,6 +37,7 @@
 - (_Bool)enableScreenTimeForDSID:(id)arg1 error:(id *)arg2;
 - (_Bool)setScreenTimeEnabled:(_Bool)arg1 error:(id *)arg2;
 - (void)screenTimeStateWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly) _Bool needsToSetRestrictionsPasscode;
 - (void)isRestrictionsPasscodeSet:(CDUnknownBlockType)arg1;
 - (_Bool)clearRestrictionsPasscodeWithError:(id *)arg1;
 @property(readonly, nonatomic) _Bool isRestrictionsPasscodeSet;

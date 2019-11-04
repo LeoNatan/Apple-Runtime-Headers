@@ -7,6 +7,7 @@
 #import <SpringBoard/NSObject-Protocol.h>
 
 @class NSString, UIViewController;
+@protocol SBHUDViewControlling;
 
 @protocol SBHUDControlling <NSObject>
 @property(readonly, nonatomic) _Bool isVisible;
@@ -15,7 +16,7 @@
 @property(readonly, nonatomic) _Bool isPresenting;
 @property(readonly, nonatomic) _Bool isPresented;
 @property(readonly, nonatomic, getter=isDismissalScheduled) _Bool dismissalScheduled;
-@property(readonly, nonatomic) UIViewController *HUDViewController;
+@property(readonly, nonatomic) UIViewController<SBHUDViewControlling> *HUDViewController;
 @property(readonly, nonatomic) NSString *identifier;
 - (void)rescheduleDismissalTimer;
 - (void)scheduleDismissalTimer;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: marginPipeline
     // Error parsing type: , name: existingMargin
     // Error parsing type: , name: layoutProvider
+    // Error parsing type: , name: sharingActivityProviderFactory
     // Error parsing type: , name: isPublisherHeaderVisible
 }
 

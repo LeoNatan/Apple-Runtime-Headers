@@ -30,6 +30,7 @@
 @property(nonatomic) __weak id <NTKCFaceDetailComplicationSectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)complicationPickerCell:(id)arg1 didSelectComplication:(id)arg2;
+- (void)_refreshPickerCellIfNeededForSelectedRow:(long long)arg1;
 - (void)_dequeuePickerCellForRow:(long long)arg1;
 - (void)faceDidChange;
 - (void)toggleRow:(long long)arg1 shouldScroll:(_Bool)arg2;

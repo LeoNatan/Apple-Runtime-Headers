@@ -8,20 +8,32 @@
 
 #import <MobileMailUI/EFLoggable-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, WKWebView;
-@protocol ContentRepresentationHandlingDelegate;
+@class EMMailDropMetadata, NSArray, NSMutableDictionary, NSProgress, NSString, WKWebView;
+@protocol ContentRepresentationHandlingDelegate, EFScheduler;
 
 @interface MessageContentItemsHelper : NSObject <EFLoggable>
 {
     NSMutableDictionary *_elementIDToContentID;
     NSMutableDictionary *_elementIDToWKAttachmentID;
     NSMutableDictionary *_contentIDToDownloadFutures;
+    _Bool _didComputeMailDropProperties;
+    long long _totalUnstartedMailDropDownloadSize;
+    id <EFScheduler> _attachmentsScheduler;
+    NSProgress *_totalMailDropProgress;
+    _Bool _allMailDropsDownloaded;
     WKWebView *_webView;
     NSArray *_contentItems;
     id <ContentRepresentationHandlingDelegate> _representationHandler;
+    EMMailDropMetadata *_mailDropBannerMetadata;
+    unsigned long long _totalMailDropDownloadSize;
+    CDUnknownBlockType _maildropProgressHandler;
 }
 
 + (id)log;
+@property(copy, nonatomic) CDUnknownBlockType maildropProgressHandler; // @synthesize maildropProgressHandler=_maildropProgressHandler;
+@property(nonatomic) _Bool allMailDropsDownloaded; // @synthesize allMailDropsDownloaded=_allMailDropsDownloaded;
+@property(nonatomic) unsigned long long totalMailDropDownloadSize; // @synthesize totalMailDropDownloadSize=_totalMailDropDownloadSize;
+@property(retain, nonatomic) EMMailDropMetadata *mailDropBannerMetadata; // @synthesize mailDropBannerMetadata=_mailDropBannerMetadata;
 @property(nonatomic) __weak id <ContentRepresentationHandlingDelegate> representationHandler; // @synthesize representationHandler=_representationHandler;
 @property(retain, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
@@ -30,16 +42,18 @@
 - (id)startDownloadForContentItem:(id)arg1 userInitiated:(_Bool)arg2;
 - (void)inlineImageFinishedDownloading:(id)arg1;
 - (void)setPercentCompleted:(double)arg1 forContentItem:(id)arg2;
+- (void)_updateProgressFraction:(id)arg1 forContentItem:(id)arg2;
 - (void)setDisplayState:(long long)arg1 forContentItem:(id)arg2;
 - (long long)displayStateForContentItem:(id)arg1;
 - (void)_injectAttachmentViewForElementWithSourceAttributeValue:(id)arg1 forContentItem:(id)arg2;
-- (void)updateDragItemProvider:(id)arg1 forContentID:(id)arg2;
+- (void)updateDragItemProvider:(id)arg1 forElementID:(id)arg2;
 - (id)futureForContentItem:(id)arg1;
 - (void)showMenuForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)displayViewerForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
-- (void)attachmentWasTappedWithContentID:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
+- (void)attachmentWasTappedWithElementID:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)noteDidFailLoadingResourceWithURL:(id)arg1;
 - (void)noteDidFinishDocumentLoadForURL:(id)arg1;
+- (void)_computeMailDropProperties;
 - (id)contentItemForContentID:(id)arg1;
 - (id)contentItemForElementID:(id)arg1;
 - (void)associateElementID:(id)arg1 withWKAttachmentID:(id)arg2;

@@ -6,9 +6,9 @@
 
 #import <EventKitUI/NSObject-Protocol.h>
 
-@class CalendarEventAlarmTable;
+@class CalendarEventAlarmTable, NSIndexPath;
 
 @protocol CalendarEventAlarmTableDelegate <NSObject>
-- (void)alarmTableDidChangeAlarm:(CalendarEventAlarmTable *)arg1;
+- (void)alarmTable:(CalendarEventAlarmTable *)arg1 didSelectRowAtIndexPath:(NSIndexPath *)arg2 commitSelectionBlock:(void (^)(void))arg3;
 @end
 

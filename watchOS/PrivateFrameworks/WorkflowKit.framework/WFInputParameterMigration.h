@@ -16,7 +16,7 @@
 - (void)recursivelyFindDictionaryWithKey:(id)arg1 inDictionary:(id)arg2 then:(CDUnknownBlockType)arg3;
 - (void)recursivelyFindDictionaryWithKey:(id)arg1 inObject:(id)arg2 then:(CDUnknownBlockType)arg3;
 - (id)findGetVariableActionProvidingInputToActionAtIndex:(int)arg1 inWorkflow:(id)arg2;
-- (id)findActionProvidingInputToActionAtIndex:(unsigned int)arg1 inWorkflow:(id)arg2 reachedBeginning:(_Bool *)arg3;
+- (id)findActionProvidingInputToActionAtIndex:(unsigned int)arg1 inWorkflow:(id)arg2 reachedBeginning:(_Bool *)arg3 inputActionIndex:(unsigned int *)arg4;
 - (void)migrateWorkflow;
 
 @end

@@ -35,6 +35,7 @@
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (id)_copyWithPlaybackRequestEnvironmentClass:(Class)arg1;
+- (id)rectifiedPlaybackRequestEnvironmentForAccountManager:(id)arg1 reasons:(id *)arg2;
 - (id)_createStoreRequestContext;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLIndicatorFileCoordinator, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
+#import <PhotoLibraryServices/PLFileSystemVolumeUnmountObserver-Protocol.h>
+
+@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLFileSystemVolumeUnmountMonitor, PLIndicatorFileCoordinator, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
 @protocol PLUnlocker;
 
-@interface PLPhotoLibraryBundle : NSObject
+@interface PLPhotoLibraryBundle : NSObject <PLFileSystemVolumeUnmountObserver>
 {
     NSURL *_libraryURL;
     struct os_unfair_lock_s _lock;
@@ -30,6 +32,7 @@
     PLLazyObject *_lazyConstraintsDirector;
     NSNumber *_sqliteErrorIndicatorFileExists;
     struct os_unfair_lock_s _sqliteErrorIndicatorLock;
+    PLFileSystemVolumeUnmountMonitor *_volumeUnmountMonitor;
     PLPhotoLibraryPathManager *_pathManager;
     PLPhotoLibraryBundleController *_bundleController;
     id <PLUnlocker> _unlocker;
@@ -47,6 +50,7 @@
 - (id)newLibraryServicesManager;
 - (id)newChangePublisher;
 - (id)newAssetsdClient;
+- (void)volumeWillUnmount:(id)arg1;
 @property(readonly) PLConstraintsDirector *constraintsDirector;
 @property(readonly) PLPhotoAnalysisServiceClient *photoAnalysisServiceClient;
 - (id)boundAssetsdServicesTable;
@@ -54,6 +58,7 @@
 - (BOOL)sqliteErrorIndicatorFileExists;
 - (void)shutdownWithReason:(id)arg1;
 - (void)close;
+- (void)_invalidatePersistentContainer;
 - (void)_invalidateChangeHandlingContainer;
 - (void)initializeChangeHandling;
 - (id)newChangeHandlingContainer;

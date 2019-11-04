@@ -21,11 +21,13 @@
 - (void).cxx_destruct;
 - (void)_turnOffVoiceIDAndChangeSiriLanguageForAllHomePods:(id)arg1;
 - (void)_clearSpinner;
-- (void)_turnOffVoiceIDAndChangeSiriLanguageForThisHomePod:(id)arg1;
-- (void)_turnOffVoiceID;
-- (void)_presentAlertConfirmingLanguageChangeForThisORAllHomePods:(id)arg1;
-- (void)_presentAlertConfirmingLanguageChangeForAllHomeMembers:(id)arg1;
-- (void)_presentAlertConfirmingLanguageChangeAndTurnOffVoiceRecognition:(id)arg1;
+- (_Bool)_isAnyHomePodOnSupportedMultiUserLanguage;
+- (void)_changeSiriLanguageOnlyForThisHomePod:(id)arg1 turnOffVoiceID:(_Bool)arg2;
+- (void)_turnOffVoiceIDForTargetLanguageOption:(id)arg1;
+- (void)_attemptToFixVoiceRecognitionOnboardingFailures:(id)arg1;
+- (void)_presentAlertConfirmingLanguageChangeForThisORAllHomePods:(id)arg1 indexPath:(id)arg2;
+- (void)_presentAlertConfirmingLanguageChangeForAllHomeMembers:(id)arg1 indexPath:(id)arg2;
+- (void)_presentAlertConfirmingLanguageChangeAndTurnOffVoiceRecognition:(id)arg1 indexPath:(id)arg2;
 - (_Bool)_shouldPresentAlertRequestingToTurnOffVoiceRecognition:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;

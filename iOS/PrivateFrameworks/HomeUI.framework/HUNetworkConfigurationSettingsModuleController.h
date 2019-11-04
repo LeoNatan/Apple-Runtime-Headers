@@ -6,14 +6,29 @@
 
 #import <HomeUI/HUItemTableModuleController.h>
 
-@interface HUNetworkConfigurationSettingsModuleController : HUItemTableModuleController
+#import <HomeUI/HUNetworkConfigurationSettingsModuleDelegate-Protocol.h>
+#import <HomeUI/HUTappableTextViewDelegate-Protocol.h>
+
+@class NSString;
+
+@interface HUNetworkConfigurationSettingsModuleController : HUItemTableModuleController <HUNetworkConfigurationSettingsModuleDelegate, HUTappableTextViewDelegate>
 {
 }
 
+- (id)_presentNetworkConfigurationSettingsMismatchViewController;
+- (void)tappableTextView:(id)arg1 tappedAtIndex:(unsigned long long)arg2 withAttributes:(id)arg3;
+- (void)networkConfigurationSettingsModuleUpdateDidTimeout:(id)arg1;
 - (unsigned long long)didSelectItem:(id)arg1;
 - (_Bool)canSelectItem:(id)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(_Bool)arg3;
 - (Class)cellClassForItem:(id)arg1;
+- (id)initWithModule:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

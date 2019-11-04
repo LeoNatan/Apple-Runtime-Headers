@@ -6,7 +6,7 @@
 
 #import <SpringBoardFoundation/SBAbstractDefaults.h>
 
-@class SBAccessibilityDefaults, SBAppIconForceTouchDefaults, SBAppSwitcherDefaults, SBApplicationDefaults, SBBiometricAuthenticationDefaults, SBBootDefaults, SBDemoDefaults, SBFloatingDockDefaults, SBGestureDefaults, SBHardwareDefaults, SBHomeScreenDefaults, SBIconDefaults, SBIdleTimerDefaults, SBLockScreenDefaults, SBMiscellaneousDefaults, SBMultiUserDefaults, SBNotificationCenterDefaults, SBNotificationDefaults, SBPIPDefaults, SBPowerDefaults, SBRecentDisplayItemsDefaults, SBRotationDefaults, SBSOSDefaults, SBSecurityDefaults, SBSetupDefaults, SBSoftwareUpdateDefaults, SBSoundDefaults, SBStatusBarDefaults, SBTestingDefaults, SBThermalDefaults, SBUsageDefaults, SBVoiceControlDefaults, SBWallpaperDefaults, SBWorkspaceDefaults;
+@class SBAccessibilityDefaults, SBAppIconForceTouchDefaults, SBAppSwitcherDefaults, SBApplicationDefaults, SBBiometricAuthenticationDefaults, SBBootDefaults, SBCameraHardwareButtonDefaults, SBDemoDefaults, SBFloatingDockDefaults, SBGestureDefaults, SBHardwareDefaults, SBHomeScreenDefaults, SBIconDefaults, SBIdleTimerDefaults, SBLockScreenDefaults, SBMiscellaneousDefaults, SBMultiUserDefaults, SBNotificationCenterDefaults, SBNotificationDefaults, SBPIPDefaults, SBPowerDefaults, SBRecentDisplayItemsDefaults, SBRotationDefaults, SBSOSDefaults, SBSecurityDefaults, SBSetupDefaults, SBSoftwareUpdateDefaults, SBSoundDefaults, SBStatusBarDefaults, SBTestingDefaults, SBThermalDefaults, SBUsageDefaults, SBVoiceControlDefaults, SBWallpaperDefaults, SBWorkspaceDefaults;
 
 @interface SBLocalDefaults : SBAbstractDefaults
 {
@@ -16,6 +16,7 @@
     SBAppSwitcherDefaults *_lazy_appSwitcherDefaults;
     SBBiometricAuthenticationDefaults *_lazy_biometricAuthenticationDefaults;
     SBBootDefaults *_lazy_bootDefaults;
+    SBCameraHardwareButtonDefaults *_lazy_cameraHardwareButtonDefaults;
     SBRecentDisplayItemsDefaults *_lazy_recentDisplayItemsDefaults;
     SBDemoDefaults *_lazy_demoDefaults;
     SBGestureDefaults *_lazy_gestureDefaults;
@@ -76,6 +77,7 @@
 @property(readonly, retain, nonatomic) SBGestureDefaults *gestureDefaults;
 @property(readonly, retain, nonatomic) SBDemoDefaults *demoDefaults;
 @property(readonly, retain, nonatomic) SBRecentDisplayItemsDefaults *recentDisplayItemsDefaults;
+@property(readonly, retain, nonatomic) SBCameraHardwareButtonDefaults *cameraHardwareButtonDefaults;
 @property(readonly, retain, nonatomic) SBBootDefaults *bootDefaults;
 @property(readonly, retain, nonatomic) SBBiometricAuthenticationDefaults *biometricAuthenticationDefaults;
 @property(readonly, retain, nonatomic) SBAppSwitcherDefaults *appSwitcherDefaults;

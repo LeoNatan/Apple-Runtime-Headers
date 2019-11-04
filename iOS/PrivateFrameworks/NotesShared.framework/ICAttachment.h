@@ -113,6 +113,7 @@
 @property(retain, nonatomic) NSString *userTitle; // @dynamic userTitle;
 @property(retain, nonatomic) NSString *title; // @dynamic title;
 @property(retain, nonatomic) NSString *urlString; // @dynamic urlString;
+- (_Bool)isUnsupported;
 - (_Bool)isLoadingFromCloud;
 - (void)accountWillChangeToAccount:(id)arg1;
 - (void)willSave;

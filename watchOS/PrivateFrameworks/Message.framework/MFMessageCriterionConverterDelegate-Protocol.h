@@ -6,11 +6,12 @@
 
 #import <Message/NSObject-Protocol.h>
 
-@class MFMessageCriterionConverter, NSArray, NSString;
+@class MFMessageCriterionConverter, MailAccount, NSArray, NSString;
 
 @protocol MFMessageCriterionConverterDelegate <NSObject>
 
 @optional
+- (MailAccount *)mailAccountForIdentifier:(NSString *)arg1;
 - (NSString *)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 expressionForConstantValue:(id)arg2 withCriterionType:(int)arg3;
 - (int)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 criterionTypeForKey:(NSString *)arg2;
 - (unsigned int)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 willUsePredicateOperatorType:(unsigned int)arg2 forKey:(NSString *)arg3;

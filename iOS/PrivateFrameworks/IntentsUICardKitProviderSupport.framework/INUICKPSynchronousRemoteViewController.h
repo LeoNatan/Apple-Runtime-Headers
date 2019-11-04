@@ -36,6 +36,7 @@
 - (id)_minimumSizesBySystemVersion;
 - (id)_interaction;
 @property(readonly, copy, nonatomic) NSSet *cachedRepresentedParameters;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 
 // Remaining properties

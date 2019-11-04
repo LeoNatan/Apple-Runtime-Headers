@@ -21,6 +21,9 @@
 - (void)addAnnotation:(struct CLLocationCoordinate2D)arg1 withImage:(id)arg2 centerOffset:(struct CGPoint)arg3;
 - (void)setRegion:(CDStruct_26e8d939)arg1;
 - (void)setVisibleMapRect:(CDStruct_90e2a262)arg1;
+- (void)setUserTrackingMode:(int)arg1 animated:(_Bool)arg2;
+- (void)setShowsUserHeading:(_Bool)arg1;
+- (void)setShowsUserLocation:(_Bool)arg1;
 - (id)init;
 
 // Remaining properties

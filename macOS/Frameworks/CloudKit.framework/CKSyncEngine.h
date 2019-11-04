@@ -24,6 +24,7 @@
     CKNotificationListener *_notificationListener;
     NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_batchCreationQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     unsigned long long _maxRecordCountPerBatch;
     unsigned long long _maxRecordBytesPerBatch;
@@ -53,6 +54,7 @@
 @property(nonatomic) unsigned long long maxRecordBytesPerBatch; // @synthesize maxRecordBytesPerBatch=_maxRecordBytesPerBatch;
 @property(nonatomic) unsigned long long maxRecordCountPerBatch; // @synthesize maxRecordCountPerBatch=_maxRecordCountPerBatch;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *batchCreationQueue; // @synthesize batchCreationQueue=_batchCreationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) CKNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;
@@ -107,6 +109,7 @@
 - (void)_fetchChangesWithOperationGroup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)nextBatchOfRecordsToModifyDefaultBehavior;
+- (id)nextBatchOfRecordsToModifyWithCustomBatching;
 - (id)nextBatchOfRecordsToModify;
 - (id)newOperationToModifyZonesToSave:(id)arg1 zoneIDsToDelete:(id)arg2 inOperationGroup:(id)arg3;
 - (void)addOperationsToModifyZonesIfNecessaryInOperationGroup:(id)arg1;

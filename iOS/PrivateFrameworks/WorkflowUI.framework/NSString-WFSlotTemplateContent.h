@@ -9,6 +9,7 @@
 #import <WorkflowUI/WFSlotTemplateContent-Protocol.h>
 
 @interface NSString (WFSlotTemplateContent) <WFSlotTemplateContent>
+- (_Bool)wf_hasStrongRTLCharacter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

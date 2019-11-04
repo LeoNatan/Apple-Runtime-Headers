@@ -16,6 +16,7 @@
 + (id)__staticAssets_KEY;
 + (id)__previewArtworkCatalogBlock_KEY;
 + (id)kind;
++ (id)classesForSecureCoding;
 - (id)previewArtworkCatalog;
 - (id)humanDescription;
 

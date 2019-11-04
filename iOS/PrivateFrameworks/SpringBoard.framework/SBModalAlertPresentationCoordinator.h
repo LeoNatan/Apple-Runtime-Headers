@@ -8,24 +8,25 @@
 
 #import <SpringBoard/BSDescriptionProviding-Protocol.h>
 
-@class NSMutableSet, NSString, SBModalAlertPresenter;
+@class NSMutableSet, NSString, SBModalAlertPresenter, UIApplicationSceneDeactivationAssertion, UIApplicationSceneDeactivationManager;
 @protocol BSInvalidatable, SBModalAlertPresentationCoordinatorDelegate;
 
 @interface SBModalAlertPresentationCoordinator : NSObject <BSDescriptionProviding>
 {
     id <SBModalAlertPresentationCoordinatorDelegate> _delegate;
+    UIApplicationSceneDeactivationManager *_sceneDeactivationManager;
     NSMutableSet *_activeModalAlertPresenters;
     SBModalAlertPresenter *_springBoardModalAlertPresenter;
+    UIApplicationSceneDeactivationAssertion *_systemModalAlertsActiveSceneDeactivationAssertion;
+    NSMutableSet *_hideApplicationModalAlertAssertions;
     id <BSInvalidatable> _hideApplicationModalAlertsAssertionWhileSBModalAlertsActive;
 }
 
 @property(retain, nonatomic, getter=_getSpringBoardPresenter, setter=_setSpringBoardPresenter:) SBModalAlertPresenter *springBoardPresenter; // @synthesize springBoardPresenter=_springBoardModalAlertPresenter;
 @property(nonatomic) __weak id <SBModalAlertPresentationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_hideApplicationModalAlertsWithFence:(_Bool)arg1;
-- (void)_showApplicationModalAlertsWithFence:(_Bool)arg1;
+- (void)_adjustApplicationSceneSettingsForModalAlertsAndFence:(_Bool)arg1;
 - (id)_fencingTransitionContext:(_Bool)arg1;
-- (void)_setNotifyStateThatSpringBoardIsShowingAMiniAlert:(_Bool)arg1;
 - (void)_noteSpringBoardModalAlertStateChanged:(_Bool)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -38,7 +39,7 @@
 @property(readonly, nonatomic, getter=canShowApplicationModalAlerts) _Bool canShowApplicationModalAlerts; // @dynamic canShowApplicationModalAlerts;
 @property(readonly, nonatomic, getter=isShowingSystemModalAlert) _Bool showingSystemModalAlert; // @dynamic showingSystemModalAlert;
 @property(readonly, nonatomic, getter=isShowingModalAlert) _Bool showingModalAlert; // @dynamic showingModalAlert;
-- (id)init;
+- (id)initWithSceneDeactivationManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

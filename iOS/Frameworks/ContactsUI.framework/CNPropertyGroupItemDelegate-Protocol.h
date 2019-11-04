@@ -13,6 +13,7 @@
 @optional
 - (CNUIGeminiDataSource *)geminiDataSource;
 - (CNContactViewCache *)contactViewCache;
+- (_Bool)propertyItemCanIgnoreGuardianRestrictions;
 - (void)propertyItem:(CNPropertyGroupItem *)arg1 willChangeValue:(id)arg2;
 @end
 

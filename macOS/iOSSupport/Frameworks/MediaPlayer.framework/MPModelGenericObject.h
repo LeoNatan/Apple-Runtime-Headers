@@ -34,12 +34,11 @@
 - (id)anyObject;
 - (id)identifiers;
 - (id)humanDescription;
+- (id)copyWithIdentifiers:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)mediaItemPropertyValues;
 - (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
 - (id)relativeModelObjectForStoreLibraryPersonalization;
 - (id)personalizationScopedPropertiesForProperties:(id)arg1;
-- (BOOL)storeItemMetadataRequestNeedsPersonalization;
-- (id)storeItemMetadataRequestItemIdentifier;
 
 // Remaining properties
 @property(retain, nonatomic) MPModelAlbum *album; // @dynamic album;

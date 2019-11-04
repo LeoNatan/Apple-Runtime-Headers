@@ -17,10 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (_Bool)_presentActionsForTextInteractableItem:(id)arg1;
 - (_Bool)_allowItemInteractions;
-- (_Bool)_beginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1;
-- (_Bool)_canBeginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1;
+- (_Bool)_beginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1 asTap:(_Bool)arg2;
+- (_Bool)_canBeginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1 asTap:(_Bool)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)interaction_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)interaction_gestureRecognizerShouldBegin:(id)arg1;

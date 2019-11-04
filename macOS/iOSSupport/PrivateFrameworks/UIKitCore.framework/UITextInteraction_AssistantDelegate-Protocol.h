@@ -31,6 +31,7 @@
 - (void)extendSelectionToPoint:(struct CGPoint)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint)arg1;
 - (void)notifyKeyboardSelectionChanged;
+- (void)setFirstResponderIfNecessaryActivatingSelection:(BOOL)arg1;
 - (void)setFirstResponderIfNecessary;
 - (void)checkEditabilityAndSetFirstResponderIfNecessary;
 - (void)scrollSelectionToVisible;

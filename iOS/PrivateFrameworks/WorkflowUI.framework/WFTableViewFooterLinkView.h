@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)tintColorDidChange;
+- (void)updateLinkColor;
 - (void)setText:(id)arg1 URL:(id)arg2 linkRange:(struct _NSRange)arg3;
 - (void)setText:(id)arg1 URL:(id)arg2;
 - (id)initWithReuseIdentifier:(id)arg1;

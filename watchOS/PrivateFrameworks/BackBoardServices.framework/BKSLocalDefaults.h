@@ -10,8 +10,14 @@
 
 @interface BKSLocalDefaults : BSAbstractDefaultDomain
 {
+    _Bool _disableStudyLogAccelerometerLogging;
+    _Bool _disableStudyLogALSLogging;
+    _Bool _disableStudyLogGyroLogging;
 }
 
+@property(nonatomic) _Bool disableStudyLogGyroLogging; // @synthesize disableStudyLogGyroLogging=_disableStudyLogGyroLogging;
+@property(nonatomic) _Bool disableStudyLogALSLogging; // @synthesize disableStudyLogALSLogging=_disableStudyLogALSLogging;
+@property(nonatomic) _Bool disableStudyLogAccelerometerLogging; // @synthesize disableStudyLogAccelerometerLogging=_disableStudyLogAccelerometerLogging;
 - (void)migrateDefaultsIfNecessary;
 - (void)_bindAndRegisterDefaults;
 - (id)init;
@@ -32,7 +38,9 @@
 @property(nonatomic) _Bool disableStudyLogBTKeyboardEventLogging; // @dynamic disableStudyLogBTKeyboardEventLogging;
 @property(nonatomic) _Bool disableStudyLogBTKeyboardEventRedirection; // @dynamic disableStudyLogBTKeyboardEventRedirection;
 @property(nonatomic) _Bool disableStudyLogButtonLogging; // @dynamic disableStudyLogButtonLogging;
+@property(nonatomic) _Bool disableStudyLogCameraKeyLogging; // @dynamic disableStudyLogCameraKeyLogging;
 @property(nonatomic) _Bool disableStudyLogHomeButtonLogging; // @dynamic disableStudyLogHomeButtonLogging;
+@property(nonatomic) _Bool disableStudyLogPowerButtonLogging; // @dynamic disableStudyLogPowerButtonLogging;
 @property(nonatomic) _Bool disableStudyLogVolumeKeyLogging; // @dynamic disableStudyLogVolumeKeyLogging;
 @property(nonatomic, getter=isDitheringEnabled) _Bool ditheringEnabled; // @dynamic ditheringEnabled;
 @property(nonatomic) float fenceArbiterTimeoutInterval; // @dynamic fenceArbiterTimeoutInterval;

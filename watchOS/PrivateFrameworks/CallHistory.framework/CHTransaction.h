@@ -26,6 +26,7 @@
 - (_Bool)isEqualToTransaction:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 andRecord:(id)arg2;

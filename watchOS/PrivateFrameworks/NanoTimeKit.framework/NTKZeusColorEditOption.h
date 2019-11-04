@@ -18,7 +18,6 @@
 + (id)_orderedBeginningValuesRestrictedByDevice:(id)arg1;
 + (id)optionWithColor:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int color;
 
 @end

@@ -39,6 +39,7 @@
     NSString *_mobileCountryCode;
     NSString *_mobileNetworkCode;
     NSNumber *_disconnectedCause;
+    NSNumber *_filteredOutReason;
     NSString *_callerNetworkFirstName;
     NSString *_callerNetworkSecondName;
     unsigned long long _unreadCount;
@@ -128,6 +129,7 @@
 @property(copy) NSString *callerNetworkSecondName; // @synthesize callerNetworkSecondName=_callerNetworkSecondName;
 @property(copy) NSString *callerNetworkFirstName; // @synthesize callerNetworkFirstName=_callerNetworkFirstName;
 @property _Bool callerIdIsBlocked; // @synthesize callerIdIsBlocked=_callerIdIsBlocked;
+@property(copy) NSNumber *filteredOutReason; // @synthesize filteredOutReason=_filteredOutReason;
 @property(copy) NSNumber *disconnectedCause; // @synthesize disconnectedCause=_disconnectedCause;
 @property(copy) NSString *mobileNetworkCode; // @synthesize mobileNetworkCode=_mobileNetworkCode;
 @property(copy) NSString *mobileCountryCode; // @synthesize mobileCountryCode=_mobileCountryCode;

@@ -17,6 +17,7 @@
 @property(readonly, copy, nonatomic) PICompositionController *originalCompositionController;
 @property(readonly, copy, nonatomic) PICompositionController *compositionController;
 @property(readonly, nonatomic) PLEditSource *activeEditSource;
+@property(readonly, nonatomic) PLEditSource *overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource;
 @property(readonly, nonatomic) NSProgress *progress;
 - (void)beginLoading;

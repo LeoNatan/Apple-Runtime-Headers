@@ -10,6 +10,8 @@
 {
 }
 
++ (void)showImproveSiriForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)showImproveSiriWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)showEnableHeySiriForWindow:(id)arg1 forBluetoothAudioDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)showEnableAskSiriWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)setLaunchAgentEnabled:(BOOL)arg1;

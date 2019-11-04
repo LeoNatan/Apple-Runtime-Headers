@@ -30,6 +30,8 @@
     id <PXActivityDataSource> _dataSource;
 }
 
++ (id)activityWithActionTitle:(id)arg1 actionType:(id)arg2 activityType:(id)arg3 systemImageName:(id)arg4;
++ (id)_destructiveActivities;
 @property(nonatomic) __weak id <PXActivityDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXActivityActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(copy, nonatomic) CDUnknownBlockType canPerformActivityActionHandler; // @synthesize canPerformActivityActionHandler=_canPerformActivityActionHandler;

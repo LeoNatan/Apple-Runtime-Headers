@@ -38,6 +38,7 @@
 - (_Bool)variableResponderHasText:(id)arg1;
 - (void)hideVariableConfiguration;
 - (void)showVariableConfiguration;
+- (void)tintColorDidChange;
 - (void)updateVariableImage;
 - (void)buttonTapped;
 - (void)dealloc;

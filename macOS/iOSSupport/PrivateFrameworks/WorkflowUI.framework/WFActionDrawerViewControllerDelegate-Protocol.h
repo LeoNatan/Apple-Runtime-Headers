@@ -6,10 +6,10 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class NSString, UIView, WFAction, WFActionDrawerSection, WFActionDrawerViewController;
+@class NSString, UIView, WFAction, WFActionDrawerViewController;
 
 @protocol WFActionDrawerViewControllerDelegate <NSObject>
-- (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectSection:(WFActionDrawerSection *)arg2;
+- (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectAppWithBundleIdentifier:(NSString *)arg2;
 - (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectCategoryForContentType:(NSString *)arg2 title:(NSString *)arg3;
 - (void)actionDrawerViewControllerDidSelectCategoryScripting:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryFavorites:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;

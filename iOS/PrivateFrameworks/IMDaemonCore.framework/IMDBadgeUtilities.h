@@ -38,6 +38,7 @@
 - (void)_clearFailureBadge;
 - (void)_checkIfUnexpectedlyLoggedOut;
 - (_Bool)_isUnexpectedlyLoggedOut;
+- (_Bool)isInAppleStoreDemoMode;
 - (_Bool)_shouldShowFailureString;
 - (void)_postBadgeString:(id)arg1;
 - (void)_postBadgeNumber:(id)arg1;

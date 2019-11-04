@@ -42,7 +42,7 @@
 - (void)queryDidFinishRemoteSearch;
 - (void)queryDidFinishInitialLoad;
 - (void)queryMatchedDeletedObjectIDs:(id)arg1;
-- (void)queryMatchedChangedObjectIDs:(id)arg1;
+- (void)queryMatchedChangesByObjectIDs:(id)arg1;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 after:(id)arg2;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 before:(id)arg2;
 - (void)queryMatchedAddedObjectIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
@@ -57,6 +57,7 @@
 - (void)stopObserving:(id)arg1;
 - (void)beginObserving:(id)arg1;
 @property(readonly, nonatomic) EFFuture *allItemIDs;
+- (void)notifyChangeObserverAboutChangesByItemIDs:(id)arg1;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 before:(id)arg2 extraInfo:(id)arg3;
 - (id)iterateItemIDsStartingAtItemID:(id)arg1 inReverse:(BOOL)arg2 withBlock:(CDUnknownBlockType)arg3;

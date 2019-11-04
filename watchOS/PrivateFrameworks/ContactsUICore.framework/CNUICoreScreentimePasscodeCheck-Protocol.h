@@ -6,10 +6,10 @@
 
 #import <ContactsUICore/NSObject-Protocol.h>
 
-@class CNDelegateInfo;
+@class CNCoreDelegateInfo;
 
 @protocol CNUICoreScreentimePasscodeCheck <NSObject>
-- (unsigned int)screentimePasscodeStatusOfDelegateWithInfo:(CNDelegateInfo *)arg1;
+- (unsigned int)screentimePasscodeStatusOfDelegateWithInfo:(CNCoreDelegateInfo *)arg1;
 - (unsigned int)screentimePasscodeStatus;
 @end
 

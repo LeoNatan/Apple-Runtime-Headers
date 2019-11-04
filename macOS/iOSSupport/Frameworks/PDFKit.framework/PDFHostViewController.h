@@ -27,6 +27,7 @@
 - (void)_endPDFViewRotationAnimated:(_Bool)arg1 withUpdate:(_Bool)arg2;
 - (void)endPDFViewRotation;
 - (void)beginPDFViewRotation;
+- (_Bool)_isTouchingLollipopAtLocationOfFirstTouch:(struct CGPoint)arg1;
 - (unsigned long long)_typeForGestureRecognizer:(id)arg1;
 - (void)handleGesture:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -44,6 +45,7 @@
 - (void)zoomToRect:(struct CGRect)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)showTextSelectionMenu:(BOOL)arg1 selectionRect:(struct CGRect)arg2;
+- (void)setTextSelectionPoints:(struct CGPoint)arg1 right:(struct CGPoint)arg2;
 - (void)setHasSelection:(BOOL)arg1;
 - (void)showSelectionRect:(struct CGRect)arg1;
 - (void)findStringUpdate:(unsigned long long)arg1 done:(BOOL)arg2;

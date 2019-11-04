@@ -30,12 +30,14 @@
     NSSet *_bulletinSnapshotCharacteristics;
     NSSet *_proactiveSnapshotCharacterisitics;
     HMDCameraNotificationCharacteristicsAvailabilityListener *_characteristicsAvailabilityListener;
+    NSString *_clientIdentifier;
 }
 
 + (BOOL)hasMessageReceiverChildren;
 + (BOOL)isMotionServiceDetectedCharacteristic:(id)arg1;
 + (BOOL)isDoorbellServiceInputCharacteristic:(id)arg1;
 + (id)logCategory;
+@property(readonly, copy) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain) HMDCameraNotificationCharacteristicsAvailabilityListener *characteristicsAvailabilityListener; // @synthesize characteristicsAvailabilityListener=_characteristicsAvailabilityListener;
 @property(retain) NSSet *proactiveSnapshotCharacterisitics; // @synthesize proactiveSnapshotCharacterisitics=_proactiveSnapshotCharacterisitics;
 @property(retain) NSSet *bulletinSnapshotCharacteristics; // @synthesize bulletinSnapshotCharacteristics=_bulletinSnapshotCharacteristics;
@@ -70,7 +72,7 @@
 - (void)_handleBulletinNotificationEnableStateDidChange:(id)arg1;
 - (void)handleBulletinNotificationEnableStateDidChange:(id)arg1;
 - (void)_enableNotificationsForCharacteristics:(id)arg1 cameraSettings:(id)arg2;
-- (void)listener:(id)arg1 didUpdateAvailableCharacteristics:(id)arg2 previousCharacteristics:(id)arg3;
+- (void)listener:(id)arg1 didUpdateAvailableCharacteristics:(id)arg2;
 - (BOOL)_canEnableNotificationForCharacteristic:(id)arg1 cameraSettings:(id)arg2;
 - (void)dealloc;
 - (void)registerForMessages;

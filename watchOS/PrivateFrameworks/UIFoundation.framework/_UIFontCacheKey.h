@@ -11,21 +11,20 @@
 @interface _UIFontCacheKey : NSObject <NSCopying>
 {
     unsigned int _hash;
-    _Bool _textLegibility;
 }
 
++ (id)fontCacheKeyWithFontDescriptor:(id)arg1 pointSize:(float)arg2 textStyleForScaling:(id)arg3 pointSizeForScaling:(float)arg4 maximumPointSizeAfterScaling:(float)arg5 textLegibility:(_Bool)arg6;
 + (id)fontCacheKeyWithFontDescriptor:(id)arg1 pointSize:(float)arg2 textStyleForScaling:(id)arg3 pointSizeForScaling:(float)arg4 maximumPointSizeAfterScaling:(float)arg5;
++ (id)fontCacheKeyWithTextStyle:(id)arg1 contentSizeCategory:(id)arg2 textLegibility:(_Bool)arg3;
 + (id)fontCacheKeyWithTextStyle:(id)arg1 contentSizeCategory:(id)arg2;
 + (id)systemFontCacheKeyWithTraits:(int)arg1 pointSize:(float)arg2;
 + (id)fontCacheKeyWithFontName:(id)arg1 traits:(int)arg2 pointSize:(float)arg3;
-@property(nonatomic) _Bool textLegibility; // @synthesize textLegibility=_textLegibility;
 - (void)_precalculateHash;
 - (unsigned int)_hash;
 - (unsigned int)hash;
 - (_Bool)_isEqualToKey:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTextLegibility:(_Bool)arg1;
 
 @end
 

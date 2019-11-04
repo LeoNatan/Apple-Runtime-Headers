@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectID, NSPersistentStoreCoordinator;
+@class NSManagedObjectID, NSPersistentStoreCoordinator, RTDarwinNotificationHelper;
 
 @interface RTPersistenceRemoteStore : NSObject
 {
     NSPersistentStoreCoordinator *_coordinator;
     NSManagedObjectID *_currentDeviceManagedObjectId;
+    RTDarwinNotificationHelper *_notificationHelper;
 }
 
 - (void).cxx_destruct;
 - (id)createManagedObjectContext;
+- (id)_createManagedObjectContext;
+- (void)updateCurrentDeviceMOIDWithContext:(id)arg1;
+- (id)initWithReadOnly:(_Bool)arg1;
 - (id)init;
 
 @end

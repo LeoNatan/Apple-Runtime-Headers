@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSAttributedString;
+@class NSAttributedString, NSNumber;
 
 @interface HKSelectedRangeData : NSObject
 {
     int _statisticsType;
     int _dataType;
     NSAttributedString *_attributedString;
+    NSNumber *_valueAsNumber;
 }
 
+@property(retain, nonatomic) NSNumber *valueAsNumber; // @synthesize valueAsNumber=_valueAsNumber;
 @property(retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(nonatomic) int dataType; // @synthesize dataType=_dataType;
 @property(nonatomic) int statisticsType; // @synthesize statisticsType=_statisticsType;

@@ -7,6 +7,8 @@
 #import <Foundation/NSCoder.h>
 
 @interface NSCoder (LPExtras)
+- (id)_lp_strictlyDecodeColorForKey:(id)arg1;
+- (void)_lp_encodeColorIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)_lp_encodeURLIfNotNilOrLocalFile:(id)arg1 forKey:(id)arg2;
 - (void)_lp_encodeArrayIfNotEmpty:(id)arg1 forKey:(id)arg2;
 - (void)_lp_encodeObjectIfNotNil:(id)arg1 forKey:(id)arg2;

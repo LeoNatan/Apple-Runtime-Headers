@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)setSelected:(_Bool)arg1;
 - (void)updateCaptionFrame;
 - (void)updateWithCaption:(id)arg1;
-- (void)updateWithView:(id)arg1 animated:(_Bool)arg2;
+- (void)updateWithView:(id)arg1 animation:(unsigned long long)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

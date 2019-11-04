@@ -13,13 +13,15 @@
 @interface GEOPDHours : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _days;
     struct GEOPDLocalTimeRange *_timeRanges;
     unsigned int _timeRangesCount;
     unsigned int _timeRangesSpace;
     GEOPDHoursThreshold *_hoursThreshold;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_days:1;
@@ -72,6 +74,8 @@
 @property(readonly, nonatomic) unsigned int daysCount;
 - (void)_readDays;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

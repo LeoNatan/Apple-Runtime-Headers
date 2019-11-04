@@ -11,6 +11,7 @@
 @interface _TtC11AppStoreKit21CommerceDialogHandler : NSObject <ASDNotificationCenterDialogObserver>
 {
     // Error parsing type: , name: presentingViewController
+    // Error parsing type: , name: sheetPresentationViewController
 }
 
 - (void).cxx_destruct;

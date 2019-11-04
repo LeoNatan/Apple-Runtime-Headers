@@ -13,7 +13,6 @@
 @interface GEOTransitDecoderData : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_accessPoints;
     NSMutableArray *_artworks;
@@ -27,6 +26,9 @@
     NSMutableArray *_transitIncidents;
     NSMutableArray *_walkings;
     NSMutableArray *_zilchPoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_accessPoints:1;
@@ -167,6 +169,8 @@
 - (void)clearStations;
 @property(retain, nonatomic) NSMutableArray *stations;
 - (void)_readStations;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)artworkFromIndices:(unsigned int *)arg1 count:(unsigned int)arg2;
 
 @end

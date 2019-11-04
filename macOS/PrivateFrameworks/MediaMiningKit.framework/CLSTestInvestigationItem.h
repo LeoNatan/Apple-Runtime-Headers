@@ -32,6 +32,7 @@
     BOOL _clsIsNonMemorable;
     BOOL _clsIsLoopOrBounce;
     BOOL _clsIsLongExposure;
+    BOOL _clsIsInterestingReframe;
     NSString *_clsIdentifier;
     CLLocation *_clsLocation;
     NSArray *_clsPeopleNames;
@@ -56,6 +57,7 @@
 + (id)contextForItems:(id)arg1;
 + (id)itemWithUniversalDate:(id)arg1 sceneClassifications:(id)arg2;
 + (id)itemWithPeopleNames:(id)arg1 universalDate:(id)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
+@property(readonly, nonatomic) BOOL clsIsInterestingReframe; // @synthesize clsIsInterestingReframe=_clsIsInterestingReframe;
 @property(readonly, nonatomic) BOOL clsIsLongExposure; // @synthesize clsIsLongExposure=_clsIsLongExposure;
 @property(readonly, nonatomic) BOOL clsIsLoopOrBounce; // @synthesize clsIsLoopOrBounce=_clsIsLoopOrBounce;
 @property(readonly, nonatomic) BOOL clsIsNonMemorable; // @synthesize clsIsNonMemorable=_clsIsNonMemorable;

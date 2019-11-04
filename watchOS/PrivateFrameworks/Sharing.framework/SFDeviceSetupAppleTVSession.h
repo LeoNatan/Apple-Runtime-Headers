@@ -18,6 +18,7 @@
     _Bool _useSFSession;
     int _preflightWiFiState;
     int _preflightiTunesState;
+    int _preflightHomeKitState;
     NSString *_iTunesUserID;
     SFSession *_sfSession;
     int _sfSessionState;
@@ -35,6 +36,7 @@
     UIViewController *_presentingViewController;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _promptForHomeHandler;
+    CDUnknownBlockType _promptForHomeiCloudHandler;
     CDUnknownBlockType _promptForPINHandler;
     CDUnknownBlockType _promptForRoomHandler;
     unsigned long long _peerFeatureFlags;
@@ -42,6 +44,7 @@
 
 @property(copy, nonatomic) CDUnknownBlockType promptForRoomHandler; // @synthesize promptForRoomHandler=_promptForRoomHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForPINHandler; // @synthesize promptForPINHandler=_promptForPINHandler;
+@property(copy, nonatomic) CDUnknownBlockType promptForHomeiCloudHandler; // @synthesize promptForHomeiCloudHandler=_promptForHomeiCloudHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForHomeHandler; // @synthesize promptForHomeHandler=_promptForHomeHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
@@ -50,6 +53,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (_Bool)_verifyiCloudMatch:(unsigned long long)arg1 error:(id *)arg2;
+- (void)_homeKitUpdateiCloudSwitchState:(_Bool)arg1;
 - (int)_runFinish:(_Bool)arg1;
 - (int)_runCDPSetup;
 - (void)_runBasicConfigResponse:(id)arg1 error:(id)arg2;
@@ -60,6 +64,7 @@
 - (void)_runPreAuthRequest;
 - (int)_runPreAuth;
 - (int)_runSFSessionStart;
+- (int)_runPreflightHomeKit;
 - (int)_runPreflightiTunes;
 - (int)_runPreflightWiFi;
 - (void)_run;
@@ -68,6 +73,7 @@
 - (void)pairSetupTryPIN:(id)arg1;
 - (void)homeKitSelectRoom:(id)arg1;
 - (void)homeKitSelectHome:(id)arg1;
+- (void)homeiCloudEnable;
 - (void)invalidate;
 - (void)activate;
 - (void)_cleanup;

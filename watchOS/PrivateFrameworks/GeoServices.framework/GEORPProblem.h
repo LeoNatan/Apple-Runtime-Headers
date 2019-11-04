@@ -13,10 +13,12 @@
 @interface GEORPProblem : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _userPaths;
     GEORPProblemContext *_problemContext;
     GEORPProblemCorrections *_problemCorrections;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _problemType;
     unsigned int _protocolVersion;
     struct {
@@ -68,6 +70,8 @@
 @property(nonatomic) _Bool hasProtocolVersion;
 @property(nonatomic) unsigned int protocolVersion;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithMerchantIndustryCode:(long long)arg1 mapsIdentifier:(unsigned long long)arg2 merchantName:(id)arg3 merchantRawName:(id)arg4 merchantIndustryCategory:(id)arg5 merchantURL:(id)arg6 merchantFormattedAddress:(id)arg7 transactionTime:(double)arg8 transactionType:(id)arg9 transactionLocation:(CDStruct_c3b9c2ee)arg10;
 
 @end

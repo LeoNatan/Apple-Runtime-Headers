@@ -9,7 +9,7 @@
 #import <CameraUI/CAMCaptureRequestIntervalometerDelegate-Protocol.h>
 #import <CameraUI/CAMCaptureService-Protocol.h>
 
-@class AVCaptureVideoPreviewLayer, CAMBurstController, CAMCaptureEngine, CAMCaptureRequestIntervalometer, CAMIrisVideoController, CAMKeyValueCoalescer, CAMLocationController, CAMMotionController, CAMPanoramaCaptureRequest, CAMPanoramaPreviewView, CAMPowerController, CAMProtectionController, CAMRemoteShutterController, CAMStillImageCaptureRequest, CAMThumbnailGenerator, CAMVideoCaptureRequest, NSCountedSet, NSMutableSet, NSString;
+@class AVCaptureVideoPreviewLayer, CAMBurstController, CAMCaptureEngine, CAMCaptureRequestIntervalometer, CAMIrisVideoController, CAMKeyValueCoalescer, CAMLocationController, CAMMotionController, CAMPanoramaCaptureRequest, CAMPanoramaPreviewView, CAMPowerController, CAMProtectionController, CAMRemoteShutterController, CAMStillImageCaptureRequest, CAMThumbnailGenerator, CAMVideoCaptureRequest, NSCountedSet, NSMutableDictionary, NSMutableSet, NSString;
 @protocol CAMAvailabilityDelegate, CAMBurstDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureResultDelegate, CAMCaptureRunningDelegate, CAMConfigurationDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMMachineReadableCodeDelegate, CAMPanoramaChangeDelegate, CAMPreviewLayerOverCaptureStatusDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMZoomDelegate, OS_dispatch_queue;
 
 @interface CUCaptureController : NSObject <CAMCaptureService, CAMCaptureRequestIntervalometerDelegate>
@@ -63,6 +63,8 @@
     long long __maximumNumberOfStillImageRequests;
     NSMutableSet *__identifiersForActiveLivePhotoVideoCaptures;
     NSMutableSet *__identifiersForActiveCTMVideoCaptures;
+    NSMutableDictionary *__persistenceUUIDToSignpostID;
+    unsigned long long __nextSignpostID;
     CAMLocationController *__locationController;
     CAMMotionController *__motionController;
     CAMBurstController *__burstController;
@@ -80,6 +82,8 @@
 @property(readonly, nonatomic) CAMBurstController *_burstController; // @synthesize _burstController=__burstController;
 @property(readonly, nonatomic) CAMMotionController *_motionController; // @synthesize _motionController=__motionController;
 @property(readonly, nonatomic) CAMLocationController *_locationController; // @synthesize _locationController=__locationController;
+@property(nonatomic, setter=_setNextSignpostID:) unsigned long long _nextSignpostID; // @synthesize _nextSignpostID=__nextSignpostID;
+@property(readonly, nonatomic) NSMutableDictionary *_persistenceUUIDToSignpostID; // @synthesize _persistenceUUIDToSignpostID=__persistenceUUIDToSignpostID;
 @property(readonly, nonatomic) NSMutableSet *_identifiersForActiveCTMVideoCaptures; // @synthesize _identifiersForActiveCTMVideoCaptures=__identifiersForActiveCTMVideoCaptures;
 @property(readonly, nonatomic) NSMutableSet *_identifiersForActiveLivePhotoVideoCaptures; // @synthesize _identifiersForActiveLivePhotoVideoCaptures=__identifiersForActiveLivePhotoVideoCaptures;
 @property(nonatomic, getter=_isVideoCaptureAvailable, setter=_setVideoCaptureAvailable:) _Bool _isVideoCaptureAvailable; // @synthesize _isVideoCaptureAvailable=__isVideoCaptureAvailable;
@@ -128,6 +132,8 @@
 @property(nonatomic) __weak id <CAMPreviewLayerOverCaptureStatusDelegate> previewLayerOverCaptureStatusDelegate; // @synthesize previewLayerOverCaptureStatusDelegate=_previewLayerOverCaptureStatusDelegate;
 @property(readonly, nonatomic, getter=isPreviewDisabled) _Bool previewDisabled; // @synthesize previewDisabled=_previewDisabled;
 - (void).cxx_destruct;
+- (void)_endCaptureSignpostIntervalForPersistenceUUID:(id)arg1;
+- (void)_startCaptureSignpostIntervalForPersistenceUUID:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)changeToAspectRatioCrop:(long long)arg1;
 - (void)_handleSystemPressureStateChanged;
@@ -174,6 +180,7 @@
 - (void)_updateAvailabilityAfterStopCapturingForRequest:(id)arg1;
 - (void)_updateAvailabilityWhenPreparingToStopCapturingForRequest:(id)arg1;
 - (void)_updateAvailabilityAfterEnqueuedRequest:(id)arg1;
+- (_Bool)_shouldTrackInflightCountForRequest:(id)arg1;
 - (void)_updateAvailabilityForRequestType:(long long)arg1;
 - (unsigned long long)_maximumNumberOfStillImageRequestsDuringBurst;
 - (void)_updateMaximumNumberOfStillImageRequestsAfterBurst;

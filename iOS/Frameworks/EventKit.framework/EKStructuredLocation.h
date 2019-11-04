@@ -34,6 +34,7 @@
 - (id)description;
 - (_Bool)isEqualToLocation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)_reset;
 @property(copy, nonatomic) NSData *mapKitHandle;
 @property(copy, nonatomic) NSString *contactLabel;
 @property(nonatomic) double radius;

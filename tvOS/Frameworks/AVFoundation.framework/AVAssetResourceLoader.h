@@ -40,6 +40,7 @@
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)_setDelegateOnStateQueue:(id)arg1;
 - (void)dealloc;
+- (id)initWithURLRequestHelper:(id)arg1 asset:(id)arg2 remoteCustomURLHandlerContext:(id)arg3;
 - (id)initWithURLRequestHelper:(id)arg1 asset:(id)arg2;
 - (id)init;
 @property(nonatomic) _Bool preloadsEligibleContentKeys;
@@ -54,6 +55,7 @@
 @property(retain, nonatomic) NSURLSession *URLSession;
 @property(readonly, nonatomic) NSOperationQueue *URLSessionDataDelegateQueue;
 @property(readonly, nonatomic) id <NSURLSessionDataDelegate> URLSessionDataDelegate;
+- (id)remoteCustomURLHandlerContextForPID:(int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

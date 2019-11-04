@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 {
     id <DDRemoteActionPresenter> _proxy;
     DDAction *_action;
-    _Bool _cancellable;
     CNContactViewController *_personViewController;
 }
 

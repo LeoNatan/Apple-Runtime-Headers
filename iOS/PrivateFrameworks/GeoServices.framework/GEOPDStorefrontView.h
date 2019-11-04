@@ -13,12 +13,14 @@
 @interface GEOPDStorefrontView : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     unsigned long long _imdataId;
     GEOPDGeographicCoordinate *_lookAtGeo;
     GEOPDOrientedPosition *_lookAt;
     GEOPDPhotoPosition *_photoPosition;
     GEOPDGeographicCoordinate *_viewpointGeo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_imdataId:1;
         unsigned int read_lookAtGeo:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) GEOPDPhotoPosition *photoPosition;
 @property(readonly, nonatomic) _Bool hasPhotoPosition;
 - (void)_readPhotoPosition;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

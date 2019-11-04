@@ -17,7 +17,7 @@
 - (void)_accessibilityLoadAccessibilityInformation;
 - (void)_accessibilityKeyboardDidHide:(id)arg1;
 - (void)_initSubviews;
-- (void)_setContentInsetAdjustments:(struct UIEdgeInsets)arg1 forScrollView:(id)arg2;
+- (void)updateInsetsForBackgroundWebView:(id)arg1;
 - (void)_axUpdateVisibleContentInsetForScrollView:(id)arg1;
 - (void)_axUpdateVisibleContentInset;
 - (void)togglePrivateBrowsingEnabled;

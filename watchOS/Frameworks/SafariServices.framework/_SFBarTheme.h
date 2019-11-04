@@ -12,9 +12,9 @@
 {
     UIColor *_preferredControlsTintColor;
     _Bool _backdropIsDark;
+    _Bool _backdropIsTinted;
     unsigned int _tintStyle;
     UIColor *_controlsTintColor;
-    UIColor *_preferredProgressBarTintColor;
     UIColor *_preferredBarTintColor;
     _UIBackdropViewSettings *_backdropInputSettings;
 }
@@ -24,11 +24,12 @@
 + (id)themeWithTheme:(id)arg1;
 @property(readonly, nonatomic) _UIBackdropViewSettings *backdropInputSettings; // @synthesize backdropInputSettings=_backdropInputSettings;
 @property(readonly, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
-@property(readonly, nonatomic) UIColor *preferredProgressBarTintColor; // @synthesize preferredProgressBarTintColor=_preferredProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *controlsTintColor; // @synthesize controlsTintColor=_controlsTintColor;
 @property(readonly, nonatomic) unsigned int tintStyle; // @synthesize tintStyle=_tintStyle;
+@property(readonly, nonatomic) _Bool backdropIsTinted; // @synthesize backdropIsTinted=_backdropIsTinted;
 @property(readonly, nonatomic) _Bool backdropIsDark; // @synthesize backdropIsDark=_backdropIsDark;
 - (void).cxx_destruct;
+- (void)applyBackdropEffectsToView:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) _SFBarTheme *fallbackTheme;
 - (id)initWithBarTintStyle:(unsigned int)arg1 preferredBarTintColor:(id)arg2 controlsTintColor:(id)arg3;

@@ -64,7 +64,7 @@
 - (id)timerCategories;
 - (id)alarmCategories;
 - (void)registerActionHandler:(id)arg1;
-- (void)setupNotificationCenters;
+- (void)setupNotificationCenter;
 - (id)init;
 
 // Remaining properties

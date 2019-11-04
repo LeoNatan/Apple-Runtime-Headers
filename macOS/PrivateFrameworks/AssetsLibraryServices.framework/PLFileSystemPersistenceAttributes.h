@@ -11,6 +11,7 @@
 @interface PLFileSystemPersistenceAttributes : NSObject
 {
     NSDictionary *_attributes;
+    NSDictionary *_unknownAttributes;
 }
 
 - (void).cxx_destruct;
@@ -22,7 +23,7 @@
 - (id)UUIDStringForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
-- (id)initWithAttributes:(id)arg1;
+- (id)initWithAttributes:(id)arg1 unknownAttributes:(id)arg2;
 
 @end
 

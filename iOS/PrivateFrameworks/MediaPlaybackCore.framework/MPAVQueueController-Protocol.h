@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) unsigned long long supportedInsertionPositions;
 @property(nonatomic) long long shuffleType;
 @property(nonatomic) long long repeatType;
+@property(readonly, nonatomic) long long displayCount;
 @property(retain, nonatomic) id <MPAVQueueCoordinating> queueCoordinator;
 @property(nonatomic) __weak id <MPAVQueueControllerDelegate> delegate;
 @property(readonly, nonatomic) MPAVItem *currentItem;
@@ -28,17 +29,16 @@
 - (void)jumpToFirstContentItem;
 - (void)reshuffle;
 - (void)player:(MPAVController *)arg1 currentItemDidChangeFromItem:(MPAVItem *)arg2 toItem:(MPAVItem *)arg3;
-- (void)finalizeStateRestorationWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)handlePlaybackFailureForItem:(MPAVItem *)arg1;
 - (void)removeContentItemID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)moveContentItemID:(NSString *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(long long)arg2 jumpToIt:(_Bool)arg3 userModification:(_Bool)arg4 completion:(void (^)(NSError *))arg5;
 - (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(long long)arg2 jumpToIt:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
 - (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(long long)arg2 completion:(void (^)(NSError *))arg3;
 - (void)addPlaybackContext:(MPPlaybackContext *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)reloadWithPlaybackContext:(MPPlaybackContext *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)reset;
-- (unsigned long long)displayCountForItem:(MPAVItem *)arg1;
-- (unsigned long long)displayIndexForItem:(MPAVItem *)arg1;
+- (long long)displayIndexForContentItemID:(NSString *)arg1;
 - (_Bool)canSkipItem:(MPAVItem *)arg1;
 
 @optional

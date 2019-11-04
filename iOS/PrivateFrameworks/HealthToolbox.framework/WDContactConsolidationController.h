@@ -8,7 +8,6 @@
 
 @class HKHealthStore, SOSContactsManager, UIAlertController, UIViewController, WDNotificationManager, _HKMedicalIDData;
 
-__attribute__((visibility("hidden")))
 @interface WDContactConsolidationController : NSObject
 {
     HKHealthStore *_healthStore;

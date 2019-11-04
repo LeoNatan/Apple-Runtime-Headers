@@ -16,7 +16,7 @@
 + (unsigned int)endpointType;
 @property(readonly, nonatomic) NSString *port;
 @property(readonly, nonatomic) NSString *hostname;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 
 @end
 

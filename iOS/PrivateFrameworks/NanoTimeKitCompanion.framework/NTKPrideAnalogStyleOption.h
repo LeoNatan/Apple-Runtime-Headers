@@ -15,7 +15,7 @@
 + (id)_orderedValuesForDevice:(id)arg1;
 + (long long)indexForStyle:(unsigned long long)arg1 forDevice:(id)arg2;
 + (id)optionWithStyle:(unsigned long long)arg1 forDevice:(id)arg2;
-- (_Bool)optionExistsInOSVersion:(unsigned int)arg1;
+- (_Bool)optionExistsInDevice:(id)arg1;
 - (id)_valueToFaceBundleStringDict;
 @property(readonly, nonatomic) unsigned long long style;
 - (long long)swatchStyle;

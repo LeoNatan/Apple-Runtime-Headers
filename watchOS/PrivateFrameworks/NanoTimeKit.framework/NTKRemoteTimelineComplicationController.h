@@ -86,7 +86,7 @@
 - (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 privacyBehavior:(unsigned int)arg4 timelineAnimationBehavior:(unsigned int)arg5 currentEntry:(id)arg6 alwaysOnTemplate:(id)arg7;
 - (void)complicationCollection:(id)arg1 didRemoveSampleTemplatesForClient:(id)arg2;
 - (void)complicationCollection:(id)arg1 didUpdateSampleTemplateForClient:(id)arg2;
-- (void)entriesDidChangeInTimeline:(id)arg1;
+- (void)entriesDidChangeInTimeline:(id)arg1 withTritiumUpdatePriority:(int)arg2;
 - (void)timeTravelEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)_queueAnimationForNextUpdate:(unsigned int)arg1;
 - (void)nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;

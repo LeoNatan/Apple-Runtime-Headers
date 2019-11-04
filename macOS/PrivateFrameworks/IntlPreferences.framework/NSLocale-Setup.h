@@ -45,8 +45,8 @@
 - (BOOL)requiresInputSourceSelectionForAttachedKeyboards;
 - (BOOL)_requiresInputSourceSelectionForKeyboardIDs:(id)arg1;
 - (id)_inputSourcesForKeyboardIDs:(id)arg1;
-- (id)_inputSourceIDsForKeyboardIDs:(id)arg1;
-- (id)_inputSourceIDsForKeyboardID:(id)arg1;
+- (id)_inputSourceIDsForKeyboardIDs:(id)arg1 fallbackToLanguageBasedLookup:(BOOL)arg2;
+- (id)_inputSourceIDsForKeyboardID:(id)arg1 fallbackToLanguageBasedLookup:(BOOL)arg2;
 - (id)defaultLanguagesForMultilingualSetup;
 - (id)languagesForMultilingualSetup;
 - (id)_languagesForMultilingualSetupWithKeyboardsIDs:(id)arg1;

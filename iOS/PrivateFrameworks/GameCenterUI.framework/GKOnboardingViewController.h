@@ -66,7 +66,9 @@
 - (_Bool)shouldPresentPersonalizationScreen;
 - (void)nextPressed:(id)arg1;
 - (void)signOutPressed:(id)arg1;
+- (void)constrainTextInView:(id)arg1 toFontSize:(double)arg2;
 - (void)addPrivacyLink;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 
 // Remaining properties

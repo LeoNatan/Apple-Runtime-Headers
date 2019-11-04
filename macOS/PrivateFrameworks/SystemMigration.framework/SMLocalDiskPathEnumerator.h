@@ -8,22 +8,28 @@
 
 #import <SystemMigration/SMPathEnumerationProtocol-Protocol.h>
 
-@class NSMutableSet, NSString, NSURL, SMPathSizer;
+@class NSDictionary, NSMutableSet, NSString, NSURL, SMPathSizer;
 
 @interface SMLocalDiskPathEnumerator : NSDirectoryEnumerator <SMPathEnumerationProtocol>
 {
     BOOL useTrueOnDiskSizes;
+    BOOL _subPathHasBeenRead;
     BOOL _postOrder;
+    BOOL _systemVolume;
     SMPathSizer *_sizer;
     struct __CFURLEnumerator *_pathEnumerator;
+    struct __CFURLEnumerator *_subPathEnumerator;
     NSURL *_currentURL;
     NSMutableSet *_hardlinkInodes;
     NSString *_basePath;
     NSURL *_basePathURL;
     NSString *_alternateBasePath;
     NSURL *_alternateBasePathURL;
+    NSDictionary *_firmlinks;
 }
 
+@property(retain) NSDictionary *firmlinks; // @synthesize firmlinks=_firmlinks;
+@property BOOL systemVolume; // @synthesize systemVolume=_systemVolume;
 @property(retain) NSURL *alternateBasePathURL; // @synthesize alternateBasePathURL=_alternateBasePathURL;
 @property(retain) NSString *alternateBasePath; // @synthesize alternateBasePath=_alternateBasePath;
 @property(retain) NSURL *basePathURL; // @synthesize basePathURL=_basePathURL;
@@ -31,6 +37,8 @@
 @property(retain) NSMutableSet *hardlinkInodes; // @synthesize hardlinkInodes=_hardlinkInodes;
 @property(retain) NSURL *currentURL; // @synthesize currentURL=_currentURL;
 @property BOOL postOrder; // @synthesize postOrder=_postOrder;
+@property BOOL subPathHasBeenRead; // @synthesize subPathHasBeenRead=_subPathHasBeenRead;
+@property struct __CFURLEnumerator *subPathEnumerator; // @synthesize subPathEnumerator=_subPathEnumerator;
 @property struct __CFURLEnumerator *pathEnumerator; // @synthesize pathEnumerator=_pathEnumerator;
 @property(retain, nonatomic) SMPathSizer *sizer; // @synthesize sizer=_sizer;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes;
@@ -48,6 +56,9 @@
 - (void)skipDescendants;
 - (id)nextObject;
 @property(readonly) BOOL supportsFastEnumeration;
+- (void)loadFirmlinksFromSystemVolume:(id)arg1 andDataVolume:(id)arg2;
+- (long long)getNextURL:(const struct __CFURL **)arg1 withError:(struct __CFError **)arg2;
+- (void)continueEnumerationFromPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithDirectory:(id)arg1;
 

@@ -15,7 +15,7 @@
 #import <HomeUI/HUPresentationDelegate-Protocol.h>
 #import <HomeUI/HUPresentationDelegateHost-Protocol.h>
 
-@class AVControlItem, AVHomeLoadingButtonControlItem, AVPlayerLooper, AVQueuePlayer, HFCameraItem, HFCameraPlaybackEngine, HFItem, HFItemManager, HMCameraProfile, HMHome, HUCalendarScrubberContainerViewController, HUCameraDemoPlayerView, HUCameraMiniScrubberViewController, HUCameraPlayerAVBehavior, HUCameraPlayerAccessoryViewController, HUCameraPlayerConfiguration, HUCameraPlayerFooterViewController, HUCameraPlayerLiveContentViewController, HUCameraPlayerPlaceholderContentViewController, HUCameraStatusOverlayView, HUClipScrubberViewController, NAUILayoutConstraintSet, NSArray, NSLayoutConstraint, NSString, UIAlertController, UIViewController;
+@class AVControlItem, AVHomeLoadingButtonControlItem, AVPlayerLooper, AVQueuePlayer, HFCameraItem, HFCameraPlaybackEngine, HFItem, HFItemManager, HMCameraProfile, HMHome, HUCalendarScrubberContainerViewController, HUCameraMiniScrubberViewController, HUCameraPlayerAVBehavior, HUCameraPlayerAccessoryViewController, HUCameraPlayerConfiguration, HUCameraPlayerFooterViewController, HUCameraPlayerLiveContentViewController, HUCameraPlayerPlaceholderContentViewController, HUCameraRecordingPlayerView, HUCameraStatusOverlayView, HUClipScrubberViewController, HULegibilityLabel, NAUILayoutConstraintSet, NSArray, NSLayoutConstraint, NSString, NSTimer, UIAlertController, UIViewController;
 @protocol HUCameraPlayerScrubbing, HUCameraPlayerViewControllerDelegate, HUPresentationDelegate;
 
 @interface HUCameraPlayerViewController : AVPlayerViewController <AVPlayerViewControllerDelegate, AVPlayerViewControllerDelegatePrivate, HFCameraPlaybackEngineObserver, HFItemManagerDelegate, HUCameraPlayerAVBehaviorDelegate, HUPresentationDelegate, HUItemPresentationContainer, HUPresentationDelegateHost>
@@ -23,7 +23,9 @@
     _Bool _recordedClipInterfaceAvailable;
     _Bool _enteringFullScreen;
     _Bool _viewVisible;
+    _Bool _viewDisappearing;
     _Bool _observingReadyForDisplay;
+    _Bool _applicationIsActive;
     _Bool _shouldResumePlaying;
     id <HUPresentationDelegate> presentationDelegate;
     id <HUCameraPlayerViewControllerDelegate> _cameraDelegate;
@@ -49,23 +51,34 @@
     NAUILayoutConstraintSet *_scrubberConstraintSet;
     NAUILayoutConstraintSet *_calendarConstraintSet;
     NSLayoutConstraint *_cameraStatusViewTopConstraint;
-    HUCameraDemoPlayerView *_demoPlayerView;
+    NSLayoutConstraint *_dayLabelTopConstraint;
+    HUCameraRecordingPlayerView *_demoPlayerView;
     AVPlayerLooper *_looper;
     AVQueuePlayer *_demoModeQueuePlayer;
     UIAlertController *_airplaneAlertController;
+    HULegibilityLabel *_dayLabel;
+    HULegibilityLabel *_timeLabel;
+    NSTimer *_liveTimer;
 }
 
++ (id)_legibilityLabelFactory;
+@property(retain, nonatomic) NSTimer *liveTimer; // @synthesize liveTimer=_liveTimer;
+@property(retain, nonatomic) HULegibilityLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
+@property(retain, nonatomic) HULegibilityLabel *dayLabel; // @synthesize dayLabel=_dayLabel;
 @property(nonatomic) _Bool shouldResumePlaying; // @synthesize shouldResumePlaying=_shouldResumePlaying;
 @property(nonatomic) __weak UIAlertController *airplaneAlertController; // @synthesize airplaneAlertController=_airplaneAlertController;
 @property(nonatomic) __weak AVQueuePlayer *demoModeQueuePlayer; // @synthesize demoModeQueuePlayer=_demoModeQueuePlayer;
 @property(retain, nonatomic) AVPlayerLooper *looper; // @synthesize looper=_looper;
-@property(retain, nonatomic) HUCameraDemoPlayerView *demoPlayerView; // @synthesize demoPlayerView=_demoPlayerView;
+@property(retain, nonatomic) HUCameraRecordingPlayerView *demoPlayerView; // @synthesize demoPlayerView=_demoPlayerView;
+@property(retain, nonatomic) NSLayoutConstraint *dayLabelTopConstraint; // @synthesize dayLabelTopConstraint=_dayLabelTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *cameraStatusViewTopConstraint; // @synthesize cameraStatusViewTopConstraint=_cameraStatusViewTopConstraint;
 @property(retain, nonatomic) NAUILayoutConstraintSet *calendarConstraintSet; // @synthesize calendarConstraintSet=_calendarConstraintSet;
 @property(retain, nonatomic) NAUILayoutConstraintSet *scrubberConstraintSet; // @synthesize scrubberConstraintSet=_scrubberConstraintSet;
 @property(retain, nonatomic) NAUILayoutConstraintSet *statusIndicatorConstraintSet; // @synthesize statusIndicatorConstraintSet=_statusIndicatorConstraintSet;
 @property(retain, nonatomic) NAUILayoutConstraintSet *staticConstraintSet; // @synthesize staticConstraintSet=_staticConstraintSet;
+@property(nonatomic) _Bool applicationIsActive; // @synthesize applicationIsActive=_applicationIsActive;
 @property(nonatomic, getter=isObservingReadyForDisplay) _Bool observingReadyForDisplay; // @synthesize observingReadyForDisplay=_observingReadyForDisplay;
+@property(nonatomic, getter=isViewDisappearing) _Bool viewDisappearing; // @synthesize viewDisappearing=_viewDisappearing;
 @property(nonatomic, getter=isViewVisible) _Bool viewVisible; // @synthesize viewVisible=_viewVisible;
 @property(nonatomic, getter=isEnteringFullScreen) _Bool enteringFullScreen; // @synthesize enteringFullScreen=_enteringFullScreen;
 @property(nonatomic) _Bool recordedClipInterfaceAvailable; // @synthesize recordedClipInterfaceAvailable=_recordedClipInterfaceAvailable;
@@ -81,23 +94,29 @@
 @property(retain, nonatomic) AVControlItem *microphoneControlItem; // @synthesize microphoneControlItem=_microphoneControlItem;
 @property(retain, nonatomic) HUCameraStatusOverlayView *cameraStatusView; // @synthesize cameraStatusView=_cameraStatusView;
 @property(retain, nonatomic) HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-@property(readonly, nonatomic) HFItemManager *itemManager; // @synthesize itemManager=_itemManager;
+@property(retain, nonatomic) HFItemManager *itemManager; // @synthesize itemManager=_itemManager;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) HUCameraPlayerConfiguration *playerConfiguration; // @synthesize playerConfiguration=_playerConfiguration;
 @property(retain, nonatomic) HUCameraPlayerAVBehavior *behavior; // @synthesize behavior=_behavior;
-@property(readonly, nonatomic) HFCameraItem *cameraItem; // @synthesize cameraItem=_cameraItem;
+@property(retain, nonatomic) HFCameraItem *cameraItem; // @synthesize cameraItem=_cameraItem;
 @property(nonatomic) __weak id <HUCameraPlayerViewControllerDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)_cleanUpIdleTimerState;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
+- (void)cancelLiveTimer;
+- (void)startLiveTimer;
+- (void)_updateDayLabelWithDate:(id)arg1;
+- (void)_updateTimeLabelWithDate:(id)arg1 showingTime:(_Bool)arg2;
 - (id)finishPresentation:(id)arg1 animated:(_Bool)arg2;
+- (void)playbackControlsDidChangePlayerVolume:(float)arg1;
 - (void)pictureInPictureDidToggleMicrophone;
 - (void)playbackControlsDidUpdateVisibilityOfLoadingIndicator:(_Bool)arg1;
 - (void)playbackControlsDidToggleMuted:(_Bool)arg1;
 - (double)currentScrubberResolutionForBehavior:(id)arg1;
-- (void)playbackEngineDidUpdateClips:(id)arg1;
+- (void)playbackEngine:(id)arg1 didRemoveClips:(id)arg2;
+- (void)playbackEngine:(id)arg1 didUpdateClips:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateLiveCameraSource:(id)arg2;
@@ -120,6 +139,8 @@
 - (_Bool)_homeHasSingleCameraProfile;
 - (id)_microphoneGlyphForState:(_Bool)arg1;
 - (id)_settingsImage;
+- (id)_imageConfigurationForScrubberType;
+- (long long)_imageScaleForScrubberType;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)_shouldAutoPlayOnViewAppearance;
 - (void)_updateCanShowOverlayState;
@@ -131,16 +152,20 @@
 - (void)_presentDetailsViewController;
 - (void)pauseEngineIfNeeded;
 - (void)_addFooterConstraints;
+- (void)_configureClipScrubberViewControllerIfNeeded;
+- (void)_configureCalendarContainerViewControllerIfNeeded;
 - (void)_configureFooterViewController;
 - (void)_dismissEditInterface;
-- (void)_removeClipScrubberIfNorecordingsAvailable;
+- (void)_removePlaybackHistoryUI;
 - (void)_configureClipScrubberViewController;
 - (void)_displayAudioControlsIfAvailable;
 - (void)_updatePlaceholderContent;
 - (void)_updateMicrophoneButtonState;
+- (void)_updatePlayerVolumeSliderState;
 - (_Bool)_shouldDisableLiveStreamAfterCameraStatusChange;
 - (void)_updateCameraStatus;
 - (void)_updateLivePreviewAspectRatio;
+- (void)_updateIndicatorColor;
 - (void)_updateStateForScrubbingStatus:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateStateForPlaybackPosition:(id)arg1 animated:(_Bool)arg2;
 - (void)_setupPlaybackEngine;

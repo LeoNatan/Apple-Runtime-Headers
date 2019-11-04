@@ -37,7 +37,7 @@
 - (void)logCarouselChangingToMultiMode;
 - (void)logCarouselChangingToSingleMode;
 - (void)logRenderingStickerEnd:(NSString *)arg1;
-- (void)logRenderingStickerStart:(NSString *)arg1;
+- (void)logRenderingStickerStart:(NSString *)arg1 forRecord:(NSString *)arg2;
 - (void)logPaddleViewVideoPlayerFailed:(NSError *)arg1;
 - (void)logStickerGeneratorPoolDidntHaveAvailableGenerator:(long long)arg1 maxCount:(long long)arg2;
 - (void)logDeduplicateRecordWithIdentifier:(NSString *)arg1 toNewRecordWithIdentifier:(NSString *)arg2;
@@ -67,6 +67,7 @@
 - (void)logErrorMergingCopiedAsideContent:(NSString *)arg1;
 - (void)logErrorCopyingStorageAside:(NSString *)arg1;
 - (void)logResetSyncReason:(unsigned long long)arg1;
+- (void)logPersistentChangeNotOfInterest:(NSString *)arg1;
 - (void)logMissingTombstonedIdentifier;
 - (void)logMissingResetSyncReasonKey;
 - (void)logStartObservingResetSync;
@@ -106,7 +107,7 @@
 - (void)logChangesRequireExport;
 - (void)logNotificationDoesntContainChangeHistoryToken;
 - (void)logErrorFetchingChangeHistory:(NSString *)arg1;
-- (void)logDispatchingRemoteChangeWithTransactionCount:(unsigned long long)arg1;
+- (void)logDispatchingRemoteChangeWithTransactionCount:(unsigned long long)arg1 handlersCount:(unsigned long long)arg2;
 - (void)logReceivedRemoteChange:(NSString *)arg1;
 - (void)logStartObservingRemoteChangeNotificationFrom:(NSString *)arg1;
 - (void)processingRemoteChangeNotification:(void (^)(void (^)(void)))arg1;

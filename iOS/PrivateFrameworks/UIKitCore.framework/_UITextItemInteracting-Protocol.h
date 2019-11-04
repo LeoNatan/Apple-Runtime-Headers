@@ -10,13 +10,12 @@
 @class UITargetedPreview, _UITextInteractableItem;
 
 @protocol _UITextItemInteracting <UITextInput, _UITextContent>
-- (UITargetedPreview *)_targetedPreviewForTextInteractableItem:(_UITextInteractableItem *)arg1;
+- (UITargetedPreview *)_targetedPreviewForTextInteractableItem:(_UITextInteractableItem *)arg1 dismissing:(_Bool)arg2;
 - (_Bool)_allowInteraction:(long long)arg1 forTextInteractableItem:(_UITextInteractableItem *)arg2;
 - (_UITextInteractableItem *)_textInteractableItemAtPoint:(struct CGPoint)arg1;
 - (_Bool)_mightHaveInteractableItems;
 
 @optional
 - (_Bool)_allowHighlightForTextInteractableItem:(_UITextInteractableItem *)arg1;
-- (_Bool)_presentActionsForTextInteractableItem:(_UITextInteractableItem *)arg1;
 @end
 

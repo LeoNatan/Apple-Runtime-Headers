@@ -51,6 +51,7 @@
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)_setupCommonCellAppearance;
+- (void)applyLayoutAttributes:(id)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

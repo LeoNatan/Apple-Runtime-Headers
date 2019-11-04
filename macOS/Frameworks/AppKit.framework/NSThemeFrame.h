@@ -108,8 +108,10 @@
 - (id)_displayName;
 - (id)menuForEvent:(id)arg1;
 - (id)menu;
+- (BOOL)handleMouseDragged:(id)arg1;
 - (BOOL)handleRightMouseDown:(id)arg1;
 - (BOOL)handleMouseDown:(id)arg1;
+- (id)_windowForFSMouseEventInTransparentTitlebar:(id)arg1;
 - (BOOL)_mouseIsInTitleOrIconArea:(id)arg1;
 - (BOOL)shouldAttemptResize;
 - (BOOL)_shouldDoClientSideDragWithEvent:(id)arg1;

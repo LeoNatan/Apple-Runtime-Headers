@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     BOOL _collapsible;
     BOOL _prefersExpanded;
+    BOOL _ignoredForCollapsingBehaviors;
     BOOL _active;
     NSString *_identifier;
     double _minimumHeight;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)calculateRestingHeightsForLayouts:(id)arg1;
 + (void)updateLayoutParameters:(id)arg1 overflowLayout:(id)arg2 forAvailableHeight:(double)arg3;
 @property(nonatomic) BOOL active; // @synthesize active=_active;
+@property(nonatomic) BOOL ignoredForCollapsingBehaviors; // @synthesize ignoredForCollapsingBehaviors=_ignoredForCollapsingBehaviors;
 @property(nonatomic) long long order; // @synthesize order=_order;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) double collapsingHeight; // @synthesize collapsingHeight=_collapsingHeight;

@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBFluidGestureDismissable-Protocol.h>
 
-@class NSString, SBFHomeGrabberSettings, SBFluidDismissalState, SBHomeGrabberView, SBUIKeyboardHomeAffordanceAssertion, SiriPresentationSpringBoardMainScreenViewController, UIScreen, UIView;
+@class NSString, SBFHomeGrabberSettings, SBFluidDismissalState, SBHomeGrabberView, SBKeyboardHomeAffordanceAssertion, SiriPresentationSpringBoardMainScreenViewController, UIScreen, UIView;
 
 @interface SBAssistantRootViewController : UIViewController <SBFluidGestureDismissable>
 {
@@ -17,7 +17,7 @@
     UIView *_clippingView;
     SBFluidDismissalState *_fluidDismissalState;
     UIScreen *_screen;
-    SBUIKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
+    SBKeyboardHomeAffordanceAssertion *_keyboardHomeAffordanceAssertion;
     SBFHomeGrabberSettings *_grabberSettings;
     _Bool _keyboardPresented;
     _Bool _keyboardStashed;

@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficSpeed : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOTrafficPath *_path;
     GEOTrafficPredictedPaces *_predictedPaces;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _color;
     unsigned int _confidence;
     float _freeFlowSpeedKph;
@@ -70,6 +72,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOTrafficPath *path;
 @property(readonly, nonatomic) BOOL hasPath;
 - (void)_readPath;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

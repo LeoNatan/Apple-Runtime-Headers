@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
+- (struct CGSize)intrinsicContentSize;
 - (void)setContentHuggingPriority:(float)arg1 forAxis:(int)arg2;
 - (void)setContentCompressionResistancePriority:(float)arg1 forAxis:(int)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

@@ -14,18 +14,20 @@ __attribute__((visibility("hidden")))
 @interface SKUIStorePagePinnedBackdropLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying>
 {
     UIColor *_backdropColor;
+    NSString *_backdropGroupName;
     long long _backdropStyle;
     _Bool _hidesBackdropView;
     double _transitionProgress;
-    NSString *_backdropGroupName;
 }
 
-@property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(nonatomic) double transitionProgress; // @synthesize transitionProgress=_transitionProgress;
 @property(nonatomic) _Bool hidesBackdropView; // @synthesize hidesBackdropView=_hidesBackdropView;
 @property(nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
+@property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(retain, nonatomic) UIColor *backdropColor; // @synthesize backdropColor=_backdropColor;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

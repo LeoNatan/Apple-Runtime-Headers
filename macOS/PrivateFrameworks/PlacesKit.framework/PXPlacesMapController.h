@@ -10,7 +10,7 @@
 #import <PlacesKit/MKMapViewDelegate-Protocol.h>
 #import <PlacesKit/PXPlacesGeotaggedItemDataSourceDelegate-Protocol.h>
 
-@class CLLocationManager, NSMapTable, NSMutableDictionary, NSSet, NSString, PXPlacesImageCache, PXPlacesMapPipelineExecutionContext, PXPlacesMapView;
+@class CLLocationManager, NSMapTable, NSMutableDictionary, NSOrderedSet, NSSet, NSString, PXPlacesImageCache, PXPlacesMapPipelineExecutionContext, PXPlacesMapView;
 @protocol MKAnnotation, OS_dispatch_queue, OS_dispatch_source, PXPlacesMapControllerChangeDelegate, PXPlacesMapControllerFocusDelegate, PXPlacesMapControllerLoadingStateDelegate, PXPlacesMapControllerSelectionDelegate;
 
 @interface PXPlacesMapController : NSObject <MKMapViewDelegate, CLLocationManagerDelegate, PXPlacesGeotaggedItemDataSourceDelegate>
@@ -74,6 +74,7 @@
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (void)dataSource:(id)arg1 didChange:(id)arg2;
+@property(readonly, nonatomic) NSOrderedSet *currentSelectedGeotaggables;
 - (double)_zPositionForAnnotationIndex:(long long)arg1;
 - (void)_executeUpdatePlanResults:(id)arg1;
 - (double)_fadeOutAnimationDuration;

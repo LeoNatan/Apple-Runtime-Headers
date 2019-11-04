@@ -39,7 +39,6 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
 - (void).cxx_destruct;
-- (id)previewActionItems;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

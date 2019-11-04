@@ -18,10 +18,12 @@
     NSData *_clientDataVRFOutput;
     NSDate *_markedForDeletion;
     NSDate *_deletionEscrowExpiry;
+    NSDate *_addedDate;
 }
 
 + (BOOL)supportsSecureCoding;
 @property BOOL verified; // @synthesize verified=_verified;
+@property(retain) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 @property(retain) NSDate *deletionEscrowExpiry; // @synthesize deletionEscrowExpiry=_deletionEscrowExpiry;
 @property(retain) NSDate *markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(retain) NSData *clientDataVRFOutput; // @synthesize clientDataVRFOutput=_clientDataVRFOutput;

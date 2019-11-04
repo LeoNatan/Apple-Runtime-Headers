@@ -13,7 +13,6 @@
 @interface GEOAttribution : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_regions;
     unsigned int _regionsCount;
@@ -25,6 +24,9 @@
     NSString *_name;
     NSMutableArray *_resources;
     NSString *_url;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _dataSet;
     struct {
         unsigned int has_dataSet:1;
@@ -101,6 +103,8 @@
 @property(readonly, nonatomic) _Bool hasBadge;
 - (void)_readBadge;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

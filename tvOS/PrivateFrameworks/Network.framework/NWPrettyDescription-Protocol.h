@@ -7,6 +7,6 @@
 @class NSString;
 
 @protocol NWPrettyDescription
-- (NSString *)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (NSString *)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 @end
 

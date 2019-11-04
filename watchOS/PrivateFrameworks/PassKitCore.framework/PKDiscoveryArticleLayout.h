@@ -12,6 +12,7 @@
 
 @interface PKDiscoveryArticleLayout : NSObject <NSSecureCoding>
 {
+    _Bool _requestedBadge;
     NSString *_itemIdentifier;
     int _version;
     int _variant;
@@ -22,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic, getter=hasRequestedBadge) _Bool requestedBadge; // @synthesize requestedBadge=_requestedBadge;
 @property(copy, nonatomic) CDUnknownBlockType actionOnDismiss; // @synthesize actionOnDismiss=_actionOnDismiss;
 @property(readonly, nonatomic) PKDiscoveryCallToAction *footerLockup; // @synthesize footerLockup=_footerLockup;
 @property(readonly, nonatomic) NSArray *shelves; // @synthesize shelves=_shelves;
@@ -33,6 +35,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualForUI:(id)arg1;
 - (void)setForItem:(id)arg1;
 - (void)localizeWithBundle:(id)arg1 table:(id)arg2;
 - (void)localizeWithBundle:(id)arg1;

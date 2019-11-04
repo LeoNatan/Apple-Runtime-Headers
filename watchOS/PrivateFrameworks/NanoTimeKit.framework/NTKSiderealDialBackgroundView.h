@@ -11,23 +11,22 @@
 @interface NTKSiderealDialBackgroundView : UIView
 {
     NTKSiderealBackgroundQuad *_backgroundQuad;
-    _Bool _renderOnProgressUpdate;
     CLKUIQuadView *_quadView;
     NTKSiderealBackgroundQuad *_quad;
     NTKAltitudeColorCurveView *_backgroundDialView;
 }
 
 @property(retain, nonatomic) NTKAltitudeColorCurveView *backgroundDialView; // @synthesize backgroundDialView=_backgroundDialView;
-@property(nonatomic) _Bool renderOnProgressUpdate; // @synthesize renderOnProgressUpdate=_renderOnProgressUpdate;
 @property(readonly, nonatomic) NTKSiderealBackgroundQuad *quad; // @synthesize quad=_quad;
 @property(retain, nonatomic) CLKUIQuadView *quadView; // @synthesize quadView=_quadView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setSectors:(id)arg1;
 - (void)setSolarDayProgress:(float)arg1;
+- (void)updateDayMask;
 - (float)computeDimming;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
-- (id)initWithFrame:(struct CGRect)arg1 dialImage:(struct CGImage *)arg2 waypointImage:(struct CGImage *)arg3 dataSource:(id)arg4;
+- (id)initWithFrame:(struct CGRect)arg1 orbitDiameter:(float)arg2 timeOrbitRadius:(float)arg3 timeRadius:(float)arg4 dialImage:(id)arg5 waypointImage:(id)arg6 gnomonImage:(id)arg7 dayGnomonImage:(id)arg8 dayDiskBloomImage:(id)arg9 tritiumDayDiskBloomImage:(id)arg10 dayDiscImage:(id)arg11 nightGnomonImage:(id)arg12 nightDiscImage:(id)arg13 nightRingImage:(id)arg14 dataSource:(id)arg15;
 
 @end
 

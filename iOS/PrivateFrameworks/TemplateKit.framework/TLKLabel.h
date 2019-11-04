@@ -45,6 +45,7 @@
 @property(retain, nonatomic) TLKFormattedText *formattedText;
 @property(retain, nonatomic) TLKMultilineText *multilineText;
 - (void)setText:(id)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setFont:(id)arg1 keepOriginal:(_Bool)arg2;
 - (void)setFont:(id)arg1;
 - (void)didMoveToWindow;

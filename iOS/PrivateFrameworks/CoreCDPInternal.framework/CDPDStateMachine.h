@@ -40,6 +40,7 @@
 - (void)_resetAccountCDPStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_enableSecureBackupWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_postRecoveryEnableSecureBackupWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_disableAsyncModeRequested;
 - (void)_attemptBackupRecoveryByPromptingForRemoteSecretWithLocalSecret:(id)arg1 localSecretType:(unsigned long long)arg2 useCachedSecret:(_Bool)arg3 circleJoinResult:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_attemptBackupRecoveryWithLocalSecret:(id)arg1 type:(unsigned long long)arg2 useCachedSecret:(_Bool)arg3 circleJoinResult:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_handleInteractiveRecoveryFlowWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;

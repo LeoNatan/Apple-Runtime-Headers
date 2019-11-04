@@ -13,6 +13,7 @@
     _Bool _settingSublayouts;
     _Bool _isUpdatingSublayouts;
     _Bool _isPerformingAdditionalUpdate;
+    _Bool _fillSafeAreaTopInset;
     _Bool _shouldExcludeTopAndBottomPaddingFromReferenceSize;
     PXGLayout *_firstSublayout;
     PXGLayout *_secondSublayout;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets presentedPadding; // @synthesize presentedPadding=_presentedPadding;
 @property(nonatomic) _Bool shouldExcludeTopAndBottomPaddingFromReferenceSize; // @synthesize shouldExcludeTopAndBottomPaddingFromReferenceSize=_shouldExcludeTopAndBottomPaddingFromReferenceSize;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
+@property(nonatomic) _Bool fillSafeAreaTopInset; // @synthesize fillSafeAreaTopInset=_fillSafeAreaTopInset;
 @property(nonatomic) double interlayoutSpacing; // @synthesize interlayoutSpacing=_interlayoutSpacing;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) PXGLayout *secondSublayout; // @synthesize secondSublayout=_secondSublayout;

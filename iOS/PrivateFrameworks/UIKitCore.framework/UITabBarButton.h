@@ -73,7 +73,10 @@ __attribute__((visibility("hidden")))
 - (id)badgeTextAttributesForState:(long long)arg1;
 - (id)badgeBackgroundColorForState:(long long)arg1;
 - (struct UIOffset)badgePositionAdjustmentForState:(long long)arg1;
+- (_Bool)isDefaultColor:(id)arg1 forState:(long long)arg2;
 - (id)iconColorForState:(long long)arg1;
+- (long long)defaultCompositingModeForState:(long long)arg1;
+- (double)defaultAlphaForState:(long long)arg1;
 - (id)defaultColorForState:(long long)arg1;
 - (struct UIOffset)titlePositionAdjustmentForState:(long long)arg1;
 - (id)titleTextAttributesForState:(long long)arg1;
@@ -126,6 +129,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets)arg4 tabBar:(id)arg5;
 - (id)initWithImage:(id)arg1 landscapeImage:(id)arg2 selectedImage:(id)arg3 landscapeSelectedImage:(id)arg4 label:(id)arg5 withInsets:(struct UIEdgeInsets)arg6 landscapeInsets:(struct UIEdgeInsets)arg7 tabBar:(id)arg8;
 - (id)_selectedIndicatorView;
+@property(readonly, nonatomic, getter=isDefaultTVLayout) _Bool _defaultTVLayout;
 @property(nonatomic, getter=isSpringLoaded) _Bool springLoaded;
 
 // Remaining properties

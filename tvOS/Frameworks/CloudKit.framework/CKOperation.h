@@ -21,6 +21,7 @@
     _Bool _isFinished;
     _Bool _isFinishingOnCallbackQueue;
     _Bool _clouddConnectionInterrupted;
+    _Bool _isDiscretionarySuspended;
     _Bool _queueHasStarted;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     CKOperationConfiguration *_resolvedConfiguration;
@@ -58,6 +59,7 @@
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *parentSectionID; // @synthesize parentSectionID=_parentSectionID;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
+@property(nonatomic) _Bool isDiscretionarySuspended; // @synthesize isDiscretionarySuspended=_isDiscretionarySuspended;
 @property(nonatomic) _Bool clouddConnectionInterrupted; // @synthesize clouddConnectionInterrupted=_clouddConnectionInterrupted;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) _Bool isFinishingOnCallbackQueue; // @synthesize isFinishingOnCallbackQueue=_isFinishingOnCallbackQueue;

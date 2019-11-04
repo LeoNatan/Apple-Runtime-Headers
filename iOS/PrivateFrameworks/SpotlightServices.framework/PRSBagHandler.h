@@ -22,6 +22,7 @@
     _Bool _collectAnonymousData;
     _Bool _collectScores;
     _Bool _use2LayerRanking;
+    _Bool _bagEnabled;
     _Bool _resourceMetadataNeedsWrite;
     id <PRSSessionController> _client;
     long long _status;
@@ -52,6 +53,7 @@
 @property(nonatomic) _Bool resourceMetadataNeedsWrite; // @synthesize resourceMetadataNeedsWrite=_resourceMetadataNeedsWrite;
 @property(retain, nonatomic) NSMutableDictionary *resourceMetadata; // @synthesize resourceMetadata=_resourceMetadata;
 @property(readonly) GEOUserSessionEntity *geoUserSessionEntity; // @synthesize geoUserSessionEntity=_geoUserSessionEntity;
+@property(readonly, nonatomic, getter=isBagEnabled) _Bool bagEnabled; // @synthesize bagEnabled=_bagEnabled;
 @property(readonly, nonatomic) NSString *lookupFirstUseLearnMore; // @synthesize lookupFirstUseLearnMore=_lookupFirstUseLearnMore;
 @property(readonly, nonatomic) NSString *lookupFirstUseDescription2; // @synthesize lookupFirstUseDescription2=_lookupFirstUseDescription2;
 @property(readonly, nonatomic) NSString *lookupFirstUseDescription1; // @synthesize lookupFirstUseDescription1=_lookupFirstUseDescription1;

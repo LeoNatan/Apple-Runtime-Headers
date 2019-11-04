@@ -37,17 +37,19 @@
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 - (void).cxx_destruct;
+- (id)itemIDOfFirstMessageListItemMatchingPredicate:(id)arg1;
 - (id)_nextThreadItemIDAfterThreadItemID:(id)arg1;
 - (BOOL)_threadIsExpandedForItemID:(id)arg1;
 - (BOOL)_threadIsExpanded:(id)arg1;
 - (void)queryMatchedOldestItemsUpdatedForMailboxesObjectIDs:(id)arg1;
 - (id)_expandedObjectIDsForObjectIDs:(id)arg1;
-- (void)queryMatchedChangedObjectIDs:(id)arg1;
+- (void)queryMatchedChangesByObjectIDs:(id)arg1;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 after:(id)arg2;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 before:(id)arg2;
 - (void)collection:(id)arg1 replacedExistingItemID:(id)arg2 withNewItemID:(id)arg3;
 - (void)collectionDidFinishInitialLoad:(id)arg1;
 - (void)collection:(id)arg1 deletedItemIDs:(id)arg2;
+- (void)collection:(id)arg1 changedItemIDs:(id)arg2 itemIDsWithCountChanges:(id)arg3;
 - (void)collection:(id)arg1 changedItemIDs:(id)arg2;
 - (void)collection:(id)arg1 movedItemIDs:(id)arg2 after:(id)arg3;
 - (void)collection:(id)arg1 movedItemIDs:(id)arg2 before:(id)arg3;
@@ -56,6 +58,7 @@
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (void)finishRecovery;
 - (id)itemIDOfMessageListItemWithDisplayMessage:(id)arg1;
+- (void)invalidateCacheForItemIDs:(id)arg1;
 - (void)_attemptToFinishRetryingPromisesByItemID:(id)arg1;
 - (id)_availableMessageListItemsForItemIDs:(id)arg1;
 - (id)messageListItemsForItemIDs:(id)arg1 ifAvailable:(BOOL)arg2;
@@ -69,6 +72,8 @@
 @property(readonly, copy) NSSet *expandedThreadItemIDs;
 @property(readonly, nonatomic) BOOL isThreaded;
 - (id)filteredMessageListWithPredicate:(id)arg1;
+- (void)notifyChangeObserverAboutChangedItemIDs:(id)arg1 itemIDsWithCountChanges:(id)arg2;
+- (void)notifyChangeObserverAboutChangesByItemIDs:(id)arg1;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 before:(id)arg2 extraInfo:(id)arg3;
 - (id)_unreadItemIDsFromExtraInfo:(id)arg1;

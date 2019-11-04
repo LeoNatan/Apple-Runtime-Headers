@@ -19,7 +19,7 @@
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
 - (void).cxx_destruct;
-- (void)showPreviewForToolWithInk:(id)arg1 withScalingFactor:(double)arg2;
+- (void)showPreviewForToolWithInk:(id)arg1 scalingFactor:(double)arg2 animated:(BOOL)arg3;
 - (void)layoutSubviews;
 - (void)_setCornerRadius:(double)arg1;
 - (id)init;

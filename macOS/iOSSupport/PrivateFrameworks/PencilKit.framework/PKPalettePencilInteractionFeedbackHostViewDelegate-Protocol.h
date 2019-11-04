@@ -17,7 +17,7 @@
 - (double)paletteShadowOpacity;
 - (struct CGSize)paletteShadowOffset;
 - (UIColor *)paletteShadowColor;
-- (double)paletteScaleFactor;
+- (double)minimizedPaletteScaleFactor;
 - (double)paletteEdgeSpacingForMinimized;
 - (double)paletteEdgeSpacing;
 - (struct CGSize)minimizedPaletteSize;

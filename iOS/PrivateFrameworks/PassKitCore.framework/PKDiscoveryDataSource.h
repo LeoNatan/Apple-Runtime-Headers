@@ -24,7 +24,6 @@
 @property(nonatomic) __weak id <PKDiscoveryDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_addDismissActionToArticleLayouts:(id)arg1;
-- (_Bool)_shouldUpdateArticleLayout:(id)arg1 withArticleLayout:(id)arg2;
 - (_Bool)_queue_updateArticleLayouts:(id)arg1;
 - (void)_updateArticlesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_articleLayoutForItemIdentifier:(id)arg1;

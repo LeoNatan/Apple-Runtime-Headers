@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutGuide, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMutableArray, NSObservation, _NSViewLayoutInvalidator;
+@class NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutGuide, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMutableArray, NSNumber, NSObservation, _NSViewLayoutInvalidator;
 
 __attribute__((visibility("hidden")))
 @interface _NSViewLayoutAux : NSObject
@@ -46,6 +46,9 @@ __attribute__((visibility("hidden")))
     NSISEngine *_cachedRootOffsetEngine;
     _NSViewLayoutInvalidator *_layoutInvalidator;
     unsigned long long _piercingToken;
+    NSNumber *_layoutEngineWidth;
+    double _firstPassWidth;
+    unsigned char _updateConstraintsPassCounter;
     unsigned char _updateConstraintsInProgressCounter;
     struct {
         unsigned int _potentiallyHasDanglyConstraints:1;
@@ -61,6 +64,7 @@ __attribute__((visibility("hidden")))
         unsigned int _preferredSizeConstraintsNeedUpdating:1;
         unsigned int _allowsEngineHostPreferredSizeConstraints:1;
         unsigned int _viewWasAdjustedToRetinaResolution:1;
+        unsigned int _indexOfFinishedConstraintsUpdatePass:2;
     } _flags;
 }
 

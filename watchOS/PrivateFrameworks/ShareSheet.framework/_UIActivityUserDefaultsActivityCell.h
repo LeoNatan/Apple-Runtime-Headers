@@ -6,11 +6,14 @@
 
 #import <UIKitCore/UITableViewCell.h>
 
-@class NSLayoutConstraint, UIView, _UIUserDefaultsActivityProxy;
+@class NSLayoutConstraint, UIImageView, UILabel, UIView, _UIUserDefaultsActivityProxy;
 
 @interface _UIActivityUserDefaultsActivityCell : UITableViewCell
 {
+    NSLayoutConstraint *_titleLabelHeightAnchor;
     unsigned int _sequence;
+    UIImageView *_activityImageView;
+    UILabel *_activityTitleLabel;
     UIView *_activityImageSlotView;
     UIView *_activityTitleView;
     _UIUserDefaultsActivityProxy *_activityProxy;
@@ -19,13 +22,15 @@
     NSLayoutConstraint *_labelLeadingConstraint;
 }
 
-+ (id)title3Font;
++ (id)bodyShortFont;
 @property(retain, nonatomic) NSLayoutConstraint *labelLeadingConstraint; // @synthesize labelLeadingConstraint=_labelLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewLeadingConstraint; // @synthesize imageViewLeadingConstraint=_imageViewLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewWidthConstraint; // @synthesize imageViewWidthConstraint=_imageViewWidthConstraint;
 @property(retain, nonatomic) _UIUserDefaultsActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;
 @property(retain, nonatomic) UIView *activityTitleView; // @synthesize activityTitleView=_activityTitleView;
 @property(retain, nonatomic) UIView *activityImageSlotView; // @synthesize activityImageSlotView=_activityImageSlotView;
+@property(retain, nonatomic) UILabel *activityTitleLabel; // @synthesize activityTitleLabel=_activityTitleLabel;
+@property(retain, nonatomic) UIImageView *activityImageView; // @synthesize activityImageView=_activityImageView;
 @property(nonatomic) unsigned int sequence; // @synthesize sequence=_sequence;
 - (void).cxx_destruct;
 - (void)prepareForReuse;

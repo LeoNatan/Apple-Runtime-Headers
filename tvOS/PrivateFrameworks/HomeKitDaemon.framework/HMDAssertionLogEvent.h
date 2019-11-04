@@ -10,11 +10,13 @@
 
 @interface HMDAssertionLogEvent : HMDLogEvent
 {
+    NSString *_description;
     NSString *_reason;
 }
 
 + (id)identifier;
 @property(readonly, copy) NSString *reason; // @synthesize reason=_reason;
+- (id)description;
 - (void).cxx_destruct;
 - (id)initWithReason:(id)arg1;
 

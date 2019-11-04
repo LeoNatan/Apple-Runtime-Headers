@@ -11,15 +11,19 @@
 __attribute__((visibility("hidden")))
 @interface _UIPortalView : UIView
 {
+    _Bool _forwardsClientHitTestingToSourceView;
     UIView *_sourceView;
 }
 
 + (Class)layerClass;
+@property(nonatomic) _Bool forwardsClientHitTestingToSourceView; // @synthesize forwardsClientHitTestingToSourceView=_forwardsClientHitTestingToSourceView;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CAPortalLayer *portalLayer; // @dynamic portalLayer;
 - (id)description;
-@property(nonatomic) _Bool allowsHitTesting;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+@property(nonatomic) _Bool allowsHitTesting; // @dynamic allowsHitTesting;
 @property(nonatomic) _Bool allowsBackdropGroups; // @dynamic allowsBackdropGroups;
 @property(nonatomic) _Bool matchesPosition; // @dynamic matchesPosition;
 @property(nonatomic) _Bool matchesTransform; // @dynamic matchesTransform;

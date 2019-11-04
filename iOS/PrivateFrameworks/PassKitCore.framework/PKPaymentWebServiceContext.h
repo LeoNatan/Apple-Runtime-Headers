@@ -25,6 +25,7 @@
     NSString *_deviceID;
     NSString *_secureElementID;
     NSString *_pushToken;
+    NSString *_nextPushToken;
     NSString *_companionSerialNumber;
     NSDate *_registrationDate;
     NSDate *_configurationDate;
@@ -51,13 +52,14 @@
 @property(copy) NSDate *registrationDate; // @synthesize registrationDate=_registrationDate;
 @property _Bool devSigned; // @synthesize devSigned=_devSigned;
 @property(copy) NSString *companionSerialNumber; // @synthesize companionSerialNumber=_companionSerialNumber;
+@property(copy) NSString *nextPushToken; // @synthesize nextPushToken=_nextPushToken;
 @property(copy) NSString *pushToken; // @synthesize pushToken=_pushToken;
 @property(copy) NSString *secureElementID; // @synthesize secureElementID=_secureElementID;
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (id)applyServicePreferredLangaugeForFeatureIdentifier:(unsigned long long)arg1;
-- (id)applyServiceLocalizationBundleForfeatureIdentifier:(unsigned long long)arg1;
+- (id)applyServicePreferredLanguageForFeatureIdentifier:(unsigned long long)arg1;
+- (id)applyServiceLocalizationBundleForFeatureIdentifier:(unsigned long long)arg1;
 - (id)applyServiceFeaturesForRegionMeetingEnablementThreshold:(id)arg1;
 - (double)_contextProvisioningEnablementValue;
 - (id)betaPaymentNetworksForRegion:(id)arg1;

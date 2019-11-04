@@ -8,7 +8,7 @@
 
 #import <ActionKit/WFContentItemClass-Protocol.h>
 
-@class AVMetadataMachineReadableCodeObject, NSString;
+@class NSString, WFMachineReadableCode;
 
 @interface WFMachineReadableCodeContentItem : WFContentItem <WFContentItemClass>
 {
@@ -32,7 +32,7 @@
 - (BOOL)canGenerateRepresentationForType:(id)arg1;
 - (id)generateImageOfSize:(struct CGSize)arg1 withErrorCorrectionLevel:(id)arg2 error:(id *)arg3;
 - (id)generateObjectRepresentationForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) AVMetadataMachineReadableCodeObject *codeObject;
+@property(readonly, nonatomic) WFMachineReadableCode *codeObject;
 
 @end
 

@@ -77,6 +77,7 @@
 - (void)scrollSectionToTop:(unsigned long long)arg1 animate:(_Bool)arg2;
 - (_Bool)updateMustAccountForLayout;
 - (void)scrollTableToTop;
+- (void)purgeMemory;
 - (void)updateWithResultSections:(id)arg1 scrollToTop:(_Bool)arg2;
 - (void)purgeAndResetTable;
 - (id)init;

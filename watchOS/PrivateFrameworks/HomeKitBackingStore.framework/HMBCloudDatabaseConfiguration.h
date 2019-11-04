@@ -7,22 +7,26 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitBackingStore/NSCopying-Protocol.h>
+#import <HomeKitBackingStore/NSMutableCopying-Protocol.h>
 
-@class CKContainerID, CKOperationConfiguration, NSString;
+@class CKContainerID, CKOperationConfiguration, HMFScheduler, NSString;
 
-@interface HMBCloudDatabaseConfiguration : HMFObject <NSCopying>
+@interface HMBCloudDatabaseConfiguration : HMFObject <NSCopying, NSMutableCopying>
 {
     _Bool _manateeContainer;
     CKContainerID *_containerID;
-    NSString *_pushTopic;
+    NSString *_sourceApplicationBundleIdentifier;
     CKOperationConfiguration *_defaultOperationConfiguration;
+    HMFScheduler *_apsRegistrationScheduler;
 }
 
+@property(retain, nonatomic) HMFScheduler *apsRegistrationScheduler; // @synthesize apsRegistrationScheduler=_apsRegistrationScheduler;
 @property(copy) CKOperationConfiguration *defaultOperationConfiguration; // @synthesize defaultOperationConfiguration=_defaultOperationConfiguration;
 @property(getter=isManateeContainer) _Bool manateeContainer; // @synthesize manateeContainer=_manateeContainer;
-@property(copy) NSString *pushTopic; // @synthesize pushTopic=_pushTopic;
+@property(copy) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(readonly, copy) CKContainerID *containerID; // @synthesize containerID=_containerID;
 - (void).cxx_destruct;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)attributeDescriptions;
 - (id)initWithContainerID:(id)arg1;

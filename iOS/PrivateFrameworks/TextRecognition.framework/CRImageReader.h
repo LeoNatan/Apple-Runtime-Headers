@@ -29,6 +29,8 @@
 
 + (id)errorWithErrorCode:(int)arg1;
 + (id)descriptionForErrorCode:(int)arg1;
++ (id)defaultOptions;
++ (id)textResultsForCGImage:(struct CGImage *)arg1 numberOfCandidates:(long long)arg2 title:(id *)arg3 error:(id *)arg4;
 + (id)textResultsForCGImage:(struct CGImage *)arg1 numberOfCandidates:(long long)arg2 title:(id *)arg3;
 + (id)textResultsForCGImage:(struct CGImage *)arg1 numberOfCandidates:(long long)arg2;
 + (id)languageSetFromOptionsDictionary:(id)arg1;
@@ -56,7 +58,6 @@
 - (id)textResultsForImage:(id)arg1 roi:(struct CGRect)arg2 options:(id)arg3 error:(id *)arg4 withProgressHandler:(CDUnknownBlockType)arg5 title:(id *)arg6;
 - (id)textResultsForImage:(id)arg1 roi:(struct CGRect)arg2 options:(id)arg3 error:(id *)arg4 title:(id *)arg5;
 - (id)signpostLog;
-- (id)defaultOptions;
 - (id)textDetectorResultsForImageAtURL:(id)arg1 options:(id)arg2;
 - (id)textDetectorResultsForImage:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)textRecognizerResultsForTextFeatures:(id)arg1 forImageAtURL:(id)arg2 options:(id)arg3;

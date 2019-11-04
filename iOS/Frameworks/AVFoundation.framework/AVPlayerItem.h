@@ -147,6 +147,7 @@
 - (void)_quietlySetVariantIndex:(long long)arg1;
 - (double)liveUpdateInterval;
 - (long long)variantIndex;
+- (id)configurationGroup;
 - (void)setGaplessInfo:(id)arg1;
 - (void)_updatePlaybackPropertiesOnFigPlaybackItem;
 - (id)_playbackProperties;

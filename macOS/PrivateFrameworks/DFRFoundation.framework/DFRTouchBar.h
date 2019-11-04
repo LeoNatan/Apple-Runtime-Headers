@@ -9,12 +9,19 @@
 __attribute__((visibility("hidden")))
 @interface DFRTouchBar : NSObject
 {
-    long long _display;
-    unsigned int _seed;
-    long long _style;
+    struct os_unfair_lock_s _lock;
+    // Error parsing type: AQ, name: _epoch
+    struct DFRTouchBarHandle _handle;
+    // Error parsing type: Aq, name: _style
+    // Error parsing type: Aq, name: _visiblePlacements
+    // Error parsing type: Ad, name: _bezelBrightness
+    // Error parsing type: Aq, name: _colorTemperature
+    // Error parsing type: Ad, name: _glyphBrightness
+    // Error parsing type: Ad, name: _scale
+    struct CGRect _frames[24];
 }
 
-+ (id)touchBarForDisplay:(long long)arg1;
++ (id)touchBarWithEpoch:(unsigned long long)arg1 handle:(struct DFRTouchBarHandle)arg2;
 
 @end
 

@@ -11,6 +11,7 @@
 }
 
 + (void)_handleOfferDataSource:(id)arg1 appContext:(id)arg2;
++ (void)registerDeviceForCommerceOffers;
 + (void)fetchAndPresentOffer:(id)arg1 sourceEvent:(id)arg2;
 
 @end

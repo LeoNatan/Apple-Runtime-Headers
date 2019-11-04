@@ -17,7 +17,7 @@
     SBGridLayoutSwitcherModifier *_gridLayoutModifier;
     unsigned long long _initialNumberOfRows;
     double _initialCardScale;
-    _Bool _didPresentFromHomeScreen;
+    _Bool _hasForegroundMainApp;
     _Bool _isTethered;
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
     SBSwitcherModifier<SBFluidSwitcherScrollProviding> *_multitaskingModifier;
@@ -40,7 +40,7 @@
 - (_Bool)respondsToSelector:(SEL)arg1;
 @property(readonly, nonatomic) double effectiveHorizontalSpacing;
 @property(readonly, nonatomic) unsigned long long numberOfRows;
-- (unsigned long long)insertionStyle;
+- (unsigned long long)insertionStyleForInsertingAppLayout:(id)arg1;
 - (struct _NSRange)fullSizeSnapshotsRange;
 - (_Bool)wantsDockBehaviorAssertion;
 - (long long)backdropBlurType;

@@ -21,10 +21,10 @@
     unsigned long long _reachabilityState;
     id <HUQuickControlColorViewInteractionDelegate> _interactionDelegate;
     HFColorPalette *_colorPalette;
-    NSIndexPath *_linearPaletteViewSelectedColorIndexPath;
     HFColorPaletteColor *_selectedColor;
     id _originalValue;
     HFColorPalette *_originalPalette;
+    NSIndexPath *_originalSelectedColorIndexPath;
     HUColorLinearPaletteView *_colorLinearPaletteView;
     HUColorPickerView *_colorPickerView;
     UISegmentedControl *_colorPickerModeSegmentedControl;
@@ -35,24 +35,27 @@
 @property(retain, nonatomic) HUColorPickerView *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
 @property(retain, nonatomic) HUColorLinearPaletteView *colorLinearPaletteView; // @synthesize colorLinearPaletteView=_colorLinearPaletteView;
 @property(nonatomic) _Bool showPickerModeControl; // @synthesize showPickerModeControl=_showPickerModeControl;
+@property(retain, nonatomic) NSIndexPath *originalSelectedColorIndexPath; // @synthesize originalSelectedColorIndexPath=_originalSelectedColorIndexPath;
 @property(retain, nonatomic) HFColorPalette *originalPalette; // @synthesize originalPalette=_originalPalette;
 @property(retain, nonatomic) id originalValue; // @synthesize originalValue=_originalValue;
 @property(retain, nonatomic) HFColorPaletteColor *selectedColor; // @synthesize selectedColor=_selectedColor;
-@property(retain, nonatomic) NSIndexPath *linearPaletteViewSelectedColorIndexPath; // @synthesize linearPaletteViewSelectedColorIndexPath=_linearPaletteViewSelectedColorIndexPath;
 @property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(nonatomic) __weak id <HUQuickControlColorViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (void)cancelColorPicking;
+- (void)controlView:(id)arg1 didSelectColorAtIndexPath:(id)arg2;
 - (void)presentFullColorViewForControlView:(id)arg1 selectedColorIndexPath:(id)arg2;
 - (void)controlView:(id)arg1 colorPaletteDidChange:(id)arg2;
 - (void)controlView:(id)arg1 colorPickerModeDidChange:(unsigned long long)arg2;
 - (void)controlView:(id)arg1 interactionStateDidChange:(_Bool)arg2 forFirstTouch:(_Bool)arg3;
 - (void)controlView:(id)arg1 valueDidChange:(id)arg2;
+- (void)updateSelectedColorIndexPathToIndexPath:(id)arg1;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 @property(retain, nonatomic) id value;
+- (void)storeCurrentColorInformationAsOriginalValues;
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 - (void)_updateColorPicker;
 @property(readonly, nonatomic, getter=isSelectedColorInPalette) _Bool selectedColorInPalette;
@@ -62,6 +65,7 @@
 - (void)layoutSubviews;
 - (id)initWithProfile:(id)arg1 colorPalette:(id)arg2;
 - (id)initWithProfile:(id)arg1;
+@property(readonly, nonatomic) NSIndexPath *linearPaletteViewSelectedColorIndexPath;
 @property(readonly, nonatomic) unsigned long long mode;
 
 // Remaining properties

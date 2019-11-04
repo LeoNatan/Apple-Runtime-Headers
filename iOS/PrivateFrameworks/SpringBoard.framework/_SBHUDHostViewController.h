@@ -42,6 +42,7 @@
 - (_Bool)isHUDBeingPresented:(id)arg1;
 - (_Bool)isHUDBeingDismissed:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfActiveTransitions;
+@property(readonly, copy) NSString *description;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
@@ -49,7 +50,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -21,7 +21,6 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
-+ (id)ruleFromFirewallRuleWan:(id)arg1;
 @property(retain, nonatomic) HMDNetworkRouterICMPTypeList *icmpTypes; // @synthesize icmpTypes=_icmpTypes;
 @property(retain, nonatomic) HMDNetworkRouterIPAddress *hostIPEnd; // @synthesize hostIPEnd=_hostIPEnd;
 @property(retain, nonatomic) HMDNetworkRouterIPAddress *hostIPStart; // @synthesize hostIPStart=_hostIPStart;

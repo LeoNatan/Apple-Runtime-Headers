@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDChildAction : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDChildActionDirections *_childActionDirections;
     GEOPDChildActionFlyover *_childActionFlyover;
     GEOPDChildActionSearch *_childActionSearch;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _childActionType;
     struct {
         unsigned int has_childActionType:1;
@@ -61,6 +63,8 @@ __attribute__((visibility("hidden")))
 - (id)childActionTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasChildActionType;
 @property(nonatomic) int childActionType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

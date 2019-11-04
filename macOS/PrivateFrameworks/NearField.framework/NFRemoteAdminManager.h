@@ -22,6 +22,7 @@
 - (void)readerModeCardIngestionStatus:(unsigned long long)arg1;
 - (void)readerModeCardSessionToken:(id)arg1;
 - (void)remoteAdminCleanupProgress:(double)arg1;
+- (id)deleteAllAppletsAndCleanupWithTSM;
 - (void)getSELDInfoForBroker:(CDUnknownBlockType)arg1;
 - (id)getAPNPublicToken;
 - (BOOL)cancelCardIngestion;

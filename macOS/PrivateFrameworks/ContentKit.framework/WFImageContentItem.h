@@ -8,7 +8,7 @@
 
 #import <ContentKit/WFContentItemClass-Protocol.h>
 
-@class NSImage, WFFileType;
+@class WFFileType, WFImage;
 
 @interface WFImageContentItem : WFGenericFileContentItem <WFContentItemClass>
 {
@@ -34,10 +34,12 @@
 - (BOOL)isContent;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;
 - (id)generateObjectRepresentationForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
+- (void)generateFileRepresentation:(CDUnknownBlockType)arg1 options:(id)arg2 forType:(id)arg3;
 - (id)generateFileRepresentationForType:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)generateImageFileForType:(id)arg1 includingMetadata:(BOOL)arg2 compressionQuality:(id)arg3 error:(id *)arg4;
 - (id)imageFile;
-@property(readonly, nonatomic) NSImage *image;
+@property(readonly, nonatomic) WFImage *image;
+- (BOOL)isObjectBacked;
 - (BOOL)isScreenshot;
 - (id)orientation;
 - (id)location;

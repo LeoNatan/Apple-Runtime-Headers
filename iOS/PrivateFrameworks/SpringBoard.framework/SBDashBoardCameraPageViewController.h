@@ -6,7 +6,7 @@
 
 #import <CoverSheet/CSPageViewController.h>
 
-#import <SpringBoard/SBApplicationHosting-Protocol.h>
+#import <SpringBoard/CSApplicationHosting-Protocol.h>
 #import <SpringBoard/SBDashBoardDelegatingScreenEdgePanGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoard/SBDashBoardHostedAppViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBHomeGestureParticipantDelegate-Protocol.h>
@@ -15,7 +15,7 @@
 
 @class NSSet, NSString, SBDashBoardDelegatingScreenEdgePanGestureRecognizer, SBDashBoardHostedAppViewController, SBFFluidBehaviorSettings, SBHomeGestureParticipant, UIView, UIViewFloatAnimatableProperty;
 
-@interface SBDashBoardCameraPageViewController : CSPageViewController <SBDashBoardHostedAppViewControllerDelegate, SBSceneHandleObserver, SBSystemGestureRecognizerDelegate, SBDashBoardDelegatingScreenEdgePanGestureRecognizerDelegate, SBHomeGestureParticipantDelegate, SBApplicationHosting>
+@interface SBDashBoardCameraPageViewController : CSPageViewController <SBDashBoardHostedAppViewControllerDelegate, SBSceneHandleObserver, SBSystemGestureRecognizerDelegate, SBDashBoardDelegatingScreenEdgePanGestureRecognizerDelegate, SBHomeGestureParticipantDelegate, CSApplicationHosting>
 {
     UIView *_maskView;
     UIView *_tintView;
@@ -73,6 +73,7 @@
 - (void)_bailIfFaceTimeCallComesIn;
 - (void)homeGestureParticipantOwningHomeGestureDidChange:(id)arg1;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
+- (_Bool)handlesRotationIndependentOfCoverSheet;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
 - (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;

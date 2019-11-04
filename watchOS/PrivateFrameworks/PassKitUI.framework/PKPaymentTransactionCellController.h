@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, PKPeerPaymentContactResolver;
+@class NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, PKObjectDownloader, PKPeerPaymentContactResolver;
 @protocol OS_dispatch_queue;
 
 @interface PKPaymentTransactionCellController : NSObject
@@ -15,9 +15,11 @@
     NSMutableArray *_iconCacheKeys;
     NSMutableOrderedSet *_highPriorityIconRequests;
     NSMutableOrderedSet *_lowPriorityIconRequests;
+    NSMutableArray *_inflightRequests;
     _Bool _processingRequest;
     NSObject<OS_dispatch_queue> *_queueIcons;
     struct os_unfair_lock_s _lockRequests;
+    PKObjectDownloader *_fileDownloader;
     PKPeerPaymentContactResolver *_contactResolver;
 }
 
@@ -25,15 +27,18 @@
 + (id)_statusAnnotationForTransaction:(id)arg1;
 + (id)_relativeDateForTransaction:(id)arg1;
 + (id)_billPaymentFundingSourceForTransaction:(id)arg1;
-+ (id)paymentMethodNameForTransaction:(id)arg1;
 + (id)presentationInformationForTransaction:(id)arg1 pass:(id)arg2 account:(id)arg3 deviceName:(id)arg4 context:(unsigned int)arg5;
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (void).cxx_destruct;
-- (id)_iconCacheKeyForPaymentTransaction:(id)arg1 size:(struct CGSize)arg2 transparent:(_Bool)arg3 imageOut:(id *)arg4;
+- (id)fileDownloader;
+- (id)_cacheImageFromDownloaderCacheForURL:(id)arg1;
+- (id)_iconCacheKeyForMerchant:(id)arg1 size:(struct CGSize)arg2 imageOut:(id *)arg3;
+- (id)_iconCacheKeyForPaymentTransaction:(id)arg1 size:(struct CGSize)arg2 imageOut:(id *)arg3;
 - (id)_iconForCacheKey:(id)arg1;
 - (void)queue_processNextIconRequest;
-- (void)iconForTransaction:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)cachedIconForTransaction:(id)arg1 size:(struct CGSize)arg2;
+- (id)_iconForTransaction:(id)arg1 merchant:(id)arg2 size:(struct CGSize)arg3 requestType:(unsigned int)arg4 iconHandler:(CDUnknownBlockType)arg5;
+- (id)iconForMerchant:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned int)arg3 iconHandler:(CDUnknownBlockType)arg4;
+- (id)iconForTransaction:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned int)arg3 iconHandler:(CDUnknownBlockType)arg4;
 - (void)_updatePrimaryLabelOnTransactionCell:(id)arg1 withPeerPaymentCounterpartHandle:(id)arg2 contact:(id)arg3;
 - (void)_updateAvatarOnTransactionCell:(id)arg1 withTransaction:(id)arg2 contact:(id)arg3;
 - (void)configureCell:(id)arg1 forTransaction:(id)arg2 paymentPass:(id)arg3 account:(id)arg4 detailStyle:(int)arg5 deviceName:(id)arg6;

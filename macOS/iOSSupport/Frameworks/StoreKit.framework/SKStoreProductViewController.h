@@ -6,12 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <StoreKit/SKRemoteDismissingViewController-Protocol.h>
 #import <StoreKit/SKScreenTrackingDelegate-Protocol.h>
+#import <StoreKit/UIViewControllerTransitioningDelegate-Protocol.h>
 
 @class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation;
 @protocol SKStoreProductViewControllerDelegate, SKStoreProductViewControllerDelegatePrivate, SKUIServiceProductPageViewController;
 
-@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate>
+@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate, UIViewControllerTransitioningDelegate, SKRemoteDismissingViewController>
 {
     NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
@@ -36,7 +38,6 @@
     CDUnknownBlockType _dismissalCompleted;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) BOOL automaticallyDismisses; // @synthesize automaticallyDismisses=_automaticallyDismisses;
 @property(copy, nonatomic) NSString *promptString; // @synthesize promptString=_promptString;
 @property(nonatomic) BOOL showsRightBarButton; // @synthesize showsRightBarButton=_showsRightBarButton;
@@ -51,21 +52,24 @@
 @property(copy, nonatomic) NSString *additionalBuyParameters; // @synthesize additionalBuyParameters=_additionalBuyParameters;
 @property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)dismissRemoteViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (id)interactionControllerForDismissal:(id)arg1;
+- (id)animationControllerForDismissedController:(id)arg1;
 - (void)sk_didBecomeOffScreen:(id)arg1;
 - (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
 - (void)_sk_applicationDidEnterBackground:(id)arg1;
-- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (int)_preferredStatusBarVisibility;
 - (long long)preferredStatusBarStyle;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
+- (BOOL)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)loadView;
 - (void)loadProductWithParameters:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

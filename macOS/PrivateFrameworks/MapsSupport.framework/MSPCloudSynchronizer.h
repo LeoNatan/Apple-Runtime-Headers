@@ -25,6 +25,7 @@
     MSPJournal *_journal;
     NSObject<OS_dispatch_queue> *_mergeQueue;
     MSPCloudMigrator *_migrator;
+    unsigned long long _lastRetryInterval;
     NSArray *_containers;
     id <MSPCloudSynchronizerDelegate> _delegate;
     MSPCloudKitAccountAccess *_cloudAccess;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) MSPCloudKitAccountAccess *cloudAccess; // @synthesize cloudAccess=_cloudAccess;
 @property(nonatomic) __weak id <MSPCloudSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
+@property(nonatomic) unsigned long long lastRetryInterval; // @synthesize lastRetryInterval=_lastRetryInterval;
 @property(nonatomic) BOOL hasMigrated; // @synthesize hasMigrated=_hasMigrated;
 @property(nonatomic) BOOL hasMigratedPreSync; // @synthesize hasMigratedPreSync=_hasMigratedPreSync;
 @property(retain, nonatomic) MSPCloudMigrator *migrator; // @synthesize migrator=_migrator;
@@ -46,6 +48,7 @@
 @property(retain, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (void)runConditionsChanged:(id)arg1;
+- (unsigned long long)retryIntervalForError:(id)arg1;
 - (void)_merge;
 - (void)merge;
 - (void)performMigrationsWithCompletion:(CDUnknownBlockType)arg1;
@@ -53,6 +56,7 @@
 - (void)prepareForMergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAccountChangeWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didReceiveRemoteNotification:(id)arg1;
+- (void)requestMergeWithReason:(unsigned long long)arg1 afterDelay:(unsigned long long)arg2;
 - (void)requestMergeWithReason:(unsigned long long)arg1;
 - (void)requestMerge;
 - (BOOL)isCurrentlyRunning;

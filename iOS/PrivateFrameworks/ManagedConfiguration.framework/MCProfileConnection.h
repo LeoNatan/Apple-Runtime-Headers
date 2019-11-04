@@ -50,10 +50,10 @@
 - (void)dealloc;
 - (id)init;
 - (void)_queueCreateAndResumePublicXPCConnection;
-- (void)_destroyPublicXPCConnection;
+- (void)_destroyPublicXPCConnectionAndInvalidate:(_Bool)arg1;
 - (void)_createAndResumePublicXPCConnection;
 - (void)_queueCreateAndResumeXPCConnection;
-- (void)_destroyXPCConnection;
+- (void)_destroyXPCConnectionAndInvalidate:(_Bool)arg1;
 - (void)_createAndResumeXPCConnection;
 @property(readonly, nonatomic) NSXPCConnection *publicXPCConnection; // @synthesize publicXPCConnection=_publicXPCConnection;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -156,7 +156,6 @@
 - (id)uninstalledProfileIdentifiersForDevice:(unsigned long long)arg1;
 - (id)installedProfileIdentifiers;
 - (id)installedMDMProfileIdentifier;
-- (_Bool)_isRestrictionDictionaryForbiddenForUserEnrollment:(id)arg1;
 - (id)effectiveWhitelistedAppsAndOptions;
 - (void)removeOrphanedClientRestrictionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeOrphanedClientRestrictions;
@@ -382,6 +381,7 @@
 - (_Bool)isScreenShotAllowed;
 - (_Bool)isWallpaperModificationAllowed;
 - (_Bool)isDeviceNameModificationAllowed;
+- (_Bool)isNetworkDriveAccessInFilesAllowed;
 - (_Bool)isUSBDriveAccessInFilesAllowed;
 - (_Bool)isESIMModificationAllowed;
 - (_Bool)isWiFiPowerModificationAllowed;
@@ -483,6 +483,8 @@
 - (void)recomputeProfileRestrictionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)invalidateRestrictionCache;
 - (id)managedWiFiNetworkNames;
+- (id)_transmogrifyRestrictionDictionaryForUserEnrollment:(id)arg1 outError:(id *)arg2;
+- (id)_disallowedRestrictionErrorForRestrictionKey:(id)arg1;
 - (id)_localizedSourceDescriptionForType:(long long)arg1 MDMName:(id)arg2 exchangeName:(id)arg3 exchangeCount:(long long)arg4 profileName:(id)arg5 profileCount:(long long)arg6;
 - (id)_localizedRestrictionSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(long long)arg3 profileName:(id)arg4 profileCount:(long long)arg5;
 - (id)_localizedCertificateSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(long long)arg3 profileName:(id)arg4 profileCount:(long long)arg5;

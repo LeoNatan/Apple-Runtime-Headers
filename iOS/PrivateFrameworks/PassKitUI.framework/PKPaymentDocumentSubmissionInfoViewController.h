@@ -25,9 +25,6 @@
 - (void).cxx_destruct;
 - (id)paymentSetupMarker;
 - (id)onPresentationRemoveViewControllersAfterMarker;
-- (void)captureController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
-- (void)captureController:(id)arg1 requestsPushViewController:(id)arg2 animated:(_Bool)arg3;
-- (void)captureController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)captureController:(id)arg1 didChangeStateTo:(long long)arg2;
 - (void)captureController:(id)arg1 showLoading:(_Bool)arg2;
 - (void)didSelectSetupLater;

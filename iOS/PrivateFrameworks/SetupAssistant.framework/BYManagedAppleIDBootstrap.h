@@ -27,6 +27,7 @@
 @property(nonatomic) _Bool shouldRetrySilentLoginUpgrade; // @synthesize shouldRetrySilentLoginUpgrade=_shouldRetrySilentLoginUpgrade;
 - (void).cxx_destruct;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
+- (id)_fetchAKURLBagSynchronously;
 - (void)writeAccountConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_languageConfigurationDictionary;
 - (void)_upgradeShortLivedTokenCompletion:(CDUnknownBlockType)arg1;

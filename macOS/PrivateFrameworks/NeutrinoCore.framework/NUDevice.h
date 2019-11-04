@@ -23,17 +23,19 @@
 }
 
 @property(readonly, nonatomic) id <MTLDevice> metalDevice; // @synthesize metalDevice=_metalDevice;
+@property(readonly, nonatomic) id <NURenderer> lowPriorityRenderer; // @synthesize lowPriorityRenderer=_lowPriorityRenderer;
+@property(readonly, nonatomic) id <NURenderer> renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)clearCaches;
-- (id)_newLowPriorityRenderer;
-- (id)_lowPriorityRenderer;
-@property(readonly, nonatomic) id <NURenderer> lowPriorityRenderer;
-- (id)_newRenderer;
+- (id)_newLowPriorityRenderer:(out id *)arg1;
+- (id)_lowPriorityRenderer:(out id *)arg1;
+- (id)lowPriorityRenderer:(out id *)arg1;
+- (id)_newRenderer:(out id *)arg1;
 - (BOOL)shouldLogRendererUsed;
-- (id)_renderer;
-@property(readonly, nonatomic) id <NURenderer> renderer;
+- (id)_renderer:(out id *)arg1;
+- (id)renderer:(out id *)arg1;
 @property(readonly, nonatomic) BOOL shouldRenderUsingOpenGL;
 @property(readonly, nonatomic) BOOL shouldRenderUsingMetal;
 - (long long)_preferredSampleMode;

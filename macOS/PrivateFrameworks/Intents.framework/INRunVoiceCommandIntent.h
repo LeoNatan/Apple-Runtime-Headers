@@ -6,11 +6,12 @@
 
 #import <Intents/INIntent.h>
 
+#import <Intents/INFileEnumerable-Protocol.h>
 #import <Intents/INRunVoiceCommandIntentExport-Protocol.h>
 
 @class INIntentExecutionResult, INSpeakableString, INVoiceCommandDeviceInformation, NSString;
 
-@interface INRunVoiceCommandIntent : INIntent <INRunVoiceCommandIntentExport>
+@interface INRunVoiceCommandIntent : INIntent <INFileEnumerable, INRunVoiceCommandIntentExport>
 {
 }
 
@@ -36,7 +37,8 @@
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
-- (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
+- (void)_intents_enumerateFileURLsWithBlock:(CDUnknownBlockType)arg1 mutate:(BOOL)arg2;
+- (void)_intents_enumerateFilesWithBlock:(CDUnknownBlockType)arg1 mutate:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

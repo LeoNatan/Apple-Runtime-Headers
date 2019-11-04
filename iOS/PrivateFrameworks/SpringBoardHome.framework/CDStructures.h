@@ -12,6 +12,29 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CAColorMatrix {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+    float _field8;
+    float _field9;
+    float _field10;
+    float _field11;
+    float _field12;
+    float _field13;
+    float _field14;
+    float _field15;
+    float _field16;
+    float _field17;
+    float _field18;
+    float _field19;
+    float _field20;
+};
+
 struct CGAffineTransform {
     double a;
     double b;
@@ -119,6 +142,7 @@ struct SBRootFolderViewMetrics {
     struct CGRect _field9;
     struct CGRect _field10;
     struct CGRect _field11;
+    struct CGRect _field12;
 };
 
 struct SBVisibleColumnRange {

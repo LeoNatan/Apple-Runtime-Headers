@@ -45,18 +45,18 @@
 + (id)wf_moduleSummarySlotErrorSelectedTitleColor;
 + (id)wf_moduleSummarySlotErrorHighlightedTitleColor;
 + (id)wf_moduleSummarySlotErrorTitleColor;
-+ (id)wf_moduleSummarySlotUnpopulatedBorderColor;
++ (id)wf_moduleSummarySlotRunningBackgroundColor;
 + (id)wf_moduleSummarySlotTypingBackgroundColor;
 + (id)wf_moduleSummarySlotDisabledBackgroundColor;
-+ (id)wf_moduleSummarySlotSelectedBackgroundColor;
-+ (id)wf_moduleSummarySlotHighlightedBackgroundColor;
-+ (id)wf_moduleSummarySlotBackgroundColor;
-+ (id)wf_moduleSummarySlotUnpopulatedTitleColor;
++ (id)wf_moduleSummarySlotSelectedBackgroundColorWithTintColor:(id)arg1;
++ (id)wf_moduleSummarySlotHighlightedBackgroundColorWithTintColor:(id)arg1;
++ (id)wf_moduleSummarySlotBackgroundColorWithTintColor:(id)arg1;
++ (id)wf_moduleSummarySlotRunningTitleColor;
 + (id)wf_moduleSummarySlotTypingTitleColor;
 + (id)wf_moduleSummarySlotDisabledTitleColor;
-+ (id)wf_moduleSummarySlotSelectedTitleColor;
-+ (id)wf_moduleSummarySlotHighlightedTitleColor;
-+ (id)wf_moduleSummarySlotTitleColor;
++ (id)wf_moduleSummarySlotSelectedTitleColorWithTintColor:(id)arg1;
++ (id)wf_moduleSummarySlotHighlightedTitleColorWithTintColor:(id)arg1;
++ (id)wf_moduleSummarySlotTitleColorWithTintColor:(id)arg1;
 + (id)wf_moduleSummaryTextColor;
 + (id)wf_moduleSeparatorColor;
 + (id)wf_moduleHeadingButtonColor;
@@ -66,10 +66,11 @@
 + (id)wf_moduleCommentParametersBackgroundColor;
 + (id)wf_moduleCommentParametersSeparatorColor;
 + (id)wf_moduleCommentCellColor;
-+ (id)moduleCellShadowColor;
 + (id)wf_moduleCellTitleColor;
 + (id)moduleCellBorderColor;
-+ (id)moduleCellHighlightedColor;
++ (id)wf_moduleCellRunningColor;
++ (id)wf_moduleCellRunningShadowColor;
++ (id)wf_moduleCellShadowColor;
 + (id)wf_modulesViewBodyButtonBackgroundColor;
 + (id)wf_moduleCellColor;
 + (id)moduleBorderColor;
@@ -81,5 +82,7 @@
 + (id)actionDescriptionColor;
 + (id)actionColor;
 + (id)wf_systemDefaultPlaceholderColor;
+- (id)wf_disabledColor;
+- (id)wf_desaturatedColorWithMagnitude:(double)arg1;
 @end
 

@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSCache, NSHashTable, NSMapTable, WFWorkflow;
+@protocol OS_dispatch_queue;
 
 @interface WFVariableAvailability : NSObject
 {
@@ -18,9 +19,11 @@
     NSMapTable *_actionOutputVariableActionsByUUID;
     NSCache *_cachedContentClassesForVariableNameAtIndex;
     NSHashTable *_variableObservers;
+    NSObject<OS_dispatch_queue> *_actionOutputWorkQueue;
 }
 
 + (_Bool)actionIsEligibleForOutputVariable:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *actionOutputWorkQueue; // @synthesize actionOutputWorkQueue=_actionOutputWorkQueue;
 @property(retain, nonatomic) NSHashTable *variableObservers; // @synthesize variableObservers=_variableObservers;
 @property(retain, nonatomic) NSCache *cachedContentClassesForVariableNameAtIndex; // @synthesize cachedContentClassesForVariableNameAtIndex=_cachedContentClassesForVariableNameAtIndex;
 @property(retain, nonatomic) NSMapTable *actionOutputVariableActionsByUUID; // @synthesize actionOutputVariableActionsByUUID=_actionOutputVariableActionsByUUID;
@@ -44,6 +47,7 @@
 - (void)invalidateActionOutputProviderCache;
 - (id)actionProvidingVariableWithOutputUUID:(id)arg1;
 - (_Bool)isVariableWithOutputUUIDAvailable:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)populateActionOutputVariableActionsByUUID;
 - (id)availableOutputActionsAtIndex:(unsigned int)arg1;
 - (_Bool)areActionOutputVariablesAvailableAtIndex:(unsigned int)arg1;
 - (void)enumerateActionsInScopeAtIndex:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;

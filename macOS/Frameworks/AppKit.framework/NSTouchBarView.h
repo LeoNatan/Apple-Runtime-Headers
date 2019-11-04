@@ -19,7 +19,7 @@
     NSArray *_views;
     NSMutableArray *_detachedViews;
     NSMutableArray *_centerViews;
-    NSMutableSet *_dirtyGroupItems;
+    NSMutableSet *_dirtyLayoutDelegates;
     NSLayoutXAxisAnchor *_visualCenterAnchor;
     NSTouchBarLayout *_layoutManager;
     NSMapTable *_itemsToAttributes;
@@ -39,6 +39,7 @@
     NSSet *_visibleBars;
     CALayer *_clipIndicator;
     CALayer *_escIndicator;
+    struct CGRect _contentRect;
 }
 
 @property double defaultItemPadding; // @synthesize defaultItemPadding=_defaultItemPadding;
@@ -52,11 +53,12 @@
 - (void)_layout;
 @property(retain) CAMediaTimingFunction *animationTimingFunction;
 @property double animationDuration;
-- (void)_notifyCompressionGroupsFrameChangesEnded;
+- (void)_notifyLayoutDelegatesFrameChangesEnded;
 - (void)_reattachViews:(id)arg1;
 - (void)_detachViews:(id)arg1;
 - (void)_removeContainerView:(id)arg1;
 - (void)_attachContainerView:(id)arg1;
+- (BOOL)_isTouchInsideContent:(struct CGPoint)arg1;
 - (struct CGRect)rectForItem:(id)arg1;
 - (void)_updateTree;
 - (void)_noteTreeNeedsUpdate;
@@ -67,7 +69,8 @@
 - (void)_appStateWillChange;
 @property BOOL isInCustomizationPalette;
 - (void)withAnimationsSuppressed:(CDUnknownBlockType)arg1;
-@property(getter=isMissingEscKeyReplacement) BOOL missingEscKeyReplacement; // @synthesize missingEscKeyReplacement=_isMissingEscKeyReplacement;
+- (BOOL)isMissingEscKeyReplacement;
+- (void)setMissingEscKeyReplacement:(BOOL)arg1;
 @property BOOL allowsTransitionAnimations;
 @property(retain) NSArray *touchBars;
 @property(copy) NSTouchBarItemTree *itemTree;

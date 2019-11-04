@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)_presentCurrentViewControllerOurselves;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)dismissCurrentController;
 - (void)_didDismissActionViewController;
 - (void)_willPresentViewController;

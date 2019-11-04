@@ -60,6 +60,7 @@
     NSString *_playerID;
 }
 
++ (void)getPendingCommandTypesWithCompletion:(CDUnknownBlockType)arg1;
 + (long long)_numberOfCommandCentersWithTargets;
 + (id)commandCenterForPlayerID:(id)arg1;
 + (id)sharedCommandCenter;
@@ -109,6 +110,7 @@
 @property(readonly, nonatomic) MPRemoteCommand *stopCommand; // @synthesize stopCommand=_stopCommand;
 @property(readonly, nonatomic) MPRemoteCommand *playCommand; // @synthesize playCommand=_playCommand;
 @property(readonly, nonatomic) MPRemoteCommand *pauseCommand; // @synthesize pauseCommand=_pauseCommand;
+- (void)getPendingCommandTypesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dispatchCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary *)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary *)arg2;

@@ -14,6 +14,8 @@
 }
 
 + (_Bool)isValidForPersistenceWithObjectDictionary:(id)arg1;
++ (id)snapshotSortDescriptors;
++ (_Bool)shouldPersistForChangedKeys:(id)arg1 entityName:(id)arg2;
 + (unsigned int)minimumSnapshotPayloadVersion;
 + (unsigned int)payloadVersion;
 + (id)additionalEntityNames;
@@ -24,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)migrateMergedPayload;
 - (void)setLocation:(id)arg1;
+- (unsigned long long)bestCPLResourceTypeForAdjustedFingerPrint;
 - (id)extendedAttributesLongitude;
 - (id)extendedAttributesLatitude;
 - (id)longitude;
@@ -32,8 +35,10 @@
 - (id)dateCreated;
 - (id)uniformTypeIdentifier;
 - (_Bool)hasAdjustments;
+- (_Bool)isSlowmo;
 - (_Bool)isImage;
 - (_Bool)isVideo;
+- (short)kindSubtype;
 - (short)kind;
 - (id)originalResourceRelativePaths;
 - (id)cloudMasterGUID;
@@ -46,6 +51,7 @@
 - (void)updatePayloadAttributes:(id)arg1 withDecodedAttributes:(id)arg2 forPayloadProperty:(id)arg3;
 - (void)updateEncodableAttributes:(id)arg1 fromPayloadAttributes:(id)arg2 forPayloadProperty:(id)arg3;
 - (_Bool)updatePayloadAttributes:(id)arg1 withManagedObject:(id)arg2 forPayloadProperty:(id)arg3;
+- (id)initWithEditedIPTCAttributes:(id)arg1 changedKeys:(id)arg2;
 - (id)initWithExtendedAttributes:(id)arg1 changedKeys:(id)arg2;
 - (id)initWithCloudMasterMediaMetadata:(id)arg1 payloadID:(id)arg2 changedKeys:(id)arg3 modelProperties:(id)arg4;
 - (id)initWithCloudMaster:(id)arg1 payloadID:(id)arg2 changedKeys:(id)arg3;

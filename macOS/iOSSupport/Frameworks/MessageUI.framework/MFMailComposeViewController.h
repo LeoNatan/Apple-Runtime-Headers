@@ -22,6 +22,7 @@
 @property(nonatomic) __weak id <MFMailComposeViewControllerDelegate> mailComposeDelegate; // @synthesize mailComposeDelegate=_mailComposeDelegate;
 - (void).cxx_destruct;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)setPreferredSendingEmailAddress:(id)arg1;
 - (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;

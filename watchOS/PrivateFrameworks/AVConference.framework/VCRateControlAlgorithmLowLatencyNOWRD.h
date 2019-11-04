@@ -75,9 +75,11 @@ __attribute__((visibility("hidden")))
     unsigned int _actualBitrate;
     void *_logDump;
     _Bool _isPeriodicLoggingEnabled;
+    _Bool _didMBLRampDown;
     double _packetLossRateVideo;
 }
 
+@property(nonatomic) _Bool didMBLRampDown; // @synthesize didMBLRampDown=_didMBLRampDown;
 @property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) double owrd; // @synthesize owrd=_owrd;

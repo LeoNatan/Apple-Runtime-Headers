@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (double)topMarginToLabel:(id)arg1 withBaselineMargin:(double)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)_imageSizeThatFits:(struct CGSize)arg1;
+- (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setBackgroundImage:(id)arg1 state:(unsigned long long)arg2;

@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSArray *combinedActionActivitySections; // @synthesize combinedActionActivitySections=_combinedActionActivitySections;
 @property(nonatomic) __weak id <WFActionDrawerSearchResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)appsTableViewCell:(id)arg1 didSelectSection:(id)arg2;
+- (void)appsTableViewCell:(id)arg1 didSelectAppWithBundleIdentifier:(id)arg2;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)siriSuggestionsTableViewCell:(id)arg1 infoButtonTappedForSuggestion:(id)arg2;

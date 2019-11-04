@@ -6,6 +6,7 @@
 
 #import <AppKit/NSView.h>
 
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXGAccessibilityRendererDelegate-Protocol.h>
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
 #import <PhotosUICore/PXGEngineDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @class MTKView, NSArray, NSColor, NSDictionary, NSResponder, NSString, PXGAnchor, PXGDebugHUDLayer, PXGEngine, PXGLayout, PXGRectDiagnosticsLayer, PXScrollViewController, PXScrollViewSpeedometer;
 @protocol NSDraggingDestination, PXGViewAccessibilityDelegate, PXGViewDiagnosticsSource;
 
-@interface PXGView : NSView <PXScrollViewControllerObserver, PXGEngineDelegate, PXGAccessibilityRendererDelegate, PXNSScrollViewControllerAccessibilityDelegate, PXGDiagnosticsProvider>
+@interface PXGView : NSView <PXScrollViewControllerObserver, PXGEngineDelegate, PXGAccessibilityRendererDelegate, PXChangeObserver, PXNSScrollViewControllerAccessibilityDelegate, PXGDiagnosticsProvider>
 {
     PXGDebugHUDLayer *_debugHUDLayer;
     PXGRectDiagnosticsLayer *_rectDiagnosticsLayer;
@@ -79,6 +80,7 @@
 @property(readonly, nonatomic) PXGLayout *accessibilityRootLayout; // @synthesize accessibilityRootLayout;
 - (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
 - (id)accessibilityHitTestResultAtPoint:(struct CGPoint)arg1;
+- (void)notifySelectedCellsChanged;
 - (void)axScrollToAsset:(id)arg1;
 - (id)assetClosestToAsset:(id)arg1 inDirection:(unsigned long long)arg2;
 - (void)selectAssets:(id)arg1;
@@ -143,14 +145,15 @@
 - (id)_validateHitTest:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)_handleScreenChanges:(id)arg1;
+- (void)_toggleSlowAnimations:(id)arg1;
+- (void)_toggleDebugHUD:(id)arg1;
 - (void)popUpDebugContextMenuWithEvent:(id)arg1;
-- (void)_hideDebugHUD:(id)arg1;
-- (void)_showDebugHUD:(id)arg1;
 - (void)_willChangeBoundsSizeFrom:(struct CGRect)arg1 toBounds:(struct CGRect)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_updateAccessibilityStatus;
 - (void)_forceAccessibilityEnabledChanged:(id)arg1;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) BOOL hasExtendedColorDisplay;

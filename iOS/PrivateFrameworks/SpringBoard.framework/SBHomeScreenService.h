@@ -9,7 +9,7 @@
 #import <SpringBoard/BSServiceConnectionListenerDelegate-Protocol.h>
 #import <SpringBoard/SBSHomeScreenServiceClientToServerInterface-Protocol.h>
 
-@class BSServiceConnectionListener, FBServiceClientAuthenticator, NSMutableSet, NSString, SBIconController;
+@class BSServiceConnectionListener, FBServiceClientAuthenticator, NSMutableSet, NSNumber, NSString, SBIconController;
 
 @interface SBHomeScreenService : NSObject <BSServiceConnectionListenerDelegate, SBSHomeScreenServiceClientToServerInterface>
 {
@@ -19,12 +19,14 @@
     FBServiceClientAuthenticator *_requestSuggestedAppAuthenticator;
     FBServiceClientAuthenticator *_iconFolderPathLookupAuthenticator;
     FBServiceClientAuthenticator *_addWidgetToTodayViewAuthenticator;
+    FBServiceClientAuthenticator *_lowDensityLayoutAuthenticator;
     NSMutableSet *_activeConnections;
     BSServiceConnectionListener *_connectionListener;
 }
 
 @property(readonly, nonatomic) BSServiceConnectionListener *connectionListener; // @synthesize connectionListener=_connectionListener;
 @property(readonly, nonatomic) NSMutableSet *activeConnections; // @synthesize activeConnections=_activeConnections;
+@property(readonly, nonatomic) FBServiceClientAuthenticator *lowDensityLayoutAuthenticator; // @synthesize lowDensityLayoutAuthenticator=_lowDensityLayoutAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *addWidgetToTodayViewAuthenticator; // @synthesize addWidgetToTodayViewAuthenticator=_addWidgetToTodayViewAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *iconFolderPathLookupAuthenticator; // @synthesize iconFolderPathLookupAuthenticator=_iconFolderPathLookupAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *requestSuggestedAppAuthenticator; // @synthesize requestSuggestedAppAuthenticator=_requestSuggestedAppAuthenticator;
@@ -32,6 +34,7 @@
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
 - (void).cxx_destruct;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+@property(copy, nonatomic) NSNumber *lowDensityIconLayoutEnabledValue;
 - (void)addWidgetToTodayViewWithBundleIdentifier:(id)arg1;
 - (id)folderPathToIconWithBundleIdentifier:(id)arg1;
 - (oneway void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 assertionPort:(id)arg2 completion:(CDUnknownBlockType)arg3;

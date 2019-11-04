@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDCategorySearchParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDRecentRouteInfo *_recentRouteInfo;
     NSData *_suggestionEntryMetadata;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _blurredHourOfDay;
     unsigned int _dayOfWeek;
     unsigned int _maxResults;
@@ -81,6 +83,8 @@ __attribute__((visibility("hidden")))
 - (void)_readViewportInfo;
 @property(nonatomic) BOOL hasMaxResults;
 @property(nonatomic) unsigned int maxResults;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

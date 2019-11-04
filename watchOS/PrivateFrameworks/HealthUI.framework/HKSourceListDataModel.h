@@ -26,6 +26,7 @@
 @property(readonly, copy, nonatomic) NSSet *allSources; // @synthesize allSources=_allSources;
 - (void).cxx_destruct;
 - (void)_sortSources:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSourceModels:(id)arg1;
 - (id)initWithSources:(id)arg1;
 

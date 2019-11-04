@@ -14,6 +14,7 @@
 {
     _Bool _stateAnimating;
     long long _state;
+    double _initialContentOffset;
     UILabel *_titleLabel;
     UIView *_backgroundView1;
     UIView *_backgroundView2;
@@ -40,9 +41,11 @@
 @property(retain, nonatomic) UIView *backgroundView2; // @synthesize backgroundView2=_backgroundView2;
 @property(retain, nonatomic) UIView *backgroundView1; // @synthesize backgroundView1=_backgroundView1;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(nonatomic) double initialContentOffset; // @synthesize initialContentOffset=_initialContentOffset;
 @property(nonatomic) _Bool stateAnimating; // @synthesize stateAnimating=_stateAnimating;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (void)_scrollBackgroundViewToVisible:(id)arg1;
 - (void)_updateContentViewBottomConstraintWithAnchor:(id)arg1 constant:(double)arg2;
 - (id)_bottomViewForState:(long long)arg1;
 - (void)_setStackedButtonViewAsFooterView;

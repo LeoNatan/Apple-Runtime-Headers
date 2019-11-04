@@ -36,6 +36,7 @@
     _Bool _SMSReady;
     _Bool _WiFiNetworkReachable;
     _Bool _WiFiNetworkSupported;
+    _Bool _mailboxUsageUpdated;
     struct os_unfair_lock_s _accessorLock;
     NSString *_isoCountryCode;
     NSMutableDictionary *_stateRequestAttemptCount;
@@ -166,6 +167,7 @@
 @property(nonatomic) unsigned long long unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(nonatomic) unsigned long long trashedCount; // @synthesize trashedCount=_trashedCount;
 @property(nonatomic, getter=isSMSReady) _Bool SMSReady; // @synthesize SMSReady=_SMSReady;
+@property(nonatomic, getter=isMailboxUsageUpdated) _Bool mailboxUsageUpdated; // @synthesize mailboxUsageUpdated=_mailboxUsageUpdated;
 @property(nonatomic, getter=isWiFiNetworkSupported) _Bool WiFiNetworkSupported; // @synthesize WiFiNetworkSupported=_WiFiNetworkSupported;
 @property(nonatomic, getter=isWiFiNetworkReachable) _Bool WiFiNetworkReachable; // @synthesize WiFiNetworkReachable=_WiFiNetworkReachable;
 @property(readonly, nonatomic, getter=isWiFiNetworkAvailable) _Bool WiFiNetworkAvailable;

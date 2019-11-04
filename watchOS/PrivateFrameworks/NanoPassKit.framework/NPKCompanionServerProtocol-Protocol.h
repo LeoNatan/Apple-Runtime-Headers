@@ -36,6 +36,7 @@
 - (void)initiateConsistencyCheckWithCompletion:(void (^)(void))arg1;
 - (void)setDefaultPaymentApplication:(PKPaymentApplication *)arg1 forPassWithUniqueID:(NSString *)arg2 completion:(void (^)(PKPaymentPass *))arg3;
 - (void)defaultPaymentApplicationForPassWithUniqueID:(NSString *)arg1 completion:(void (^)(PKPaymentApplication *))arg2;
+- (void)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)defaultCard:(void (^)(NSString *))arg1;
 - (void)setDefaultCard:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)removePaymentPassWithUniqueID:(NSString *)arg1 forPairingID:(NSUUID *)arg2 waitForConfirmation:(_Bool)arg3 completion:(void (^)(_Bool, NSError *))arg4;

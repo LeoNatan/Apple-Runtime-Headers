@@ -6,17 +6,28 @@
 
 #import <HomeUI/HUItemTableModuleController.h>
 
-@interface HUCameraSettingsModuleController : HUItemTableModuleController
+#import <HomeUI/UITextViewDelegate-Protocol.h>
+
+@class NSString;
+
+@interface HUCameraSettingsModuleController : HUItemTableModuleController <UITextViewDelegate>
 {
 }
 
 - (unsigned long long)didSelectItem:(id)arg1;
 - (BOOL)canSelectItem:(id)arg1;
+- (void)viewSizeDidChanged;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(BOOL)arg3;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;
 - (Class)cellClassForItem:(id)arg1;
 - (void)setHost:(id)arg1;
 - (id)initWithModule:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

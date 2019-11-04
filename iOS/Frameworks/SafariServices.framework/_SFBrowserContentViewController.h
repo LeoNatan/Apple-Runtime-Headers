@@ -10,10 +10,12 @@
 #import <SafariServices/SFReaderEnabledWebViewControllerDelegate-Protocol.h>
 #import <SafariServices/UIGestureRecognizerDelegate-Protocol.h>
 #import <SafariServices/UIScrollViewDelegate-Protocol.h>
+#import <SafariServices/WBSDigitalHealthManagerDelegate-Protocol.h>
 #import <SafariServices/WBSFluidProgressControllerWindowDelegate-Protocol.h>
 #import <SafariServices/WBSFluidProgressStateSource-Protocol.h>
 #import <SafariServices/_SFActivityItemCustomizationDelegate-Protocol.h>
 #import <SafariServices/_SFActivityViewControllerDelegate-Protocol.h>
+#import <SafariServices/_SFAdaptivePreviewViewControllerDelegate-Protocol.h>
 #import <SafariServices/_SFAppleConnectExtensionUIDelegate-Protocol.h>
 #import <SafariServices/_SFBarManagerDelegate-Protocol.h>
 #import <SafariServices/_SFBrowserContentController-Protocol.h>
@@ -30,10 +32,10 @@
 #import <SafariServices/_SFSaveToFilesOperationDelegate-Protocol.h>
 #import <SafariServices/_SFSingleBookmarkNavigationControllerDelegate-Protocol.h>
 
-@class NSArray, NSError, NSString, NSTimer, NSURL, SFBrowserPersonaAnalyticsHelper, SFReaderEnabledWebViewController, SFReaderViewController, SFSafariViewControllerConfiguration, UIColor, UIPanGestureRecognizer, UITapGestureRecognizer, WBSFluidProgressController, WBSFluidProgressState, WBSURLSpoofingMitigator, WKBackForwardListItem, WKPreferences, WKWebView, _SFActivityViewController, _SFAppleConnectExtensionPageController, _SFBarManager, _SFBrowserToolbar, _SFBrowserView, _SFCalendarEventDetector, _SFDownload, _SFDynamicBarAnimator, _SFFindOnPageView, _SFFluidProgressView, _SFMailContentProvider, _SFNavigationBar, _SFNavigationBarItem, _SFNavigationUtilitiesManager, _SFPageFormatMenuController, _SFPageLoadErrorController, _SFPerSitePreferencesVendor, _SFPrintController, _SFQuickLookDocument, _SFQuickLookDocumentController, _SFQuickLookDocumentWriter, _SFReloadOptionsController, _SFSafariSharingExtensionController, _SFSaveToFilesOperation, _SFSecIdentityPreferencesController, _SFTelephonyNavigationMitigationPolicy, _WKActivatedElementInfo, _WKUserInitiatedAction;
+@class NSArray, NSError, NSString, NSTimer, NSURL, SFBrowserPersonaAnalyticsHelper, SFReaderEnabledWebViewController, SFReaderViewController, SFSafariViewControllerConfiguration, UIColor, UIPanGestureRecognizer, UITapGestureRecognizer, WBSDigitalHealthManager, WBSFluidProgressController, WBSFluidProgressState, WBSURLSpoofingMitigator, WKBackForwardListItem, WKPreferences, WKWebView, _SFActivityViewController, _SFAppleConnectExtensionPageController, _SFBarManager, _SFBrowserToolbar, _SFBrowserView, _SFCalendarEventDetector, _SFDigitalHealthViewController, _SFDownload, _SFDynamicBarAnimator, _SFFindOnPageView, _SFFluidProgressView, _SFMailContentProvider, _SFNavigationBar, _SFNavigationBarItem, _SFNavigationUtilitiesManager, _SFPageFormatMenuController, _SFPageLoadErrorController, _SFPageZoomPreferenceManager, _SFPerSitePreferencesVendor, _SFPrintController, _SFQuickLookDocument, _SFQuickLookDocumentController, _SFQuickLookDocumentWriter, _SFReloadOptionsController, _SFSafariSharingExtensionController, _SFSaveToFilesOperation, _SFSecIdentityPreferencesController, _SFTelephonyNavigationMitigationPolicy, _WKActivatedElementInfo, _WKUserInitiatedAction;
 @protocol SFReaderContext, _SFBrowserDocument;
 
-@interface _SFBrowserContentViewController : UIViewController <SFBrowserViewDelegate, SFReaderEnabledWebViewControllerDelegate, _SFAppleConnectExtensionUIDelegate, _SFBarManagerDelegate, _SFDownloadDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFMailContentProviderDataSource, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFPrintControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, _SFActivityItemCustomizationDelegate, _SFActivityViewControllerDelegate, _SFSaveToFilesOperationDelegate, _SFQuickLookDocumentSource, _SFBrowserKeyCommandSafariViewControllerMethods, _SFBrowserContentController, _SFBrowserDocument>
+@interface _SFBrowserContentViewController : UIViewController <SFBrowserViewDelegate, SFReaderEnabledWebViewControllerDelegate, _SFAdaptivePreviewViewControllerDelegate, _SFAppleConnectExtensionUIDelegate, _SFBarManagerDelegate, _SFDownloadDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFMailContentProviderDataSource, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFPrintControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, WBSDigitalHealthManagerDelegate, _SFActivityItemCustomizationDelegate, _SFActivityViewControllerDelegate, _SFSaveToFilesOperationDelegate, _SFQuickLookDocumentSource, _SFBrowserKeyCommandSafariViewControllerMethods, _SFBrowserContentController, _SFBrowserDocument>
 {
     _SFBrowserView *_browserView;
     SFReaderViewController *_readerViewController;
@@ -103,6 +105,8 @@
     _Bool _loadWasUserDriven;
     _Bool _webViewIsInFullScreen;
     CDUnknownBlockType _pendingNavigationActionDueToExternalSchemePromptHandler;
+    WBSDigitalHealthManager *_cachedDigitalHealthManager;
+    _SFDigitalHealthViewController *_digitalHealthViewController;
     _Bool _remoteSwipeGestureEnabled;
     _Bool _webViewLayoutUnderlapsStatusBar;
     _Bool _didNotifyInitialLoadFinish;
@@ -149,6 +153,8 @@
 @property(retain, nonatomic) _SFReloadOptionsController *reloadOptionsController; // @synthesize reloadOptionsController=_reloadOptionsController;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 - (void).cxx_destruct;
+- (void)adaptivePreviewViewControlerWillDisableLinkPreview:(id)arg1;
+- (id)adaptivePreviewViewController:(id)arg1 requestLinkPreviewViewControllerWithURL:(id)arg2;
 - (_Bool)isReaderAvailableForCustomizationController:(id)arg1;
 - (_Bool)isDisplayingQuickLookDocumentForCustomizationController:(id)arg1;
 - (_Bool)isContentObscuredByDigitalHealthForCustomizationController:(id)arg1;
@@ -163,6 +169,11 @@
 - (void)appleConnectExtensionPageController:(id)arg1 dismissViewController:(id)arg2;
 - (void)appleConnectExtensionPageController:(id)arg1 presentViewController:(id)arg2;
 - (void)_setUpAppleConnectPageControllerIfNeeded;
+- (void)policyDidChangeForDigitalHealthManager:(id)arg1;
+- (void)_hideDigitalHealthOverlay;
+- (void)_showDigitalHealthOverlay;
+- (void)_updateDigitalHealthTracking;
+- (id)_digitalHealthManager;
 - (void)_perSitePageZoomPreferenceDidChange:(id)arg1;
 - (void)_perSiteAutomaticReaderActivationPreferenceDidChange:(id)arg1;
 - (_Bool)_shouldAllowAutomaticReader;
@@ -207,6 +218,7 @@
 @property(readonly, nonatomic) id <SFReaderContext> readerContext;
 @property(readonly, nonatomic) NSURL *URLForPerSitePreferences;
 @property(readonly, nonatomic) _Bool canHideToolbar;
+@property(readonly, nonatomic) _SFPageZoomPreferenceManager *pageZoomManager;
 @property(readonly, nonatomic) _SFPerSitePreferencesVendor *perSitePreferencesVendor;
 - (void)reloadEnablingContentBlockers:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool wasLoadedWithContentBlockersEnabled;
@@ -271,6 +283,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (_Bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)dynamicBarAnimatorOutputsDidChange:(id)arg1;
+- (void)dynamicBarAnimatorStateDidChange:(id)arg1;
 - (void)dynamicBarAnimatorWillLeaveSteadyState:(id)arg1;
 - (void)dynamicBarAnimatorWillEnterSteadyState:(id)arg1;
 - (_Bool)dynamicBarAnimator:(id)arg1 canTransitionToState:(long long)arg2 byDraggingWithOffset:(double)arg3;
@@ -313,7 +326,7 @@
 - (void)webViewControllerDidChangeURL:(id)arg1;
 - (void)webViewController:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (id)_quickLookDocumentFromDownloadResponse:(id)arg1;
+- (id)_quickLookDocumentForDownload:(id)arg1;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_didResolveDestinationURL:(id)arg1 pendingAppLinkCheck:(_Bool)arg2;
 - (void)_redirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 promptPolicy:(long long)arg3 isMainFrame:(_Bool)arg4 userAction:(id)arg5;
@@ -328,7 +341,7 @@
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
 - (void)createReaderWebViewForWebViewController:(id)arg1;
 - (void)webViewController:(id)arg1 didClickLinkInReaderWithRequest:(id)arg2;
-- (void)webViewControllerDidDetermineReaderAvailability:(id)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
+- (void)webViewControllerDidDetermineReaderAvailability:(id)arg1 dueTo:(long long)arg2;
 - (void)webViewController:(id)arg1 didFinishDocumentLoadForNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didCommitNavigation:(id)arg2;

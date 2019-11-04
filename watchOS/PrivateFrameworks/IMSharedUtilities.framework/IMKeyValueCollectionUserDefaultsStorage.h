@@ -17,6 +17,7 @@
 
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+- (id)setWithMutableClassIfApplicableFor:(Class)arg1;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)removeObjectForKey:(id)arg1;

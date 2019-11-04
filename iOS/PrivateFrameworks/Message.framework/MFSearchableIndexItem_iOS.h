@@ -18,6 +18,7 @@
 - (id)fetchIndexableAttachments;
 - (_Bool)_shouldAutoDownloadAttachment:(id)arg1;
 - (void)addAttachmentAttributesToAttributeSet:(id)arg1;
+- (void)setNeedsAllAttributesIndexingType;
 - (_Bool)shouldExcludeFromIndex;
 
 // Remaining properties

@@ -14,6 +14,7 @@
 
 + (id)storageNumberForTodayNotificationTime:(id)arg1;
 + (id)todayNotificationFireTimeFromStorageNumber:(id)arg1;
+@property(nonatomic) BOOL disableAlarmEngineDataSourcePrefetching;
 - (id)streamTodayNotificationFireTime:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSDateComponents *todayNotificationFireTime;
 @property(nonatomic) BOOL forceShowWelcomeScreen;
@@ -27,7 +28,10 @@
 @property(copy, nonatomic) NSDate *nextScheduledAlarmDate;
 @property(copy, nonatomic) NSNumber *spotlightIndexVersion;
 @property(retain, nonatomic) NSString *acAccountIdentifierToMergeLocalDataIntoSyncData;
+- (id)observePreferredDefaultListIDWithBlock:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) REMObjectID *preferredDefaultListID;
+@property(nonatomic) BOOL cloudKitMigrationDisableCleanUp;
+@property(retain, nonatomic) NSNumber *cloudKitResultsLimitPerSyncOperation;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationSimulatedError;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationObserverPollingInterval;
 @property(retain, nonatomic) NSNumber *cloudKitMigrationDelayAfterError;

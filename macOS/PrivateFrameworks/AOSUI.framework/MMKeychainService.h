@@ -71,8 +71,8 @@
 - (void)_handleCircleChangeNotification:(int)arg1;
 - (void)_handleCredentialVerificationIfNeeded:(id)arg1 shouldNest:(BOOL)arg2 title:(id)arg3 message:(id)arg4 authenticatedHandler:(CDUnknownBlockType)arg5 cancelHandler:(CDUnknownBlockType)arg6 errorHandler:(CDUnknownBlockType)arg7;
 - (void)_handleCredentialVerification:(id)arg1 shouldNest:(BOOL)arg2 title:(id)arg3 message:(id)arg4 authenticatedHandler:(CDUnknownBlockType)arg5 cancelHandler:(CDUnknownBlockType)arg6 errorHandler:(CDUnknownBlockType)arg7;
-- (void)handlePreflightDialogResult:(long long)arg1 withDisableDict:(id *)arg2;
-- (BOOL)preflightForSignout:(id *)arg1 withWindow:(id)arg2 andDataclassActions:(id)arg3;
+- (void)handlePreflightDialogResult:(long long)arg1;
+- (BOOL)preflightForSignoutWithWindow:(id)arg1;
 - (BOOL)hasPreflightAction;
 - (BOOL)isICDPIsEnabled;
 - (void)handleCDPDeletionResponse:(long long)arg1 successful:(BOOL)arg2 error:(id)arg3;

@@ -15,15 +15,21 @@
 @interface MapsSuggestionsMSPShortcutStorage : NSObject <MSPQueryDelegate, MapsSuggestionsShortcutStorage>
 {
     CDUnknownBlockType _changeHandler;
+    BOOL _hasAttemptedLoadingContents;
     MSPPinnedPlacesQuery *_query;
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
+@property(nonatomic) BOOL hasAttemptedLoadingContents; // @synthesize hasAttemptedLoadingContents=_hasAttemptedLoadingContents;
 @property(retain, nonatomic) MSPPinnedPlacesQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
+- (BOOL)moveShortcutToFront:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (BOOL)moveShortcutToBack:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (BOOL)moveShortcut:(id)arg1 beforeShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (BOOL)moveShortcut:(id)arg1 afterShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)moveShortcut:(id)arg1 toIndex:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;

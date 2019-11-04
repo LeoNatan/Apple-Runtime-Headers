@@ -13,9 +13,11 @@
 @interface GEOLogMsgStateDeviceConnection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_deviceCarrierName;
     NSString *_deviceCountryCode;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _cellularDataState;
     int _deviceNetworkConnectivity;
     struct {
@@ -56,6 +58,8 @@
 - (id)deviceNetworkConnectivityAsString:(int)arg1;
 @property(nonatomic) BOOL hasDeviceNetworkConnectivity;
 @property(nonatomic) int deviceNetworkConnectivity;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

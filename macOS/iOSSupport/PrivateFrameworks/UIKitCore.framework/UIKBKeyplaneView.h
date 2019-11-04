@@ -55,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (void)activateKeys;
 - (void)deactivateKeys;
 - (void)deactivateKey:(id)arg1 previousState:(int)arg2;
+- (void)retestSelectedVariantIndexForKey:(id)arg1 atPoint:(struct CGPoint)arg2;
+- (id)_existingVariantsKeyViewForKey:(id)arg1;
 - (void)hideKeyCaps:(BOOL)arg1;
 - (void)dimKeys:(id)arg1;
 - (void)deactivateAdaptiveKey:(id)arg1;

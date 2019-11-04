@@ -49,6 +49,7 @@
 + (id)axAttributesForSnapshotAttributes:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)requiredAXAttributesForElementSnapshotHierarchyOnMacOS:(BOOL)arg1;
 + (id)sanitizedElementSnapshotHierarchyAttributesForAttributes:(id)arg1 isMacOS:(BOOL)arg2;
++ (id)axAttributesForFaultingPropertiesOnMacOS:(BOOL)arg1;
 + (id)axAttributesForElementSnapshotKeyPaths:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)elementWithAccessibilityElement:(id)arg1;
 + (BOOL)supportsSecureCoding;

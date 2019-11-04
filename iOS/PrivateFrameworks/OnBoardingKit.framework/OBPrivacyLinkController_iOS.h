@@ -11,12 +11,15 @@
 @interface OBPrivacyLinkController_iOS : OBPrivacyLinkController
 {
     OBPrivacyLinkButton *_linkButton;
+    _Bool bundleTitlesMatch;
+    _Bool bundlesIncludePII;
 }
 
 - (void).cxx_destruct;
 @property(readonly) UITextView *textView;
 @property(readonly) UIImageView *iconView;
 - (void)setLinkEnabled:(_Bool)arg1;
+- (void)processBundlesForTitleInformation;
 - (void)loadView;
 - (id)initWithBundleIdentifiers:(id)arg1;
 - (id)initWithPrivacyBundle:(id)arg1;

@@ -9,6 +9,7 @@
 @class ACAccount, AKAppleIDAuthenticationInAppContext, HUAppleMusicAccountModuleController;
 
 @protocol HUAppleMusicAccountModuleControllerDelegate <NSObject>
+- (void)appleMusicModuleControllerPresentSignInFlow:(HUAppleMusicAccountModuleController *)arg1;
 - (void)appleMusicModuleController:(HUAppleMusicAccountModuleController *)arg1 willPresentContext:(AKAppleIDAuthenticationInAppContext *)arg2 account:(ACAccount *)arg3;
 - (void)appleMusicModuleControllerDidUpdateAuthenticationState:(HUAppleMusicAccountModuleController *)arg1;
 @end

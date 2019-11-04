@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDChildPlace : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDMapsIdentifier *_mapsId;
     NSString *_name;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_mapsId:1;
@@ -48,6 +50,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
 @property(readonly, nonatomic) BOOL hasMapsId;
 - (void)_readMapsId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

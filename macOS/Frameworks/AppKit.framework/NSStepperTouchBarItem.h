@@ -11,16 +11,20 @@
 @interface NSStepperTouchBarItem : NSTouchBarItem
 {
     _NSStepperTouchBarItemView *_stepperView;
+    id target;
+    SEL action;
     NSString *_customizationLabel;
 }
 
 + (id)stepperTouchBarItemWithIdentifier:(id)arg1 drawingHandler:(CDUnknownBlockType)arg2;
 + (id)stepperTouchBarItemWithIdentifier:(id)arg1 formatter:(id)arg2;
+@property SEL action; // @synthesize action;
+@property __weak id target; // @synthesize target;
+- (void).cxx_destruct;
 - (void)_configureAsGraphicalStepperWithDrawingHandler:(CDUnknownBlockType)arg1;
 - (void)_configureAsTextualStepperWithFormatter:(id)arg1;
+- (void)_stepperValueDidChange:(id)arg1;
 @property(copy) NSString *customizationLabel; // @synthesize customizationLabel=_customizationLabel;
-@property SEL action;
-@property __weak id target;
 @property double value;
 @property double increment;
 @property double minValue;
@@ -28,6 +32,7 @@
 - (id)view;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (void)_commonStepperViewSetUp:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 @property(readonly) NSFormatter *formatter;

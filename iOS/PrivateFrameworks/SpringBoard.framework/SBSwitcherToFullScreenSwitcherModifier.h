@@ -26,7 +26,7 @@
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)transitionWillBegin;
 - (id)handleMainTransitionEvent:(id)arg1;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)initWithTransitionID:(id)arg1 direction:(long long)arg2 fullScreenAppLayout:(id)arg3 multitaskingModifier:(id)arg4;
 
 @end

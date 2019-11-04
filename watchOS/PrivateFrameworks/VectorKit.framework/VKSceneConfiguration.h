@@ -36,7 +36,6 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)analyticsLogContextWithNavigationState;
 - (unsigned char)navigationState;
 - (unsigned int)navigationDestination;
 - (void)setNavigationDestination:(unsigned int)arg1;

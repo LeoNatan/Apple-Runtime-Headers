@@ -84,6 +84,7 @@
 - (void)setUserActivity;
 - (void)menuAction:(id)arg1;
 - (id)actionController;
+- (void)performActionWithItemID:(id)arg1 forNotificationID:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)canProvideActionController;
 - (void)_performBlockOnViewDidAppear:(CDUnknownBlockType)arg1;
 - (void)updateCrownSequencerWithData:(id)arg1;

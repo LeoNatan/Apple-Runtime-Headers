@@ -52,6 +52,7 @@
 - (id)URLForItemWithPersistentIdentifier:(id)arg1;
 - (id)documentStorageURL;
 - (id)providerIdentifier;
+- (void)invalidate;
 - (id)init;
 - (void)handleEventsForBackgroundURLSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)performActionWithIdentifier:(id)arg1 onItemsWithIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

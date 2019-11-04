@@ -8,13 +8,12 @@
 
 #import <SearchUI/NUIArrangementContainer-Protocol.h>
 #import <SearchUI/NUIGridArrangementDataSource-Protocol.h>
-#import <SearchUI/SBIconViewDelegate-Protocol.h>
-#import <SearchUI/SBLeafIconDataSource-Protocol.h>
+#import <SearchUI/SearchUIHomeScreenEngagementDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableArray, NSString, NUIGridArrangement, SBHIconImageCache;
+@class NSMutableArray, NSString, NUIGridArrangement;
 @protocol SearchUIFeedbackDelegate;
 
-@interface SearchUIAppIconsRowView : UIView <SBLeafIconDataSource, NUIGridArrangementDataSource, NUIArrangementContainer, SBIconViewDelegate>
+@interface SearchUIAppIconsRowView : UIView <SearchUIHomeScreenEngagementDelegate, NUIGridArrangementDataSource, NUIArrangementContainer>
 {
     id <SearchUIFeedbackDelegate> _delegate;
     NSMutableArray *_iconViews;
@@ -23,17 +22,9 @@
     NSMutableArray *_itemAtIndex;
     NSMutableArray *_spacerDebuggerViews;
     NUIGridArrangement *_arrangment;
-    SBHIconImageCache *_iconImageCache;
-    NSMapTable *_iconImageGenerationCountByView;
 }
 
-+ (id)applicationShortcutService;
-+ (struct SBIconImageInfo)appIconImageInfo;
 + (double)numberOfIcons;
-+ (id)appLabel;
-+ (id)imageCache;
-@property(retain, nonatomic) NSMapTable *iconImageGenerationCountByView; // @synthesize iconImageGenerationCountByView=_iconImageGenerationCountByView;
-@property(retain, nonatomic) SBHIconImageCache *iconImageCache; // @synthesize iconImageCache=_iconImageCache;
 @property(retain, nonatomic) NUIGridArrangement *arrangment; // @synthesize arrangment=_arrangment;
 @property(retain, nonatomic) NSMutableArray *spacerDebuggerViews; // @synthesize spacerDebuggerViews=_spacerDebuggerViews;
 @property(retain, nonatomic) NSMutableArray *itemAtIndex; // @synthesize itemAtIndex=_itemAtIndex;
@@ -42,36 +33,16 @@
 @property(retain, nonatomic) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
 @property __weak id <SearchUIFeedbackDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)parallaxSettingsForShortcutsPresentationWithIconView:(id)arg1;
-- (_Bool)shouldUseSecureWindowForShortcutsPresentationWithIconView:(id)arg1;
-- (_Bool)iconView:(id)arg1 shouldActivateApplicationShortcutItem:(id)arg2 atIndex:(unsigned long long)arg3;
-- (_Bool)shouldHideShortcutsForAppIcon:(id)arg1;
-- (id)applicationShortcutWidgetBundleIdentifierForShortcutsWithIconView:(id)arg1;
-- (id)applicationBundleURLForShortcutsWithIconView:(id)arg1;
-- (id)iconView:(id)arg1 applicationShortcutItemsWithProposedItems:(id)arg2;
-- (_Bool)iconViewShouldBeginShortcutsPresentation:(id)arg1;
-- (void)iconTapped:(id)arg1;
-- (_Bool)icon:(id)arg1 launchFromLocation:(id)arg2 context:(id)arg3;
-- (_Bool)isTimedOutForIcon:(id)arg1;
-- (_Bool)iconViewCanBeginDrags:(id)arg1;
-- (id)icon:(id)arg1 displayNameForLocation:(id)arg2;
-- (id)icon:(id)arg1 imageWithInfo:(struct SBIconImageInfo)arg2;
-- (unsigned long long)priorityForIcon:(id)arg1;
 - (void)layoutSubviews;
-- (double)gridArrangement:(id)arg1 heightOfRowAtIndex:(long long)arg2 spacingAfter:(double *)arg3;
 - (struct CGRect)layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect)arg2;
 - (struct CGSize)contentLayoutSizeFittingSize:(struct CGSize)arg1 forArrangedSubview:(id)arg2;
 - (id)gridArrangement:(id)arg1 itemAtIndex:(long long)arg2 columns:(struct _NSRange *)arg3 rows:(struct _NSRange *)arg4 horizontalAlignment:(long long *)arg5 verticalAlignment:(long long *)arg6;
 - (long long)numberOfItemsInGridArrangement:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
-- (void)fetchApplicationShortcutInfoForIcon:(id)arg1;
-- (void)fetchIconImageForIcon:(id)arg1 iconView:(id)arg2;
-- (void)incrementIconImageGenerationCountForIconView:(id)arg1;
-- (unsigned long long)iconImageGenerationCountForIconView:(id)arg1;
+- (void)dismissIfNecessaryForIconDrag;
+- (void)didEngageResult:(id)arg1;
 - (void)updateWithResultsForRow:(id)arg1;
-- (void)appIconsChanged:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

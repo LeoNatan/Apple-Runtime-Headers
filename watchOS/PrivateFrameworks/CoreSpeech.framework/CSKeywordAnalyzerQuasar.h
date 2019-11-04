@@ -28,6 +28,7 @@
 - (void)processAudioChunk:(id)arg1;
 - (void)endAudio;
 - (void)runRecognition;
+- (void)dealloc;
 - (void)reset;
 - (id)initWithConfigPath:(id)arg1 triggerTokens:(id)arg2 useKeywordSpotting:(_Bool)arg3;
 

@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOIndexQueryNode : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_field;
     NSMutableArray *_operands;
     NSString *_value;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _type;
     CDStruct_24aeab2f _flags;
 }
@@ -54,6 +56,8 @@ __attribute__((visibility("hidden")))
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) int type;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

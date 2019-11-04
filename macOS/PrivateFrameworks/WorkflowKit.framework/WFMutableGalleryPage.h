@@ -19,12 +19,14 @@
     NSArray *routines;
     NSString *language;
     CKRecordID *base;
+    NSString *persistentIdentifier;
     NSArray *donations;
     NSArray *donationsGroupedByApp;
 }
 
 @property(copy, nonatomic) NSArray *donationsGroupedByApp; // @synthesize donationsGroupedByApp;
 @property(copy, nonatomic) NSArray *donations; // @synthesize donations;
+@property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 @property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
 @property(copy, nonatomic) NSArray *routines; // @synthesize routines;

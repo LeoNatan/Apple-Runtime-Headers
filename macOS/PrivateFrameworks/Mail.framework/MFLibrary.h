@@ -173,6 +173,7 @@
 - (id)_messageDataAtPath:(id)arg1;
 - (BOOL)isMessageContentLocallyAvailable:(id)arg1;
 - (id)fullMessageDataForMessage:(id)arg1;
+- (id)messageDataForMessage:(id)arg1;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2;
 - (id)bodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2;
 - (id)headerDataForMessageWithPath:(id)arg1;

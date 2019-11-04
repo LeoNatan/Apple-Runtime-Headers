@@ -49,8 +49,9 @@
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 @property(retain, nonatomic) id value;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
-- (void)_actuateTapticFeedbackIfAvailable;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_actuateTapticFeedback;
+- (void)_prepareForTapticFeedback;
+- (struct CGSize)intrinsicContentSize;
 - (id)_stepperViewMetricsForControlSize:(unsigned long long)arg1;
 - (void)updateConstraints;
 - (void)_updateUserInteractionActive:(BOOL)arg1 forFirstTouch:(BOOL)arg2;

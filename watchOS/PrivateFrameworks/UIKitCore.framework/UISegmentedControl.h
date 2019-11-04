@@ -19,6 +19,7 @@
     NSMutableArray *_segments;
     int _selectedSegment;
     int _highlightedSegment;
+    int _selectionIndicatorSegment;
     UIView *_removedSegment;
     UISegment *_focusedSegment;
     int _barStyle;
@@ -137,13 +138,14 @@
 - (_Bool)shouldTrack;
 - (void)layoutSubviews;
 - (void)_updateSelectionIndicator;
-- (void)_updateSelectionToSegment:(id)arg1 highlight:(_Bool)arg2 shouldAnimate:(_Bool)arg3;
+- (void)_updateSelectionToSegment:(id)arg1 highlight:(_Bool)arg2 shouldAnimate:(_Bool)arg3 sameSegment:(_Bool)arg4;
 - (void)_insertSelectionViewForSegment:(id)arg1;
-- (id)_segmentToHighlight:(_Bool *)arg1;
+- (int)_segmentIndexToHighlight:(_Bool *)arg1;
 - (_Bool)_disableSlidingControl;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (CDStruct_b2fbf00d)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (struct CGRect)bounds;
@@ -197,6 +199,7 @@
 - (void)_setAppearanceIsTiled:(_Bool)arg1 leftCapWidth:(unsigned int)arg2 rightCapWidth:(unsigned int)arg3;
 - (void)_setSegmentedControlAppearance:(CDStruct_cb57b644 *)arg1;
 - (void)_setNeedsAppearanceUpdate;
+- (void)_setNeedsBackgroundAndContentViewUpdate;
 - (void)_resetForAppearanceChange;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -209,6 +212,7 @@
 - (void)_commonSegmentedControlInit;
 - (void)updateForMiniBarState:(_Bool)arg1;
 @property(nonatomic) _Bool apportionsSegmentWidthsByContent;
+- (id)_viewForLoweringBaselineLayoutAttribute:(int)arg1;
 - (id)infoViewForSegment:(int)arg1;
 - (int)selectedSegment;
 - (void)setSelectedSegment:(int)arg1;

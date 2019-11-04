@@ -13,7 +13,6 @@
 @interface GEOActiveTileSet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_availableTiles;
     unsigned long long _availableTilesCount;
@@ -24,6 +23,9 @@
     NSString *_localizationURL;
     NSMutableArray *_sentinelTiles;
     NSMutableArray *_supportedLanguages;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _checksumType;
     int _requestStyle;
     int _scale;
@@ -155,6 +157,8 @@
 @property(readonly, nonatomic) BOOL hasBaseURL;
 - (void)_readBaseURL;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)_resetBestLanguage;
 - (BOOL)isEquivalentTileSet:(id)arg1;
 - (id)disputedBordersQueryItemsForCountry:(id)arg1 region:(id)arg2;

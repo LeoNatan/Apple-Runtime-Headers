@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)setEntityControllers:(id)arg1;
 - (void)entityController:(id)arg1 doubleTappedAt:(struct CGPoint)arg2;
 - (void)entityDidPlaceOnARAnchor;
 - (void)placeModelOn:(id)arg1;
@@ -41,7 +42,7 @@
 - (id)_axDescriptionForCurrentScreenCoverageForEntityController:(id)arg1;
 - (double)_valueForPercentageFromRawValue:(double)arg1;
 - (id)_axDescriptionForCurrentPositionForEntityController:(id)arg1;
-- (id)_axControlForTranslationForLevitation:(_Bool)arg1 delta:(id)arg2 name:(id)arg3 entityController: /* Error: Ran out of types for this method. */;
+- (id)_axControlForTranslationForLevitation:(_Bool)arg1 delta:(id)arg2 nameFormat:(id)arg3 entityController: /* Error: Ran out of types for this method. */;
 - (float)_axLevitationHeightForEntityController:(id)arg1;
 - (id)_axControlForScalingForEntityController:(id)arg1;
 - (void)_axResetToInitialScaleForEntityAction:(id)arg1;
@@ -49,7 +50,7 @@
 - (id)_axUnifiedGestureRecognizerForEntityController:(id)arg1;
 - (float)_axAssetScaleForAnnouncementsForEntityController:(id)arg1;
 - (float)_axAssetScaleForEntityController:(id)arg1;
-- (id)_axControlForRotationWithDeltaYaw:(float)arg1 deltaPitch:(float)arg2 name:(id)arg3 hint:(id)arg4 shouldUseArrows:(_Bool)arg5 entityController:(id)arg6;
+- (id)_axControlForRotationWithDeltaYaw:(float)arg1 deltaPitch:(float)arg2 nameFormat:(id)arg3 hintFormat:(id)arg4 shouldUseArrows:(_Bool)arg5 entityController:(id)arg6;
 - (id)_axCreateAssetElementForEntityController:(id)arg1;
 - (id)_axDescriptionForCurrentPitchForEntityController:(id)arg1;
 - (id)_axDescriptionForCurrentRotationForEntityController:(id)arg1;

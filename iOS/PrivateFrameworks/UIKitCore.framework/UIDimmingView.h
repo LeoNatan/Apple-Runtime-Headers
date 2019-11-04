@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)mouseUp:(struct __GSEvent *)arg1;
 - (void)updateBackgroundColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)display:(_Bool)arg1 withAnimationDuration:(double)arg2 afterDelay:(double)arg3;
 - (void)display:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool displayed;

@@ -11,6 +11,7 @@
 @protocol HFItemManagerDelegate <NSObject>
 
 @optional
+- (void)itemManagerDidFinishUpdate:(HFItemManager *)arg1;
 - (void)itemManager:(HFItemManager *)arg1 didUpdateItemModules:(NSArray *)arg2;
 - (void)itemManager:(HFItemManager *)arg1 didChangeSourceItem:(HFItem *)arg2;
 - (void)itemManager:(HFItemManager *)arg1 didUpdateResultsForSourceItem:(HFItem *)arg2;

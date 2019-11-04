@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, NSTimer, PKPalettePencilInteractionFeedbackView, UILayoutGuide;
+@class NSLayoutConstraint, NSTimer, PKPalettePencilInteractionFeedbackView, UILayoutGuide, UIViewFloatAnimatableProperty;
 @protocol PKPalettePencilInteractionFeedbackHostViewDelegate;
 
 @interface PKPalettePencilInteractionFeedbackHostView : UIView
@@ -26,8 +26,10 @@
     NSLayoutConstraint *_pencilInteractionFeedbackViewRightConstraint;
     NSLayoutConstraint *_pencilInteractionFeedbackViewCenterXConstraint;
     NSLayoutConstraint *_pencilInteractionFeedbackViewCenterYConstraint;
+    UIViewFloatAnimatableProperty *_feedbackViewVisibilityAnimatableProperty;
 }
 
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *feedbackViewVisibilityAnimatableProperty; // @synthesize feedbackViewVisibilityAnimatableProperty=_feedbackViewVisibilityAnimatableProperty;
 @property(nonatomic, getter=isPencilInteractionFeedbackViewVisible) _Bool pencilInteractionFeedbackViewVisible; // @synthesize pencilInteractionFeedbackViewVisible=_pencilInteractionFeedbackViewVisible;
 @property(retain, nonatomic) NSLayoutConstraint *pencilInteractionFeedbackViewCenterYConstraint; // @synthesize pencilInteractionFeedbackViewCenterYConstraint=_pencilInteractionFeedbackViewCenterYConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *pencilInteractionFeedbackViewCenterXConstraint; // @synthesize pencilInteractionFeedbackViewCenterXConstraint=_pencilInteractionFeedbackViewCenterXConstraint;
@@ -49,6 +51,7 @@
 - (void)hideFeedbackView;
 - (long long)_palettePosition;
 - (void)showFeedbackForCurrentlySelectedToolInPaletteView;
+- (_Bool)_isPencilInteractionFeedbackViewAlmostOffScreen;
 - (void)layoutSubviews;
 - (id)initWithDelegate:(id)arg1;
 

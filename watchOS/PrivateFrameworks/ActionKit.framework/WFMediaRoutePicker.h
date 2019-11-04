@@ -27,8 +27,7 @@
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)findHandoffRoutesMatchingDescriptors:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)findHandoffRouteMatchingDescriptor:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)handOffFromEndpoint:(id)arg1 toEndpoint:(id)arg2 timeout:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)establishConnectionToEndpoints:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)handOffFromSourceUID:(id)arg1 toDestinationUID:(id)arg2 timeout:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)selectRoute:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)findRoutesMatchingDescriptors:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)findRouteMatchingDescriptor:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -62,6 +62,7 @@
 - (BOOL)connectAndAuthenticate:(id)arg1;
 - (void)savePersistentAccount;
 - (id)smtpIdentifier;
+@property(readonly) BOOL primaryiCloudAccount;
 - (BOOL)canAuthenticateWithCurrentCredentials;
 - (id)authenticatedConnection;
 - (id)newConnectedConnectionDiscoveringBestSettings:(BOOL)arg1 withConnectTimeout:(double)arg2 readWriteTimeout:(double)arg3;
@@ -89,6 +90,7 @@
 @property long long portNumber;
 - (void)setTLSIdentity:(struct __SecIdentity *)arg1;
 - (struct __SecIdentity *)copyTLSIdentity;
+@property(readonly, copy, nonatomic) NSDate *expiryDate;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *clientInfo;
 - (id)_anisetteData;

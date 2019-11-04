@@ -34,6 +34,7 @@
 + (id)overrideDataSourceImage;
 + (id)applicationBundleIdentifier;
 + (id)bundleIdentifier;
++ (_Bool)drivenByUserInteraction;
 + (_Bool)wantsPrivateQueue;
 + (id)contentAttributes;
 @property(readonly, nonatomic, getter=hasUnlockedSinceBoot) _Bool unlockedSinceBoot; // @synthesize unlockedSinceBoot=_unlockedSinceBoot;
@@ -55,6 +56,7 @@
 - (id)complicationDescriptor;
 - (void)setUnlockedSinceBoot:(_Bool)arg1;
 - (void)setRunning:(_Bool)arg1;
+- (_Bool)isWhitelisted;
 - (void)elementWithIdentifierDidBecomeHidden:(id)arg1;
 - (void)elementWithIdentifierWillBecomeVisible:(id)arg1;
 - (void)resume;

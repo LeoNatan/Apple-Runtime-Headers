@@ -90,6 +90,7 @@
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;
 @property(retain, nonatomic) REMObjectID *listID; // @dynamic listID;
 @property(readonly, nonatomic) REMCRMergeableStringDocument *notesDocument; // @dynamic notesDocument;
+@property(readonly, nonatomic) NSData *notesDocumentData; // @dynamic notesDocumentData;
 @property(readonly, nonatomic) REMObjectID *objectID; // @dynamic objectID;
 @property(readonly, nonatomic) REMObjectID *parentReminderID; // @dynamic parentReminderID;
 @property(readonly, nonatomic) unsigned long long priority; // @dynamic priority;
@@ -101,6 +102,7 @@
 @property(readonly, nonatomic) NSSet *subtaskIDsToUndelete; // @dynamic subtaskIDsToUndelete;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) REMCRMergeableStringDocument *titleDocument; // @dynamic titleDocument;
+@property(readonly, nonatomic) NSData *titleDocumentData; // @dynamic titleDocumentData;
 @property(readonly, nonatomic) REMUserActivity *userActivity; // @dynamic userActivity;
 
 @end

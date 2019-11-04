@@ -6,7 +6,9 @@
 
 #import <UIKit/UIView.h>
 
+#import <CameraUI/CAMAccessibilityHUDItemProvider-Protocol.h>
 #import <CameraUI/CAMAdditiveAnimatorDelegate-Protocol.h>
+#import <CameraUI/CAMBarsAccessibilityHUDManagerGestureProvider-Protocol.h>
 #import <CameraUI/CAMControlDrawerPresentationDelegate-Protocol.h>
 #import <CameraUI/CAMInstructionLabelDelegate-Protocol.h>
 #import <CameraUI/CAMViewfinderTransitionable-Protocol.h>
@@ -15,11 +17,12 @@
 @class AVSpatialOverCaptureVideoPreviewLayer, CAMAdditiveAnimator, CAMBadgeTray, CAMCTMDescriptionOverlayView, CAMControlDrawer, CAMControlStatusBar, CAMCreativeCameraButton, CAMDynamicShutterControl, CAMElapsedTimeView, CAMFilterNameBadge, CAMFlipButton, CAMFullscreenModeSelector, CAMFullscreenViewfinderLayout, CAMImageWell, CAMLowLightInstructionLabel, CAMModeDial, CAMModeIndicatorView, CAMPanoramaView, CAMPortraitModeDescriptionOverlayView, CAMPortraitModeInstructionLabel, CAMPreviewView, CAMQRCodeInstructionLabel, CAMTimerIndicatorView, CAMViewfinderReticleView, CAMZoomControl, CEKLightingControl, CEKLightingNameBadge, NSString, UILongPressGestureRecognizer;
 @protocol CAMFullscreenViewfinderDelegate;
 
-@interface CAMFullscreenViewfinder : UIView <CAMAdditiveAnimatorDelegate, CAMControlDrawerPresentationDelegate, CEKBadgeViewDelegate, CAMInstructionLabelDelegate, CAMViewfinderTransitionable>
+@interface CAMFullscreenViewfinder : UIView <CAMAdditiveAnimatorDelegate, CAMControlDrawerPresentationDelegate, CEKBadgeViewDelegate, CAMInstructionLabelDelegate, CAMViewfinderTransitionable, CAMAccessibilityHUDItemProvider, CAMBarsAccessibilityHUDManagerGestureProvider>
 {
     _Bool _controlDrawerAllowed;
     _Bool _modeUIAllowed;
     _Bool _controlDrawerExpanded;
+    _Bool _flipButtonVisible;
     _Bool _zoomControlVisible;
     _Bool _elapsedTimeViewVisible;
     _Bool _timerIndicatorVisible;
@@ -110,12 +113,18 @@
 @property(nonatomic, getter=isTimerIndicatorVisible) _Bool timerIndicatorVisible; // @synthesize timerIndicatorVisible=_timerIndicatorVisible;
 @property(nonatomic, getter=isElapsedTimeViewVisible) _Bool elapsedTimeViewVisible; // @synthesize elapsedTimeViewVisible=_elapsedTimeViewVisible;
 @property(nonatomic, getter=isZoomControlVisible) _Bool zoomControlVisible; // @synthesize zoomControlVisible=_zoomControlVisible;
+@property(nonatomic, getter=isFlipButtonVisible) _Bool flipButtonVisible; // @synthesize flipButtonVisible=_flipButtonVisible;
 @property(nonatomic, getter=isControlDrawerExpanded) _Bool controlDrawerExpanded; // @synthesize controlDrawerExpanded=_controlDrawerExpanded;
 @property(readonly, nonatomic, getter=isModeUIAllowed) _Bool modeUIAllowed; // @synthesize modeUIAllowed=_modeUIAllowed;
 @property(readonly, nonatomic, getter=isControlDrawerAllowed) _Bool controlDrawerAllowed; // @synthesize controlDrawerAllowed=_controlDrawerAllowed;
 @property(retain, nonatomic) NSString *contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) __weak id <CAMFullscreenViewfinderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)shouldAccessibilityGestureBeginForHUDManager:(id)arg1;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
+- (void)_iterateViewsForHUDManager:(id)arg1 withItemFoundBlock:(CDUnknownBlockType)arg2;
+- (id)touchingRecognizersToCancel;
 - (void)prepareForResumingUsingCrossfade;
 - (void)removeInflightBlurAnimations;
 - (void)setReticleMaskingStyle:(long long)arg1 withDuration:(double)arg2;
@@ -124,6 +133,7 @@
 - (void)setTimerIndicatorVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setElapsedTimeViewVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setZoomControlVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setFlipButtonVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)_updateControlsForContentSize;
 - (void)setControlDrawerAllowed:(_Bool)arg1 modeUIAllowed:(_Bool)arg2 animated:(_Bool)arg3;
@@ -138,7 +148,7 @@
 - (_Bool)_showPortraitControls;
 - (_Bool)_showModeView;
 - (_Bool)_showControlDrawer;
-- (void)controlDrawer:(id)arg1 didChangeExpanded:(_Bool)arg2 forControlType:(long long)arg3;
+- (void)controlDrawer:(id)arg1 didChangeExpanded:(_Bool)arg2 forControlType:(long long)arg3 animated:(_Bool)arg4;
 - (void)dismissModalControlDrawerIfNeeded;
 - (_Bool)isControlDrawerPresentedModallyWithControlType:(long long)arg1;
 - (void)presentControlDrawerModally:(_Bool)arg1 withControlType:(long long)arg2;

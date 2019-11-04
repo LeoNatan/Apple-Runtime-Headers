@@ -47,6 +47,9 @@
 - (id)_makeSelfFirstResponderIfCurrentFirstResponderIsDescendantOfSelfAndReturnCurrentFirstResponderInThatCase;
 - (void)_replaceCurrentControlsViewControllerWithViewController:(id)arg1;
 - (id)_currentControlsViewController;
+- (void)setPrefersCompactTouchBarScrubber:(BOOL)arg1;
+- (BOOL)prefersCompactTouchBarScrubber;
+- (BOOL)showsControlsPane;
 - (void)touchesCancelledWithEvent:(id)arg1;
 - (void)touchesEndedWithEvent:(id)arg1;
 - (void)touchesMovedWithEvent:(id)arg1;

@@ -17,16 +17,15 @@
     BOOL _allowCopyValueToPasteboard;
     UILabel *_titleLabel;
     UILabel *_valueLabel;
+    UIStackView *_labelsStackView;
     NSString *_titleText;
     UIFont *_titleFont;
     NSString *_valueText;
     UIFont *_valueFont;
     NSArray *_stackViewConstraints;
-    UIStackView *_labelsStackView;
 }
 
 + (BOOL)requiresConstraintBasedLayout;
-@property(retain, nonatomic) UIStackView *labelsStackView; // @synthesize labelsStackView=_labelsStackView;
 @property(retain, nonatomic) NSArray *stackViewConstraints; // @synthesize stackViewConstraints=_stackViewConstraints;
 @property(nonatomic) BOOL allowCopyValueToPasteboard; // @synthesize allowCopyValueToPasteboard=_allowCopyValueToPasteboard;
 @property(nonatomic) BOOL valueColorFollowsTintColor; // @synthesize valueColorFollowsTintColor=_valueColorFollowsTintColor;
@@ -37,6 +36,7 @@
 @property(nonatomic) BOOL hideTitle; // @synthesize hideTitle=_hideTitle;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(readonly, nonatomic) UIStackView *labelsStackView; // @synthesize labelsStackView=_labelsStackView;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;

@@ -16,7 +16,8 @@
     id <MTLRenderPipelineState> _mtlPipelineOpaque;
     id <MTLRenderPipelineState> _mtlPipelineBlend;
     // Error parsing type: , name: _aspect
-    CLKUITexture *_primaryTexture;
+    CLKUITexture *_primaryLumaTexture;
+    CLKUITexture *_primaryChromaTexture;
     CLKUITexture *_secondaryTexture;
     unsigned int _shaderType;
     float _alpha;
@@ -38,7 +39,8 @@
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
 @property(readonly, nonatomic) unsigned int shaderType; // @synthesize shaderType=_shaderType;
 @property(retain, nonatomic) CLKUITexture *secondaryTexture; // @synthesize secondaryTexture=_secondaryTexture;
-@property(retain, nonatomic) CLKUITexture *primaryTexture; // @synthesize primaryTexture=_primaryTexture;
+@property(retain, nonatomic) CLKUITexture *primaryChromaTexture; // @synthesize primaryChromaTexture=_primaryChromaTexture;
+@property(retain, nonatomic) CLKUITexture *primaryLumaTexture; // @synthesize primaryLumaTexture=_primaryLumaTexture;
 - (void).cxx_destruct;
 - (_Bool)prepareForTime:(double)arg1;
 - (void)renderForDisplayWithEncoder:(id)arg1;

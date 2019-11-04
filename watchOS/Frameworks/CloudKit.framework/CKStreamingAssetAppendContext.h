@@ -9,7 +9,7 @@
 #import <CloudKit/C2RequestDelegate-Protocol.h>
 
 @class CKStreamingAsset, NSString, NSURLSessionDataTask;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_os_activity;
 
 @interface CKStreamingAssetAppendContext : NSObject <C2RequestDelegate>
 {
@@ -21,12 +21,16 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     unsigned int _currentSegmentLength;
     NSURLSessionDataTask *_dataTask;
+    NSString *_requestUUID;
+    NSObject<OS_os_activity> *_osActivity;
     CDUnknownBlockType _completionHandler;
 }
 
-+ (id)requestToAppendSegmentData:(id)arg1 uploadURL:(id)arg2 offset:(unsigned int)arg3;
++ (id)requestToAppendSegmentData:(id)arg1 uploadURL:(id)arg2 requestUUID:(id)arg3 offset:(unsigned int)arg4;
 @property(nonatomic) _Bool fakeMissingUploadReceipt; // @synthesize fakeMissingUploadReceipt=_fakeMissingUploadReceipt;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(retain, nonatomic) NSObject<OS_os_activity> *osActivity; // @synthesize osActivity=_osActivity;
+@property(retain, nonatomic) NSString *requestUUID; // @synthesize requestUUID=_requestUUID;
 @property(retain, nonatomic) NSURLSessionDataTask *dataTask; // @synthesize dataTask=_dataTask;
 @property(nonatomic) unsigned int currentSegmentLength; // @synthesize currentSegmentLength=_currentSegmentLength;
 @property(nonatomic, getter=isCurrentAppendCancelled) _Bool currentAppendCancelled; // @synthesize currentAppendCancelled=_currentAppendCancelled;

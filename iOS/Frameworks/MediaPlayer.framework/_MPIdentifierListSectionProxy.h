@@ -24,6 +24,7 @@
 - (void)applyChanges:(id)arg1 itemLookupBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *itemIdentifiers;
 - (void)updateItem:(id)arg1;
+- (void)updateSection;
 - (void)removeItem:(id)arg1;
 - (void)moveItemToTail:(id)arg1;
 - (void)moveItem:(id)arg1 afterItem:(id)arg2;

@@ -7,11 +7,10 @@
 #import <SafariServices/SFBrowserServiceViewController.h>
 
 #import <SafariServices/SFWebAppServiceViewControllerProtocol-Protocol.h>
-#import <SafariServices/WBSDigitalHealthManagerDelegate-Protocol.h>
 
-@class BKSApplicationStateMonitor, NSMutableArray, NSString, NSURL, UIView, UIWebClip, WBSDigitalHealthManager, WKProcessPool, WKWebsiteDataStore;
+@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore;
 
-@interface _SFWebAppServiceViewController : SFBrowserServiceViewController <WBSDigitalHealthManagerDelegate, SFWebAppServiceViewControllerProtocol>
+@interface _SFWebAppServiceViewController : SFBrowserServiceViewController <SFWebAppServiceViewControllerProtocol>
 {
     UIWebClip *_webClip;
     UIView *_statusBarBackgroundView;
@@ -20,8 +19,6 @@
     NSMutableArray *_fallbackURLs;
     BKSApplicationStateMonitor *_stateMonitor;
     unsigned int _hostState;
-    NSURL *_currentUsageTrackingURL;
-    WBSDigitalHealthManager *_digitalHealthManager;
 }
 
 + (id)_exportedInterface;
@@ -45,18 +42,13 @@
 - (void)webViewControllerDidChangeURL:(id)arg1;
 - (void)webViewController:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
-- (_Bool)_isURLOutOfScope:(id)arg1;
+- (_Bool)_isURLOutOfScope:(id)arg1 withLoginURLExempted:(_Bool)arg2;
+- (_Bool)_isURLOutOfLegacyScope:(id)arg1 withLoginURLExempted:(_Bool)arg2;
 - (_Bool)_isURLOutOfManifestScope:(id)arg1;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_hideDigitalHealthOverlay;
-- (void)_showDigitalHealthOverlay;
-- (void)_updateDigitalHealthTracking;
-- (void)policyDidChangeForDigitalHealthManager:(id)arg1;
-- (id)_digitalHealthManager;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
 - (void)_hostApplicationDidEnterBackground;
-- (_Bool)_shouldCacheWebViewController;
 - (void)setNeedsStatusBarAppearanceUpdate;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidLoad;

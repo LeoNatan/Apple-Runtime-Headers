@@ -14,6 +14,7 @@
 + (id)deviceConfiguration;
 - (_Bool)requiresResponse;
 @property(nonatomic) double initialInterstitialDelayForVoiceTriggerOneShotWithoutAudioDucking;
+@property(nonatomic) double initialInterstitialDelayForCarPlay;
 @property(nonatomic) double initialInterstitialDelay;
 - (id)encodedClassName;
 - (id)groupIdentifier;

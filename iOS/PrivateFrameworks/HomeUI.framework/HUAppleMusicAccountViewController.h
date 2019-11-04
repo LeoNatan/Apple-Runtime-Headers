@@ -26,11 +26,15 @@
 @property(retain, nonatomic) HUAppleMusicAccountModuleController *appleMusicAccountModuleController; // @synthesize appleMusicAccountModuleController=_appleMusicAccountModuleController;
 - (void).cxx_destruct;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)_accessorySupportsMultiUser;
 - (id)_appleMusicFooterMessage;
+- (id)_appleMusicFooterView;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
+- (void)appleMusicModuleControllerPresentSignInFlow:(id)arg1;
 - (void)appleMusicModuleControllerDidUpdateAuthenticationState:(id)arg1;
 - (void)appleMusicModuleController:(id)arg1 willPresentContext:(id)arg2 account:(id)arg3;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)itemModuleControllers;
 - (void)viewDidLoad;
 - (id)initWithAccessoryGroupItem:(id)arg1;

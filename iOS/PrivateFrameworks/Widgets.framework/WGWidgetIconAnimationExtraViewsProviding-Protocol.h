@@ -9,6 +9,7 @@
 @class NSArray, UIView;
 
 @protocol WGWidgetIconAnimationExtraViewsProviding <NSObject>
+@property(readonly, nonatomic) _Bool shouldAnimateFirstTwoViewsAsOne;
 @property(readonly, nonatomic) _Bool shouldAnimateLastTwoViewsAsOne;
 @property(readonly, copy, nonatomic) NSArray *extraViews;
 @property(readonly, nonatomic) UIView *extraViewsContainer;

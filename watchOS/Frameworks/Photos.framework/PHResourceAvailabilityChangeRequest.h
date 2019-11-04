@@ -6,13 +6,11 @@
 
 #import <Photos/PHResourceAvailabilityRequest.h>
 
-@class NSError, PHResourceAvailabilityDataStoreManager;
+@class PHResourceAvailabilityDataStoreManager;
 @protocol PHResourceAvailabilityChangeRequestDelegate;
 
 @interface PHResourceAvailabilityChangeRequest : PHResourceAvailabilityRequest
 {
-    _Bool _success;
-    NSError *_error;
     struct os_unfair_lock_s _lock;
     PHResourceAvailabilityDataStoreManager *_dataStoreManager;
     _Bool _wantsProgress;
@@ -30,13 +28,14 @@
 - (void)_cplDownloadFinishedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;
+- (void)abortClientSide;
 - (void)runDaemonSide;
 - (void)_handleLocalAvailabilityChangeForResource:(id)arg1 mutableInfo:(id)arg2 fileURL:(id *)arg3 uti:(id *)arg4 orientation:(unsigned int *)arg5 data:(id *)arg6;
 - (id)_availabilityRequestOptions;
 - (_Bool)_prepareForChangeRequestWithLibrary:(id)arg1 asset:(id *)arg2 resource:(id *)arg3 error:(id *)arg4;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
-- (id)initWithAssetObjectID:(id)arg1 resourceIdentity:(id)arg2;
+- (id)initWithTaskIdentifier:(id)arg1 assetObjectID:(id)arg2 resourceIdentity:(id)arg3;
 
 @end
 

@@ -52,6 +52,7 @@
 + (id)deviceBatteryPercentageStream;
 + (id)deviceIsPluggedInStream;
 + (id)keybagIsLockedStream;
++ (id)deviceIsLockedImputedStream;
 + (id)deviceIsLockedStream;
 + (id)nextEventForTopOffProtectionStream;
 + (id)airplaneModeStream;

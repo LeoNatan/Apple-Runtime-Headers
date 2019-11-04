@@ -32,6 +32,8 @@
 - (float)_edgeRegionSize;
 - (void)_setBottomEdgeRegionSize:(float)arg1;
 - (float)_bottomEdgeRegionSize;
+- (void)_setBottomEdgeAngleWindow:(float)arg1;
+- (float)_bottomEdgeAngleWindow;
 - (void)featureDidChangeState:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

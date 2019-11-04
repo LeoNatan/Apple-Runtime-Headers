@@ -10,18 +10,19 @@
 @protocol SBTetheredSwitcherContentViewControlling;
 
 @protocol SBTetheredSwitcherContentViewControlling <NSObject>
+@property(readonly, nonatomic) id <SBTetheredSwitcherContentViewControlling> tetheredViewController;
 - (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreen;
-- (struct CGPoint)contentOffsetForTetheredIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfAppLayouts;
 - (struct CGSize)contentSize;
 - (_Bool)isScrolling;
+- (void)prepareToReopenClosedWindowsWithCompletion:(void (^)(_Bool, _Bool))arg1;
 - (void)returnScrollViewPanGestureRecognizer:(UIPanGestureRecognizer *)arg1;
 - (UIPanGestureRecognizer *)borrowScrollViewPanGestureRecognizer;
 - (_Bool)hasItemContainerAtLocationInContentView:(struct CGPoint)arg1;
 - (void)dispatchAndHandleTetheredRemovalEvent:(SBTetheredRemovalSwitcherModifierEvent *)arg1;
 - (void)tetheredViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1 didPerformTransitionWithMode:(long long)arg2;
 - (void)setTetheredContentView:(SBFluidSwitcherContentView *)arg1;
-- (void)setTetheredScrollViewContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
+- (void)setTetheredScrollViewContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 completion:(void (^)(_Bool))arg3;
 - (void)endTetheringWithViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1;
 - (void)beginTetheringWithViewController:(id <SBTetheredSwitcherContentViewControlling>)arg1 asTetheree:(_Bool)arg2;
 @end

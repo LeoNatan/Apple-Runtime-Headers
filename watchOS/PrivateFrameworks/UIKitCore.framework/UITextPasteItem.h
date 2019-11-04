@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_defaultAttributes;
     UITextPasteCoordinator *_coordinator;
     NSArray *_supportedPasteConfigurationClasses;
+    NSDictionary *_documentOptions;
 }
 
+@property(copy, nonatomic) NSDictionary *documentOptions; // @synthesize documentOptions=_documentOptions;
 @property(nonatomic) _Bool forcesDefaultAttributes; // @synthesize forcesDefaultAttributes=_forcesDefaultAttributes;
 @property(retain, nonatomic) NSArray *supportedPasteConfigurationClasses; // @synthesize supportedPasteConfigurationClasses=_supportedPasteConfigurationClasses;
 @property(readonly, nonatomic) UITextPasteCoordinator *coordinator; // @synthesize coordinator=_coordinator;

@@ -7,27 +7,20 @@
 #import <WorkflowKit/WFAction.h>
 
 #import <ActionKit/AVCapturePhotoCaptureDelegate-Protocol.h>
-#import <ActionKit/UIImagePickerControllerDelegate-Protocol.h>
-#import <ActionKit/UINavigationControllerDelegate-Protocol.h>
 
 @class AVCaptureSession, NSString;
 
-@interface WFTakePhotoAction : WFAction <AVCapturePhotoCaptureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface WFTakePhotoAction : WFAction <AVCapturePhotoCaptureDelegate>
 {
     unsigned long long _remainingPhotos;
     AVCaptureSession *_session;
 }
 
-+ (long long)cameraDeviceFromString:(id)arg1;
 @property(retain, nonatomic) AVCaptureSession *session; // @synthesize session=_session;
 @property(nonatomic) unsigned long long remainingPhotos; // @synthesize remainingPhotos=_remainingPhotos;
 - (void).cxx_destruct;
-- (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)captureOutput:(id)arg1 didFinishProcessingPhoto:(id)arg2 error:(id)arg3;
-- (void)takePhotoWithDevice:(id)arg1;
-- (void)presentCameraFromViewController:(id)arg1 requiredPhotoCount:(unsigned long long)arg2 usingDevice:(id)arg3;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
+- (void)takePhoto;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

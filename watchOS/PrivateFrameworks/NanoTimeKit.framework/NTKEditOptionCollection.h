@@ -23,8 +23,6 @@
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
-- (id)filteredCollectionForOSVersion:(unsigned int)arg1;
-- (id)filteredCollectionWithObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)initWithEditMode:(int)arg1 localizedName:(id)arg2 options:(id)arg3 collectionType:(unsigned int)arg4;
 
 @end

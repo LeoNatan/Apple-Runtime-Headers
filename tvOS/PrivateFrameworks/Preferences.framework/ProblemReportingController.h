@@ -19,9 +19,11 @@
     NSArray *_healthDataSpecifiers;
     NSArray *_healthRecordsDataSpecifiers;
     NSArray *_wheelchairDataSpecifiers;
+    NSArray *_improveSiriSpecifiers;
 }
 
 + (_Bool)isProblemReportingEnabled;
+@property(retain, nonatomic) NSArray *improveSiriSpecifiers; // @synthesize improveSiriSpecifiers=_improveSiriSpecifiers;
 @property(nonatomic) _Bool shouldShareHealthRecordsData; // @synthesize shouldShareHealthRecordsData=_shouldShareHealthRecordsData;
 - (void).cxx_destruct;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
@@ -61,6 +63,7 @@
 - (void)showAboutHealthDataSheet;
 - (void)showAboutAppAnalyticsSheet;
 - (void)showAboutiCloudAnalyticsSheet;
+- (void)showAboutImproveSiriAnalyticsSheet;
 - (void)showAboutAnalyticsSheet;
 - (void)dismissAboutSheet:(id)arg1;
 - (void)showAboutSheetWithTitle:(id)arg1 content:(id)arg2;

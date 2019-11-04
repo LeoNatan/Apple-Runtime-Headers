@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
     int _lastDisplayedFromImageQueueCount;
     int _lastDroppedFromImageQueueCount;
     int _networkInterfaceType;
+    int _channelSequenceCountWithInactiveSlots;
 }
 
 + (id)capabilities;

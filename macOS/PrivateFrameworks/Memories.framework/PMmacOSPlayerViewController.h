@@ -9,7 +9,7 @@
 #import <Memories/PMEditProviderDelegate-Protocol.h>
 #import <Memories/PMMovieProviderDelegate-Protocol.h>
 
-@class AVPlayer, AVPlayerView, NSString, PHAssetCollection, PMAVSynchronizedView, PMDurationProvider, PMMoodProvider, PMMovieProvider, PMPlayerContainerView, PMPosterViewController, PMSaveProvider, PMTitleSubtitleView, PMmacOSProgressIndicatorView, VEKProduction;
+@class AVPlayer, AVPlayerView, NSString, NSView, PHAssetCollection, PMAVSynchronizedView, PMDurationProvider, PMMoodProvider, PMMovieProvider, PMPosterViewController, PMSaveProvider, PMTitleSubtitleView, PMmacOSProgressIndicatorView, VEKProduction;
 
 @interface PMmacOSPlayerViewController : NSViewController <PMMovieProviderDelegate, PMEditProviderDelegate>
 {
@@ -18,9 +18,10 @@
     PHAssetCollection *_assetCollection;
     VEKProduction *_production;
     AVPlayerView *_playerView;
-    PMPlayerContainerView *_playerContainerView;
+    NSView *_playerContainerView;
     PMmacOSProgressIndicatorView *_progressIndicatorView;
     PMTitleSubtitleView *_titleView;
+    PMTitleSubtitleView *_posterTitleView;
     PMAVSynchronizedView *_synchronizedView;
     PMPosterViewController *_posterViewController;
     PMMovieProvider *_movieProvider;
@@ -43,9 +44,10 @@
 @property(retain, nonatomic) PMMovieProvider *movieProvider; // @synthesize movieProvider=_movieProvider;
 @property(retain, nonatomic) PMPosterViewController *posterViewController; // @synthesize posterViewController=_posterViewController;
 @property(retain, nonatomic) PMAVSynchronizedView *synchronizedView; // @synthesize synchronizedView=_synchronizedView;
+@property(retain, nonatomic) PMTitleSubtitleView *posterTitleView; // @synthesize posterTitleView=_posterTitleView;
 @property(retain, nonatomic) PMTitleSubtitleView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) PMmacOSProgressIndicatorView *progressIndicatorView; // @synthesize progressIndicatorView=_progressIndicatorView;
-@property(retain, nonatomic) PMPlayerContainerView *playerContainerView; // @synthesize playerContainerView=_playerContainerView;
+@property(retain, nonatomic) NSView *playerContainerView; // @synthesize playerContainerView=_playerContainerView;
 @property(retain, nonatomic) AVPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
 @property(retain, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
@@ -65,10 +67,12 @@
 - (void)moodChanged:(id)arg1;
 - (void)viewDidLayout;
 - (void)setupTitleView;
+- (void)setupPosterView;
 - (void)viewDidAppear;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)viewDidLoad;
+- (void)constrainView:(id)arg1 toSuperviewWithBleed:(double)arg2;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithAssetCollection:(id)arg1;

@@ -25,8 +25,8 @@
 - (BOOL)highlightItemList:(id)arg1 canBeMergedWithOtherHighlightItemList:(id)arg2;
 - (BOOL)highlightItem:(id)arg1 belongsToHighlightItemList:(id)arg2;
 - (id)dominantMonthDateComponentForStartDateComponents:(id)arg1 endDateComponents:(id)arg2 numberOfDaysInMonthOfStartDate:(long long)arg3;
-- (void)titlesForHighlightItemList:(id)arg1 forceUpdateLocale:(BOOL)arg2 resultBlock:(CDUnknownBlockType)arg3;
-- (void)titlesForHighlightItemList:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
+- (void)titlesForHighlightItemList:(id)arg1 dateRangeTitleGenerator:(id)arg2 forceUpdateLocale:(BOOL)arg3 resultBlock:(CDUnknownBlockType)arg4;
+- (void)titlesForHighlightItemList:(id)arg1 dateRangeTitleGenerator:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 
 // Remaining properties

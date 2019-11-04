@@ -6,12 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, IKViewElement, NSArray, VUILabel, VUIOverlayLayout, VUITextBadgeView, _TVProgressView;
+@class CALayer, IKViewElement, NSArray, VUILabel, VUIOverlayLayout, VUITextBadgeView, _TVProgressView;
 
 __attribute__((visibility("hidden")))
 @interface VUIOverlayView : UIView
 {
-    CAGradientLayer *_gradientLayer;
+    CALayer *_gradientLayer;
     VUIOverlayLayout *_overlayLayout;
     IKViewElement *_viewElement;
     VUILabel *_titleLabel;
@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUIOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
-@property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
+@property(retain, nonatomic) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 - (void).cxx_destruct;
 - (void)reset;
 - (void)layoutSubviews;

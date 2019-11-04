@@ -41,9 +41,11 @@ __attribute__((visibility("hidden")))
 - (id)widthConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
+@property(readonly, nonatomic) _Bool requiresWindowBasedSafeAreaInsets;
 @property(readonly, nonatomic) _Bool isInteractive;
 @property(readonly, nonatomic) _Bool showsKeyboard;
 @property(readonly, nonatomic) _Bool showsInputViews;
+@property(readonly, nonatomic) _Bool isInvisible;
 @property(readonly, nonatomic) _Bool isFloating;
 @property(readonly, nonatomic) _Bool isUndocked;
 - (_Bool)isEqual:(id)arg1;

@@ -7,25 +7,27 @@
 #import <UIKit/UITableViewCell.h>
 
 #import <HomeUI/HUCellProtocol-Protocol.h>
+#import <HomeUI/UITextViewDelegate-Protocol.h>
 
-@class HFItem, NSArray, NSString, UILabel;
+@class HFItem, NSArray, NSString, UILabel, UITextView;
 @protocol HUResizableCellDelegate;
 
-@interface HUInstructionsCell : UITableViewCell <HUCellProtocol>
+@interface HUInstructionsCell : UITableViewCell <UITextViewDelegate, HUCellProtocol>
 {
     HFItem *_item;
     double _contentBottomMargin;
     UILabel *_titleLabel;
-    UILabel *_descriptionLabel;
+    UITextView *_descriptionView;
     NSArray *_constraints;
 }
 
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
-@property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
+@property(retain, nonatomic) UITextView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double contentBottomMargin; // @synthesize contentBottomMargin=_contentBottomMargin;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)layoutSubviews;

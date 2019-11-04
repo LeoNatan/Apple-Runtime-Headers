@@ -20,6 +20,7 @@
 - (id)externalId;
 - (void)setXPropertiesData:(id)arg1;
 - (id)XPropertiesData;
+- (void)setUUID:(id)arg1;
 - (id)UUID;
 - (void)setFileSize:(id)arg1;
 - (id)fileSize;

@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface STBarView : UIView
 {
+    _Bool _useVibrancy;
     STUsageReportGraphDataPoint *_dataPoint;
     UIColor *_color;
     NSArray *_sectionViews;
@@ -21,13 +22,15 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIView *darkenedView; // @synthesize darkenedView=_darkenedView;
 @property(copy, nonatomic) NSArray *sectionHeightConstraints; // @synthesize sectionHeightConstraints=_sectionHeightConstraints;
 @property(copy, nonatomic) NSArray *sectionViews; // @synthesize sectionViews=_sectionViews;
+@property(readonly) _Bool useVibrancy; // @synthesize useVibrancy=_useVibrancy;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) STUsageReportGraphDataPoint *dataPoint; // @synthesize dataPoint=_dataPoint;
 - (void).cxx_destruct;
 - (void)setUpSectionHeightConstraints;
 - (void)setUpSections;
 @property(getter=isDarkened) _Bool darkened;
-- (id)initWithDataPoint:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)initWithDataPoint:(id)arg1 useVibrancy:(_Bool)arg2;
 
 @end
 

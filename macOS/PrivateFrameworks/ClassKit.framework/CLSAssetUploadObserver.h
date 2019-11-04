@@ -10,7 +10,6 @@
 
 @interface CLSAssetUploadObserver : NSObject
 {
-    BOOL _uploaded;
     CLSAsset *_asset;
     double _uploadProgress;
     NSError *_uploadError;
@@ -24,7 +23,6 @@
 @property(copy, nonatomic) CDUnknownBlockType preCompleteHook; // @synthesize preCompleteHook=_preCompleteHook;
 @property(retain, nonatomic) NSOperationQueue *uploadObserverQueue; // @synthesize uploadObserverQueue=_uploadObserverQueue;
 @property(retain, nonatomic) NSMetadataQuery *query; // @synthesize query=_query;
-@property(nonatomic, getter=isUploaded) BOOL uploaded; // @synthesize uploaded=_uploaded;
 @property(copy, nonatomic) CDUnknownBlockType onUploadComplete; // @synthesize onUploadComplete=_onUploadComplete;
 @property(copy, nonatomic) CDUnknownBlockType onUploadProgress; // @synthesize onUploadProgress=_onUploadProgress;
 @property(retain) NSError *uploadError; // @synthesize uploadError=_uploadError;
@@ -38,6 +36,7 @@
 - (void)queryGatheredData:(id)arg1;
 - (void)stopObserving;
 - (void)startObserving;
+@property(nonatomic, getter=isUploaded) BOOL uploaded;
 - (id)initWithAsset:(id)arg1;
 - (id)init;
 

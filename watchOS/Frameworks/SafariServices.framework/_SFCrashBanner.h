@@ -6,22 +6,21 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UIButton, UIImageView, UILabel, _UIBackdropView;
+@class NSString, UIButton, UIImageView, UILabel, _SFBarTheme, _UIBackdropView;
 
 @interface _SFCrashBanner : UIView
 {
     _UIBackdropView *_backdrop;
     UIImageView *_closeButtonOverlayImageView;
-    UILabel *_label;
     UIView *_separator;
-    UIView *_separatorOverlay;
+    UILabel *_label;
     struct CGSize _cachedLabelLayoutSize;
-    _Bool _usesLightControls;
+    _SFBarTheme *_theme;
     UIButton *_closeButton;
 }
 
-@property(readonly, nonatomic) _Bool usesLightControls; // @synthesize usesLightControls=_usesLightControls;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
+@property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
@@ -29,7 +28,7 @@
 - (struct CGSize)_labelLayoutSizeForWidth:(float)arg1;
 - (_Bool)_shouldUseManuallyWrappedCrashMessageForWidth:(float)arg1;
 @property(copy, nonatomic) NSString *backdropGroupName;
-- (id)initUsingLightControls:(_Bool)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

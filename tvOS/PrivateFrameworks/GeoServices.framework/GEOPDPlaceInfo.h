@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDPlaceInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _area;
     GEOPDBasemapRegionMetadata *_basemapRegionMetadata;
     GEOLatLng *_center;
     GEOTimezone *_timezone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _knownAccuracy;
     _Bool _isApproximateCenter;
     struct {
@@ -72,6 +74,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) _Bool hasCenter;
 - (void)_readCenter;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

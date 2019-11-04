@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <RelevanceEngine/RESectionDelegate-Protocol.h>
+#import <RelevanceEngine/RESectionProperties-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, REElementQueue, REMLElementComparator, _RESectionDescriptor;
 @protocol RESectionDelegate;
 
-@interface RESection : NSObject <RESectionDelegate>
+@interface RESection : NSObject <RESectionDelegate, RESectionProperties>
 {
     _RESectionDescriptor *_descriptor;
     REElementQueue *_queue;
@@ -28,6 +29,7 @@
 @property(nonatomic) __weak id <RESectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) REMLElementComparator *comparator; // @synthesize comparator=_comparator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *elements;
 - (id)section:(id)arg1 groupForIdentifier:(id)arg2;
 - (void)sectionDidUpdateContentOrder:(id)arg1;
 - (int)_mappedIndexFromIndex:(int)arg1;

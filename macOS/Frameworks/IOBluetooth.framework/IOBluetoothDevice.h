@@ -220,6 +220,11 @@
 - (void)rename:(id)arg1;
 - (void)setHighPower:(BOOL)arg1;
 - (void)setHighPriorityLink:(BOOL)arg1;
+@property(nonatomic) unsigned int listeningModeConfigs;
+@property(nonatomic) unsigned char rightClickHoldMode;
+@property(nonatomic) unsigned char leftClickHoldMode;
+@property(nonatomic) unsigned char doubleClickMode;
+@property(nonatomic) unsigned char singleClickMode;
 @property(retain) NSString *accessoryFWVersion;
 @property(nonatomic) BOOL heySiriEnabled;
 @property(nonatomic) BOOL switchControlEnabled;
@@ -324,6 +329,9 @@
 - (unsigned int)audioDeviceID:(BOOL)arg1;
 - (void)batteryLevel:(CDUnknownBlockType)arg1;
 - (void)audioCodecString:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL isClickHoldSupported;
+@property(readonly) BOOL isDoubleClickSupported;
+@property(readonly) BOOL isSingleClickSupported;
 @property(readonly) BOOL isDoAPSupported;
 @property(readonly) BOOL isSwitchControlSupported;
 @property(readonly) BOOL isWIAPSink;

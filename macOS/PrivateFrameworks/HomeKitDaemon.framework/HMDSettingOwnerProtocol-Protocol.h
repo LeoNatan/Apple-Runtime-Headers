@@ -6,10 +6,11 @@
 
 #import <HomeKitDaemon/HMDSettingProtocol-Protocol.h>
 
-@class HMSettingValue, NSArray;
+@class HMSettingValue, NSArray, NSString;
 @protocol HMDSettingConstraintProtocol;
 
 @protocol HMDSettingOwnerProtocol <HMDSettingProtocol>
+@property(copy) NSString *keyPath;
 @property(readonly, copy) HMSettingValue *internalValue;
 @property(readonly) NSArray *constraints;
 - (BOOL)updateWithSettingValue:(HMSettingValue *)arg1;

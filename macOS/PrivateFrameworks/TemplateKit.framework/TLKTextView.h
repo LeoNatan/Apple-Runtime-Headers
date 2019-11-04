@@ -22,6 +22,7 @@
 - (struct CGSize)calculateLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)_usesNonVibrantAppearance;
+- (void)updateAttributedString;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)urlify;
 - (void)viewDidMoveToWindow;

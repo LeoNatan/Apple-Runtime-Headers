@@ -21,22 +21,22 @@
     id <DNDSSettingsSyncManagerDelegate> _delegate;
 }
 
-+ (id)managerForReceiver;
-+ (id)managerForSender;
++ (id)receiveManagerForPairedDevice:(id)arg1;
++ (id)sendManagerForPairedDevice:(id)arg1;
 + (void)cleanupState;
 @property(nonatomic) __weak id <DNDSSettingsSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSSettingsSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)_updateBypassSettings;
 - (void)_propagateBypassSettings:(id)arg1;
-- (void)_updateScheduleSettings;
+- (void)_updateScheduleSettingsWithDate:(id)arg1;
 - (void)_propagateScheduleSettings:(id)arg1;
 - (void)_endMonitoringForChanges;
 - (void)_beginMonitoringForChanges;
 - (void)update;
 - (void)resume;
 - (void)dealloc;
-- (id)_initWithListen:(_Bool)arg1 send:(_Bool)arg2;
+- (id)_initWithListen:(_Bool)arg1 send:(_Bool)arg2 pairedDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

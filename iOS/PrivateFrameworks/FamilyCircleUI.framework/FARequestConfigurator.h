@@ -23,7 +23,6 @@
     AKAppleIDAuthenticationContext *_authContext;
 }
 
-+ (unsigned char)_isUsingV2Flows;
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *authContext; // @synthesize authContext=_authContext;
 @property(nonatomic) _Bool attachSetupHeader; // @synthesize attachSetupHeader=_attachSetupHeader;
 - (void).cxx_destruct;
@@ -40,11 +39,12 @@
 - (id)_accountStore;
 - (id)_account;
 - (void)renewCredentialsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_urlForEventType:(id)arg1;
-- (id)requestForContext:(id)arg1;
+- (id)_urlEndpointForEventType:(id)arg1;
+- (void)_urlForEventType:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)requestForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addPayload:(id)arg1 toRequest:(id)arg2;
 - (void)addFresnoPayloadToRequest:(id)arg1 additionalPayload:(id)arg2;
-- (id)_pushToken;
+- (void)pushTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addFresnoHeadersToRequest:(id)arg1;
 - (void)addFresnoHeadersToRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)initWithAccount:(id)arg1;

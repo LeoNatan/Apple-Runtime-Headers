@@ -9,14 +9,16 @@
 #import <CloudKit/NSCopying-Protocol.h>
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class NSData;
+@class NSData, NSURL;
 
 @interface CKDeviceToDeviceShareInvitationToken : NSObject <NSCopying, NSSecureCoding>
 {
     NSData *_sharingInvitationData;
+    NSURL *_shareURL;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 @property(retain, nonatomic) NSData *sharingInvitationData; // @synthesize sharingInvitationData=_sharingInvitationData;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
@@ -26,6 +28,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithSharingInvitationData:(id)arg1 shareURL:(id)arg2;
 - (id)initWithSharingInvitationData:(id)arg1;
 - (id)init;
 

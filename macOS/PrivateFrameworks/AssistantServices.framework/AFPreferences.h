@@ -22,6 +22,8 @@
 
 + (id)sharedPreferences;
 - (void).cxx_destruct;
+- (void)setNanoSiriDataSharingOptInStatus:(long long)arg1;
+- (long long)nanoSiriDataSharingOptInStatus;
 - (void)setNanoCrownActivationEnabled:(BOOL)arg1;
 - (BOOL)nanoCrownActivationEnabled;
 - (void)setNanoOutputVoice:(id)arg1;
@@ -104,8 +106,6 @@
 - (BOOL)applySASToFirstPartyDomains;
 - (void)setUseSASAutoSelectionFeature:(BOOL)arg1;
 - (BOOL)useSASAutoSelectionFeature;
-- (void)setShouldLoadNativeMessagesExtensionAsBundle:(BOOL)arg1;
-- (BOOL)shouldLoadNativeMessagesExtensionAsBundle;
 - (void)setEnableNonFullScreenAppearance:(BOOL)arg1;
 - (BOOL)enableNonFullScreenAppearance;
 - (void)setEnableDragAndDrop:(BOOL)arg1;
@@ -167,6 +167,12 @@
 - (id)supplementalLanguages;
 - (id)supplementalLanguagesForProduct:(id)arg1 forBuildVersion:(id)arg2;
 - (id)supplementalLanguageDictionaryForProduct:(id)arg1;
+- (BOOL)shouldSuppressSiriDataSharingOptInAlert;
+- (void)setSiriDataSharingOptInAlertPresented:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)siriDataSharingOptInStatus;
+- (void)setSiriDataSharingOptInStatus:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setDesignModeEnabled:(BOOL)arg1;
+- (BOOL)designModeIsEnabled;
 - (void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
 - (void)getSpokenNotificationShouldAlwaysSpeakNotificationsWithCompletion:(CDUnknownBlockType)arg1;

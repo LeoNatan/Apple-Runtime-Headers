@@ -6,13 +6,14 @@
 
 #import <TVSettingKit/TSKTableViewController.h>
 
+#import <TVSettingKit/TSKDiffableDataSourceProxy-Protocol.h>
 #import <TVSettingKit/TSKSettingGroupDelegate-Protocol.h>
 #import <TVSettingKit/TSKSettingItemEditingControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSObject, NSString, TSKSettingItem, TSKVibrantImageView, UIViewController;
+@class NSArray, NSMutableDictionary, NSObject, NSString, TSKDiffableDataSource, TSKSettingItem, TSKVibrantImageView, UIViewController;
 @protocol OS_dispatch_source;
 
-@interface TSKViewController : TSKTableViewController <TSKSettingGroupDelegate, TSKSettingItemEditingControllerDelegate>
+@interface TSKViewController : TSKTableViewController <TSKDiffableDataSourceProxy, TSKSettingGroupDelegate, TSKSettingItemEditingControllerDelegate>
 {
     _Bool _shouldProcessUpdates;
     NSArray *_settingGroups;
@@ -22,8 +23,10 @@
     TSKVibrantImageView *_imagePreviewView;
     NSMutableDictionary *_observationContexts;
     TSKSettingItem *_initialFocusedSettingItem;
+    TSKDiffableDataSource *_diffableDataSource;
 }
 
+@property(retain, nonatomic) TSKDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(nonatomic, getter=_initialFocusedSettingItem, setter=_setInitialFocusedSettingItem:) __weak TSKSettingItem *initialFocusedSettingItem; // @synthesize initialFocusedSettingItem=_initialFocusedSettingItem;
 @property(nonatomic) _Bool shouldProcessUpdates; // @synthesize shouldProcessUpdates=_shouldProcessUpdates;
 @property(readonly, copy, nonatomic) NSMutableDictionary *observationContexts; // @synthesize observationContexts=_observationContexts;
@@ -33,7 +36,7 @@
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 - (void).cxx_destruct;
 - (void)_removeDeletedItems;
-- (void)_updateTableView;
+- (void)_updateTableViewAnimated:(_Bool)arg1;
 - (void)_updateSettingGroup:(id)arg1;
 - (id)_prepareChildViewControllerWithItem:(id)arg1;
 - (id)_settingGroups;
@@ -54,9 +57,7 @@
 - (id)indexPathForPreferredFocusedViewInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)defaultIndexPathForPreview;
 - (id)previewForItemAtIndexPath:(id)arg1;
 - (id)indexPathForSettingItem:(id)arg1;

@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class INCAppProxy, INCDisplayLayoutMonitorObserver, INCExtensionTransaction, INIntent, INWatchdogTimer, NSArray;
+@class CLInUseAssertion, INCAppProxy, INCDisplayLayoutMonitorObserver, INCExtensionTransaction, INIntent, INWatchdogTimer, NSArray;
 @protocol OS_dispatch_queue;
 
 @interface INCExtensionConnection : NSObject
 {
     INCDisplayLayoutMonitorObserver *_layoutObserver;
     INWatchdogTimer *_requestTimer;
+    CLInUseAssertion *_inUseAssertion;
     _Bool _shouldObserveLayout;
     NSObject<OS_dispatch_queue> *_queue;
     INCExtensionTransaction *_transaction;
@@ -37,6 +38,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue;
 @property(nonatomic, setter=_setShouldObserveLayout:) _Bool _shouldObserveLayout; // @synthesize _shouldObserveLayout;
 - (void).cxx_destruct;
+- (void)_invalidateInUseAssertion;
+- (void)_takeInUseAssertionForBundleIdentifier:(id)arg1 withReason:(id)arg2;
 - (_Bool)_cancelRequestTimer;
 - (double)_timeoutIntervalForTransactionState:(id)arg1;
 - (void)_startRequestTimerWithExtensionProxy:(id)arg1;

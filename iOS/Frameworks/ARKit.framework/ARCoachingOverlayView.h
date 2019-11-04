@@ -64,6 +64,7 @@
 - (void)resolveCoachingMessage;
 - (void)restartIfActive;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 willRunWithConfiguration:(id)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (_Bool)checkDeactivationHeuristics;

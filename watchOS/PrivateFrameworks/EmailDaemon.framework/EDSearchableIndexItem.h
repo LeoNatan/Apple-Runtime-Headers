@@ -47,6 +47,7 @@
 - (void)addStaticAttributesToAttributeSet:(id)arg1;
 - (void)addUpdatableAttributesToAttributeSet:(id)arg1;
 - (void)addFlagsAttributesToAttributeSet:(id)arg1;
+- (void)setNeedsAllAttributesIndexingType;
 @property(retain, nonatomic) NSData *underlyingData;
 - (id)fetchIndexableAttachments;
 - (void)addAttachmentAttributesToAttributeSet:(id)arg1;

@@ -9,6 +9,7 @@
 @class CKShare, NSError;
 
 @protocol _UISharingPublicController <NSObject>
+- (void)_cloudSharingControllerDidActivateShowSharedFolder;
 - (void)_cloudSharingControllerDidModifyPrimarySwitch:(_Bool)arg1;
 - (void)_cloudSharingControllerDidModifySecondarySwitch:(_Bool)arg1;
 - (void)_representFullscreenAfterActivityDismissal:(void (^)(void))arg1;

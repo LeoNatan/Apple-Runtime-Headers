@@ -30,7 +30,8 @@
 @property(retain, nonatomic) IMNicknameAvatarImage *avatar; // @synthesize avatar=_avatar;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (_Bool)isDifferentFromNickname:(id)arg1 withOptions:(unsigned int)arg2;
+- (void)updateNameFromContact:(id)arg1;
+- (_Bool)isUpdateFromNickname:(id)arg1 withOptions:(unsigned int)arg2;
 - (id)_sharingState;
 - (id)_imageHashCreatedInChunks;
 @property(readonly, nonatomic) NSString *imageHash;
@@ -49,6 +50,7 @@
 - (id)initWithMeContact:(id)arg1;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 avatar:(id)arg3;
 - (id)init;
+- (_Bool)isEqual:(id)arg1;
 
 @end
 

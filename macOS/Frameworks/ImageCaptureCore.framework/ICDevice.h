@@ -14,8 +14,6 @@
     BOOL _preferred;
     BOOL _canCancelSoftwareInstallation;
     BOOL _autoOpenSession;
-    BOOL _openSessionPending;
-    BOOL _closeSessionPending;
     BOOL _ready;
     BOOL _systemReportsEjectable;
     BOOL _shared;
@@ -28,6 +26,7 @@
     int _usbProductID;
     int _usbVendorID;
     int _moduleExecutableArchitecture;
+    int _sessionID;
     int _usbIntefaceClass;
     int _usbInterfaceSubClass;
     int _usbInterfaceProtocol;
@@ -53,7 +52,7 @@
     NSString *_moduleVersion;
     NSString *_serialNumberString;
     NSString *_persistentIDString;
-    NSNumber *_sessionID;
+    long long _sessionState;
     struct CGImage *_icon;
     long long _fwGUID;
     NSDictionary *_lastSoftwareInstallStatus;
@@ -64,11 +63,13 @@
     NSMutableSet *_deviceCapabilities;
     id _deviceDelegate;
     NSString *_deviceAutolaunchApplicationPath;
+    NSNumber *_deviceHandle;
     NSString *_iconPath;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(readonly, nonatomic) NSString *iconPath; // @synthesize iconPath=_iconPath;
+@property(copy, nonatomic) NSNumber *deviceHandle; // @synthesize deviceHandle=_deviceHandle;
 @property(copy, nonatomic) NSString *deviceAutolaunchApplicationPath; // @synthesize deviceAutolaunchApplicationPath=_deviceAutolaunchApplicationPath;
 @property(nonatomic) id deviceDelegate; // @synthesize deviceDelegate=_deviceDelegate;
 @property(retain, nonatomic) NSMutableSet *deviceCapabilities; // @synthesize deviceCapabilities=_deviceCapabilities;
@@ -90,10 +91,9 @@
 @property(nonatomic) int usbInterfaceProtocol; // @synthesize usbInterfaceProtocol=_usbInterfaceProtocol;
 @property(nonatomic) int usbInterfaceSubClass; // @synthesize usbInterfaceSubClass=_usbInterfaceSubClass;
 @property(nonatomic) int usbIntefaceClass; // @synthesize usbIntefaceClass=_usbIntefaceClass;
-@property(nonatomic) BOOL closeSessionPending; // @synthesize closeSessionPending=_closeSessionPending;
-@property(nonatomic) BOOL openSessionPending; // @synthesize openSessionPending=_openSessionPending;
 @property(nonatomic) BOOL autoOpenSession; // @synthesize autoOpenSession=_autoOpenSession;
-@property(copy, nonatomic) NSNumber *sessionID; // @synthesize sessionID=_sessionID;
+@property(nonatomic) long long sessionState; // @synthesize sessionState=_sessionState;
+@property(nonatomic) int sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) int moduleExecutableArchitecture; // @synthesize moduleExecutableArchitecture=_moduleExecutableArchitecture;
 @property(copy, nonatomic) NSString *persistentIDString; // @synthesize persistentIDString=_persistentIDString;
 @property(nonatomic) int usbVendorID; // @synthesize usbVendorID=_usbVendorID;
@@ -136,7 +136,7 @@
 @property(copy, nonatomic) NSString *autolaunchApplicationPath; // @synthesize autolaunchApplicationPath=_autolaunchApplicationPath;
 - (void)addCommonConnectionInfo:(id)arg1;
 - (void)updateCapabilities:(id)arg1;
-- (void)handleImageCaptureEventNotification:(id)arg1;
+- (void)handleImageCaptureEventNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)imageCaptureEventNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeCapability:(id)arg1;
 - (void)addCapability:(id)arg1;
@@ -147,7 +147,6 @@
 - (void)requestYield;
 @property(nonatomic) id <ICDeviceDelegate> delegate;
 - (void)updateSoftwareInstallStatus:(id)arg1;
-@property(readonly, nonatomic) BOOL hasOpenSession;
 - (id)description;
 - (void)unlockConnection;
 - (void)lockConnection;
@@ -174,6 +173,7 @@
 - (void)setPreferred:(BOOL)arg1;
 - (void)logDevice:(id)arg1;
 - (void)dealloc;
+@property(readonly, nonatomic) BOOL hasOpenSession;
 - (void)notifyObservers:(id)arg1;
 - (BOOL)updateProperties:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

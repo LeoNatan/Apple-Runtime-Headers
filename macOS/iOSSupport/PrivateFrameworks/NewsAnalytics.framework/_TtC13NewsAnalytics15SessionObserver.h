@@ -6,10 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsAnalytics/FCBundleSubscriptionChangeObserver-Protocol.h>
-#import <NewsAnalytics/FCUserInfoObserving-Protocol.h>
-
-@interface _TtC13NewsAnalytics15SessionObserver : NSObject <FCBundleSubscriptionChangeObserver, FCUserInfoObserving>
+@interface _TtC13NewsAnalytics15SessionObserver : NSObject
 {
     // Error parsing type: , name: sessionManager
     // Error parsing type: , name: cloudContext
@@ -19,13 +16,6 @@
 - (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
-- (void)bundleSubscriptionDidSubscribe:(id)arg1;
-- (void)bundleSubscriptionDidExpire:(id)arg1;
-- (void)pushOrientationData;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)pushUserSubscriptionContextData;
-- (void)pushSessionData;
-- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(BOOL)arg2;
 
 @end
 

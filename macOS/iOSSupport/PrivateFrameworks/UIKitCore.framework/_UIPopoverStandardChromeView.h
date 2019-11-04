@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     UIView *_arrowBackgroundView;
     UIVisualEffectView *_blurView;
     UIView *_maskView;
+    UIView *_rimShadowView;
     UIColor *_popoverBackgroundColor;
     UIColor *_arrowBackgroundColor;
     BOOL _popoverBackgroundColorIsOpaque;
@@ -30,11 +31,17 @@ __attribute__((visibility("hidden")))
     UIView *_arrowView;
     UIView *_leftCapView;
     UIView *_rightCapView;
+    UIView *_arrowRimShadowView;
+    UIView *_leftCapRimShadowView;
+    UIView *_rightCapRimShadowView;
 }
 
 + (struct UIEdgeInsets)contentViewInsets;
 + (double)arrowBase;
 + (double)arrowHeight;
+@property(readonly, nonatomic) UIView *rightCapRimShadowView; // @synthesize rightCapRimShadowView=_rightCapRimShadowView;
+@property(readonly, nonatomic) UIView *leftCapRimShadowView; // @synthesize leftCapRimShadowView=_leftCapRimShadowView;
+@property(readonly, nonatomic) UIView *arrowRimShadowView; // @synthesize arrowRimShadowView=_arrowRimShadowView;
 @property(readonly, nonatomic) UIView *rightCapView; // @synthesize rightCapView=_rightCapView;
 @property(readonly, nonatomic) UIView *leftCapView; // @synthesize leftCapView=_leftCapView;
 @property(readonly, nonatomic) UIView *arrowView; // @synthesize arrowView=_arrowView;
@@ -59,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isPinned;
 @property(readonly, nonatomic) BOOL hasComponentViews;
 - (void)_loadNecessaryViews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_resetComponentViews;
 - (struct CGRect)_contentViewFrame;
 - (struct UIEdgeInsets)safeAreaInsetsForContentView;
@@ -84,6 +92,9 @@ __attribute__((visibility("hidden")))
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
+- (void)_layoutArrowRimShadowViewsNone;
+- (void)_layoutArrowRimShadowViewsLeftOrRight;
+- (void)_layoutArrowRimShadowViewsUpOrDown;
 - (void)_layoutArrowViewsNone;
 - (void)_layoutArrowViewsLeftOrRight;
 - (void)_layoutArrowViewsUpOrDown;

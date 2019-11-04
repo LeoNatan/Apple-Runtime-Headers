@@ -12,22 +12,22 @@
 
 + (id)screentimeiWorkBundleForUTI:(id)arg1;
 + (id)typesForWhichExternalGeneratorsArePreferred;
-+ (id)internallySupportedTypes;
-+ (id)supportedWebViewTypes;
-+ (id)supportedCSVTypes;
-+ (id)supportediWorkTypes;
-+ (id)supportedOfficeTypes;
-+ (id)supportedArchiveTypes;
-+ (id)supportedAVTypes;
-+ (id)supportedImageTypes;
-+ (id)supportedPDFTypes;
-+ (id)supportedTextTypes;
-+ (id)supportedCalendarTypes;
-+ (id)supportedContactTypes;
-+ (id)supportedLivePhotoTypes;
-+ (id)_selectParentUTIForUTI:(id)arg1 fromParentUTIs:(id)arg2 dictionary:(id)arg3 alreadySeenUTIs:(id)arg4 matchedValueToTypeBlock:(id)arg5;
++ (id)internallyClaimedTypes;
++ (id)claimedWebViewTypes;
++ (id)claimedCSVTypes;
++ (id)claimediWorkTypes;
++ (id)claimedOfficeTypes;
++ (id)claimedAVTypes;
++ (id)claimedImageTypes;
++ (id)claimedPDFTypes;
++ (id)claimedTextTypes;
++ (id)claimedCalendarTypes;
++ (id)claimedContactTypes;
++ (id)claimedLivePhotoTypes;
++ (id)_selectParentUTIForUTI:(id)arg1 fromParentUTIs:(id)arg2 dictionary:(id)arg3 alreadySeenUTIs:(id)arg4 matchedValueToTypeBlock:(CDUnknownBlockType)arg5 validationBlock:(CDUnknownBlockType)arg6;
 + (id)_preferredParentUTIof:(id)arg1 fromParents:(id)arg2;
-+ (id)_recursiveValueInDictionary:(id)arg1 forType:(id)arg2 alreadySeenUTIs:(id)arg3 matchedValueToTypeBlock:(CDUnknownBlockType)arg4;
++ (id)_recursiveValueInDictionary:(id)arg1 forType:(id)arg2 alreadySeenUTIs:(id)arg3 matchedValueToTypeBlock:(CDUnknownBlockType)arg4 validationBlock:(CDUnknownBlockType)arg5;
++ (id)_searchParentTypesFor:(id)arg1 fromDictionary:(id)arg2 alreadySeenUTIs:(id)arg3 matchedValueToTypeBlock:(CDUnknownBlockType)arg4 validationBlock:(CDUnknownBlockType)arg5;
 + (id)findAndStoreValueInTypeKeyedDictionary:(id)arg1 forType:(id)arg2 withDescription:(id)arg3 withQueue:(id)arg4 validationBlock:(CDUnknownBlockType)arg5;
 + (id)valueInTypeKeyedDictionary:(id)arg1 forType:(id)arg2;
 

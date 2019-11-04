@@ -8,7 +8,7 @@
 
 #import <IMSharedUtilities/NSSecureCoding-Protocol.h>
 
-@class NSData, NSString;
+@class NSString;
 
 @interface IMNicknameAvatarImage : IMNicknameAvatar <NSSecureCoding>
 {
@@ -25,7 +25,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool imageExists;
-@property(readonly, copy, nonatomic) NSData *imageData;
+- (id)imageData;
+@property(readonly, nonatomic) _Bool hasImage;
 - (id)loadAndReturnImageData;
 - (id)publicDictionaryMetadataRepresentation;
 - (id)publicDictionaryRepresentation;

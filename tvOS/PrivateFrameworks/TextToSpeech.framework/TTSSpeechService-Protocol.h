@@ -24,6 +24,9 @@
 - (void)initializeSpeechServerInstance:(unsigned long long)arg1;
 
 @optional
+- (_Bool)isNashvilleService;
+- (_Bool)isSiriService;
+- (NSString *)serviceIdentifier;
 - (NSDictionary *)audioFileSettingsForVoice:(TTSSpeechVoice *)arg1;
 - (NSString *)embeddedVolumeMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 volume:(double)arg3;
 - (NSString *)embeddedPitchMarkupForVoice:(TTSSpeechVoice *)arg1 string:(NSString *)arg2 pitch:(double)arg3;

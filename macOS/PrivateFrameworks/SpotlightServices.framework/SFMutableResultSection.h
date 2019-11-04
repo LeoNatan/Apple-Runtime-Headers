@@ -45,7 +45,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)mutableDeepCopy;
 - (id)description;
+- (id)initWithPrototype:(id)arg1;
 - (id)initWithSection:(id)arg1;
 
 @end

@@ -11,6 +11,8 @@
 }
 
 + (id)sharedInstance;
+- (void)deleteAllPersonalNicknamesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setPersonalNickname:(id)arg1 oldRecordID:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)getNicknameWithRecordID:(id)arg1 decryptionKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)preWarmMMCSForOwnerID:(id)arg1;
 - (void)cancelSendTransferID:(id)arg1;

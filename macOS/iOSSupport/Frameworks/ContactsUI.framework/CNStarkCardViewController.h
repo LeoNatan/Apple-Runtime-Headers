@@ -33,8 +33,6 @@
 - (void)showMore:(id)arg1;
 - (void)updateNavigationItems;
 - (void)updateViewControllers;
-- (id)regularFontSizeConstraints;
-- (id)accessibilityFontSizeConstraints;
 - (void)setupLayoutConstraints;
 - (void)updateViewConstraints;
 - (void)resetLayoutConstraints;

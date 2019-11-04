@@ -35,6 +35,7 @@
 + (_Bool)supportPhatic;
 + (_Bool)supportPremiumModel;
 + (_Bool)supportPremiumWatchAssets;
++ (_Bool)supportCompactPlus;
 + (_Bool)supportRaiseToSpeak;
 + (_Bool)supportTTS;
 + (_Bool)supportSAT;
@@ -52,6 +53,7 @@
 + (void)URLsInDirectory:(id)arg1 matchingPattern:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)clearLogFilesInDirectory:(id)arg1 matchingPattern:(id)arg2 exceedNumber:(unsigned long long)arg3;
 + (void)removeLogFilesInDirectory:(id)arg1 matchingPattern:(id)arg2 beforeDays:(float)arg3;
++ (id)assetHashInResourcePath:(id)arg1;
 + (id)getSiriLanguageWithFallback:(id)arg1;
 + (void)apply12dBGain:(id)arg1;
 + (id)convertToShortLPCMBufFromFloatLPCMBuf:(id)arg1;
@@ -79,7 +81,7 @@
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
 + (id)spIdSiriDebugGradingDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
-+ (id)getHomeUserIdForVoiceProfile:(id)arg1;
++ (void)getHomeUserIdForVoiceProfile:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (id)getContentsOfDirectory:(id)arg1;
 + (id)getVoiceProfilesMarkedForUpload;
 + (void)markVoiceProfileUploaded:(id)arg1;
@@ -169,7 +171,6 @@
 + (_Bool)isRecordContextAutoPrompt:(id)arg1;
 + (_Bool)isRecordContextHomeButtonPress:(id)arg1;
 + (_Bool)isRecordContextVoiceTrigger:(id)arg1;
-+ (id)assetHashInResourcePath:(id)arg1;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSSet, NSString;
+@class NSDate, NSSet, NSString, PLDateRangeTitleGenerator;
 @protocol NSCopying;
 
 @interface PLPhotosHighlightCluster : NSObject
@@ -22,10 +22,12 @@
     int _startTimeZoneOffset;
     int _endTimeZoneOffset;
     NSString *_title;
+    PLDateRangeTitleGenerator *_dateRangeTitleGenerator;
     NSObject<NSCopying> *_objectID;
 }
 
 @property(readonly, nonatomic) NSObject<NSCopying> *objectID; // @synthesize objectID=_objectID;
+@property(retain, nonatomic) PLDateRangeTitleGenerator *dateRangeTitleGenerator; // @synthesize dateRangeTitleGenerator=_dateRangeTitleGenerator;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) int endTimeZoneOffset; // @synthesize endTimeZoneOffset=_endTimeZoneOffset;
 @property(nonatomic) int startTimeZoneOffset; // @synthesize startTimeZoneOffset=_startTimeZoneOffset;
@@ -40,7 +42,7 @@
 - (void).cxx_destruct;
 - (void)_calculatePropertyValues;
 - (void)setMoments:(id)arg1;
-- (id)initWithMoments:(id)arg1;
+- (id)initWithMoments:(id)arg1 dateRangeTitleGenerator:(id)arg2;
 
 @end
 

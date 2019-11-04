@@ -28,8 +28,8 @@
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_executeService:(id)arg1;
 - (id)_currentRootViewController;
-- (void)_presentContextualViewControllerFromPoint:(struct CGPoint)arg1;
-- (void)_handleShowContextualDiagnostics;
+- (void)_presentContextualViewControllerFromPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (void)presentContextualDiagnostics;
 - (void)_handleGestureRecognizer:(id)arg1;
 - (void)_updateGestureRecognizer;
 - (void)_loadDiagnosticsServicesClasses;

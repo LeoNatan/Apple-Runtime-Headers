@@ -25,11 +25,13 @@
     NSString *_assetUUIDRecoveryMappingPath;
 }
 
++ (id)basenameForSpatialOverCaptureFromOriginalBasename:(id)arg1;
 + (void)recordPrevSystemLibraryPath:(id)arg1;
 + (BOOL)isSystemLibraryURLDefined;
 + (BOOL)setSystemLibraryURL:(id)arg1 options:(unsigned short)arg2 error:(id *)arg3;
 + (id)systemLibraryURLIfResolvable;
 + (id)systemLibraryURL;
++ (id)_constructLegacySystemPhotoLibraryURLFromUnresolvableBookmark:(id)arg1;
 + (id)_legacySystemLibraryPath;
 + (id)_legacySystemLibraryBookmarkData;
 + (void)_updateSystemLibraryURLWithOldValue:(id)arg1;

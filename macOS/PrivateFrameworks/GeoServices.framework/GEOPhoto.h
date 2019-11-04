@@ -13,10 +13,12 @@
 @interface GEOPhoto : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_photoInfos;
     NSString *_uid;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _photoType;
     struct {
         unsigned int has_photoType:1;
@@ -59,6 +61,8 @@
 - (id)photoTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasPhotoType;
 @property(nonatomic) int photoType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithPlaceDataPhoto:(id)arg1;
 
 @end

@@ -42,7 +42,6 @@
 - (void)repeatFiringAlert:(id)arg1;
 - (void)snoozeFiringAlert:(id)arg1;
 - (_Bool)shouldShowAlert:(id)arg1;
-- (void)_sendResponse:(id)arg1;
 - (void)_clearBulletin:(id)arg1 alertProvider:(id)arg2;
 @property(readonly, nonatomic) id <NTSAlertable> nextFiringAlert;
 - (id)_findAlertForAlertable:(id)arg1;

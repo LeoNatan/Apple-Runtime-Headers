@@ -53,6 +53,7 @@
     NSMutableArray *_pendingGlyphStateCompletionHandlers;
     _Bool _glyphStateDirty;
     _Bool _presentationWasForced;
+    _Bool _presentationWasForFieldDetect;
     _Bool _waitingForGlyphView;
     int _transactionSubstate;
     _Bool _holdingTerminalSubstate;
@@ -81,7 +82,7 @@
     PKTransitBalanceModel *_transitBalanceModel;
 }
 
-+ (_Bool)shouldAutomaticallyAuthorizeForPassType:(unsigned int)arg1 withContext:(id)arg2;
++ (_Bool)shouldAutomaticallyAuthorizeForPass:(id)arg1 withContext:(id)arg2;
 - (void).cxx_destruct;
 - (void)_processValueAddedServiceTransactionsForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_processPaymentTransactionForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -163,6 +164,7 @@
 - (void)_resetToIdleStateWhileIgnoringField:(_Bool)arg1;
 - (void)_resetToIdleState;
 - (void)_prearmButtonPressed:(id)arg1;
+- (void)_addPasscodeButtonPressed:(id)arg1;
 - (void)_passcodeFallbackButtonPressed:(id)arg1;
 - (void)_passcodeAuthenticationButtonPressed:(id)arg1;
 - (void)_beginPasscodeOnlyAuthentication;
@@ -176,6 +178,7 @@
 - (void)_endPaymentAuthorization;
 - (void)_beginPaymentAuthorizationWithImmediatePasscode:(_Bool)arg1;
 - (void)_beginPaymentAuthorization;
+- (void)payStateViewDidUpdateLayout:(id)arg1;
 - (void)payStateView:(id)arg1 revealingCheckmark:(_Bool)arg2;
 - (void)contactlessInterfaceSession:(id)arg1 didReceiveExpressState:(unsigned int)arg2;
 - (void)contactlessInterfaceSession:(id)arg1 didTransitionFromState:(unsigned int)arg2 toState:(unsigned int)arg3;

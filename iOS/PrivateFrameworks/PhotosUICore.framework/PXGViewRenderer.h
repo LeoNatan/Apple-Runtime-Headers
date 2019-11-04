@@ -25,11 +25,11 @@
     id <PXGTextureConverter> _textureConverter;
     PXScrollViewController *_scrollViewController;
     struct CGRect _visibleRect;
-    CDStruct_04522d6a _interactionState;
+    CDStruct_93894d6c _interactionState;
 }
 
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
-@property(nonatomic) CDStruct_04522d6a interactionState; // @synthesize interactionState=_interactionState;
+@property(nonatomic) CDStruct_93894d6c interactionState; // @synthesize interactionState=_interactionState;
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter; // @synthesize textureConverter=_textureConverter;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType test_renderSnapshotHandler; // @synthesize test_renderSnapshotHandler=_test_renderSnapshotHandler;

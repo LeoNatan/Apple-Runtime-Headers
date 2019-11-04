@@ -18,10 +18,11 @@ __attribute__((visibility("hidden")))
     NSError *_error;
     NSException *_exception;
     id _result;
+    NSQueryGenerationToken *_queryGeneration;
+    NSNumber *_transactionID;
     BOOL _useColoredLogging;
     BOOL _useConcurrentFetching;
     BOOL _hasHistoryTracking;
-    NSNumber *_transactionID;
     BOOL _storeIsInMemory;
 }
 
@@ -40,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)executeRequestUsingConnection:(id)arg1;
 - (BOOL)executeRequestCore:(id *)arg1;
 - (void)executePrologue;
-@property(readonly, nonatomic) NSQueryGenerationToken *queryGenerationToken;
+@property(retain, nonatomic) NSQueryGenerationToken *queryGenerationToken;
 @property(readonly, nonatomic) BOOL isWritingRequest;
 - (void)setTransactionID:(id)arg1;
 - (BOOL)hasHistoryTracking;

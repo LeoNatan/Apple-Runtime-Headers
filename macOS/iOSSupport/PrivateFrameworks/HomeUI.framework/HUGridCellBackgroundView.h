@@ -6,31 +6,40 @@
 
 #import <UIKit/UIView.h>
 
-@class HUGridCellBackgroundDisplayOptions, UIVisualEffectView;
+@class HFWallpaperSlice, HUGridCellBackgroundDisplayOptions, UIVisualEffectView;
 
 @interface HUGridCellBackgroundView : UIView
 {
     BOOL _pressed;
     unsigned long long _backgroundState;
     HUGridCellBackgroundDisplayOptions *_displayOptions;
+    HFWallpaperSlice *_blurredWallpaperSlice;
+    HFWallpaperSlice *_darkModeBlurredWallpaperSlice;
     double _cornerRadius;
     UIVisualEffectView *_effectView;
     UIView *_ccMaterialView;
+    struct CGRect _normalizedWallpaperRect;
 }
 
 + (id)_sharedBlurEffect;
 @property(retain, nonatomic) UIView *ccMaterialView; // @synthesize ccMaterialView=_ccMaterialView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
+@property(retain, nonatomic) HFWallpaperSlice *darkModeBlurredWallpaperSlice; // @synthesize darkModeBlurredWallpaperSlice=_darkModeBlurredWallpaperSlice;
+@property(retain, nonatomic) HFWallpaperSlice *blurredWallpaperSlice; // @synthesize blurredWallpaperSlice=_blurredWallpaperSlice;
+@property(nonatomic) struct CGRect normalizedWallpaperRect; // @synthesize normalizedWallpaperRect=_normalizedWallpaperRect;
 @property(retain, nonatomic) HUGridCellBackgroundDisplayOptions *displayOptions; // @synthesize displayOptions=_displayOptions;
 @property(nonatomic, getter=isPressed) BOOL pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) unsigned long long backgroundState; // @synthesize backgroundState=_backgroundState;
 - (void).cxx_destruct;
 - (id)_normalBackgroundColor;
+- (BOOL)_shouldUsePrecomputedWallpaperContents;
 - (BOOL)_shouldUseVisualEffectStyle;
 - (BOOL)_isUsingControlCenterDisplayStyle;
 - (BOOL)_shouldUseCCMaterialView;
 - (void)_updateBackgroundColor;
+- (void)_updateWallpaperContentsScale;
+- (void)_updateWallpaperContentsRect;
 - (void)_updateCornerRadius;
 - (void)_updateDisplay;
 - (void)traitCollectionDidChange:(id)arg1;

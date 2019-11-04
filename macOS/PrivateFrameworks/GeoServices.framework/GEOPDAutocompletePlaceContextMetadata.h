@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDAutocompletePlaceContextMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _clientizationFeatures;
     NSString *_matchedDisplayNameLanguageCode;
     NSString *_matchedDisplayName;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _isDefaultName;
     BOOL _isLookAroundActionAllowed;
     BOOL _isProminentResult;
@@ -82,6 +84,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasMatchedDisplayName;
 - (void)_readMatchedDisplayName;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

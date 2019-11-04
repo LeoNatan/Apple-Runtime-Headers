@@ -69,6 +69,8 @@
 - (void).cxx_destruct;
 - (void)updateRasterizationForInvisibleInkEffect;
 @property(nonatomic) struct CKBalloonDescriptor_t balloonDescriptor; // @dynamic balloonDescriptor;
+- (void)prepareForAcknowledgementDismissal;
+- (void)prepareForAcknowledgementDisplay;
 - (void)longPressGestureRecognized:(id)arg1;
 - (void)doubleTapGestureRecognized:(id)arg1;
 - (void)invisibleInkEffectViewWasResumed;

@@ -68,6 +68,8 @@
 - (id)sampleUUIDsAssociatedWithConcept:(id)arg1 error:(id *)arg2;
 - (_Bool)removeAllAssociationsToSampleUUID:(id)arg1 error:(id *)arg2;
 - (_Bool)breakAssociationFromSampleUUID:(id)arg1 toConcept:(id)arg2 error:(id *)arg3;
+- (_Bool)makeAssociationFromSampleUUID:(id)arg1 toConceptIdentifier:(id)arg2 error:(id *)arg3;
+- (_Bool)insertAssociations:(id)arg1 error:(id *)arg2;
 - (_Bool)makeAssociationFromSampleUUID:(id)arg1 toConcept:(id)arg2 error:(id *)arg3;
 - (long long)countOfConceptsAssociatedWithUserRecords:(id *)arg1;
 - (id)relationshipsForConceptWithIdentifier:(id)arg1 error:(id *)arg2;
@@ -81,7 +83,7 @@
 - (id)conceptsForIdentifiers:(id)arg1 expectedOntologyVersion:(id)arg2 error:(id *)arg3;
 - (id)conceptForIdentifier:(id)arg1 error:(id *)arg2;
 - (id)_conceptWithGraphDatabaseCall:(CDUnknownBlockType)arg1 error:(id *)arg2;
-- (id)_work_conceptFromGraphNode:(id)arg1;
+- (id)_work_conceptFromGraphNode:(id)arg1 preloadRelationships:(_Bool)arg2;
 - (id)_codingSystemPriorityArrayForSampleType:(id)arg1 property:(id)arg2;
 - (id)_adHocConceptCodingFromCodings:(id)arg1;
 - (id)_privateCodeCreationCodingSortDescriptors;

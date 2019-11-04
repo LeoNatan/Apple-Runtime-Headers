@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSArray;
-@protocol MTLArgumentEncoder, MTLBuffer, MTLComputePipelineState;
+@protocol MTLComputePipelineState;
 
 @interface AVTCompositorPipeline : NSObject
 {
@@ -15,12 +15,10 @@
     long long _affectingComponentsMask;
     NSArray *_bindings;
     id <MTLComputePipelineState> _pipelineState;
-    id <MTLArgumentEncoder> _argumentEncoder;
-    id <MTLBuffer> _paramsBuffer;
 }
 
 - (void).cxx_destruct;
-- (void)compositeTexture:(id)arg1 forMemoji:(id)arg2 considerSkin:(_Bool)arg3 componentsToConsider:(long long)arg4 computeCommandHandler:(CDUnknownBlockType)arg5 blitCommandHandler:(CDUnknownBlockType)arg6 helper:(id)arg7 invalidationTokens:(id)arg8;
+- (void)compositeTexture:(id)arg1 forMemoji:(id)arg2 considerSkin:(_Bool)arg3 componentsToConsider:(long long)arg4 computeCommandHandler:(CDUnknownBlockType)arg5 blitCommandHandler:(CDUnknownBlockType)arg6 helper:(id)arg7 helperTokens:(id)arg8;
 - (id)initWithFunction:(id)arg1;
 
 @end

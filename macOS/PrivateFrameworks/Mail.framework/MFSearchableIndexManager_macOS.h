@@ -19,6 +19,7 @@
 @property(retain, nonatomic) EDSearchableIndexPersistence *persistence; // @synthesize persistence=_persistence;
 @property(retain, nonatomic) EDSearchableIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
+- (void)enableIndexingAndBeginScheduling:(BOOL)arg1 budgetConfiguration:(id)arg2;
 - (void)enableIndexingAndBeginScheduling:(BOOL)arg1;
 - (id)initWithDatabase:(id)arg1 hookResponder:(id)arg2;
 

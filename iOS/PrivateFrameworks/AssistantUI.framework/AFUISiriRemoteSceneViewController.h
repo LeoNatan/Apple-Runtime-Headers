@@ -9,12 +9,14 @@
 #import <AssistantUI/SRSiriViewControllerHosting-Protocol.h>
 #import <AssistantUI/SiriUIPresentationRemoteControlling-Protocol.h>
 
-@class AFApplicationInfo, NSString, NSXPCConnection;
+@class AFApplicationInfo, NSArray, NSString, NSXPCConnection;
 @protocol AFUISiriRemoteSceneViewControllerDataSource, AFUISiriRemoteSceneViewControllerDelegate;
 
 @interface AFUISiriRemoteSceneViewController : AFUISceneHostingViewController <SRSiriViewControllerHosting, SiriUIPresentationRemoteControlling>
 {
     _Bool _connectionHasBeenResumed;
+    NSArray *_audioCategoriesDisablingVolumeHUD;
+    _Bool _expectingInvalidation;
     id <AFUISiriRemoteSceneViewControllerDataSource> _dataSource;
     id <AFUISiriRemoteSceneViewControllerDelegate> _delegate;
     AFApplicationInfo *_viewServiceApplicationInfo;
@@ -28,6 +30,7 @@
 @property(nonatomic) __weak id <AFUISiriRemoteSceneViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriRemoteSceneViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)setWaitingForTelephonyToStart:(_Bool)arg1;
 - (void)setRunningPPT:(_Bool)arg1 withTestName:(id)arg2 testOptions:(id)arg3;
 - (void)applicationDidBecomeActive;
@@ -54,6 +57,7 @@
 - (void)setRequestOptions:(id)arg1;
 - (void)siriDidActivateFromSource:(long long)arg1;
 - (void)siriWillActivateFromSource:(long long)arg1;
+- (void)updateRemoteSceneWithFrontMostAppInterfaceOrientation:(long long)arg1;
 - (void)updateToPresentationWithIdentifier:(id)arg1 presentationProperties:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)extendCurrentTTSRequested;
 - (void)servicePresentedIntentWithBundleId:(id)arg1;
@@ -93,7 +97,6 @@
 - (void)setStatusViewUserInteractionEnabled:(_Bool)arg1;
 - (void)setStatusViewDisabled:(_Bool)arg1;
 - (void)setCarDisplaySnippetMode:(long long)arg1;
-- (void)setCarDisplaySnippetVisible:(_Bool)arg1;
 - (void)setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)setStatusViewHidden:(_Bool)arg1;
 - (void)siriIdleAndQuietStatusDidChange:(_Bool)arg1;
@@ -109,12 +112,14 @@
 - (id)speechSynthesisDelegate;
 - (id)sessionDelegate;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)_noteSceneDidInvalidate;
+- (void)_audioCategoriesDisablingVolumeHUDDidChangeTo:(id)arg1;
+- (void)_handleInvalidationForReason:(unsigned long long)arg1 explanation:(id)arg2;
+- (void)sceneController:(id)arg1 willInvalidateScene:(id)arg2 forReason:(unsigned long long)arg3;
 - (void)startHostingSceneForConfiguration:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_interrupted;
-- (void)_invalidate;
+- (void)_invalidated;
 - (id)serviceViewControllerProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)serviceViewControllerProxy;
 - (id)_connection;

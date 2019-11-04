@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NSObject-Protocol.h>
 
-@class NSDate, NSString;
+@class NSString;
 @protocol CSLSScreenWakeProviderDelegate;
 
 @protocol CSLSScreenWakeProvider <NSObject>
@@ -21,6 +21,6 @@
 - (void)handleScreenUnblanked;
 - (void)didChangeActiveProvider:(_Bool)arg1 completion:(void (^)(void))arg2;
 - (void)willBecomeInactiveProvider:(void (^)(void))arg1;
-- (void)invalidateFramesOnOrAfterPresentationTime:(NSDate *)arg1 forReason:(NSString *)arg2;
+- (void)invalidateAllFramesForReason:(NSString *)arg1;
 @end
 

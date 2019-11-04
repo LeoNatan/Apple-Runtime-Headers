@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewHeaderFooterView.h>
 
-@class UILabel;
+@class NSString, UILabel;
 
 @interface WFTableViewHeaderFooterTextView : UITableViewHeaderFooterView
 {
@@ -15,7 +15,8 @@
 
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
-- (void)setText:(id)arg1;
+@property(copy, nonatomic) NSString *text;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (id)init;
 
 @end

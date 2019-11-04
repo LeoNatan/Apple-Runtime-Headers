@@ -9,6 +9,7 @@
 @protocol CPKEmojiIMViewControllerDelegate
 
 @optional
+- (void)emojiIMViewController:(CPKEmojiIMViewController *)arg1 hideDefaultCloseBox:(BOOL)arg2;
 - (void)dismissEmojiIMViewController:(CPKEmojiIMViewController *)arg1;
 - (void)searchButtonClickedOnEmojiIMViewController:(CPKEmojiIMViewController *)arg1;
 - (void)emojiIMViewController:(CPKEmojiIMViewController *)arg1 characterSelected:(NSString *)arg2;

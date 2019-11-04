@@ -30,7 +30,6 @@
     NMUButton *_leadingSecondaryButton;
     NMUButton *_trailingSecondaryButton;
     NSSet *_defaultActions;
-    float _progress;
     CAShapeLayer *_progressRingTrackLayer;
     CAShapeLayer *_progressRingProgressLayer;
     double _elapsedTime;
@@ -42,7 +41,6 @@
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(nonatomic, getter=isAlwaysLive) _Bool alwaysLive; // @synthesize alwaysLive=_alwaysLive;
 @property(nonatomic, getter=isTrackTitlesInteractionEnabled) _Bool trackTitlesInteractionEnabled; // @synthesize trackTitlesInteractionEnabled=_trackTitlesInteractionEnabled;
-@property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSSet *defaultActions; // @synthesize defaultActions=_defaultActions;
 @property(readonly, nonatomic) NMUButton *trailingSecondaryButton; // @synthesize trailingSecondaryButton=_trailingSecondaryButton;
 @property(readonly, nonatomic) NMUButton *leadingSecondaryButton; // @synthesize leadingSecondaryButton=_leadingSecondaryButton;

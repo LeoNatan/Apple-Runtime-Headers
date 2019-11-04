@@ -332,6 +332,7 @@ struct ToneCurve_Control {
     float contrastRatio;
     float sdrMaxBrightnessInNits;
     _Bool HDRProcessingFullAmbientAdaptation;
+    int HDRProcessingDisplayAdjustsBlackLevel;
     struct __CFString *targetColorPrimaries;
     unsigned int outputPixelFormat;
     int hdr10_tm_mode;
@@ -790,7 +791,9 @@ typedef struct {
     struct _HDR10DpcParam preRGBtoRGB_coef0__preRGBtoRGB_coef1__preRGBtoRGB_coef2__RGBtoY_coefs__postRGBtoRGB_coef0__postRGBtoRGB_coef1__postRGBtoRGB_coef2__dpcParam;
     _Bool llUseDM31;
     _Bool forceReCreateLUT;
-} CDStruct_73ebd679;
+    _Bool blackLevelCompensation;
+    float blackLevelCompensationGain;
+} CDStruct_78732a63;
 
 typedef struct {
     float _field1;
@@ -837,7 +840,7 @@ typedef struct {
     struct ToneCurve_Control tcControl;
     CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_83bc7613;
+} CDStruct_2203fc2d;
 
 typedef struct {
     int version;

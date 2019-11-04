@@ -8,11 +8,12 @@
 
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSString;
+@class NSString, PKPasscodeUpgradeFlowController;
 @protocol PKNewDevicePasscodeViewControllerDelegate;
 
 @interface PKNewDevicePasscodeViewController : UIViewController <PKPaymentSetupPresentationProtocol>
 {
+    PKPasscodeUpgradeFlowController *_flowController;
     int _minimumPasscodeLength;
     unsigned int _passcodeInputScreenType;
     unsigned int _passcodeInputState;
@@ -20,6 +21,7 @@
     NSString *_currentPasscode;
     NSString *_newPasscode;
     NSString *_constraintFailedInstructions;
+    _Bool _viewHasAppeared;
     id <PKNewDevicePasscodeViewControllerDelegate> _delegate;
 }
 
@@ -29,9 +31,10 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)initWithMinimumPasscodeLength:(int)arg1 withCurrentPasscode:(id)arg2 paymentSetupContext:(int)arg3;
+- (id)initWithPasscodeUpgradeFlowController:(id)arg1 minimumPasscodeLength:(int)arg2 withCurrentPasscode:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

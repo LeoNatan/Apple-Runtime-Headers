@@ -10,12 +10,12 @@
 #import <AuthKitUI/UITableViewDelegate-Protocol.h>
 
 @class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, NSString, UIStackView, UITableView, UIVisualEffectView;
-@protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate;
+@protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate;
 
 @interface AKAuthorizationPaneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *_tableView;
-    id <AKAuthorizationPaneViewControllerDelegate> _paneDelegate;
+    id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> _paneDelegate;
     id <AKAuthorizationEditableDataSources> _editableDataSources;
     UIStackView *_paneHeaderStackView;
     UIStackView *_paneFooterStackView;
@@ -36,7 +36,7 @@
 @property(readonly, nonatomic) UIStackView *paneFooterStackView; // @synthesize paneFooterStackView=_paneFooterStackView;
 @property(readonly, nonatomic) UIStackView *paneHeaderStackView; // @synthesize paneHeaderStackView=_paneHeaderStackView;
 @property(nonatomic) __weak id <AKAuthorizationEditableDataSources> editableDataSources; // @synthesize editableDataSources=_editableDataSources;
-@property(nonatomic) __weak id <AKAuthorizationPaneViewControllerDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
+@property(nonatomic) __weak id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1;
@@ -62,7 +62,7 @@
 - (double)intrinsicContentHeight;
 - (_Bool)_shouldEmbedContentTray;
 - (_Bool)shouldEmbedContentTrayIfNeeded;
-- (double)contentTrayOffset;
+- (double)contentScrollOffset;
 - (_Bool)_isContentUnderNavigationBar;
 - (_Bool)_isContentUnderTray;
 - (double)_contentTrayOffsetAdjustedForScrollInset:(_Bool)arg1;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) NSNumber *dsid;
 @property(readonly, copy) NSString *identifier;
+@property(readonly) BOOL isChildAccount;
 @property(readonly) NSURL *persistentStoreURL;
 @property(readonly) Class superclass;
 

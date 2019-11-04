@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)startCollapsingWithProposedFrame:(struct CGRect)arg1;
 - (_Bool)canBecomeFocused;
 - (_Bool)isAccessibilityElement;
 

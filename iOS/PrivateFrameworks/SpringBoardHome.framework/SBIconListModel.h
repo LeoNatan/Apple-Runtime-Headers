@@ -60,7 +60,7 @@
 - (void)markIconStateClean;
 - (void)markIconStateDirty;
 - (_Bool)isIconStateDirty;
-- (id)iconsOficonsOfClass:(Class)arg1;
+- (id)iconsOfClass:(Class)arg1;
 - (void)addIconsOfClass:(Class)arg1 toSet:(id)arg2;
 - (_Bool)isFullIncludingPlaceholders;
 - (_Bool)isFull;

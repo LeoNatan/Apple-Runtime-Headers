@@ -24,6 +24,7 @@
 - (void)addTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (_Bool)canAddTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (void)markCurrentPassAsFinished;
+@property(readonly, getter=_markAsFinishedCalled) _Bool markAsFinishedCalled;
 - (void)markAsFinished;
 @property(readonly) long long numberOfAppendFailures;
 - (_Bool)_appendPixelBuffer:(struct __CVBuffer *)arg1 withPresentationTime:(CDStruct_1b6d18a9)arg2;

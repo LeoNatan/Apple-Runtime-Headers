@@ -12,8 +12,10 @@ __attribute__((visibility("hidden")))
     BOOL _loadingStatusChanged;
     BOOL _saveProgressChanged;
     BOOL _saveStateChanged;
+    BOOL _flippingFullSizeRenderStateChanged;
 }
 
+@property(nonatomic) BOOL flippingFullSizeRenderStateChanged; // @synthesize flippingFullSizeRenderStateChanged=_flippingFullSizeRenderStateChanged;
 @property(nonatomic) BOOL saveStateChanged; // @synthesize saveStateChanged=_saveStateChanged;
 @property(nonatomic) BOOL saveProgressChanged; // @synthesize saveProgressChanged=_saveProgressChanged;
 @property(nonatomic) BOOL loadingStatusChanged; // @synthesize loadingStatusChanged=_loadingStatusChanged;

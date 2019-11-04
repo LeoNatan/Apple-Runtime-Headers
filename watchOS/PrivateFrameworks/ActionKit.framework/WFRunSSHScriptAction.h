@@ -16,6 +16,7 @@
 
 - (void)session:(id)arg1 didDisconnectWithError:(id)arg2;
 - (void)finishRunningSSHScriptWithError:(id)arg1;
+- (void)authenticateAndRunAsynchronouslyWithInput:(id)arg1 session:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 // Remaining properties

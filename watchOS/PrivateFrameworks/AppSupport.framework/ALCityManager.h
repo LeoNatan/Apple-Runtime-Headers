@@ -16,6 +16,12 @@
     NSRecursiveLock *_databaseAccessRecursiveLock;
 }
 
++ (id)_displayStringForTaiwanRegionWithKey2Value:(_Bool)arg1;
++ (id)displayStringForTaiwanRegion;
++ (id)displayStringForMacaoSAR;
++ (id)displayStringForMacaoSARChina;
++ (id)displayStringForHongKongSAR;
++ (id)displayStringForHongKongSARChina;
 + (id)_localeDictionaryFromSQLRow:(char **)arg1;
 + (struct __CFArray *)legacyCityForCity:(id)arg1;
 + (id)newCitiesByIdentifierMap:(id)arg1;
@@ -32,9 +38,11 @@
 - (id)localeWithCode:(id)arg1;
 - (id)allLocales;
 - (id)_cityForTimeZone:(id)arg1 localeCode:(id)arg2;
+- (id)_whileDatabaseLocked_localeCodesMatchingQualifier:(id)arg1;
 - (id)citiesMatchingQualifier:(id)arg1;
 - (id)bestCityForLegacyCity:(struct __CFArray *)arg1;
 - (id)cityForClassicIdentifier:(id)arg1;
+- (id)_cityForClassicIdentifier:(id)arg1 commaSearchOptions:(unsigned int)arg2;
 - (id)citiesWithIdentifiers:(id)arg1;
 - (void)localizeCities:(id)arg1;
 - (id)citiesMatchingName:(id)arg1 localized:(_Bool)arg2;

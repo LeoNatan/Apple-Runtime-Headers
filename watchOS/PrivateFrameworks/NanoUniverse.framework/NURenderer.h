@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (void)_asyncDeallocInstance;
 - (void)_initPrograms;
-- (void)_createPipelineForProgramType:(unsigned int)arg1 fromLibrary:(id)arg2;
+- (void)_createPipelineForProgramType:(unsigned int)arg1 fromLibrary:(id)arg2 librarySPI:(id)arg3;
 - (void)renderWithScene:(id)arg1 viewport:(struct NUViewport)arg2 resources:(id)arg3 encoder:(id)arg4;
 -     // Error parsing type: v24@0:4@8r^{NURendererState={NUViewport=iiii}IIf{_NUGeometryRange=ii}{_NUGeometryRange=ii}(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])}12@16@20, name: drawSpriteWithEncoder:state:spheroid:resources:
 -     // Error parsing type: v24@0:4@8r^{NURendererState={NUViewport=iiii}IIf{_NUGeometryRange=ii}{_NUGeometryRange=ii}(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])(float4x4=[16f][4[4f]][4])}12@16@20, name: draw3DWithEncoder:state:spheroid:resources:

@@ -23,7 +23,6 @@
 - (id)readCacheFileForConsumerSubtype:(unsigned char)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)_prefetchAssetMapping;
 - (id)initWithCacheBasePath:(id)arg1;
 
 @end

@@ -13,9 +13,7 @@
 + (id)optionsForPrimaryStateControlItem:(id)arg1 incrementalCharacteristicType:(id)arg2;
 + (id)readOnlyCharacteristicTypes;
 - (id)readValueAndPopulateStandardResults;
-- (id)_hue;
-- (id)_colorTemperature;
-- (id)_saturation;
+- (id)_tintColorFromResults:(id)arg1;
 - (BOOL)supportsRGBColor;
 
 @end

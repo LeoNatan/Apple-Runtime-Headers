@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIBasicAnimationFactory-Protocol.h>
 #import <UIKitCore/_UIHostedFocusSystemDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIColor, UIImageView, UILongPressGestureRecognizer, UISegment, UIView, _UIHostedFocusSystem;
+@class NSMutableArray, NSString, UIColor, UIImageView, UIKeyCommand, UILongPressGestureRecognizer, UISegment, UIView, _UIHostedFocusSystem;
 
 @interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, UIPopoverPresentationControllerDelegate, _UIHostedFocusSystemDelegate, NSCoding>
 {
@@ -19,6 +19,7 @@
     NSMutableArray *_segments;
     long long _selectedSegment;
     long long _highlightedSegment;
+    long long _selectionIndicatorSegment;
     UIView *_removedSegment;
     UISegment *_focusedSegment;
     long long _barStyle;
@@ -40,6 +41,8 @@
         unsigned int appearanceNeedsUpdate:1;
         unsigned int selectionIndicatorDragged:1;
     } _segmentedControlFlags;
+    UIKeyCommand *_selectNextCellCommand;
+    UIKeyCommand *_selectPreviousCellCommand;
     _UIHostedFocusSystem *_internalFocusSystem;
     UILongPressGestureRecognizer *_axLongPressGestureRecognizer;
 }
@@ -109,6 +112,12 @@
 - (void)_selectFocusedSegment;
 - (BOOL)_hasEnabledSegment;
 - (void)_diagnoseFocusabilityForReport:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (void)_advanceFocusedSegmentForKeyCommand:(id)arg1;
+- (id)keyCommands;
+- (struct CGRect)accessibilityFrame;
+- (id)accessibilityPath;
+- (id)_viewToAddFocusLayer;
 - (BOOL)canBecomeFocused;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
@@ -140,13 +149,14 @@
 - (BOOL)shouldTrack;
 - (void)layoutSubviews;
 - (void)_updateSelectionIndicator;
-- (void)_updateSelectionToSegment:(id)arg1 highlight:(BOOL)arg2 shouldAnimate:(BOOL)arg3;
+- (void)_updateSelectionToSegment:(id)arg1 highlight:(BOOL)arg2 shouldAnimate:(BOOL)arg3 sameSegment:(BOOL)arg4;
 - (void)_insertSelectionViewForSegment:(id)arg1;
-- (id)_segmentToHighlight:(char *)arg1;
+- (long long)_segmentIndexToHighlight:(char *)arg1;
 - (BOOL)_disableSlidingControl;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (struct CGRect)bounds;
@@ -213,6 +223,7 @@
 - (void)_commonSegmentedControlInit;
 - (void)updateForMiniBarState:(BOOL)arg1;
 @property(nonatomic) BOOL apportionsSegmentWidthsByContent;
+- (id)_viewForLoweringBaselineLayoutAttribute:(int)arg1;
 - (id)infoViewForSegment:(long long)arg1;
 - (long long)selectedSegment;
 - (void)setSelectedSegment:(long long)arg1;

@@ -21,11 +21,10 @@ __attribute__((visibility("hidden")))
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 @property(nonatomic) __weak id <PUVideoListAssetExpungeActionPerformerDelegate> actionPerformerDelegate; // @synthesize actionPerformerDelegate=_actionPerformerDelegate;
 - (void).cxx_destruct;
+- (void)deletePhotosActionController:(id)arg1 dismissConfirmationViewController:(id)arg2;
 - (void)deletePhotosActionController:(id)arg1 presentConfirmationViewController:(id)arg2;
-- (long long)preferredAlertControllerStyle;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
-- (id)_presentingViewControllerForExpungeConfirmation;
 - (void)_performUserInteractionTask;
 
 // Remaining properties

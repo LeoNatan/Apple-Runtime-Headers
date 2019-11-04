@@ -36,14 +36,10 @@
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(readonly, nonatomic) unsigned int navigationOrientation; // @synthesize navigationOrientation=_navigationOrientation;
 - (void).cxx_destruct;
-- (_Bool)_childCanEndAppearanceTransition:(id)arg1;
-- (void)_child:(id)arg1 beginAppearanceTransition:(_Bool)arg2 animated:(_Bool)arg3;
-- (_Bool)_child:(id)arg1 canBeginAppearanceTransition:(_Bool)arg2;
-- (_Bool)_childViewController:(id)arg1 endAppearanceTransitionIfPossible:(_Bool)arg2;
-- (_Bool)_childViewController:(id)arg1 beginAppearanceTransitionIfPossible:(_Bool)arg2 animated:(_Bool)arg3;
-- (void)_removeChildViewController:(id)arg1 fromCell:(id)arg2;
-- (void)_addChildViewController:(id)arg1 toCell:(id)arg2;
+- (_Bool)_canEndAppearanceTransitionForController:(id)arg1;
+- (_Bool)_canBeginAppearanceTransitionForController:(id)arg1 isAppearing:(_Bool)arg2;
 - (void)_pageViewControllerWill:(_Bool)arg1 appear:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)updateTitleForViewController:(id)arg1;
 - (void)_scrollViewDidSettle:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScrollToTop:(id)arg1;

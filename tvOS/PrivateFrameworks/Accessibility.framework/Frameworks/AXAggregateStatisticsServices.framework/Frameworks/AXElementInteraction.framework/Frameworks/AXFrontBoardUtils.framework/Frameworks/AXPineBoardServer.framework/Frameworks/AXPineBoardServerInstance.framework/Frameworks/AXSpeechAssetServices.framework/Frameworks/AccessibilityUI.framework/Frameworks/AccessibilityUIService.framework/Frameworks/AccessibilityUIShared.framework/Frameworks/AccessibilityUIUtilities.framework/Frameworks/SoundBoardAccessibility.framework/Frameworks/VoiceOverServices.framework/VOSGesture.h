@@ -81,6 +81,7 @@
 @property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *rawValue;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -25,6 +25,8 @@
 @property(nonatomic) _Bool showsTopSeparator; // @synthesize showsTopSeparator=_showsTopSeparator;
 @property __weak id <EKEventDetailPredictedLocationCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *rejectView;
+@property(readonly, nonatomic) UIView *acceptView;
 - (void)_setEventDate:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)rejectLocationTapped:(id)arg1;

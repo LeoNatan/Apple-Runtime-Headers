@@ -9,14 +9,14 @@
 #import <ActionKit/MTLJSONSerializing-Protocol.h>
 #import <ActionKit/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString, UIColor;
+@class NSDictionary, NSString, WFColor;
 
 @interface WFTodoistProject : MTLModel <NSSecureCoding, MTLJSONSerializing>
 {
     _Bool _collapsed;
     int _projectId;
     NSString *_name;
-    UIColor *_color;
+    WFColor *_color;
     int _indent;
     int _order;
 }
@@ -28,7 +28,7 @@
 @property(readonly, nonatomic) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(readonly, nonatomic) int order; // @synthesize order=_order;
 @property(readonly, nonatomic) int indent; // @synthesize indent=_indent;
-@property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
+@property(readonly, nonatomic) WFColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) int projectId; // @synthesize projectId=_projectId;
 - (void).cxx_destruct;

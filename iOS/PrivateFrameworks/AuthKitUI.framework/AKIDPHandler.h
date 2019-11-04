@@ -24,12 +24,13 @@
 @property(readonly, nonatomic) AKServerRequestConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (void)_completeFlowWithError:(id)arg1;
+- (void)_completeWithACSPostRequestFromWebView:(id)arg1;
 - (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (id)_samlJavaScriptQuery;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
-- (id)_safeAcsDictionaryFromResult:(id)arg1;
+- (id)_safeACSDictionaryFromResult:(id)arg1;
 - (void)cancel;
 - (id)initWithConfiguration:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 

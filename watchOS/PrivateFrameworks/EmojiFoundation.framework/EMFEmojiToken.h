@@ -37,9 +37,12 @@
 - (_Bool)supportsPresentationStyle:(int)arg1;
 @property(readonly, nonatomic) int presentationStyle;
 @property(readonly, nonatomic) _Bool _shouldHighlightEmoji;
+- (id)copyWithSkinToneVariantSpecifier:(id)arg1;
 - (id)copyWithSkinToneVariant:(int)arg1;
 @property(readonly, copy, nonatomic) NSArray *_skinToneVariantStrings;
 @property(readonly, copy, nonatomic) NSArray *skinToneVariants;
+@property(readonly, nonatomic) NSArray *skinToneChooserVariants;
+@property(readonly, nonatomic) NSArray *skinToneSpecifiers;
 @property(readonly, nonatomic) int skinTone;
 @property(readonly, nonatomic) _Bool supportsSkinToneVariants;
 @property(readonly, nonatomic) EMFEmojiLocaleData *localeData;

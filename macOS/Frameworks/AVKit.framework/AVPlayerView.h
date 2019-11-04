@@ -97,6 +97,7 @@
     NSLayoutGuide *_transportControlsHeightLayoutGuide;
     BOOL _showsAudioOnlyIndicatorView;
     BOOL _includesTrimAndCancelButtons;
+    BOOL _prefersCompactTouchBarScrubber;
     BOOL _flashesControlsWhenChangingStyle;
     BOOL _shouldInsetControlsFromVideoRect;
     NSLayoutConstraint *_controlsContainerWidthConstraint;
@@ -203,6 +204,7 @@
 - (id)_currentControlsViewController;
 - (void)_setupTrackingAreas;
 - (void)_showOrHideControls;
+- (void)_updateControlsTimeDisplayStyleIfPossible;
 - (BOOL)_mouseInNoHideArea;
 - (id)_noHideAreaViews;
 - (void)_updatePlaybackControlsViewVisibilityForPlayingOnExternalScreen;
@@ -317,6 +319,7 @@
 - (void)setPlayButtonHandlerForLazyPlayerLoading:(CDUnknownBlockType)arg1;
 - (void)cancelTrim:(id)arg1;
 - (void)commitTrim:(id)arg1;
+@property(nonatomic) BOOL prefersCompactTouchBarScrubber;
 @property(nonatomic) BOOL includesTrimAndCancelButtons;
 @property(nonatomic) BOOL flashesControlsWhenChangingStyle;
 @property(nonatomic) BOOL showsAudioOnlyIndicatorView;

@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_accessibilityParentForFindingScrollParent;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;

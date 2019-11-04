@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class IKImageElement, IKViewElement, NSArray, VUILabel, VUIUpsellOfferViewLayout, _TVImageView;
+@class IKImageElement, IKViewElement, VUILabel, VUIUpsellOfferViewLayout, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUIUpsellOfferView : UIView
@@ -15,8 +15,6 @@ __attribute__((visibility("hidden")))
     VUIUpsellOfferViewLayout *_layout;
     VUILabel *_titleLabel;
     VUILabel *_descriptionLabel;
-    VUILabel *_disclaimerLabel;
-    NSArray *_buttons;
     _TVImageView *_imageView;
     IKImageElement *_imageElement;
 }
@@ -24,8 +22,6 @@ __attribute__((visibility("hidden")))
 + (id)upsellViewFromElement:(id)arg1 existingView:(id)arg2;
 @property(retain, nonatomic) IKImageElement *imageElement; // @synthesize imageElement=_imageElement;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
-@property(retain, nonatomic) VUILabel *disclaimerLabel; // @synthesize disclaimerLabel=_disclaimerLabel;
 @property(retain, nonatomic) VUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUIUpsellOfferViewLayout *layout; // @synthesize layout=_layout;

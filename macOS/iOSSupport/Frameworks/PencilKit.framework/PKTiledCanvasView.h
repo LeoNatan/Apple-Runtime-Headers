@@ -176,6 +176,7 @@
 - (void)_drawingDisplay:(double)arg1;
 @property(readonly, nonatomic) BOOL hasVisibleStrokes;
 - (void)setHidden:(BOOL)arg1;
+- (void)schedulePurgeResourcesBlock;
 - (void)handleDrawingShouldPause:(BOOL)arg1;
 - (BOOL)_isLiveAnimating;
 - (void)setNeedsDrawingDisplay;

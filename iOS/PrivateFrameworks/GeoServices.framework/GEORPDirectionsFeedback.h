@@ -13,10 +13,12 @@
 @interface GEORPDirectionsFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPDirectionsFeedbackContext *_directionsContext;
     GEORPDirectionsCorrections *_directionsCorrections;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _correctionType;
     struct {
         unsigned int has_correctionType:1;
@@ -54,6 +56,8 @@
 @property(retain, nonatomic) GEORPDirectionsFeedbackContext *directionsContext;
 @property(readonly, nonatomic) _Bool hasDirectionsContext;
 - (void)_readDirectionsContext;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

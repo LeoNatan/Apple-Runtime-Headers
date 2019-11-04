@@ -11,8 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
-- (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_contextualMenuGestureRecognizerChanged:(id)arg1;
 - (void)finishSetup;
 - (id)init;

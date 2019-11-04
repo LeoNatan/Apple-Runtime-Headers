@@ -84,11 +84,13 @@
 @property(readonly, nonatomic) unsigned int icsDisplayOrder; // @dynamic icsDisplayOrder;
 @property(readonly, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
 @property(readonly, nonatomic) _Bool isOverdue; // @dynamic isOverdue;
+@property(readonly, nonatomic) _Bool isRecurrent; // @dynamic isRecurrent;
 @property(readonly, nonatomic) NSDate *lastBannerPresentationDate; // @dynamic lastBannerPresentationDate;
 @property(readonly, copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;
 @property(retain, nonatomic) REMObjectID *listID; // @dynamic listID;
 @property(readonly, nonatomic) REMCRMergeableStringDocument *notesDocument; // @dynamic notesDocument;
+@property(readonly, nonatomic) NSData *notesDocumentData; // @dynamic notesDocumentData;
 @property(readonly, nonatomic) REMObjectID *objectID; // @dynamic objectID;
 @property(readonly, nonatomic) REMObjectID *parentReminderID; // @dynamic parentReminderID;
 @property(readonly, nonatomic) unsigned int priority; // @dynamic priority;
@@ -100,6 +102,7 @@
 @property(readonly, nonatomic) NSSet *subtaskIDsToUndelete; // @dynamic subtaskIDsToUndelete;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) REMCRMergeableStringDocument *titleDocument; // @dynamic titleDocument;
+@property(readonly, nonatomic) NSData *titleDocumentData; // @dynamic titleDocumentData;
 @property(readonly, nonatomic) REMUserActivity *userActivity; // @dynamic userActivity;
 
 @end

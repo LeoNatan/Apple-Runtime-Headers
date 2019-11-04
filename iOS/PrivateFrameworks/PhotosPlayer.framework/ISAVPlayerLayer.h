@@ -12,14 +12,17 @@
 @interface ISAVPlayerLayer : AVPlayerLayer
 {
     NSObject<OS_dispatch_queue> *_isolationQueue;
+    CDUnknownBlockType _readyForDisplayChangeHandler;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType readyForDisplayChangeHandler; // @synthesize readyForDisplayChangeHandler=_readyForDisplayChangeHandler;
 - (void).cxx_destruct;
 - (void)setPlayer:(id)arg1;
 - (void)setWrappedPlayer:(id)arg1;
 - (void)deferredDealloc;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)dealloc;
+- (void)didChangeValueForKey:(id)arg1;
 - (id)init;
 
 @end

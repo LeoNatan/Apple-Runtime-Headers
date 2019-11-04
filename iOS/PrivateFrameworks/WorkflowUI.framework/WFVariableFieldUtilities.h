@@ -13,6 +13,8 @@
 + (void)paste:(id)arg1 intoField:(id)arg2;
 + (void)copy:(id)arg1 fromField:(id)arg2;
 + (void)cut:(id)arg1 fromField:(id)arg2;
++ (id)variableStringFromPasteboard:(id)arg1 withVariableProvider:(id)arg2;
++ (void)copyVariableString:(id)arg1 toPasteboard:(id)arg2;
 + (_Bool)pasteboardContainsVariableString:(id)arg1;
 + (_Bool)clipboardContainsVariableString;
 

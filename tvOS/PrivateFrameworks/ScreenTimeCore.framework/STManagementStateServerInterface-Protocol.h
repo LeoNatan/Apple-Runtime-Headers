@@ -24,6 +24,7 @@
 - (void)deleteWebHistoryForDomain:(NSString *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)deleteWebHistoryForURL:(NSURL *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)authenticateRestrictionsPasscode:(NSString *)arg1 replyHandler:(void (^)(NSError *))arg2;
+- (void)needsToSetRestrictionsPasscodeWithReplyHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)isRestrictionsPasscodeSetWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)clearRestrictionsPasscodeWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)shouldRequestMoreTimeWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;

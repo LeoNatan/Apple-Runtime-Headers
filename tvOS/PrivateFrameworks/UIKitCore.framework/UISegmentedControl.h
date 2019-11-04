@@ -19,6 +19,7 @@
     NSMutableArray *_segments;
     long long _selectedSegment;
     long long _highlightedSegment;
+    long long _selectionIndicatorSegment;
     UIView *_removedSegment;
     UISegment *_focusedSegment;
     long long _barStyle;
@@ -137,9 +138,9 @@
 - (_Bool)shouldTrack;
 - (void)layoutSubviews;
 - (void)_updateSelectionIndicator;
-- (void)_updateSelectionToSegment:(id)arg1 highlight:(_Bool)arg2 shouldAnimate:(_Bool)arg3;
+- (void)_updateSelectionToSegment:(id)arg1 highlight:(_Bool)arg2 shouldAnimate:(_Bool)arg3 sameSegment:(_Bool)arg4;
 - (void)_insertSelectionViewForSegment:(id)arg1;
-- (id)_segmentToHighlight:(_Bool *)arg1;
+- (long long)_segmentIndexToHighlight:(_Bool *)arg1;
 - (_Bool)_disableSlidingControl;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -211,6 +212,7 @@
 - (void)_commonSegmentedControlInit;
 - (void)updateForMiniBarState:(_Bool)arg1;
 @property(nonatomic) _Bool apportionsSegmentWidthsByContent;
+- (id)_viewForLoweringBaselineLayoutAttribute:(int)arg1;
 - (id)infoViewForSegment:(long long)arg1;
 - (long long)selectedSegment;
 - (void)setSelectedSegment:(long long)arg1;

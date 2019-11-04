@@ -10,35 +10,34 @@
 #import <ContactsUI/CNAddFieldTouchBarDelegate-Protocol.h>
 #import <ContactsUI/CNContactCardWidget-Protocol.h>
 
-@class ABNameView, AKCardViewDataSource, CNAddFieldTouchBar, CNContact, NSArray, NSString, NSTextField, NSView;
-@protocol ABNameView, CNContactNameViewControllerDelegate;
+@class ABNameView, AKCardViewDataSource, CNAddFieldTouchBar, CNContact, NSArray, NSString, NSTextField;
+@protocol CNContactNameViewControllerDelegate;
 
-@interface CNContactNameViewController : NSViewController <CNAddFieldTouchBarDelegate, ABNameViewDelegate, CNContactCardWidget>
+@interface CNContactNameViewController : NSViewController <ABNameViewDelegate, CNAddFieldTouchBarDelegate, CNContactCardWidget>
 {
     BOOL _shouldDisableShowingShareLabel;
     CNContact *_contact;
     id <CNContactNameViewControllerDelegate> _delegate;
     unsigned long long _mode;
     AKCardViewDataSource *_dataSource;
-    CNAddFieldTouchBar *_addFieldTouchBar;
     ABNameView *_nameView;
-    NSView<ABNameView> *_dataDetectorsNameView;
     NSArray *_nameViewConstraints;
     NSTextField *_shareTextField;
+    NSTextField *_downtimeTextField;
+    CNAddFieldTouchBar *_addFieldTouchBar;
 }
 
+@property(retain, nonatomic) CNAddFieldTouchBar *addFieldTouchBar; // @synthesize addFieldTouchBar=_addFieldTouchBar;
+@property(retain, nonatomic) NSTextField *downtimeTextField; // @synthesize downtimeTextField=_downtimeTextField;
 @property(retain, nonatomic) NSTextField *shareTextField; // @synthesize shareTextField=_shareTextField;
 @property(retain, nonatomic) NSArray *nameViewConstraints; // @synthesize nameViewConstraints=_nameViewConstraints;
-@property(retain, nonatomic) NSView<ABNameView> *dataDetectorsNameView; // @synthesize dataDetectorsNameView=_dataDetectorsNameView;
 @property(retain, nonatomic) ABNameView *nameView; // @synthesize nameView=_nameView;
-@property(retain) CNAddFieldTouchBar *addFieldTouchBar; // @synthesize addFieldTouchBar=_addFieldTouchBar;
 @property(nonatomic) BOOL shouldDisableShowingShareLabel; // @synthesize shouldDisableShowingShareLabel=_shouldDisableShowingShareLabel;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <CNContactNameViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
-- (void)setCustomNameView:(id)arg1;
 - (void)nameView:(id)arg1 willLoseFocusInDirection:(unsigned long long)arg2;
 - (BOOL)isSelectable;
 - (BOOL)templateMode;
@@ -64,9 +63,9 @@
 - (void)updateShareTextFieldVisibility;
 - (double)desiredHeight;
 - (id)updateKeyViewLoopAndReturnTailView;
+- (void)generateConstraints;
 - (void)clearConstraints;
 - (void)updateNameViewConstraints;
-- (void)updateDataDetectorsNameViewConstraints;
 - (void)updateViewConstraints;
 - (void)mouseUp:(id)arg1;
 - (void)viewDidLoad;

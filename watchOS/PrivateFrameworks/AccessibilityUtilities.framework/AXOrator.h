@@ -19,12 +19,11 @@
     _Bool _spellOutContent;
     _Bool _shouldSpeakNextItemOnResume;
     _Bool _preferredLanguageWasSpecified;
-    _Bool _isAudioSessionActive;
-    _Bool _pendingAudioSessionActive;
     _Bool _isProcessingContentForSpeech;
     id <AXOratorDelegate> _delegate;
     int _speakingContext;
     AXLanguageTaggedContent *_selectedContent;
+    float _audioSessionInactiveTimeout;
     NSString *_voiceIdentifier;
     AXLanguageTaggedContent *_speakingContent;
     NSArray *_speakingContentTokenRanges;
@@ -42,8 +41,6 @@
 
 @property(retain, nonatomic) NSMutableArray *additionalContentToProcess; // @synthesize additionalContentToProcess=_additionalContentToProcess;
 @property(nonatomic) _Bool isProcessingContentForSpeech; // @synthesize isProcessingContentForSpeech=_isProcessingContentForSpeech;
-@property(nonatomic) _Bool pendingAudioSessionActive; // @synthesize pendingAudioSessionActive=_pendingAudioSessionActive;
-@property(nonatomic) _Bool isAudioSessionActive; // @synthesize isAudioSessionActive=_isAudioSessionActive;
 @property(nonatomic) _Bool preferredLanguageWasSpecified; // @synthesize preferredLanguageWasSpecified=_preferredLanguageWasSpecified;
 @property(retain, nonatomic) NSString *currentLanguageCode; // @synthesize currentLanguageCode=_currentLanguageCode;
 @property(nonatomic) _Bool shouldSpeakNextItemOnResume; // @synthesize shouldSpeakNextItemOnResume=_shouldSpeakNextItemOnResume;
@@ -57,6 +54,7 @@
 @property(retain, nonatomic) NSArray *speakingContentTokenRanges; // @synthesize speakingContentTokenRanges=_speakingContentTokenRanges;
 @property(retain, nonatomic) AXLanguageTaggedContent *speakingContent; // @synthesize speakingContent=_speakingContent;
 @property(retain, nonatomic) NSString *voiceIdentifier; // @synthesize voiceIdentifier=_voiceIdentifier;
+@property(nonatomic) float audioSessionInactiveTimeout; // @synthesize audioSessionInactiveTimeout=_audioSessionInactiveTimeout;
 @property(nonatomic) _Bool spellOutContent; // @synthesize spellOutContent=_spellOutContent;
 @property(retain, nonatomic) AXLanguageTaggedContent *selectedContent; // @synthesize selectedContent=_selectedContent;
 @property(nonatomic) int speakingContext; // @synthesize speakingContext=_speakingContext;

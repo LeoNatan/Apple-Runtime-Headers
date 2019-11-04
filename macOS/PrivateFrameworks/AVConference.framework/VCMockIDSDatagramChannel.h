@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct __CFAllocator *_datagramPacketAllocator;
     unsigned long long _datagramPacketNextSequenceNumber;
     BOOL _usingOptions;
+    double _emulatedRxPLR;
 }
 
 - (void)osChannelInfoLog;

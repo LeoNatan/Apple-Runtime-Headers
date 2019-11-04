@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class ACAccount, NSString;
 @protocol AMSBagDataSourceProtocol;
 
 @interface AMSBagValue : NSObject
 {
+    ACAccount *_account;
     id <AMSBagDataSourceProtocol> _dataSource;
     NSString *_key;
     unsigned long long _valueType;
@@ -24,11 +25,13 @@
 @property(nonatomic) unsigned long long valueType; // @synthesize valueType=_valueType;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) __weak id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
+@property(copy, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (id)valuePromise;
 - (id)valueWithError:(id *)arg1;
 - (void)valueWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isLoaded) _Bool loaded;
+- (id)initWithDataSource:(id)arg1 key:(id)arg2 valueType:(unsigned long long)arg3 account:(id)arg4;
 - (id)initWithDataSource:(id)arg1 key:(id)arg2 valueType:(unsigned long long)arg3;
 
 @end

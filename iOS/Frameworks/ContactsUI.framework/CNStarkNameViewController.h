@@ -26,9 +26,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *firstBaselineAnchor;
-- (id)stackViewEdgePinningConstraints;
-- (id)accessibilityFontSizeConstraints;
-- (id)regularFontSizeConstraints;
 - (void)setupLayoutConstraints;
 - (void)updateViewConstraints;
 - (void)resetLayoutConstraints;

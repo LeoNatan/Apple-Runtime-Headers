@@ -10,7 +10,6 @@
 
 @interface TransparencyManagedDataStore : NSObject
 {
-    struct os_unfair_lock_s contextLock;
     NSManagedObjectContext *_context;
     NSPersistentContainer *_persistentContainer;
     // Error parsing type: Aq, name: _sequenceId
@@ -23,8 +22,14 @@
 // Property attributes: TAq,V_sequenceId
 
 @property(retain) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-@property(retain) NSManagedObjectContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (void)performBlock:(CDUnknownBlockType)arg1;
+- (void)performBlockAndWait:(CDUnknownBlockType)arg1;
+- (BOOL)performAndWaitForRequestId:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (void)performOnRequestsForPredicate:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (void)performOnBatchesOfEntity:(id)arg1 predicate:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
+- (id)copyStatistics:(id *)arg1;
+- (BOOL)clearStateForApplication:(id)arg1 error:(id *)arg2;
 - (BOOL)persistAndRefaultObject:(id)arg1 error:(id *)arg2;
 - (BOOL)persistWithError:(id *)arg1;
 - (void)refaultObject:(id)arg1;
@@ -38,9 +43,13 @@
 - (unsigned long long)countOutstandingSMTsForApplication:(id)arg1 error:(id *)arg2;
 - (unsigned long long)countTotalRequestsForApplication:(id)arg1 error:(id *)arg2;
 - (unsigned long long)countOutstandingRequestsForApplication:(id)arg1 error:(id *)arg2;
+- (BOOL)deleteSMTs:(id)arg1 mutationTimeLessThan:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)resetRequestsToPending:(id)arg1 error:(id *)arg2;
+- (BOOL)deleteSTHs:(id)arg1 logBeginMsLessThan:(unsigned long long)arg2 error:(id *)arg3;
 - (void)garbageCollectRequests:(id)arg1 olderThan:(id)arg2 error:(id *)arg3;
 - (void)deleteCompletedRequest:(id)arg1;
 - (BOOL)clearState:(id *)arg1;
+- (void)deleteObjectSet:(id)arg1;
 - (void)deleteObject:(id)arg1;
 - (id)createSignedTreeHeadFailure;
 - (id)createTreeHead;
@@ -51,19 +60,27 @@
 - (id)createRequestFailure;
 - (id)fetchCompletedRequests:(id)arg1 olderThan:(id)arg2 error:(id *)arg3;
 - (id)fetchRequestsWithPendingResponses:(id)arg1 error:(id *)arg2;
-- (id)fetchUrisWithPendingSMTs:(id)arg1 error:(id *)arg2;
-- (id)fetchRequestForUUID:(id)arg1 uri:(id)arg2 error:(id *)arg3;
+- (id)fetchRequestsWithPendingSMTs:(id)arg1 error:(id *)arg2;
+- (id)fetchRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 loggableDatas:(id)arg4 youngerThan:(id)arg5 error:(id *)arg6;
 - (id)fetchRequestsForURI:(id)arg1 error:(id *)arg2;
 - (id)fetchRequestForUUID:(id)arg1 error:(id *)arg2;
-- (id)createRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 serverData:(id)arg4 syncedData:(id)arg5 queryResponse:(id)arg6 type:(unsigned long long)arg7 error:(id *)arg8;
+- (id)treeHeadsForApplication:(id)arg1 error:(id *)arg2;
+- (id)createRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 serverData:(id)arg4 syncedData:(id)arg5 queryRequest:(id)arg6 queryResponse:(id)arg7 type:(unsigned long long)arg8 error:(id *)arg9;
 - (id)createRequest;
+- (unsigned long long)signedTreeHeadFailureCount:(id *)arg1;
 - (id)signedTreeHeadFailures:(id *)arg1;
+- (unsigned long long)treeHeadCount:(id *)arg1;
 - (id)treeHeads:(id *)arg1;
+- (unsigned long long)signedMutationTimestampsFailureCount:(id *)arg1;
 - (id)signedMutationTimestampsFailures:(id *)arg1;
+- (unsigned long long)signedMutationTimestampCount:(id *)arg1;
 - (id)signedMutationTimestamps:(id *)arg1;
+- (unsigned long long)requestFailureCount:(id *)arg1;
 - (id)requestFailures:(id *)arg1;
+- (unsigned long long)requestCount:(id *)arg1;
 - (id)requests:(id *)arg1;
 - (id)init;
+@property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 - (long long)currentSequenceId:(id *)arg1;
 - (id)bundleURL;
 

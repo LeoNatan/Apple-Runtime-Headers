@@ -10,8 +10,8 @@
 
 @interface NWUDPSession : NSObject
 {
-    BOOL _viable;
-    BOOL _hasBetterPath;
+    _Bool _viable;
+    _Bool _hasBetterPath;
     long long _state;
     NWEndpoint *_endpoint;
     NWEndpoint *_resolvedEndpoint;
@@ -23,15 +23,15 @@
     NWParameters *_parameters;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(readonly) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property unsigned long long internalMTU; // @synthesize internalMTU=_internalMTU;
 @property(copy) CDUnknownBlockType readHandler; // @synthesize readHandler=_readHandler;
 @property unsigned long long maxReadDatagrams; // @synthesize maxReadDatagrams=_maxReadDatagrams;
 @property(retain) NWDatagramConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NWPath *currentPath; // @synthesize currentPath=_currentPath;
-@property(nonatomic) BOOL hasBetterPath; // @synthesize hasBetterPath=_hasBetterPath;
-@property(nonatomic, getter=isViable) BOOL viable; // @synthesize viable=_viable;
+@property(nonatomic) _Bool hasBetterPath; // @synthesize hasBetterPath=_hasBetterPath;
+@property(nonatomic, getter=isViable) _Bool viable; // @synthesize viable=_viable;
 @property(retain, nonatomic) NWEndpoint *resolvedEndpoint; // @synthesize resolvedEndpoint=_resolvedEndpoint;
 @property(readonly) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -46,7 +46,7 @@
 - (void)tryNextResolvedEndpoint;
 @property(readonly, copy, nonatomic) NSString *privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (void)dealloc;
 - (id)initWithUpgradeForSession:(id)arg1;
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;

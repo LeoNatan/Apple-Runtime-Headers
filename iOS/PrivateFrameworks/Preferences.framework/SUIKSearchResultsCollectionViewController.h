@@ -8,20 +8,18 @@
 
 #import <Preferences/PSKeyboardNavigationSearchResultsController-Protocol.h>
 
-@class NSArray, NSObject, UICollectionViewDiffableDataSource, _SUIKSearchResultsUpdateOperation;
+@class NSObject, UICollectionViewDiffableDataSource, _SUIKSearchResultsUpdateOperation;
 @protocol SUIKSearchResultsCollectionViewControllerDelegate;
 
 @interface SUIKSearchResultsCollectionViewController : UICollectionViewController <PSKeyboardNavigationSearchResultsController>
 {
     NSObject<SUIKSearchResultsCollectionViewControllerDelegate> *_delegate;
-    NSArray *_results;
     UICollectionViewDiffableDataSource *_diffableDataSource;
     _SUIKSearchResultsUpdateOperation *_updateOperation;
 }
 
 @property(retain, nonatomic) _SUIKSearchResultsUpdateOperation *updateOperation; // @synthesize updateOperation=_updateOperation;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
-@property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(nonatomic) __weak NSObject<SUIKSearchResultsCollectionViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_selectAndScrollToIndexPath:(id)arg1;
@@ -31,6 +29,7 @@
 - (void)searchQueryCompleted;
 - (void)searchQueryFoundItems:(id)arg1;
 - (void)searchQueryStarted;
+- (void)setResults:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (double)iconWidth;

@@ -10,5 +10,6 @@
 - (id)resizedImageWithSize:(struct CGSize)arg1 shouldCover:(_Bool)arg2;
 - (id)resizedImageToFit:(struct CGSize)arg1;
 - (id)resizedImageToCover:(struct CGSize)arg1;
+- (id)npkImageByMemoryMappingDataWithTemporaryFilePrefix:(id)arg1;
 @end
 

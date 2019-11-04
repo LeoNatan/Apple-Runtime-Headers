@@ -15,6 +15,7 @@
 + (id)bundleIdentifierForApp:(unsigned long long)arg1;
 + (void)openApplicationWithBundleIdentifier:(id)arg1;
 + (id)imageForBlockedApp;
++ (_Bool)resultBlockedForScreenTime:(id)arg1;
 + (_Bool)bundleIdentifierIsBlockedForScreenTimeExpiration:(id)arg1;
 + (_Bool)resultIsSiriAction:(id)arg1;
 + (_Bool)appIsValidForBundleIdentifier:(id)arg1;
@@ -23,6 +24,7 @@
 + (id)stringForSFRichText:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (void)playNegativeHaptic;
++ (void)requestDeviceUnlock:(CDUnknownBlockType)arg1;
 + (void)requestDeviceUnlockWithSuccessHandler:(CDUnknownBlockType)arg1;
 + (_Bool)deviceIsAuthenticated;
 + (id)sendFeedbackForPunchout:(id)arg1 toListener:(id)arg2 fromCardSection:(id)arg3 triggerEvent:(unsigned long long)arg4 queryId:(unsigned long long)arg5;

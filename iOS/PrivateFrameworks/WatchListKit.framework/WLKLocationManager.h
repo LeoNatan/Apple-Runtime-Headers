@@ -8,7 +8,7 @@
 
 #import <WatchListKit/CLLocationManagerDelegate-Protocol.h>
 
-@class CLLocationManager, NSDictionary, NSString, NSXPCConnection;
+@class CLLocationManager, NSDictionary, NSString, NSUserDefaults, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 @interface WLKLocationManager : NSObject <CLLocationManagerDelegate>
@@ -16,38 +16,39 @@
     int _didChangeNotificationToken;
     NSDictionary *_lastKnownLocation;
     NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_queue> *_readWriteQueue;
+    NSObject<OS_dispatch_queue> *_clQueue;
     CDUnknownBlockType _locationUpdateBlock;
     CLLocationManager *_clLocationManager;
+    NSUserDefaults *_userDefaults;
     NSXPCConnection *_connection;
 }
 
 + (id)defaultLocationManager;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) int didChangeNotificationToken; // @synthesize didChangeNotificationToken=_didChangeNotificationToken;
+@property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) CLLocationManager *clLocationManager; // @synthesize clLocationManager=_clLocationManager;
 @property(copy, nonatomic) CDUnknownBlockType locationUpdateBlock; // @synthesize locationUpdateBlock=_locationUpdateBlock;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *readWriteQueue; // @synthesize readWriteQueue=_readWriteQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clQueue; // @synthesize clQueue=_clQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 - (void).cxx_destruct;
 - (id)_connection;
+- (void)_locationAuthorizationStatus:(CDUnknownBlockType)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (id)_supportPath;
-- (void)_dictionaryOnDisk:(CDUnknownBlockType)arg1;
-- (void)_writeToDisk:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_dictionaryOnDisk:(_Bool)arg1;
 - (id)_dictionaryOnDisk;
-- (void)_writeToDisk;
+- (void)_writeToDisk:(id)arg1;
 - (void)_readFromDisk;
 - (long long)_statusForCLAuthorizationStatus:(int)arg1;
 - (id)_dictionaryForCLLocation:(id)arg1;
 - (void)_requestCLLocationUpdates:(CDUnknownBlockType)arg1;
 - (void)_requestRecentCLLocation:(CDUnknownBlockType)arg1;
-- (void)setLastKnownLocation:(id)arg1;
+- (void)_setLastKnownLocation:(id)arg1;
 - (double)_getDistanceOfLastKnownLocationDictionary:(id)arg1 fromLocation:(id)arg2;
 - (id)_createLocationObjFromLocationDictionary:(id)arg1;
-- (_Bool)isLastKnownLocation:(id)arg1 significantlyOlderThanNewLocation:(id)arg2;
+- (_Bool)_isLastKnownLocation:(id)arg1 significantlyOlderThanNewLocation:(id)arg2;
 - (_Bool)_shouldLastKnownLocation:(id)arg1 beUpdatedTo:(id)arg2;
 - (_Bool)_isLastKnownLocationFresh:(id)arg1;
 - (_Bool)_isLastKnownLocation:(id)arg1 freshForMaxAge:(double)arg2 fromNewTimestamp:(double)arg3;

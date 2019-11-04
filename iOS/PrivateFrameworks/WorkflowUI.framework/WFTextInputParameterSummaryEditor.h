@@ -9,24 +9,34 @@
 #import <WorkflowUI/WFVariableTypingContext-Protocol.h>
 #import <WorkflowUI/WFVariableUIDelegate-Protocol.h>
 
-@class NSArray, NSString, WFVariableInputCoordinator, WFVariableStringParameterState;
+@class NSArray, NSString, NSTextAttachment, WFVariableInputCoordinator, WFVariableStringParameterState;
 
 @interface WFTextInputParameterSummaryEditor : WFModuleSummaryEditor <WFVariableTypingContext, WFVariableUIDelegate>
 {
     _Bool _hasChangedText;
     _Bool _isPickingMagicVariable;
-    WFVariableInputCoordinator *_variableCoordinator;
     WFVariableStringParameterState *_stagedState;
+    WFVariableInputCoordinator *_variableCoordinator;
+    NSTextAttachment *_textAttachmentToEdit;
 }
 
 @property(nonatomic) _Bool isPickingMagicVariable; // @synthesize isPickingMagicVariable=_isPickingMagicVariable;
-@property(nonatomic) _Bool hasChangedText; // @synthesize hasChangedText=_hasChangedText;
-@property(retain, nonatomic) WFVariableStringParameterState *stagedState; // @synthesize stagedState=_stagedState;
+@property(retain, nonatomic) NSTextAttachment *textAttachmentToEdit; // @synthesize textAttachmentToEdit=_textAttachmentToEdit;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
+@property(readonly, nonatomic) WFVariableStringParameterState *stagedState; // @synthesize stagedState=_stagedState;
+@property(readonly, nonatomic) _Bool hasChangedText; // @synthesize hasChangedText=_hasChangedText;
 - (void).cxx_destruct;
+- (_Bool)variableMenuSupportsVariableSelectionForSlotWithIdentifier:(id)arg1;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
 - (void)showActionOutputPickerFromSourceResponder:(id)arg1 allowExtensionInput:(_Bool)arg2 variableProvider:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)sourceViewTintColorDidChange;
+- (void)configureVariableAttachmentForInsertion:(id)arg1;
 - (void)textEntryDidFinish;
+- (void)textEntryDidPasteWithOriginalBlock:(CDUnknownBlockType)arg1;
+- (void)textEntryDidCopyWithOriginalBlock:(CDUnknownBlockType)arg1;
+- (void)textEntryDidCutWithOriginalBlock:(CDUnknownBlockType)arg1;
+- (void)copyVariableString;
+- (struct _NSRange)selectedRange;
 - (void)textEntryTextDidChange:(id)arg1;
 - (void)insertVariable:(id)arg1;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(_Bool *)arg2;
@@ -36,7 +46,7 @@
 - (void)setVariableUIDelegate:(id)arg1;
 - (void)setVariableProvider:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

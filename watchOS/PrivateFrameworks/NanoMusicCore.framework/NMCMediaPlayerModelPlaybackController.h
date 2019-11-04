@@ -10,6 +10,7 @@
 #import <NanoMusicCore/MPRequestResponseControllerDelegate-Protocol.h>
 
 @class CSLSOnWristMonitor, MPCPlaybackEngine, MPRequestResponseController, NMCWiFiManager, NMRNowPlayingController, NSHashTable, NSString;
+@protocol OS_dispatch_group;
 
 @interface NMCMediaPlayerModelPlaybackController : NSObject <MPCPlaybackEngineDelegate, MPRequestResponseControllerDelegate>
 {
@@ -18,6 +19,7 @@
     void *_mediaRemoteCommandObserver;
     NSHashTable *_errorHandlers;
     _Bool _systemMusicApplication;
+    NSObject<OS_dispatch_group> *_commandsPendingFirstPlayerResponseGroup;
     CSLSOnWristMonitor *_onWristMonitor;
     _Bool _shouldPauseNextTimeOffWrist;
     NMCWiFiManager *_wifiManager;

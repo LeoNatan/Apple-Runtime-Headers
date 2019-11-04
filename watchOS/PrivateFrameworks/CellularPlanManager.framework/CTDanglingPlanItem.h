@@ -24,7 +24,7 @@
 @property(retain, nonatomic) NSString *simLabelID; // @synthesize simLabelID=_simLabelID;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *iccid; // @synthesize iccid=_iccid;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

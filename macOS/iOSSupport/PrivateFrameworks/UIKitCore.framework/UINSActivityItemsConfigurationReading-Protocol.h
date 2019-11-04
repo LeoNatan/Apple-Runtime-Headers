@@ -12,6 +12,11 @@
 @property(readonly, copy, nonatomic) NSArray *itemProvidersForActivityItemsConfiguration;
 
 @optional
++ (NSArray *)_itemsForSystemSharingFromActivityItemsConfiguration:(id)arg1 wrapperBlock:(id (^)(id <UINSActivityItemsConfigurationReading>, long long))arg2;
+@property(readonly, copy, nonatomic) NSArray *_excludedActivityTypes;
+@property(readonly, copy, nonatomic) NSArray *_uinsActivityItemSourceProxies;
+@property(readonly, copy, nonatomic) NSArray *_uinsApplicationActivityProxies;
+@property(readonly, nonatomic) BOOL _hasItemsForActivityItemsConfiguration;
 - (NSItemProvider *)activityItemsConfigurationPreviewForItemAtIndex:(long long)arg1 intent:(NSString *)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)activityItemsConfigurationMetadataForItemAtIndex:(long long)arg1 key:(NSString *)arg2;
 - (id)activityItemsConfigurationMetadataForKey:(NSString *)arg1;

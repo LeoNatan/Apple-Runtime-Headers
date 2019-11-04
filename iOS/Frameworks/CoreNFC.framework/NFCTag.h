@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 + (double)_MaxRetryInterval;
 + (unsigned long long)_MaxRetry;
 + (_Bool)supportsSecureCoding;
-- (_Bool)isMatchingSession:(id)arg1;
+- (_Bool)isMatchingSession:(id)arg1 outError:(id *)arg2;
 - (void)_sendAPDU:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_transceiveWithSession:(id)arg1 sendData:(id)arg2 receivedData:(id *)arg3 error:(id *)arg4;
 - (void)_transceiveWithData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)writeLockWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)readNDEFWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)queryNDEFStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)_translateNFCDError:(id)arg1;
 - (unsigned long long)capacity;
 - (_Bool)isNDEFFormatted;
 - (_Bool)isReadOnly;

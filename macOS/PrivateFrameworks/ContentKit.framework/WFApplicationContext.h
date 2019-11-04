@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL canLoadShortcutsDatabase; // @synthesize canLoadShortcutsDatabase=_canLoadShortcutsDatabase;
 @property(nonatomic, getter=isIdleTimerDisabled) BOOL idleTimerDisabled;
+@property(readonly, nonatomic) BOOL shouldReverseLayoutDirection;
 @property(readonly, nonatomic) NSBundle *applicationBundle; // @synthesize applicationBundle=_applicationBundle;
 @property(readonly, nonatomic) NSString *currentUserInterfaceType;
 @property(readonly, nonatomic) NSBundle *bundle;

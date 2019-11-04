@@ -32,6 +32,9 @@
 - (void)choiceViewTappedHelpLink:(id)arg1;
 - (void)choiceView:(id)arg1 tappedChoiceAtIndex:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *choices;
+- (id)_choiceColorForIndex:(int)arg1;
+- (id)_smallChoiceColor;
+- (id)_bigChoiceColor;
 - (void)addChoiceElement:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
 - (void)setImageSize:(struct CGSize)arg1;

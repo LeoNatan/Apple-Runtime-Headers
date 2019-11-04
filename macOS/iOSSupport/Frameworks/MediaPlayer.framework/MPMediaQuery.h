@@ -111,7 +111,9 @@
 - (void)removeFilterPredicate:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
 @property(retain, nonatomic) NSSet *filterPredicates;
+- (id)protobufferEncodableObjectFromLibrary:(id)arg1;
 - (id)protobufferEncodableObject;
+- (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
 - (id)copyBySanitizingStaticEntities;
 - (id)copyByRemovingStaticEntities;

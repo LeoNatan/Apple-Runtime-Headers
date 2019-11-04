@@ -24,6 +24,7 @@
     _Bool _canRenderLoopingVideoLive;
     long long _playbackMode;
     _Bool _muted;
+    _Bool _didReleaseAVObjects;
     // Error parsing type: Ai, name: _videoRenderInFlightCount
     NSObject<OS_dispatch_group> *_renderGroup;
     NSObject<OS_dispatch_queue> *_renderQueue;
@@ -81,6 +82,7 @@
 - (void)pause;
 - (void)play;
 - (void)stepByCount:(long long)arg1;
+- (void)seekToTime:(CDStruct_198678f7)arg1 exact:(_Bool)arg2;
 - (void)seekToTime:(CDStruct_198678f7)arg1;
 @property(readonly, nonatomic) CDStruct_198678f7 currentTime;
 - (long long)_playbackStateFromPlayerStatus:(long long)arg1 rate:(float)arg2;

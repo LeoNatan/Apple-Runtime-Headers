@@ -6,20 +6,29 @@
 
 #import <PassKitUI/PKWrapperViewController.h>
 
+@class PKCompactNavigationContainedNavigationController;
+
 @interface PKCompactNavigationWrapperViewController : PKWrapperViewController
 {
+    PKCompactNavigationContainedNavigationController *_parentNavigationController;
+    double _navigationBarHeight;
+    _Bool _needsInitialLayout;
     _Bool _hasExplicitTargetNavigationHeight;
     double _targetNavigationHeight;
 }
 
 @property(nonatomic) double targetNavigationHeight; // @synthesize targetNavigationHeight=_targetNavigationHeight;
 @property(readonly, nonatomic) _Bool hasExplicitTargetNavigationHeight; // @synthesize hasExplicitTargetNavigationHeight=_hasExplicitTargetNavigationHeight;
-- (struct CGRect)_wrappedViewControllerFrameForBounds:(struct CGRect)arg1;
+@property(readonly, nonatomic) _Bool needsInitialLayout; // @synthesize needsInitialLayout=_needsInitialLayout;
+- (void).cxx_destruct;
+- (struct CGRect)_wrappedViewControllerFrameForBounds:(struct CGRect)arg1 navigationBarHeight:(double)arg2;
 - (void)didMoveToParentViewController:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
+- (struct UIEdgeInsets)_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(_Bool *)arg2;
+- (void)loadView;
 - (_Bool)_canShowWhileLocked;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
-- (id)initWithWrappedViewController:(id)arg1;
+- (id)initWithWrappedViewController:(id)arg1 parentNavigationController:(id)arg2;
 - (id)initWithWrappedViewController:(id)arg1 type:(long long)arg2;
 
 @end

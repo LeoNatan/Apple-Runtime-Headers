@@ -13,11 +13,13 @@
 @interface GEOWaypointPlace : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_center;
     GEOMapRegion *_mapRegion;
     NSMutableArray *_roadAccessPoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_center:1;
@@ -58,6 +60,8 @@
 @property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) _Bool hasCenter;
 - (void)_readCenter;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -13,7 +13,6 @@
 @interface _GPURawCounterSourceGroup : NSObject <GPURawCounterSourceGroup>
 {
     unsigned int _acceleratorPort;
-    struct __IOAccelDevice *_deviceRef;
     NSString *_name;
     NSArray *_sourceList;
     unsigned long long _samplingPeriodInMicroseconds;

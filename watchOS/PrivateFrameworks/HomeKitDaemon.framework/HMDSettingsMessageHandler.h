@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMDSettingsMessageHandlerProtocol-Protocol.h>
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDUserMessagePolicy, HMFMessageDispatcher, NSMapTable, NSString;
+@class HMDUserMessagePolicy, HMFMessageDispatcher, NSMapTable, NSObject, NSString;
 @protocol HMDSettingsMessageController, OS_dispatch_queue;
 
-@interface HMDSettingsMessageHandler : NSObject <HMDSettingsMessageHandlerProtocol>
+@interface HMDSettingsMessageHandler : HMFObject <HMDSettingsMessageHandlerProtocol, HMFLogging>
 {
     _Bool _isCurrentUser;
     NSMapTable *_settingMessageMap;
@@ -22,6 +23,7 @@
     HMDUserMessagePolicy *_anyUserAllowedPolicy;
 }
 
++ (id)logCategory;
 @property _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
 @property(retain) HMDUserMessagePolicy *anyUserAllowedPolicy; // @synthesize anyUserAllowedPolicy=_anyUserAllowedPolicy;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;

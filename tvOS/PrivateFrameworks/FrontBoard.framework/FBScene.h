@@ -76,6 +76,7 @@
 - (unsigned long long)_beginTransaction;
 @property(readonly, copy, nonatomic) NSArray *observerProxies;
 @property(readonly, nonatomic) FBSceneObserver *delegateProxy;
+- (void)_adjustInitialSettings:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)snapshotContext;

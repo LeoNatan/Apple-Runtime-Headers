@@ -12,7 +12,6 @@
 @protocol SBIconViewDelegate <NSObject>
 
 @optional
-- (SBFParallaxSettings *)parallaxSettingsForShortcutsPresentationWithIconView:(SBIconView *)arg1;
 - (UIView *)customPresentingContainerViewForShortcutsPresentationWithIconView:(SBIconView *)arg1;
 - (_Bool)iconView:(SBIconView *)arg1 shouldActivateApplicationShortcutItem:(SBSApplicationShortcutItem *)arg2 atIndex:(unsigned long long)arg3;
 - (NSString *)applicationShortcutWidgetBundleIdentifierForShortcutsWithIconView:(SBIconView *)arg1;
@@ -21,6 +20,7 @@
 - (void)iconViewShortcutsPresentationDidCancel:(SBIconView *)arg1;
 - (void)iconViewShortcutsPresentationDidFinish:(SBIconView *)arg1;
 - (_Bool)iconViewShouldBeginShortcutsPresentation:(SBIconView *)arg1;
+- (void)iconViewWasRecycled:(SBIconView *)arg1;
 - (UIColor *)accessibilityTintColorForIconView:(SBIconView *)arg1;
 - (_Bool)iconView:(SBIconView *)arg1 shouldContinueToUseBackgroundViewForComponents:(UIView *)arg2;
 - (UIView *)backgroundViewForComponentsOfIconView:(SBIconView *)arg1;

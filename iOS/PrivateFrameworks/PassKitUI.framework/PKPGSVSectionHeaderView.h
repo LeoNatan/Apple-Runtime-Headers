@@ -13,6 +13,7 @@
 
 @interface PKPGSVSectionHeaderView : UIView <PKPGSVSectionHeaderView>
 {
+    _Bool _sizesDirty;
     UILabel *_titleView;
     UILabel *_environmentLabel;
     UIButton *_actionButton;
@@ -33,6 +34,7 @@
 - (void)_addTapped;
 - (void)addTapped;
 - (void)layoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithPassType:(unsigned long long)arg1 delegate:(id)arg2;
 - (id)init;
 

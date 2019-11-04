@@ -72,7 +72,6 @@
 - (void)flashAutomationForTriggerID:(id)arg1;
 - (void)updateUI;
 - (void)updateTableViewLayoutMargins;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateSubheadLayoutMargins;
 - (void)viewLayoutMarginsDidChange;
 - (void)viewDidLoad;

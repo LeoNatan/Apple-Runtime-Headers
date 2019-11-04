@@ -9,7 +9,7 @@
 #import <iTunesCloud/ICUserIdentityStoreBackendDelegate-Protocol.h>
 #import <iTunesCloud/NSSecureCoding-Protocol.h>
 
-@class ACAccountStore, ICDelegateAccountStore, ICDelegateAccountStoreOptions, ICUserIdentityStoreCoding, ICValueHistory, NSOperationQueue, NSString;
+@class ACAccountStore, ICDelegateAccountStore, ICDelegateAccountStoreOptions, ICLocalStoreAccountProperties, ICUserIdentityStoreCoding, ICValueHistory, NSOperationQueue, NSString;
 @protocol ICUserIdentityStoreBackend, OS_dispatch_queue;
 
 @interface ICUserIdentityStore : NSObject <ICUserIdentityStoreBackendDelegate, NSSecureCoding>
@@ -21,6 +21,7 @@
     ICUserIdentityStoreCoding *_codingHelper;
     ICDelegateAccountStore *_delegateAccountStore;
     ICDelegateAccountStoreOptions *_delegateAccountStoreOptions;
+    ICLocalStoreAccountProperties *_localStoreAccountProperties;
     NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -33,11 +34,13 @@
 + (id)defaultIdentityStore;
 @property(readonly, nonatomic) id <ICUserIdentityStoreBackend> _unsafeBackend; // @synthesize _unsafeBackend=_backend;
 - (void).cxx_destruct;
+- (id)_icValidStoreAccountsFromACAccounts:(id)arg1;
 - (void)_unregisterForDelegateAccountStoreNotifications:(id)arg1;
 - (void)_saveIdentityProperties:(id)arg1 andPostAccountChangeNotification:(_Bool)arg2 forUserIdentity:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_registerForDelegateAccountStoreNotifications:(id)arg1;
 - (void)_openDelegateAccountStoreForUserIdentity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_openDelegateAccountStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_initializeLocalStoreAccountProperties;
 - (void)_importValuesFromCodingHelper:(id)arg1;
 - (void)_existingIdentityPropertiesForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dsidForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -51,8 +54,13 @@
 - (void)_unsafe_deleteDelegateAccountStore;
 - (void)_resetDelegateAccountStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_reloadForExternalChange;
+- (void)_refreshLocalStoreAccountPropertiesAllowingDidChangeNotification:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_prepareDelegateAccountStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)userIdentityStoreBackendDidChange:(id)arg1;
+- (void)getuserIdentitiesForAllStoreAccountsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)userIdentitiesForAllStoreAccountsWithError:(id *)arg1;
+- (void)updatePropertiesForLocalStoreAccountUsingBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) ICLocalStoreAccountProperties *localStoreAccountProperties;
 - (void)getUserIdentitiesForManageableAccountsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)userIdentitiesForManageableAccountsWithError:(id *)arg1;
 - (id)DSIDForUserIdentity:(id)arg1 outError:(id *)arg2;

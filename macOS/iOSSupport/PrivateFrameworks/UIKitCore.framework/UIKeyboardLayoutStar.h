@@ -217,6 +217,7 @@ __attribute__((visibility("hidden")))
 - (void)swipeDetected:(id)arg1;
 - (void)uninstallGestureRecognizers;
 - (void)installGestureRecognizers;
+- (void)_gestureRecognizerFailed:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)touchChanged:(id)arg1 executionContext:(id)arg2;

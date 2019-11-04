@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)allData;
 - (void)readWriteDatabase:(CDUnknownBlockType)arg1 async:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (id)unarchivedObjectOfClass:(Class)arg1 fromData:(id)arg2 error:(id *)arg3;
 - (void)readDatabase:(CDUnknownBlockType)arg1 async:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteDatabase;
 - (void)clearDatabase;

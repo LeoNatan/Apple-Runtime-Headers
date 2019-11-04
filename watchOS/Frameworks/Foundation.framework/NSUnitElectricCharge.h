@@ -20,6 +20,7 @@
 + (id)megaampereHours;
 + (id)coulombs;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

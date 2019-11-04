@@ -4,14 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Home/HFAccessoryProfileGroupItemProvider.h>
+#import <Home/HFItemProvider.h>
 
-@interface HFNetworkConfigurationGroupItemProvider : HFAccessoryProfileGroupItemProvider
+@class HMHome, NSMutableSet;
+
+@interface HFNetworkConfigurationGroupItemProvider : HFItemProvider
 {
+    HMHome *_home;
+    NSMutableSet *_groupItems;
 }
 
-- (id)_profileGroupItemForProfiles:(id)arg1 groupIdentifier:(id)arg2;
-- (id)_supportedProfileClasses;
+@property(retain, nonatomic) NSMutableSet *groupItems; // @synthesize groupItems=_groupItems;
+@property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
+- (void).cxx_destruct;
+- (id)invalidationReasons;
+- (id)items;
+- (id)reloadItems;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 - (id)initWithHome:(id)arg1;
 
 @end

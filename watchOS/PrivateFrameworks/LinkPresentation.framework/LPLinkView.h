@@ -137,8 +137,6 @@
 - (unsigned int)_edgesPropagatingSafeAreaInsetsToDescendants;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (void)layoutMarginsDidChange;
-- (struct UIEdgeInsets)_effectiveContentInset;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) int _style;
 - (void)_setPresentationProperties:(id)arg1;
@@ -153,6 +151,8 @@
 - (void)_setMetadataInternal:(id)arg1;
 - (void)themeParametersDidChange;
 - (void)_setupView;
+- (_Bool)_shouldClipAnimationView;
+- (_Bool)_shouldApplyCornerRadius;
 - (void)_commonInitWithURL:(id)arg1;
 - (id)initWithPresentationProperties:(id)arg1 URL:(id)arg2;
 - (id)initWithPresentationProperties:(id)arg1;

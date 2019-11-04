@@ -16,13 +16,11 @@
     NSObject<OS_dispatch_queue> *workQueue;
     CBCentralManager *centralManager;
     NSMutableSet *delegates;
-    int centralManagerState;
-    int _state;
+    int state;
 }
 
 + (id)getInstance;
-@property(readonly) int state; // @synthesize state=_state;
-@property int centralManagerState; // @synthesize centralManagerState;
+@property int state; // @synthesize state;
 @property(retain, nonatomic) NSMutableSet *delegates; // @synthesize delegates;
 @property(retain, nonatomic) CBCentralManager *centralManager; // @synthesize centralManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue;

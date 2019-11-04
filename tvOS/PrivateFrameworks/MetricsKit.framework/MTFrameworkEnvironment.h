@@ -16,6 +16,7 @@
 + (void)withEnvironment:(id)arg1 execute:(CDUnknownBlockType)arg2;
 - (id)valueForEntitlement:(id)arg1;
 - (id)date;
+- (_Bool)isInternalBuild;
 - (_Bool)isStandardEnvironment;
 
 @end

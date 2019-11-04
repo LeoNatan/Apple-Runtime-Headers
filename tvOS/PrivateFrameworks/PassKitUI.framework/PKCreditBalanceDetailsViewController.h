@@ -31,8 +31,15 @@
     PKDashboardBalanceSummaryItem *_paymentsSummaryItem;
     PKDashboardBalanceSummaryItem *_creditsSummaryItem;
     PKDashboardBalanceSummaryItem *_dailyCashSummaryItem;
+    PKDashboardBalanceSummaryItem *_installmentBalanceSummaryItem;
+    PKDashboardBalanceSummaryItem *_creditLimitSummaryItem;
+    PKDashboardBalanceSummaryItem *_totalBalanceSummaryItem;
+    PKDashboardBalanceSummaryItem *_availableCreditSummaryItem;
+    NSArray *_totalBalanceItems;
     NSArray *_usageItems;
-    PKDashboardBalanceSummaryItem *_statementDowloadSummaryItem;
+    PKDashboardBalanceSummaryItem *_statementDownloadSummaryItem;
+    PKDashboardBalanceSummaryItem *_exportTransactionDataSummaryItem;
+    NSArray *_buttonItems;
     PKBalanceSummary *_balanceSummary;
     NSArray *_statements;
     NSDictionary *_statementsByYear;

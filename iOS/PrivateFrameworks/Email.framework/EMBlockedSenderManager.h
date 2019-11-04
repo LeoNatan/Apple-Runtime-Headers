@@ -11,11 +11,13 @@
 
 @interface EMBlockedSenderManager : NSObject
 {
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _didRemoveObservers
     NSSet *_blockedSenderCache;
     id <EFScheduler> _resetScheduler;
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
++ (_Bool)shouldMoveToTrashForMailboxType:(long long)arg1;
 + (void)setPromptForBlockedSender:(_Bool)arg1;
 + (_Bool)shouldPromptForBlockedSender;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
@@ -43,6 +45,9 @@
 - (void)_postBlockedSenderListDidChangeNotificationBasedOnBlockedSenderEnabledState;
 - (void)_resetBlockedSenderCache;
 - (void)_blockedSenderListDidChange:(id)arg1;
+- (void)_removeObserversIfNeeded;
+- (void)tearDown;
+- (void)dealloc;
 - (id)init;
 
 @end

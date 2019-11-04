@@ -23,5 +23,6 @@
 @property(copy, nonatomic) CDUnknownBlockType failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType resultsBlock;
+@property(copy, nonatomic) NSString *bundleIdentifier;
 @end
 

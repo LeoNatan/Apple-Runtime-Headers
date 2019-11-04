@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)setEnabled:(_Bool)arg1;
 - (void)tintColorDidChange;
 - (void)_dynamicUserInterfaceTraitDidChange;
+- (struct CGSize)intrinsicContentSize;
 - (id)initWithBarButtonItem:(id)arg1;
 
 @end

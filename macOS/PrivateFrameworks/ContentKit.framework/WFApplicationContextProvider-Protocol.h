@@ -9,6 +9,7 @@
 @class NSBundle, NSString, UIApplication, UIWindow, WFApplicationContext;
 
 @protocol WFApplicationContextProvider <NSObject>
+- (BOOL)shouldReverseLayoutDirection;
 - (UIApplication *)applicationForWFApplicationContext:(WFApplicationContext *)arg1;
 - (UIWindow *)keyWindowForWFApplicationContext:(WFApplicationContext *)arg1;
 - (NSString *)notificationNameForApplicationStateEvent:(long long)arg1 applicationContext:(WFApplicationContext *)arg2;

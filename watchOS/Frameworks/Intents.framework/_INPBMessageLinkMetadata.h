@@ -20,6 +20,8 @@
     _Bool __encodeLegacyGloryData;
     NSString *_albumArtist;
     NSString *_albumName;
+    NSString *_appleTvSubtitle;
+    NSString *_appleTvTitle;
     NSString *_artistGenre;
     NSString *_artistName;
     NSString *_audioBookAuthor;
@@ -34,6 +36,8 @@
     NSArray *_imageURLs;
     NSString *_itemType;
     int _linkMediaType;
+    NSString *_movieBundleGenre;
+    NSString *_movieBundleName;
     NSString *_movieGenre;
     NSString *_movieName;
     NSString *_musicVideoArtist;
@@ -63,10 +67,12 @@
     NSString *_tvEpisodeSeasonName;
     NSString *_tvSeasonGenre;
     NSString *_tvSeasonName;
+    NSString *_tvShowName;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
+@property(copy, nonatomic) NSString *tvShowName; // @synthesize tvShowName=_tvShowName;
 @property(copy, nonatomic) NSString *tvSeasonName; // @synthesize tvSeasonName=_tvSeasonName;
 @property(copy, nonatomic) NSString *tvSeasonGenre; // @synthesize tvSeasonGenre=_tvSeasonGenre;
 @property(copy, nonatomic) NSString *tvEpisodeSeasonName; // @synthesize tvEpisodeSeasonName=_tvEpisodeSeasonName;
@@ -96,6 +102,8 @@
 @property(copy, nonatomic) NSString *musicVideoArtist; // @synthesize musicVideoArtist=_musicVideoArtist;
 @property(copy, nonatomic) NSString *movieName; // @synthesize movieName=_movieName;
 @property(copy, nonatomic) NSString *movieGenre; // @synthesize movieGenre=_movieGenre;
+@property(copy, nonatomic) NSString *movieBundleName; // @synthesize movieBundleName=_movieBundleName;
+@property(copy, nonatomic) NSString *movieBundleGenre; // @synthesize movieBundleGenre=_movieBundleGenre;
 @property(nonatomic) int linkMediaType; // @synthesize linkMediaType=_linkMediaType;
 @property(copy, nonatomic) NSString *itemType; // @synthesize itemType=_itemType;
 @property(copy, nonatomic) NSArray *imageURLs; // @synthesize imageURLs=_imageURLs;
@@ -110,6 +118,8 @@
 @property(copy, nonatomic) NSString *audioBookAuthor; // @synthesize audioBookAuthor=_audioBookAuthor;
 @property(copy, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(copy, nonatomic) NSString *artistGenre; // @synthesize artistGenre=_artistGenre;
+@property(copy, nonatomic) NSString *appleTvTitle; // @synthesize appleTvTitle=_appleTvTitle;
+@property(copy, nonatomic) NSString *appleTvSubtitle; // @synthesize appleTvSubtitle=_appleTvSubtitle;
 @property(copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(copy, nonatomic) NSString *albumArtist; // @synthesize albumArtist=_albumArtist;
 - (void).cxx_destruct;
@@ -121,6 +131,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+@property(readonly, nonatomic) _Bool hasTvShowName;
 @property(readonly, nonatomic) _Bool hasTvSeasonName;
 @property(readonly, nonatomic) _Bool hasTvSeasonGenre;
 @property(readonly, nonatomic) _Bool hasTvEpisodeSeasonName;
@@ -150,6 +161,8 @@
 @property(readonly, nonatomic) _Bool hasMusicVideoArtist;
 @property(readonly, nonatomic) _Bool hasMovieName;
 @property(readonly, nonatomic) _Bool hasMovieGenre;
+@property(readonly, nonatomic) _Bool hasMovieBundleName;
+@property(readonly, nonatomic) _Bool hasMovieBundleGenre;
 - (int)StringAsLinkMediaType:(id)arg1;
 - (id)linkMediaTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasLinkMediaType;
@@ -172,6 +185,8 @@
 @property(readonly, nonatomic) _Bool hasAudioBookAuthor;
 @property(readonly, nonatomic) _Bool hasArtistName;
 @property(readonly, nonatomic) _Bool hasArtistGenre;
+@property(readonly, nonatomic) _Bool hasAppleTvTitle;
+@property(readonly, nonatomic) _Bool hasAppleTvSubtitle;
 @property(readonly, nonatomic) _Bool hasAlbumName;
 @property(readonly, nonatomic) _Bool hasAlbumArtist;
 

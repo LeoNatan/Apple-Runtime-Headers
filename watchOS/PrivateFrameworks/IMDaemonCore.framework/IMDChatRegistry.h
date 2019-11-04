@@ -8,7 +8,7 @@
 
 #import <IMDaemonCore/TUConversationManagerDelegate-Protocol.h>
 
-@class IMDCKUtilities, IMDCNPersonAliasResolver, IMDChatStore, IMDMessageHistorySyncController, IMDMessageProcessingController, NSArray, NSMutableDictionary, NSRecursiveLock, NSString, TUConversationManager;
+@class IMDCKUtilities, IMDChatStore, IMDMessageHistorySyncController, IMDMessageProcessingController, NSArray, NSData, NSMutableDictionary, NSRecursiveLock, NSString, TUConversationManager;
 
 @interface IMDChatRegistry : NSObject <TUConversationManagerDelegate>
 {
@@ -17,9 +17,11 @@
     NSMutableDictionary *_chats;
     _Bool _isLoading;
     _Bool _doneLoadingAfterMerge;
+    _Bool _blackholedChatsExistCache;
     NSMutableDictionary *_chatsByGroupID;
     _Bool _hasDumpedLogsForNoExisitingGroup;
     NSMutableDictionary *_idToHandlesMap;
+    NSData *_historyToken;
     IMDCKUtilities *_ckUtilities;
     IMDChatStore *_chatStore;
     IMDMessageProcessingController *_messageProcessingController;
@@ -38,6 +40,7 @@
 @property(nonatomic) _Bool hasDumpedLogsForNoExisitingGroup; // @synthesize hasDumpedLogsForNoExisitingGroup=_hasDumpedLogsForNoExisitingGroup;
 @property(retain, nonatomic) IMDChatStore *chatStore; // @synthesize chatStore=_chatStore;
 @property(retain, nonatomic) IMDCKUtilities *ckUtilities; // @synthesize ckUtilities=_ckUtilities;
+@property(readonly, nonatomic) NSData *historyToken; // @synthesize historyToken=_historyToken;
 @property(retain, nonatomic) NSMutableDictionary *idToHandlesMap; // @synthesize idToHandlesMap=_idToHandlesMap;
 - (void)updateMeCardHasUpdatedForAllChats;
 - (void)_chatGUIDsThatNeedRemerging:(id *)arg1 chatDictionaryArray:(id *)arg2 aliasMap:(id)arg3;
@@ -52,10 +55,11 @@
 - (void)_updateCachedCNIDMapForHandles:(id)arg1;
 - (void)_populateContactIDOnHandles;
 - (id)_generateCurrentAliasToCNIDDictionary;
-- (void)_generateCurrentAliasToCNIDDictionaryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_updateCurrentAliasToCNIDDictionaryAndHistoryTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)aliasToCNIDMap;
+- (void)setHistoryToken:(id)arg1;
 - (id)_aliasToCNIDMapForAliases:(id)arg1;
-- (void)_aliasToCNIDMapForAliases:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_updateCachedAliasToCNIDMap:(id)arg1 withHistoryToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_contactsBasedMerginEnabled;
 - (void)invalidatePersonCentricGroupedChatsCache;
 - (void)simulateMessageReceive:(id)arg1 serviceName:(id)arg2 groupID:(id)arg3 handles:(id)arg4 sender:(id)arg5;
@@ -108,11 +112,8 @@
 - (id)truncateSortedChatsGroupedByPersonCentricID:(id)arg1 toMaximumNumberOfChats:(int)arg2;
 - (id)groupChatsBasedOnIdentityUsingCacheIfApplicable:(id)arg1;
 - (id)groupChatsBasedOnIdentity:(id)arg1;
-- (void)startHandleIDPopulation;
-- (void)_populateCNRecordIDForHandles:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_aliasToHandlesMap:(id)arg1;
 - (id)_allHandles;
-@property(readonly, nonatomic) IMDCNPersonAliasResolver *cnaliasResolver;
 - (_Bool)repairDuplicateChatsIfNeeded;
 - (_Bool)_mergeDuplicateGroupsIfNeeded;
 - (struct NSArray *)_createGroupChatsArray;
@@ -137,7 +138,8 @@
 - (void)_forceReloadChats:(_Bool)arg1;
 - (void)_setInitialLoadForTesting:(_Bool)arg1;
 - (id)_chatInfoForSaving;
-- (id)_chatInfoInRange:(struct _NSRange)arg1;
+- (id)_chatInfoInRange:(struct _NSRange)arg1 wantsBlackholed:(_Bool)arg2;
+- (id)_blackholedChatInfoForNumberOfChats:(int)arg1;
 - (id)_chatInfoForNumberOfChats:(int)arg1;
 - (id)_allChatInfo;
 - (id)_chatInfoForConnection;
@@ -152,6 +154,7 @@
 - (void)removeChat:(id)arg1;
 - (void)addChat:(id)arg1 firstLoad:(_Bool)arg2;
 - (void)addChat:(id)arg1;
+- (void)checkBlackholedChatsExistAfterUpdatingChatWithAdd:(_Bool)arg1;
 - (void)updateGroupIDForChat:(id)arg1 newGroupID:(id)arg2;
 - (void)updateStateForChat:(id)arg1 forcePost:(_Bool)arg2 shouldRebuildFailedMessageDate:(_Bool)arg3 setUnreadCountToZero:(_Bool)arg4;
 - (void)updateStateForChat:(id)arg1 forcePost:(_Bool)arg2 shouldRebuildFailedMessageDate:(_Bool)arg3 shouldCalculateUnreadCount:(_Bool)arg4;
@@ -178,8 +181,12 @@
 - (id)existingChatsWithGroupID:(id)arg1;
 - (id)existingChatWithGUID:(id)arg1;
 - (id)chatForRoom:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4;
-- (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 groupID:(id)arg5 displayName:(id)arg6 guid:(id)arg7 lastAddressedHandle:(id)arg8 lastAddressedSIMID:(id)arg9;
-- (id)chatForHandle:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4 lastAddressedHandle:(id)arg5 lastAddressedSIMID:(id)arg6;
+- (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 groupID:(id)arg5 displayName:(id)arg6 guid:(id)arg7 lastAddressedHandle:(id)arg8 lastAddressedSIMID:(id)arg9 isBlackholed:(_Bool)arg10;
+- (id)chatForHandle:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4 lastAddressedHandle:(id)arg5 lastAddressedSIMID:(id)arg6 isBlackholed:(_Bool)arg7;
+- (id)_chatsWithBlackholed:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool blackholedChatsExist;
+@property(readonly, nonatomic) NSArray *blackholedChats;
+@property(readonly, nonatomic) NSArray *allChats;
 @property(readonly, nonatomic) NSArray *chats;
 - (id)_sharedMessageStore;
 - (void)dealloc;

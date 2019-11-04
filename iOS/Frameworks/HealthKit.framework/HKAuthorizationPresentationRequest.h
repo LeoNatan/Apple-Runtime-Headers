@@ -16,6 +16,7 @@
     long long _type;
     NSString *_readUsageDescription;
     NSString *_shareUsageDescription;
+    NSString *_researchStudyUsageDescription;
     NSSet *_typesRequiringReadAuthorization;
     NSSet *_typesRequiringShareAuthorization;
 }
@@ -24,6 +25,7 @@
 @property(nonatomic, getter=shouldDismissWhenBackgrounded) _Bool dismissWhenBackgrounded; // @synthesize dismissWhenBackgrounded=_dismissWhenBackgrounded;
 @property(copy, nonatomic) NSSet *typesRequiringShareAuthorization; // @synthesize typesRequiringShareAuthorization=_typesRequiringShareAuthorization;
 @property(copy, nonatomic) NSSet *typesRequiringReadAuthorization; // @synthesize typesRequiringReadAuthorization=_typesRequiringReadAuthorization;
+@property(copy, nonatomic) NSString *researchStudyUsageDescription; // @synthesize researchStudyUsageDescription=_researchStudyUsageDescription;
 @property(copy, nonatomic) NSString *shareUsageDescription; // @synthesize shareUsageDescription=_shareUsageDescription;
 @property(copy, nonatomic) NSString *readUsageDescription; // @synthesize readUsageDescription=_readUsageDescription;
 @property(nonatomic) long long type; // @synthesize type=_type;

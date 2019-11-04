@@ -16,6 +16,7 @@
 
 + (id)descriptor;
 - (BOOL)verifyWithError:(id *)arg1;
+@property(retain) NSData *salt;
 @property(retain) NSData *message;
 @property(retain) TransparencyVRFVerifier *verifier;
 

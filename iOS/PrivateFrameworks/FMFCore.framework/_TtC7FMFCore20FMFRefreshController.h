@@ -15,16 +15,14 @@
     // Error parsing type: , name: apsConnectionHandler
     // Error parsing type: , name: tapContexts
     // Error parsing type: , name: refreshQueue
+    // Error parsing type: , name: callbackInterval
     // Error parsing type: , name: minCallbackInterval
     // Error parsing type: , name: maxCallbackInterval
-    // Error parsing type: , name: backgroundCallbackInterval
     // Error parsing type: , name: lastRefreshTime
-    // Error parsing type: , name: lastForegroundTime
     // Error parsing type: , name: refreshTimer
     // Error parsing type: , name: initializedOnce
     // Error parsing type: , name: firstRefreshCompleted
     // Error parsing type: , name: isRefreshing
-    // Error parsing type: , name: isBackgrounded
 }
 
 - (void)refreshTimerFired;

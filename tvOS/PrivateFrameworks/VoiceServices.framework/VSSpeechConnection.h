@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSystemSpeaking;
 - (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 - (id)availableVoicesForLanguageCode:(id)arg1;
+- (void)estimateDurationWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)queryPhaticCapabilityWithRequest:(id)arg1;
 - (void)prewarmIfNeededWithRequest:(id)arg1;
 - (void)updateWithConnectionIdentifier:(id)arg1;

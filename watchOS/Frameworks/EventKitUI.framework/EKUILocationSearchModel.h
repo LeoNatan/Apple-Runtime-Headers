@@ -70,6 +70,7 @@
 - (void)updateRecents:(id)arg1;
 - (void)_updateContactsSearchWithResults:(id)arg1 forToken:(id)arg2;
 - (void)updateContacts:(id)arg1;
+- (void)completerDidFail:(id)arg1 error:(id)arg2;
 - (void)completerDidUpdateResults:(id)arg1 finished:(_Bool)arg2;
 - (void)dedupeResults;
 - (void)beginSearchForTerm:(id)arg1;

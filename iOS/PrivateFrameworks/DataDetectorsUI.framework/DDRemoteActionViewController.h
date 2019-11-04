@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)getIsBeingPresentedInPopover:(CDUnknownBlockType)arg1;
 - (void)actionDidFinish;
-- (void)actionBecameCancellable:(_Bool)arg1;
+- (void)actionCanBeCancelledExternally:(_Bool)arg1;
 - (void)adaptForPresentationInPopover:(_Bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewControllerReady;

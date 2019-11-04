@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)_willPerformOutputOperation;
 - (void)_handleInputViewControllerState:(id)arg1;
 - (void)adjustTextPositionByCharacterOffset:(int)arg1;
-- (_Bool)needsInputModeSwitchKey;
+@property(readonly, nonatomic) _Bool needsInputModeSwitchKey;
 @property(readonly, copy, nonatomic) NSUUID *documentIdentifier;
 @property(readonly, nonatomic) NSString *markedText;
 @property(readonly, nonatomic) NSString *selectedText;

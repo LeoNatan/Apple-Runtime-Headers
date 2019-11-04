@@ -8,13 +8,14 @@
 
 #import <CoreHandwriting/CHRecognizing-Protocol.h>
 
-@class CHCutpointModel, CHDrawing, CHPatternNetwork, CHRecognitionInsight, CHRecognitionInsightRequest, CHRecognizerConfiguration, CHSpellChecker, CHStrokeTransitionModel, NSCharacterSet, NSDictionary, NSLocale, NSMutableDictionary, NSMutableIndexSet, NSString, NSURL;
+@class CHCutpointModel, CHDrawing, CHPatternNetwork, CHRecognitionInsight, CHRecognitionInsightRequest, CHRecognizerConfiguration, CHSpellChecker, CHStrokeTransitionModel, NSArray, NSCharacterSet, NSDictionary, NSLocale, NSMutableDictionary, NSMutableIndexSet, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface CHRecognizer : NSObject <CHRecognizing>
 {
     CHRecognitionInsightRequest *_nextRecognitionInsightRequest;
     CHRecognitionInsight *_activeRecognitionInsight;
+    NSArray *_whitelistMecabraRareCharacters;
     _Bool _saveDrawingUntilNextCandidateAccepted;
     int _recognitionType;
     unsigned int _maxRecognitionResultCount;
@@ -184,7 +185,8 @@
 - (id)initWithType:(int)arg1 mode:(int)arg2;
 - (id)strokeIndexesForLastCharacter;
 - (id)mecabraRareWordIndexes:(id)arg1 wordRanges:(id)arg2;
-- (_Bool)isMecabraRareEntry:(id)arg1;
+- (_Bool)isRareChineseEntry:(id)arg1;
+- (id)whitelistMecabraRareCharacters;
 - (vector_de520796)completionsForCandidate:(id)arg1 candidateContext:(id)arg2 prefix:(id)arg3 option:(unsigned long)arg4;
 - (vector_de520796)completionsForCandidate:(id)arg1 prefix:(id)arg2 option:(unsigned long)arg3;
 - (void)candidateAccepted:(void *)arg1;

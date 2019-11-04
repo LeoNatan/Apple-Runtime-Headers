@@ -32,17 +32,18 @@
     NSObject<OS_dispatch_queue> *_prefsQueue;
     int _symptomsToken;
     CoreTelephonyClient *_ctc;
-    int _dataIndicator;
     NSObject<OS_dispatch_queue> *_dataStatusQueue;
     _Bool _cellularDataAvailable;
     struct __SCNetworkReachability *_reachability;
     struct __SCDynamicStore *_store;
     struct __CFRunLoopSource *_store_source;
     CXCallObserver *_callObserver;
+    int _dataIndicator;
 }
 
 + (id)networkAssertionWithIdentifier:(id)arg1;
 + (id)sharedInstance;
+@property(readonly) int dataIndicator; // @synthesize dataIndicator=_dataIndicator;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) AWDMailNetworkDiagnosticsReport *awdNetworkDiagnosticReport;
 - (id)copyDiagnosticInformation;
@@ -66,15 +67,16 @@
 - (void)_handleWiFiNotification:(unsigned int)arg1;
 - (void)_checkKeys:(id)arg1 forStore:(struct __SCDynamicStore *)arg2;
 - (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability *)arg2;
-- (_Bool)hasAlternateAdvice;
-- (_Bool)is4GConnection;
-- (_Bool)is3GConnection;
-- (_Bool)inAirplaneMode;
-- (_Bool)isOnWWAN;
-- (_Bool)isFatPipe;
-- (_Bool)isNetworkUp;
+@property(readonly) _Bool hasAlternateAdvice;
+@property(readonly) int transportType;
+@property(readonly) _Bool is4GConnection;
+@property(readonly) _Bool is3GConnection;
+@property(readonly) _Bool inAirplaneMode;
+@property(readonly) _Bool isOnWWAN;
+@property(readonly) _Bool isFatPipe;
+@property(readonly) _Bool isNetworkUp;
 - (_Bool)_isNetworkUp_nts;
-- (_Bool)isDataAvailable;
+@property(readonly) _Bool isDataAvailable;
 - (int)dataStatus;
 - (void)_setDataStatus_nts:(id)arg1;
 - (_Bool)_simulationOverrideForType:(unsigned int)arg1 actualValue:(_Bool)arg2;

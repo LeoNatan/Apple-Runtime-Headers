@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: pluggableDelegate
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory
     // Error parsing type: , name: $__lazy_storage_$_spinnerViewController
+    // Error parsing type: , name: purchasePresenter
     // Error parsing type: , name: renderToken
 }
 

@@ -11,6 +11,7 @@
 }
 
 + (id)sharedPreferences;
+- (_Bool)opportuneSpeakListenerBypassEnabled;
 - (_Bool)companionSyncVoiceTriggerUtterancesEnabled;
 - (id)fakeHearstModelPath;
 - (void)setHearstSecondPassModelVersion:(id)arg1;
@@ -42,6 +43,8 @@
 - (void)setJarvisTriggerMode:(int)arg1;
 - (_Bool)jarvisAudioLoggingEnabled;
 - (_Bool)secondPassAudioLoggingEnabled;
+- (id)myriadHashFilePath;
+- (id)myriadHashDirectory;
 - (id)assistantAudioFileLogDirectory;
 - (id)assistantLogDirectory;
 - (id)voiceTriggerAudioLogDirectory;

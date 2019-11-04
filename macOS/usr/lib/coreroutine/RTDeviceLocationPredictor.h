@@ -61,10 +61,10 @@
 - (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 handler:(CDUnknownBlockType)arg4;
-- (id)_sortedAndMergedPredictedLocationsOfInterest:(id)arg1;
-- (id)_sortedPredictedLocationsOfInterest:(id)arg1;
-- (id)_mergedPredictedLocationsOfInterest:(id)arg1;
-- (id)_mergePredictedLocationOfInterest:(id)arg1 otherPredictedLocationOfInterest:(id)arg2;
+- (id)_sortAndDedupePredictedLocationsOfInterest:(id)arg1;
+- (id)_sortPredictedLocationsOfInterest:(id)arg1;
+- (id)_dedupePredictedLocationsOfInterest:(id)arg1;
+- (id)_mergePredictedLocationsOfInterest:(id)arg1;
 - (id)_mergedLocationOfInterest:(id)arg1 otherLocationOfInterest:(id)arg2;
 - (void)purgeWithReferenceDate:(id)arg1;
 - (void)_purgeWithReferenceDate:(id)arg1;

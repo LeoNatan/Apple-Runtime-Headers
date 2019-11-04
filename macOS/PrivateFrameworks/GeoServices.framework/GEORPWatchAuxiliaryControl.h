@@ -13,10 +13,12 @@
 @interface GEORPWatchAuxiliaryControl : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_hardwareIdentifier;
     NSString *_osBuild;
     NSString *_osVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_hardwareIdentifier:1;
         unsigned int read_osBuild:1;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) NSString *hardwareIdentifier;
 @property(readonly, nonatomic) BOOL hasHardwareIdentifier;
 - (void)_readHardwareIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

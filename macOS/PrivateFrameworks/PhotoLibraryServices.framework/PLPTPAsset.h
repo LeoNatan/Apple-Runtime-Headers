@@ -40,6 +40,7 @@
     BOOL _highFrameRateVideo;
     BOOL _timeLapseVideo;
     NSString *_relatedUUID;
+    NSString *_spatialOverCaptureGroupIdentifier;
     long long _conversionGroup;
 }
 
@@ -52,6 +53,7 @@
 @property(readonly, nonatomic, getter=isBurstFavorite) BOOL burstFavorite; // @synthesize burstFavorite=_burstFavorite;
 @property(readonly, nonatomic, getter=isBurstPicked) BOOL burstPicked; // @synthesize burstPicked=_burstPicked;
 @property(readonly, copy, nonatomic) NSString *burstUUID; // @synthesize burstUUID=_burstUUID;
+@property(readonly, copy, nonatomic) NSString *spatialOverCaptureGroupIdentifier; // @synthesize spatialOverCaptureGroupIdentifier=_spatialOverCaptureGroupIdentifier;
 @property(readonly, copy, nonatomic) NSString *groupUUID; // @synthesize groupUUID=_groupUUID;
 @property(readonly, copy, nonatomic) NSString *locationString; // @synthesize locationString=_locationString;
 @property(readonly, copy, nonatomic) NSString *durationString; // @synthesize durationString=_durationString;

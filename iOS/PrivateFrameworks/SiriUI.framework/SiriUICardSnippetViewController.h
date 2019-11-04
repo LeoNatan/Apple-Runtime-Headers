@@ -14,7 +14,7 @@
 #import <SiriUI/SiriUIModalContainerViewControllerDelegate-Protocol.h>
 #import <SiriUI/_SiriUICardLoaderDelegate-Protocol.h>
 
-@class CRKCardPresentation, NSMutableDictionary, NSObject, NSString, SACardSnippet, SiriUICardSnippetView, SiriUIModalContainerViewController, UIViewController, _SiriUICardLoader;
+@class CRKCardPresentation, NSMutableDictionary, NSObject, NSString, NSTimer, SACardSnippet, SiriUICardSnippetView, SiriUIModalContainerViewController, UIViewController, _SiriUICardLoader;
 @protocol CRKCardViewControllerDelegate, CRKCardViewControlling, OS_dispatch_group;
 
 @interface SiriUICardSnippetViewController : SiriUISnippetViewController <_SiriUICardLoaderDelegate, SiriUICardLoadingObserver, SiriUIModalContainerViewControllerDelegate, CRKCardPresentationDelegate, SiriUICardSnippetViewDataSource, SiriUICardSnippetViewDelegate, CRKCardViewControllerDelegate>
@@ -26,6 +26,9 @@
     NSObject<OS_dispatch_group> *_cardLoadingGroup;
     SACardSnippet *_newlyLoadedCardSnippet;
     _SiriUICardLoader *_cardLoader;
+    CDUnknownBlockType _cardLoadingCompletionhandler;
+    NSTimer *_cardLoadingTimer;
+    _Bool _isCardLoading;
     SiriUIModalContainerViewController *_presentedModalContainerViewController;
     UIViewController<CRKCardViewControlling> *_cardViewController;
     CRKCardPresentation *_cardPresentation;

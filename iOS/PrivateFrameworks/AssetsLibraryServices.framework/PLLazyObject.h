@@ -8,6 +8,7 @@
 
 @interface PLLazyObject : NSObject
 {
+    _Bool _shouldRetryBlockOnNil;
     struct os_unfair_lock_s _lock;
     CDUnknownBlockType _block;
     id _object;
@@ -17,6 +18,8 @@
 - (void)invalidateWithHandler:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 @property(readonly) id objectValue;
+- (id)initWithRetry:(_Bool)arg1 block:(CDUnknownBlockType)arg2;
+- (id)initWithRetriableBlock:(CDUnknownBlockType)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithObject:(id)arg1;
 - (id)init;

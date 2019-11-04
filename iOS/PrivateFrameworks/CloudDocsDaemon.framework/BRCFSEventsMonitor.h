@@ -20,7 +20,6 @@
     // Error parsing type: Ai, name: _resetCount
     BRCFSEventsPersistedState *_persistedState;
     NSString *_devicePath;
-    NSString *_rootPathRelativeToDevice;
     NSObject<OS_dispatch_source> *_rootVnodeWatcher;
     struct __FSEventStream *_stream;
     NSObject<OS_dispatch_queue> *_streamQueue;

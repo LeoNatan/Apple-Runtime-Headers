@@ -42,6 +42,7 @@
     NSString *_languageCode;
     NSString *_localeIdentifier;
     NSString *_temperatureUnit;
+    int _siriDataSharingState;
     BOOL _siriDisabled;
     NSString *_siriListenLanguage;
     long long _siriVoiceGender;
@@ -59,7 +60,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (void)_setSystemName:(id)arg1 hostname:(id)arg2;
-- (void)_setSiriLanguageInfo;
+- (void)_setSiriInfo;
 - (void)_speakLocalizedKey:(id)arg1 event:(unsigned int)arg2;
 - (void)_siriGreetingDialogCPhrase:(id)arg1 error:(id)arg2;
 - (void)_siriGreetingDialogCStart;

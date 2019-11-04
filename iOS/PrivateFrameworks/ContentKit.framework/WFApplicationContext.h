@@ -33,6 +33,7 @@
 @property(nonatomic, getter=isIdleTimerDisabled) _Bool idleTimerDisabled;
 - (id)applicationOrNil;
 - (id)keyWindow;
+@property(readonly, nonatomic) _Bool shouldReverseLayoutDirection;
 @property(readonly, nonatomic) NSBundle *applicationBundle; // @synthesize applicationBundle=_applicationBundle;
 @property(readonly, nonatomic) NSString *currentUserInterfaceType;
 @property(readonly, nonatomic) NSBundle *bundle;

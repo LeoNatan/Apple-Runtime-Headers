@@ -23,6 +23,7 @@
     unsigned long long _currentMessageID;
 }
 
++ (id)prepopulatedChat;
 @property(copy, nonatomic) NSString *simulatedChatIdentifier; // @synthesize simulatedChatIdentifier=_simulatedChatIdentifier;
 @property(readonly, nonatomic) unsigned long long currentMessageID; // @synthesize currentMessageID=_currentMessageID;
 @property(readonly, nonatomic) IMHandle *outgoingHandle; // @synthesize outgoingHandle=_outgoingHandle;

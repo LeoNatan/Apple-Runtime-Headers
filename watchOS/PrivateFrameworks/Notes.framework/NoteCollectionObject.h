@@ -14,6 +14,7 @@
 {
 }
 
+@property(readonly, nonatomic) _Bool isAllNotesContainer;
 - (id)basicAccountIdentifier;
 - (id)collectionInfo;
 - (id)predicateForNotes;

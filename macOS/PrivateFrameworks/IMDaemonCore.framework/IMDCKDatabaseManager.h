@@ -6,37 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainer, IMDCKMockDatabase;
+@class CKContainer;
 
 @interface IMDCKDatabaseManager : NSObject
 {
-    BOOL _useStingRay;
-    CKContainer *_stingRayContainer;
     CKContainer *_manateeContainer;
     CKContainer *_nonHSA2ManateeContainer;
-    IMDCKMockDatabase *_mockDatabase;
     CKContainer *_nickNameContainer;
 }
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) CKContainer *nickNameContainer; // @synthesize nickNameContainer=_nickNameContainer;
-@property(readonly, nonatomic) IMDCKMockDatabase *mockDatabase; // @synthesize mockDatabase=_mockDatabase;
 @property(readonly, nonatomic) CKContainer *nonHSA2ManateeContainer; // @synthesize nonHSA2ManateeContainer=_nonHSA2ManateeContainer;
 @property(readonly, nonatomic) CKContainer *manateeContainer; // @synthesize manateeContainer=_manateeContainer;
-@property(readonly, nonatomic) CKContainer *stingRayContainer; // @synthesize stingRayContainer=_stingRayContainer;
-@property(nonatomic) BOOL useStingRay; // @synthesize useStingRay=_useStingRay;
 - (void)fetchCurrentUserForNicknameContainer:(CDUnknownBlockType)arg1;
 - (id)nickNamePublicDatabase;
 - (id)nonHSA2ManateeDatabase;
 - (id)manateeDataBase;
 @property(readonly, nonatomic) CKContainer *truthContainer;
-- (id)stingRayDatabase;
 - (id)truthPublicDatabase;
 - (id)truthDatabase;
-- (BOOL)_useMockCloudKit;
 - (id)_nickNameContainer;
 - (id)_nickNameContainerIdentifier;
 - (BOOL)_serverSaysToUseOldContainer;
+@property(readonly, nonatomic) BOOL useStingRay;
 - (void)dealloc;
 - (id)init;
 

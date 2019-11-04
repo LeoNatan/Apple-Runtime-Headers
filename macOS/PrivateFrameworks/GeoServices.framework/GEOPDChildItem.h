@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDChildItem : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDChildAction *_childAction;
     GEOPDChildPlace *_childPlace;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _childItemType;
     struct {
         unsigned int has_childItemType:1;
@@ -55,6 +57,8 @@ __attribute__((visibility("hidden")))
 - (id)childItemTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasChildItemType;
 @property(nonatomic) int childItemType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

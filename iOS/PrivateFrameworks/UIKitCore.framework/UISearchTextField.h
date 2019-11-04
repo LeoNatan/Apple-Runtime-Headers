@@ -46,6 +46,7 @@
 - (id)_customDraggableObjectsForRange:(id)arg1;
 - (id)_rangeOfCustomDraggableObjectsInRange:(id)arg1;
 - (_Bool)allowsDraggingAttachments;
+- (_Bool)_shouldSuppressSelectionHandles;
 - (void)fieldEditorDidChangeSelection:(id)arg1;
 - (void)_updateAtomViewSelection:(_Bool)arg1;
 - (void)deleteBackward;
@@ -71,7 +72,6 @@
 - (struct _NSRange)_rangeForSetText;
 - (id)textInRange:(id)arg1;
 - (void)_didSetFont:(id)arg1;
-- (_Bool)drawsAsAtom;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_tokenTapGestureRecognized;
 - (unsigned long long)_characterIndexForTokenTapGestureRecognizer;
@@ -144,6 +144,7 @@
 - (void)_setOffsetValue:(id)arg1 forIcon:(long long)arg2;
 - (id)_clearButtonImageForState:(unsigned long long)arg1;
 - (void)_setClearButtonImage:(id)arg1 forState:(unsigned long long)arg2;
+@property(nonatomic, setter=_setIgnoresDynamicType:) _Bool _ignoresDynamicType;
 - (void)_setMagnifyingGlassImage:(id)arg1;
 - (_Bool)canBecomeFocused;
 - (struct CGSize)intrinsicContentSize;

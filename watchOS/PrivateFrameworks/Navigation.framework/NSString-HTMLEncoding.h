@@ -23,6 +23,9 @@
 + (id)_navigation_stringWithTimeStampValues:(id)arg1 options:(CDStruct_d560ab42)arg2;
 + (id)_navigation_replacementForFormatToken:(id)arg1 options:(CDStruct_d560ab42)arg2 overrideVariables:(id)arg3;
 + (id)_navigation_replacementForFormatToken:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(int)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5;
++ (id)_navigation_spokenStringWithMinutes:(unsigned int)arg1 andAbbreviationType:(unsigned int)arg2;
++ (id)_navigation_spokenStringWithSeconds:(unsigned int)arg1 andAbbreviationType:(unsigned int)arg2;
++ (id)_navigation_spokenStringWithSeconds:(unsigned int)arg1 abbreviated:(_Bool)arg2;
 + (id)_navigation_stringWithMinutes:(unsigned int)arg1 andAbbreviationType:(unsigned int)arg2;
 + (id)_navigation_stringWithSeconds:(unsigned int)arg1 andAbbreviationType:(unsigned int)arg2;
 + (id)_navigation_stringWithSeconds:(unsigned int)arg1 abbreviated:(_Bool)arg2;
@@ -30,8 +33,10 @@
 + (id)_navigation_localizedStringForDistance:(double)arg1 detail:(int)arg2 unitFormat:(int)arg3 locale:(id)arg4 useMetric:(unsigned int)arg5 useYards:(unsigned int)arg6;
 + (id)_navigation_localizedStringForDistance:(double)arg1 context:(int)arg2 extraDetail:(_Bool)arg3;
 + (id)_navigation_overridenTokenForToken:(id)arg1 overrideVariables:(id)arg2;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(int)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5 allTokensExpanded:(_Bool *)arg6;
 + (id)_navigation_stringForServerFormattedString:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(int)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5;
 + (id)_navigation_stringForServerFormattedString:(id)arg1;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_d560ab42)arg2 overrideVariables:(id)arg3 allTokensExpanded:(_Bool *)arg4;
 + (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_d560ab42)arg2 overrideVariables:(id)arg3;
 + (id)_navigation_descriptionForFrequencyRangeWithMinFrequency:(int)arg1 maxFrequency:(int)arg2;
 + (id)_navigation_descriptionForFrequencyMinuteValue:(int)arg1;

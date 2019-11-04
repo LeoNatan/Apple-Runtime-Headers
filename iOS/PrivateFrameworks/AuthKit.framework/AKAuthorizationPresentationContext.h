@@ -34,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
-- (int)_iconVariantForScale:(float)arg1;
 - (void)_addPresentationParametersForContext:(id)arg1;
 - (void)_addPresenterParameters;
 - (id)initWithCoder:(id)arg1;

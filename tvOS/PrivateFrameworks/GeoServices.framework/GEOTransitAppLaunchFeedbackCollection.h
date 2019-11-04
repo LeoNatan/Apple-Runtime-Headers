@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOTransitAppLaunchFeedbackCollection : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_bundleIdentifier;
     GEOLatLng *_destination;
     GEOLatLng *_source;
     double _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     CDStruct_ea2c3af7 _flags;
 }
 
@@ -45,6 +47,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *bundleIdentifier;
 @property(readonly, nonatomic) _Bool hasBundleIdentifier;
 - (void)_readBundleIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -24,12 +24,12 @@
 - (void)ams_addHomeUserIdentifier:(id)arg1;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 dataProtectionClass:(unsigned int)arg3 expectedClass:(Class)arg4;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 expectedClass:(Class)arg3;
-- (_Bool)_setCookies:(id)arg1;
 - (id)_hashedStorefront;
 - (id)_hashedIdentifiers;
 - (id)_hashedMultiUserIdentifiers;
 - (id)_hashedActiveState;
 - (id)_createCookieStorage;
+- (_Bool)_updateCookiesWithCookiesToAdd:(id)arg1 cookiesToRemove:(id)arg2;
 - (id)_cookiesMatchingProperties:(id)arg1;
 - (id)_accountPropertyForKey:(id)arg1 dataProtectionClass:(unsigned int)arg2 expectedClasses:(id)arg3 error:(id *)arg4;
 - (id)_accountPropertyForKey:(id)arg1 expectedClass:(Class)arg2;
@@ -57,6 +57,7 @@
 - (void)ams_setValidPayment:(_Bool)arg1;
 - (void)ams_setStorefront:(id)arg1;
 - (void)ams_setServerResponse:(id)arg1;
+- (void)ams_setRegisterSuccessCriteria:(id)arg1;
 - (void)ams_setRawPassword:(id)arg1;
 - (void)ams_setPassword:(id)arg1;
 @property(nonatomic, setter=ams_setMergedPrivacyAcknowledgement:) _Bool ams_mergedPrivacyAcknowledgement;
@@ -74,6 +75,7 @@
 - (id)ams_lastAuthenticationServerResponse;
 @property(readonly, nonatomic) unsigned int ams_securityLevel;
 - (_Bool)ams_requiresAuthKitUpdate;
+- (id)ams_registerSuccessCriteria;
 - (id)ams_rawPassword;
 @property(readonly, nonatomic) NSDictionary *ams_privacyAcknowledgement;
 - (id)ams_password;
@@ -99,6 +101,7 @@
 @property(readonly, nonatomic) NSArray *ams_cookies;
 - (int)ams_biometricsState;
 @property(readonly, nonatomic) NSString *ams_altDSID;
+- (id)ams_allStorefronts;
 - (id)ams_accountFlags;
 
 // Remaining properties

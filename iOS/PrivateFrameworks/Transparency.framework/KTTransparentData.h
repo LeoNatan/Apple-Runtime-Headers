@@ -29,6 +29,8 @@
 - (_Bool)validateOtherAccountIDsInactiveForAccountId:(id)arg1 error:(id *)arg2;
 - (_Bool)validateAndUpdateWithSyncedLoggableDatas:(id)arg1 accountId:(id)arg2 error:(id *)arg3;
 - (_Bool)updateWithSMTs:(id)arg1 error:(id *)arg2;
+- (_Bool)updateWithMutation:(id)arg1 error:(id *)arg2;
+- (void)markAccountsWithMutationMs:(unsigned long long)arg1;
 - (id)mutationsFromSMTs:(id)arg1 error:(id *)arg2;
 - (id)sortMutationsByTimestamp:(id)arg1;
 - (_Bool)updateWithMapLeaf:(id)arg1 error:(id *)arg2;

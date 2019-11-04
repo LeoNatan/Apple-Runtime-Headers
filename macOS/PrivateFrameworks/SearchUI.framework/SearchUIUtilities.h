@@ -13,6 +13,7 @@
 + (id)bundleIdentifierForApp:(unsigned long long)arg1;
 + (void)openApplicationWithBundleIdentifier:(id)arg1;
 + (id)imageForBlockedApp;
++ (BOOL)resultBlockedForScreenTime:(id)arg1;
 + (BOOL)bundleIdentifierIsBlockedForScreenTimeExpiration:(id)arg1;
 + (BOOL)resultIsSiriAction:(id)arg1;
 + (BOOL)appIsValidForBundleIdentifier:(id)arg1;

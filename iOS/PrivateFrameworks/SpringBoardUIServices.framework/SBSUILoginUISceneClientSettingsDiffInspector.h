@@ -11,6 +11,7 @@
 }
 
 - (void)_observeOtherLoginUISetting:(unsigned long long)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)observeWallpaperModeWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeRotationModeWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarUserNameOverrideWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeIdleTimerModeWithBlock:(CDUnknownBlockType)arg1;

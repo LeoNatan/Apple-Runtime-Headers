@@ -31,6 +31,8 @@
 - (void)startAutomaticPruneWithBudget:(long long)arg1 urgency:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateCacheDeletePurgeableAmount;
 - (void)_handleCacheDeleteRegistration;
+- (struct __CFDictionary *)_handleCacheDeletePurgeable:(int)arg1 info:(struct __CFDictionary *)arg2;
+- (struct __CFDictionary *)_handleCacheDeletePurge:(int)arg1 info:(struct __CFDictionary *)arg2;
 - (long long)_purgeableAmountWithBudget:(long long)arg1 debugString:(id)arg2;
 - (long long)_totalPurgeableAmountForUrgency:(long long)arg1;
 - (void)dealloc;

@@ -27,7 +27,6 @@
 + (id)_statusAnnotationForTransaction:(id)arg1;
 + (id)_relativeDateForTransaction:(id)arg1;
 + (id)_billPaymentFundingSourceForTransaction:(id)arg1;
-+ (id)paymentMethodNameForTransaction:(id)arg1;
 + (id)presentationInformationForTransaction:(id)arg1 pass:(id)arg2 account:(id)arg3 deviceName:(id)arg4 context:(unsigned long long)arg5;
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (void).cxx_destruct;

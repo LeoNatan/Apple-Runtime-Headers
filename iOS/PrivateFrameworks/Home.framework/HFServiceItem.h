@@ -11,7 +11,7 @@
 #import <Home/HFServiceLikeBuilderCreating-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 
-@class HMService, NSSet, NSString;
+@class HMHome, HMService, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject;
 
 @interface HFServiceItem : HFItem <HFServiceLikeItem, HFActionBuilderFactory, HFServiceLikeBuilderCreating, HFNamingComponentCreating>
@@ -31,7 +31,6 @@
 - (id)controlDescriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)descriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)incrementalStateIconDescriptorForPrimaryState:(long long)arg1 incrementalValue:(id)arg2;
-- (id)_iconDescriptorWithFallBackIfNecessary:(id)arg1 withIconPrimaryState:(long long)arg2;
 - (id)_augmentedStandardResultsForUpdateResponse:(id)arg1 controlItems:(id)arg2;
 - (id)performStandardUpdateWithCharacteristicTypes:(id)arg1 options:(id)arg2;
 - (id)characteristicsToReadForCharacteristicTypes:(id)arg1 controlItems:(id)arg2;
@@ -40,6 +39,7 @@
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)accessories;
 @property(readonly, nonatomic) NSSet *services;
+@property(readonly, nonatomic) HMHome *home;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (_Bool)actionsMayRequireDeviceUnlock;
 - (_Bool)containsActions;

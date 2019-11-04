@@ -134,6 +134,7 @@
 + (id)getSPIClientIdentifierSalt;
 + (id)getUniqueDeviceIdSalt;
 + (BOOL)doesSaveReasonNotAffectLocalData:(id)arg1;
++ (BOOL)shouldIgnoreExpectedConfigurationVersionUpdateForReason:(id)arg1;
 + (BOOL)doesSaveReasonAffectOnlyLocalData:(id)arg1;
 + (BOOL)doesSaveReasonAffectHomeManager:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *siriSyncNotificationReasons; // @synthesize siriSyncNotificationReasons=_siriSyncNotificationReasons;
@@ -444,6 +445,8 @@
 - (void)_handleRequestAddHome:(id)arg1;
 - (id)_findHomeConfigurationModelChange:(id)arg1;
 - (id)_findHomeModel:(id)arg1;
+- (id)_findHomeSharedUserModelChange:(id)arg1;
+- (id)_findHomeOwnerModelChange:(id)arg1;
 - (id)_findHomeModelChange:(id)arg1;
 - (void)_handleCurrentHomeChanged:(id)arg1;
 - (void)_handleAssistantTeamIdentifierChanged:(id)arg1;
@@ -452,7 +455,7 @@
 - (void)_notifyCurrentHomeUpdated;
 - (void)_writeAssistantCurrentHomeIdentifier;
 - (void)writeAssistantCurrentHomeIdentifier;
-- (id)nominateCurrentHomeUUID;
+- (id)_nominateCurrentHomeUUID;
 - (void)notifyPrimaryHomeUpdated;
 - (void)_extractVendorIdentifierFor:(id)arg1 andRun:(CDUnknownBlockType)arg2;
 - (void)_handleConnectivityInfoRequest:(id)arg1;

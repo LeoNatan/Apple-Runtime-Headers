@@ -10,14 +10,16 @@
 {
     int _orientation;
     int _rotationDirection;
+    unsigned int _sequenceNumber;
     double _duration;
 }
 
+@property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) int rotationDirection; // @synthesize rotationDirection=_rotationDirection;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 - (id)description;
-- (id)initWithOrientation:(int)arg1 duration:(double)arg2 rotationDirection:(int)arg3;
+- (id)initWithOrientation:(int)arg1 sequenceNumber:(unsigned int)arg2 duration:(double)arg3 rotationDirection:(int)arg4;
 - (id)init;
 
 @end

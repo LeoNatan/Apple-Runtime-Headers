@@ -28,7 +28,7 @@
 - (void)_beginAnimatingMultitaskingPropertyWithMode:(long long)arg1 settings:(id)arg2;
 - (double)initialPanThreshold;
 - (_Bool)wantsMinificationFilter;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;

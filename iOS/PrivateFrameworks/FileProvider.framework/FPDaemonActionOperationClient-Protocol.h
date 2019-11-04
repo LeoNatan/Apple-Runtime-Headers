@@ -6,12 +6,12 @@
 
 #import <FileProvider/FPOperationClient-Protocol.h>
 
-@class FPActionOperationLocator, FPItem, NSError;
+@class FPActionOperationLocator, NSError;
 
 @protocol FPDaemonActionOperationClient <FPOperationClient>
 - (void)remoteOperationFinishedSendingPastUpdates;
 - (void)remoteOperationProgressesAreReady;
-- (void)remoteOperationCompletedRoot:(FPActionOperationLocator *)arg1 resultingItem:(FPItem *)arg2 error:(NSError *)arg3 completion:(void (^)(void))arg4;
-- (void)remoteOperationCreatedRoot:(FPActionOperationLocator *)arg1 resultingItem:(FPItem *)arg2 completion:(void (^)(void))arg3;
+- (void)remoteOperationCompletedRoot:(FPActionOperationLocator *)arg1 resultingItem:(FPActionOperationLocator *)arg2 error:(NSError *)arg3 completion:(void (^)(void))arg4;
+- (void)remoteOperationCreatedRoot:(FPActionOperationLocator *)arg1 resultingItem:(FPActionOperationLocator *)arg2 completion:(void (^)(void))arg3;
 @end
 

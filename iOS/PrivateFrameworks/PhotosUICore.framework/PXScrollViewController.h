@@ -19,6 +19,7 @@
     _Bool _isDecelerating;
     _Bool _isDragging;
     _Bool _isTracking;
+    _Bool _isScrubbing;
     _Bool _isManuallyChanging;
     _Bool _deferContentOffsetUpdates;
     id <PXTilingScrollControllerUpdateDelegate> _updateDelegate;
@@ -38,6 +39,7 @@
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(readonly, nonatomic) NSObject<UICoordinateSpace> *contentCoordinateSpace; // @synthesize contentCoordinateSpace=_contentCoordinateSpace;
 @property(readonly, nonatomic) _Bool isManuallyChanging; // @synthesize isManuallyChanging=_isManuallyChanging;
+@property(readonly, nonatomic) _Bool isScrubbing; // @synthesize isScrubbing=_isScrubbing;
 @property(readonly, nonatomic) _Bool isTracking; // @synthesize isTracking=_isTracking;
 @property(readonly, nonatomic) _Bool isDragging; // @synthesize isDragging=_isDragging;
 @property(readonly, nonatomic) _Bool isDecelerating; // @synthesize isDecelerating=_isDecelerating;
@@ -49,6 +51,7 @@
 @property(nonatomic) struct CGPoint visibleOrigin;
 - (void)updateIfNeeded;
 - (void)setNeedsUpdate;
+@property(readonly, nonatomic) struct CGRect targetRect;
 @property(readonly, nonatomic) struct CGRect constrainedVisibleRect;
 @property(readonly, nonatomic) struct CGRect visibleRect;
 @property(readonly, nonatomic) struct CGRect activeRect;
@@ -56,6 +59,7 @@
 - (void)performManualChange:(CDUnknownBlockType)arg1;
 - (void)applyScrollInfo:(id)arg1;
 @property(nonatomic) struct CGRect scrollViewContentBounds;
+@property(readonly, nonatomic) struct CGRect scrollViewTargetRect;
 @property(readonly, nonatomic) struct CGRect scrollViewConstrainedVisibleRect;
 @property(readonly, nonatomic) struct CGRect scrollViewVisibleRect;
 @property(readonly, nonatomic) struct CGRect scrollViewActiveRect;

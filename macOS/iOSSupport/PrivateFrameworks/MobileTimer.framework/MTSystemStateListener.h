@@ -31,6 +31,7 @@
 - (BOOL)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (void)_handleF5Reset;
 - (void)_handleRestoreDone;
+- (void)_verifyRestoreDone;
 - (void)springboardStartMonitor:(id)arg1 didReceiveStarted:(BOOL)arg2;
 - (BOOL)_checkIfRestoreDone;
 - (BOOL)checkSystemReady;

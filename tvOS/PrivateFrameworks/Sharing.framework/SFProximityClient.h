@@ -60,6 +60,7 @@
 - (void)proximityClientDeviceEnteredNearby:(id)arg1;
 - (void)proximityClientDeviceExitedImmediate:(id)arg1;
 - (void)proximityClientDeviceEnteredImmediate:(id)arg1;
+- (void)requestScannerTimerReset;
 - (void)_updateContent:(id)arg1 forDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateContent:(id)arg1 forDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_provideContent:(id)arg1 forDevice:(id)arg2 force:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

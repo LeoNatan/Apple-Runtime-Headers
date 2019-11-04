@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAFilter, TVImageProxy, UIColor, UIImage, UIImageView;
+@class CAFilter, TVImageProxy, UIColor, UIImage, UIImageSymbolConfiguration, UIImageView;
 
 @interface _TVImageView : UIView
 {
@@ -29,8 +29,10 @@
     CDUnknownBlockType _completion;
     UIColor *__tintColor;
     UIColor *__darkTintColor;
+    UIImageSymbolConfiguration *_preferredSymbolConfiguration;
 }
 
+@property(retain, nonatomic, setter=_setPreferredSymbolConfiguration:) UIImageSymbolConfiguration *preferredSymbolConfiguration; // @synthesize preferredSymbolConfiguration=_preferredSymbolConfiguration;
 @property(nonatomic, setter=_setEnableEdgeAntialiasingOnSelected:) _Bool _enableEdgeAntialiasingOnSelected; // @synthesize _enableEdgeAntialiasingOnSelected=__enableEdgeAntialiasingOnSelected;
 @property(retain, nonatomic, setter=_setFocusedColor:) UIColor *_focusedColor; // @synthesize _focusedColor=__focusedColor;
 @property(retain, nonatomic, setter=_setDarkTintColor:) UIColor *_darkTintColor; // @synthesize _darkTintColor=__darkTintColor;

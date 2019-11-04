@@ -16,6 +16,7 @@
     NSMutableDictionary *_localizeableSampleDataTemplates;
     NSLock *_templatesLock;
     NSHashTable *_observers;
+    NSMutableArray *_loadCallbacks;
     NSLock *_observersLock;
     _Bool _updatesSuspended;
     NSMutableArray *_updatesEnqueuedWhileSuspended;
@@ -53,6 +54,7 @@
 - (id)supportedTemplateFamiliesForClientIdentifier:(id)arg1;
 - (id)clientsSupportingFamily:(long long)arg1;
 - (id)clients;
+- (void)performAfterLoad:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

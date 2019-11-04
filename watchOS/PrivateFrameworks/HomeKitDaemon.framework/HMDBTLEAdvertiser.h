@@ -23,6 +23,7 @@
     HMFUnfairLock *_lock;
 }
 
++ (id)initializeAdvertiser;
 + (id)sharedAdvertiser;
 @property(retain, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) HMDAccessoryQueues *powerOnQueues; // @synthesize powerOnQueues;

@@ -164,7 +164,7 @@
 + (id)queryForKeyAssetInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForExtendedCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
-+ (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
++ (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2 changeDetectionCriteria:(id)arg3;
 + (id)_fetchOptionsForFetchingAssetsFromImportSessions:(id)arg1 options:(id)arg2;
 + (id)combinedFetchRequestForQueries:(id)arg1;
 + (_Bool)_isKindOfMomentOrAlbumEntity:(id)arg1;

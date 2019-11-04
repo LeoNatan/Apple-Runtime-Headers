@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_interestedClients;
     int _interfaceOrientation;
+    unsigned int _sequenceNumber;
 }
 
 - (void).cxx_destruct;

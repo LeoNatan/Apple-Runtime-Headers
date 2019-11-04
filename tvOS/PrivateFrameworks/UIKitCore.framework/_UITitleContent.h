@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *title;
 - (void)updateWithButton:(id)arg1;
+- (void)updateWithTitleAttributes:(id)arg1 button:(id)arg2;
 
 @end
 

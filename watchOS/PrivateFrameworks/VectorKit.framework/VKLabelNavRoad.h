@@ -72,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_worldPointForRoadOffset:(float)arg1 worldPoint:(Mercator3_40a88dec *)arg2;
 - (void)_worldRoadPoints:(vector_8c4749e3 *)arg1;
 - (void)appendSimplifiedWorldRoadPoints:(vector_8c4749e3 *)arg1;
+- (void)recreateRoadShieldWithNavContext:(struct NavContext *)arg1 artworkCache:(struct VKLabelNavArtworkCache *)arg2;
 - (void)recreateRoadSignWithAlignment:(unsigned char)arg1 navContext:(struct NavContext *)arg2 artworkCache:(struct VKLabelNavArtworkCache *)arg3;
 - (void)createLabelWithNavContext:(struct NavContext *)arg1 isShieldLabel:(_Bool)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7 artworkCache:(struct VKLabelNavArtworkCache *)arg8;
 - (_Bool)_findLabelAnchorPoint:(Mercator3_40a88dec *)arg1 isShieldLabel:(_Bool)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 roadGraph:(id)arg6;
@@ -94,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutWithNavContext:(struct NavContext *)arg1;
 - (void)_updateWithNavContext:(struct NavContext *)arg1;
 - (void)_updateWithNavContext:(struct NavContext *)arg1 threshold:(double)arg2;
+- (void)clearRoadShield;
 - (void)clearRoadSign;
 @property(readonly, nonatomic) const char *cstrName;
 - (void)dealloc;

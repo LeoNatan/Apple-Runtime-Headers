@@ -30,7 +30,12 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_packageContentQueue; // @synthesize _packageContentQueue=__packageContentQueue;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)sidecarObjectForKey:(id)arg1;
+- (id)sidecarImageForKey:(id)arg1;
+- (CDStruct_198678f7)sidecarTimeForKey:(id)arg1;
+- (id)sidecarDateForKey:(id)arg1;
+- (id)sidecarNumberForKey:(id)arg1;
+- (id)sidecarPropertyListForKey:(id)arg1;
+- (id)_sidecarObjectForKey:(id)arg1;
 - (id)currentURLForType:(id)arg1;
 - (id)suppressedTypesSnapshot;
 - (id)sidecarSnapshot;

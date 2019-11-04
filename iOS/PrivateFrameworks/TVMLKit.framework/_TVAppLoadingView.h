@@ -29,6 +29,7 @@
 - (_Bool)isVisible;
 - (void)hide;
 - (void)timeout;
+- (void)showOverKeyWindowWithSpinnerOnly:(_Bool)arg1;
 - (void)showOverKeyWindow;
 - (void)setLoadingDelay:(double)arg1;
 - (void)setTimeout:(double)arg1;

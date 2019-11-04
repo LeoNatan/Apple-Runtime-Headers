@@ -9,7 +9,7 @@
 @class NSDictionary, NSString, TURouteController;
 
 @protocol TURouteControllerActions <NSObject>
-- (void)pickRouteWithUniqueIdentifier:(NSString *)arg1 forRouteController:(TURouteController *)arg2;
+- (void)pickRouteWithUniqueIdentifier:(NSString *)arg1 shouldWaitUntilAvailable:(_Bool)arg2 forRouteController:(TURouteController *)arg3;
 - (NSDictionary *)routesByUniqueIdentifierForRouteController:(TURouteController *)arg1;
 @end
 

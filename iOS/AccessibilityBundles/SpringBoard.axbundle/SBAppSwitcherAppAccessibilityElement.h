@@ -24,6 +24,7 @@
 @property(retain, nonatomic) SBAppLayoutAccessibility *appLayout; // @synthesize appLayout=_appLayout;
 @property(readonly, nonatomic) _Bool isControlCenter; // @synthesize isControlCenter=_isControlCenter;
 - (void).cxx_destruct;
+- (_Bool)_axIsAppActive;
 - (_Bool)_accessibilityUpdatesSwitchMenu;
 - (id)_accessibilityScrollAncestor;
 - (id)_accessibilityPreferredScrollActions;
@@ -34,6 +35,7 @@
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityCustomActions;
 - (id)accessibilityValue;
+- (_Bool)_accessibilityIsVisibleByCompleteHitTest;
 - (id)accessibilityHint;
 - (id)accessibilityIdentifier;
 - (id)accessibilityLabel;

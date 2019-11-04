@@ -8,16 +8,18 @@
 
 #import <MobileTimer/MTBedtimeDNDStateMachineEventHandler-Protocol.h>
 
-@class MTBedtimeDNDStateMachineOffState, MTBedtimeDNDStateMachineWaitingState, NSString;
+@class MTBedtimeDNDStateMachineInitialState, MTBedtimeDNDStateMachineOffState, MTBedtimeDNDStateMachineWaitingState, NSString;
 
 @interface MTBedtimeDNDStateMachine : MTStateMachine <MTBedtimeDNDStateMachineEventHandler>
 {
+    MTBedtimeDNDStateMachineInitialState *_initialState;
     MTBedtimeDNDStateMachineOffState *_offState;
     MTBedtimeDNDStateMachineWaitingState *_waitingState;
 }
 
 @property(readonly, nonatomic) MTBedtimeDNDStateMachineWaitingState *waitingState; // @synthesize waitingState=_waitingState;
 @property(readonly, nonatomic) MTBedtimeDNDStateMachineOffState *offState; // @synthesize offState=_offState;
+@property(readonly, nonatomic) MTBedtimeDNDStateMachineInitialState *initialState; // @synthesize initialState=_initialState;
 - (void).cxx_destruct;
 - (void)stateMachine:(id)arg1 scheduleUpdateForSecondsFromNow:(double)arg2;
 - (void)stateMachineClearKeepBedtimeDNDOff:(id)arg1;

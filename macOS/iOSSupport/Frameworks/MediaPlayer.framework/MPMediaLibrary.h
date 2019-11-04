@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPActiveUserChangeMonitorDelegate-Protocol.h>
 
-@class ICUserIdentity, ML3MusicLibrary, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSPointerArray, NSString, NSURL, QueryCriteriaResultsCache;
+@class ICUserIdentity, ML3MusicLibrary, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSPointerArray, NSString, NSURL, QueryCriteriaResultsCache, _MPActiveUserChangeMonitor;
 @protocol MPMediaLibraryDataProviderPrivate, OS_dispatch_queue;
 
-@interface MPMediaLibrary : NSObject <NSSecureCoding>
+@interface MPMediaLibrary : NSObject <_MPActiveUserChangeMonitorDelegate, NSSecureCoding>
 {
     id <MPMediaLibraryDataProviderPrivate> _libraryDataProvider;
     NSObject<OS_dispatch_queue> *_entityCacheQueue;
@@ -82,9 +83,9 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     ICUserIdentity *_userIdentity;
     long long _libraryChangeObservers;
+    _MPActiveUserChangeMonitor *_activeUserChangeMonitor;
 }
 
-+ (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
 + (void)libraryPathDidChangeForDataProvider:(id)arg1;
 + (void)uniqueIdentifierDidChangeForLibraryDataProvider:(id)arg1;
 + (void)syncGenerationDidChangeForLibraryDataProvider:(id)arg1;
@@ -120,6 +121,7 @@
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (id)defaultMediaLibrary;
 + (void)initialize;
+@property(retain, nonatomic) _MPActiveUserChangeMonitor *activeUserChangeMonitor; // @synthesize activeUserChangeMonitor=_activeUserChangeMonitor;
 - (void).cxx_destruct;
 - (BOOL)recordPlayEventForPlaylistPersistentID:(long long)arg1;
 - (BOOL)recordPlayEventForAlbumPersistentID:(long long)arg1;
@@ -170,6 +172,7 @@
 - (BOOL)collectionExistsContainedWithinPersistentIDs:(const unsigned long long *)arg1 count:(unsigned long long)arg2 groupingType:(long long)arg3 existentPID:(unsigned long long *)arg4;
 - (void)_performBlockOnLibraryHandlingTheSameAccount:(CDUnknownBlockType)arg1;
 - (BOOL)_handlesSameAccountAs:(id)arg1;
+- (void)activeUserChangeDidFinish;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (id)pathForAssetURL:(id)arg1;
 - (BOOL)isValidAssetURL:(id)arg1;
@@ -276,6 +279,7 @@
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (void)_canShowCloudTracksDidChangeNotification:(id)arg1;
+- (void)_activeUserDidChangeNotification:(id)arg1;
 - (void)_reloadLibraryForPathChange;
 - (void)_reloadLibraryForInvisiblePropertyChangeWithNotificationInfo:(id)arg1;
 - (void)_reloadLibraryForDynamicPropertyChangeWithNotificationInfo:(id)arg1;
@@ -286,9 +290,9 @@
 - (void)_clearCachedEntitiesIncludingResultSets:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
@@ -310,6 +314,10 @@
 @property(copy, nonatomic) NSDate *sagaLastItemPlayDataUploadDate;
 @property(copy, nonatomic) NSNumber *sagaAccountID;
 - (unsigned long long)filterAvailableContentGroups:(unsigned long long)arg1 withOptions:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

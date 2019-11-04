@@ -26,6 +26,8 @@
 + (id)bagSubProfile;
 + (id)bagKeySet;
 + (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (unsigned long long)paidPasswordSettingFromServerValue:(unsigned long long)arg1;
++ (unsigned long long)freePasswordSettingFromServerValue:(unsigned long long)arg1;
 + (id)serverValueForPaidPasswordSetting:(unsigned long long)arg1;
 + (id)serverValueForFreePasswordSetting:(unsigned long long)arg1;
 @property(readonly) unsigned long long paidSetting; // @synthesize paidSetting=_paidSetting;

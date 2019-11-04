@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface _FPUnionDataSource : NSObject <FPCollectionDataSource, FPItemCollectionItemIDBasedDelegate>
 {
     NSArray *_collections;
+    _Bool _isRunning;
     id <FPCollectionDataSourceDelegate> delegate;
 }
 

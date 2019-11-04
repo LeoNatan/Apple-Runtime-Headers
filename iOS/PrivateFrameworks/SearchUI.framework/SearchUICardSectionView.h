@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)presentViewController:(id)arg1;
+- (void)requestRemovalFromEnclosingView;
 - (void)didInvalidateSizeAnimate:(_Bool)arg1;
 - (id)sendFeedbackForPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)openPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;

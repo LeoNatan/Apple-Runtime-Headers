@@ -27,6 +27,7 @@
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithAuditToken:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1;
 
 @end

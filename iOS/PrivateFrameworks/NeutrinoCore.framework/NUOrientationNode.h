@@ -22,6 +22,7 @@
 - (_Bool)requiresVideoComposition;
 - (id)_evaluateAuxiliaryImageForType:(long long)arg1 error:(out id *)arg2;
 - (_Bool)canPropagateOriginalAuxiliaryData;
+- (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_transformWithError:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (long long)outputImageOrientation:(long long)arg1;

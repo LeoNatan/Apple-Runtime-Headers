@@ -37,7 +37,8 @@
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
-- (id)keyPrefix;
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)localizedDisplayNameForLanguage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDisplayName;
 - (_Bool)isEqual:(id)arg1;

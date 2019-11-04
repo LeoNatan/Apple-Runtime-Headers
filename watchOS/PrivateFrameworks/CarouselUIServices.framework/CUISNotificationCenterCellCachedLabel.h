@@ -23,6 +23,7 @@
 @property(nonatomic) unsigned int labelType; // @synthesize labelType=_labelType;
 @property(nonatomic) CDStruct_e1c9cff6 metrics; // @synthesize metrics=_metrics;
 - (void).cxx_destruct;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 
 @end

@@ -83,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationBarInvalidatedResolvedLayoutMargins;
 - (void)_setupTopNavigationItemAnimated:(_Bool)arg1;
 - (id)restingHeights;
+- (_Bool)topItemHasVariableHeight;
 - (CDStruct_869f9c67)layoutHeightsFittingWidth:(float)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
@@ -90,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (int)statusBarStyle;
 - (int)currentContentSize;
 - (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
+- (void)traitCollectionDidChangeOnSubtree:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)animateForSearchPresentation:(_Bool)arg1;
 - (void)prepareForPop;
@@ -152,6 +154,7 @@ __attribute__((visibility("hidden")))
 - (void)updateArchivedSubviews:(id)arg1;
 - (void)provideViewsForContents:(id)arg1 topItem:(id)arg2 backItem:(id)arg3;
 - (void)_invalidateIntrinsicContentSizeAndNotifySizeChanged;
+- (struct CGSize)sizeForRestoringFromCancelledTransition;
 - (void)recordBarSize:(struct CGSize)arg1;
 - (void)changeLayout;
 - (void)changeAppearance;

@@ -109,7 +109,6 @@
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (id)valuesForProperties:(id)arg1;
 - (id)valueForProperty:(id)arg1;
-- (Class)itemArrayCoderPIDDataCodingClass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

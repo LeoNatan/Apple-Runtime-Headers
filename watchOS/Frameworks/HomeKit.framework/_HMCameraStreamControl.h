@@ -36,7 +36,7 @@
 @property(readonly, nonatomic) HMCameraStream *cameraStream; // @synthesize cameraStream=_cameraStream;
 @property(nonatomic) __weak id <_HMCameraStreamControlDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
-- (void)homedRestarted;
+- (void)homedRestarted:(id)arg1;
 - (id)initWithCameraProfile:(id)arg1 service:(id)arg2 profileUniqueIdentifier:(id)arg3;
 
 @end

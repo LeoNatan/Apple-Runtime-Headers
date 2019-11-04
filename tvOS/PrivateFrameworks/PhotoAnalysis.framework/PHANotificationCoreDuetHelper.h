@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)bestDateForDeliveringNotificationWithError:(id *)arg1;
 + (_Bool)userIsActivelyUsingAppWithName:(id)arg1 error:(id *)arg2;
 
 @end

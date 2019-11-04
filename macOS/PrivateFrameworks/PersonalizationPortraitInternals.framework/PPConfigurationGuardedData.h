@@ -33,6 +33,7 @@
     BOOL highLevelTopicExtractionEnabled;
     BOOL safariDonationTitleExtractionEnabled;
     BOOL safariDataDetectorsEnabledForHighMemoryDevices;
+    double highLevelTopicScoreAttenuationFactor;
     double highLevelTopicScoreThreshold;
     float scoreThresholdForNamedEntity;
     float scoreThresholdForTopic;

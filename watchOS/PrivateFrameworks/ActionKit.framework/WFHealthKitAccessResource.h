@@ -4,25 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WorkflowKit/WFAccessResource.h>
+#import <WorkflowKit/WFGranularAccessResource.h>
 
 #import <ActionKit/WFActionEventObserver-Protocol.h>
 
 @class HKHealthStore, NSString, WFAction;
 
-@interface WFHealthKitAccessResource : WFAccessResource <WFActionEventObserver>
+@interface WFHealthKitAccessResource : WFGranularAccessResource <WFActionEventObserver>
 {
     unsigned int _globalLevelStatus;
     WFAction *_action;
     HKHealthStore *_healthStore;
 }
 
++ (Class)perWorkflowStateClass;
 + (_Bool)isSystemResource;
 + (_Bool)alwaysMakeAvailable;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 - (unsigned int)globalLevelStatus;
 - (void).cxx_destruct;
+- (id)localizedWorkflowLevelDeniedStatusMessage;
+- (id)localizedWorkflowLevelNotDeterminedStatusMessage;
+- (id)localizedWorkflowLevelMessageTemplate;
+- (id)localizedWorkflowLevelPromptTemplate;
+- (id)requestedEntries;
 - (void)attemptRecoveryFromGlobalLevelErrorWithOptionIndex:(unsigned int)arg1 userInterface:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)errorRecoveryOptionsForGlobalLevelStatus:(unsigned int)arg1;
 - (id)localizedImportErrorReasonForGlobalLevelStatus:(unsigned int)arg1;

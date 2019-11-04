@@ -7,12 +7,13 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitBackingStore/HMBCloudZoneRebuilder-Protocol.h>
+#import <HomeKitBackingStore/HMFLogging-Protocol.h>
 #import <HomeKitBackingStore/HMFTimerDelegate-Protocol.h>
 
 @class CKRecord, HMBCloudZone, HMBCloudZoneRebuilderStatus, HMFTimer, HMFUnfairLock, NAFuture, NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
-@interface HMBPrivateCloudZoneRebuilder : HMFObject <HMFTimerDelegate, HMBCloudZoneRebuilder>
+@interface HMBPrivateCloudZoneRebuilder : HMFObject <HMFTimerDelegate, HMFLogging, HMBCloudZoneRebuilder>
 {
     HMBCloudZoneRebuilderStatus *_rebuilderStatus;
     NAFuture *_rebuildCompleteFuture;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
     HMBCloudZone *_cloudZone;
 }
 
++ (id)logCategory;
 @property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain, nonatomic) HMFTimer *uploadMonitorWatchdogTimer; // @synthesize uploadMonitorWatchdogTimer=_uploadMonitorWatchdogTimer;
 @property(retain, nonatomic) NSUUID *lastRebuildUUID; // @synthesize lastRebuildUUID=_lastRebuildUUID;

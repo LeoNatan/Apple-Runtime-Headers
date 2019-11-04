@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)_indexForObject:(id)arg1 buffer:(id)arg2;
 - (unsigned int)_insertionIndexForObject:(id)arg1 buffer:(id)arg2;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;
-- (void)enqueueObject:(id)arg1 buffer:(id)arg2;
+- (void)enqueueObject:(id)arg1 replaceIfExists:(_Bool)arg2 buffer:(id)arg3;
 @property(readonly, nonatomic) NSString *descriptionType;
 - (id)initWithComparator:(CDUnknownBlockType)arg1;
 

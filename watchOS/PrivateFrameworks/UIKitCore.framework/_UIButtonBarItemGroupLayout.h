@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
 - (id)layoutsForSpacerItem:(id)arg1;
 - (id)layoutForBarButtonItem:(id)arg1;
+- (void)dirtyLayoutForPlainAppearanceChange:(_Bool)arg1 doneAppearanceChanged:(_Bool)arg2;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItemGroup:(id)arg2;
 - (_Bool)shouldHoriziontallyCenterView:(id)arg1;
 - (id)initWithLayoutMetrics:(id)arg1;

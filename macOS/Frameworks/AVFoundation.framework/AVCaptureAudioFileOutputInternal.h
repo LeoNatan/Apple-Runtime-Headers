@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s runningRecordingOperationDescriptorLock;
     CDStruct_1b6d18a9 syncTime;
     void *syncTimeConnection;
-    unsigned long long curAudioBuffer;
     CDStruct_1b6d18a9 timeWritten;
     long long sizeWritten;
     BOOL wasForcedToPause;

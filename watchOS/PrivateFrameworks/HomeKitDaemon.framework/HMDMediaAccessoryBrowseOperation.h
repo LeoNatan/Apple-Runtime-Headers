@@ -15,19 +15,21 @@
 {
     id <HMFLocking> _lock;
     void *_session;
-    NSString *_accessoryIdentifier;
+    unsigned int _endpointFeatures;
     HMDMediaEndpoint *_endpoint;
     NSArray *_outputDevices;
+    NSString *_accessoryIdentifier;
 }
 
 + (id)logCategory;
 + (double)defaultTimeout;
-@property(readonly) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
-@property(readonly) HMDMediaEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(readonly, copy) NSString *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
+@property(readonly) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
+@property(readonly) HMDMediaEndpoint *endpoint; // @synthesize endpoint=_endpoint;
+@property unsigned int endpointFeatures; // @synthesize endpointFeatures=_endpointFeatures;
 - (void)dealloc;
 - (id)initWithAccessoryIdentifier:(id)arg1 timeout:(double)arg2;
 - (id)initWithAccessoryIdentifier:(id)arg1;

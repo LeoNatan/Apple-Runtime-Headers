@@ -13,10 +13,12 @@
 @interface GEOWiFiQualitySearchResultTile : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_ess;
     NSString *_etag;
     unsigned long long _tileKey;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_tileKey:1;
         unsigned int read_ess:1;
@@ -52,6 +54,8 @@
 - (void)_readEtag;
 @property(nonatomic) _Bool hasTileKey;
 @property(nonatomic) unsigned long long tileKey;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

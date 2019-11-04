@@ -54,6 +54,7 @@
 - (void)_updateWithTouches:(id)arg1 event:(id)arg2;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)reset;
+- (_Bool)isEnabled;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 - (double)welcomeViewContentViewTopAnchorLayoutConstraintConstant;
 - (_Bool)shouldPopoverSuggestionsBanner;
 - (unsigned long long)suggestedAppStripLimit;
+- (double)searchLinkThumbnailWidth;
+- (double)searchPhotoThumbnailWidth;
 - (id)fullscreenPickerActionLayoutAxisPrioritiesForWidth:(double)arg1;
 - (_Bool)shouldAlignRecipientGlyphsWithMargins;
 - (double)photoPickerMaxPopoverPhotoHeight;

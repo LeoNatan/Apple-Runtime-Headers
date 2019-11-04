@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasKeyAppearance;
 - (BOOL)worksWhenModal;
 - (BOOL)_shouldDoLayerPerformanceUpdates;
-@property(readonly) NSFunctionRow *functionRow;
+@property(readonly) __weak NSFunctionRow *functionRow;
 
 @end
 

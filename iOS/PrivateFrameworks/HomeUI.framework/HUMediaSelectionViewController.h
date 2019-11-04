@@ -31,7 +31,7 @@
 - (void)mediaPicker:(id)arg1 didPickPlaybackArchive:(id)arg2;
 - (id)_musicAppURL;
 - (void)_presentMediaPickerUnavailablePromptWithReason:(long long)arg1 storeKitErrorObject:(id)arg2;
-- (void)_presentMediaPicker;
+- (void)_presentMediaPickerWithOptionsShowsLibraryContent:(_Bool)arg1 pickingForExternalPlayer:(_Bool)arg2;
 - (_Bool)_allowRowInteractionForIndexPath:(id)arg1;
 - (void)applyAccessory:(long long)arg1 toItem:(id)arg2 onTableView:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

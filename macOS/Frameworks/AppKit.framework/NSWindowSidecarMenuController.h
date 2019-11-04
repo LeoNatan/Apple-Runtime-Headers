@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)moveToIPad:(id)arg1;
 - (void)requestZoomToDisplayID:(long long)arg1;
 - (BOOL)zoomToScreenWithDisplayID:(long long)arg1;
-- (id)labelForScreen:(id)arg1;
 - (id)labelForIPad:(id)arg1;
 - (id)imageForIPad:(id)arg1;
 @property(readonly) BOOL isOnIPad;

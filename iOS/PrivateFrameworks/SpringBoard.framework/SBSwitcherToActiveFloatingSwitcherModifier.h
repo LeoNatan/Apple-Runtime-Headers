@@ -12,11 +12,12 @@
 
 - (id)layoutSettings;
 - (_Bool)wantsMinificationFilter;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (long long)transitionLiveContentRasterizationStyle;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (long long)backdropBlurType;
 - (double)opacityForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)appLayoutToScrollToDuringTransition;
 
 @end

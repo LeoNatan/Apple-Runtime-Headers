@@ -198,6 +198,7 @@
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeForTitle:(id)arg1 attributedTitle:(id)arg2 image:(id)arg3 backgroundImage:(id)arg4 titlePaddingInsets:(struct UIEdgeInsets *)arg5;
 - (struct CGSize)_roundSize:(struct CGSize)arg1;
+- (CDStruct_b2fbf00d)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)_viewForBaselineLayout;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
@@ -259,6 +260,7 @@
 - (id)_externalTitleColorForState:(unsigned int)arg1;
 - (id)_externalFocusedTitleColor;
 - (int)_externalDrawingStyleForState:(unsigned int)arg1;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_willMoveToWindow:(id)arg1;
 - (void)_setupDrawingStyleForState:(unsigned int)arg1;
 - (struct CGRect)_highlightBoundsForDrawingStyle;

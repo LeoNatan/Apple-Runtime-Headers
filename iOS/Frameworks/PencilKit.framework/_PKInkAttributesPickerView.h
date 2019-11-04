@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIControl.h>
+#import <UIKit/UIView.h>
 
 #import <PencilKit/_PKColorAlphaSliderDelegate-Protocol.h>
 
-@class NSString, PKInk, UIView, _PKColorAlphaSlider, _PKInkThicknessPicker;
+@class NSString, PKInk, _PKColorAlphaSlider, _PKInkThicknessPicker;
 @protocol _PKInkAttributesPickerViewDelegate;
 
-@interface _PKInkAttributesPickerView : UIControl <_PKColorAlphaSliderDelegate>
+@interface _PKInkAttributesPickerView : UIView <_PKColorAlphaSliderDelegate>
 {
     id <_PKInkAttributesPickerViewDelegate> _delegate;
     PKInk *_ink;
@@ -30,9 +30,10 @@
 - (void).cxx_destruct;
 - (void)_colorAlphaSliderUserDidEndDraggingSlider:(id)arg1;
 - (void)_colorAlphaSliderUserDidStartDraggingSlider:(id)arg1;
-- (void)opacityValueChanged:(id)arg1;
-- (void)thicknessValueChanged:(id)arg1;
+- (void)_opacityValueChanged:(id)arg1;
+- (void)_thicknessValueChanged:(id)arg1;
 - (void)setInk:(id)arg1 animated:(_Bool)arg2;
+@property(nonatomic) long long colorUserInterfaceStyle;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithInk:(id)arg1;

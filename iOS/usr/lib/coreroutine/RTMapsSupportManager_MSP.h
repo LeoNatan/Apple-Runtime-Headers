@@ -8,26 +8,24 @@
 
 #import <coreroutine/MSPQueryDelegate-Protocol.h>
 
-@class NSString, NewMSPQuery, RTInvocationDispatcher;
+@class NSMutableDictionary, NSString, RTTimer, RTTimerManager;
 
 @interface RTMapsSupportManager_MSP : RTMapsSupportManager <MSPQueryDelegate>
 {
-    RTInvocationDispatcher *_favoritesDispatcher;
-    RTInvocationDispatcher *_historyPlaceDisplaysDispatcher;
-    RTInvocationDispatcher *_historyRoutesDispatcher;
-    RTInvocationDispatcher *_pinnedPlacesDispatcher;
-    NewMSPQuery *_favoritesQuery;
-    NewMSPQuery *_historyPlaceDisplaysQuery;
-    NewMSPQuery *_historyRoutesQuery;
-    NewMSPQuery *_pinnedPlacesQuery;
-    _Bool _favoritesContainerLoaded;
-    _Bool _historyPlaceDisplaysContainerLoaded;
-    _Bool _historyRoutesContainerLoaded;
-    _Bool _pinnedPlacesContainerLoaded;
+    RTTimerManager *_timerManager;
+    RTTimer *_queryTimer;
+    NSMutableDictionary *_queryMap;
 }
 
++ (id)createQueryWithContainer:(id)arg1 delegate:(id)arg2 filteredWithBlock:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) NSMutableDictionary *queryMap; // @synthesize queryMap=_queryMap;
+@property(retain, nonatomic) RTTimer *queryTimer; // @synthesize queryTimer=_queryTimer;
 - (void).cxx_destruct;
+- (void)_handleQueryTimerExpiry;
+- (void)_queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
+- (void)_invalidateQueryTimer;
+- (void)_startQueryTimer;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)_fetchHistoryEntryRoutesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchHistoryEntryPlaceDisplaysWithHandler:(CDUnknownBlockType)arg1;
@@ -39,7 +37,15 @@
 - (id)pinnedPlacesContainer;
 - (id)historyContainer;
 - (id)favoritesContainer;
-- (id)initWithMapServiceManager:(id)arg1;
+- (void)dealloc;
+- (void)_createPinnedPlacesQuery:(id)arg1;
+- (void)_createHistoryRoutesQuery:(id)arg1;
+- (void)_createHistoryPlaceDisplaysQuery:(id)arg1;
+- (void)_createFavoritesQuery:(id)arg1;
+- (void)_createQueries;
+- (void)_setup;
+- (void)setup;
+- (id)initWithMapServiceManager:(id)arg1 timerManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

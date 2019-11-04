@@ -86,6 +86,7 @@
 + (id)rendererWithContext:(id)arg1 options:(id)arg2;
 + (id)rendererWithDevice:(id)arg1 options:(id)arg2;
 - (void)_setInterfaceOrientation:(int)arg1;
+- (void)_interfaceOrientationDidChange;
 - (void)_UIOrientationDidChangeNotification:(id)arg1;
 - (id)privateRendererOwner;
 - (void)_jitterAtStep:(unsigned int)arg1 updateMainFramebuffer:(_Bool)arg2 redisplay:(_Bool)arg3 jitterer:(id)arg4;
@@ -219,6 +220,7 @@
 - (id)metalLayer;
 - (void)setDisableOverlays:(_Bool)arg1;
 - (_Bool)disableOverlays;
+- (void)_c3dBackgroundColorDidChange;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
 @property(retain, nonatomic) SCNScene *scene;

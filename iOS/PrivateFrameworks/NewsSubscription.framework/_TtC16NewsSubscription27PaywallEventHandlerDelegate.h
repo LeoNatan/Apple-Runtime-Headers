@@ -9,11 +9,11 @@
 @interface _TtC16NewsSubscription27PaywallEventHandlerDelegate : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory
-    // Error parsing type: , name: $__lazy_storage_$_purchaseSpinner
     // Error parsing type: , name: $__lazy_storage_$_verificationSpinner
     // Error parsing type: , name: tag
     // Error parsing type: , name: delegate
     // Error parsing type: , name: presentationViewController
+    // Error parsing type: , name: purchasePresenter
 }
 
 @end

@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDBatchPopularNearbySearchParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _requestLocalTimestamp;
     NSMutableArray *_suggestionEntryMetadatas;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _maxResults;
     struct {
         unsigned int has_requestLocalTimestamp:1;
@@ -63,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)_readViewportInfo;
 @property(nonatomic) BOOL hasMaxResults;
 @property(nonatomic) unsigned int maxResults;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

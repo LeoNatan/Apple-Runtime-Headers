@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOABClientDebugPanelExperimentBranch : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_configKeyValues;
     GEOABDebugPanelExperimentBranch *_debugExperimentBranch;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_configKeyValues:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOABDebugPanelExperimentBranch *debugExperimentBranch;
 @property(readonly, nonatomic) _Bool hasDebugExperimentBranch;
 - (void)_readDebugExperimentBranch;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

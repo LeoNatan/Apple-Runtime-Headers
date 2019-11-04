@@ -12,6 +12,7 @@
 
 @interface PXGViewEnvironment : NSObject <NSCopying>
 {
+    BOOL _accessibilityEnabled;
     BOOL _emphasized;
     NSColor *_backgroundColor;
     NSColor *_tintColor;
@@ -23,6 +24,7 @@
 
 @property(readonly, nonatomic) NSAppearance *effectiveAppearance; // @synthesize effectiveAppearance=_effectiveAppearance;
 @property(readonly, nonatomic) BOOL emphasized; // @synthesize emphasized=_emphasized;
+@property(readonly, nonatomic) BOOL accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
 @property(readonly, nonatomic) struct CGColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
 @property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(readonly, nonatomic) id traitCollection; // @synthesize traitCollection=_traitCollection;
@@ -32,7 +34,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)initWithView:(id)arg1;
+- (id)initWithView:(id)arg1 accessibilityEnabled:(BOOL)arg2;
 
 @end
 

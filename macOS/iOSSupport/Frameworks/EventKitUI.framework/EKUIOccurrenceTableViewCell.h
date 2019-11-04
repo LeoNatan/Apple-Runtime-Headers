@@ -6,7 +6,7 @@
 
 #import <EventKitUI/EKUITableViewCellWithPrimaryAndSecondaryFonts.h>
 
-@class ColorBarView, ColoredBackgroundView, EKCalendarDate, EKUIOccurrenceTableViewCellLabel, NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSObject, NSString, UIColor, UIImageView, UIVisualEffect, UIVisualEffectView;
+@class ColorBarView, ColoredBackgroundView, EKCalendarDate, EKUIOccurrenceTableViewCellLabel, NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSMutableArray, NSObject, NSString, UIColor, UIImageView, UIVisualEffect;
 @protocol OS_dispatch_source;
 
 @interface EKUIOccurrenceTableViewCell : EKUITableViewCellWithPrimaryAndSecondaryFonts
@@ -28,8 +28,8 @@
     BOOL _carplayMode;
     BOOL _includesTopTimeLabel;
     struct CGSize _sizeWhenLayerLastCalculated;
-    UIVisualEffectView *_primaryVisualEffectParentView;
-    UIVisualEffectView *_secondaryVisualEffectParentView;
+    NSMutableArray *_primaryVisualEffectViews;
+    NSMutableArray *_secondaryVisualEffectViews;
     BOOL _travelTimeTemplate;
     BOOL _invitationTemplate;
     NSLayoutConstraint *_contentTop_to_travelTextBaseline_Constraint;
@@ -154,6 +154,8 @@
 - (void)updateConstraints;
 - (void)layoutSubviews;
 - (void)contentCategorySizeChanged;
+- (void)_addVibrantSubview:(id)arg1 usingPrimaryEffect:(BOOL)arg2;
+- (void)_addSubview:(id)arg1 forVibrancy:(BOOL)arg2 usingPrimaryEffect:(BOOL)arg3;
 - (id)_createParentVisualEffectViewWithVisualEffect:(id)arg1;
 - (void)_createViewsForReuseIdentifier:(id)arg1;
 - (void)forceUpdateOfAllElements;

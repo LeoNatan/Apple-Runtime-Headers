@@ -151,6 +151,7 @@
 @property(copy) UIColor *toolbarItemTintColor;
 - (id)_effectiveBackgroundColor;
 @property(copy) UIColor *backgroundColor;
+- (void)_updateNavBarProperties;
 - (void)_updateAppearanceForTraitCollection:(id)arg1;
 - (void)_updateConstraintsForBarPosition:(long long)arg1;
 - (void)adjustContentInsetsForBars;
@@ -223,6 +224,7 @@
 - (void)documentDidCloseTeardown;
 - (void)fullTeardown;
 - (void)willBeginLoadingNewDocument;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (void)_commonInit;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

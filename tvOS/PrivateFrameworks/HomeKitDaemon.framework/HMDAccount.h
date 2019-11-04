@@ -48,7 +48,6 @@
 - (_Bool)shouldMergeObject:(id)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)logIdentifier;
-- (void)__notifyDelegateUpdatedDevice:(id)arg1;
 - (void)removeDevice:(id)arg1;
 - (void)addDevice:(id)arg1;
 - (id)deviceWithModelIdentifier:(id)arg1;

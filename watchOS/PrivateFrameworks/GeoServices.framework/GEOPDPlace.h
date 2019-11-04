@@ -13,7 +13,6 @@
 @interface GEOPDPlace : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_components;
     unsigned long long _createdTime;
@@ -23,6 +22,9 @@
     unsigned long long _preferredMuid;
     GEOMapItemInitialRequestData *_requestData;
     unsigned long long _updateVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _referenceFrame;
     int _resultProviderId;
     int _status;
@@ -108,6 +110,8 @@
 @property(nonatomic) int status;
 @property(nonatomic) _Bool hasMuid;
 @property(nonatomic) unsigned long long muid;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (_Bool)hasExpectedComponentTypes:(id)arg1;
 - (_Bool)isCacheable;
 - (_Bool)meetsManifestVersioningForServiceVersion:(id)arg1;

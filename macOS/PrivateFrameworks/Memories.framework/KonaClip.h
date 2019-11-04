@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 + (Class)classForClipType:(int)arg1;
 + (id)clip;
 + (id)clipWithAsset:(id)arg1;
-@property(nonatomic) __weak id scene; // @synthesize scene=_scene;
+@property(retain, nonatomic) id scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) id freezeInfo; // @synthesize freezeInfo=_freezeInfo;
 @property(nonatomic) __weak id suggestion; // @synthesize suggestion=_suggestion;
 @property(nonatomic) double altAspect; // @synthesize altAspect=_altAspect;

@@ -7,37 +7,34 @@
 #import <WorkflowKit/WFResource.h>
 
 #import <WorkflowKit/ICAppInstallStatusObserver-Protocol.h>
-#import <WorkflowKit/SKStoreProductViewControllerDelegate-Protocol.h>
 
-@class ICApp, NSString, SKStoreProductViewController;
+@class ICApp, NSObject, NSString, WFiTunesSessionManager;
+@protocol OS_dispatch_queue;
 
-@interface WFAppInstalledResource : WFResource <SKStoreProductViewControllerDelegate, ICAppInstallStatusObserver>
+@interface WFAppInstalledResource : WFResource <ICAppInstallStatusObserver>
 {
-    CDUnknownBlockType _recoveryCompletionHandler;
-    SKStoreProductViewController *_viewController;
+    _Bool _skipLookup;
+    NSString *_appName;
+    WFiTunesSessionManager *_currentAppNameLookupSessionManager;
+    NSObject<OS_dispatch_queue> *_stateQueue;
 }
 
 + (_Bool)refreshesAvailabilityOnApplicationResume;
 + (_Bool)mustBeAvailableForDisplay;
-@property(retain, nonatomic) SKStoreProductViewController *viewController; // @synthesize viewController=_viewController;
-@property(copy, nonatomic) CDUnknownBlockType recoveryCompletionHandler; // @synthesize recoveryCompletionHandler=_recoveryCompletionHandler;
+@property(nonatomic) _Bool skipLookup; // @synthesize skipLookup=_skipLookup;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
+@property(retain, nonatomic) WFiTunesSessionManager *currentAppNameLookupSessionManager; // @synthesize currentAppNameLookupSessionManager=_currentAppNameLookupSessionManager;
+@property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
 - (void)appRegistry:(id)arg1 installStatusChangedForApp:(id)arg2;
-- (void)productViewControllerDidFinish:(id)arg1;
-- (void)showAppStoreForApp:(id)arg1 userInterface:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 userInterface:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)appNotInstalledError;
 - (void)refreshAvailability;
 - (id)eventDictionary;
 - (void)dealloc;
 - (id)initWithDefinition:(id)arg1;
 @property(readonly, nonatomic) ICApp *app;
 @property(readonly, nonatomic) NSString *appIdentifier;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

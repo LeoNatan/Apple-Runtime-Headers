@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CDUnknownBlockType overflowHandler; // @synthesize overflowHandler=_overflowHandler;
 - (void).cxx_destruct;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;
-- (void)enqueueObject:(id)arg1 buffer:(id)arg2;
+- (void)enqueueObject:(id)arg1 replaceIfExists:(_Bool)arg2 buffer:(id)arg3;
 @property(readonly, nonatomic) NSString *descriptionType;
 - (id)initWithCapacity:(unsigned long long)arg1 overflowHandler:(CDUnknownBlockType)arg2;
 

@@ -15,8 +15,6 @@
 @property unsigned long long filesCopied; // @synthesize filesCopied=_filesCopied;
 @property unsigned long long templateFileCount; // @synthesize templateFileCount=_templateFileCount;
 - (void)_updateFilesCopiedCount:(long long)arg1;
-- (BOOL)_symlinkSystemApplications:(id)arg1 toApplications:(id)arg2 linkedPaths:(id)arg3 error:(id *)arg4;
-- (BOOL)_moveBackJustDataWithError:(id *)arg1;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)_createFirmlinksWithError:(id *)arg1;

@@ -38,7 +38,7 @@
     struct CGRect _avoidanceFrame;
 }
 
-+ (struct CGSize)intrinsicContentSizeForTargetScreen:(id)arg1 orientation:(long long)arg2;
++ (struct CGSize)intrinsicContentSizeForTargetScreen:(id)arg1 orientation:(long long)arg2 onLockScreen:(_Bool)arg3;
 + (id)stringForStatusBarStyle:(long long)arg1;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) _UIStatusBarStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
@@ -68,6 +68,7 @@
 - (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;
+- (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldBeginAtPoint:(struct CGPoint)arg2;
 - (id)_statusBarWindowForAccessibilityHUD;
 - (id)dataEntryKeysForItemsWithIdentifiers:(id)arg1;
 - (id)itemIdentifiersInRegionsWithIdentifiers:(id)arg1;

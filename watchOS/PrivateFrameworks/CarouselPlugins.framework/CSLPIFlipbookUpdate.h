@@ -18,6 +18,7 @@
     id <CSLPIFlipbookUpdateDelegate> _delegate;
     _Bool _active;
     _Bool _isPartialUpdate;
+    _Bool _aborted;
     unsigned int _frameCount;
     NSDate *_referenceDate;
     NSDate *_currentAnimationStartDate;
@@ -25,22 +26,22 @@
     CSLPIFlipbookFrame *_lastFrameFromPreviousUpdate;
     unsigned int _targetFlipbookSize;
     CSLPIPowerAssertion *_powerAssertion;
-    double _caMediaReferenceTime;
     unsigned long long _startTime;
 }
 
 @property(retain, nonatomic) CSLPIPowerAssertion *powerAssertion; // @synthesize powerAssertion=_powerAssertion;
+@property(nonatomic, getter=wasAborted) _Bool aborted; // @synthesize aborted=_aborted;
 @property(nonatomic) _Bool isPartialUpdate; // @synthesize isPartialUpdate=_isPartialUpdate;
 @property(nonatomic) unsigned int targetFlipbookSize; // @synthesize targetFlipbookSize=_targetFlipbookSize;
 @property(readonly, nonatomic) CSLPIFlipbookFrame *lastFrameFromPreviousUpdate; // @synthesize lastFrameFromPreviousUpdate=_lastFrameFromPreviousUpdate;
 @property(readonly, nonatomic) NSDate *currentAnimationEndDate; // @synthesize currentAnimationEndDate=_currentAnimationEndDate;
 @property(readonly, nonatomic) NSDate *currentAnimationStartDate; // @synthesize currentAnimationStartDate=_currentAnimationStartDate;
 @property(readonly, nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
-@property(readonly, nonatomic) double caMediaReferenceTime; // @synthesize caMediaReferenceTime=_caMediaReferenceTime;
 @property(readonly, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 @property(readonly, nonatomic) unsigned int frameCount; // @synthesize frameCount=_frameCount;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (void).cxx_destruct;
+- (unsigned long long)encodePresentationTime:(id)arg1;
 - (void)swapEndUpdateObserversAndCopyReasonsFromUpdate:(id)arg1;
 - (void)advanceToNextAnimationDates;
 - (void)incrementFrameCount;
@@ -52,6 +53,8 @@
 @property(readonly, nonatomic) NSString *reasons;
 - (id)description;
 - (void)_relinquishPowerAssertion;
+- (_Bool)dateIsCurrentMinute:(id)arg1;
+- (void)adjustCurrentAnimationEndDateToNowTimerDate;
 - (void)dealloc;
 - (id)init;
 - (id)initWithFirstAnimationStartDate:(id)arg1 firstAnimationEndDate:(id)arg2 lastFrameFromPreviousUpdate:(id)arg3 delegate:(id)arg4;

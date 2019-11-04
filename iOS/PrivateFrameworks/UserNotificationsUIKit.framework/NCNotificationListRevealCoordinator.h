@@ -39,6 +39,7 @@
 - (void)_performHaptic;
 - (void)_releaseHaptic;
 - (void)_prepareHaptic;
+- (id)_stringForRevealState:(int)arg1;
 - (void)_performRevealForSubviewsIfNecessary;
 - (id)_revealListView;
 - (id)_topView;

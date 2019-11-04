@@ -14,6 +14,7 @@
     BOOL _criticalUpdateShouldNotifyAfterInstall;
     BOOL _isAutoUpdateEligible;
     BOOL _isRecommended;
+    BOOL _isRamped;
     BOOL _allowedToUseInstallLater;
     NSString *_productKey;
     NSString *_title;
@@ -40,6 +41,7 @@
 @property(retain) SUAppStoreUpdate *appStoreUpdate; // @synthesize appStoreUpdate=_appStoreUpdate;
 @property(retain) SUUpdateProduct *updateProduct; // @synthesize updateProduct=_updateProduct;
 @property(readonly) BOOL allowedToUseInstallLater; // @synthesize allowedToUseInstallLater=_allowedToUseInstallLater;
+@property(readonly) BOOL isRamped; // @synthesize isRamped=_isRamped;
 @property(readonly) BOOL isRecommended; // @synthesize isRecommended=_isRecommended;
 @property(readonly) BOOL isAutoUpdateEligible; // @synthesize isAutoUpdateEligible=_isAutoUpdateEligible;
 @property long long timeRemainingBeforeCriticalAutoInstallIfApplicable; // @synthesize timeRemainingBeforeCriticalAutoInstallIfApplicable=_timeRemainingBeforeCriticalAutoInstallIfApplicable;

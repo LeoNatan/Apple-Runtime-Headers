@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (long long)pickerViewCellNumberOfRows:(id)arg1;
 - (long long)pickerViewCellInitialSelectedRow:(id)arg1;
 - (id)pickerViewCell:(id)arg1 titleForRow:(long long)arg2;
+- (id)pickerTitle;
 - (void)pickerButtonSelected;
 - (void)setViewModel:(id)arg1;
 - (id)_createSpecifierForField:(id)arg1;

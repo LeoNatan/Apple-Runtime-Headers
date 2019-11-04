@@ -30,8 +30,10 @@
 - (id)logIdentifier;
 - (void)handleHomeUserRemovedNotification:(id)arg1;
 - (void)handleHomeUserAddedNotification:(id)arg1;
-- (id)invitationContextForUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
+- (id)_untrustedInvitationContextForUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
+- (id)fetchInvitationContextForUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
 - (id)fetchInvitationToUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
+- (void)clearParticipants;
 - (void)updateShareParticipants;
 - (void)configure;
 @property(readonly) NSSet *participatingUsers;

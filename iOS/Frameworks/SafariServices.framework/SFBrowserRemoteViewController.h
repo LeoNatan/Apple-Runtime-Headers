@@ -24,8 +24,10 @@ __attribute__((visibility("hidden")))
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) __weak id <SFBrowserRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 @property(readonly, nonatomic) NSString *volumeAudioCategory;
 @property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
+- (void)didDecideShouldShowLinkPreviews:(_Bool)arg1;
 - (void)didResolveRedirectionWithURL:(id)arg1 appLink:(id)arg2;
 - (void)didChangeFullScreen:(_Bool)arg1;
 - (void)initialLoadDidRedirectToURL:(id)arg1;
@@ -47,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 
 @end
 

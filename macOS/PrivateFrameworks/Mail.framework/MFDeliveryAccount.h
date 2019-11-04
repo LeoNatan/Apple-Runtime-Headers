@@ -7,11 +7,11 @@
 #import <Mail/MFAccount.h>
 
 #import <Mail/EDAccount-Protocol.h>
-#import <Mail/EDDeliveryAcount-Protocol.h>
+#import <Mail/EDDeliveryAccount-Protocol.h>
 
 @class ACAccount, MFMailAccount, NSArray, NSString;
 
-@interface MFDeliveryAccount : MFAccount <EDAccount, EDDeliveryAcount>
+@interface MFDeliveryAccount : MFAccount <EDAccount, EDDeliveryAccount>
 {
     unsigned long long _maximumMessageBytes;
 }
@@ -51,6 +51,7 @@
 @property(copy) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(copy) NSString *password;
+@property(readonly) BOOL primaryiCloudAccount;
 @property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly) Class superclass;
 @property(readonly, copy) ACAccount *systemAccount;

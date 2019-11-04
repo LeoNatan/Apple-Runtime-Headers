@@ -13,10 +13,12 @@
 @interface GEORPGroundViewFeedback : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPGroundViewFeedbackContext *_groundViewContext;
     GEORPGroundViewCorrections *_groundViewCorrections;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_groundViewContext:1;
@@ -47,6 +49,8 @@
 @property(retain, nonatomic) GEORPGroundViewFeedbackContext *groundViewContext;
 @property(readonly, nonatomic) _Bool hasGroundViewContext;
 - (void)_readGroundViewContext;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

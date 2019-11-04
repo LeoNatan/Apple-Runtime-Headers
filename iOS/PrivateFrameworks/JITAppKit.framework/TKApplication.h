@@ -16,10 +16,12 @@
     NSURL *_bundleURL;
     id <TKApplicationDelegate> _delegate;
     NSURL *_baseURL;
+    NSString *_overrideCachesDirectoryPath;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)shared;
+@property(copy, nonatomic) NSString *overrideCachesDirectoryPath; // @synthesize overrideCachesDirectoryPath=_overrideCachesDirectoryPath;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(nonatomic) __weak id <TKApplicationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TKRepository *repository; // @synthesize repository=_repository;

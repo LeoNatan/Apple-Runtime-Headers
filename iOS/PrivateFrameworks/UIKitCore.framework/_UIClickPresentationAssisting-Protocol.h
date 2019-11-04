@@ -6,13 +6,13 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UITargetedPreview, UIViewController, _UIClickPresentation;
+@class UITargetedPreview, _UIClickPresentation;
 
 @protocol _UIClickPresentationAssisting <NSObject>
-@property(copy, nonatomic) CDUnknownBlockType dismissalCompletion;
+@property(copy, nonatomic) CDUnknownBlockType lifecycleCompletion;
 @property(retain, nonatomic) _UIClickPresentation *presentation;
-- (void)dismissWithStyle:(unsigned long long)arg1 alongsideActions:(void (^)(void))arg2 completion:(void (^)(void))arg3;
-- (void)presentFromViewController:(UIViewController *)arg1 sourcePreview:(UITargetedPreview *)arg2 dismissalCompletion:(void (^)(void))arg3;
+- (void)dismissWithReason:(unsigned long long)arg1 alongsideActions:(void (^)(void))arg2 completion:(void (^)(void))arg3;
+- (void)presentFromSourcePreview:(UITargetedPreview *)arg1 lifecycleCompletion:(void (^)(_Bool))arg2;
 - (id)initWithClickPresentation:(_UIClickPresentation *)arg1;
 @end
 

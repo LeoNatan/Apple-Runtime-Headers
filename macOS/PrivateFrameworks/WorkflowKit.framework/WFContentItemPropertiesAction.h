@@ -13,7 +13,7 @@
 - (void)finishWithItems:(id)arg1 property:(id)arg2 coercionPerformed:(BOOL)arg3;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (id)parameterDefinitions;
-- (id)outputMeasurementUnit;
+- (id)outputMeasurementUnitType;
 - (id)localizedDefaultOutputName;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)selectedProperty;

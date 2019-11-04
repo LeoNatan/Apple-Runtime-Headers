@@ -56,7 +56,6 @@
 - (unsigned long long)appID;
 - (BOOL)handleOpenURL:(id)arg1;
 - (void)dealloc;
-- (void)applicationDidEnterBackground:(id)arg1;
 @property(retain, nonatomic) NSString *URLScheme; // @synthesize URLScheme;
 - (void)receivedURL:(id)arg1 withReplyEvent:(id)arg2;
 - (id)init;

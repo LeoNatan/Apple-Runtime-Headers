@@ -16,6 +16,7 @@
     NSMutableDictionary *_localizeableSampleDataTemplates;
     NSLock *_templatesLock;
     NSHashTable *_observers;
+    NSMutableArray *_loadCallbacks;
     NSLock *_observersLock;
     _Bool _updatesSuspended;
     NSMutableArray *_updatesEnqueuedWhileSuspended;

@@ -14,6 +14,11 @@
     IMKUIWindowBasedCandidateController *_visibleOnscreenController;
 }
 
++ (double)maxWidthOfHandwritingCandidates;
++ (double)widthOfHandwritingCandidatesForTouchBarWidth:(double)arg1 candidateSurfaceWidth:(double)arg2;
++ (double)touchBarWidth;
++ (double)quickTypeBarWidth;
++ (double)candidateSurfaceWidth;
 + (id)sharedInformation;
 + (BOOL)isUsingSubclassingImplementation;
 + (BOOL)isAppleInternal;

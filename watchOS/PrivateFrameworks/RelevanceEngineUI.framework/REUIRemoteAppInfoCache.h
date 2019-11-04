@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)bltSettingsServiceApplicationInfoUpdatedForBundleIDs:(id)arg1;
-- (void)loadAppInfoForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)loadAppInfoForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)_init;
 

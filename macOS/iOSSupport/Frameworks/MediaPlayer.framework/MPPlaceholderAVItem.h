@@ -13,6 +13,7 @@
     BOOL _explicitTrack;
     BOOL _likeStateEnabled;
     BOOL _supportsLikedState;
+    BOOL _tailPlaceholder;
     NSString *_album;
     NSString *_artist;
     double _durationFromExternalMetadata;
@@ -22,6 +23,7 @@
 
 + (BOOL)isPlaceholder;
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @synthesize artworkCatalogBlock=_artworkCatalogBlock;
+@property(nonatomic, getter=isTailPlaceholder) BOOL tailPlaceholder; // @synthesize tailPlaceholder=_tailPlaceholder;
 @property(nonatomic) BOOL supportsLikedState; // @synthesize supportsLikedState=_supportsLikedState;
 @property(retain, nonatomic) NSString *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property(nonatomic, getter=isLikedStateEnabled) BOOL likedStateEnabled; // @synthesize likedStateEnabled=_likeStateEnabled;
@@ -33,6 +35,7 @@
 - (void)loadAssetAndPlayerItem;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)description;
+- (id)init;
 
 @end
 

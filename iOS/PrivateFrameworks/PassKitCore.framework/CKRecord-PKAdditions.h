@@ -33,7 +33,7 @@
 - (int)pk_encryptedIntForKey:(id)arg1;
 - (long long)pk_encryptedIntegerForKey:(id)arg1;
 - (_Bool)pk_encryptedBoolForKey:(id)arg1;
-- (id)pk_encryptedArrayForKey:(id)arg1;
+- (id)pk_encryptedArrayOfClasses:(id)arg1 forKey:(id)arg2;
 - (id)pk_encryptedDictionaryForKey:(id)arg1;
 - (id)pk_encryptedUrlForKey:(id)arg1;
 - (id)pk_encryptedDecimalNumberForKey:(id)arg1;

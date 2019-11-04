@@ -9,10 +9,11 @@
 #import <MediaPlayer/NSCopying-Protocol.h>
 #import <MediaPlayer/NSMutableCopying-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
 
-@class NSDictionary, NSSet;
+@class NSDictionary, NSSet, NSString;
 
-@interface MPPropertySet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface MPPropertySet : NSObject <_MPStateDumpPropertyListTransformable, NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSSet *_properties;
     NSDictionary *_relationships;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) NSDictionary *relationships; // @synthesize relationships=_relationships;
 @property(readonly, nonatomic) NSSet *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (id)propertySetByIntersectingWithPropertySet:(id)arg1;
 - (id)propertySetByCombiningWithPropertySet:(id)arg1;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
@@ -32,9 +34,13 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (id)initWithProperties:(id)arg1 relationships:(id)arg2;
+
+// Remaining properties
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

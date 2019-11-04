@@ -13,14 +13,14 @@
     WFAlert *_unitAlert;
 }
 
-+ (_Bool)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(retain, nonatomic) WFAlert *unitAlert; // @synthesize unitAlert=_unitAlert;
 - (void).cxx_destruct;
 - (id)stateForVariable:(id)arg1;
 - (id)stateForEnteredText:(id)arg1;
-- (id)variableStateForVariablePicker;
+- (id)variableMenuInitialStateForSlotWithIdentifier:(id)arg1;
+- (_Bool)variableMenuSupportsVariableSelectionForSlotWithIdentifier:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 @end
 

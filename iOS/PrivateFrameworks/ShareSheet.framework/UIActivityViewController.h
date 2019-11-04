@@ -17,7 +17,7 @@
 #import <ShareSheet/_UIActivityHelperDelegate-Protocol.h>
 #import <ShareSheet/_UIActivityUserDefaultsViewControllerDelegate-Protocol.h>
 
-@class LPLinkMetadata, NSArray, NSDictionary, NSLayoutConstraint, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSUserDefaults, ObjectManipulationViewController, SFAirDropViewController, SFShareSheetSlotManager, UIActivity, UIActivityContentViewController, UIAlertAction, UIAlertController, UINavigationController, UISUIActivityViewControllerConfiguration, UIView, _UIActivityHelper, _UICollectionViewDiffableDataSource;
+@class LPLinkMetadata, NSArray, NSDictionary, NSLayoutConstraint, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSUserDefaults, ObjectManipulationViewController, SFAirDropViewController, SFShareSheetSlotManager, UIActivity, UIActivityContentViewController, UIAlertAction, UIAlertController, UINavigationController, UISUIActivityViewControllerConfiguration, UIView, _UIActivityHelper, _UIActivityNavigationController, _UICollectionViewDiffableDataSource;
 @protocol UIActivityViewControllerAirDropDelegate, UIActivityViewControllerObjectManipulationDelegate, UIActivityViewControllerPhotosDelegate;
 
 @interface UIActivityViewController : UIViewController <UIViewControllerRestoration, _UIActivityHelperDelegate, SFAirDropViewControllerDelegate, SFShareSheetSlotManagerDelegate, _UIActivityUserDefaultsViewControllerDelegate, ObjectManipulationDelegate, UICollectionViewDelegate, UIActivityContentDelegate, UIViewControllerTransitioningDelegate, LPLinkViewDelegate>
@@ -67,6 +67,7 @@
     unsigned long long _beginPerformingActivityTimestamp;
     unsigned long long _viewWillAppearTimestamp;
     unsigned long long _readyToInteractTimestamp;
+    unsigned long long _creationTimestamp;
     NSArray *_activityTypesToCreateInShareService;
     NSArray *_resolvedActivityItemsForCurrentActivity;
     UIViewController *_linkViewController;
@@ -77,7 +78,7 @@
     ObjectManipulationViewController *_customizationViewController;
     NSLayoutConstraint *_blurViewHeightConstraint;
     UINavigationController *_contentNavigationController;
-    UINavigationController *_secondaryContentNavigationController;
+    _UIActivityNavigationController *_secondaryContentNavigationController;
     UIActivityContentViewController *_contentViewController;
     UIActivityContentViewController *_secondaryContentViewController;
     _UICollectionViewDiffableDataSource *_dataSource;
@@ -141,7 +142,7 @@
 @property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIActivityContentViewController *secondaryContentViewController; // @synthesize secondaryContentViewController=_secondaryContentViewController;
 @property(retain, nonatomic) UIActivityContentViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-@property(retain, nonatomic) UINavigationController *secondaryContentNavigationController; // @synthesize secondaryContentNavigationController=_secondaryContentNavigationController;
+@property(retain, nonatomic) _UIActivityNavigationController *secondaryContentNavigationController; // @synthesize secondaryContentNavigationController=_secondaryContentNavigationController;
 @property(retain, nonatomic) UINavigationController *contentNavigationController; // @synthesize contentNavigationController=_contentNavigationController;
 @property(retain, nonatomic) NSLayoutConstraint *blurViewHeightConstraint; // @synthesize blurViewHeightConstraint=_blurViewHeightConstraint;
 @property(retain, nonatomic) ObjectManipulationViewController *customizationViewController; // @synthesize customizationViewController=_customizationViewController;
@@ -156,6 +157,7 @@
 @property(retain, nonatomic) UIViewController *linkViewController; // @synthesize linkViewController=_linkViewController;
 @property(readonly, nonatomic) NSArray *resolvedActivityItemsForCurrentActivity; // @synthesize resolvedActivityItemsForCurrentActivity=_resolvedActivityItemsForCurrentActivity;
 @property(retain, nonatomic) NSArray *activityTypesToCreateInShareService; // @synthesize activityTypesToCreateInShareService=_activityTypesToCreateInShareService;
+@property(nonatomic, getter=_creationTimestamp, setter=_setCreationTimestamp:) unsigned long long creationTimestamp; // @synthesize creationTimestamp=_creationTimestamp;
 @property(nonatomic, getter=_readyToInteractTimestamp, setter=_setReadyToInteractTimestamp:) unsigned long long readyToInteractTimestamp; // @synthesize readyToInteractTimestamp=_readyToInteractTimestamp;
 @property(nonatomic, getter=_viewWillAppearTimestamp, setter=_setViewWillAppearTimestamp:) unsigned long long viewWillAppearTimestamp; // @synthesize viewWillAppearTimestamp=_viewWillAppearTimestamp;
 @property(nonatomic, getter=_beginPerformingActivityTimestamp, setter=_setBeginPerformingActivityTimestamp:) unsigned long long beginPerformingActivityTimestamp; // @synthesize beginPerformingActivityTimestamp=_beginPerformingActivityTimestamp;
@@ -195,7 +197,7 @@
 - (void)_willPerformInServiceActivityType:(id)arg1 activitySpecificMetadata:(id)arg2;
 - (void)_performShareServiceSelectedActivity:(id)arg1;
 - (void)presentAirDrop;
-- (void)connectAirDrop;
+- (void)connectAirDropWithNoContentView:(_Bool)arg1;
 - (_Bool)_shouldShowSystemActivityType:(id)arg1;
 - (_Bool)activityHelper:(id)arg1 matchingWithContext:(id)arg2 shouldIncludeSystemActivityType:(id)arg3 sessionID:(id)arg4;
 - (id)_configurationForActivity:(id)arg1;
@@ -217,8 +219,8 @@
 - (void)_endDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
 - (void)_presentationControllerDismissalTransitionDidEndNotification:(id)arg1;
 - (void)_beginDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
-- (void)_endInProgressActivityExecutionForcedStrongReference;
-- (void)_beginInProgressActivityExecutionForcedStrongReference;
+- (void)_endInProgressActivityExecutionForcedStrongReferenceForActivity:(id)arg1;
+- (void)_beginInProgressActivityExecutionForcedStrongReferenceForActivity:(id)arg1;
 - (_Bool)_queueBackgroundOperationsForActivityItems:(id)arg1 activityBeingPerformed:(id)arg2;
 - (void)_performActivity:(id)arg1;
 - (_Bool)_shouldExecuteItemOperation:(id)arg1 forActivity:(id)arg2;
@@ -283,7 +285,8 @@
 - (void)connectionInterrupted;
 - (void)willPerformInServiceActivityWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performShortcutActivityInHostWithBundleID:(id)arg1 singleUseToken:(id)arg2;
-- (void)performExtensionActivityInHostWithBundleID:(id)arg1;
+- (void)performExtensionActivityInHostWithBundleID:(id)arg1 request:(id)arg2;
+- (void)performAirDropActivityInHostWithNoContentView:(_Bool)arg1;
 - (void)performActivityInHostWithUUID:(id)arg1;
 - (void)_editActionsTapped;
 - (void)optionsButtonTapped;

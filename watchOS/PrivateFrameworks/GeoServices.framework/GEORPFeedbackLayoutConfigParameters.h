@@ -13,11 +13,13 @@
 @interface GEORPFeedbackLayoutConfigParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_coordinate;
     GEOMapRegion *_mapRegion;
     GEOPDMapsIdentifier *_mapsId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _formType;
     struct {
         unsigned int has_formType:1;
@@ -60,6 +62,8 @@
 - (id)formTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasFormType;
 @property(nonatomic) int formType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

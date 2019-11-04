@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: $__lazy_storage_$_profileNameSection
     // Error parsing type: , name: $__lazy_storage_$_medicalDetailSection
+    // Error parsing type: , name: researchStudiesItem
 }
 
 @end

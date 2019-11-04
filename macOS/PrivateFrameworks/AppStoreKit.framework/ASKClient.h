@@ -17,6 +17,7 @@
 
 @property(retain) ACAccount *activeiTunesAccount; // @synthesize activeiTunesAccount=_activeiTunesAccount;
 - (void).cxx_destruct;
+- (id)isPairedSystemVersionAtLeast:(id)arg1;
 - (BOOL)isActivePairedWatchSystemVersionAtLeastMajorVersion:(id)arg1 minorVersion:(id)arg2 patchVersion:(id)arg3;
 - (BOOL)deviceHasCapabilities:(id)arg1;
 @property(readonly) BOOL supportsHEIF;

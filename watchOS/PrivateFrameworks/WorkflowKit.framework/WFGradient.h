@@ -8,27 +8,27 @@
 
 #import <WorkflowKit/NSCopying-Protocol.h>
 
-@class UIColor;
+@class WFColor;
 
 @interface WFGradient : NSObject <NSCopying>
 {
     struct CGGradient *_CGGradient;
-    UIColor *_baseColor;
-    UIColor *_darkBaseColor;
-    UIColor *_accessibilityBaseColor;
-    UIColor *_darkAccessibilityBaseColor;
-    UIColor *_startColor;
-    UIColor *_endColor;
+    WFColor *_baseColor;
+    WFColor *_darkBaseColor;
+    WFColor *_accessibilityBaseColor;
+    WFColor *_darkAccessibilityBaseColor;
+    WFColor *_startColor;
+    WFColor *_endColor;
     int _blendMode;
 }
 
 @property(readonly, nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
-@property(readonly, nonatomic) UIColor *endColor; // @synthesize endColor=_endColor;
-@property(readonly, nonatomic) UIColor *startColor; // @synthesize startColor=_startColor;
-@property(readonly, nonatomic) UIColor *darkAccessibilityBaseColor; // @synthesize darkAccessibilityBaseColor=_darkAccessibilityBaseColor;
-@property(readonly, nonatomic) UIColor *accessibilityBaseColor; // @synthesize accessibilityBaseColor=_accessibilityBaseColor;
-@property(readonly, nonatomic) UIColor *darkBaseColor; // @synthesize darkBaseColor=_darkBaseColor;
-@property(readonly, nonatomic) UIColor *baseColor; // @synthesize baseColor=_baseColor;
+@property(readonly, nonatomic) WFColor *endColor; // @synthesize endColor=_endColor;
+@property(readonly, nonatomic) WFColor *startColor; // @synthesize startColor=_startColor;
+@property(readonly, nonatomic) WFColor *darkAccessibilityBaseColor; // @synthesize darkAccessibilityBaseColor=_darkAccessibilityBaseColor;
+@property(readonly, nonatomic) WFColor *accessibilityBaseColor; // @synthesize accessibilityBaseColor=_accessibilityBaseColor;
+@property(readonly, nonatomic) WFColor *darkBaseColor; // @synthesize darkBaseColor=_darkBaseColor;
+@property(readonly, nonatomic) WFColor *baseColor; // @synthesize baseColor=_baseColor;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

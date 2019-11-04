@@ -6,7 +6,7 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSImage, NSNumber;
+@class NSNumber, WFImage;
 
 @interface WFSliderParameter : WFParameter
 {
@@ -17,8 +17,8 @@
 @property(retain, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(retain, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSImage *maximumIcon;
-@property(readonly, nonatomic) NSImage *minimumIcon;
+@property(readonly, nonatomic) WFImage *maximumIcon;
+@property(readonly, nonatomic) WFImage *minimumIcon;
 - (BOOL)shouldAlignLabels;
 - (id)defaultSerializedRepresentation;
 - (id)initWithDefinition:(id)arg1;

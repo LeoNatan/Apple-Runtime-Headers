@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewHeaderFooterView.h>
 
-@class ACAccountStore, HUContactView, HUSplitAccountHeaderTableView, NSArray, NSAttributedString;
+@class ACAccountStore, HUContactView, HUSplitAccountHeaderTableView, NAFuture, NSArray, NSAttributedString;
 @protocol HUSplitAccountDelegate;
 
 @interface _HUUserAvatarHeaderView : UITableViewHeaderFooterView
@@ -16,8 +16,10 @@
     ACAccountStore *_accountStore;
     NSArray *_layoutConstraints;
     id <HUSplitAccountDelegate> _splitAccountDelegate;
+    NAFuture *_mediaAccountFuture;
 }
 
+@property(retain, nonatomic) NAFuture *mediaAccountFuture; // @synthesize mediaAccountFuture=_mediaAccountFuture;
 @property(nonatomic) __weak id <HUSplitAccountDelegate> splitAccountDelegate; // @synthesize splitAccountDelegate=_splitAccountDelegate;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
@@ -29,6 +31,7 @@
 - (void)dismissSplitAccountView;
 - (void)showSplitAccountViewIfNeeded;
 - (void)setAccounts:(id)arg1 forHome:(id)arg2;
+- (void)dealloc;
 - (id)initWithUserHandle:(id)arg1 home:(id)arg2 delegate:(id)arg3;
 
 @end

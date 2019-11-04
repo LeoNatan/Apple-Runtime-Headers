@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol PKCloudStoreCoordinatorDelegate <NSObject>
-- (void)itemOfItemType:(unsigned int)arg1 recordName:(NSString *)arg2 completion:(void (^)(PKCloudRecordObject *, NSError *))arg3;
+- (void)recreateZone:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)itemOfItemType:(unsigned int)arg1 recordName:(NSString *)arg2 qualityOfService:(int)arg3 completion:(void (^)(PKCloudRecordObject *, NSError *))arg4;
 @end
 

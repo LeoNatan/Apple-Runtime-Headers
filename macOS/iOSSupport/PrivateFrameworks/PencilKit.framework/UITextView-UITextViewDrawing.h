@@ -30,6 +30,7 @@
 @property(retain, nonatomic) UIImage *paperTexture;
 @property(copy, nonatomic) PKLinedPaper *linedPaper;
 @property(nonatomic, getter=isRulerEnabled) BOOL rulerEnabled;
+- (void)_setSelectedInkColor:(id)arg1;
 @property(copy, nonatomic, setter=_setTool:) PKTool *_tool;
 @property(copy, nonatomic) PKInk *ink;
 - (void)_clearDrawingInfo;

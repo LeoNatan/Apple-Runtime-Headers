@@ -8,12 +8,13 @@
 
 @interface CSSpIdSpeakerVectorGenerator : NSObject
 {
+    unsigned int _spIdType;
 }
 
+@property(readonly, nonatomic) unsigned int spIdType; // @synthesize spIdType=_spIdType;
 - (void)endAudio;
 - (void)processAudioData:(id)arg1;
-@property(readonly, nonatomic) unsigned int spIdType;
-- (id)initWithCSspIdType:(unsigned int)arg1 withSysConfigFile:(id)arg2 sysConfigRoot:(id)arg3 delegate:(id)arg4;
+- (id)initWithCSSpIdType:(unsigned int)arg1 withSysConfigFilepath:(id)arg2 sysConfigRoot:(id)arg3 delegate:(id)arg4 queue:(id)arg5;
 
 @end
 

@@ -54,7 +54,7 @@
 - (id)createShareForListWithID:(id)arg1 error:(id *)arg2;
 - (id)fetchShareForListWithID:(id)arg1 error:(id *)arg2;
 - (void)_saveAccountChangeItems:(id)arg1 listChangeItems:(id)arg2 reminderChangeItems:(id)arg3 author:(id)arg4 replicaManagerProvider:(id)arg5 synchronously:(BOOL)arg6 performer:(id)arg7 completion:(CDUnknownBlockType)arg8;
-- (id)_xpcSyncStorePerformerWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)_xpcSyncStorePerformerWithReason:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_enumerateAllListsIncludingGroups:(BOOL)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateAllGroupsAndListsWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateAllListsWithBlock:(CDUnknownBlockType)arg1;
@@ -122,7 +122,7 @@
 - (void)requestToDeleteLocalDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestToDeleteSyncDataWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestToMergeLocalDataIntoSyncDataWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_triggerSyncForcingCloudKitReload:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_triggerSyncWithReason:(id)arg1 forcingCloudKitReload:(BOOL)arg2 discretionary:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeOrphanedAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)deleteAccountWithAccountID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateAccountWithAccountID:(id)arg1 restartDA:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
@@ -130,7 +130,7 @@
 - (void)updateAccountsAndFetchMigrationState:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateAccountsAndSync:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)triggerSyncForDataAccessAccountsWithAccountIDs:(id)arg1;
-- (void)triggerThrottledSyncWithCompletion:(CDUnknownBlockType)arg1;
+- (void)triggerThrottledSyncWithReason:(id)arg1 discretionary:(BOOL)arg2 WithCompletion:(CDUnknownBlockType)arg3;
 - (id)replicaManagerProviderForCalDAVSync;
 
 @end

@@ -21,6 +21,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)createUncachedConcreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
 - (void).cxx_destruct;
@@ -43,7 +44,6 @@
 - (unsigned long long)persistentID;
 - (id)mediaLibrary;
 - (_Bool)existsInLibrary;
-- (Class)itemArrayCoderPIDDataCodingClass;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

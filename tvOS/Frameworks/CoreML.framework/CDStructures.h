@@ -707,6 +707,14 @@ struct vector<float, std::__1::allocator<float>> {
     } __end_cap_;
 };
 
+struct vector<int, std::__1::allocator<int>> {
+    int *__begin_;
+    int *__end_;
+    struct __compressed_pair<int *, std::__1::allocator<int>> {
+        int *__value_;
+    } __end_cap_;
+};
+
 struct vector<long long, std::__1::allocator<long long>> {
     long long *__begin_;
     long long *__end_;
@@ -1002,6 +1010,14 @@ typedef struct vector<float, std::__1::allocator<float>> {
         float *__value_;
     } __end_cap_;
 } vector_7584168e;
+
+typedef struct vector<int, std::__1::allocator<int>> {
+    int *__begin_;
+    int *__end_;
+    struct __compressed_pair<int *, std::__1::allocator<int>> {
+        int *__value_;
+    } __end_cap_;
+} vector_12bd641b;
 
 typedef struct vector<std::__1::map<std::__1::basic_string<char>, espresso_buffer_t *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, espresso_buffer_t *>>>, std::__1::allocator<std::__1::map<std::__1::basic_string<char>, espresso_buffer_t *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, espresso_buffer_t *>>>>> {
     struct map<std::__1::basic_string<char>, espresso_buffer_t *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, espresso_buffer_t *>>> *__begin_;

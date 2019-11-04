@@ -6,13 +6,17 @@
 
 #import <HealthExperience/_TtC16HealthExperience21AsynchronousOperation.h>
 
+@class NSString;
+
 @interface _TtC16HealthExperience26AsynchronousBlockOperation : _TtC16HealthExperience21AsynchronousOperation
 {
     // Error parsing type: , name: workBlock
+    // Error parsing type: , name: debugIdentifier
 }
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSString *debugDescription;
 - (void)main;
 
 @end

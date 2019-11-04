@@ -13,7 +13,8 @@
 - (void)performUserDefaultsWithFavoritesProxies:(NSArray *)arg1 suggestionProxies:(NSArray *)arg2 orderedUUIDs:(NSArray *)arg3 activityCategory:(long long)arg4;
 - (void)willPerformInServiceActivityWithRequest:(UISUIActivityExtensionItemDataRequest *)arg1 completion:(void (^)(NSArray *, UISDActivityItemData *))arg2;
 - (void)performShortcutActivityInHostWithBundleID:(NSString *)arg1 singleUseToken:(NSString *)arg2;
-- (void)performExtensionActivityInHostWithBundleID:(NSString *)arg1;
+- (void)performAirDropActivityInHostWithNoContentView:(_Bool)arg1;
+- (void)performExtensionActivityInHostWithBundleID:(NSString *)arg1 request:(UISUIActivityExtensionItemDataRequest *)arg2;
 - (void)performActivityInHostWithUUID:(NSUUID *)arg1;
 - (void)dataSourceUpdatedWithSessionConfiguration:(UISDShareSheetSessionConfiguration *)arg1;
 - (void)connectionInterrupted;

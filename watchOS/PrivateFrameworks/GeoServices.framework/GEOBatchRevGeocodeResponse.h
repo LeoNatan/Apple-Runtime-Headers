@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOBatchRevGeocodeResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_batchPlaceResults;
     NSMutableArray *_clusters;
     double _timestamp;
     NSMutableArray *_versionDomains;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _statusCode;
     unsigned int _ttl;
     unsigned int _version;
@@ -87,6 +89,8 @@ __attribute__((visibility("hidden")))
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCode;
 @property(nonatomic) int statusCode;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

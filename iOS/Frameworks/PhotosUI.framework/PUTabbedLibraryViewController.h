@@ -56,6 +56,7 @@
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (int)_contentModeForDestination:(id)arg1;
 - (id)nextExistingParticipantOnRouteToDestination:(id)arg1;
+- (void)px_switchToTabForDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)canRouteToDestination:(id)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;

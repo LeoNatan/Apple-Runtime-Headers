@@ -6,7 +6,7 @@
 
 #import <AnnotationKit/AKTextAttributesViewController.h>
 
-@class NSButton, NSSlider, NSStackView;
+@class NSButton, NSStackView, NSStepperTouchBarItem;
 
 @interface AKDFRTextAttributesViewController : AKTextAttributesViewController
 {
@@ -15,10 +15,10 @@
     NSButton *_boldButton;
     NSButton *_italicsButton;
     NSButton *_underlineButton;
-    NSSlider *_fontSizeSlider;
+    NSStepperTouchBarItem *_textSizeStepperItem;
 }
 
-@property(retain) NSSlider *fontSizeSlider; // @synthesize fontSizeSlider=_fontSizeSlider;
+@property(retain, nonatomic) NSStepperTouchBarItem *textSizeStepperItem; // @synthesize textSizeStepperItem=_textSizeStepperItem;
 @property(retain) NSButton *underlineButton; // @synthesize underlineButton=_underlineButton;
 @property(retain) NSButton *italicsButton; // @synthesize italicsButton=_italicsButton;
 @property(retain) NSButton *boldButton; // @synthesize boldButton=_boldButton;
@@ -26,7 +26,7 @@
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
 - (void)textStyleAction:(id)arg1;
-- (void)fontSizeControlAction:(id)arg1;
+- (void)_fontSizeDidChange:(id)arg1;
 - (void)syncFontsToUI:(id)arg1;
 - (void)setUnderlineSelected:(BOOL)arg1;
 - (void)setItalicsSelected:(BOOL)arg1;
@@ -35,6 +35,7 @@
 - (void)setBoldEnabled:(BOOL)arg1;
 - (BOOL)isItalicsUIEnabled;
 - (BOOL)isBoldUIEnabled;
+- (id)_createTextSizeStepperItem;
 - (void)viewDidLoad;
 - (id)initWithController:(id)arg1;
 

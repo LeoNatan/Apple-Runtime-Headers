@@ -48,7 +48,7 @@
 @property(nonatomic) __weak id <AXCharacterVoiceSpeechDelegate> speechDelegate; // @synthesize speechDelegate;
 @property(nonatomic) __weak id <AXCharacterVoiceMobileAssetDelegate> mobileAssetDelegate; // @synthesize mobileAssetDelegate;
 - (void).cxx_destruct;
-- (_Bool)isDoneSyncing;
+- (_Bool)isDoneSyncingForSyncClientState:(id)arg1;
 - (void)syncClientStateDidChange:(id)arg1;
 - (void)_deregisterForSyncStateNotifications;
 - (void)_registerForSyncStateNotifications;
@@ -97,6 +97,7 @@
 @property(readonly, nonatomic) NSString *assetType;
 - (void)_beginUpdatePollingForLanguage:(id)arg1;
 - (void)dealloc;
+- (_Bool)isCharacterFaceActiveFace;
 - (id)init;
 - (void)initiateCharacterVoiceDownloadForLanguage:(id)arg1;
 

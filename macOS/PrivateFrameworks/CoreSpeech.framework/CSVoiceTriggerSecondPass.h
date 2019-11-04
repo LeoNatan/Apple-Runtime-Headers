@@ -14,14 +14,13 @@
 #import <CoreSpeech/CSMediaPlayingMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSelfTriggerDetectorDelegate-Protocol.h>
 #import <CoreSpeech/CSSpIdVTTextDependentSpeakerRecognizerDelegate-Protocol.h>
-#import <CoreSpeech/CSSpeakerDetectorNDAPIDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVolumeMonitorDelegate-Protocol.h>
 
 @class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString, NSUUID;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpIdVTTextDependentSpeakerRecognizerDelegate, CSSelfTriggerDetectorDelegate>
+@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpIdVTTextDependentSpeakerRecognizerDelegate, CSSelfTriggerDetectorDelegate>
 {
     BOOL _hasReceivedNDEAPIResult;
     BOOL _isSecondChanceHot;
@@ -42,6 +41,7 @@
     float _keywordThresholdSecondChance;
     float _effectiveKeywordThreshold;
     float _keywordLoggingThreshold;
+    float _keywordRejectLoggingThreshold;
     float _lastScore;
     float _recognizerScore;
     float _recognizerScoreScaleFactor;
@@ -101,11 +101,13 @@
     NSDate *_tdsrStartTime;
     unsigned long long _kwdRejectCleanupSecondPassResult;
     NSUUID *_kwdRejectCleanupToken;
+    NSUUID *_tdsrTimeoutToken;
 }
 
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+@property(retain, nonatomic) NSUUID *tdsrTimeoutToken; // @synthesize tdsrTimeoutToken=_tdsrTimeoutToken;
 @property(retain, nonatomic) NSUUID *kwdRejectCleanupToken; // @synthesize kwdRejectCleanupToken=_kwdRejectCleanupToken;
 @property(nonatomic) unsigned long long kwdRejectCleanupSecondPassResult; // @synthesize kwdRejectCleanupSecondPassResult=_kwdRejectCleanupSecondPassResult;
 @property(nonatomic) BOOL kwdRejectCleanupPending; // @synthesize kwdRejectCleanupPending=_kwdRejectCleanupPending;
@@ -159,6 +161,7 @@
 @property(nonatomic) unsigned long long extraSamplesAtStart; // @synthesize extraSamplesAtStart=_extraSamplesAtStart;
 @property(nonatomic) BOOL isSecondChanceHot; // @synthesize isSecondChanceHot=_isSecondChanceHot;
 @property(nonatomic) float lastScore; // @synthesize lastScore=_lastScore;
+@property(nonatomic) float keywordRejectLoggingThreshold; // @synthesize keywordRejectLoggingThreshold=_keywordRejectLoggingThreshold;
 @property(nonatomic) float keywordLoggingThreshold; // @synthesize keywordLoggingThreshold=_keywordLoggingThreshold;
 @property(nonatomic) float effectiveKeywordThreshold; // @synthesize effectiveKeywordThreshold=_effectiveKeywordThreshold;
 @property(nonatomic) float keywordThresholdSecondChance; // @synthesize keywordThresholdSecondChance=_keywordThresholdSecondChance;
@@ -196,6 +199,7 @@
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)handleSATOnlyScore;
 - (void)handleTDSRCombinedScore;
+- (void)_addToPHSRejectListIfNeeded:(id)arg1;
 - (void)_getDidWakeAP:(id)arg1;
 - (void)_addDeviceStatusInfoToDict:(id)arg1;
 - (void)_addRejectStatsToDict:(id)arg1;
@@ -212,7 +216,7 @@
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDEAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
-- (void)_handleTDSRTimeout;
+- (void)_handleTDSRTimeout:(id)arg1;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(BOOL)arg4;
 - (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
 - (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;

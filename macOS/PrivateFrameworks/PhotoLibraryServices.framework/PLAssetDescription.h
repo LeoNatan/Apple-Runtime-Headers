@@ -12,9 +12,11 @@
 {
 }
 
++ (id)listOfSyncedProperties;
 + (id)entityName;
 - (void)willSave;
 - (void)prepareForDeletion;
+- (BOOL)isSyncableChange;
 - (id)payloadForChangedKeys:(id)arg1;
 - (id)payloadID;
 

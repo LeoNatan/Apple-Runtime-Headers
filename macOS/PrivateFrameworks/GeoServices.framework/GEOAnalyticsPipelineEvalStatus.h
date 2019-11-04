@@ -13,10 +13,12 @@
 @interface GEOAnalyticsPipelineEvalStatus : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_inflightTypeCounts;
     NSMutableArray *_shadowTypeCounts;
     NSMutableArray *_storedTypeCounts;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _evalModeEnabled;
     struct {
         unsigned int has_evalModeEnabled:1;
@@ -68,6 +70,8 @@
 - (void)_readStoredTypeCounts;
 @property(nonatomic) BOOL hasEvalModeEnabled;
 @property(nonatomic) BOOL evalModeEnabled;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

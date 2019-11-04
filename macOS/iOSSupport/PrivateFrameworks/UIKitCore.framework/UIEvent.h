@@ -27,6 +27,7 @@
 @property(nonatomic, setter=_setTimestamp:) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (void)_wasDeliveredToGestureRecognizers;
+- (void)_gestureRecognizerNoLongerNeedsSendEvent:(id)arg1;
 - (BOOL)_sendEventToGestureRecognizer:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (void)_removeEventObserver:(id)arg1;

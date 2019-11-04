@@ -16,9 +16,9 @@
     unsigned long long _colorPixelFormat;
     unsigned long long _depthPixelFormat;
     // Error parsing type: , name: _depthRange
-    long long _HUDOption;
     long long _layout;
     long long _multisampleCount;
+    long long _HUDOption;
     long long _presentationWarp;
     unsigned long long _drawablePixelFormat;
     unsigned long long _drawableCount;
@@ -30,9 +30,9 @@
 @property(nonatomic) unsigned long long drawableCount; // @synthesize drawableCount=_drawableCount;
 @property(nonatomic) unsigned long long drawablePixelFormat; // @synthesize drawablePixelFormat=_drawablePixelFormat;
 @property(nonatomic) long long presentationWarp; // @synthesize presentationWarp=_presentationWarp;
+@property(nonatomic) long long HUDOption; // @synthesize HUDOption=_HUDOption;
 @property(nonatomic) long long multisampleCount; // @synthesize multisampleCount=_multisampleCount;
 @property(nonatomic) long long layout; // @synthesize layout=_layout;
-@property(nonatomic) long long HUDOption; // @synthesize HUDOption=_HUDOption;
 // Error parsing type for property depthRange:
 // Property attributes: T,N,V_depthRange
 

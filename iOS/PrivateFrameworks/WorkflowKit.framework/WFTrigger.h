@@ -19,8 +19,9 @@
 + (_Bool)isAllowedToRunAutomatically;
 + (_Bool)supportsSecureCoding;
 + (id)triggerWithSerializedData:(id)arg1;
+- (id)localizedPastTenseDescription;
+- (id)localizedDescriptionWithConfigurationSummary;
 - (_Bool)hasValidConfiguration;
-- (id)localizedTitleWithConfigurationSummary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

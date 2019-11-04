@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <FPSpotlightDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dataSource:(id)arg1 didChangeItemsOrigin:(unsigned long long)arg2;
+- (_Bool)dataSourceShouldAlwaysReplaceContents:(id)arg1;
 - (void)dataSource:(id)arg1 wasInvalidatedWithError:(id)arg2;
 - (void)dataSource:(id)arg1 receivedUpdatedItems:(id)arg2 deletedItems:(id)arg3 hasMoreChanges:(_Bool)arg4;
 - (void)dataSource:(id)arg1 replaceContentsWithItems:(id)arg2 hasMoreChanges:(_Bool)arg3;

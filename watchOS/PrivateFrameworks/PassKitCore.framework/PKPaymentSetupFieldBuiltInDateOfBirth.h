@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)submissionStringMeetsAllRequirements;
 - (_Bool)isBuiltIn;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
 

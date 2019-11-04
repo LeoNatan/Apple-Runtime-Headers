@@ -74,6 +74,7 @@
 @property(readonly, nonatomic) NSString *cacheKey;
 @property(readonly, nonatomic) _Bool shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly, nonatomic) _Bool shouldMatchDataInCacheByURLPathComponentOnly;
+- (id)_resourceLoaderWithRemoteHandlerContext:(id)arg1;
 - (_Bool)_hasResourceLoaderDelegate;
 @property(readonly, nonatomic) AVAssetResourceLoader *resourceLoader;
 - (void)_setUserInfoObject:(id)arg1;

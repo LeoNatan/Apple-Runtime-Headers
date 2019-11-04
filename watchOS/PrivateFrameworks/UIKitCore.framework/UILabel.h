@@ -41,6 +41,7 @@
     struct {
         unsigned int highlighted:1;
         unsigned int autosizeTextToFit:1;
+        unsigned int supportMultiLineShrinkToFit:1;
         unsigned int autotrackTextToFit:1;
         unsigned int baselineAdjustment:2;
         unsigned int enabled:1;
@@ -121,7 +122,11 @@
 - (void)layerWillDraw:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)_drawTextInRect:(struct CGRect)arg1 baselineCalculationOnly:(_Bool)arg2;
+- (void)_drawTextInRectSupportingMultiLineShrinkToFit:(struct CGRect)arg1 baselineCalculationOnly:(_Bool)arg2;
+- (void)_setSupportMultiLineShrinkToFit:(_Bool)arg1;
+- (_Bool)_supportMultiLineShrinkToFit;
 - (_Bool)_updateScaledMetricsForRect:(struct CGRect)arg1;
+- (_Bool)_updateScaledMetricsForRectSupportingMultiLineShrinkToFit:(struct CGRect)arg1;
 - (_Bool)_drawsUnderline;
 - (void)drawTextInRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -139,6 +144,7 @@
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
 - (void)invalidateIntrinsicContentSize;
 - (_Bool)_needsDoubleUpdateConstraintsPass;
+- (CDStruct_b2fbf00d)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (_Bool)_hasBaseline;
 - (float)_firstBaselineOffsetFromTop;
 - (float)_baselineOffsetFromBottom;
@@ -168,7 +174,8 @@
 @property(retain, nonatomic) UIFont *font;
 - (void)_adjustFontForAccessibilityTraits:(_Bool)arg1;
 - (void)_setFont:(id)arg1;
-- (void)_baselineOffsetParametersDidChange;
+- (void)_invalidateBaselineConstraints;
+- (_Bool)_shouldInvalidateBaselineConstraintsForSize:(struct CGSize)arg1 oldSize:(struct CGSize)arg2;
 - (id)__currentDefaultColor;
 - (id)currentTextColor;
 - (id)_disabledFontColor;

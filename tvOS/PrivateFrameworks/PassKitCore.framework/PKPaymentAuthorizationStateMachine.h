@@ -91,12 +91,14 @@
 - (void)_enqueueDidAuthorizePaymentWithRemotePayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithByPassPayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithToken:(id)arg1;
+- (void)_enqueueDidAuthorizePaymentWithInstallmentAuthorizationToken:(id)arg1;
 - (void)_enqueueDidUpdateAccountServicePaymentMethod:(id)arg1;
 - (void)_enqueueDidSelectRemotePaymentInstrument:(id)arg1 paymentApplication:(id)arg2;
 - (void)_enqueueDidSelectRemotePaymentInstrument:(id)arg1;
 - (void)_enqueueDidSelectPaymentPass:(id)arg1 paymentApplication:(id)arg2;
 - (void)_enqueueDidSelectPaymentPass:(id)arg1;
 - (void)_enqueueDidSelectPaymentMethodWithQuote:(id)arg1;
+- (void)_enqueueDidSelectPaymentMethodWithBindToken:(id)arg1;
 - (void)_enqueueDidSelectShippingContact:(id)arg1;
 - (void)_enqueueDidRequestMerchantSession;
 - (void)_clientCallbackTimedOut;
@@ -106,10 +108,11 @@
 - (id)_dequeuePendingCallbackParam;
 - (void)_enqueueCallbackOfKind:(long long)arg1 withObject:(id)arg2;
 - (void)_dispatchNextCallbackParam;
-- (void)_updateModelWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2;
+- (void)_updateModelWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2 contentItems:(id)arg3;
 - (void)_advanceToNextState;
 - (void)_sendDidTransitionFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2 withParam:(id)arg3;
 - (void)_enqueueInitialCallbacks;
+- (void)_performInstallmentBind;
 - (void)_startPayment;
 - (void)_startRemoteDeviceUpdate;
 - (void)_startHandoff;

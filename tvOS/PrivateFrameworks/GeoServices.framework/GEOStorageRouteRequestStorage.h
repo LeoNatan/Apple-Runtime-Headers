@@ -13,10 +13,12 @@
 @interface GEOStorageRouteRequestStorage : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOURLRouteHandle *_routeHandle;
     NSMutableArray *_waypoints;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _transportType;
     struct {
         unsigned int has_transportType:1;
@@ -59,6 +61,8 @@
 - (void)clearWaypoints;
 @property(retain, nonatomic) NSMutableArray *waypoints;
 - (void)_readWaypoints;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

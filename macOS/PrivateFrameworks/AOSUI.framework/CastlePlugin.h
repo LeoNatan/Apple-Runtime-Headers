@@ -9,7 +9,7 @@
 #import <AOSUI/AKAppleIDAuthenticationDelegate-Protocol.h>
 #import <AOSUI/MMWebKitViewControllerDelegate-Protocol.h>
 
-@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController;
+@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController;
 @protocol OS_dispatch_semaphore, iCloudPrefDelegate;
 
 @interface CastlePlugin : NSObject <AKAppleIDAuthenticationDelegate, MMWebKitViewControllerDelegate>
@@ -19,8 +19,6 @@
     NSDictionary *_authenticationResults;
     NSMutableDictionary *_accountList;
     NSString *_visibleAccountID;
-    NSTimer *_signoutSpinnerStartTimer;
-    double _signoutSpinnerStopTime;
     NSWindow *_mainWindow;
     NSString *_reAuthTitleFormat;
     iCloudAccountDetailsController *_accountDetailsController;
@@ -100,8 +98,6 @@
 - (BOOL)isAccountPrimary:(id)arg1;
 - (id)displayNameForVisibleAccount;
 - (void)deleteAccountName:(id)arg1;
-- (void)deleteAccountName:(id)arg1 andSendIANotification:(BOOL)arg2;
-- (void)finishDeletingAccountNamed:(id)arg1 withServiceInfo:(id)arg2 suppressPreflight:(BOOL)arg3;
 - (void)deleteAccountName:(id)arg1 andSendIANotification:(BOOL)arg2 suppressPreFlight:(BOOL)arg3;
 - (BOOL)refreshPending:(id)arg1;
 - (void)clearRefreshPending:(id)arg1;
@@ -120,7 +116,6 @@
 - (BOOL)createAOSAccount:(id)arg1 password:(id)arg2;
 - (void)reloadAccountView:(id)arg1 withSigninError:(id)arg2;
 - (id)signedInAccounts;
-- (BOOL)isSigningOut;
 - (BOOL)supportsDataMigration;
 - (void)signInFailedCompletedMainThread:(id)arg1;
 - (BOOL)shouldShowPasswordField;
@@ -136,15 +131,11 @@
 - (void)deactivateFailedMainThread:(id)arg1;
 - (void)deactivateCompletedMainThread:(id)arg1;
 - (void)signInFailedMainThread:(id)arg1;
-- (void)signOutCompletedMainThread:(id)arg1;
-- (void)signOutAndShowSignIn:(id)arg1;
 - (void)signInCompletedMainThread:(id)arg1;
 - (void)accountConfigChangeMainThread:(id)arg1;
 - (void)prefsActionRequiredMainThread:(id)arg1;
 - (void)handlePrimarySigninCompletedMainThread:(id)arg1;
 - (void)accountVettedMainThread:(id)arg1;
-- (void)dismissSigningOut;
-- (void)showSigningOut:(id)arg1;
 - (BOOL)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (void)reauthenticate:(id)arg1;
 - (void)forgotPressedTopLevel:(id)arg1;
@@ -176,8 +167,6 @@
 - (void)_showCreateAppleIDForWindow:(id)arg1;
 - (void)showAlreadySignedInSheet:(id)arg1;
 - (void)openMCCPrefPane;
-- (void)signOutFailedMainThread:(id)arg1;
-- (void)showDeleteFailedSheet:(id)arg1;
 - (void)showVerifySentFailed:(id)arg1;
 - (void)showVerifySentSheet:(id)arg1;
 - (void)help:(id)arg1;
@@ -187,13 +176,11 @@
 - (void)deactivateFailed:(id)arg1;
 - (void)deactivateCompleted:(id)arg1;
 - (void)accountConfigChange:(id)arg1;
-- (void)signOutFailed:(id)arg1;
 - (void)prefsActionRequired:(id)arg1;
 - (void)handlePrimarySigninCompleted:(id)arg1;
 - (void)accountVetted:(id)arg1;
 - (void)signInFailedCompleted:(id)arg1;
 - (void)signInFailed:(id)arg1;
-- (void)signOutCompleted:(id)arg1;
 - (void)signInCompleted:(id)arg1;
 - (void)_loadNibIfNeeded;
 - (void)_registerNotificationListeners;

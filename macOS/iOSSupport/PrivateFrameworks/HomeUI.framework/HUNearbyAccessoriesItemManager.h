@@ -10,9 +10,11 @@
 
 @interface HUNearbyAccessoriesItemManager : HFItemManager
 {
+    BOOL _supportsQuickControls;
     HMAccessory *_primaryAccessory;
 }
 
+@property(nonatomic) BOOL supportsQuickControls; // @synthesize supportsQuickControls=_supportsQuickControls;
 @property(retain, nonatomic) HMAccessory *primaryAccessory; // @synthesize primaryAccessory=_primaryAccessory;
 - (void).cxx_destruct;
 - (BOOL)_isAPreferredServiceType:(id)arg1;
@@ -22,7 +24,7 @@
 - (CDUnknownBlockType)_comparatorForSectionIdentifier:(id)arg1;
 - (unsigned long long)_numberOfSections;
 - (id)_buildItemProvidersForHome:(id)arg1;
-- (id)initWithDelegate:(id)arg1 sourceProfileItem:(id)arg2;
+- (id)initWithDelegate:(id)arg1 sourceProfileItem:(id)arg2 supportsQuickControls:(BOOL)arg3;
 
 @end
 

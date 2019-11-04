@@ -9,12 +9,13 @@
 #import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
 #import <PersonalizationPortraitInternals/PPFeedbackProcessing-Protocol.h>
 
-@class PPLocationCache, PPLocationStorage, PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPMLocationDonation, PPMObjectsDeletion;
+@class PPLocationCache, PPLocationStorage, PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPMLocationDonation, PPMLocationScored, PPMObjectsDeletion;
 
 @interface PPLocalLocationStore : NSObject <PPFeedbackAccepting, PPFeedbackProcessing>
 {
     PPLocationStorage *_storage;
     PPLocationCache *_cache;
+    PPMLocationScored *_adoptionTracker;
     PPMLocationDonation *_donationTracker;
     PPMObjectsDeletion *_deletionTracker;
     PPMFeedbackRegistered *_feedbackTracker;
@@ -50,6 +51,7 @@
 - (id)locationRecordOfCategory:(unsigned short)arg1;
 - (_Bool)iterLocationRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)rankedLocationsWithQuery:(id)arg1 error:(id *)arg2;
+- (void)_petLoggingForQuery:(id)arg1 resultCount:(unsigned int)arg2 hasError:(_Bool)arg3;
 - (_Bool)iterRankedLocationsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)donateLocations:(id)arg1 source:(id)arg2 contextualNamedEntities:(id)arg3 algorithm:(unsigned short)arg4 cloudSync:(_Bool)arg5 decayRate:(double)arg6 error:(id *)arg7;
 - (id)sourceStatsExcludedAlgorithms:(id)arg1;

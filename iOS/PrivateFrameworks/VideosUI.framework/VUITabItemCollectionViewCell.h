@@ -6,12 +6,13 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class IKViewElement, NSShadow, TVImageLayout, VUILabel, VUITextLayout, _TVImageView;
+@class IKImageElement, IKViewElement, NSShadow, TVImageLayout, VUILabel, VUITextLayout, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUITabItemCollectionViewCell : UICollectionViewCell
 {
     IKViewElement *_viewElement;
+    IKImageElement *_imageElement;
     VUILabel *_titleLabel;
     VUITextLayout *_titleLayout;
     _TVImageView *_imageView;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) IKImageElement *imageElement; // @synthesize imageElement=_imageElement;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
 - (_Bool)scalesLargeContentImage;

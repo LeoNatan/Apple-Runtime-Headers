@@ -35,8 +35,6 @@
 - (_Bool)_axIsDoneAnnouncing;
 - (void)_loadSnapshotContentViews;
 - (void)setTimeView:(id)arg1;
-- (void)_axApplyAnnotationsToComplicationControllers:(id)arg1;
-- (void)_axAnnotateComplications;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (void)layoutSubviews;
 

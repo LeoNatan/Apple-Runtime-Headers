@@ -6,12 +6,14 @@
 
 #import <AppKit/NSViewController.h>
 
-@class CPKSkintoneItemView;
+@class NSView;
 
 __attribute__((visibility("hidden")))
 @interface CPKSkintoneHelpViewController : NSViewController
 {
-    CPKSkintoneItemView *_baseItem;
+    NSView *_imageEnclosingView;
+    NSView *_imageForEmojiSkinTones;
+    NSView *_imageForCouplesSkinTones;
     CDUnknownBlockType _completionBlock;
     BOOL _hasCompletionBlockCalled;
 }

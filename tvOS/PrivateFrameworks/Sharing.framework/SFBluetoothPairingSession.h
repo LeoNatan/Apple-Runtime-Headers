@@ -30,9 +30,11 @@
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSObject<OS_os_transaction> *_transaction;
     struct LogCategory *_ucat;
+    _Bool _aggregate;
     _Bool _connectOnly;
     _Bool _disconnectOnly;
     _Bool _guestMode;
+    _Bool _softwareVolume;
     _Bool _userNotInContacts;
     unsigned int _deviceVersion;
     CDUnknownBlockType _completionHandler;
@@ -44,6 +46,7 @@
 }
 
 @property(nonatomic) _Bool userNotInContacts; // @synthesize userNotInContacts=_userNotInContacts;
+@property(readonly, nonatomic) _Bool softwareVolume; // @synthesize softwareVolume=_softwareVolume;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool guestMode; // @synthesize guestMode=_guestMode;
 @property(copy, nonatomic) NSData *guestKey; // @synthesize guestKey=_guestKey;
@@ -54,6 +57,7 @@
 @property(copy, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(nonatomic) _Bool connectOnly; // @synthesize connectOnly=_connectOnly;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(nonatomic) _Bool aggregate; // @synthesize aggregate=_aggregate;
 - (void).cxx_destruct;
 - (void)_btDeletePairingAndRetry;
 - (void)_btEnsureStopped;

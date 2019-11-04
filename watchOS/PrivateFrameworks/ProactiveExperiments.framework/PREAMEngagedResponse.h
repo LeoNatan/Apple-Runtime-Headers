@@ -20,6 +20,7 @@
     NSString *_lang;
     NSString *_locale;
     unsigned int _modelId;
+    unsigned int _numberOfResponsesGenerated;
     unsigned int _position;
     unsigned int _replyTextId;
     unsigned int _responseClassId;
@@ -32,6 +33,7 @@
         unsigned int generationStatus:1;
         unsigned int inputMethod:1;
         unsigned int modelId:1;
+        unsigned int numberOfResponsesGenerated:1;
         unsigned int position:1;
         unsigned int replyTextId:1;
         unsigned int responseClassId:1;
@@ -48,6 +50,7 @@
 @property(retain, nonatomic) NSString *treatmentModelName; // @synthesize treatmentModelName=_treatmentModelName;
 @property(retain, nonatomic) NSString *treatmentId; // @synthesize treatmentId=_treatmentId;
 @property(retain, nonatomic) NSString *experimentId; // @synthesize experimentId=_experimentId;
+@property(nonatomic) unsigned int numberOfResponsesGenerated; // @synthesize numberOfResponsesGenerated=_numberOfResponsesGenerated;
 @property(nonatomic) unsigned int position; // @synthesize position=_position;
 @property(nonatomic) unsigned int replyTextId; // @synthesize replyTextId=_replyTextId;
 @property(nonatomic) unsigned int responseClassId; // @synthesize responseClassId=_responseClassId;
@@ -74,6 +77,7 @@
 @property(readonly, nonatomic) _Bool hasTreatmentModelName;
 @property(readonly, nonatomic) _Bool hasTreatmentId;
 @property(readonly, nonatomic) _Bool hasExperimentId;
+@property(nonatomic) _Bool hasNumberOfResponsesGenerated;
 - (int)StringAsGenerationStatus:(id)arg1;
 - (id)generationStatusAsString:(int)arg1;
 @property(nonatomic) _Bool hasGenerationStatus;

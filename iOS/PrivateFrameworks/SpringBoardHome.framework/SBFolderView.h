@@ -20,13 +20,11 @@
     NSMutableArray *_iconListViews;
     NSMutableSet *_scrollingDisabledReasons;
     NSMutableSet *_pageControlDisabledReasons;
-    SBIconListView *_rotatingIconList;
     SBIconListPageControl *_pageControl;
     SBIconScrollView *_scrollView;
     SBFolderTitleTextField *_titleTextField;
     NSMutableSet *_scrollViewIsScrollingOverrides;
     UIView *_scalingView;
-    long long _disableUpdatingCurrentIconListCount;
     struct SBVisibleColumnRange _visibleColumnRange;
     struct SBFolderPredictedVisibleColumn _predictedVisibleColumn;
     _Bool _isScalingViewBorrowed;
@@ -162,7 +160,6 @@
 @property(readonly, nonatomic) double scrollableWidthForVisibleColumnRange;
 - (void)_updateEditingStateAnimated:(_Bool)arg1;
 - (void)layoutIconLists:(double)arg1 animationType:(long long)arg2 forceRelayout:(_Bool)arg3;
-- (void)updateIconListViews;
 - (void)resetIconListViews;
 - (void)tearDownListViews;
 - (id)allIconListViews;
@@ -180,7 +177,7 @@
 - (struct CGSize)_scrollViewContentSize;
 - (void)_updateIconListFrames;
 - (void)_updateIconListContainment:(id)arg1 atIndex:(unsigned long long)arg2;
-- (void)_updateIconListViews;
+- (void)updateIconListViews;
 - (void)_resetIconListViews;
 - (void)_addIconListViewsForModels:(id)arg1;
 - (id)_createIconListViewForList:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -188,6 +185,7 @@
 @property(readonly, copy, nonatomic) NSString *iconLocation;
 - (Class)listViewClass;
 - (id)_interactionTintColor;
+- (void)enumerateIconListViewsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateIconListViewsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)iconListViewWithList:(id)arg1;
 - (void)_removeIconListView:(id)arg1;
@@ -196,9 +194,6 @@
 - (void)_disableUserInteractionBeforeSignificantAnimation;
 - (double)_titleFontSize;
 - (_Bool)_showsTitle;
-- (void)_popDisableUpdateCurrentIconListCount;
-- (void)_pushDisableUpdateCurrentIconListCount;
-- (_Bool)_shouldDisableUpdatingCurrentIconList;
 - (_Bool)_isValidIconListViewIndex:(long long)arg1;
 - (_Bool)_isValidPageIndex:(long long)arg1;
 - (struct SBHFloatRange)_scrollRangeForContentAtPageIndex:(long long)arg1 pageWidth:(double)arg2;
@@ -248,7 +243,7 @@
 - (void)returnScalingView;
 - (id)borrowScalingView;
 - (struct CGRect)scalingViewFrame;
-- (void)_willAnimateScrollToPageIndex:(long long)arg1;
+- (void)_willScrollToPageIndex:(long long)arg1 animated:(_Bool)arg2;
 - (void)_setScrollViewContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)animateScrollToDefaultPageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetContentOffsetToCurrentPageAnimated:(_Bool)arg1;
@@ -267,6 +262,7 @@
 @property(nonatomic, getter=isPageControlHidden) _Bool pageControlHidden;
 - (void)_updatePageControlCurrentPage;
 - (void)_updatePageControlToIndex:(long long)arg1;
+- (void)_currentPageIndexDidChangeFromPageIndex:(long long)arg1;
 - (void)_currentPageIndexDidChange;
 - (void)_setCurrentPageIndex:(long long)arg1 deferringPageControlUpdate:(_Bool)arg2;
 - (void)_setCurrentPageIndex:(long long)arg1;

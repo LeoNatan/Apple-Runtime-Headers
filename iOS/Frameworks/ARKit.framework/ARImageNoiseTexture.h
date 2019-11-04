@@ -14,6 +14,7 @@
     float _maxSNR;
     float _nSteps;
     NSObject<OS_dispatch_queue> *_queue;
+    float _lastSNR;
     id <MTLTexture> _texture;
 }
 

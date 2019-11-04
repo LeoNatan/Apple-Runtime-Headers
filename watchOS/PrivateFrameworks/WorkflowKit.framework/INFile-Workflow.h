@@ -12,6 +12,7 @@
 
 @interface INFile (Workflow) <WFCodableAttributeContentConvertible>
 + (Class)wf_contentItemClass;
++ (id)wf_fileWithFileRepresentation:(id)arg1;
 - (id)wf_fileRepresentation;
 - (void)wf_transformUsingCodableAttribute:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)wf_contentItemWithCodableAttribute:(id)arg1;

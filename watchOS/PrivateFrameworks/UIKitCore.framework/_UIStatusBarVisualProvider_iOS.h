@@ -22,6 +22,7 @@
 }
 
 + (struct CGSize)intrinsicContentSizeForOrientation:(int)arg1;
++ (float)bluetoothPaddingInset;
 + (float)regionSpacing;
 + (float)expandedItemSpacing;
 + (float)itemSpacing;

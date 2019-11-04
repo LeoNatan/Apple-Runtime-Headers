@@ -13,13 +13,15 @@
 @interface GEORPFeedbackRequestParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEORPFeedbackIdLookupParameters *_idLookupParameters;
     GEORPFeedbackImageUploadParameters *_imageUploadParameters;
     GEORPFeedbackLayoutConfigParameters *_layoutConfigParameters;
     GEORPFeedbackQueryParameters *_queryParameters;
     GEORPFeedbackSubmissionParameters *_submissionParameters;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_idLookupParameters:1;
@@ -65,6 +67,8 @@
 @property(retain, nonatomic) GEORPFeedbackSubmissionParameters *submissionParameters;
 @property(readonly, nonatomic) _Bool hasSubmissionParameters;
 - (void)_readSubmissionParameters;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithMerchantIndustryCode:(long long)arg1 mapsIdentifier:(unsigned long long)arg2 merchantName:(id)arg3 merchantRawName:(id)arg4 merchantIndustryCategory:(id)arg5 merchantURL:(id)arg6 merchantFormattedAddress:(id)arg7 transactionTime:(double)arg8 transactionType:(id)arg9 transactionLocation:(CDStruct_c3b9c2ee)arg10;
 
 @end

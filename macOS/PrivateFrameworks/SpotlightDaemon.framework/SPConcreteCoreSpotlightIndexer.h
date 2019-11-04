@@ -85,6 +85,7 @@
 - (BOOL)writeDiagnostic:(id)arg1 bundleID:(id)arg2 identifier:(id)arg3;
 - (void)issueConsistencyCheck;
 - (void)issueRepair;
+- (void)issueDefrag:(id)arg1;
 - (void)cleanupStringsWithActivity:(id)arg1 group:(id)arg2 shouldDefer:(_Bool *)arg3 flags:(int)arg4;
 - (void)cleanupStringsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)mergeWithCompletionHandler:(CDUnknownBlockType)arg1;

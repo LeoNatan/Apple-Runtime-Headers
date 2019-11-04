@@ -12,6 +12,7 @@
 
 @interface PXCPLServiceStatus : NSObject <NSCopying>
 {
+    BOOL _inResetSync;
     float _pendingProgress;
     long long _state;
     long long _pauseReason;
@@ -21,13 +22,20 @@
     NSDate *_syncDate;
     NSDate *_exitDate;
     unsigned long long _numberOfItemsFailingToUpload;
+    unsigned long long _numberOfPhotoAssets;
+    unsigned long long _numberOfVideoAssets;
+    unsigned long long _numberOfOtherAssets;
     unsigned long long _numberOfReferencedItems;
 }
 
 @property(nonatomic) unsigned long long numberOfReferencedItems; // @synthesize numberOfReferencedItems=_numberOfReferencedItems;
+@property(nonatomic) unsigned long long numberOfOtherAssets; // @synthesize numberOfOtherAssets=_numberOfOtherAssets;
+@property(nonatomic) unsigned long long numberOfVideoAssets; // @synthesize numberOfVideoAssets=_numberOfVideoAssets;
+@property(nonatomic) unsigned long long numberOfPhotoAssets; // @synthesize numberOfPhotoAssets=_numberOfPhotoAssets;
 @property(nonatomic) unsigned long long numberOfItemsFailingToUpload; // @synthesize numberOfItemsFailingToUpload=_numberOfItemsFailingToUpload;
 @property(retain, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
 @property(retain, nonatomic) NSDate *syncDate; // @synthesize syncDate=_syncDate;
+@property(nonatomic) BOOL inResetSync; // @synthesize inResetSync=_inResetSync;
 @property(nonatomic) unsigned long long pendingNumberOfItems; // @synthesize pendingNumberOfItems=_pendingNumberOfItems;
 @property(nonatomic) float pendingProgress; // @synthesize pendingProgress=_pendingProgress;
 @property(nonatomic) long long action; // @synthesize action=_action;

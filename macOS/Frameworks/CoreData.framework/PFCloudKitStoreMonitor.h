@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL storeIsAlive; // @synthesize storeIsAlive=_storeIsAlive;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *monitorGroup; // @synthesize monitorGroup=_monitorGroup;
 - (void).cxx_destruct;
+- (id)instantiateNewBackgroundContext;
 - (id)newBackgroundContextForMonitoredCoordinator;
 - (id)retainedMonitoredCoordinator;
 - (void)performBlock:(CDUnknownBlockType)arg1;

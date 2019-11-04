@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) _Bool resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
 - (void).cxx_destruct;
+- (int)preferredUserInterfaceStyle;
 - (void)_handleTapOnMap;
 - (id)geoCamera;
 - (void)fetchPoisForBrand;

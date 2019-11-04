@@ -8,7 +8,7 @@
 
 #import <HomeUI/HUAccessoryViewCellProtocol-Protocol.h>
 
-@class HFItem, HUGridServiceCellLayoutOptions, HUGridServiceCellTextView, HUIconView, HUVisualEffectContainerView, NSString, UIActivityIndicatorView, UILabel, UIView, UIVisualEffectView;
+@class HFItem, HUGridServiceCellLayoutOptions, HUGridServiceCellTextView, HUIconView, HUVisualEffectContainerView, NSString, UIActivityIndicatorView, UIColor, UILabel, UIView, UIVisualEffectView;
 @protocol NACancelable;
 
 @interface HUGridServiceCell : HUGridCell <HUAccessoryViewCellProtocol>
@@ -21,6 +21,7 @@
     BOOL _showingProgressIndicator;
     HFItem *_serviceItem;
     UIView *_accessoryView;
+    UIColor *_defaultDescriptionColor;
     HUIconView *_iconView;
     HUGridServiceCellTextView *_serviceTextView;
     UILabel *_coloredDescriptionLabel;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) BOOL shouldShowRoomName; // @synthesize shouldShowRoomName=_shouldShowRoomName;
 @property(nonatomic) BOOL shouldShowLoadingState; // @synthesize shouldShowLoadingState=_shouldShowLoadingState;
+@property(retain, nonatomic) UIColor *defaultDescriptionColor; // @synthesize defaultDescriptionColor=_defaultDescriptionColor;
 @property(nonatomic) BOOL shouldColorDescription; // @synthesize shouldColorDescription=_shouldColorDescription;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) HFItem *serviceItem; // @synthesize serviceItem=_serviceItem;

@@ -142,6 +142,7 @@
 - (id)_checkOutDatabaseForTransaction:(id)arg1 databaseType:(int)arg2 error:(id *)arg3;
 - (id)databaseTransaction:(id)arg1 checkOutDatabaseWithType:(int)arg2 error:(id *)arg3;
 - (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
+- (void)_reportMigrationResultIfNecessaryForStatus:(int)arg1 database:(id)arg2 protectedDatabase:(_Bool)arg3 error:(id)arg4;
 - (_Bool)_isDatabaseValidWithError:(id *)arg1;
 - (int)_performMigrationWithUnprotectedDatabase:(id)arg1 protectedDatabase:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (int)_migrateOrCreateProtectedSchemaInDatabaseIfWritable:(id)arg1 error:(id *)arg2;

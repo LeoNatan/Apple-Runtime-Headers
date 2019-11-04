@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSError, NSString, NSURL;
+@class AMSAuthenticateResult, AMSDialogResult, NSDictionary, NSError, NSString, NSURL;
 
 @interface AMSURLAction : NSObject
 {
@@ -14,6 +14,8 @@
     NSError *_error;
     NSString *_reason;
     NSURL *_redirectURL;
+    AMSAuthenticateResult *_authenticateResult;
+    AMSDialogResult *_dialogResult;
     NSDictionary *_updatedHeaders;
 }
 
@@ -22,6 +24,8 @@
 + (id)proceedAction;
 + (id)actionWithError:(id)arg1;
 @property(retain) NSDictionary *updatedHeaders; // @synthesize updatedHeaders=_updatedHeaders;
+@property(retain) AMSDialogResult *dialogResult; // @synthesize dialogResult=_dialogResult;
+@property(retain) AMSAuthenticateResult *authenticateResult; // @synthesize authenticateResult=_authenticateResult;
 @property(readonly) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
 @property(retain) NSString *reason; // @synthesize reason=_reason;
 @property(readonly) NSError *error; // @synthesize error=_error;

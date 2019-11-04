@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 @property(nonatomic) unsigned int lastKnownIDMSEnvironment;
 @property(nonatomic) int shouldAutocycleAppsInWebTakeover;
+@property(nonatomic) int shouldAlwaysShowWelcome;
 @property(nonatomic) int shouldAutocycleAppsInTiburon;
 @property(nonatomic) int shouldSuppressModalSheetsInMacBuddy;
 @property(nonatomic) int shouldEnableTestAccountMode;

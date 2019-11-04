@@ -93,6 +93,7 @@
 - (long long)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)equivalentFPItemRequestWithItem:(id)arg1 representationTypes:(unsigned long long)arg2;
 - (_Bool)resultShouldBeSavedToDisk;
 - (_Bool)isFileBased;
 - (_Bool)isUbiquitous;

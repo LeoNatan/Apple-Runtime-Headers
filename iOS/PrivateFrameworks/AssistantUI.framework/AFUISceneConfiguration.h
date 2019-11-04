@@ -26,6 +26,7 @@
 }
 
 + (id)defaultSiriSceneConfigurationWithInitialBounds:(struct CGRect)arg1 onDisplay:(id)arg2;
++ (id)stringForDeactivationReason:(unsigned long long)arg1;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(copy, nonatomic) FBSSceneParameters *sceneParameters; // @synthesize sceneParameters=_sceneParameters;

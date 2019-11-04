@@ -14,12 +14,14 @@
 @interface GEOURLOptions : PBCodable <GEOURLSerializable, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOURLCamera *_camera;
     GEOURLCenterSpan *_centerSpan;
     NSString *_referralIdentifier;
     GEOURLRouteHandle *_routeHandle;
     GEOURLTimePoint *_timePoint;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _mapType;
     int _transportType;
     int _userTrackingMode;
@@ -92,6 +94,8 @@
 @property(nonatomic) int mapType;
 @property(nonatomic) BOOL hasEnableTraffic;
 @property(nonatomic) BOOL enableTraffic;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)urlRepresentation;
 - (id)initWithUrlRepresentation:(id)arg1;
 

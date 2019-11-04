@@ -39,6 +39,8 @@
 @property(retain, nonatomic) NSArray *gestures; // @synthesize gestures=_gestures;
 - (void).cxx_destruct;
 - (_Bool)containsGesture:(id)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)init;
 - (id)initWithGestures:(id)arg1 localizedCategoryName:(id)arg2;
 

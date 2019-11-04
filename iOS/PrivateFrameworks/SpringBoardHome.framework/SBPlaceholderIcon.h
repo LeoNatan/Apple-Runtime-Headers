@@ -15,6 +15,7 @@
     NSArray *_icons;
 }
 
++ (_Bool)hasIconImage;
 + (id)grabbedIconPlaceholderForIcons:(id)arg1;
 + (id)grabbedIconPlaceholderForIcon:(id)arg1;
 + (id)placeholderForIcon:(id)arg1;

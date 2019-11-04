@@ -64,10 +64,11 @@
 - (void)transaction:(id)arg1 willLaunchProcess:(id)arg2;
 - (void)_sendActivationResultWithSuccess:(_Bool)arg1;
 - (_Bool)_overrideInterfaceOrientationForOrientationMismatch:(long long *)arg1;
+- (long long)_orientationForFollowOnRotationIfNeeded;
 - (void)_updateScenesForTransitionCompletion;
 - (void)_prepareScenesForTransition;
 - (void)_prepareScenesForSceneUpdates;
-- (void)_updateKeyboardContextMaskStyleForEntities:(id)arg1;
+- (void)_updateKeyboardContextMaskStyles:(_Bool)arg1;
 - (void)_updateAggregateDictionary;
 - (void)_mainDisplayUpdateAggregateDictionaryForLayoutRoleWithApplication:(id)arg1;
 - (void)_beginLayoutTransition;
@@ -77,6 +78,7 @@
 - (void)_performTransition;
 - (_Bool)_sceneEntities:(id)arg1 hasEntityRepresentingSceneID:(id)arg2;
 - (void)_captureAppsForTransition;
+- (id)sceneManager;
 - (_Bool)canInterruptForTransitionRequest:(id)arg1;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (void)_willFailWithReason:(id)arg1;

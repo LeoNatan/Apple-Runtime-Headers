@@ -6,10 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+#import <WatchKit/CSLSWaterLockDelegate-Protocol.h>
 
-@interface WKInterfaceDevice : NSObject
+@class CSLSWaterLock, NSString;
+@protocol OS_dispatch_queue;
+
+@interface WKInterfaceDevice : NSObject <CSLSWaterLockDelegate>
 {
+    _Bool _cachedWaterLockEnabled;
+    _Bool _receivedFirstWaterLockEnabledValue;
     float _screenScale;
     NSString *_preferredContentSizeCategory;
     int _layoutDirection;
@@ -18,11 +23,17 @@
     NSString *_deviceModel;
     NSString *_deviceLocalizedModel;
     NSString *_deviceSystemName;
+    CSLSWaterLock *_waterLock;
+    NSObject<OS_dispatch_queue> *_waterLockReadQueue;
     struct CGRect _screenBounds;
 }
 
 + (int)interfaceLayoutDirectionForSemanticContentAttribute:(int)arg1;
 + (id)currentDevice;
+@property _Bool receivedFirstWaterLockEnabledValue; // @synthesize receivedFirstWaterLockEnabledValue=_receivedFirstWaterLockEnabledValue;
+@property _Bool cachedWaterLockEnabled; // @synthesize cachedWaterLockEnabled=_cachedWaterLockEnabled;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *waterLockReadQueue; // @synthesize waterLockReadQueue=_waterLockReadQueue;
+@property(retain, nonatomic) CSLSWaterLock *waterLock; // @synthesize waterLock=_waterLock;
 @property(copy, nonatomic) NSString *deviceSystemName; // @synthesize deviceSystemName=_deviceSystemName;
 @property(copy, nonatomic) NSString *deviceLocalizedModel; // @synthesize deviceLocalizedModel=_deviceLocalizedModel;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
@@ -33,6 +44,11 @@
 @property(nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
 - (void).cxx_destruct;
+- (void)waterLockDidChange:(id)arg1;
+- (void)_queryInitialWaterLockState;
+- (void)_updateWaterLockEnabledPropertyValue:(_Bool)arg1;
+@property(readonly, nonatomic, getter=isWaterLockEnabled) _Bool waterLockEnabled;
+- (void)enableWaterLock;
 - (void)playHaptic:(int)arg1;
 @property(readonly, nonatomic) int batteryState;
 @property(nonatomic, getter=isBatteryMonitoringEnabled) _Bool batteryMonitoringEnabled;
@@ -46,6 +62,12 @@
 @property(readonly, copy, nonatomic) NSString *systemVersion;
 @property(readonly, nonatomic) int crownOrientation;
 @property(readonly, nonatomic) int wristLocation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

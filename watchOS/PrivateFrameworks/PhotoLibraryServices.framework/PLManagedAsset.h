@@ -70,6 +70,8 @@
 + (id)extensionForMediumThumbnailFile;
 + (id)extensionForLargeThumbnailFile;
 + (id)extensionForFullsizeThumbnailFile;
++ (id)pathForAdjustmentDataFileWithPathManager:(id)arg1 uuid:(id)arg2 directory:(id)arg3 filename:(id)arg4;
++ (id)pathForAdjustmentFileWithPathManager:(id)arg1 uuid:(id)arg2 directory:(id)arg3 filename:(id)arg4;
 + (unsigned long long)localResourceOptionFromResourceType:(unsigned int)arg1 useMaster:(_Bool)arg2;
 + (id)pathForAdjustmentDirectoryWithMutationsDirectory:(id)arg1;
 + (id)pathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
@@ -93,6 +95,7 @@
 + (struct CGSize)dimensionsForVideoAtURL:(id)arg1;
 + (struct CGSize)sizeOfImageAtURL:(id)arg1 outOrientation:(short *)arg2;
 + (_Bool)photoGroupingVisibilityEnabled;
++ (void)_setPhotoGroupingVisibilityEnabled:(_Bool)arg1;
 + (void)_setVisibility:(_Bool)arg1 forNonPrimaryAssetsWithGroupingUUID:(id)arg2 inLibrary:(id)arg3;
 + (void)_setGroupingStateForPrimaryAsset:(id)arg1 secondaryAssets:(id)arg2 secondaryVisible:(_Bool)arg3;
 + (void)autoPickPrimaryGroupingStateForAssets:(id)arg1;
@@ -194,16 +197,15 @@
 + (void)markAssetAsRecentlyUsed:(id)arg1;
 + (id)persistedRecentlyUsedGUIDSWithPathManager:(id)arg1;
 + (id)recentlyUsedGUIDsPathWithPathManager:(id)arg1;
-+ (id)sortedCloudSharedAssetsWithPlaceholderKinds:(id)arg1 ascending:(_Bool)arg2 inLibrary:(id)arg3;
-+ (id)fetchRequestForSortedCloudSharedAssetsWithPlaceholderKinds:(id)arg1 ascending:(_Bool)arg2;
++ (id)fetchRequestForSortedCloudSharedAssetsWithPlaceholderKinds:(id)arg1 additionalPredicate:(id)arg2 ascending:(_Bool)arg3;
 + (id)cloudSharedAssetsWithGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)allCloudSharedAssetsInLibrary:(id)arg1;
 + (void)rm_cplResourceWasUploaded:(id)arg1 photoLibrary:(id)arg2;
 + (void)_rm_copyResourceFileFrom:(id)arg1 to:(id)arg2 forCloudMaster:(id)arg3 andAsset:(id)arg4;
++ (id)fetchResourcesForAssetWithObjectID:(id)arg1 inContext:(id)arg2 versions:(id)arg3 includeVirtualResources:(_Bool)arg4 allowDerivatives:(_Bool)arg5 additionalPredicate:(id)arg6 error:(id *)arg7;
 + (void)enumerateImageRequestHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 libraryID:(id)arg4 startingOffset:(long long)arg5 block:(CDUnknownBlockType)arg6;
 + (id)calculateImageRequestHintsFromSortedResources:(id)arg1 asset:(id)arg2;
 + (id)debugDescriptionForHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 assetID:(id)arg4;
-+ (id)_persistedResourcesForManagedAsset:(id)arg1 resourceIdentity:(id)arg2 fetchConfigurationBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
 + (id)predicateFilteringForNonDerivativeRecipeIDs;
 @property(nonatomic) _Bool disableFileSystemPersistency; // @synthesize disableFileSystemPersistency=_disableFileSystemPersistency;
 @property(nonatomic) _Bool disableDupeAnalysis; // @synthesize disableDupeAnalysis=_disableDupeAnalysis;
@@ -464,7 +466,7 @@
 - (id)cameraMake;
 - (id)avAssetAllowReadFromFile:(_Bool)arg1;
 - (id)imageProperties;
-- (_Bool)setAttributesFromMainFileURL:(id)arg1 savedAssetType:(short)arg2 isPlaceholder:(_Bool)arg3 imageSource:(struct CGImageSource **)arg4 imageData:(id *)arg5;
+- (_Bool)setAttributesFromMainFileURL:(id)arg1 savedAssetType:(short)arg2 isPlaceholder:(_Bool)arg3 placeholderFileURL:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6;
 - (_Bool)updateAttributesFromMainFileURL:(id)arg1 fullSizeRenderURL:(id)arg2;
 - (void)refreshFaces;
 - (id)mutableDetectedFaces;
@@ -472,6 +474,7 @@
 - (id)legacyFaceWithIdentifier:(short)arg1;
 - (void)setLocationFromPersistedAttributes:(id)arg1;
 - (void)synchronizeWithPersistedFileSystemAttributes;
+- (void)persistMetadataToFileURL:(id)arg1;
 - (void)persistMetadataToFilesystem;
 - (id)_mediaGroupUUIDFromPersistence:(id)arg1;
 - (id)_mediaGroupUUIDForPersistence;
@@ -731,13 +734,9 @@
 - (void)_debugPrintAdjustmentState;
 - (void)_applyResourceChangeToCPLAsset:(id)arg1 forChangeType:(unsigned int)arg2 shouldGenerateDerivatives:(_Bool)arg3 inLibrary:(id)arg4;
 - (id)_calculateCloudAdjustmentFingerprintFromAdjustmentPListAndCPLResources;
-- (void)_synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)createResourcesForAssetInPhotoLibrary:(id)arg1 shouldGenerateDerivatives:(_Bool)arg2;
-- (_Bool)_hasAllOriginalResourcesLocallyAvailable;
-- (_Bool)_hasAllAdjustedResourcesLocallyAvailable;
-- (_Bool)_checkResource:(unsigned int)arg1 onPath:(id)arg2 onMaster:(_Bool)arg3;
 - (_Bool)shouldIncludeInCPLCounts;
-- (_Bool)hasAllRequiredResourcesLocallyAvailable;
 - (id)bestAvaliableAdjustedResource;
 - (void)_applyFaceChangeToCPLAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)_applyPropertiesChangeToCPLAssetChange:(id)arg1 withMasterScopedIdentifier:(id)arg2 inLibrary:(id)arg3;
@@ -754,7 +753,7 @@
 - (void)_copyResourceFileFrom:(id)arg1 to:(id)arg2;
 - (id)_videoComplementDerivativeResourcesForMaster:(id)arg1;
 - (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2 shouldGenerateDerivatives:(_Bool)arg3;
-- (void)_createPhotoResourcesForMaster:(id)arg1 withOriginalResource:(id)arg2 intoMasterResources:(id)arg3 shouldGenerateDerivatives:(_Bool)arg4;
+- (void)_createPhotoResourcesForMaster:(id)arg1 withOriginalResource:(id)arg2 intoMasterResources:(id)arg3 shouldGenerateDerivatives:(_Bool)arg4 inPhotoLibrary:(id)arg5;
 - (void)createMasterIfNecessaryInLibrary:(id)arg1;
 - (id)existingCloudMaster;
 - (void)incrementUploadAttempts;
@@ -766,7 +765,7 @@
 - (unsigned int)originalResourceChoice;
 - (void)removeSidecar:(id)arg1;
 - (id)fileURLForHypotheticalSidecarFileWithFilename:(id)arg1;
-- (id)pathForSideCarImageFile;
+- (id)urlForSideCarImageFile;
 - (_Bool)addSidecarFileAtIndex:(unsigned int)arg1 sidecarURL:(id)arg2 withFilename:(id)arg3 compressedSize:(id)arg4 captureDate:(id)arg5 modificationDate:(id)arg6 uniformTypeIdentifier:(id)arg7 pathManager:(id)arg8;
 - (_Bool)addSidecarFileInfo:(id)arg1 pathManager:(id)arg2 atIndex:(unsigned int)arg3;
 - (id)sidecarFileMatchingUTI:(struct __CFString *)arg1 requireExactMatch:(_Bool)arg2 requireSort:(_Bool)arg3;
@@ -803,6 +802,7 @@
 @property(readonly, nonatomic) NSString *cloudOwnerLastName;
 @property(readonly, nonatomic) NSString *cloudOwnerFirstName;
 @property(readonly, nonatomic) NSString *cloudOwnerEmail;
+- (id)_missingCloudOwnerDisplayName;
 - (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
 - (id)payloadForChangedKeys:(id)arg1;
 - (id)payloadIDForTombstone:(id)arg1;
@@ -816,10 +816,11 @@
 - (_Bool)placeholder_shouldCopySnowplowResources;
 - (_Bool)placeholder_shouldFlattenLivePhoto;
 - (_Bool)placeholder_shouldBakeInAdjustments;
+- (_Bool)checkAllResourcesRequiredForCPLDisableWithReachableBlock:(CDUnknownBlockType)arg1;
 - (id)rm_applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)rm_createAssetResourcesForCPLResources:(id)arg1 inLibrary:(id)arg2;
 - (id)rm_cplExpungeableMasterResourceStates;
-- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1;
+- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1 addOriginalResourceMode:(_Bool)arg2;
 - (id)rm_cplMasterResourceForResourceType:(unsigned int)arg1;
 - (id)rm_cplResourceForResourceType:(unsigned int)arg1;
 - (void)_rm_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
@@ -832,7 +833,6 @@
 - (_Bool)hasAdjustedCPLThumbResource;
 - (id)allLocalCPLResources;
 - (id)allMasterCPLResources;
-- (id)allOriginalAssetCPLResources;
 - (id)allAssetCPLResources;
 - (id)assetResourceForCPLType:(unsigned int)arg1;
 - (id)masterResourceForCPLType:(unsigned int)arg1;
@@ -847,6 +847,8 @@
 - (void)deleteResourceForSidecarRepresentation:(id)arg1;
 - (void)deleteResourcesWithRecipeID:(unsigned int)arg1 andVersion:(unsigned int)arg2;
 - (void)deleteAdjustedResources;
+- (id)overflowAdjustmentDataResource;
+- (id)adjustmentDataResource;
 - (id)primaryStoreOriginalResource;
 - (id)persistedResourcesWithRecipeID:(unsigned int)arg1 andVersion:(unsigned int)arg2;
 - (id)resourcesWithVersion:(unsigned int)arg1;
@@ -864,6 +866,7 @@
 - (void)recalculateImageRequestHints;
 - (id)validateForAssetID:(id)arg1 resourceIdentity:(id)arg2;
 - (id)_anyOriginalNonDerivativeAlternateImageResource;
+- (id)_persistedResourcesForResourceIdentity:(id)arg1 fetchConfigurationBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(retain, nonatomic) NSDate *addedDate; // @dynamic addedDate;

@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)invalidate;
-- (void)deactivate;
 - (void)activate;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @dynamic valid;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

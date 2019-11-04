@@ -49,6 +49,7 @@
 - (void)_removeBatteryChargingView;
 - (void)_addBatteryChargingView;
 - (void)_handleBacklightFadeEnded;
+- (void)sceneUpdatedWallpaperMode:(unsigned long long)arg1;
 - (void)sceneUpdatedRotationMode:(long long)arg1;
 - (void)sceneUpdatedStatusBarUserName:(id)arg1;
 - (void)sceneUpdatedIdleTimerMode:(long long)arg1;
@@ -56,8 +57,6 @@
 - (void)_setupLoginScene;
 - (void)_reallyRelinquishStatusBarAssertion;
 - (void)_reallyAcquireStatusBarAssertionIfNecessaryInitiallyVisible:(_Bool)arg1;
-- (void)_hideStatusBarForReason:(id)arg1;
-- (void)_showStatusBarForReason:(id)arg1;
 - (id)_statusBarSettingsAssertion;
 - (id)_hostedSceneIdentifier;
 - (id)_hostedAppView;

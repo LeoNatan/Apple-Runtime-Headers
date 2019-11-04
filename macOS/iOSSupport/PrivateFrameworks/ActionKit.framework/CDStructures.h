@@ -12,27 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CC_SHA1state_st {
-    unsigned int h0;
-    unsigned int h1;
-    unsigned int h2;
-    unsigned int h3;
-    unsigned int h4;
-    unsigned int Nl;
-    unsigned int Nh;
-    unsigned int data[16];
-    int num;
-};
-
-struct CGAffineTransform {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
-};
-
 struct CGPoint {
     double x;
     double y;
@@ -46,18 +25,6 @@ struct CGRect {
 struct CGSize {
     double width;
     double height;
-};
-
-struct NSString {
-    Class _field1;
-};
-
-struct _FileHashComputationContext {
-    CDUnknownFunctionPointerType _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-    unsigned long long _field4;
-    char **_field5;
 };
 
 struct _LIBSSH2_SFTP_ATTRIBUTES {
@@ -74,6 +41,12 @@ struct _NSRange {
     unsigned long long location;
     unsigned long long length;
 };
+
+struct _xmlAttr;
+
+struct _xmlBuf;
+
+struct _xmlDict;
 
 struct _xmlDoc {
     void *_field1;
@@ -102,7 +75,65 @@ struct _xmlDoc {
     int _field24;
 };
 
-struct _xmlDtd;
+struct _xmlDtd {
+    void *_field1;
+    int _field2;
+    char *_field3;
+    struct _xmlNode *_field4;
+    struct _xmlNode *_field5;
+    struct _xmlDoc *_field6;
+    struct _xmlNode *_field7;
+    struct _xmlNode *_field8;
+    struct _xmlDoc *_field9;
+    void *_field10;
+    void *_field11;
+    void *_field12;
+    void *_field13;
+    char *_field14;
+    char *_field15;
+    void *_field16;
+};
+
+struct _xmlElement {
+    void *_field1;
+    int _field2;
+    char *_field3;
+    struct _xmlNode *_field4;
+    struct _xmlNode *_field5;
+    struct _xmlDtd *_field6;
+    struct _xmlNode *_field7;
+    struct _xmlNode *_field8;
+    struct _xmlDoc *_field9;
+    int _field10;
+    struct _xmlElementContent *_field11;
+    struct _xmlAttribute *_field12;
+    char *_field13;
+    struct _xmlRegexp *_field14;
+};
+
+struct _xmlEntity {
+    void *_field1;
+    int _field2;
+    char *_field3;
+    struct _xmlNode *_field4;
+    struct _xmlNode *_field5;
+    struct _xmlDtd *_field6;
+    struct _xmlNode *_field7;
+    struct _xmlNode *_field8;
+    struct _xmlDoc *_field9;
+    char *_field10;
+    char *_field11;
+    int _field12;
+    int _field13;
+    char *_field14;
+    char *_field15;
+    struct _xmlEntity *_field16;
+    char *_field17;
+    int _field18;
+    int _field19;
+};
+
+struct _xmlHashTable;
 
 struct _xmlNode {
     void *_field1;
@@ -124,6 +155,47 @@ struct _xmlNode {
 };
 
 struct _xmlNs;
+
+struct _xmlParserInput;
+
+struct _xmlParserNodeInfo;
+
+struct _xmlSAXHandler {
+    CDUnknownFunctionPointerType _field1;
+    CDUnknownFunctionPointerType _field2;
+    CDUnknownFunctionPointerType _field3;
+    CDUnknownFunctionPointerType _field4;
+    CDUnknownFunctionPointerType _field5;
+    CDUnknownFunctionPointerType _field6;
+    CDUnknownFunctionPointerType _field7;
+    CDUnknownFunctionPointerType _field8;
+    CDUnknownFunctionPointerType _field9;
+    CDUnknownFunctionPointerType _field10;
+    CDUnknownFunctionPointerType _field11;
+    CDUnknownFunctionPointerType _field12;
+    CDUnknownFunctionPointerType _field13;
+    CDUnknownFunctionPointerType _field14;
+    CDUnknownFunctionPointerType _field15;
+    CDUnknownFunctionPointerType _field16;
+    CDUnknownFunctionPointerType _field17;
+    CDUnknownFunctionPointerType _field18;
+    CDUnknownFunctionPointerType _field19;
+    CDUnknownFunctionPointerType _field20;
+    CDUnknownFunctionPointerType _field21;
+    CDUnknownFunctionPointerType _field22;
+    CDUnknownFunctionPointerType _field23;
+    CDUnknownFunctionPointerType _field24;
+    CDUnknownFunctionPointerType _field25;
+    CDUnknownFunctionPointerType _field26;
+    CDUnknownFunctionPointerType _field27;
+    unsigned int _field28;
+    void *_field29;
+    CDUnknownFunctionPointerType _field30;
+    CDUnknownFunctionPointerType _field31;
+    CDUnknownFunctionPointerType _field32;
+};
+
+struct _xmlValidState;
 
 struct _xmlXPathObject {
     int _field1;

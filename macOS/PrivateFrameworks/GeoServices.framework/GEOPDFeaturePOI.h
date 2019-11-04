@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDFeaturePOI : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDVenueBuilding *_building;
     GEOPDVenueDirectoryGroup *_directoryGroup;
     NSMutableArray *_levels;
     GEOPDVenueContainer *_venueContainer;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_building:1;
@@ -65,6 +67,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOPDVenueContainer *venueContainer;
 @property(readonly, nonatomic) BOOL hasVenueContainer;
 - (void)_readVenueContainer;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

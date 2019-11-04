@@ -49,6 +49,7 @@
 - (void)_updatePlayerActionAtItemEnd;
 - (void)removeTimeObserver:(id)arg1;
 - (id)addPeriodicTimeObserverForInterval:(double)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)endScrubbingWithOffset:(double)arg1;
 - (void)pause;
 - (void)play;
 @property(readonly, nonatomic) BOOL hasFatalError;

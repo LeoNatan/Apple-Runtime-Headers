@@ -9,6 +9,7 @@
 @class NSSet;
 
 @protocol HUServiceContainerItem <NSObject>
+- (NSSet *)hu_containedAccessories;
 - (NSSet *)hu_containedServices;
 @end
 

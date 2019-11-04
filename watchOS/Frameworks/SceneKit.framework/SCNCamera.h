@@ -131,7 +131,7 @@
 @property(nonatomic) float sensorHeight;
 @property(nonatomic) float fieldOfView;
 - (void)_updateFocalLength;
-- (void)_updateFov;
+- (void)_updateFieldOfView;
 @property(nonatomic) double zNear;
 @property(nonatomic) double zFar;
 - (void)setYFov:(double)arg1;

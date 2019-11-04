@@ -19,12 +19,13 @@ __attribute__((visibility("hidden")))
 
 + (id)ambientSessionManager;
 + (id)mediaSessionManager;
-@property(readonly, nonatomic) AVAudioSession *session; // @synthesize session=_session;
 - (BOOL)setActive:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)setSessionMode:(id)arg1 error:(id *)arg2;
+- (void)resetSession;
 - (void)setUpSession;
+@property(readonly, nonatomic) AVAudioSession *session; // @synthesize session=_session;
 - (void)dealloc;
-- (id)initWithSession:(id)arg1 type:(unsigned long long)arg2;
+- (id)initWithType:(unsigned long long)arg1;
 
 @end
 

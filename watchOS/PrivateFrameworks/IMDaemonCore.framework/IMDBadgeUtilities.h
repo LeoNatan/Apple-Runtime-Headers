@@ -22,6 +22,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) IMDefaults *sharedDefaultsInstance; // @synthesize sharedDefaultsInstance=_sharedDefaultsInstance;
 @property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
+- (_Bool)isInAppleStoreDemoMode;
 - (_Bool)_shouldShowFailureString;
 - (void)_postBadgeString:(id)arg1;
 - (void)_postBadgeNumber:(id)arg1;

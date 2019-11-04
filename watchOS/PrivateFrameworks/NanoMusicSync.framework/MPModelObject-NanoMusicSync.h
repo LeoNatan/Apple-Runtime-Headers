@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface MPModelObject (NanoMusicSync)
-@property(readonly, nonatomic) NSString *syncInfoContainerIdentifier;
+@property(readonly, nonatomic) NSString *nms_syncInfoContainerIdentifier;
+- (_Bool)nms_originalIdentifierSetHasNoLibraryPersistentID;
 @end
 

@@ -60,7 +60,8 @@ __attribute__((visibility("hidden")))
 - (id)textInRange:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (id)_selectionForTextRange:(id)arg1;
-- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
+- (void)updateGestureRecognizerDependencies;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (id)selection;
 - (void)setSelection:(id)arg1;
 - (void)updateTextSelectionGraphics;

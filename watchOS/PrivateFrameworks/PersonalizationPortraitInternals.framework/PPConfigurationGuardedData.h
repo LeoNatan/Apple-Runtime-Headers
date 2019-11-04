@@ -20,6 +20,7 @@
     double musicDataCollectionSamplingRateForCTS;
     double musicDataCollectionSamplingRateForAMP;
     int musicDataCollectionMaximumRecordsPerType;
+    _Bool musicDataCollectionCollectNonAMPNowPlaying;
     NSArray *musicDataCollectionAMPBundleIds;
     NSString *variantName;
     NSString *naturalVariantName;
@@ -32,6 +33,7 @@
     _Bool highLevelTopicExtractionEnabled;
     _Bool safariDonationTitleExtractionEnabled;
     _Bool safariDataDetectorsEnabledForHighMemoryDevices;
+    double highLevelTopicScoreAttenuationFactor;
     double highLevelTopicScoreThreshold;
     float scoreThresholdForNamedEntity;
     float scoreThresholdForTopic;

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOPDResultSnippet : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_category;
     NSMutableArray *_childItems;
@@ -23,6 +22,9 @@ __attribute__((visibility("hidden")))
     NSString *_name;
     GEOPDPriceDescription *_priceDescription;
     GEOPDRating *_priceRange;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distanceDisplayThreshold;
     struct {
         unsigned int has_distanceDisplayThreshold:1;
@@ -94,6 +96,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
 - (void)_readName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -43,7 +43,7 @@
 - (void)operationWillStart:(id)arg1;
 - (void)shutdown;
 - (void)cooldown;
-- (void)warmup;
+- (void)warmupWithProgressBlock:(CDUnknownBlockType)arg1;
 - (void)startup;
 - (id)libraryScopedWorkerPreferencesURL;
 - (void)setLibraryScopedWorkerPreferencesValue:(id)arg1 forKey:(id)arg2;

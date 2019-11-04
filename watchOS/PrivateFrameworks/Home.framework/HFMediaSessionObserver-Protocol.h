@@ -11,7 +11,9 @@
 @protocol HFMediaSessionObserver <HMMediaSessionDelegate>
 
 @optional
+- (void)mediaSessionDidUpdate:(HMMediaSession *)arg1;
 - (void)mediaSession:(HMMediaSession *)arg1 failedToUpdatePlaybackStateWithError:(NSError *)arg2;
+- (void)mediaSession:(HMMediaSession *)arg1 didUpdatePlaybackState:(int)arg2;
 - (void)mediaSession:(HMMediaSession *)arg1 willUpdatePlaybackState:(int)arg2;
 @end
 

@@ -16,23 +16,23 @@
 }
 
 @property struct netagent *internalNetagent; // @synthesize internalNetagent=_internalNetagent;
-- (BOOL)supportsResolve;
-- (BOOL)requiresAssert;
-- (BOOL)supportsBrowse;
-- (BOOL)isNexusProvider;
-@property(readonly, nonatomic, getter=isNetworkProvider) BOOL networkProvider;
-@property(readonly, nonatomic, getter=isSpecificUseOnly) BOOL specificUseOnly;
-@property(readonly, nonatomic, getter=isVoluntary) BOOL voluntary;
-@property(readonly, nonatomic, getter=isUserActivated) BOOL userActivated;
-@property(readonly, nonatomic, getter=isKernelActivated) BOOL kernelActivated;
-@property(readonly, nonatomic, getter=isActive) BOOL active;
+- (_Bool)supportsResolve;
+- (_Bool)requiresAssert;
+- (_Bool)supportsBrowse;
+- (_Bool)isNexusProvider;
+@property(readonly, nonatomic, getter=isNetworkProvider) _Bool networkProvider;
+@property(readonly, nonatomic, getter=isSpecificUseOnly) _Bool specificUseOnly;
+@property(readonly, nonatomic, getter=isVoluntary) _Bool voluntary;
+@property(readonly, nonatomic, getter=isUserActivated) _Bool userActivated;
+@property(readonly, nonatomic, getter=isKernelActivated) _Bool kernelActivated;
+@property(readonly, nonatomic, getter=isActive) _Bool active;
 @property(readonly, nonatomic) NSUUID *agentUUID;
 @property(readonly, nonatomic) NSString *agentDescription;
 @property(readonly, nonatomic) NSString *agentType;
 @property(readonly, nonatomic) NSString *agentDomain;
 @property(readonly, copy, nonatomic) NSString *privateDescription;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (void)dealloc;
 - (id)initWithKernelAgent:(const struct netagent *)arg1;
 

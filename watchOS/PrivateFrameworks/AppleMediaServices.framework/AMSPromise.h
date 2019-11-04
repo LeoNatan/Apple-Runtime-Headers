@@ -42,6 +42,7 @@
 - (_Bool)finishWithError:(id)arg1;
 - (_Bool)cancel;
 - (id)thenWithBlock:(CDUnknownBlockType)arg1;
+- (id)continueWithBlock:(CDUnknownBlockType)arg1;
 - (id)catchWithBlock:(CDUnknownBlockType)arg1;
 - (void)waitUntilFinishedWithTimeout:(double)arg1;
 - (void)waitUntilFinished;

@@ -68,7 +68,7 @@
 - (void)cancelSuggestionRequest:(id)arg1;
 - (id)requestSuggestionsForFaceClusterSequenceNumbers:(id)arg1 withClusteringFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (id)suggestedFaceClusterSequenceNumbersForFaceClusterSequenceNumbersRepresentingClusters:(id)arg1 error:(id *)arg2;
-- (long long)restoreClusterCacheAndSyncWithLibrary:(_Bool)arg1;
+- (long long)restoreClusterCacheAndSyncWithLibrary:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)_processingQueueRestoreClusterCacheAndSyncWithLibrary:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)_processingQueueRestoreFromClusterSnapshotFileAtURL:(id)arg1 error:(id *)arg2;
 - (void)_removeVisionClusterCacheFilesNotReferencedByVisionClusterState:(id)arg1;

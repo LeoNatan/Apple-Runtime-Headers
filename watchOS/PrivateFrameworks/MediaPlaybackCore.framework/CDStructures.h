@@ -94,6 +94,17 @@ typedef struct {
 } CDStruct_fce57115;
 
 typedef struct {
+    int _field1;
+    int _field2;
+    int _field3;
+    int _field4;
+    int _field5;
+    int _field6;
+    int _field7;
+    int _field8;
+} CDStruct_3d22b96e;
+
+typedef struct {
     int reverseCount;
     int forwardCount;
 } CDStruct_b9e39389;

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <ChatKit/CKEditableSearchResultCell.h>
 
 #import <ChatKit/CKSearchResultCell-Protocol.h>
 
 @class NSString, UIImage, UIImageView, UILabel;
 
-@interface CKPhotoSearchResultCell : UICollectionViewCell <CKSearchResultCell>
+@interface CKPhotoSearchResultCell : CKEditableSearchResultCell <CKSearchResultCell>
 {
     UIImage *_image;
     UIImageView *_imageView;
@@ -44,6 +44,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isEditing) _Bool editing;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

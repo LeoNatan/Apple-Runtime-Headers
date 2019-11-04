@@ -65,6 +65,12 @@
     BOOL _didSetOriginalResourceChoice;
     BOOL _didRevertLocationToOriginal;
     BOOL _didRemoveFromPhotoStream;
+    BOOL _didExpungeAllSpatialOverCaptureResources;
+    BOOL _didTrashAllSpatialOverCaptureResources;
+    BOOL _didUntrashAllSpatialOverCaptureResources;
+    BOOL _didExpungeTrashedSpatialOverCaptureResources;
+    BOOL _didSetReframeVariation;
+    BOOL _performReframe;
     BOOL _didSetTimeZone;
     NSString *_timeZoneName;
     long long _timeZoneOffsetValue;
@@ -91,6 +97,7 @@
     NSString *_pairingIdentifier;
     PHRelationshipChangeRequestHelper *_facesHelper;
     NSDate *_alternateImportImageDate;
+    unsigned long long _reframeVariation;
     NSDate *_mediaAnalysisTimeStamp;
     unsigned long long _mediaAnalysisVersion;
     unsigned long long _faceCount;
@@ -130,6 +137,7 @@
 @property(retain, nonatomic) NSDate *mediaAnalysisTimeStamp; // @synthesize mediaAnalysisTimeStamp=_mediaAnalysisTimeStamp;
 @property(nonatomic) float testScore; // @synthesize testScore=_testScore;
 @property(nonatomic) CDStruct_1b6d18a9 imageDisplayTime; // @synthesize imageDisplayTime=_imageDisplayTime;
+@property(nonatomic) unsigned long long reframeVariation; // @synthesize reframeVariation=_reframeVariation;
 @property(retain, nonatomic) NSDate *alternateImportImageDate; // @synthesize alternateImportImageDate=_alternateImportImageDate;
 @property(readonly, nonatomic) BOOL duplicateAllowsPrivateMetadata; // @synthesize duplicateAllowsPrivateMetadata=_duplicateAllowsPrivateMetadata;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *facesHelper; // @synthesize facesHelper=_facesHelper;
@@ -168,6 +176,10 @@
 - (void)encodeToXPCDict:(id)arg1;
 - (void)revertAssetContentToOriginal;
 - (void)retryUpload;
+- (void)expungeTrashedSpatialOverCaptureResources;
+- (void)expungeAllSpatialOverCaptureResources;
+- (void)untrashAllSpatialOverCaptureResources;
+- (void)trashAllSpatialOverCaptureResources;
 - (void)removeFromMyPhotoStream;
 - (void)revertLocationToOriginal;
 - (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize)arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8 optionalOriginalResourceChoice:(id)arg9;
@@ -192,6 +204,7 @@
 - (void)setRectWithNormalizedRect:(struct CGRect)arg1 forPackedRect:(long long *)arg2 forSetFlag:(char *)arg3;
 - (void)setAcceptableCropRectWithNormalizedRect:(struct CGRect)arg1;
 - (void)setPreferredCropRectWithNormalizedRect:(struct CGRect)arg1;
+- (void)performReframe;
 - (void)setSceneClassifications:(id)arg1 algorithmVersion:(long long)arg2 distanceIdentity:(id)arg3 adjustmentVersion:(id)arg4;
 - (void)setSceneClassifications:(id)arg1 algorithmVersion:(long long)arg2 adjustmentVersion:(id)arg3;
 @property(retain, nonatomic) NSString *title;

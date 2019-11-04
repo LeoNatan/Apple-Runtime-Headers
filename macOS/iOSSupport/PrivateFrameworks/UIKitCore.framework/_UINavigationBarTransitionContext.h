@@ -26,30 +26,30 @@ __attribute__((visibility("hidden")))
     double _backgroundAlpha;
     int _largeTitleTransitionType;
     long long _apiVersion;
-    BOOL _isRTL;
-    BOOL _compact;
-    BOOL _allowLargeTitles;
-    BOOL _twoPart;
-    BOOL _beginWithLargeTitle;
-    BOOL _endWithLargeTitle;
+    struct {
+        unsigned int isRTL:1;
+        unsigned int compact:1;
+        unsigned int allowLargeTitles:1;
+        unsigned int twoPart:1;
+        unsigned int beginWithLargeTitle:1;
+        unsigned int endWithLargeTitle:1;
+        unsigned int observedScrollViewOffsetIsApplicable:1;
+        unsigned int sharesContentViewLayouts:1;
+    } _navigationBarTransitionContextFlags;
     NSMutableSet *_clippingViews;
+    struct CGPoint _startingContentOffsetForObservedScrollView;
 }
 
 + (id)contextForTransition:(int)arg1;
 @property(retain, nonatomic) _UINavigationBarLayout *toLayout; // @synthesize toLayout=_toLayout;
 @property(retain, nonatomic) _UINavigationBarLayout *fromLayout; // @synthesize fromLayout=_fromLayout;
-@property(nonatomic) BOOL endWithLargeTitle; // @synthesize endWithLargeTitle=_endWithLargeTitle;
-@property(nonatomic) BOOL beginWithLargeTitle; // @synthesize beginWithLargeTitle=_beginWithLargeTitle;
+@property(nonatomic) struct CGPoint startingContentOffsetForObservedScrollView; // @synthesize startingContentOffsetForObservedScrollView=_startingContentOffsetForObservedScrollView;
 @property(retain, nonatomic) _UINavigationBarLargeTitleView *largeTitleView; // @synthesize largeTitleView=_largeTitleView;
 @property(retain, nonatomic) _UIBarBackground *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) _UINavigationBarContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) _UINavigationBarModernPromptView *promptView; // @synthesize promptView=_promptView;
 @property(nonatomic) double backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
 @property(nonatomic) long long apiVersion; // @synthesize apiVersion=_apiVersion;
-@property(nonatomic) BOOL twoPart; // @synthesize twoPart=_twoPart;
-@property(nonatomic) BOOL allowLargeTitles; // @synthesize allowLargeTitles=_allowLargeTitles;
-@property(nonatomic) BOOL compact; // @synthesize compact=_compact;
-@property(nonatomic) BOOL isRTL; // @synthesize isRTL=_isRTL;
 @property(retain, nonatomic) _UINavigationBarItemStack *stack; // @synthesize stack=_stack;
 @property(nonatomic) UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 - (void).cxx_destruct;
@@ -74,6 +74,15 @@ __attribute__((visibility("hidden")))
 - (void)_prepareToBottomPaletteAtEdge:(unsigned long long)arg1;
 - (void)prepare;
 - (void)recordUpdates:(CDUnknownBlockType)arg1;
+- (id)description;
+@property(nonatomic) BOOL sharesContentViewLayouts;
+@property(nonatomic) BOOL observedScrollViewOffsetIsApplicable;
+@property(nonatomic) BOOL endWithLargeTitle;
+@property(nonatomic) BOOL beginWithLargeTitle;
+@property(nonatomic) BOOL twoPart;
+@property(nonatomic) BOOL allowLargeTitles;
+@property(nonatomic) BOOL compact;
+@property(nonatomic, setter=setRTL:) BOOL isRTL;
 
 // Remaining properties
 @property(readonly, nonatomic) int transition; // @dynamic transition;

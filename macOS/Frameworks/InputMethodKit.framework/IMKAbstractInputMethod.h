@@ -48,10 +48,12 @@
 - (id)verbatimFromString:(id)arg1;
 - (void)alignVerbatimWithComposingText;
 - (void)runShowCandidatesFor:(id)arg1 withKeyboardState:(id)arg2;
+- (void)cancelActiveCandidateRequest;
 - (id)newDeferredCandidatesTimerFor:(id)arg1 withKeyboardState:(id)arg2 withDelay:(double)arg3;
 - (void)showCandidatesOnKeyboardFor:(id)arg1 withKeyboardState:(id)arg2 afterDelay:(double)arg3;
 - (void)showCandidatesOnKeyboardFor:(id)arg1 withKeyboardState:(id)arg2;
 - (void)showCandidatesOnKeyboardFor:(id)arg1;
+- (BOOL)canShowCandidatesOn:(id)arg1;
 - (id)_candidateSeparator;
 - (BOOL)ignoreSeparatorIfApplied;
 - (id)candidateSeparator;

@@ -13,6 +13,12 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_axIsAddCell;
+- (struct CGPoint)accessibilityActivationPoint;
+- (_Bool)accessibilityActivate;
+- (_Bool)_accessibilitySupportsActivateAction;
+- (_Bool)isAccessibilityElement;
+- (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 
 @end

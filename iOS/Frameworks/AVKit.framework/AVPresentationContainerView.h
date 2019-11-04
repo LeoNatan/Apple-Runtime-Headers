@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     _Bool _wantsAppearanceConfigValues;
     _Bool _beingPresented;
     _Bool _beingDismissed;
-    _Bool _isBeingTransitionedToADifferentOrientation;
     _Bool _willBeginOrientationChange;
     UIView *_presentationContainerContentView;
     long long _fromOrientation;
@@ -26,7 +25,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool willBeginOrientationChange; // @synthesize willBeginOrientationChange=_willBeginOrientationChange;
 @property(nonatomic) long long toOrientation; // @synthesize toOrientation=_toOrientation;
 @property(nonatomic) long long fromOrientation; // @synthesize fromOrientation=_fromOrientation;
-@property(readonly, nonatomic) _Bool isBeingTransitionedToADifferentOrientation; // @synthesize isBeingTransitionedToADifferentOrientation=_isBeingTransitionedToADifferentOrientation;
 @property(nonatomic, getter=isBeingDismissed) _Bool beingDismissed; // @synthesize beingDismissed=_beingDismissed;
 @property(nonatomic, getter=isBeingPresented) _Bool beingPresented; // @synthesize beingPresented=_beingPresented;
 @property(nonatomic) _Bool wantsAppearanceConfigValues; // @synthesize wantsAppearanceConfigValues=_wantsAppearanceConfigValues;
@@ -37,12 +35,14 @@ __attribute__((visibility("hidden")))
 - (void)setClipsToBounds:(_Bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (double)_radiansForCounterRotation;
+- (_Bool)avkit_isBeingDismissed;
 - (struct CGAffineTransform)_contentTransform;
 - (void)didStopTransition;
 - (void)willStartDismissalTransitionFromInterfaceOrientation:(long long)arg1 toOrientation:(long long)arg2 needsCounterRotation:(_Bool)arg3;
 - (void)willStartPresentationTransitionFromInterfaceOrientation:(long long)arg1 toOrientation:(long long)arg2 needsCounterRotation:(_Bool)arg3;
 - (struct UIEdgeInsets)avkit_overrideLayoutMarginsForCounterRotation;
 - (struct UIEdgeInsets)avkit_overrideLayoutMarginsForInterfaceOrientation:(long long)arg1;
+- (_Bool)avkit_isCounterRotatedForTransition;
 - (_Bool)avkit_isVideoGravityFrozen;
 - (void)willBeginAdjustingOrientation;
 - (void)_setCornerRadius:(double)arg1;

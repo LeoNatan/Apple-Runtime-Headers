@@ -8,7 +8,7 @@
 
 #import <Mail/MFPOPAccount-Protocol.h>
 
-@class ACAccount, ECAuthScheme, ECPOPAccount, MCActivityMonitor, MFPOPStore, NSArray, NSLock, NSOperationQueue, NSString;
+@class ACAccount, ECAuthScheme, ECPOPAccount, MCActivityMonitor, MFPOPStore, NSArray, NSDate, NSLock, NSOperationQueue, NSString;
 
 @interface MFPOPAccount : MFMailAccount <MFPOPAccount>
 {
@@ -96,6 +96,7 @@
 @property(readonly, copy) NSString *description;
 @property(copy) NSString *displayName;
 @property(readonly, copy) NSArray *emailAddressStrings;
+@property(readonly, copy, nonatomic) NSDate *expiryDate;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *hostname;
@@ -109,6 +110,7 @@
 @property(readonly, copy) NSString *password;
 @property long long portNumber;
 @property(retain) ECAuthScheme *preferredAuthScheme;
+@property(readonly) BOOL primaryiCloudAccount;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue;
 @property long long securityLayerType;

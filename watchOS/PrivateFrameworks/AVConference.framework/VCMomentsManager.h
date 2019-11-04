@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)newRequestWithArguments:(id)arg1 state:(unsigned char)arg2;
 - (void)streamTokenDidCleanupAllRequests:(int)arg1;
 - (void)streamToken:(int)arg1 didFinishRequest:(id)arg2 didSucceed:(_Bool)arg3;
-- (void)streamToken:(int)arg1 didEndProcessingRequest:(id)arg2 URL:(id)arg3 error:(id)arg4;
+- (void)streamToken:(int)arg1 didEndProcessingRequest:(id)arg2 stillImageURL:(id)arg3 movieURL:(id)arg4 error:(id)arg5;
 - (void)streamToken:(int)arg1 didStartProcessingRequest:(id)arg2 error:(id)arg3;
 - (void)notifyClientsWithStreamToken:(int)arg1 service:(char *)arg2 arguments:(id)arg3;
 - (void)registerBlocksForService;

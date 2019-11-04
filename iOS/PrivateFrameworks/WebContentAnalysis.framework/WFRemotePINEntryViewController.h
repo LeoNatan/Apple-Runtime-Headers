@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)simplePIN;
 - (_Bool)isNumericPIN;
 - (_Bool)requiresKeyboard;
+- (void)permitURLWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getIsPINPresentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)userDidCancel;
 - (void)userEnteredCorrectPIN;
 - (unsigned long long)supportedInterfaceOrientations;

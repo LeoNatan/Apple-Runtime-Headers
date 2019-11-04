@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <PassKitCore/CLLocationManagerDelegate-Protocol.h>
+#import <PassKitCore/PKPaymentServiceDelegate-Protocol.h>
 #import <PassKitCore/PKPaymentWebServiceDelegate-Protocol.h>
 
-@class CLLocationManager, NSArray, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, PKPaymentCredential, PKPaymentEligibilityResponse, PKPaymentPass, PKPaymentProvisioningControllerCredentialQueue, PKPaymentProvisioningResponse, PKPaymentRequirementsResponse, PKPaymentSetupMoreInfoItem, PKPaymentSetupProductModel, PKPaymentWebService;
+@class CLLocationManager, NSArray, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, PKPaymentCredential, PKPaymentEligibilityResponse, PKPaymentPass, PKPaymentProvisioningControllerCredentialQueue, PKPaymentProvisioningResponse, PKPaymentRequirementsResponse, PKPaymentService, PKPaymentSetupMoreInfoItem, PKPaymentSetupProductModel, PKPaymentWebService;
 @protocol OS_dispatch_source;
 
-@interface PKPaymentProvisioningController : NSObject <CLLocationManagerDelegate, PKPaymentWebServiceDelegate>
+@interface PKPaymentProvisioningController : NSObject <CLLocationManagerDelegate, PKPaymentServiceDelegate, PKPaymentWebServiceDelegate>
 {
     _Bool _preflightCompleted;
     NSMutableSet *_tasks;
@@ -25,11 +26,13 @@
     NSHashTable *_delegates;
     NSLock *_delegateLock;
     NSSet *_supportedFeatureIdentifierStrings;
+    NSSet *_supportedFeatureIdentifierStringsForAccountProvisioning;
     unsigned int _targetDeviceSupportsTypeF;
     PKPaymentSetupMoreInfoItem *_marketExpressInfoItem;
     CLLocationManager *_locationManager;
     NSObject<OS_dispatch_source> *_locationTimer;
     CDUnknownBlockType _locationCompletion;
+    PKPaymentService *_paymentService;
     NSString *_productIdentifier;
     NSString *_referrerIdentifier;
     PKPaymentWebService *_webService;
@@ -71,6 +74,9 @@
 - (void)_updateLocalizedProgressAndInvalidateTimer;
 - (void)paymentWebService:(id)arg1 didCompleteTSMConnectionForTaskID:(unsigned int)arg2;
 - (void)paymentWebService:(id)arg1 didQueueTSMConnectionForTaskID:(unsigned int)arg2;
+- (void)featureApplicationChanged:(id)arg1;
+- (void)featureApplicationRemoved:(id)arg1;
+- (void)featureApplicationAdded:(id)arg1;
 - (id)displayableErrorForProvisioningError:(id)arg1;
 - (id)displayableErrorForError:(id)arg1;
 - (id)_displayableErrorOverrideForUnderlyingError:(id)arg1;
@@ -79,10 +85,11 @@
 - (_Bool)hasDebitPaymentPass;
 - (_Bool)hasCreditPaymentPass;
 - (_Bool)hasPaymentPass;
+- (void)makePaymentPassDefault:(id)arg1;
+- (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
 - (void)_endRequiringUpgradedPasscodeIfNecessary;
 - (void)_startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
 - (void)passcodeUpgradeCompleted:(_Bool)arg1;
-- (void)skipPasscodeUpgrade;
 - (void)preflightPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isPasscodeUpgradeRequired) _Bool passcodeUpgradeRequired;
 @property(readonly, copy, nonatomic) NSArray *allCredentials;
@@ -143,11 +150,13 @@
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRemoteCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)retrieveAllAvailableCredentials:(CDUnknownBlockType)arg1;
+- (_Bool)_featureApplicationInValidStateToPresent:(id)arg1;
 - (void)setupFeatures:(CDUnknownBlockType)arg1;
 - (void)_addAccountToProductMatchingFeatureIdentifier:(unsigned int)arg1;
 - (id)_fetchOrCreateProductsForIdentifier:(unsigned int)arg1;
 - (void)retrieveAccountCredentials:(CDUnknownBlockType)arg1;
-- (id)supportedFeatureIdentifierStrings;
+- (id)_supportedFeatureIdentifierStringsForAccountProvisioning;
+- (id)_supportedFeatureIdentifierStrings;
 - (void)retrieveRemoteCredentials:(CDUnknownBlockType)arg1;
 - (void)performDeviceCheckInIfNeeded:(CDUnknownBlockType)arg1;
 - (id)_doesDisplayableErrorConstitutePreflightFailure:(id)arg1;

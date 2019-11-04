@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property struct os_unfair_lock_s iconValidationTokenLock; // @synthesize iconValidationTokenLock=_iconValidationTokenLock;
+@property(retain) NSData *iconValidationToken; // @synthesize iconValidationToken=_iconValidationToken;
 @property(readonly) ISImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(readonly, copy, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
 @property struct _LSBinding *binding; // @synthesize binding=_binding;
@@ -26,7 +27,8 @@ __attribute__((visibility("hidden")))
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
 - (double)_aspectRatio;
-@property(retain) NSData *iconValidationToken; // @synthesize iconValidationToken=_iconValidationToken;
+- (BOOL)evaluateCurrentValidationToken:(struct NSData *)arg1;
+- (struct NSData *)generateIconValidationToken;
 - (void)getImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)imageForImageDescriptor:(id)arg1;
 - (void)prepareImagesForImageDescriptors:(id)arg1;

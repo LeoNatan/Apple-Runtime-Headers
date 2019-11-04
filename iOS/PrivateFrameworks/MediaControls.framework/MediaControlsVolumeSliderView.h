@@ -16,6 +16,7 @@
     UIView *_orangeValueView;
     _Bool _didAcknowledgeThreshold;
     _Bool _didHitThreshold;
+    _Bool _didTakeActionToAcknowledge;
     UIImpactFeedbackGenerator *_impactFeedbackGenerator;
     UIView *_materialView;
 }

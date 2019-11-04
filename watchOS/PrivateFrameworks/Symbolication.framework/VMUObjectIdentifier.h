@@ -15,6 +15,7 @@
     _Bool _needToValidateAddressRange;
     CDUnknownBlockType _memoryReader;
     VMUTaskMemoryScanner *_scanner;
+    unsigned int _objcABI;
     struct libSwiftRemoteMirrorWrapper *_swiftMirror;
     NSMutableDictionary *_libSwiftRemoteMirrors;
     VMUSwiftRuntimeInfo *_swiftRuntimeInfoStableABI;
@@ -50,6 +51,8 @@
     unsigned long _taggedPointerObfuscator;
 }
 
+@property(readonly) unsigned int objcABI; // @synthesize objcABI=_objcABI;
+@property(readonly, nonatomic) struct _CSTypeRef symbolicator; // @synthesize symbolicator=_symbolicator;
 @property(readonly, nonatomic) unsigned long taggedPointerMask; // @synthesize taggedPointerMask=_taggedPointerMask;
 @property(readonly, nonatomic) struct libSwiftRemoteMirrorWrapper *swiftMirror; // @synthesize swiftMirror=_swiftMirror;
 @property(readonly, nonatomic) VMUSwiftRuntimeInfo *swiftRuntimeInfoStableABI; // @synthesize swiftRuntimeInfoStableABI=_swiftRuntimeInfoStableABI;
@@ -78,6 +81,7 @@
 - (id)labelForMallocBlock:(struct _VMURange)arg1 usingHandlerBlock:(CDUnknownBlockType)arg2;
 - (id)labelForMallocBlock:(struct _VMURange)arg1;
 - (id)labelForClassStructure:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForClassDataExtRW:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForClassDataRW:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelForClassDataRO:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)labelFor__NSMallocBlock__:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;

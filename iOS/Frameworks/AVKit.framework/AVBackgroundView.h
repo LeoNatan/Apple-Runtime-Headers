@@ -11,12 +11,14 @@
 @interface AVBackgroundView : UIView
 {
     _Bool _automaticallyDrawsRoundedCorners;
+    _Bool _prefersLowQualityEffects;
     _Bool _circular;
     AVBackdropView *_backdropView;
 }
 
 @property(retain, nonatomic) AVBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(nonatomic, getter=isCircular) _Bool circular; // @synthesize circular=_circular;
+@property(nonatomic) _Bool prefersLowQualityEffects; // @synthesize prefersLowQualityEffects=_prefersLowQualityEffects;
 @property(nonatomic) _Bool automaticallyDrawsRoundedCorners; // @synthesize automaticallyDrawsRoundedCorners=_automaticallyDrawsRoundedCorners;
 - (void).cxx_destruct;
 - (_Bool)_isContainedInOverlappingBackgroundView;

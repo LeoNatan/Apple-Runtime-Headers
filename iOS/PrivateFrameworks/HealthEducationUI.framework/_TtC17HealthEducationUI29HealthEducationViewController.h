@@ -8,13 +8,13 @@
 
 @interface _TtC17HealthEducationUI29HealthEducationViewController : UIViewController
 {
-    // Error parsing type: , name: dataSource
-    // Error parsing type: , name: $__lazy_storage_$_collectionView
+    // Error parsing type: , name: components
+    // Error parsing type: , name: $__lazy_storage_$_componentViews
+    // Error parsing type: , name: $__lazy_storage_$_contentView
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 

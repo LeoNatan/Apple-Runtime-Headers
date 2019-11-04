@@ -28,7 +28,7 @@
 - (struct __CFBundle *)copyTCCBundleForService:(struct __CFString *)arg1;
 - (id)privacySpecifierForService:(struct __CFString *)arg1;
 - (id)privacySpecifiers;
-- (id)authLevelStringForStatus:(int)arg1;
+- (id)authLevelStringForStatus:(unsigned int)arg1;
 - (id)locationStatus:(id)arg1;
 - (_Bool)_isLocationServicesRestricted;
 - (id)locationServicesSpecifier;

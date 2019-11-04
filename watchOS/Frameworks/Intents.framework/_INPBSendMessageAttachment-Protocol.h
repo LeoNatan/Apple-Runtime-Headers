@@ -10,6 +10,8 @@
 
 @protocol _INPBSendMessageAttachment <NSObject>
 @property(readonly, nonatomic) unsigned int whichDatasource;
+@property(readonly, nonatomic) _Bool hasSpeechDataURL;
+@property(retain, nonatomic) _INPBURLValue *speechDataURL;
 @property(readonly, nonatomic) _Bool hasFileURL;
 @property(retain, nonatomic) _INPBURLValue *fileURL;
 @property(readonly, nonatomic) _Bool hasFile;

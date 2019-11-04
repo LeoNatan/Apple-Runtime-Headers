@@ -6,6 +6,8 @@
 
 #import <RelevanceEngine/RERelevanceProvider.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface _TtC16HealthExperience26DateRangeRelevanceProvider : RERelevanceProvider
 {
@@ -13,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;

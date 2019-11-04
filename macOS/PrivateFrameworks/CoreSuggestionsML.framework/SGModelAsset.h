@@ -13,6 +13,8 @@
 + (id)asset;
 + (id)dictionaryWithPlistAssetPath:(id)arg1;
 + (id)dictionaryWithPlistFilename:(id)arg1;
++ (id)dpRecorderRules;
++ (id)signatureRules;
 + (id)metricsConfig;
 + (id)quickResponses;
 + (id)mappings;

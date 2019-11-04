@@ -6,7 +6,7 @@
 
 #import <CoreDuet/_DKSyncCompositeOperation.h>
 
-@class NSArray, NSDate, NSString, _CDMutablePerfMetric, _DKSync2Policy, _DKSyncHistory, _DKSyncPeer, _DKSyncType;
+@class NSArray, NSDate, _CDMutablePerfMetric, _DKSync2Policy, _DKSyncHistory, _DKSyncPeer, _DKSyncType;
 @protocol _DKKeyValueStore, _DKSyncLocalKnowledgeStorage, _DKSyncRemoteKnowledgeStorage;
 
 @interface _DKPerformSyncDownPeerAdditionsOperation : _DKSyncCompositeOperation
@@ -22,8 +22,6 @@
     _Bool _highPriority;
     _DKSyncHistory *_history;
     id <_DKKeyValueStore> _keyValueStore;
-    NSString *_hadAdditionsKey;
-    _Bool _hadAdditions;
     NSDate *_startDate;
     NSDate *_highWaterMark;
     unsigned int _batchNumber;

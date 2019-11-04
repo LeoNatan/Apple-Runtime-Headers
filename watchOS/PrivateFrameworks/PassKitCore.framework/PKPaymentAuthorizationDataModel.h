@@ -34,6 +34,7 @@
     NSString *_hostAppLocalizedName;
     NSString *_hostApplicationIdentifier;
     NSString *_bundleIdentifier;
+    NSString *_relevantPassUniqueID;
     NSString *_teamIdentifier;
     CNContact *_shippingEmail;
     CNContact *_shippingPhone;
@@ -57,6 +58,9 @@
     PKDisbursementApplicationInformation *_disbursementApplicationInformation;
     PKBankAccountInformation *_bankAccount;
     PKCurrencyAmount *_peerPaymentBalanceForAccountPayment;
+    NSString *_installmentBindToken;
+    NSString *_installmentGroupIdentifier;
+    NSDecimalNumber *_installmentAuthorizationAmount;
     PKPaymentApplication *_paymentApplication;
     PKPaymentInstructions *_instructions;
     PKRemotePaymentInstrument *_remotePaymentInstrument;
@@ -74,6 +78,9 @@
 @property(readonly, nonatomic) NSArray *allRemoteDevices; // @synthesize allRemoteDevices=_allRemoteDevices;
 @property(retain, nonatomic) PKPaymentInstructions *instructions; // @synthesize instructions=_instructions;
 @property(retain, nonatomic) PKPaymentApplication *paymentApplication; // @synthesize paymentApplication=_paymentApplication;
+@property(retain, nonatomic) NSDecimalNumber *installmentAuthorizationAmount; // @synthesize installmentAuthorizationAmount=_installmentAuthorizationAmount;
+@property(copy, nonatomic) NSString *installmentGroupIdentifier; // @synthesize installmentGroupIdentifier=_installmentGroupIdentifier;
+@property(copy, nonatomic) NSString *installmentBindToken; // @synthesize installmentBindToken=_installmentBindToken;
 @property(retain, nonatomic) PKCurrencyAmount *peerPaymentBalanceForAccountPayment; // @synthesize peerPaymentBalanceForAccountPayment=_peerPaymentBalanceForAccountPayment;
 @property(retain, nonatomic) PKBankAccountInformation *bankAccount; // @synthesize bankAccount=_bankAccount;
 @property(retain, nonatomic) PKDisbursementApplicationInformation *disbursementApplicationInformation; // @synthesize disbursementApplicationInformation=_disbursementApplicationInformation;
@@ -99,6 +106,7 @@
 @property(retain, nonatomic) CNContact *shippingPhone; // @synthesize shippingPhone=_shippingPhone;
 @property(retain, nonatomic) CNContact *shippingEmail; // @synthesize shippingEmail=_shippingEmail;
 @property(retain, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
+@property(retain, nonatomic) NSString *relevantPassUniqueID; // @synthesize relevantPassUniqueID=_relevantPassUniqueID;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(retain, nonatomic) NSString *hostAppLocalizedName; // @synthesize hostAppLocalizedName=_hostAppLocalizedName;
@@ -143,6 +151,7 @@
 - (void)_ensurePlaceholderItems;
 - (void)_ensurePaymentContentItems;
 - (void)_ensureItemForClass:(Class)arg1;
+- (void)_didSetItemForClass:(Class)arg1;
 - (void)_updatePeerPaymentPromotionAvailability;
 - (void)_ensureItems;
 @property(readonly, nonatomic) NSString *defaultPaymentPassUniqueIdentifier;

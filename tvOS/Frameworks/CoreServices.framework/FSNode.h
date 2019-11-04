@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)_resolvedNodeFromAliasFile:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 + (id)_resolvedURLFromAliasFile:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
++ (id)systemDataVolumeNode;
 + (id)rootVolumeNode;
 + (_Bool)canReadMetadataOfURL:(id)arg1 fromSandboxWithAuditToken:(const CDStruct_4c969caf *)arg2;
 + (_Bool)canWriteURL:(id)arg1 fromSandboxWithAuditToken:(const CDStruct_4c969caf *)arg2;

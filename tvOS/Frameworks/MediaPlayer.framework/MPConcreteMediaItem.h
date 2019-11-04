@@ -44,7 +44,6 @@
 - (unsigned long long)persistentID;
 - (id)mediaLibrary;
 - (_Bool)existsInLibrary;
-- (Class)itemArrayCoderPIDDataCodingClass;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

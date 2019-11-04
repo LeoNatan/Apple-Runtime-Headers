@@ -36,6 +36,7 @@
 + (Class)_timeViewClass;
 - (void).cxx_destruct;
 - (id)tritium_appropriateChronoPalette;
+- (_Bool)tritium_usingDarkChronoPalette;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_transitionToFrameSpecifier:(id)arg1;
 - (void)tritium_requestStatusbarUpdate;

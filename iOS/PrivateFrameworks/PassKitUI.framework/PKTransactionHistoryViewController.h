@@ -8,19 +8,21 @@
 
 #import <PassKitUI/CNAvatarViewDelegate-Protocol.h>
 
-@class NSString, PKAnimatedNavigationBarTitleView, PKContinuousButton, PKNavigationController, PKPaymentPass, PKPaymentTransaction, PKSpendingSummaryFooterContainer, PKSpendingSummaryFooterView, UIImageView;
+@class NSObject, NSString, PKAnimatedNavigationBarTitleView, PKContinuousButton, PKNavigationController, PKPaymentPass, PKPaymentTransaction, PKSpendingSummaryFooterContainer, PKSpendingSummaryFooterView, UIImageView;
+@protocol OS_dispatch_source;
 
 @interface PKTransactionHistoryViewController : PKDashboardViewController <CNAvatarViewDelegate>
 {
     PKSpendingSummaryFooterView *_footer;
     PKSpendingSummaryFooterContainer *_footerContainer;
     _Bool _loadingMapsViewController;
+    NSObject<OS_dispatch_source> *_loadingMapsTimer;
     PKContinuousButton *_detailsButton;
     PKContinuousButton *_phoneButton;
     PKContinuousButton *_messageButton;
     struct UIEdgeInsets _lastContentInset;
     double _headerHeight;
-    PKNavigationController *_pkNavigationController;
+    PKNavigationController *_navigationController;
     double _merchantHeaderAnimationProgress;
     PKAnimatedNavigationBarTitleView *_titleView;
     UIImageView *_titleIconImageView;
@@ -41,17 +43,17 @@
 - (void)_handleMessageButtonTapped:(id)arg1;
 - (void)_handleInfoButtonTapped:(id)arg1;
 - (id)_barButtonItems;
-- (id)pkui_navigationBarItemTintColor;
+- (CDStruct_8f3a66c8)pkui_navigationStatusBarStyleDescriptor;
 - (void)_updateNavigationBarIconWithLogoURL:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)contentIsLoaded;
-- (long long)preferredStatusBarStyle;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_updateNavigationBarIconForNavigationBarAppeared:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 transactionHistory:(id)arg4;
 - (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 featuredTransaction:(id)arg4 selectedTransactions:(id)arg5 transactionHistory:(id)arg6;
 

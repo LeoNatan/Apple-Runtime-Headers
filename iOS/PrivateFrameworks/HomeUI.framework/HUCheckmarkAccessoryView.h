@@ -17,7 +17,6 @@
 
 + (id)grayBorderColor;
 + (double)borderWidth;
-+ (id)checkmarkImage;
 @property(retain, nonatomic) UIImageView *checkmarkImageView; // @synthesize checkmarkImageView=_checkmarkImageView;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;

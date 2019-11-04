@@ -97,6 +97,7 @@
 - (double)insetHorizontalMarginForNotificationListComponent:(id)arg1;
 - (id)containerViewForPreviewInteractionPresentedContentForNotificationListComponent:(id)arg1;
 - (id)notificationListComponent:(id)arg1 sectionSettingsForSectionIdentifier:(id)arg2;
+- (void)notificationListComponent:(id)arg1 willDismissLongLookForCancelActionForViewController:(id)arg2;
 - (void)notificationListComponent:(id)arg1 requestsExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 requestAuthentication:(_Bool)arg4 withParameters:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)notificationListComponent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)legibilitySettingsForNotificationListComponent:(id)arg1;

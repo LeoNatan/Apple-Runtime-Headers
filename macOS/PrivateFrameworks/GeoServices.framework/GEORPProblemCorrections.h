@@ -13,7 +13,6 @@
 @interface GEORPProblemCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_comments;
     GEORPCorrectedCoordinate *_correctedCoordinate;
     NSMutableArray *_correctedFields;
@@ -25,6 +24,9 @@
     GEORPMerchantLookupCorrections *_merchantLookupCorrections;
     NSMutableArray *_photoWithMetadatas;
     GEORPPlaceProblem *_placeProblem;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     BOOL _delayed;
     struct {
         unsigned int has_delayed:1;
@@ -116,6 +118,8 @@
 - (void)clearCorrectedFields;
 @property(retain, nonatomic) NSMutableArray *correctedFields;
 - (void)_readCorrectedFields;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

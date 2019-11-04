@@ -19,7 +19,9 @@
 
 @property(retain, nonatomic) SPZKWSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (void)updateWithQueryContext:(id)arg1 uiPriority:(_Bool)arg2;
 - (void)updateWithQueryContext:(id)arg1;
+- (void)updateAtUIPriorityWithQueryContext:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

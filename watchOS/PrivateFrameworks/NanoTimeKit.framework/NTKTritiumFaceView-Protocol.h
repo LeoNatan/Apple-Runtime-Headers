@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
-@class NSArray, NSDictionary, NTKFaceView, UIView;
+@class NSArray, NSDictionary, NTKFaceView, NTKTritiumFrameSpecifier, UIView;
 
 @protocol NTKTritiumFaceView <NTKTritiumAnimator>
 + (Class)tritium_frameSpecifierClass;
@@ -14,7 +14,7 @@
 - (double)tritium_durationForTritiumOnAnimation;
 - (struct NTKTritiumTimeAnimationConfiguration)tritium_timeTransitionAnimationConfiguration;
 - (void)tritium_synchronizeWithActiveFaceView:(NTKFaceView *)arg1;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(NTKTritiumFrameSpecifier *)arg1;
 - (void)tritium_willSnapshotForBurnInStudy;
 - (void)tritium_setupForBurnInStudy;
 - (void)tritium_unloadContentViews;

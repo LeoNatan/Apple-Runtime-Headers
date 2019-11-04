@@ -8,7 +8,7 @@
 
 #import <HearingUtilities/HUNearbyDeviceDelegate-Protocol.h>
 
-@class AXRemoteHearingAidDevice, NSArray, NSObject, NSString, RPCompanionLinkClient, SFDeviceDiscovery;
+@class AXDispatchTimer, AXRemoteHearingAidDevice, NSArray, NSObject, NSString, RPCompanionLinkClient, SFDeviceDiscovery;
 @protocol HUNearbyControllerDelegate, OS_dispatch_queue;
 
 @interface HUNearbyController : HUDeviceController <HUNearbyDeviceDelegate>
@@ -23,11 +23,13 @@
     RPCompanionLinkClient *_client;
     AXRemoteHearingAidDevice *_localDevice;
     NSObject<OS_dispatch_queue> *_mediaQueue;
+    AXDispatchTimer *_sendConnectionToCompanionTimer;
 }
 
 + (id)sharedInstance;
 @property(nonatomic) _Bool holdingPhoneForConnection; // @synthesize holdingPhoneForConnection=_holdingPhoneForConnection;
 @property(nonatomic) _Bool holdingMediaForConnection; // @synthesize holdingMediaForConnection=_holdingMediaForConnection;
+@property(retain, nonatomic) AXDispatchTimer *sendConnectionToCompanionTimer; // @synthesize sendConnectionToCompanionTimer=_sendConnectionToCompanionTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaQueue; // @synthesize mediaQueue=_mediaQueue;
 @property(nonatomic, getter=isSearching) _Bool searching; // @synthesize searching=_searching;
 @property(retain, nonatomic) AXRemoteHearingAidDevice *localDevice; // @synthesize localDevice=_localDevice;
@@ -36,6 +38,7 @@
 @property(nonatomic) __weak id <HUNearbyControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (_Bool)representsLocalDevices;
 - (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 andDeviceID:(id)arg3;
 - (void)updateProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (id)hearingAidForDeviceID:(id)arg1;
@@ -63,6 +66,7 @@
 - (_Bool)shouldRelinquishConnectionForReason:(long long)arg1;
 - (void)checkPairedPeerExists:(CDUnknownBlockType)arg1;
 - (void)requestConnectionForReason:(long long)arg1;
+- (void)sendConnectionToCompanionIfPossible:(_Bool)arg1;
 - (void)sendConnectionToCompanionIfPossible;
 - (void)requestHandoffForMedia;
 - (void)mediaPlaybackDidChange:(id)arg1;

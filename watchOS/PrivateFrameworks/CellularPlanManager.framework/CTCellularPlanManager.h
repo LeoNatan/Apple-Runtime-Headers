@@ -86,6 +86,7 @@
 - (id)resolveSimLabel:(id)arg1;
 - (void)resolveSimLabel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deletePlanPendingTransfer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)cancelPlanActivation:(id)arg1;
 - (void)activatePlanPendingTransfer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getPlansPendingTransfer:(id *)arg1;
 - (id)danglingPlanItemsShouldUpdate:(_Bool)arg1;

@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSItemProviderReading-Protocol.h>
 #import <UIKitCore/NSItemProviderWriting-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
@@ -15,7 +16,7 @@
 
 @class CIImage, NSArray, NSMapTable, NSString, UIGraphicsImageRendererFormat, UIImageAsset, UIImageConfiguration, UIImageSymbolConfiguration, UITraitCollection, _UIImageContent;
 
-@interface UIImage : NSObject <NSItemProviderReading, NSItemProviderWriting, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting, NSSecureCoding>
+@interface UIImage : NSObject <NSItemProviderReading, NSItemProviderWriting, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting, NSCopying, NSSecureCoding>
 {
     NSMapTable *_siblingImages;
     UIImageConfiguration *_configuration;
@@ -155,6 +156,8 @@
 - (id)_rasterizedImage;
 - (id)_imagePaddedByInsets:(struct UIEdgeInsets)arg1;
 - (id)_flatImageWithColor:(id)arg1;
+- (CDStruct_e79446ac)_calculateStatisticsOfEdge:(_Bool)arg1;
+- (CDStruct_e79446ac)_calculateEdgeStatistics;
 - (CDStruct_e79446ac)_calculateStatistics;
 - (id)_resizableImageWithSubimageInsets:(struct UIEdgeInsets)arg1 resizeInsets:(struct UIEdgeInsets)arg2;
 - (id)_stretchableImageWithCapInsets:(struct UIEdgeInsets)arg1;

@@ -30,6 +30,7 @@
 + (id)errorWithErrorCode:(int)arg1;
 + (id)descriptionForErrorCode:(int)arg1;
 + (id)defaultOptions;
++ (id)textResultsForCGImage:(struct CGImage *)arg1 numberOfCandidates:(long long)arg2 title:(id *)arg3 error:(id *)arg4;
 + (id)textResultsForCGImage:(struct CGImage *)arg1 numberOfCandidates:(long long)arg2 title:(id *)arg3;
 + (id)textResultsForCGImage:(struct CGImage *)arg1 numberOfCandidates:(long long)arg2;
 + (id)languageSetFromOptionsDictionary:(id)arg1;

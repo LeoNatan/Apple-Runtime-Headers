@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CDUnknownBlockType batchHandler; // @synthesize batchHandler=_batchHandler;
 - (void).cxx_destruct;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;
-- (void)enqueueObject:(id)arg1 buffer:(id)arg2;
+- (void)enqueueObject:(id)arg1 replaceIfExists:(BOOL)arg2 buffer:(id)arg3;
 @property(readonly, nonatomic) NSString *descriptionType;
 - (id)initWithCapacity:(unsigned long long)arg1 batchHandler:(CDUnknownBlockType)arg2;
 

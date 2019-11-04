@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)loadView;
 - (id)flightInfoView;

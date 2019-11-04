@@ -48,6 +48,8 @@
 - (void)_teardownFigCaptureSession;
 - (long)_createFigCaptureSession;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)informSessionMembersOfChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
+- (void)handleVideoInputDevice:(id)arg1 activeDepthDataFormatChanged:(id)arg2;
 - (void)handleVideoInputDevice:(id)arg1 activeFormatChanged:(id)arg2;
 - (_Bool)videoHDREnabledForDevice:(id)arg1 format:(id)arg2 sessionPreset:(id)arg3;
 - (id)valueForUndefinedKey:(id)arg1;

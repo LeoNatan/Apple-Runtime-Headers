@@ -12,11 +12,12 @@
 
 + (id)_valueFromCKKnowledgeStoreWithKey:(id)arg1;
 + (id)_clientFlowUserDefaults;
-+ (_Bool)isByteCodeCacheEnabled;
++ (id)scripterInactivityTimerInSeconds;
 + (id)defaultWarmupScriptsExtension;
 + (id)baseScriptExecutorCacheKey;
 + (id)warmupModularScriptIdentifiers;
 + (id)warmupScriptIdentifiers;
++ (_Bool)isByteCodeCacheEnabled;
 + (_Bool)shouldSkipUpdateScriptsOnBoot;
 + (_Bool)shouldRunNodeFlow:(_Bool)arg1;
 + (_Bool)shouldOverrideScripts;

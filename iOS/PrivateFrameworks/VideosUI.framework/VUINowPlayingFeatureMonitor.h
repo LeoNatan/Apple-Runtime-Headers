@@ -54,6 +54,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VUINowPlayingFeatureMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_cleanUpEverything;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_expireTimerFeaturesIfNeeded;
+- (void)_setupTimerFeatureExpiration;
+- (_Bool)_isTimerFeatureExpired:(id)arg1;
 - (void)_cancelTimerForFeature:(id)arg1;
 - (void)_processTimerTriggeredFeature:(id)arg1;
 - (_Bool)_needsUIForFeature:(id)arg1;

@@ -13,10 +13,12 @@
 @interface GEOMapItemHandle : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOMapItemClientAttributes *_clientAttributes;
     GEOPDPlaceRefinementParameters *_placeRefinementParameters;
     GEOMapItemInitialRequestData *_placeRequestData;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _handleType;
     struct {
         unsigned int has_handleType:1;
@@ -57,6 +59,8 @@
 - (id)handleTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasHandleType;
 @property(nonatomic) int handleType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

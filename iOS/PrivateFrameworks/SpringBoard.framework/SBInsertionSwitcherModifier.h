@@ -6,7 +6,7 @@
 
 #import <SpringBoard/SBSwitcherModifier.h>
 
-@class SBAppLayout;
+@class NSArray, SBAppLayout;
 
 @interface SBInsertionSwitcherModifier : SBSwitcherModifier
 {
@@ -14,6 +14,7 @@
     _Bool _keepAppLayoutsBeforeInsertionInHierarchy;
     unsigned long long _indexToScrollToAfterInsertion;
     struct CGPoint _contentOffsetBeforeInsertion;
+    NSArray *_appLayoutsVisibleBeforeInsertion;
     unsigned long long _phase;
 }
 

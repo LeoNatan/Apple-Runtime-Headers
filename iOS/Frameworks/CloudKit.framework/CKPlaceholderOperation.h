@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_group> *_group;
     _Bool _isFinished;
     _Bool _isExecuting;
+    _Bool _finishInvoked;
     NSString *_sectionID;
     id _context;
     NSDate *_startDate;
@@ -21,6 +22,7 @@
     CDUnknownBlockType _daemonInvokeBlock;
 }
 
+@property(nonatomic) _Bool finishInvoked; // @synthesize finishInvoked=_finishInvoked;
 @property(readonly, nonatomic) CDUnknownBlockType daemonInvokeBlock; // @synthesize daemonInvokeBlock=_daemonInvokeBlock;
 @property(readonly, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -34,9 +36,9 @@
 - (void)_setIsExecuting:(_Bool)arg1;
 - (void)_setIsFinished:(_Bool)arg1;
 - (_Bool)isConcurrent;
+- (void)finish;
 - (void)main;
 - (void)start;
-- (void)cancel;
 - (id)initWithOperation:(id)arg1 daemonInvocationBlock:(CDUnknownBlockType)arg2;
 
 @end

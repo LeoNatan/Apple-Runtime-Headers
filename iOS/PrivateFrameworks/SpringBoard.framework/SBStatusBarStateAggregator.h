@@ -142,7 +142,6 @@
 - (void)addPostingObserver:(id)arg1;
 - (void)sendStatusBarActions:(int)arg1;
 - (void)setUserNameOverride:(id)arg1;
-- (void)updateBackgroundActivityStartTimeForApplication:(id)arg1;
 - (void)setShowsSyncActivityIndicator:(_Bool)arg1;
 - (void)setShowsActivityIndicatorEverywhere:(_Bool)arg1;
 - (void)setShowsActivityIndicatorOnHomeScreen:(_Bool)arg1;

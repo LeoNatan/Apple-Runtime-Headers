@@ -19,6 +19,7 @@
 @property(nonatomic) _Bool expectAudioData;
 @property(nonatomic) _Bool expectDepthData;
 @property(readonly, nonatomic) NSURL *outputFileURL;
+- (void)abortRecording;
 - (void)finishRecording;
 - (void)startRecording;
 - (void)recordCustomData:(id <NSSecureCoding>)arg1 forTimestamp:(double)arg2;

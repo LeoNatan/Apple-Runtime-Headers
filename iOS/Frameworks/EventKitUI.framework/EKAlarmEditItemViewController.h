@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) EKUIAlarm *previousAlarm; // @synthesize previousAlarm=_previousAlarm;
 @property(retain, nonatomic) EKUIAlarm *alarm; // @synthesize alarm=_alarm;
 - (void).cxx_destruct;
-- (void)alarmTableDidChangeAlarm:(id)arg1;
+- (void)alarmTable:(id)arg1 didSelectRowAtIndexPath:(id)arg2 commitSelectionBlock:(CDUnknownBlockType)arg3;
 @property(nonatomic) long long presetIdentifier;
 - (_Bool)customSelected;
 - (void)setCustomString:(id)arg1;

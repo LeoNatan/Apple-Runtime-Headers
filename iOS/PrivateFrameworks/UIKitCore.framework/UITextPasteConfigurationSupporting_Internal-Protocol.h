@@ -21,6 +21,7 @@
 
 @optional
 + (Class)_textPasteItemClass;
+@property(nonatomic) _Bool usesStandardTextScaling;
 - (void)_pasteSessionDidFinish:(id <UITextPasteSession>)arg1;
 @end
 

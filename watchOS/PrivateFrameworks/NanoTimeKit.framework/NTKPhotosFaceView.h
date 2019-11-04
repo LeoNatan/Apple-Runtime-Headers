@@ -37,7 +37,6 @@
     NTKPhotoAnalysis *_nextAnalysis;
     UIColor *_nextForegroundColor;
     UIView *_nextPosterViewSnapshot;
-    _Bool _isInactiveViewUsedForBurnInTesting;
     NTKCachedPhoto *_presentedPhoto;
 }
 
@@ -51,9 +50,8 @@
 - (void)_setTritiumOnProgress:(float)arg1;
 - (void)tritium_willTransitionToTritiumOn;
 - (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
-- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)tritium_willSnapshotForBurnInStudy;
-- (void)tritium_setupForBurnInStudy;
 - (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)tritium_createFaceAnimator;
 - (id)_createAndCachePhotoAnalysisForKey:(id)arg1 dateAlignment:(unsigned int)arg2 image:(id)arg3;

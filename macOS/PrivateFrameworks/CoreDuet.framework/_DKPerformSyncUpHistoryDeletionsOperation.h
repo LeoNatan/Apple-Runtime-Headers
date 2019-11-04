@@ -20,7 +20,6 @@
     _CDMutablePerfMetric *_perfMetric;
     struct _CDPerfEvent _perfEvent;
     NSArray *_streamNames;
-    BOOL _hadDeletions;
     NSDate *_now;
     _DKSyncHistory *_history;
     unsigned long long _batchNumber;

@@ -62,8 +62,8 @@
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (id)voiceAccessQueue;
 + (id)allAvailableVoices;
-+ (void)refreshAllAvailableVoices:(BOOL)arg1;
-+ (void)refreshAllAvailableVoices;
++ (id)refreshAllAvailableVoices:(BOOL)arg1;
++ (id)refreshAllAvailableVoices;
 + (id)synthesizerForSynthesizerID:(unsigned long long)arg1;
 + (id)voiceAssetsForTesting;
 + (void)setVoiceAssetsForTesting:(id)arg1;

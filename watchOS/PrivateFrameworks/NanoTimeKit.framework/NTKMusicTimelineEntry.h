@@ -10,16 +10,17 @@
 
 @interface NTKMusicTimelineEntry : NTKTimelineEntryModel
 {
+    unsigned int _state;
+    NSString *_title;
+    NSString *_album;
+    NSString *_artist;
+    NSString *_applicationName;
     _Bool _isPlayable;
     _Bool _isNewUser;
     _Bool _isLibraryEmpty;
     _Bool _isLive;
-    unsigned int _state;
     NSNumber *_persistentID;
     NSString *_contentItemID;
-    NSString *_title;
-    NSString *_album;
-    NSString *_artist;
     double _duration;
     double _elapsedTime;
 }
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
-- (id)_relativeDateTextProvider;
 - (id)_fullColorNowPlayingProviderForFamily:(int)arg1;
 - (id)_nowPlayingProviderForFamily:(int)arg1;
 - (id)_signatureSongSummaryTextProvider;
@@ -55,14 +55,10 @@
 - (id)largeModular;
 - (id)templateForComplicationFamily:(int)arg1;
 - (id)description;
-- (_Bool)isSameTrackAs:(id)arg1;
 @property(readonly, nonatomic) NSDate *projectedEndDate;
 @property(readonly, nonatomic) NSDate *projectedStartDate;
-- (id)initAsPastEntryWith:(id)arg1;
-- (id)initAsFutureEntryWith:(id)arg1;
-- (id)initAsProactiveCurrentEntryWith:(id)arg1;
-- (id)initAsCurrentEntryWith:(id)arg1 isNewUser:(_Bool)arg2 isLibraryEmpty:(_Bool)arg3;
-- (id)initWithNoMusicWithNewUser:(_Bool)arg1 isLibraryEmpty:(_Bool)arg2;
+- (id)initAsSwitcherTemplate;
+- (id)initWithState:(id)arg1;
 
 @end
 

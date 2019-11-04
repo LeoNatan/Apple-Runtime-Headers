@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (id)_headerLabelFont;
 - (double)_headerLabelInset;
 - (double)_paletteHorizontalInsets;
+- (double)_horizontalHeaderLabelSpacing;
 - (double)_horizontalHeaderStackSpacing;
 - (double)_verticalStackSpacing;
 - (double)_doneButtonWidth;

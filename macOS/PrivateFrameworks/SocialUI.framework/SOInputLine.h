@@ -8,7 +8,7 @@
 
 #import <SocialUI/NSFilePresenter-Protocol.h>
 
-@class IMPluginPayload, NSColor, NSDate, NSFont, NSMenuItem, NSNumber, NSOperationQueue, NSSet, NSString, NSURL, NSView, SOInputLineAutoSender, SOTimer, SOTimerCenter;
+@class IMPluginPayload, NSColor, NSDate, NSFont, NSMenuItem, NSNumber, NSOperationQueue, NSSet, NSString, NSURL, NSUserDefaults, NSView, SOInputLineAutoSender, SOTimer, SOTimerCenter;
 @protocol SOInputLineDelegate;
 
 @interface SOInputLine : NSTextView <NSFilePresenter>
@@ -40,6 +40,7 @@
     double _lastChangedTime;
     SOInputLineAutoSender *_autoSender;
     IMPluginPayload *_balloonPluginPayloadToInsert;
+    NSUserDefaults *_inputLineDefaults;
     NSURL *_dropDirectoryURL;
 }
 
@@ -47,6 +48,7 @@
 + (id)_updateCharacterSet;
 + (double)minimumFontSize;
 @property(retain) NSURL *dropDirectoryURL; // @synthesize dropDirectoryURL=_dropDirectoryURL;
+@property(retain, nonatomic) NSUserDefaults *inputLineDefaults; // @synthesize inputLineDefaults=_inputLineDefaults;
 @property(nonatomic) BOOL useBigEmoji; // @synthesize useBigEmoji=_useBigEmoji;
 @property(retain, nonatomic) IMPluginPayload *balloonPluginPayloadToInsert; // @synthesize balloonPluginPayloadToInsert=_balloonPluginPayloadToInsert;
 @property(retain, nonatomic) SOInputLineAutoSender *autoSender; // @synthesize autoSender=_autoSender;
@@ -105,6 +107,7 @@
 - (BOOL)canRenderInline:(id)arg1;
 - (BOOL)canAttachFile;
 - (void)dealloc;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)insertNewline:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
@@ -142,9 +145,8 @@
 - (void)_placeholderAttributedStringNeedsUpdate;
 - (void)updateAutomaticEmojiSubstitutionState;
 - (void)_updateValue:(id)arg1 forSettingsKey:(id)arg2;
-- (void)_helperDefaultsDidChange:(id)arg1;
 - (void)_settingsDidChange;
-- (void)_initializeInputLineSettings:(id)arg1;
+- (void)_initializeInputLineSettings;
 - (void)updateUseBigEmoji;
 - (void)stopTimers;
 - (BOOL)insertLinkAtSelection:(id)arg1 withText:(id)arg2;

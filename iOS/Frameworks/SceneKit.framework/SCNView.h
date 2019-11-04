@@ -25,11 +25,13 @@
     unsigned int _firstDrawDone:1;
     unsigned int _drawOnMainThreadPending:1;
     unsigned int _viewIsOffscreen:1;
+    unsigned int _appChangedColorAppearance:1;
     unsigned int _appIsDeactivated:1;
     unsigned int _autoPausedScene:1;
     unsigned int _inRenderQueueForLayerBackedGLRendering:1;
     unsigned int _disableLinearRendering:1;
     unsigned int _isInLiveResize:1;
+    _Bool _isHidden;
     _Bool _didTriggerRedrawWhileRendering;
     id _delegate;
     SCNRenderer *_renderer;
@@ -150,6 +152,7 @@
 @property(nonatomic) _Bool autoenablesDefaultLighting;
 @property(nonatomic) double sceneTime;
 - (_Bool)isOpaque;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_updateOpacity;
@@ -221,6 +224,7 @@
 - (_Bool)skipFramesIfNoDrawableAvailable;
 @property(retain, nonatomic) SCNScene *scene;
 - (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)setHidden:(_Bool)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

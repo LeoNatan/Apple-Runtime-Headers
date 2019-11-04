@@ -33,7 +33,7 @@
 - (id)_createPredictor;
 - (void)_invalidateCacheForAddedMessage:(id)arg1;
 - (id)_processPredictionForMessages:(id)arg1;
-- (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)persistenceWillAddMessage:(id)arg1 fromExistingMessage:(_Bool)arg2;
 - (void)dealloc;
 - (id)initWithMessagePersistence:(id)arg1 mailboxPersistence:(id)arg2 hookRegistry:(id)arg3 userProfileProvider:(id)arg4;

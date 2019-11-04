@@ -8,7 +8,7 @@
 
 #import <Rapport/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDate, NSString;
+@class NSArray, NSData, NSDate, NSString;
 
 @interface RPIdentity : NSObject <NSSecureCoding>
 {
@@ -16,6 +16,8 @@
     BOOL _disabled;
     BOOL _present;
     int _type;
+    unsigned int _revisionID;
+    NSArray *_accessGroups;
     NSString *_accountID;
     NSString *_contactID;
     NSDate *_dateAdded;
@@ -37,6 +39,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)nullIdentity;
+@property(nonatomic) unsigned int revisionID; // @synthesize revisionID=_revisionID;
 @property(nonatomic) BOOL present; // @synthesize present=_present;
 @property(nonatomic) BOOL disabled; // @synthesize disabled=_disabled;
 @property(copy, nonatomic) NSDate *dateRequested; // @synthesize dateRequested=_dateRequested;
@@ -58,6 +61,7 @@
 @property(copy, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
+@property(copy, nonatomic) NSArray *accessGroups; // @synthesize accessGroups=_accessGroups;
 - (void).cxx_destruct;
 - (BOOL)verifySignaturePtr:(const void *)arg1 signatureLen:(unsigned long long)arg2 dataPtr:(const void *)arg3 dataLen:(unsigned long long)arg4 error:(id *)arg5;
 - (BOOL)verifySignature:(id)arg1 data:(id)arg2 error:(id *)arg3;
@@ -66,6 +70,7 @@
 - (BOOL)verifyAuthTagPtr:(const void *)arg1 authTagLen:(unsigned long long)arg2 dataPtr:(const void *)arg3 dataLen:(unsigned long long)arg4 type:(int)arg5 error:(id *)arg6;
 - (BOOL)verifyAuthTag:(id)arg1 data:(id)arg2 type:(int)arg3 error:(id *)arg4;
 - (id)authTagForData:(id)arg1 type:(int)arg2 error:(id *)arg3;
+- (unsigned int)updateWithRPMessage:(id)arg1 error:(id *)arg2;
 - (unsigned int)updateWithKeychainItem:(id)arg1 error:(id *)arg2;
 - (unsigned int)compareWithRPIdentity:(id)arg1;
 - (id)descriptionWithLevel:(int)arg1;

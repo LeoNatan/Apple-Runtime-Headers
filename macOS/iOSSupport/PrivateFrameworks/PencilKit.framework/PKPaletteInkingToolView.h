@@ -66,7 +66,9 @@
 - (void).cxx_destruct;
 - (id)_opacityLabelFont;
 - (void)setScalingFactor:(double)arg1;
-- (void)inkAttributesPickerDidChangeSelectedInk:(id)arg1;
+- (void)_inkAttributesPickerUserDidEndDraggingSlider:(id)arg1;
+- (void)inkAttributesPickerDidChangeInkThickness:(id)arg1;
+- (void)inkAttributesPickerDidChangeInkOpacity:(id)arg1;
 - (id)attributeViewController;
 - (void)setInkWeight:(double)arg1;
 - (void)_updateOpacityLabel;

@@ -19,6 +19,8 @@
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) unsigned long long scenePresenterRenderIdentifierForSnapshotting;
+@property(readonly, nonatomic) unsigned int hostContextIdentifierForSnapshotting;
 @property(nonatomic) unsigned int artworkSubtype;
 @property(readonly, nonatomic) int deviceOrientation;
 @property(readonly, nonatomic) _Bool statusBarDisabled;

@@ -210,6 +210,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingNetworkQuality;
++ (void)stopSecureControlChannel:(id)arg1;
 + (id)getDecodePayloadTypes:(int)arg1 secondaryPayloadTypes:(id)arg2;
 + (int)setRxPayloadList:(struct tagHANDLE *)arg1 withPayloadTypes:(id)arg2 isRedEnabled:(_Bool)arg3;
 + (int)setRxPayloadList:(struct tagHANDLE *)arg1 withPayloadTypes:(id)arg2;
@@ -391,7 +392,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool useCompressedConnectionData;
 @property(nonatomic) _Bool requiresWifi;
 @property(readonly) _Bool isCurrentPayloadTypeValid;
-- (id)initWithDeviceRole:(int)arg1 transportType:(unsigned int)arg2 isGKVoiceChat:(_Bool)arg3;
+- (id)initWithDeviceRole:(int)arg1 transportType:(unsigned int)arg2 isGKVoiceChat:(_Bool)arg3 reportingHierarchyToken:(id)arg4;
 - (id)init;
 @property(readonly, copy) NSString *description;
 - (void)vcSecureDataChannel:(id)arg1 messageType:(unsigned int)arg2 receivedData:(id)arg3;
@@ -517,7 +518,8 @@ __attribute__((visibility("hidden")))
 - (long long)calculateSIPEndAction:(_Bool)arg1 currentState:(long long)arg2 error:(id)arg3;
 - (void)notifyDelegateAndEndCall:(long long)arg1 didRemoteCancel:(_Bool)arg2 error:(id)arg3;
 - (struct __SecIdentity *)retrieveIdentity;
-- (void)setupPeerInfo:(id)arg1 usingInviteData:(id)arg2 isCaller:(_Bool)arg3 capabilities:(id)arg4;
+- (void)setupPeerInfo:(_Bool)arg1 capabilities:(id)arg2;
+- (void)setupRemoteCallInfoWithParticipantID:(id)arg1 usingInviteData:(id)arg2;
 - (void)setupDTLSDefaults;
 - (void)logDetailedNetworkInformation;
 - (void)updateNetworkCheckHint:(double)arg1;

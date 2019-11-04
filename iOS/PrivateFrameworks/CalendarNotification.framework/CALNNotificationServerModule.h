@@ -45,6 +45,7 @@
 - (void).cxx_destruct;
 - (void)_removeNotificationsFromUnprotectedStorage:(id)arg1;
 - (void)_reloadNotificationRecords:(id)arg1 forNotificationServer:(id)arg2;
+- (void)_updateSourceClientIdentifiersIfNeeded;
 - (void)protectedDataDidBecomeAvailable;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
 - (void)didRegisterForBackgroundTaskAgentJobs;

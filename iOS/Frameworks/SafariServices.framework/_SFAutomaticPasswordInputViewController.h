@@ -35,6 +35,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_postButtonPressedNotificationForButton:(long long)arg1;
+- (void)_dismissKeyboard:(id)arg1;
 - (void)viewDidLoad;
 - (void)_updateKeyboardMetricsAndInterfaceOrientationIfNeeded;
 - (id)initWithPassword:(id)arg1 keyboardType:(long long)arg2;

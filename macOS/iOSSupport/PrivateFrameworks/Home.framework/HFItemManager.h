@@ -215,6 +215,7 @@
 - (void)settingsDidUpdate:(id)arg1;
 - (void)mediaObject:(id)arg1 didUpdateSettings:(id)arg2;
 - (void)mediaObject:(id)arg1 didUpdateMediaSession:(id)arg2;
+- (void)mediaSessionDidUpdate:(id)arg1;
 - (void)mediaSession:(id)arg1 failedToUpdatePlaybackStateWithError:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(long long)arg2;
 - (void)mediaSession:(id)arg1 willUpdatePlaybackState:(long long)arg2;

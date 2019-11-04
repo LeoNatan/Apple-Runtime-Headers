@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_remoteViewClass;
+@property(readonly) NSDocumentRevisionsAuxiliaryWindow *timelineWindow; // @synthesize timelineWindow=_timelineWindow;
 @property(retain) NSView *stackView; // @synthesize stackView=_stackView;
 @property(readonly) struct CGRect focusedRevisionFrame; // @synthesize focusedRevisionFrame=_focusedRevisionFrame;
 @property(readonly) struct CGRect focusedOriginalFrame; // @synthesize focusedOriginalFrame=_focusedOriginalFrame;

@@ -9,7 +9,7 @@
 #import <PhotosUICore/PXAssetsDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryMutableAssetsDataSourceManager-Protocol.h>
 
-@class NSDictionary, NSString, PXAssetsDataSource, PXCuratedLibraryAssetsDataSourceManagerConfiguration, PXPhotoKitAssetsDataSourceManager, PXUpdater, PXVisualPositionsChangeDetails;
+@class NSDictionary, NSPredicate, NSString, PXAssetsDataSource, PXCuratedLibraryAssetsDataSourceManagerConfiguration, PXPhotoKitAssetsDataSourceManager, PXUpdater, PXVisualPositionsChangeDetails;
 @protocol PXCuratedLibraryAssetsDataSourceManagerDelegate;
 
 @interface PXCuratedLibraryAssetsDataSourceManager : PXAssetsDataSourceManager <PXCuratedLibraryMutableAssetsDataSourceManager, PXAssetsDataSourceManagerObserver>
@@ -28,6 +28,7 @@
     _Bool _wantsCuration;
     id <PXCuratedLibraryAssetsDataSourceManagerDelegate> _delegate;
     long long _zoomLevel;
+    NSPredicate *_allPhotosFilterPredicate;
     PXUpdater *_updater;
     PXCuratedLibraryAssetsDataSourceManagerConfiguration *_configuration;
     long long _zoomLevelForCurrentDataSourceManager;
@@ -50,6 +51,7 @@
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManagerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) _Bool canLoadData; // @synthesize canLoadData=_canLoadData;
+@property(copy, nonatomic) NSPredicate *allPhotosFilterPredicate; // @synthesize allPhotosFilterPredicate=_allPhotosFilterPredicate;
 @property(readonly, nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(nonatomic) __weak id <PXCuratedLibraryAssetsDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -75,7 +77,8 @@
 - (id)firstAssetCollectionReferenceInDataSourceForZoomLevel:(long long)arg1 withParent:(id)arg2;
 - (id)assetCollectionReferencesInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollectionReference:(id)arg2 assetCollectionReferenceWithSameKeyAssetAsParent:(id *)arg3;
 - (id)assetCollectionReferencesInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollectionReference:(id)arg2;
-- (void)forceAccurateLastSection;
+- (_Bool)forceAllPhotosAccurateIfNeeded;
+- (void)ensureLastSectionHasContent;
 @property(readonly, nonatomic) PXPhotoKitAssetsDataSourceManager *currentPhotoKitAssetsDataSourceManager;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *currentAssetsDataSourceManager;
 - (id)_photosDataSourceForZoomLevel:(long long)arg1;

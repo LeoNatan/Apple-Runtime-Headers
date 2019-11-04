@@ -17,6 +17,7 @@
     _Bool _isPhotoIrisPlaceholder;
     _Bool _HDR;
     _Bool _representsBurst;
+    NSDate *_localCreationDate;
     NSString *_uuid;
     unsigned long long _mediaType;
     unsigned long long _mediaSubtypes;
@@ -56,6 +57,7 @@
 @property(readonly, nonatomic) unsigned long long mediaSubtypes; // @synthesize mediaSubtypes=_mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+@property(readonly, nonatomic) NSDate *localCreationDate; // @synthesize localCreationDate=_localCreationDate;
 - (void).cxx_destruct;
 - (unsigned long long)isContentEqualTo:(id)arg1;
 @property(readonly, nonatomic) _Bool hasPhotoColorAdjustments;
@@ -67,8 +69,6 @@
 - (id)init;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSDate *localCreationDate;
-- (id)creationDateUsingLocalTimeZone;
 @property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, nonatomic, getter=isLivePhoto) _Bool livePhoto;
 @property(readonly, nonatomic) _Bool isAnimatedImage;

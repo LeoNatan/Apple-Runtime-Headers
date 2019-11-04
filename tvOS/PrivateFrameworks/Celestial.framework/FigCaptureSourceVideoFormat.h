@@ -32,6 +32,7 @@
 - (CDStruct_79c71658)_visibleSensorDimensionsIncludingCinematic:(_Bool)arg1;
 - (CDStruct_79c71658)_maxUseableSensorDimensions;
 - (CDStruct_79c71658)_outputDimensions;
+@property(readonly, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported;
 @property(readonly) int ispPowerConsumption;
 @property(readonly) int variableSensorPowerConsumption;
 @property(readonly) int baseSensorPowerConsumption;

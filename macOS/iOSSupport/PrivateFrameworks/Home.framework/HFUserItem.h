@@ -38,6 +38,8 @@
 - (void).cxx_destruct;
 - (BOOL)hasDismissedUserSplitMediaAccountWarning;
 - (id)setDismissUserSplitMediaAccountWarning:(BOOL)arg1;
+- (BOOL)isPlaybackInfluencesForYouEnabled;
+- (id)setPlaybackInfluencesForYou:(BOOL)arg1;
 - (BOOL)isIdentifyVoiceEnabled;
 - (id)setEnableIdentifyVoice:(BOOL)arg1;
 - (id)setDismissCameraRecordingReminderBanner:(BOOL)arg1;

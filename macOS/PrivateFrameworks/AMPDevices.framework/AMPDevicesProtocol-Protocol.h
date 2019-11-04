@@ -34,7 +34,7 @@
 - (void)archiveBackup:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)registerForRestoreProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)registerForBackupProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
-- (NSProgress *)restoreDevice:(AMPDevice *)arg1 fromBackup:(NSDictionary *)arg2 withPassword:(NSString *)arg3 withReply:(void (^)(NSError *))arg4;
+- (NSProgress *)restoreDevice:(AMPDevice *)arg1 fromBackup:(NSDictionary *)arg2 withPassword:(NSString *)arg3 setPasswordInKeychain:(BOOL)arg4 withReply:(void (^)(NSError *))arg5;
 - (void)isRestoreFromBackupInProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)cancelBackupForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)backupDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;

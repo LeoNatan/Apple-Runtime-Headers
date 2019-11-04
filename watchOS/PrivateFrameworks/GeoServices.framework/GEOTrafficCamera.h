@@ -13,7 +13,6 @@
 @interface GEOTrafficCamera : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_identifier;
     GEOMiniCard *_infoCard;
@@ -21,6 +20,9 @@
     NSString *_speedLimitText;
     double _speedThreshold;
     GEOMiniCard *_speedingCard;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _cameraPriority;
     unsigned int _highlightDistance;
     int _type;
@@ -87,6 +89,8 @@
 @property(retain, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 - (void)_readIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

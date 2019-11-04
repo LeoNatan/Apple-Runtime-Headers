@@ -12,9 +12,7 @@
 {
 }
 
-- (_Bool)respondsToSelector:(SEL)arg1;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-- (_Bool)selectMultiple;
+@property(readonly, nonatomic) _Bool selectMultiple;
 - (void)outputContacts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *contactPropertyIDs;
 

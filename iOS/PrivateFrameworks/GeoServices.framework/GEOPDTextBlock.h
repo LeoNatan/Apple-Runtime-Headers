@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDTextBlock : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_text;
     NSString *_title;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     CDStruct_3e4cc335 _flags;
 }
 
@@ -42,6 +44,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *title;
 @property(readonly, nonatomic) _Bool hasTitle;
 - (void)_readTitle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_moveByLineGoingForward:(BOOL)arg1;
 - (BOOL)moveToPreviousVisualLine;
 - (BOOL)moveToNextVisualLine;
+@property(readonly, nonatomic) long long currentLineNumber;
 - (id)initWithTextProvider:(id)arg1;
 
 @end

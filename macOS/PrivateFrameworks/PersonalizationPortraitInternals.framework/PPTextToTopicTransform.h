@@ -18,9 +18,8 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)enumerateTopicsForText:(id)arg1 threshold:(double)arg2 block:(CDUnknownBlockType)arg3;
 - (id)_payloadForTopic:(unsigned int)arg1;
-- (id)_getTopicScoreArrayForText:(id)arg1;
+- (void)iterateTopicsForText:(id)arg1 threshold:(double)arg2 scoreAttenuationFactor:(double)arg3 block:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) unsigned long long outputTopicCount;
 - (void)dealloc;
 - (id)init;

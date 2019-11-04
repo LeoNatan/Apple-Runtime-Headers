@@ -7,6 +7,7 @@
 #import <TSReading/TSDCanvasView.h>
 
 @interface TSDCanvasView (STAccessibility)
+- (_Bool)_isInPreviewPlatter;
 - (id)_speakThisElements;
 - (id)_speakThisElementStrings;
 - (id)_accessibilityTextRectsForSpeakThisStringRange:(struct _NSRange)arg1;

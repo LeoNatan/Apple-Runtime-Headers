@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (id)convertToStoreItemMetadataDictionary:(id)arg1;
 - (id)storeItemMetadataWithMusicAPIMetadataDictionary:(id)arg1;
-- (id)modelObjectForRecommendationChildDictionary:(id)arg1 parentGroup:(id)arg2 subgroupsAccumulator:(id)arg3;
+- (id)modelObjectForRecommendationChildDictionary:(id)arg1 parentGroup:(id)arg2 subgroupsAccumulator:(id)arg3 userIdentity:(id)arg4;
 - (id)initWithRequestedPropertySet:(id)arg1 storeItemMetadataResults:(id)arg2 flatSectionedItems:(id)arg3 storeBagDictionary:(id)arg4;
 
 @end

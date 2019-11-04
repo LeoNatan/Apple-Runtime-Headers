@@ -16,6 +16,7 @@
     _Bool _onlyShowDeviceSwitches;
     NSSet *_itemProviders;
     id <HFMediaProfileContainer> _sourceMediaProfileContainer;
+    NSArray *_supportedMULanguageCodes;
     HMHome *_home;
     HFUserItem *_sourceItem;
     HFItemProvider *_personalRequestsDevicesProvider;
@@ -30,15 +31,19 @@
 @property(retain, nonatomic) HFItemProvider *personalRequestsDevicesProvider; // @synthesize personalRequestsDevicesProvider=_personalRequestsDevicesProvider;
 @property(readonly, nonatomic) HFUserItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
+@property(retain, nonatomic) NSArray *supportedMULanguageCodes; // @synthesize supportedMULanguageCodes=_supportedMULanguageCodes;
 @property(nonatomic) _Bool onlyShowDeviceSwitches; // @synthesize onlyShowDeviceSwitches=_onlyShowDeviceSwitches;
 @property(retain, nonatomic) id <HFMediaProfileContainer> sourceMediaProfileContainer; // @synthesize sourceMediaProfileContainer=_sourceMediaProfileContainer;
 @property(readonly, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (void).cxx_destruct;
 - (void)locationDeviceManager:(id)arg1 didUpdateActiveLocationDevice:(id)arg2;
 - (id)_commitUpdateToAccessControl:(id)arg1;
+- (_Bool)isCurrentIOSDeviceOnSameVoiceRecognitionLanguageAsPersonalRequestsDeviceForItem:(id)arg1;
 - (id)updateLocationDeviceToThisDevice;
 @property(readonly, nonatomic) NAFuture *activeLocationDeviceFuture;
 @property(copy, nonatomic) NSArray *personalRequestsDevices;
+- (void)turnOnPersonalRequestsForAllVoiceRecognitionCapablePersonalRequestsDevices;
+- (_Bool)_voiceRecognitionLanguage:(id)arg1 matchesMultiUserCapableHomePod:(id)arg2;
 - (void)turnOnAllPersonalRequestsDevices;
 - (void)toggleAllPersonalRequestsDevices;
 - (_Bool)isItemPersonalRequestsFooter:(id)arg1;

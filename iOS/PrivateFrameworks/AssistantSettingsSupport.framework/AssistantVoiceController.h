@@ -26,6 +26,7 @@
     AssistantVoiceViewModel *_currentViewModel;
 }
 
++ (_Bool)gryphonAssetsExistForLanguage:(id)arg1;
 + (_Bool)selectedLanguageHasGryphonAssets;
 + (id)bundle;
 @property(retain, nonatomic) AssistantVoiceViewModel *currentViewModel; // @synthesize currentViewModel=_currentViewModel;

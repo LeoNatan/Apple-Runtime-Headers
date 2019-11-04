@@ -11,6 +11,7 @@
 @protocol MKPlaceCardPhotosControllerDelegate <NSObject>
 
 @optional
+- (_Bool)shouldMoveMuninStorefrontViewForPlaceCardPhotosController:(MKPlacePhotosViewController *)arg1;
 - (void)cleanMuninContainerForPlaceCardPhotosController:(MKPlacePhotosViewController *)arg1;
 - (MKMuninContainerView *)muninContainerForPlaceCardPhotosController:(MKPlacePhotosViewController *)arg1;
 - (void)placeCardPhotosController:(MKPlacePhotosViewController *)arg1 enterMuninForMapItem:(MKMapItem *)arg2 muninView:(MKMuninView *)arg3;

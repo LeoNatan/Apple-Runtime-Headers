@@ -4,28 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <WorkflowUI/WFActionCustomView.h>
 
 #import <ActionKitUI/WFDictateTextActionRunningDelegate-Protocol.h>
 
-@class NSString, UIButton, UITextView, WFDictateTextAction, WFDictateTextActionStopButton;
-@protocol WFComponentNavigationContext;
+@class NSString, UIButton, UITextView, WFDictateTextActionStopButton;
 
 __attribute__((visibility("hidden")))
-@interface WFDictateTextActionView : UIView <WFDictateTextActionRunningDelegate>
+@interface WFDictateTextActionView : WFActionCustomView <WFDictateTextActionRunningDelegate>
 {
-    WFDictateTextAction *_action;
-    id <WFComponentNavigationContext> _navigationContext;
     UITextView *_textView;
     WFDictateTextActionStopButton *_stopButton;
     UIButton *_inputSourceButton;
 }
 
++ (double)preferredHeightForAction:(id)arg1;
 @property(nonatomic) __weak UIButton *inputSourceButton; // @synthesize inputSourceButton=_inputSourceButton;
 @property(nonatomic) __weak WFDictateTextActionStopButton *stopButton; // @synthesize stopButton=_stopButton;
 @property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
-@property(nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
-@property(nonatomic) __weak WFDictateTextAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (void)action:(id)arg1 didReceiveTranscription:(id)arg2;
 - (void)actionDidBeginListening:(id)arg1;
@@ -34,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)sourceButtonTapped;
 - (void)willLeaveReusePool;
 - (void)didEnterReusePool;
+- (void)setAction:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

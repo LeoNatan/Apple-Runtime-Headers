@@ -71,6 +71,7 @@
 - (id)_displayLabelForCandidate:(id)arg1;
 - (_Bool)_isSecureCandidate:(id)arg1;
 - (_Bool)_usesMorphingLabelForCandidate:(id)arg1;
+- (_Bool)_isPad;
 - (long long)_currentInterfaceOrientation;
 - (id)initWithFrame:(struct CGRect)arg1;
 

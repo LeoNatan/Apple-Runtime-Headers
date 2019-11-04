@@ -30,7 +30,6 @@
 - (void)_axRemoteElementRegistered:(id)arg1;
 - (id)accessibilityRemoteSubstituteChildren:(id)arg1;
 - (void)dealloc;
-- (_Bool)_accessibilityWindowVisible;
 - (int)_accessibilityRemotePid;
 - (id)accessibilityContainer;
 - (id)_accessibilityUserTestingParent;

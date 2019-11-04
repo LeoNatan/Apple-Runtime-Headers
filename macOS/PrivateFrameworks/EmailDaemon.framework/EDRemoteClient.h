@@ -56,6 +56,7 @@
 @property(readonly, nonatomic) EDMessageRepository *messageRepository; // @synthesize messageRepository=_messageRepository;
 @property(readonly, nonatomic) EDMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(readonly, nonatomic) EDAccountRepository *accountRepository; // @synthesize accountRepository=_accountRepository;
+- (void)tearDown;
 - (id)initWithConnection:(id)arg1 daemonInterfaceFactory:(id)arg2;
 
 // Remaining properties

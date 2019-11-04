@@ -382,6 +382,7 @@
 - (id)loadEntityByKey:(id)arg1;
 - (id)_loadMessageByKey:(id)arg1;
 - (id)loadOriginByRecordId:(id)arg1;
+- (id)allEntitiesOfType:(long long)arg1 limitedTo:(unsigned long long)arg2 onlyMLExtractions:(BOOL)arg3;
 - (id)allEntitiesOfType:(long long)arg1 limitedTo:(unsigned long long)arg2;
 - (id)loadEntityByRecordId:(id)arg1;
 - (void)refreshSuggestionsContact:(id)arg1;
@@ -413,6 +414,7 @@
 - (void)registerJournalUnlockHandler;
 - (void)tryExecuteSnippetsJournal;
 - (long long)migration_deleteSerializedContacts;
+- (long long)migration_deleteInternalExtractionsFromML;
 - (long long)migration_deleteEmergencyExtractions;
 - (long long)migration_reimport;
 - (long long)migration_deleteInteractions;

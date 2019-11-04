@@ -18,8 +18,9 @@
 + (id)sharedGenerator;
 @property(readonly, nonatomic) QLThumbnailGenerator *thumbnailGenerator; // @synthesize thumbnailGenerator=_thumbnailGenerator;
 - (void).cxx_destruct;
-- (void)endBatch;
-- (void)startBatch;
+- (void)endBatching:(id)arg1;
+- (id)startBatching;
+- (void)performInBatch:(CDUnknownBlockType)arg1;
 - (id)_endCurrentThumbnailsBatch;
 - (id)_currentItemThumbnailsBatch;
 - (void)markThumbnailAsRecentlyUsed:(id)arg1;

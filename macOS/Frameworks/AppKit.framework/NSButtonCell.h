@@ -243,11 +243,12 @@
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (struct NSEdgeInsets)_alignmentRectInsetsForRect:(struct CGRect)arg1 inView:(id)arg2;
+- (struct CGSize)cellSizeForBounds:(struct CGRect)arg1 compressionOptions:(id)arg2;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)_autolayout_cellSize;
 - (struct CGSize)_extraContentPaddingForAutolayout;
 - (struct CGSize)_minCellSizeIncrement;
-- (struct CGSize)_minCellSize;
+- (struct CGSize)_minCellSizeWithCompressionOptions:(id)arg1;
 - (struct CGRect)imageRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)_titleRectForProposedTitleRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;

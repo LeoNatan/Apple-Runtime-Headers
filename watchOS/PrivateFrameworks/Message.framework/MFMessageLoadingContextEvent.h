@@ -15,6 +15,7 @@
     MFMessageLoadingContext *_context;
     NSArray *_content;
     unsigned int _remainingBytes;
+    int _transportType;
     NSError *_error;
     MFMimePart *_loadedPart;
     MFMimeBody *_loadedBody;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) MFMimeBody *loadedBody; // @synthesize loadedBody=_loadedBody;
 @property(retain, nonatomic) MFMimePart *loadedPart; // @synthesize loadedPart=_loadedPart;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(nonatomic) unsigned int remainingBytes; // @synthesize remainingBytes=_remainingBytes;
 @property(nonatomic) _Bool hasLoadedBestAlternativePart; // @synthesize hasLoadedBestAlternativePart=_hasLoadedBestAlternativePart;
 @property(nonatomic) _Bool hasLoadedCompleteBody; // @synthesize hasLoadedCompleteBody=_hasLoadedCompleteBody;

@@ -18,11 +18,12 @@
 - (void)logUtteranceUnderDirectory:(id)arg1 withScores:(id)arg2 withWinner:(id)arg3;
 - (void)rejectUtterance;
 - (void)updateModelWithBestScoreUser:(id)arg1;
+- (void)setCVTTriggerPhraseDetected;
 - (void)endProcessing;
 - (void)processAudioData:(id)arg1;
 @property(readonly, nonatomic) float satScoreThreshold;
 @property(readonly, nonatomic) unsigned int spIdType;
-- (id)initWithCSSpIdType:(unsigned int)arg1 delegate:(id)arg2;
+- (id)initWithSpIdContext:(id)arg1 forSpIdType:(unsigned int)arg2 delegate:(id)arg3;
 
 @end
 

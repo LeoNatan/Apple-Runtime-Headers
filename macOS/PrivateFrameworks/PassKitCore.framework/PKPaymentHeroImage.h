@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) PKOSVersionRequirementRange *versionRequirement; // @synthesize versionRequirement=_versionRequirement;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (_Bool)isSupportedByDevice:(id)arg1 deviceVersion:(id)arg2 deviceClass:(id)arg3;
+- (_Bool)isSupportedByDevice:(id)arg1;
 - (id)imageFilePathForImageModel:(id)arg1;
 - (id)imageFilePathOnDiskForPreferredLanguages:(id)arg1 scale:(double)arg2;
 - (void)downloadImageForPreferredLanguages:(id)arg1 scale:(double)arg2 fileDownloader:(id)arg3 completion:(CDUnknownBlockType)arg4;

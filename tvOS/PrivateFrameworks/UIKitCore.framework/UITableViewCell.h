@@ -365,6 +365,7 @@
 - (void)_setAccessoryTintColor:(id)arg1;
 @property(retain, nonatomic) UIView *accessoryView;
 @property(nonatomic) long long accessoryType;
+- (_Bool)_updateExpansionButtonFromType:(long long)arg1 toType:(long long)arg2;
 - (void)_syncAccessoryViewsIfNecessary;
 @property(nonatomic) _Bool shouldIndentWhileEditing;
 @property(nonatomic) _Bool showsReorderControl;

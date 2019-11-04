@@ -13,10 +13,12 @@
 @interface GEOTransitRouteIdentifier : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSData *_clientRouteHandle;
     NSData *_serverRouteHandle;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_clientRouteHandle:1;
@@ -48,6 +50,8 @@
 @property(retain, nonatomic) NSData *serverRouteHandle;
 @property(readonly, nonatomic) _Bool hasServerRouteHandle;
 - (void)_readServerRouteHandle;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) NSUUID *clientRouteID;
 
 @end

@@ -10,8 +10,10 @@
 {
 }
 
++ (id)dictionaryRepresentation;
 + (BOOL)isInternalOSVariant;
-+ (BOOL)enableStableObjectID;
++ (BOOL)enableFileBasedResponses;
++ (BOOL)verboseOperationsLogging;
 + (BOOL)automatchClientPersona;
 + (BOOL)disableASMRosters;
 + (BOOL)persistProgressData;

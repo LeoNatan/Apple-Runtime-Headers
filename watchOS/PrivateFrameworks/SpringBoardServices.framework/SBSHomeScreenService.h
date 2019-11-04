@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, getter=isLowDensityIconLayoutEnabled) _Bool lowDensityIconLayoutEnabled;
 - (void)addWidgetToTodayViewWithBundleIdentifier:(id)arg1;
 - (id)folderPathToIconWithBundleIdentifier:(id)arg1;
 - (void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

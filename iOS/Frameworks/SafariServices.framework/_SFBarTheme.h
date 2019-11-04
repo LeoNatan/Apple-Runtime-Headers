@@ -12,9 +12,9 @@
 {
     UIColor *_preferredControlsTintColor;
     _Bool _backdropIsDark;
+    _Bool _backdropIsTinted;
     unsigned long long _tintStyle;
     UIColor *_controlsTintColor;
-    UIColor *_preferredProgressBarTintColor;
     UIColor *_preferredBarTintColor;
     long long _overrideUserInterfaceStyle;
     UIBlurEffect *_backdropEffect;
@@ -28,11 +28,12 @@
 @property(readonly, nonatomic) UIBlurEffect *backdropEffect; // @synthesize backdropEffect=_backdropEffect;
 @property(readonly, nonatomic) long long overrideUserInterfaceStyle; // @synthesize overrideUserInterfaceStyle=_overrideUserInterfaceStyle;
 @property(readonly, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
-@property(readonly, nonatomic) UIColor *preferredProgressBarTintColor; // @synthesize preferredProgressBarTintColor=_preferredProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *controlsTintColor; // @synthesize controlsTintColor=_controlsTintColor;
 @property(readonly, nonatomic) unsigned long long tintStyle; // @synthesize tintStyle=_tintStyle;
+@property(readonly, nonatomic) _Bool backdropIsTinted; // @synthesize backdropIsTinted=_backdropIsTinted;
 @property(readonly, nonatomic) _Bool backdropIsDark; // @synthesize backdropIsDark=_backdropIsDark;
 - (void).cxx_destruct;
+- (void)applyBackdropEffectsToView:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) _SFBarTheme *fallbackTheme;
 - (id)initWithBarTintStyle:(unsigned long long)arg1 preferredBarTintColor:(id)arg2 controlsTintColor:(id)arg3;

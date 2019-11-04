@@ -13,7 +13,6 @@
 @interface GEOABAssignmentResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_assignments;
     unsigned long long _branchExpirationTtlHours;
@@ -26,6 +25,9 @@
     GEOABSecondPartyPlaceRequestClientMetaData *_siriClientMetadata;
     NSString *_sourceURL;
     double _timestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _invalidatePoiCache;
     _Bool _invalidateTileCache;
     struct {
@@ -113,6 +115,8 @@
 @property(retain, nonatomic) NSString *requestGuid;
 @property(readonly, nonatomic) _Bool hasRequestGuid;
 - (void)_readRequestGuid;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)_clientConfigValueForKey:(id)arg1;
 
 @end

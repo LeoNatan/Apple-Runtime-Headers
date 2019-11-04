@@ -17,10 +17,10 @@
 @interface HMDDatabase : HMFObject <HMBLocalDatabaseDelegate, HMBCloudDatabaseDelegate, HMDDatabaseZoneDelegate, HMFLogging, HMDDatabase>
 {
     BOOL _hasStarted;
+    HMBLocalDatabase *_localDatabase;
+    HMBCloudDatabase *_cloudDatabase;
     NSHashTable *_delegates;
     NSMapTable *_zoneDelegatesByLocalZone;
-    HMBCloudDatabase *_cloudDatabase;
-    HMBLocalDatabase *_localDatabase;
     HMFUnfairLock *_lock;
     HMDLogEventDispatcher *_logEventDispatcher;
 }
@@ -31,13 +31,14 @@
 @property BOOL hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(readonly) HMDLogEventDispatcher *logEventDispatcher; // @synthesize logEventDispatcher=_logEventDispatcher;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
-@property(readonly) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
 @property(readonly) HMBCloudDatabase *cloudDatabase; // @synthesize cloudDatabase=_cloudDatabase;
+@property(readonly) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)localZone:(id)arg1 didCompleteProcessingWithResult:(id)arg2;
 - (void)cloudDatabase:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;
 - (void)cloudDatabase:(id)arg1 didRemoveZoneWithID:(id)arg2;
+- (id)cloudDatabase:(id)arg1 willRemoveZoneWithID:(id)arg2;
 - (void)cloudDatabase:(id)arg1 didCreateZoneWithID:(id)arg2;
 - (void)localDatabase:(id)arg1 willRemoveZoneWithID:(id)arg2;
 - (void)localDatabase:(id)arg1 detectedLocalCorruptionWithInfo:(id)arg2;
@@ -50,21 +51,20 @@
 - (void)performDelegateCallback:(CDUnknownBlockType)arg1;
 @property(readonly) NSHashTable *delegates; // @synthesize delegates=_delegates;
 - (id)removeZonesWithID:(id)arg1 isOwned:(BOOL)arg2;
-- (id)zonesWithID:(id)arg1 isOwned:(BOOL)arg2 shouldRebuildOnManateeKeyLoss:(BOOL)arg3 delegate:(id)arg4 error:(id *)arg5;
+- (id)zonesWithID:(id)arg1 isOwned:(BOOL)arg2 configuration:(id)arg3 delegate:(id)arg4 error:(id *)arg5;
 - (id)declineInvitation:(id)arg1;
 - (id)acceptInvitation:(id)arg1;
 - (id)removeLocalAndCloudDataForLocalZone:(id)arg1;
 - (id)removeSharedZonesWithName:(id)arg1;
 - (id)removeOwnedZonesWithName:(id)arg1;
-- (id)sharedZonesWithID:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
+- (id)sharedZonesWithID:(id)arg1 configuration:(id)arg2 delegate:(id)arg3 error:(id *)arg4;
 - (id)existingSharedZoneIDWithName:(id)arg1;
-- (id)ownedZonesWithName:(id)arg1 shouldRebuildOnManateeKeyLoss:(BOOL)arg2 delegate:(id)arg3 error:(id *)arg4;
+- (id)ownedZonesWithName:(id)arg1 configuration:(id)arg2 delegate:(id)arg3 error:(id *)arg4;
 - (id)unregisterSharedSubscriptionForExternalRecordType:(id)arg1;
 - (id)registerSharedSubscriptionForExternalRecordType:(id)arg1;
 - (void)start;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
-@property(readonly, copy) NSString *cloudContainerIdentifier;
 - (id)initWithLocalDatabase:(id)arg1 cloudDatabase:(id)arg2 logEventDispatcher:(id)arg3;
 - (id)initWithCloudContainerIdentifier:(id)arg1 cloudContainerSourceApplicationBundleIdentifier:(id)arg2;
 

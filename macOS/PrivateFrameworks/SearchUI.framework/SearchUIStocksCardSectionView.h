@@ -9,7 +9,7 @@
 #import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 #import <SearchUI/SearchUIChartUpdaterDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NSView, NUIContainerBoxView, NUIContainerStackView, SearchUIChartUpdater, SearchUIDashedLineView, SearchUIStockChartData, SearchUIStockChartDisplayMode, SearchUIStockGraphView, TLKLabel;
+@class NSMutableArray, NSString, NSView, NUIContainerBoxView, NUIContainerStackView, SearchUIChartUpdater, SearchUIDashedLineView, SearchUIStockChartData, SearchUIStockChartDisplayMode, SearchUIStockGraphSectionRowModel, SearchUIStockGraphView, TLKLabel;
 
 @interface SearchUIStocksCardSectionView : SearchUICardSectionView <SearchUIChartUpdaterDelegate, NUIContainerViewDelegate>
 {
@@ -27,6 +27,7 @@
     NSMutableArray *_xLabelViews;
 }
 
+@property(nonatomic) int graphColor; // @synthesize graphColor=_graphColor;
 @property(retain) NSMutableArray *xLabelViews; // @synthesize xLabelViews=_xLabelViews;
 @property(retain) NSView *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
 @property(retain) NSMutableArray *axisViews; // @synthesize axisViews=_axisViews;
@@ -38,7 +39,6 @@
 @property(retain) SearchUIStockChartDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
 @property(retain) SearchUIStockGraphView *stockGraphView; // @synthesize stockGraphView=_stockGraphView;
 @property(retain) SearchUIChartUpdater *chartUpdater; // @synthesize chartUpdater=_chartUpdater;
-@property(nonatomic) int graphColor; // @synthesize graphColor=_graphColor;
 - (void).cxx_destruct;
 - (void)layoutAxesAndXLabels;
 - (void)layoutPriceLabels;
@@ -60,6 +60,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain) SearchUIStockGraphSectionRowModel *rowModel; // @dynamic rowModel;
 @property(readonly) Class superclass;
 
 @end

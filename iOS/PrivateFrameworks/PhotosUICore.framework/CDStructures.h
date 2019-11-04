@@ -51,6 +51,15 @@ struct NSString {
     Class _field1;
 };
 
+struct PHAssetResourceTableDataSpecification {
+    int width;
+    int height;
+    int bytesPerRow;
+    int dataWidth;
+    int dataHeight;
+    int imageDataOffset;
+};
+
 struct PXAlphaLayer {
     long long columnIndex;
     long long columns;
@@ -98,6 +107,12 @@ struct PXFaceTileImageParams {
 struct PXGDecorationSpriteInfo {
     long long _field1;
     double _field2;
+};
+
+struct PXGImageRequest {
+    unsigned int _field1;
+    int _field2;
+    void *_field3;
 };
 
 struct PXGItemsLayout {
@@ -289,6 +304,7 @@ struct _PXGEngineScrollState {
     struct CGSize referenceSize;
     struct UIEdgeInsets contentInsets;
     struct CGRect visibleRect;
+    struct CGRect targetRect;
     struct CGRect constrainedVisibleRect;
     struct CGPoint lastScrollDirection;
 };
@@ -445,6 +461,12 @@ typedef struct {
 } CDStruct_e4f06a70;
 
 typedef struct {
+    unsigned long long photosCount;
+    unsigned long long videosCount;
+    unsigned long long othersCount;
+} CDStruct_aa0b146f;
+
+typedef struct {
     unsigned long long pixelFormat;
     unsigned short width;
     unsigned short height;
@@ -456,6 +478,11 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned long long count;
+    long long type;
+} CDStruct_15189878;
 
 typedef struct {
     double _field1[6];
@@ -526,9 +553,10 @@ typedef struct {
 
 typedef struct {
     int _field1;
-    id _field2;
+    unsigned long long _field2;
     id _field3;
-} CDStruct_acc9a335;
+    id _field4;
+} CDStruct_39b4dbd3;
 
 typedef struct {
     int _field1;
@@ -556,15 +584,6 @@ typedef struct {
 } CDStruct_fcaf9308;
 
 typedef struct {
-    long long scrollRegime;
-    _Bool isAnimatingScroll;
-    _Bool isAnimatingContent;
-    unsigned long long zoomBehavior;
-    _Bool isViewBoundsChanging;
-    _Bool isInitialLoad;
-} CDStruct_04522d6a;
-
-typedef struct {
     long long _field1;
     float _field2;
 } CDStruct_fd7332cd;
@@ -588,12 +607,6 @@ typedef struct {
     long long _field3;
     double _field4;
 } CDStruct_68723fc0;
-
-typedef struct {
-    long long photosCount;
-    long long videosCount;
-    long long othersCount;
-} CDStruct_9bad6f47;
 
 typedef struct CDStruct_183601bc;
 
@@ -713,6 +726,17 @@ typedef struct {
     double _field3;
     CDStruct_ac168a83 _field4;
 } CDStruct_b159a3fc;
+
+typedef struct {
+    long long scrollRegime;
+    _Bool isAnimatingScroll;
+    _Bool isScrubbing;
+    _Bool isAnimatingContent;
+    unsigned long long zoomBehavior;
+    _Bool isViewBoundsChanging;
+    _Bool isInitialLoad;
+    struct CGRect targetRect;
+} CDStruct_93894d6c;
 
 typedef struct {
     struct CGRect layoutRect;

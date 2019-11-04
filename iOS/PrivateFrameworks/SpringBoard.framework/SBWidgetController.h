@@ -38,6 +38,7 @@
 - (void)widgetDiscoveryControllerDidDismissWidgetsPinningTeachingView:(id)arg1;
 - (_Bool)shouldShowWidgetsPinningTeachingViewForWidgetDiscoveryController:(id)arg1;
 - (_Bool)areWidgetsPinnedForWidgetDiscoveryController:(id)arg1;
+- (_Bool)_shouldUsePinnedWidgets;
 - (_Bool)shouldShowWidgetsPinButtonForWidgetDiscoveryController:(id)arg1;
 - (_Bool)widgetDiscoveryControllerShouldRespectFavorites:(id)arg1;
 - (_Bool)widgetDiscoveryControllerShouldIncludeInternalWidgets:(id)arg1;

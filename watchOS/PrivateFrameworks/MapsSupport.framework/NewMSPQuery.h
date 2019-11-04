@@ -39,8 +39,13 @@
 - (void).cxx_destruct;
 - (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
+- (void)containerDidEraseContents:(id)arg1 fromStorageTypes:(unsigned int)arg2;
 - (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(int)arg4 context:(id)arg5;
 - (void)moveObject:(id)arg1 toIndex:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)moveObjectToBack:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)moveObjectToFront:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)moveObject:(id)arg1 afterObject:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)moveObject:(id)arg1 beforeObject:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeObject:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addOrUpdateObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;

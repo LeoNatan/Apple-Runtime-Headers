@@ -6,10 +6,12 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class GEOUserSessionEntity, NSData, NSObject, NSString;
+@class GEOAnalyticsPipelineEvalStatus, GEOUserSessionEntity, NSData, NSObject, NSPredicate, NSString;
 @protocol OS_dispatch_queue;
 
 @protocol GEOAnalyticsPipelineProxy <NSObject>
+- (GEOAnalyticsPipelineEvalStatus *)getEvalStatus;
+- (void)showEvalDataWithPredicate:(NSPredicate *)arg1 visitorBlock:(_Bool (^)(GEOLogMessage *))arg2 summaryBlock:(void (^)(unsigned long long, unsigned long long))arg3;
 - (void)initiateUploadOfType:(int)arg1;
 - (void)flushEvalData;
 - (void)setEvalMode:(_Bool)arg1;

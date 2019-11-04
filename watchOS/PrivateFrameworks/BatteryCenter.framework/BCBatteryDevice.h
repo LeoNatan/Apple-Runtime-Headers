@@ -31,6 +31,7 @@
     int _productIdentifier;
     NSString *_accessoryIdentifier;
     NSString *_name;
+    NSString *_modelNumber;
     unsigned int _parts;
     unsigned int _accessoryCategory;
     NSString *_groupName;
@@ -54,6 +55,7 @@
 @property(nonatomic, getter=isCharging) _Bool charging; // @synthesize charging=_charging;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
 @property(nonatomic) int percentCharge; // @synthesize percentCharge=_percentCharge;
+@property(copy, nonatomic) NSString *modelNumber; // @synthesize modelNumber=_modelNumber;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 @property(readonly, nonatomic) int productIdentifier; // @synthesize productIdentifier=_productIdentifier;

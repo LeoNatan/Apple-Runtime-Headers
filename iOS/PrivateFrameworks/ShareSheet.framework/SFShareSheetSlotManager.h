@@ -30,15 +30,16 @@
 - (id)machServiceName;
 - (void)setProgress:(id)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(id)arg5 animated:(_Bool)arg6;
 - (void)willPerformInServiceActivityWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performAirDropActivityInHostWithNoContentView:(_Bool)arg1;
 - (void)performActivityInHostWithUUID:(id)arg1;
 - (void)performShortcutActivityInHostWithBundleID:(id)arg1 singleUseToken:(id)arg2;
-- (void)performExtensionActivityInHostWithBundleID:(id)arg1;
+- (void)performExtensionActivityInHostWithBundleID:(id)arg1 request:(id)arg2;
 - (void)performUserDefaultsWithFavoritesProxies:(id)arg1 suggestionProxies:(id)arg2 orderedUUIDs:(id)arg3 activityCategory:(long long)arg4;
 - (void)dataSourceUpdatedWithSessionConfiguration:(id)arg1;
 - (void)activityViewControllerPerformEditActionsWithSessionID:(id)arg1;
 - (void)activityViewControllerWillEnterForegroundWithSessionID:(id)arg1;
 - (void)activityViewControllerDidEnterBackgroundWithSessionID:(id)arg1;
-- (void)activityViewControllerWithSessionID:(id)arg1 performedActivityWithSuccess:(_Bool)arg2;
+- (void)activityViewControllerPerformedActivityWithInfoDictionary:(id)arg1;
 - (void)activityViewControllerWithSessionID:(id)arg1 updatedFavoritesProxies:(id)arg2 activityCategory:(long long)arg3;
 - (void)activityViewControllerWithSessionID:(id)arg1 selectedDefaultActivityWithIdentifier:(id)arg2 activityCategory:(long long)arg3;
 - (void)activityViewControllerWithSessionID:(id)arg1 favoritedActivity:(_Bool)arg2 withIdentifier:(id)arg3 activityCategory:(long long)arg4;

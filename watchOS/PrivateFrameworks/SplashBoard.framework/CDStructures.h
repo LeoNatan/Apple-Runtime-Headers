@@ -34,6 +34,13 @@ struct CGSize {
     float height;
 };
 
+struct UIEdgeInsets {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+};
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };

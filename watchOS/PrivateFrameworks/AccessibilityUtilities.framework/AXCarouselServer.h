@@ -8,18 +8,21 @@
 
 #import <AccessibilityUtilities/AXCarouselAppServer-Protocol.h>
 
-@class NSString;
-@protocol AXCarouselAppServer;
+@class NSObject, NSString;
+@protocol AXCarouselAppServer, OS_dispatch_queue;
 
 @interface AXCarouselServer : AXServer <AXCarouselAppServer>
 {
     id <AXCarouselAppServer> _localServiceProvider;
+    NSObject<OS_dispatch_queue> *_serverConnectionQueue;
 }
 
 + (id)carouselServer;
 + (id)server;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serverConnectionQueue; // @synthesize serverConnectionQueue=_serverConnectionQueue;
 @property(nonatomic) __weak id <AXCarouselAppServer> localServiceProvider; // @synthesize localServiceProvider=_localServiceProvider;
 - (void).cxx_destruct;
+- (id)currentFaceClass;
 - (_Bool)showHearingDevicesControl:(_Bool)arg1;
 - (_Bool)showControlCenter:(_Bool)arg1;
 - (_Bool)canShowControlCenter;
@@ -49,6 +52,7 @@
 - (_Bool)isSiriVisible;
 - (_Bool)dismissSiri;
 - (void)_wasDisconnectedFromClient;
+- (_Bool)_connectIfNecessary;
 - (id)_serviceName;
 - (id)init;
 

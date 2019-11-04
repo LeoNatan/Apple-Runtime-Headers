@@ -79,6 +79,7 @@
 - (id)_performSetAppAttributes:(id)arg1 outAdditionalResponseKeys:(id *)arg2;
 - (id)_performSetAppConfig:(id)arg1 outAdditionalResponseKeys:(id *)arg2;
 - (id)_handleSetAppManagementInfoRequest:(id)arg1 outAdditionalResponseKeys:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (_Bool)_isManagedAppFromManagementInformation:(id)arg1;
 - (_Bool)_isManagedApp:(id)arg1;
 - (id)_malformedRequestError;
 - (id)_performSetPersonalHotspot:(id)arg1;
@@ -94,6 +95,7 @@
 - (id)_removeProfile:(id)arg1;
 - (id)_installProfile:(id)arg1 accessRights:(int)arg2 installationType:(long long)arg3;
 - (id)_installProfile:(id)arg1 accessRights:(int)arg2;
+- (unsigned long long)_profileInstallationStyleForRequest:(id)arg1;
 - (id)_restrictions:(id)arg1 withProfileFilterFlags:(int)arg2;
 - (id)_restrictions:(id)arg1;
 - (id)_installedApplicationList:(id)arg1;

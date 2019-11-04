@@ -15,7 +15,6 @@
 {
     _Bool _isAudioOnly;
     _Bool _disableResumeMenu;
-    _Bool _isForDownload;
     _Bool _disableScrubbing;
     _Bool _sharedPurchase;
     _Bool _isHLS;
@@ -44,7 +43,6 @@
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) _Bool sharedPurchase; // @synthesize sharedPurchase=_sharedPurchase;
 @property(nonatomic) _Bool disableScrubbing; // @synthesize disableScrubbing=_disableScrubbing;
-@property(nonatomic) _Bool isForDownload; // @synthesize isForDownload=_isForDownload;
 @property(nonatomic) _Bool disableResumeMenu; // @synthesize disableResumeMenu=_disableResumeMenu;
 @property(copy, nonatomic) NSNumber *bookmarkOverrideTime; // @synthesize bookmarkOverrideTime=_bookmarkOverrideTime;
 @property(copy, nonatomic) NSString *bookmarkID; // @synthesize bookmarkID=_bookmarkID;

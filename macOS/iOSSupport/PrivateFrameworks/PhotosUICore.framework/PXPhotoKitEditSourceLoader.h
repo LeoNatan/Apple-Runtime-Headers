@@ -18,7 +18,9 @@
     NSDate *_loadingStartDate;
     NSProgress *_editSourceCreationProgress;
     NSObject<OS_dispatch_queue> *_loadingQueue;
+    BOOL _overcaptureSourceIsActive;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     PICompositionController *_compositionController;
     PICompositionController *_originalCompositionController;
     NSProgress *_progress;
@@ -37,6 +39,7 @@
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, copy, nonatomic) PICompositionController *originalCompositionController; // @synthesize originalCompositionController=_originalCompositionController;
 @property(readonly, copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
+@property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PLEditSource *activeEditSource;

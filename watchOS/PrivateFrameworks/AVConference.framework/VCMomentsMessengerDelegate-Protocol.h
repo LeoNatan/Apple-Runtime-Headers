@@ -11,7 +11,7 @@
 @protocol VCMomentsMessengerDelegate <NSObject>
 - (void)streamTokenDidCleanupAllRequests:(int)arg1;
 - (void)streamToken:(int)arg1 didFinishRequest:(NSDictionary *)arg2 didSucceed:(_Bool)arg3;
-- (void)streamToken:(int)arg1 didEndProcessingRequest:(NSDictionary *)arg2 URL:(NSURL *)arg3 error:(NSError *)arg4;
+- (void)streamToken:(int)arg1 didEndProcessingRequest:(NSDictionary *)arg2 stillImageURL:(NSURL *)arg3 movieURL:(NSURL *)arg4 error:(NSError *)arg5;
 - (void)streamToken:(int)arg1 didStartProcessingRequest:(NSDictionary *)arg2 error:(NSError *)arg3;
 @end
 

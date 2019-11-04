@@ -50,6 +50,7 @@
 
 + (id)ASCIICapableInputModeIdentifierForPreferredLanguages;
 + (id)inputModeIdentifierForPreferredLanguages:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
++ (id)disallowedDictationLanguagesForDeviceLanguage;
 + (id)hardwareInputModeAutomaticHardwareLayout;
 + (id)sharedInputModeController;
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
@@ -137,6 +138,8 @@
 - (void)updateCurrentInputMode:(id)arg1;
 - (void)_setCurrentInputMode:(id)arg1 force:(_Bool)arg2;
 @property(retain) UIKeyboardInputMode *currentInputMode;
+- (id)getDictationSLSLanguagesEnabled;
+- (void)setDictationSLSLanguagesEnabled:(id)arg1;
 @property(readonly, nonatomic) _Bool containsDictationSupportedInputMode;
 - (void)updateEnabledDictationAndSLSLanguagesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)updateEnabledDictationLanguages:(_Bool)arg1;

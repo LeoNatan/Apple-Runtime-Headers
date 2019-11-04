@@ -27,6 +27,7 @@
     HMFNetMonitor *_networkMonitor;
     HMDCameraResidentMessageHandler *_residentMessageHandler;
     HMDCameraProfileSettingsManager *_cameraSettingsManager;
+    CDUnknownBlockType _recordingManagerFactory;
     HMDCameraClipUserNotificationCenter *_clipUserNotificationCenter;
     HMDPredicateUtilities *_predicateUtilities;
 }
@@ -36,6 +37,7 @@
 + (id)logCategory;
 @property(retain) HMDPredicateUtilities *predicateUtilities; // @synthesize predicateUtilities=_predicateUtilities;
 @property(retain) HMDCameraClipUserNotificationCenter *clipUserNotificationCenter; // @synthesize clipUserNotificationCenter=_clipUserNotificationCenter;
+@property(readonly) CDUnknownBlockType recordingManagerFactory; // @synthesize recordingManagerFactory=_recordingManagerFactory;
 @property(readonly) HMDCameraProfileSettingsManager *cameraSettingsManager; // @synthesize cameraSettingsManager=_cameraSettingsManager;
 @property(readonly) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
 @property(readonly) HMFNetMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
@@ -57,9 +59,11 @@
 - (void)clipManagerDidBecomeAvailable:(id)arg1;
 - (void)clipManager:(id)arg1 didDeleteClip:(id)arg2;
 - (void)clipManager:(id)arg1 didAddSignificantEventNotification:(id)arg2;
-- (BOOL)canPostSignificantEventNotification:(id)arg1;
+- (BOOL)clipManager:(id)arg1 shouldAddNotificationForSignificantEvent:(id)arg2 withHomePresence:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
+- (void)handleResidentsChanged:(id)arg1;
+- (void)handleCameraProfileSettingsDidChangeNotification:(id)arg1;
 @property(readonly) HMDCameraProfileSettingsModel *currentSettingsModel;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
@@ -71,12 +75,14 @@
 - (id)_createCameraManagers:(id)arg1;
 - (id)dumpState;
 - (void)dealloc;
-- (void)unconfigure;
+- (void)removeCloudData;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
+- (void)_configureForRecording;
 - (void)createCameraClipUserNotificationCenter;
 - (void)setUp;
 @property(readonly, nonatomic, getter=isCameraRecordingFeatureSupported) BOOL supportsCameraRecordingFeature;
+- (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3 settingsManager:(id)arg4 workQueue:(id)arg5 recordingManagerFactory:(CDUnknownBlockType)arg6;
 - (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3 settingsManager:(id)arg4 workQueue:(id)arg5;
 - (id)assistantObject;
 - (id)url;

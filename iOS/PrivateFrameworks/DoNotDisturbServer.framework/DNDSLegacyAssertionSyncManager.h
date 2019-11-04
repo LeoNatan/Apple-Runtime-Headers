@@ -38,7 +38,7 @@
 - (void)updateForStateUpdate:(id)arg1;
 - (void)resume;
 - (void)dealloc;
-- (id)initWithClientDetailsProvider:(id)arg1;
+- (id)initWithClientDetailsProvider:(id)arg1 pairedDevice:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

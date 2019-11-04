@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOETARequest : PBRequest <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTimepoint _timepoint;
     struct GEOSessionID _sessionID;
@@ -41,6 +40,9 @@ __attribute__((visibility("hidden")))
     GEOTFTrafficSnapshot *_trafficSnapshot;
     GEOTransitOptions *_transitOptions;
     GEOWalkingOptions *_walkingOptions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _transportType;
     unsigned int _walkingLimitMeters;
     _Bool _allowPartialResults;
@@ -263,6 +265,8 @@ __attribute__((visibility("hidden")))
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransportType;
 @property(nonatomic) int transportType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithQuickETARequest:(id)arg1;
 
 @end

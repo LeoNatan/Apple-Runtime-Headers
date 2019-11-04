@@ -17,7 +17,6 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
 - (void).cxx_destruct;
-- (id)valuesForProperties:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

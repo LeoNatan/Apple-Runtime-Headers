@@ -18,19 +18,33 @@
     id <SBFluidSwitcherModifierProviding> _modifierProvider;
     SBSwitcherModifier *_outgoingTransitionModifier;
     _Bool _isFloating;
+    _Bool _isShowingReopenClosedWindowsButton;
+    long long _numberOfHiddenAppLayouts;
 }
 
 - (void).cxx_destruct;
+- (_Bool)_canShowReopenClosedWindowsButton;
+- (id)_updateReopenClosedWindowsButtonPresence;
 - (_Bool)_shouldFilteringIncludeAppLayout:(id)arg1;
+- (id)appLayoutToScrollToBeforeReopeningClosedWindows;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
+- (long long)plusButtonStyle;
+- (long long)appExposeAccessoryButtonsOverrideUserInterfaceStyle;
+- (double)reopenClosedWindowsButtonScale;
 - (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
 - (id)appExposeAccessoryButtonsBundleIdentifier;
 - (_Bool)isTetheredScrollingEnabled;
+- (id)handleTimerEvent:(id)arg1;
+- (id)handleTetheredInsertionEvent:(id)arg1;
+- (id)handleTetheredRemovalEvent:(id)arg1;
+- (id)handleInsertionEvent:(id)arg1;
+- (id)handleRemovalEvent:(id)arg1;
 - (id)handleAppExposeEvent:(id)arg1;
 - (id)handleMainTransitionEvent:(id)arg1;
 - (id)handleEvent:(id)arg1;
+- (long long)liveContentRasterizationStyle;
 - (id)appLayoutsForInsertionOrRemoval;
 - (id)initWithBundleIdentifier:(id)arg1 modifierProvider:(id)arg2 floating:(_Bool)arg3;
 

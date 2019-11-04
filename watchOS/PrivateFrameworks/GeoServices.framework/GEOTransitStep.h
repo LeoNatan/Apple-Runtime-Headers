@@ -15,7 +15,6 @@
 @interface GEOTransitStep : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _routeDetailsPrimaryArtworkIndexs;
     CDStruct_084d6ede _steppingArtworkIndexs;
@@ -30,6 +29,9 @@
     NSData *_updateIdentifier;
     NSMutableArray *_vehicleInfos;
     GEOTransitVehiclePositionInfo *_vehiclePositionInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _accessPointZilchIndex;
     unsigned int _defaultVehicleInfoIndex;
     unsigned int _departureFrequency;
@@ -220,6 +222,8 @@
 @property(nonatomic) _Bool hasManeuverType;
 @property(nonatomic) int maneuverType;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)instanceCompatibleWithProtocolVersion:(unsigned int)arg1;
 @property(readonly, nonatomic) id <GEOTransitVehicleEntries> vehicleEntries;
 - (int)legTypeForManeuver;

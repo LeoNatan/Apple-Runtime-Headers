@@ -9,7 +9,7 @@
 @class NSArray, TLAlert, TLAlertStoppingOptions;
 
 @protocol TLAlertPlaybackBackEndController <NSObject>
-- (void)stopPlayingAlerts:(NSArray *)arg1 withOptions:(TLAlertStoppingOptions *)arg2 playbackCompletionType:(int)arg3 completionHandler:(void (^)(_Bool))arg4;
+- (void)stopPlayingAlerts:(NSArray *)arg1 withOptions:(TLAlertStoppingOptions *)arg2 playbackCompletionType:(int)arg3 willStopAlertsHandler:(void (^)(_Bool))arg4 completionHandler:(void (^)(_Bool))arg5;
 - (void)playAlert:(TLAlert *)arg1 withCompletionHandler:(void (^)(int, NSError *))arg2;
 
 @optional

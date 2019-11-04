@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <ContentKit/NSSecureCoding-Protocol.h>
-#import <ContentKit/UIActivityItemSource-Protocol.h>
 #import <ContentKit/WFContentItemClass-Protocol.h>
 #import <ContentKit/WFCopying-Protocol.h>
 
-@class NSExtensionItem, NSItemProvider, NSMutableDictionary, NSString, UIImage, WFRepresentation, WFType;
+@class NSExtensionItem, NSItemProvider, NSMutableDictionary, NSString, WFImage, WFRepresentation, WFType;
 
-@interface WFContentItem : NSObject <UIActivityItemSource, WFContentItemClass, WFCopying, NSSecureCoding>
+@interface WFContentItem : NSObject <WFContentItemClass, WFCopying, NSSecureCoding>
 {
     NSMutableDictionary *_representationsByType;
     NSMutableDictionary *_subItemsByClass;
@@ -76,7 +75,6 @@
 + (id)badCoercionErrorWithReasonString:(id)arg1;
 + (_Bool)errorIsBadCoercionError:(id)arg1;
 + (id)pasteboardValueClasses;
-+ (id)activityItemClasses;
 @property(readonly, nonatomic) WFType *internalRepresentationType; // @synthesize internalRepresentationType=_internalRepresentationType;
 @property(retain, nonatomic) NSMutableDictionary *subItemsByClass; // @synthesize subItemsByClass=_subItemsByClass;
 @property(retain, nonatomic) NSMutableDictionary *representationsByType; // @synthesize representationsByType=_representationsByType;
@@ -96,7 +94,7 @@
 - (id)representationForType:(id)arg1;
 - (id)representationsForType:(id)arg1;
 - (id)initWithRepresentation:(id)arg1 forType:(id)arg2;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)allSupportedItemClasses;
 - (id)supportedItemClasses;
 - (id)allSupportedTypes;
@@ -108,7 +106,7 @@
 - (id)ownedTypes;
 - (void)getPreferredFileSize:(CDUnknownBlockType)arg1;
 - (void)getPreferredFileExtension:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) UIImage *icon;
+@property(readonly, nonatomic) WFImage *icon;
 - (id)preferredFileType;
 - (id)preferredObjectType;
 - (id)preferredTypeOfClass:(Class)arg1;
@@ -176,17 +174,6 @@
 - (void)getFileRepresentations:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)getFileRepresentation:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)getObjectRepresentation:(CDUnknownBlockType)arg1 forClass:(Class)arg2;
-- (void)prepareForActivityItemPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (_Bool)shouldUseObjectRepresentation;
-- (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
-- (id)activityViewControllerPlaceholderItem:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

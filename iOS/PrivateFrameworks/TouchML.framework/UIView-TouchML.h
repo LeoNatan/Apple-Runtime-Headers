@@ -11,6 +11,8 @@
 @interface UIView (TouchML)
 + (id)tmlLoadViewFromPath:(id)arg1;
 + (void)tmlLoadCategory;
+- (void)tmlAccessibilityDecrement;
+- (void)tmlAccessibilityIncrement;
 - (_Bool)tmlAccessibilityActivate;
 - (void)tmlLoadReusableView:(id)arg1;
 - (void)tmlLoadViewFromPath:(id)arg1;

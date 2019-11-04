@@ -7,16 +7,19 @@
 #import <PhotosUICore/PXGadgetDataSourceManager.h>
 
 #import <PhotosUICore/PXCMMCloudGadgetViewControllerDelegate-Protocol.h>
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSArray, NSString, PXCMMSuggestionsDataSourceManager, PXCloudWelcomeGadgetProvider, PXGadgetNavigationHelper, PXMessagesCMMSuggestionsCollectionGadgetProvider, PXMessagesExtensionViewModel, PXMessagesRecentPhotosGadgetProvider, UIViewController;
+@class NSArray, NSString, PXCMMSuggestionsDataSourceManager, PXCPLStatus, PXCloudWelcomeGadgetProvider, PXGadgetNavigationHelper, PXMessagesCMMSuggestionsCollectionGadgetProvider, PXMessagesExtensionViewModel, PXMessagesRecentPhotosGadgetProvider, UIViewController;
 @protocol PXGadgetDelegate, PXGadgetTransition, PXPhotoLibraryPresenting;
 
-@interface PXMessagesGadgetDataSourceManager : PXGadgetDataSourceManager <PXCMMCloudGadgetViewControllerDelegate>
+@interface PXMessagesGadgetDataSourceManager : PXGadgetDataSourceManager <PXChangeObserver, PXCMMCloudGadgetViewControllerDelegate>
 {
     PXMessagesExtensionViewModel *_viewModel;
     PXCloudWelcomeGadgetProvider *_cloudWelcomeGadgeProvider;
     PXMessagesCMMSuggestionsCollectionGadgetProvider *_suggestionsCollectionGadgetProvider;
     NSArray *_cachedGadgetProviders;
+    PXCPLStatus *_cplStatusProvider;
+    _Bool _cmmIsAvailable;
     PXCMMSuggestionsDataSourceManager *_suggestionsDataSourceManager;
     UIViewController<PXPhotoLibraryPresenting> *_recentPhotosViewController;
     double _recentPhotosHeight;
@@ -30,9 +33,11 @@
 @property(retain, nonatomic) UIViewController<PXPhotoLibraryPresenting> *recentPhotosViewController; // @synthesize recentPhotosViewController=_recentPhotosViewController;
 @property(retain, nonatomic) PXCMMSuggestionsDataSourceManager *suggestionsDataSourceManager; // @synthesize suggestionsDataSourceManager=_suggestionsDataSourceManager;
 - (void).cxx_destruct;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)didUpdateCloudPhotoLibraryEnablement:(id)arg1;
 - (void)presentationRequestForWelcomeCloudViewController:(id)arg1;
 - (id)gadgetProviders;
+- (void)removeCachedProviders;
 - (void)_updateGadgetProviders;
 - (id)initWithViewModel:(id)arg1 dataSourceManager:(id)arg2;
 

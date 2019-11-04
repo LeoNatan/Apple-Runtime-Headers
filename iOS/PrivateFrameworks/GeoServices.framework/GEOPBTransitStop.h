@@ -14,7 +14,6 @@
 @interface GEOPBTransitStop : PBCodable <GEOTransitNamedItem, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLatLng *_latLng;
     unsigned long long _muid;
@@ -22,6 +21,9 @@
     GEOStyleAttributes *_styleAttributes;
     NSString *_timezone;
     NSMutableArray *_zoomNames;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _hallIndex;
     unsigned int _stopIndex;
     struct {
@@ -86,6 +88,8 @@
 @property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasStopIndex;
 @property(nonatomic) unsigned int stopIndex;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)identifier;
 - (id)bestNameWithLocale:(out id *)arg1;
 - (id)bestName;

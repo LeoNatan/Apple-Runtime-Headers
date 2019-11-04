@@ -10,6 +10,8 @@
 
 @interface NSCoder (RemoteTransport)
 - (id)supportedFeatures;
+- (_Bool)isAtLeastDataVersion4;
+- (long long)dataVersion;
 @property(readonly, getter=isSharedUser) _Bool sharedUser;
 - (id)user;
 - (_Bool)isForNonAdminSharedUser;

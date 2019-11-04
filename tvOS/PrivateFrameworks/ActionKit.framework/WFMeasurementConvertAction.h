@@ -13,7 +13,7 @@
 - (id)unitWithSymbol:(id)arg1;
 - (id)currentUnitType;
 - (id)unitParameter;
-- (id)outputMeasurementUnit;
+- (id)outputMeasurementUnitType;
 - (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)parametersRequiringUserInputAlongsideParameter:(id)arg1;
 - (void)initializeParameters;

@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NSError (EmailFoundationAdditions) <EFPubliclyDescribable>
++ (id)ef_temporarilyUnavailableError;
 + (id)ef_connectionInterruptedError;
 + (id)ef_notSupportedError;
 + (id)ef_timeoutError;
@@ -18,6 +19,7 @@
 + (void)ef_setDecoder:(CDUnknownBlockType)arg1 forDomain:(id)arg2;
 + (id)ef_SQLiteErrorWithCode:(int)arg1;
 - (CDUnknownBlockType)ef_match;
+@property(readonly, nonatomic) _Bool ef_isTemporarilyUnavailableError;
 @property(readonly, nonatomic) _Bool ef_isConnectionInterruptedError;
 @property(readonly, nonatomic) _Bool ef_isNotSupportedError;
 @property(readonly, nonatomic) _Bool ef_isTimeoutError;

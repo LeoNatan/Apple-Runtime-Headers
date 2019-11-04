@@ -11,22 +11,22 @@
 #import <Home/HMCameraClipManagerObserver-Protocol.h>
 
 @class AVPlayer, HFCameraPlaybackPosition, HMCameraClip, HMCameraClipManager, HMCameraProfile, HMCameraSource, HMHome, NADelegateDispatcher, NSArray, NSDate, NSError, NSMapTable, NSString;
-@protocol HFCameraClipPlaying, HFCameraClipScrubbing, HFCameraLiveStreamControlling;
+@protocol HFCameraClipPlaying, HFCameraClipScrubbing, HFCameraLiveStreamControlling, OS_dispatch_queue;
 
 @interface HFCameraPlaybackEngine : NSObject <HMCameraClipManagerObserver, HFCameraClipPlayerDelegate, HFCameraLiveStreamControllerDelegate>
 {
     BOOL _prefersAudioEnabled;
     BOOL _microphoneEnabled;
     BOOL _streamAudioEnabled;
+    BOOL _userScrubbing;
     BOOL _pictureInPictureModeActive;
+    BOOL _shouldBypassVideoFetchRequest;
     BOOL _wantsToPlay;
     BOOL _scrubbing;
     float _streamAudioVolume;
     HMCameraProfile *_cameraProfile;
     HMCameraClipManager *_clipManager;
     HMCameraSource *_liveCameraSource;
-    unsigned long long _timelineState;
-    NSDate *_currentEngineDate;
     unsigned long long _timeControlStatus;
     NSError *_playbackError;
     HMHome *_home;
@@ -39,10 +39,14 @@
     unsigned long long _engineMode;
     NSDate *_lastRequestedClipPlaybackDate;
     unsigned long long _scrubbingInProgressCount;
+    NSObject<OS_dispatch_queue> *_clipQueue;
     id <HFCameraClipPlaying> _clipPlayer;
+    unsigned long long _timelineState;
 }
 
+@property(nonatomic) unsigned long long timelineState; // @synthesize timelineState=_timelineState;
 @property(readonly, nonatomic) id <HFCameraClipPlaying> clipPlayer; // @synthesize clipPlayer=_clipPlayer;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *clipQueue; // @synthesize clipQueue=_clipQueue;
 @property(nonatomic, getter=isScrubbing) BOOL scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) unsigned long long scrubbingInProgressCount; // @synthesize scrubbingInProgressCount=_scrubbingInProgressCount;
 @property(nonatomic) BOOL wantsToPlay; // @synthesize wantsToPlay=_wantsToPlay;
@@ -57,15 +61,15 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSError *playbackError; // @synthesize playbackError=_playbackError;
 @property(nonatomic) unsigned long long timeControlStatus; // @synthesize timeControlStatus=_timeControlStatus;
+@property(nonatomic) BOOL shouldBypassVideoFetchRequest; // @synthesize shouldBypassVideoFetchRequest=_shouldBypassVideoFetchRequest;
 @property(nonatomic, getter=isPictureInPictureModeActive) BOOL pictureInPictureModeActive; // @synthesize pictureInPictureModeActive=_pictureInPictureModeActive;
-@property(retain, nonatomic) NSDate *currentEngineDate; // @synthesize currentEngineDate=_currentEngineDate;
-@property(nonatomic) unsigned long long timelineState; // @synthesize timelineState=_timelineState;
+@property(nonatomic, getter=isUserScrubbing) BOOL userScrubbing; // @synthesize userScrubbing=_userScrubbing;
 @property(nonatomic) float streamAudioVolume; // @synthesize streamAudioVolume=_streamAudioVolume;
 @property(nonatomic, getter=isStreamAudioEnabled) BOOL streamAudioEnabled; // @synthesize streamAudioEnabled=_streamAudioEnabled;
 @property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(retain, nonatomic) HMCameraSource *liveCameraSource; // @synthesize liveCameraSource=_liveCameraSource;
 @property(retain, nonatomic) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
-@property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
+@property(retain, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(nonatomic) BOOL prefersAudioEnabled; // @synthesize prefersAudioEnabled=_prefersAudioEnabled;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -95,6 +99,7 @@
 - (void)pause;
 - (void)play;
 @property(retain, nonatomic) HFCameraPlaybackPosition *playbackPosition;
+- (void)updatePlaybackPositionToDate:(id)arg1 usingClip:(id)arg2;
 @property(readonly, nonatomic) AVPlayer *player;
 - (void)_setupTimeObservationForObserver:(id)arg1;
 - (void)_setupClipPlayerWithClipManager:(id)arg1;

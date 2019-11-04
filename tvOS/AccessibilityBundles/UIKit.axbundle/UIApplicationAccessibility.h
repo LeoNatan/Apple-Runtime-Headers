@@ -54,6 +54,7 @@
 - (_Bool)_accessibilityHandleFullKeyboardAccessAction:(int)arg1 value:(id)arg2;
 - (void)_accessibilityShowKeyboardHints;
 - (_Bool)_iosAccessibilityPerformAction:(int)arg1 withValue:(id)arg2 fencePort:(unsigned int)arg3;
+- (id)_accessibilityMakeUIPressInfoWithType:(long long)arg1 Phase:(long long)arg2 timestamp:(double)arg3 contextID:(unsigned int)arg4;
 - (_Bool)_accessibilityActionIsPhysicalButton:(int)arg1 nativeUIKitTypeRef:(long long *)arg2;
 - (id)_accessibilityElementsWithSemanticContext:(id)arg1;
 - (id)accessibilityLabel;
@@ -128,6 +129,9 @@
 - (unsigned int)_accessibilityMachPort;
 - (void)_accessibilityKeyboardDidShow:(id)arg1;
 - (void)_accessibilityKeyboardDidHide:(id)arg1;
+- (_Bool)_axApplicationIsWidgetExtension;
+- (double)_accessibilityMaximumAllowedOutOfBoundsPercent;
+- (_Bool)_accessibilityUseWindowBoundsForOutOfBoundsChecking;
 - (struct CGRect)_accessibilityConvertSystemBoundedScreenRectToContextSpace:(struct CGRect)arg1;
 - (struct CGRect)accessibilityFrame;
 - (unsigned long long)_accessibilityAutomationType;

@@ -15,6 +15,10 @@
 
 @interface REMReminderStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
+    BOOL _hasDeserializedTitleDocument;
+    BOOL _hasDeserializedNotesDocument;
+    REMCRMergeableStringDocument *_deserializedTitleDocumentCache;
+    REMCRMergeableStringDocument *_deserializedNotesDocumentCache;
     unsigned long long _storeGeneration;
     unsigned long long _copyGeneration;
     BOOL _completed;
@@ -27,7 +31,8 @@
     REMObjectID *_objectID;
     REMObjectID *_listID;
     REMObjectID *_parentReminderID;
-    REMCRMergeableStringDocument *_titleDocument;
+    NSData *_titleDocumentData;
+    NSData *_notesDocumentData;
     NSDate *_completionDate;
     REMResolutionTokenMap *_resolutionTokenMap;
     NSSet *_subtaskIDsToUndelete;
@@ -38,7 +43,6 @@
     NSDate *_creationDate;
     NSDate *_lastModifiedDate;
     NSArray *_recurrenceRules;
-    REMCRMergeableStringDocument *_notesDocument;
     NSArray *_attachments;
     NSArray *_alarms;
     REMContactRepresentation *_contactHandles;
@@ -72,7 +76,6 @@
 @property(retain, nonatomic) REMContactRepresentation *contactHandles; // @synthesize contactHandles=_contactHandles;
 @property(retain, nonatomic) NSArray *alarms; // @synthesize alarms=_alarms;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
-@property(retain, nonatomic) REMCRMergeableStringDocument *notesDocument; // @synthesize notesDocument=_notesDocument;
 @property(retain, nonatomic) NSArray *recurrenceRules; // @synthesize recurrenceRules=_recurrenceRules;
 @property(copy, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
@@ -85,7 +88,8 @@
 @property(retain, nonatomic) REMResolutionTokenMap *resolutionTokenMap; // @synthesize resolutionTokenMap=_resolutionTokenMap;
 @property(copy, nonatomic) NSDate *completionDate; // @synthesize completionDate=_completionDate;
 @property(nonatomic, getter=isCompleted) BOOL completed; // @synthesize completed=_completed;
-@property(retain, nonatomic) REMCRMergeableStringDocument *titleDocument; // @synthesize titleDocument=_titleDocument;
+@property(retain, nonatomic) NSData *notesDocumentData; // @synthesize notesDocumentData=_notesDocumentData;
+@property(retain, nonatomic) NSData *titleDocumentData; // @synthesize titleDocumentData=_titleDocumentData;
 @property(retain, nonatomic) REMObjectID *parentReminderID; // @synthesize parentReminderID=_parentReminderID;
 @property(retain, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 @property(retain, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
@@ -102,6 +106,10 @@
 - (id)titleReplicaIDSource;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier;
+- (void)setNotesDocument:(id)arg1;
+- (id)notesDocument;
+- (void)setTitleDocument:(id)arg1;
+- (id)titleDocument;
 - (void)setStoreGenerationIfNeeded:(unsigned long long)arg1;
 - (unsigned long long)storeGeneration;
 - (void)encodeWithCoder:(id)arg1;

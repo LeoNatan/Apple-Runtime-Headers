@@ -13,9 +13,11 @@
 @interface GEOLogMsgStateSuggestions : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSMutableArray *_displayedResults;
     NSString *_searchString;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _acSequenceNumber;
     int _searchFieldType;
     int _selectedIndex;
@@ -64,6 +66,8 @@
 @property(retain, nonatomic) NSString *searchString;
 @property(readonly, nonatomic) _Bool hasSearchString;
 - (void)_readSearchString;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

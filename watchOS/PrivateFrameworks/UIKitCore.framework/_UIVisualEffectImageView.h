@@ -9,7 +9,7 @@
 #import <UIKitCore/_UIVisualEffectViewParticipating-Protocol.h>
 
 @class NSArray, NSString, UIView, _UIVisualEffectViewBackdropCaptureGroup;
-@protocol _UIVisualEffectViewParticipating;
+@protocol _UIVisualEffectViewParticipating, _UIVisualEffectViewSubviewMonitoring;
 
 __attribute__((visibility("hidden")))
 @interface _UIVisualEffectImageView : UIImageView <_UIVisualEffectViewParticipating>
@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 - (void)applyIdentityViewEffects;
 - (void)applyRequestedViewEffects;
 @property(retain, nonatomic) UIView<_UIVisualEffectViewParticipating> *containedView;
+@property(nonatomic) _Bool disableGroupFiltering;
+@property(nonatomic) __weak id <_UIVisualEffectViewSubviewMonitoring> subviewMonitor;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

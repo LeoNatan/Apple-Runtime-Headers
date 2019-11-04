@@ -11,12 +11,14 @@
 
 @interface IMKAppleSpellCandidateEngine : IMKCandidateEngine
 {
+    BOOL _shouldLearn;
     long long _processID;
     long long _spellDocumentTag;
     NSString *_bundleID;
     id <IMKMacSpellChecker> _spellChecker;
 }
 
+@property(nonatomic) BOOL shouldLearn; // @synthesize shouldLearn=_shouldLearn;
 @property(readonly, nonatomic) id <IMKMacSpellChecker> spellChecker; // @synthesize spellChecker=_spellChecker;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) long long spellDocumentTag; // @synthesize spellDocumentTag=_spellDocumentTag;

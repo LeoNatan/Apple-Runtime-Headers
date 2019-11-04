@@ -34,7 +34,9 @@
     unsigned long long _badgeTypes;
 }
 
-+ (id)placeholderFilters;
++ (id)darkPlaceholderFilters;
++ (id)lightPlaceholderFilters;
++ (id)_gaussianBlurFilter;
 + (struct UIFont *)titleLabelFont;
 + (struct UIFont *)suggestionLabelFont;
 + (double)scaledSubtitleBaselineDistance;

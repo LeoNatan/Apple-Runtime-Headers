@@ -139,9 +139,7 @@ struct vm_statistics64 {
 typedef struct {
     unsigned int _field1;
     unsigned int _field2;
-    char *_field3;
-    unsigned int _field4;
-} CDStruct_211000a5;
+} CDStruct_c0454aff;
 
 typedef struct {
     unsigned long _field1;

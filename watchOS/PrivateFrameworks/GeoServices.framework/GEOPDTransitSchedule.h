@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
 @interface GEOPDTransitSchedule : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDDeparturePredicate *_departurePredicateCountdown;
     GEOPDDeparturePredicate *_departurePredicateStamp;
     NSMutableArray *_departureSequences;
     struct GEOPDTimeRange _operatingHoursRange;
     unsigned long long _ttlSeconds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_operatingHoursRange:1;
         unsigned int has_ttlSeconds:1;
@@ -70,6 +72,8 @@ __attribute__((visibility("hidden")))
 - (void)clearDepartureSequences;
 @property(retain, nonatomic) NSMutableArray *departureSequences;
 - (void)_readDepartureSequences;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

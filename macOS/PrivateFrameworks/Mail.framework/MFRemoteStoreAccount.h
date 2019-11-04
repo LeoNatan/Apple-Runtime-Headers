@@ -8,7 +8,7 @@
 
 #import <Mail/MCRemoteStoreAccount-Protocol.h>
 
-@class ACAccount, ECAuthScheme, NSArray, NSOperationQueue, NSString;
+@class ACAccount, ECAuthScheme, NSArray, NSDate, NSOperationQueue, NSString;
 
 @interface MFRemoteStoreAccount : MFMailAccount <MCRemoteStoreAccount>
 {
@@ -53,6 +53,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSArray *emailAddressStrings;
+@property(readonly, copy, nonatomic) NSDate *expiryDate;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *hostname;
@@ -66,6 +67,7 @@
 @property(readonly, copy) NSString *password;
 @property long long portNumber;
 @property(retain) ECAuthScheme *preferredAuthScheme;
+@property(readonly) BOOL primaryiCloudAccount;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue;
 @property(readonly, nonatomic) BOOL requiresAuthentication;

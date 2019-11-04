@@ -13,6 +13,7 @@
 
 @interface SFNotificationInfo : NSObject <NSSecureCoding, NSCopying>
 {
+    SFNotificationInfo *_cachedMediumBubbleVersion;
     unsigned char _deviceClass;
     unsigned char _interactionBehavior;
     unsigned char _interactionDirection;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSURL *attachmentURL; // @synthesize attachmentURL=_attachmentURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SFNotificationInfo *mediumBubbleVersion;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

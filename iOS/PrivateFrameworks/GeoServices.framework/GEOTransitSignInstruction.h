@@ -14,12 +14,14 @@
 @interface GEOTransitSignInstruction : PBCodable <GEOComposedRouteStepTransitInstructionMerging, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_commandFormatteds;
     NSMutableArray *_detailFormatteds;
     NSMutableArray *_noticeFormatteds;
     NSMutableArray *_priceFormatteds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_commandFormatteds:1;
@@ -80,6 +82,8 @@
 - (void)clearCommandFormatteds;
 @property(retain, nonatomic) NSMutableArray *commandFormatteds;
 - (void)_readCommandFormatteds;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)_transit_prepareForDeepMergeFrom:(id)arg1;
 
 // Remaining properties

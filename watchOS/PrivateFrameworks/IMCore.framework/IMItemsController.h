@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray;
+
 @interface IMItemsController : NSObject
 {
     struct __CFArray *_items;
@@ -35,7 +37,7 @@
 - (void)_removeItem:(id)arg1;
 - (void)_handleItem:(id)arg1;
 - (void)_itemsDidChange:(id)arg1;
-- (id)_items;
+@property(readonly, copy, nonatomic) NSArray *_items;
 - (id)_initWithItems:(id)arg1;
 - (_Bool)_shouldPinUnsentMessagesToBottom;
 - (void)assignSortIDsToItems:(id)arg1 shouldRecalculateSortIDForAllMessages:(_Bool)arg2;

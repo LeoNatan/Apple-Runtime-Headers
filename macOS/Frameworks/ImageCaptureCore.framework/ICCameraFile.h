@@ -6,13 +6,17 @@
 
 #import <ImageCaptureCore/ICCameraItem.h>
 
-@class NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSProgress, NSString;
+@class NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSProgress, NSString;
 
 @interface ICCameraFile : ICCameraItem
 {
     struct CGImage *_originalThumbnail;
     struct CGImage *_thumbnail;
     NSMutableDictionary *_metadata;
+    NSString *_debugType;
+    NSString *_debugBadge;
+    NSNumber *_fileIsJPEG;
+    NSNumber *_fileIsHEIC;
     BOOL _highFramerate;
     BOOL _timeLapse;
     BOOL _firstPicked;
@@ -51,7 +55,6 @@
     NSString *_devMediaBase;
     NSDictionary *_mediaData;
     NSMutableDictionary *_subImages;
-    NSData *_thumbnailData;
     NSProgress *_progress;
     unsigned long long _oUUID;
     unsigned long long _uTime;
@@ -66,7 +69,6 @@
 @property BOOL fetchingMetadata; // @synthesize fetchingMetadata=_fetchingMetadata;
 @property BOOL fetchingThumbnail; // @synthesize fetchingThumbnail=_fetchingThumbnail;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-@property(copy, nonatomic) NSData *thumbnailData; // @synthesize thumbnailData=_thumbnailData;
 @property(readonly, nonatomic) unsigned int objectHandle; // @synthesize objectHandle=_objectHandle;
 @property(nonatomic) BOOL retrievedThumbnail; // @synthesize retrievedThumbnail=_retrievedThumbnail;
 @property(nonatomic) BOOL retrievedMetadata; // @synthesize retrievedMetadata=_retrievedMetadata;
@@ -101,6 +103,7 @@
 @property(copy, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;
 @property(nonatomic) long long height; // @synthesize height=_height;
 @property(nonatomic) long long width; // @synthesize width=_width;
+- (BOOL)isHEIC;
 - (BOOL)isJPEG;
 - (BOOL)isData;
 - (BOOL)isImage;
@@ -124,6 +127,9 @@
 - (BOOL)isConverted;
 - (BOOL)isOriginal;
 - (BOOL)isUntouched:(unsigned long long)arg1;
+- (id)debugIdentity;
+- (id)debugType;
+- (id)debugBadge;
 - (id)getConnection;
 - (BOOL)hasThumbnail;
 - (BOOL)hasMetadata;
@@ -141,11 +147,11 @@
 - (id)metadata;
 - (struct CGImage *)thumbnail;
 - (BOOL)setThumbnailData:(struct __CFData *)arg1 withOrientation:(id)arg2;
+@property(copy, nonatomic) NSData *thumbnailData; // @dynamic thumbnailData;
 - (void)overrideOrientation:(unsigned long long)arg1;
 - (void)requestThumbnailDataWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestThumbnailWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestThumbnail;
-- (void)updateThumbnailData;
 - (struct CGImage *)largeThumbnailIfAvailable;
 - (struct CGImage *)thumbnailIfAvailable;
 - (BOOL)handleCommandCompletion:(id)arg1;
@@ -154,8 +160,6 @@
 @property(readonly) NSString *mediaBase;
 - (id)description;
 - (void)dealloc;
-- (id)debugMediaMetadata;
-- (id)debugIdentity;
 @property(readonly, nonatomic) NSString *spatialOverCaptureGroupID;
 - (void)setSpatialOverCaptureGroupID:(id)arg1;
 - (id)initWithDictionary:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;

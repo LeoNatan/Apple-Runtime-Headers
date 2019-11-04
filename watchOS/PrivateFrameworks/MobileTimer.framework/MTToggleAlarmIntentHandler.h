@@ -16,8 +16,14 @@
 {
 }
 
+- (void)handleMTDisableAlarm:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)confirmMTDisableAlarm:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handleMTEnableAlarm:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)confirmMTEnableAlarm:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_alarmUserActivityWithDisableIntent:(id)arg1;
 - (id)_alarmUserActivityWithEnableIntent:(id)arg1;
+- (id)updateEnableStateForAlarm:(id)arg1 enabled:(_Bool)arg2;
+- (_Bool)getEnableStateForAlarm:(id)arg1;
 - (void)_toggleAlarm:(id)arg1 alarmIDString:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resolveOperationForToggleAlarm:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleToggleAlarm:(id)arg1 completion:(CDUnknownBlockType)arg2;

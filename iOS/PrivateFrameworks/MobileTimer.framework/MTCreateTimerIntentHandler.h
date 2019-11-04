@@ -18,6 +18,7 @@
 - (_Bool)_timer:(id)arg1 conflictsWithRunningTimersInTimers:(id)arg2;
 - (id)_responseToCreateTimerIntent:(id)arg1 withCreatedTimer:(id)arg2 error:(id)arg3 dryRun:(_Bool)arg4;
 - (void)_createTimerWithIntent:(id)arg1 dryRun:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_checkNowPlayingMediaState:(CDUnknownBlockType)arg1;
 - (void)handleCreateTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmCreateTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveTypeForCreateTimer:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

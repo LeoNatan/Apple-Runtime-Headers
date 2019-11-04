@@ -10,6 +10,7 @@
 
 @interface MPModelObject (NMUMetricsReporter)
 - (unsigned int)nmu_metricsMoreActionContentType;
+- (id)_nmu_libraryArtworkCatalogForPlaylist:(id)arg1;
 @property(readonly, nonatomic) MPArtworkCatalog *nmu_preferredArtworkCatalog;
 @property(readonly, nonatomic) NSString *nmu_headerSubtitle;
 @property(readonly, nonatomic) NSString *nmu_headerTitle;

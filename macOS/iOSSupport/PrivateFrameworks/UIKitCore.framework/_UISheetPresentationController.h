@@ -20,6 +20,7 @@
     BOOL __didTearOff;
     BOOL __remoteDismissing;
     BOOL __dimmingViewTapDismissing;
+    BOOL __keyboardShown;
     BOOL __isRemote;
     BOOL __presentsAtStandardHalfHeight;
     BOOL __allowsTearOff;
@@ -44,7 +45,8 @@
 @property(nonatomic, setter=_setIsRemote:) BOOL _isRemote; // @synthesize _isRemote=__isRemote;
 @property(readonly, nonatomic) UIDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(readonly, nonatomic) UIDropShadowView *dropShadowView; // @synthesize dropShadowView=_dropShadowView;
-@property(nonatomic) BOOL _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
+@property(nonatomic, getter=_isKeyboardShown, setter=_setKeyboardShown:) BOOL _keyboardShown; // @synthesize _keyboardShown=__keyboardShown;
+@property(nonatomic, getter=_isDimmingViewTapDismissing, setter=_setDimmingViewTapDismissing:) BOOL _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
 @property(retain, nonatomic) UIViewPropertyAnimator *_remoteDismissalPropertyAnimator; // @synthesize _remoteDismissalPropertyAnimator=__remoteDismissalPropertyAnimator;
 @property(nonatomic, getter=_isRemoteDismissing, setter=_setRemoteDismissing:) BOOL _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
 @property(readonly, nonatomic) _UIRemoteViewController *_connectedRemoteViewController; // @synthesize _connectedRemoteViewController=__connectedRemoteViewController;
@@ -69,12 +71,12 @@
 - (BOOL)dragInteraction:(id)arg1 prefersFullSizePreviewsForSession:(id)arg2;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (BOOL)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
-- (void)_completeInteractiveTransitionFromRemote:(BOOL)arg1 immediately:(BOOL)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)_completeInteractiveTransitionFromRemote:(BOOL)arg1 offset:(double)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)_updateInteractiveTransitionFromRemoteWithProgress:(double)arg1 offset:(double)arg2;
 - (void)_startInteractiveTransitionFromRemoteWithProgress:(double)arg1 offset:(double)arg2;
 - (struct CGPoint)offsetForInterruptedAnimationInSheetInteraction:(id)arg1;
 - (void)sheetInteraction:(id)arg1 didChangeOffset:(struct CGPoint)arg2;
-- (void)_completeInteractiveTransition:(BOOL)arg1 immediately:(BOOL)arg2 duration:(double)arg3 timingCurve:(id)arg4;
+- (void)_completeInteractiveTransition:(BOOL)arg1 duration:(double)arg2 timingCurve:(id)arg3;
 - (void)_updateInteractiveTransitionWithProgress:(double)arg1;
 - (void)_startInteractiveTransitionWithProgress:(double)arg1;
 - (void)_updateAnimationController;
@@ -88,6 +90,7 @@
 - (void)_containerViewLayoutSubviews;
 - (void)containerViewWillLayoutSubviews;
 @property(copy, nonatomic, setter=_setPassthroughViews:) NSArray *_passthroughViews;
+- (BOOL)_inheritsPresentingViewControllerThemeLevel;
 - (BOOL)_shouldOccludeDuringPresentation;
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;
 - (id)presentedView;
@@ -98,8 +101,7 @@
 - (void)_keyboardAboutToHide:(id)arg1;
 - (void)_keyboardAboutToChangeFrame:(id)arg1;
 - (void)_keyboardAboutToShow:(id)arg1;
-- (void)_layoutPresentedViewAndContainerViewIfNeeded;
-- (void)_avoidKeyboardAndAnimateSheetForNotification:(id)arg1;
+- (void)_handleKeyboardNotification:(id)arg1 aboutToHide:(BOOL)arg2;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 @property(readonly, nonatomic) _UISheetPresentationController *_childSheetPresentationController;

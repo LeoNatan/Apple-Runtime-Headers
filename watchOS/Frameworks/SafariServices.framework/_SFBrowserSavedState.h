@@ -19,6 +19,8 @@
     NSArray *_browserWindows;
 }
 
++ (void)setShouldMergeAllWindowsIfNeeded:(_Bool)arg1;
++ (_Bool)shouldMergeAllWindowsIfNeeded;
 + (id)ephemeralSavedState;
 + (void)setSharedBrowserSavedState:(id)arg1;
 + (id)sharedBrowserSavedState;

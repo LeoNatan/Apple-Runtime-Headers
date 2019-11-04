@@ -13,12 +13,14 @@
 @interface GEORPUserSearchInput : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOPDAutocompleteEntry *_autocompleteEntry;
     GEOLatLng *_coordinate;
     GEOPDPlace *_place;
     NSString *_searchString;
     NSString *_singleLineAddressString;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _origin;
     struct {
         unsigned int has_origin:1;
@@ -67,6 +69,8 @@
 @property(retain, nonatomic) NSString *searchString;
 @property(readonly, nonatomic) _Bool hasSearchString;
 - (void)_readSearchString;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

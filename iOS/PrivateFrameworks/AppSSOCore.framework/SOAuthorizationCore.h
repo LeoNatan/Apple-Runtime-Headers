@@ -22,6 +22,7 @@
 + (_Bool)_canPerformAuthorizationWithURL:(id)arg1 responseCode:(long long)arg2 callerBundleIdentifier:(id)arg3 useInternalExtensions:(_Bool)arg4;
 + (_Bool)canPerformAuthorizationWithURL:(id)arg1 responseCode:(long long)arg2 useInternalExtensions:(_Bool)arg3;
 + (_Bool)canPerformAuthorizationWithURL:(id)arg1 responseCode:(long long)arg2;
++ (void)isExtensionProcessWithAuditToken:(CDStruct_6ad76789)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSDictionary *authorizationOptions; // @synthesize authorizationOptions=_authorizationOptions;
 @property(retain) NSObject<OS_dispatch_queue> *delegateDispatchQueue; // @synthesize delegateDispatchQueue=_delegateDispatchQueue;
 @property __weak id <SOAuthorizationCoreDelegate> delegate; // @synthesize delegate=_delegate;

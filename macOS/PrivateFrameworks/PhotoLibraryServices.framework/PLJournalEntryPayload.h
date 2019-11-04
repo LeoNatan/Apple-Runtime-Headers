@@ -26,6 +26,7 @@
 + (id)modelPropertiesDescription;
 + (id)payloadClassID;
 + (id)payloadWithData:(id)arg1 forPayloadID:(id)arg2 version:(unsigned int)arg3 andNilProperties:(id)arg4 error:(id *)arg5;
++ (id)snapshotSortDescriptors;
 + (BOOL)shouldPersistForChangedKeys:(id)arg1 entityName:(id)arg2;
 + (unsigned int)minimumSnapshotPayloadVersion;
 + (unsigned int)payloadVersion;

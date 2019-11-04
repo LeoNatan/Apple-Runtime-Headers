@@ -92,7 +92,6 @@
 - (void)processDirtyFaceCrops;
 - (BOOL)processAsset:(id)arg1 error:(id *)arg2;
 - (BOOL)getLocallyAvailableAssetResource:(id *)arg1 forAnalyzingAsset:(id)arg2 error:(id *)arg3;
-- (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
 - (unsigned long long)analyzeImageData:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id *)arg4;
 - (unsigned long long)analyzeAssetResourceFileAtURL:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id *)arg4;
 - (unsigned long long)_analyzeAsset:(id)arg1 withAttributes:(id)arg2 usingPVImageProvidedByBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
@@ -119,7 +118,7 @@
 - (void)willCompleteJob:(id)arg1;
 - (BOOL)stopAnalysisJob:(id)arg1 error:(id *)arg2;
 - (void)cooldown;
-- (void)warmup;
+- (void)warmupWithProgressBlock:(CDUnknownBlockType)arg1;
 - (void)shutdown;
 - (BOOL)performPersonBuildingWithCanceler:(id)arg1 extendTimeoutBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (BOOL)_setAllFaceGroupsNeedPersonBuilding;

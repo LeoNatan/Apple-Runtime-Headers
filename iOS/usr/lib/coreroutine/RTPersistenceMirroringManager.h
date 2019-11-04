@@ -12,18 +12,18 @@
 #import <coreroutine/RTPersistenceMirroringRequestDelegate-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
+@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPlatform, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
 @protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMirroringMetricsDelegate;
 
 @interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringMetricsDelegate, RTPersistenceMirroringRequestDelegate, RTPersistenceMirroringDelegate, RTPurgable, RTDiagnosticProvider>
 {
     RTDefaultsManager *_defaultsManager;
-    RTInvocationDispatcher *_dispatcher;
     RTTimerManager *_timerManager;
     RTAccountManager *_accountManager;
     RTReachabilityManager *_reachabilityManager;
     long long _cloudSyncAuthorizationState;
     long long _currentReachability;
+    _Bool _syncDisabledForPerProcessMemoryLimit;
     id <RTPersistenceMirroringMetricsDelegate> _metricsDelegate;
     RTPersistenceManager *_persistenceManager;
     RTPowerAssertion *_powerAssertion;
@@ -34,11 +34,14 @@
     NSMutableArray *_pendingMirroringRequests;
     RTPersistenceMirroringRequest *_activeMirroringRequest;
     RTXPCActivityManager *_xpcActivityManager;
+    RTPlatform *_platform;
     RTPersistenceCloudDeletionEnforcer *_persistenceCloudDeletionEnforcer;
+    RTInvocationDispatcher *_dispatcher;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) RTPersistenceCloudDeletionEnforcer *persistenceCloudDeletionEnforcer; // @synthesize persistenceCloudDeletionEnforcer=_persistenceCloudDeletionEnforcer;
+@property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(retain, nonatomic) RTPersistenceMirroringRequest *activeMirroringRequest; // @synthesize activeMirroringRequest=_activeMirroringRequest;
 @property(retain, nonatomic) NSMutableArray *pendingMirroringRequests; // @synthesize pendingMirroringRequests=_pendingMirroringRequests;
@@ -80,6 +83,7 @@
 - (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(id)arg2 qualityOfService:(long long)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_performPeriodicExportWithHandler:(CDUnknownBlockType)arg1;
 - (void)_performPeriodicImportWithHandler:(CDUnknownBlockType)arg1;
+- (void)setMirroringAttemptMapValue:(_Bool)arg1 buildVersion:(id)arg2;
 - (void)performPeriodicSyncWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_authorizedToMirror;
 - (_Bool)_dataAvailableToMirror;
@@ -87,8 +91,9 @@
 - (void)shutdown;
 - (void)unregisterForXPCActivities;
 - (void)registerForXPCActivities;
-- (id)initWithAccountManager:(id)arg1 persistenceCloudDeletionEnforcer:(id)arg2 persistenceManager:(id)arg3 defaultsManager:(id)arg4 mirroringPolicies:(id)arg5 reachabilityManager:(id)arg6 timerManager:(id)arg7 xpcActivityManager:(id)arg8;
-- (id)initWithAccountManager:(id)arg1 defaultsManager:(id)arg2 persistenceManager:(id)arg3 reachabilityManager:(id)arg4 xpcActivityManager:(id)arg5;
+- (_Bool)disableSyncForPerProcessMemoryLimit:(id)arg1 platform:(id)arg2;
+- (id)initWithAccountManager:(id)arg1 persistenceCloudDeletionEnforcer:(id)arg2 persistenceManager:(id)arg3 defaultsManager:(id)arg4 mirroringPolicies:(id)arg5 platform:(id)arg6 reachabilityManager:(id)arg7 timerManager:(id)arg8 xpcActivityManager:(id)arg9;
+- (id)initWithAccountManager:(id)arg1 defaultsManager:(id)arg2 persistenceManager:(id)arg3 platform:(id)arg4 reachabilityManager:(id)arg5 xpcActivityManager:(id)arg6;
 - (id)init;
 - (void)collectMetricsFromMirroringRequest:(id)arg1 error:(id)arg2;
 - (void)mirroringManager:(id)arg1 mirroringRequest:(id)arg2 didFailWithError:(id)arg3;

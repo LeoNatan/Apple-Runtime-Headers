@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)writeLockWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)readNDEFWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)queryNDEFStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)_translateNFCDError:(id)arg1;
 - (unsigned long long)capacity;
 - (BOOL)isNDEFFormatted;
 - (BOOL)isReadOnly;

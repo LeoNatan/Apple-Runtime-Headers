@@ -53,7 +53,7 @@
 - (void)inputView:(id)arg1 didCollectDrawingForAnalysis:(id)arg2;
 - (void)inputViewDidBeginStroke:(id)arg1;
 @property(retain) AKInkOverlayView *inkOverlayView; // @synthesize inkOverlayView=_inkOverlayView;
-- (void)annotationEditingDidEnd;
+- (void)annotationEditingDidEndWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_partialTeardown;
 - (void)teardown;
 - (void)_fullSetup;

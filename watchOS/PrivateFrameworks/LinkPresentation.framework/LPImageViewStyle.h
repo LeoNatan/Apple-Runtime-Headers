@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 @interface LPImageViewStyle : NSObject <LPEmailCompatibleCaptionBarItemChild, NSCopying>
 {
     _Bool _requireFixedSize;
+    _Bool _allowsPlatterPresentation;
     LPSize *_fixedSize;
     LPSize *_minimumSize;
     LPPointUnit *_fixedFallbackImageSize;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) LPPointUnit *cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) LPPointUnit *backgroundInset; // @synthesize backgroundInset=_backgroundInset;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) _Bool allowsPlatterPresentation; // @synthesize allowsPlatterPresentation=_allowsPlatterPresentation;
 @property(retain, nonatomic) UIColor *maskColor; // @synthesize maskColor=_maskColor;
 @property(retain, nonatomic) LPShadowStyle *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic) int verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;

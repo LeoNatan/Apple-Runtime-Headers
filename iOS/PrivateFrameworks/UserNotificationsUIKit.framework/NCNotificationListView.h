@@ -19,6 +19,7 @@
     _Bool _activeRevealTransitioning;
     _Bool _performingGroupingAnimation;
     _Bool _performingRevealAnimation;
+    _Bool _performingHeaderReloadAnimation;
     _Bool _performingVisibleRectAdjustment;
     _Bool _performedFirstLayout;
     _Bool _cachedSizeValid;
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSMutableSet *viewsPerformingAnimation; // @synthesize viewsPerformingAnimation=_viewsPerformingAnimation;
 @property(nonatomic, getter=isPerformingVisibleRectAdjustment) _Bool performingVisibleRectAdjustment; // @synthesize performingVisibleRectAdjustment=_performingVisibleRectAdjustment;
+@property(nonatomic, getter=isPerformingHeaderReloadAnimation) _Bool performingHeaderReloadAnimation; // @synthesize performingHeaderReloadAnimation=_performingHeaderReloadAnimation;
 @property(nonatomic, getter=isPerformingRevealAnimation) _Bool performingRevealAnimation; // @synthesize performingRevealAnimation=_performingRevealAnimation;
 @property(nonatomic, getter=isPerformingGroupingAnimation) _Bool performingGroupingAnimation; // @synthesize performingGroupingAnimation=_performingGroupingAnimation;
 @property(nonatomic) unsigned long long removedViewIndex; // @synthesize removedViewIndex=_removedViewIndex;

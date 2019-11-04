@@ -26,6 +26,7 @@
     double _startTime;
     NSString *_albumArtistName;
     NSString *_albumName;
+    NSString *_albumYear;
     NSData *_appMetricsData;
     int _artworkDataHeightDeprecated;
     int _artworkDataWidthDeprecated;
@@ -147,6 +148,7 @@
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSString *albumYear; // @synthesize albumYear=_albumYear;
 @property(retain, nonatomic) NSString *localizedDurationString; // @synthesize localizedDurationString=_localizedDurationString;
 @property(retain, nonatomic) NSString *brandIdentifier; // @synthesize brandIdentifier=_brandIdentifier;
 @property(retain, nonatomic) NSString *artworkFileURL; // @synthesize artworkFileURL=_artworkFileURL;
@@ -238,6 +240,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasAlbumYear;
 @property(readonly, nonatomic) BOOL hasLocalizedDurationString;
 @property(readonly, nonatomic) BOOL hasBrandIdentifier;
 @property(readonly, nonatomic) BOOL hasArtworkFileURL;

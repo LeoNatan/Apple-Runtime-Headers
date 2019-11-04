@@ -6,24 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class ArouetRecognitionManager, NSDate, NSString;
+@class ArouetRecognitionManager, EAGLContext, NSString;
 
 @interface ArouetPrewarmer : NSObject
 {
     ArouetRecognitionManager *_recognitionManager;
-    NSDate *_lastPrewarmDate;
+    EAGLContext *_eaglContext;
+    unsigned int _updateProg;
+    unsigned int _inputProg;
     NSString *_language;
     NSString *_textContentType;
 }
 
++ (id)_glPrewarmingQueue;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
+- (void)_loadGLContextIfNeeded;
 - (void)_loadRecognitionManagerIfNeeded;
 - (void)prewarmIfNeeded;
+- (void)prewarmGL;
+- (void)prewarmRecognizer;
 - (void)prewarm;
 - (id)initWithLanguage:(id)arg1;
 - (id)initWithLanguage:(id)arg1 textContentType:(id)arg2;
+- (void)getPrewarmedGLContext:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) ArouetRecognitionManager *recognitionManager;
 
 @end

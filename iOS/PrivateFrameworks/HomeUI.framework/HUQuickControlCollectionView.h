@@ -15,6 +15,7 @@
 
 @property(readonly, nonatomic) HUScrollGestureRecognitionResolver *scrollGestureResolver; // @synthesize scrollGestureResolver=_scrollGestureResolver;
 - (void).cxx_destruct;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)touchesShouldCancelInContentView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;

@@ -35,7 +35,6 @@
 - (id)_handleBlueLightStatusEnabled:(id)arg1;
 - (id)_handleBrightnessFiltersEnabled:(id)arg1;
 - (id)_handleDisableBrightnessFilters:(id)arg1;
-- (void)restartHearingServer;
 - (id)_setAXPreferenceAsMobile:(id)arg1;
 - (id)_axPreferenceAsMobile:(id)arg1;
 - (id)_handleGuidedAccessCurrentModeAndSessionApp:(id)arg1;

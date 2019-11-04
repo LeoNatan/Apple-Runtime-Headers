@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface AXTapticChimeAsset : NSObject
 {
@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned int)createSystemSoundIDForStartTime:(double)arg1;
-- (id)hapticAtomEntries;
+@property(readonly, nonatomic) NSArray *hapticAtomEntries;
 - (id)_initWithChimeSoundType:(long long)arg1 audioFilePath:(id)arg2 hapticsFilePath:(id)arg3;
 
 @end

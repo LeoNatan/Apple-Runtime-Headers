@@ -12,8 +12,9 @@
 
 @interface NSURL (_QLUtilities) <QLPreviewItem>
 + (id)_QLCreateTemporaryDirectoryForOriginalFileAtURL:(id)arg1 error:(id *)arg2;
-+ (void)_QLTemporaryFileURLWithContentType:(id)arg1 uuid:(id)arg2 forOriginalFileAtURL:(id)arg3 temporaryFileURL:(id *)arg4 temporaryDirectoryURL:(id *)arg5;
++ (void)_QLTemporaryFileURLWithContentType:(id)arg1 forOriginalFileAtURL:(id)arg2 temporaryFileURL:(id *)arg3 temporaryDirectoryURL:(id *)arg4 fallbackUUID:(id)arg5;
 + (id)_QLTemporaryFileURLWithContentType:(id)arg1 uuid:(id)arg2;
++ (id)_QLTemporaryFileURLWithContentType:(id)arg1 filename:(id)arg2;
 + (id)_QLCreateTemporaryDirectory:(id *)arg1;
 - (id)_QLUrlFileSize;
 - (id)_QLSingleFileSizeForURL:(id)arg1;

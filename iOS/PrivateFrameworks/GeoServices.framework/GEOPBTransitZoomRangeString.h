@@ -13,10 +13,12 @@
 @interface GEOPBTransitZoomRangeString : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_labelLanguage;
     NSString *_labelText;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _minZoom;
     struct {
         unsigned int has_minZoom:1;
@@ -52,6 +54,8 @@
 - (void)_readLabelLanguage;
 @property(nonatomic) _Bool hasMinZoom;
 @property(nonatomic) unsigned int minZoom;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

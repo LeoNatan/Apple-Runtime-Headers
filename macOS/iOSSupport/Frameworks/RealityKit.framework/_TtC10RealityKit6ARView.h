@@ -6,11 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-#import <RealityKit/UIGestureRecognizerDelegate-Protocol.h>
-
-@class CALayer;
-
-@interface _TtC10RealityKit6ARView : UIView <UIGestureRecognizerDelegate>
+@interface _TtC10RealityKit6ARView : UIView
 {
     // Error parsing type: , name: _scene
     // Error parsing type: , name: __delegatePrivate
@@ -39,23 +35,10 @@
     // Error parsing type: , name: __disableStatisticsRendering
 }
 
-+ (Class)layerClass;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (void)handleSingleTapWithRecognizer:(id)arg1;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
-- (void)didMoveToSuperview;
-- (void)restartEngineWithNotification:(id)arg1;
-- (void)willResignActiveWithNotification:(id)arg1;
-@property(nonatomic) double contentScaleFactor;
-@property(nonatomic, readonly) CALayer *renderLayer;
 
 @end
 

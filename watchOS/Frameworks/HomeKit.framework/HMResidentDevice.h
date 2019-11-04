@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKit/HMFLogging-Protocol.h>
+#import <HomeKit/HMFObject-Protocol.h>
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMDevice, HMFUnfairLock, HMHome, NSString, NSUUID, _HMContext;
+@class HMDevice, HMFUnfairLock, HMHome, NSArray, NSString, NSUUID, _HMContext;
 @protocol HMResidentDeviceDelegate;
 
-@interface HMResidentDevice : NSObject <HMObjectMerge, NSSecureCoding>
+@interface HMResidentDevice : NSObject <HMFLogging, HMFObject, HMObjectMerge, NSSecureCoding>
 {
     HMFUnfairLock *_lock;
     _Bool _enabled;
@@ -27,12 +29,19 @@
     NSUUID *_uuid;
 }
 
++ (id)logCategory;
++ (id)shortDescription;
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) HMDevice *device; // @synthesize device=_device;
 @property __weak id <HMResidentDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)logIdentifier;
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
 - (void)handleRuntimeStateUpdate:(id)arg1;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
@@ -51,8 +60,8 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, copy) NSString *propertyDescription;
 @property(readonly) Class superclass;
 
 @end

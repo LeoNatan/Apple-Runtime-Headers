@@ -13,8 +13,10 @@
     int _dayViewFirstVisibleSecond;
     double _dayViewHourScale;
     double _weekViewHourScale;
+    long long _weekViewFirstVisibleSecond;
 }
 
+@property(nonatomic) long long weekViewFirstVisibleSecond; // @synthesize weekViewFirstVisibleSecond=_weekViewFirstVisibleSecond;
 @property(nonatomic) int dayViewFirstVisibleSecond; // @synthesize dayViewFirstVisibleSecond=_dayViewFirstVisibleSecond;
 @property(nonatomic) double weekViewHourScale; // @synthesize weekViewHourScale=_weekViewHourScale;
 @property(nonatomic) double dayViewHourScale; // @synthesize dayViewHourScale=_dayViewHourScale;

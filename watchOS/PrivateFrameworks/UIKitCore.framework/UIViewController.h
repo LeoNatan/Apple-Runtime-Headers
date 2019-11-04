@@ -330,6 +330,7 @@
 - (id)_effectiveStatusBarHiddenViewController;
 - (id)_effectiveStatusBarStyleViewController;
 - (void)setNeedsStatusBarAppearanceUpdate;
+- (void)_setNeedsStatusBarAppearanceUpdateWithAnimationParameters:(id)arg1;
 @property(readonly, nonatomic, getter=_preferredStatusBarHideAnimationParameters) UIStatusBarHideAnimationParameters *preferredStatusBarHideAnimationParameters;
 @property(readonly, nonatomic, getter=_preferredStatusBarStyleAnimationParameters) UIStatusBarStyleAnimationParameters *preferredStatusBarStyleAnimationParameters;
 @property(readonly, nonatomic) int preferredStatusBarUpdateAnimation;

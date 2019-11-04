@@ -6,18 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@protocol MTLBuffer;
-
 __attribute__((visibility("hidden")))
 @interface ARUIRingsRenderer : NSObject
 {
-    id <MTLBuffer> _vertexPositionsBuffer;
-    id <MTLBuffer> _indexBuffer;
     unsigned int _indexCount;
 }
 
 + (void)clearCaches;
-- (void).cxx_destruct;
 - (void)_renderRingsFollowingPercent:(id)arg1 withCommandEncoder:(id)arg2 forState:(id)arg3;
 - (void)_renderEntireRings:(id)arg1 withCommandEncoder:(id)arg2 forState:(id)arg3;
 - (void)renderRings:(id)arg1 withCommandEncoder:(id)arg2 forState:(id)arg3;

@@ -18,6 +18,7 @@
 {
     id <SBFThermalBlockProvider> _thermalProvider;
     _Bool _lockedOutCached;
+    unsigned long long _lastBlockedStatus;
     SBFUserAuthenticationController *_authenticationController;
 }
 

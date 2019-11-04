@@ -19,12 +19,12 @@
     NSHashTable *_fvcObservers;
     NSHashTable *_observers;
     NSDictionary *_complicationSlotDescriptors;
-    _Bool _editOptionsPrepared;
     NSMutableDictionary *_selectedSlotsByEditMode;
     _Bool _suppressingConfigurationChangeNotifications;
     _Bool _configurationChangedWhileSuppressingNotifications;
     _Bool _resourceDirectoryIsOwned;
     NSString *_cachedDefaultName;
+    _Bool _editOptionsPrepared;
     _Bool _isLibraryFace;
     _Bool _complicationExistenceInvalidatesSnapshot;
     _Bool _beingEdited;
@@ -83,12 +83,13 @@
 @property(nonatomic) long long mostRecentEditMode; // @synthesize mostRecentEditMode=_mostRecentEditMode;
 @property(readonly, nonatomic) _Bool complicationExistenceInvalidatesSnapshot; // @synthesize complicationExistenceInvalidatesSnapshot=_complicationExistenceInvalidatesSnapshot;
 @property(nonatomic) _Bool isLibraryFace; // @synthesize isLibraryFace=_isLibraryFace;
+@property(readonly, nonatomic) _Bool editOptionsPrepared; // @synthesize editOptionsPrepared=_editOptionsPrepared;
 @property(readonly, nonatomic) NSString *resourceDirectory; // @synthesize resourceDirectory=_resourceDirectory;
 @property(readonly, nonatomic) NTKFaceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) long long faceStyle; // @synthesize faceStyle=_faceStyle;
 - (void).cxx_destruct;
-- (_Bool)hasValidConfigurationForDeviceVersion:(unsigned int)arg1;
+- (_Bool)hasValidConfigurationForDevice:(id)arg1;
 - (void)_selectDefaultSlots;
 - (id)_sortedComplicationSlots;
 - (_Bool)_verifyCompatibilityOfConfiguration:(id)arg1;

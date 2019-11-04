@@ -19,6 +19,7 @@
 __attribute__((visibility("hidden")))
 @interface PUActivitySharingController : NSObject <PUActivityViewControllerDelegate, UIActivityViewControllerAirDropDelegate, PUCarouselSharingViewControllerDelegate, UIPresentationControllerDelegatePrivate, PXChangeObserver, PXActivitySharingController>
 {
+    _Bool _activityViewControllerWasCreated;
     _Bool _allowAirPlayActivity;
     _Bool _excludeShareActivity;
     id <PXActivitySharingControllerDelegate> _delegate;
@@ -67,6 +68,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PXSelectionSnapshot *selectionSnapshot;
 - (id)photosDataSource;
 @property(readonly, nonatomic) UIActivityViewController<PXActivityViewController> *activityViewController;
+- (id)activityViewControllerIfAvailable;
 - (void)_createCarouselSharingViewControllerIfNeeded;
 - (void)dealloc;
 - (id)initWithActivitySharingConfiguration:(id)arg1;

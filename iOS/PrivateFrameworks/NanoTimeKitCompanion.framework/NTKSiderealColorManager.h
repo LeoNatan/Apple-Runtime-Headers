@@ -6,16 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray, NTKAltitudeColorCurve;
 
 @interface NTKSiderealColorManager : NSObject
 {
     NSMutableArray *_updateHandlers;
+    NTKAltitudeColorCurve *_dialBackground;
+    NSArray *_dayGradient;
+    NTKAltitudeColorCurve *_civilTwilight;
+    NTKAltitudeColorCurve *_nauticalTwilight;
+    NTKAltitudeColorCurve *_astronomicalTwilight;
+    NTKAltitudeColorCurve *_innerComplication;
+    NTKAltitudeColorCurve *_outerComplication;
+    NTKAltitudeColorCurve *_dayDiskBloom;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)solarDiskGlowColorCurve;
+- (id)dayDiskBloomColorCurve;
 - (id)outerComplicationColorCurve;
 - (id)innerComplicationColorCurve;
 - (id)astronomicalTwilightColorCurve;

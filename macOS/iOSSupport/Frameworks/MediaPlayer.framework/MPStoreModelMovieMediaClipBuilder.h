@@ -24,7 +24,7 @@
 
 + (id)allSupportedProperties;
 - (id)mediaClipWithStoreItemMetadata:(id)arg1 storeItemMovieClip:(id)arg2;
-- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2 userIdentity:(id)arg3;
 
 @end
 

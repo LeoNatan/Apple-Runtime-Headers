@@ -13,8 +13,7 @@
 @optional
 - (void)rootFolderController:(SBRootFolderController *)arg1 didEndOverscrollOnFirstPageWithVelocity:(double)arg2;
 - (void)rootFolderController:(SBRootFolderController *)arg1 didOverscrollOnFirstPageByAmount:(double)arg2;
-- (_Bool)rootFolderControllerShouldAllowOverscrollOnFirstPage:(SBRootFolderController *)arg1;
-- (void)rootFolderControllerDidChangeSidebarPinned:(SBRootFolderController *)arg1;
+- (void)rootFolderController:(SBRootFolderController *)arg1 didChangeEffectiveSidebarVisibilityProgress:(double)arg2;
 - (void)rootFolderController:(SBRootFolderController *)arg1 didChangeSidebarVisibilityProgress:(double)arg2;
 - (SBIconListView *)externalDockIconListViewForRootFolderController:(SBRootFolderController *)arg1;
 - (void)rootFolderController:(SBRootFolderController *)arg1 willUsePropertyAnimator:(UIViewPropertyAnimator *)arg2 toTransitionToState:(long long)arg3;

@@ -6,20 +6,23 @@
 
 #import <objc/NSObject.h>
 
-#import <UIFoundation/NSCollectionLayoutEnvironment-Protocol.h>
+#import <UIFoundation/NSCollectionLayoutEnvironment_Private-Protocol.h>
 
 @class NSString;
-@protocol _NSCollectionLayoutContainer;
+@protocol NSCollectionLayoutContainer, _NSDataSourceSnapshot;
 
-__attribute__((visibility("hidden")))
-@interface NSCollectionLayoutEnvironment : NSObject <NSCollectionLayoutEnvironment>
+@interface NSCollectionLayoutEnvironment : NSObject <NSCollectionLayoutEnvironment_Private>
 {
-    id <_NSCollectionLayoutContainer> _container;
+    id <_NSDataSourceSnapshot> __dataSourceSnapshot;
+    id <NSCollectionLayoutContainer> _container;
+    NSObject *_traitCollection;
 }
 
-@property(retain, nonatomic) id <_NSCollectionLayoutContainer> container; // @synthesize container=_container;
+@property(retain, nonatomic) NSObject *traitCollection; // @synthesize traitCollection=_traitCollection;
+@property(retain, nonatomic) id <NSCollectionLayoutContainer> container; // @synthesize container=_container;
+@property(retain, nonatomic) id <_NSDataSourceSnapshot> _dataSourceSnapshot; // @synthesize _dataSourceSnapshot=__dataSourceSnapshot;
 - (void).cxx_destruct;
-- (id)initWithContainer:(id)arg1;
+- (id)initWithContainer:(id)arg1 traitCollection:(id)arg2 dataSourceSnapshot:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

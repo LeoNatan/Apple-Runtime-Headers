@@ -52,9 +52,9 @@
 - (id)nowWindow;
 - (id)timeTravelEntry;
 - (id)nowEntry;
-- (void)extendLeftFromDate:(id)arg1 withEntries:(struct NSArray *)arg2;
-- (void)extendRightFromDate:(id)arg1 withEntries:(struct NSArray *)arg2;
-- (void)resetWithEntry:(id)arg1;
+- (void)extendLeftFromDate:(id)arg1 withEntries:(struct NSArray *)arg2 tritiumUpdatePriority:(int)arg3;
+- (void)extendRightFromDate:(id)arg1 withEntries:(struct NSArray *)arg2 tritiumUpdatePriority:(int)arg3;
+- (void)resetWithEntry:(id)arg1 withTritiumUpdatePriority:(int)arg2;
 - (void)clearTimeTravelCache;
 - (id)tritium_entryForDate:(id)arg1;
 - (void)dealloc;

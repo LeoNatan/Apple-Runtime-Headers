@@ -18,6 +18,7 @@
     _Bool _isScrubbing;
     MPAVItem *_itemForCurrentTimeChange;
     NSOperationQueue *_recordEventOperationQueue;
+    NSString *_itemContentItemIDForLastPlayEventEndTime;
     double _lastPlayEventEndTimeForCurrentItem;
     double _lastPlayEventTimeStamp;
     _Bool _shouldReportAsPlaying;
@@ -39,7 +40,7 @@
 - (void).cxx_destruct;
 - (double)_itemStartTimeForItem:(id)arg1;
 - (double)_itemEndTimeForItem:(id)arg1 withProposedEndTime:(double)arg2;
-- (void)_setLastPlayEventEndTimeForCurrentItem:(double)arg1;
+- (void)_setLastPlayEventEndTime:(double)arg1 forItemContentItemID:(id)arg2;
 - (void)_sendPlaybackEndNotification:(double)arg1 endTime:(double)arg2;
 - (void)_sendPlaybackStartNotification;
 - (void)_reportPlaybackEndedForTimeoutWithItem:(id)arg1;

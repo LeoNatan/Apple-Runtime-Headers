@@ -13,11 +13,13 @@
 @interface GEOStaleResource : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOResource *_desiredResource;
     GEOResource *_fallbackResource;
     double _originalTimestamp;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_originalTimestamp:1;
         unsigned int read_unknownFields:1;
@@ -52,6 +54,8 @@
 @property(retain, nonatomic) GEOResource *desiredResource;
 @property(readonly, nonatomic) BOOL hasDesiredResource;
 - (void)_readDesiredResource;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

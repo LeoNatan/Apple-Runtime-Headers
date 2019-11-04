@@ -36,14 +36,16 @@
 - (void).cxx_destruct;
 - (void)_recreateEventTapAsNeededForListenerWrappers:(id)arg1 listenOnly:(BOOL)arg2;
 - (id)_createEventTapWithEventsOfInterest:(unsigned long long)arg1 listenOnly:(BOOL)arg2;
-- (id)_findWrapperForListener:(id)arg1 inListeners:(id)arg2;
+- (id)_findWrapperForListener:(void *)arg1 inListeners:(id)arg2;
 - (unsigned long long)_eventsOfInterestAcrossAllListeners:(id)arg1;
 - (id)_initWithPlacement:(unsigned int)arg1 location:(unsigned long long)arg2;
 - (struct __CGEvent *)eventTap:(id)arg1 handleEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (void)_unregisterListenerForAllEvents:(void *)arg1;
 - (void)unregisterListenerForAllEvents:(id)arg1;
 - (void)unregisterMouseEventListener:(id)arg1 listenOnly:(BOOL)arg2;
 - (void)unregisterKeyboardEventListener:(id)arg1 listenOnly:(BOOL)arg2;
 - (void)unregisterGestureEventListener:(id)arg1 listenOnly:(BOOL)arg2;
+- (void)_unregisterListener:(void *)arg1 listenOnly:(BOOL)arg2 forEventMask:(unsigned long long)arg3;
 - (void)unregisterListener:(id)arg1 listenOnly:(BOOL)arg2 forEventMask:(unsigned long long)arg3;
 - (void)registerMouseEventListener:(id)arg1 listenOnly:(BOOL)arg2;
 - (void)registerKeyboardEventListener:(id)arg1 listenOnly:(BOOL)arg2;

@@ -13,6 +13,7 @@
     NSPopUpButton *_microphoneButton;
 }
 
++ (_Bool)deviceHasViews:(id)arg1;
 @property NSPopUpButton *microphoneButton; // @synthesize microphoneButton=_microphoneButton;
 - (void)handleMenu:(id)arg1;
 - (void)loadPrefs;

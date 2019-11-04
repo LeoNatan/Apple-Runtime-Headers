@@ -76,9 +76,13 @@
 - (BOOL)isVideoHDREnabled;
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(BOOL)arg1;
 - (BOOL)automaticallyAdjustsVideoHDREnabled;
+- (void)setGeometricDistortionCorrectionEnabled:(BOOL)arg1;
+- (BOOL)isGeometricDistortionCorrectionEnabled;
+- (BOOL)isGeometricDistortionCorrectionSupported;
 - (double)maxAvailableVideoZoomFactor;
 - (double)minAvailableVideoZoomFactor;
 - (double)dualCameraSwitchOverVideoZoomFactor;
+- (id)virtualDeviceSwitchOverVideoZoomFactors;
 - (void)cancelVideoZoomRamp;
 - (BOOL)isRampingVideoZoom;
 - (void)rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;

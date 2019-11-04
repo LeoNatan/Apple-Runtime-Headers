@@ -13,11 +13,13 @@
 @interface GEORPMapLocation : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_coordinate;
     NSData *_image;
     NSString *_mapScreenshotId;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     float _zoomLevel;
     struct {
         unsigned int has_zoomLevel:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSData *image;
 @property(readonly, nonatomic) BOOL hasImage;
 - (void)_readImage;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (void)_setMapMode:(int)arg1 region:(id)arg2;
 
 @end

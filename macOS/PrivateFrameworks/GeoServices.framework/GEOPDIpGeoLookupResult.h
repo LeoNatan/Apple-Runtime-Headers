@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDIpGeoLookupResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_countryCode;
     NSString *_ipAddress;
     GEOLatLng *_location;
     NSString *_timeZome;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _status;
     struct {
         unsigned int has_status:1;
@@ -67,6 +69,8 @@ __attribute__((visibility("hidden")))
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
 @property(nonatomic) int status;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

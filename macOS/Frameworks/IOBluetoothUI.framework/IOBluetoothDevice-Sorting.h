@@ -9,6 +9,8 @@
 @interface IOBluetoothDevice (Sorting)
 + (id)imageForSystemIconType:(unsigned int)arg1 ofSize:(struct CGSize)arg2;
 - (long long)compare:(id)arg1;
+- (id)imageForTypeStr:(id)arg1;
+- (id)typeForModelStr:(id)arg1;
 - (id)findAppleDefaultNameByPIDVID;
 - (id)image;
 - (id)findDefaultImage;

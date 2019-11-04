@@ -236,9 +236,15 @@
 - (void)reportStartupTime:(CDUnknownBlockType)arg1;
 - (id)descriptionForChartData:(id)arg1 timeScope:(long long)arg2;
 - (id)replaceRangeClause:(id)arg1;
+- (id)_numberForXCoordinate:(double)arg1 graphView:(id)arg2;
+- (id)_dateForXCoordinate:(double)arg1 graphView:(id)arg2;
 - (id)descriptionForXCoordinate:(double)arg1 graphView:(id)arg2;
+- (id)_rangeValueAsNumber:(id)arg1;
+- (id)descriptionSpansForGraphView:(id)arg1;
 - (id)descriptionSeriesForGraphView:(id)arg1;
-- (id)descriptionForVisiblePoints;
+- (_Bool)_date:(id)arg1 closeToDate:(id)arg2 epsilonDateComponents:(id)arg3 calendar:(id)arg4;
+- (id)_addNoDataEntries:(id)arg1 timeScope:(long long)arg2;
+- (id)accessibilityDataForChart;
 - (id)initWithDisplayTypes:(id)arg1 healthStore:(id)arg2 unitPreferenceController:(id)arg3 dateCache:(id)arg4 chartDataCacheController:(id)arg5 selectedTimeScopeController:(id)arg6 initialXValue:(id)arg7 options:(unsigned long long)arg8 fixedRange:(id)arg9;
 - (id)initWithDisplayTypes:(id)arg1 healthStore:(id)arg2 unitPreferenceController:(id)arg3 dateCache:(id)arg4 chartDataCacheController:(id)arg5 selectedTimeScopeController:(id)arg6 initialXValue:(id)arg7 options:(unsigned long long)arg8;
 - (id)initWithStackedDisplayTypes:(id)arg1 healthStore:(id)arg2 unitPreferenceController:(id)arg3 dateCache:(id)arg4 chartDataCacheController:(id)arg5 selectedTimeScopeController:(id)arg6 initialXValue:(id)arg7 options:(unsigned long long)arg8;

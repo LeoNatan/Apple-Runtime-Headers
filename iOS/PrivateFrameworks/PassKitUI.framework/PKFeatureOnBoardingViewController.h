@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 #import <PassKitUI/PKViewControllerPreflightable-Protocol.h>
 
-@class NSString, PKApplyController, PKDynamicProvisioningPageContent, PKPaymentProvisioningController, PKPaymentSetupProduct, UIImage, UIView;
+@class NSString, PKApplyController, PKDynamicProvisioningPageContent, PKPaymentInstallmentConfiguration, PKPaymentProvisioningController, PKPaymentSetupProduct, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate, PKSetupFlowControllerProtocol;
 
 @interface PKFeatureOnBoardingViewController : PKExplanationViewController <PKPaymentSetupPresentationProtocol, PKExplanationViewControllerDelegate, PKViewControllerPreflightable>
@@ -24,9 +24,11 @@
     UIImage *_heroImage;
     PKDynamicProvisioningPageContent *_currentPage;
     _Bool _isMainFeatureOnboardingPage;
-    UIView *_topBackgroundView;
+    _Bool _useCompactLayout;
+    PKPaymentInstallmentConfiguration *_installmentConfiguration;
 }
 
+@property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 - (void).cxx_destruct;
 - (id)paymentSetupMarker;
 - (void)_handleNotifyRequested;
@@ -41,7 +43,6 @@
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
-- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithParentFlowController:(id)arg1 setupDelegate:(id)arg2 context:(long long)arg3 featureIdentifier:(unsigned long long)arg4 provisoningController:(id)arg5 paymentSetupProduct:(id)arg6 currentPage:(id)arg7;
 

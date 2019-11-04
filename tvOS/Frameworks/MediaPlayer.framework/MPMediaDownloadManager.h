@@ -13,6 +13,8 @@
 }
 
 + (id)sharedManager;
+- (void)downloadLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)pausedDownloadForMediaItemPersistentID:(long long)arg1;
 - (id)activeDownloadForStoreID:(long long)arg1;
 - (id)activeDownloadForMediaItemPersistentID:(long long)arg1;
 - (_Bool)hasActiveDownloads;

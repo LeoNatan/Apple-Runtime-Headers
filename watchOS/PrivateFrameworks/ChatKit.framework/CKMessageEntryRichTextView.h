@@ -32,6 +32,7 @@
 @property(nonatomic) BOOL balloonColor; // @synthesize balloonColor=_balloonColor;
 - (void).cxx_destruct;
 - (void)handleTapOrLongPress:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)attributedTextForCompositionText:(id)arg1;
 - (id)composeImageForTransferGUID:(id)arg1;
 - (void)previewDidChange:(id)arg1;

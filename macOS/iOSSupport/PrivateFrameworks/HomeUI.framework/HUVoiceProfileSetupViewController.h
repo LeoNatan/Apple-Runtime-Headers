@@ -9,12 +9,13 @@
 #import <HomeUI/HUConfigurationViewController-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
 
-@class HUPersonalRequestsEditorItemManager, NSString, OBLinkTrayButton, OBTrayButton;
+@class HMHome, HUPersonalRequestsEditorItemManager, NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
 @interface HUVoiceProfileSetupViewController : HUImageOBWelcomeController <HUConfigurationViewController, HUPreloadableViewController>
 {
     id <HUConfigurationViewControllerDelegate> _delegate;
+    HMHome *_home;
     OBTrayButton *_setupButton;
     OBLinkTrayButton *_notNowButton;
     HUPersonalRequestsEditorItemManager *_prEditorItemManager;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
 @property(retain, nonatomic) OBLinkTrayButton *notNowButton; // @synthesize notNowButton=_notNowButton;
 @property(retain, nonatomic) OBTrayButton *setupButton; // @synthesize setupButton=_setupButton;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -35,12 +37,13 @@
 - (void)userTappedContinueFromWarning;
 - (id)hu_preloadContent;
 - (void)_turnOffPersonalRequests;
+- (void)_turnOffVoiceRecognition;
 - (void)_resetVoiceProfileSetup;
 - (void)_setupVoiceProfile:(id)arg1;
 - (void)_dontSetupVoiceProfile;
 - (void)_dontSetupVoiceProfileWithWarning:(id)arg1;
 - (void)_setupPersonalRequestsItemInfrastructure;
-- (id)init;
+- (id)initWithHome:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

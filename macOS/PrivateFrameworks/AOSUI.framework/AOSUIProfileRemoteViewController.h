@@ -19,7 +19,6 @@
 @property(nonatomic) __weak id <AOSUIProfileRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)viewHost_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(id)arg2;
-- (void)viewHost_hideOverlay:(BOOL)arg1;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;
 

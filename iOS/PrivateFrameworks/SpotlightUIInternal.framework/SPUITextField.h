@@ -6,7 +6,7 @@
 
 #import <SearchUI/SearchUISearchField.h>
 
-@class NSArray, SPSearchEntity, SPUIHeaderBlurView, UIButton, UIImage, UIView;
+@class NSArray, NSString, SPSearchEntity, SPUIHeaderBlurView, UIButton, UIImage, UIView;
 @protocol SearchUITextFieldDelegate;
 
 @interface SPUITextField : SearchUISearchField
@@ -18,6 +18,8 @@
     long long _activeInterfaceOrientation;
     SPUIHeaderBlurView *_blurView;
     UIView *_tintView;
+    NSString *_lastSearchText;
+    SPSearchEntity *_lastSearchEntity;
     struct CGSize _imageSize;
 }
 
@@ -25,6 +27,8 @@
 + (Class)_backgroundViewClass;
 + (_Bool)_isRTL;
 @property _Bool ignoreTokensUpdate; // @synthesize ignoreTokensUpdate=_ignoreTokensUpdate;
+@property(retain) SPSearchEntity *lastSearchEntity; // @synthesize lastSearchEntity=_lastSearchEntity;
+@property(retain) NSString *lastSearchText; // @synthesize lastSearchText=_lastSearchText;
 @property(retain) UIView *tintView; // @synthesize tintView=_tintView;
 @property(retain) SPUIHeaderBlurView *blurView; // @synthesize blurView=_blurView;
 @property long long activeInterfaceOrientation; // @synthesize activeInterfaceOrientation=_activeInterfaceOrientation;
@@ -53,7 +57,6 @@
 - (struct CGRect)_microphoneRectForBounds:(struct CGRect)arg1;
 - (_Bool)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
 - (struct CGSize)intrinsicContentSize;
-- (_Bool)resignFirstResponder;
 - (id)init;
 
 // Remaining properties

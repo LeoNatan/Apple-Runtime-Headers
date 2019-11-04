@@ -22,5 +22,8 @@
 - (void)viewControllerDidDeactivate:(SPViewController *)arg1;
 - (void)viewControllerWillActivate:(SPViewController *)arg1;
 - (void)viewController:(SPViewController *)arg1 createWKInterfaceControllerClass:(NSString *)arg2 properties:(NSArray *)arg3 contextID:(NSNumber *)arg4 creationCompletion:(void (^)(NSString *))arg5;
+
+@optional
+- (void)appWithRootInterfaceViewController:(SPViewController *)arg1 performActionWithItemID:(NSString *)arg2 forNotificationID:(NSString *)arg3 userInfo:(NSDictionary *)arg4 completionHandler:(void (^)(void))arg5;
 @end
 

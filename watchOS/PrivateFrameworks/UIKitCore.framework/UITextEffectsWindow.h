@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UICanvasBasedObject-Protocol.h>
 
-@class NSDictionary, NSString, UIEditingOverlayViewController, UIWindowScene;
+@class NSDictionary, NSLayoutConstraint, NSString, UIEditingOverlayViewController, UIWindowScene;
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow <_UICanvasBasedObject>
 {
@@ -25,6 +25,7 @@
     struct CGSize _hostedSceneSize;
     _Bool _manualHostingOverride;
     UIEditingOverlayViewController *_editingOverlayViewController;
+    NSLayoutConstraint *_bottomConstraint;
     struct UIEdgeInsets _hostedSafeInsets;
 }
 
@@ -43,6 +44,7 @@
 + (id)_sharedTextEffectsWindowforWindowScene:(id)arg1 allowHosted:(_Bool)arg2 matchesStatusBarOrientationOnAccess:(_Bool)arg3 shouldCreateIfNecessary:(_Bool)arg4;
 + (_Bool)_isSecure;
 + (_Bool)_shouldSoftAssertOnSetScreen;
+@property(readonly, nonatomic) UIEditingOverlayViewController *editingOverlayViewController; // @synthesize editingOverlayViewController=_editingOverlayViewController;
 @property(nonatomic) struct UIEdgeInsets hostedSafeInsets; // @synthesize hostedSafeInsets=_hostedSafeInsets;
 @property(nonatomic) struct CGSize hostedSceneSize; // @synthesize hostedSceneSize=_hostedSceneSize;
 @property(nonatomic) struct CGPoint hostedWindowOffset; // @synthesize hostedWindowOffset=_hostedWindowOffset;
@@ -86,6 +88,7 @@
 - (void)_didRemoveSubview:(id)arg1;
 - (void)delayHideWindow;
 - (void)_updateRootViewConstraintsForInterfaceOrientationAndStatusBarHeight;
+- (id)_inputWindowController;
 - (void)handleStatusBarChangeFromHeight:(float)arg1 toHeight:(float)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2;
@@ -98,6 +101,7 @@
 - (struct CGRect)_forHostedProcessConvertRect:(struct CGRect)arg1 forWindow:(id)arg2 wasFromWindow:(_Bool)arg3;
 - (struct CGPoint)_forHostedProcessConvertPoint:(struct CGPoint)arg1 forWindow:(id)arg2 wasFromWindow:(_Bool)arg3;
 @property(readonly, nonatomic) struct CGRect hostedFrame;
+- (void)addBottomPadding:(float)arg1;
 - (void)_updateTransformLayerForClassicPresentation;
 - (void)_configureContextOptions:(id)arg1;
 - (void)_restoreWindowLevel;

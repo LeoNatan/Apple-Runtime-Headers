@@ -107,6 +107,7 @@
 - (void)loadSidecarsFor:(id)arg1;
 - (BOOL)confirmAsset:(id)arg1 isSidecarOfAsset:(id)arg2;
 - (BOOL)confirmAsset:(id)arg1 isBaseOf:(id)arg2;
+- (BOOL)confirmAsset:(id)arg1 isSocOf:(id)arg2;
 - (BOOL)confirmAsset:(id)arg1 isRenderOf:(id)arg2;
 - (void)setIsLivePhotoForImportIdentifier:(id)arg1;
 - (BOOL)isLivePhotoForImportIdentifier:(id)arg1;

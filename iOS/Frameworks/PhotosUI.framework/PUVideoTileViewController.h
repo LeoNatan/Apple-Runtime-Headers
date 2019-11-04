@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _playerIsSeeking;
     _Bool _playerDidPlayToEnd;
     _Bool _placeholderVisible;
+    _Bool _currentImageIsPlaceholder;
     int __currentImageRequestID;
     PUAssetViewModel *_assetViewModel;
     PUMediaProvider *_mediaProvider;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
     struct CGSize __targetSize;
 }
 
+@property(nonatomic) _Bool currentImageIsPlaceholder; // @synthesize currentImageIsPlaceholder=_currentImageIsPlaceholder;
 @property(nonatomic) _Bool placeholderVisible; // @synthesize placeholderVisible=_placeholderVisible;
 @property(nonatomic) _Bool playerDidPlayToEnd; // @synthesize playerDidPlayToEnd=_playerDidPlayToEnd;
 @property(nonatomic) _Bool playerIsSeeking; // @synthesize playerIsSeeking=_playerIsSeeking;

@@ -13,6 +13,7 @@
     struct os_unfair_lock_s _primaryCaptureRectLock;
     struct CGPoint _primaryCaptureRectCenterPoint;
     double _primaryCaptureRectAspectRatio;
+    long long _primaryCaptureRectUniqueID;
     _Bool _havePendingPrimaryCaptureRectChange;
     struct CGRect _primaryCaptureRect;
     struct CGRect _overCaptureRect;
@@ -26,6 +27,7 @@
     double _lastAspectCenterUpdateTime;
 }
 
++ (long long)uniqueID;
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) struct CGRect overCaptureRect; // @synthesize overCaptureRect=_overCaptureRect;
 @property(readonly, nonatomic) struct CGRect primaryCaptureRect; // @synthesize primaryCaptureRect=_primaryCaptureRect;
@@ -40,6 +42,8 @@
 - (void)layoutSublayers;
 @property(nonatomic) _Bool automaticallyDimsOverCaptureRegion;
 @property(readonly, nonatomic) long long overCaptureStatus;
+- (void)getPrimaryCaptureRectCenter:(struct CGPoint *)arg1 aspectRatio:(double *)arg2 uniqueID:(long long *)arg3;
+- (long long)primaryCaptureRectUniqueID;
 @property(readonly, nonatomic) double primaryCaptureRectAspectRatio;
 @property(readonly, nonatomic) struct CGPoint primaryCaptureRectCenterPoint;
 @property(nonatomic, getter=isPrimaryAndOverCaptureCompositingEnabled) _Bool primaryAndOverCaptureCompositingEnabled;

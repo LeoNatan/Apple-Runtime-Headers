@@ -7,6 +7,7 @@
 @protocol TIAssistantSettings
 - (void)launchDictationSettings;
 - (void)launchKeyboardSettings;
+- (void)dismissedDataSharingWithResponse:(int)arg1;
 - (void)dismissDialogWithCompletionHandler:(void (^)(void))arg1;
 - (void)presentDialogForType:(int)arg1 withCompletionHandler:(void (^)(int))arg2;
 @end

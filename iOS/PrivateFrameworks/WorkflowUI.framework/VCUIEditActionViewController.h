@@ -6,11 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <WorkflowUI/WFComponentNavigationContext-Protocol.h>
 #import <WorkflowUI/WFEditWorkflowViewControllerDelegate-Protocol.h>
 
 @class NSString, WFEditWorkflowViewController, WFWorkflow;
 
-@interface VCUIEditActionViewController : UIViewController <WFEditWorkflowViewControllerDelegate>
+@interface VCUIEditActionViewController : UIViewController <WFEditWorkflowViewControllerDelegate, WFComponentNavigationContext>
 {
     WFWorkflow *_workflow;
     WFEditWorkflowViewController *_workflowViewController;
@@ -19,6 +20,7 @@
 @property(retain, nonatomic) WFEditWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIViewController *componentHostingViewController;
 - (_Bool)workflowViewControllerCanRemoveActions:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithWorkflow:(id)arg1;

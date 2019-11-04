@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)addNFCHardwareManagerCallbacksListener:(id)arg1;
 @property(readonly, copy, nonatomic, getter=getDelegates) NSArray *delegates;
 - (void)dequeueReaderSession:(id)arg1;
-- (void)queueReaderSession:(id)arg1 showSharingUI:(unsigned long long)arg2 coreNFCSessionType:(unsigned long long)arg3 scanText:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)queueReaderSession:(id)arg1 sessionConfig:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;
 

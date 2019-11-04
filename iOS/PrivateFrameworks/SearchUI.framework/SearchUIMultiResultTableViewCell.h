@@ -26,6 +26,7 @@
 @property(retain, nonatomic) SearchUIAppIconsRowView *bottomRow; // @synthesize bottomRow=_bottomRow;
 @property(retain, nonatomic) SearchUIAppIconsRowView *topRow; // @synthesize topRow=_topRow;
 - (void).cxx_destruct;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)removeKeyboardHandler;
 - (_Bool)navigateKeyboardUp;
 - (_Bool)navigateKeyboardDown;
@@ -41,7 +42,6 @@
 - (_Bool)isExpandable;
 - (void)layoutSubviews;
 - (double)appRowSpacing;
-- (double)topAndBottomPadding;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateWithRowModel:(id)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

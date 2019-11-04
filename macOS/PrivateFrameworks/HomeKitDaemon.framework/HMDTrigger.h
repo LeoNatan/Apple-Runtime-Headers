@@ -52,7 +52,6 @@
 - (void)_addActionSet:(id)arg1;
 - (BOOL)supportsDeviceWithCapabilities:(id)arg1;
 - (void)confirmResident;
-- (void)registerWithResidentDeviceManager;
 - (id)updateEventTriggerMessage:(int)arg1 message:(id)arg2 relay:(BOOL)arg3;
 - (void)timerFired:(id)arg1;
 - (id)emptyModelObject;

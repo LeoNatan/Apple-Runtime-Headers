@@ -11,6 +11,8 @@
 }
 
 - (id)description;
+- (void)updateSeparatorInset;
+- (void)safeAreaInsetsDidChange;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

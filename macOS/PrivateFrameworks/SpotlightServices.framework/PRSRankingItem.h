@@ -29,7 +29,7 @@
     NSData *_serverFeaturesJSON;
     double _mostRecentUsedDate;
     double _closestUpComingDate;
-    // Error parsing type: ^{?=[2Q]TT[0^v]}, name: _attributes
+    // Error parsing type: ^{?=q[2Q]TT[0^v]}, name: _attributes
     PRSRankingSpanCalculator *_spanCalculator;
     NSMutableArray *_matchedSenders;
     NSMutableArray *_matchedVipSenders;
@@ -45,15 +45,6 @@
 + (unsigned short)featureFromVirtualIdx:(unsigned long long)arg1;
 + (id)rankingDescriptorForBundleFeature:(unsigned long long)arg1;
 + (unsigned long long)indexOfShortcutBit;
-+ (id)deviceClass;
-+ (int *)requiredContactAttributesIndexes;
-+ (id)requiredContactAttributes;
-+ (id)requiredSMSAttributes;
-+ (id)requiredMailAttributes;
-+ (id)requiredOtherAttributes;
-+ (int *)requiredTextFeatureAttributesIndexes;
-+ (id)requiredTextFeatureAttributes;
-+ (id)requiredAttributes;
 + (void)initialize;
 @property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) BOOL isPrepared; // @synthesize isPrepared=_isPrepared;
@@ -72,7 +63,7 @@
 // Property attributes: TT,N,V_indexScore
 
 // Error parsing type for property attributes:
-// Property attributes: T^{?=[2Q]TT[0^v]},N,V_attributes
+// Property attributes: T^{?=q[2Q]TT[0^v]},N,V_attributes
 
 @property(nonatomic) double closestUpComingDate; // @synthesize closestUpComingDate=_closestUpComingDate;
 @property(nonatomic) double mostRecentUsedDate; // @synthesize mostRecentUsedDate=_mostRecentUsedDate;
@@ -116,8 +107,8 @@
 - (void)populateContactFeatures:(struct PRSL2FeatureScoreInfo *)arg1 currentTime:(double)arg2;
 - (BOOL)didMatchRankingDescriptor:(id)arg1;
 - (void)dealloc;
--     // Error parsing type: @36@0:8^{?=[2Q]TT[0^v]}16@24c32, name: initWithAttrs:bundleID:isAppleApp:
--     // Error parsing type: @32@0:8^{?=[2Q]TT[0^v]}16@24, name: initWithAttrs:bundleID:
+-     // Error parsing type: @36@0:8^{?=q[2Q]TT[0^v]}16@24c32, name: initWithAttrs:bundleID:isAppleApp:
+-     // Error parsing type: @32@0:8^{?=q[2Q]TT[0^v]}16@24, name: initWithAttrs:bundleID:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -16,6 +16,11 @@
     CSLPIDispatchTimer *_timeoutTimer;
     struct os_unfair_lock_s _lock;
     unsigned int _state;
+    unsigned long long _startMachTime;
+    unsigned long long _startContinuousDeltaTime;
+    unsigned long long _startKernelAPWakeTime;
+    _Bool _wasAfterCanSleep;
+    _Bool _wasAfterWillSleep;
     CDUnknownBlockType _completion;
 }
 

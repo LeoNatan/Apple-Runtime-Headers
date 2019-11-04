@@ -32,10 +32,11 @@
     NSMutableArray *_layoutActiveConstraints;
     NSMapTable *_senderActionMap;
     struct {
+        unsigned int isInLayoutReentrancyGuard:1;
         unsigned int needsAppearanceUpdate:1;
         unsigned int plainAppearanceChanged:1;
         unsigned int doneAppearanceChanged:1;
-    } _updateFlags;
+    } _buttonBarFlags;
     BOOL _itemsInGroupUseSameSize;
     BOOL _compact;
     NSArray *_barButtonGroups;

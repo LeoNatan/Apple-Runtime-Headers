@@ -71,7 +71,7 @@
 - (id)work_allNodesWithFromRelationshipID:(long long)arg1 error:(id *)arg2;
 - (_Bool)work_deleteAllRelationshipsWithName:(id)arg1 withError:(id *)arg2;
 - (id)work_nodesContainingAttribute:(id)arg1 withValue:(id)arg2 error:(id *)arg3;
-- (id)work_nodesContainingAttributeWithID:(long long)arg1 withValue:(id)arg2 error:(id *)arg3;
+- (id)work_nodesContainingAttributeWithID:(long long)arg1 limit:(long long)arg2 withValue:(id)arg3 error:(id *)arg4;
 - (_Bool)work_deleteNodesWithIDs:(id)arg1 error:(id *)arg2;
 - (_Bool)work_deleteNodeWithID:(long long)arg1 error:(id *)arg2;
 - (id)work_nodeForID:(long long)arg1 error:(id *)arg2;

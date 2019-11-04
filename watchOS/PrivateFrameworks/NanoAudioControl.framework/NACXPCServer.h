@@ -19,6 +19,7 @@
     NSObject<OS_dispatch_queue> *_audioAndHapticPreviewQueue;
     NPSDomainAccessor *_domainAccessor;
     NSMutableDictionary *_volumeRecords;
+    NSMutableDictionary *_listeningModesRecords;
     NSMutableDictionary *_audioRoutesRecords;
     NSXPCListener *_xpcListener;
     NACIDSClient *_idsClient;
@@ -27,15 +28,13 @@
     int _hapticState;
     _Bool _systemMutedState;
     NSObject<OS_dispatch_source> *_audioRouteDeferTimer;
-    _Bool _audioAndHapticPreviewIsPlaying;
-    _Bool _defaultHapticPreviewIsPlaying;
-    _Bool _prominentHapticPreviewIsPlaying;
 }
 
 + (id)server;
 - (void).cxx_destruct;
 - (id)_routeObservationCategoriesForConnection:(id)arg1;
 - (id)_audioRoutesRecordForCategory:(id)arg1;
+- (id)_listeningModesRecordForTarget:(id)arg1;
 - (id)_volumeRecordForTarget:(id)arg1;
 - (void)_cleanupConnection:(id)arg1;
 - (void)_persistHapticState;
@@ -54,6 +53,9 @@
 - (void)_updateAudioRoutes:(id)arg1 category:(id)arg2;
 - (void)_scheduleDeferredAudioRoutesUpdate:(id)arg1 category:(id)arg2;
 - (void)client:(id)arg1 audioRoutes:(id)arg2 didChangeForCategory:(id)arg3;
+- (void)client:(id)arg1 didFailToSetCurrentListeningModeForTarget:(id)arg2 error:(id)arg3;
+- (void)client:(id)arg1 currentListeningMode:(id)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 availableListeningModes:(id)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 volumeWarningEnabled:(_Bool)arg2 volumeWarningState:(int)arg3 didChangeForTarget:(id)arg4;
 - (void)client:(id)arg1 EULimit:(float)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 systemMutedStateDidChange:(_Bool)arg2;
@@ -78,9 +80,16 @@
 - (void)hapticState:(CDUnknownBlockType)arg1;
 - (void)prominentHapticEnabled:(CDUnknownBlockType)arg1;
 - (void)hapticIntensity:(CDUnknownBlockType)arg1;
+- (void)setCurrentListeningMode:(id)arg1 forTarget:(id)arg2;
+- (void)currentListeningModeForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)availableListeningModesForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)_endObservingListeningModesForTarget:(id)arg1 connection:(id)arg2;
+- (void)_beginObservingListeningModesForTarget:(id)arg1 connection:(id)arg2;
+- (void)endObservingListeningModesForTarget:(id)arg1;
+- (void)beginObservingListeningModesForTarget:(id)arg1;
 - (void)setSystemMuted:(_Bool)arg1;
-- (void)setMuted:(_Bool)arg1 target:(id)arg2;
-- (void)setVolumeValue:(float)arg1 target:(id)arg2;
+- (void)setMuted:(_Bool)arg1 forTarget:(id)arg2;
+- (void)setVolumeValue:(float)arg1 forTarget:(id)arg2;
 - (void)volumeWarningForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)EULimitForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)mutedStateForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
@@ -88,11 +97,10 @@
 - (void)volumeValueForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)_endObservingVolumeForTarget:(id)arg1 connection:(id)arg2;
 - (void)endObservingVolumeForTarget:(id)arg1;
-- (int)_aggregatedCountOfObserversForTarget:(id)arg1;
+- (int)_aggregatedCountOfObserversForTarget:(id)arg1 inRecords:(id)arg2;
 - (void)_beginObservingVolumeForTarget:(id)arg1 connection:(id)arg2;
 - (void)beginObservingVolumeForTarget:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)audioAndHapticPreviewHasCompletedPlaying;
 - (id)init;
 
 // Remaining properties

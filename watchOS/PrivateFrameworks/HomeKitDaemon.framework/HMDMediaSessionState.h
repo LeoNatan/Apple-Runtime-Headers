@@ -8,13 +8,17 @@
 
 #import <HomeKitDaemon/HMFDumpState-Protocol.h>
 
-@class NSObject, NSString;
+@class NSNumber, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HMDMediaSessionState : HMFObject <HMFDumpState>
 {
     NSString *_sessionIdentifier;
     int _playbackState;
+    int _shuffleState;
+    int _repeatState;
+    NSNumber *_volume;
+    NSString *_mediaUniqueIdentifier;
     NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
@@ -24,6 +28,10 @@
 - (id)dumpState;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
+@property(copy) NSString *mediaUniqueIdentifier; // @synthesize mediaUniqueIdentifier=_mediaUniqueIdentifier;
+@property(copy) NSNumber *volume; // @synthesize volume=_volume;
+@property(nonatomic) int repeatState; // @synthesize repeatState=_repeatState;
+@property(nonatomic) int shuffleState; // @synthesize shuffleState=_shuffleState;
 @property(nonatomic) int playbackState; // @synthesize playbackState=_playbackState;
 - (id)initWithSessionIdentifier:(id)arg1;
 

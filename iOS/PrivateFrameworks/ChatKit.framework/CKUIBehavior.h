@@ -46,6 +46,7 @@
 @property(readonly, nonatomic) UIFont *searchHeaderButtonFont;
 @property(readonly, nonatomic) UIFont *searchHeaderFont;
 @property(readonly, nonatomic) double searchMessageCellHeight;
+@property(readonly, nonatomic) double searchLinkThumbnailWidth;
 @property(readonly, nonatomic) double searchPhotoThumbnailWidth;
 @property(readonly, nonatomic) double searchSectionTitleVertPadding;
 @property(readonly, nonatomic) double searchHeaderHeight;
@@ -379,8 +380,11 @@
 @property(readonly, nonatomic) _Bool hyphenatesTextContent;
 @property(readonly, nonatomic) _Bool shouldUseDynamicGradient;
 @property(readonly, nonatomic) UIImage *replayImage;
+@property(readonly, nonatomic) UIImage *screenTimeConversationListSummaryIcon;
 @property(readonly, nonatomic) UIImage *facetimeAudioIcon;
 @property(readonly, nonatomic) UIImage *conversationListFacetimeVideoIcon;
+@property(readonly, nonatomic) UIImage *hawkingWarningIconRed;
+@property(readonly, nonatomic) UIImage *hawkingWarningIcon;
 @property(readonly, nonatomic) UIImage *locationShareActionIcon;
 @property(readonly, nonatomic) UIFont *transcriptJunkHeaderButtonFont;
 @property(readonly, nonatomic) UIFont *transcriptJunkHeaderTitleFont;
@@ -502,6 +506,8 @@
 @property(readonly, nonatomic) UIFont *conversationListBoldSummaryFont;
 @property(readonly, nonatomic) UIFont *conversationListSummaryFont;
 @property(readonly, nonatomic) UIFont *conversationListSenderFont;
+@property(readonly, nonatomic) UIFont *conversationListLargeTitleReducedFont;
+@property(readonly, nonatomic) UIFont *conversationListLargeTitleStandardFont;
 @property(readonly, nonatomic) double conversationListMultipleContactsImageDiameter;
 @property(readonly, nonatomic) double conversationListContactImageDiameter;
 @property(readonly, nonatomic) double conversationListMinimumWidthForHiddenContactImage;
@@ -527,6 +533,7 @@
 @property(readonly, nonatomic) double conversationListCellRightMargin;
 @property(readonly, nonatomic) double conversationListCellLargeTextLeftMargin;
 @property(readonly, nonatomic) double conversationListCellLeftMargin;
+@property(readonly, nonatomic) double conversationListButtonToTitleSpacing;
 @property(readonly, nonatomic) double conversationListComposeButtonSpacing;
 @property(readonly, nonatomic) struct UIEdgeInsets conversationListFilterSegmentInset;
 @property(readonly, nonatomic) double conversationListEditingTableMarginWidth;
@@ -632,7 +639,7 @@
 @property(readonly, nonatomic) double muteEightHourTimeInterval;
 @property(readonly, nonatomic) double muteOneHourTimeInterval;
 @property(readonly, nonatomic) CKUITheme *theme;
-- (double)adjustedLeadingMargin:(double)arg1 isRTL:(_Bool)arg2;
+- (_Bool)contactPhotosEnabled;
 - (_Bool)shouldShowAvatarForWidth:(double)arg1;
 
 @end

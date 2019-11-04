@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 - (id)manualEndpointingThreshold;
 - (_Bool)ignoreServerManualEndpointingThreshold;
 - (_Bool)suppressDictationOptIn;
+- (_Bool)suppressDataSharingOptIn;
+- (int)dataSharingOptInStatus;
 - (_Bool)dictationIsEnabled;
 - (id)initSingleton;
 

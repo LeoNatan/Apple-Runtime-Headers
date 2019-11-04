@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) BOOL progressIncludesDownload; // @synthesize progressIncludesDownload=_progressIncludesDownload;
-@property(retain, nonatomic) id observedObject; // @synthesize observedObject=_observedObject;
+@property(nonatomic) __weak id observedObject; // @synthesize observedObject=_observedObject;
 @property(retain, nonatomic) VEKProgress *progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 - (void).cxx_destruct;

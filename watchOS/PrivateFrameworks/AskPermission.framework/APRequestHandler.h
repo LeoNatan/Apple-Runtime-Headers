@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)addRequestWithURL:(id)arg1;
 + (void)startDaemon;
 + (void)resetAccountWithType:(int)arg1;
 + (void)addRequestWithURL:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;

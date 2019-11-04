@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBApplicationRestrictionObserver-Protocol.h>
 
-@class NSDictionary, NSMutableArray, NSMutableSet, NSString, SBAppSwitcherDefaults, SBApplicationController, SBIconController, SBRecentAppLayoutsPersister;
+@class NSDictionary, NSMutableArray, NSMutableSet, NSString, SBAppSwitcherDefaults, SBApplicationController, SBIconController, SBMainDisplaySceneManager, SBRecentAppLayoutsPersister;
 @protocol BSInvalidatable, SBRecentAppLayoutsDelegate;
 
 @interface SBRecentAppLayouts : NSObject <SBApplicationRestrictionObserver>
@@ -23,6 +23,7 @@
     SBAppSwitcherDefaults *_defaults;
     SBIconController *_iconController;
     SBApplicationController *_applicationController;
+    SBMainDisplaySceneManager *_sceneManager;
     SBRecentAppLayoutsPersister *_persister;
     id <BSInvalidatable> _stateCaptureInvalidatable;
     id <SBRecentAppLayoutsDelegate> _delegate;
@@ -69,7 +70,7 @@
 - (id)recentsIncludingHiddenAppLayouts:(_Bool)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithUserDefaults:(id)arg1 persister:(id)arg2 iconController:(id)arg3 applicationController:(id)arg4;
+- (id)initWithUserDefaults:(id)arg1 persister:(id)arg2 iconController:(id)arg3 applicationController:(id)arg4 sceneManager:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

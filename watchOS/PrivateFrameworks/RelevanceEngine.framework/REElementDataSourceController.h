@@ -77,7 +77,10 @@
 - (void)prepareToUnload;
 - (void)_queue_updateDataSourceLocationUse;
 - (void)setAllowsLocationUse:(_Bool)arg1;
+- (void)_queue_pause;
+- (void)pauseIfNeeded;
 - (void)pause;
+- (void)_queue_resume;
 - (void)resume;
 - (id)_dataSourceIdentifierFromIdentifier:(id)arg1;
 - (id)_elementForIdentifier:(id)arg1;

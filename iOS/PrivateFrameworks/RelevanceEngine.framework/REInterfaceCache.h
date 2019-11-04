@@ -26,7 +26,7 @@
 - (void)_enumerateMethodsOfInterface:(id)arg1 forProtocol:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)_enumeratePropertiesOfInterface:(id)arg1 forProtocol:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_accessInterfaceForKey:(id)arg1;
-- (id)_queue_valueForKey:(id)arg1;
+- (id)_queue_valueForKey:(id)arg1 level:(unsigned long long)arg2;
 - (id)_supportedProtocols;
 - (id)_init;
 - (_Bool)_supportsCache;

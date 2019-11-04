@@ -10,10 +10,10 @@
 {
     int _style;
     float _width;
-    CDStruct_742218f3 _sequenceAttributes;
+    CDStruct_8d15c181 _sequenceAttributes;
 }
 
-+ (id)_frameImagesForSequence:(CDStruct_742218f3)arg1;
++ (id)_frameImagesForSequence:(CDStruct_8d15c181)arg1;
 - (void)_cleanupView;
 - (_Bool)isAnimating;
 - (void)stop:(_Bool)arg1;

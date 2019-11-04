@@ -42,7 +42,8 @@
 - (id)_swatchForAsset:(unsigned long long)arg1;
 - (_Bool)_wantsConstantSpeedZoom;
 - (id)_quadWithStyle:(unsigned long long)arg1 asset:(unsigned long long)arg2;
-- (id)_textureForAsset:(unsigned long long)arg1;
+- (id)_textureChromaForAsset:(unsigned long long)arg1;
+- (id)_textureLumaForAsset:(unsigned long long)arg1;
 - (id)_pathfinderForAsset:(unsigned long long)arg1;
 - (id)_imageForAsset:(unsigned long long)arg1;
 - (void)_updateComplications;
@@ -93,6 +94,7 @@
 - (void)_applyDataMode;
 - (void)_applyFrozen;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_updateWithAsset:(unsigned long long)arg1;

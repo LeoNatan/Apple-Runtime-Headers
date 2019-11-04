@@ -6,11 +6,12 @@
 
 #import <UIKitCore/UIAdaptivePresentationControllerDelegate-Protocol.h>
 
-@class _UISheetPresentationController;
+@class UIView, _UISheetPresentationController;
 
 @protocol _UISheetPresentationControllerDelegate <UIAdaptivePresentationControllerDelegate>
 
 @optional
+- (UIView *)_sheetPresentationControllerViewForTouchContinuation:(_UISheetPresentationController *)arg1;
 - (void)_sheetPresentationController:(_UISheetPresentationController *)arg1 didChangeIndexOfCurrentDetent:(int)arg2;
 @end
 

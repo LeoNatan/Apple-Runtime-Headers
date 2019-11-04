@@ -25,6 +25,7 @@
 + (id)entryEventForwardDefinitionPowerState;
 + (id)entryEventForwardDefinitionUserIdle;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionKernelState;
 + (id)entryEventPointDefinitionCurrentMachWakeTime;
 + (id)entryEventPointDefinitionCurrentKernelWakeTime;
 + (id)entryEventPointDefinitionWakeGesture;
@@ -66,6 +67,7 @@
 - (void)systemPoweredOn:(_Bool)arg1;
 - (short)getSleepState;
 - (void)logEventForwardUserIdle:(BOOL)arg1;
+- (void)logEventPointKernelState;
 - (void)logEventPointWakeGesture:(id)arg1;
 - (void)log;
 - (void)initOperatorDependancies;

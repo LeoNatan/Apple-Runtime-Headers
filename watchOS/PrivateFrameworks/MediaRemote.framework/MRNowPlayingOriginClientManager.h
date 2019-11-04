@@ -9,11 +9,9 @@
 #import <MediaRemote/MRNowPlayingClientState-Protocol.h>
 
 @class NSMutableDictionary;
-@protocol OS_dispatch_queue;
 
 @interface MRNowPlayingOriginClientManager : NSObject <MRNowPlayingClientState>
 {
-    NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableDictionary *_originClients;
     NSMutableDictionary *_originClientRequests;
 }

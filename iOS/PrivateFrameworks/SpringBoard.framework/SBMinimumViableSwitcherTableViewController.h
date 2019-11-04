@@ -17,12 +17,12 @@
     SBApplicationSceneView *_temporaryAppView;
     SBApplicationSceneView *_temporarySideAppView;
     SBBestAppSuggestion *_bestAppSuggestion;
-    _Bool _asynchronousRenderingDisabled;
+    _Bool _liveContentRasterizationDisabled;
     id <SBSwitcherContentViewControllerDataSource> _dataSource;
     long long _contentOrientation;
 }
 
-@property(nonatomic, getter=isAsynchronousRenderingDisabled) _Bool asynchronousRenderingDisabled; // @synthesize asynchronousRenderingDisabled=_asynchronousRenderingDisabled;
+@property(nonatomic, getter=isLiveContentRasterizationDisabled) _Bool liveContentRasterizationDisabled; // @synthesize liveContentRasterizationDisabled=_liveContentRasterizationDisabled;
 @property(nonatomic) long long contentOrientation; // @synthesize contentOrientation=_contentOrientation;
 @property(retain, nonatomic) SBBestAppSuggestion *bestAppSuggestion; // @synthesize bestAppSuggestion=_bestAppSuggestion;
 @property(nonatomic) __weak id <SBSwitcherContentViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -36,12 +36,17 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;
-- (id)dispatchAndReturnTetheredInsertionEventIfNeededWithID:(id)arg1 phase:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)noteAppLayoutsDidChange;
-- (void)removeAppLayout:(id)arg1 forReason:(long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)performInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)noteModelDidMutateForInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2;
-- (id)prepareInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2 shouldAnimate:(inout _Bool *)arg3;
+- (id)dispatchAndReturnTetheredRemovalEventWithID:(id)arg1 phase:(unsigned long long)arg2;
+- (void)performAnimatedRemovalOfAppLayout:(id)arg1 forReason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)noteModelDidMutateForRemovalOfAppLayout:(id)arg1 forReason:(long long)arg2 animated:(_Bool)arg3;
+- (id)prepareAnimatedRemovalOfAppLayout:(id)arg1 forReason:(long long)arg2;
+- (_Bool)shouldAnimateRemovalOfAppLayout:(id)arg1 forReason:(long long)arg2;
+- (id)dispatchAndReturnTetheredInsertionEventWithID:(id)arg1 phase:(unsigned long long)arg2;
+- (void)performAnimatedInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)noteModelDidMutateForInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2 willAnimate:(_Bool)arg3;
+- (id)prepareAnimatedInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2;
+- (_Bool)shouldAnimateInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (id)enterAppExposeForBundleID:(id)arg1;
 - (void)handleModifierAction:(id)arg1;
@@ -52,9 +57,9 @@
 - (id)animationControllerForTransitionRequest:(id)arg1;
 @property(readonly, copy, nonatomic) BSAnimationSettings *defaultTransitionAnimationSettings;
 @property(readonly, nonatomic) _Bool canInterruptActiveTransition;
-- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 alongsideAnimationController:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performTransitionWithContext:(id)arg1 animated:(_Bool)arg2 alongsideAnimationHandler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_appLayouts;
-- (void)respondToInAppStatusBarRequestedHiddenUpdate;
+- (void)respondToInAppStatusBarRequestedHiddenUpdateAnimated:(_Bool)arg1;
 - (_Bool)isStatusBarHiddenForAppLayout:(id)arg1;
 - (_Bool)shouldRubberbandHomeGrabberView;
 - (_Bool)shouldAcceleratedHomeButtonPressBegin;
@@ -64,7 +69,6 @@
 - (void)relinquishTransientOverlayViewController:(id)arg1;
 - (void)failMultitaskingGesturesForReason:(id)arg1;
 - (double)minimumHomeScreenScale;
-- (_Bool)hasInteractiveContentAtBottomOfScreen;
 - (double)switcherCardScale;
 - (double)snapshotScaleForSceneHandle:(id)arg1;
 - (void)acquiredViewController:(id)arg1 forTransientOverlayAppLayout:(id)arg2;

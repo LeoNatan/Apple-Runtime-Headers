@@ -422,6 +422,7 @@
 - (void)photoLibraryChangesPausedDidChange;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
+- (void)invalidateTrashedStateForOvercaptureResources;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_presentWarningForIrisRemovesEditsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleLivePhotoTouchRecognizer:(id)arg1;
@@ -482,6 +483,7 @@
 - (void)_updateAutoEnhanceButtonAnimated:(_Bool)arg1;
 - (void)_updateCancelButtonAnimated:(_Bool)arg1;
 - (void)_updateMainActionButtonAnimated:(_Bool)arg1;
+- (_Bool)_canCompositionControllerBeReverted:(id)arg1;
 - (_Bool)_hasAdjustedSlowMotion;
 - (void)_updateModelDependentControlsAnimated:(_Bool)arg1;
 - (void)_updateSpecDependentUIPieces;
@@ -498,6 +500,7 @@
 - (id)mainLivePhotoView;
 - (void)configureEnablenessOfControlButton:(id)arg1 animated:(_Bool)arg2 canVisuallyDisable:(_Bool)arg3;
 - (void)_setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
+- (void)_clearToolbars;
 - (void)_setPlaceholderImage:(id)arg1 filters:(id)arg2;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)_requestDismissTransitionViewContentsWithCompletion:(CDUnknownBlockType)arg1;

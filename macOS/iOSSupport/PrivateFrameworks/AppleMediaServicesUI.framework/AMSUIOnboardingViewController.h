@@ -42,6 +42,7 @@
 - (id)childTraitCollectionForViewController:(id)arg1;
 @property(readonly, nonatomic) UITraitCollection *cappedTraitCollection;
 - (unsigned long long)supportedInterfaceOrientations;
+- (struct CGSize)preferredContentSize;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

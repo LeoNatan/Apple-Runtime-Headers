@@ -33,6 +33,8 @@
 @property(retain, nonatomic) NSMutableDictionary *policiesByVersion; // @synthesize policiesByVersion=_policiesByVersion;
 @property(retain, nonatomic) NSMutableDictionary *peersByID; // @synthesize peersByID=_peersByID;
 - (void).cxx_destruct;
+- (id)recoveryEncryptionPublicKey;
+- (id)recoverySigningPublicKey;
 - (void)clearViableBottles;
 - (void)setViableBottles:(id)arg1;
 - (id)currentCachedViableBottlesSet;
@@ -56,7 +58,8 @@
 - (id)calculateDynamicInfoFromModel:(id)arg1 peer:(id)arg2 peerPermanentInfo:(id)arg3 peerStableInfo:(id)arg4 startingDynamicInfo:(id)arg5 addingPeerIDs:(id)arg6 removingPeerIDs:(id)arg7 preapprovedKeys:(id)arg8 signingKeyPair:(id)arg9 currentMachineIDs:(id)arg10 error:(id *)arg11;
 - (id)calculateDynamicInfoForPeerWithID:(id)arg1 addingPeerIDs:(id)arg2 removingPeerIDs:(id)arg3 preapprovedKeys:(id)arg4 signingKeyPair:(id)arg5 currentMachineIDs:(id)arg6 error:(id *)arg7;
 - (void)recursivelyExpandIncludedPeerIDs:(id)arg1 andExcludedPeerIDs:(id)arg2 dispositions:(id)arg3 withPeersTrustedBySponsorID:(id)arg4 currentMachineIDs:(id)arg5 forEpoch:(unsigned long long)arg6;
-- (void)considerVouchersSponsoredByPeerID:(id)arg1 sponsorPermanentInfo:(id)arg2 toReecursivelyExpandIncludedPeerIDs:(id)arg3 andExcludedPeerIDs:(id)arg4 dispositions:(id)arg5 currentMachineIDs:(id)arg6 forEpoch:(unsigned long long)arg7;
+- (void)considerPreapprovalsSponsoredByPeer:(id)arg1 toRecursivelyExpandIncludedPeerIDs:(id)arg2 andExcludedPeerIDs:(id)arg3 dispositions:(id)arg4 currentMachineIDs:(id)arg5 forEpoch:(unsigned long long)arg6;
+- (void)considerVouchersSponsoredByPeerID:(id)arg1 sponsorPermanentInfo:(id)arg2 toRecursivelyExpandIncludedPeerIDs:(id)arg3 andExcludedPeerIDs:(id)arg4 dispositions:(id)arg5 currentMachineIDs:(id)arg6 forEpoch:(unsigned long long)arg7;
 - (id)considerCandidateID:(id)arg1 withSponsorID:(id)arg2 sponsorPermanentInfo:(id)arg3 toExpandIncludedPeerIDs:(id)arg4 andExcludedPeerIDs:(id)arg5 dispositions:(id)arg6 currentMachineIDs:(id)arg7 forEpoch:(unsigned long long)arg8;
 - (void)checkVouchers;
 - (void)registerVoucher:(id)arg1;
@@ -76,7 +79,7 @@
 - (unsigned long long)statusOfPeerWithID:(id)arg1;
 - (_Bool)validatePeerWithPreApproval:(id)arg1 sponsor:(id)arg2;
 - (_Bool)hasPeerPreapprovingKey:(id)arg1;
-- (id)peerCountsByModelID;
+- (id)viablePeerCountsByModelID;
 - (id)allMachineIDs;
 - (id)actualPeerWithID:(id)arg1 error:(id *)arg2;
 - (id)peerWithID:(id)arg1;

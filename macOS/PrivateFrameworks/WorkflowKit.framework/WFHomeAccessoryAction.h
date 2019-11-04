@@ -15,7 +15,6 @@
 + (id)homeAccessoryActionWithHome:(id)arg1;
 + (id)homeAccessoryActionWithTriggerActionSetsBuilder:(id)arg1;
 - (id)homeName;
-- (id)localizedFooter;
 - (id)localizedAttribution;
 - (id)localizedDescriptionSummary;
 - (id)localizedName;

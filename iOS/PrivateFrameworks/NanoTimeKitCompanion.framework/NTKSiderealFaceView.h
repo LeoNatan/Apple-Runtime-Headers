@@ -10,7 +10,7 @@
 #import <NanoTimeKitCompanion/NTKSiderealDataSourceDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CALayer, CAShapeLayer, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKSiderealWaypointsView, NTKWhistlerAnalogFaceViewComplicationFactory, UILabel, UIView;
+@class CALayer, CAShapeLayer, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealTimeView, NTKWhistlerAnalogFaceViewComplicationFactory, UILabel, UIView;
 
 @interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider>
 {
@@ -26,9 +26,6 @@
     double _interactionProgress;
     double _lastTestedWaypointProgress;
     NTKSiderealDialBackgroundView *_dialBackgroundView;
-    NTKSiderealSolarContainerView *_solarContainerView;
-    NTKSiderealSolarOrbitView *_solarOrbitView;
-    NTKSiderealWaypointsView *_waypointsView;
     NTKSiderealAuxiliaryDialLabels *_auxiliaryDialLabels;
     NTKSiderealTimeView *_siderealTimeView;
     UILabel *_offsetLabel;
@@ -42,10 +39,12 @@
     unsigned long long _transitionState;
     double _breathScaleModifier;
     double _rubberBandScaleModifier;
+    _Bool _disableRendering;
 }
 
 + (long long)uiSensitivity;
 - (void).cxx_destruct;
+- (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (id)_innerComplicationColors;
 - (id)_outerComplicationColors;
@@ -56,9 +55,21 @@
 - (double)_idealizedSolarDayProgress;
 - (double)_solarDayProgressForCurrentTime;
 - (struct CGAffineTransform)_timeViewScaleTransform;
+- (double)_distanceBetweenAngleA:(double)arg1 angleB:(double)arg2;
+- (id)waypointBetweenPreviousOffset:(double)arg1 currentOffset:(double)arg2;
+- (id)closestWaypointForSolarDayProgress:(double)arg1 range:(double)arg2;
 - (struct CGImage *)newImageRefFromView:(id)arg1;
-- (struct CGImage *)_waypointViewImageRef;
-- (struct CGImage *)_dialViewImageRef;
+- (struct CGImage *)newImageRefFromSolarContainerView:(id)arg1 withHeight:(double)arg2;
+- (id)_nightRingImageFromSolarContainerView:(id)arg1;
+- (id)_nightDiscImageFromSolarContainerView:(id)arg1;
+- (id)_nightGnomonImageFromSolarContainerView:(id)arg1;
+- (id)_dayDiscImageFromSolarContainerView:(id)arg1;
+- (id)_dayDiskBloomImageFromSolarContainerView:(id)arg1;
+- (id)_dayGnomonImageFromSolarContainerView:(id)arg1;
+- (id)_gnomonImage;
+- (id)_newGnomonLayer;
+- (id)_waypointViewImageRef;
+- (id)_dialViewImageRef;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
 - (id)_pickerMaskForSlot:(id)arg1;
 - (long long)_complicationPickerStyleForSlot:(id)arg1;
@@ -97,6 +108,7 @@
 - (void)_updateTimeLabelsWithReferenceDate:(id)arg1 overrideDate:(id)arg2;
 - (void)_updateWaypointLabel;
 - (void)_updateSolarOrbitGlowPath:(double)arg1;
+- (void)_refreshGlowPathState;
 - (void)_updateStatusBarVisibility;
 - (void)_cleanupAfterSettingViewMode:(unsigned long long)arg1;
 - (void)_interpolateFromViewMode:(unsigned long long)arg1 toViewMode:(unsigned long long)arg2 progress:(double)arg3;
@@ -110,7 +122,6 @@
 - (void)_animateSolarDayFromProgress:(double)arg1 toProgress:(double)arg2 minDuration:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_forceSolarDayUpdate;
 - (void)_setSolarDayProgress:(double)arg1;
-- (void)_updateSolarDayMask;
 - (void)dataSourceDidUpdateSolarData;
 - (void)_updateLocale;
 - (void)_asyncUpdateLocale;
@@ -137,6 +148,7 @@
 - (void)_applyDataMode;
 - (void)setDataMode:(long long)arg1;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsTimeScrubbing;
 - (_Bool)_wantsMinorDetents;
 - (void)handleScreenBlanked;
@@ -147,10 +159,6 @@
 - (void)_loadSnapshotContentViews;
 - (void)_unloadTimeView;
 - (void)_loadTimeView;
-- (void)_unloadSolarViews;
-- (void)_loadSolarViews;
-- (void)_unloadSolarOrbit;
-- (void)_loadSolarOrbit;
 - (void)_unloadDial;
 - (void)_loadDial;
 - (void)_unloadUI;

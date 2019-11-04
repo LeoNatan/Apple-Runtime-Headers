@@ -95,7 +95,7 @@
 - (void)powerStateChanged;
 - (void)revokeExpiredItems:(id)arg1;
 - (void)fetchAttributesForProtectionClass:(id)arg1 attributes:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)fetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)fetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 includeParents:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (double)lastUpdateTime;
 - (void)performIndexerTask:(id)arg1 withIndexExtensionsAndCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)addCompletedBundleIDs:(id)arg1 forIndexerTask:(id)arg2;
@@ -146,6 +146,7 @@
 - (void)shrink:(unsigned long long)arg1;
 - (void)coolDown;
 - (void)issueConsistencyCheck:(id)arg1;
+- (void)issueDefrag:(id)arg1 group:(id)arg2;
 - (void)issueCleanup:(id)arg1 flags:(int)arg2;
 - (void)issueRepair:(id)arg1;
 - (void)cleanupStringsWithProtectionClasses:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

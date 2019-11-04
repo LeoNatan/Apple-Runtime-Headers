@@ -24,12 +24,12 @@
 + (id)_changeScopesFromXPCDictionary:(id)arg1;
 + (id)_transactionTokenFromXPCDictionary:(id)arg1;
 + (void)_cleanupAllTransactionsScopesByPath:(id)arg1;
-+ (void)handleOutstandingTransactionsForPathManager:(id)arg1 handler:(CDUnknownBlockType)arg2;
++ (void)handleOutstandingTransactionsForPathManager:(id)arg1 sqliteErrorHandler:(CDUnknownBlockType)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)_outstandingTransactionScopesByPathForPathManager:(id)arg1;
 + (_Bool)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long *)arg2;
 + (unsigned long long)_readScopeValuesFromFileDescriptor:(int)arg1;
 + (id)_allTransactionPathsForPathManager:(id)arg1;
-+ (void)_checkForAndHandleExcessiveRecoveryAttemptsForPathManager:(id)arg1;
++ (void)_checkForAndHandleExcessiveRecoveryAttemptsForPathManager:(id)arg1 sqliteErrorHandler:(CDUnknownBlockType)arg2;
 + (_Bool)_archiveRecoveryHistoryForPathManager:(id)arg1 error:(id *)arg2;
 + (_Bool)_hasExcessiveRecoveryAttemptsForPathManager:(id)arg1;
 + (void)_recordRecoveryAttemptForPathManager:(id)arg1;

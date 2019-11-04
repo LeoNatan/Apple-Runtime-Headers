@@ -7,7 +7,7 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (Utilities)
-+ (id)millisecondsSince1970;
-- (id)millisecondsSince1970;
++ (id)mt_millisecondsSince1970;
+- (id)mt_millisecondsSince1970;
 @end
 

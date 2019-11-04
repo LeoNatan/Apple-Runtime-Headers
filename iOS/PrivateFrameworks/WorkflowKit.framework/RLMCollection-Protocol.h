@@ -7,18 +7,23 @@
 #import <WorkflowKit/NSFastEnumeration-Protocol.h>
 #import <WorkflowKit/RLMThreadConfined-Protocol.h>
 
-@class NSArray, NSPredicate, NSString, RLMNotificationToken, RLMObject, RLMRealm, RLMResults;
+@class NSArray, NSNumber, NSPredicate, NSString, RLMNotificationToken, RLMRealm, RLMResults;
 
 @protocol RLMCollection <NSFastEnumeration, RLMThreadConfined>
 @property(readonly, nonatomic) RLMRealm *realm;
 @property(readonly, copy, nonatomic) NSString *objectClassName;
+@property(readonly, nonatomic, getter=isOptional) _Bool optional;
+@property(readonly, nonatomic) int type;
 @property(readonly, nonatomic) unsigned long long count;
+- (NSNumber *)averageOfProperty:(NSString *)arg1;
+- (NSNumber *)sumOfProperty:(NSString *)arg1;
+- (id)maxOfProperty:(NSString *)arg1;
+- (id)minOfProperty:(NSString *)arg1;
 - (RLMNotificationToken *)addNotificationBlock:(void (^)(id <RLMCollection>, RLMCollectionChange *, NSError *))arg1;
 - (void)setValue:(id)arg1 forKey:(NSString *)arg2;
 - (id)valueForKey:(NSString *)arg1;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (RLMResults *)sortedResultsUsingDescriptors:(NSArray *)arg1;
-- (RLMResults *)sortedResultsUsingProperty:(NSString *)arg1 ascending:(_Bool)arg2;
 - (RLMResults *)sortedResultsUsingKeyPath:(NSString *)arg1 ascending:(_Bool)arg2;
 - (RLMResults *)objectsWithPredicate:(NSPredicate *)arg1;
 - (RLMResults *)objectsWhere:(NSString *)arg1 args:(struct __va_list_tag [1])arg2;
@@ -26,7 +31,7 @@
 - (unsigned long long)indexOfObjectWithPredicate:(NSPredicate *)arg1;
 - (unsigned long long)indexOfObjectWhere:(NSString *)arg1 args:(struct __va_list_tag [1])arg2;
 - (unsigned long long)indexOfObjectWhere:(NSString *)arg1;
-- (unsigned long long)indexOfObject:(RLMObject *)arg1;
+- (unsigned long long)indexOfObject:(id)arg1;
 - (id)lastObject;
 - (id)firstObject;
 - (id)objectAtIndex:(unsigned long long)arg1;

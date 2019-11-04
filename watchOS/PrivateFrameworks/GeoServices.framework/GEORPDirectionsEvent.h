@@ -13,13 +13,15 @@
 @interface GEORPDirectionsEvent : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     long long _errorCode;
     NSString *_errorDomain;
     GEOLatLng *_occurrenceLatLng;
     NSData *_occurrenceRouteId;
     NSData *_switchedToRouteId;
     NSString *_synthesizedStepInstructions;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _occurrenceResponseIndex;
     unsigned int _occurrenceStepIndex;
     unsigned int _switchedToResponseIndex;
@@ -94,6 +96,8 @@
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

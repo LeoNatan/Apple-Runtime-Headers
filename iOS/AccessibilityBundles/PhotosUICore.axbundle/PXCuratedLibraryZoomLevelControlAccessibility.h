@@ -23,6 +23,7 @@
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
+- (void)_updateSelection;
 - (void)_accessibilityLoadAccessibilityInformation;
 
 @end

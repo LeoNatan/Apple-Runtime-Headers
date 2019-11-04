@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)_resolvedNodeFromAliasFile:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 + (id)_resolvedURLFromAliasFile:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
++ (id)systemDataVolumeNode;
 + (id)rootVolumeNode;
 + (_Bool)canReadMetadataOfURL:(id)arg1 fromSandboxWithAuditToken:(const CDStruct_4c969caf *)arg2;
 + (_Bool)canWriteURL:(id)arg1 fromSandboxWithAuditToken:(const CDStruct_4c969caf *)arg2;
@@ -55,8 +56,10 @@ __attribute__((visibility("hidden")))
 - (id)initWithFileSystemRepresentation:(const char *)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (id)initWithPath:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (_Bool)checkResourceIsReachableAndReturnError:(id *)arg1;
+- (id)sideFaultResourceValuesReturningError:(id *)arg1;
 - (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
 - (_Bool)getTemporaryResourceValue:(id *)arg1 forKey:(id)arg2;
+- (void)removeCachedResourceValueForKey:(id)arg1;
 - (_Bool)setResourceValue:(id)arg1 forKey:(id)arg2 options:(unsigned char)arg3 error:(id *)arg4;
 - (_Bool)getResourceValue:(id *)arg1 forKey:(id)arg2 options:(unsigned char)arg3 error:(id *)arg4;
 - (void)clearURLPropertyCacheIfStale;
@@ -72,6 +75,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic, getter=isRegularFile) _Bool regularFile;
 @property(readonly, nonatomic) _Bool hasPackageBit;
+@property(readonly, nonatomic, getter=isSideFault) _Bool sideFault;
 @property(readonly, nonatomic, getter=isAliasFile) _Bool aliasFile;
 @property(readonly, nonatomic, getter=isSymbolicLink) _Bool symbolicLink;
 @property(readonly, nonatomic, getter=isResolvable) _Bool resolvable;

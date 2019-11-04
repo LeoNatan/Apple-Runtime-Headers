@@ -14,8 +14,10 @@
 @interface NSString (ReminderKitAdditions) <REMDAChangedIdentifierResult, CRDataType, CREquatable, CRCoding>
 + (void)rem_registerClassAtCRCoderIfNeeded;
 - (id)rem_removingTel;
+- (id)rem_addingTel;
 - (BOOL)rem_hasTel;
 - (id)rem_removingMailto;
+- (id)rem_addingMailto;
 - (BOOL)rem_hasMailto;
 - (BOOL)rem_hasPrefixCaseInsensitive:(id)arg1;
 - (id)tombstone;

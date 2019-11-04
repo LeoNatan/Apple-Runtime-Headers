@@ -62,6 +62,8 @@
 - (id)_blurContentView;
 @property(readonly, nonatomic) UIView *_blurViewContainerView;
 - (void)_handleNubTapGestureRecognizerAction:(id)arg1;
+@property(nonatomic) _Bool shouldRasterizeSceneHostView;
+@property(copy, nonatomic) NSString *sceneHostViewMinificationFilter;
 @property(retain, nonatomic) MTLumaDodgePillSettings *homeGrabberPillSettings;
 @property(nonatomic) long long homeGrabberDisplayMode;
 - (double)effectiveCornerRadius;
@@ -81,6 +83,7 @@
 - (void)statusBarAssertionDidUpdate:(id)arg1;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 atLevel:(unsigned long long)arg2;
+- (_Bool)SB_conformsToMedusaDecoratedDeviceApplicationSceneViewControlling;
 @property(nonatomic) __weak id <SBApplicationSceneViewControllingStatusBarDelegate> applicationSceneStatusBarDelegate;
 @property(readonly, nonatomic) long long overrideStatusBarStyle;
 @property(readonly, nonatomic) double statusBarAlpha;

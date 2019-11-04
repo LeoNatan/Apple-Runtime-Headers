@@ -41,8 +41,13 @@
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;
-@property(readonly, nonatomic) long long hideSuggestedIssuesMinFollowedIssuesRegularCount;
-@property(readonly, nonatomic) long long hideSuggestedIssuesMinFollowedIssuesCompactCount;
+@property(readonly, nonatomic) long long appLaunchUpsellNewSessionBackgroundTimeInterval;
+@property(readonly, nonatomic) long long appLaunchUpsellRequiredAppLaunchCount;
+@property(readonly, nonatomic) NSString *appLaunchUpsellArticleID;
+@property(readonly, nonatomic) NSString *appLaunchUpsellInstanceID;
+@property(readonly, nonatomic) unsigned long long appLaunchUpsellPaidVisibility;
+@property(readonly, nonatomic) long long minFollowedMagazinesToHideSuggestionsRegular;
+@property(readonly, nonatomic) long long minFollowedMagazinesToHideSuggestionsCompact;
 @property(readonly, nonatomic) long long minimumPagesInPDFIssueBeforeRead;
 @property(readonly, nonatomic) long long minimumArticlesInANFIssueBeforeRead;
 @property(readonly, nonatomic) long long minimumReadIssuesInMyMagazines;

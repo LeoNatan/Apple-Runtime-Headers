@@ -22,8 +22,10 @@
     NSButton *_closeButton;
     NSFunctionRowBackgroundColorView *_colorView;
     NSTouchBarItemOverlayOptions *_options;
+    CDUnknownBlockType _closeButtonHandler;
     unsigned int _showsCloseButtonForOverlay:1;
     unsigned int _showsControlStripForOverlay:1;
+    unsigned int _preventUserDismissalForOverlay:1;
     unsigned int _listeningForAppDeactivation:1;
     unsigned int _listeningForItemInvisible:1;
     unsigned int _trackingTouches:1;
@@ -34,6 +36,7 @@
 + (id)_createContainerViewWithFrame:(struct CGRect)arg1;
 + (id)makePopoverCloseButtonWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)activeOverlay;
+@property(copy) CDUnknownBlockType closeButtonHandler; // @synthesize closeButtonHandler=_closeButtonHandler;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, getter=isTrackingTouches) BOOL trackingTouches;
@@ -41,12 +44,14 @@
 - (void)trackTouch:(id)arg1 fromSourceFrame:(struct CGRect)arg2 toFrame:(struct CGRect)arg3;
 - (void)_setContainerView:(id)arg1;
 - (void)hide;
+- (void)closeButtonPressed;
 - (void)showWithOptions:(id)arg1;
 @property(readonly, copy) NSTouchBarItemOverlayOptions *currentRecommendedOptions;
 - (void)show;
 - (void)dealloc;
 @property(readonly) NSTouchBarView *touchBarView;
 @property BOOL showsControlStripForOverlay;
+@property BOOL preventUserDismissalForOverlay;
 @property BOOL showsCloseButtonForOverlay;
 @property(retain) NSTouchBar *popoverTouchBar;
 @property(retain) NSTouchBar *overlayTouchBar;

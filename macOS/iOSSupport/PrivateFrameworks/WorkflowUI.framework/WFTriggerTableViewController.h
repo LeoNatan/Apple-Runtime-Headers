@@ -6,26 +6,24 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, NSMutableOrderedSet, NSOrderedSet, NSString;
+@class NSArray, NSString;
 @protocol WFTriggerTableViewControllerDelegate;
 
 @interface WFTriggerTableViewController : UITableViewController
 {
-    BOOL _anyOption;
+    BOOL _anyOptionSelected;
     id <WFTriggerTableViewControllerDelegate> _delegate;
-    NSOrderedSet *_allOptions;
-    NSMutableOrderedSet *_selectedOptions;
     NSArray *_sections;
+    NSArray *_options;
     NSString *_nameOfAnyOption;
     NSString *_mainSectionTitle;
 }
 
 @property(readonly, copy, nonatomic) NSString *mainSectionTitle; // @synthesize mainSectionTitle=_mainSectionTitle;
 @property(readonly, copy, nonatomic) NSString *nameOfAnyOption; // @synthesize nameOfAnyOption=_nameOfAnyOption;
-@property(nonatomic) BOOL anyOption; // @synthesize anyOption=_anyOption;
+@property(nonatomic) BOOL anyOptionSelected; // @synthesize anyOptionSelected=_anyOptionSelected;
+@property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-@property(retain, nonatomic) NSMutableOrderedSet *selectedOptions; // @synthesize selectedOptions=_selectedOptions;
-@property(retain, nonatomic) NSOrderedSet *allOptions; // @synthesize allOptions=_allOptions;
 @property(nonatomic) __weak id <WFTriggerTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)done:(id)arg1;
@@ -39,7 +37,7 @@
 - (id)infoForSection:(long long)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (id)initWithOptions:(id)arg1 selectedOptions:(id)arg2 nameOfAnyOption:(id)arg3 mainSectionTitle:(id)arg4;
+- (id)initWithOptions:(id)arg1 anySelected:(BOOL)arg2 nameOfAnyOption:(id)arg3 mainSectionTitle:(id)arg4;
 
 @end
 

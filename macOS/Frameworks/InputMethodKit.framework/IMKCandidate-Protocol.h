@@ -13,5 +13,6 @@
 @property(readonly, copy, nonatomic) IMKDocumentContent *documentContentToReplace;
 @property(copy, nonatomic) NSString *annotation;
 @property(readonly, copy, nonatomic) NSString *text;
+@property(readonly, copy, nonatomic) NSString *displayText;
 @end
 

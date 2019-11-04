@@ -115,7 +115,7 @@
 - (void)addConnectionlessTask:(id)arg1;
 - (id)copyTasks;
 - (void)replaceTask:(id)arg1 withTask:(id)arg2;
-- (Class)sessionConnectionClass:(id)arg1;
+- (Class)sessionConnectionClass:(id)arg1 task:(id)arg2;
 - (id)connToTask:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

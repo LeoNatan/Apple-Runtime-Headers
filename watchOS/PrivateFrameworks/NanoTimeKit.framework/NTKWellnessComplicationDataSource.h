@@ -6,12 +6,12 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
+#import <NanoTimeKit/CLKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 #import <NanoTimeKit/NTKWellnessTimelineModelSubscriber-Protocol.h>
 
 @class NSString;
 
-@interface NTKWellnessComplicationDataSource : NTKComplicationDataSource <NTKWellnessTimelineModelSubscriber, NTKTritiumRandomizedComplicationEntryProvider>
+@interface NTKWellnessComplicationDataSource : NTKComplicationDataSource <NTKWellnessTimelineModelSubscriber, CLKTritiumRandomizedComplicationEntryProvider>
 {
     _Bool _historicalDataLoaded;
 }

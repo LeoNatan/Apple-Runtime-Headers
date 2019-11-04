@@ -30,7 +30,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *mediaTag;
 - (id)EDAMResource;
-- (id)initWithImage:(id)arg1;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 filename:(id)arg3;
 

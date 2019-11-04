@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MRAVRoutingClientController, MRMediaRemoteService, MRNotificationClient, MRNotificationServiceClient, NSArray, NSMutableArray, NSMutableSet, _MRNowPlayingPlayerPathProtobuf;
+@class MRAVRoutingClientController, MRBlockGuard, MRMediaRemoteService, MRNotificationClient, MRNotificationServiceClient, NSArray, NSMutableArray, NSMutableSet, _MRNowPlayingPlayerPathProtobuf;
 @protocol OS_dispatch_queue;
 
 @interface MRMediaRemoteServiceClient : NSObject
@@ -18,6 +18,8 @@
     int _notifyRestoreClientStateForLaunch;
     NSMutableSet *_playerPathInvalidationHandlers;
     MRNotificationServiceClient *_notificationService;
+    _Bool _xpcConnectionIsActive;
+    MRBlockGuard *_xpcConnectionIgnoreNextInvalidationTimer;
     MRMediaRemoteService *_service;
     MRNotificationClient *_notificationClient;
     NSObject<OS_dispatch_queue> *_playbackQueueDispatchQueue;
@@ -45,7 +47,10 @@
 @property(readonly, nonatomic) NSArray *registeredOrigins;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workerQueue;
 - (id)debugDescription;
+- (void)_resumeConnection;
+- (void)_invalidateConnectionWithTimer:(_Bool)arg1;
 - (void)_initializeConnection;
+- (void)_registerCallbacks;
 - (void)dealloc;
 - (id)init;
 

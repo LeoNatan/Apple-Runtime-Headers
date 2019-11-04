@@ -8,22 +8,27 @@
 
 #import <ScreenTimeUI/STAllowanceDetailListControllerDelegate-Protocol.h>
 
-@class NSArray, NSObject, NSString, PSSpecifier;
+@class NSArray, NSDictionary, NSObject, NSString, PSSpecifier;
 @protocol STRootViewModelCoordinator;
 
 __attribute__((visibility("hidden")))
 @interface STAllowanceListController : STPINListViewController <STAllowanceDetailListControllerDelegate>
 {
+    _Bool _shouldShowConfirmDeletionAlert;
     NSObject<STRootViewModelCoordinator> *_coordinator;
     NSArray *_allowanceSpecifiers;
     PSSpecifier *_enableAllAllowancesSpecifier;
+    NSDictionary *_allowanceSpecifiersByBundleIdentifier;
 }
 
+@property(copy) NSDictionary *allowanceSpecifiersByBundleIdentifier; // @synthesize allowanceSpecifiersByBundleIdentifier=_allowanceSpecifiersByBundleIdentifier;
+@property _Bool shouldShowConfirmDeletionAlert; // @synthesize shouldShowConfirmDeletionAlert=_shouldShowConfirmDeletionAlert;
 @property(retain) PSSpecifier *enableAllAllowancesSpecifier; // @synthesize enableAllAllowancesSpecifier=_enableAllAllowancesSpecifier;
 @property(copy) NSArray *allowanceSpecifiers; // @synthesize allowanceSpecifiers=_allowanceSpecifiers;
 @property(retain, nonatomic) NSObject<STRootViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
 - (void)showStoreDemoAlert;
+- (void)_didFetchAppInfo:(id)arg1;
 - (void)allowanceDetailController:(id)arg1 didDeleteAllowance:(id)arg2;
 - (void)allowanceDetailController:(id)arg1 didSaveAllowance:(id)arg2;
 - (void)deleteAllowance:(id)arg1;
@@ -31,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)confirmDeletion:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)addAllowance:(id)arg1;
 - (void)_showAllowanceDetailController:(id)arg1;
 - (id)_subtitleTextForAllowance:(id)arg1;

@@ -262,6 +262,7 @@ struct inner_product_uniforms {
     int sparse_block_size_x;
     int sparse_block_size_y;
     int low_precision_accumulation;
+    int compute_every;
 };
 
 struct kernels_validation_status_t;

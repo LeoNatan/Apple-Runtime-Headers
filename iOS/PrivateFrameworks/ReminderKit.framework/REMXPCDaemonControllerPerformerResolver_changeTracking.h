@@ -15,7 +15,7 @@
 
 @property(readonly, nonatomic) REMStoreContainerToken *storeContainerToken; // @synthesize storeContainerToken=_storeContainerToken;
 - (void).cxx_destruct;
-- (void)resolveWithDaemon:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resolveWithDaemon:(id)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)name;
 - (id)initWithStoreContainerToken:(id)arg1;
 

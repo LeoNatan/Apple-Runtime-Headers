@@ -8,7 +8,7 @@
 
 #import <NetworkExtension/NSXPCListenerDelegate-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NEExtensionProviderContext, NSMutableArray, NSString;
 
 @interface NEProviderServer : NSObject <NSXPCListenerDelegate>
 {
@@ -23,6 +23,8 @@
 - (void)removeProviderContext:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;
+@property(readonly) NEExtensionProviderContext *firstContext;
+- (void)generateProviderEndpointInfoInMessage:(id)arg1 extensionPoint:(id)arg2;
 - (id)getListenerForExtensionPoint:(id)arg1;
 
 // Remaining properties

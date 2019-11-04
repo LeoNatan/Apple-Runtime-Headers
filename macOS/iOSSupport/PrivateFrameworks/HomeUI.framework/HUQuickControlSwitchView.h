@@ -39,8 +39,8 @@
 - (void)_updateDecorationIconDescriptorAnimated:(BOOL)arg1;
 @property(retain, nonatomic) id value;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
-- (void)_actuateTapticFeedbackIfAvailable;
-- (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_actuateTapticFeedback;
+- (void)_prepareForTapticFeedback;
 - (void)_updateKnobViewTintColorAnimated:(BOOL)arg1;
 - (struct CGPoint)_knobCenterForMetrics:(CDStruct_2418a849)arg1 switchValue:(double)arg2;
 - (struct CGSize)_knobSizeForMetrics:(CDStruct_2418a849)arg1;

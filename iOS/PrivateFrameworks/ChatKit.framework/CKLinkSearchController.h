@@ -11,13 +11,14 @@
 }
 
 + (Class)cellClass;
++ (id)indexingString;
 + (id)reuseIdentifier;
 + (id)sectionIdentifier;
 + (id)sectionTitle;
 - (_Bool)handleSelectionForResult:(id)arg1;
 - (id)previewViewControllerForResult:(id)arg1;
 - (_Bool)shouldStartMenuInteractionForResult:(id)arg1;
-- (void)_deleteResult:(id)arg1;
+- (void)deleteAttachmentForResult:(id)arg1;
 - (id)_activityItemProviderForResult:(id)arg1;
 - (id)_pasteboardItemsForResult:(id)arg1;
 - (id)_additionalMenuActionsForResult:(id)arg1;

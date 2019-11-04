@@ -52,6 +52,7 @@
 - (void)autoscrollTimerFired:(id)arg1;
 - (void)updateDragSelectionForEvent:(id)arg1;
 - (BOOL)_performDragFromMouseDown:(id)arg1;
+- (void)_addSelectedCursorIndexPath:(struct PXSimpleIndexPath)arg1 selectionManager:(id)arg2;
 - (id)_indexPathsInRect:(struct CGRect)arg1;
 - (struct PXSimpleIndexPath)_indexPathForEvent:(id)arg1;
 - (struct PXSimpleIndexPath)_indexPathAtPoint:(struct CGPoint)arg1;

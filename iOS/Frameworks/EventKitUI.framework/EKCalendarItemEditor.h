@@ -68,9 +68,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBecomeFirstResponder;
 - (void)_performCloseKeyCommand;
 - (void)_setUpKeyCommands;
-- (void)_presentDetachSheet;
+- (void)_presentDetachSheetForEvent:(id)arg1 saveAttachments:(_Bool)arg2;
+- (void)_presentAttachmentRecurrenceSheetForEvent:(id)arg1;
 - (id)_viewForSheet;
 - (id)_nameForDeleteButton;
+- (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)_performSave:(long long)arg1 animated:(_Bool)arg2;
 - (void)_performDelete:(long long)arg1;
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
@@ -139,6 +141,9 @@ __attribute__((visibility("hidden")))
 - (id)defaultAlertTitle;
 - (void)setupDeleteButton;
 - (id)preferredTitle;
+- (_Bool)hasAttachmentChanges;
+- (id)attachmentsModifiedEvent;
+- (_Bool)attachmentsModifiedOnRecurrence;
 - (_Bool)saveCalendarItemWithSpan:(long long)arg1 error:(id *)arg2;
 - (void)prepareEditItems;
 - (void)_setCalendarItemOnEditItems;
@@ -147,6 +152,7 @@ __attribute__((visibility("hidden")))
 - (void)_completeWithAction:(long long)arg1 animated:(_Bool)arg2 notify:(_Bool)arg3;
 - (void)completeWithAction:(long long)arg1 animated:(_Bool)arg2;
 - (_Bool)saveWithSpan:(long long)arg1 animated:(_Bool)arg2;
+- (void)resignCurrentEditItemFirstResponder;
 - (void)focus:(unsigned long long)arg1 select:(_Bool)arg2;
 - (_Bool)hasUnsavedChanges;
 - (_Bool)willPresentDialogOnSave;

@@ -13,7 +13,6 @@
 @interface GEOPlaceActionDetails : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     NSString *_actionUrl;
     unsigned long long _animationID;
     unsigned long long _businessID;
@@ -24,6 +23,9 @@
     double _searchResponseRelativeTimestamp;
     unsigned long long _targetID;
     GEOTransitPlaceCard *_transitPlaceCard;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _localSearchProviderID;
     int _resultIndex;
     struct {
@@ -102,6 +104,8 @@
 @property(nonatomic) long long placeID;
 @property(nonatomic) BOOL hasBusinessID;
 @property(nonatomic) unsigned long long businessID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithMapItem:(id)arg1 childPlace:(id)arg2 relativeTimestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitDepartureSequence:(id)arg8 transitIncident:(id)arg9;
 - (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4;
 - (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3;

@@ -6,14 +6,11 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class GEOLogContext, GEOLogMsgEvent;
-
 @protocol GEOLogContextDelegate <NSObject>
 
 @optional
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 - (int)searchFieldTypeForAnalytics;
-- (GEOLogContext *)logContextForLogMsgEvent:(GEOLogMsgEvent *)arg1;
 @end
 

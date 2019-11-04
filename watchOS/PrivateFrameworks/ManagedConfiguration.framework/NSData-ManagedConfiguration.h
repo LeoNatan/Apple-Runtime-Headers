@@ -7,6 +7,7 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (ManagedConfiguration)
++ (id)MCDataFromFile:(id)arg1;
 + (id)MCDataWithCFData:(struct __CFData *)arg1;
 + (id)MCDataWithHexString:(id)arg1;
 - (id)MCSHA1Hash;

@@ -14,5 +14,7 @@
     // Error parsing type: , name: sidepack
 }
 
+- (void)subscriptionBagDidChange;
+
 @end
 

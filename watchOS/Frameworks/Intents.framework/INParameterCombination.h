@@ -40,7 +40,8 @@
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
-- (id)keyPrefix;
+@property(readonly, copy, nonatomic) NSString *keyPrefix;
+@property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)localizedSubtitleFormatStringForLanguage:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedSubtitleFormatString;
 - (id)localizedTitleFormatStringForLanguage:(id)arg1;

@@ -24,7 +24,6 @@
 - (id)accessibilityLocalizedStringKey;
 - (void)setAccessibilityAttributedLabel:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
-- (id)accessibilityLabel;
 - (id)unselectedImage;
 - (id)selectedImage;
 

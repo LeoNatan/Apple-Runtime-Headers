@@ -13,6 +13,7 @@
 @interface ARCollaborationData : NSObject <NSSecureCoding>
 {
     long long _priority;
+    long long _version;
     double _timestamp;
     NSData *_vioData;
     long long _vioDataType;
@@ -32,6 +33,7 @@
 @property(readonly, nonatomic) long long vioDataType; // @synthesize vioDataType=_vioDataType;
 @property(readonly, nonatomic) NSData *vioData; // @synthesize vioData=_vioData;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

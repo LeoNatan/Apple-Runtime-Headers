@@ -15,15 +15,17 @@
 {
     CLRegionInternal *_internal;
     BOOL _conservativeEntry;
+    BOOL _emergency;
     int _referenceFrame;
     NSString *_onBehalfOfBundleId;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL emergency; // @synthesize emergency=_emergency;
 @property(nonatomic) int referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(nonatomic) BOOL conservativeEntry; // @synthesize conservativeEntry=_conservativeEntry;
 @property(copy, nonatomic) NSString *onBehalfOfBundleId; // @synthesize onBehalfOfBundleId=_onBehalfOfBundleId;
-@property(readonly, nonatomic) CDStruct_5652eb1b clientRegion;
+@property(readonly, nonatomic) CDStruct_4c505072 clientRegion;
 - (BOOL)containsCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(nonatomic) BOOL notifyOnExit;
 @property(nonatomic) BOOL notifyOnEntry;
@@ -41,7 +43,7 @@
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initCircularRegionWithCenter:(struct CLLocationCoordinate2D)arg1 radius:(double)arg2 identifier:(id)arg3;
-- (id)initWithClientRegion:(CDStruct_5652eb1b)arg1;
+- (id)initWithClientRegion:(CDStruct_4c505072)arg1;
 
 @end
 

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)undoManagerForTextView:(id)arg1;
 - (void)textDidChange:(id)arg1;
 - (void)_updateParentContents;
 - (void)_removeControlForAnnotation;

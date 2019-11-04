@@ -86,6 +86,11 @@ struct _NSRange {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+} CDStruct_4bcfbbae;
+
+typedef struct {
     unsigned int respondsTo_bubbleAnimatorForTransitionFromViewController:1;
     unsigned int respondsTo_bubbleAnimatorForTransitionToViewController:1;
     unsigned int respondsTo_bubbleAnimatorForRotation:1;

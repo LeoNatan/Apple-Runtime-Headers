@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOHours : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _days;
     NSMutableArray *_timeRanges;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_days:1;
@@ -61,6 +63,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long daysCount;
 - (void)_readDays;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithPlaceDataHours:(id)arg1;
 
 @end

@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (long)generationCount;
 - (void)handleChangeNotificationForDomainIdentifier:(struct __CFString *)arg1 isRemote:(_Bool)arg2;
 - (long)alreadylocked_generationCountFromListOfSources:(id *)arg1 count:(long)arg2;
-- (void)synchronouslySendDaemonMessage:(id)arg1 andAgentMessage:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
+- (void)synchronouslySendDaemonMessage:(id)arg1 andAgentMessage:(id)arg2 andDirectMessage:(id)arg3 replyHandler:(CDUnknownBlockType)arg4;
 - (id)createRequestNewContentMessageForDaemon:(int)arg1;
 - (id)createMultiMessageWithContainedMessages:(id)arg1;
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(_Bool *)arg5;
@@ -62,7 +62,8 @@ __attribute__((visibility("hidden")))
 - (void)addSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2 byHost:(_Bool)arg3 container:(struct __CFString *)arg4;
 - (void)addSimulatorBackstopSourceForIdentifier:(struct __CFString *)arg1;
 - (void)addManagedSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2;
-- (_Bool)shouldEnableDirectMode;
+- (_Bool)isDirectModeEnabled;
+- (void)transitionIntoDirectModeIfNeededWithRetryBlock:(CDUnknownBlockType)arg1;
 - (void)unlock;
 - (void)lock;
 - (id)copyWithZone:(struct _NSZone *)arg1;

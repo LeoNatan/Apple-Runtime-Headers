@@ -8,7 +8,7 @@
 
 #import <iTunesCloud/ICUserIdentityStoreBackend-Protocol.h>
 
-@class NSMutableDictionary, NSNumber, NSString;
+@class ICLocalStoreAccountProperties, NSMutableDictionary, NSNumber, NSString;
 @protocol ICUserIdentityStoreBackendDelegate;
 
 @interface ICUserIdentityStoreTestingBackend : NSObject <ICUserIdentityStoreBackend>
@@ -16,10 +16,12 @@
     NSNumber *_activeAccountDSID;
     NSNumber *_activeLockerAccountDSID;
     NSMutableDictionary *_identityProperties;
+    ICLocalStoreAccountProperties *_localStoreAccountProperties;
     id <ICUserIdentityStoreBackendDelegate> _delegate;
 }
 
 + (_Bool)supportsSecureCoding;
++ (void)setDefaultStorefrontIdentifier:(id)arg1;
 + (void)setDefaultActiveLockerAccountDSID:(id)arg1;
 + (void)setDefaultActiveAccountDSID:(id)arg1;
 @property(nonatomic) __weak id <ICUserIdentityStoreBackendDelegate> delegate; // @synthesize delegate=_delegate;
@@ -28,6 +30,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)setLocalStoreAccountProperties:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)localStoreAccountPropertiesWithError:(id *)arg1;
+- (void)localStoreAccountPropertiesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)verificationContextForDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)verificationContextForAccountEstablishmentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)synchronize;

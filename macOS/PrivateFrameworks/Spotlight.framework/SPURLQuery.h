@@ -11,6 +11,7 @@
 }
 
 - (void)start;
+- (BOOL)isURLQuery;
 
 @end
 

@@ -9,44 +9,39 @@
 #import <WorkflowUI/NSCopying-Protocol.h>
 #import <WorkflowUI/WFSlotTemplateContent-Protocol.h>
 
-@class NSAttributedString, NSMutableDictionary, NSString, WFSlotIdentifier;
+@class NSAttributedString, NSString, WFSlotIdentifier;
 
 @interface WFSlotTemplateSlot : NSObject <WFSlotTemplateContent, NSCopying>
 {
     _Bool _enabled;
+    _Bool _invalid;
     _Bool _prefersNoWrapping;
     _Bool _standaloneTextAttachment;
     WFSlotIdentifier *_identifier;
-    NSString *_placeholder;
+    NSString *_localizedName;
+    NSString *_localizedPlaceholder;
     NSAttributedString *_contentAttributedString;
     long long _userInputInsertionIndex;
-    NSMutableDictionary *_titleColorsByState;
-    NSMutableDictionary *_backgroundColorsByState;
 }
 
-+ (id)slotWithPlaceholder:(id)arg1 key:(id)arg2;
++ (id)slotWithLocalizedName:(id)arg1 localizedPlaceholder:(id)arg2 key:(id)arg3;
 + (id)addingSlotWithKey:(id)arg1;
-@property(readonly, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
-@property(readonly, nonatomic) NSMutableDictionary *titleColorsByState; // @synthesize titleColorsByState=_titleColorsByState;
 @property(nonatomic) long long userInputInsertionIndex; // @synthesize userInputInsertionIndex=_userInputInsertionIndex;
 @property(nonatomic) _Bool standaloneTextAttachment; // @synthesize standaloneTextAttachment=_standaloneTextAttachment;
 @property(nonatomic) _Bool prefersNoWrapping; // @synthesize prefersNoWrapping=_prefersNoWrapping;
 @property(copy, nonatomic) NSAttributedString *contentAttributedString; // @synthesize contentAttributedString=_contentAttributedString;
+@property(nonatomic, getter=isInvalid) _Bool invalid; // @synthesize invalid=_invalid;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
+@property(copy, nonatomic) NSString *localizedPlaceholder; // @synthesize localizedPlaceholder=_localizedPlaceholder;
+@property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(copy, nonatomic) WFSlotIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)backgroundColorForControlState:(unsigned long long)arg1;
-- (void)setBackgroundColor:(id)arg1 forControlState:(unsigned long long)arg2;
-- (id)titleColorForControlState:(unsigned long long)arg1;
-- (void)setTitleColor:(id)arg1 forControlState:(unsigned long long)arg2;
 @property(readonly, nonatomic, getter=isPopulated) _Bool populated;
-- (id)initWithPlaceholder:(id)arg1 identifier:(id)arg2;
-- (void)applyErrorColors;
-- (void)populateWithVariableString:(id)arg1;
+- (id)initWithLocalizedName:(id)arg1 localizedPlaceholder:(id)arg2 identifier:(id)arg3;
+- (void)populateWithVariableString:(id)arg1 askVariableName:(id)arg2;
 - (void)populateWithVariable:(id)arg1;
 - (void)populateWithIcon:(id)arg1 string:(id)arg2;
 - (void)populateWithString:(id)arg1;

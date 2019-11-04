@@ -10,7 +10,7 @@
 {
 }
 
-- (struct CGPoint)originForIconAtCoordinate:(struct SBIconCoordinate)arg1;
+- (struct CGPoint)originForIconAtCoordinate:(struct SBIconCoordinate)arg1 numberOfIcons:(unsigned long long)arg2;
 
 @end
 

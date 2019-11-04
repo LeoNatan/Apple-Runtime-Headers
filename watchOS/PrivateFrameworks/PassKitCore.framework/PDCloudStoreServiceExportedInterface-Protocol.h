@@ -21,7 +21,7 @@
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)simulateCloudStorePushForContainerIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg2;
 - (void)resetContainerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
-- (void)itemOfItemType:(unsigned int)arg1 recordName:(NSString *)arg2 completion:(void (^)(PKCloudRecordObject *, NSError *))arg3;
+- (void)itemOfItemType:(unsigned int)arg1 recordName:(NSString *)arg2 qualityOfService:(int)arg3 completion:(void (^)(PKCloudRecordObject *, NSError *))arg4;
 - (void)allItemsOfItemType:(unsigned int)arg1 storeLocally:(_Bool)arg2 completion:(void (^)(PKCloudRecordArray *, NSError *))arg3;
 - (void)removeItemsWithRecordNames:(NSArray *)arg1 itemType:(unsigned int)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateCloudStoreWithLocalItems:(NSArray *)arg1 recordSpecificKeys:(NSArray *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;

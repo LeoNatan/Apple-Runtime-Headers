@@ -13,6 +13,7 @@
     _Bool _hasShownRenewalNotice;
     _Bool _inTrialPeriod;
     _Bool _isPurchaser;
+    _Bool _isAmplifyUser;
     NSString *_identifier;
     NSString *_purchaseID;
     NSDate *_dateOfExpiration;
@@ -21,6 +22,7 @@
 }
 
 @property(copy, nonatomic) NSArray *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
+@property(nonatomic) _Bool isAmplifyUser; // @synthesize isAmplifyUser=_isAmplifyUser;
 @property(nonatomic) _Bool isPurchaser; // @synthesize isPurchaser=_isPurchaser;
 @property(nonatomic) _Bool inTrialPeriod; // @synthesize inTrialPeriod=_inTrialPeriod;
 @property(nonatomic) _Bool hasShownRenewalNotice; // @synthesize hasShownRenewalNotice=_hasShownRenewalNotice;
@@ -35,7 +37,7 @@
 - (id)bundleSubscription;
 - (id)dictionaryRepresentation;
 - (id)initWithEntryID:(id)arg1 dictionaryRepresentation:(id)arg2;
-- (id)initWithEntryID:(id)arg1 bundleChannelIDs:(id)arg2 purchaseID:(id)arg3 purchaseValidationState:(unsigned long long)arg4 dateOfExpiration:(id)arg5 hasShownRenewalNotice:(_Bool)arg6 inTrialPeriod:(_Bool)arg7 isPurchaser:(_Bool)arg8;
+- (id)initWithEntryID:(id)arg1 bundleChannelIDs:(id)arg2 purchaseID:(id)arg3 purchaseValidationState:(unsigned long long)arg4 dateOfExpiration:(id)arg5 hasShownRenewalNotice:(_Bool)arg6 inTrialPeriod:(_Bool)arg7 isPurchaser:(_Bool)arg8 isAmplifyUser:(_Bool)arg9;
 
 @end
 

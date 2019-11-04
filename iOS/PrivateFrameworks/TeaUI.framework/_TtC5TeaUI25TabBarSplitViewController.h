@@ -18,6 +18,7 @@
     // Error parsing type: , name: restoreStateCache
     // Error parsing type: , name: options
     // Error parsing type: , name: hasPerformedInitialLayout
+    // Error parsing type: , name: splitViewFocus
 }
 
 - (void).cxx_destruct;

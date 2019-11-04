@@ -13,6 +13,7 @@
 + (void)resetOutputDeviceForAllOutputContexts;
 + (id)outputContextImplForID:(NSString *)arg1 type:(NSString *)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(NSString *)arg1 options:(NSDictionary *)arg2;
++ (id)defaultSharedOutputContextImpl;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
 + (id)sharedSystemAudioContext;

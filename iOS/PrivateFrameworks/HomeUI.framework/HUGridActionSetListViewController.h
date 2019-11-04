@@ -17,7 +17,7 @@
     UILabel *_titleLabel;
 }
 
-+ (double)requiredHeightWithLayoutOptions:(id)arg1;
++ (double)requiredHeightWithLayoutOptions:(id)arg1 numberOfItems:(unsigned long long)arg2;
 + (unsigned long long)updateMode;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <HUGridActionSetListViewControllerItemUpdateDelegate> itemUpdateDelegate; // @synthesize itemUpdateDelegate=_itemUpdateDelegate;
@@ -42,6 +42,7 @@
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)_internalSetLayoutOptions:(id)arg1;
 @property(copy, nonatomic) HUGridLayoutOptions *layoutOptions;
+@property(retain, nonatomic) HFWallpaperSlice *darkModeBlurredWallpaperSlice;
 @property(retain, nonatomic) HFWallpaperSlice *blurredWallpaperSlice;
 @property(retain, nonatomic) HUWallpaperView *wallpaperView;
 - (void)viewDidLoad;

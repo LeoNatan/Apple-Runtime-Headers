@@ -103,6 +103,7 @@ __attribute__((visibility("hidden")))
 - (void)updateForIncomingAnimation;
 - (void)setOriginalStillImageTime:(CDStruct_1b6d18a9)arg1;
 @property(readonly, nonatomic) NSArray *editActionActivities;
+- (void)removeEditActionActivity:(id)arg1;
 - (void)addEditActionActivity:(id)arg1;
 - (void)_layoutToolGradient;
 @property(readonly, nonatomic) PICompositionController *uneditedCompositionController;

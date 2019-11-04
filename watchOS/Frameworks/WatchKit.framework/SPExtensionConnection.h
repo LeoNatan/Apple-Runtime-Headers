@@ -184,12 +184,14 @@
 - (id)redirectClientIDForSelector:(SEL)arg1;
 - (void)notificationController:(id)arg1 setNotificationActions:(id)arg2;
 - (void)notificationControllerPerformDefaultAction:(id)arg1;
+- (void)interfaceViewController:(id)arg1 removeDynamicInterfaceObject:(id)arg2;
 - (void)interfaceViewController:(id)arg1 setupDynamicInterfaceObject:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)interfaceViewController:(id)arg1 setUnderlyingUIHostingController:(id)arg2;
 - (void)controllerDismiss:(id)arg1;
 - (void)notificationController:(id)arg1 showNotificationInterfaceType:(id)arg2 bulletinUniqueID:(id)arg3;
 - (void)interfaceViewController:(id)arg1 updateUserActivity:(id)arg2;
 - (void)interfaceViewController:(id)arg1 updateUserActivityDict:(id)arg2;
+- (void)interfaceViewController:(id)arg1 popToRootWithCompletion:(CDUnknownBlockType)arg2;
 - (void)interfaceViewController:(id)arg1 receivePresentInterfaceControllerClass:(Class)arg2 willPresent:(CDUnknownBlockType)arg3 didDismiss:(CDUnknownBlockType)arg4;
 - (void)interfaceViewController:(id)arg1 receivePushInterfaceControllerClass:(Class)arg2 willPush:(CDUnknownBlockType)arg3;
 - (void)interfaceViewController:(id)arg1 receivePushInterfaceController:(id)arg2 initializationContextID:(id)arg3 willPush:(CDUnknownBlockType)arg4;

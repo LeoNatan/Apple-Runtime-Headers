@@ -28,11 +28,13 @@
     id <GEORoutePreloadSessionDelegate> _delegate;
     CDUnknownBlockType _tileKeyIsDownloadedPredicate;
     double _stepSizeInMeters;
-    GEOApplicationAuditToken *_token;
     struct GEOOnce_s _didTearDown;
+    GEOApplicationAuditToken *_auditToken;
 }
 
++ (id)preloaderForRoute:(id)arg1 auditToken:(id)arg2;
 + (id)preloaderForRoute:(id)arg1;
+@property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, copy, nonatomic) CDUnknownBlockType tileKeyIsDownloadedPredicate; // @synthesize tileKeyIsDownloadedPredicate=_tileKeyIsDownloadedPredicate;
 @property(copy, nonatomic) CDUnknownBlockType batteryHandler; // @synthesize batteryHandler=_batteryHandler;
 @property(nonatomic) unsigned long long networkQuality; // @synthesize networkQuality=_networkQuality;
@@ -63,6 +65,7 @@
 - (void)performTearDown;
 - (void)dealloc;
 - (void)tearDown;
+- (id)initWithRoute:(id)arg1 auditToken:(id)arg2 loggingEnabled:(_Bool)arg3 minimalDebugging:(_Bool)arg4 fullDebugging:(_Bool)arg5 batteryHandler:(CDUnknownBlockType)arg6;
 - (id)initWithRoute:(id)arg1 loggingEnabled:(_Bool)arg2 minimalDebugging:(_Bool)arg3 fullDebugging:(_Bool)arg4 batteryHandler:(CDUnknownBlockType)arg5;
 - (id)init;
 

@@ -4,7 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSDictionary;
+
 @protocol CRCarPlayAppService
+- (void)requestCarCapabilitiesStatus:(NSDictionary *)arg1 withReply:(void (^)(_Bool))arg2;
 - (void)requestCarCapabilitiesUpdate;
 - (void)requestBlacklistUpdate;
 @end

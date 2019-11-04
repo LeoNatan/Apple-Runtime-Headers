@@ -30,7 +30,7 @@
 + (id)displayableErrorForPeerPaymentAction:(unsigned int)arg1 andReason:(unsigned int)arg2;
 + (_Bool)canPerformPeerPaymentAction:(unsigned int)arg1 account:(id)arg2 unableReason:(unsigned int *)arg3 displayableError:(id *)arg4;
 @property(readonly, nonatomic) PKBankAccountInformation *bankInformation; // @synthesize bankInformation=_bankInformation;
-@property(readonly, nonatomic) id <PKPeerPaymentActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <PKPeerPaymentActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int controllerAction; // @synthesize controllerAction=_controllerAction;
 - (void).cxx_destruct;
 - (void)presentAddDebitCardViewController;

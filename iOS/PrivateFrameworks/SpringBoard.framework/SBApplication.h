@@ -11,7 +11,7 @@
 #import <SpringBoard/UISApplicationStateServiceDataSource-Protocol.h>
 #import <SpringBoard/XBApplicationSnapshotManifestDelegate-Protocol.h>
 
-@class FBApplicationProcess, FBProcessExitContext, FBSApplicationDataStore, NSArray, NSDate, NSHashTable, NSMapTable, NSSet, NSString, NSUserDefaults, SBApplicationInfo, SBApplicationProcessState, SBApplicationSupportServiceRequestContext, SBApplicationWakeScheduler, XBApplicationSnapshotManifest;
+@class FBApplicationProcess, FBProcessExitContext, FBSApplicationDataStore, NSArray, NSDate, NSHashTable, NSMapTable, NSMutableDictionary, NSString, NSUserDefaults, SBApplicationInfo, SBApplicationProcessState, SBApplicationSupportServiceRequestContext, SBApplicationWakeScheduler, XBApplicationSnapshotManifest;
 
 @interface SBApplication : NSObject <XBApplicationSnapshotManifestDelegate, SBLeafIconDataSource, UISApplicationStateServiceDataSource, BSDescriptionProviding>
 {
@@ -33,7 +33,7 @@
     _Bool _hasShownDataPlanAlertSinceLock;
     NSHashTable *_statusBarStyleOverridesAssertions;
     NSMapTable *_statusBarStyleOverridesAssertionsByStyleOverride;
-    NSSet *_suppressVolumeHudCategories;
+    NSMutableDictionary *_suppressVolumeHUDCategoriesBySceneIdentifier;
     int _showsProgressCount;
     _Bool _isRestoringApplicationFromHiding;
     int _applicationRestorationCheckState;
@@ -57,6 +57,7 @@
 + (id)restrictedClassicModeDisplayConfigurationForDisplayConfiguration:(id)arg1 classicMode:(long long)arg2;
 + (long long)_classicModeForLaunchingSize:(struct CGSize)arg1;
 + (struct CGSize)_defaultLaunchingSizeForDisplayConfiguration:(id)arg1 classicMode:(long long)arg2;
++ (id)snapshotSortDescriptorForCustomSafeAreaInsets:(id)arg1;
 + (id)snapshotSortDescriptorForUIUserInterfaceStyle:(long long)arg1;
 + (id)snapshotSortDescriptorForCreationDate;
 + (id)snapshotSortDescriptorForRequiredOSVersion:(id)arg1;
@@ -138,10 +139,9 @@
 - (void)preHeatForUserLaunchIfNecessaryWithAbsoluteTime:(unsigned long long)arg1 andContinuousTime:(unsigned long long)arg2;
 - (void)markRecentlyUpdated;
 - (void)markNewlyInstalled;
-- (id)_sceneIdentifierForDisplayIdentity:(id)arg1;
 - (_Bool)shouldReceiveSourceApplicationContextFromOriginatingApplication:(id)arg1;
-- (_Bool)canShowSystemVolumeHUDForCategory:(id)arg1;
-- (void)setAudioCategoriesThatDisableSystemVolumeHUD:(id)arg1;
+- (_Bool)canShowSystemVolumeHUDForCategory:(id)arg1 forSceneIdentifier:(id)arg2;
+- (void)setAudioCategoriesThatDisableSystemVolumeHUD:(id)arg1 forSceneIdentifier:(id)arg2;
 - (id)statusBarStyleOverridesAssertionsByStyleOverride;
 - (void)releaseStatusBarStyleOverridesAssertion:(id)arg1;
 - (void)takeStatusBarStyleOverridesAssertion:(id)arg1;
@@ -226,9 +226,9 @@
 - (_Bool)isWebApplication;
 - (id)cachedImageForSnapshot:(id)arg1 interfaceOrientation:(long long)arg2;
 - (id)imageForSnapshot:(id)arg1 interfaceOrientation:(long long)arg2;
-- (id)_snapshotsWithImageName:(id)arg1 sceneHandle:(id)arg2 launchingSize:(struct CGSize)arg3 launchingScale:(double)arg4 contentTypeMask:(unsigned long long)arg5 statusBarStateMask:(unsigned long long)arg6 launchingOrientation:(long long)arg7 contentOverridesContext:(id)arg8 userInterfaceStyle:(long long)arg9;
+- (id)_snapshotsWithImageName:(id)arg1 sceneHandle:(id)arg2 launchingSize:(struct CGSize)arg3 launchingScale:(double)arg4 contentTypeMask:(unsigned long long)arg5 statusBarStateMask:(unsigned long long)arg6 launchingOrientation:(long long)arg7 contentOverridesContext:(id)arg8 userInterfaceStyle:(long long)arg9 displayEdgeInfo:(id)arg10;
 - (id)mostRecentSceneSnapshotsForSceneHandle:(id)arg1 scale:(double)arg2 launchingOrientation:(long long)arg3;
-- (id)bestSnapshotWithImageName:(id)arg1 sceneHandle:(id)arg2 variantID:(id)arg3 scale:(double)arg4 size:(struct CGSize)arg5 contentTypeMask:(unsigned long long)arg6 statusBarStateMask:(unsigned long long)arg7 launchingOrientation:(long long)arg8 contentOverridesContext:(id)arg9 userInterfaceStyle:(long long)arg10;
+- (id)bestSnapshotWithImageName:(id)arg1 sceneHandle:(id)arg2 variantID:(id)arg3 scale:(double)arg4 size:(struct CGSize)arg5 contentTypeMask:(unsigned long long)arg6 statusBarStateMask:(unsigned long long)arg7 launchingOrientation:(long long)arg8 contentOverridesContext:(id)arg9 userInterfaceStyle:(long long)arg10 displayEdgeInfo:(id)arg11;
 - (id)_defaultPNGNameFromSuspensionSettingsWithExpiration:(double *)arg1 sceneID:(id)arg2;
 - (id)_defaultPNGNameUsingFallbacksWithSceneID:(id)arg1 contentOverridesContext:(id)arg2;
 - (id)_normalizeSnapshotName:(id)arg1;

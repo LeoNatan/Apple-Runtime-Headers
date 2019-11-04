@@ -168,6 +168,7 @@
 - (id)applicationForBraille;
 - (BOOL)performBrailleStartEditingWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)performBrailleReplaceTextRangeWithEvent:(id)arg1 request:(id)arg2;
+- (BOOL)performBrailleCommandWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)refreshEnclosingBrailleLineWithEvent:(id)arg1 request:(id)arg2;
 @property(readonly, nonatomic) NSMutableArray *brailleLineChildren;
 @property(readonly, nonatomic) SCRBrailleLineManager *brailleLineManager;
@@ -463,6 +464,7 @@
 - (BOOL)isOrphan;
 - (void)setIsOrphan:(BOOL)arg1;
 - (void)didBecomeOrphan;
+- (void)_spinRunloopForDuration:(double)arg1;
 - (void)removeObserver;
 - (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
@@ -800,6 +802,7 @@
 - (void)_windowMoveSizeDispatchHandler:(id)arg1;
 - (void)_elementMoveSizeDispatchHandler:(id)arg1;
 - (void)_brailleStartEditingDispatchHandler:(id)arg1;
+- (void)_braillePerformCommandDispatchHandler:(id)arg1;
 - (void)_brailleReplaceTextRangeDispatchHandler:(id)arg1;
 - (void)_brailleRefreshBrailleLineDispatchHandler:(id)arg1;
 - (void)_findTextDispatchHandler:(id)arg1;

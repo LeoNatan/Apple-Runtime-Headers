@@ -86,6 +86,7 @@
 - (id)currentViewController;
 - (id)viewControllerForMode:(long long)arg1;
 - (id)_viewForMode:(long long)arg1;
+- (void)_refreshForMode:(long long)arg1;
 - (void)refreshForMode:(long long)arg1;
 - (void)settleNewMode;
 - (double)animationResizeTime;

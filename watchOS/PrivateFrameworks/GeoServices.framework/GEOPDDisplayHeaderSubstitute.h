@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDDisplayHeaderSubstitute : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_interpretedQuery;
     GEOPDRelatedSearchSuggestion *_relatedSearchSuggestion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _substituteType;
     struct {
         unsigned int has_substituteType:1;
@@ -55,6 +57,8 @@ __attribute__((visibility("hidden")))
 - (id)substituteTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSubstituteType;
 @property(nonatomic) int substituteType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

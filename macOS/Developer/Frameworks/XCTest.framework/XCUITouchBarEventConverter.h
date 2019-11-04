@@ -15,6 +15,7 @@
     double _startTime;
 }
 
++ (BOOL)dfrHardwareIsPresent;
 + (id)supportedEventTypes;
 @property(readonly) double startTime; // @synthesize startTime=_startTime;
 - (id)interpolatorForPointerEvent:(id)arg1 eventSource:(struct __CGEventSource *)arg2;

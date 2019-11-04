@@ -40,8 +40,8 @@
 @property(copy, nonatomic) NSUUID *companionSlotUuid; // @synthesize companionSlotUuid=_companionSlotUuid;
 @property(nonatomic) _Bool isSelectable; // @synthesize isSelectable=_isSelectable;
 @property(retain, nonatomic) NSNumber *isSelectedOverride; // @synthesize isSelectedOverride=_isSelectedOverride;
-@property(nonatomic) CTUserLabel *userLabel; // @synthesize userLabel=_userLabel;
-@property(nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
+@property(retain, nonatomic) CTUserLabel *userLabel; // @synthesize userLabel=_userLabel;
+@property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) _Bool isDefaultVoice; // @synthesize isDefaultVoice=_isDefaultVoice;
 @property(nonatomic) _Bool isActiveDataPlan; // @synthesize isActiveDataPlan=_isActiveDataPlan;
@@ -53,8 +53,8 @@
 @property(nonatomic) long long lockState; // @synthesize lockState=_lockState;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) CTCellularPlan *plan; // @synthesize plan=_plan;
-@property(nonatomic) NSString *label; // @synthesize label=_label;
-- (void)dealloc;
+@property(retain, nonatomic) NSString *label; // @synthesize label=_label;
+- (void).cxx_destruct;
 - (id)description;
 - (id)typeAsString:(long long)arg1;
 @property(readonly, nonatomic) NSString *carrierName;

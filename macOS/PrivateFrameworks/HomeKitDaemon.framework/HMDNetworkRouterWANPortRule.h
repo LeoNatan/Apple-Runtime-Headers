@@ -23,7 +23,6 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
-+ (id)ruleFromFirewallRuleWan:(id)arg1;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *hostPortEnd; // @synthesize hostPortEnd=_hostPortEnd;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *hostPortStart; // @synthesize hostPortStart=_hostPortStart;
 @property(retain, nonatomic) HMDNetworkRouterIPAddress *hostIPEnd; // @synthesize hostIPEnd=_hostIPEnd;

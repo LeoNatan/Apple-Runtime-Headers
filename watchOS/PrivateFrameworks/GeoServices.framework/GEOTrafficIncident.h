@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEOTrafficIncident : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     CDStruct_084d6ede _alertCCodes;
     CDStruct_56d48c16 _types;
     NSString *_area;
@@ -24,10 +23,15 @@ __attribute__((visibility("hidden")))
     NSString *_incidentId;
     NSMutableArray *_laneMessages;
     GEOLatLng *_location;
+    NSString *_name;
     NSMutableArray *_paths;
     NSString *_primaryStreetName;
     unsigned long long _startTime;
     unsigned long long _updateTime;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
+    int _advisoryType;
     int _color;
     unsigned int _delaySeconds;
     unsigned int _laneClosureCount;
@@ -44,6 +48,7 @@ __attribute__((visibility("hidden")))
         unsigned int has_durationSeconds:1;
         unsigned int has_startTime:1;
         unsigned int has_updateTime:1;
+        unsigned int has_advisoryType:1;
         unsigned int has_color:1;
         unsigned int has_delaySeconds:1;
         unsigned int has_laneClosureCount:1;
@@ -64,6 +69,7 @@ __attribute__((visibility("hidden")))
         unsigned int read_incidentId:1;
         unsigned int read_laneMessages:1;
         unsigned int read_location:1;
+        unsigned int read_name:1;
         unsigned int read_paths:1;
         unsigned int read_primaryStreetName:1;
         unsigned int wrote_alertCCodes:1;
@@ -75,10 +81,12 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_incidentId:1;
         unsigned int wrote_laneMessages:1;
         unsigned int wrote_location:1;
+        unsigned int wrote_name:1;
         unsigned int wrote_paths:1;
         unsigned int wrote_primaryStreetName:1;
         unsigned int wrote_startTime:1;
         unsigned int wrote_updateTime:1;
+        unsigned int wrote_advisoryType:1;
         unsigned int wrote_color:1;
         unsigned int wrote_delaySeconds:1;
         unsigned int wrote_laneClosureCount:1;
@@ -109,6 +117,13 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *name;
+@property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
+- (int)StringAsAdvisoryType:(id)arg1;
+- (id)advisoryTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasAdvisoryType;
+@property(nonatomic) int advisoryType;
 @property(retain, nonatomic) NSString *area;
 @property(readonly, nonatomic) _Bool hasArea;
 - (void)_readArea;
@@ -200,6 +215,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *paths;
 - (void)_readPaths;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

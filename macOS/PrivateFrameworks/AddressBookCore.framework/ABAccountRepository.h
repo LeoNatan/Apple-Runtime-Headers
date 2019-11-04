@@ -13,7 +13,9 @@
 @interface ABAccountRepository : NSObject <ABAccountCollection>
 {
     NSMutableDictionary *_existingAccounts;
+    NSMutableDictionary *_hiddenAccounts;
     BOOL _areExistingAccountsValid;
+    BOOL _areHiddenAccountsValid;
     id _futureAutocompletionAccounts;
     id _factory;
     id _defaultAccountPreference;
@@ -40,6 +42,7 @@
 - (id)futureAutocompletionAccounts;
 - (id)autocompletionAccounts;
 - (id)autocompletionSources;
+- (void)runWithLockLoadingHiddenAccountsIfNecessary:(CDUnknownBlockType)arg1;
 - (void)runWithLockLoadingExistingAccountsIfNecessary:(CDUnknownBlockType)arg1;
 - (id)sources;
 - (id)defaultAccountTypeInfo;
@@ -55,8 +58,8 @@
 - (id)accounts;
 @property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly, copy) NSArray *persistentAccounts;
-- (id)uncachedAccountWithIdentifier:(id)arg1;
-- (id)memoizedAccountWithIdentifier:(id)arg1;
+- (id)hiddenAccountWithIdentifier:(id)arg1;
+- (id)nonHiddenAccountWithIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)sourceWithUID:(id)arg1;
 - (id)setEnabled:(BOOL)arg1 forAccountWithIdentifier:(id)arg2;
@@ -78,8 +81,11 @@
 - (void)nts_invalidateAutocompletionAccounts;
 - (void)nts_removeAccountsFromArray:(id)arg1;
 - (void)nts_removeAccount:(id)arg1;
+- (void)nts_addHiddenAccountsFromArray:(id)arg1;
 - (void)nts_addAccountsFromArray:(id)arg1;
 - (void)nts_addAccount:(id)arg1;
+- (id)nts_hiddenAccountForIdentifier:(id)arg1;
+- (id)nts_hiddenAccounts;
 - (id)nts_accountForIdentifier:(id)arg1;
 - (id)nts_allExistingAccounts;
 - (void)replaceSourceWithUid:(id)arg1;

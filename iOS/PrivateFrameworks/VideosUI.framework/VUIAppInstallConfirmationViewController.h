@@ -12,8 +12,6 @@
 __attribute__((visibility("hidden")))
 @interface VUIAppInstallConfirmationViewController : VUIAppLoadingViewController
 {
-    id <WLKInstallable> _installable;
-    SSLookupItemOffer *_itemOffer;
     NSString *_updateTitle;
     NSString *_updateMessage;
     CDUnknownBlockType _cancelationHandler;
@@ -23,8 +21,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _state;
     UIBarButtonItem *_barButtonItem;
     VUIAppInstallConfirmationView *_confirmationView;
+    id <WLKInstallable> _installable;
+    SSLookupItemOffer *_itemOffer;
 }
 
+@property(retain, nonatomic) SSLookupItemOffer *itemOffer; // @synthesize itemOffer=_itemOffer;
+@property(retain, nonatomic) id <WLKInstallable> installable; // @synthesize installable=_installable;
 @property(retain, nonatomic) VUIAppInstallConfirmationView *confirmationView; // @synthesize confirmationView=_confirmationView;
 @property(retain, nonatomic) UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_namedRatingWithRatings:(id)arg1;
 - (id)_fileSizeWithDeviceSizes:(id)arg1;
+- (void)_fetchStoreInfoForAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_fetchAppInfo;
 - (void)_handleSecondaryLink;
 - (void)_handleAppStore;
@@ -52,7 +55,6 @@ __attribute__((visibility("hidden")))
 - (void)setUpdateMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (id)itemOffer;
 - (id)initWithInstallable:(id)arg1;
 - (id)init;
 

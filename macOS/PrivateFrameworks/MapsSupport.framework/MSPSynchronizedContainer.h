@@ -27,6 +27,7 @@
 - (void)containerDidEraseContents:(id)arg1 fromStorageTypes:(unsigned long long)arg2;
 - (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(long long)arg4 context:(id)arg5;
 @property(readonly, copy) NSString *description;
+- (void)cancelMergeWithError:(id)arg1;
 - (void)mergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)prepareCloudWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic) BOOL requiresMerge; // @synthesize requiresMerge=_requiresMerge;

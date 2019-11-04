@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol EMAccountBuilder <NSObject>
+@property(getter=isPrimaryiCloudAccount) BOOL primaryiCloudAccount;
 @property(copy) NSString *hostname;
 @property(copy) NSString *username;
 @end

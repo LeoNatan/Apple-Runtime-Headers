@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)matchedRankingQueriesForResult:(id)arg1 withRankingQueryCount:(unsigned long long)arg2;
++ (id)matchedRankingQueriesForResult:(id)arg1 withRankingQueryCount:(unsigned long long)arg2 maxRankingQuery:(unsigned long long *)arg3;
 + (id)rankingQueryForField:(id)arg1 matchType:(unsigned long long)arg2 searchString:(id)arg3;
 + (id)rankingQueriesForSearchString:(id)arg1 attributes:(id)arg2;
 + (id)queryStringForSearchString:(id)arg1 attributes:(id)arg2 matchType:(unsigned long long)arg3;

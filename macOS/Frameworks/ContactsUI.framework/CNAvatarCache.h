@@ -39,6 +39,7 @@
 - (void)updateLikenessForEntry:(id)arg1;
 - (void)performFirstResolutionForEntry:(id)arg1;
 - (id)likenessHandlerForContact:(id)arg1;
+- (void)invalidateObservables:(id)arg1;
 - (id)lastKnownLikenessForContact:(id)arg1;
 - (void)invalidate;
 - (id)initWithLikenessResolver:(id)arg1 contactStore:(id)arg2;

@@ -144,6 +144,7 @@
 - (void)_setupCustomContentProvider;
 - (void)_setupStaticContentProvider;
 - (void)invalidateContentProviders;
+@property(readonly, nonatomic, getter=isNotPresentingOrHasCommittedToDismissingCustomContentProvidingViewController) _Bool notPresentingOrHasCommittedToDismissingCustomContentProvidingViewController;
 @property(readonly, nonatomic, getter=hasCommittedToPresentingCustomContentProvidingViewController) _Bool committedToPresentingCustomContentProvidingViewController;
 @property(readonly, nonatomic, getter=_isPresentingCustomContentProvidingViewController) _Bool presentingCustomContentProvidingViewController;
 @property(readonly, nonatomic, getter=isDragging) _Bool dragging;

@@ -40,9 +40,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)_updateUIHighlightedOverlayView;
-- (void)_updateTitleTextColor;
-- (void)_updateTitleFontSize;
-- (void)_updateTitleFont;
+- (void)_updateTitleLabel;
 - (void)_createTitleLabelIfNecessary;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithStyle:(unsigned long long)arg1 orientation:(unsigned long long)arg2 controlSize:(unsigned long long)arg3;

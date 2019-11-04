@@ -56,6 +56,7 @@
 + (_Bool)_useCustomBackButtonAction;
 + (void)_setUseCustomBackButtonAction:(_Bool)arg1;
 + (id)_visualProviderForNavigationBar:(id)arg1;
++ (_Bool)_requiresModernVisualProvider;
 + (_Bool)_supportsCanvasView;
 + (void)_initializeForIdiom:(int)arg1;
 + (double)defaultAnimationDuration;
@@ -259,6 +260,7 @@
 - (void)_completePushOperationAnimated:(_Bool)arg1 transitionAssistant:(id)arg2;
 - (void)pushNavigationItem:(id)arg1;
 - (int)_currentBarStyle;
+@property(readonly, nonatomic) struct CGSize _sizeForRestoringFromCancelledTransition;
 - (void)_cancelInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
 - (void)_finishInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
 - (void)_updateInteractiveTransition:(float)arg1;
@@ -298,6 +300,7 @@
 - (void)setTitleVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 @property(copy, nonatomic) NSDictionary *titleTextAttributes;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
+- (void)_traitCollectionDidChangeOnSubtreeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
 - (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;

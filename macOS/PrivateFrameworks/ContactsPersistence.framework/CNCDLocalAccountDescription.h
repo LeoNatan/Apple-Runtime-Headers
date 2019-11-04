@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)localAccountDescription;
+@property(readonly, copy) NSArray *childAccounts;
+@property(readonly) BOOL isChildAccount;
 @property(readonly) ABCDContainer *containerRepresentation;
 @property(readonly) NSURL *persistentStoreURL;
 @property(readonly, copy) NSURL *baseURL;
@@ -24,7 +26,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *identifier;
 
 // Remaining properties
-@property(readonly, copy) NSArray *childAccounts;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSNumber *dsid;

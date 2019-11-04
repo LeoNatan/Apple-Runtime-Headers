@@ -6,12 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <CameraUI/CAMAccessibilityHUDItemProvider-Protocol.h>
 #import <CameraUI/CAMControlStatusIndicatorDelegate-Protocol.h>
 
-@class CAMApertureStatusIndicator, CAMDirectionalIndicator, CAMFilterStatusIndicator, CAMFlashStatusIndicator, CAMFramerateStatusIndicator, CAMHDRStatusIndicator, CAMIntensityStatusIndicator, CAMLivePhotoStatusIndicator, CAMLowLightStatusIndicator, CAMTimerStatusIndicator, NSArray, NSMutableDictionary, NSSet, NSString;
+@class CAMApertureStatusIndicator, CAMDirectionalIndicator, CAMFilterStatusIndicator, CAMFlashStatusIndicator, CAMHDRStatusIndicator, CAMIntensityStatusIndicator, CAMLivePhotoStatusIndicator, CAMLowLightStatusIndicator, CAMTimerStatusIndicator, CAMVideoConfigurationStatusIndicator, NSArray, NSMutableDictionary, NSSet, NSString;
 @protocol CAMControlStatusBarDelegate;
 
-@interface CAMControlStatusBar : UIView <CAMControlStatusIndicatorDelegate>
+@interface CAMControlStatusBar : UIView <CAMControlStatusIndicatorDelegate, CAMAccessibilityHUDItemProvider>
 {
     _Bool _directionIndicatorVisible;
     _Bool __directionIndicatorHiddenForSpace;
@@ -38,6 +39,9 @@
 @property(copy, nonatomic) NSArray *primaryVisibleIndicatorTypes; // @synthesize primaryVisibleIndicatorTypes=_primaryVisibleIndicatorTypes;
 @property(nonatomic) __weak id <CAMControlStatusBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
+- (void)_iterateViewsForHUDManager:(id)arg1 withItemFoundBlock:(CDUnknownBlockType)arg2;
 - (void)controlStatusIndicatorDidChangeIntrinsicContentSize:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateIndicatorsVisibilityAnimated:(_Bool)arg1;
 - (void)_installIndicatorIfNeededForType:(unsigned long long)arg1;
@@ -49,7 +53,6 @@
 - (_Bool)isIndicatorVisibleForType:(unsigned long long)arg1;
 - (void)setPrimaryVisibleIndicatorTypes:(id)arg1 secondaryVisibleIndicatorTypes:(id)arg2 animated:(_Bool)arg3;
 - (void)_handleLowLightStatusIndicatorTapped:(id)arg1;
-- (void)_handleFramerateStatusIndicatorTapped:(id)arg1;
 - (void)_handleIntensityStatusIndicatorTapped:(id)arg1;
 - (void)_handleApertureStatusIndicatorTapped:(id)arg1;
 - (void)_handleFilterStatusIndicatorTapped:(id)arg1;
@@ -58,7 +61,7 @@
 - (void)_handleLivePhotoStatusIndicatorTapped:(id)arg1;
 - (void)_handleFlashStatusIndicatorTapped:(id)arg1;
 @property(readonly, nonatomic) CAMLowLightStatusIndicator *lowLightIndicator;
-@property(readonly, nonatomic) CAMFramerateStatusIndicator *framerateIndicator;
+@property(readonly, nonatomic) CAMVideoConfigurationStatusIndicator *videoConfigurationIndicator;
 @property(readonly, nonatomic) CAMIntensityStatusIndicator *intensityIndicator;
 @property(readonly, nonatomic) CAMApertureStatusIndicator *apertureIndicator;
 @property(readonly, nonatomic) CAMFilterStatusIndicator *filterIndicator;

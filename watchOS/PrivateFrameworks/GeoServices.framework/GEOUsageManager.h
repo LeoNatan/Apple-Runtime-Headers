@@ -11,23 +11,7 @@
 }
 
 + (id)sharedManager;
-- (int)_originTypeForTileLoadReason:(unsigned char)arg1;
 - (void)captureMapsResultsDisplayedFeedbackForQueryString:(id)arg1 resultsArray:(id)arg2;
-- (_Bool)shouldIgnoreUsageForCountry;
-- (id)sharedLogMsgStateFactoryInstance;
-- (id)sharedLogMsgEventFactoryInstance;
-- (id)sharedLogManagerInstance;
-- (id)sharedLoggerInstance;
-- (id)init;
-- (id)logContextByAddingMapViewStateWithMapRegion:(id)arg1 zoomLevel:(double)arg2 mapType:(int)arg3 toLogContext:(id)arg4;
-- (id)logContextByAddingMapRestoreStateWithUITargets:(id)arg1 toLogContext:(id)arg2;
-- (id)logContextByAddingSuggestionsStateWithSearchFieldType:(int)arg1 searchString:(id)arg2 displayedResults:(id)arg3 selectedIndex:(int)arg4 acSequenceNumber:(int)arg5 toLogContext:(id)arg6;
-- (id)logContextByAddingMapViewLocationStateWithLocationBucket:(int)arg1 currentLocationInViewport:(_Bool)arg2 toLogContext:(id)arg3;
-- (id)logContextByAddingNavigationStateWithLineType:(int)arg1 navState:(int)arg2 distanceToDestination:(double)arg3 upcomingManeuverType:(int)arg4 distanceToManeuver:(int)arg5 isGroupedManeuver:(_Bool)arg6 speedBucket:(int)arg7 toLogContext:(id)arg8;
-- (id)logContextByAddingPlaceCardStateWithPlaceActionDetails:(id)arg1 placeCardType:(int)arg2 mapItemCategory:(id)arg3 availableActions:(id)arg4 unactionableUIElements:(id)arg5 toLogContext:(id)arg6;
-- (void)registerTouristInfo:(_Bool)arg1;
-- (void)captureStateTransitionEventWithStates:(id)arg1 generateOnlyIfStateChanged:(_Bool)arg2;
-- (void)clearStateTimingData;
 
 @end
 

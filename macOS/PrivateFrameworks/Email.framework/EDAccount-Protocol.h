@@ -9,6 +9,7 @@
 @class ACAccount, NSString;
 
 @protocol EDAccount <ECMailAccount>
+@property(readonly) BOOL primaryiCloudAccount;
 @property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly, copy) ACAccount *systemAccount;
 @property(readonly, copy) NSString *identifier;

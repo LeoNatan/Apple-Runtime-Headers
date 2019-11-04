@@ -101,6 +101,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithInitialImagePickerProperties:(id)arg1;
 
 // Remaining properties

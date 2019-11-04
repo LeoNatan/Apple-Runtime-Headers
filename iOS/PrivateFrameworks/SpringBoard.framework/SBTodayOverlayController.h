@@ -15,30 +15,29 @@
 #import <SpringBoard/SBTodayOverlayViewControllerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class FBDisplayLayoutElement, NSHashTable, NSString, SBBarSwipeAffordanceViewController, SBHomeGesturePanGestureRecognizer, SBMainScreenActiveInterfaceOrientationWindow, SBMainStatusBarContentAssertion, SBTodayOverlayViewController;
-@protocol SBTodayOverlayWindow;
+@class FBDisplayLayoutElement, NSHashTable, NSString, SBAppStatusBarDateTimeAssertion, SBBarSwipeAffordanceViewController, SBHomeGesturePanGestureRecognizer, SBMainScreenActiveInterfaceOrientationWindow, SBTodayOverlayViewController;
 
 @interface SBTodayOverlayController : NSObject <SBBarSwipeAffordanceObserver, SBTodayOverlayViewControllerDelegate, UIGestureRecognizerDelegate, SBFTodayOverlayControlling, SBFIdleTimerBehaviorProviding, CSExternalBehaviorProviding, CSExternalEventHandling, BSDescriptionProviding>
 {
     NSHashTable *_observers;
     _Bool _dismissing;
-    SBMainScreenActiveInterfaceOrientationWindow<SBTodayOverlayWindow> *_window;
+    SBMainScreenActiveInterfaceOrientationWindow *_window;
     SBBarSwipeAffordanceViewController *_homeAffordanceViewController;
     SBTodayOverlayViewController *_overlayViewController;
     SBHomeGesturePanGestureRecognizer *_dismissHomeGestureRecognizer;
     FBDisplayLayoutElement *_displayLayoutElement;
-    SBMainStatusBarContentAssertion *_statusBarContentAssertion;
+    SBAppStatusBarDateTimeAssertion *_statusBarContentAssertion;
     unsigned long long _systemGestureType;
 }
 
 @property(readonly, nonatomic) unsigned long long systemGestureType; // @synthesize systemGestureType=_systemGestureType;
 @property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
-@property(retain, nonatomic) SBMainStatusBarContentAssertion *statusBarContentAssertion; // @synthesize statusBarContentAssertion=_statusBarContentAssertion;
+@property(retain, nonatomic) SBAppStatusBarDateTimeAssertion *statusBarContentAssertion; // @synthesize statusBarContentAssertion=_statusBarContentAssertion;
 @property(retain, nonatomic) FBDisplayLayoutElement *displayLayoutElement; // @synthesize displayLayoutElement=_displayLayoutElement;
 @property(readonly, nonatomic) SBHomeGesturePanGestureRecognizer *dismissHomeGestureRecognizer; // @synthesize dismissHomeGestureRecognizer=_dismissHomeGestureRecognizer;
 @property(readonly, nonatomic) SBTodayOverlayViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
 @property(readonly, nonatomic) SBBarSwipeAffordanceViewController *homeAffordanceViewController; // @synthesize homeAffordanceViewController=_homeAffordanceViewController;
-@property(readonly, nonatomic) SBMainScreenActiveInterfaceOrientationWindow<SBTodayOverlayWindow> *window; // @synthesize window=_window;
+@property(readonly, nonatomic) SBMainScreenActiveInterfaceOrientationWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -67,13 +66,14 @@
 - (void)dismissScrollGestureUpdated:(id)arg1;
 - (void)dismissTapGestureUpdated:(id)arg1;
 - (id)testScrollView;
-- (void)dismiss;
+- (void)dismissAnimated:(_Bool)arg1;
+- (void)presentAnimated:(_Bool)arg1;
 - (void)setDisplayLayoutElementActive:(_Bool)arg1;
 - (void)enumerateTodayOverlayObserversUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeTodayOverlayObserver:(id)arg1;
 - (void)addTodayOverlayObserver:(id)arg1;
 - (double)finalPresentationProgressForPresentationProgress:(double)arg1 gestureVelocity:(double)arg2;
-- (void)setPresentationProgress:(double)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setPresentationProgress:(double)arg1 interactive:(_Bool)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(nonatomic) double presentationProgress;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 @property(readonly, nonatomic) double contentWidth;

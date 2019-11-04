@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
 
 @class HMDHome, HMFUnfairLock, NSMutableDictionary, NSNotificationCenter, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
-@interface HMDAccessoryNetworkProtectionGroupRegistry : NSObject <HMFMessageReceiver>
+@interface HMDAccessoryNetworkProtectionGroupRegistry : NSObject <HMFMessageReceiver, HMFLogging>
 {
     HMFUnfairLock *_lock;
     NSMutableDictionary *_groupRecords;
@@ -20,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
++ (id)logCategory;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
@@ -33,16 +35,22 @@
 - (void)handleRemoveAccessoryNetworkProtectionGroupModel:(id)arg1 message:(id)arg2;
 - (void)handleAddOrUpdateAccessoryNetworkProtectionGroupModel:(id)arg1 message:(id)arg2;
 - (void)configure;
-- (void)addSurrogateGroupAndNotifyForAccessory:(id)arg1;
+- (void)addActiveSurrogateGroupForAccessory:(id)arg1 shouldNotifyChange:(BOOL)arg2;
 - (void)notifyClientsOfRemovedGroup:(id)arg1;
 - (void)notifyClientsOfAddedGroup:(id)arg1;
-- (void)_evaluateHomeForActiveGroups;
-- (void)handleAccessoryChangeProtectionGroup:(id)arg1;
+- (BOOL)_updateGroupWithUUID:(id)arg1 active:(BOOL)arg2;
+- (BOOL)_evaluateActiveStatusForGroupWithUUID:(id)arg1;
+- (void)_setupProtectionGroupForAccessory:(id)arg1 shouldNotifyChange:(BOOL)arg2;
+- (void)_setupActiveGroupsForHome;
+- (void)_registerForAccessoryChanges:(id)arg1;
+- (void)handleUpdatedAccessoryConfiguredNetworkProtectionGroup:(id)arg1;
+- (void)handleUpdatedAccessoryInitialManufacturerOrCategory:(id)arg1;
 - (void)handleUpdateAccessoryNetworkProtectionGroupProtectionMode:(id)arg1;
 - (void)_registerForMessages;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
-- (id)markInactiveGroupWithUUID:(id)arg1;
+- (id)logIdentifier;
+- (id)markGroupWithUUID:(id)arg1 active:(BOOL)arg2;
 - (id)removeGroupWithUUID:(id)arg1;
 - (BOOL)addActiveSurrogateGroup:(id)arg1;
 - (id)groupWithUUID:(id)arg1;

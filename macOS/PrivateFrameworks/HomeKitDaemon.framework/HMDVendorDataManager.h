@@ -9,42 +9,49 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMFTimer, NSDictionary, NSObject, NSString, NSURLSession;
+@class HMFTimer, NSDictionary, NSObject, NSString, NSURL, NSURLSession;
 @protocol OS_dispatch_queue;
 
 @interface HMDVendorDataManager : HMFObject <HMFLogging, HMFTimerDelegate>
 {
-    NSDictionary *_vendorModelEntries;
-    long long _dataVersion;
-    NSObject<OS_dispatch_queue> *_databaseQueue;
+    NSObject<OS_dispatch_queue> *_workQueue;
     NSURLSession *_urlSession;
     HMFTimer *_fetchTimer;
+    long long _dataVersion;
+    NSDictionary *_collectionsByManufacturer;
+    NSDictionary *_entriesByProductData;
 }
 
-+ (id)dbURL;
 + (id)logCategory;
++ (id)dbURL;
 + (id)sharedVendorDataManager;
+@property(retain, nonatomic) NSDictionary *entriesByProductData; // @synthesize entriesByProductData=_entriesByProductData;
+@property(retain, nonatomic) NSDictionary *collectionsByManufacturer; // @synthesize collectionsByManufacturer=_collectionsByManufacturer;
+@property(nonatomic) long long dataVersion; // @synthesize dataVersion=_dataVersion;
 @property(readonly, nonatomic) HMFTimer *fetchTimer; // @synthesize fetchTimer=_fetchTimer;
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *databaseQueue; // @synthesize databaseQueue=_databaseQueue;
-@property(nonatomic) long long dataVersion; // @synthesize dataVersion=_dataVersion;
-@property(retain, nonatomic) NSDictionary *vendorModelEntries; // @synthesize vendorModelEntries=_vendorModelEntries;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
-- (BOOL)_isSameVendorList:(id)arg1;
-- (id)_modelEntryForProductData:(id)arg1;
-- (id)_modelEntryForManufacturer:(id)arg1 model:(id)arg2;
-- (id)_parseManufacturersList:(id)arg1;
-- (void)_handleData:(id)arg1 fromServerWithError:(id)arg2;
-- (void)_saveToLocalFile:(id)arg1;
-- (BOOL)_parseDatabaseFromDictionary:(id)arg1;
+- (BOOL)_parseManufacturersList:(id)arg1 collectionsByManufacturer:(struct NSDictionary **)arg2 entriesByProductData:(struct NSDictionary **)arg3;
+- (id)_parseVendorModelEntryForManufacturer:(id)arg1 model:(id)arg2 dictionary:(id)arg3;
+- (id)_modelsStringForManufacturer:(id)arg1 model:(id)arg2 dictionary:(id)arg3 key:(id)arg4;
+- (BOOL)_parseDatabaseFromDictionary:(id)arg1 dataVersion:(long long *)arg2 collectionsByManufacturer:(struct NSDictionary **)arg3 entriesByProductData:(struct NSDictionary **)arg4;
+- (void)_handleDataFromServer:(id)arg1;
 - (void)_handleServerResponse:(id)arg1 withData:(id)arg2 error:(id)arg3;
-- (void)_initWithLocalFile;
 - (void)_fetchDataFromServer;
+- (void)_start;
+- (void)_loadDatabaseFromLocalFiles;
+- (BOOL)_loadDatabaseFromFilePath:(id)arg1 fileDescription:(id)arg2;
+- (BOOL)_loadDatabaseFromFileURL:(id)arg1 fileDescription:(id)arg2;
+- (BOOL)_loadDatabaseFromDictionary:(id)arg1;
+@property(readonly, nonatomic) NSURL *urlForBundledInternalPlist;
+@property(readonly, nonatomic) NSURL *urlForBundledPlist;
 - (id)vendorModelEntryForProductData:(id)arg1;
 - (id)vendorModelEntryForManufacturer:(id)arg1 model:(id)arg2;
+- (id)initWithDefaults;
+- (id)initWithWorkQueue:(id)arg1 urlSession:(id)arg2 fetchTimer:(id)arg3;
 - (id)init;
-- (void)start;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

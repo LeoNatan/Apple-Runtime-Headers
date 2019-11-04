@@ -16,6 +16,7 @@
     // Error parsing type: , name: detailLabel
     // Error parsing type: , name: accessoryLabel
     // Error parsing type: , name: detailContainerView
+    // Error parsing type: , name: $__lazy_storage_$_accessoryImage
     // Error parsing type: , name: minimumViewHeight
     // Error parsing type: , name: titleToTop
     // Error parsing type: , name: titleToBottom
@@ -26,6 +27,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)updateTitleText;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)didReceiveSignificantTimeChangeNotification:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

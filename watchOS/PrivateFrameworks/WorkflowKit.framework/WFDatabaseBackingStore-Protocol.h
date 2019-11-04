@@ -22,6 +22,7 @@
 - (WFDatabaseResult *)allConfiguredTriggers;
 - (WFDatabaseResult *)sortedVisibleWorkflowsWithAssociatedAppBundleIdentifier:(NSString *)arg1;
 - (WFDatabaseResult *)sortedVisibleWorkflowsByName;
+- (WFDatabaseResult *)sortedWorkflowsIncludingTombstonesAndConflicts;
 - (WFDatabaseResult *)sortedVisibleWorkflows;
 - (WFDatabaseResult *)sortedVisibleWorkflowsWithType:(NSString *)arg1;
 - (_Bool)startObservingChangesForResult:(WFDatabaseResult *)arg1;
@@ -29,8 +30,8 @@
 - (WFConfiguredTrigger *)createTriggerWithRecord:(WFConfiguredTriggerRecord *)arg1 workflow:(WFWorkflowReference *)arg2 error:(id *)arg3;
 - (void)deleteAllAccessResourceStateDataForReference:(WFWorkflowReference *)arg1;
 - (NSArray *)accessResourceStatesForReference:(WFWorkflowReference *)arg1;
-- (void)setStateData:(NSData *)arg1 forAccessResourceWithIdentifier:(NSString *)arg2 forReference:(WFWorkflowReference *)arg3;
-- (NSData *)currentStateDataForAccessResourceWithIdentifier:(NSString *)arg1 forReference:(WFWorkflowReference *)arg2;
+- (void)setPerWorkflowStateData:(NSData *)arg1 forAccessResourceWithIdentifier:(NSString *)arg2 forReference:(WFWorkflowReference *)arg3;
+- (NSData *)currentPerWorkflowStateDataForAccessResourceWithIdentifier:(NSString *)arg1 forReference:(WFWorkflowReference *)arg2;
 - (_Bool)isReference:(WFWorkflowReference *)arg1 allowedToRunOnDomain:(NSString *)arg2;
 - (void)setTrustedToRunScripts:(_Bool)arg1 forReference:(WFWorkflowReference *)arg2 onDomain:(NSString *)arg3;
 - (void)setOutcome:(int)arg1 forRunEvent:(WFWorkflowRunEvent *)arg2;

@@ -4,21 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMDCameraSignificantEventNotification.h>
+#import <HMFoundation/HMFObject.h>
 
-@class _HMCameraClip;
+@class HMCameraClipSignificantEvent, NSURL, NSUUID;
+@protocol HMDHomePresenceCheck;
 
-@interface HMDCameraClipSignificantEventNotification : HMDCameraSignificantEventNotification
+@interface HMDCameraClipSignificantEventNotification : HMFObject
 {
-    _HMCameraClip *_clip;
-    double _timeOffsetWithinClip;
+    HMCameraClipSignificantEvent *_significantEvent;
+    NSURL *_heroFrameURL;
+    id <HMDHomePresenceCheck> _homePresence;
+    NSUUID *_clipUUID;
 }
 
-@property(readonly) double timeOffsetWithinClip; // @synthesize timeOffsetWithinClip=_timeOffsetWithinClip;
-@property(readonly) _HMCameraClip *clip; // @synthesize clip=_clip;
+@property(readonly, copy) NSUUID *clipUUID; // @synthesize clipUUID=_clipUUID;
+@property(readonly) id <HMDHomePresenceCheck> homePresence; // @synthesize homePresence=_homePresence;
+@property(readonly, copy) NSURL *heroFrameURL; // @synthesize heroFrameURL=_heroFrameURL;
+@property(readonly, copy) HMCameraClipSignificantEvent *significantEvent; // @synthesize significantEvent=_significantEvent;
 - (void).cxx_destruct;
-- (id)initWithModel:(id)arg1 heroFrameURL:(id)arg2 camera:(id)arg3 clip:(id)arg4;
-- (id)initWithUUID:(id)arg1 dateOfOccurrence:(id)arg2 reason:(unsigned long long)arg3 confidenceLevel:(unsigned long long)arg4 heroFrameURL:(id)arg5 camera:(id)arg6 clip:(id)arg7 timeOffsetWithinClip:(double)arg8 homePresence:(id)arg9;
+- (id)attributeDescriptions;
+- (id)initWithModel:(id)arg1 heroFrameURL:(id)arg2 clipUUID:(id)arg3;
+- (id)initWithSignificantEvent:(id)arg1 heroFrameURL:(id)arg2 homePresence:(id)arg3 clipUUID:(id)arg4;
 
 @end
 

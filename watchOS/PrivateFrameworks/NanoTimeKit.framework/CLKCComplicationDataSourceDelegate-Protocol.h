@@ -11,9 +11,11 @@
 @protocol CLKCComplicationDataSourceDelegate <NSObject>
 - (void)invalidateSwitcherTemplate;
 - (double)minimumIntervalBetweenTimelineEntries;
+- (void)appendEntries:(NSArray *)arg1 withTritiumUpdatePriority:(int)arg2;
 - (void)appendEntries:(NSArray *)arg1;
 - (void)setTimelineEndDate:(NSDate *)arg1;
 - (void)setTimelineStartDate:(NSDate *)arg1;
+- (void)invalidateEntriesWithTritiumUpdatePriority:(int)arg1;
 - (void)invalidateEntries;
 @end
 

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVAudioSession, AVAudioSessionMediaPlayerOnly, AVOutputContext, AVPixelBufferAttributeMediator, AVPlayerItem, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol AVCallbackCancellation><AVKVOIntrospection, AVLoggingIdentifier, OS_dispatch_queue;
+@protocol AVBlockScheduler, AVLoggingIdentifier, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerInternal : NSObject
@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
     void *IAPDCallbackToken;
     struct OpaqueFigSimpleMutex *prerollIDMutex;
     NSObject<OS_dispatch_queue> *configurationQueue;
+    id layerVisibilityChangeToken;
+    id <AVBlockScheduler> KVOChangeSerializer;
     long long status;
     NSError *error;
     AVPlayerItem *currentItem;
@@ -97,7 +99,7 @@ __attribute__((visibility("hidden")))
     int pendingPrerollID;
     CDUnknownBlockType prerollCompletionHandler;
     id currentItemSuppressesVideoLayersNotificationToken;
-    id <AVCallbackCancellation><AVKVOIntrospection> currentItemPreferredPixelBufferAttributesCallbackInvoker;
+    id currentItemPreferredPixelBufferAttributesNotificationToken;
     struct OpaqueFigPlayer *figPlayer;
     struct OpaqueFigPlaybackItem *figPlaybackItemToIdentifyNextCurrentItem;
     _Bool needsToCreateFigPlayer;
@@ -106,6 +108,7 @@ __attribute__((visibility("hidden")))
     NSArray *expectedAssetTypes;
     _Bool reevaluateBackgroundPlayback;
     _Bool hadAssociatedOnscreenPlayerLayerWhenSuspended;
+    _Bool suspensionExpected;
     struct OpaqueCMClock *figMasterClock;
     NSString *captionRenderingStrategy;
     NSArray *displaysUsedForPlayback;

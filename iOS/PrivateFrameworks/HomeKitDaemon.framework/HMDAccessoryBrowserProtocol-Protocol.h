@@ -19,7 +19,6 @@
 - (id <HMDAccessoryBrowserHapProtocol>)acessoryBrowserHapProtocol;
 - (void)handleStartDiscoveringAssociatedMediaAccessories:(_Bool)arg1 forTransport:(HMFMessageTransport *)arg2 completionHandler:(void (^)(NSError *, NSDictionary *))arg3;
 - (void)handleNewlyPairedAccessory:(NSString *)arg1 linkType:(long long)arg2;
-- (void)tearDownSessionForAccesoryServer:(HAPAccessoryServer *)arg1 completion:(void (^)(void))arg2;
 - (_Bool)isBrowsingAllowed;
 - (void)discoverAccessoryServer:(NSString *)arg1 linkType:(long long)arg2 errorHandler:(void (^)(NSError *))arg3;
 - (void)discoverAccessories:(HAPAccessoryServer *)arg1;

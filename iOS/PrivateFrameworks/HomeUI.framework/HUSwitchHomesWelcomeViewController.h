@@ -9,25 +9,27 @@
 #import <HomeUI/HUConfigurationViewController-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
 
-@class NSString, OBLinkTrayButton, OBTrayButton;
+@class HMHome, NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
 @interface HUSwitchHomesWelcomeViewController : HUImageOBWelcomeController <HUConfigurationViewController, HUPreloadableViewController>
 {
     id <HUConfigurationViewControllerDelegate> _delegate;
+    HMHome *_home;
     OBTrayButton *_continueButton;
     OBLinkTrayButton *_changeButton;
 }
 
 @property(retain, nonatomic) OBLinkTrayButton *changeButton; // @synthesize changeButton=_changeButton;
 @property(retain, nonatomic) OBTrayButton *continueButton; // @synthesize continueButton=_continueButton;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)hu_preloadContent;
 - (void)_continueButtonTapped:(id)arg1;
 - (void)_changeButtonTapped:(id)arg1;
-- (id)init;
+- (id)initWithHome:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

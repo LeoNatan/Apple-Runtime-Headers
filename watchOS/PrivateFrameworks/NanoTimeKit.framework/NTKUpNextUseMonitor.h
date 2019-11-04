@@ -18,11 +18,13 @@
 
 @property(retain, nonatomic) NTKFaceCollection *libraryFaceCollection; // @synthesize libraryFaceCollection=_libraryFaceCollection;
 - (void).cxx_destruct;
+- (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)_significantTimeChanged;
 - (void)_updatePipedLocation;
 - (void)_markSupergreenAsInUseIfNecessary;
+- (void)_checkSupergreenInCollection:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

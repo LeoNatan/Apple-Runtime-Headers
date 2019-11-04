@@ -33,6 +33,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
+@property(readonly) BOOL canAskForUserFeedback;
 - (id)initWithUniqueIdentifier:(id)arg1 reason:(unsigned long long)arg2 timeOffsetWithinClip:(double)arg3 dateOfOccurrence:(id)arg4 confidenceLevel:(unsigned long long)arg5;
 - (id)initWithUniqueIdentifier:(id)arg1 reason:(unsigned long long)arg2 dateOfOccurrence:(id)arg3 confidenceLevel:(unsigned long long)arg4;
 

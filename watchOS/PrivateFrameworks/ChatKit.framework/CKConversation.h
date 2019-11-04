@@ -9,7 +9,7 @@
 #import <ChatKit/NCABPersonListViewDelegate-Protocol.h>
 #import <ChatKit/_MKNanoPlaceCardViewControllerDelegate-Protocol.h>
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString, STConversationContext;
+@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString;
 
 @interface CKConversation : NSObject <_MKNanoPlaceCardViewControllerDelegate, NCABPersonListViewDelegate>
 {
@@ -31,7 +31,6 @@
     NSSet *_pendingRecipients;
     NSAttributedString *_groupName;
     NSArray *_suggestedReplies;
-    STConversationContext *_screenTimeConversationContext;
     NSString *_previewText;
     NSNumber *_businessConversation;
     NSDate *_dateLastViewed;
@@ -64,7 +63,6 @@
 @property(nonatomic) _Bool hasLoadedAllMessages; // @synthesize hasLoadedAllMessages=_hasLoadedAllMessages;
 @property(copy, nonatomic) NSString *previewText; // @synthesize previewText=_previewText;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
-@property(nonatomic) __weak STConversationContext *screenTimeConversationContext; // @synthesize screenTimeConversationContext=_screenTimeConversationContext;
 @property(retain, nonatomic) NSArray *suggestedReplies; // @synthesize suggestedReplies=_suggestedReplies;
 @property(readonly, nonatomic) NSAttributedString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) NSSet *pendingRecipients; // @synthesize pendingRecipients=_pendingRecipients;
@@ -107,6 +105,7 @@
 - (double)maxTrimDurationForMediaType:(int)arg1;
 - (_Bool)canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;
 - (_Bool)canSendComposition:(id)arg1 error:(id *)arg2;
+- (_Bool)_allowedByScreenTime;
 - (_Bool)canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
 @property(readonly, nonatomic, getter=isPending) _Bool pending;
 @property(readonly, copy, nonatomic) NSArray *recipientStrings;
@@ -202,6 +201,7 @@
 - (id)summaryTextForBlockedConversation;
 - (_Bool)shouldBeBlockedDueToDowntime;
 - (_Bool)supportsSurf;
+- (void)nanoPlaceCardViewController:(id)arg1 didSelectTransitIncidents:(id)arg2;
 - (void)nanoPlaceCardViewControllerDidTapAttribution:(id)arg1;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectPhoneNumber:(id)arg2;
 - (void)nanoPlaceCardViewControllerDidTapMap:(id)arg1;

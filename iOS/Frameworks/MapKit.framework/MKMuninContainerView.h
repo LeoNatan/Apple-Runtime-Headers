@@ -37,6 +37,7 @@
 @property(nonatomic) __weak id <MKMuninContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_updateDimmingViewBackgroundColor;
+- (void)_updateDimmingViewActivityIndicator;
 - (void)_updateDimmingStateForMuninView:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)infoCardThemeChanged;
 - (void)cancelIfPresent;

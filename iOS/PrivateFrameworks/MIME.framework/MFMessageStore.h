@@ -21,8 +21,6 @@
 + (Class)headersClass;
 @property(readonly, retain, nonatomic) MFMessageStoreObjectCache *objectCache; // @synthesize objectCache=_objectCache;
 - (void).cxx_destruct;
-- (id)additionalHeadersForForwardOfMessage:(id)arg1;
-- (id)additionalHeadersForReplyOfMessage:(id)arg1;
 - (void)setMessageClass:(Class)arg1;
 - (_Bool)wantsLineEndingConversionForMIMEPart:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3 forMessage:(id)arg4;

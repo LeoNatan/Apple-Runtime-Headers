@@ -23,6 +23,7 @@
 - (id)privacyIdentifierForSectionIdentifier:(id)arg1;
 - (void)displayPrivacyInformationWithIdentifier:(id)arg1;
 - (void)displayUnifiedPrivacyInformationWithIdentifiers:(id)arg1;
+- (void)dismissTextViewController;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 
 // Remaining properties

@@ -9,7 +9,7 @@
 @class NSString, UIView, WFAction, WFActionDrawerCategoriesCollectionViewManager;
 
 @protocol WFActionDrawerCategoriesCollectionViewManagerDelegate <NSObject>
-- (void)categoriesCollectionViewManager:(WFActionDrawerCategoriesCollectionViewManager *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
+- (void)categoriesCollectionViewManager:(WFActionDrawerCategoriesCollectionViewManager *)arg1 didSelectCategoryForContentType:(NSString *)arg2 title:(NSString *)arg3;
 - (void)categoriesCollectionViewManagerDidSelectCategoryScripting:(WFActionDrawerCategoriesCollectionViewManager *)arg1 title:(NSString *)arg2;
 - (void)categoriesCollectionViewManagerDidSelectCategoryFavorites:(WFActionDrawerCategoriesCollectionViewManager *)arg1 title:(NSString *)arg2;
 - (void)categoriesCollectionViewManagerDidSelectCategoryApps:(WFActionDrawerCategoriesCollectionViewManager *)arg1 title:(NSString *)arg2;

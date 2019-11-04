@@ -13,10 +13,12 @@
 @interface GEORPAmenityCorrections : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _addedAmenities;
     CDStruct_95bda58d _removedAmenities;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_addedAmenities:1;
@@ -62,6 +64,8 @@
 @property(readonly, nonatomic) unsigned long long addedAmenitiesCount;
 - (void)_readAddedAmenities;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

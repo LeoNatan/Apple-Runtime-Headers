@@ -28,6 +28,8 @@
 - (void)_LSClearSchemaCaches;
 - (void)_LSFailedToOpenURL:(id)arg1 withBundle:(id)arg2;
 - (_Bool)_LSPrivateDatabaseNeedsRebuild;
+- (id)_LSPrivateRemovedSystemAppIdentifiers;
+- (void)_LSPrivateSetRemovedSystemAppIdentifiers:(id)arg1;
 - (void)_LSPrivateUpdateAppRemovalRestrictions;
 - (void)_LSPrivateSyncWithMobileInstallation;
 - (_Bool)_LSPrivateRebuildApplicationDatabasesForSystemApps:(_Bool)arg1 internal:(_Bool)arg2 user:(_Bool)arg3;

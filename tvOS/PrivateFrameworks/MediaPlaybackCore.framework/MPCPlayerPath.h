@@ -9,28 +9,30 @@
 #import <MediaPlaybackCore/NSCopying-Protocol.h>
 #import <MediaPlaybackCore/NSSecureCoding-Protocol.h>
 
-@class MPAVRoute, NSArray, NSString;
+@class MPAVRoute, NSString;
 
 @interface MPCPlayerPath : NSObject <NSCopying, NSSecureCoding>
 {
     int _pid;
-    NSArray *_routeUIDs;
     _Bool _resolved;
     NSString *_bundleID;
     NSString *_playerID;
     void *_mediaRemotePlayerPath;
+    NSString *_deviceUID;
     MPAVRoute *_route;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)pathWithCustomOrigin:(void *)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 + (id)pathWithRoute:(id)arg1 mediaRemotePlayerPath:(void *)arg2 isResolved:(_Bool)arg3;
++ (id)pathWithDeviceUID:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 playerID:(id)arg4;
 + (id)pathWithDeviceUIDs:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 playerID:(id)arg4;
 + (id)pathWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 + (id)systemMusicPathWithRoute:(id)arg1 playerID:(id)arg2;
 + (id)deviceActivePlayerPath;
 @property(readonly, nonatomic, getter=isResolved) _Bool resolved; // @synthesize resolved=_resolved;
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
+@property(readonly, nonatomic) NSString *deviceUID; // @synthesize deviceUID=_deviceUID;
 @property(readonly, nonatomic) void *mediaRemotePlayerPath; // @synthesize mediaRemotePlayerPath=_mediaRemotePlayerPath;
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -51,7 +53,7 @@
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithDeviceUIDs:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 playerID:(id)arg4;
+- (id)initWithDeviceUID:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 playerID:(id)arg4;
 - (id)initWithRoute:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 playerID:(id)arg4;
 - (id)initWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 

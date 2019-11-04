@@ -13,11 +13,13 @@
 @interface GEOSource : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_sourceId;
     NSString *_sourceName;
     NSString *_sourceVersion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_sourceId:1;
@@ -51,6 +53,8 @@
 - (void)_readSourceId;
 @property(retain, nonatomic) NSString *sourceName;
 - (void)_readSourceName;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithAttributionID:(id)arg1;
 
 @end

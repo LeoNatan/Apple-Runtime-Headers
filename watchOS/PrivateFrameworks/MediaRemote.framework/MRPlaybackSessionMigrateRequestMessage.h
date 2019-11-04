@@ -16,7 +16,7 @@
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property(readonly, nonatomic) MRPlaybackSessionMigrateRequest *request;
 @property(readonly, nonatomic) _MRPlaybackSessionProtobuf *playbackSession;
-- (id)initWithPlaybackSession:(struct _MRPlaybackSessionProtobuf *)arg1 request:(id)arg2 forPlayerPath:(struct _MRNowPlayingPlayerPathProtobuf *)arg3;
+- (id)initWithPlaybackSession:(id)arg1 request:(id)arg2 forPlayerPath:(id)arg3;
 
 @end
 

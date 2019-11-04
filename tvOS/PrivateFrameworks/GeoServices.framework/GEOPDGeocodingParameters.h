@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDGeocodingParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_queryString;
     GEOStructuredAddress *_structuredAddress;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _maxResults;
     struct {
         unsigned int has_maxResults:1;
@@ -59,6 +61,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *queryString;
 @property(readonly, nonatomic) _Bool hasQueryString;
 - (void)_readQueryString;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 addressString:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;

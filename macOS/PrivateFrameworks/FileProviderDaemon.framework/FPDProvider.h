@@ -58,6 +58,7 @@
 - (id)newDomainFromNSDomain:(id)arg1;
 - (id)defaultNSDomain;
 - (id)_recreateDefaultDomainIfNeeded;
+- (void)_writeDomainPropertiesIfChangedFrom:(id)arg1;
 - (void)_writeDomainProperties;
 - (void)writeDomainProperties;
 @property(readonly, nonatomic) BOOL supportsEnumeration;

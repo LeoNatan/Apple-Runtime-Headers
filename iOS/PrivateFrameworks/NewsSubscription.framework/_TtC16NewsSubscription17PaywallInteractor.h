@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: paywallModel
     // Error parsing type: , name: purchaseSessionID
     // Error parsing type: , name: dataManager
-    // Error parsing type: , name: purchaseStarter
     // Error parsing type: , name: webAccessAuthenticatorFactory
     // Error parsing type: , name: webAccessAuthenticator
     // Error parsing type: , name: purchaseConversionLocation

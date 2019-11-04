@@ -10,6 +10,7 @@
 @protocol NFRemoteAdminManagerCallbacks;
 
 @protocol NFRemoteAdminManagerInterface <NSObject>
+- (oneway void)deleteAllAppletsAndCleanupWithTSM:(void (^)(NSError *))arg1;
 - (oneway void)getSELDInfoForBroker:(void (^)(NSDictionary *, NSError *))arg1;
 - (oneway void)getAPNPublicToken:(void (^)(NSData *, NSError *))arg1;
 - (oneway void)cancelCardIngestion:(void (^)(NSError *))arg1;

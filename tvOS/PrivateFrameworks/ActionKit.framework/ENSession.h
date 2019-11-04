@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <ActionKit/ENAuthenticatorDelegate-Protocol.h>
 #import <ActionKit/ENBusinessNoteStoreClientDelegate-Protocol.h>
 #import <ActionKit/ENLinkedNoteStoreClientDelegate-Protocol.h>
-#import <ActionKit/ENOAuthAuthenticatorDelegate-Protocol.h>
 
-@class EDAMUser, ENAuthCache, ENBusinessNoteStoreClient, ENNoteStoreClient, ENOAuthAuthenticator, ENPreferencesStore, ENUserStoreClient, NSArray, NSDate, NSString;
-@protocol ENSDKLogging, OS_dispatch_queue;
+@class EDAMUser, ENAuthCache, ENBusinessNoteStoreClient, ENNoteStoreClient, ENPreferencesStore, ENUserStoreClient, NSArray, NSDate, NSString;
+@protocol ENAuthenticator, ENSDKLogging, OS_dispatch_queue;
 
-@interface ENSession : NSObject <ENLinkedNoteStoreClientDelegate, ENBusinessNoteStoreClientDelegate, ENOAuthAuthenticatorDelegate>
+@interface ENSession : NSObject <ENLinkedNoteStoreClientDelegate, ENBusinessNoteStoreClientDelegate, ENAuthenticatorDelegate>
 {
     _Bool _isAuthenticated;
     _Bool _supportsLinkedAppNotebook;
@@ -23,15 +23,13 @@
     long long _personalUploadLimit;
     long long _businessUploadUsage;
     long long _businessUploadLimit;
-    NSString *_customEvernoteLoginTitle;
-    NSString *_customEvernoteLoginDescription;
-    ENOAuthAuthenticator *_authenticator;
+    id <ENAuthenticator> _authenticator;
     CDUnknownBlockType _authenticationCompletion;
     NSString *_sessionHost;
     EDAMUser *_user;
+    NSString *_primaryAuthenticationToken;
     EDAMUser *_businessUser;
     ENPreferencesStore *_preferences;
-    NSString *_primaryAuthenticationToken;
     ENUserStoreClient *_userStore;
     ENNoteStoreClient *_primaryNoteStore;
     ENBusinessNoteStoreClient *_businessNoteStore;
@@ -44,6 +42,10 @@
 
 + (id)bundleSeedID;
 + (_Bool)checkSharedSessionSettings;
++ (id)developerToken;
++ (id)consumerSecret;
++ (id)consumerKey;
++ (id)sessionHostOverride;
 + (id)keychainAccessGroup;
 + (void)setKeychainGroup:(id)arg1;
 + (void)setSecurityApplicationGroupIdentifier:(id)arg1;
@@ -59,16 +61,14 @@
 @property(retain, nonatomic) ENBusinessNoteStoreClient *businessNoteStore; // @synthesize businessNoteStore=_businessNoteStore;
 @property(retain, nonatomic) ENNoteStoreClient *primaryNoteStore; // @synthesize primaryNoteStore=_primaryNoteStore;
 @property(retain, nonatomic) ENUserStoreClient *userStore; // @synthesize userStore=_userStore;
-@property(retain, nonatomic) NSString *primaryAuthenticationToken; // @synthesize primaryAuthenticationToken=_primaryAuthenticationToken;
 @property(retain, nonatomic) ENPreferencesStore *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) EDAMUser *businessUser; // @synthesize businessUser=_businessUser;
+@property(nonatomic) _Bool supportsLinkedAppNotebook; // @synthesize supportsLinkedAppNotebook=_supportsLinkedAppNotebook;
+@property(copy, nonatomic) NSString *primaryAuthenticationToken; // @synthesize primaryAuthenticationToken=_primaryAuthenticationToken;
 @property(retain, nonatomic) EDAMUser *user; // @synthesize user=_user;
 @property(copy, nonatomic) NSString *sessionHost; // @synthesize sessionHost=_sessionHost;
 @property(copy, nonatomic) CDUnknownBlockType authenticationCompletion; // @synthesize authenticationCompletion=_authenticationCompletion;
-@property(retain, nonatomic) ENOAuthAuthenticator *authenticator; // @synthesize authenticator=_authenticator;
-@property(nonatomic) _Bool supportsLinkedAppNotebook; // @synthesize supportsLinkedAppNotebook=_supportsLinkedAppNotebook;
-@property(copy, nonatomic) NSString *customEvernoteLoginDescription; // @synthesize customEvernoteLoginDescription=_customEvernoteLoginDescription;
-@property(copy, nonatomic) NSString *customEvernoteLoginTitle; // @synthesize customEvernoteLoginTitle=_customEvernoteLoginTitle;
+@property(retain, nonatomic) id <ENAuthenticator> authenticator; // @synthesize authenticator=_authenticator;
 @property(nonatomic) long long businessUploadLimit; // @synthesize businessUploadLimit=_businessUploadLimit;
 @property(nonatomic) long long businessUploadUsage; // @synthesize businessUploadUsage=_businessUploadUsage;
 @property(nonatomic) long long personalUploadLimit; // @synthesize personalUploadLimit=_personalUploadLimit;
@@ -100,8 +100,6 @@
 - (id)credentialsForHost:(id)arg1;
 - (id)credentialStore;
 - (_Bool)isErrorDueToRestrictedAuth:(id)arg1;
-- (_Bool)viewNoteInEvernote:(id)arg1 callbackURL:(id)arg2;
-- (_Bool)viewNoteInEvernote:(id)arg1;
 - (void)downloadThumbnailForNote:(id)arg1 maxDimension:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)downloadNote:(id)arg1 progress:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)findNotes_completeWithContext:(id)arg1 error:(id)arg2;
@@ -150,7 +148,6 @@
 - (void)completeAuthenticationWithError:(id)arg1;
 - (void)refreshUploadUsage;
 - (void)performPostAuthentication;
-- (void)authenticateWithViewController:(id)arg1 preferRegistration:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)selectInitialSessionHost;
 - (void)startup;
 - (void)dealloc;

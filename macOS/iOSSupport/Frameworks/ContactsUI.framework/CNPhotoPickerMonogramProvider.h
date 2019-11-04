@@ -13,12 +13,14 @@
 __attribute__((visibility("hidden")))
 @interface CNPhotoPickerMonogramProvider : NSObject <CNPhotoPickerProvider>
 {
-    NSString *identifier;
+    NSString *_identifier;
     CNContact *_contact;
 }
 
++ (id)generateMonogramItemForContact:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 RTL:(BOOL)arg4;
++ (id)providerItemForContact:(id)arg1 size:(struct CGSize)arg2 RTL:(BOOL)arg3;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)loadItemsForSize:(struct CGSize)arg1 scale:(double)arg2 RTL:(BOOL)arg3 renderingQueue:(id)arg4 callbackQueue:(id)arg5 itemDelegate:(id)arg6;
 - (id)initWithContact:(id)arg1;

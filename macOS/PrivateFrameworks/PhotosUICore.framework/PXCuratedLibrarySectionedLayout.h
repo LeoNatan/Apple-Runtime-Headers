@@ -31,6 +31,7 @@
     BOOL _performedInitialLoad;
     PXCuratedLibraryLayoutSpec *_spec;
     PXCuratedLibraryViewModel *_viewModel;
+    double _lateralMargin;
     id _lastVisibleDominantObjectReference;
     PXGSpriteReference *_lastHitSpriteReference;
     double _defaultInterlayoutSpacing;
@@ -47,6 +48,7 @@
 @property(nonatomic) BOOL isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(retain, nonatomic) PXGSpriteReference *lastHitSpriteReference; // @synthesize lastHitSpriteReference=_lastHitSpriteReference;
 @property(retain, nonatomic) id lastVisibleDominantObjectReference; // @synthesize lastVisibleDominantObjectReference=_lastVisibleDominantObjectReference;
+@property(nonatomic) double lateralMargin; // @synthesize lateralMargin=_lateralMargin;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) PXCuratedLibraryLayoutSpec *spec; // @synthesize spec=_spec;
 - (void).cxx_destruct;
@@ -77,6 +79,7 @@
 - (void)clearLastVisibleAreaAnchoringInformation;
 - (void)enumerateVisibleAnchoringLayoutsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_anchorVisibleArea;
+- (void)_updatePreheating;
 - (void)_updateSublayoutsForSkimming;
 - (void)_prepareAccumulatedSectionItemsBufferForSections:(long long)arg1;
 - (void)_updateSublayoutsDataSource;

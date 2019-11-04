@@ -6,7 +6,7 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HFDiscoveredAccessory, HFSetupAccessoryResult, HMAccessorySetupCompletedInfo, HMHome, HMSetupAccessoryDescription, NAFuture, NSSet, NSString;
+@class HFDiscoveredAccessory, HFSetupAccessoryResult, HFSetupPairingContext, HMAccessorySetupCompletedInfo, HMHome, NAFuture, NSSet, NSString;
 @protocol HFSetupPairingObserver;
 
 @protocol HFSetupPairingController <NSObject>
@@ -18,7 +18,7 @@
 @property(readonly, nonatomic) unsigned long long phase;
 @property(readonly, nonatomic) HMHome *home;
 @property(retain, nonatomic) HFSetupAccessoryResult *setupResult;
-@property(readonly, nonatomic) HMSetupAccessoryDescription *setupAccessoryDescription;
+@property(readonly, nonatomic) HFSetupPairingContext *context;
 - (NSSet *)pairedAccessories;
 - (NAFuture *)cancel;
 - (void)startWithHome:(HMHome *)arg1;

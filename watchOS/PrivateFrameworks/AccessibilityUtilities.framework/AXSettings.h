@@ -119,7 +119,6 @@
 @property(nonatomic) _Bool shouldStreamToLeftAid;
 @property(nonatomic) _Bool allowHearingAidControlOnLockScreen;
 @property(nonatomic) _Bool independentHearingAidSettings;
-@property(retain, nonatomic) NSDictionary *pairedHearingAids;
 - (void)voiceOverResetSoundAndHapticPreferences;
 - (void)voiceOverSetHapticEnabled:(_Bool)arg1 forEvent:(id)arg2;
 - (id)voiceOverHapticEnabledForEvent:(id)arg1;
@@ -272,6 +271,7 @@
 @property(nonatomic) int voiceOverKeyboardModifierChoice;
 @property(nonatomic) float voiceOverContinuousPathKeyboardStartTimeout;
 @property(retain, nonatomic) NSArray *currentVoices;
+@property(readonly, nonatomic) _Bool currentVoicesExist;
 @property(readonly, nonatomic) _Bool extantVoicesExist;
 @property(retain, nonatomic) NSArray *extantVoices;
 - (id)testingExtantVoices;
@@ -311,6 +311,7 @@
 @property(retain, nonatomic) NSDictionary *gaxInternalSettingsSavedAccessibilityFeatures;
 @property(retain, nonatomic) NSDictionary *gaxInternalSettingsUserGlobalProfile;
 @property(retain, nonatomic) NSDictionary *gaxInternalSettingsUserAppProfile;
+@property(readonly, nonatomic) _Bool guidedAccessAllowsMultipleWindows;
 @property(nonatomic) int guidedAccessAutoLockTimeInSeconds;
 @property(readonly, nonatomic) _Bool guidedAccessOverrideIdleTime;
 @property(nonatomic) _Bool guidedAccessShouldSpeakForTimeRestrictionEvents;

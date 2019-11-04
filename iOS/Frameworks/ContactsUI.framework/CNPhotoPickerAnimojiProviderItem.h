@@ -44,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (id)renderAvatarWithBackgroundWithImageData:(id)arg1;
 - (id)renderAvatarWithPoseWithSize:(double)arg1;
 - (id)renderDefaultAvatarImage;
+- (unsigned long long)imageType;
+- (id)variantIdentifier;
 - (id)copyWithPoseConfiguration:(id)arg1 generatorProvider:(id)arg2;
 - (id)copyWithColor:(id)arg1;
 - (id)initWithAvatarRecord:(id)arg1 imageProvider:(id)arg2 renderingScope:(id)arg3 renderingQueue:(id)arg4 callbackQueue:(id)arg5;

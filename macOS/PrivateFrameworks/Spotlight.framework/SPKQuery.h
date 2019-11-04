@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, PRSRankingItemRanker;
 @protocol SPKQueryDelegate;
 
 @interface SPKQuery : NSObject
 {
     NSMutableArray *_childQueries;
     double _startTime;
+    BOOL _extensionQuery;
     int _queryState;
     unsigned long long _queryOptions;
     unsigned long long _queryId;
     unsigned long long _queryGroupId;
     NSString *_userQueryString;
     NSObject<SPKQueryDelegate> *_delegate;
+    PRSRankingItemRanker *_ranker;
     SPKQuery *_parentQuery;
     double _queryStartTime;
     NSString *_keyboardLanguage;
@@ -30,10 +32,12 @@
 + (void)initialize;
 @property(retain) NSString *internalUnmodifiedUserQueryString; // @synthesize internalUnmodifiedUserQueryString=_internalUnmodifiedUserQueryString;
 @property(copy) CDUnknownBlockType clientResponseHandler; // @synthesize clientResponseHandler=_clientResponseHandler;
+@property(readonly, getter=isExtensionQuery) BOOL extensionQuery; // @synthesize extensionQuery=_extensionQuery;
 @property int queryState; // @synthesize queryState=_queryState;
 @property(retain) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 @property double queryStartTime; // @synthesize queryStartTime=_queryStartTime;
 @property __weak SPKQuery *parentQuery; // @synthesize parentQuery=_parentQuery;
+@property(readonly) PRSRankingItemRanker *ranker; // @synthesize ranker=_ranker;
 @property(nonatomic) __weak NSObject<SPKQueryDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSString *userQueryString; // @synthesize userQueryString=_userQueryString;
 @property(readonly) unsigned long long queryGroupId; // @synthesize queryGroupId=_queryGroupId;
@@ -42,15 +46,13 @@
 - (void).cxx_destruct;
 @property(readonly, getter=isDictionaryQuery) BOOL dictionaryQuery;
 @property(readonly) BOOL supportsRefinement;
-@property(readonly, getter=isExtensionQuery) BOOL extensionQuery;
 @property(readonly, getter=isCalculatorQuery) BOOL calculatorQuery;
 @property(readonly, getter=isApplicationQuery) BOOL applicationQuery;
 @property(readonly, getter=isCoreSpotlightQuery) BOOL coreSpotlightQuery;
 @property(readonly, getter=isDocumentQuery) BOOL documentQuery;
-@property(readonly, getter=isRemoteQuery) BOOL remoteQuery;
+@property(readonly, getter=isURLQuery) BOOL urlQuery;
 @property(readonly, getter=isParsecQuery) BOOL parsecQuery;
 - (void)_queryDidComplete;
-- (void)_queryGatherComplete;
 - (void)_queryWillStart;
 - (double)startTime;
 - (void)cancel;

@@ -39,7 +39,6 @@
 - (unsigned int)countHomeLOIs;
 - (void)updateFixedLOIs;
 - (_Bool)fetchSuggestedShortcutsForType:(int)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)_addMapItemToShortcut:(id)arg1 fromLOI:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)_addMapItemToShortcut:(id)arg1 fromLOI:(id)arg2 group:(id)arg3;
 - (_Bool)fetchEntriesForLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_resolveMapItemsAndAddEntries:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVAudioMix, AVComposition, AVVideoComposition, CIImage, NSArray, NSError, NSString, NUComposition, NUGeometrySpaceMap, NUImageGeometry, NUObservatory, NUPriority, NURenderJobStatistics, NURenderNode, NURenderPipeline, NURenderRequest;
-@protocol NUDevice, NUExtentPolicy, NURenderStatistics, NURenderer, NUScalePolicy, OS_dispatch_group, OS_dispatch_queue;
+@protocol NUDevice, NUExtentPolicy, NURenderStatistics, NUScalePolicy, OS_dispatch_group, OS_dispatch_queue;
 
 @interface NURenderJob : NSObject
 {
@@ -133,7 +133,7 @@
 @property(readonly, nonatomic) _Bool wantsOutputVideoFrame;
 @property(readonly, nonatomic) _Bool wantsOutputImage;
 @property(readonly, nonatomic) _Bool wantsOutputGeometry;
-@property(readonly, nonatomic) id <NURenderer> renderer;
+- (id)renderer:(out id *)arg1;
 @property(readonly) id <NUExtentPolicy> extentPolicy;
 @property(readonly) id <NUScalePolicy> scalePolicy;
 @property(readonly) NUPriority *priority;

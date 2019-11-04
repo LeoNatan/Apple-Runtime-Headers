@@ -15,7 +15,6 @@
 @interface GEOInstructionSet : PBCodable <GEOComposedRouteStepTransitInstructionMerging, NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOFormattedString *_countStopsText;
     GEOFormattedString *_departureBar;
@@ -25,6 +24,9 @@
     GEOGenericInstruction *_genericInstruction;
     GEOTransitListInstruction *_transitListInstruction;
     GEOTransitSignInstruction *_transitSignInstruction;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _departureBarStyle;
     struct {
         unsigned int has_departureBarStyle:1;
@@ -92,6 +94,8 @@
 @property(retain, nonatomic) GEOTransitSignInstruction *transitSignInstruction;
 @property(readonly, nonatomic) _Bool hasTransitSignInstruction;
 - (void)_readTransitSignInstruction;
+- (id)initWithData:(id)arg1;
+- (id)init;
 @property(readonly, nonatomic) _Bool hideTimeInstructionsIfCollapsed;
 @property(readonly, nonatomic) id <GEOServerFormattedString> secondaryTimeFormattedString;
 @property(readonly, nonatomic) id <GEOServerFormattedString> primaryTimeFormattedString;

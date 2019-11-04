@@ -34,6 +34,7 @@
 @property _Bool _allowsWCA; // @synthesize _allowsWCA=__allowsWCA;
 @property _Bool _collectsTimingData; // @synthesize _collectsTimingData=__collectsTimingData;
 @property long long multipathServiceType; // @synthesize multipathServiceType=_multipathServiceType;
+- (_Bool)isEqual:(id)arg1;
 - (struct _CFHSTSPolicy *)copyHSTSPolicy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

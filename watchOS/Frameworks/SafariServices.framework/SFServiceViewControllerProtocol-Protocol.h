@@ -9,6 +9,7 @@
 @class NSArray, NSString, NSURL, SFSafariViewControllerConfiguration, UIColor;
 
 @protocol SFServiceViewControllerProtocol <NSObject>
+- (void)didRequestShowLinkPreviews:(_Bool)arg1;
 - (void)startResolveRedirectionForURL:(NSURL *)arg1;
 - (void)updateScrollViewIndicatorVerticalInsets:(struct UIEdgeInsets)arg1 horizontalInsets:(struct UIEdgeInsets)arg2;
 - (void)openCurrentURLInSafari;

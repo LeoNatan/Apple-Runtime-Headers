@@ -27,7 +27,7 @@
 - (void)setErrorKey:(id)arg1;
 - (void)tallyError:(id)arg1;
 - (void)tallyKey:(id)arg1;
-- (id)init;
+- (id)initWithLoggingEnabled:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_updatePanoramicStretchForLayer;
-- (void)dealloc;
+- (void)invalidate;
 - (id)initWithLayer:(id)arg1;
 
 @end

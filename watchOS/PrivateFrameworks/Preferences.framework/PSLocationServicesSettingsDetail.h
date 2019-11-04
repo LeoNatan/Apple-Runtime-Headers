@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <Preferences/PSSettingsLink-Protocol.h>
+#import <Preferences/PSSettingsBoolDetail-Protocol.h>
 
 @class NSString;
 
-@interface PSLocationServicesSettingsDetail : NSObject <PSSettingsLink>
+@interface PSLocationServicesSettingsDetail : NSObject <PSSettingsBoolDetail>
 {
 }
 
++ (id)iconImage;
++ (_Bool)isEnabled;
++ (void)setEnabled:(_Bool)arg1;
 + (id)preferencesURL;
 
 // Remaining properties

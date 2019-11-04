@@ -19,9 +19,9 @@
     NSObject<OS_dispatch_source> *_readSource;
 }
 
-+ (BOOL)useNetworkAgent:(id)arg1 returnUseCount:(unsigned long long *)arg2;
-+ (BOOL)removeActiveAssertionFromNetworkAgent:(id)arg1;
-+ (BOOL)addActiveAssertionToNetworkAgent:(id)arg1;
++ (_Bool)useNetworkAgent:(id)arg1 returnUseCount:(unsigned long long *)arg2;
++ (_Bool)removeActiveAssertionFromNetworkAgent:(id)arg1;
++ (_Bool)addActiveAssertionToNetworkAgent:(id)arg1;
 + (int)newRegistrationFileDescriptor;
 @property(retain) NSObject<OS_dispatch_source> *readSource; // @synthesize readSource=_readSource;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -31,20 +31,20 @@
 @property Class networkAgentClass; // @synthesize networkAgentClass=_networkAgentClass;
 - (void).cxx_destruct;
 @property(nonatomic) unsigned long long useCount;
-- (BOOL)assignResolvedEndpoints:(id)arg1 toClient:(id)arg2;
-- (BOOL)assignDiscoveredEndpoints:(id)arg1 toClient:(id)arg2;
-- (BOOL)assignNexusData:(id)arg1 toClient:(id)arg2;
-- (BOOL)removeNetworkAgentFromInterfaceNamed:(id)arg1;
-- (BOOL)addNetworkAgentToInterfaceNamed:(id)arg1;
-- (BOOL)unregisterNetworkAgent;
-- (BOOL)updateNetworkAgent:(id)arg1;
-- (BOOL)setRegisteredNetworkAgent:(id)arg1 fileDescriptor:(int)arg2;
-- (BOOL)registerNetworkAgent:(id)arg1;
-- (BOOL)registerNetworkAgent:(id)arg1 withFileDescriptor:(int)arg2;
-- (BOOL)createReadSourceWithRegistrationSocket:(int)arg1;
+- (_Bool)assignResolvedEndpoints:(id)arg1 toClient:(id)arg2;
+- (_Bool)assignDiscoveredEndpoints:(id)arg1 toClient:(id)arg2;
+- (_Bool)assignNexusData:(id)arg1 toClient:(id)arg2;
+- (_Bool)removeNetworkAgentFromInterfaceNamed:(id)arg1;
+- (_Bool)addNetworkAgentToInterfaceNamed:(id)arg1;
+- (_Bool)unregisterNetworkAgent;
+- (_Bool)updateNetworkAgent:(id)arg1;
+- (_Bool)setRegisteredNetworkAgent:(id)arg1 fileDescriptor:(int)arg2;
+- (_Bool)registerNetworkAgent:(id)arg1;
+- (_Bool)registerNetworkAgent:(id)arg1 withFileDescriptor:(int)arg2;
+- (_Bool)createReadSourceWithRegistrationSocket:(int)arg1;
 - (void)handleMessageFromAgent;
 - (int)dupRegistrationFileDescriptor;
-@property(readonly, nonatomic, getter=isRegistered) BOOL registered;
+@property(readonly, nonatomic, getter=isRegistered) _Bool registered;
 - (void)dealloc;
 - (id)initWithNetworkAgentClass:(Class)arg1 queue:(id)arg2;
 - (id)initWithNetworkAgentClass:(Class)arg1;

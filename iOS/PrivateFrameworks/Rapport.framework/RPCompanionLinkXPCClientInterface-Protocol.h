@@ -9,6 +9,8 @@
 @protocol RPCompanionLinkXPCClientInterface
 
 @optional
+- (void)xpcServerHidePassword:(unsigned int)arg1;
+- (void)xpcServerShowPassword:(NSString *)arg1 flags:(unsigned int)arg2;
 - (void)xpcServerAcceptSession:(RPSession *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)xpcDiscoveryChangedEndpoint:(RPEndpoint *)arg1;
 - (void)xpcDiscoveryLostEndpoint:(RPEndpoint *)arg1;

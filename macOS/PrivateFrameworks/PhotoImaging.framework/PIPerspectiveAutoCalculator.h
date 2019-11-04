@@ -9,7 +9,7 @@
 #import <PhotoImaging/NUTimeBased-Protocol.h>
 #import <PhotoImaging/PIFaceObservingAutoCalculator-Protocol.h>
 
-@class CIImage, NSMutableDictionary, NSNumber, NSString, PIFaceObservationCache, VNSaliencyImageObservation;
+@class CIImage, NSArray, NSMutableDictionary, NSNumber, NSString, PIFaceObservationCache, VNSaliencyImageObservation;
 
 @interface PIPerspectiveAutoCalculator : NUAutoCalculator <NUTimeBased, PIFaceObservingAutoCalculator>
 {
@@ -33,6 +33,7 @@
     double _maxSalientSubjectArea;
     VNSaliencyImageObservation *_saliencyObservation;
     double _angleSeedDegreesCCW;
+    NSArray *_ANODSubjects;
     NSString *_debugFilesPrefix;
     NSMutableDictionary *_debugDiagnostics;
     CIImage *_debugLineDetectionImage;
@@ -44,6 +45,7 @@
 @property(readonly) NSMutableDictionary *debugDiagnostics; // @synthesize debugDiagnostics=_debugDiagnostics;
 @property(copy) NSString *debugFilesPrefix; // @synthesize debugFilesPrefix=_debugFilesPrefix;
 @property BOOL debugFilesEnabled; // @synthesize debugFilesEnabled=_debugFilesEnabled;
+@property(copy, nonatomic) NSArray *ANODSubjects; // @synthesize ANODSubjects=_ANODSubjects;
 @property double angleSeedDegreesCCW; // @synthesize angleSeedDegreesCCW=_angleSeedDegreesCCW;
 @property(retain, nonatomic) VNSaliencyImageObservation *saliencyObservation; // @synthesize saliencyObservation=_saliencyObservation;
 @property(nonatomic) double maxSalientSubjectArea; // @synthesize maxSalientSubjectArea=_maxSalientSubjectArea;
@@ -69,8 +71,10 @@
 - (BOOL)passesConfidenceCheck:(id)arg1 error:(out id *)arg2;
 - (BOOL)canGenerateNewCropRect:(out id *)arg1;
 - (id)primaryImageProperties:(out id *)arg1;
+- (id)overcaptureImageProperties:(out id *)arg1;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (BOOL)passesSaliencyCheck:(out id *)arg1;
+- (BOOL)passesBuildingCheck:(out id *)arg1;
 - (BOOL)passesImagePropertiesCheck:(out id *)arg1;
 - (BOOL)isFrontFacingCameraImage:(id)arg1 pixelSize:(CDStruct_912cb5d2)arg2;
 - (BOOL)hasFrontFacingCameraDimentions:(CDStruct_912cb5d2)arg1;

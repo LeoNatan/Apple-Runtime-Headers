@@ -17,6 +17,7 @@
 - (id)addPlaybackTimeObserver:(void (^)(id <NUMediaPlayer>, struct))arg1;
 - (id)addPlaybackStateObserver:(void (^)(id <NUMediaPlayer>, long long))arg1;
 - (void)stepByCount:(long long)arg1;
+- (void)seekToTime:(CDStruct_198678f7)arg1 exact:(_Bool)arg2;
 - (void)seekToTime:(CDStruct_198678f7)arg1;
 - (void)pause;
 - (void)play;

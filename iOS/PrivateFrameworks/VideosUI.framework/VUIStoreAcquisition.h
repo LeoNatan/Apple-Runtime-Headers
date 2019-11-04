@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class ATVAcquisitionRequest, NSMutableArray;
+@class NSMutableArray, VUIAcquisitionRequest;
 
-__attribute__((visibility("hidden")))
 @interface VUIStoreAcquisition : NSObject
 {
     NSMutableArray *_pendingQueue;
     unsigned long long _concurrentCount;
-    ATVAcquisitionRequest *_activeRequest;
+    VUIAcquisitionRequest *_activeRequest;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)_postCrossProcessNotificationWithBuyParams:(id)arg1 error:(id)arg2;
 - (void)_handleResponse:(id)arg1 responseDict:(id)arg2 forRequest:(id)arg3 error:(id)arg4 cancelled:(_Bool)arg5;
 - (void)_handleCustomRequest:(id)arg1;
 - (void)_handleRequest:(id)arg1;

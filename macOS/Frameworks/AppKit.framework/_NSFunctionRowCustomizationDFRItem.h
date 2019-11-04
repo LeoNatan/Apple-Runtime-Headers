@@ -15,17 +15,23 @@ __attribute__((visibility("hidden")))
     struct CGSize _minSize;
     struct CGSize _preferredSize;
     struct CGSize _maxSize;
+    struct CGSize _reducedMetricsThreshold;
     BOOL _hasCachedMinMaxSize;
     BOOL _requiresExactMinSize;
+    BOOL _forcesReducedMetricsCompression;
+    BOOL _requiresTrueCenterLayout;
     long long _section;
     NSCompressionGroupLayout *_compressionLayout;
 }
 
+@property BOOL requiresTrueCenterLayout; // @synthesize requiresTrueCenterLayout=_requiresTrueCenterLayout;
+@property BOOL forcesReducedMetricsCompression; // @synthesize forcesReducedMetricsCompression=_forcesReducedMetricsCompression;
 @property BOOL requiresExactMinSize; // @synthesize requiresExactMinSize=_requiresExactMinSize;
 @property long long section; // @synthesize section=_section;
 - (id)description;
 @property(retain) NSCompressionGroupLayout *compressionLayout; // @synthesize compressionLayout=_compressionLayout;
 - (void)invalidateSizes;
+@property(readonly) struct CGSize reducedMetricsThreshold; // @synthesize reducedMetricsThreshold=_reducedMetricsThreshold;
 @property(readonly) struct CGSize contentClippingSize;
 @property(readonly) struct CGSize preferredSize;
 @property(readonly) struct CGSize maxSize;

@@ -14,6 +14,7 @@
 @optional
 - (UITableViewCell *)cellWithReuseIdentifier:(NSString *)arg1 forEditItem:(EKCalendarItemEditItem *)arg2;
 - (UIViewController *)viewControllerForEditItem:(EKCalendarItemEditItem *)arg1;
+- (void)editItemWantsFooterTitlesToReload:(EKCalendarItemEditItem *)arg1;
 - (void)editItem:(EKCalendarItemEditItem *)arg1 textViewShouldReturn:(UIView *)arg2;
 - (void)editItemRequiresPopoverSizeUpdate:(EKCalendarItemEditItem *)arg1;
 - (void)editItemRequiresHeightChange:(EKCalendarItemEditItem *)arg1;

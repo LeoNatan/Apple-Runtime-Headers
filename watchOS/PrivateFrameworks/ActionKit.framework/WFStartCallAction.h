@@ -15,15 +15,16 @@
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)errorFromHandleResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromConfirmResponse:(id)arg1 intent:(id)arg2;
-- (id)supportedAppIdentifiers;
 - (_Bool)skipsProcessingHiddenParameters;
 - (id)errorFromStartCallResponse:(id)arg1 intent:(id)arg2;
+- (id)errorFromResolutionResult:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
 - (id)airplaneModeError;
 - (id)contactNotSupportedByAppErrorForContacts:(id)arg1;
 - (id)callingServiceNotAvailableError;
 - (id)appConfigurationRequiredError;
 - (id)localizedKeyParameterDisplayName;
 - (id)localizedCallServiceName;
+- (id)appIdentifierForIdentifier:(id)arg1;
 - (int)preferredCallProvider;
 - (int)callCapability;
 - (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;

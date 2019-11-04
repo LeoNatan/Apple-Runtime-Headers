@@ -11,6 +11,7 @@
 @interface PKEntitlementWhitelist : NSObject
 {
     _Bool _passesAllAccess;
+    _Bool _passesOverviewAccess;
     _Bool _passesAddSilently;
     _Bool _passPresentationSuppression;
     _Bool _paymentAllAccess;
@@ -19,6 +20,7 @@
     _Bool _applePayTrustAllAccess;
     _Bool _inAppPayments;
     _Bool _inAppPaymentsPrivate;
+    _Bool _manualPaymentPassProvisioning;
     _Bool _webPayments;
     _Bool _winterpegPayments;
     _Bool _cardOnFilePayments;
@@ -52,6 +54,7 @@
 @property(readonly) _Bool cardOnFilePayments; // @synthesize cardOnFilePayments=_cardOnFilePayments;
 @property(readonly) _Bool winterpegPayments; // @synthesize winterpegPayments=_winterpegPayments;
 @property(readonly) _Bool webPayments; // @synthesize webPayments=_webPayments;
+@property(readonly) _Bool manualPaymentPassProvisioning; // @synthesize manualPaymentPassProvisioning=_manualPaymentPassProvisioning;
 @property(readonly) _Bool inAppPaymentsPrivate; // @synthesize inAppPaymentsPrivate=_inAppPaymentsPrivate;
 @property(readonly) _Bool inAppPayments; // @synthesize inAppPayments=_inAppPayments;
 @property(readonly) _Bool applePayTrustAllAccess; // @synthesize applePayTrustAllAccess=_applePayTrustAllAccess;
@@ -60,6 +63,7 @@
 @property(readonly) _Bool paymentAllAccess; // @synthesize paymentAllAccess=_paymentAllAccess;
 @property(readonly) _Bool passPresentationSuppression; // @synthesize passPresentationSuppression=_passPresentationSuppression;
 @property(readonly) _Bool passesAddSilently; // @synthesize passesAddSilently=_passesAddSilently;
+@property(readonly) _Bool passesOverviewAccess; // @synthesize passesOverviewAccess=_passesOverviewAccess;
 @property(readonly) _Bool passesAllAccess; // @synthesize passesAllAccess=_passesAllAccess;
 - (void).cxx_destruct;
 - (void)_probeEntitlementsWithConnection:(id)arg1;

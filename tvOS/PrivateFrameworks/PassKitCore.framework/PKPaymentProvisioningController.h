@@ -85,6 +85,8 @@
 - (_Bool)hasDebitPaymentPass;
 - (_Bool)hasCreditPaymentPass;
 - (_Bool)hasPaymentPass;
+- (void)makePaymentPassDefault:(id)arg1;
+- (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
 - (void)_endRequiringUpgradedPasscodeIfNecessary;
 - (void)_startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
 - (void)passcodeUpgradeCompleted:(_Bool)arg1;

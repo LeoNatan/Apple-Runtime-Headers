@@ -33,8 +33,10 @@
 + (id)_navigation_localizedStringForDistance:(double)arg1 detail:(long long)arg2 unitFormat:(long long)arg3 locale:(id)arg4 useMetric:(unsigned long long)arg5 useYards:(unsigned long long)arg6;
 + (id)_navigation_localizedStringForDistance:(double)arg1 context:(long long)arg2 extraDetail:(BOOL)arg3;
 + (id)_navigation_overridenTokenForToken:(id)arg1 overrideVariables:(id)arg2;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 abbreviatedUnits:(BOOL)arg2 detail:(long long)arg3 spoken:(BOOL)arg4 overrideVariables:(id)arg5 allTokensExpanded:(char *)arg6;
 + (id)_navigation_stringForServerFormattedString:(id)arg1 abbreviatedUnits:(BOOL)arg2 detail:(long long)arg3 spoken:(BOOL)arg4 overrideVariables:(id)arg5;
 + (id)_navigation_stringForServerFormattedString:(id)arg1;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_5b8a7f88)arg2 overrideVariables:(id)arg3 allTokensExpanded:(char *)arg4;
 + (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_5b8a7f88)arg2 overrideVariables:(id)arg3;
 + (id)_navigation_descriptionForFrequencyRangeWithMinFrequency:(long long)arg1 maxFrequency:(long long)arg2;
 + (id)_navigation_descriptionForFrequencyMinuteValue:(long long)arg1;

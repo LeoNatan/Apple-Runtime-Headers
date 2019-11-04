@@ -21,9 +21,11 @@
     NSString *_locality;
     NSString *_stateCode;
     NSString *_administrativeArea;
+    NSString *_placemark;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *placemark; // @synthesize placemark=_placemark;
 @property(copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
 @property(copy, nonatomic) NSString *stateCode; // @synthesize stateCode=_stateCode;
 @property(copy, nonatomic) NSString *locality; // @synthesize locality=_locality;
@@ -39,6 +41,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithFormattedAddressLines:(id)arg1 country:(id)arg2 countryCode:(id)arg3 streetName:(id)arg4 streetAddress:(id)arg5 locality:(id)arg6 stateCode:(id)arg7 administrativeArea:(id)arg8 placemark:(id)arg9;
 - (id)initWithFormattedAddressLines:(id)arg1 country:(id)arg2 countryCode:(id)arg3 streetName:(id)arg4 streetAddress:(id)arg5 locality:(id)arg6 stateCode:(id)arg7 administrativeArea:(id)arg8;
 
 @end

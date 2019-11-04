@@ -6,10 +6,12 @@
 
 #import <UIKitCore/_UIStatusBarVisualProvider_Phone.h>
 
-@class NSDictionary;
+#import <UIKitCore/_UIStatusBarCellularItemTypeStringProvider-Protocol.h>
+
+@class NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _UIStatusBarVisualProvider_LegacyPhone : _UIStatusBarVisualProvider_Phone
+@interface _UIStatusBarVisualProvider_LegacyPhone : _UIStatusBarVisualProvider_Phone <_UIStatusBarCellularItemTypeStringProvider>
 {
     NSDictionary *_orderedDisplayItemPlacements;
 }
@@ -17,7 +19,10 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)smallPillSize;
 + (struct CGSize)pillSize;
 + (id)pillFont;
++ (id)expandedFont;
++ (id)timeFont;
 + (id)normalFont;
++ (float)expandedBaselineOffset;
 + (float)baselineOffset;
 + (struct NSDirectionalEdgeInsets)edgeInsets;
 + (float)regionSpacing;
@@ -27,15 +32,24 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_backgroundActivityDetailRemovalAnimation;
 - (id)styleAttributesForStyle:(int)arg1;
+- (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)regionIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)overriddenStyleAttributesForDisplayItemWithIdentifier:(id)arg1;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (void)updateDataForBackgroundActivity:(id)arg1;
 - (void)actionable:(id)arg1 highlighted:(_Bool)arg2 initialPress:(_Bool)arg3;
+- (id)condensedFontForCellularType:(int)arg1 defaultFont:(id)arg2 baselineOffset:(float *)arg3;
+- (id)stringForCellularType:(int)arg1 condensed:(_Bool)arg2;
 - (void)itemCreated:(id)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
 - (id)setupInContainerView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

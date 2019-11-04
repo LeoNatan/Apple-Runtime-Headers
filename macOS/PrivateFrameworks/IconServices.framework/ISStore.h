@@ -19,10 +19,10 @@
 
 @property struct os_unfair_lock_s registryLock; // @synthesize registryLock=_registryLock;
 @property(readonly) NSMutableDictionary *registry; // @synthesize registry=_registry;
+@property(readonly) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
-@property(readonly) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 - (void)removeUnitForUUID:(id)arg1;
 - (id)addUnitWithLength:(unsigned long long)arg1 dataProvider:(CDUnknownBlockType)arg2;
 - (id)addUnitWithData:(id)arg1;

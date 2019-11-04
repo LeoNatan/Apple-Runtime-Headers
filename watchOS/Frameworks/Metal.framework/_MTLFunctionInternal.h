@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 - (void)setFilePath:(id)arg1;
 - (void)initializePrivateMetadata;
 - (id)newFunctionWithPluginData:(id)arg1 bitcodeType:(unsigned char)arg2;
-- (id)newSpecializedFunctionWithRequestType:(int)arg1 llvmTargetVersion:(unsigned int)arg2 constants:(id)arg3 functionCache:(id)arg4 error:(id *)arg5;
-- (void)newSpecializedFunctionWithRequestType:(int)arg1 llvmTargetVersion:(unsigned int)arg2 constants:(id)arg3 functionCache:(id)arg4 sync:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (id)newSpecializedFunctionWithRequestType:(int)arg1 llvmTargetVersion:(unsigned int)arg2 constants:(id)arg3 functionCache:(id)arg4 options:(unsigned int)arg5 error:(id *)arg6;
+- (void)newSpecializedFunctionWithRequestType:(int)arg1 llvmTargetVersion:(unsigned int)arg2 constants:(id)arg3 functionCache:(id)arg4 options:(unsigned int)arg5 sync:(_Bool)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)setSourceArchiveOffset:(unsigned long long)arg1;
 - (unsigned long long)sourceArchiveOffset;
 - (id)functionConstantsDictionary;

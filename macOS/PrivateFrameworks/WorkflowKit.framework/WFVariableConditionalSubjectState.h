@@ -24,7 +24,7 @@
 - (unsigned long long)displayableTimeUnits;
 - (unsigned long long)tense;
 - (BOOL)isIrrational;
-- (id)unit;
+- (id)unitType;
 - (BOOL)isCaseInsensitive;
 - (id)supportedComparisonOperators;
 @property(readonly, nonatomic) WFContentProperty *effectiveContentProperty; // @synthesize effectiveContentProperty=_effectiveContentProperty;

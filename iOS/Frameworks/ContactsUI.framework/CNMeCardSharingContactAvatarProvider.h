@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) NSData *thumbnailImageData;
 @property(readonly, nonatomic) struct CGRect cropRect;
 @property(readonly, nonatomic) NSData *imageData;
+- (id)initWithContact:(id)arg1 renderer:(id)arg2;
 - (id)initWithContact:(id)arg1;
 
 // Remaining properties

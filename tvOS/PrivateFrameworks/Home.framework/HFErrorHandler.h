@@ -8,12 +8,14 @@
 
 @interface HFErrorHandler : NSObject
 {
+    _Bool _presentingAlert;
 }
 
 + (id)_descriptionForHFErrorCode:(long long)arg1;
 + (id)_descriptionForHMErrorCode:(long long)arg1;
 + (id)descriptionLocalizationKeyForError:(id)arg1;
 + (id)sharedHandler;
+@property(nonatomic, getter=isPresentingAlert) _Bool presentingAlert; // @synthesize presentingAlert=_presentingAlert;
 - (id)_localizedStringOrNilIfNotFoundForKey:(id)arg1;
 - (id)_localizedDescriptionForError:(id)arg1 operationType:(id)arg2 options:(id)arg3;
 - (id)_localizedTitleForError:(id)arg1 operationType:(id)arg2 options:(id)arg3;
@@ -24,6 +26,7 @@
 - (void)handleError:(id)arg1 operationType:(id)arg2 options:(id)arg3 retryBlock:(CDUnknownBlockType)arg4 cancelBlock:(CDUnknownBlockType)arg5;
 - (void)handleError:(id)arg1 retryBlock:(CDUnknownBlockType)arg2 cancelBlock:(CDUnknownBlockType)arg3;
 - (void)handleError:(id)arg1;
+- (id)init;
 
 @end
 

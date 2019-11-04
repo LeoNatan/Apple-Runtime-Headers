@@ -16,8 +16,8 @@
     _Bool _eligibleForDemotion;
     _Bool _shouldHideUnderShowMore;
     _Bool _matchedQueryTerms;
-    unsigned char _bundleIDType;
     _Bool _isPrepared;
+    unsigned short _bundleIDType;
     float _rawScore;
     float _feedbackScore;
     float _score;
@@ -28,7 +28,7 @@
     NSData *_serverFeaturesJSON;
     double _mostRecentUsedDate;
     double _closestUpComingDate;
-    // Error parsing type: ^{?=[2Q]TT[0^v]}, name: _attributes
+    // Error parsing type: ^{?=q[2Q]TT[0^v]}, name: _attributes
     PRSRankingSpanCalculator *_spanCalculator;
     NSMutableArray *_matchedSenders;
     NSMutableArray *_matchedVipSenders;
@@ -44,19 +44,10 @@
 + (unsigned short)featureFromVirtualIdx:(unsigned long long)arg1;
 + (id)rankingDescriptorForBundleFeature:(unsigned long long)arg1;
 + (unsigned long long)indexOfShortcutBit;
-+ (id)deviceClass;
-+ (int *)requiredContactAttributesIndexes;
-+ (id)requiredContactAttributes;
-+ (id)requiredSMSAttributes;
-+ (id)requiredMailAttributes;
-+ (id)requiredOtherAttributes;
-+ (int *)requiredTextFeatureAttributesIndexes;
-+ (id)requiredTextFeatureAttributes;
-+ (id)requiredAttributes;
 + (void)initialize;
 @property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) _Bool isPrepared; // @synthesize isPrepared=_isPrepared;
-@property(nonatomic) unsigned char bundleIDType; // @synthesize bundleIDType=_bundleIDType;
+@property(nonatomic) unsigned short bundleIDType; // @synthesize bundleIDType=_bundleIDType;
 @property(nonatomic) unsigned long long importantPropertiesWordMatched; // @synthesize importantPropertiesWordMatched=_importantPropertiesWordMatched;
 @property(nonatomic) unsigned long long importantPropertiesPrefixMatched; // @synthesize importantPropertiesPrefixMatched=_importantPropertiesPrefixMatched;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
@@ -71,7 +62,7 @@
 // Property attributes: TT,N,V_indexScore
 
 // Error parsing type for property attributes:
-// Property attributes: T^{?=[2Q]TT[0^v]},N,V_attributes
+// Property attributes: T^{?=q[2Q]TT[0^v]},N,V_attributes
 
 @property(nonatomic) double closestUpComingDate; // @synthesize closestUpComingDate=_closestUpComingDate;
 @property(nonatomic) double mostRecentUsedDate; // @synthesize mostRecentUsedDate=_mostRecentUsedDate;
@@ -96,9 +87,9 @@
 - (id)displayName;
 - (long long)compare:(id)arg1 currentTime:(double)arg2;
 - (long long)compareWithDates:(id)arg1 currentTime:(double)arg2;
+- (long long)compareWithTypes:(id)arg1;
 - (id)moreRecentDateFromDate1:(id)arg1 date2:(id)arg2;
 - (id)interestingDate;
-- (id)dedupeIdentifier;
 - (void)populateTextFeatureValuesForProperty:(id)arg1 updatingBundleFeatureValues:(float (*)[0])arg2 propertyIndex:(unsigned long long)arg3 withEvaluator:(id)arg4 withContext:(struct prs_feature_population_ctx_t *)arg5 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg6 propertyCanFuzzyMatch:(_Bool)arg7 keyboardLanguage:(id)arg8 isCJK:(_Bool)arg9;
 - (void)populateFeaturesWithEvaluator:(id)arg1 updatingBundleFeatures:(float *)arg2 withContext:(struct prs_feature_population_ctx_t *)arg3 keyboardLanguage:(id)arg4 isCJK:(_Bool)arg5 currentTime:(double)arg6;
 - (void)populateOtherFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
@@ -114,7 +105,7 @@
 - (void)populateContactFeatures:(struct PRSL2FeatureScoreInfo *)arg1 currentTime:(double)arg2;
 - (_Bool)didMatchRankingDescriptor:(id)arg1;
 - (void)dealloc;
--     // Error parsing type: @24@0:8^{?=[2Q]TT[0^v]}16, name: initWithAttrs:
+-     // Error parsing type: @24@0:8^{?=q[2Q]TT[0^v]}16, name: initWithAttrs:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

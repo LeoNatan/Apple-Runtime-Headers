@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (_Bool)_isToAppLayoutAtIndex:(unsigned long long)arg1;
 - (_Bool)_isFromAppLayoutAtIndex:(unsigned long long)arg1;
+- (id)opacitySettings;
 - (id)layoutSettings;
 - (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
 - (id)topMostAppLayouts;
@@ -35,7 +36,7 @@
 - (id)transitionDidEnd;
 - (id)transitionWillUpdate;
 - (id)transitionWillBegin;
-- (_Bool)asynchronouslyRendersUntilDelay:(inout double *)arg1;
+- (_Bool)shouldRasterizeLiveContentUntilDelay:(inout double *)arg1;
 - (id)initWithTransitionID:(id)arg1 fromAppLayout:(id)arg2 toAppLayout:(id)arg3 direction:(unsigned long long)arg4;
 
 @end

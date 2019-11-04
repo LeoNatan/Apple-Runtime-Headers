@@ -30,6 +30,10 @@
 - (void)setExpanded:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic, getter=isSelfExpanding) _Bool selfExpanding;
 - (void)_updateHighlightedView;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
+- (_Bool)shouldAccessibilityGestureBeginForHUDManager:(id)arg1;
+- (_Bool)_shouldRejectAccessibilityGestureForHUDManager:(id)arg1;
 - (_Bool)_shouldTrackView:(id)arg1 forTouchAtLocation:(struct CGPoint)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

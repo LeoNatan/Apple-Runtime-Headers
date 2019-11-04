@@ -12,12 +12,14 @@
 {
     unsigned long long _majorVersion;
     unsigned long long _minorVersion;
+    unsigned long long _subMinorVersion;
     NSString *_platform;
 }
 
 + (id)versionFromString:(id)arg1;
-+ (id)versionWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 platform:(id)arg3;
++ (id)versionWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 subMinor:(unsigned long long)arg3 platform:(id)arg4;
 @property(readonly, copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
+@property(readonly, nonatomic) unsigned long long subMinorVersion; // @synthesize subMinorVersion=_subMinorVersion;
 @property(readonly, nonatomic) unsigned long long minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(readonly, nonatomic) unsigned long long majorVersion; // @synthesize majorVersion=_majorVersion;
 - (void).cxx_destruct;
@@ -26,9 +28,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (long long)compare:(id)arg1;
+- (long long)asOrderedInteger;
 @property(readonly, nonatomic) __weak NSString *string;
-- (id)initWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2;
-- (id)initWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 platform:(id)arg3;
+- (id)initWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 subMinor:(unsigned long long)arg3;
+- (id)initWithMajor:(unsigned long long)arg1 minor:(unsigned long long)arg2 subMinor:(unsigned long long)arg3 platform:(id)arg4;
 - (id)init;
 
 @end

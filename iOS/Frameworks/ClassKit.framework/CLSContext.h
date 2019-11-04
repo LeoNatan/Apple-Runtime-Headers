@@ -25,15 +25,18 @@
     NSString *_storeIdentifier;
     NSString *_storeTeamID;
     long long _authorizationStatus;
+    NSString *_stableObjectID;
 }
 
 + (id)reservedContextTypes;
 + (id)allowedTopics;
 + (id)arrayOfStringClasses;
++ (id)stableObjectIDPathFromIdentifierPath:(id)arg1;
 + (id)objectIDPathFromIdentifierPath:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (_Bool)conformsToProtocol:(id)arg1;
 + (id)relations;
+@property(copy, nonatomic) NSString *stableObjectID; // @synthesize stableObjectID=_stableObjectID;
 @property(nonatomic) long long authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
 @property(copy, nonatomic) NSArray *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *storeTeamID; // @synthesize storeTeamID=_storeTeamID;

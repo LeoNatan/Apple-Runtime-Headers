@@ -25,6 +25,11 @@ struct CGSize {
     double height;
 };
 
+struct CGVector {
+    double dx;
+    double dy;
+};
+
 struct NSDictionary {
     Class _field1;
 };

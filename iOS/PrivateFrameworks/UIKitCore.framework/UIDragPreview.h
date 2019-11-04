@@ -13,6 +13,7 @@
 @interface UIDragPreview : NSObject <NSCopying>
 {
     NSValue *_preferredAnchorPoint;
+    _Bool _preventAfterScreenUpdatesSnapshot;
     _Bool _avoidAnimation;
     UIView *_view;
     UIDragPreviewParameters *_parameters;
@@ -25,6 +26,7 @@
 + (id)previewForURL:(id)arg1;
 @property(copy, nonatomic) NSDictionary *_springboardParameters; // @synthesize _springboardParameters=__springboardParameters;
 @property(nonatomic) _Bool avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
+@property(nonatomic, getter=_preventAfterScreenUpdatesSnapshot, setter=_setPreventAfterScreenUpdatesSnapshot:) _Bool preventAfterScreenUpdatesSnapshot; // @synthesize preventAfterScreenUpdatesSnapshot=_preventAfterScreenUpdatesSnapshot;
 @property(readonly, copy, nonatomic) UIDragPreviewParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;

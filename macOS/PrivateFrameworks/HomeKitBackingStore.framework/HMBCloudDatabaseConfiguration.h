@@ -9,7 +9,7 @@
 #import <HomeKitBackingStore/NSCopying-Protocol.h>
 #import <HomeKitBackingStore/NSMutableCopying-Protocol.h>
 
-@class CKContainerID, CKOperationConfiguration, NSString;
+@class CKContainerID, CKOperationConfiguration, HMFScheduler, NSString;
 
 @interface HMBCloudDatabaseConfiguration : HMFObject <NSCopying, NSMutableCopying>
 {
@@ -17,8 +17,10 @@
     CKContainerID *_containerID;
     NSString *_sourceApplicationBundleIdentifier;
     CKOperationConfiguration *_defaultOperationConfiguration;
+    HMFScheduler *_apsRegistrationScheduler;
 }
 
+@property(retain, nonatomic) HMFScheduler *apsRegistrationScheduler; // @synthesize apsRegistrationScheduler=_apsRegistrationScheduler;
 @property(copy) CKOperationConfiguration *defaultOperationConfiguration; // @synthesize defaultOperationConfiguration=_defaultOperationConfiguration;
 @property(getter=isManateeContainer) BOOL manateeContainer; // @synthesize manateeContainer=_manateeContainer;
 @property(copy) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;

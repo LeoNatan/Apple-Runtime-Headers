@@ -13,7 +13,6 @@
 @interface GEORPFeedbackCommonContext : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _userPaths;
     NSMutableArray *_auxiliaryControls;
@@ -26,6 +25,9 @@
     GEORPSearchCommonContext *_searchCommon;
     GEORPSourceInfo *_sourceInfo;
     NSMutableArray *_visibleTileSets;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _deviceGmtOffset;
     int _pinType;
     struct {
@@ -129,6 +131,8 @@
 @property(nonatomic) _Bool hasPinType;
 @property(nonatomic) int pinType;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

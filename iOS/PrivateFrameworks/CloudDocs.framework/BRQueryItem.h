@@ -167,8 +167,8 @@
 @property(readonly, copy, nonatomic) NSString *filename;
 @property(readonly, copy, nonatomic) NSString *parentItemIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemIdentifier;
+@property(readonly, copy) NSString *fp_cloudContainerIdentifier;
 @property(readonly) _Bool fp_isContainer;
-- (id)fp_appContainerBundleIdentifier;
 - (id)localizedFileNameIfDesktopOrDocuments;
 - (id)containerIDIfDesktopOrDocuments;
 
@@ -181,7 +181,6 @@
 @property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) _Bool fp_addedByCurrentUser;
 @property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
-@property(readonly, copy) NSString *fp_cloudContainerIdentifier;
 @property(readonly, copy) NSString *fp_domainIdentifier;
 @property(readonly) _Bool fp_isContainerPristine;
 @property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) _Bool fp_lastModifiedByCurrentUser;

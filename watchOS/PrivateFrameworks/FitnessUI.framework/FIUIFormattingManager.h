@@ -63,6 +63,8 @@
 - (id)localizedDistinguishingPaceUnitStringWithMetricType:(unsigned int)arg1 distanceType:(unsigned int)arg2 distanceUnit:(unsigned int)arg3 paceFormat:(int)arg4 abbreviated:(_Bool)arg5;
 - (id)localizedPaceUnitStringWithDistanceType:(unsigned int)arg1 distanceUnit:(unsigned int)arg2 unitStyle:(int)arg3;
 - (id)localizedPaceUnitStringWithDistanceType:(unsigned int)arg1 distanceUnit:(unsigned int)arg2;
+- (id)localizedSpeedUnitStringForDistanceUnit:(unsigned int)arg1;
+- (id)localizedSpeedUnitStringForActivityType:(id)arg1;
 - (id)localizedSpeedUnitString;
 - (id)localizedShortTypeDistinguishingUnitStringForPowerType:(unsigned int)arg1 unitString:(id)arg2;
 - (id)localizedPowerUnitStringForPower:(double)arg1;
@@ -76,11 +78,13 @@
 - (id)localizedShortUnitStringForDistanceType:(unsigned int)arg1;
 - (id)localizedShortUnitStringForDistanceUnit:(unsigned int)arg1 textCase:(unsigned int)arg2;
 - (id)localizedShortUnitStringForDistanceUnit:(unsigned int)arg1;
-- (id)_localizedStringWithDistanceUnit:(unsigned int)arg1 distanceInUnit:(double)arg2 unitStyle:(int)arg3 decimalPrecision:(unsigned int)arg4;
+- (id)_localizedStringWithDistanceUnit:(unsigned int)arg1 distanceInUnit:(double)arg2 unitStyle:(int)arg3 decimalPrecision:(unsigned int)arg4 roundingMode:(unsigned int)arg5;
 - (unsigned int)_naturalScaleUnitForDistanceInMeters:(double)arg1 distanceType:(unsigned int)arg2;
 - (id)localizedNaturalScaleStringWithDistanceInMeters:(double)arg1 distanceType:(unsigned int)arg2 unitStyle:(unsigned int)arg3 usedUnit:(unsigned int *)arg4;
+- (id)localizedStringWithDistanceInMeters:(double)arg1 distanceType:(unsigned int)arg2 unitStyle:(unsigned int)arg3 roundingMode:(unsigned int)arg4;
 - (id)localizedStringWithDistanceInMeters:(double)arg1 distanceType:(unsigned int)arg2 unitStyle:(unsigned int)arg3;
 - (id)_stringByReplacingThirtyThreeAndAThirdIfNeeded:(id)arg1 distanceInMeters:(double)arg2 distanceUnit:(unsigned int)arg3;
+- (id)localizedStringWithDistanceInMeters:(double)arg1 distanceUnit:(unsigned int)arg2 unitStyle:(unsigned int)arg3 decimalPrecision:(unsigned int)arg4 roundingMode:(unsigned int)arg5;
 - (id)localizedStringWithDistanceInMeters:(double)arg1 distanceUnit:(unsigned int)arg2 unitStyle:(unsigned int)arg3 decimalPrecision:(unsigned int)arg4;
 - (id)stringWithDuration:(double)arg1 durationFormat:(unsigned int)arg2;
 - (id)localizationKeyForDistanceBaseKey:(id)arg1 distanceType:(unsigned int)arg2;

@@ -8,9 +8,12 @@
 
 #import <CarouselPlugins/NSSecureCoding-Protocol.h>
 
+@class NSString;
+
 @interface CSLFlipbookInvalidation : NSObject <NSSecureCoding>
 {
     int _reason;
+    NSString *_reasonStr;
     int _upToTwoMinCount;
     int _upToThreeMinCount;
     int _upToFourMinCount;
@@ -24,11 +27,13 @@
 @property(readonly, nonatomic) int upToFourMinCount; // @synthesize upToFourMinCount=_upToFourMinCount;
 @property(readonly, nonatomic) int upToThreeMinCount; // @synthesize upToThreeMinCount=_upToThreeMinCount;
 @property(readonly, nonatomic) int upToTwoMinCount; // @synthesize upToTwoMinCount=_upToTwoMinCount;
+@property(readonly, nonatomic) NSString *reasonStr; // @synthesize reasonStr=_reasonStr;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithReason:(int)arg1 upToTwoMinCount:(int)arg2 upToThreeMinCount:(int)arg3 upToFourMinCount:(int)arg4 upToFiveMinCount:(int)arg5 upToSixMinCount:(int)arg6;
+- (id)initWithReason:(int)arg1 reasonStr:(id)arg2 upToTwoMinCount:(int)arg3 upToThreeMinCount:(int)arg4 upToFourMinCount:(int)arg5 upToFiveMinCount:(int)arg6 upToSixMinCount:(int)arg7;
 
 @end
 

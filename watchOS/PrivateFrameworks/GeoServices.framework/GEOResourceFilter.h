@@ -13,10 +13,12 @@
 @interface GEOResourceFilter : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _scales;
     CDStruct_56d48c16 _scenarios;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_scales:1;
@@ -62,6 +64,8 @@
 @property(readonly, nonatomic) unsigned int scalesCount;
 - (void)_readScales;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -7,6 +7,7 @@
 #import <PhotoLibraryServices/PLEditSource.h>
 
 @interface PLEditSource (PHContentEditingInput)
++ (id)overcaptureEditSourceForContentEditingInput:(id)arg1;
 + (id)editSourceForContentEditingInput:(id)arg1 useEmbeddedPreview:(BOOL)arg2;
 + (id)editSourceForContentEditingInput:(id)arg1 useEmbeddedPreview:(BOOL)arg2 sourceKind:(unsigned long long)arg3;
 @end

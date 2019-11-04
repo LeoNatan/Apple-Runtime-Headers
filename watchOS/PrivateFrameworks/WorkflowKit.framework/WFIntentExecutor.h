@@ -48,7 +48,8 @@
 - (void)getDefaultValueForParameterNamed:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) INIntent *intent;
-- (id)initWithIntent:(id)arg1;
+- (id)extensionInputItemsWithIntent:(id)arg1;
+- (id)initWithIntent:(id)arg1 donateInteraction:(_Bool)arg2 groupIdentifier:(id)arg3;
 
 @end
 

@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)_currentUserIsOONForShareMetadata:(id)arg1;
 - (void)_decryptRootRecordsForShareURL:(id)arg1 withMetadata:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_continueHandlingFetchedShareMetadata:(id)arg1 shareURL:(id)arg2;
+- (void)_prepPPPCSDataForDugongShareMetadata:(id)arg1 withInvitationToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_continueSharePCSPrepForShareMetadata:(id)arg1 shareURL:(id)arg2;
 - (void)_handleTokenResolveWithLookupInfo:(id)arg1 shareMetadata:(id)arg2 responseCode:(id)arg3 urlByShortTokenLookupInfos:(id)arg4 tokensToFetchByURL:(id)arg5;
 - (void)_fetchShortTokenMetadata;
 - (id)_decodeProtectedFullToken:(id)arg1 tokenMetadata:(id)arg2;

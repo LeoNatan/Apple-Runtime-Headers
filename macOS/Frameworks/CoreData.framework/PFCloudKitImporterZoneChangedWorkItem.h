@@ -25,24 +25,31 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_encounteredErrors;
     NSMutableDictionary *_fetchedZoneIDToChangeToken;
     NSMutableArray *_failedRelationships;
+    NSMutableArray *_incrementalResults;
+    unsigned long long _currentOperationBytes;
 }
 
+@property(readonly, nonatomic) NSArray *incrementalResults; // @synthesize incrementalResults=_incrementalResults;
 @property(readonly, nonatomic) NSDictionary *fetchedZoneIDToChangeToken; // @synthesize fetchedZoneIDToChangeToken=_fetchedZoneIDToChangeToken;
 @property(readonly, nonatomic) NSArray *encounteredErrors; // @synthesize encounteredErrors=_encounteredErrors;
 @property(readonly, nonatomic) NSArray *allRecordIDs; // @synthesize allRecordIDs=_allRecordIDs;
 @property(readonly, nonatomic) NSDictionary *recordTypeToDeletedRecordID; // @synthesize recordTypeToDeletedRecordID=_recordTypeToDeletedRecordID;
 @property(readonly, nonatomic) NSArray *updatedRecords; // @synthesize updatedRecords=_updatedRecords;
 @property(readonly, nonatomic) unsigned long long totalOperationBytes; // @synthesize totalOperationBytes=_totalOperationBytes;
+@property(readonly, nonatomic) unsigned long long currentOperationBytes; // @synthesize currentOperationBytes=_currentOperationBytes;
 @property(readonly, nonatomic) NSDictionary *assetPathToSafeSaveURL; // @synthesize assetPathToSafeSaveURL=_assetPathToSafeSaveURL;
 @property(readonly, nonatomic) NSUUID *importOperationIdentifier; // @synthesize importOperationIdentifier=_importOperationIdentifier;
 @property(readonly, nonatomic) NSArray *changedRecordZoneIDs; // @synthesize changedRecordZoneIDs=_changedRecordZoneIDs;
 - (id)cloudKitSerializer:(id)arg1 safeSaveURLForAsset:(id)arg2;
 - (void)cloudKitSerializer:(id)arg1 failedToUpdateRelationship:(id)arg2 withError:(id)arg3;
+- (void)checkAndApplyChangesIfNeeded:(id)arg1;
 - (void)removeDownloadedAssetFiles;
 - (void)fetchOperationFinishedWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)serverChangeTokenUpdated:(id)arg1 forRecordZoneWithID:(id)arg2;
 - (void)fetchFinishedForZoneWithID:(id)arg1 serverChangeToken:(id)arg2 error:(id)arg3;
 - (void)addDeletedRecordID:(id)arg1 ofType:(id)arg2;
 - (void)addUpdatedRecord:(id)arg1;
+- (BOOL)applyAccumulatedChanges:(char *)arg1 error:(id *)arg2;
 - (id)newMirroringResultByApplyingAccumulatedChanges:(id *)arg1;
 - (void)doWorkWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long totalRecordBytes;

@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
 @interface GEOPDVenueInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_filterElements;
     GEOPDVenueItemList *_itemList;
     GEOPDLocatedInsideInfo *_locatedInside;
     NSMutableArray *_venueFeatureIds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _featureType;
     int _goInsideLevel;
     struct {
@@ -83,6 +85,8 @@ __attribute__((visibility("hidden")))
 - (void)clearVenueFeatureIds;
 @property(retain, nonatomic) NSMutableArray *venueFeatureIds;
 - (void)_readVenueFeatureIds;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

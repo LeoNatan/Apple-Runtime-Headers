@@ -48,7 +48,7 @@
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (id)_fetchPaymentInstrumentsForRequestingDevice:(id)arg1;
-- (id)_preparePaymentDeviceResponseForRequestingDevice:(id)arg1;
+- (id)_preparePaymentDeviceResponseForRequestingDevice:(id)arg1 userDisabled:(BOOL)arg2;
 - (void)_registerListeners;
 - (void)_postCTLMThrottleUncapNotification;
 - (void)_unregisterCTLMThrottleUncapNotification;

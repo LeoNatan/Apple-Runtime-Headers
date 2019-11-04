@@ -13,12 +13,14 @@
 @interface GEOETAResultByType : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _expectedTimeOfDeparture;
     GEORouteTrafficDetail *_routeTrafficDetail;
     GEOShortTrafficSummary *_shortTrafficSummary;
     NSMutableArray *_summaryForPredictedDestinations;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _distance;
     unsigned int _historicTravelTime;
     unsigned int _staticTravelTime;
@@ -107,6 +109,8 @@
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransportType;
 @property(nonatomic) int transportType;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

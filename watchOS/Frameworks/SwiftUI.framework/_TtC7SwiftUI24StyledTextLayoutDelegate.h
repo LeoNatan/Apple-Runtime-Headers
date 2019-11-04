@@ -9,10 +9,6 @@
 @interface _TtC7SwiftUI24StyledTextLayoutDelegate : _TtCV7SwiftUI14LayoutComputer8Delegate
 {
     // Error parsing type: , name: text
-    // Error parsing type: , name: sizeCache
-    // Error parsing type: , name: firstBaselineCache
-    // Error parsing type: , name: lastBaselineCache
-    // Error parsing type: , name: traitsCache
 }
 
 @end

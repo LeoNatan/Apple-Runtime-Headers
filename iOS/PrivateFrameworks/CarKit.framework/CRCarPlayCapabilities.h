@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSValue;
+@class NSString, NSValue;
 
 @interface CRCarPlayCapabilities : NSObject
 {
@@ -16,13 +16,19 @@
     NSValue *_viewAreaInsets;
     NSValue *_dashboardRoundedCorners;
     long long _userInterfaceStyle;
+    NSString *_version;
 }
 
++ (void)waitForCarCapabilitiesValues;
++ (void)_resetCapabilitiesGlobalDomain;
 + (id)newCapabilitiesFromGlobalDomain;
 + (id)fetchCarCapabilities;
++ (id)capabilitiesVersion;
++ (void)setCapabilitiesVersion:(id)arg1;
 + (void)setCapabilitiesIdentifier:(id)arg1;
 + (id)capabilitiesIdentifier;
 @property(nonatomic) _Bool persisted; // @synthesize persisted=_persisted;
+@property(nonatomic) NSString *version; // @synthesize version=_version;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(retain, nonatomic) NSValue *dashboardRoundedCorners; // @synthesize dashboardRoundedCorners=_dashboardRoundedCorners;
 @property(retain, nonatomic) NSValue *viewAreaInsets; // @synthesize viewAreaInsets=_viewAreaInsets;
@@ -35,6 +41,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCapabilities:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)informativeText;
 - (id)description;
 - (id)init;
 

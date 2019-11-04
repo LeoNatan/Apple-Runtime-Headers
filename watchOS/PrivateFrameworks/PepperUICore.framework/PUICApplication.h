@@ -54,7 +54,7 @@
 - (void)_applicationHandleSiriTask:(id)arg1;
 - (_Bool)isNetworkActivityIndicatorVisible;
 - (void)setNetworkActivityIndicatorVisible:(_Bool)arg1;
-- (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 sceneSettings:(id)arg3;
+- (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 scene:(id)arg3;
 @property(readonly, nonatomic) UIColor *primaryApplicationColor;
 - (void)dealloc;
 - (id)_appScene;

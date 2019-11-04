@@ -10,7 +10,7 @@
 #import <MapsSupport/MSPSenderMessageStrategyDelegate-Protocol.h>
 #import <MapsSupport/MSPSharedTripGroupSessionDelegate-Protocol.h>
 
-@class MSPGroupSessionStorage, MSPNavigationListener, MSPSenderLiveStrategy, MSPSenderMessageStrategy, MSPSenderMinimalStrategy, MSPSharedTripGroupSession, MSPSharedTripRelay, MSPSharedTripStorageController, NSMutableSet, NSString;
+@class MSPGroupSessionStorage, MSPNavigationListener, MSPSenderLiveStrategy, MSPSenderMessageStrategy, MSPSenderMinimalStrategy, MSPSharedTripGroupSession, MSPSharedTripRelay, MSPSharedTripStorageController, NSArray, NSMutableSet, NSString;
 @protocol MSPSenderETAControllerDelegate, OS_os_transaction;
 
 __attribute__((visibility("hidden")))
@@ -47,8 +47,11 @@ __attribute__((visibility("hidden")))
 - (void)sendMessage:(id)arg1 toParticipant:(id)arg2;
 - (void)_stopNavigationListener;
 - (void)_startNavigationListener;
+- (void)_invalidateActiveHandles;
+- (void)_invalidateSharedTripWithError:(id)arg1;
 - (void)_sendfinishedToIdentifiers:(id)arg1;
 - (void)_cleanObjects;
+@property(readonly, nonatomic) NSArray *activeHandles;
 - (void)stopSharing;
 - (void)stopSharingWithGroup:(id)arg1;
 - (void)startSharingWithGroup:(id)arg1;
@@ -60,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)_createGroupSessionIfNeededWithIdentifier:(id)arg1;
 - (void)_restoreLastSession;
 - (void)_updateStorage;
+- (void)dealloc;
 - (id)initWithRelay:(id)arg1;
 
 // Remaining properties

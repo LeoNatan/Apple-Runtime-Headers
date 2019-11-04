@@ -6,18 +6,18 @@
 
 #import <Message/MFOutgoingMessageDelivery.h>
 
-@class MFMailDropMetadata, NSArray;
+@class EMMailDropMetadata, NSArray;
 
 @interface MFMailDropMailDelivery : MFOutgoingMessageDelivery
 {
     NSArray *_attachments;
-    MFMailDropMetadata *_imageArchiveMetadata;
+    EMMailDropMetadata *_imageArchiveMetadata;
     long long _mailDropState;
 }
 
 + (id)_mailDropZone;
 @property(nonatomic) long long mailDropState; // @synthesize mailDropState=_mailDropState;
-@property(retain, nonatomic) MFMailDropMetadata *imageArchiveMetadata; // @synthesize imageArchiveMetadata=_imageArchiveMetadata;
+@property(retain, nonatomic) EMMailDropMetadata *imageArchiveMetadata; // @synthesize imageArchiveMetadata=_imageArchiveMetadata;
 @property(retain, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void).cxx_destruct;
 - (void)_recordZoneIDInDatabase:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -13,11 +13,11 @@
 }
 
 + (id)properties;
-+ (id)modelIDForHome:(id)arg1 manufacturer:(id)arg2 accessoryCategory:(id)arg3;
++ (id)modelIDForHome:(id)arg1 manufacturer:(id)arg2 category:(id)arg3;
 + (id)modelNamespace;
 
 // Remaining properties
-@property(retain, nonatomic) NSString *categoryIdentifier; // @dynamic categoryIdentifier;
+@property(retain, nonatomic) NSNumber *category; // @dynamic category;
 @property(retain, nonatomic) NSString *manufacturer; // @dynamic manufacturer;
 @property(retain, nonatomic) NSNumber *targetProtectionMode; // @dynamic targetProtectionMode;
 

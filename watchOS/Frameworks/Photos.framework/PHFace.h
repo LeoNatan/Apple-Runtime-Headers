@@ -52,6 +52,7 @@
     double _poseYaw;
 }
 
++ (id)fetchSuggestedFacesForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchKeyFacesGroupedByPersons:(id)arg1;
 + (id)fetchFacesGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)propertySetAccessorsByPropertySet;

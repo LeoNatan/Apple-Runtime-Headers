@@ -13,7 +13,6 @@
 @interface GEORPMerchantLookupContext : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     NSString *_correlationId;
     NSString *_merchantAdamId;
     NSString *_merchantFormattedAddress;
@@ -26,6 +25,9 @@
     GEOLocation *_transactionLocation;
     double _transactionTime;
     NSString *_transactionType;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_merchantIndustryCode:1;
         unsigned int has_transactionTime:1;
@@ -100,6 +102,8 @@
 - (void)_readMerchantId;
 @property(nonatomic) _Bool hasMerchantIndustryCode;
 @property(nonatomic) long long merchantIndustryCode;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

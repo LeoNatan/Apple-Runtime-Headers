@@ -9,6 +9,7 @@
 @class EKTravelEngineHypothesis;
 
 @protocol CALNTravelAdvisoryAuthority <NSObject>
+@property(readonly, nonatomic) double maximumAllowableTravelTime;
 @property(readonly, nonatomic) double minimumAllowableTravelTime;
 - (_Bool)travelStateIndicatesTravelingTowardDestination:(long long)arg1;
 - (_Bool)doesHypothesisSatisfyMinimumAllowableTravelTime:(EKTravelEngineHypothesis *)arg1;

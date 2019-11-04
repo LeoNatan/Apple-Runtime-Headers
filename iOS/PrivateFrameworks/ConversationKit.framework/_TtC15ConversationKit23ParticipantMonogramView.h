@@ -12,11 +12,13 @@
 {
     // Error parsing type: , name: colorStyle
     // Error parsing type: , name: contactView
+    // Error parsing type: , name: glowClippingView
     // Error parsing type: , name: glowView
     // Error parsing type: , name: audioVisualizationView
     // Error parsing type: , name: titleLabelContainer
     // Error parsing type: , name: subtitleLabelContainer
     // Error parsing type: , name: isInRoster
+    // Error parsing type: , name: customCornerRadius
 }
 
 - (void).cxx_destruct;

@@ -49,6 +49,7 @@
 - (void)postRecipeResponse:(id)arg1 recipeId:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_downloadAttachments:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleRecipeResponse:(id)arg1 recipeId:(id)arg2 matchingRecordSet:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (BOOL)taskIsDeferred;
 - (void)_fetchRecipe:(id)arg1 matchingRecordSet:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_attemptRecipeMatchWithRecipes:(id)arg1 keepGoing:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) BOOL isPFLPlugin;

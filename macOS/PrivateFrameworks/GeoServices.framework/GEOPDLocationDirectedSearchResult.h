@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDLocationDirectedSearchResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_disambiguationLabels;
     GEOMapRegion *_displayMapRegion;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_disambiguationLabels:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) GEOMapRegion *displayMapRegion;
 @property(readonly, nonatomic) BOOL hasDisplayMapRegion;
 - (void)_readDisplayMapRegion;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

@@ -20,8 +20,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *_axAppElementsDictionary;
 @property(readonly, nonatomic) NSArray *_axAppElements;
 @property(readonly, nonatomic) SBFluidSwitcherViewControllerAccessibility *_axSwitcherViewController;
-- (id)_axSortedElementArray:(id)arg1;
-- (void)_axUpdateElementOrderingIfNecessary;
 - (_Bool)_axScrollToAppElement:(id)arg1;
 - (id)_axElementForAppLayout:(id)arg1;
 - (void)_axAddVisibleItemContainer:(id)arg1 forAppLayout:(id)arg2;

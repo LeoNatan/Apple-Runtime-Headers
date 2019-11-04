@@ -6,7 +6,7 @@
 
 #import <FamilyCircleUI/NSObject-Protocol.h>
 
-@class NSArray, PSSpecifier, UIViewController;
+@class NSArray, NSNumber, PSSpecifier, UIViewController;
 @protocol AAUISpecifierProvider;
 
 @protocol AAUISpecifierProviderDelegate <NSObject>
@@ -14,5 +14,8 @@
 - (void)specifierProvider:(id <AAUISpecifierProvider>)arg1 didFinishLoadingSpecifier:(PSSpecifier *)arg2;
 - (void)specifierProvider:(id <AAUISpecifierProvider>)arg1 willBeginLoadingSpecifier:(PSSpecifier *)arg2;
 - (void)specifierProvider:(id <AAUISpecifierProvider>)arg1 showViewController:(UIViewController *)arg2;
+
+@optional
+- (void)specifierProvider:(id <AAUISpecifierProvider>)arg1 dataclassSwitchStateDidChange:(NSNumber *)arg2 withSpecifier:(PSSpecifier *)arg3;
 @end
 

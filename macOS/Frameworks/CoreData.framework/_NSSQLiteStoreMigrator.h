@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_attributeExtensionsToUpdate;
     NSMutableArray *_indexesToCreate;
     NSMutableArray *_indexesToDrop;
+    NSMutableArray *_defaultValueStatements;
     NSMutableArray *_derivationsToDrop;
     NSMutableArray *_derivationsToRun;
     NSMutableDictionary *_historyMigrationPropertyDataForEntityCache;

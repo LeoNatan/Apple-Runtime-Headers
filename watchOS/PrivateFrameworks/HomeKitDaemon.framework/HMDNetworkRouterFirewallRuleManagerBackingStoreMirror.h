@@ -10,7 +10,7 @@
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerBackingStoreMirror-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMBCloudDatabase, HMBLocalDatabase, HMBLocalZone, HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorInternalStateModel, NAFuture, NAPromise, NSMutableSet, NSObject, NSString;
+@class HMBCloudDatabase, HMBLocalDatabase, HMBLocalZone, HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorInternalStateModel, NAFuture, NAPromise, NSObject, NSSet, NSString;
 @protocol HMBLocalZoneID, NAScheduler, OS_dispatch_queue;
 
 @interface HMDNetworkRouterFirewallRuleManagerBackingStoreMirror : HMFObject <HMFLogging, HMDNetworkRouterFirewallRuleManagerBackingStoreMirror, HMBMirrorProtocol>
@@ -20,7 +20,7 @@
     id <HMBLocalZoneID> _zoneID;
     HMBLocalZone *_localZone;
     NAFuture *_lastAsyncFuture;
-    NSMutableSet *_watchedRecordIDs;
+    NSSet *_watchedRecordIDs;
     HMDNetworkRouterFirewallRuleManagerBackingStoreMirrorInternalStateModel *_internalState;
     HMBCloudDatabase *_cloudDatabase;
     HMBLocalDatabase *_localDatabase;
@@ -69,9 +69,8 @@
 - (void)fetchCloudRecordsForZoneID:(id)arg1 recordID:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchCloudRecordIDsForZoneID:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchCloudRecordsForZoneID:(id)arg1 recordID:(id)arg2 options:(id)arg3 desiredKeys:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)fetchCloudChangesWithOptions:(id)arg1 xpcActivity:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)stopWatchingRecordsWithIDs:(id)arg1;
-- (void)startWatchingRecordsWithIDs:(id)arg1;
+- (void)fetchCloudChangesWithOptions:(id)arg1 ignoreLastFetchedAccessories:(_Bool)arg2 xpcActivity:(id)arg3 completion:(CDUnknownBlockType)arg4;
+@property(retain, nonatomic) NSSet *watchedRecordIDs; // @synthesize watchedRecordIDs=_watchedRecordIDs;
 @property(readonly, nonatomic) NAFuture *shutdownFuture;
 @property(readonly, nonatomic) NAFuture *startupFuture;
 - (id)shutdown;
@@ -81,7 +80,6 @@
 - (void)startUpWithLocalZone:(id)arg1;
 @property(readonly, nonatomic) NAFuture *startUp;
 - (id)__asyncFutureWithActivity:(id)arg1 ignoreErrors:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic) NSMutableSet *watchedRecordIDs; // @synthesize watchedRecordIDs=_watchedRecordIDs;
 @property(retain, nonatomic) NAFuture *lastAsyncFuture; // @synthesize lastAsyncFuture=_lastAsyncFuture;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 - (id)initWithLocalDatabase:(id)arg1 cloudDatabase:(id)arg2 useAnonymousRequests:(_Bool)arg3 ownerQueue:(id)arg4;
@@ -112,8 +110,6 @@
 - (void)__shutdownLocalZones:(id)arg1 activity:(id)arg2;
 - (id)__openLocalZoneForCloudZoneID:(id)arg1 error:(id *)arg2;
 - (id)__createCloudZoneIDForZoneID:(id)arg1;
-- (void)__stopWatchingRecords:(id)arg1 activity:(id)arg2;
-- (void)__startWatchingRecords:(id)arg1 activity:(id)arg2;
 - (void)__updateChangeTokenWithFetchInfo:(id)arg1;
 - (void)__removeDeletedZonesWithFetchInfo:(id)arg1;
 - (void)__retryFetchDatabaseChangesWithFetchInfo:(id)arg1;

@@ -46,6 +46,7 @@
 @property(copy, nonatomic) CDUnknownBlockType tableViewDidUpdateHandler; // @synthesize tableViewDidUpdateHandler;
 @property(copy, nonatomic) CDUnknownBlockType tableViewWillUpdateHandler; // @synthesize tableViewWillUpdateHandler;
 - (void).cxx_destruct;
+- (void)dismissIfNecessaryForIconDrag;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (_Bool)forwardFeedbackForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
@@ -62,6 +63,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)deselectSelectedRows;
+- (void)restoreResultsIfNeeded;
 - (void)purgeMemory;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
@@ -69,7 +71,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)updateViewControllerTitle:(id)arg1;
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
-- (void)updateSeparators;
+- (void)removeRowModel:(id)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(_Bool)arg2;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateTableForNewCellHeightAnimated:(_Bool)arg1;
@@ -95,12 +97,12 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)fallbackPeekViewControllerForIndexPath:(id)arg1;
 - (id)viewControllerForIndexPath:(id)arg1 isPeek:(_Bool)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic) _Bool threeDTouchEnabled;
 - (void)updateLayoutMarginsWithSize:(struct CGSize)arg1 orientation:(long long)arg2;
 - (void)updateLayoutMargins;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)addOrbInteractionIfNeeded;
+- (void)sceneDidActivate:(id)arg1;
 - (id)init;
 
 // Remaining properties

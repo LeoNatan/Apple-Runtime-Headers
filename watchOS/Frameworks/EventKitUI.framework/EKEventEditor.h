@@ -8,7 +8,7 @@
 
 #import <EventKitUI/EKEventAutocompleteResultsEditItemDelegate-Protocol.h>
 
-@class EKCalendarItemAlarmEditItem, EKCalendarItemCalendarEditItem, EKCalendarItemLocationInlineEditItem, EKCalendarItemTitleInlineEditItem, EKEvent, EKEventAttendeesEditItem, EKEventAutocompleteResultsEditItem, EKEventDateEditItem, EKEventURLAndNotesInlineEditItem, EKUIAutocompletePETTracker, EKUIAutocompleteSearchResult, NSString, NSTimer, UIColor;
+@class EKCalendarItemAlarmEditItem, EKCalendarItemCalendarEditItem, EKCalendarItemLocationInlineEditItem, EKCalendarItemTitleInlineEditItem, EKEvent, EKEventAttachmentsEditItem, EKEventAttendeesEditItem, EKEventAutocompleteResultsEditItem, EKEventDateEditItem, EKEventURLAndNotesInlineEditItem, EKUIAutocompletePETTracker, EKUIAutocompleteSearchResult, NSString, NSTimer, UIColor;
 @protocol EKUIAutocompletePendingSearchProtocol;
 
 @interface EKEventEditor : EKCalendarItemEditor <EKEventAutocompleteResultsEditItemDelegate>
@@ -21,6 +21,7 @@
     EKCalendarItemCalendarEditItem *_calendarEditItem;
     EKCalendarItemAlarmEditItem *_alarmEditItem;
     EKEventURLAndNotesInlineEditItem *_notesEditItem;
+    EKEventAttachmentsEditItem *_attachmentsEditItem;
     _Bool _shouldAutocomplete;
     id <EKUIAutocompletePendingSearchProtocol> _pendingSearch;
     NSTimer *_autocompleteTimer;
@@ -79,6 +80,10 @@
 - (id)_nameForDeleteButton;
 - (id)preferredTitle;
 - (_Bool)saveCalendarItemWithSpan:(int)arg1 error:(id *)arg2;
+- (id)attachmentsModifiedEvent;
+- (_Bool)attachmentsModifiedOnRecurrence;
+- (_Bool)hasUnsavedChanges;
+- (_Bool)hasAttachmentChanges;
 - (id)_orderedEditItems;
 - (id)_editItems;
 - (id)_calendarItemIndexSet;

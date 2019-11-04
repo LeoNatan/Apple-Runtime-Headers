@@ -33,6 +33,7 @@
 @property(readonly, nonatomic, getter=isMatchingAllowed) _Bool matchingAllowed;
 @property(readonly, nonatomic, getter=isPearlDetectEnabled) _Bool pearlDetectEnabled;
 @property(readonly, nonatomic) _Bool hasPearlSupport;
+@property(readonly, nonatomic) _Bool hasMesaSupport;
 @property(readonly, nonatomic, getter=isFingerDetectEnabled) _Bool fingerDetectEnabled;
 @property(readonly, nonatomic, getter=isFingerOn) _Bool fingerOn;
 @property(readonly, nonatomic) _Bool hasBiometricAuthenticationCapabilityEnabled;

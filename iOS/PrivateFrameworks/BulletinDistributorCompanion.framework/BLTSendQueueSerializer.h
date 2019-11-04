@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) _Bool usesMessageIdentifiers; // @synthesize usesMessageIdentifiers=_usesMessageIdentifiers;
 @property(copy, nonatomic) NSURL *sendFileURL; // @synthesize sendFileURL=_sendFileURL;
 - (void).cxx_destruct;
-- (void)handleFileURL:(id)arg1 protobufHandler:(id)arg2;
+- (_Bool)handleFileURL:(id)arg1 protobufHandler:(id)arg2;
 - (void)sendWithSender:(id)arg1 timeout:(id)arg2 responseHandlers:(id)arg3 didSend:(CDUnknownBlockType)arg4 didQueue:(CDUnknownBlockType)arg5;
 - (void)add:(id)arg1 type:(unsigned short)arg2 messageIdentifier:(id *)arg3;
 - (void)add:(id)arg1 type:(unsigned short)arg2;

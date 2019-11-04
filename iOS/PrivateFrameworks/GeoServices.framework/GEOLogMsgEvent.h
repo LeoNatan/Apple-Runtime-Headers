@@ -8,12 +8,11 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventDisplayAnalytic, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapKitCounts, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventMarcoLiteUsage, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventPredExTrainingData, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventThrottle, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray, PBDataReader;
+@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventDisplayAnalytic, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapKitCounts, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventMarcoLiteUsage, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventPredExTrainingData, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventThrottle, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventTripDepartureFeedback, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray, PBDataReader;
 
 @interface GEOLogMsgEvent : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOLogMsgEventBatchTrafficProbe *_batchTrafficProbeCollection;
     GEOLogMsgEventClientACSuggestions *_clientAcSuggestions;
     GEOLogMsgEventCommuteWindow *_commuteWindow;
@@ -48,9 +47,13 @@
     GEOLogMsgEventTimeToLeaveHypothesis *_timeToLeaveHypothesisEvent;
     GEOLogMsgEventTimeToLeaveInitialTravelTime *_timeToLeaveInitialTravelTimeEvent;
     GEOLogMsgEventTransitAppLaunch *_transitAppLaunchEvent;
+    GEOLogMsgEventTripDepartureFeedback *_tripDepartureFeedback;
     double _usageEventTime;
     GEOLogMsgEventUserAction *_userActionEvent;
     GEOLogMsgEventWifiConnectionQualityProbe *_wifiConnectionQualityProbeEvent;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     int _eventType;
     struct {
         unsigned int has_usageEventTime:1;
@@ -89,6 +92,7 @@
         unsigned int read_timeToLeaveHypothesisEvent:1;
         unsigned int read_timeToLeaveInitialTravelTimeEvent:1;
         unsigned int read_transitAppLaunchEvent:1;
+        unsigned int read_tripDepartureFeedback:1;
         unsigned int read_userActionEvent:1;
         unsigned int read_wifiConnectionQualityProbeEvent:1;
         unsigned int wrote_batchTrafficProbeCollection:1;
@@ -125,6 +129,7 @@
         unsigned int wrote_timeToLeaveHypothesisEvent:1;
         unsigned int wrote_timeToLeaveInitialTravelTimeEvent:1;
         unsigned int wrote_transitAppLaunchEvent:1;
+        unsigned int wrote_tripDepartureFeedback:1;
         unsigned int wrote_usageEventTime:1;
         unsigned int wrote_userActionEvent:1;
         unsigned int wrote_wifiConnectionQualityProbeEvent:1;
@@ -134,11 +139,6 @@
 
 + (_Bool)isValid:(id)arg1;
 + (Class)logMsgStateType;
-+ (id)logMsgEventSettings;
-+ (_Bool)logMsgEventType:(int)arg1 acceptsLogMsgStateType:(int)arg2;
-+ (id)acceptedLogMsgStatesForLogMsgEventType:(int)arg1;
-+ (id)acceptedLogMsgStates;
-+ (void)_initializeAcceptedLogMsgStateTypes;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool hasUsageEventTime;
 @property(nonatomic) double usageEventTime;
@@ -152,6 +152,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLogMsgEventTripDepartureFeedback *tripDepartureFeedback;
+@property(readonly, nonatomic) _Bool hasTripDepartureFeedback;
+- (void)_readTripDepartureFeedback;
 @property(retain, nonatomic) GEOLogMsgEventMarcoLiteUsage *marcoLiteUsage;
 @property(readonly, nonatomic) _Bool hasMarcoLiteUsage;
 - (void)_readMarcoLiteUsage;
@@ -268,22 +271,8 @@
 - (void)clearLogMsgStates;
 @property(retain, nonatomic) NSMutableArray *logMsgStates;
 - (void)_readLogMsgStates;
-- (void)unregisterLogMsgStateOfType:(int)arg1;
-- (void)unregisterLogMsgStatesOfTypes:(id)arg1;
-- (id)logMsgStateOfType:(int)arg1 stateOrigin:(id)arg2;
-- (id)logMsgStateOfType:(int)arg1;
-- (unsigned long long)numberOfLogMsgStatesOfType:(int)arg1 stateOrigin:(id)arg2;
-- (unsigned long long)numberOfLogMsgStatesOfType:(int)arg1;
-- (id)disallowedStatesForLogMessage:(id)arg1;
-- (_Bool)disallowedStateWithStateType:(int)arg1 logMessage:(id)arg2;
-- (_Bool)supportsCohortSession;
-- (_Bool)isSessionlessEvent;
-- (_Bool)isApplicationStatesAllowed;
-- (_Bool)isFullExperimentsStateAllowed;
-- (_Bool)isFullCarPlayStateAllowed;
-- (_Bool)isNavigationSessionAllowed;
-- (_Bool)isLogMsgEventSettingsAllowed:(id)arg1 defaultValue:(_Bool)arg2;
-- (_Bool)acceptsLogMsgStateType:(int)arg1;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

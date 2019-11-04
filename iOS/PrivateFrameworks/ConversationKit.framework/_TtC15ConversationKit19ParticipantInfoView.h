@@ -16,6 +16,7 @@
     // Error parsing type: , name: expandButton
     // Error parsing type: , name: isSmall
     // Error parsing type: , name: isExpanded
+    // Error parsing type: , name: customCornerRadius
     // Error parsing type: , name: isMomentsAvailable
     // Error parsing type: , name: delegate
 }

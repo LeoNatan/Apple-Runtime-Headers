@@ -41,15 +41,18 @@
     NSMutableSet *_associatedCancelables;
     _Bool _isRemoteSearch;
     CDUnknownBlockType _startedFetch;
+    int _transportType;
 }
 
 + (void)destroyMonitor;
 + (id)pushNewMonitor;
 + (id)currentMonitor;
+@property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(nonatomic) _Bool isRemoteSearch; // @synthesize isRemoteSearch=_isRemoteSearch;
 @property(copy) CDUnknownBlockType startedFetch; // @synthesize startedFetch=_startedFetch;
 @property(retain) MFMailboxUid *mailbox; // @synthesize mailbox=_mailbox;
 - (void).cxx_destruct;
+- (void)recordTransportType:(int)arg1;
 @property(readonly, nonatomic) unsigned int bytesWritten;
 @property(readonly, nonatomic) unsigned int bytesRead;
 - (void)recordBytesWritten:(unsigned int)arg1;

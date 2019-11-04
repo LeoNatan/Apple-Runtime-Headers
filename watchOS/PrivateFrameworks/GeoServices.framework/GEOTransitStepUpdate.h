@@ -13,12 +13,14 @@
 @interface GEOTransitStepUpdate : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOInstructionSet *_instructions;
     GEOTransitScheduleInfo *_scheduleInfo;
     NSData *_updateIdentifier;
     GEOTransitVehiclePositionInfo *_vehiclePositionInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_instructions:1;
@@ -59,6 +61,8 @@
 @property(retain, nonatomic) NSData *updateIdentifier;
 @property(readonly, nonatomic) _Bool hasUpdateIdentifier;
 - (void)_readUpdateIdentifier;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

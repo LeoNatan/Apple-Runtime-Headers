@@ -6,9 +6,10 @@
 
 #import <NewsCore/NSObject-Protocol.h>
 
-@class NSString;
+@class ACAccount, NSString;
 
 @protocol FCAppleAccount <NSObject>
+@property(readonly, nonatomic) ACAccount *activeiTunesAccount;
 @property(readonly, nonatomic) NSString *endpointConnectionClientID;
 @property(readonly, nonatomic, getter=isUserSignedInToiCloud) _Bool userSignedInToiCloud;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled;

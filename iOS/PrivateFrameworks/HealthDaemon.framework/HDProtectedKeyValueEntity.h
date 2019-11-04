@@ -10,6 +10,7 @@
 {
 }
 
++ (id)_insertOrReplaceSQL;
 + (long long)_deviceLocalCategory;
 + (long long)protectionClass;
 + (id)databaseTable;

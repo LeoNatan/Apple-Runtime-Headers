@@ -15,6 +15,7 @@
     NSXPCConnection *_clientConnection;
 }
 
++ (BOOL)_shouldCopySpatialOverCaptureResourcesMetadataCopyOptions:(id)arg1;
 + (BOOL)_shouldCopyTitleDescriptionAndKeywordsForMetadataCopyOptions:(id)arg1;
 + (BOOL)_shouldBakeInAdjustmentsAndFlattenLivePhoto:(char *)arg1 forSourceAsset:(id)arg2 adjustmentBakeInOptions:(id)arg3;
 @property(readonly, nonatomic) __weak NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;

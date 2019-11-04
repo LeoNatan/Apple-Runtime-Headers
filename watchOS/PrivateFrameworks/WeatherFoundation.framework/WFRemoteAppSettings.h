@@ -27,9 +27,11 @@
     long long _appConfigRefreshRate;
 }
 
++ (_Bool)wfSeedBuild;
 + (_Bool)wfInternalBuild;
 + (_Bool)useInternalBundleID;
-+ (id)configurationWithData:(id)arg1 bundleID:(id)arg2 country:(id)arg3 userID:(id)arg4 error:(id *)arg5;
++ (id)bundleIDsListFor:(id)arg1 useInternalBundleID:(_Bool)arg2 useSeedBundleID:(_Bool)arg3;
++ (id)configurationWithData:(id)arg1 bundleIDs:(id)arg2 country:(id)arg3 userID:(id)arg4 error:(id *)arg5;
 + (id)configurationWithData:(id)arg1 userID:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) unsigned int apiConfigMaxRange; // @synthesize apiConfigMaxRange=_apiConfigMaxRange;
 @property(readonly, nonatomic) unsigned int apiConfigMinRange; // @synthesize apiConfigMinRange=_apiConfigMinRange;
@@ -45,13 +47,15 @@
 @property(readonly, nonatomic) NSString *apiVersionFallback; // @synthesize apiVersionFallback=_apiVersionFallback;
 @property(readonly, nonatomic) NSString *apiVersion; // @synthesize apiVersion=_apiVersion;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)aqiEnabledForCountryCode:(id)arg1;
 @property(readonly, nonatomic) _Bool isExpired;
 @property(readonly, copy) NSString *description;
 - (_Bool)shouldUseAPIVersionFromDictionary:(id)arg1 userID:(id)arg2;
 - (id)getAPIVersionFromDictionary:(id)arg1 userID:(id)arg2;
-- (id)getEnvironmentSpecificConfigDictionaryFromDictionary:(id)arg1 bundleID:(id)arg2 country:(id)arg3;
-- (id)initWithConfigDictionary:(id)arg1 bundleID:(id)arg2 country:(id)arg3 userID:(id)arg4;
+- (id)getSpecificConfigFromConfigs:(id)arg1 configSpecifiers:(id)arg2 specifierKey:(id)arg3;
+- (id)getEnvironmentSpecificConfigDictionaryFromDictionary:(id)arg1 bundleIDs:(id)arg2 country:(id)arg3;
+- (id)initWithConfigDictionary:(id)arg1 bundleIDs:(id)arg2 country:(id)arg3 userID:(id)arg4;
 - (id)init;
 
 // Remaining properties

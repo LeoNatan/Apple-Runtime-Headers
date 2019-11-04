@@ -9,7 +9,7 @@
 #import <NewsCore/FCUserInfoObserving-Protocol.h>
 
 @class FCCommandQueue, FCUserInfo, NSString;
-@protocol FCBundleSubscriptionManagerType, FCCoreConfigurationManager;
+@protocol FCCoreConfigurationManager;
 
 @interface FCNotificationController : NSObject <FCUserInfoObserving>
 {
@@ -20,19 +20,16 @@
     FCUserInfo *_userInfo;
     FCCommandQueue *_commandQueue;
     id <FCCoreConfigurationManager> _configurationManager;
-    id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
 }
 
 @property(nonatomic) _Bool appleNewsNotificationsAllowed; // @synthesize appleNewsNotificationsAllowed=_appleNewsNotificationsAllowed;
 @property(nonatomic) _Bool publisherNotificationsAllowed; // @synthesize publisherNotificationsAllowed=_publisherNotificationsAllowed;
-@property(retain, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) FCCommandQueue *commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(retain, nonatomic) FCUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
 @property(copy, nonatomic) NSString *notificationsUserID; // @synthesize notificationsUserID=_notificationsUserID;
 - (void).cxx_destruct;
-- (unsigned long long)_bundleSubscriptionState;
 - (void)userInfoDidChangeNotificationsUserID:(id)arg1;
 - (id)appendBreakingNewsIfNeededToChannelIDs:(id)arg1;
 - (void)refreshNotificationsFromAppleNews;
@@ -44,7 +41,7 @@
 - (void)_registerDeviceToken:(id)arg1;
 - (void)registerDeviceToken:(id)arg1;
 - (void)dealloc;
-- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 configurationManager:(id)arg3 bundleSubscriptionManager:(id)arg4 publisherNotificationsAllowed:(_Bool)arg5 appleNewsNotificationsAllowed:(_Bool)arg6;
+- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 configurationManager:(id)arg3 publisherNotificationsAllowed:(_Bool)arg4 appleNewsNotificationsAllowed:(_Bool)arg5;
 - (id)init;
 
 // Remaining properties

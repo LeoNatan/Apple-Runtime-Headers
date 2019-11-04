@@ -18,6 +18,7 @@
 - (id)_imageByApplyingLayerEffects:(id)arg1 toImage:(id)arg2;
 - (id)_layerWithCompositingFilterType:(id)arg1 color:(id)arg2;
 - (id)_lightContentBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
+- (id)_darkContentDarkModeBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
 - (id)_darkContentBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
 - (id)_processedImageForWallpaper:(id)arg1 image:(id)arg2;
 - (id)_croppedImageFromWallpaper:(id)arg1 image:(id)arg2;

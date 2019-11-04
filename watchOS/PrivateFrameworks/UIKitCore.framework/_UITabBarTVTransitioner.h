@@ -14,18 +14,18 @@
 __attribute__((visibility("hidden")))
 @interface _UITabBarTVTransitioner : NSObject <_UITabBarControllerInterruptibleTransitioning>
 {
+    _Bool _fromViewOriginalShouldRasterize;
+    float _fromViewLayerOriginalRasterizationScale;
+    _Bool _toViewOriginalShouldRasterize;
+    float _toViewLayerOriginalRasterizationScale;
     _Bool _transitionFromRight;
     int _transitionStyle;
     id <UIViewControllerContextTransitioning> _transitionContext;
     UISpringTimingParameters *_slideTimingParameters;
-    float _fromViewLayerOriginalRasterizationScale;
-    float _toViewLayerOriginalRasterizationScale;
     UIView *_toViewXFlippedScreenShot;
 }
 
 @property(retain, nonatomic) UIView *toViewXFlippedScreenShot; // @synthesize toViewXFlippedScreenShot=_toViewXFlippedScreenShot;
-@property(nonatomic) float toViewLayerOriginalRasterizationScale; // @synthesize toViewLayerOriginalRasterizationScale=_toViewLayerOriginalRasterizationScale;
-@property(nonatomic) float fromViewLayerOriginalRasterizationScale; // @synthesize fromViewLayerOriginalRasterizationScale=_fromViewLayerOriginalRasterizationScale;
 @property(retain, nonatomic) UISpringTimingParameters *slideTimingParameters; // @synthesize slideTimingParameters=_slideTimingParameters;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) _Bool transitionFromRight; // @synthesize transitionFromRight=_transitionFromRight;

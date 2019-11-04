@@ -12,7 +12,7 @@
 #import <GameCenterUI/UITextFieldDelegate-Protocol.h>
 
 @class GKContactSkipControl, GKDashboardMultiplayerPickerDataSource, NSArray, NSLayoutConstraint, NSString, UIButton, UILabel, UISearchController, UISegmentedControl, UITextField, UIView, UIViewController, UIVisualEffectView;
-@protocol GKDashboardNearbyBrowserDelegate;
+@protocol GKDashboardMultiplayerPickerDelegate, GKDashboardNearbyBrowserDelegate;
 
 @interface GKDashboardMultiplayerPickerViewController : GKDashboardCollectionViewController <UITextFieldDelegate, UISearchBarDelegate, GKComposeControllerDelegate, UISearchResultsUpdating>
 {
@@ -23,6 +23,7 @@
     NSString *_message;
     CDUnknownBlockType _completionHandler;
     id <GKDashboardNearbyBrowserDelegate> _nearbyDelegate;
+    id <GKDashboardMultiplayerPickerDelegate> _multiplayerPickerDelegate;
     NSArray *_initiallySelectedPlayers;
     UILabel *_descriptionLabel;
     UIButton *_sendButton;
@@ -64,6 +65,7 @@
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) _Bool shouldIgnoreClearSelection; // @synthesize shouldIgnoreClearSelection=_shouldIgnoreClearSelection;
 @property(retain, nonatomic) NSArray *initiallySelectedPlayers; // @synthesize initiallySelectedPlayers=_initiallySelectedPlayers;
+@property(nonatomic) __weak id <GKDashboardMultiplayerPickerDelegate> multiplayerPickerDelegate; // @synthesize multiplayerPickerDelegate=_multiplayerPickerDelegate;
 @property(nonatomic) id <GKDashboardNearbyBrowserDelegate> nearbyDelegate; // @synthesize nearbyDelegate=_nearbyDelegate;
 @property(nonatomic) _Bool supportsNearby; // @synthesize supportsNearby=_supportsNearby;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

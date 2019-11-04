@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationBarInvalidatedResolvedLayoutMargins;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
+- (void)traitCollectionDidChangeOnSubtree:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setBackButtonVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setupTopNavigationItem;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float backgroundAlpha;
 @property(nonatomic) _Bool useInlineBackgroundHeightWhenLarge;
 @property(readonly, nonatomic) _Bool wantsLargeTitleDisplayed;
+- (struct CGSize)sizeForRestoringFromCancelledTransition;
 - (void)recordBarSize:(struct CGSize)arg1;
 - (void)updateTopNavigationItemTitleView;
 - (void)updateTopNavigationItemAnimated:(_Bool)arg1;
@@ -61,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)barSizeChanged;
 - (_Bool)shouldUseHeightRangeFittingWidth;
 - (id)restingHeights;
+- (_Bool)topItemHasVariableHeight;
 - (CDStruct_869f9c67)layoutHeightsFittingWidth:(float)arg1;
 - (struct NSDirectionalEdgeInsets)resolvedLargeTitleMargins;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

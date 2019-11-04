@@ -42,7 +42,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)applicationIconForBundleIdentifier:(id)arg1;
+- (id)applicationIconImageForBundleIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *filteredApps;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
@@ -51,6 +51,7 @@
 - (void)cancel;
 - (void)loadView;
 - (void)dealloc;
+- (id)initWithAppSearchType:(long long)arg1 omittedAppBundleIDs:(id)arg2 allowMultipleSelection:(BOOL)arg3 selectedApps:(id)arg4;
 - (id)initWithAppSearchType:(long long)arg1 allowMultipleSelection:(BOOL)arg2 selectedApps:(id)arg3;
 - (id)initWithAppSearchType:(long long)arg1;
 - (id)init;

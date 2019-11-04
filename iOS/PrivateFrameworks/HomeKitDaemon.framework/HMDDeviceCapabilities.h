@@ -43,7 +43,6 @@
 - (id)modelBackedObjects;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
-- (id)modelCopyWithChangeType:(unsigned long long)arg1 uuid:(id)arg2 parentUUID:(id)arg3;
 @property(copy, nonatomic) NSUUID *modelParentIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *modelIdentifier;
 @property(readonly) Class modelClass;
@@ -56,6 +55,7 @@
 @property(readonly, nonatomic) _Bool supportsShortcutActions;
 @property(readonly, nonatomic) _Bool supportsRouterManagement;
 @property(readonly, nonatomic) _Bool supportsCameraRecording;
+@property(readonly, nonatomic) _Bool supportsCompanionInitiatedRestart;
 @property(readonly, nonatomic) _Bool supportsMultiUser;
 @property(readonly, nonatomic) _Bool supportsTargetControl;
 @property(readonly, nonatomic) _Bool supportsHomeInvitation;

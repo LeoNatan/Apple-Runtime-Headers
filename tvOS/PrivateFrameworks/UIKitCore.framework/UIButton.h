@@ -260,6 +260,7 @@
 - (id)_externalTitleColorForState:(unsigned long long)arg1;
 - (id)_externalFocusedTitleColor;
 - (long long)_externalDrawingStyleForState:(unsigned long long)arg1;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_willMoveToWindow:(id)arg1;
 - (void)_setupDrawingStyleForState:(unsigned long long)arg1;
 - (struct CGRect)_highlightBoundsForDrawingStyle;

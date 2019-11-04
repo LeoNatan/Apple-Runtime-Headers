@@ -14,14 +14,12 @@
 }
 
 + (unsigned long long)variableResultTypeForParameter:(id)arg1;
-+ (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(retain, nonatomic) WFEnumerationTextTokenChooser *chooser; // @synthesize chooser=_chooser;
 - (void).cxx_destruct;
-- (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)completeEditing;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadDynamicEnumerationValuesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(BOOL)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 @end
 

@@ -29,12 +29,12 @@
     id <PUICRecentEmojiViewDelegate> _delegate;
 }
 
++ (id)stickerFromRecentItem:(id)arg1;
 @property(nonatomic) __weak id <PUICRecentEmojiViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
 - (id)_animojiStickerForIndexPath:(id)arg1;
 - (id)_animojiStickerPackForIndexPath:(id)arg1;
-- (id)_stickerFromRecentItem:(id)arg1;
 - (id)_emojiOrStickerForIndexPath:(id)arg1;
 - (id)_emojiCategoryIdentifierForSection:(unsigned int)arg1;
 - (id)_sizingHeader;

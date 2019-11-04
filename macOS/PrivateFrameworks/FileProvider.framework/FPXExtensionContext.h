@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)fetchDefaultContainerForBundleIdentifier:(id)arg1 defaultName:(id)arg2 inDomainIdentifier:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)fetchItemID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)fetchHierarchyForItemID:(id)arg1 recursively:(BOOL)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)_createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 bounce:(BOOL)arg5 bounceIndex:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)_createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 targetName:(id)arg5 bounce:(BOOL)arg6 bounceNumber:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 bounce:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)deleteItemsWithIDs:(id)arg1 baseVersions:(id)arg2 options:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)preflightReparentItemID:(id)arg1 underParentID:(id)arg2 reply:(CDUnknownBlockType)arg3;

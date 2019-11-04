@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface GEODataSetURLOverride : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_addressCorrectionInitURL;
     NSString *_addressCorrectionUpdateURL;
@@ -31,6 +30,9 @@ __attribute__((visibility("hidden")))
     NSString *_problemSubmissionURL;
     NSString *_simpleETAURL;
     NSString *_spatialLookupURL;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     unsigned int _dataSet;
     struct {
         unsigned int has_dataSet:1;
@@ -131,6 +133,8 @@ __attribute__((visibility("hidden")))
 - (void)_readDirectionsURL;
 @property(nonatomic) BOOL hasDataSet;
 @property(nonatomic) unsigned int dataSet;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

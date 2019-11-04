@@ -18,9 +18,9 @@
 - (void)findInvokingHomePodEndpointWithRoutePicker:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)localEndpoint;
 - (id)invokingHomePodRouteDescriptor;
-- (void)runWithSourceRoute:(id)arg1 destinationRoute:(id)arg2 routePicker:(id)arg3;
-- (void)runWhenInvokedThroughLocalDeviceWithSpecifiedDescriptor:(id)arg1 specifiedRoute:(id)arg2 picker:(id)arg3;
-- (void)runWhenInvokedThroughHomePodWithSpecifiedDescriptor:(id)arg1 route:(id)arg2 picker:(id)arg3;
+- (void)runWithSourceRouteUID:(id)arg1 destinationRouteUID:(id)arg2 routePicker:(id)arg3;
+- (void)runWhenInvokedThroughLocalDeviceWithSpecifiedDescriptor:(id)arg1 picker:(id)arg2;
+- (void)runWhenInvokedThroughHomePodWithSpecifiedDescriptor:(id)arg1 picker:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end

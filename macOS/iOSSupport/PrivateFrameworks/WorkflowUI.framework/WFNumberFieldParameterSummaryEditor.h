@@ -19,7 +19,6 @@
     id <WFParameterState> _stagedState;
 }
 
-+ (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) BOOL isPickingMagicVariable; // @synthesize isPickingMagicVariable=_isPickingMagicVariable;
 @property(nonatomic) BOOL hasChangedText; // @synthesize hasChangedText=_hasChangedText;
 @property(retain, nonatomic) id <WFParameterState> stagedState; // @synthesize stagedState=_stagedState;
@@ -34,13 +33,12 @@
 - (void)negateText;
 - (id)stateForVariable:(id)arg1;
 - (id)stateForEnteredText:(id)arg1;
-- (id)variableStateForVariablePicker;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(char *)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)setVariableUIDelegate:(id)arg1;
 - (void)setVariableProvider:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(BOOL)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
+- (void)beginEditingSlotWithIdentifier:(id)arg1 sourceViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

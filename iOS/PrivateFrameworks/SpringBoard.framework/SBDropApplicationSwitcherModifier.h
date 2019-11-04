@@ -15,7 +15,9 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)wantsAsynchronousRenderingAssertion;
+- (_Bool)shouldPerformCrossfadeForReduceMotion;
+- (long long)layoutUpdateMode;
+- (long long)liveContentRasterizationStyle;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;

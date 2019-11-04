@@ -15,10 +15,13 @@
     NSLock *_lock;
     NSMutableArray *_blocks;
     _Bool _isInvoked;
+    NSString *_label;
 }
 
 + (id)tokenWithInvocationBlock:(CDUnknownBlockType)arg1;
++ (id)tokenWithLabel:(id)arg1 invocationBlock:(CDUnknownBlockType)arg2;
 + (id)_descriptionString;
+@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)addInvocable:(id)arg1;
 - (void)addInvocationBlock:(CDUnknownBlockType)arg1;
@@ -27,6 +30,7 @@
 - (void)removeAllInvocationBlocks;
 - (id)_nts_consumeBlocks;
 @property(readonly, copy) NSString *description;
+- (id)initWithLabel:(id)arg1;
 - (id)init;
 
 // Remaining properties

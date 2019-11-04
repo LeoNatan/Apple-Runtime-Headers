@@ -10,6 +10,7 @@
 {
 }
 
+- (id)traitCollection;
 - (id)timeLabelsFont;
 - (id)secondaryTextLabelFont;
 - (id)primaryTextLabelFont;

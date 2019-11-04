@@ -11,6 +11,7 @@
 @interface HFNamingComponents : NSObject
 {
     _Bool _isAccessory;
+    _Bool _isDiscoveredAccessory;
     _Bool _isService;
     _Bool _isChildService;
     _Bool _isServiceGroup;
@@ -23,6 +24,7 @@
 }
 
 + (id)namingComponentFromHomeKitObject:(id)arg1;
++ (id)namingComponentFromDiscoveredAccessory:(id)arg1;
 + (id)namingComponentFromMediaSystem:(id)arg1;
 + (id)namingComponentFromAccessory:(id)arg1;
 + (id)namingComponentFromServiceGroup:(id)arg1;
@@ -34,6 +36,7 @@
 @property(nonatomic) _Bool isServiceGroup; // @synthesize isServiceGroup=_isServiceGroup;
 @property(nonatomic) _Bool isChildService; // @synthesize isChildService=_isChildService;
 @property(nonatomic) _Bool isService; // @synthesize isService=_isService;
+@property(nonatomic) _Bool isDiscoveredAccessory; // @synthesize isDiscoveredAccessory=_isDiscoveredAccessory;
 @property(nonatomic) _Bool isAccessory; // @synthesize isAccessory=_isAccessory;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) id homeKitObject; // @synthesize homeKitObject=_homeKitObject;

@@ -146,6 +146,7 @@
     unsigned int _needsDisplayInRectNotificationsCount:11;
     unsigned int _overridesViewLayout:1;
     unsigned int _overridesResizeSubviewsWithOldSize:1;
+    unsigned int _overridesBaselineOffsetsAtSize:1;
     unsigned int _layingOut:1;
     unsigned int _hasAutoSetWantsLayer:1;
     unsigned int _backgroundFiltersUseCIFilter:1;
@@ -438,7 +439,6 @@
 - (struct CGRect)adjustScroll:(struct CGRect)arg1;
 - (BOOL)autoscroll:(id)arg1;
 - (BOOL)scrollRectToVisible:(struct CGRect)arg1;
-- (BOOL)scrollRectToVisible:(const struct CGRect *)arg1 fromView:(id)arg2;
 - (void)scrollPoint:(struct CGPoint)arg1;
 - (void)scrollPoint:(const struct CGPoint *)arg1 fromView:(id)arg2;
 - (id)imageInRect:(struct CGRect)arg1;
@@ -482,6 +482,7 @@
 - (struct CGRect)frameForAlignmentRect:(struct CGRect)arg1;
 - (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
 - (struct NSEdgeInsets)alignmentRectInsets;
+- (BOOL)_hasBaselineOffsetsAtSize;
 - (double)lastBaselineOffsetFromBottom;
 - (double)firstBaselineOffsetFromTop;
 - (double)baselineOffsetFromBottom;
@@ -503,6 +504,7 @@
 - (void)_requestExtraUpdateConstraints;
 - (void)setNeedsUpdateConstraints:(BOOL)arg1;
 - (void)_informContainerThatSubviewsNeedUpdateConstraints;
+- (void)_resetUpdateConstraintsPassCounter;
 - (void)_updateConstraintsFinished;
 - (id)_collectedViewsWaitingForConstraintsFinished;
 - (void)_requestUpdateConstraintsFinishedForView:(id)arg1;
@@ -714,6 +716,7 @@
 - (struct CGRect)nsis_frame;
 - (struct CGRect)_layoutFrame;
 - (void)_maybeCheckForAmbiguityForItem:(id)arg1;
+- (struct CGRect)nsis_layoutRectFromHostingViewInEngine:(id)arg1;
 - (struct CGRect)nsis_frameInEngine:(id)arg1 forLayoutGuide:(id)arg2 withRounding:(BOOL)arg3;
 - (BOOL)_allowRoundingToChangeSize;
 @property BOOL postsFrameChangedNotifications;
@@ -1288,6 +1291,10 @@
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (void)_setBaselineOffsetFromBottomMayBeReferenced:(BOOL)arg1;
 - (void)_makeOrUpdateContentSizeWidthConstraint:(id *)arg1 heightConstraint:(id *)arg2;
+- (id)_viewForLastBaselineLayout;
+- (id)_viewForFirstBaselineLayout;
+- (void)_finishTwoPassConstraintsUpdateIfNeeded;
+- (void)_prepareForTwoPassConstraintsUpdateIfNeeded;
 - (void)_updateContentSizeConstraints;
 - (struct CGSize)_intrinsicContentFrameSize;
 - (struct CGSize)intrinsicContentSize;
@@ -1482,6 +1489,12 @@
 - (BOOL)textLayerShouldEnableFontSmoothing:(id)arg1;
 @property(readonly) id <NSAppearanceCustomization> _effectiveAppearanceParent;
 - (void)removeConstraintWithIdentifier:(id)arg1;
+@property(readonly) BOOL _wantsConstraintBasedLayout;
+- (CDStruct_6b6ad735)_baselineOffsetsAtSize:(struct CGSize)arg1;
+@property(readonly) unsigned long long _axesForDerivingIntrinsicContentSizeFromLayoutSize;
+@property(readonly) BOOL _layoutHeightDependsOnWidth;
+- (struct CGSize)_layoutSizeThatFits:(struct CGSize)arg1 fixedAxes:(unsigned long long)arg2;
+- (void)_measureWithTemporaryConstraints:(id)arg1 suspendingSystemConstraints:(BOOL)arg2 withOptimizedEngineBlock:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property struct CGPoint accessibilityActivationPoint; // @dynamic accessibilityActivationPoint;

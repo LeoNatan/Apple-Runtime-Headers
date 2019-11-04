@@ -10,6 +10,8 @@
 @protocol EMMailboxChangeObserver;
 
 @protocol EMMailboxRepositoryInterface <NSObject>
+- (void)mailboxTypeForMailboxObjectID:(EMObjectID *)arg1 completionHandler:(void (^)(int))arg2;
+- (void)mailboxObjectIDsForMailboxType:(int)arg1 completionHandler:(void (^)(NSSet *))arg2;
 - (void)performMailboxChangeAction:(EMMailboxChangeAction *)arg1 completionHandler:(void (^)(_Bool))arg2;
 - (void)refreshMailboxList;
 - (void)cancelObservation:(EMObjectID *)arg1;

@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface GEOPDCategoryLookupParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     long long _industryCode;
     NSString *_mapsCategoryId;
     NSString *_walletCategoryId;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int has_industryCode:1;
         unsigned int read_unknownFields:1;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *mapsCategoryId;
 @property(readonly, nonatomic) BOOL hasMapsCategoryId;
 - (void)_readMapsCategoryId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

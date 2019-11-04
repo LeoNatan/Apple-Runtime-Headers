@@ -11,7 +11,7 @@
 #import <AnnotationKit/UITableViewDataSource-Protocol.h>
 #import <AnnotationKit/UITableViewDelegate-Protocol.h>
 
-@class AKController, NSArray, NSString, UIColor, UINavigationBar, UITableView;
+@class AKController, NSArray, NSString, UIColor, UINavigationBar, UIResponder, UITableView;
 @protocol AKSignaturesViewControllerDelegate;
 
 @interface AKSignaturesViewController_iOS : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate, AKSignatureCreationControllerDelegate>
@@ -28,8 +28,10 @@
     NSArray *_rightBarItems;
     NSArray *_editingLeftBarItems;
     NSArray *_leftBarItems;
+    UIResponder *_responderToRestore;
 }
 
+@property(nonatomic) __weak UIResponder *responderToRestore; // @synthesize responderToRestore=_responderToRestore;
 @property(retain, nonatomic) NSArray *leftBarItems; // @synthesize leftBarItems=_leftBarItems;
 @property(retain, nonatomic) NSArray *editingLeftBarItems; // @synthesize editingLeftBarItems=_editingLeftBarItems;
 @property(retain, nonatomic) NSArray *rightBarItems; // @synthesize rightBarItems=_rightBarItems;
@@ -60,6 +62,10 @@
 - (void)_configureUI;
 - (_Bool)_canShowWhileLocked;
 @property(readonly, nonatomic) double idealHeight;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (_Bool)canBecomeFirstResponder;
+- (_Bool)becomeFirstResponder;
 - (void)viewDidLoad;
 - (struct CGSize)preferredContentSize;
 - (id)initWithController:(id)arg1;

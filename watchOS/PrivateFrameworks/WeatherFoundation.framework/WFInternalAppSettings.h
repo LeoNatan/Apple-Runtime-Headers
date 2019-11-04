@@ -14,6 +14,7 @@
 {
 }
 
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) unsigned int locationNumDecimalsOfPrecision;
 @property(readonly, nonatomic) unsigned int networkSwitchExpirationTimeInSeconds;
 @property(readonly, nonatomic) unsigned int networkFailedAttemptsLimit;

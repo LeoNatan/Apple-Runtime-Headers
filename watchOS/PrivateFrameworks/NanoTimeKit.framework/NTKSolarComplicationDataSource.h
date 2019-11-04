@@ -20,8 +20,10 @@
 - (void)_cancelLocationUpdates;
 - (id)_templateFromLocation:(id)arg1 useIdealizedTime:(_Bool)arg2;
 - (void)_handleLocation:(id)arg1;
+- (void)_invalidate;
 - (void)becomeInactive;
 - (void)becomeActive;
+- (void)resume;
 - (id)complicationApplicationIdentifier;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;

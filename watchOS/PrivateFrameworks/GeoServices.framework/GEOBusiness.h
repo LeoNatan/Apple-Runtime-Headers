@@ -13,7 +13,6 @@
 @interface GEOBusiness : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     unsigned long long _uID;
     NSString *_uRL;
@@ -32,6 +31,9 @@
     NSMutableArray *_sources;
     NSMutableArray *_starRatings;
     NSString *_telephone;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     _Bool _isClosed;
     struct {
         unsigned int has_uID:1;
@@ -191,6 +193,8 @@
 - (void)_readName;
 @property(nonatomic) _Bool hasUID;
 @property(nonatomic) unsigned long long uID;
+- (id)initWithData:(id)arg1;
+- (id)init;
 - (id)initWithPlaceDataEntity:(id)arg1 rating:(id)arg2 hours:(id)arg3 reviews:(id)arg4 photos:(id)arg5 entityAttribution:(id)arg6;
 - (id)initWithBusinessURL:(id)arg1 phoneNumber:(id)arg2 muid:(unsigned long long)arg3 attributionID:(id)arg4 sampleSizeForUserRatingScore:(unsigned int)arg5 normalizedUserRatingScore:(float)arg6;
 

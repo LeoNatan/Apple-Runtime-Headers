@@ -7,23 +7,22 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMDCloudShareMessengerDelegate-Protocol.h>
-#import <HomeKitDaemon/HMDCloudShareParticipantsManagerDataSource-Protocol.h>
 #import <HomeKitDaemon/HMDCloudShareParticipantsManagerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDDatabaseDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMBCloudZone, HMBLocalZone, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, HMDHome, NSObject, NSSet, NSString, NSUUID;
+@class HMBCloudZone, HMBCloudZoneConfiguration, HMBLocalZone, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, HMDHome, NSObject, NSSet, NSString, NSUUID;
 @protocol HMBLocalZoneDelegate><HMBCloudZoneDelegate, HMDCloudShareParticipantsManagerDataSource, HMDDatabase, HMDDatabaseZoneManagerDelegate, OS_dispatch_queue;
 
-@interface HMDDatabaseZoneManager : HMFObject <HMFLogging, HMDDatabaseDelegate, HMDCloudShareMessengerDelegate, HMDCloudShareParticipantsManagerDataSource, HMDCloudShareParticipantsManagerDelegate>
+@interface HMDDatabaseZoneManager : HMFObject <HMFLogging, HMDDatabaseDelegate, HMDCloudShareMessengerDelegate, HMDCloudShareParticipantsManagerDelegate>
 {
-    _Bool _shouldRebuildOnManateeKeyLoss;
     id <HMDDatabaseZoneManagerDelegate> _delegate;
-    id <HMDCloudShareParticipantsManagerDataSource> _participantManagerDataSource;
+    id <HMDCloudShareParticipantsManagerDataSource> _participantsManagerDataSource;
     NSString *_zoneName;
     HMBLocalZone *_localZone;
     HMBCloudZone *_cloudZone;
     NSSet *_externalRecordTypesForSubscriptions;
+    HMBCloudZoneConfiguration *_cloudZoneConfiguration;
     long long _state;
     id <HMDDatabase> _database;
     HMDHome *_home;
@@ -43,12 +42,12 @@
 @property(readonly) HMDHome *home; // @synthesize home=_home;
 @property(readonly) id <HMDDatabase> database; // @synthesize database=_database;
 @property long long state; // @synthesize state=_state;
-@property _Bool shouldRebuildOnManateeKeyLoss; // @synthesize shouldRebuildOnManateeKeyLoss=_shouldRebuildOnManateeKeyLoss;
+@property(copy) HMBCloudZoneConfiguration *cloudZoneConfiguration; // @synthesize cloudZoneConfiguration=_cloudZoneConfiguration;
 @property(copy) NSSet *externalRecordTypesForSubscriptions; // @synthesize externalRecordTypesForSubscriptions=_externalRecordTypesForSubscriptions;
 @property(retain) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(readonly, copy) NSString *zoneName; // @synthesize zoneName=_zoneName;
-@property __weak id <HMDCloudShareParticipantsManagerDataSource> participantManagerDataSource; // @synthesize participantManagerDataSource=_participantManagerDataSource;
+@property __weak id <HMDCloudShareParticipantsManagerDataSource> participantsManagerDataSource; // @synthesize participantsManagerDataSource=_participantsManagerDataSource;
 @property __weak id <HMDDatabaseZoneManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)logIdentifier;
@@ -56,7 +55,6 @@
 - (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2;
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (void)manager:(id)arg1 didRequestSendForInvitation:(id)arg2 toUser:(id)arg3;
-- (_Bool)manager:(id)arg1 shouldShareWithUser:(id)arg2;
 - (void)messengerDidReceiveInvitationRequest:(id)arg1;
 - (void)messenger:(id)arg1 didReceiveInvitationData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_tearDownState;

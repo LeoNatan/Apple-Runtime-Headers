@@ -23,6 +23,7 @@
 + (id)__sectionedItems_KEY;
 + (id)__lastUpdatedDate_KEY;
 + (id)__groupType_KEY;
++ (id)classesForSecureCoding;
 @property(nonatomic, getter=isGroupRecommendation) _Bool groupRecommendation; // @synthesize groupRecommendation=_groupRecommendation;
 - (void).cxx_destruct;
 - (id)itemAtIndex:(int)arg1;

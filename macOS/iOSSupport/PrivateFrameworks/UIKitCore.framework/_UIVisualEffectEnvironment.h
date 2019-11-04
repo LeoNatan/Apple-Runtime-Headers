@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) BOOL windowAppearsKey; // @synthesize windowAppearsKey=_windowAppearsKey;
-@property(nonatomic) UIView *superview; // @synthesize superview=_superview;
-@property(nonatomic) UIWindow *window; // @synthesize window=_window;
+@property(nonatomic) __weak UIView *superview; // @synthesize superview=_superview;
+@property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) BOOL reducedTransperancy; // @synthesize reducedTransperancy=_reducedTransperancy;
 @property(nonatomic) BOOL useSimpleVibrancy; // @synthesize useSimpleVibrancy=_useSimpleVibrancy;

@@ -13,12 +13,14 @@
 @interface GEOSnapScoreSegment : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributes;
     NSMutableArray *_categoryScores;
     unsigned long long _geoId;
     GEOLatLng *_pointOnLine;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     float _overallScore;
     struct {
         unsigned int has_geoId:1;
@@ -73,6 +75,8 @@
 - (void)_readPointOnLine;
 @property(nonatomic) _Bool hasGeoId;
 @property(nonatomic) unsigned long long geoId;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

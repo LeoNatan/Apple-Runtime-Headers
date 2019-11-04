@@ -9,7 +9,7 @@
 #import <WatchKit/MKMapViewDelegate-Protocol.h>
 #import <WatchKit/SPInterfaceItem-Protocol.h>
 
-@class MKMapView, NSBundle, NSDictionary, NSMutableArray, NSString;
+@class MKMapView, MKUserLocationView, NSBundle, NSDictionary, NSMutableArray, NSString;
 
 @interface SPInterfaceMapView : UIView <MKMapViewDelegate, SPInterfaceItem>
 {
@@ -28,11 +28,13 @@
     MKMapView *_mapView;
     NSMutableArray *_annotations;
     NSMutableArray *_annotationViews;
+    MKUserLocationView *_userLocationAnnotationView;
     struct CGSize _interfacePlistSize;
     struct CGSize _cachedContainerSize;
     struct CGSize _cachedSize;
 }
 
+@property(retain, nonatomic) MKUserLocationView *userLocationAnnotationView; // @synthesize userLocationAnnotationView=_userLocationAnnotationView;
 @property(retain, nonatomic) NSMutableArray *annotationViews; // @synthesize annotationViews=_annotationViews;
 @property(retain, nonatomic) NSMutableArray *annotations; // @synthesize annotations=_annotations;
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;

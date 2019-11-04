@@ -21,6 +21,7 @@
 - (_Bool)isNetworkRouterSatellite;
 - (_Bool)isNetworkRouter;
 - (_Bool)isContainedInAParent;
+- (_Bool)isAccessoryDisplayedAsIndividualTiles;
 - (_Bool)isBridge;
 - (_Bool)isNotificationSupportedCamera;
 - (_Bool)isCamera;

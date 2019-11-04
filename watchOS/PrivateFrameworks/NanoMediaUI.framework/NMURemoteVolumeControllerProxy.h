@@ -9,7 +9,7 @@
 #import <NanoMediaUI/NACVolumeController-Protocol.h>
 #import <NanoMediaUI/NMCConnectivityObserver-Protocol.h>
 
-@class NSString;
+@class NSOrderedSet, NSString;
 @protocol NACVolumeController, NACVolumeControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, nonatomic) float EUVolumeLimit;
+@property(readonly, nonatomic) NSOrderedSet *availableListeningModes;
+@property(retain, nonatomic) NSString *currentListeningMode;
 @property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) __weak id <NACVolumeControllerDelegate> delegate;
 @property(readonly, copy) NSString *description;

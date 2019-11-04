@@ -19,7 +19,7 @@
 #import <CoreSpeech/CSXPCClientDelegate-Protocol.h>
 
 @class CSAudioConverter, CSAudioPowerMeter, CSAudioRecordContext, CSAudioSampleRateConverter, CSAudioStream, CSAudioZeroCounter, CSContinuousVoiceTrigger, CSEndpointerProxy, CSLanguageDetector, CSPlainAudioFileWriter, CSSelectiveChannelAudioFileWriter, CSSmartSiriVolumeController, CSSpIdImplicitTraining, CSSpeakerIdRecognizerFactory, CSSpeechEndHostTimeEstimator, CSUserVoiceProfileStore, CSXPCClient, NSDictionary, NSString, NSUUID;
-@protocol CSAudioAlertProviding, CSAudioMeterProviding, CSAudioMetricProviding, CSAudioSessionProviding, CSAudioStreamProviding, CSEndpointAnalyzer, CSLanguageDetectorDelegate, CSSpIdSpeakerRecognizer, CSSpeakerIdentificationDelegate, CSSpeechControllerDelegate, OS_dispatch_group, OS_dispatch_queue;
+@protocol CSAudioAlertProviding, CSAudioMeterProviding, CSAudioMetricProviding, CSAudioSessionProviding, CSAudioStreamProviding, CSBargeInModeProviding, CSEndpointAnalyzer, CSLanguageDetectorDelegate, CSSpIdSpeakerRecognizer, CSSpeakerIdentificationDelegate, CSSpeechControllerDelegate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface CSSpeechController : NSObject <CSAudioConverterDelegate, CSSpIdSpeakerRecognizerDelegate, CSSmartSiriVolumeControllerDelegate, CSAudioSessionProvidingDelegate, CSAudioStreamProvidingDelegate, CSAudioAlertProvidingDelegate, CSAudioSessionControllerDelegate, CSXPCClientDelegate, CSVoiceTriggerAssetHandlerDelegate, CSSpeechManagerDelegate, CSContinuousVoiceTriggerDelegate>
 {
@@ -47,6 +47,7 @@
     BOOL _myriadPreventingTwoShotFeedback;
     BOOL _needsPostGain;
     BOOL _shouldUseLanguageDetectorForCurrentRequest;
+    BOOL _didDeliverLastBuffer;
     float _cachedAvgPower;
     float _cachedPeakPower;
     id <CSSpeechControllerDelegate> _delegate;
@@ -60,6 +61,7 @@
     id <CSAudioAlertProviding> _alertProvider;
     id <CSAudioMeterProviding> _audioMeterProvider;
     id <CSAudioMetricProviding> _audioMetricProvider;
+    id <CSBargeInModeProviding> _bargeInModeProvider;
     CSPlainAudioFileWriter *_audioFileWriter;
     CSSelectiveChannelAudioFileWriter *_serverLoggingWriter;
     CSSmartSiriVolumeController *_volumeController;
@@ -76,14 +78,17 @@
     CDUnknownBlockType _pendingAudioSessionActivationCompletion;
     double _audioSessionActivationDelay;
     CSXPCClient *_xpcClient;
+    CSXPCClient *_bargeInModeXPCClient;
     CSAudioPowerMeter *_powerMeter;
 }
 
 + (BOOL)isSmartSiriVolumeAvailable;
 + (id)sharedController;
+@property(nonatomic) BOOL didDeliverLastBuffer; // @synthesize didDeliverLastBuffer=_didDeliverLastBuffer;
 @property(retain, nonatomic) CSAudioPowerMeter *powerMeter; // @synthesize powerMeter=_powerMeter;
 @property(nonatomic) float cachedPeakPower; // @synthesize cachedPeakPower=_cachedPeakPower;
 @property(nonatomic) float cachedAvgPower; // @synthesize cachedAvgPower=_cachedAvgPower;
+@property(retain, nonatomic) CSXPCClient *bargeInModeXPCClient; // @synthesize bargeInModeXPCClient=_bargeInModeXPCClient;
 @property(retain, nonatomic) CSXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(nonatomic) double audioSessionActivationDelay; // @synthesize audioSessionActivationDelay=_audioSessionActivationDelay;
 @property(copy, nonatomic) CDUnknownBlockType pendingAudioSessionActivationCompletion; // @synthesize pendingAudioSessionActivationCompletion=_pendingAudioSessionActivationCompletion;
@@ -112,6 +117,7 @@
 @property(nonatomic) BOOL isNarrowBand; // @synthesize isNarrowBand=_isNarrowBand;
 @property(nonatomic) BOOL isActivated; // @synthesize isActivated=_isActivated;
 @property(nonatomic) BOOL isOpus; // @synthesize isOpus=_isOpus;
+@property(retain, nonatomic) id <CSBargeInModeProviding> bargeInModeProvider; // @synthesize bargeInModeProvider=_bargeInModeProvider;
 @property(retain, nonatomic) id <CSAudioMetricProviding> audioMetricProvider; // @synthesize audioMetricProvider=_audioMetricProvider;
 @property(retain, nonatomic) id <CSAudioMeterProviding> audioMeterProvider; // @synthesize audioMeterProvider=_audioMeterProvider;
 @property(retain, nonatomic) id <CSAudioAlertProviding> alertProvider; // @synthesize alertProvider=_alertProvider;
@@ -124,6 +130,7 @@
 @property(nonatomic) __weak id <CSSpeakerIdentificationDelegate> speakerIdDelegate; // @synthesize speakerIdDelegate=_speakerIdDelegate;
 @property(nonatomic) __weak id <CSSpeechControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_tearDownBargeInModeProviderIfNeeded;
 - (void)_teardownAudioProviderIfNeeded;
 - (void)CSXPCClient:(id)arg1 didDisconnect:(BOOL)arg2;
 - (void)voiceTriggerAssetHandler:(id)arg1 didChangeCachedAsset:(id)arg2;
@@ -152,6 +159,8 @@
 - (id)_contextToString:(id)arg1;
 - (void)_deviceAudioLoggingWithFileWriter:(id)arg1;
 - (id)_getSpeechIdentifier;
+- (id)_fetchFallbackAudioSessionReleaseProviding;
+- (void)_createBargeInModeProviderFromXPCIfNeeded;
 - (BOOL)_createAudioProviderFromXPCWithContext:(id)arg1;
 - (BOOL)_fetchAudioProviderWithContext:(id)arg1;
 - (void)processServerEndpointFeatures:(id)arg1;
@@ -205,6 +214,7 @@
 - (id)recordDeviceInfo;
 - (id)recordRoute;
 - (BOOL)isRecording;
+- (void)stopRecordingWithOptions:(id)arg1;
 - (void)stopRecording;
 - (BOOL)startRecording:(id *)arg1;
 - (BOOL)_lastVoiceTriggerWasHearst;
@@ -229,6 +239,7 @@
 - (void)preheat;
 - (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
 - (BOOL)_activateAudioSession:(id *)arg1 forRetry:(BOOL)arg2;
+- (void)_enableBargeInMode:(BOOL)arg1;
 - (void)_performPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_cancelPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_scheduleActivateAudioSessionWithDelay:(double)arg1 forReason:(id)arg2 validator:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;

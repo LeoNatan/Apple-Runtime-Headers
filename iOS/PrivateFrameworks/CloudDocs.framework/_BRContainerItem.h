@@ -9,12 +9,13 @@
 #import <CloudDocs/NSCopying-Protocol.h>
 #import <CloudDocs/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _BRContainerItem : BRQueryItem <NSSecureCoding, NSCopying>
 {
     NSString *_containerID;
+    NSSet *_containerClientIDs;
     NSString *_localizedName;
 }
 
@@ -25,7 +26,8 @@ __attribute__((visibility("hidden")))
 - (id)typeIdentifier;
 - (id)parentItemIdentifier;
 - (_Bool)fp_isContainer;
-- (id)fp_appContainerBundleIdentifier;
+- (id)fp_cloudContainerClientBundleIdentifiers;
+- (id)fp_cloudContainerIdentifier;
 - (id)displayName;
 - (id)filename;
 - (id)itemIdentifier;

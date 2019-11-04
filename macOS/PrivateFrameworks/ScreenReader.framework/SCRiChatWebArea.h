@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (BOOL)chainEvent:(id)arg1 request:(id)arg2;
 - (void)layoutCoalescor:(id)arg1;
 - (void)registerForLayoutCompleteNotification;
 - (void)setLastMessageElement:(id)arg1;

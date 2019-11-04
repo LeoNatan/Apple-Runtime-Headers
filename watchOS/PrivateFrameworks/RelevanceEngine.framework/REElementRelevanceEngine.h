@@ -70,6 +70,7 @@
 - (id)sectionForElement:(id)arg1;
 - (id)pathForElement:(id)arg1;
 - (void)removeElement:(id)arg1;
+- (void)reloadElement:(id)arg1 withElement:(id)arg2;
 - (void)addElement:(id)arg1 section:(id)arg2;
 - (void)modelManagerDidUpdateModel:(id)arg1;
 - (void)_enumerateAndGenerateSectionComparators:(CDUnknownBlockType)arg1;

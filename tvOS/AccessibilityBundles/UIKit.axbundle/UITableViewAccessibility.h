@@ -18,8 +18,10 @@
 - (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 - (_Bool)_accessibilityDrawsFocusRingWhenChildrenFocused;
 - (id)preferredFocusedView;
+- (id)preferredFocusEnvironments;
 - (id)_accessibilityLastFocusedChild;
 - (_Bool)canBecomeFocused;
+- (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)_accessibilityKeyCommandsShouldOverrideKeyCommands;
 - (void)_fkaScrollToNextRow;
 - (void)_fkaScrollToPreviousRow;
@@ -130,6 +132,7 @@
 - (_Bool)_accessibilityScrollToFrame:(struct CGRect)arg1 forView:(id)arg2;
 - (id)indexPathsForRowsInRect:(struct CGRect)arg1;
 - (unsigned long long)_accessibilityAutomationType;
+@property(nonatomic, setter=_accessibilitySetShouldConsiderSwipeDeletionCommitted:) _Bool _accessibilityShouldConsiderSwipeDeletionCommitted;
 - (void)_accessibilitySetUseOpaqueElements:(id)arg1;
 - (id)_accessibilityUseOpaqueElements;
 

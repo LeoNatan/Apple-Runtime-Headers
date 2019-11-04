@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)deleteBackward;
 - (void)insertText:(id)arg1;
 @property(readonly, nonatomic) _Bool hasText;
+@property(readonly, nonatomic) _Bool shouldDismissWithAnimation;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (struct OptionItem *)findItemAt:(id)arg1;

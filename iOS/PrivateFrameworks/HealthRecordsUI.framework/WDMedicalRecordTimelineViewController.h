@@ -10,21 +10,23 @@
 #import <HealthRecordsUI/HKConceptStoreObserver-Protocol.h>
 #import <HealthRecordsUI/HKHealthRecordsStoreAccountStateChangeListener-Protocol.h>
 #import <HealthRecordsUI/HKHealthRecordsStoreIngestionStateListener-Protocol.h>
+#import <HealthRecordsUI/HRTimelineHeaderViewDelegate-Protocol.h>
 #import <HealthRecordsUI/UISearchControllerDelegate-Protocol.h>
 #import <HealthRecordsUI/UISearchResultsUpdating-Protocol.h>
 #import <HealthRecordsUI/_TtP15HealthRecordsUI36FilterSettingsViewControllerDelegate_-Protocol.h>
 
-@class HKClinicalAccount, HKCloudSyncObserver, HKConcept, HKViewTableViewCell, HRContentStatusCell, HRContentStatusView, HROverlayRoomViewController, HRProfile, NSPredicate, NSSet, NSString, NSTimer, NSUUID, UIButton, UISearchController, WDMedicalRecordCategory, WDMedicalRecordDisplayItemProvider;
+@class HKClinicalAccount, HKCloudSyncObserver, HKConcept, HKViewTableViewCell, HRContentStatusCell, HRContentStatusView, HROverlayRoomViewController, HRProfile, NSHashTable, NSPredicate, NSSet, NSString, NSTimer, NSUUID, UIButton, UISearchController, WDMedicalRecordCategory, WDMedicalRecordDisplayItemProvider;
 @protocol HRRecordViewControllerFactory;
 
 __attribute__((visibility("hidden")))
-@interface WDMedicalRecordTimelineViewController : HKTableViewController <UISearchControllerDelegate, UISearchResultsUpdating, _TtP15HealthRecordsUI36FilterSettingsViewControllerDelegate_, HKHealthRecordsStoreIngestionStateListener, HKHealthRecordsStoreAccountStateChangeListener, HKConceptStoreObserver, HKCloudSyncObserverDelegate>
+@interface WDMedicalRecordTimelineViewController : HKTableViewController <UISearchControllerDelegate, UISearchResultsUpdating, _TtP15HealthRecordsUI36FilterSettingsViewControllerDelegate_, HKHealthRecordsStoreIngestionStateListener, HKHealthRecordsStoreAccountStateChangeListener, HKConceptStoreObserver, HKCloudSyncObserverDelegate, HRTimelineHeaderViewDelegate>
 {
     _Bool _loadingNextPage;
     _Bool _showSearchBar;
     _Bool _showsFilterControl;
     _Bool _enableReconnect;
     _Bool _queryReturned;
+    _Bool _chartabilityDetermined;
     _Bool _cloudSyncActive;
     WDMedicalRecordDisplayItemProvider *_displayItemProvider;
     HRProfile *_profile;
@@ -49,12 +51,15 @@ __attribute__((visibility("hidden")))
     long long _ingestionState;
     unsigned long long _indexManagerState;
     HKCloudSyncObserver *_cloudSyncObserver;
+    NSHashTable *_floatingSectionHeaders;
 }
 
+@property(retain, nonatomic) NSHashTable *floatingSectionHeaders; // @synthesize floatingSectionHeaders=_floatingSectionHeaders;
 @property(nonatomic) _Bool cloudSyncActive; // @synthesize cloudSyncActive=_cloudSyncActive;
 @property(retain, nonatomic) HKCloudSyncObserver *cloudSyncObserver; // @synthesize cloudSyncObserver=_cloudSyncObserver;
 @property(nonatomic) unsigned long long indexManagerState; // @synthesize indexManagerState=_indexManagerState;
 @property(nonatomic) long long ingestionState; // @synthesize ingestionState=_ingestionState;
+@property(nonatomic) _Bool chartabilityDetermined; // @synthesize chartabilityDetermined=_chartabilityDetermined;
 @property(nonatomic) _Bool queryReturned; // @synthesize queryReturned=_queryReturned;
 @property(retain, nonatomic) HRContentStatusCell *contentStatusCell; // @synthesize contentStatusCell=_contentStatusCell;
 @property(retain, nonatomic) HRContentStatusView *contentStatusView; // @synthesize contentStatusView=_contentStatusView;
@@ -111,6 +116,8 @@ __attribute__((visibility("hidden")))
 - (void)_setupSearchController;
 - (void)_searchControllerHasQueryChange:(id)arg1;
 - (void)updateSearchResultsForSearchController:(id)arg1;
+- (void)headerViewDidEndFloating:(id)arg1;
+- (void)headerViewDidBeginFloating:(id)arg1;
 - (void)_postAWDMetricForDetailCategory;
 - (void)_postAWDMetricForTimelineCategory;
 - (void)_postAWDMetricForCategoryType:(int)arg1;
@@ -132,6 +139,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateTableHeaderView;
 - (id)_headerViewForTitle:(id)arg1;
 - (void)_determineConceptChartabilityAndInsertChartIfNeeded;
+- (void)_scrollToHighlightedRecordIfNeeded;
 - (void)_updateTableViewGroups;
 - (void)_startCollectingData;
 - (id)_sampleTypesToDisplay;
@@ -146,6 +154,7 @@ __attribute__((visibility("hidden")))
 - (void)_tapToRadar:(id)arg1;
 - (void)_configureBarButtonItems;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

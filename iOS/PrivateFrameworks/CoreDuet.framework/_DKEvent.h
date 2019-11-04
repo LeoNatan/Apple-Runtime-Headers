@@ -22,6 +22,7 @@
     NSTimeZone *_timeZone;
     NSDictionary *_metadata;
     double _confidence;
+    long long _compatibilityVersion;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -55,6 +56,7 @@
 + (id)entityName;
 + (id)keyPathForMOKeyPath:(id)arg1;
 + (id)moKeyPathForKeyPath:(id)arg1;
+@property long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property _Bool shouldSync; // @synthesize shouldSync=_shouldSync;
 @property double confidence; // @synthesize confidence=_confidence;
 @property(copy) NSDictionary *metadata; // @synthesize metadata=_metadata;

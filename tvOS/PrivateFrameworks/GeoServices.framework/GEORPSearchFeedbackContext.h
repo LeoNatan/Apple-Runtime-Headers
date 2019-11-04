@@ -13,10 +13,12 @@
 @interface GEORPSearchFeedbackContext : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_autocompleteSuggestionLists;
     GEORPPlaceRequestResponse *_requestContext;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_autocompleteSuggestionLists:1;
@@ -52,6 +54,8 @@
 - (void)clearAutocompleteSuggestionLists;
 @property(retain, nonatomic) NSMutableArray *autocompleteSuggestionLists;
 - (void)_readAutocompleteSuggestionLists;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

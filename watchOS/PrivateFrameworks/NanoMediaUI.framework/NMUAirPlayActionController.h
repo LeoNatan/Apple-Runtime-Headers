@@ -7,19 +7,24 @@
 #import <PepperUICore/PUICActionSheetController.h>
 
 #import <NanoMediaUI/NACRoutingControllerDelegate-Protocol.h>
+#import <NanoMediaUI/NACVolumeControllerDelegate-Protocol.h>
 #import <NanoMediaUI/NMCConnectivityObserver-Protocol.h>
 #import <NanoMediaUI/PUICActionSheetControllerDelegate-Protocol.h>
 #import <NanoMediaUI/PUICTableViewDelegate-Protocol.h>
 #import <NanoMediaUI/UITableViewDataSource-Protocol.h>
 
 @class NACAudioRoute, NMCAudioRoutingManager, NMCVirtualAudioRoute, NMROrigin, NMUAirPlayActionCell, NSObject, NSString, PUICActionSheetGroup;
-@protocol NACRoutingController, OS_dispatch_source, PUICActionSheetControllerDelegate;
+@protocol NACRoutingController, NACVolumeController, OS_dispatch_source, PUICActionSheetControllerDelegate;
 
-@interface NMUAirPlayActionController : PUICActionSheetController <NACRoutingControllerDelegate, PUICActionSheetControllerDelegate, PUICTableViewDelegate, UITableViewDataSource, NMCConnectivityObserver>
+@interface NMUAirPlayActionController : PUICActionSheetController <NACRoutingControllerDelegate, PUICActionSheetControllerDelegate, PUICTableViewDelegate, UITableViewDataSource, NMCConnectivityObserver, NACVolumeControllerDelegate>
 {
+    unsigned int _mode;
     id <NACRoutingController> _companionRoutingController;
     _Bool _shouldObserveRoutes;
     NMCAudioRoutingManager *_audioRoutingManager;
+    id <NACVolumeController> _volumeController;
+    _Bool _shouldObserveListeningModes;
+    _Bool _hasReceivedAvailableListeningModes;
     NMCVirtualAudioRoute *_currentlySelectingLocalRoute;
     NACAudioRoute *_currentlySelectingCompanionRoute;
     id <PUICActionSheetControllerDelegate> _externalDelegate;
@@ -28,14 +33,13 @@
     _Bool _didAutomaticallyAttemptLocalRoute;
     int _loadingIndicatorState;
     NMUAirPlayActionCell *_sampleAirPlayActionCell;
+    PUICActionSheetGroup *_listeningModesGroup;
+    PUICActionSheetGroup *_routesGroup;
     PUICActionSheetGroup *_connectDeviceGroup;
-    _Bool _automaticallySelectsLoneAvailableRoute;
     NMROrigin *_origin;
 }
 
 + (id)controllerWithAudioRoutingManager:(id)arg1;
-+ (id)controllerWithOrigin:(id)arg1 audioRoutingManager:(id)arg2;
-@property(nonatomic) _Bool automaticallySelectsLoneAvailableRoute; // @synthesize automaticallySelectsLoneAvailableRoute=_automaticallySelectsLoneAvailableRoute;
 @property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
 - (void)_stopObservingNotifications;
@@ -47,6 +51,7 @@
 - (void)_pickLoneAvailableLocalRouteIfDesired;
 - (void)_cancelPickRouteTimeout;
 - (void)_beginPickRouteTimeout;
+- (id)_volumeController;
 - (void)_openSettings;
 - (id)_connectDeviceGroup;
 - (float)_defaultStatusBarHeight;
@@ -58,19 +63,25 @@
 - (void)_updateHeaderForNoCompanionRoutes;
 - (void)_showConnectionFailedMessage;
 - (void)_connectionFailed;
-- (id)sampleAirPlayActionCell;
+- (void)_updateCurrentListeningMode;
+- (void)_updateListeningModesGroupIfNeeded;
+- (id)_availableListeningModeActionItems;
+- (void)_finishPickingRouteForItem:(id)arg1 alreadyPicked:(_Bool)arg2;
+- (id)_sampleAirPlayActionCell;
 - (void)_cancelFindRoutesTimer;
-- (void)_updateWithItems:(id)arg1 timeoutDuration:(double)arg2 timeoutCompletion:(CDUnknownBlockType)arg3;
-- (void)_updateItemsForCompanionOrigin;
-- (void)_updateItemsForLocalOrigin;
+- (void)_updateGroupsWithRouteActionItems:(id)arg1 timeoutDuration:(double)arg2 timeoutCompletion:(CDUnknownBlockType)arg3;
+- (void)_updateGroupsForCompanionOrigin;
+- (void)_updateGroupsForLocalOrigin;
 - (void)_companionAudioRouteItemSelected:(id)arg1;
 - (void)_localAudioRouteItemSelected:(id)arg1;
-- (void)_updateRouteSelectingIndicatorForActionItem:(id)arg1;
-- (void)_updateItemsForCurrentOrigin;
+- (void)_updateSelectingIndicatorForActionItem:(id)arg1 inGroup:(id)arg2;
+- (void)_updateGroupsForCurrentOrigin;
 - (void)_updateForCurrentOrigin;
+- (void)volumeController:(id)arg1 didFailToSetCurrentListeningModeWithError:(id)arg2;
+- (void)volumeControllerDidUpdateCurrentListeningMode:(id)arg1;
+- (void)volumeControllerDidUpdateAvailableListeningModes:(id)arg1;
 - (void)manager:(id)arg1 connectivityDidChange:(_Bool)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)routingControllerFailedToPickRoute:(id)arg1;
 - (void)routingControllerDidUpdateAvailableRoutes:(id)arg1;
@@ -81,10 +92,13 @@
 - (void)dealloc;
 - (void)dismiss;
 - (void)setDelegate:(id)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)_initWithOrigin:(id)arg1 audioRoutingManager:(id)arg2;
+- (id)initWithMode:(unsigned int)arg1 origin:(id)arg2 audioRoutingManager:(id)arg3;
+- (id)initWithOrigin:(id)arg1 audioRoutingManager:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

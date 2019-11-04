@@ -291,9 +291,3 @@ typedef struct {
     unsigned long long size;
 } CDStruct_95bda58d;
 
-typedef struct {
-    long long *list;
-    unsigned long long count;
-    unsigned long long size;
-} CDStruct_5df41632;
-

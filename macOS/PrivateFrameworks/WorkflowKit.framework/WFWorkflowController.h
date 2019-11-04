@@ -16,6 +16,7 @@
 @interface WFWorkflowController : NSObject <WFRemoteQuarantinePolicyEvaluatorDelegate, WFVariableDataSource, WFActionParameterInputProvider>
 {
     WFWorkflowController *_strongSelf;
+    BOOL _donateInteraction;
     BOOL _paused;
     BOOL _running;
     BOOL _stepping;
@@ -24,6 +25,8 @@
     WFContentCollection *_output;
     id <WFWorkflowControllerDelegate> _delegate;
     NSProgress *_progress;
+    NSString *_runSource;
+    NSString *_automationType;
     unsigned long long _currentIndex;
     NSMapTable *_variableTable;
     WFWorkflowControllerState *_pendingState;
@@ -37,9 +40,12 @@
 @property(nonatomic, getter=isStepping) BOOL stepping; // @synthesize stepping=_stepping;
 @property(nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
+@property(copy, nonatomic) NSString *automationType; // @synthesize automationType=_automationType;
+@property(copy, nonatomic) NSString *runSource; // @synthesize runSource=_runSource;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(nonatomic) __weak id <WFWorkflowControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) BOOL donateInteraction; // @synthesize donateInteraction=_donateInteraction;
 @property(retain, nonatomic) WFContentCollection *output; // @synthesize output=_output;
 @property(retain, nonatomic) WFContentCollection *input; // @synthesize input=_input;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
@@ -50,6 +56,8 @@
 - (void)workflowController:(id)arg1 prepareToRunAction:(id)arg2 withInput:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)workflowController:(id)arg1 didFinishRunningWithError:(id)arg2 cancelled:(BOOL)arg3;
 - (void)workflowControllerWillRun:(id)arg1;
+- (void)logStartEvent;
+- (void)logRunEvent:(BOOL)arg1;
 - (BOOL)action:(id)arg1 canProvideInputForParameter:(id)arg2;
 - (void)action:(id)arg1 provideInputForParameters:(id)arg2 withDefaultStates:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)autoreleaseSelf;
@@ -60,14 +68,14 @@
 - (void)evaluateRemoteQuarantinePolicyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)userInterfaceToPresentAlertForEvaluator:(id)arg1;
 - (void)reset;
-- (void)step;
-- (void)pause;
+- (void)setFinishedRunningWithSuccess:(BOOL)arg1;
 - (void)stop;
 - (void)run;
 - (void)_stepWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)stateWithActionIndex:(unsigned long long)arg1 input:(id)arg2 processedParameters:(id)arg3;
 @property(retain, nonatomic) WFWorkflowControllerState *currentState;
 - (id)currentAction;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)link;
 - (id)contextMenuConfiguration;
 - (id)defaultAction;
-- (id)initWithRange:(struct _NSRange)arg1 textContentView:(id)arg2;
+- (id)initWithRange:(struct _NSRange)arg1 rect:(struct CGRect)arg2 inTextContentView:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

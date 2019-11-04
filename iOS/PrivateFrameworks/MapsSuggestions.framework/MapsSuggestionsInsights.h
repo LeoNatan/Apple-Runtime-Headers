@@ -8,7 +8,7 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class MapsSuggestionsFwdGeocodingRelevanceScoreProvider, MapsSuggestionsNetworkRequester, MapsSuggestionsPortraitRelevanceScoreProvider, MapsSuggestionsRelevanceScorer, MapsSuggestionsRoutine, MapsSuggestionsRoutineRelevanceScoreProvider, NSString, NSXPCConnection;
+@class MapsSuggestionsFwdGeocodingRelevanceScoreProvider, MapsSuggestionsPortraitRelevanceScoreProvider, MapsSuggestionsRelevanceScorer, MapsSuggestionsRoutineRelevanceScoreProvider, NSString, NSXPCConnection;
 @protocol OS_dispatch_source;
 
 @interface MapsSuggestionsInsights : NSObject <MapsSuggestionsObject>
@@ -16,12 +16,10 @@
     struct Queue _queue;
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_source> *_closeTimer;
-    MapsSuggestionsNetworkRequester *_networkRequester;
     MapsSuggestionsFwdGeocodingRelevanceScoreProvider *_fwdGeoCodingRoutineScoreProvider;
     MapsSuggestionsRoutineRelevanceScoreProvider *_routineScoreProvider;
     MapsSuggestionsPortraitRelevanceScoreProvider *_portraitScoreProvider;
     MapsSuggestionsRelevanceScorer *_relevanceScorer;
-    MapsSuggestionsRoutine *_routine;
 }
 
 + (id)sharedInsights;

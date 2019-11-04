@@ -11,7 +11,7 @@
 #import <PhotosUICore/PXGViewSource-Protocol.h>
 #import <PhotosUICore/PXLibrarySummaryOutputPresenter-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDictionary, NSObject, NSSet, NSString, PXAssetCollectionReference, PXCuratedLibraryActionPerformer, PXCuratedLibraryEllipsisButtonActionPerformer, PXCuratedLibrarySectionHeaderLayoutSpec, PXTitleSubtitleLabelSpec;
+@class NSArray, NSAttributedString, NSDictionary, NSObject, NSSet, NSString, PXAssetCollectionReference, PXCuratedLibraryActionPerformer, PXCuratedLibraryEllipsisButtonActionPerformer, PXCuratedLibraryFilterActionPerformer, PXCuratedLibrarySectionHeaderLayoutSpec, PXTitleSubtitleLabelSpec;
 @protocol OS_dispatch_queue;
 
 @interface PXCuratedLibrarySectionHeaderLayout : PXGLayout <PXGTitleSubtitleSource, PXGViewSource, PXGNamedImageSource, PXLibrarySummaryOutputPresenter>
@@ -19,6 +19,8 @@
     CDStruct_5f1286c4 _updateFlags;
     unsigned short _textVersion;
     unsigned short _ellipsisButtonVersion;
+    unsigned short _filterButtonVersion;
+    unsigned short _selectionTitleVersion;
     unsigned short _selectButtonVersion;
     unsigned short _cancelButtonVersion;
     unsigned short _toggleAspectFitButtonVersion;
@@ -27,14 +29,15 @@
     unsigned short _controlStackButtonVersion;
     NSArray *_itemIdentifierBySpriteIndex;
     unsigned short _gradientResizableCapInsetsIndex;
-    struct CGSize _cachedSizeByButtonIdentifier[8];
+    struct CGSize _cachedSizeByButtonIdentifier[9];
     struct CGSize _cachedExternalTrailingButtonsSize;
     struct CGSize _cachedExternalLeadingButtonsSize;
+    struct CGSize _cachedLongestPossibleSelectionTitleSize;
     long long _asyncDateGeneration;
     NSObject<OS_dispatch_queue> *_asyncDateQueue;
     BOOL _showsBackgroundGradient;
     BOOL _showsDebugDescription;
-    BOOL _shouldRespectSafeAreaInsets;
+    BOOL _filterButtonHighlighted;
     BOOL _controlStackButtonSelected;
     BOOL _usesCompactToggleAspectFitButton;
     float _buttonsZIndex;
@@ -42,43 +45,62 @@
     NSString *_subtitle;
     PXAssetCollectionReference *_assetCollectionReference;
     PXCuratedLibrarySectionHeaderLayoutSpec *_spec;
+    double _lateralMargin;
     double _maxPossibleHeight;
     double _titleAlpha;
     double _buttonsAlpha;
     PXCuratedLibraryEllipsisButtonActionPerformer *_ellipsisButtonActionPerformer;
+    PXCuratedLibraryFilterActionPerformer *_filterActionPerformer;
     PXCuratedLibraryActionPerformer *_selectButtonActionPerformer;
     PXCuratedLibraryActionPerformer *_cancelButtonActionPerformer;
     PXCuratedLibraryActionPerformer *_zoomInButtonActionPerformer;
     PXCuratedLibraryActionPerformer *_zoomOutButtonActionPerformer;
     PXCuratedLibraryActionPerformer *_toggleAspectFitButtonActionPerformer;
     NSString *_selectButtonTitle;
+    NSString *_filterButtonCaption;
+    NSString *_filterButtonTitle;
+    NSString *_selectionTitle;
+    NSString *_longestPossibleSelectionTitle;
     NSString *_toggleAspectFitButtonTitle;
     NSSet *_toggleAspectFitButtonPossibleTitles;
     long long _toggleAspectFitCompactButtonSymbol;
+    long long _safeAreaBehavior;
     NSArray *_externalTrailingButtonConfigurations;
     NSArray *_externalLeadingButtonConfigurations;
     PXCuratedLibrarySectionHeaderLayoutSpec *_effectiveSpec;
     PXTitleSubtitleLabelSpec *_effectiveTitleSubtitleLabelSpec;
+    double _buttonsMaxY;
+    double _titleSubtitleTopSpacing;
+    double _titleSubtitleLastBaseline;
     struct CGRect _titleSubtitleFrame;
 }
 
+@property(nonatomic) double titleSubtitleLastBaseline; // @synthesize titleSubtitleLastBaseline=_titleSubtitleLastBaseline;
+@property(nonatomic) double titleSubtitleTopSpacing; // @synthesize titleSubtitleTopSpacing=_titleSubtitleTopSpacing;
+@property(nonatomic) double buttonsMaxY; // @synthesize buttonsMaxY=_buttonsMaxY;
 @property(nonatomic) BOOL usesCompactToggleAspectFitButton; // @synthesize usesCompactToggleAspectFitButton=_usesCompactToggleAspectFitButton;
 @property(nonatomic) BOOL controlStackButtonSelected; // @synthesize controlStackButtonSelected=_controlStackButtonSelected;
 @property(retain, nonatomic) PXTitleSubtitleLabelSpec *effectiveTitleSubtitleLabelSpec; // @synthesize effectiveTitleSubtitleLabelSpec=_effectiveTitleSubtitleLabelSpec;
 @property(retain, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *effectiveSpec; // @synthesize effectiveSpec=_effectiveSpec;
 @property(copy, nonatomic) NSArray *externalLeadingButtonConfigurations; // @synthesize externalLeadingButtonConfigurations=_externalLeadingButtonConfigurations;
 @property(copy, nonatomic) NSArray *externalTrailingButtonConfigurations; // @synthesize externalTrailingButtonConfigurations=_externalTrailingButtonConfigurations;
-@property(nonatomic) BOOL shouldRespectSafeAreaInsets; // @synthesize shouldRespectSafeAreaInsets=_shouldRespectSafeAreaInsets;
+@property(nonatomic) long long safeAreaBehavior; // @synthesize safeAreaBehavior=_safeAreaBehavior;
 @property(readonly, nonatomic) struct CGRect titleSubtitleFrame; // @synthesize titleSubtitleFrame=_titleSubtitleFrame;
 @property(nonatomic) long long toggleAspectFitCompactButtonSymbol; // @synthesize toggleAspectFitCompactButtonSymbol=_toggleAspectFitCompactButtonSymbol;
 @property(copy, nonatomic) NSSet *toggleAspectFitButtonPossibleTitles; // @synthesize toggleAspectFitButtonPossibleTitles=_toggleAspectFitButtonPossibleTitles;
 @property(copy, nonatomic) NSString *toggleAspectFitButtonTitle; // @synthesize toggleAspectFitButtonTitle=_toggleAspectFitButtonTitle;
+@property(copy, nonatomic) NSString *longestPossibleSelectionTitle; // @synthesize longestPossibleSelectionTitle=_longestPossibleSelectionTitle;
+@property(copy, nonatomic) NSString *selectionTitle; // @synthesize selectionTitle=_selectionTitle;
+@property(nonatomic) BOOL filterButtonHighlighted; // @synthesize filterButtonHighlighted=_filterButtonHighlighted;
+@property(copy, nonatomic) NSString *filterButtonTitle; // @synthesize filterButtonTitle=_filterButtonTitle;
+@property(copy, nonatomic) NSString *filterButtonCaption; // @synthesize filterButtonCaption=_filterButtonCaption;
 @property(copy, nonatomic) NSString *selectButtonTitle; // @synthesize selectButtonTitle=_selectButtonTitle;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *toggleAspectFitButtonActionPerformer; // @synthesize toggleAspectFitButtonActionPerformer=_toggleAspectFitButtonActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *zoomOutButtonActionPerformer; // @synthesize zoomOutButtonActionPerformer=_zoomOutButtonActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *zoomInButtonActionPerformer; // @synthesize zoomInButtonActionPerformer=_zoomInButtonActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *cancelButtonActionPerformer; // @synthesize cancelButtonActionPerformer=_cancelButtonActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *selectButtonActionPerformer; // @synthesize selectButtonActionPerformer=_selectButtonActionPerformer;
+@property(retain, nonatomic) PXCuratedLibraryFilterActionPerformer *filterActionPerformer; // @synthesize filterActionPerformer=_filterActionPerformer;
 @property(retain, nonatomic) PXCuratedLibraryEllipsisButtonActionPerformer *ellipsisButtonActionPerformer; // @synthesize ellipsisButtonActionPerformer=_ellipsisButtonActionPerformer;
 @property(nonatomic) float buttonsZIndex; // @synthesize buttonsZIndex=_buttonsZIndex;
 @property(nonatomic) BOOL showsDebugDescription; // @synthesize showsDebugDescription=_showsDebugDescription;
@@ -86,6 +108,7 @@
 @property(nonatomic) double buttonsAlpha; // @synthesize buttonsAlpha=_buttonsAlpha;
 @property(nonatomic) double titleAlpha; // @synthesize titleAlpha=_titleAlpha;
 @property(nonatomic) double maxPossibleHeight; // @synthesize maxPossibleHeight=_maxPossibleHeight;
+@property(nonatomic) double lateralMargin; // @synthesize lateralMargin=_lateralMargin;
 @property(retain, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXAssetCollectionReference *assetCollectionReference; // @synthesize assetCollectionReference=_assetCollectionReference;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -97,6 +120,7 @@
 - (struct CGSize)_sizeOfButton:(unsigned long long)arg1;
 - (id)viewUserDataForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (Class)viewClassForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
+- (void)didRenderTitleAndSubtitleSpriteAtIndex:(unsigned int)arg1 layoutVersion:(long long)arg2 withLastBaseline:(double)arg3;
 - (id)imageNameAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)titleSubtitleSpecForSpriteAtIndex:(unsigned int)arg1;
 - (id)subtitleForSpriteAtIndex:(unsigned int)arg1;
@@ -105,6 +129,8 @@
 - (void)_updateTitleAndSubtitle;
 - (id)_effectiveTitleSubtitleLabelSpec:(id)arg1;
 - (void)_updateEffectiveSpec;
+- (void)_invalidateFilterButton;
+- (void)_updateLastBaseline;
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceOptionsDidChange;
@@ -113,8 +139,9 @@
 - (void)visibleRectDidChange;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
+- (id)_selectionTitleLabelConfigurationWithTitle:(id)arg1;
 @property(readonly, nonatomic) unsigned long long toggleAspectFitButton;
-- (struct NSEdgeInsets)actualSafeAreaInsets;
+- (struct NSEdgeInsets)safeAreaInsetsWithCurrentBehavior;
 - (void)_updateSpritesAlpha;
 - (void)_updateSpriteTags;
 - (void)_updateButtonActionPerformers;

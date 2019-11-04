@@ -96,6 +96,8 @@
 - (void)setValueFromString:(id)arg1 notify:(_Bool)arg2;
 - (_Bool)setSelectPageRowValue:(id)arg1;
 - (void)setSelectRowValue:(id)arg1;
+- (void)setSelectedRowTextColor;
+- (void)setDetailAndPlaceholderText;
 - (id)tableCell;
 - (_Bool)loadAccessoryImage;
 - (void)accessoryImageLoaded;

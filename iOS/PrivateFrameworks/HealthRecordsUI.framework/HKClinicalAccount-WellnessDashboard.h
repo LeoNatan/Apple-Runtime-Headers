@@ -11,6 +11,7 @@
 @interface HKClinicalAccount (WellnessDashboard)
 - (void)beginReloginSessionWithClinicalSourcesDataProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic, readonly) NSString *displayableStatus;
+@property(nonatomic, readonly) _Bool needsLogin;
 @property(nonatomic, readonly) _Bool hasLogo;
 @end
 

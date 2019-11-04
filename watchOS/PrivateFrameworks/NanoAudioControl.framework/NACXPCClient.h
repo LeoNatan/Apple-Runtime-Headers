@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
     NSMutableSet *_routeObservingCategories;
     NSMutableSet *_volumeObservingTargets;
+    NSMutableSet *_listeningModesObservingTargets;
 }
 
 + (id)sharedClient;
@@ -31,12 +32,15 @@ __attribute__((visibility("hidden")))
 - (void)endObservingAudioRoutesForCategory:(id)arg1;
 - (void)beginObservingAudioRoutesForCategory:(id)arg1;
 - (void)audioRoutesForCategory:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)setCurrentListeningMode:(id)arg1 forTarget:(id)arg2;
+- (void)currentListeningModeForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)availableListeningModesForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)setSystemMuted:(_Bool)arg1;
 - (void)setHapticState:(int)arg1;
 - (void)setProminentHapticEnabled:(_Bool)arg1;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setMuted:(_Bool)arg1 target:(id)arg2;
-- (void)setVolumeValue:(float)arg1 target:(id)arg2;
+- (void)setMuted:(_Bool)arg1 forTarget:(id)arg2;
+- (void)setVolumeValue:(float)arg1 forTarget:(id)arg2;
 - (void)volumeWarningForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)EULimitForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)systemMutedState:(CDUnknownBlockType)arg1;
@@ -46,9 +50,12 @@ __attribute__((visibility("hidden")))
 - (void)mutedStateForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)volumeControlAvailabilityForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)volumeValueForTarget:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)endObservingListeningModesForTarget:(id)arg1;
+- (void)beginObservingListeningModesForTarget:(id)arg1;
 - (void)endObservingVolumeForTarget:(id)arg1;
 - (void)beginObservingVolumeForTarget:(id)arg1;
 - (void)_resumeRouteObservingIfNecessary;
+- (void)_resumeListeningModesObservingIfNecessary;
 - (void)_resumeVolumeObservingIfNecessary;
 - (id)init;
 

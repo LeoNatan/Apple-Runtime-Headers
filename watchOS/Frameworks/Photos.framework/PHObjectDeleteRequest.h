@@ -21,6 +21,7 @@
 + (id)_deleteRequestsForObjects:(id)arg1;
 + (id)deleteRequestsForObjects:(id)arg1 ofType:(Class)arg2 forSelector:(SEL)arg3;
 + (id)deleteRequestForObject:(id)arg1;
+@property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled; // @synthesize clientEntitled=_clientEntitled;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 - (id)uuid;
@@ -38,7 +39,6 @@
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 
 // Remaining properties
-@property(readonly, nonatomic) NSString *clientName;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

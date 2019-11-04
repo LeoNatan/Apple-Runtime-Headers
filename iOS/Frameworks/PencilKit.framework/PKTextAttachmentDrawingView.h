@@ -123,6 +123,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)fingerDrawingEnabledDidChange;
 - (void)drawingDidChange;
+- (void)drawingDidEraseStrokes;
 - (void)drawingWillBegin;
 @property(readonly, nonatomic) double drawingAspectRatio;
 - (struct CGRect)drawingBounds;

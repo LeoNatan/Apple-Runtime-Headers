@@ -17,8 +17,6 @@
     unsigned long long _mode;
     double _desiredAccuracy;
     MNCoreLocationProvider *_coreLocationProvider;
-    unsigned long long _activeServices;
-    BOOL _shouldNotifyDelegate;
     id <MNLocationProviderDelegate> _delegate;
 }
 
@@ -55,9 +53,7 @@
 - (void)startUpdatingLocation;
 - (id)leechedLocationProvider;
 - (id)coreLocationProvider;
-- (void)_unsubscribeFromService:(unsigned long long)arg1;
-- (void)_subscribeToService:(unsigned long long)arg1;
-- (BOOL)_isSubscribedToService:(unsigned long long)arg1;
+- (void)_setEffectiveAccuracy:(double)arg1;
 - (void)_sharedInit;
 @property(nonatomic) unsigned long long mode;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;

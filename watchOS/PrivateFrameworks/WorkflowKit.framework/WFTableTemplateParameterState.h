@@ -17,6 +17,7 @@
     NSArray *_rows;
 }
 
++ (Class)processingValueClass;
 @property(readonly, copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(readonly, nonatomic) int compoundType; // @synthesize compoundType=_compoundType;
 - (void).cxx_destruct;

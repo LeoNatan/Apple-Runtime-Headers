@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_delayedBrightnessCommitTimer;
     NSMutableDictionary *_properties;
     _Bool _brightnessUpdatesDisabled;
+    float _magSafeFactor;
     BOOL _builtIn;
     unsigned long long _displayID;
 }

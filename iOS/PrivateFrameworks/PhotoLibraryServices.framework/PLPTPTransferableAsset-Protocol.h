@@ -52,6 +52,7 @@
 @property(readonly, copy, nonatomic) NSDate *dateCreated;
 @property(readonly, copy, nonatomic) NSString *originalFilename;
 @property(readonly, copy, nonatomic) NSString *filename;
+@property(readonly, nonatomic) unsigned short deferredProcessingNeeded;
 @property(readonly, nonatomic) short savedAssetType;
 @property(readonly, retain, nonatomic) id uuid;
 @property(readonly, nonatomic) NSManagedObjectID *objectID;

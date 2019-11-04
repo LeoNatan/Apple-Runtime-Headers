@@ -17,6 +17,7 @@
 + (_Bool)defaultAllowsDecimalNumbers;
 @property(copy, nonatomic) NSArray *possibleUnits; // @synthesize possibleUnits=_possibleUnits;
 - (void).cxx_destruct;
+- (id)defaultSerializedRepresentation;
 - (id)localizedLabelForPossibleUnit:(id)arg1 magnitude:(id)arg2 style:(unsigned long long)arg3;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

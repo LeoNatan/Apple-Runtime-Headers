@@ -33,6 +33,7 @@
     BOOL _supportsTargetController;
     BOOL _targetControllerHardwareSupport;
     BOOL _supportsMultiUser;
+    BOOL _supportsCompanionInitiatedRestart;
     BOOL _suspendCapable;
     BOOL _paired;
     NSUUID *_uniqueIdentifier;
@@ -99,6 +100,8 @@
 - (void).cxx_destruct;
 - (void)setNetworkProtectionGroupUUID:(id)arg1;
 @property(readonly) NSUUID *networkProtectionGroupUUID; // @synthesize networkProtectionGroupUUID=_networkProtectionGroupUUID;
+- (void)_handleSupportsCompanionInitiatedRestartUpdatedMessage:(id)arg1;
+- (void)_notifyClientsOfSupportsCompanionInitiatedRestartUpdate;
 - (void)_handleMultiUserSupportUpdatedMessage:(id)arg1;
 - (void)_notifyClientsOfMultiUserSupportUpdate;
 - (void)_handleTargetControlSupportUpdatedMessage:(id)arg1;
@@ -131,6 +134,8 @@
 - (void)_handleServiceTypeAssociated:(id)arg1;
 - (void)_handleServiceDefaultNameUpdate:(id)arg1;
 - (void)_handleServiceRenamed:(id)arg1;
+- (void)_deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)deleteSiriHistoryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_listPairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_updateFromAccessory:(id)arg1;
 - (void)_identifyWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -208,6 +213,7 @@
 - (void)removeControlTargetUUIDs:(id)arg1;
 - (void)addControlTargetUUIDs:(id)arg1;
 @property(copy, nonatomic) NSArray *controlTargetUUIDs; // @synthesize controlTargetUUIDs=_controlTargetUUIDs;
+@property(nonatomic) BOOL supportsCompanionInitiatedRestart; // @synthesize supportsCompanionInitiatedRestart=_supportsCompanionInitiatedRestart;
 @property(nonatomic) BOOL supportsMultiUser; // @synthesize supportsMultiUser=_supportsMultiUser;
 @property(nonatomic) BOOL targetControllerHardwareSupport; // @synthesize targetControllerHardwareSupport=_targetControllerHardwareSupport;
 @property(nonatomic) BOOL supportsTargetController; // @synthesize supportsTargetController=_supportsTargetController;

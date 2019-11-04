@@ -44,6 +44,8 @@
 - (id)hf_identifyHomePod;
 @property(readonly, nonatomic) BOOL hf_needsSoftwareUpdateToSupportBeingAddedToMediaSystem;
 @property(readonly, nonatomic) unsigned long long hf_mediaAccessControlCapabilities;
+- (BOOL)hf_supportsMultiUserLanguage:(id)arg1;
+@property(readonly, nonatomic) BOOL hf_isSpeaker;
 @property(readonly, nonatomic) BOOL hf_isDumbSpeaker;
 @property(readonly, nonatomic) BOOL hf_isAirPortExpressSpeaker;
 @property(readonly, nonatomic) BOOL hf_isAppleTV;
@@ -65,6 +67,9 @@
 @property(readonly, copy, nonatomic) NSSet *hf_visibleServices;
 @property(readonly, copy, nonatomic) NSSet *hf_standardServices;
 @property(readonly, nonatomic) HMResidentDevice *hf_linkedResidentDevice;
+- (id)hf_setShowAsIndividualServices:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL hf_showAsIndividualServices;
+@property(readonly, nonatomic) BOOL hf_showAsAccessoryTile;
 @property(readonly, nonatomic) BOOL hf_shouldSeparateAccessoryName;
 @property(readonly, nonatomic) BOOL hf_isNonServiceBasedAccessory;
 @property(readonly, nonatomic) BOOL hf_isVisibleAccessory;

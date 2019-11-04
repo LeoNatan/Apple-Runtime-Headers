@@ -19,14 +19,14 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     _CDInteractionStoreNotifier *_notifier;
     NSObject<OS_dispatch_queue> *_pendingShareInteractionQueue;
-    BOOL _executeConcurrently;
+    BOOL _readConcurrently;
     _CDInteraction *_pendingShareSheetInteraction;
     id <_DKLocationHistorian> _locationHistorian;
 }
 
 + (id)defaultDatabaseDirectory;
 + (id)storeWithDirectory:(id)arg1 readOnly:(BOOL)arg2;
-@property(nonatomic) BOOL executeConcurrently; // @synthesize executeConcurrently=_executeConcurrently;
+@property(nonatomic) BOOL readConcurrently; // @synthesize readConcurrently=_readConcurrently;
 @property(readonly, nonatomic) _DKCoreDataStorage *storage; // @synthesize storage=_storage;
 @property(retain) id <_DKLocationHistorian> locationHistorian; // @synthesize locationHistorian=_locationHistorian;
 @property(retain, nonatomic) _CDInteraction *pendingShareSheetInteraction; // @synthesize pendingShareSheetInteraction=_pendingShareSheetInteraction;

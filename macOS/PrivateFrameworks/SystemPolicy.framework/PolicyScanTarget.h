@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSBundle, NSData, NSDate, NSDictionary, NSString, NSURL, NSUUID;
+@class NSData, NSDate, NSDictionary, NSString, NSURL, NSUUID;
 
 @interface PolicyScanTarget : NSObject
 {
@@ -24,7 +24,7 @@
     NSURL *_mainExecutableURL;
     NSString *_bundleID;
     BOOL _isDirectory;
-    NSBundle *_bundle;
+    struct __CFBundle *_bundle;
     struct __SecCode *_staticCodeRef;
     NSDictionary *_signingInfo;
     NSString *_cdhash;

@@ -18,7 +18,7 @@
     MXMSampleTag *_tag;
     NSUnit *_unit;
     MXMSampleTimeSeries *_timeIndex;
-    CDStruct_0bece6d5 *_index;
+    CDStruct_4bcfbbae *_index;
     void *_underlyingBuffer;
     long long _underlyingBufferLength;
     NSArray *_cachedSamples;
@@ -30,7 +30,7 @@
 @property(retain) NSArray *cachedSamples; // @synthesize cachedSamples=_cachedSamples;
 @property(nonatomic) long long underlyingBufferLength; // @synthesize underlyingBufferLength=_underlyingBufferLength;
 @property(nonatomic) void *underlyingBuffer; // @synthesize underlyingBuffer=_underlyingBuffer;
-@property(nonatomic) CDStruct_0bece6d5 *index; // @synthesize index=_index;
+@property(nonatomic) CDStruct_4bcfbbae *index; // @synthesize index=_index;
 @property(readonly, retain) MXMSampleTimeSeries *timeIndex; // @synthesize timeIndex=_timeIndex;
 @property(readonly) NSUnit *unit; // @synthesize unit=_unit;
 @property(readonly) MXMSampleTag *tag; // @synthesize tag=_tag;
@@ -50,9 +50,8 @@
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)sampleWithIndex:(unsigned long long)arg1;
-- (id)initWithTime:(id)arg1 tag:(id)arg2 unit:(id)arg3 attributes:(id)arg4 values:(void *)arg5 length:(unsigned long long)arg6 valueSize:(unsigned long long)arg7 valueType:(char *)arg8 valueTypeLength:(unsigned long long)arg9;
+- (id)initWithTime:(id)arg1 tag:(id)arg2 unit:(id)arg3 attributes:(id)arg4 values:(void *)arg5 length:(unsigned long long)arg6 valueSize:(unsigned long long)arg7;
 - (id)initWithTime:(id)arg1 tag:(id)arg2 unit:(id)arg3 attributes:(id)arg4 doubleValues:(double *)arg5 length:(unsigned long long)arg6;
-- (id)initWithTime:(id)arg1 tag:(id)arg2 unit:(id)arg3 attributes:(id)arg4 unsignedIntegerValues:(unsigned long long *)arg5 length:(unsigned long long)arg6;
 - (id)initWithTime:(id)arg1 tag:(id)arg2 unit:(id)arg3 attributes:(id)arg4;
 - (id)initWithTag:(id)arg1 unit:(id)arg2 attributes:(id)arg3;
 - (id)attributeWithName:(id)arg1;

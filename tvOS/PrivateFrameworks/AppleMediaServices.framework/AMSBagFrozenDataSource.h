@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void).cxx_destruct;
-- (id)valueForURLVariable:(id)arg1;
+- (id)valueForURLVariable:(id)arg1 account:(id)arg2;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (id)bagKeyInfoForKey:(id)arg1;
 @property(readonly, nonatomic, getter=isLoaded) _Bool loaded;

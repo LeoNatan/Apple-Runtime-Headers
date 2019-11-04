@@ -12,7 +12,7 @@
 #import <SpringBoard/SPUISearchBarDelegate-Protocol.h>
 #import <SpringBoard/WGWidgetGroupViewControllerDelegate-Protocol.h>
 
-@class FBDisplayLayoutElement, NSString, SBMainStatusBarContentAssertion, SBUISpotlightBarNavigationController, SBViewControllerTransitionContext, SPUISearchBarController, WGWidgetGroupViewController, _UILegibilitySettings;
+@class FBDisplayLayoutElement, NSString, SBUISpotlightBarNavigationController, SBViewControllerTransitionContext, SPUISearchBarController, WGWidgetGroupViewController, _UILegibilitySettings;
 @protocol SBHomeScreenTodayViewControllerDelegate;
 
 @interface SBHomeScreenTodayViewController : UIViewController <WGWidgetGroupViewControllerDelegate, SPUISearchBarDelegate, SBUICoronaAnimationControllerParticipant, SBUISpotlightInitiating, SBHLegibility>
@@ -30,11 +30,9 @@
     UIViewController *_spotlightViewController;
     id <SBHomeScreenTodayViewControllerDelegate> _delegate;
     long long _pullToSearchState;
-    SBMainStatusBarContentAssertion *_statusBarContentAssertion;
 }
 
 + (double)_verticalSpacingBetweenWidgets;
-@property(retain, nonatomic) SBMainStatusBarContentAssertion *statusBarContentAssertion; // @synthesize statusBarContentAssertion=_statusBarContentAssertion;
 @property(nonatomic) _Bool ignoresScrolling; // @synthesize ignoresScrolling=_ignoresScrolling;
 @property(nonatomic) long long pullToSearchState; // @synthesize pullToSearchState=_pullToSearchState;
 @property(nonatomic) __weak id <SBHomeScreenTodayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -46,8 +44,6 @@
 - (void)_updateScrollViewContentInsetAndOffsetIfNecessary;
 - (void)_statusBarHeightDidChange:(id)arg1;
 - (void)_updateLegibilitySettings;
-- (void)_relinquishStatusBarContentAssertion;
-- (void)_takeStatusBarContentAssertion;
 - (id)_majorScrollView;
 - (id)_widgetGroupViewController;
 - (double)_maxClippingOffset;
@@ -83,7 +79,6 @@
 - (double)pullDownSearchGesturePercentComplete;
 - (double)pullDownSearchGestureYOffset;
 - (struct UIEdgeInsets)defaultTodayViewContentInsets;
-- (void)widgetGroupViewControllerDidChangeHeaderVisibility:(id)arg1;
 - (void)_coverSheetDidPresent:(id)arg1;
 - (void)_setRequestDisableRootFolderParallax:(_Bool)arg1 reason:(id)arg2;
 - (void)_setRequestDisableRootFolderScrolling:(_Bool)arg1 reason:(id)arg2;

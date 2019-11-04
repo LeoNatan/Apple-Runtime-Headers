@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIKBAlertControllerDelegate-Protocol.h>
 
-@class NSArray, NSString, UIAlertController, UIKBTree, UILabel, UILexicon, UIView;
+@class NSArray, NSString, UIAlertController, UIKBTree, UILabel, UILexicon, UIView, UIWindow;
 
 __attribute__((visibility("hidden")))
 @interface UIKeyboardLayoutCursor : UIKeyboardLayoutStar <UIKBAlertControllerDelegate>
@@ -29,10 +29,12 @@ __attribute__((visibility("hidden")))
     UIAlertController *_recentInputsAlert;
     NSString *_keyplaneBeforeDictation;
     int _selectedKeyBeforeDictation;
+    UIWindow *_focusWindow;
 }
 
 + (struct CGSize)keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(int)arg3;
 + (id)carKeyboardNameForKeyboard:(id)arg1 screenTraits:(id)arg2;
+@property(retain, nonatomic) UIWindow *focusWindow; // @synthesize focusWindow=_focusWindow;
 @property(nonatomic) int selectedKeyBeforeDictation; // @synthesize selectedKeyBeforeDictation=_selectedKeyBeforeDictation;
 @property(retain, nonatomic) NSString *keyplaneBeforeDictation; // @synthesize keyplaneBeforeDictation=_keyplaneBeforeDictation;
 @property(retain, nonatomic) UIAlertController *recentInputsAlert; // @synthesize recentInputsAlert=_recentInputsAlert;

@@ -31,6 +31,9 @@
 @property __weak id <SearchUIWatchListCardRowModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (int)separatorStyle;
+- (_Bool)isDraggable;
+- (_Bool)isTappable;
+- (id)punchouts;
 - (void)toggleAddToUpNextWithFeedbackDelegate:(id)arg1;
 - (void)updateWithText:(id)arg1 buttonState:(long long)arg2 image:(id)arg3 punchout:(id)arg4;
 - (void)updateWithText:(id)arg1 buttonState:(long long)arg2;

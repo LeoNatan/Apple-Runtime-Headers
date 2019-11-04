@@ -107,6 +107,7 @@
 - (BOOL)_needsUpdate;
 - (id)_assetSharedViewModelForAsset:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)assetSharedViewModelForAsset:(id)arg1;
+- (BOOL)isTogglingCTMForAsset:(id)arg1;
 @property(readonly, nonatomic) PUAssetViewModel *assetViewModelForCurrentAssetReference;
 - (id)assetViewModelForAssetReference:(id)arg1;
 - (id)activeAssetReferences;

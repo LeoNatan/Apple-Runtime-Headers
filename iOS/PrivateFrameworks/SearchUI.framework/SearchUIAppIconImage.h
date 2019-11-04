@@ -18,6 +18,7 @@
 + (double)cornerRadiusForVariant:(unsigned long long)arg1;
 + (struct CGSize)sizeForVariant:(unsigned long long)arg1;
 + (int)iconFormatForVariant:(unsigned long long)arg1;
++ (id)descriptorNameForVariant:(unsigned long long)arg1;
 + (id)appIconForBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;
 + (id)appIconForResult:(id)arg1 variant:(unsigned long long)arg2;
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;

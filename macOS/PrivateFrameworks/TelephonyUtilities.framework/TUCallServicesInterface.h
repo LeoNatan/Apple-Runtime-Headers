@@ -63,7 +63,7 @@
 - (BOOL)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)policyForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (BOOL)containsRestrictedHandle:(id)arg1 forBundleIdentifier:(id)arg2;
-- (void)pickRouteWithUniqueIdentifier:(id)arg1 forRouteController:(id)arg2;
+- (void)pickRouteWithUniqueIdentifier:(id)arg1 shouldWaitUntilAvailable:(BOOL)arg2 forRouteController:(id)arg3;
 - (id)routesByUniqueIdentifierForRouteController:(id)arg1;
 - (oneway void)setCurrentAudioOutputDeviceToDeviceWithUID:(id)arg1;
 - (oneway void)setCurrentAudioInputDeviceToDeviceWithUID:(id)arg1;

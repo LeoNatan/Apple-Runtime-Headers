@@ -15,6 +15,7 @@
     _Bool _isSelectedPass;
     _Bool _hideAccessoryIfPossible;
     _Bool _showAccessoryButtonIfHidden;
+    _Bool _allowDynamicView;
     _Bool _needsUpdateUI;
     _Bool _updateNeedsHeightChange;
     _Bool _pendingHeightChangeCallback;
@@ -36,12 +37,14 @@
 @property(nonatomic) _Bool needsUpdateUI; // @synthesize needsUpdateUI=_needsUpdateUI;
 @property(nonatomic) __weak id <NPKPassViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
+@property(getter=isDynamicViewAllowed) _Bool allowDynamicView; // @synthesize allowDynamicView=_allowDynamicView;
 @property(nonatomic) struct CGSize rasterizedImageSize; // @synthesize rasterizedImageSize=_rasterizedImageSize;
 @property(nonatomic) _Bool showAccessoryButtonIfHidden; // @synthesize showAccessoryButtonIfHidden=_showAccessoryButtonIfHidden;
 @property(nonatomic) _Bool hideAccessoryIfPossible; // @synthesize hideAccessoryIfPossible=_hideAccessoryIfPossible;
 @property(nonatomic) _Bool isSelectedPass; // @synthesize isSelectedPass=_isSelectedPass;
 @property(nonatomic) _Bool showFullPass; // @synthesize showFullPass=_showFullPass;
 - (void).cxx_destruct;
+- (void)prepareForReuse;
 - (_Bool)handleTapAtPoint:(struct CGPoint)arg1 andScrollWithBehavior:(int *)arg2 toOffset:(struct CGPoint *)arg3;
 - (_Bool)shouldShowAccessoryButton;
 - (int)accessoryTypeToShow;

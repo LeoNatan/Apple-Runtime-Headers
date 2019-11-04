@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (unsigned int)_legacyFlagsForFlags:(unsigned int)arg1;
 - (unsigned int)_legacyReasonForReason:(unsigned int)arg1;
+- (void)dealloc;
 - (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)invalidate;
 - (_Bool)acquire;

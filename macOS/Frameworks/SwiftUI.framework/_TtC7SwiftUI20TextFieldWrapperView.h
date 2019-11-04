@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(nonatomic, readonly) double lastBaselineOffsetFromBottom;
 @property(nonatomic, readonly) double firstBaselineOffsetFromTop;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (void)layout;
 @property(nonatomic, readonly) BOOL canBecomeKeyView;
 @property(nonatomic) BOOL enabled;

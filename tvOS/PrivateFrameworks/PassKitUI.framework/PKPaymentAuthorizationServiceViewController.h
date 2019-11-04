@@ -48,6 +48,7 @@
     _Bool _keyboardVisible;
     struct CGRect _keyboardFrame;
     struct CGRect _lastKeyboardFrame;
+    unsigned short _layoutRecursionCounter;
     UIViewController *_passcodeViewController;
     UIViewController *_passphraseViewController;
     _Bool _hostApplicationResignedActive;
@@ -103,7 +104,7 @@
 - (void)_setupShippingContact;
 - (void)_setupShippingAddress;
 - (void)_setupShippingMethods;
-- (void)_setupWithPaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 applicationIdentifier:(id)arg3 bundleIdentifier:(id)arg4 teamIdentifier:(id)arg5;
+- (void)_setupWithPaymentRequest:(id)arg1 relevantPassUniqueID:(id)arg2 fromAppWithLocalizedName:(id)arg3 applicationIdentifier:(id)arg4 bundleIdentifier:(id)arg5 teamIdentifier:(id)arg6;
 - (void)_handleModelUpdate;
 - (Class)_viewPresenterClassForDataItem:(id)arg1;
 - (Class)_tableViewClassForDataItem:(id)arg1;
@@ -171,7 +172,7 @@
 - (void)_updateCancelButtonEnabledForState:(unsigned long long)arg1 param:(id)arg2;
 - (_Bool)paymentAuthorizationStateMachine:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3 withParam:(id)arg4;
 - (void)invalidate;
-- (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 applicationIdentifier:(id)arg3 bundleIdentifier:(id)arg4 teamIdentifier:(id)arg5;
+- (id)handlePaymentRequest:(id)arg1 relevantPassUniqueID:(id)arg2 fromAppWithLocalizedName:(id)arg3 applicationIdentifier:(id)arg4 bundleIdentifier:(id)arg5 teamIdentifier:(id)arg6;
 - (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
 - (void)_updateLayoutForKeyboardAction:(CDUnknownBlockType)arg1;
 - (void)keyboardWillHide:(id)arg1;
@@ -187,6 +188,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_setVisibility:(unsigned char)arg1;
+- (void)_setAMPBarItem;
 - (void)viewDidLoad;
 - (void)_createSubviews;
 - (void)dealloc;

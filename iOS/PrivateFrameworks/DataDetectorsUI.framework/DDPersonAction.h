@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (id)menuActions;
 - (id)_menuActionsForPersonWithNumber:(id)arg1 email:(id)arg2;
 - (id)_menuActionsForBusinessWithNumber:(id)arg1;
-- (id)_businessItemForNumber:(id)arg1 messageable:(_Bool *)arg2;
 - (id)_appendActionsForPhoneNumbers:(id)arg1 emailAddresses:(id)arg2 class:(Class)arg3 filter:(id)arg4 scheme:(id)arg5;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult *)arg2 context:(id)arg3;
 

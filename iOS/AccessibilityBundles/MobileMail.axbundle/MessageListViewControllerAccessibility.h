@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_updateBackButtonImageWithCount:(unsigned long long)arg1;
 - (void)_configureCell:(id)arg1 itemID:(id)arg2;
 - (void)_axSetTriageActionForAnnouncement:(unsigned long long)arg1;
 - (unsigned long long)_axGetTriageActionForAnnouncement;

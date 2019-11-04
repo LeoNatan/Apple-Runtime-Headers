@@ -11,7 +11,7 @@
 }
 
 + (id)_axFocusedWindowSubviews;
-+ (void)_axTriggerNextContextMenuInteractionInQueue:(id)arg1 forElement:(id)arg2 customAction:(id)arg3;
++ (void)_axTriggerNextContextMenuInteractionInQueue:(id)arg1 forElement:(id)arg2 targetPointValue:(id)arg3;
 + (_Bool)_isSerializableAccessibilityElement;
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
@@ -60,7 +60,7 @@
 - (id)_accessibilityCheckForAllowedModalView:(struct CGPoint)arg1 event:(id)arg2;
 - (_Bool)_accessibilityViewIsBeingHitTested:(id)arg1;
 - (id)__accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (id)_accessibilityContextMenuActionForElement:(id)arg1;
+- (_Bool)_accessibilityShowContextMenuForElement:(id)arg1 targetPointValue:(id)arg2;
 - (_Bool)_accessibilityIsUserInteractionEnabledChain;
 - (double)_accessibilityMaxFuzzyHitTestDistance;
 - (_Bool)_accessibilityUseAccessibilityFrameForHittest;

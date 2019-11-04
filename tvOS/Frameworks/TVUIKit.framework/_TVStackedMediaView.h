@@ -26,6 +26,7 @@
     NSMutableArray *_videoPlayerViews;
     UIImageView *_fallbackImageView;
     UIImage *_previewImage;
+    NSString *_currentPreviewAssetPath;
     _TVStackedMediaLoader *_mediaLoader;
     UIViewPropertyAnimator *_videoViewsAnimator;
     long long _videoAnimatorConfiguration;
@@ -41,6 +42,7 @@
 @property(nonatomic) long long videoAnimatorConfiguration; // @synthesize videoAnimatorConfiguration=_videoAnimatorConfiguration;
 @property(retain, nonatomic) UIViewPropertyAnimator *videoViewsAnimator; // @synthesize videoViewsAnimator=_videoViewsAnimator;
 @property(retain, nonatomic) _TVStackedMediaLoader *mediaLoader; // @synthesize mediaLoader=_mediaLoader;
+@property(retain, nonatomic) NSString *currentPreviewAssetPath; // @synthesize currentPreviewAssetPath=_currentPreviewAssetPath;
 @property(retain, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
 @property(retain, nonatomic) UIImageView *fallbackImageView; // @synthesize fallbackImageView=_fallbackImageView;
 @property(retain, nonatomic) NSMutableArray *videoPlayerViews; // @synthesize videoPlayerViews=_videoPlayerViews;
@@ -73,9 +75,8 @@
 - (void)_positionFallbackImageView;
 - (void)_positionGimballingViews;
 - (void)_positionContentView;
-- (void)_unloadPreviewImage;
-- (void)_handlePreviewAssetFailure;
-- (void)_loadPreviewAssetIfNecessary;
+- (void)_unloadEntriesAndPreviewImage;
+- (_Bool)_loadPreviewAssetIfNecessary;
 - (void)_teardownDocumentViews;
 - (void)_createViewForEntry:(id)arg1 layerIndex:(unsigned long long)arg2;
 - (void)_createDocumentViewsIfNecessaryAnimated:(_Bool)arg1;

@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSImage, NSString, WFDailyRoutineShortcutSetupFlow;
+@class NSString, WFDailyRoutineShortcutSetupFlow, WFImage;
 
 @interface WFDailyRoutineShortcut : NSObject
 {
     NSString *_title;
     NSString *_subtitle;
-    NSImage *_bannerImage;
+    WFImage *_bannerImage;
     WFDailyRoutineShortcutSetupFlow *_setupFlow;
 }
 
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupFlow *setupFlow; // @synthesize setupFlow=_setupFlow;
-@property(readonly, copy, nonatomic) NSImage *bannerImage; // @synthesize bannerImage=_bannerImage;
+@property(readonly, copy, nonatomic) WFImage *bannerImage; // @synthesize bannerImage=_bannerImage;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;

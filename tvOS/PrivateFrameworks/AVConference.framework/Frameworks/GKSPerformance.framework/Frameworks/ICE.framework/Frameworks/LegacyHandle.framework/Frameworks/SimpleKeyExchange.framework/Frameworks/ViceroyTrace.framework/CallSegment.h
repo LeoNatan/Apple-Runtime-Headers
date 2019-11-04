@@ -63,6 +63,8 @@
     double _averageBWE;
     unsigned int _minBWE;
     unsigned int _maxBWE;
+    unsigned int _totalSuddenBandwidthDropCount;
+    unsigned int _totalMBLRampDownCount;
     double _averageRTT;
     unsigned int _poorConnectionFrequency;
     unsigned int _BBQueueTooLargeCount;
@@ -169,6 +171,8 @@
 @property unsigned int BBQueueTooLargeCount; // @synthesize BBQueueTooLargeCount=_BBQueueTooLargeCount;
 @property unsigned int poorConnectionFrequency; // @synthesize poorConnectionFrequency=_poorConnectionFrequency;
 @property double averageRTT; // @synthesize averageRTT=_averageRTT;
+@property unsigned int totalMBLRampDownCount; // @synthesize totalMBLRampDownCount=_totalMBLRampDownCount;
+@property unsigned int totalSuddenBandwidthDropCount; // @synthesize totalSuddenBandwidthDropCount=_totalSuddenBandwidthDropCount;
 @property unsigned int maxBWE; // @synthesize maxBWE=_maxBWE;
 @property unsigned int minBWE; // @synthesize minBWE=_minBWE;
 @property double averageBWE; // @synthesize averageBWE=_averageBWE;

@@ -8,7 +8,6 @@
 
 @interface _TtC7SwiftUIP33_DAAACAB0B71F0997824BE4289855D4428StateBox : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: host
     // Error parsing type: , name: isActive
     // Error parsing type: , name: phase
     // Error parsing type: , name: sampler

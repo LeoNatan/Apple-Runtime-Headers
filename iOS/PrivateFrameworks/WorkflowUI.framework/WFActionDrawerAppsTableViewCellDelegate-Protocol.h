@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class WFActionDrawerAppsTableViewCell, WFActionDrawerSection;
+@class NSString, WFActionDrawerAppsTableViewCell;
 
 @protocol WFActionDrawerAppsTableViewCellDelegate
-- (void)appsTableViewCell:(WFActionDrawerAppsTableViewCell *)arg1 didSelectSection:(WFActionDrawerSection *)arg2;
+- (void)appsTableViewCell:(WFActionDrawerAppsTableViewCell *)arg1 didSelectAppWithBundleIdentifier:(NSString *)arg2;
 @end
 

@@ -8,13 +8,14 @@
 
 #import <NanoAudioControl/MPAVRoutingControllerDelegate-Protocol.h>
 #import <NanoAudioControl/MPVolumeControllerDelegate-Protocol.h>
+#import <NanoAudioControl/MediaControlsVolumeControllerObserver-Protocol.h>
 #import <NanoAudioControl/NACVolumeController-Protocol.h>
 
-@class MPAVRoute, MPAVRoutingController, MPVolumeController, NACEventThrottler, NSCountedSet, NSString;
+@class MPAVRoute, MPAVRoutingController, MPVolumeController, MediaControlsVolumeController, NACEventThrottler, NSCountedSet, NSOrderedSet, NSString;
 @protocol NACVolumeControllerDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface NACVolumeControllerLocal : NSObject <MPVolumeControllerDelegate, MPAVRoutingControllerDelegate, NACVolumeController>
+@interface NACVolumeControllerLocal : NSObject <MPVolumeControllerDelegate, MPAVRoutingControllerDelegate, MediaControlsVolumeControllerObserver, NACVolumeController>
 {
     NSString *_audioCategory;
     MPAVRoute *_route;
@@ -29,6 +30,9 @@ __attribute__((visibility("hidden")))
     _Bool _monitoringHaptics;
     int _cachedHapticState;
     NSObject<OS_dispatch_queue> *_serialQueue;
+    MediaControlsVolumeController *_mediaControlsVolumeController;
+    NSOrderedSet *_lastNotifiedAvailableListeningModes;
+    NSString *_lastNotifiedCurrentListeningMode;
     _Bool _systemMuted;
     id <NACVolumeControllerDelegate> _delegate;
 }
@@ -49,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)beginObservingHapticState;
 - (void)updateCachedHapticState;
 @property(nonatomic) int hapticState;
+- (void)mediaControlsVolumeController:(id)arg1 didUpdateSplitRoute:(_Bool)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
@@ -56,6 +61,9 @@ __attribute__((visibility("hidden")))
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(_Bool)arg2;
 - (void)_ignoreHapticObservation;
+- (id)_mediaControlsVolumeController;
+@property(retain, nonatomic) NSString *currentListeningMode;
+@property(readonly, nonatomic) NSOrderedSet *availableListeningModes;
 - (void)allowUserToExceedEUVolumeLimit;
 - (void)setVolumeValue:(float)arg1 muted:(_Bool)arg2 overrideEULimit:(_Bool)arg3;
 - (void)setMuted:(_Bool)arg1;
@@ -67,6 +75,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;
 @property(readonly, nonatomic, getter=isMuted) _Bool muted;
 @property(readonly, nonatomic) float volumeValue;
+- (void)endObservingListeningModes;
+- (void)beginObservingListeningModes;
 - (void)endObservingHaptics;
 - (void)beginObservingHaptics;
 - (void)endObservingVolume;

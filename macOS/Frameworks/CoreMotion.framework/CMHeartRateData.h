@@ -6,9 +6,11 @@
 
 #import <CoreMotion/CMLogItem.h>
 
-@class NSDate;
+#import <CoreMotion/SRSampling-Protocol.h>
 
-@interface CMHeartRateData : CMLogItem
+@class NSDate, NSString;
+
+@interface CMHeartRateData : CMLogItem <SRSampling>
 {
     BOOL _error;
     double _heartRate;
@@ -27,12 +29,19 @@
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) double heartRate; // @synthesize heartRate=_heartRate;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithHeartRate:(double)arg1 confidence:(double)arg2 timestamp:(double)arg3 startDate:(id)arg4 error:(BOOL)arg5 dataSource:(long long)arg6 mode:(long long)arg7;
+- (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
+- (id)binarySampleRepresentation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

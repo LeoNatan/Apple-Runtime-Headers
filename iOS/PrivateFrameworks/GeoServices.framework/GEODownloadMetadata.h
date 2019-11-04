@@ -13,12 +13,14 @@
 @interface GEODownloadMetadata : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_environment;
     NSString *_etag;
     double _timestamp;
     NSString *_url;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_environment:1;
@@ -56,6 +58,8 @@
 @property(readonly, nonatomic) _Bool hasEtag;
 - (void)_readEtag;
 @property(nonatomic) double timestamp;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

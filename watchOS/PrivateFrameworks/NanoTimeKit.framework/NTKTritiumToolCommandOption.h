@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSString;
+@class NSArray, NSDate, NSMutableArray, NSString;
 
 @interface NTKTritiumToolCommandOption : NSObject <NSSecureCoding>
 {
@@ -22,18 +22,21 @@
     NSString *_rawStringValue;
     int _integerValue;
     NSString *_choice;
+    NSMutableArray *_selectedChoices;
     NSDate *_date;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)integerOptionWithKey:(id)arg1 keyDescription:(id)arg2;
 + (id)dateOptionWithKey:(id)arg1 keyDescription:(id)arg2;
++ (id)mulitpleChoicesOptionWithKey:(id)arg1 choices:(id)arg2 keyDescription:(id)arg3;
 + (id)choicesOptionWithKey:(id)arg1 choices:(id)arg2 keyDescription:(id)arg3;
 + (id)boolOptionWithKey:(id)arg1 keyDescription:(id)arg2;
 + (id)rawStringOptionWithKey:(id)arg1 keyDescription:(id)arg2;
 @property(readonly, nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(readonly, nonatomic) NSMutableArray *selectedChoices; // @synthesize selectedChoices=_selectedChoices;
 @property(readonly, nonatomic) NSString *choice; // @synthesize choice=_choice;
 @property(readonly, nonatomic) int integerValue; // @synthesize integerValue=_integerValue;
 @property(readonly, nonatomic) _Bool boolValue; // @synthesize boolValue=_boolValue;

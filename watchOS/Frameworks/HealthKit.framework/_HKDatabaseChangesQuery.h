@@ -16,12 +16,16 @@
     CDUnknownBlockType _resultsHandler;
     NSArray *_sampleTypes;
     HKQueryAnchor *_anchor;
+    int _changeDetailsQueryStrategy;
+    int _anchorStrategyChangeCountLimit;
 }
 
 + (void)configureServerInterface:(id)arg1;
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+@property(nonatomic) int anchorStrategyChangeCountLimit; // @synthesize anchorStrategyChangeCountLimit=_anchorStrategyChangeCountLimit;
+@property(nonatomic) int changeDetailsQueryStrategy; // @synthesize changeDetailsQueryStrategy=_changeDetailsQueryStrategy;
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, copy, nonatomic) NSArray *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
 @property(readonly, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;

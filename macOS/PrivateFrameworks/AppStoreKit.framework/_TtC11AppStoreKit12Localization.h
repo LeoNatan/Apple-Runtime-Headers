@@ -17,6 +17,7 @@
     // Error parsing type: , name: dateFormatters
     // Error parsing type: , name: dynamicDateFormatters
     // Error parsing type: , name: $__lazy_storage_$_relativeDateFormatter
+    // Error parsing type: , name: identifier
 }
 
 - (void).cxx_destruct;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak CNContactViewHostViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
 - (void)asyncShouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
+- (void)presentCancelConfirmationAlert;
 - (void)didExecuteDeleteFromDowntimeWhitelistAction;
 - (void)didExecuteClearRecentsDataAction;
 - (void)viewDidAppear;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)didCompleteWithContact:(id)arg1;
 - (void)updateEditing:(_Bool)arg1 doneButtonEnabled:(_Bool)arg2 doneButtonText:(id)arg3;
 - (_Bool)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
+- (void)performConfirmedCancel;
 - (void)toggleEditing;
 - (void)editCancel;
 - (void)didChangeToEditMode:(_Bool)arg1;

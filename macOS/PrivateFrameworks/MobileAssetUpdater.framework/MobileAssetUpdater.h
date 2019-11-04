@@ -18,9 +18,11 @@
     BOOL _assetDownloaded;
     BOOL _requireAssetMetadata;
     BOOL _overrideApplied;
+    BOOL _downloadOnCellularAllowed;
     CDUnknownBlockType _logger;
 }
 
+@property BOOL downloadOnCellularAllowed; // @synthesize downloadOnCellularAllowed=_downloadOnCellularAllowed;
 @property(copy) CDUnknownBlockType logger; // @synthesize logger=_logger;
 @property BOOL requireAssetMetadata; // @synthesize requireAssetMetadata=_requireAssetMetadata;
 @property(readonly) BOOL overrideApplied; // @synthesize overrideApplied=_overrideApplied;

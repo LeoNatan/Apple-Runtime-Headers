@@ -11,9 +11,6 @@
 }
 
 + (id)newTrustManager;
-+ (int)actionForEncryptionCertificate:(struct __SecCertificate *)arg1 address:(id)arg2;
-+ (int)actionForSigningIdentity:(struct __SecIdentity *)arg1 address:(id)arg2;
-+ (int)_actionForCertificate:(struct __SecCertificate *)arg1 policy:(struct __SecPolicy *)arg2 uncommentedAddress:(id)arg3;
 + (id)saveEncryptionCertificate:(struct __SecCertificate *)arg1 forAddress:(id)arg2;
 + (id)_removeCertificateForPersistent:(id)arg1;
 + (id)_addPersistentMapping:(id)arg1 forAddress:(id)arg2;

@@ -19,6 +19,7 @@
     _Bool __didTearOff;
     _Bool __remoteDismissing;
     _Bool __dimmingViewTapDismissing;
+    _Bool __keyboardShown;
     _Bool __isRemote;
     _Bool __presentsAtStandardHalfHeight;
     _Bool __allowsTearOff;
@@ -42,9 +43,10 @@
 @property(nonatomic, setter=_setIsRemote:) _Bool _isRemote; // @synthesize _isRemote=__isRemote;
 @property(readonly, nonatomic) UIDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(readonly, nonatomic) UIDropShadowView *dropShadowView; // @synthesize dropShadowView=_dropShadowView;
-@property(nonatomic) _Bool _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
+@property(nonatomic, getter=_isKeyboardShown, setter=_setKeyboardShown:) _Bool _keyboardShown; // @synthesize _keyboardShown=__keyboardShown;
+@property(nonatomic, getter=_isDimmingViewTapDismissing, setter=_setDimmingViewTapDismissing:) _Bool _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
 @property(retain, nonatomic) UIViewPropertyAnimator *_remoteDismissalPropertyAnimator; // @synthesize _remoteDismissalPropertyAnimator=__remoteDismissalPropertyAnimator;
-@property(nonatomic) _Bool _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
+@property(nonatomic, getter=_isRemoteDismissing, setter=_setRemoteDismissing:) _Bool _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
 @property(readonly, nonatomic) _UIRemoteViewController *_connectedRemoteViewController; // @synthesize _connectedRemoteViewController=__connectedRemoteViewController;
 @property(retain, nonatomic, setter=_setTearOffActivity:) NSUserActivity *_tearOffActivity; // @synthesize _tearOffActivity=__tearOffActivity;
 @property(nonatomic, setter=_setInitialTearOffPoint:) struct CGPoint _initialTearOffPoint; // @synthesize _initialTearOffPoint=__initialTearOffPoint;
@@ -59,12 +61,12 @@
 @property(nonatomic) struct CGRect frameOfPresentedViewInContainerView; // @synthesize frameOfPresentedViewInContainerView=_frameOfPresentedViewInContainerView;
 - (void).cxx_destruct;
 - (_Bool)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
-- (void)_completeInteractiveTransitionFromRemote:(_Bool)arg1 immediately:(_Bool)arg2 offset:(float)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)_completeInteractiveTransitionFromRemote:(_Bool)arg1 offset:(float)arg2 duration:(double)arg3 timingCurve:(id)arg4;
 - (void)_updateInteractiveTransitionFromRemoteWithProgress:(float)arg1 offset:(float)arg2;
 - (void)_startInteractiveTransitionFromRemoteWithProgress:(float)arg1 offset:(float)arg2;
 - (struct CGPoint)offsetForInterruptedAnimationInSheetInteraction:(id)arg1;
 - (void)sheetInteraction:(id)arg1 didChangeOffset:(struct CGPoint)arg2;
-- (void)_completeInteractiveTransition:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id)arg4;
+- (void)_completeInteractiveTransition:(_Bool)arg1 duration:(double)arg2 timingCurve:(id)arg3;
 - (void)_updateInteractiveTransitionWithProgress:(float)arg1;
 - (void)_startInteractiveTransitionWithProgress:(float)arg1;
 - (void)_updateAnimationController;
@@ -87,8 +89,8 @@
 - (void)_keyboardAboutToHide:(id)arg1;
 - (void)_keyboardAboutToChangeFrame:(id)arg1;
 - (void)_keyboardAboutToShow:(id)arg1;
-- (void)_layoutPresentedViewAndContainerViewIfNeeded;
-- (void)_avoidKeyboardAndAnimateSheetForNotification:(id)arg1;
+- (void)_handleKeyboardNotification:(id)arg1 aboutToHide:(_Bool)arg2;
+- (void)presentationTransitionDidEnd:(_Bool)arg1;
 - (void)presentationTransitionWillBegin;
 @property(readonly, nonatomic) _UISheetPresentationController *_childSheetPresentationController;
 @property(readonly, nonatomic) _UISheetPresentationController *_parentSheetPresentationController;
@@ -103,6 +105,7 @@
 - (void)_updateLayoutInfoContainerSafeAreaInsets;
 - (void)_containerViewSafeAreaInsetsDidChange;
 - (void)_containerViewBoundsDidChange;
+- (void)_resetRemoteDismissing;
 - (void)_tryToConnectToRemoteViewController:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_expectedRemoteViewController;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;

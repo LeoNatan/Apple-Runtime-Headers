@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)describeInto:(id)arg1;
 - (double)bg2ShadowAlpha;
 - (id)bg2ShadowTint;
+- (id)bg2ShadowEffect;
 - (id)bg2ShadowImage;
 - (id)bg2ShadowColor;
 - (BOOL)bg2HasShadow;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)bg2Enabled;
 - (double)bg1ShadowAlpha;
 - (id)bg1ShadowTint;
+- (id)bg1ShadowEffect;
 - (id)bg1ShadowImage;
 - (id)bg1ShadowColor;
 - (BOOL)bg1HasShadow;

@@ -9,7 +9,7 @@
 #import <Photos/PHBatchFetchingArrayDataSource-Protocol.h>
 #import <Photos/PHPerformChangesRequest-Protocol.h>
 
-@class CPLStatus, NSError, NSHashTable, NSManagedObjectID, NSMutableDictionary, NSProgress, NSString, NSURL, PHPerformChangesRequest, PHPersistentChangeToken, PHPhotoLibraryAppPrivateData, PLAssetsdClient, PLFileSystemVolume, PLLazyObject, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibrary, PLPhotoLibraryBundle;
+@class CPLStatus, NSError, NSHashTable, NSManagedObjectID, NSMutableDictionary, NSProgress, NSString, NSURL, PAImageConversionServiceClient, PAVideoConversionServiceClient, PHPerformChangesRequest, PHPersistentChangeToken, PHPhotoLibraryAppPrivateData, PLAssetsdClient, PLFileSystemVolume, PLLazyObject, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibrary, PLPhotoLibraryBundle;
 @protocol OS_dispatch_queue, PLPhotoAnalysisServiceTaxonomyResolver;
 
 @interface PHPhotoLibrary : NSObject <PHBatchFetchingArrayDataSource, PHPerformChangesRequest>
@@ -45,6 +45,8 @@
     PLPhotoLibraryBundle *_photoLibraryBundle;
     NSProgress *_postOpenProgress;
     PHPhotoLibraryAppPrivateData *_appPrivateData;
+    PAImageConversionServiceClient *_imageConversionServiceClient;
+    PAVideoConversionServiceClient *_videoConversionServiceClient;
 }
 
 + (id)sharedContactStore;
@@ -65,6 +67,7 @@
 + (id)stringFromPHPhotoLibraryType:(unsigned short)arg1;
 + (void)assertTransaction;
 + (BOOL)isSystemPhotoLibraryURL:(id)arg1;
++ (const char *)systemPhotoLibraryAvailableNotificationName;
 + (const char *)systemPhotoLibraryURLChangeNotificationName;
 + (BOOL)setSystemPhotoLibraryURL:(id)arg1 error:(id *)arg2;
 + (id)systemPhotoLibraryURL;
@@ -81,6 +84,8 @@
 + (BOOL)hasSharedPhotoLibrary;
 + (void)assertRunningInExtension;
 + (BOOL)shouldDisplayMergeCandidates:(id)arg1 forPerson:(id)arg2;
+@property(retain, nonatomic) PAVideoConversionServiceClient *videoConversionServiceClient; // @synthesize videoConversionServiceClient=_videoConversionServiceClient;
+@property(retain, nonatomic) PAImageConversionServiceClient *imageConversionServiceClient; // @synthesize imageConversionServiceClient=_imageConversionServiceClient;
 @property(nonatomic) BOOL clearsOIDCacheAfterFetchResultDealloc; // @synthesize clearsOIDCacheAfterFetchResultDealloc=_clearsOIDCacheAfterFetchResultDealloc;
 @property(readonly, nonatomic) PHPhotoLibraryAppPrivateData *appPrivateData; // @synthesize appPrivateData=_appPrivateData;
 @property(readonly, nonatomic) NSProgress *postOpenProgress; // @synthesize postOpenProgress=_postOpenProgress;

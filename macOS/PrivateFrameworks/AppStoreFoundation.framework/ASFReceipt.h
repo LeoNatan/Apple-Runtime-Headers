@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSMutableArray, NSNumber, NSString;
+@class NSArray, NSData, NSDate, NSMutableArray, NSNumber, NSString;
 
 @interface ASFReceipt : NSObject
 {
@@ -76,6 +76,7 @@
 - (BOOL)_checkArray:(struct __CFArray *)arg1 containsCertificateWithOID:(struct __CFString *)arg2;
 - (BOOL)_anchorTrust:(struct __SecTrust *)arg1 toRootCertificateIn:(struct __CFArray *)arg2;
 @property(readonly) NSString *receiptDataString;
+@property(readonly) NSData *receiptData;
 @property(readonly) BOOL isVPPLicensed;
 @property(readonly) BOOL isRevoked;
 @property(readonly) BOOL isDSIDless;

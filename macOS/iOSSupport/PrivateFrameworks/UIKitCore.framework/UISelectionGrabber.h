@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)dotIsVisibleInDocument:(struct CGRect)arg1;
 - (BOOL)clipDot:(struct CGRect)arg1;
 - (void)removeFromSuperview;
-- (void)setAlpha:(double)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)autoscrolled;
 - (BOOL)inputViewIsChanging;

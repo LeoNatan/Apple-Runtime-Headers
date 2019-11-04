@@ -19,11 +19,13 @@
     id <HFIconDescriptor> _iconDescriptor;
     NSString *_associatedServiceType;
     int _configurationState;
+    NSString *_accessoryName;
     HFNamingComponents *_namingComponent;
 }
 
 + (Class)homeKitRepresentationClass;
 @property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
+@property(copy, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
 @property(nonatomic) int configurationState; // @synthesize configurationState=_configurationState;
 @property(copy, nonatomic) NSString *associatedServiceType; // @synthesize associatedServiceType=_associatedServiceType;
 @property(retain, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;

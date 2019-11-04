@@ -6,9 +6,9 @@
 
 #import <SiriVOX/NSObject-Protocol.h>
 
-@class NSArray;
+@class NSArray, SARemoteDevice;
 
 @protocol SVXExpressionParsingServing <NSObject>
-- (void)parseExpressions:(NSArray *)arg1 reply:(void (^)(BOOL, NSArray *))arg2;
+- (void)parseExpressions:(NSArray *)arg1 targetDevice:(SARemoteDevice *)arg2 reply:(void (^)(BOOL, NSArray *))arg3;
 @end
 

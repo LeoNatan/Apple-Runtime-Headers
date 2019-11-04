@@ -222,7 +222,7 @@
 - (void)renderInContext:(struct CGContext *)arg1;
 - (void)setContentsScale:(double)arg1;
 - (void)dealloc;
-- (id)initShouldRasterize:(_Bool)arg1 inBackground:(_Bool)arg2 contentScale:(double)arg3;
+- (id)initShouldRasterize:(_Bool)arg1 inBackground:(_Bool)arg2 contentScale:(double)arg3 auditToken:(id)arg4;
 - (void)activateInternalSettings;
 @property(nonatomic) _Bool allowDatelineWraparound;
 - (void)setCenterCoordinate:(CDStruct_c3b9c2ee)arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;

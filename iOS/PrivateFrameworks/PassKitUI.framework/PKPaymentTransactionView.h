@@ -21,6 +21,7 @@
     _Bool _hideRewardsBackground;
     _Bool _showsAvatarView;
     _Bool _showsDisclosureView;
+    _Bool _strokeImage;
     UIColor *_primaryColor;
     UIColor *_secondaryColor;
     NSString *_primaryString;
@@ -32,6 +33,7 @@
 
 + (id)defaultTertiaryLabelFont;
 @property(readonly, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
+@property(nonatomic) _Bool strokeImage; // @synthesize strokeImage=_strokeImage;
 @property(retain, nonatomic) UIImage *primaryImage; // @synthesize primaryImage=_primaryImage;
 @property(nonatomic) _Bool showsDisclosureView; // @synthesize showsDisclosureView=_showsDisclosureView;
 @property(nonatomic) _Bool showsAvatarView; // @synthesize showsAvatarView=_showsAvatarView;

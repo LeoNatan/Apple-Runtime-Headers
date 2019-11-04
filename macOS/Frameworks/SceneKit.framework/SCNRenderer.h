@@ -220,6 +220,8 @@
 - (id)metalLayer;
 - (void)setDisableOverlays:(BOOL)arg1;
 - (BOOL)disableOverlays;
+- (void)resolvedBackgroundColorDidChange:(struct CGColor *)arg1;
+- (void)_c3dBackgroundColorDidChange;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
 @property(retain, nonatomic) SCNScene *scene;

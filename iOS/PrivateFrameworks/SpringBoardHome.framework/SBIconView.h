@@ -16,7 +16,7 @@
 #import <SpringBoardHome/UIGestureRecognizerDelegate-Protocol.h>
 #import <SpringBoardHome/_UISettingsKeyObserver-Protocol.h>
 
-@class NSArray, NSDate, NSHashTable, NSMapTable, NSString, SBCloseBoxView, SBFParallaxSettings, SBFolderIcon, SBFolderIconImageCache, SBHIconImageCache, SBHRecentsDocumentExtensionProvider, SBIcon, SBIconImageCrossfadeView, SBIconImageView, UIColor, UIContextMenuConfiguration, UIContextMenuInteraction, UIDragInteraction, UIFont, UIImage, UILongPressGestureRecognizer, UITapGestureRecognizer, UIViewPropertyAnimator, _UILegibilitySettings, _UIStatesFeedbackGenerator;
+@class NSArray, NSCountedSet, NSDate, NSHashTable, NSMapTable, NSString, NSURL, SBCloseBoxView, SBFParallaxSettings, SBFolderIcon, SBFolderIconImageCache, SBHIconImageCache, SBHRecentsDocumentExtensionProvider, SBIcon, SBIconImageCrossfadeView, SBIconImageView, UIColor, UIContextMenuConfiguration, UIContextMenuInteraction, UIDragInteraction, UIFont, UIImage, UILongPressGestureRecognizer, UITapGestureRecognizer, UIViewPropertyAnimator, _UILegibilitySettings, _UIStatesFeedbackGenerator;
 @protocol BSInvalidatable, SBIconAccessoryView, SBIconContinuityInfo, SBIconLabelAccessoryView, SBIconLabelView, SBIconListLayout, SBIconListLayoutProvider, SBIconViewDelegate;
 
 @interface SBIconView : UIView <_UISettingsKeyObserver, UIGestureRecognizerDelegate, UIDragInteractionDelegate, SBCloseBoxViewDelegate, UIContextMenuInteractionDelegate, SBSHardwareButtonEventConsuming, SBIconObserver, SBReusableView, SBIconAccessoryInfoProvider>
@@ -62,10 +62,13 @@
     unsigned int _disableContextMenuInteraction:1;
     unsigned int _contextMenuInteractionPending:1;
     unsigned int _contextMenuInteractionActive:1;
+    unsigned int _disallowsBlockedForScreenTimeExpiration:1;
+    unsigned int _imageLoadingBehavior:2;
     double _iconContentScale;
     UIView *_scalingContainer;
     struct CGRect _visibleImageRect;
     NSHashTable *_observers;
+    NSCountedSet *_forbidEditingModeReasons;
     struct SBIconImageInfo _iconImageInfo;
     UIFont *_labelFont;
     SBHRecentsDocumentExtensionProvider *_recentsDocumentExtensionProvider;
@@ -128,6 +131,7 @@
 + (_Bool)supportsPreviewInteraction;
 + (double)iconLiftAlpha;
 + (long long)continuityBadgeTypeForContinuityInfo:(id)arg1;
++ (unsigned long long)defaultImageLoadingBehavior;
 + (_Bool)isIconTapGestureRecognizer:(id)arg1;
 + (void)activateShortcut:(id)arg1 withBundleIdentifier:(id)arg2 forIconView:(id)arg3;
 + (struct CGSize)defaultIconViewSize;
@@ -157,7 +161,7 @@
 @property(copy, nonatomic) NSDate *lastTouchDownDate; // @synthesize lastTouchDownDate=_lastTouchDownDate;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-@property(retain, nonatomic) NSArray *applicationShortcutItems; // @synthesize applicationShortcutItems=_applicationShortcutItems;
+@property(copy, nonatomic) NSArray *applicationShortcutItems; // @synthesize applicationShortcutItems=_applicationShortcutItems;
 @property(nonatomic) double iconLabelAlpha; // @synthesize iconLabelAlpha=_iconLabelAlpha;
 @property(nonatomic) double iconAccessoryAlpha; // @synthesize iconAccessoryAlpha=_iconAccessoryAlpha;
 @property(nonatomic) double iconImageAlpha; // @synthesize iconImageAlpha=_iconImageAlpha;
@@ -166,6 +170,8 @@
 @property(copy, nonatomic) NSString *location; // @synthesize location=_iconLocation;
 @property(nonatomic) __weak id <SBIconViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)endForbiddingEditingModeWithReason:(id)arg1;
+- (void)startForbiddingEditingModeWithReason:(id)arg1;
 - (void)iconImageDidUpdate:(id)arg1;
 - (void)iconLaunchEnabledDidChange:(id)arg1;
 - (void)iconAccessoriesDidUpdate:(id)arg1;
@@ -179,8 +185,7 @@
 - (void)cleanupAfterFloatyFolderCrossfade;
 - (void)setFloatyFolderCrossfadeFraction:(double)arg1;
 - (void)prepareToCrossfadeWithFloatyFolderView:(id)arg1 allowFolderInteraction:(_Bool)arg2;
-- (void)iconDropDidComplete;
-- (void)prepareForIconDrop;
+- (id)prepareForIconDrop;
 - (void)setBackgroundAndIconGridImageAlpha:(double)arg1;
 - (void)setIconGridImageAlpha:(double)arg1;
 @property(readonly, nonatomic, getter=isAnimatingScrolling) _Bool animatingScrolling;
@@ -208,12 +213,14 @@
 - (void)_updateProgressAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) long long progressState;
 - (void)configureMatchingIconView:(id)arg1;
+- (void)_removeUnknownSubviews;
 - (void)prepareForReuse;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)_delegateTapAllowed;
 - (void)_delegateTouchEnded:(_Bool)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+@property(nonatomic) _Bool allowsBlockedForScreenTimeExpiration;
 - (void)_closeBoxTapGestureChanged:(id)arg1;
 - (void)_setShowingCloseBox:(_Bool)arg1;
 - (_Bool)_isShowingCloseBox;
@@ -234,7 +241,6 @@
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (_Bool)closeBoxShouldTrack:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
@@ -263,7 +269,9 @@
 - (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
+- (id)matchingIconViewByAddingConfigurationOptions:(unsigned long long)arg1 removingConfigurationOptions:(unsigned long long)arg2;
 - (id)matchingIconViewWithConfigurationOptions:(unsigned long long)arg1;
+@property(readonly, nonatomic) _Bool canBeginDrags;
 - (void)cancelDragLift;
 - (void)cancelDrag;
 - (void)cleanUpAfterDropAnimation;
@@ -326,6 +334,9 @@
 - (id)_legibilitySettingsWithStyle:(long long)arg1 primaryColor:(id)arg2;
 - (id)_legibilitySettingsWithPrimaryColor:(id)arg1;
 - (id)_legibilitySettingsWithParameters:(id)arg1;
+@property(readonly, nonatomic) double baselineOffsetFromBottom;
+@property(readonly, nonatomic) double lastLineBaseline;
+@property(readonly, nonatomic) double firstLineBaseline;
 - (void)_updateLabel;
 - (id)_labelImageParameters;
 - (void)configureLabelImageParametersBuilder:(id)arg1;
@@ -351,24 +362,25 @@
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)hideActivatingOrDismissingPreview;
-- (id)_fetchApplicationShortcutItems;
+@property(readonly, copy, nonatomic) NSArray *effectiveApplicationShortcutItems;
 - (void)dismissContextMenuWithCompletion:(CDUnknownBlockType)arg1;
 - (void)earlyTerminateContextMenuDismissAnimation;
+- (void)cleanupAnimatorCompletionForConfiguration:(id)arg1;
 - (CDUnknownBlockType)pendingAnimatorCompletionForConfiguration:(id)arg1;
 - (void)addPendingAnimatorCompletionForConfiguration:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (_Bool)shouldActivateApplicationShortcutItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)applicationShortcutWidgetBundleIdentifier;
-- (id)applicationBundleIdentifier;
-- (id)applicationBundleURL;
+@property(readonly, copy, nonatomic) NSString *applicationBundleIdentifierForShortcuts;
+@property(readonly, copy, nonatomic) NSURL *applicationBundleURLForShortcuts;
 - (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
 - (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
-- (id)_contextMenuInteraction:(id)arg1 previewForIconWithConfigurationOptions:(unsigned long long)arg2;
+- (id)_contextMenuInteraction:(id)arg1 previewForIconWithConfigurationOptions:(unsigned long long)arg2 highlighted:(_Bool)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
 - (_Bool)_contextMenuInteractionShouldAllowDragAfterDismiss:(id)arg1;
 - (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
+- (id)_contextMenuInteraction:(id)arg1 overrideSuggestedActionsForConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
-- (void)_activateAndCoolDownContextMenuInteractionNegativeHaptic;
-- (void)_warmUpContextMenuInteractionNegativeHaptic;
 - (void)_handleAddWidgetRequest:(id)arg1;
 - (void)_unregisterForAddWidgetRequests;
 - (void)_registerForAddWidgetRequestsIfNecessary;
@@ -408,8 +420,10 @@
 @property(nonatomic, getter=isContextMenuInteractionPending) _Bool contextMenuInteractionPending;
 - (_Bool)isContextMenuInteractionActiveOrPending;
 - (void)setContinuityInfo:(id)arg1 animated:(_Bool)arg2;
+@property(nonatomic) unsigned long long imageLoadingBehavior;
 @property(nonatomic, getter=isInDock) _Bool inDock;
 @property(nonatomic) unsigned long long configurationOptions;
+- (id)effectiveListLayoutProvider;
 @property(retain, nonatomic) SBIcon *icon;
 @property(nonatomic) _Bool showsSquareCorners;
 - (void)setIcon:(id)arg1 animated:(_Bool)arg2;
@@ -430,6 +444,7 @@
 @property(readonly, nonatomic) id <SBIconListLayout> listLayout;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithConfigurationOptions:(unsigned long long)arg1 listLayoutProvider:(id)arg2;
 - (id)initWithConfigurationOptions:(unsigned long long)arg1;
 
 // Remaining properties

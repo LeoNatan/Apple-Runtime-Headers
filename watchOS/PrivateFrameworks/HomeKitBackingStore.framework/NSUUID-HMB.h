@@ -6,15 +6,16 @@
 
 #import <Foundation/NSUUID.h>
 
-#import <HomeKitBackingStore/HMBModelQueryableParameterCoder-Protocol.h>
+#import <HomeKitBackingStore/HMBQueryableModelFieldCoder-Protocol.h>
 
 @class NSString;
 
-@interface NSUUID (HMB) <HMBModelQueryableParameterCoder>
-+ (id)hmbDecodeQueryableParameterFromData:(id)arg1;
+@interface NSUUID (HMB) <HMBQueryableModelFieldCoder>
 + (id)hmbUUIDFromData:(id)arg1;
++ (id)hmbDescriptionForEncodedQueryableVariable:(id)arg1;
++ (id)hmbDecodeQueryableParameter:(id)arg1;
++ (id)hmbEncodeQueryableParameter:(id)arg1;
 + (id)hmbUUIDWithSQLite3Column:(struct sqlite3_stmt *)arg1 column:(int)arg2;
-- (id)hmbEncodeQueryableParameter;
 - (id)data;
 
 // Remaining properties

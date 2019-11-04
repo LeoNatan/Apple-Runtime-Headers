@@ -81,6 +81,7 @@
 + (void)deleteCloudSharedAlbumFromServer:(id)arg1;
 + (void)_userDidDeleteSharedAlbum:(id)arg1;
 + (void)publishCloudSharedAlbumToServer:(id)arg1;
++ (void)deleteLocalAlbumsForMSASAlbumsWithGUID:(id)arg1 inviterAddress:(id)arg2;
 + (void)deleteLocalAlbumsForMSASAlbumsWithGUIDs:(id)arg1;
 + (void)resetAllLocalState;
 + (void)updateLocalAlbumMetadataForMSASAlbum:(id)arg1 info:(id)arg2;

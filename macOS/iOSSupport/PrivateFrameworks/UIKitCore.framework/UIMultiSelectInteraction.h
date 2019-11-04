@@ -17,6 +17,12 @@
 {
     BOOL _isScrollView;
     BOOL _delegateConformsToProtocol;
+    struct {
+        unsigned int respondsToShouldPreventDragLiftGesture:1;
+        unsigned int respondsToShouldAllowSelectionExtensionAtPoint:1;
+        unsigned int respondsToDidCancelMultiSelectInteraction:1;
+        unsigned int respondsToShouldBeginMultiSelectInteraction:1;
+    } _optionalDelegateFlags;
     _UIMultiSelectOneFingerPanGesture *_multiSelectModePan;
     UIPanGestureRecognizer *_multiFingerPan;
     UITapGestureRecognizer *_multiFingerTap;
@@ -45,6 +51,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)_triggeredLegacyPathInsteadForGestureRecognizer:(id)arg1 velocity:(struct CGPoint)arg2 shouldBegin:(out char *)arg3;
 - (BOOL)multiSelectOneFingerPanGestureShouldPreventDragInteractionGesture:(id)arg1;
 - (unsigned long long)_currentExtensionTypeForOneFingerTapGesture:(id)arg1;
 - (BOOL)_isCommandKeyBeingHeldWithGesture:(id)arg1;
@@ -60,6 +67,7 @@
 @property(nonatomic) double singleTouchPanGestureHysteresis; // @dynamic singleTouchPanGestureHysteresis;
 - (id)_interactionDelegate;
 - (void)_updateDelegateConformance;
+- (long long)_gestureTypeForGestureInstance:(id)arg1;
 - (id)init;
 
 // Remaining properties

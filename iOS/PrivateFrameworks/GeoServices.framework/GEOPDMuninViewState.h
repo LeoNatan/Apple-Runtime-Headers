@@ -13,9 +13,11 @@
 @interface GEOPDMuninViewState : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_158f0f88 _readerMark;
     GEOPDCameraFrame *_cameraFrame;
     GEOPDLocationInfo *_locationInfo;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_cameraFrame:1;
         unsigned int read_locationInfo:1;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) GEOPDCameraFrame *cameraFrame;
 @property(readonly, nonatomic) _Bool hasCameraFrame;
 - (void)_readCameraFrame;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

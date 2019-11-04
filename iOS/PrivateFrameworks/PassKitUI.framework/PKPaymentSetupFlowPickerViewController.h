@@ -50,7 +50,7 @@
 - (void)_prepareViewControllerForProvsioningFlow:(id)arg1;
 - (void)productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)_didSelectProducts:(id)arg1;
+- (void)_didSelectProducts:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)addPickerSection:(id)arg1;
 - (void)addPickerItems:(id)arg1 toSection:(id)arg2;
 - (void)addPickerItem:(id)arg1 toSection:(id)arg2;

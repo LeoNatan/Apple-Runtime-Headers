@@ -21,6 +21,8 @@
     NSNumber *_friendBiDirectional;
     NSNumber *_friendPlayedWith;
     NSNumber *_friendPlayedNearby;
+    NSString *_lastPersonalizationVersionDisplayed;
+    unsigned int _lastPrivacyNoticeVersionDisplayed;
     unsigned short _numberOfFriends;
     unsigned short _numberOfGames;
     unsigned short _numberOfFriendsInCommon;
@@ -48,6 +50,8 @@
 + (id)secureCodedPropertyKeys;
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *monogramComponents; // @synthesize monogramComponents=_monogramComponents;
+@property(nonatomic) unsigned int lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
+@property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(retain, nonatomic) NSNumber *friendPlayedNearby; // @synthesize friendPlayedNearby=_friendPlayedNearby;
 @property(retain, nonatomic) NSNumber *friendPlayedWith; // @synthesize friendPlayedWith=_friendPlayedWith;
 @property(retain, nonatomic) NSNumber *friendBiDirectional; // @synthesize friendBiDirectional=_friendBiDirectional;

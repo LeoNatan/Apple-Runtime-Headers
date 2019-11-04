@@ -12,27 +12,29 @@
 
 @interface HMDNetworkRouterFirewallRuleConfiguration : HMFObject <HMFLogging>
 {
+    BOOL _fullAccessLAN;
+    BOOL _fullAccessWAN;
     HMDNetworkRouterFirewallRuleAccessoryIdentifier *_accessoryIdentifier;
     NSDate *_lastModifiedTime;
     NSArray *_lanRules;
     NSArray *_wanRules;
 }
 
-+ (BOOL)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3 rules:(id *)arg4;
++ (id)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3;
 + (BOOL)__decodeFullAccessFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 fullAccess:(char *)arg3;
 + (BOOL)__decodeNetworkDeclarationsFromJSONDictionary:(struct NSDictionary *)arg1 networkDeclarations:(struct NSDictionary **)arg2;
 + (id)logCategory;
+@property(readonly, nonatomic, getter=hasFullAccessToWAN) BOOL fullAccessWAN; // @synthesize fullAccessWAN=_fullAccessWAN;
 @property(readonly, nonatomic) NSArray *wanRules; // @synthesize wanRules=_wanRules;
+@property(readonly, nonatomic, getter=hasFullAccessToLAN) BOOL fullAccessLAN; // @synthesize fullAccessLAN=_fullAccessLAN;
 @property(readonly, nonatomic) NSArray *lanRules; // @synthesize lanRules=_lanRules;
 @property(readonly, nonatomic) NSDate *lastModifiedTime; // @synthesize lastModifiedTime=_lastModifiedTime;
 @property(readonly, nonatomic) HMDNetworkRouterFirewallRuleAccessoryIdentifier *accessoryIdentifier; // @synthesize accessoryIdentifier=_accessoryIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *prettyJSONDictionary;
 - (id)attributeDescriptions;
-@property(readonly, nonatomic, getter=hasFullAccessToWAN) BOOL fullAccessWAN;
-@property(readonly, nonatomic, getter=hasFullAccessToLAN) BOOL fullAccessLAN;
 - (id)initWithAccessoryIdentifier:(id)arg1 jsonDictionary:(struct NSDictionary *)arg2;
-- (id)initWithAccessoryIdentifier:(id)arg1 lastModifiedTime:(id)arg2 lanRules:(id)arg3 wanRules:(id)arg4;
+- (id)initWithAccessoryIdentifier:(id)arg1 lastModifiedTime:(id)arg2 fullAccessLAN:(BOOL)arg3 lanRules:(id)arg4 fullAccessWAN:(BOOL)arg5 wanRules:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

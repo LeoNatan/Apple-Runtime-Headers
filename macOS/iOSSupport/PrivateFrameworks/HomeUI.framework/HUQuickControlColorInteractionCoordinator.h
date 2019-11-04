@@ -21,6 +21,7 @@
 @property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 - (void).cxx_destruct;
 - (void)cancelButtonTappedToDismissColorViewController;
+- (void)controlView:(id)arg1 didSelectColorAtIndexPath:(id)arg2;
 - (void)presentFullColorViewForControlView:(id)arg1 selectedColorIndexPath:(id)arg2;
 - (void)hideAuxiliaryViewForControlView:(id)arg1;
 - (void)controlView:(id)arg1 showAuxiliaryView:(id)arg2;

@@ -21,6 +21,7 @@
 @interface MPIdentifierSet : NSObject <MPMutableLocalLibraryIdentifiers, MPMutablePersonalStoreIdentifiers, MPMutableUniversalStoreIdentifiers, MPMutableRadioIdentifiers, MPMutableIdentifierSet, _MPStateDumpPropertyListTransformable, NSCopying, NSSecureCoding>
 {
     BOOL _shouldExcludeFromShuffle;
+    BOOL _placeholder;
     NSString *_databaseID;
     long long _persistentID;
     long long _containedPersistentID;
@@ -51,6 +52,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)emptyIdentifierSet;
+@property(nonatomic, getter=isPlaceholder) BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) BOOL shouldExcludeFromShuffle; // @synthesize shouldExcludeFromShuffle=_shouldExcludeFromShuffle;
 @property(readonly, nonatomic) MPModelKind *modelKind; // @synthesize modelKind=_modelKind;
 @property(copy, nonatomic) NSString *vendorID; // @synthesize vendorID=_vendorID;

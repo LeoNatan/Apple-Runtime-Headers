@@ -20,7 +20,6 @@
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)size:(id)arg1;
 - (_Bool)canBeShownFromSuspendedState;
-- (_Bool)needsToShowToolbarInPrefsAppRoot;
 - (void)loadView;
 
 @end

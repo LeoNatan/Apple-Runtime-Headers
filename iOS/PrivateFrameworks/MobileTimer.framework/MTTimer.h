@@ -65,6 +65,8 @@
 - (void)_setDuration:(double)arg1;
 @property(readonly, nonatomic) NSString *timerIDString;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic, getter=isFiring) _Bool firing;
+- (void)setFiring:(_Bool)arg1;
 - (id)nextTriggerAfterDate:(id)arg1;
 - (id)nextTrigger;
 - (long long)compare:(id)arg1;

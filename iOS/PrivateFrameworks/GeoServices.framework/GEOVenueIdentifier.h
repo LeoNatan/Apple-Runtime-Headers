@@ -14,6 +14,8 @@
 {
     _Bool _hasVenueID;
     unsigned long long _venueID;
+    _Bool _hasFeatureID;
+    unsigned long long _featureID;
     _Bool _hasBusinessID;
     unsigned long long _businessID;
     NSArray *_componentIdentifiers;
@@ -21,19 +23,19 @@
 }
 
 + (id)componentIdentifiersFromVenueIdentifiers:(id)arg1;
-+ (unsigned long long)businessIDFromVenueIdentifiers:(id)arg1;
-+ (unsigned long long)venueIdFromVenueIdentifiers:(id)arg1;
 @property(readonly, nonatomic) NSArray *componentIdentifiers; // @synthesize componentIdentifiers=_componentIdentifiers;
 @property(readonly, nonatomic) unsigned long long businessID; // @synthesize businessID=_businessID;
 @property(readonly, nonatomic, getter=_hasBusinessID) _Bool hasBusinessID; // @synthesize hasBusinessID=_hasBusinessID;
+@property(readonly, nonatomic) unsigned long long featureID; // @synthesize featureID=_featureID;
+@property(readonly, nonatomic, getter=_hasFeatureID) _Bool hasFeatureID; // @synthesize hasFeatureID=_hasFeatureID;
 @property(readonly, nonatomic) unsigned long long venueID; // @synthesize venueID=_venueID;
 @property(readonly, nonatomic, getter=_hasVenueID) _Bool hasVenueID; // @synthesize hasVenueID=_hasVenueID;
 - (void).cxx_destruct;
 - (id)placeDataVenueIdentifierForVenue;
 - (id)placeDataVenueIdentifier;
-- (id)initWithVenueID:(unsigned long long)arg1 businessID:(unsigned long long)arg2;
+- (id)initWithVenueID:(unsigned long long)arg1 featureID:(unsigned long long)arg2 businessID:(unsigned long long)arg3;
 - (id)initWithVenueID:(unsigned long long)arg1;
-- (id)initWithVenueID:(unsigned long long)arg1 businessID:(unsigned long long)arg2 componentIdentifiers:(id)arg3;
+- (id)initWithVenueID:(unsigned long long)arg1 featureID:(unsigned long long)arg2 businessID:(unsigned long long)arg3 componentIdentifiers:(id)arg4;
 - (id)initWithVenueID:(unsigned long long)arg1 componentIdentifiers:(id)arg2;
 - (id)initWithVenueIdentifiers:(id)arg1;
 - (id)init;

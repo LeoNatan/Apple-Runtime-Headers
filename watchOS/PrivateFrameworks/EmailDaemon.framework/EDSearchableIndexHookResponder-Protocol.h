@@ -6,12 +6,12 @@
 
 #import <EmailDaemon/NSObject-Protocol.h>
 
-@class EDSearchableIndexUpdates, NSArray;
+@class EDPersistenceDatabaseGenerationWindow, EDSearchableIndexUpdates, NSArray;
 
 @protocol EDSearchableIndexHookResponder <NSObject>
 
 @optional
-- (void)searchableIndexDidAssignIndexingType:(int)arg1 forIdentifiers:(NSArray *)arg2;
-- (void)searchableIndexDidAssignTransaction:(long long)arg1 toUpdates:(EDSearchableIndexUpdates *)arg2 withMissingIdentifiers:(NSArray *)arg3;
+- (void)searchableIndexDidAssignIndexingType:(int)arg1 forIdentifiers:(NSArray *)arg2 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg3;
+- (void)searchableIndexDidAssignTransaction:(long long)arg1 toUpdates:(EDSearchableIndexUpdates *)arg2 withMissingIdentifiers:(NSArray *)arg3 generationWindow:(EDPersistenceDatabaseGenerationWindow *)arg4;
 @end
 

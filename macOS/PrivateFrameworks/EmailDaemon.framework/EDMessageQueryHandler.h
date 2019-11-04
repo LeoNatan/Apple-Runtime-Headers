@@ -11,12 +11,13 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
 @class EDMessageQueryHelper, EFCancelationToken, NSMutableDictionary, NSObject, NSString;
-@protocol EFScheduler, OS_dispatch_queue;
+@protocol EDRemoteSearchProvider, EFScheduler, OS_dispatch_queue;
 
 @interface EDMessageQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
     BOOL _didCancel;
     BOOL _isInitialized;
+    id <EDRemoteSearchProvider> _remoteSearchProvider;
     EDMessageQueryHelper *_currentQueryHelper;
     id <EFScheduler> _scheduler;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
 @property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) EDMessageQueryHelper *currentQueryHelper; // @synthesize currentQueryHelper=_currentQueryHelper;
+@property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 - (void).cxx_destruct;
 - (id)findMessagesByPreviousObjectIDForAddedMessages:(id)arg1 helper:(id)arg2;
 - (void)_oldestMessagesByMailboxObjectIDsWasUpdated;
@@ -48,7 +50,7 @@
 - (void)queryHelper:(id)arg1 conversationIDDidChangeForMessages:(id)arg2 fromConversationID:(long long)arg3;
 - (void)queryHelper:(id)arg1 didDeleteMessages:(id)arg2;
 - (void)queryHelper:(id)arg1 didUpdateMessages:(id)arg2 forKeyPaths:(id)arg3;
-- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3;
+- (void)queryHelper:(id)arg1 objectIDDidChangeForMessage:(id)arg2 oldObjectID:(id)arg3 oldConversationID:(long long)arg4;
 - (void)queryHelper:(id)arg1 messageFlagsDidChangeForMessages:(id)arg2;
 - (void)queryHelper:(id)arg1 didAddMessages:(id)arg2;
 - (void)queryHelperDidFindAllMessages:(id)arg1;
@@ -63,7 +65,7 @@
 - (void)dealloc;
 - (void)cancel;
 - (void)start;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 remoteSearchProvider:(id)arg4 observer:(id)arg5 observationIdentifier:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

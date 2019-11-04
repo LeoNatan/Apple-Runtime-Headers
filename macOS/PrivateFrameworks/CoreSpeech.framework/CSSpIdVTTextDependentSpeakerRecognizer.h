@@ -24,14 +24,16 @@
 @property(readonly, nonatomic) NSString *tdSATModelFilePath; // @synthesize tdSATModelFilePath=_tdSATModelFilePath;
 @property(readonly, nonatomic) BOOL tdPsrCanProcessRequest; // @synthesize tdPsrCanProcessRequest=_tdPsrCanProcessRequest;
 - (void).cxx_destruct;
+- (float)scoreSpeakerVector:(id)arg1 withDimensions:(unsigned long long)arg2;
 - (void)logWithAudioFilepath:(id)arg1;
 - (void)deleteVectorAtIndex:(int)arg1;
 - (void)deleteExistingSATModel;
 - (void)updateSAT;
 - (float)satScore;
 - (void)endAudio;
-- (void)processAudio:(const short *)arg1 numSamples:(unsigned long long)arg2;
+- (void)processAudio:(id)arg1 numSamples:(unsigned long long)arg2;
 - (void)resetForNewRequest;
+- (double)getRejectLoggingThreshold;
 - (double)getCombinationWeight;
 - (double)getThresholdSAT;
 - (id)initWithResourcePath:(id)arg1 satDirectory:(id)arg2 assetHash:(id)arg3 shouldCreateModelDir:(BOOL)arg4 delegate:(id)arg5;

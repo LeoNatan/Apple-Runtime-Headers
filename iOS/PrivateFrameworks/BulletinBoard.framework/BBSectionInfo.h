@@ -9,7 +9,7 @@
 #import <BulletinBoard/NSCopying-Protocol.h>
 #import <BulletinBoard/NSSecureCoding-Protocol.h>
 
-@class BBSectionIcon, BBSectionInfoSettings, NSArray, NSData, NSString;
+@class BBSectionIcon, BBSectionInfoSettings, NSArray, NSData, NSDictionary, NSString;
 
 @interface BBSectionInfo : NSObject <NSCopying, NSSecureCoding>
 {
@@ -68,6 +68,8 @@
 @property(readonly, copy, nonatomic) NSData *iconData;
 @property(nonatomic) unsigned long long bulletinCount;
 @property(nonatomic) _Bool enabled;
+@property(readonly, copy, nonatomic) NSDictionary *stateCapture;
+- (id)_suppressedSettingsList:(unsigned long long)arg1;
 - (void)deliverQuietly:(_Bool)arg1;
 - (void)_deliverQuietly:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isDeliveredQuietly;

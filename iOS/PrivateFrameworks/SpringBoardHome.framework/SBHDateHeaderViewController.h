@@ -23,6 +23,7 @@
     NSLayoutConstraint *_timeLeadingConstraint;
 }
 
++ (double)_topMarginFromTimeFont;
 + (CDStruct_d2b197d1)dateFontMetrics;
 + (id)dateFont;
 + (CDStruct_d2b197d1)timeFontMetrics;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) id <SBFDateProviding> dateProvider; // @synthesize dateProvider=_dateProvider;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (struct UIEdgeInsets)_cachedGlyphInsetsTimeFontForString:(id)arg1;
 - (struct UIEdgeInsets)_timeLabelInsetsForTimeString:(id)arg1;
 - (void)_startUpdateTimer;

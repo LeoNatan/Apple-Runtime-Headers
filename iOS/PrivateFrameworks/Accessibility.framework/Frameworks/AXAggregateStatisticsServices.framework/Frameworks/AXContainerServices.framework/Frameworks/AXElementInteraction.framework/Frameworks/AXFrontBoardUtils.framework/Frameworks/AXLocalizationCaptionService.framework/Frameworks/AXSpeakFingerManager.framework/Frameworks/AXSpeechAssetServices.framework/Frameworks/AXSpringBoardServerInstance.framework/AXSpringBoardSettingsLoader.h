@@ -65,6 +65,10 @@
 - (void)dealloc;
 - (id)init;
 - (void)_handleGuidedAccessManagedConfigurationDidChange:(id)arg1;
+- (void)_bootstrapUltron;
+- (void)_startupUltronUIServer;
+- (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;
+- (void)_turnOnControlCenterModule;
 - (void)_updateAXSettings;
 
 // Remaining properties

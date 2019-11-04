@@ -97,7 +97,6 @@
 - (void)setStatusViewUserInteractionEnabled:(_Bool)arg1;
 - (void)setStatusViewDisabled:(_Bool)arg1;
 - (void)setCarDisplaySnippetMode:(long long)arg1;
-- (void)setCarDisplaySnippetVisible:(_Bool)arg1;
 - (void)setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)setStatusViewHidden:(_Bool)arg1;
 - (void)siriIdleAndQuietStatusDidChange:(_Bool)arg1;
@@ -115,10 +114,9 @@
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)_audioCategoriesDisablingVolumeHUDDidChangeTo:(id)arg1;
-- (void)_noteSceneDidInvalidate;
-- (void)sceneController:(id)arg1 willInvalidateScene:(id)arg2;
+- (void)_handleInvalidationForReason:(unsigned long long)arg1 explanation:(id)arg2;
+- (void)sceneController:(id)arg1 willInvalidateScene:(id)arg2 forReason:(unsigned long long)arg3;
 - (void)startHostingSceneForConfiguration:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_interrupted;
 - (void)_invalidated;

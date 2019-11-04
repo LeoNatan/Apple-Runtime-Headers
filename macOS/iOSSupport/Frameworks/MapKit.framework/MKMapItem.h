@@ -69,6 +69,7 @@
 + (BOOL)_openHandleInMaps:(id)arg1 withLaunchOptions:(id)arg2;
 + (void)openMapsWithItems:(id)arg1 launchOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (BOOL)openMapsWithItems:(id)arg1 launchOptions:(id)arg2;
++ (void)openMapsWithItems:(id)arg1 launchOptions:(id)arg2 fromScene:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)_localizedNextOpeningDayOftheWeekFormatter;
 + (id)_localizedNextOpeningHoursFormatter;
 + (id)mapItemForCurrentLocation;
@@ -168,6 +169,7 @@
 @property(readonly, nonatomic, getter=_handle) NSData *handle;
 - (void)openInMapsWithLaunchOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)openInMapsWithLaunchOptions:(id)arg1;
+- (void)openInMapsWithLaunchOptions:(id)arg1 fromScene:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic, getter=_poiPinpointURLString) NSString *poiPinpointURLString;
 @property(readonly, nonatomic, getter=_poiSurveyURLString) NSString *poiSurveyURLString;
 @property(readonly, nonatomic, getter=_placeDataAsData) NSData *placeDataAsData;

@@ -38,6 +38,8 @@
 - (BOOL)startCurrentTimerWithDurationSync:(double)arg1;
 - (id)getCurrentTimerSync;
 - (id)startCurrentTimerWithDuration:(double)arg1;
+- (id)_runningTimerFromCurrentTimer:(id)arg1 withDuration:(double)arg2;
+- (id)_validateCanStartTimer:(id)arg1;
 - (id)resumeCurrentTimer;
 - (id)pauseCurrentTimer;
 - (id)stopCurrentTimer;
@@ -47,6 +49,7 @@
 - (id)dismissTimerWithIdentifier:(id)arg1;
 - (id)removeTimer:(id)arg1;
 - (id)updateTimer:(id)arg1;
+- (id)_updateTimer:(id)arg1 doSynchronous:(BOOL)arg2;
 - (id)addTimer:(id)arg1;
 - (id)nextTimersForDate:(id)arg1 maxCount:(unsigned long long)arg2;
 - (id)timersSync;

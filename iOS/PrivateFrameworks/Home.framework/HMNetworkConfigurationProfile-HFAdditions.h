@@ -9,17 +9,20 @@
 @class NSString;
 
 @interface HMNetworkConfigurationProfile (HFAdditions)
++ (id)_localizedStringForPurpose;
++ (id)_validCurrentModesForTargetModes;
++ (_Bool)hf_currentProtectionMode:(long long)arg1 isValidForTargetProtectionMode:(long long)arg2;
++ (_Bool)hf_targetProtectionModeIsValid:(long long)arg1;
 + (id)hf_localizedDescriptionForAllowedHostPurpose:(unsigned long long)arg1;
 + (id)hf_detailedLocalizedDescriptionForTargetProtectionMode:(long long)arg1;
 + (id)hf_detailedLocalizedTitleForTargetProtectionMode:(long long)arg1;
 + (id)hf_localizedTitleForTargetProtectionMode:(long long)arg1;
-+ (id)hf_updateProtectionMode:(long long)arg1 forProfiles:(id)arg2;
-- (id)hf_updateProtectionMode:(long long)arg1;
 @property(readonly, nonatomic) _Bool hf_requiresManualWiFiReconfiguration;
 @property(readonly, nonatomic) _Bool hf_hasCurrentNetworkAccessViolation;
+@property(readonly, nonatomic) _Bool hf_targetProtectionModeIsValid;
+@property(readonly, nonatomic) _Bool hf_hasProtectionModeMismatch;
 @property(readonly, copy, nonatomic) NSString *hf_targetProtectionModeDetailedLocalizedDescription;
 @property(readonly, copy, nonatomic) NSString *hf_targetProtectionModeDetailedLocalizedTitle;
 @property(readonly, copy, nonatomic) NSString *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;
-@property(readonly, copy, nonatomic) NSString *hf_title;
 @end
 

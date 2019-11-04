@@ -8,13 +8,14 @@
 
 #import <HomeUI/HUCameraSettingsModule-Protocol.h>
 
-@class HFItem, HFStaticItemProvider, HUCameraUsageOptionItemProvider, NSArray, NSSet, NSString, UIViewController;
+@class HFItem, HFStaticItemProvider, HMHome, HUCameraUsageOptionItemProvider, NSArray, NSSet, NSString, UIViewController;
 
 @interface HUCameraPresenceRecordingSettingsModule : HUExpandableItemModule <HUCameraSettingsModule>
 {
     BOOL _didCompleteCloudUpgradeOffer;
     NSSet *_itemProviders;
     HFItem *_showOptionsItem;
+    NSString *_longestCameraUsageOptionItemTitle;
     NSSet *_cameraProfiles;
     unsigned long long _presenceEventType;
     UIViewController *_presentingViewController;
@@ -22,8 +23,10 @@
     HFStaticItemProvider *_itemProvider;
     UIViewController *_viewController;
     NSArray *_optionItems;
+    HMHome *_home;
 }
 
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) BOOL didCompleteCloudUpgradeOffer; // @synthesize didCompleteCloudUpgradeOffer=_didCompleteCloudUpgradeOffer;
 @property(retain, nonatomic) NSArray *optionItems; // @synthesize optionItems=_optionItems;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
@@ -34,13 +37,16 @@
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 - (id)showOptionsItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *longestCameraUsageOptionItemTitle; // @synthesize longestCameraUsageOptionItemTitle=_longestCameraUsageOptionItemTitle;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (void)_buildItemProvider;
 - (id)itemProviders;
 - (id)didSelectItem:(id)arg1;
 - (id)_titleString;
 - (void)_dispatchUpdateForCameraProfile:(id)arg1;
+- (void)_clearItemsUpdating;
 - (void)presentMissingSupportedHubAlert;
+- (void)presentGenericError;
 - (void)presentInsufficientPrivilegesAlert;
 - (void)presentCloudUpgradeFlowWithCameraCount:(unsigned long long)arg1;
 - (id)updateStreamingSetting:(unsigned long long)arg1;

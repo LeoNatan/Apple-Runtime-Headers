@@ -52,6 +52,7 @@
     BOOL _hasCommittedLoadForMainFrame;
     BOOL _needsResetViewStateAfterCommitLoadForMainFrame;
     unsigned long long _firstPaintAfterCommitLoadTransactionID;
+    unsigned long long _lastTransactionID;
     int _dynamicViewportUpdateMode;
     unsigned long long _currentDynamicViewportSizeUpdateID;
     struct CATransform3D _resizeAnimationTransformAdjustments;
@@ -75,8 +76,10 @@
     struct Color _scrollViewBackgroundColor;
     double _totalScrollViewBottomInsetAdjustmentForKeyboard;
     BOOL _currentlyAdjustingScrollViewInsetsForKeyboard;
-    BOOL _delayUpdateVisibleContentRects;
-    BOOL _hadDelayedUpdateVisibleContentRects;
+    BOOL _invokingUIScrollViewDelegateCallback;
+    BOOL _didDeferUpdateVisibleContentRectsForUIScrollViewDelegateCallback;
+    BOOL _didDeferUpdateVisibleContentRectsForAnyReason;
+    BOOL _didDeferUpdateVisibleContentRectsForUnstableScrollView;
     BOOL _waitingForEndAnimatedResize;
     BOOL _waitingForCommitAfterAnimatedResize;
     struct Vector<WTF::Function<void ()>, 0, WTF::CrashOnOverflow, 16> _callbacksDeferredDuringResize;
@@ -88,8 +91,10 @@
     unsigned long long _dragInteractionPolicy;
     struct MonotonicTime _timeOfRequestForVisibleContentRectUpdate;
     struct MonotonicTime _timeOfLastVisibleContentRectUpdate;
+    struct Optional<WTF::MonotonicTime> _timeOfFirstVisibleContentRectUpdateWithPendingCommit;
     unsigned long long _focusPreservationCount;
     unsigned long long _activeFocusedStateRetainCount;
+    BOOL _hasEnteredDealloc;
     unsigned long long _selectionAttributes;
 }
 

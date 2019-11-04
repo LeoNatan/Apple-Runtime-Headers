@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKConversation *selectedConversation; // @synthesize selectedConversation=_selectedConversation;
 - (void).cxx_destruct;
 - (void)_handleNewComposePressed:(id)arg1;
+- (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -28,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (int)getCurrentUIUserInterfaceStyle;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setupComposeButton;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

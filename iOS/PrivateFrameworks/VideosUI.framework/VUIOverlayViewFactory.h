@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)_overlayPaddingWithMediaItem:(id)arg1;
 + (struct UIEdgeInsets)_overlayPaddingWithElement:(id)arg1;
 + (long long)_overlayTypeFromString:(id)arg1;
-+ (id)_appImageLayout;
 + (id)_overlayWithMediaItem:(id)arg1 overlayType:(long long)arg2 existingView:(id)arg3;
 + (id)_overlayWithElement:(id)arg1 overlayType:(long long)arg2 existingView:(id)arg3;
 + (id)_upnextOverlayWithElement:(id)arg1 existingView:(id)arg2;

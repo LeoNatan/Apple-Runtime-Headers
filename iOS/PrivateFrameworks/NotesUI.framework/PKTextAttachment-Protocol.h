@@ -6,12 +6,14 @@
 
 #import <NotesUI/NSObject-Protocol.h>
 
-@class PKDrawing;
+@class PKDrawing, UIView;
+@protocol PKTextAttachmentView;
 
 @protocol PKTextAttachment <NSObject>
 
 @optional
 - (void)resetZoom;
 - (void)drawingDataDidChange:(PKDrawing *)arg1;
+- (void)drawingDataDidChange:(PKDrawing *)arg1 view:(UIView<PKTextAttachmentView> *)arg2;
 @end
 

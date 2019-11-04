@@ -45,6 +45,8 @@
 @property(nonatomic) float rightTimeViewInset; // @synthesize rightTimeViewInset=_rightTimeViewInset;
 - (void).cxx_destruct;
 - (void)wellnessTimeLineModelCurrentEntryModelUpdated:(id)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
 - (void)tritium_invalidateMetalContentForSnapshot;
 - (void)tritium_willSnapshotForBurnInStudy;
 - (id)tritium_createFaceAnimator;

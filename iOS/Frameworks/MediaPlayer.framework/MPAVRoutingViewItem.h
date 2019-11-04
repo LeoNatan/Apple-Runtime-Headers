@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
+
 @class MPAVRoute, NSString, UIImage;
 
-@interface MPAVRoutingViewItem : NSObject
+@interface MPAVRoutingViewItem : NSObject <_MPStateDumpPropertyListTransformable>
 {
     _Bool _enabled;
     NSString *_localizedTitle;
@@ -28,8 +30,15 @@
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

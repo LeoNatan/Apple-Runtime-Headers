@@ -10,7 +10,7 @@
 #import <Email/EMMutableContentItem-Protocol.h>
 #import <Email/NSSecureCoding-Protocol.h>
 
-@class EMObjectID, NSArray, NSDate, NSString;
+@class EMMailDropMetadata, EMObjectID, NSArray, NSString;
 
 @interface _EMAttachmentContentItem : EMObject <EFPubliclyDescribable, EMMutableContentItem, NSSecureCoding>
 {
@@ -21,7 +21,7 @@
     NSString *_displayName;
     CDUnknownBlockType _loaderBlock;
     NSString *_UTType;
-    NSDate *_expiryDate;
+    EMMailDropMetadata *_mailDropMetadata;
     int _exchangeEventUID;
     long long _dataTransferByteCount;
     long long _storageByteCount;
@@ -30,8 +30,8 @@
 + (_Bool)supportsSecureCoding;
 - (void)setExchangeEventUID:(int)arg1;
 @property(readonly, nonatomic) int exchangeEventUID;
-- (void)setExpiryDate:(id)arg1;
-@property(readonly, nonatomic) NSDate *expiryDate;
+- (void)setMailDropMetadata:(id)arg1;
+@property(readonly, copy, nonatomic) EMMailDropMetadata *mailDropMetadata;
 @property(nonatomic) _Bool isSinglePagePDF; // @synthesize isSinglePagePDF=_isSinglePagePDF;
 - (void)setUTType:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *UTType;

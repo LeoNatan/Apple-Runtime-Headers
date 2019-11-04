@@ -9,31 +9,34 @@
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSString;
+@class NSString, PKPasscodeUpgradeFlowController;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPasscodeUpgradeExplanationViewController : PKExplanationViewController <PKExplanationViewControllerDelegate, PKPaymentSetupPresentationProtocol>
 {
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
+    PKPasscodeUpgradeFlowController *_flowController;
     int _context;
     _Bool _isForWatch;
+    _Bool _viewHasAppeared;
     _Bool _upgradeRequiredToAddNewPass;
     CDUnknownBlockType _continuationHandler;
-    CDUnknownBlockType _dismissalHandler;
+    CDUnknownBlockType _setupLaterHandler;
 }
 
 @property(nonatomic) _Bool upgradeRequiredToAddNewPass; // @synthesize upgradeRequiredToAddNewPass=_upgradeRequiredToAddNewPass;
-@property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
+@property(copy, nonatomic) CDUnknownBlockType setupLaterHandler; // @synthesize setupLaterHandler=_setupLaterHandler;
 @property(copy, nonatomic) CDUnknownBlockType continuationHandler; // @synthesize continuationHandler=_continuationHandler;
 - (void).cxx_destruct;
-- (void)_terminateSetupFlow;
+- (void)_showSpinner:(_Bool)arg1;
 - (id)paymentSetupMarker;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithContext:(int)arg1 setupDelegate:(id)arg2 isForWatch:(_Bool)arg3;
+- (id)initWithPasscodeUpgradeFlowController:(id)arg1 isForWatch:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

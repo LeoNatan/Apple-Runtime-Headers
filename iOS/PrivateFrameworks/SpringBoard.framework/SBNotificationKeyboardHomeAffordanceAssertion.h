@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SpringBoardUI/SBUIKeyboardHomeAffordanceAssertion.h>
+#import <SpringBoard/SBKeyboardHomeAffordanceAssertion.h>
 
 #import <SpringBoard/PLKeyboardHomeAffordanceAssertion-Protocol.h>
 
 @class NSString;
 
-@interface SBNotificationKeyboardHomeAffordanceAssertion : SBUIKeyboardHomeAffordanceAssertion <PLKeyboardHomeAffordanceAssertion>
+@interface SBNotificationKeyboardHomeAffordanceAssertion : SBKeyboardHomeAffordanceAssertion <PLKeyboardHomeAffordanceAssertion>
 {
 }
 

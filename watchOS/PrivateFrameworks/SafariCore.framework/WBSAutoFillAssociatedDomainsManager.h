@@ -12,14 +12,20 @@
 @interface WBSAutoFillAssociatedDomainsManager : NSObject
 {
     NSMutableDictionary *_domainToDomainsWithAssociatedCredentials;
+    NSMutableDictionary *_domainsToDomainsToConsiderIdentical;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSArray *_domainsWithAssociatedCredentials;
+    NSArray *_domainsToConsiderIdentical;
 }
 
+@property(copy, nonatomic) NSArray *domainsToConsiderIdentical; // @synthesize domainsToConsiderIdentical=_domainsToConsiderIdentical;
 @property(copy, nonatomic) NSArray *domainsWithAssociatedCredentials; // @synthesize domainsWithAssociatedCredentials=_domainsWithAssociatedCredentials;
 - (void).cxx_destruct;
+- (void)_updateDomainToDomainsToConsiderIdentical;
 - (void)_updateDomainToDomainsWithAssociatedCredentials;
+- (id)domainsToConsiderIdenticalToDomain:(id)arg1;
 - (id)domainsWithAssociatedCredentialsForDomain:(id)arg1;
+- (id)initWithDomainsWithAssociatedCredentials:(id)arg1 domainsToConsiderIdentical:(id)arg2;
 - (id)initWithDomainsWithAssociatedCredentials:(id)arg1;
 - (id)init;
 

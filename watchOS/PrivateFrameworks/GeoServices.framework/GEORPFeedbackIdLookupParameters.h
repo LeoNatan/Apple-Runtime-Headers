@@ -13,10 +13,12 @@
 @interface GEORPFeedbackIdLookupParameters : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
-    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _feedbackComponentTypes;
     NSMutableArray *_feedbackIds;
+    unsigned int _readerMarkPos;
+    unsigned int _readerMarkLength;
+    struct os_unfair_lock_s _readerLock;
     struct {
         unsigned int read_unknownFields:1;
         unsigned int read_feedbackComponentTypes:1;
@@ -60,6 +62,8 @@
 @property(retain, nonatomic) NSMutableArray *feedbackIds;
 - (void)_readFeedbackIds;
 - (void)dealloc;
+- (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

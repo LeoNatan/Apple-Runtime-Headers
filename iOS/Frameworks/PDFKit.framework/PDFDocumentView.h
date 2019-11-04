@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)forceUpdateActivePageIndex:(unsigned long long)arg1 withMaxDuration:(double)arg2;
 - (void)willForceUpdate;
 - (void)previewRotateShiftPages:(double)arg1;
+- (void)_updateVisibility;
 - (void)updateVisibility;
 - (struct CGSize)documentViewSize;
 - (void)layoutDocumentView;

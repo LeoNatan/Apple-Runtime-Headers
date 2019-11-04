@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)_uninstallInteractionPlattersForOperation:(id)arg1;
 - (void)_installInteractionPlattersForOperation:(id)arg1;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
+- (void)_addworkaroundForPropertyAnimator:(id)arg1 inView:(id)arg2;
 - (id)init;
 
 // Remaining properties

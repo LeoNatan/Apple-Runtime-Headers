@@ -16,6 +16,7 @@
     _Bool _audioEnabled;
     _Bool _videoEnabled;
     _Bool _locallyCreated;
+    _Bool _hasJoined;
     TUContactsDataProvider *_contactsDataProvider;
     NSUUID *_UUID;
     NSUUID *_groupUUID;
@@ -44,6 +45,7 @@
 @property(retain, nonatomic) TUHandle *initiator; // @synthesize initiator=_initiator;
 @property(retain, nonatomic) NSUUID *messagesGroupUUID; // @synthesize messagesGroupUUID=_messagesGroupUUID;
 @property(retain, nonatomic) TUConversationMember *localMember; // @synthesize localMember=_localMember;
+@property(nonatomic, getter=hasJoined) _Bool hasJoined; // @synthesize hasJoined=_hasJoined;
 @property(copy, nonatomic) NSString *avcSessionIdentifier; // @synthesize avcSessionIdentifier=_avcSessionIdentifier;
 @property(nonatomic) int avcSessionToken; // @synthesize avcSessionToken=_avcSessionToken;
 @property(copy, nonatomic) NSSet *activeRemoteParticipants; // @synthesize activeRemoteParticipants=_activeRemoteParticipants;

@@ -71,7 +71,10 @@ __attribute__((visibility("hidden")))
 - (id)badgeTextAttributesForState:(int)arg1;
 - (id)badgeBackgroundColorForState:(int)arg1;
 - (struct UIOffset)badgePositionAdjustmentForState:(int)arg1;
+- (_Bool)isDefaultColor:(id)arg1 forState:(int)arg2;
 - (id)iconColorForState:(int)arg1;
+- (int)defaultCompositingModeForState:(int)arg1;
+- (float)defaultAlphaForState:(int)arg1;
 - (id)defaultColorForState:(int)arg1;
 - (struct UIOffset)titlePositionAdjustmentForState:(int)arg1;
 - (id)titleTextAttributesForState:(int)arg1;
@@ -124,6 +127,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets)arg4 tabBar:(id)arg5;
 - (id)initWithImage:(id)arg1 landscapeImage:(id)arg2 selectedImage:(id)arg3 landscapeSelectedImage:(id)arg4 label:(id)arg5 withInsets:(struct UIEdgeInsets)arg6 landscapeInsets:(struct UIEdgeInsets)arg7 tabBar:(id)arg8;
 - (id)_selectedIndicatorView;
+@property(readonly, nonatomic, getter=isDefaultTVLayout) _Bool _defaultTVLayout;
 
 @end
 

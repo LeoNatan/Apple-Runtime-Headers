@@ -10,7 +10,8 @@
 
 @interface SFDeviceAssetQuery : NSObject
 {
-    _Bool _legacyFormats;
+    _Bool _legacyAsset;
+    _Bool _h264;
     struct LogCategory *_ucat;
     NSString *_assetType;
     unsigned long long _version;
@@ -20,15 +21,16 @@
     NSDictionary *_additionalQueryParameters;
 }
 
-+ (_Bool)deviceWantsLegacyFormats;
++ (_Bool)deviceWantsH264;
 @property(readonly, nonatomic) NSDictionary *additionalQueryParameters; // @synthesize additionalQueryParameters=_additionalQueryParameters;
 @property(readonly, nonatomic) NSString *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSString *mappedProductType; // @synthesize mappedProductType=_mappedProductType;
 @property(readonly, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
-@property(readonly, nonatomic) _Bool legacyFormats; // @synthesize legacyFormats=_legacyFormats;
+@property(nonatomic) _Bool h264; // @synthesize h264=_h264;
 @property(readonly, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
 @property(readonly, nonatomic) struct LogCategory *ucat; // @synthesize ucat=_ucat;
+@property(nonatomic) _Bool legacyAsset; // @synthesize legacyAsset=_legacyAsset;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

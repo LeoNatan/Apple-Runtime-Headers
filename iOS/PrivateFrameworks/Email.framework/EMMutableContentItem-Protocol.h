@@ -6,11 +6,11 @@
 
 #import <Email/EMExtendedContentItem-Protocol.h>
 
-@class NSArray, NSDate, NSString;
+@class EMMailDropMetadata, NSArray, NSString;
 
 @protocol EMMutableContentItem <EMExtendedContentItem>
 @property(nonatomic) int exchangeEventUID;
-@property(retain, nonatomic) NSDate *expiryDate;
+@property(copy, nonatomic) EMMailDropMetadata *mailDropMetadata;
 @property(nonatomic) long long storageByteCount;
 @property(nonatomic) long long dataTransferByteCount;
 @property(nonatomic) _Bool isSinglePagePDF;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)detailTextLabel;
 - (id)textLabel;
+- (void)setCellEnabled:(_Bool)arg1;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)_setLabel:(id)arg1 andPhoneNumber:(id)arg2;
 - (void)_setCenteredText:(id)arg1;

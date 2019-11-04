@@ -16,6 +16,8 @@
 - (void)_axPerformBlockOnNotificationController:(CDUnknownBlockType)arg1;
 - (_Bool)_axIsGrouped;
 - (id)_axNCNotificationViewController;
+- (void)accessibilityElementDidLoseFocus;
+- (void)accessibilityElementDidBecomeFocused;
 - (_Bool)accessibilityPerformEscape;
 - (id)accessibilityCustomActions;
 - (_Bool)_axDismissAction:(id)arg1;

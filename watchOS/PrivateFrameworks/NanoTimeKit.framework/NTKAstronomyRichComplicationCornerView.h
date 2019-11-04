@@ -22,6 +22,7 @@
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)_enumerateQuadViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)_applyPausedUpdate;
 - (id)_outerView;

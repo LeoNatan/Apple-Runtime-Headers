@@ -12,6 +12,7 @@
 
 @interface NSError (MSPAdditions) <MSPJournaled>
 + (id)MSPSyncErrorWithCode:(long long)arg1 description:(id)arg2;
+- (_Bool)_maps_isFoundationWriteError;
 @property(readonly) _Bool _maps_isFileNotFoundError;
 @property(readonly) _Bool _maps_isCloudKitTokenExpirationError;
 @property(readonly) _Bool _maps_isCloudKitErrorContainingNotFoundMarkersOnly;

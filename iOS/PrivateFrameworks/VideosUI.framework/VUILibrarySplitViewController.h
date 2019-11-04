@@ -12,7 +12,7 @@
 #import <VideosUI/VUILibraryCategoryMenuViewModelDelegate-Protocol.h>
 #import <VideosUI/VUILibraryGridCollectionViewControllerDelegate-Protocol.h>
 
-@class NSIndexPath, NSSet, NSString, UINavigationController, VUICategoryMenuViewController, VUILibraryAlertView, VUILibraryCategoryMenuViewModel, VUILibraryGridCollectionViewController, VUIMediaLibrary;
+@class NSIndexPath, NSString, UINavigationController, VUICategoryMenuViewController, VUILibraryAlertView, VUILibraryCategoryMenuViewModel, VUILibraryGridCollectionViewController, VUIMediaLibrary;
 @protocol VUILibrarySplitViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -21,14 +21,13 @@ __attribute__((visibility("hidden")))
     _Bool _shouldShowBackButton;
     _Bool _hasLoaded;
     id <VUILibrarySplitViewControllerDelegate> _librarySplitViewControllerDelegate;
+    VUICategoryMenuViewController *_menuViewController;
     VUIMediaLibrary *_mediaLibrary;
     UINavigationController *_masterNavigationController;
     UINavigationController *_detailNavigationController;
     VUILibraryCategoryMenuViewModel *_categoryViewModel;
-    VUICategoryMenuViewController *_menuViewController;
     VUILibraryGridCollectionViewController *_currentGridCollectionViewController;
     NSIndexPath *_currentlySelectedIndexPath;
-    NSSet *_validCategories;
     VUILibraryAlertView *_alertView;
     VUIMediaLibrary *_currentHomeShareMediaLibrary;
 }
@@ -37,14 +36,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIMediaLibrary *currentHomeShareMediaLibrary; // @synthesize currentHomeShareMediaLibrary=_currentHomeShareMediaLibrary;
 @property(nonatomic) _Bool shouldShowBackButton; // @synthesize shouldShowBackButton=_shouldShowBackButton;
 @property(retain, nonatomic) VUILibraryAlertView *alertView; // @synthesize alertView=_alertView;
-@property(retain, nonatomic) NSSet *validCategories; // @synthesize validCategories=_validCategories;
 @property(retain, nonatomic) NSIndexPath *currentlySelectedIndexPath; // @synthesize currentlySelectedIndexPath=_currentlySelectedIndexPath;
 @property(retain, nonatomic) VUILibraryGridCollectionViewController *currentGridCollectionViewController; // @synthesize currentGridCollectionViewController=_currentGridCollectionViewController;
-@property(retain, nonatomic) VUICategoryMenuViewController *menuViewController; // @synthesize menuViewController=_menuViewController;
 @property(retain, nonatomic) VUILibraryCategoryMenuViewModel *categoryViewModel; // @synthesize categoryViewModel=_categoryViewModel;
 @property(retain, nonatomic) UINavigationController *detailNavigationController; // @synthesize detailNavigationController=_detailNavigationController;
 @property(retain, nonatomic) UINavigationController *masterNavigationController; // @synthesize masterNavigationController=_masterNavigationController;
 @property(retain, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
+@property(retain, nonatomic) VUICategoryMenuViewController *menuViewController; // @synthesize menuViewController=_menuViewController;
 @property(nonatomic) __weak id <VUILibrarySplitViewControllerDelegate> librarySplitViewControllerDelegate; // @synthesize librarySplitViewControllerDelegate=_librarySplitViewControllerDelegate;
 - (void).cxx_destruct;
 - (_Bool)vui_ppt_isLoading;
@@ -70,8 +68,8 @@ __attribute__((visibility("hidden")))
 - (void)categoryMenuViewControllerShouldDismiss:(id)arg1;
 - (void)categoryMenuViewController:(id)arg1 didSelectMenuItemAtIndexPath:(id)arg2;
 - (id)_viewControllerForIndexPath:(id)arg1;
-- (void)categoryViewModel:(id)arg1 categoriesDidChange:(id)arg2;
-- (void)categoryViewModel:(id)arg1 fetchDidCompleteWithCategories:(id)arg2 error:(id)arg3;
+- (void)updateForViewModel:(id)arg1;
+- (void)fetchDidCompleteForViewModel:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)loadView;

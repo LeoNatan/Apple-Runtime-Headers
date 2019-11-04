@@ -13,6 +13,8 @@
 + (void)setShouldPreventNotifications:(_Bool)arg1 forRecordID:(id)arg2;
 + (_Bool)shouldPreventNotificationsForRecordID:(id)arg1;
 + (id)defaultsKeyForPreventingNotificationsForIdentifier:(id)arg1;
++ (id)displayableEditorNames:(id)arg1;
++ (id)notificationTitleForEditors:(id)arg1;
 + (void)showNotificationWithTitle:(id)arg1 message:(id)arg2 userInfo:(id)arg3;
 + (void)showNotificationForNote:(id)arg1 editors:(id)arg2;
 + (id)participantsWithReplicaIDs:(id)arg1 inNote:(id)arg2;

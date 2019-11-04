@@ -28,16 +28,12 @@
 @property(readonly, nonatomic) _SFInjectedJavaScriptController *activityJSController; // @synthesize activityJSController=_activityJSController;
 - (void).cxx_destruct;
 - (void)logCompletedPageloadToDifferentialPrivacy:(id)arg1;
-- (void)dealloc;
-- (void)invalidate;
 - (void)didMarkURLAsNeedingStandardUserAgent:(id)arg1;
 - (void)didMarkURLAsNeedingDesktopUserAgent:(id)arg1;
 - (void)requestStandardSite;
 - (void)requestDesktopSiteWithURL:(id)arg1;
 - (void)requestDesktopSite;
 - (id)customNavigatorPlatformForSetting:(int)arg1;
-- (id)customSiteCompatibilityScriptForMainFrameURL:(id)arg1;
-- (id)customJavaScriptUserAgentForSetting:(int)arg1 withMainFrameURL:(id)arg2;
 - (id)customUserAgentForSetting:(int)arg1;
 - (void)customUserAgentSettingForMainFrameURL:(id)arg1 withTimeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_overrideSettingIfNeeded:(int)arg1 source:(unsigned int)arg2 domain:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -46,6 +42,7 @@
 - (void)_loadPerSitePreferences;
 - (void)didUpdateRequestDesktopSitePerSitePreference:(id)arg1;
 - (void)didUpdateRequestDesktopSiteDefaultValue:(int)arg1;
+- (void)invalidate;
 - (id)init;
 - (id)initWithWebView:(id)arg1 activityJSController:(id)arg2 perSitePreferenceManager:(id)arg3;
 

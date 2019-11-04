@@ -8,7 +8,7 @@
 
 #import <NanoMediaUI/NMUActionSheetItemProvider-Protocol.h>
 
-@class MPLibraryAddStatusObserver, MPModelObject, NMROrigin, NSString, PUICActionSheetController;
+@class MPLibraryAddStatusObserver, MPModelObject, NMROrigin, NMSMediaSyncInfo, NSString, PUICActionSheetController;
 
 @interface NMUDownloadItem : NSObject <NMUActionSheetItemProvider>
 {
@@ -18,12 +18,15 @@
     PUICActionSheetController *_actionSheetController;
     unsigned int _pinningStatus;
     MPLibraryAddStatusObserver *_libraryAddStatusObserver;
+    NMSMediaSyncInfo *_syncInfo;
     CDUnknownBlockType _visibilityBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 - (void).cxx_destruct;
+- (void)_presentWaitingToDownloadAlert;
 - (void)_updatePinningStatus;
+- (void)_handleMediaSyncInfoDidUpdateNotification:(id)arg1;
 - (void)_handleMediaPinningMusicContentsInvalidatedNotification:(id)arg1;
 - (void)_performAction;
 - (_Bool)isVisible;

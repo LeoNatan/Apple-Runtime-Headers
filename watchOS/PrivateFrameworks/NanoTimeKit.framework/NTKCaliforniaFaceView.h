@@ -80,6 +80,7 @@
 - (void)setCircularMaskForCircularDialFraction:(float)arg1 circleDiameter:(float)arg2;
 - (void)updateCircularMask;
 - (void)_updateDialBezelComplicationColor:(id)arg1;
+- (void)updateWorldClockComplicationColors:(id)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 fraction:(float)arg4;
 - (_Bool)shouldFlipColorsForSubDialRichComplicationView:(id)arg1;
 - (void)_updateRichCornerComplicationsInnerColor:(id)arg1 outerColor:(id)arg2;
 - (void)_updateSubDialRichComplicationsColor:(id)arg1 alternateColor:(id)arg2;

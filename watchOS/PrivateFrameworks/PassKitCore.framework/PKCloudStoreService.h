@@ -34,6 +34,7 @@
 - (void)uploadTransaction:(id)arg1 forPassWithUniqueIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)itemOfItemType:(unsigned int)arg1 recordName:(id)arg2 qualityOfService:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)itemOfItemType:(unsigned int)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)allItemsOfItemType:(unsigned int)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;

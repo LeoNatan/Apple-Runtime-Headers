@@ -59,6 +59,7 @@
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 delay:(double)arg3;
 - (void)updateStyleForAnnotation:(id)arg1;
 - (void)prepareForReuse;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2 tintColor:(id)arg3;
 - (id)initWithCoder:(id)arg1;

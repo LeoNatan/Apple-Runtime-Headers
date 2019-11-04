@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) unsigned long long mode;
 @property(readonly, nonatomic) HFCharacteristicTriggerBuilder *characteristicTriggerBuilder;
 @property(readonly, nonatomic) HUCharacteristicTriggerServicePickerContentViewController *servicePickerContentViewController;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
 - (void)viewDidLoad;
 - (id)initWithCharacteristicTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 source:(unsigned long long)arg3 delegate:(id)arg4;
 - (id)initWithInstructionsItem:(id)arg1 contentViewController:(id)arg2;

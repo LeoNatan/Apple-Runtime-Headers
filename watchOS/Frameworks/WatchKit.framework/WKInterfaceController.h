@@ -102,6 +102,7 @@
 - (void)interfaceOffsetDidScrollToTop;
 - (void)interfaceDidScrollToTop;
 - (void)scrollToObject:(id)arg1 atScrollPosition:(int)arg2 animated:(_Bool)arg3;
+- (void)popToRootControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)popToRootController;
 - (void)popController;
 - (void)pushControllerClass:(Class)arg1 willPush:(CDUnknownBlockType)arg2;
@@ -128,6 +129,7 @@
 - (void)awakeWithContext:(id)arg1;
 - (void)_finishGestureInstallationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)installPlaceholderGestureForProperty:(id)arg1;
+- (void)removeDynamicWKInterfaceObject:(id)arg1;
 - (void)addDynamicWKInterfaceObject:(id)arg1;
 - (unsigned int)numProperties;
 - (void)didRegisterWithRemoteInterface;

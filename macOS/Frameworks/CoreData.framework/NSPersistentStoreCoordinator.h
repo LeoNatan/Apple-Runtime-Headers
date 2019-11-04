@@ -82,6 +82,7 @@
 - (BOOL)_removePersistentStore:(id)arg1 error:(id *)arg2;
 - (BOOL)_removeAllPersistentStores:(id *)arg1;
 - (BOOL)removePersistentStore:(id)arg1 error:(id *)arg2;
+- (void)_repairIndiciesForStoreWithIdentifier:(id)arg1 synchronous:(BOOL)arg2;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id *)arg5;
 - (void)addPersistentStoreWithDescription:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_doAddPersistentStoreWithDescription:(id)arg1 privateCopy:(id)arg2 completeOnMainThread:(BOOL)arg3 withHandler:(CDUnknownBlockType)arg4;

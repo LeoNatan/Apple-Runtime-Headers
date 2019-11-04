@@ -19,6 +19,9 @@
 + (id)connection:(id)arg1 valuesForEntitlements:(id)arg2;
 + (BOOL)auditToken:(CDStruct_6ad76789)arg1 hasEntitlement:(id)arg2;
 + (BOOL)secTask:(struct __SecTask *)arg1 hasEntitlement:(id)arg2;
++ (BOOL)isAppleSignedAtURL:(id)arg1;
++ (BOOL)isAppleSigned;
++ (BOOL)_isAppleSignedCodeRef:(void *)arg1 validityChecker:(CDUnknownBlockType)arg2;
 + (id)_secTask:(struct __SecTask *)arg1 grantedEntitlements:(id)arg2;
 
 @end

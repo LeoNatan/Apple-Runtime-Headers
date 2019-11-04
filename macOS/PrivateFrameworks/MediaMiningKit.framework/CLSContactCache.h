@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSPredicate *entryPredicateWithContactIdentifiers; // @synthesize entryPredicateWithContactIdentifiers=_entryPredicateWithContactIdentifiers;
 @property(retain, nonatomic) NSPredicate *entryPredicateWithContactIdentifier; // @synthesize entryPredicateWithContactIdentifier=_entryPredicateWithContactIdentifier;
 - (void).cxx_destruct;
+- (BOOL)_updateHasPicture:(BOOL)arg1 forEntry:(id)arg2;
 - (BOOL)setLastHistoryToken:(id)arg1;
 - (id)lastHistoryToken;
 - (void)enumerateCachedEntriesUsingBlock:(CDUnknownBlockType)arg1;

@@ -56,6 +56,7 @@
 @property(copy) NSData *sourceAppUniqueIdentifier; // @synthesize sourceAppUniqueIdentifier=_sourceAppUniqueIdentifier;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *identifier;
 - (void)copySourceAppInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property BOOL isOpen;
 @property(retain) NEFilterAbsoluteVerdict *currentVerdict;

@@ -15,6 +15,7 @@
     NSMutableSet *_interruptionHandlers;
     NSDictionary *_libraryTokens;
     int _notifyToken;
+    struct os_unfair_lock_s _lock;
     BOOL _libraryOnline;
     NSObject<OS_dispatch_queue> *_replyQueue;
     id <BKAgentService> _agentService;

@@ -8,7 +8,7 @@
 
 #import <NanoAudioControl/NACVolumeController-Protocol.h>
 
-@class NACEventThrottler, NSNumber, NSString;
+@class NACEventThrottler, NSNumber, NSOrderedSet, NSString;
 @protocol NACVolumeControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     NACEventThrottler *_defaultsThrottler;
     NSNumber *_volumeValue;
     _Bool _allowUserToExceedEUVolumeLimit;
+    NSString *_currentListeningMode;
+    _Bool _observingListeningModes;
     _Bool _systemMuted;
     _Bool _prominentHapticEnabled;
     id <NACVolumeControllerDelegate> _delegate;
@@ -35,6 +37,8 @@ __attribute__((visibility("hidden")))
 - (void)_persistVolumeValue:(id)arg1;
 - (void)_setNeedsVolumeReload;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
+@property(retain, nonatomic) NSString *currentListeningMode;
+@property(readonly, nonatomic) NSOrderedSet *availableListeningModes;
 - (void)allowUserToExceedEUVolumeLimit;
 - (void)setVolumeValue:(float)arg1 muted:(_Bool)arg2 overrideEULimit:(_Bool)arg3;
 - (void)setMuted:(_Bool)arg1;
@@ -45,6 +49,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;
 @property(readonly, nonatomic, getter=isMuted) _Bool muted;
 @property(readonly, nonatomic) float volumeValue;
+- (void)endObservingListeningModes;
+- (void)beginObservingListeningModes;
 - (void)endObservingVolume;
 - (void)beginObservingVolume;
 - (void)dealloc;

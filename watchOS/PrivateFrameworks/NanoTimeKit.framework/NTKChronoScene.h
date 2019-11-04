@@ -39,7 +39,7 @@
 - (id)_chronoVariantForTimeScale:(unsigned int)arg1;
 - (id)_addChronoVariantWithElements:(id)arg1 forTimeScale:(unsigned int)arg2;
 - (id)_createDensityVariantWitElements:(id)arg1 parent:(id)arg2 hidden:(_Bool)arg3;
-- (void)tritium_applyPalette:(id)arg1 progress:(float)arg2;
+- (void)tritium_applyPalette:(id)arg1 progress:(float)arg2 colorizeUpperSubdial:(_Bool)arg3;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4;

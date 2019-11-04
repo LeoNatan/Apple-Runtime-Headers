@@ -80,10 +80,8 @@
 - (void)_updateCropOperation:(id)arg1;
 - (void)removeAutoCalcSettings:(id)arg1;
 - (void)updateRenderDescription:(id)arg1;
-- (BOOL)canApplyAutoCropForRenderDescription:(id)arg1;
-- (BOOL)canApplyAutoCropForObservedRenderDescription;
-- (BOOL)hasCropInRenderDescription:(id)arg1;
-- (BOOL)hasCropInObservedRenderDescription;
+- (BOOL)canApplyAutoCropInRenderDescription;
+- (BOOL)hasCropInRenderDescription;
 - (BOOL)hasCrop;
 - (void)_updateTargetAreaWithRect:(struct CGRect)arg1 force:(BOOL)arg2;
 - (void)_updateTargetAreaWithRect:(struct CGRect)arg1;

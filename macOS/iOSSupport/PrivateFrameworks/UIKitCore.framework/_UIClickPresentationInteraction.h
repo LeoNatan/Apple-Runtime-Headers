@@ -45,6 +45,7 @@
     id <_UIClickPresentationAssisting> _presentationAssistant;
     _UIClickPresentation *_pendingPresentation;
     UIDragInteraction *_latentAssociatedDragInteraction;
+    NSMutableArray *_activeInteractionEffects;
     UIDragInteraction *_associatedDragInteraction;
     NSString *_debugIdentifier;
     NSString *_presentationTypeDebugString;
@@ -54,6 +55,7 @@
 @property(copy, nonatomic) NSString *presentationTypeDebugString; // @synthesize presentationTypeDebugString=_presentationTypeDebugString;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
+@property(retain, nonatomic) NSMutableArray *activeInteractionEffects; // @synthesize activeInteractionEffects=_activeInteractionEffects;
 @property(retain, nonatomic) UIDragInteraction *latentAssociatedDragInteraction; // @synthesize latentAssociatedDragInteraction=_latentAssociatedDragInteraction;
 @property(nonatomic) struct CGPoint initialLocation; // @synthesize initialLocation=_initialLocation;
 @property(retain, nonatomic) _UIClickPresentation *pendingPresentation; // @synthesize pendingPresentation=_pendingPresentation;
@@ -78,6 +80,7 @@
 - (BOOL)_isControlledByCC;
 - (void)_endInteractionEffectIfNeeded;
 - (id)_clickDriverTouch;
+- (id)_activeEffectForPreview:(id)arg1;
 - (void)_prepareInteractionEffect;
 - (void)_endInteractionWithContext:(id)arg1;
 - (void)_endInteractionDidComplete:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;

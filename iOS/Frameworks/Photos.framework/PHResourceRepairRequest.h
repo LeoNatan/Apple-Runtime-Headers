@@ -19,8 +19,8 @@
 @property(retain, nonatomic) NSSet *errorCodesToRepair; // @synthesize errorCodesToRepair=_errorCodesToRepair;
 @property(nonatomic) __weak id <PHResourceRepairRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)initWithDataStoreKey:(id)arg1 store:(id)arg2 assetObjectID:(id)arg3 context:(id)arg4 validationErrors:(id)arg5;
-- (id)initWithResource:(id)arg1 assetObjectID:(id)arg2 validationErrors:(id)arg3;
+- (id)initWithTaskIdentifier:(id)arg1 dataStoreKey:(id)arg2 store:(id)arg3 assetObjectID:(id)arg4 context:(id)arg5 validationErrors:(id)arg6;
+- (id)initWithTaskIdentifier:(id)arg1 resource:(id)arg2 assetObjectID:(id)arg3 validationErrors:(id)arg4;
 - (void)runDaemonSide;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;

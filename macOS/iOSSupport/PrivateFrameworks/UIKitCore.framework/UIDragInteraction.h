@@ -108,7 +108,7 @@
 - (void)_dragSharingChanged:(id)arg1;
 - (void)_finalizeLiftCancellation;
 - (void)_cancelLift;
-- (void)_endLift;
+- (void)_endLiftWithoutDragging;
 - (BOOL)_beginLiftForItems:(id)arg1 session:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)_prepareForLiftAtPoint:(struct CGPoint)arg1 invocationType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_accessibilityAddItemsToDragSessionAtPoint:(struct CGPoint)arg1;

@@ -7,17 +7,19 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitBackingStore/HMBCloudZoneRebuilder-Protocol.h>
+#import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class HMBCloudZone, HMBCloudZoneRebuilderStatus, NAFuture;
+@class HMBCloudZone, HMBCloudZoneRebuilderStatus, NAFuture, NSString;
 
 __attribute__((visibility("hidden")))
-@interface HMBSharedCloudZoneRebuilder : HMFObject <HMBCloudZoneRebuilder>
+@interface HMBSharedCloudZoneRebuilder : HMFObject <HMFLogging, HMBCloudZoneRebuilder>
 {
     HMBCloudZoneRebuilderStatus *_rebuilderStatus;
     NAFuture *_rebuildCompleteFuture;
     HMBCloudZone *_cloudZone;
 }
 
++ (id)logCategory;
 @property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain, nonatomic) NAFuture *rebuildCompleteFuture; // @synthesize rebuildCompleteFuture=_rebuildCompleteFuture;
 @property(copy) HMBCloudZoneRebuilderStatus *rebuilderStatus; // @synthesize rebuilderStatus=_rebuilderStatus;
@@ -29,6 +31,12 @@ __attribute__((visibility("hidden")))
 - (id)zoneStartUp;
 - (void)rebuild;
 - (id)initWithCloudZone:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -4,23 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <WorkflowUI/WFActionCustomView.h>
 
-@class UIStackView, WFHFTriggerActionSetsBuilderParameterState;
+#import <ActionKitUI/WFActionEventObserver-Protocol.h>
+
+@class NSString, UIStackView;
 
 __attribute__((visibility("hidden")))
-@interface WFHomeAccessoryActionView : UIView
+@interface WFHomeAccessoryActionView : WFActionCustomView <WFActionEventObserver>
 {
-    WFHFTriggerActionSetsBuilderParameterState *_parameterState;
     UIStackView *_iconsStackView;
 }
 
-+ (double)preferredHeightForParameterState:(id)arg1;
++ (double)preferredHeightForAction:(id)arg1;
 @property(retain, nonatomic) UIStackView *iconsStackView; // @synthesize iconsStackView=_iconsStackView;
-@property(copy, nonatomic) WFHFTriggerActionSetsBuilderParameterState *parameterState; // @synthesize parameterState=_parameterState;
 - (void).cxx_destruct;
 - (void)updateIcons;
+- (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
+- (void)setAction:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 
