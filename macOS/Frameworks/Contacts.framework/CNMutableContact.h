@@ -88,7 +88,9 @@
 - (void)_setLinkIdentifier:(id)arg1;
 @property(copy, nonatomic) NSString *linkIdentifier; // @dynamic linkIdentifier;
 @property(nonatomic) BOOL imageDataAvailable; // @dynamic imageDataAvailable;
+- (void)updateExternalImageURIFromCurrentState;
 - (void)updateImageDataAvailableFromCurrentState;
+- (void)updateDependentImagePropertiesFromCurrentState;
 - (void)_setSyncImageData:(id)arg1;
 - (void)setSyncImageData:(id)arg1;
 - (id)syncImageData;

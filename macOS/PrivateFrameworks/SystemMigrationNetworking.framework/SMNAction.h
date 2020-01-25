@@ -15,6 +15,7 @@
     CDUnknownBlockType _shouldContinueBlock;
     NSString *_uniqueID;
     NSDictionary *_result;
+    NSString *_selectiveDescription;
 }
 
 + (void)sendErrorResponseOnStream:(id)arg1;
@@ -24,6 +25,7 @@
 + (id)actionWithPayload:(id)arg1;
 + (id)descriptionForActionID:(int)arg1;
 + (int)actionID;
+@property(retain) NSString *selectiveDescription; // @synthesize selectiveDescription=_selectiveDescription;
 @property(retain) NSDictionary *result; // @synthesize result=_result;
 @property(retain) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly) int returnCode; // @synthesize returnCode=_returnCode;

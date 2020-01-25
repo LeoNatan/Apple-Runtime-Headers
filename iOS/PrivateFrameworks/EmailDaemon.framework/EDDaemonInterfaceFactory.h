@@ -17,6 +17,7 @@
 @property(retain, nonatomic) EDCategorySubsystem *categorySubsystem; // @synthesize categorySubsystem=_categorySubsystem;
 @property(readonly, nonatomic) EDPersistence *persistence; // @synthesize persistence=_persistence;
 - (void).cxx_destruct;
+- (id)newClientResumerWithForegroundReporter:(id)arg1;
 - (id)newActivityRegistry;
 - (id)newVIPManagerInterface;
 - (id)sharedDonationController;

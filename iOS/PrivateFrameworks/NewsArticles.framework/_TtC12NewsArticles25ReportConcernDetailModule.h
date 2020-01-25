@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles25ReportConcernDetailModule : NSObject
 {
     // Error parsing type: , name: resolver
+    // Error parsing type: , name: tracker
 }
 
 - (void).cxx_destruct;

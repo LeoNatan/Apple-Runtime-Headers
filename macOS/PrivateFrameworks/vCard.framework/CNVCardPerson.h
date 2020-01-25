@@ -53,13 +53,13 @@
     NSString *_cardDAVUID;
     NSString *_uid;
     NSString *_phonemeData;
-    NSString *_downtimeWhitelist;
+    int _downtimeWhitelistAuthorization;
     NSArray *_unknownProperties;
     NSString *_preferredLikenessSource;
     NSString *_preferredApplePersonaIdentifier;
 }
 
-@property(retain) NSString *downtimeWhitelist; // @synthesize downtimeWhitelist=_downtimeWhitelist;
+@property int downtimeWhitelistAuthorization; // @synthesize downtimeWhitelistAuthorization=_downtimeWhitelistAuthorization;
 @property(retain) NSArray *unknownProperties; // @synthesize unknownProperties=_unknownProperties;
 @property(retain) NSString *preferredApplePersonaIdentifier; // @synthesize preferredApplePersonaIdentifier=_preferredApplePersonaIdentifier;
 @property(retain) NSString *preferredLikenessSource; // @synthesize preferredLikenessSource=_preferredLikenessSource;

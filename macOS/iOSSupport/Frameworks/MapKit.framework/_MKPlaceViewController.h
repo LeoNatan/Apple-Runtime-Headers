@@ -255,6 +255,7 @@
 - (BOOL)hasWebContent;
 - (BOOL)isWebContentLoading;
 - (BOOL)isLoading;
+- (BOOL)isLayoutDynamic;
 - (void)_setDefaultViewControllers:(id)arg1;
 - (id)draggableHeaderView;
 - (id)draggableContent;

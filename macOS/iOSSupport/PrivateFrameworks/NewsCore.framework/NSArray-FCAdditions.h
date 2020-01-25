@@ -45,6 +45,7 @@
 - (id)fc_subarrayUpToIndex:(unsigned long long)arg1 inclusive:(BOOL)arg2;
 - (id)fc_subarrayUpToCountInclusive:(unsigned long long)arg1;
 - (id)fc_arrayByAddingNonContainedObjectsFromArray:(id)arg1;
+- (id)fc_setByCollectingObjectsWithBlock:(CDUnknownBlockType)arg1;
 - (id)fc_arrayByCollectingObjectsWithBlock:(CDUnknownBlockType)arg1;
 - (id)fc_indexesOfObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)fc_indexesOfObjectsIdenticalTo:(id)arg1;

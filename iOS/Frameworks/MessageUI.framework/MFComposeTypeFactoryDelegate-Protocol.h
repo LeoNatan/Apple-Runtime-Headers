@@ -6,8 +6,8 @@
 
 #import <MessageUI/NSObject-Protocol.h>
 
-@class EFFuture, MFMailAccountProxy, MFMutableMessageHeaders, NSArray, NSString, UIView;
-@protocol MFComposeBodyField, MFMailAccountProxyGenerator;
+@class EFFuture, MFComposeWebView, MFMailAccountProxy, MFMutableMessageHeaders, NSArray, NSString;
+@protocol MFMailAccountProxyGenerator;
 
 @protocol MFComposeTypeFactoryDelegate <NSObject>
 - (EFFuture *)shouldCreateRichTextRepresentation;
@@ -25,7 +25,7 @@
 - (void)setCcRecipients:(NSArray *)arg1;
 - (NSArray *)toRecipients;
 - (void)setToRecipients:(NSArray *)arg1;
-- (UIView<MFComposeBodyField> *)bodyField;
+- (MFComposeWebView *)composeWebView;
 - (id <MFMailAccountProxyGenerator>)accountProxyGenerator;
 
 @optional

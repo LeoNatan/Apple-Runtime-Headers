@@ -39,6 +39,11 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
+struct TransformMetadataItemPair {
+    id _field1;
+    id _field2;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

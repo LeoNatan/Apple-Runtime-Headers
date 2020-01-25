@@ -7,6 +7,7 @@
 @class ADAdSpaceConfiguration, ADAdSpaceEventInfo, ADDeviceInfo, ADMRAIDAction, ADSInternalPoint, ADSInternalRect, AdAnalyticsEventInfo, NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol ADSSession_RPC
+- (void)_remote_reportErrorEvent:(int)arg1 forAdSpaceWithIdentifier:(NSString *)arg2 errorDetails:(NSString *)arg3 badURLs:(NSArray *)arg4;
 - (void)_remote_captureAnalytics:(AdAnalyticsEventInfo *)arg1 completion:(void (^)(AdAnalyticsEventInfo *, NSError *))arg2;
 - (void)_remote_reportPreRollDidStopForAdSpaceWithIdentifier:(NSString *)arg1;
 - (void)_remote_reportPreRollDidStartForAdSpaceWithIdentifier:(NSString *)arg1;

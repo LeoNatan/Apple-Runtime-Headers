@@ -8,8 +8,9 @@
 
 @interface AVAsset (PUPerspectiveTransform)
 - (id)pu_vitalityVideoComposition;
+-     // Error parsing type: {?=[3]}88@0:8{?=[3]}16@64{CGSize=dd}72, name: pu_perspectiveTransform:rescaledForMetadata:currentAssetDimensions:
 -     // Error parsing type: {?=[3]}24@0:8@16, name: pu_perspectiveTransformForMetadata:
-- (id)pu_stillAssetTransformMetadata;
+- (struct TransformMetadataItemPair)pu_stillAssetTransformMetadataPair;
 - (id)pu_stillImageTransformAssetTrack;
 @property(readonly, nonatomic) _Bool pu_supportsVitality;
 @end

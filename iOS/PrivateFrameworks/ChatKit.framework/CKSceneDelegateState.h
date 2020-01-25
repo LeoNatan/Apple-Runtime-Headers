@@ -13,13 +13,17 @@
 @interface CKSceneDelegateState : NSObject <NSSecureCoding>
 {
     _Bool _composingNewMessage;
+    _Bool _showingInbox;
     NSArray *_unreadLastMessages;
     NSString *_groupID;
     NSDate *_date;
+    unsigned long long _filterMode;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)unarchivingClasses;
+@property(nonatomic) _Bool showingInbox; // @synthesize showingInbox=_showingInbox;
+@property(nonatomic) unsigned long long filterMode; // @synthesize filterMode=_filterMode;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) _Bool composingNewMessage; // @synthesize composingNewMessage=_composingNewMessage;
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
@@ -29,7 +33,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithUnreadMessages:(id)arg1 groupID:(id)arg2 composingNewMessage:(_Bool)arg3;
+- (id)initWithUnreadMessages:(id)arg1 groupID:(id)arg2 composingNewMessage:(_Bool)arg3 filterMode:(unsigned long long)arg4 showingInbox:(_Bool)arg5;
 
 @end
 

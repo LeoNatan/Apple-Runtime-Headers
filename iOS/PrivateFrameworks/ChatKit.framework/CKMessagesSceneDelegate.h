@@ -31,6 +31,8 @@
 - (id)_oldInputContextIdentifiers;
 - (void)_clearOldInputContextIdentifiersIfNeeded;
 - (id)sharedConversationList;
+- (_Bool)_messageFilteringEnabled;
+- (_Bool)_shouldShowInboxView;
 - (void)messagesController:(id)arg1 didUpdateCurrentConversation:(id)arg2;
 - (id)canActivatePredicate;
 - (id)prefersToActivatePredicate;

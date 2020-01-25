@@ -38,5 +38,6 @@
 - (NSString *)phonemesFromIPA:(NSString *)arg1 language:(NSString *)arg2;
 - (NSString *)lhPhonemesFromIPA:(NSString *)arg1 language:(NSString *)arg2;
 - (_Bool)employSpeechMarkupForType:(long long)arg1 language:(NSString *)arg2;
+- (oneway void)getVoicesForLanguage:(NSString *)arg1 queryingMobileAssets:(_Bool)arg2 reply:(void (^)(NSArray *))arg3;
 @end
 

@@ -37,7 +37,7 @@
 - (void)insertText:(id)arg1;
 - (_Bool)_accessibilityInputObjectUsesSecureText:(id)arg1;
 - (id)_accessibilityKeyboardInputDelegate;
-- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4;
+- (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4 compareAttributes:(_Bool)arg5;
 - (void)unmarkText:(id)arg1;
 - (void)hideKeyboard;
 - (void)showKeyboard;

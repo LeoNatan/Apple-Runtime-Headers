@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)addObserver:(id)arg1 selector:(SEL)arg2 name:(struct __CFString *)arg3 uiElement:(id)arg4 cancelMask:(unsigned int)arg5;
+- (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (BOOL)isDictationApplication;
 
 @end

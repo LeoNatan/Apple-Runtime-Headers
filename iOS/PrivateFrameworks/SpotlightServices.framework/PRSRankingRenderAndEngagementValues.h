@@ -9,18 +9,16 @@
 #import <SpotlightServices/NSCopying-Protocol.h>
 #import <SpotlightServices/NSSecureCoding-Protocol.h>
 
-@class NSMutableArray;
-
 @interface PRSRankingRenderAndEngagementValues : NSObject <NSSecureCoding, NSCopying>
 {
-    NSMutableArray *_renderValues;
-    NSMutableArray *_engagementValues;
+    short _renderValues[6];
+    short _engagementValues[6];
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) NSMutableArray *engagementValues; // @synthesize engagementValues=_engagementValues;
-@property(retain) NSMutableArray *renderValues; // @synthesize renderValues=_renderValues;
-- (void).cxx_destruct;
+- (void)incrementRankingValuesForType:(int)arg1;
+- (void)setRankingValues:(short [6])arg1 forType:(int)arg2;
+- (_Bool)getRankingValues:(short *)arg1 withRankingValueSize:(unsigned long long)arg2 forType:(int)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

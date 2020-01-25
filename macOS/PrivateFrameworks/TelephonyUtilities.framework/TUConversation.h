@@ -64,6 +64,8 @@
 - (unsigned long long)hash;
 - (BOOL)isEqualToConversation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)handles;
+- (id)bundleIdentifier;
 @property(readonly, nonatomic) TUContactsDataProvider *contactsDataProvider; // @synthesize contactsDataProvider=_contactsDataProvider;
 - (BOOL)isRepresentedByRemoteMembers:(id)arg1;
 - (id)initiatorLocalizedName;

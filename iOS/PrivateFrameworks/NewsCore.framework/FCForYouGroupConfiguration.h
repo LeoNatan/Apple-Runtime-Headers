@@ -27,6 +27,7 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long groupType; // @synthesize groupType=_groupType;
 - (void).cxx_destruct;
+- (id)copyWithGroupPosition:(unsigned long long)arg1 precedingGroupsCount:(unsigned long long)arg2 precedingGroupsCountForFirstGroup:(unsigned long long)arg3;
 - (long long)compareGroupPosition:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

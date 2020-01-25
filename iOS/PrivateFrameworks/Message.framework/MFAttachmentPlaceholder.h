@@ -27,6 +27,8 @@
 + (id)_placeholderMagic;
 + (id)placeholderFromSerializedRepresentation:(id)arg1;
 + (id)_localStoreURLForFileData:(id)arg1 contentID:(id)arg2;
++ (id)attachmentPlaceholderForData:(id)arg1 fileName:(id)arg2 type:(id)arg3 contentID:(id)arg4;
++ (id)attachmentPlaceholderForFileURL:(id)arg1 fileName:(id)arg2 fileSize:(long long)arg3 type:(id)arg4 contentID:(id)arg5;
 + (id)placeholder;
 - (void).cxx_destruct;
 - (id)serializedRepresentation;

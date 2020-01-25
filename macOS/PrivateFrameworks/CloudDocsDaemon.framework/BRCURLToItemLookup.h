@@ -65,7 +65,7 @@
 @property(readonly, nonatomic) BRCDocumentItem *faultedLocalItem; // @synthesize faultedLocalItem=_faultedLocalItem;
 @property(readonly, nonatomic) BRCServerItem *faultedServerItem; // @synthesize faultedServerItem=_faultedServerItem;
 @property(readonly, nonatomic) BRCRelativePath *faultedRelpath; // @synthesize faultedRelpath=_faultedRelpath;
-- (void)_fetchFaultedPathMatch;
+- (void)_fetchFaultedMatch;
 @property(readonly, nonatomic) CDStruct_177058d5 faultedMatch;
 - (void)refreshFaultedDiffs;
 - (void)clearByIDItem;
@@ -103,7 +103,9 @@
 - (BOOL)_applyOrEvictLosersIfNecessary:(id)arg1 si:(id)arg2 url:(id)arg3 addedLosers:(id)arg4 removedLosers:(id)arg5 updatedAddition:(char *)arg6 applySchedulerState:(int *)arg7;
 - (BOOL)_applyOrDownloadThumbnailIfNecessary:(id)arg1 si:(id)arg2 url:(id)arg3 updatedAddition:(char *)arg4 applySchedulerState:(int *)arg5;
 - (BOOL)tryToDeleteItemInNamespace:(unsigned char)arg1;
+- (BOOL)trashItemIfNecessary:(id)arg1 atURL:(id)arg2 error:(id *)arg3;
 - (void)tryToUpdateItemInNamespace:(unsigned char)arg1 withDstLookup:(id)arg2;
+- (BOOL)copyItemAtURLToGenstore:(id)arg1 forItem:(id)arg2 error:(id *)arg3;
 - (BOOL)_bouncePathMatchIfNecessaryWithLookup:(id)arg1 localItem:(id)arg2 serverItem:(id)arg3 bounceNamespace:(unsigned char)arg4 applyNamespace:(unsigned char)arg5;
 - (BOOL)_canUpdatePathMatch:(const CDStruct_177058d5 *)arg1 hasAdditionsToApply:(BOOL)arg2;
 - (BOOL)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id *)arg3;

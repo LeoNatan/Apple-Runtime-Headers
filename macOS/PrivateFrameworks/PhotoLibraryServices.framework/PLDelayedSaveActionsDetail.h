@@ -28,10 +28,12 @@
     NSDictionary *_searchIndexUpdates;
     NSSet *_albumCountsAndDateRangeUpdates;
     NSDictionary *_assetsForAnalysis;
+    NSSet *_assetsForDuetDelete;
 }
 
 + (id)_decodeMomentDeletes:(id)arg1 urlToObjectID:(CDUnknownBlockType)arg2;
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSSet *assetsForDuetDelete; // @synthesize assetsForDuetDelete=_assetsForDuetDelete;
 @property(copy, nonatomic) NSDictionary *assetsForAnalysis; // @synthesize assetsForAnalysis=_assetsForAnalysis;
 @property(copy, nonatomic) NSSet *albumCountsAndDateRangeUpdates; // @synthesize albumCountsAndDateRangeUpdates=_albumCountsAndDateRangeUpdates;
 @property(copy, nonatomic) NSDictionary *searchIndexUpdates; // @synthesize searchIndexUpdates=_searchIndexUpdates;

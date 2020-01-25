@@ -53,9 +53,9 @@
 - (_Bool)_preStartCheck;
 - (void)_clearQueue;
 - (long long)_numberOfTapMinutesForClockTime;
-- (long long)_numberOfTapHoursForClockTime;
+- (long long)_numberOfTapHoursForClockTimeWithEncoding:(long long)arg1;
 - (id)_dateComponentsForClockTime;
-- (long long)_numberOfTapsForHourNumber:(long long)arg1;
+- (long long)_numberOfTapsForHourNumber:(long long)arg1 withEncoding:(long long)arg2;
 - (_Bool)_is24HourTime;
 - (void)_updateIs24HourTime;
 - (void)_localeDidChange:(id)arg1;

@@ -45,12 +45,14 @@
     unsigned int _isBRAlias:1;
     unsigned int _qtnResolved:1;
     unsigned int _xattrsResolved:1;
+    unsigned int _sharedBookmarkResolved:1;
     int _fd;
     // Error parsing type: Ai, name: _openRefCount
     struct brc_mutex _mutex;
     BRCAccountSession *_session;
     NSData *_quarantineInfo;
     NSData *_xattrs;
+    NSString *_sharedItemBookmark;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -65,6 +67,7 @@
 - (id)description;
 @property(readonly) unsigned long long parentHash;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *sharedItemBookmark; // @synthesize sharedItemBookmark=_sharedItemBookmark;
 @property(readonly, nonatomic) NSData *xattrs; // @synthesize xattrs=_xattrs;
 @property(readonly, nonatomic) NSData *quarantineInfo; // @synthesize quarantineInfo=_quarantineInfo;
 @property(readonly, nonatomic) BRCBookmark *bookmark;

@@ -6,14 +6,17 @@
 
 #import <MapsSupport/MSPContainerPersister.h>
 
-@class NSURL;
+@class NSObject, NSURL;
+@protocol OS_dispatch_queue;
 
 @interface MSPFileContainerPersister : MSPContainerPersister
 {
     NSURL *_persistenceFileURL;
+    NSObject<OS_dispatch_queue> *_ioQueue;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(readonly, nonatomic) NSURL *persistenceFileURL; // @synthesize persistenceFileURL=_persistenceFileURL;
 - (void).cxx_destruct;
 - (id)stateSnapshotFromData:(id)arg1;

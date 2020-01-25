@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
     long long _contactManagementState;
 }
 
++ (void)setHasShownCompatibilityAlert:(_Bool)arg1 forDSID:(id)arg2;
++ (_Bool)hasShownCompatibilityAlertForDSID:(id)arg1;
 @property _Bool contactsEditable; // @synthesize contactsEditable=_contactsEditable;
 @property long long contactManagementState; // @synthesize contactManagementState=_contactManagementState;
 @property long long downtimeCommunicationLimit; // @synthesize downtimeCommunicationLimit=_downtimeCommunicationLimit;

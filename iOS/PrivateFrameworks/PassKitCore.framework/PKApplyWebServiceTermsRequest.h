@@ -8,19 +8,25 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSString, NSURL, PKPaymentDeviceMetadata;
+@class NSDecimalNumber, NSString, NSURL, PKPaymentDeviceMetadata;
 
 @interface PKApplyWebServiceTermsRequest : PKApplyWebServiceRequest <NSSecureCoding>
 {
     _Bool _termsAccepted;
+    _Bool _isInstallment;
     NSString *_applicationIdentifier;
     NSString *_applicationTermsIdentifier;
     NSString *_offerTermsIdentifier;
     NSURL *_baseURL;
     PKPaymentDeviceMetadata *_deviceMetadata;
+    NSDecimalNumber *_installmentAmount;
+    NSString *_installmentCurrencyCode;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *installmentCurrencyCode; // @synthesize installmentCurrencyCode=_installmentCurrencyCode;
+@property(retain, nonatomic) NSDecimalNumber *installmentAmount; // @synthesize installmentAmount=_installmentAmount;
+@property(nonatomic) _Bool isInstallment; // @synthesize isInstallment=_isInstallment;
 @property(retain, nonatomic) PKPaymentDeviceMetadata *deviceMetadata; // @synthesize deviceMetadata=_deviceMetadata;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(nonatomic) _Bool termsAccepted; // @synthesize termsAccepted=_termsAccepted;

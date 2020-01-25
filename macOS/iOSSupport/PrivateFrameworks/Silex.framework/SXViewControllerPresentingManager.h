@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
+#import <Silex/SWViewControllerPresentingManager-Protocol.h>
 #import <Silex/SXViewControllerPresenting-Protocol.h>
 
 @class NSString, UIViewController;
 
-@interface SXViewControllerPresentingManager : NSObject <SXViewControllerPresenting>
+@interface SXViewControllerPresentingManager : NSObject <SXViewControllerPresenting, SWViewControllerPresentingManager>
 {
     UIViewController *_presentingViewController;
 }
 
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
+- (void)popOrDismissViewControllerAnimated:(BOOL)arg1;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2;
 @property(readonly, nonatomic) UIViewController *controller;

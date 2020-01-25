@@ -96,6 +96,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)setView:(id)arg1;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

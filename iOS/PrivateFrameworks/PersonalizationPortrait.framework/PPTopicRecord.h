@@ -9,10 +9,11 @@
 #import <PersonalizationPortrait/NSCopying-Protocol.h>
 #import <PersonalizationPortrait/NSMutableCopying-Protocol.h>
 #import <PersonalizationPortrait/NSSecureCoding-Protocol.h>
+#import <PersonalizationPortrait/PPRecord-Protocol.h>
 
 @class NSString, PPSource, PPTopic, PPTopicMetadata;
 
-@interface PPTopicRecord : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface PPTopicRecord : NSObject <PPRecord, NSCopying, NSMutableCopying, NSSecureCoding>
 {
     PPTopic *_topic;
     PPSource *_source;

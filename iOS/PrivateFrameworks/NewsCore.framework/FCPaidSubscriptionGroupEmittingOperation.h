@@ -20,7 +20,10 @@
 - (void)_fetchTagForSourceChannelIdentifier:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)_feedItemsTransformationWithOptions:(long long)arg1;
 - (id)_additionalFeedItemsTransformationLimitedToNumberOfFeedItems:(unsigned long long)arg1 withOptions:(long long)arg2;
+- (void)_constructClassicGroupForChannelWithIdentifier:(id)arg1 usingFeedItems:(id)arg2 feedFilterOptions:(long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_constructSupergroupForChannelWithGroupConfig:(id)arg1 forYouConfig:(id)arg2 usingFeedItems:(id)arg3 feedFilterOptions:(long long)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)_constructGroupForChannelWithIdentifier:(id)arg1 usingFeedItems:(id)arg2 feedFilterOptions:(long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_continueWithEnumerator:(id)arg1 groupedFeedItems:(id)arg2 validPurchasedTagIDs:(id)arg3;
 - (void)_performOperation;
 - (void)performOperation;
 

@@ -54,6 +54,8 @@
 - (void)_handleDisableFKAConfirmation;
 - (void)_handleDisableSwitchControlConfirmation;
 - (void)_handleSwitchUsageConfirmed;
+- (void)_handleASTMenuCustomizeAddDwell:(_Bool)arg1 addScroll:(_Bool)arg2;
+- (void)_handleASTMenuFullForInstance:(id)arg1;
 - (void)_handleDisallowUSBRestrictedModeSCInformativeOnly:(_Bool)arg1;
 - (void)_handleDisallowUSBRestrictedModeVOInformativeOnly:(_Bool)arg1;
 - (void)_handleVONoHomeButtonGestureAlert;
@@ -191,6 +193,7 @@
 - (void)openCommandAndControlCommandsWithServerInstance:(id)arg1;
 - (void)openCommandAndControlSettingsWithServerInstance:(id)arg1;
 - (void)openCustomGestureCreationForSCATWithServerInstance:(id)arg1;
+- (void)openMenuCustomizationForASTWithServerInstance:(id)arg1;
 - (void)openCustomGestureCreationForASTWithServerInstance:(id)arg1;
 - (void)serverInstance:(id)arg1 setOrientationLocked:(_Bool)arg2;
 - (_Bool)isOrientationLockedWithServerInstance:(id)arg1;

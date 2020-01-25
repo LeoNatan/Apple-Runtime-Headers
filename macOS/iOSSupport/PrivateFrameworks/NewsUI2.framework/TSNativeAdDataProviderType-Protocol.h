@@ -7,7 +7,7 @@
 @protocol FCHeadlineProviding;
 
 @protocol TSNativeAdDataProviderType
-- (void)requestNativeSubscriptionAdWithCompletion:(void (^)(id <TSBannerViewProviding>, NSString *, NSString *, NSError *))arg1;
-- (void)requestNativeAdCellDataValidatingAgainst:(id <FCHeadlineProviding>)arg1 completion:(void (^)(id <TSBannerViewProviding>, id <FCHeadlineProviding>, NSError *))arg2;
+- (void)requestNativeSubscriptionAdWithCompletion:(void (^)(id <NABannerViewProviding>, NSString *, NSString *, NSError *))arg1;
+- (void)requestNativeAdCellDataValidatingAgainst:(id <FCHeadlineProviding>)arg1 completion:(void (^)(id <NABannerViewProviding>, id <FCHeadlineProviding>, NSError *))arg2;
 @end
 

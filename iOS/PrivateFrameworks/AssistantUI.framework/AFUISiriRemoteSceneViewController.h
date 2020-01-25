@@ -30,6 +30,7 @@
 @property(nonatomic) __weak id <AFUISiriRemoteSceneViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriRemoteSceneViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (void)setWaitingForTelephonyToStart:(_Bool)arg1;
 - (void)setRunningPPT:(_Bool)arg1 withTestName:(id)arg2 testOptions:(id)arg3;

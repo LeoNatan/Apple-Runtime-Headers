@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, NSMutableDictionary, RTDistanceCalculator, RTMapItemProviderLearnedPlaceParameters, RTMapItemProviderReverseGeocode, RTRelabelerParameters, RTRelabelerPersisterMetrics, RTRelabelerPersisterParameters;
+@class NSManagedObjectContext, NSMutableDictionary, RTDistanceCalculator, RTLocationShifter, RTMapItemProviderLearnedPlaceParameters, RTMapItemProviderReverseGeocode, RTRelabelerParameters, RTRelabelerPersisterMetrics, RTRelabelerPersisterParameters;
 
 @interface RTRelabelerPersister : NSObject
 {
     RTRelabelerPersisterMetrics *_metrics;
     NSManagedObjectContext *_context;
     RTDistanceCalculator *_distanceCalculator;
+    RTLocationShifter *_locationShifter;
     RTMapItemProviderReverseGeocode *_reverseGeocodeProvider;
     RTMapItemProviderLearnedPlaceParameters *_learnedPlaceParameters;
     NSMutableDictionary *_loiIdentifierToUnconcreteMap;
@@ -26,6 +27,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *loiIdentifierToUnconcreteMap; // @synthesize loiIdentifierToUnconcreteMap=_loiIdentifierToUnconcreteMap;
 @property(readonly, nonatomic) RTMapItemProviderLearnedPlaceParameters *learnedPlaceParameters; // @synthesize learnedPlaceParameters=_learnedPlaceParameters;
 @property(readonly, nonatomic) RTMapItemProviderReverseGeocode *reverseGeocodeProvider; // @synthesize reverseGeocodeProvider=_reverseGeocodeProvider;
+@property(readonly, nonatomic) RTLocationShifter *locationShifter; // @synthesize locationShifter=_locationShifter;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) RTRelabelerPersisterMetrics *metrics; // @synthesize metrics=_metrics;
@@ -60,7 +62,8 @@
 - (_Bool)performBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (_Bool)restoreToOldCandidate:(struct RTPair *)arg1 error:(id *)arg2;
 - (_Bool)restoreVisit:(id)arg1 transitions:(id)arg2 toOldCandidate:(struct RTPair *)arg3 error:(id *)arg4;
-- (id)learnedPlaceForVisit:(id)arg1 creationDate:(id)arg2 expirationDate:(id)arg3 error:(id *)arg4;
+- (id)learnedPlaceForVisit:(id)arg1 creationDate:(id)arg2 expirationDate:(id)arg3 context:(id)arg4 error:(id *)arg5;
+- (id)fetchRevGeoLearnedPlaceInVicinityOfLocation:(id)arg1 error:(id *)arg2;
 - (id)fetchLearnedPlaceMOforMapItemIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchLocationOfInterestMOforMapItemIdentifier:(id)arg1 error:(id *)arg2;
 - (id)fetchTransitionMOsEndingAtVisitIdentifier:(id)arg1 error:(id *)arg2;
@@ -70,7 +73,7 @@
 - (id)fetchClosestUnconcreteLocationOfInterestMOToLocation:(id)arg1 withinDistance:(double)arg2 distanceCalculator:(id)arg3 error:(id *)arg4;
 - (id)fetchNearbyLocationOfInterestMOsAroundLocation:(id)arg1 withinDistance:(double)arg2 error:(id *)arg3;
 - (_Bool)unconcreteLOIMO:(id)arg1;
-- (id)initWithDistanceCalculator:(id)arg1 learnedPlaceParameters:(id)arg2 metrics:(id)arg3 persistenceManager:(id)arg4 relabelerParameters:(id)arg5 relabelerPersisterParameters:(id)arg6 reverseGeocodeProvider:(id)arg7;
+- (id)initWithDistanceCalculator:(id)arg1 learnedPlaceParameters:(id)arg2 locationShifter:(id)arg3 metrics:(id)arg4 persistenceManager:(id)arg5 relabelerParameters:(id)arg6 relabelerPersisterParameters:(id)arg7 reverseGeocodeProvider:(id)arg8;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 learnedPlaceParameters:(id)arg3 metrics:(id)arg4 persistenceManager:(id)arg5 relabelerParameters:(id)arg6 reverseGeocodeProvider:(id)arg7;
 - (id)init;
 

@@ -17,16 +17,19 @@
     CNPromise *_familyCirclePromise;
 }
 
++ (id)delegateInfoForFamilyMembers:(id)arg1;
 @property(retain, nonatomic) CNPromise *familyCirclePromise; // @synthesize familyCirclePromise=_familyCirclePromise;
 @property(retain, nonatomic) ACAccountType *accountsType; // @synthesize accountsType=_accountsType;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
 - (void)retryFamilyCircleFetch;
 - (_Bool)isGuardianAccount:(id)arg1;
+- (id)adultsInFamily;
 - (id)nonParentsInFamily;
 - (id)appleIDsOfExistingDelegates:(id)arg1;
 - (id)familyMembersPromise;
 - (id)cardDAVAccounts;
+- (id)collectExpiredDelgatesForAccount:(id)arg1;
 - (id)collectDelegatesForAccount:(id)arg1;
 - (id)init;
 

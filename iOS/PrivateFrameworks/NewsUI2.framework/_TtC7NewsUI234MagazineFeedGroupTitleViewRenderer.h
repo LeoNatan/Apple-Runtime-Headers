@@ -13,6 +13,8 @@
     // Error parsing type: , name: blueprintProvider
     // Error parsing type: , name: likeButtonRenderer
     // Error parsing type: , name: dislikeButtonRenderer
+    // Error parsing type: , name: feedPersonalizer
+    // Error parsing type: , name: tagController
     // Error parsing type: , name: debugEnabled
 }
 

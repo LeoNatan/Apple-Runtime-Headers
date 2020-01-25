@@ -8,13 +8,14 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class GEOAutomobileOptions, MapsSuggestionsManager, MapsSuggestionsShortcutManager, NSString;
+@class GEOAutomobileOptions, MapsSuggestionsManager, MapsSuggestionsShortcutManager, MapsSuggestionsUser, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MapsSuggestionsEngine : NSObject <MapsSuggestionsObject>
 {
     MapsSuggestionsManager *_entryManager;
     MapsSuggestionsShortcutManager *_shortcutManager;
+    MapsSuggestionsUser *_user;
     NSObject<OS_dispatch_queue> *_optionsSerialQueue;
     int _mapType;
     GEOAutomobileOptions *_automobileOptions;
@@ -30,6 +31,7 @@
 - (id)fakeSource;
 - (id)strategy;
 - (id)manager;
+- (id)user;
 - (id)routine;
 - (id)shortcutManager;
 - (void)feedbackForContact:(id)arg1 action:(int)arg2;

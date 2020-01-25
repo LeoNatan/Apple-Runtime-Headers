@@ -8,10 +8,11 @@
 #import <NewsCore/NSObject-Protocol.h>
 
 @class FCColor, FCColorGradient, FCFeedEdition, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo;
-@protocol FCForYouMagazineFeedGroup;
+@protocol FCCardStyleProviding, FCForYouBridgedFeedGroup;
 
 @protocol FCFeedGroupOutlining <NSObject, FCFeedElement>
-@property(readonly, nonatomic) id <FCForYouMagazineFeedGroup> magazineGroup;
+@property(readonly, nonatomic) _Bool usesPlaceholderHeadlines;
+@property(readonly, nonatomic) id <FCForYouBridgedFeedGroup> bridgedGroup;
 @property(readonly, copy, nonatomic) NSArray *issueIDs;
 @property(readonly, copy, nonatomic) NSString *backingTagID;
 @property(readonly, copy, nonatomic) NSArray *headlines;
@@ -21,10 +22,8 @@
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
-@property(readonly, copy, nonatomic) FCColor *darkStyleCardBackgroundColor;
-@property(readonly, copy, nonatomic) FCColor *cardBackgroundColor;
-@property(readonly, copy, nonatomic) FCColorGradient *darkStyleSauceGradient;
-@property(readonly, copy, nonatomic) FCColorGradient *sauceGradient;
+@property(readonly, copy, nonatomic) id <FCCardStyleProviding> darkCardStyle;
+@property(readonly, copy, nonatomic) id <FCCardStyleProviding> cardStyle;
 @property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundGradient;
 @property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
 @property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor;

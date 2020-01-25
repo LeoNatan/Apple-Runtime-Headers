@@ -20,6 +20,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
 - (void)dealloc;
+- (BOOL)CAMLTypeSupportedForKey:(id)arg1;
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -14,7 +14,7 @@
 {
 }
 
-- (void)handleSubscribeActionOnPresenter:(id)arg1;
+- (void)handleSubscribeActionOnPresenter:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -66,7 +66,6 @@
     _Bool _isCurrentlyDownloadingPurgedAssets;
     _Bool _allowedByScreenTime;
     _Bool _hasSurfRequest;
-    NSString *_participantIDsHash;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
     NSString *_groupChatIdentifierUppercase;
@@ -236,7 +235,6 @@
 - (void)_watchHandleStatusChangedForHandle:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
 @property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
-@property(readonly, copy, nonatomic) NSString *participantIDsHash; // @synthesize participantIDsHash=_participantIDsHash;
 - (void)_recomputeOverallChatStatusQuietly:(_Bool)arg1;
 - (void)didUnregisterFromRegistry:(id)arg1;
 - (void)clear;
@@ -245,10 +243,8 @@
 - (_Bool)containsMessageFromContactOrMe;
 - (void)_updateLastSeenMessageGuid:(id)arg1;
 @property(readonly, nonatomic) NSString *lastSeenMessageGuid;
-- (void)verifyChatShouldBeSpamWithService:(id)arg1;
 - (void)_updateChatItemsAsNotSpamEnumeratingItems:(CDUnknownBlockType)arg1;
 - (void)_updateChatItemsAsNotSpam;
-- (void)updateWasDetectedAsiMessageSpam:(_Bool)arg1;
 - (void)updateWasDetectedAsSMSSpam:(_Bool)arg1;
 - (void)updateShouldForceToSMS:(_Bool)arg1;
 - (_Bool)shouldForceToSMS;
@@ -416,6 +412,7 @@
 - (void)_launchAppForJoinRequest:(id)arg1;
 - (id)conversation;
 - (_Bool)mapsToTUConversation:(id)arg1;
+- (id)participantHandleIDs;
 - (id)conversationContext;
 - (_Bool)allowedToShowConversationSync;
 - (_Bool)allowedToShowConversation;

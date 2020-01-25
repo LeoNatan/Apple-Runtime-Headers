@@ -33,6 +33,7 @@
 - (id)_boostApplyRulesForText:(id)arg1 rangeAdjustments:(id)arg2;
 - (id)_calculatedUTF8Offsets:(id)arg1;
 - (id)applyRulesForText:(id)arg1 rangeAdjustments:(id)arg2;
+- (void)_addNSRule:(id)arg1 ruleApplication:(id)arg2 caseInsensitive:(_Bool)arg3;
 - (void)_addRules:(id)arg1;
 - (void)addRules:(id)arg1;
 - (id)init;

@@ -16,7 +16,7 @@
     NSObject<OS_dispatch_queue> *_countQueue;
 }
 
-+ (id)getRenderEngagementCounts;
++ (id)copyRenderEngagementCounts;
 + (id)sharedInstance;
 @property(retain) NSObject<OS_dispatch_queue> *countQueue; // @synthesize countQueue=_countQueue;
 @property(retain) NSMutableArray *sectionCSItems; // @synthesize sectionCSItems=_sectionCSItems;

@@ -6,14 +6,14 @@
 
 #import <AppleMediaServices/NSObject-Protocol.h>
 
-@class AMSBagKeyInfo, NSDate, NSString;
+@class ACAccount, AMSBagKeyInfo, NSDate, NSString;
 
 @protocol AMSBagDataSourceProtocol <NSObject>
 @property(readonly, copy) NSString *profileVersion;
 @property(readonly, copy) NSString *profile;
 @property(readonly, getter=isLoaded) BOOL loaded;
 @property(readonly) NSDate *expirationDate;
-- (NSString *)valueForURLVariable:(NSString *)arg1;
+- (NSString *)valueForURLVariable:(NSString *)arg1 account:(ACAccount *)arg2;
 - (void)loadWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
 - (AMSBagKeyInfo *)bagKeyInfoForKey:(NSString *)arg1;
 

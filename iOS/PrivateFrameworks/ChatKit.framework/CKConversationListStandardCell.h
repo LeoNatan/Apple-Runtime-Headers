@@ -16,6 +16,7 @@
 
 + (id)identifierForConversation:(id)arg1;
 - (void).cxx_destruct;
+- (_Bool)_shouldShowAvatarForWidth:(double)arg1;
 - (id)chevronImageView;
 - (id)contactsForPreviewInteractionForAvatarView:(id)arg1 suggestedKeysToFetch:(id)arg2;
 - (_Bool)avatarView:(id)arg1 shouldShowContact:(id)arg2;

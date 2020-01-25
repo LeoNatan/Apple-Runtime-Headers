@@ -408,8 +408,6 @@
 - (void)_handleMultiUserEnabledChange:(id)arg1 message:(id)arg2;
 - (void)_handleSetHasAnyUserAcknowledgedCameraRecordingOnboardingRequest:(id)arg1;
 - (void)_handleEnableMultiUserRequest:(id)arg1;
-- (void)_handleEnableRemoteAccess:(id)arg1;
-- (void)_handleQueryRemoteAccess:(id)arg1;
 - (void)_configureConfiguredResident:(id)arg1 desiredConfigState:(unsigned long long)arg2 message:(id)arg3;
 - (void)_addResidentWithUsername:(id)arg1 publicKey:(id)arg2 destination:(id)arg3;
 - (void)_sendResidentInviteWithDestination:(id)arg1;
@@ -673,7 +671,7 @@
 - (void)_updateWoWState:(id)arg1;
 - (void)_handleMediaContentProfileAccessControlUpdate:(id)arg1;
 - (void)_handleAssistantAccessControlUpdate:(id)arg1;
-- (void)_registerForInternalNotifications;
+- (void)_registerForNotifications;
 - (void)_registerForMessages;
 @property(readonly, nonatomic) NSUUID *spiClientIdentifier;
 - (void)notifyClientOfVendorInfoUpdatedForManufacturers:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -822,6 +820,7 @@
 - (id)descriptionWithPointer:(BOOL)arg1;
 - (id)shortDescription;
 - (void)dealloc;
+- (void)unconfigure;
 - (id)initWithName:(id)arg1 uuid:(id)arg2 defaultRoomUUID:(id)arg3 owner:(id)arg4 homeManager:(id)arg5 presenceAuth:(id)arg6;
 - (struct NSDictionary *)firmwareUpdateBulletinContext;
 @property(readonly, copy, nonatomic) NSUUID *contextSPIUniqueIdentifier;

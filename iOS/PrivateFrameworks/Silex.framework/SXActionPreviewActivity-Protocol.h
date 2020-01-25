@@ -6,10 +6,11 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXAction, UIViewController;
+@class UIViewController;
+@protocol SXAction;
 
 @protocol SXActionPreviewActivity <NSObject>
-- (void)commitViewController:(UIViewController *)arg1 action:(SXAction *)arg2;
-- (UIViewController *)previewViewControllerForAction:(SXAction *)arg1;
+- (void)commitViewController:(UIViewController *)arg1 action:(id <SXAction>)arg2;
+- (UIViewController *)previewViewControllerForAction:(id <SXAction>)arg1;
 @end
 

@@ -12,20 +12,21 @@
 {
     // Error parsing type: , name: stillImageLayer
     // Error parsing type: , name: playerLayer
-    // Error parsing type: , name: loopBehavior
     // Error parsing type: , name: looper
     // Error parsing type: , name: readyToDisplayObservation
+    // Error parsing type: , name: statusObservation
     // Error parsing type: , name: nonAnimatingDelegate
 }
 
++ (id)defaultActionForKey:(id)arg1;
 - (void).cxx_destruct;
-- (id)initWithLayer:(id)arg1;
-- (id)init;
 - (void)reduceMotionStatusDidChange;
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
 - (void)dealloc;
 - (void)layoutSublayers;
+- (id)initWithLayer:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) AVPlayerLayer *playerLayer; // @synthesize playerLayer;
 

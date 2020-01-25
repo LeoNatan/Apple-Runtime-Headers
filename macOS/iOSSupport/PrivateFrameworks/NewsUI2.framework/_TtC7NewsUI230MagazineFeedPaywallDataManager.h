@@ -8,6 +8,12 @@
 
 @interface _TtC7NewsUI230MagazineFeedPaywallDataManager : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: assetManager
+    // Error parsing type: , name: imageProvider
+    // Error parsing type: , name: layoutAttributesProvider
+    // Error parsing type: , name: imageCache
+    // Error parsing type: , name: model
+    // Error parsing type: , name: blueprintLayoutOptions
 }
 
 @end

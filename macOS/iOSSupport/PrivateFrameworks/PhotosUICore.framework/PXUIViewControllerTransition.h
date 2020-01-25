@@ -35,12 +35,14 @@
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
+- (long long)transitionIdentifierForTransitionMode:(unsigned long long)arg1;
 @property(readonly, nonatomic) UIPercentDrivenInteractiveTransition *interactionController; // @synthesize interactionController=_interactionController;
 - (void)didEndTransition;
 - (void)willEndTransition;
 - (void)willStartTransition;
 - (void)installTransitionAnimationCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)installTransitionAnimationStartHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) long long transitionIdentifier;
 @property(readonly, nonatomic) __weak UIViewController *detailViewController;
 @property(readonly, nonatomic) __weak UIViewController *masterViewController;
 - (id)initWithMasterViewController:(id)arg1 detailViewController:(id)arg2;

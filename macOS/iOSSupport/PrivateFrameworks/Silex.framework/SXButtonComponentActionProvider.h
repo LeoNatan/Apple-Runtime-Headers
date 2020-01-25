@@ -8,16 +8,16 @@
 
 #import <Silex/SXButtonComponentActionProvider-Protocol.h>
 
-@class NSString, SXAction;
+@class NSString;
+@protocol SXAction;
 
 @interface SXButtonComponentActionProvider : NSObject <SXButtonComponentActionProvider>
 {
-    SXAction *_action;
+    id <SXAction> _action;
 }
 
-@property(readonly, nonatomic) SXAction *action; // @synthesize action=_action;
+@property(readonly, nonatomic) id <SXAction> action; // @synthesize action=_action;
 - (void).cxx_destruct;
-- (id)buttonAction;
 - (id)initWithAction:(id)arg1;
 
 // Remaining properties

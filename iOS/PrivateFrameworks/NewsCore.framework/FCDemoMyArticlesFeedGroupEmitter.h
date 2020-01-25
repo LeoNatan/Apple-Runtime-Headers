@@ -14,8 +14,9 @@
 {
 }
 
++ (_Bool)canMergeGroupsUnconditionally;
 + (id)groupEmitterIdentifier;
-- (_Bool)canMergeGroupsUnconditionally;
+@property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 - (_Bool)supportsPagination;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;

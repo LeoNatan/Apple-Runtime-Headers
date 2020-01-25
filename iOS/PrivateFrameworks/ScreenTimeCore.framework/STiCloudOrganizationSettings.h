@@ -6,7 +6,7 @@
 
 #import <ScreenTimeCore/STCoreOrganizationSettings.h>
 
-@class STiCloudOrganization;
+@class NSString, STiCloudOrganization;
 
 __attribute__((visibility("hidden")))
 @interface STiCloudOrganizationSettings : STCoreOrganizationSettings
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(retain, nonatomic) STiCloudOrganization *organization; // @dynamic organization;
+@property(copy, nonatomic) NSString *recoveryAltDSID; // @dynamic recoveryAltDSID;
 
 @end
 

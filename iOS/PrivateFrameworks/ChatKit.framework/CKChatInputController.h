@@ -145,6 +145,8 @@
 - (void)openURL:(id)arg1 pluginID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)entryViewDidChangeSize;
 - (void)messageEntryView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
+- (id)balloonPluginForIndexPath:(id)arg1;
+- (void)didSelectPlugin:(id)arg1;
 - (_Bool)shouldPreventAppFromDisplayingForBundleIdentifier:(id)arg1;
 - (long long)messageEntryViewHighLightInputButton:(id)arg1;
 - (_Bool)messageEntryShouldHideCaret:(id)arg1;

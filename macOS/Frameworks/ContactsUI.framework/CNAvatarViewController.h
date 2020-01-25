@@ -129,6 +129,8 @@
 - (void)updateLikenesses;
 - (void)updateViewModelWithContacts:(id)arg1;
 - (void)setLikenessProviders:(id)arg1;
+- (id)likenessedProvidersByFilteringOutInvalidProviders:(id)arg1;
+- (void)logAnyInvalidLikenessProviders:(id)arg1 origin:(id)arg2;
 @property(retain, nonatomic) CNAvatarCache *avatarCache; // @synthesize avatarCache=_avatarCache;
 @property(retain) NSArray *contacts;
 @property(copy) CNContact *contact;

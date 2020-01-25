@@ -13,7 +13,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 struct ccdh_gp {
     unsigned int _field1;
     unsigned int _field2;
-    CDUnknownFunctionPointerType _field3;
+    struct cczp_funcs *_field3;
     unsigned int _field4[0];
 };
 
@@ -58,6 +58,8 @@ struct ccsrp_ctx {
     unsigned char _field5[19];
     unsigned int _field6[1];
 };
+
+struct cczp_funcs;
 
 #pragma mark Typedef'd Structures
 

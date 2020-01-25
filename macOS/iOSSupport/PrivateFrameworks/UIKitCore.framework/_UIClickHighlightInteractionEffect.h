@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 @interface _UIClickHighlightInteractionEffect : NSObject <UIInteractionEffect>
 {
     long long _phase;
+    long long _inflightAnimationCount;
+    BOOL _isActive;
     UITargetedPreview *_targetedPreview;
     _UIAnchoredClickHighlightPlatterView *_highlightPlatter;
     CDUnknownBlockType _completionBlock;

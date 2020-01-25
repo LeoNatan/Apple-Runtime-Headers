@@ -13,6 +13,7 @@
 - (BOOL)okayToSkip;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
+- (BOOL)isSkippableSnapshot:(id)arg1 deleteAllSnapshotTypes:(BOOL)arg2;
 - (BOOL)_purgeSnapshotsOnVolume:(id)arg1 preserveLastSnapshot:(BOOL)arg2 deleteAllSnapshotTypes:(BOOL)arg3 withError:(id *)arg4;
 - (BOOL)runReturningError:(id *)arg1;
 - (id)initWithOptions:(id)arg1;

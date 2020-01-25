@@ -6,14 +6,14 @@
 
 #import <Silex/SXComponentSizer.h>
 
-@protocol SXWebContentLoadingPolicyProvider;
+@protocol SWLoadingPolicyProvider;
 
 @interface SXWebContentComponentSizer : SXComponentSizer
 {
-    id <SXWebContentLoadingPolicyProvider> _loadingPolicyProvider;
+    id <SWLoadingPolicyProvider> _loadingPolicyProvider;
 }
 
-@property(readonly, nonatomic) id <SXWebContentLoadingPolicyProvider> loadingPolicyProvider; // @synthesize loadingPolicyProvider=_loadingPolicyProvider;
+@property(readonly, nonatomic) id <SWLoadingPolicyProvider> loadingPolicyProvider; // @synthesize loadingPolicyProvider=_loadingPolicyProvider;
 - (void).cxx_destruct;
 - (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5 loadingPolicyProvider:(id)arg6;

@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CNKStagingAreaViewController;
+@class CNKStagingAreaViewController, UIViewController;
 
 @protocol CNKStagingAreaViewControllerDelegate
+- (void)viewControllerDidRequestTemporaryPreventSuspension:(UIViewController *)arg1;
 - (void)didRequestTransitionToCanvasFromStagingAreaViewController:(CNKStagingAreaViewController *)arg1;
 @end
 

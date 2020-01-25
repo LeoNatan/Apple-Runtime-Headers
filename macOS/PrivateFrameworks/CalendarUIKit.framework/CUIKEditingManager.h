@@ -7,18 +7,21 @@
 #import <objc/NSObject.h>
 
 @class EKChangeListener, EKEventStore, NSMutableDictionary, NSMutableSet;
+@protocol OS_dispatch_queue;
 
 @interface CUIKEditingManager : NSObject
 {
     EKEventStore *_eventStore;
     NSMutableSet *_editingContextGroups;
     EKChangeListener *_changeListener;
+    NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_changeHistory;
     NSMutableDictionary *_changedObjectMap;
 }
 
 @property(retain) NSMutableDictionary *changedObjectMap; // @synthesize changedObjectMap=_changedObjectMap;
 @property(retain) NSMutableDictionary *changeHistory; // @synthesize changeHistory=_changeHistory;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) EKChangeListener *changeListener; // @synthesize changeListener=_changeListener;
 @property(retain) NSMutableSet *editingContextGroups; // @synthesize editingContextGroups=_editingContextGroups;
 @property __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
@@ -46,9 +49,7 @@
 - (BOOL)_changesExistForObject:(id)arg1;
 - (id)_liveEditedObjectsMatchingPredicate:(id)arg1 notInSet:(id)arg2;
 - (id)_objectsWithLiveEdits:(id)arg1 matchingPredicate:(id)arg2;
-- (id)changedObjectWithIdentifier:(id)arg1;
-- (id)changedObjects;
-- (id)changedObjectIdentifiers;
+- (id)changedObjectsCopy;
 - (void)clearAllLiveChanges;
 - (void)clearLiveChangesForObjects:(id)arg1;
 - (void)applyLiveChangesToObjects:(id)arg1;

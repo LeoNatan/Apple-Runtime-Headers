@@ -26,7 +26,7 @@
 - (void)didAcceptRemovePIN;
 - (void)didCancelEnteringPIN;
 - (void)didAcceptEnteredPIN:(id)arg1;
-- (_Bool)validatePIN:(id)arg1;
+- (_Bool)validatePIN:(id)arg1 forPINController:(id)arg2;
 - (void)showPINSheet:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showPINSheet:(id)arg1;
 - (_Bool)shouldShowPINSheetForSpecifier:(id)arg1;

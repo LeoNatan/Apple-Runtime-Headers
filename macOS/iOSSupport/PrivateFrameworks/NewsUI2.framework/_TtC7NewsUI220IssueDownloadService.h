@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: cloudContext
     // Error parsing type: , name: layeredMediaAssetHandlesProvider
+    // Error parsing type: , name: highPriorityDownloadQueue
 }
 
 @end

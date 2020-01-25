@@ -47,6 +47,7 @@
 - (id)fetchDefaultAccountWithError:(id *)arg1;
 - (id)fetchDefaultListWithError:(id *)arg1;
 - (id)fetchEligibleDefaultListsWithError:(id *)arg1;
+- (id)compressedDistributedEvaluationDataWithOptions:(id)arg1 error:(id *)arg2;
 - (BOOL)everConnectedToCar;
 - (void)acceptShareWithMetadata:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)stopShare:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;

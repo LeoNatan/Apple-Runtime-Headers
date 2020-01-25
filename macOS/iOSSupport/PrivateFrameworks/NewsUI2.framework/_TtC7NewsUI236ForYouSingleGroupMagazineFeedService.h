@@ -11,6 +11,7 @@
     // Error parsing type: , name: group
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: magazineConfigurationService
+    // Error parsing type: , name: personalizationService
 }
 
 @end

@@ -78,7 +78,8 @@
 - (_Bool)setWrappedPrivateKeys:(id)arg1 forPeerWithID:(id)arg2 error:(id *)arg3;
 - (unsigned int)statusOfPeerWithID:(id)arg1;
 - (_Bool)validatePeerWithPreApproval:(id)arg1 sponsor:(id)arg2;
-- (_Bool)hasPeerPreapprovingKey:(id)arg1;
+- (_Bool)hasPotentiallyTrustedPeerPreapprovingKey:(id)arg1;
+- (id)peerCountsByMachineID;
 - (id)viablePeerCountsByModelID;
 - (id)allMachineIDs;
 - (id)actualPeerWithID:(id)arg1 error:(id *)arg2;

@@ -18,6 +18,7 @@
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(nonatomic) CDStruct_6f807b77 anchor; // @synthesize anchor=_anchor;
 @property(nonatomic) unsigned long long location; // @synthesize location=_location;
+- (struct CGPoint)attachmentOffsetWithReferenceFrame:(struct CGRect)arg1;
 - (void)setVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(CDStruct_c50e6da7)arg2;
 

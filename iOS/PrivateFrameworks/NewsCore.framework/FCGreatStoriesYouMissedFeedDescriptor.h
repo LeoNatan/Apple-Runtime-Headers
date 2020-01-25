@@ -22,7 +22,8 @@
 - (id)editionAtDate:(id)arg1;
 - (id)feedPaginator;
 - (id)name;
-- (id)feedGroupEmittersWithConfiguration:(id)arg1;
+- (id)allEmitterClasses;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1 forYouConfig:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

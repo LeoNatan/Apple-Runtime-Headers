@@ -6,13 +6,17 @@
 
 #import <UIKit/UIAccessibilityElement.h>
 
+@protocol AccessibilityGoalConfigElementDelegate;
+
 @interface AccessibilityGoalConfigElement : UIAccessibilityElement
 {
     id _plusButton;
     id _minusButton;
     id _label;
+    id <AccessibilityGoalConfigElementDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <AccessibilityGoalConfigElementDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id label; // @synthesize label=_label;
 @property(retain) id minusButton; // @synthesize minusButton=_minusButton;
 @property(retain) id plusButton; // @synthesize plusButton=_plusButton;

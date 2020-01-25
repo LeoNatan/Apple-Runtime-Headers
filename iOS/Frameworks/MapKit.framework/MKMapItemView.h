@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) _Bool shouldResolveMapItem; // @synthesize shouldResolveMapItem=_shouldResolveMapItem;
 - (void).cxx_destruct;
+- (_Bool)shouldHideMuninForParsec;
 - (void)dealloc;
 - (void)triggerAnimation;
 - (void)_resetMuninContainerViewState;
@@ -51,6 +52,7 @@
 - (void)_handleTapOnMuninView:(id)arg1;
 - (void)_handleTapOnSnapshot:(id)arg1;
 - (id)_annotationView;
+- (id)_customAnnotation;
 - (id)_deriveSnapshotOptions:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(_Bool)arg2;

@@ -27,12 +27,10 @@
 - (id)emailsForInvitationRecordGUID:(id)arg1;
 - (void)deleteEmailsAndPhonesForInvitationRecordGUID:(id)arg1;
 - (void)setEmails:(id)arg1 phones:(id)arg2 forInvitationRecordGUID:(id)arg3;
-- (id)displayNameForPersonID:(id)arg1;
 - (id)emailForPersonID:(id)arg1;
 - (id)fullNameForPersonID:(id)arg1;
 - (id)lastNameForPersonID:(id)arg1;
 - (id)firstNameForPersonID:(id)arg1;
-- (void)infoForPersonID:(id)arg1 firstName:(id *)arg2 lastName:(id *)arg3 fullName:(id *)arg4 email:(id *)arg5;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 email:(id)arg4 forPersonID:(id)arg5;
 - (id)initWithPathManager:(id)arg1 lazyAssetsdClient:(id)arg2;
 

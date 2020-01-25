@@ -13,6 +13,7 @@
 @property(nonatomic, readonly) NSDate *displayDate;
 
 @optional
+@property(nonatomic, readonly) NSString *shortExcerpt;
 @property(nonatomic, readonly) NSString *title;
 @end
 

@@ -98,6 +98,7 @@
 - (_Bool)isTextDropActive;
 - (_Bool)isTextDragActive;
 - (_Bool)_allowHighlightForTextInteractableItem:(id)arg1;
+- (_Bool)_interactionPossibleWithAttachment:(id)arg1;
 - (id)_textInteractableItemAtPoint:(struct CGPoint)arg1;
 - (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
@@ -395,6 +396,7 @@
 - (void)_scrollToSelectionIfNeeded;
 - (void)_scrollToCaretIfNeeded;
 - (void)_invalidateContainerViewSize;
+- (void)layoutSubviews;
 - (void)_layoutText;
 - (void)_setNeedsTextLayout;
 - (void)setNeedsLayout;

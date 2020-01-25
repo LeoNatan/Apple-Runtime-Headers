@@ -8,6 +8,7 @@
 
 @interface _TtC5TeaUI42FlowBlueprintLayoutCollectionSectionSolver : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: supplementarySolver
     // Error parsing type: , name: layoutDirection
     // Error parsing type: , name: layoutOptions
     // Error parsing type: , name: options

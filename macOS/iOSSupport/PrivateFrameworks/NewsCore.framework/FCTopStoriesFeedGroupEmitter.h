@@ -15,6 +15,7 @@
 }
 
 + (id)groupEmitterIdentifier;
+@property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
 @property(readonly, nonatomic) BOOL isRequiredByFollowingEmitters;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;

@@ -46,7 +46,7 @@
 - (void)_tickleKVO;
 - (void)_removeWatchListApp:(id)arg1;
 - (id)_appsForChannelID:(id)arg1;
-- (void)_accountStoreChangedNotification:(id)arg1;
+- (void)_activeAccountChangedNotification:(id)arg1;
 - (void)_attemptCullingOfObsoleteApp:(id)arg1;
 - (_Bool)synchronize:(unsigned long long)arg1;
 - (void)synchronize:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

@@ -9,10 +9,11 @@
 #import <PersonalizationPortrait/NSCopying-Protocol.h>
 #import <PersonalizationPortrait/NSMutableCopying-Protocol.h>
 #import <PersonalizationPortrait/NSSecureCoding-Protocol.h>
+#import <PersonalizationPortrait/PPRecord-Protocol.h>
 
 @class NSArray, NSString, NSUUID, PPLocation, PPSource;
 
-@interface PPLocationRecord : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface PPLocationRecord : NSObject <PPRecord, NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSUUID *_uuid;
     PPLocation *_location;

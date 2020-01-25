@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)_canShowWhileLocked;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
 - (void)setDefaultNavigationBarStyle;

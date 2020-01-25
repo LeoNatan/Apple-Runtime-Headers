@@ -36,6 +36,8 @@
 - (void)__hostDidChangeStatusBarOrientationToInterfaceOrientation:(int)arg1;
 - (void)__hostDidBecomeActive;
 - (void)__hostWillResignActive;
+- (void)__hostSceneDidEnterBackground;
+- (void)__hostSceneWillEnterForeground;
 - (void)__hostDidEnterBackground;
 - (void)__hostWillEnterForeground;
 - (void)__setBoundingPath:(_UIBoundingPath *)arg1;

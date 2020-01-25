@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <GeoServices/GEOStateCapturing-Protocol.h>
-
 @class GEOApplicationAuditToken, GEODataRequestThrottlerToken, NSData, NSDictionary, NSString, NSURL;
 @protocol GEORequestCounterTicket, OS_xpc_object;
 
-@interface GEODataRequest : NSObject <GEOStateCapturing>
+@interface GEODataRequest : NSObject
 {
     NSURL *_URL;
     NSObject<OS_xpc_object> *_xpcRequest;
@@ -55,22 +53,16 @@
 @property(readonly, nonatomic) GEODataRequestThrottlerToken *throttleToken; // @synthesize throttleToken=_throttleToken;
 - (void).cxx_destruct;
 - (id)publicLogDescription;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(_Bool)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(_Bool)arg10 constraints:(unsigned long long)arg11 allowTLSSessionTicketUse:(_Bool)arg12 allowTFOUse:(_Bool)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16 requestCounterTicket:(id)arg17 multipathServiceType:(unsigned long long)arg18 multipathAlternatePort:(unsigned long long)arg19 throttleToken:(id)arg20;
 - (id)initWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 needsProxy:(_Bool)arg7 HTTPMethod:(BOOL)arg8 bodyData:(id)arg9 HTTPShouldHandleCookies:(_Bool)arg10 constraints:(unsigned long long)arg11 allowTLSSessionTicketUse:(_Bool)arg12 allowTFOUse:(_Bool)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16 requestCounterTicket:(id)arg17 multipathServiceType:(unsigned long long)arg18 multipathAlternatePort:(unsigned long long)arg19 backgroundSessionIdentifier:(id)arg20 throttleToken:(id)arg21;
 - (id)init;
-- (id)captureStateWithHints:(struct os_state_hints_s *)arg1;
 - (id)newURLRequest;
 - (id)updatedRequestWithNewProtobufRequest:(id)arg1;
 - (id)updatedRequestWithNewBodyData:(id)arg1;
 - (id)initForAnalyticsUploadRequest:(id)arg1 toURL:(id)arg2 requiresProxy:(_Bool)arg3 backgroundIdentifier:(id)arg4 compressRequest:(_Bool)arg5 allowCellular:(_Bool)arg6 allowBattery:(_Bool)arg7 timeToLive:(double)arg8 requestCounterTicket:(id)arg9 throttleToken:(id)arg10;
 - (id)initHttpOnlyRequestWithKind:(CDStruct_d1a7ebee)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 needsProxy:(_Bool)arg5 allowCellularUse:(_Bool)arg6 compressRequest:(_Bool)arg7 requestCounterTicket:(id)arg8 multipathServiceType:(unsigned long long)arg9 multipathAlternatePort:(unsigned long long)arg10 throttleToken:(id)arg11;
 - (id)initWithKind:(CDStruct_d1a7ebee)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 needsProxy:(_Bool)arg5 auditToken:(id)arg6 timeoutInterval:(double)arg7 traits:(id)arg8 requestCounterTicket:(id)arg9 multipathServiceType:(unsigned long long)arg10 multipathAlternatePort:(unsigned long long)arg11 throttleToken:(id)arg12;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

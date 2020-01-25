@@ -24,6 +24,7 @@
     _Bool _removing;
     _Bool _hasSafeAreaInsetOverride;
     PKDiscoveryArticleLayout *_articleLayout;
+    int _priority;
     id <PKDiscoveryCardViewDelegate> _delegate;
     int _displayType;
     CDUnknownBlockType _callToActionTappedOverride;
@@ -45,6 +46,7 @@
 @property(nonatomic, getter=isRemoving) _Bool removing; // @synthesize removing=_removing;
 @property(nonatomic) int displayType; // @synthesize displayType=_displayType;
 @property(nonatomic) __weak id <PKDiscoveryCardViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PKDiscoveryArticleLayout *articleLayout; // @synthesize articleLayout=_articleLayout;
 - (void).cxx_destruct;
 - (id)_dismissButtonTintColor;

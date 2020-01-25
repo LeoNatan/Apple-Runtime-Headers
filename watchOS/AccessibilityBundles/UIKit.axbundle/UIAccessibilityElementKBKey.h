@@ -54,12 +54,15 @@
 - (_Bool)isAccessibilityElement;
 - (id)_accessibilityKeyboardKeyEnteredString;
 - (_Bool)_axIsDictationKey;
+- (_Bool)_accessibilitySecondaryActivate;
 - (_Bool)accessibilityActivate;
 - (unsigned long long)_accessibilityAutomationType;
+- (_Bool)_accessibilityActivateForPanAlternate:(_Bool)arg1 isSecondAlternate:(_Bool)arg2 isSecondaryActivate:(_Bool)arg3;
 - (_Bool)_accessibilityActivateForPanAlternate:(_Bool)arg1 isSecondAlternate:(_Bool)arg2;
 - (_Bool)_accessibilityDismissAlternativeKeyPicker;
 - (id)_axLayoutStar;
 - (_Bool)_accessibilityKeyboardKeyAllowsTouchTyping;
+- (_Bool)_accessibilitySupportsSecondaryActivateAction;
 - (_Bool)_accessibilitySupportsActivateAction;
 - (id)_accessibilityLocalizedStringForKeyboardLocale:(id)arg1;
 - (_Bool)_accessibilityWasForcedToUseForeignKB;

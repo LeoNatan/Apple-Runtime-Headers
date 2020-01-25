@@ -27,7 +27,7 @@
     NSString *_realFullPath;
     NSArray *_extraAttributes;
     NSNumber *_pendingLevel;
-    int _type;
+    // Error parsing type: Ai, name: _type
     NSMutableDictionary *_userInfo;
 }
 
@@ -64,9 +64,8 @@
 - (id)userInfoObjectForKey:(id)arg1;
 - (id)_loadUserInfo;
 - (_Bool)isVisible;
-- (void)setMailboxType:(int)arg1;
+@property int mailboxType;
 @property(readonly, nonatomic) long long type;
-- (int)mailboxType;
 - (id)_privacySafeDescription;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;

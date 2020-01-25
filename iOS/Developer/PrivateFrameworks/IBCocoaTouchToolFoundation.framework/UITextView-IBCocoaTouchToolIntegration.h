@@ -7,6 +7,7 @@
 #import <UIKit/UITextView.h>
 
 @interface UITextView (IBCocoaTouchToolIntegration)
+- (void)ibSwizzled_populateArchivedSubviews:(id)arg1;
 - (double)ibAdditionalBaselineOffsetFromBottom;
 - (double)ibAdditionalBaselineOffsetFromTop;
 - (struct CGSize)sizeThatFitsBounds;

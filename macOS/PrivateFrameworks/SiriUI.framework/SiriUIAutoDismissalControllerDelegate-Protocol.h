@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class SiriUIAutoDismissalController;
+@class SiriUIAutoDismissalController, SiriUIDismissalOptions;
 
 @protocol SiriUIAutoDismissalControllerDelegate
+- (void)autoDismissController:(SiriUIAutoDismissalController *)arg1 dismissViewControllerWithDismissalOptions:(SiriUIDismissalOptions *)arg2;
 - (void)autoDismissController:(SiriUIAutoDismissalController *)arg1 willAutoDismiss:(BOOL)arg2;
 @end
 

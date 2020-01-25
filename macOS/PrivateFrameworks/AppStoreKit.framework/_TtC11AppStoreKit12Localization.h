@@ -13,11 +13,11 @@
 @interface _TtC11AppStoreKit12Localization : NSObject <_TtP11AppStoreKit20LocalizationProtocol_>
 {
     // Error parsing type: , name: locale
+    // Error parsing type: , name: extendedLocale
     // Error parsing type: , name: localizedStringTables
     // Error parsing type: , name: dateFormatters
     // Error parsing type: , name: dynamicDateFormatters
     // Error parsing type: , name: $__lazy_storage_$_relativeDateFormatter
-    // Error parsing type: , name: identifier
 }
 
 - (void).cxx_destruct;

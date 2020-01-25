@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
 + (struct NSDirectionalEdgeInsets)edgeInsets;
 + (float)regionSpacing;
 + (float)height;
++ (struct CGSize)intrinsicLockScreenContentSizeForOrientation:(int)arg1;
 + (_Bool)wantsExpandedLeadingPlacements;
 @property(retain, nonatomic) NSDictionary *orderedDisplayItemPlacements; // @synthesize orderedDisplayItemPlacements=_orderedDisplayItemPlacements;
 - (void).cxx_destruct;
 - (id)_backgroundActivityDetailRemovalAnimation;
 - (id)styleAttributesForStyle:(int)arg1;
-- (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)regionIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)overriddenStyleAttributesForDisplayItemWithIdentifier:(id)arg1;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;

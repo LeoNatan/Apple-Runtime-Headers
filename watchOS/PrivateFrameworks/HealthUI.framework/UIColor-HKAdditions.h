@@ -11,6 +11,7 @@
 + (id)_accessibilityColorView;
 + (id)hk_randomColor;
 + (id)hk_colorNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
++ (id)hk_sourceIconTintColor;
 + (id)hk_lightGrayTextColor;
 + (id)hk_unknownCategoryClinicalKeyColor;
 + (id)hk_vitalsClinicalKeyColor;
@@ -40,6 +41,8 @@
 + (id)hk_electrocardiogramCardBackgroundColor;
 + (id)hk_electrocardiogramCardHeaderColor;
 + (id)hk_activityLegendLabelColor;
++ (id)hk_activitySeparatorLollipopColor;
++ (id)hk_activitySeparatorDefaultColor;
 + (id)hk_activityStandGoalMissedGradientBottomColor;
 + (id)hk_activityStandGoalMissedGradientTopColor;
 + (id)hk_activityStandGoalMetGradientBottomColor;

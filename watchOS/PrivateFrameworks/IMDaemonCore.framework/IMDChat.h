@@ -80,9 +80,15 @@
 - (void)updateHasHadSuccessfulQuery:(_Bool)arg1;
 - (void)updateLastSeenMessageGuidIfNeeded:(id)arg1;
 - (id)lastSeenMessageGUID;
+- (int)messageHandshakeState;
+- (int)smsHandshakeState;
+- (_Bool)receivedBlackholeError;
 - (int)getNumberOfTimesRespondedToThread;
 - (_Bool)isSMSSpam;
 - (_Bool)isiMessageSpam;
+- (void)updateMessageHandshakeState:(int)arg1;
+- (void)updateSMSHandshakeState:(int)arg1;
+- (void)updateReceivedBlackholeError:(_Bool)arg1;
 - (void)updateSMSSpamExtensionNameChatProperty:(id)arg1;
 - (void)updateShouldForceToSMS:(_Bool)arg1;
 - (void)updateIsSMSSpamChatProperty:(_Bool)arg1;

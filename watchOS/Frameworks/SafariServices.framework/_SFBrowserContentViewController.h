@@ -396,6 +396,7 @@
 - (_Bool)_shouldGoBackToOwnerWebView;
 - (void)_setUpFindOnPageViewIfNeeded;
 - (void)_setUpWebViewControllerIfNeeded;
+- (void)_updateWebKitExperimentalFeatures;
 - (void)_updateTrackerProtectionPreferences;
 - (_Bool)isSafariRestricted;
 - (id)webViewConfiguration;

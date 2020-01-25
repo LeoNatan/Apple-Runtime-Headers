@@ -6,11 +6,12 @@
 
 #import <ContactsUICore/NSObject-Protocol.h>
 
-@class PRLikeness;
+@class NSString, PRLikeness;
 
 @protocol CNUIPRLikenessProvider <NSObject>
 
 @optional
+- (NSString *)likenessFingerprint;
 - (struct CGImage *)_cnui_image;
 - (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct CGImage *)_cnui_circularImageForSize:(struct CGSize)arg1 scale:(double)arg2;

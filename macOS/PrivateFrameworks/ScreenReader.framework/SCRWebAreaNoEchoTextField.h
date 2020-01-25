@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEditable;
 - (id)_staticText_textMarkerRange_selectRange:(struct _NSRange)arg1 textArea:(id)arg2;
 - (id)_staticTextSupportingTextMarkerRangeSelectRange:(struct _NSRange)arg1 withStartingIndexOffset:(unsigned long long)arg2 textArea:(id)arg3;
+- (BOOL)supportsCaretBrowsing;
 - (BOOL)shouldOutputClickableState;
 - (id)helpDescription;
 - (id)shortInstruction;

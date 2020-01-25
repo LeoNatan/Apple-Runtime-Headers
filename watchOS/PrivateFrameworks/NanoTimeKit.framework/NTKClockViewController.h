@@ -190,6 +190,8 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)_didReceiveTritiumSettingChangeNotification;
 - (void)_teardownExistingFaceViewControllerIfNeeded;
 - (void)_finishLoadingViewIfNecessary;
 - (_Bool)_hasRealFaceCollections;

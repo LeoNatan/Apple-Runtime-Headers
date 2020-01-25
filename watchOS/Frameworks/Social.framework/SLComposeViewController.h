@@ -57,6 +57,7 @@
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidUnload;
 - (void)viewDidAppear:(_Bool)arg1;

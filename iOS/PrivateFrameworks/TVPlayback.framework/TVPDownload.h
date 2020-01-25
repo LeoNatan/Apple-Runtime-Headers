@@ -13,6 +13,7 @@
 
 @interface TVPDownload : NSObject <AVAssetDownloadDelegate>
 {
+    _Bool _performKeyFetchOnly;
     _Bool _downloadIsComplete;
     NSObject<TVPMediaItem> *_mediaItem;
     long long _state;
@@ -45,6 +46,7 @@
 @property(nonatomic) __weak TVPDownloadSession *downloadSession; // @synthesize downloadSession=_downloadSession;
 @property(retain, nonatomic) TVPMediaItemLoader *mediaItemLoader; // @synthesize mediaItemLoader=_mediaItemLoader;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(nonatomic) _Bool performKeyFetchOnly; // @synthesize performKeyFetchOnly=_performKeyFetchOnly;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;

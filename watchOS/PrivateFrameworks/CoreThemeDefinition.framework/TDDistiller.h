@@ -81,6 +81,7 @@
 - (id)_productionForRenditionSpec:(id)arg1;
 - (_Bool)sortAndStoreRenditions;
 - (_Bool)_storeRenditions;
+- (void)_binaryInsertList:(id)arg1;
 - (unsigned int)_removeRenditionsWithKeySpecs:(id)arg1;
 - (_Bool)_sortRenditionEntries;
 - (void)setAsset:(id)arg1 withKey:(const struct _renditionkeytoken *)arg2 fromRenditionSpec:(id)arg3;

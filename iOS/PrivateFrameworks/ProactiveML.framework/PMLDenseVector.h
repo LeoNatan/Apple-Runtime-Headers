@@ -26,10 +26,12 @@
 - (float)minValue;
 - (float)l2norm;
 - (float)l1norm;
+- (float)cosineDistanceFrom:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)vecByAppendingVec:(id)arg1;
 - (id)sliceFrom:(int)arg1 to:(int)arg2;
+- (id)initWithNumbers:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithFloatsNoCopy:(float *)arg1 count:(unsigned long long)arg2 deallocator:(CDUnknownBlockType)arg3;
 - (id)initWithFloatsNoCopy:(float *)arg1 count:(unsigned long long)arg2 freeWhenDone:(_Bool)arg3;

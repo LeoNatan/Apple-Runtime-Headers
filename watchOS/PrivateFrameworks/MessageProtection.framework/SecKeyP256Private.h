@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (id)generateWithAccessControl:(struct __CFString *)arg1;
 + (id)generate;
++ (const struct __CFString *)defaultProtectionClassForPlatform;
 @property(retain, nonatomic) SecKeyP256Public *publicKey; // @synthesize publicKey=_publicKey;
 @property(readonly, nonatomic) NSData *privateKeyBlob; // @synthesize privateKeyBlob=_privateKeyBlob;
 - (void).cxx_destruct;

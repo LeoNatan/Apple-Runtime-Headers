@@ -17,6 +17,7 @@
     int _kTCCPhotosAuthorized;
     int _kTCCPhotosAddAuthorized;
     BOOL _libraryUpgradeAuthorized;
+    BOOL _directDatabaseAccessAuthorized;
     BOOL _directDatabaseWriteAuthorized;
     BOOL _photoKitEntitled;
     int _clientProcessIdentifier;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) CDStruct_4c969caf clientAuditToken;
 - (BOOL)isPhotosClient;
 @property(readonly, nonatomic) BOOL directDatabaseWriteAuthorized;
+@property(readonly, nonatomic) BOOL directDatabaseAccessAuthorized;
 - (BOOL)isClientAuthorizedForLibraryUpgrade;
 - (BOOL)isClientAuthorizedForTCCServicePhotosAdd;
 - (BOOL)isClientAuthorizedForTCCServicePhotos;

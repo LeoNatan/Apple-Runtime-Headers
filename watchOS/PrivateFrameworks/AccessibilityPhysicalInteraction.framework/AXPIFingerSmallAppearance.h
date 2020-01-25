@@ -20,6 +20,7 @@
 - (float)fingerInnerRadius;
 - (float)strokeOutlineWidth;
 - (float)strokeWidth;
+- (id)pressedCircularProgressFillColor;
 - (id)circularProgressFillColor;
 - (id)strokeOutlineColor;
 - (id)deselectedStrokeColor;

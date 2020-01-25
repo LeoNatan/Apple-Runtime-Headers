@@ -76,8 +76,11 @@
 @property(retain, nonatomic) AXSpeechAction *requestedActionDuringAudioInterruption; // @synthesize requestedActionDuringAudioInterruption=_requestedActionDuringAudioInterruption;
 @property(nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
 - (void).cxx_destruct;
+- (void)_processWillSpeechRange:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 forRequest:(id)arg3;
+- (void)_processDidContinueCallback:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeakingRequest:(id)arg2;
+- (void)_processDidPauseCallback:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didPauseSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 withError:(id)arg4;
 - (void)__speechJobFinished:(id)arg1;

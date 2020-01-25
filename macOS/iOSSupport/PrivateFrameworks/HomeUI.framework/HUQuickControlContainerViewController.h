@@ -94,6 +94,7 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (BOOL)isControlPresentedOrPresenting;
 @property(readonly, copy) NSString *description;

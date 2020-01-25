@@ -244,6 +244,7 @@
 - (void)_updateInterfaceForModelReloadAnimated:(_Bool)arg1;
 - (_Bool)_shouldShowAsset:(id)arg1;
 - (_Bool)_embedsActivityView;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithPhotoCollectionsFetchResult:(id)arg1 assetsFetchResults:(id)arg2 filterPredicate:(id)arg3 selection:(id)arg4;
 

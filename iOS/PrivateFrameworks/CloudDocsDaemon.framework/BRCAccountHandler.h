@@ -26,6 +26,7 @@
 + (_Bool)destroyCurrentAccountSynchronously;
 + (id)primaryiCloudAccountID;
 + (id)primaryiCloudAccount;
++ (_Bool)icloudAccountIsInCarry;
 + (id)icloudDriveAccountID;
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)mobileDocsAccountID;

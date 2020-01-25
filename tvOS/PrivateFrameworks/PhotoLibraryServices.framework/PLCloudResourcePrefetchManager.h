@@ -51,7 +51,7 @@
 - (void)_checkCPLBackgroundDownloadOperations;
 - (void)handleOptimizeModeChange;
 - (void)startAutomaticPrefetch;
-- (void)dealloc;
+- (void)invalidate;
 - (id)initWithCPLManager:(id)arg1 pruneManager:(id)arg2 library:(id)arg3;
 - (id)init;
 

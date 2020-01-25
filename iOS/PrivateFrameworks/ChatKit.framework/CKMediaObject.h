@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) int mediaType;
 - (id)pasteboardItem;
 @property(readonly, copy, nonatomic) NSString *UTIType;
+- (_Bool)isDirectory;
 @property(readonly, copy, nonatomic) NSString *mimeType;
 @property(readonly, copy, nonatomic) NSDictionary *transcoderUserInfo;
 @property(readonly, copy, nonatomic) NSString *filename;

@@ -30,6 +30,7 @@
 @property(readonly) unsigned int hash;
 - (id)initWithNotification:(id)arg1 actionIdentifier:(id)arg2 userText:(id)arg3;
 - (id)_initWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 targetSceneIdentifier:(id)arg5 userText:(id)arg6;
+- (id)_initWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 targetSceneIdentifier:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -166,6 +166,7 @@
 - (id)accessibilityAttributeNames;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property(readonly, copy) NSURL *presentedItemURL;
+- (BOOL)performDragOperation:(id)arg1 isDragWithinApp:(BOOL)arg2;
 - (BOOL)performDragOperation:(id)arg1;
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (void)_commonSOInputLineInit;

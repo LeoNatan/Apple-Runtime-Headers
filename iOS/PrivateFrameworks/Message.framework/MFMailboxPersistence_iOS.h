@@ -22,7 +22,7 @@
 - (_Bool)moveMailbox:(id)arg1 newParentMailboxID:(id)arg2;
 - (_Bool)deleteMailbox:(id)arg1;
 - (_Bool)createMailbox:(id)arg1 parentMailboxID:(id)arg2;
-- (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1;
+- (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1 createIfNecessary:(_Bool)arg2;
 - (id)initWithMailboxProvider:(id)arg1 database:(id)arg2 library:(id)arg3;
 
 // Remaining properties

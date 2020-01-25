@@ -15,12 +15,16 @@
     BOOL _enforcesUniformHeight;
     BOOL _centerIsPrincipal;
     BOOL _allowsSingleItemClipping;
+    BOOL _centerRequiresTrueCenterLayout;
+    BOOL _overlayRequiresTrueCenterLayout;
     long long _accessoryUserInterfaceLayoutDirection;
     long long _itemUserInterfaceLayoutDirection;
 }
 
 + (id)toolbarLayoutWithVisualCenterX:(double)arg1;
 + (id)touchBarLayoutWithVisualCenterX:(double)arg1;
+@property BOOL overlayRequiresTrueCenterLayout; // @synthesize overlayRequiresTrueCenterLayout=_overlayRequiresTrueCenterLayout;
+@property BOOL centerRequiresTrueCenterLayout; // @synthesize centerRequiresTrueCenterLayout=_centerRequiresTrueCenterLayout;
 @property BOOL allowsSingleItemClipping; // @synthesize allowsSingleItemClipping=_allowsSingleItemClipping;
 @property(getter=isCenterPrincipal) BOOL centerIsPrincipal; // @synthesize centerIsPrincipal=_centerIsPrincipal;
 @property double standardCenterWidth; // @synthesize standardCenterWidth=_standardCenterWidth;

@@ -52,8 +52,10 @@
 @property(readonly) CNDowntimeWhitelist *whitelist; // @synthesize whitelist=_whitelist;
 @property(readonly) CNContactStore *contactsStore; // @synthesize contactsStore=_contactsStore;
 - (void).cxx_destruct;
+- (id)_filteredArrayForKnownHandlesInArray:(id)arg1;
 - (id)_contactsByHandle:(id)arg1 error:(id *)arg2;
 - (void)_populateAllowedContactsByHandlesForContactHandles:(id)arg1 context:(id)arg2;
+- (_Bool)_doesContainAtLeastOneContactInHandles:(id)arg1 contactsByHandle:(id)arg2;
 - (_Bool)_shouldWhileLimitedAllowHandles:(id)arg1 context:(id)arg2;
 - (_Bool)_shouldGeneralScreenTimeAllowHandles:(id)arg1 context:(id)arg2;
 - (void)_emergencyModeDidChange;

@@ -6,18 +6,17 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
-#import <SiriInstrumentation/SISchemaServerEventMetadata-Protocol.h>
-
 @class NSData, NSString;
 
-@interface SISchemaServerEventMetadata : PBCodable <SISchemaServerEventMetadata, NSSecureCoding>
+@interface SISchemaServerEventMetadata : PBCodable
 {
     NSData *_turnID;
     long long _timestampNs;
     NSData *_siriDeviceID;
+    NSString *_serverPod;
 }
 
+@property(copy, nonatomic) NSString *serverPod; // @synthesize serverPod=_serverPod;
 @property(copy, nonatomic) NSData *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
 @property(nonatomic) long long timestampNs; // @synthesize timestampNs=_timestampNs;
 @property(copy, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
@@ -26,15 +25,10 @@
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 - (id)dictionaryRepresentation;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

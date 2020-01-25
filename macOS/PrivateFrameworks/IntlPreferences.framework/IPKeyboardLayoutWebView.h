@@ -48,6 +48,7 @@
 - (id)webView:(id)arg1 contextMenuItemsForElement:(id)arg2 defaultMenuItems:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (unsigned char)defaultFallbackForPhysicalKeyboardID:(unsigned char)arg1;
+- (unsigned char)fallbackForKeyboardIDWithDFRAndEscapeKey:(unsigned char)arg1;
 - (void)updateAriaLabel;
 - (void)updateTrackpadLabel;
 - (void)updateKeyLabels;

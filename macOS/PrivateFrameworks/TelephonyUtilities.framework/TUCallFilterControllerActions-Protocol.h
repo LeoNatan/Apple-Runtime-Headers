@@ -12,7 +12,8 @@
 - (BOOL)isUnknownAddress:(NSString *)arg1 normalizedAddress:(NSString *)arg2 forBundleIdentifier:(NSString *)arg3;
 - (BOOL)willRestrictAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (NSDictionary *)policyForAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
-- (BOOL)shouldRestrictAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
-- (BOOL)containsRestrictedHandle:(TUHandle *)arg1 forBundleIdentifier:(NSString *)arg2;
+- (unsigned long long)filterStatusForAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2;
+- (BOOL)shouldRestrictAddresses:(NSSet *)arg1 forBundleIdentifier:(NSString *)arg2 performSynchronously:(BOOL)arg3;
+- (BOOL)containsRestrictedHandle:(TUHandle *)arg1 forBundleIdentifier:(NSString *)arg2 performSynchronously:(BOOL)arg3;
 @end
 

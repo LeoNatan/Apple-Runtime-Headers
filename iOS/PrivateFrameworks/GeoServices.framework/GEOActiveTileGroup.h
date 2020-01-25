@@ -35,6 +35,7 @@
     GEODataSetDescription *_dataSet;
     NSString *_directionsURLLegacy;
     NSString *_dispatcherURLLegacy;
+    NSMutableArray *_displayStrings;
     NSString *_environment;
     NSString *_etaURLLegacy;
     NSData *_flyoverRegionVersions;
@@ -107,6 +108,7 @@
         unsigned int read_dataSet:1;
         unsigned int read_directionsURLLegacy:1;
         unsigned int read_dispatcherURLLegacy:1;
+        unsigned int read_displayStrings:1;
         unsigned int read_environment:1;
         unsigned int read_etaURLLegacy:1;
         unsigned int read_flyoverRegionVersions:1;
@@ -170,6 +172,7 @@
         unsigned int wrote_dataSet:1;
         unsigned int wrote_directionsURLLegacy:1;
         unsigned int wrote_dispatcherURLLegacy:1;
+        unsigned int wrote_displayStrings:1;
         unsigned int wrote_environment:1;
         unsigned int wrote_etaURLLegacy:1;
         unsigned int wrote_flyoverRegionVersions:1;
@@ -220,6 +223,7 @@
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)displayStringsType;
 + (Class)muninBucketType;
 + (Class)staleResourceType;
 + (Class)regionalResourceType;
@@ -254,6 +258,13 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)displayStringsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)displayStringsCount;
+- (void)_addNoFlagsDisplayStrings:(id)arg1;
+- (void)addDisplayStrings:(id)arg1;
+- (void)clearDisplayStrings;
+@property(retain, nonatomic) NSMutableArray *displayStrings;
+- (void)_readDisplayStrings;
 @property(retain, nonatomic) NSString *environment;
 @property(readonly, nonatomic) _Bool hasEnvironment;
 - (void)_readEnvironment;

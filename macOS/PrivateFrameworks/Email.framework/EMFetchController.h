@@ -21,8 +21,6 @@
 - (void)performFetchOfType:(int)arg1 accounts:(id)arg2;
 - (void)performFetchOfType:(int)arg1 mailboxes:(id)arg2;
 - (void)performFetchOfType:(int)arg1;
-- (BOOL)_networkIsOffline;
-@property(readonly) BOOL networkIsOffline;
 - (id)initWithRemoteConnection:(id)arg1;
 
 @end

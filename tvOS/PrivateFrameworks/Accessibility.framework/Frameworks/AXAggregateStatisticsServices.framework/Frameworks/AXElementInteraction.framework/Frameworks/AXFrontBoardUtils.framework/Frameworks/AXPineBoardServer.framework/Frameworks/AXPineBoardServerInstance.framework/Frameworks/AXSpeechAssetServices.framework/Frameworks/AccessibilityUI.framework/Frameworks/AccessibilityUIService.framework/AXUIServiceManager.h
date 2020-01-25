@@ -9,7 +9,6 @@
 #import <AccessibilityUIService/AXUIMessageSenderDelegate-Protocol.h>
 
 @class AXAccessQueue, AXUIDisplayManager, AXUIMessageSender, BSProcessDeathWatcher, NSMutableArray, NSMutableDictionary, NSString;
-@protocol OS_os_transaction;
 
 @interface AXUIServiceManager : NSObject <AXUIMessageSenderDelegate>
 {
@@ -24,12 +23,12 @@
     NSMutableArray *_serviceContexts;
     AXAccessQueue *_servicesAccessQueue;
     unsigned long long _lastUsedServiceIdentifier;
-    NSObject<OS_os_transaction> *_transaction;
+    NSMutableDictionary *_transactions;
 }
 
 + (void)_releaseSharedServiceManager;
 + (id)sharedServiceManager;
-@property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
+@property(retain, nonatomic) NSMutableDictionary *transactions; // @synthesize transactions=_transactions;
 @property(nonatomic) _Bool shouldAllowServicesToProcessMessages; // @synthesize shouldAllowServicesToProcessMessages=_shouldAllowServicesToProcessMessages;
 @property(nonatomic) unsigned long long lastUsedServiceIdentifier; // @synthesize lastUsedServiceIdentifier=_lastUsedServiceIdentifier;
 @property(retain, nonatomic) AXAccessQueue *servicesAccessQueue; // @synthesize servicesAccessQueue=_servicesAccessQueue;

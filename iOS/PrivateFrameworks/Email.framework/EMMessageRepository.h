@@ -71,7 +71,7 @@
 - (void)didStartBlockingMainThreadForFuture:(id)arg1;
 - (void)_notifyRecoverableObservers;
 - (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3 blockedSenderManager:(id)arg4;
-- (id)_init;
+- (id)initInternal;
 - (unsigned long long)signpostID;
 
 // Remaining properties

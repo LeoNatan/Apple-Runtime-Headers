@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)setContacts:(id)arg1;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithSettings:(id)arg1;
 - (id)descriptorForRequiredKeys;
 

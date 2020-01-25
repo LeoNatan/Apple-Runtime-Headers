@@ -13,14 +13,16 @@
 
 @interface FCFeedTransformationEndOfArticle : NSObject <FCFeedTransforming>
 {
+    _Bool _isPaywallAvailable;
     unsigned long long _minimumResultHeadlineCount;
     double _paidHeadlineRatio;
     unsigned long long _maxiumInaccessibleHeadlineCount;
     id <FCPurchaseProviderType> _purchaseProvider;
 }
 
-+ (id)transformationWithConfiguration:(id)arg1 context:(id)arg2;
++ (id)transformationWithConfiguration:(id)arg1 context:(id)arg2 isPaywallAvailable:(_Bool)arg3;
 @property(retain, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
+@property(nonatomic) _Bool isPaywallAvailable; // @synthesize isPaywallAvailable=_isPaywallAvailable;
 @property(nonatomic) unsigned long long maxiumInaccessibleHeadlineCount; // @synthesize maxiumInaccessibleHeadlineCount=_maxiumInaccessibleHeadlineCount;
 @property(nonatomic) double paidHeadlineRatio; // @synthesize paidHeadlineRatio=_paidHeadlineRatio;
 @property(nonatomic) unsigned long long minimumResultHeadlineCount; // @synthesize minimumResultHeadlineCount=_minimumResultHeadlineCount;

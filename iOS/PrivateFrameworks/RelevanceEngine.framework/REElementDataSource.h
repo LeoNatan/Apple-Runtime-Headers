@@ -56,6 +56,7 @@
 - (id)complicationDescriptor;
 - (void)setUnlockedSinceBoot:(_Bool)arg1;
 - (void)setRunning:(_Bool)arg1;
+- (_Bool)isWhitelisted;
 - (void)elementWithIdentifierDidBecomeHidden:(id)arg1;
 - (void)elementWithIdentifierWillBecomeVisible:(id)arg1;
 - (void)resume;

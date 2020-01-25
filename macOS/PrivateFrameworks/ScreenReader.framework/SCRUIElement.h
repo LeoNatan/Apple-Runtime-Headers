@@ -402,9 +402,12 @@
 - (id)_accessibilityVisibleOpaqueElements;
 - (id)_accessibilityFocusedOpaqueElement;
 - (id)_accessibilityOpaqueElementParent;
+@property(readonly, nonatomic) BOOL _accessibilityIsScrollAncestor;
+@property(readonly, nonatomic) BOOL _accessibilityParentDiscardsChildrenContainerGroupingBehavior;
+@property(readonly, nonatomic) BOOL _accessibilityChildrenContainerGroupingBehaviorHasOverridingParentDelegate;
 @property(readonly, nonatomic) BOOL _accessibilityIsOpaqueElementProvider;
-@property(readonly, copy, nonatomic) NSString *_accessibilityEquivalenceTag;
 @property(nonatomic, getter=_isAssistiveTechnologyFocused, setter=_setAssistiveTechnologyFocused:) BOOL _assistiveTechnologyFocused;
+@property(readonly, nonatomic) BOOL _isiOSElementInWebProcess;
 @property(readonly, nonatomic) BOOL _isiOSElement;
 - (id)_accessibilityUIElementsForRole:(struct __CFString *)arg1;
 @property(nonatomic, getter=_isAccessibilityEnhancedUserInterface, setter=_setAccessibilityEnhancedUserInterface:) BOOL _accessibilityEnhancedUserInterface;
@@ -480,6 +483,8 @@
 @property(readonly, nonatomic) NSNumber *_accessibilityPageIndex;
 @property(readonly, nonatomic) NSNumber *_accessibilityBlockquoteLevel;
 @property(readonly, copy, nonatomic) NSString *_accessibilityPopupValue;
+@property(readonly, copy, nonatomic) NSString *_accessibilityComputedEquivalenceTag;
+@property(readonly, copy, nonatomic) NSString *_accessibilityEquivalenceTag;
 @property(readonly, nonatomic, getter=_hasAccessibilityPopup) BOOL _accessibilityPopup;
 @property(readonly, nonatomic, getter=_isAccessibilityVisited) BOOL _accessibilityVisited;
 @property(readonly, nonatomic, getter=_isAccessibilityBusy) BOOL _accessibilityBusy;
@@ -504,6 +509,10 @@
 - (void)debugNodeDescriptionForTextMarker:(id)arg1;
 - (id)debugDescriptionForTextMarkerRange:(id)arg1;
 - (id)debugDescriptionForTextMarker:(id)arg1;
+- (struct _NSRange)_accessiblityTextInputElementRange;
+- (BOOL)_supportsAccessibilityTextInputElementRange;
+- (id)_accessibilityUIElementForTextInsertionAndDeletion;
+- (BOOL)_supportsAccessibilityUIElementForTextInsertionAndDeletion;
 - (BOOL)_canSetAccessibilitySelectedTextMarkerRange;
 - (id)_accessibilityDataDetectorTypeAtPoint:(struct CGPoint)arg1;
 - (BOOL)_didAccessibilityShowDataDetectorMenuAtPoint:(struct CGPoint)arg1;

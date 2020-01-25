@@ -17,6 +17,7 @@
     BOOL isHistorical;
     BOOL shouldSaveCurrentEventOnShutdown;
     NSString *name;
+    NSString *formattedName;
     NSString *knowledgeBaseName;
     NSString *knowledgeBaseMetadataClass;
     NSString *descriptionString;
@@ -53,6 +54,7 @@
 @property(readonly, nonatomic) NSString *descriptionString; // @synthesize descriptionString;
 @property(readonly, nonatomic) NSString *knowledgeBaseMetadataClass; // @synthesize knowledgeBaseMetadataClass;
 @property(readonly, nonatomic) NSString *knowledgeBaseName; // @synthesize knowledgeBaseName;
+@property(readonly, nonatomic) NSString *formattedName; // @synthesize formattedName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name;
 - (void).cxx_destruct;
 - (id)initFromDictionary:(id)arg1 defaultProperties:(id)arg2;

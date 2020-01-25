@@ -195,12 +195,16 @@
 - (id)textEffectsWindowForServiceScreen;
 - (void)_applicationDidFinishSuspendSnapshot:(id)arg1;
 - (void)_windowDidDetachContext:(id)arg1;
+- (void)_hostSceneDidEnterBackground:(id)arg1;
 - (void)_hostDidEnterBackground:(id)arg1;
 - (void)_configureFocusDeferralForEnteringBackground;
+- (void)_sceneDidEnterBackground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_windowDidAttachContext:(id)arg1;
+- (void)_hostSceneWillEnterForeground:(id)arg1;
 - (void)_hostWillEnterForeground:(id)arg1;
 - (void)_configureFocusDeferralForEnteringForeground;
+- (void)_sceneWillEnterForeground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_statusBarHeightDidChange:(id)arg1;
 - (void)_statusBarOrientationDidChange:(id)arg1;

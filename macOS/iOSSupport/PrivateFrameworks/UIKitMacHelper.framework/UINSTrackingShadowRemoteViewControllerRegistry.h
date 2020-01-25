@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)_displayLinkTick:(id)arg1;
 - (void)unregisterShadowRemoteViewController:(id)arg1;
 - (void)_stopTracking;
+- (void)maybeReestablishFirstResponderStateForUIWindow:(id)arg1 uiFirstResponder:(id)arg2 forceUpdate:(BOOL)arg3;
 - (void)registerShadowRemoteViewController:(id)arg1;
 - (void)_firstResponderDidChange;
 - (id)_init;

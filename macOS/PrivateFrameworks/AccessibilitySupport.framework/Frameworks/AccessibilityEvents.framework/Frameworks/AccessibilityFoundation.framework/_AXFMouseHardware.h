@@ -70,6 +70,7 @@
 - (void)showCursor;
 - (void)_postEventRef:(struct __CGEvent *)arg1 markupHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) struct CGSize cursorImageSize;
+- (void)_updateCursorTimer;
 @property(nonatomic) double cursorScale;
 @property(nonatomic) struct CGPoint currentLocation;
 - (void)dealloc;

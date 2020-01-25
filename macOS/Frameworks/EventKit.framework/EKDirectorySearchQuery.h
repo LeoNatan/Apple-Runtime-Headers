@@ -10,8 +10,14 @@
 
 @interface EKDirectorySearchQuery : NSObject
 {
+    BOOL _findGroups;
+    BOOL _findResources;
+    BOOL _findUsers;
 }
 
+@property(nonatomic) BOOL findUsers; // @synthesize findUsers=_findUsers;
+@property(nonatomic) BOOL findResources; // @synthesize findResources=_findResources;
+@property(nonatomic) BOOL findGroups; // @synthesize findGroups=_findGroups;
 @property(nonatomic) unsigned long long resultLimit;
 @property(nonatomic) BOOL findLocations;
 @property(retain, nonatomic) NSSet *terms;

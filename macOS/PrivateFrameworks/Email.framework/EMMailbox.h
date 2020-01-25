@@ -54,6 +54,8 @@
 @property(nonatomic) __weak EMMailbox *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) EMObjectID *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (void).cxx_destruct;
+- (BOOL)_shouldArchiveByDefault;
+@property(readonly, nonatomic) BOOL shouldArchiveByDefault;
 - (BOOL)_canArchiveForMailboxType:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

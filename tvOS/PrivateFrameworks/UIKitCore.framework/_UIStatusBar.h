@@ -38,7 +38,7 @@
     struct CGRect _avoidanceFrame;
 }
 
-+ (struct CGSize)intrinsicContentSizeForTargetScreen:(id)arg1 orientation:(long long)arg2;
++ (struct CGSize)intrinsicContentSizeForTargetScreen:(id)arg1 orientation:(long long)arg2 onLockScreen:(_Bool)arg3;
 + (id)stringForStatusBarStyle:(long long)arg1;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) _UIStatusBarStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;

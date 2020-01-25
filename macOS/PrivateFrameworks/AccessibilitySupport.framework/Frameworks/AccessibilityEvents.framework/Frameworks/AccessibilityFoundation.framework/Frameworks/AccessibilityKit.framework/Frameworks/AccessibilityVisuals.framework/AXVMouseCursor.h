@@ -10,20 +10,20 @@
 
 @interface AXVMouseCursor : NSObject
 {
-    BOOL _keepCursorImageSynchronizedWithSystem;
-    AXFMouseCursorImage *_cursorImage;
-    double _cursorScale;
+    BOOL __atomicKeepCursorImageSynchronizedWithSystem;
     AXVOverlayWindow *__overlayWindow;
     CALayer *__imageLayer;
-    struct CGPoint _location;
+    AXFMouseCursorImage *__atomicCursorImage;
+    double __atomicCursorScale;
+    struct CGPoint __atomicLocation;
 }
 
+@property BOOL _atomicKeepCursorImageSynchronizedWithSystem; // @synthesize _atomicKeepCursorImageSynchronizedWithSystem=__atomicKeepCursorImageSynchronizedWithSystem;
+@property double _atomicCursorScale; // @synthesize _atomicCursorScale=__atomicCursorScale;
+@property struct CGPoint _atomicLocation; // @synthesize _atomicLocation=__atomicLocation;
+@property(retain) AXFMouseCursorImage *_atomicCursorImage; // @synthesize _atomicCursorImage=__atomicCursorImage;
 @property(retain, nonatomic) CALayer *_imageLayer; // @synthesize _imageLayer=__imageLayer;
 @property(retain, nonatomic) AXVOverlayWindow *_overlayWindow; // @synthesize _overlayWindow=__overlayWindow;
-@property(nonatomic) double cursorScale; // @synthesize cursorScale=_cursorScale;
-@property(nonatomic) struct CGPoint location; // @synthesize location=_location;
-@property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem; // @synthesize keepCursorImageSynchronizedWithSystem=_keepCursorImageSynchronizedWithSystem;
-@property(retain, nonatomic) AXFMouseCursorImage *cursorImage; // @synthesize cursorImage=_cursorImage;
 - (void).cxx_destruct;
 - (void)_updateImageLayerFrame;
 - (void)_updateCursorScale;
@@ -31,6 +31,10 @@
 - (void)hide;
 - (void)show;
 @property(readonly, nonatomic) BOOL visible;
+@property double cursorScale;
+@property struct CGPoint location;
+@property BOOL keepCursorImageSynchronizedWithSystem;
+@property(retain) AXFMouseCursorImage *cursorImage;
 - (void)dealloc;
 - (id)init;
 

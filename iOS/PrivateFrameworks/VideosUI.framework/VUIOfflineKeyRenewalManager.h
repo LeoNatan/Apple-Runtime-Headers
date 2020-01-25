@@ -6,10 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSTimer, TVPContentKeySession, TVPStateMachine;
+#import <VideosUI/TVPDownloadDelegate-Protocol.h>
+#import <VideosUI/VUIStoreFPSKeyLoaderDelegate-Protocol.h>
+
+@class NSMutableArray, NSString, NSTimer, TVPContentKeySession, TVPStateMachine;
 
 __attribute__((visibility("hidden")))
-@interface VUIOfflineKeyRenewalManager : NSObject
+@interface VUIOfflineKeyRenewalManager : NSObject <VUIStoreFPSKeyLoaderDelegate, TVPDownloadDelegate>
 {
     _Bool _networkErrorOccurredDuringInvalidation;
     TVPStateMachine *_stateMachine;
@@ -18,9 +21,11 @@ __attribute__((visibility("hidden")))
     NSTimer *_expirationTimer;
     TVPContentKeySession *_contentKeySession;
     unsigned long long _backgroundTaskIdentifier;
+    NSMutableArray *_downloadsForRepairingKeys;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSMutableArray *downloadsForRepairingKeys; // @synthesize downloadsForRepairingKeys=_downloadsForRepairingKeys;
 @property(nonatomic) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(retain, nonatomic) TVPContentKeySession *contentKeySession; // @synthesize contentKeySession=_contentKeySession;
 @property(retain, nonatomic) NSTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
@@ -30,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
+- (void)_fetchNewKeysForVideosWithBrokenKeys:(id)arg1;
 - (void)_sendRenewalRequestForFirstArray:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_expirationTimerDidFire:(id)arg1;
 - (void)_renewalTimerDidFire:(id)arg1;
@@ -37,8 +43,16 @@ __attribute__((visibility("hidden")))
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_isPlaybackUIBeingShownDidChange:(id)arg1;
 - (void)_networkReachbilityDidChange:(id)arg1;
+- (void)download:(id)arg1 didChangeStateTo:(long long)arg2;
+- (void)storeFPSKeyLoader:(id)arg1 didLoadOfflineKeyData:(id)arg2 forKeyRequest:(id)arg3;
 - (void)updateKeyRenewalAndExpiration;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

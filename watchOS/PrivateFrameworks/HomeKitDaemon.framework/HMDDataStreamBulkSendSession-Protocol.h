@@ -7,7 +7,7 @@
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
 @protocol HMDDataStreamBulkSendSession <NSObject>
-@property(readonly) _Bool hasMoreData;
+@property(readonly, getter=isActive) _Bool active;
 - (void)read:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)cancelWithReason:(unsigned short)arg1;
 @end

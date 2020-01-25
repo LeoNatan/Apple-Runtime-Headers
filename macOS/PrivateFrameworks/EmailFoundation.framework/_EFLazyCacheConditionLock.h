@@ -9,12 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface _EFLazyCacheConditionLock : NSConditionLock
 {
-    long long _waiterCount;
+    // Error parsing type: Aq, name: _waiterCount
 }
 
 - (void)decrementWaiterCount;
 - (void)incrementWaiterCount;
 @property(readonly) long long waiterCount;
+- (id)initWithCondition:(long long)arg1;
 
 @end
 

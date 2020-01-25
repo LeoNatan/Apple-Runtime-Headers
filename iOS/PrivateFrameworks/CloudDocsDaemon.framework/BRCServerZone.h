@@ -60,11 +60,10 @@
 - (_Bool)resetServerTruthAndDestroyZone:(_Bool)arg1;
 - (void)collectTombstoneRanks:(id)arg1;
 - (void)_collectTombstoneForRank:(unsigned long long)arg1;
-- (unsigned long long)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 movedZoneNames:(id)arg6 allocRankZones:(id *)arg7 syncStatus:(long long)arg8;
+- (unsigned long long)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 movedZoneNames:(id)arg6 allocRankZones:(id *)arg7 syncStatus:(long long)arg8 savedDirectly:(_Bool *)arg9;
+- (unsigned long long)_saveInconsistentStateWithRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 syncStatus:(long long)arg6;
 - (void)handleBrokenStructure;
-- (_Bool)allocateRanks;
-- (_Bool)fixupLocalSharingOptions;
-- (long long)_fixupSharingOptions:(unsigned long long)arg1 underParentID:(id)arg2;
+- (_Bool)allocateRanksWhenCaughtUp:(_Bool)arg1;
 - (id)_structurePrefixForType:(BOOL)arg1;
 - (_Bool)_saveEditedShareRecords:(id)arg1 deletedShareRecordIDs:(id)arg2 zonesNeedingAllocRanks:(id)arg3;
 - (_Bool)_saveEditedContentRecords:(id)arg1 zonesNeedingAllocRanks:(id)arg2;
@@ -85,8 +84,8 @@
 - (_Bool)_saveEditedDocumentContentRecord:(id)arg1 error:(id *)arg2;
 - (_Bool)_saveEditedDirOrDocStructureRecord:(id)arg1 error:(id *)arg2;
 - (_Bool)_saveItemID:(id)arg1 version:(id)arg2 record:(id)arg3 iWorkSharingOptions:(unsigned long long)arg4;
-- (_Bool)_saveItemID:(id)arg1 stat:(id)arg2 record:(id)arg3 error:(id *)arg4;
-- (_Bool)_saveItemID:(id)arg1 stat:(id)arg2 record:(id)arg3 origName:(id)arg4 base:(id)arg5 no:(id)arg6 ext:(id)arg7;
+- (_Bool)_saveItemID:(id)arg1 stat:(id)arg2 serverMetrics:(id)arg3 record:(id)arg4 error:(id *)arg5;
+- (_Bool)_saveItemID:(id)arg1 stat:(id)arg2 serverMetrics:(id)arg3 record:(id)arg4 origName:(id)arg5 base:(id)arg6 no:(id)arg7 ext:(id)arg8;
 - (id)xattrForSignature:(id)arg1;
 - (_Bool)storeXattr:(id)arg1;
 - (_Bool)hasXattrWithSignature:(id)arg1;

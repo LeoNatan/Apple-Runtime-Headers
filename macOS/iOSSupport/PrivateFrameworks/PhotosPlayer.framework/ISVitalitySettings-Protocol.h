@@ -7,6 +7,7 @@
 #import <PhotosPlayer/NSObject-Protocol.h>
 
 @protocol ISVitalitySettings <NSObject>
+- (double)maxVitalityDelay;
 - (double)maximumDelayBeforePlayback;
 - (double)minimumVisibilityFactor;
 - (double)endTimeOffset;

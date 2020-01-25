@@ -6,9 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSURL, SXAction;
+@class NSURL;
+@protocol SXAction;
 
 @protocol SXURLActionFactory <NSObject>
-- (SXAction *)actionForURL:(NSURL *)arg1;
+- (id <SXAction>)actionForURL:(NSURL *)arg1;
 @end
 

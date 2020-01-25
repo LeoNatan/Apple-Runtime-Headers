@@ -6,7 +6,7 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class NSButton, WebView;
+@class NSButton, NSOcclusionDetectionView, SLSecureCursorAssertion, WebView;
 
 __attribute__((visibility("hidden")))
 @interface ExtensionsPreferencesOld : PreferencesModule
@@ -18,6 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _originalContentMaxSize;
     unsigned long long _previousEnabledHeight;
     BOOL _usingDisabledHeight;
+    SLSecureCursorAssertion *_cursorAssertion;
+    NSOcclusionDetectionView *_occlusionDetectionView;
+    BOOL _windowIsOccluded;
+    id _occlusionValidationToken;
     BOOL _shouldHideAllButtons;
     NSButton *_installExtensionUpdatesAutomaticallyCheckBox;
 }
@@ -37,6 +41,12 @@ __attribute__((visibility("hidden")))
 - (void)_updateMinSize;
 - (void)moduleWillBeRemoved;
 - (void)moduleWasInstalled;
+- (void)_viewDidBecomeUnoccluded:(id)arg1;
+- (void)_viewDidBecomeOccluded:(id)arg1;
+- (void)_prepareOcclusionDetectionView;
+- (void)_prepareSecureCursorAssertion;
+- (void)_updateSecureAssertionState:(id)arg1;
+@property(readonly, nonatomic) BOOL canEnableExtensions;
 - (void)willBeDisplayed;
 - (BOOL)isResizable;
 - (void)awakeFromNib;

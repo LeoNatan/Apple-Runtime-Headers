@@ -14,6 +14,7 @@
     // Error parsing type: , name: intentUUID
     // Error parsing type: , name: dkEventUUID
     // Error parsing type: , name: bundleID
+    // Error parsing type: , name: direction
     // Error parsing type: , name: inintentHandlingStatus
     // Error parsing type: , name: engagementSignals
 }

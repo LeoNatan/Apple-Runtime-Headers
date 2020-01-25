@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldHideTabContent;
     BOOL _shouldOfferToRemember;
     long long _dialogType;
+    CDUnknownBlockType _presentationBlock;
     NSString *_proposedUserName;
     NSString *_securityLabel;
     NSString *_title;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *securityLabel; // @synthesize securityLabel=_securityLabel;
 @property(readonly, copy, nonatomic) NSString *proposedUserName; // @synthesize proposedUserName=_proposedUserName;
+@property(readonly, nonatomic) CDUnknownBlockType presentationBlock; // @synthesize presentationBlock=_presentationBlock;
 @property(readonly, nonatomic) BOOL shouldHideTabContent; // @synthesize shouldHideTabContent=_shouldHideTabContent;
 @property(readonly, nonatomic) long long dialogType; // @synthesize dialogType=_dialogType;
 - (void).cxx_destruct;

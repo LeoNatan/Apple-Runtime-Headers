@@ -29,6 +29,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)_configureCell:(id)arg1 withBlockingTask:(id)arg2;
 - (id)_tableView;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 

@@ -22,6 +22,7 @@
     BOOL _listsDADisplayOrderChanged;
     BOOL _inactive;
     BOOL _didChooseToMigrate;
+    BOOL _didChooseToMigrateLocally;
     BOOL _didFinishMigration;
     BOOL _daAllowsCalendarAddDeleteModify;
     BOOL _daSupportsSharedCalendars;
@@ -49,6 +50,7 @@
 @property(nonatomic) BOOL daAllowsCalendarAddDeleteModify; // @synthesize daAllowsCalendarAddDeleteModify=_daAllowsCalendarAddDeleteModify;
 @property(copy, nonatomic) NSString *daConstraintsDescriptionPath; // @synthesize daConstraintsDescriptionPath=_daConstraintsDescriptionPath;
 @property(nonatomic) BOOL didFinishMigration; // @synthesize didFinishMigration=_didFinishMigration;
+@property(nonatomic) BOOL didChooseToMigrateLocally; // @synthesize didChooseToMigrateLocally=_didChooseToMigrateLocally;
 @property(nonatomic) BOOL didChooseToMigrate; // @synthesize didChooseToMigrate=_didChooseToMigrate;
 @property(nonatomic) BOOL inactive; // @synthesize inactive=_inactive;
 @property(nonatomic) BOOL listsDADisplayOrderChanged; // @synthesize listsDADisplayOrderChanged=_listsDADisplayOrderChanged;

@@ -18,13 +18,16 @@
     STAskForTimeClient *_client;
 }
 
++ (id)keyPathsForValuesAffectingHasPendingContactManagementRequest;
 @property(readonly) STAskForTimeClient *client; // @synthesize client=_client;
 @property(retain) NSFetchedResultsController *requestFetchedResultsController; // @synthesize requestFetchedResultsController=_requestFetchedResultsController;
 @property(retain) NSMutableArray *mutablePendingRequests; // @synthesize mutablePendingRequests=_mutablePendingRequests;
 @property(retain, nonatomic) STCoreUser *user; // @synthesize user=_user;
 - (void).cxx_destruct;
+- (void)respondToContactManagementRequestByApproving:(BOOL)arg1;
 - (void)respondToRequest:(id)arg1 approved:(BOOL)arg2 amountGranted:(id)arg3;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;
+@property(readonly) BOOL hasPendingContactManagementRequest;
 - (void)replaceObjectInPendingRequestsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectFromPendingRequestsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inPendingRequestsAtIndex:(unsigned long long)arg2;

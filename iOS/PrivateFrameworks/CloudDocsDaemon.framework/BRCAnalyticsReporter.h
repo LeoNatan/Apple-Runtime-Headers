@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BRCAccountSession, BRCMetricEndpoint, NSMutableDictionary;
+@class BRCAccountSession, BRCMetricEndpoint, BRCSyncHealthReport, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
     BRCMetricEndpoint *_metricEndpoint;
     NSMutableDictionary *_eventsByKind;
+    BRCSyncHealthReport *_syncHealthReport;
 }
 
 - (void).cxx_destruct;

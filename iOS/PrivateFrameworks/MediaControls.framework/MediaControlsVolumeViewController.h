@@ -31,6 +31,7 @@
 - (void)_dismissMediaControlsVolumeViewController;
 - (void)_performWithoutAnimationWhileHidden:(CDUnknownBlockType)arg1;
 - (void)_updateVisibility;
+- (void)_updateGlyphPackageDescription;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_secondarySliderValueDidChange:(id)arg1;
 - (void)_primarySliderValueDidChange:(id)arg1;
@@ -50,6 +51,7 @@
 - (void)dealloc;
 - (struct CGRect)secondaryFrame;
 - (struct CGRect)primaryFrame;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;

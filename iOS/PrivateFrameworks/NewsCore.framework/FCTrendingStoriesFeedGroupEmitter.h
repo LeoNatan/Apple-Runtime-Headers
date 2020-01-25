@@ -17,6 +17,7 @@
 
 + (id)groupEmitterIdentifier;
 @property(nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
+@property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
 - (id)backingChannelTagIDWithConfiguration:(id)arg1;

@@ -67,6 +67,7 @@
 - (void)fileTransfer:(NSString *)arg1 updatedWithProperties:(NSDictionary *)arg2;
 - (void)fileTransfer:(NSString *)arg1 createdWithProperties:(NSDictionary *)arg2;
 - (void)blackholedChatsExist:(BOOL)arg1;
+- (void)previouslyBlackholedChatLoadedWithHandleIDs:(NSArray *)arg1 chat:(NSDictionary *)arg2;
 - (void)chatLoadedWithChatIdentifier:(NSString *)arg1 chats:(NSArray *)arg2;
 - (void)frequentRepliesQuery:(NSString *)arg1 chatID:(NSString *)arg2 services:(NSArray *)arg3 finishedWithResult:(NSArray *)arg4 limit:(unsigned long long)arg5;
 - (void)historicalMessageGUIDsDeleted:(NSArray *)arg1 chatGUIDs:(NSArray *)arg2 queryID:(NSString *)arg3;

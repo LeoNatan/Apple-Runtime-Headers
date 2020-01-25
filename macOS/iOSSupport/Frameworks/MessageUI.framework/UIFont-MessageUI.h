@@ -12,6 +12,7 @@
 + (id)mf_messageHeaderTimestampLabelFont;
 + (id)mf_messageHeaderSummaryLabelFont;
 + (id)mf_messageHeaderSenderLabelFont;
++ (double)mf_defaultComposeFontPixelSize;
 - (struct CGPoint)mf_originPointFromMidlinePoint:(struct CGPoint)arg1;
 - (struct CGPoint)mf_caplinePointFromBaselinePoint:(struct CGPoint)arg1;
 - (struct CGPoint)mf_baselinePointFromCaplinePoint:(struct CGPoint)arg1;

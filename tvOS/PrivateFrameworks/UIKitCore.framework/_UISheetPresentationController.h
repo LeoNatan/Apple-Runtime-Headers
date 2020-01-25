@@ -80,6 +80,7 @@
 - (void)containerViewWillLayoutSubviews;
 @property(copy, nonatomic, setter=_setPassthroughViews:) NSArray *_passthroughViews;
 - (_Bool)_shouldOccludeDuringPresentation;
+- (_Bool)_shouldPreserveFirstResponder;
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;
 - (id)presentedView;
 - (void)dimmingViewWasTapped:(id)arg1;

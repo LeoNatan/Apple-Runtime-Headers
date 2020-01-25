@@ -27,6 +27,7 @@
     BOOL _wifiP2P;
     unsigned char _osVersion;
     BOOL _paired;
+    BOOL _testMode;
     unsigned int _deviceFlags;
     unsigned int _hotspotInfo;
     unsigned int _systemPairState;
@@ -48,6 +49,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL testMode; // @synthesize testMode=_testMode;
 @property(nonatomic) BOOL paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned char osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) BOOL wifiP2P; // @synthesize wifiP2P=_wifiP2P;

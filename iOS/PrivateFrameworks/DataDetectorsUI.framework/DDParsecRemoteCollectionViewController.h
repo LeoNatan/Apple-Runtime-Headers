@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)serviceViewControllerInterface;
 @property __weak id <DDParsecHostVCInterface> hostSideDelegate; // @synthesize hostSideDelegate=_hostSideDelegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)openTrailerPunchout:(id)arg1;
 - (void)getStatusBarHidden:(CDUnknownBlockType)arg1;
 - (void)openParsecURL:(id)arg1;

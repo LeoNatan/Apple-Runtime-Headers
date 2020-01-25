@@ -72,6 +72,7 @@
 - (void)runTurboAnalysis;
 - (void)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)scheduleAssetForOnDemandAnalysisWithUUID:(id)arg1 workerType:(short)arg2 workerFlags:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)requestRunPFLWithAttachments:(id)arg1 recipeUserInfo:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (BOOL)reportMetricsWithOptions:(id)arg1 error:(id *)arg2;
 - (id)runCurationWithItems:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)requestM5CompatibleMemoriesReturningError:(id *)arg1;

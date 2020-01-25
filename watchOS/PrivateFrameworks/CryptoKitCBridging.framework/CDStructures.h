@@ -9,7 +9,9 @@
 struct ccec_cp {
     unsigned int _field1;
     unsigned int _field2;
-    CDUnknownFunctionPointerType _field3;
+    struct cczp_funcs *_field3;
     unsigned int _field4[0];
 };
+
+struct cczp_funcs;
 

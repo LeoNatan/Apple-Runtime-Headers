@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int playbackReportToken; // @synthesize playbackReportToken=_playbackReportToken;
 @property(retain, nonatomic) NSMapTable *observerMapTable; // @synthesize observerMapTable=_observerMapTable;
 - (void).cxx_destruct;
+- (void)_postSubscriptionNotification:(id)arg1 interruptedOfferDetails:(id)arg2 error:(id)arg3;
 - (void)_notifyObserversOfEvent:(id)arg1;
 - (void)_notifyObserver:(id)arg1 ofRefreshEvent:(id)arg2;
+- (void)_handlePurchaseRequestSucceededNotification:(id)arg1;
 - (void)_handleLocationDidChangeNotification:(id)arg1;
 - (void)_handleLocationAuthorizationDidChangeNotification:(id)arg1;
 - (void)_handleClearPlayHistoryNotification:(id)arg1;

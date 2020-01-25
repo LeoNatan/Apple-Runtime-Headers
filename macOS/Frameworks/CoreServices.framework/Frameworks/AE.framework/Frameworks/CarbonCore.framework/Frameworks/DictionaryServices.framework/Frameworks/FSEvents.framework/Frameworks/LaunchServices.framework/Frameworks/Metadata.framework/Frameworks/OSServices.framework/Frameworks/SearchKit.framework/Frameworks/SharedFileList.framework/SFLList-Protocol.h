@@ -16,5 +16,8 @@
 - (void)removeAllItems;
 - (BOOL)moveItem:(SFLItem *)arg1 afterItem:(SFLItem *)arg2 error:(id *)arg3;
 - (BOOL)insertItem:(SFLItem *)arg1 afterItem:(SFLItem *)arg2 error:(id *)arg3;
+
+@optional
+- (BOOL)openItem:(SFLItem *)arg1 error:(id *)arg2;
 @end
 

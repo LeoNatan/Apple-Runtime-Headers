@@ -23,7 +23,7 @@
 - (id)trampoliningObserverForObserver:(id)arg1;
 - (void)prepareRepositoryObjects:(id)arg1;
 - (id)performQuery:(id)arg1 withObserver:(id)arg2;
-- (id)_init;
+- (id)initInternal;
 
 @end
 

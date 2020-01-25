@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 @property(readonly) UITextView *textView;
 @property(readonly) UIImageView *iconView;
 - (void)setLinkEnabled:(BOOL)arg1;

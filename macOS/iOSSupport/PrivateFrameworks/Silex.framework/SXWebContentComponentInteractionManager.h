@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 @class SXComponentView;
-@protocol SXComponentInteractionHandler, SXComponentInteractionHandlerManager, SXWebContentComponentInteractionHandlerFactory, SXWebContentInteractionProvider;
+@protocol SWInteractionProvider, SXComponentInteractionHandler, SXComponentInteractionHandlerManager, SXWebContentComponentInteractionHandlerFactory;
 
 @interface SXWebContentComponentInteractionManager : NSObject
 {
     SXComponentView *_componentView;
-    id <SXWebContentInteractionProvider> _interactionProvider;
+    id <SWInteractionProvider> _interactionProvider;
     id <SXComponentInteractionHandlerManager> _interactionHandlerManager;
     id <SXWebContentComponentInteractionHandlerFactory> _componentInteractionHandlerFactory;
     id <SXComponentInteractionHandler> _currentInteractionHandler;
@@ -21,7 +21,7 @@
 @property(retain, nonatomic) id <SXComponentInteractionHandler> currentInteractionHandler; // @synthesize currentInteractionHandler=_currentInteractionHandler;
 @property(readonly, nonatomic) id <SXWebContentComponentInteractionHandlerFactory> componentInteractionHandlerFactory; // @synthesize componentInteractionHandlerFactory=_componentInteractionHandlerFactory;
 @property(readonly, nonatomic) __weak id <SXComponentInteractionHandlerManager> interactionHandlerManager; // @synthesize interactionHandlerManager=_interactionHandlerManager;
-@property(readonly, nonatomic) id <SXWebContentInteractionProvider> interactionProvider; // @synthesize interactionProvider=_interactionProvider;
+@property(readonly, nonatomic) id <SWInteractionProvider> interactionProvider; // @synthesize interactionProvider=_interactionProvider;
 @property(readonly, nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
 - (void).cxx_destruct;
 - (void)manageInteractionHandlerForInteraction:(id)arg1;

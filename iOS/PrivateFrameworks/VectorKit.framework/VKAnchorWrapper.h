@@ -35,7 +35,7 @@
 - (void)_updateCachedPoint;
 - (shared_ptr_2fc78ff4)_anchorWithContext:(struct AnchorManager *)arg1;
 - (double)pointOffsetForDistanceOffset:(double)arg1;
-- (struct CGPoint)pointInLayer:(id)arg1;
+- (struct CGPoint)pointInLayer:(id)arg1 bound:(struct CGRect)arg2;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 - (void)destroyAnchor;
 - (void)dealloc;

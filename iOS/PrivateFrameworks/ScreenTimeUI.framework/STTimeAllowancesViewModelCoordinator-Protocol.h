@@ -6,9 +6,10 @@
 
 #import <ScreenTimeUI/NSObject-Protocol.h>
 
-@class NSNumber, STAllowance, STAlwaysAllowList, STDeviceBedtime, STTimeAllowancesViewModel, STUIAskForTimeRequestResponse;
+@class NSNumber, STAllowance, STAlwaysAllowList, STCoreUser, STDeviceBedtime, STTimeAllowancesViewModel, STUIAskForTimeRequestResponse;
 
 @protocol STTimeAllowancesViewModelCoordinator <NSObject>
++ (_Bool)saveAllowance:(STAllowance *)arg1 forUser:(STCoreUser *)arg2 error:(id *)arg3;
 @property(readonly) STTimeAllowancesViewModel *viewModel;
 - (void)respondToAskForTime:(STUIAskForTimeRequestResponse *)arg1 withApproval:(_Bool)arg2 timeApproved:(NSNumber *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)saveDefaultAlwaysAllowListWithCompletionHandler:(void (^)(NSError *))arg1;

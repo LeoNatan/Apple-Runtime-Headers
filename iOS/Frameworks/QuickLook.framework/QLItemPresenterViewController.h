@@ -89,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (void)showErrorViewController;
 - (void)_performLoadingCompletionHandlerWithError:(id)arg1;
 - (void)_performReadyBlockIfNedded;
+- (struct CGSize)preferredContentSize;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_showReadyToDisplayPreviewViewControllerDeferredIfNeeded:(id)arg1;
 - (void)_showLoadingViewControllerDeferredIfNeeded;

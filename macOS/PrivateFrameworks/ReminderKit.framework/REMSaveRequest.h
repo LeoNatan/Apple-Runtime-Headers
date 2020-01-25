@@ -54,6 +54,7 @@
 - (id)performRecurrenceClone;
 - (void)performPreSaveActions;
 - (void)_prepareSave:(CDUnknownBlockType)arg1;
+- (BOOL)_changeItemsAreAllEmpty;
 - (BOOL)saveSynchronouslyWithError:(id *)arg1;
 - (void)saveWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_willSaveAccountChangeItems:(id)arg1 listChangeItems:(id)arg2 reminderChangeItems:(id)arg3;

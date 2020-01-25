@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (struct CGSize)preferredContentSize;
 @property(nonatomic) long long eraserType;
+- (_Bool)_canShowWhileLocked;
 - (void)_segmentedControlDidChangeValue:(id)arg1;
 - (void)loadView;
 

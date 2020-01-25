@@ -246,6 +246,10 @@
 @property(copy) NSString *multichannelAudioStrategy;
 @property(copy, nonatomic) NSString *captionRenderingStrategy;
 @property(copy, nonatomic) NSString *captionPipelineStrategy;
+- (BOOL)_preservesAudioSessionSampleRate;
+- (void)_setPreservesAudioSessionSampleRate:(BOOL)arg1;
+- (id)audioSession;
+- (void)setAudioSession:(id)arg1;
 @property(nonatomic) unsigned long long preferredVideoDecoderGPURegistryID;
 @property(retain, nonatomic) id <AVLoggingIdentifier> loggingIdentifier;
 @property(nonatomic, getter=_disallowsAutoPauseOnRouteRemovalIfNoAudio, setter=_setDisallowsAutoPauseOnRouteRemovalIfNoAudio:) BOOL disallowsAutoPauseOnRouteRemovalIfNoAudio;

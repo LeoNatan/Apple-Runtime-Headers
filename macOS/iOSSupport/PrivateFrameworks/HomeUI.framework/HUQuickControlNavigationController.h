@@ -15,6 +15,7 @@
 }
 
 - (id)hu_prepareForDismissalAnimated:(BOOL)arg1;
+- (BOOL)_canShowWhileLocked;
 - (struct CGSize)preferredContentSize;
 - (void)viewDidLoad;
 

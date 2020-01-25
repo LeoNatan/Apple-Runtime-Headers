@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)unpromotableUIDescendantElementForUIElement:(id)arg1;
 + (id)uiContainerElementForUIElement:(id)arg1;
 + (id)uiChildElementForSearchDirection:(long long)arg1 containerElement:(id)arg2 uiStartElement:(id)arg3;
++ (id)uiChildElementWithPredicate:(CDUnknownBlockType)arg1 containerElement:(id)arg2 maxItem:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;
 + (id)uiChildElementsForSearchDirection:(long long)arg1 containerElement:(id)arg2 uiStartElement:(id)arg3 limit:(long long)arg4;
 + (id)resultsWithSearchKeys:(id)arg1 containerElement:(id)arg2 searchDirection:(long long)arg3 limit:(unsigned long long)arg4 startResult:(id)arg5 searchText:(id)arg6 immediateDescendantsOnly:(BOOL)arg7;
 + (id)allResultsWithSearchKey:(long long)arg1 containerElement:(id)arg2;

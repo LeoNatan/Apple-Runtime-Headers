@@ -22,19 +22,19 @@
 #import <ChatKit/PUICQuickboardLanguageControllerDelegate-Protocol.h>
 #import <ChatKit/UIAlertViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewDataSource-Protocol.h>
-#import <ChatKit/UICollectionViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <ChatKit/UICollectionViewDelegate_Private-Protocol.h>
 
-@class ArouetPrewarmer, CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKNanoPPTSmartReplyTest, CKNanoReplyLoader, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSDate, NSHashTable, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, PUICMixedDetentsFrameNotchProvider, PUICQuickboardLanguageController, UITapGestureRecognizer, UIView;
+@class ArouetPrewarmer, CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKNanoPPTSmartReplyTest, CKNanoReplyLoader, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSDate, NSDictionary, NSHashTable, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, PUICMixedDetentsFrameNotchProvider, PUICQuickboardLanguageController, UITapGestureRecognizer, UIView;
 @protocol CKFullscreenEffectView, CKGradientReferenceView, CKTranscriptCollectionViewControllerDelegate, OS_dispatch_group;
 
-@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CKNanoReplyButtonsCellDelegate, CKNanoReplyListCellDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegate_Private, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKBalloonViewDelegate, CKSendAnimationManagerDelegate, PUICQuickboardLanguageControllerDelegate>
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CKNanoReplyButtonsCellDelegate, CKNanoReplyListCellDelegate, UIAlertViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKBalloonViewDelegate, UICollectionViewDelegate_Private, CKSendAnimationManagerDelegate, PUICQuickboardLanguageControllerDelegate>
 {
     NSIndexPath *_itemIndexPathToHighlight;
     _Bool _initialLoad;
     _Bool _shouldLoadDefaultConversationViewingMessageCountOnAppear;
     _Bool _transitionedFromComposing;
+    _Bool _transitioningFromComposing;
     _Bool _transcriptUpdateAnimated;
     _Bool _allowsPluginPlayback;
     _Bool _forceDisableNotches;
@@ -64,6 +64,7 @@
     NSArray *_notifications;
     CKTranscriptCollectionView *_collectionView;
     CKAudioController *_audioController;
+    NSDictionary *_pluginSnapshots;
     NSString *_cachedRepliesContext;
     NSDate *_cachedRepliesContextTime;
     CKNanoReplyLoader *_replyLoader;
@@ -115,6 +116,7 @@
 @property(retain, nonatomic) CKNanoReplyLoader *replyLoader; // @synthesize replyLoader=_replyLoader;
 @property(retain, nonatomic) NSDate *cachedRepliesContextTime; // @synthesize cachedRepliesContextTime=_cachedRepliesContextTime;
 @property(retain, nonatomic) NSString *cachedRepliesContext; // @synthesize cachedRepliesContext=_cachedRepliesContext;
+@property(retain, nonatomic) NSDictionary *pluginSnapshots; // @synthesize pluginSnapshots=_pluginSnapshots;
 @property(retain, nonatomic) CKAudioController *audioController; // @synthesize audioController=_audioController;
 @property(retain, nonatomic) CKTranscriptCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) NSArray *notifications; // @synthesize notifications=_notifications;
@@ -125,6 +127,7 @@
 @property(nonatomic) double pluginPlaybackDelay; // @synthesize pluginPlaybackDelay=_pluginPlaybackDelay;
 @property(nonatomic) _Bool allowsPluginPlayback; // @synthesize allowsPluginPlayback=_allowsPluginPlayback;
 @property(nonatomic, getter=isTranscriptUpdateAnimated) _Bool transcriptUpdateAnimated; // @synthesize transcriptUpdateAnimated=_transcriptUpdateAnimated;
+@property(nonatomic) _Bool transitioningFromComposing; // @synthesize transitioningFromComposing=_transitioningFromComposing;
 @property(nonatomic) _Bool transitionedFromComposing; // @synthesize transitionedFromComposing=_transitionedFromComposing;
 @property(retain, nonatomic) CKFullScreenEffectManager *fullscreenEffectManager; // @synthesize fullscreenEffectManager=_fullscreenEffectManager;
 @property(retain, nonatomic) CKImpactEffectManager *impactEffectManager; // @synthesize impactEffectManager=_impactEffectManager;
@@ -301,6 +304,7 @@
 - (_Bool)isVisiblePlugin:(id)arg1;
 - (void)stopFullscreenEffect;
 - (void)startFullscreenEffectIfNeededForChatItem:(id)arg1;
+- (void)__raiseGestureRecognized:(id)arg1;
 - (void)raiseGestureRecognized:(id)arg1;
 - (_Bool)canRaiseToTalk;
 - (_Bool)canRaiseToListen;

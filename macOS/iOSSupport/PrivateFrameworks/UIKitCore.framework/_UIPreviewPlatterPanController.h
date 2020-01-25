@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     double _currentDistanceToActionScrubPath;
     struct CGPoint _initialLocationInsidePreview;
     BOOL _actionsViewIsVisible;
+    BOOL _touchEverEnteredMenu;
     BOOL _enabled;
     UIViewSpringAnimationBehavior *_animationBehavior;
     id <_UIPreviewPlatterPanControllerDelegate> _delegate;
@@ -52,7 +53,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(nonatomic) __weak id <_UIPreviewPlatterPanControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updatePlatterGestureDebugUIWithGesture:(id)arg1;
+- (void)_updatePlatterGestureDebugUIWithGesture:(id)arg1 invalidate:(BOOL)arg2;
 - (struct CGPoint)_rubberBandedTranslationForGestureTranslation:(struct CGPoint)arg1;
 - (BOOL)_initialPointInPlatterIsValid;
 - (void)_animationsForAnyAttachedAccessoryViews;
@@ -62,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateViewPositionsWithTranslation:(struct CGPoint)arg1 location:(struct CGPoint)arg2 ended:(BOOL)arg3 withVelocity:(BOOL)arg4;
 - (double)_tearOffSpeedMultiplier;
 - (BOOL)_canBeginDraggingWithTranslation:(struct CGPoint)arg1 location:(struct CGPoint)arg2;
-- (id)_actionScrubPathWithInitialLocation:(struct CGPoint)arg1;
+- (void)_updateActionScrubPathWithLocationIfNecessary:(struct CGPoint)arg1;
 - (void)_handlePanGesture:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

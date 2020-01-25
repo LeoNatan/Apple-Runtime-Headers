@@ -63,6 +63,7 @@
 - (void)touch;
 - (void)didModifyRange:(struct _NSRange)arg1;
 - (void)makeAliasable;
+- (id)newRemoteBufferViewForDevice:(id)arg1;
 @property(readonly) id <MTLBuffer> remoteStorageBuffer;
 - (void *)contents;
 @property(readonly) id <MTLHeap> heap;

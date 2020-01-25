@@ -113,6 +113,7 @@
     NSMutableSet *_clientsWantingExternalPlayback;
     long long _currentItemRevisionID;
     BOOL _muted;
+    BOOL _shouldPostCompatibilityNotifications;
     BOOL _useAirPlayMusicMode;
     BOOL _managesAirPlayBehaviors;
     BOOL _shouldConnectToAVPlayer;
@@ -145,6 +146,7 @@
 @property(nonatomic) BOOL managesAirPlayBehaviors; // @synthesize managesAirPlayBehaviors=_managesAirPlayBehaviors;
 @property(nonatomic) BOOL useAirPlayMusicMode; // @synthesize useAirPlayMusicMode=_useAirPlayMusicMode;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) BOOL shouldPostCompatibilityNotifications; // @synthesize shouldPostCompatibilityNotifications=_shouldPostCompatibilityNotifications;
 @property(nonatomic) BOOL shouldEnforceHDCP; // @synthesize shouldEnforceHDCP=_shouldEnforceHDCP;
 @property(nonatomic) double nextFadeOutDuration; // @synthesize nextFadeOutDuration=_nextFadeOutDuration;
 @property(retain, nonatomic) id <MPAVQueueController> queueController; // @synthesize queueController=_queueController;

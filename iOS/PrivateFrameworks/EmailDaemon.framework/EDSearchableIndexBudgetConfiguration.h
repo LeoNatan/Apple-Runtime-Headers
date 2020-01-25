@@ -14,12 +14,15 @@
 {
     _Bool _enableActivityBasedScheduling;
     _Bool _autoStartMaintenanceIndexing;
+    _Bool _allowBacklogIndexingOnPower;
     double _time;
     double _periodDuration;
     long long _numberOfItemsToIndexOnResume;
 }
 
++ (id)nonSchedulingBudgetConfiguration;
 + (id)defaultConfiguration;
+@property(nonatomic) _Bool allowBacklogIndexingOnPower; // @synthesize allowBacklogIndexingOnPower=_allowBacklogIndexingOnPower;
 @property(nonatomic) _Bool autoStartMaintenanceIndexing; // @synthesize autoStartMaintenanceIndexing=_autoStartMaintenanceIndexing;
 @property(nonatomic) _Bool enableActivityBasedScheduling; // @synthesize enableActivityBasedScheduling=_enableActivityBasedScheduling;
 @property(readonly, nonatomic) long long numberOfItemsToIndexOnResume; // @synthesize numberOfItemsToIndexOnResume=_numberOfItemsToIndexOnResume;
@@ -29,7 +32,7 @@
 @property(readonly, copy) NSString *description;
 - (id)init;
 - (id)initWithTime:(double)arg1 periodDuration:(double)arg2 numberOfItemsToIndexOnResume:(long long)arg3;
-- (id)initWithTime:(double)arg1 periodDuration:(double)arg2 numberOfItemsToIndexOnResume:(long long)arg3 enableActivityBasedScheduling:(_Bool)arg4 autoStartMaintenanceIndexing:(_Bool)arg5;
+- (id)initWithTime:(double)arg1 periodDuration:(double)arg2 numberOfItemsToIndexOnResume:(long long)arg3 enableActivityBasedScheduling:(_Bool)arg4 autoStartMaintenanceIndexing:(_Bool)arg5 allowBacklogIndexingOnPower:(_Bool)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

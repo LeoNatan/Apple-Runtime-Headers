@@ -151,6 +151,8 @@
 @property(readonly, nonatomic) UITextView *textView;
 @property(readonly, nonatomic) NSString *text;
 - (id)_userEnteredTextWithRange:(struct _NSRange *)arg1;
+- (_Bool)_hasRecipientsWithPresentationOptions:(unsigned long long)arg1;
+- (_Bool)_hasDowntimeBlockedRecipients;
 - (_Bool)_hasUnsafeRecipients;
 - (void)_updateAddButtonVisibility;
 - (void)setEditable:(_Bool)arg1 animated:(_Bool)arg2;

@@ -20,7 +20,7 @@
     NSArray *_wanRules;
 }
 
-+ (id)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3;
++ (id)__decodeRulesFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 class:(Class)arg3 required:(_Bool)arg4;
 + (_Bool)__decodeFullAccessFromNetworkDeclarations:(struct NSDictionary *)arg1 key:(id)arg2 fullAccess:(_Bool *)arg3;
 + (_Bool)__decodeNetworkDeclarationsFromJSONDictionary:(struct NSDictionary *)arg1 networkDeclarations:(struct NSDictionary **)arg2;
 + (id)logCategory;

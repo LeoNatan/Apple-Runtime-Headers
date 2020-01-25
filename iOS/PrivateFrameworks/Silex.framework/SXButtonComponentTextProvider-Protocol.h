@@ -7,8 +7,9 @@
 #import <Silex/NSObject-Protocol.h>
 
 @class NSString;
+@protocol SXButtonComponent;
 
 @protocol SXButtonComponentTextProvider <NSObject>
-- (NSString *)buttonText;
+- (NSString *)textForComponent:(id <SXButtonComponent>)arg1;
 @end
 

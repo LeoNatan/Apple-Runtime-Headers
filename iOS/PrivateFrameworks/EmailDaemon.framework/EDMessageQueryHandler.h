@@ -9,11 +9,12 @@
 #import <EmailDaemon/EDMessageQueryHelperDelegate-Protocol.h>
 #import <EmailDaemon/EFContentProtectionObserver-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EMCollectionItemIDStateCapturerDelegate-Protocol.h>
 
-@class EDMessageQueryHelper, EFCancelationToken, NSMutableDictionary, NSObject, NSString;
+@class EDMessageQueryHelper, EFCancelationToken, EMCollectionItemIDStateCapturer, NSMutableDictionary, NSObject, NSString;
 @protocol EDRemoteSearchProvider, EFScheduler, OS_dispatch_queue;
 
-@interface EDMessageQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
+@interface EDMessageQueryHandler : EDMessageRepositoryQueryHandler <EMCollectionItemIDStateCapturerDelegate, EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
     _Bool _didCancel;
     _Bool _isInitialized;
@@ -24,10 +25,12 @@
     NSObject<OS_dispatch_queue> *_resultQueue;
     NSMutableDictionary *_oldestMessageIDsByMailboxObjectIDs;
     EFCancelationToken *_updateOldestMessagesCancelationToken;
+    EMCollectionItemIDStateCapturer *_stateCapturer;
 }
 
 + (id)findMessagesByPreviousObjectIDForAddedMessages:(id)arg1 messageSource:(id)arg2;
 + (id)log;
+@property(readonly, nonatomic) EMCollectionItemIDStateCapturer *stateCapturer; // @synthesize stateCapturer=_stateCapturer;
 @property(retain, nonatomic) EFCancelationToken *updateOldestMessagesCancelationToken; // @synthesize updateOldestMessagesCancelationToken=_updateOldestMessagesCancelationToken;
 @property(readonly, copy, nonatomic) NSMutableDictionary *oldestMessageIDsByMailboxObjectIDs; // @synthesize oldestMessageIDsByMailboxObjectIDs=_oldestMessageIDsByMailboxObjectIDs;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
@@ -38,6 +41,8 @@
 @property(retain, nonatomic) EDMessageQueryHelper *currentQueryHelper; // @synthesize currentQueryHelper=_currentQueryHelper;
 @property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 - (void).cxx_destruct;
+- (id)itemIDsForStateCaptureWithErrorString:(id *)arg1;
+- (id)labelForStateCapture;
 - (id)findMessagesByPreviousObjectIDForAddedMessages:(id)arg1 helper:(id)arg2;
 - (void)_oldestMessagesByMailboxObjectIDsWasUpdated;
 - (id)_oldestItemQueryForMailbox:(id)arg1;

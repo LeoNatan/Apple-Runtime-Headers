@@ -59,10 +59,11 @@
 - (oneway void)handleLocalRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (oneway void)setClientCapabilities:(id)arg1;
 - (BOOL)isUnknownAddress:(id)arg1 normalizedAddress:(id)arg2 forBundleIdentifier:(id)arg3;
-- (BOOL)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
+- (unsigned long long)filterStatusForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
+- (BOOL)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2 performSynchronously:(BOOL)arg3;
 - (BOOL)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)policyForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
-- (BOOL)containsRestrictedHandle:(id)arg1 forBundleIdentifier:(id)arg2;
+- (BOOL)containsRestrictedHandle:(id)arg1 forBundleIdentifier:(id)arg2 performSynchronously:(BOOL)arg3;
 - (void)pickRouteWithUniqueIdentifier:(id)arg1 shouldWaitUntilAvailable:(BOOL)arg2 forRouteController:(id)arg3;
 - (id)routesByUniqueIdentifierForRouteController:(id)arg1;
 - (oneway void)setCurrentAudioOutputDeviceToDeviceWithUID:(id)arg1;

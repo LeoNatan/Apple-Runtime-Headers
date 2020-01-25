@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double beforeReductionTimeInterval; // @synthesize beforeReductionTimeInterval=_beforeReductionTimeInterval;
 @property(nonatomic) double beginPinchTimestamp; // @synthesize beginPinchTimestamp=_beginPinchTimestamp;
 - (void).cxx_destruct;
+- (BOOL)_analyticsIsGestureHandled;
 - (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (double)avgDistanceToCentroid:(id)arg1;
 - (struct CGPoint)centroidOfTouches:(id)arg1;

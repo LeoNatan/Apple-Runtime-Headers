@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     HKHealthStore *_healthStore;
     WDSourceOrderController *_sourceOrderController;
     NSMutableSet *_dataSources;
-    NSMutableArray *_orderedDataSources;
     NSArray *_preEditSourcesOrdered;
     NSArray *_readerAppSources;
     NSArray *_readerResearchStudySources;
@@ -32,12 +31,14 @@ __attribute__((visibility("hidden")))
     _Bool _shouldInsetSectionContentForDataSourceDataList;
     HKSourceListDataSource *_sourceListDataSource;
     NSArray *_loadedOrderedDataSources;
+    NSMutableArray *_orderedDataSources;
     NSSet *_loadedAllDataSources;
     NSDictionary *_loadedAuthorizationRecordsBySource;
 }
 
 @property(copy, nonatomic) NSDictionary *loadedAuthorizationRecordsBySource; // @synthesize loadedAuthorizationRecordsBySource=_loadedAuthorizationRecordsBySource;
 @property(copy, nonatomic) NSSet *loadedAllDataSources; // @synthesize loadedAllDataSources=_loadedAllDataSources;
+@property(retain, nonatomic) NSMutableArray *orderedDataSources; // @synthesize orderedDataSources=_orderedDataSources;
 @property(copy, nonatomic) NSArray *loadedOrderedDataSources; // @synthesize loadedOrderedDataSources=_loadedOrderedDataSources;
 @property(retain, nonatomic) HKSourceListDataSource *sourceListDataSource; // @synthesize sourceListDataSource=_sourceListDataSource;
 @property(nonatomic) _Bool shouldInsetSectionContentForDataSourceDataList; // @synthesize shouldInsetSectionContentForDataSourceDataList=_shouldInsetSectionContentForDataSourceDataList;
@@ -55,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (void)_handleReturnedImage:(id)arg1 forSource:(id)arg2 cell:(id)arg3 tableView:(id)arg4 fetchError:(id)arg5;
 - (id)_noneTableViewCell;
 - (id)_dataSourceCellForTableView:(id)arg1 row:(unsigned long long)arg2;
 - (id)_readerSourceCellForTableView:(id)arg1 sourceArray:(id)arg2 row:(unsigned long long)arg3;

@@ -16,6 +16,7 @@
     unsigned long long _timestamp;
     int _direction;
     NSString *_identifier;
+    NSString *_messageName;
     int _messageType;
     NSString *_transactionID;
     int _transport;
@@ -30,6 +31,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *messageName; // @synthesize messageName=_messageName;
 @property(nonatomic) BOOL isSecure; // @synthesize isSecure=_isSecure;
 @property(retain, nonatomic) NSString *transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -45,6 +47,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasMessageName;
 - (int)StringAsDirection:(id)arg1;
 - (id)directionAsString:(int)arg1;
 @property(nonatomic) BOOL hasDirection;

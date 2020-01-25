@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)popDecryptRefKeyFailure;
++ (void)failNextDecryptRefKey:(id)arg1;
 + (void)unlockAllClasses;
 + (void)lockClassA_C;
 + (void)lockClassA;

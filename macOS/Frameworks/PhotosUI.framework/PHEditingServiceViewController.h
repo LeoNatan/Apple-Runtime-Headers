@@ -11,6 +11,7 @@
 }
 
 + (Class)expectedExtensionContextClass;
+- (void)loadView;
 
 @end
 

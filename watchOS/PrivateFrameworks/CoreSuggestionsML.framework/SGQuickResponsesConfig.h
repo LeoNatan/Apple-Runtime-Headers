@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, PMLSessionDescriptor, SGModelHyperparameters, SGQuickResponsesClassificationParameters, SGQuickResponsesPredictionParameters, SGQuickResponsesReplies;
+@class NSArray, NSString, PMLSessionDescriptor, SGCustomResponsesParameters, SGModelHyperparameters, SGQuickResponsesClassificationParameters, SGQuickResponsesPredictionParameters, SGQuickResponsesReplies;
 
 @interface SGQuickResponsesConfig : NSObject
 {
@@ -16,6 +16,7 @@
     SGQuickResponsesReplies *_replies;
     SGQuickResponsesClassificationParameters *_classificationParams;
     SGQuickResponsesPredictionParameters *_predictionParams;
+    SGCustomResponsesParameters *_customResponsesParameters;
     NSString *_language;
     unsigned int _mode;
     PMLSessionDescriptor *_sessionDescriptor;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
 @property(readonly, nonatomic) unsigned int mode; // @synthesize mode=_mode;
 @property(readonly, copy, nonatomic) NSString *language; // @synthesize language=_language;
+@property(readonly, nonatomic) SGCustomResponsesParameters *customResponsesParameters; // @synthesize customResponsesParameters=_customResponsesParameters;
 @property(readonly, nonatomic) SGQuickResponsesPredictionParameters *predictionParams; // @synthesize predictionParams=_predictionParams;
 @property(readonly, nonatomic) SGQuickResponsesClassificationParameters *classificationParams; // @synthesize classificationParams=_classificationParams;
 @property(readonly, nonatomic) SGQuickResponsesReplies *replies; // @synthesize replies=_replies;

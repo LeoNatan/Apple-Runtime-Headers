@@ -18,6 +18,10 @@
     // Error parsing type: , name: issueViewRenderer
     // Error parsing type: , name: coverIssueViewRenderer
     // Error parsing type: , name: coverChannelViewRenderer
+    // Error parsing type: , name: formatLayoutViewRenderer
+    // Error parsing type: , name: webEmbedViewRenderer
+    // Error parsing type: , name: webEmbedViewControllerReuseManager
+    // Error parsing type: , name: formatRegistrationIdentifiers
 }
 
 @end

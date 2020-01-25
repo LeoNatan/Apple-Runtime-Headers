@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned int)fingerShapeForCorner:(unsigned int)arg1;
 + (id)_points:(id)arg1 adjustedForBounds:(struct CGRect)arg2;
 + (id)pointStringsForFingerModels:(id)arg1;
 + (id)fingerModelsForPointStrings:(id)arg1;

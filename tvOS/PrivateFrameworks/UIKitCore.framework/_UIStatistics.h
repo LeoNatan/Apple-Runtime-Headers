@@ -27,8 +27,6 @@ __attribute__((visibility("hidden")))
 + (id)recentsInputViewItemSelectedCount;
 + (id)recentsInputViewNumberOfItems;
 + (id)recentsInputViewPresentationCount;
-+ (id)scrollViewVerticalVelocityInteractive;
-+ (id)scrollViewVerticalVelocityNoninteractive;
 + (id)feedbackGeneratorPlayCountWithSuffix:(id)arg1;
 + (id)feedbackGeneratorPreparationCountWithSuffix:(id)arg1;
 + (id)feedbackGeneratorActivationTimeOutCountWithSuffix:(id)arg1;

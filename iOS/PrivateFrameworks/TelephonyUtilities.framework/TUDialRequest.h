@@ -12,7 +12,7 @@
 #import <TelephonyUtilities/TUFilteredRequest-Protocol.h>
 #import <TelephonyUtilities/TUVideoRequest-Protocol.h>
 
-@class BSProcessHandle, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
+@class BSProcessHandle, CNGeminiManager, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
 
 @interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, TUFilteredRequest, NSSecureCoding, NSCopying>
 {
@@ -28,6 +28,7 @@
     _Bool _shouldSuppressInCallUI;
     NSString *_uniqueProxyIdentifier;
     TUSenderIdentityClient *_senderIdentityClient;
+    CNGeminiManager *_contactGeminiManager;
     TUCallProvider *_provider;
     long long _dialType;
     TUHandle *_handle;
@@ -99,6 +100,7 @@
 @property(retain, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic) long long dialType; // @synthesize dialType=_dialType;
 @property(retain, nonatomic) TUCallProvider *provider; // @synthesize provider=_provider;
+@property(retain, nonatomic) CNGeminiManager *contactGeminiManager; // @synthesize contactGeminiManager=_contactGeminiManager;
 @property(nonatomic) struct CGSize localLandscapeAspectRatio; // @synthesize localLandscapeAspectRatio=_localLandscapeAspectRatio;
 @property(nonatomic) struct CGSize localPortraitAspectRatio; // @synthesize localPortraitAspectRatio=_localPortraitAspectRatio;
 @property(copy, nonatomic) NSString *uniqueProxyIdentifier; // @synthesize uniqueProxyIdentifier=_uniqueProxyIdentifier;

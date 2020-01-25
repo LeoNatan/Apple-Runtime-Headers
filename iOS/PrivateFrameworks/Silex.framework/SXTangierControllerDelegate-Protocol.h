@@ -6,13 +6,13 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class STScrollView, SXTangierController, UIScrollView;
+@class SXScrollView, SXTangierController, UIScrollView;
 
 @protocol SXTangierControllerDelegate <NSObject>
 
 @optional
-- (void)tangierController:(SXTangierController *)arg1 scrollViewDidEndDragging:(STScrollView *)arg2 willDecelerate:(_Bool)arg3;
-- (void)tangierController:(SXTangierController *)arg1 scrollViewWillBeginDragging:(STScrollView *)arg2;
+- (void)tangierController:(SXTangierController *)arg1 scrollViewDidEndDragging:(SXScrollView *)arg2 willDecelerate:(_Bool)arg3;
+- (void)tangierController:(SXTangierController *)arg1 scrollViewWillBeginDragging:(SXScrollView *)arg2;
 - (void)tangierController:(SXTangierController *)arg1 scrollViewWillEndDragging:(UIScrollView *)arg2 withVelocity:(struct CGPoint)arg3 targetContentOffset:(inout struct CGPoint *)arg4;
 - (void)tangierControllerDidStopScrolling:(SXTangierController *)arg1;
 - (void)tangierControllerWillStartScrolling:(SXTangierController *)arg1;

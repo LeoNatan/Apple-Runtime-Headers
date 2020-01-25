@@ -14,8 +14,8 @@
 {
     id <SXDocumentLayout> _documentLayout;
     long long _layoutWidth;
-    long long _leftMargin;
-    long long _rightMargin;
+    double _leftMargin;
+    double _rightMargin;
     long long _gutter;
     unsigned long long _numberOfColumns;
     double _columnWidth;
@@ -46,8 +46,8 @@
 @property(readonly, nonatomic) double columnWidth; // @synthesize columnWidth=_columnWidth;
 @property(readonly, nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) long long gutter; // @synthesize gutter=_gutter;
-@property(readonly, nonatomic) long long rightMargin; // @synthesize rightMargin=_rightMargin;
-@property(readonly, nonatomic) long long leftMargin; // @synthesize leftMargin=_leftMargin;
+@property(readonly, nonatomic) double rightMargin; // @synthesize rightMargin=_rightMargin;
+@property(readonly, nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
 @property(readonly, nonatomic) long long layoutWidth; // @synthesize layoutWidth=_layoutWidth;
 @property(readonly, nonatomic) id <SXDocumentLayout> documentLayout; // @synthesize documentLayout=_documentLayout;
 @property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;

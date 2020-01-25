@@ -21,17 +21,22 @@
     NSString *_moreVideosArticleListID;
     NSMutableArray *_specialEventArticleIDs;
     NSString *_spotlightArticleID;
+    NSString *_todayFeedConfiguration;
+    NSMutableArray *_todayFeedTopStoriesArticleIDs;
     NSMutableArray *_topStoriesCombinedArticleIDs;
     NSMutableArray *_topVideosArticleIDs;
     NSString *_trendingArticleListID;
 }
 
++ (Class)todayFeedTopStoriesArticleIDsType;
 + (Class)topVideosArticleIDsType;
 + (Class)specialEventArticleIDsType;
 + (Class)topStoriesCombinedArticleIDsType;
 + (Class)breakingNewsArticleIDsType;
 + (Class)editorialSectionTagIDsType;
 + (Class)editorialArticleListIDsType;
+@property(retain, nonatomic) NSString *todayFeedConfiguration; // @synthesize todayFeedConfiguration=_todayFeedConfiguration;
+@property(retain, nonatomic) NSMutableArray *todayFeedTopStoriesArticleIDs; // @synthesize todayFeedTopStoriesArticleIDs=_todayFeedTopStoriesArticleIDs;
 @property(retain, nonatomic) NSString *spotlightArticleID; // @synthesize spotlightArticleID=_spotlightArticleID;
 @property(retain, nonatomic) NSString *moreVideosArticleListID; // @synthesize moreVideosArticleListID=_moreVideosArticleListID;
 @property(retain, nonatomic) NSMutableArray *topVideosArticleIDs; // @synthesize topVideosArticleIDs=_topVideosArticleIDs;
@@ -52,6 +57,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasTodayFeedConfiguration;
+- (id)todayFeedTopStoriesArticleIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)todayFeedTopStoriesArticleIDsCount;
+- (void)addTodayFeedTopStoriesArticleIDs:(id)arg1;
+- (void)clearTodayFeedTopStoriesArticleIDs;
 @property(readonly, nonatomic) BOOL hasSpotlightArticleID;
 @property(readonly, nonatomic) BOOL hasMoreVideosArticleListID;
 - (id)topVideosArticleIDsAtIndex:(unsigned long long)arg1;

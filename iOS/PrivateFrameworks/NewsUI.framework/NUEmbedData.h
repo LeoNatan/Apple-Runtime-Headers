@@ -15,7 +15,6 @@
 }
 
 - (unsigned long long)autoPlayMediaWithValue:(id)arg1 withType:(int)arg2;
-- (id)baseURLWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) unsigned long long autoPlayMedia; // @dynamic autoPlayMedia;

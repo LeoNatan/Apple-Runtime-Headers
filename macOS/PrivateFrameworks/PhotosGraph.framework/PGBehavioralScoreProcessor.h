@@ -31,6 +31,9 @@
 - (void)_writeBehavioralScoresToPhotosDatabase:(id)arg1 assets:(id)arg2;
 - (void)processBehavioralScoresWithProgressBlock:(CDUnknownBlockType)arg1;
 - (void)_persistNewGoldAssetsUUIDs:(id)arg1 processorData:(id)arg2;
+- (id)sceneFeatures;
+- (id)peopleFeatures;
+- (id)goldAssetUUIDs;
 - (id)_previousResults;
 - (id)initWithGraphManager:(id)arg1 algorithm:(long long)arg2;
 

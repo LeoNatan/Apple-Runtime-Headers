@@ -17,6 +17,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)messageCollectionItemIDForMessageIDHeaderHash:(id)arg1 mailboxScope:(id)arg2;
 + (id)messageCollectionItemIDForDatabaseID:(long long)arg1;
++ (id)unarchivingObjectClassSet;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

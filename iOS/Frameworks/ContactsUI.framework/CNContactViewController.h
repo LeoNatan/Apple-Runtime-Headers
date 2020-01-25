@@ -21,6 +21,8 @@
     _Bool _highlightedPropertyImportant;
     _Bool _requiresSetup;
     _Bool _showingMeContact;
+    _Bool _shouldDrawNavigationBar;
+    _Bool _editingProposedInformation;
     _Bool _allowsDisplayModePickerActions;
     _Bool _allowsEditPhoto;
     _Bool _ignoresParentalRestrictions;
@@ -44,6 +46,7 @@
     CNContact *_additionalContact;
     id <CNContactViewControllerPPTDelegate> _pptDelegate;
     NSArray *_prohibitedPropertyKeys;
+    NSString *_initialPrompt;
     long long _displayMode;
     long long _editMode;
     long long _actions;
@@ -76,6 +79,9 @@
 @property(nonatomic) long long actions; // @synthesize actions=_actions;
 @property(nonatomic) long long editMode; // @synthesize editMode=_editMode;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
+@property(nonatomic) _Bool editingProposedInformation; // @synthesize editingProposedInformation=_editingProposedInformation;
+@property(nonatomic) _Bool shouldDrawNavigationBar; // @synthesize shouldDrawNavigationBar=_shouldDrawNavigationBar;
+@property(retain, nonatomic) NSString *initialPrompt; // @synthesize initialPrompt=_initialPrompt;
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(nonatomic) __weak id <CNContactViewControllerPPTDelegate> pptDelegate; // @synthesize pptDelegate=_pptDelegate;
 @property(nonatomic) _Bool showingMeContact; // @synthesize showingMeContact=_showingMeContact;

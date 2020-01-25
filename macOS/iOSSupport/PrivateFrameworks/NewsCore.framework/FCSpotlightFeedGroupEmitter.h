@@ -20,6 +20,7 @@
 + (id)spotlightFeedTransformationWithContext:(id)arg1;
 @property(readonly, copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
 - (id)backingChannelTagIDWithConfiguration:(id)arg1;

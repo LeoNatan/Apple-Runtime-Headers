@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)pageLoadDidComplete;
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
 - (BOOL)chainEvent:(id)arg1 request:(id)arg2;
+- (BOOL)isReaderWebArea;
 - (BOOL)isReadingList;
 - (void)dealloc;
 

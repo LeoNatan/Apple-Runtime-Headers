@@ -10,24 +10,16 @@
 {
 }
 
++ (id)ignoreSuggestionActivity;
 + (id)removeIssueFromMyMagazinesActivity;
 + (id)downloadIssueActivity;
 + (id)removeIssueActivity;
 + (id)openChannelActivity;
-+ (id)unfollowChannelActivity;
-+ (id)followChannelActivity;
-+ (id)unblockActivity;
-+ (id)blockActivity;
-+ (id)showLessSelectedActivity;
-+ (id)showLessActivity;
-+ (id)showMoreSelectedActivity;
-+ (id)showMoreActivity;
 + (id)openInSafariActivity;
-+ (id)saveSelectedActivity;
-+ (id)saveActivity;
 + (id)reportActivity;
 + (id)copyLinkActivity;
-+ (id)nextArrow;
++ (id)leftArrow;
++ (id)rightArrow;
 + (id)sharrowCompact;
 + (id)sharrow;
 + (id)iconTextSizeControlCompact;

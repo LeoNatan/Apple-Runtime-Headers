@@ -8,15 +8,18 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 #import <AppKit/NSCopying-Protocol.h>
+#import <AppKit/NSSecureCoding-Protocol.h>
 
 @class NSMutableDictionary, NSPrinter, NSString;
 
-@interface NSPrintInfo : NSObject <NSCopying, NSCoding>
+@interface NSPrintInfo : NSObject <NSSecureCoding, NSCopying, NSCoding>
 {
     NSMutableDictionary *_attributes;
     id _moreVars;
 }
 
++ (id)allowedAttributeClasses;
++ (BOOL)supportsSecureCoding;
 + (id)defaultPrinter;
 + (id)sharedPrintInfo;
 + (void)setSharedPrintInfo:(id)arg1;
@@ -40,6 +43,11 @@
 + (void)_setPaperSize:(struct CGSize)arg1 inPrintSession:(struct OpaquePMPrintSession *)arg2 pageFormat:(struct OpaquePMPageFormat *)arg3;
 + (id)_printerInPrintSession:(struct OpaquePMPrintSession *)arg1;
 + (void)_setPrinter:(id)arg1 inPrintSession:(struct OpaquePMPrintSession *)arg2;
+- (void)_setPrintSettings:(struct OpaquePMPrintSettings *)arg1;
+- (void)_setPageFormat:(struct OpaquePMPageFormat *)arg1;
+- (struct OpaquePMPrintSettings *)_printSettings;
+- (struct OpaquePMPageFormat *)_pageFormat;
+- (struct OpaquePMPrintSession *)_printSession;
 - (void)takeSettingsFromPDFInfo:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_compatibility_initWithUnkeyedCoder:(id)arg1;
@@ -81,11 +89,6 @@
 - (void)_setBool:(BOOL)arg1 ifNoAttributeForKey:(id)arg2;
 - (id)_initWithAttributesNoCopy:(id)arg1 flattenedPageFormatData:(id)arg2 printSettingsData:(id)arg3;
 - (void)_setAttributesNoCopy:(id)arg1 pageFormat:(struct OpaquePMPageFormat *)arg2 orFlattenedData:(id)arg3 printSettings:(struct OpaquePMPrintSettings *)arg4 orFlattenedData:(id)arg5;
-- (void)_setPrintSettings:(struct OpaquePMPrintSettings *)arg1;
-- (void)_setPageFormat:(struct OpaquePMPageFormat *)arg1;
-- (struct OpaquePMPrintSettings *)_printSettings;
-- (struct OpaquePMPageFormat *)_pageFormat;
-- (struct OpaquePMPrintSession *)_printSession;
 - (id)_makePDFInfo;
 - (void)_setPrintInfo:(id)arg1;
 - (void)_printSettingsWasEdited;

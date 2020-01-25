@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) _Bool canSelectAccessibilityGroupElementsChildren;
 @property(readonly, nonatomic) _Bool canSelectAccessibilityGroupElements;
 @property(readonly, nonatomic) PXGLayout *accessibilityRootLayout;
+- (void)notifySelectedCellsChanged;
 - (void)axScrollToAsset:(id <PXDisplayAsset>)arg1;
 - (id <PXDisplayAsset>)assetClosestToAsset:(id <PXDisplayAsset>)arg1 inDirection:(unsigned long long)arg2;
 - (NSObject<PXAccessibilityView> *)accessibilityViewForSpriteIndex:(unsigned int)arg1;

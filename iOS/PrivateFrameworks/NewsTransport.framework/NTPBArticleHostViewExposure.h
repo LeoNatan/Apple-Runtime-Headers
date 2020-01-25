@@ -48,6 +48,7 @@
     int _coverArticleDisplayRank;
     int _coverArticleFeatureType;
     NSString *_creativeId;
+    NSString *_curatedBatchId;
     int _curatedContentType;
     int _displayRank;
     NSString *_exposedGroupSourceChannelId;
@@ -67,6 +68,7 @@
     int _groupPresentationReason;
     int _groupType;
     NSData *_groupViewExposureId;
+    int _heroArticleType;
     NSString *_iadNativeAd;
     NSString *_iadNativeCampaign;
     NSString *_iadNativeCampaignAd;
@@ -116,6 +118,7 @@
     int _topStoryType;
     NSString *_userActivityType;
     NSString *_viewFrameInScreen;
+    NSString *_webEmbedId;
     int _widgetArticleRank;
     NTPBWidgetEngagement *_widgetEngagement;
     int _widgetSection;
@@ -144,12 +147,14 @@
     _Bool _isVideoInFeed;
     _Bool _subscriptionOnlyArticle;
     _Bool _viewFromNotificationDirectOpen;
-    CDStruct_803929fe _has;
+    CDStruct_c335251c _has;
 }
 
 + (Class)surfacedByTagIdsType;
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NSString *curatedBatchId; // @synthesize curatedBatchId=_curatedBatchId;
+@property(retain, nonatomic) NSString *webEmbedId; // @synthesize webEmbedId=_webEmbedId;
 @property(retain, nonatomic) NTPBIssueViewContextData *issueViewContextData; // @synthesize issueViewContextData=_issueViewContextData;
 @property(retain, nonatomic) NTPBChannelData *channelData; // @synthesize channelData=_channelData;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
@@ -266,6 +271,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasCuratedBatchId;
+@property(readonly, nonatomic) _Bool hasWebEmbedId;
+@property(nonatomic) _Bool hasHeroArticleType;
+@property(nonatomic) int heroArticleType; // @synthesize heroArticleType=_heroArticleType;
 @property(readonly, nonatomic) _Bool hasIssueViewContextData;
 @property(readonly, nonatomic) _Bool hasChannelData;
 @property(nonatomic) _Bool hasRole;

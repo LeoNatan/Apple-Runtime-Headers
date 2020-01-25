@@ -6,7 +6,7 @@
 
 #import <ContactsUI/NSObject-Protocol.h>
 
-@class CNContact, NSView;
+@class CNContact, CNUIEditingRules, NSView;
 
 @protocol CNContactCardWidget <NSObject>
 - (BOOL)shouldBeIncludedInKeyViewLoop;
@@ -15,6 +15,7 @@
 - (void)setContact:(CNContact *)arg1;
 
 @optional
+- (void)setEditingRules:(CNUIEditingRules *)arg1;
 - (NSView *)updateKeyViewLoopAndReturnTailView;
 - (double)customSpacingAfterWidget;
 @end

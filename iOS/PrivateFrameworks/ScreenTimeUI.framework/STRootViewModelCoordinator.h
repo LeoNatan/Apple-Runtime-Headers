@@ -26,7 +26,7 @@
     NSNumber *_userDSID;
     NSString *_deviceIdentifier;
     NSNumber *_usageReportType;
-    long long _usageHistoryType;
+    long long _usageContext;
     NSString *_userName;
 }
 
@@ -35,7 +35,7 @@
 + (id)keyPathsForValuesAffectingUsageDetailsCoordinator;
 @property(nonatomic) _Bool isLocalUser; // @synthesize isLocalUser=_isLocalUser;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
-@property(readonly) long long usageHistoryType; // @synthesize usageHistoryType=_usageHistoryType;
+@property(readonly) long long usageContext; // @synthesize usageContext=_usageContext;
 @property(readonly, copy) NSNumber *usageReportType; // @synthesize usageReportType=_usageReportType;
 @property(readonly, copy) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(copy, nonatomic) NSNumber *userDSID; // @synthesize userDSID=_userDSID;
@@ -50,10 +50,12 @@
 - (void)loadViewModelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadViewModelRightNow;
 - (void)saveViewModel:(id)arg1;
-- (void)enableScreenTimeWithPIN:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)enableScreenTimeWithPIN:(id)arg1 recoveryAltDSID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setShareWebUsageEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setScreenTimeSyncingEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setScreenTimeEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_setPIN:(id)arg1 recoveryAltDSID:(id)arg2 shouldSetRecoveryAppleID:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)setPIN:(id)arg1 recoveryAltDSID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setPIN:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)validatePIN:(id)arg1;
 @property(readonly, nonatomic, getter=isPasscodeEnabled) _Bool passcodeEnabled;
@@ -67,7 +69,7 @@
 - (void)groupResultsControllerDidChangeContents:(id)arg1;
 - (void)_registerForPersistentStoreNotifications;
 - (id)init;
-- (id)initWithUserDSID:(id)arg1 deviceIdentifier:(id)arg2 usageReportType:(id)arg3 usageHistoryType:(long long)arg4;
+- (id)initWithUserDSID:(id)arg1 deviceIdentifier:(id)arg2 usageReportType:(id)arg3 usageContext:(long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

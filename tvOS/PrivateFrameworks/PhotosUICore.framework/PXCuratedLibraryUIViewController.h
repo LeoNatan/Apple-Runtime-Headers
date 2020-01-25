@@ -41,7 +41,6 @@
     long long _zoomLevelBeforeBackNavigationTransition;
     PXGTransition *_backNavigationTransition;
     PXRelaxedScreenEdgePanGestureRecognizer *_screenEdgePanGestureRecognizer;
-    long long _trackedScrollZoomLevel;
     PXSwipeSelectionManager *_swipeSelectionManager;
     PXAssetReference *_navigatedAssetReference;
     PXMovieProvider *_movieProvider;
@@ -49,6 +48,7 @@
     PXProgrammaticNavigationRequest *_initialNavigationRequest;
     PXCPLServiceUI *_cplServiceUI;
     PXContentUnavailableView *_emptyPlaceHolderView;
+    CDStruct_0c606d9b _trackedScrollContext;
 }
 
 @property(retain, nonatomic) PXContentUnavailableView *emptyPlaceHolderView; // @synthesize emptyPlaceHolderView=_emptyPlaceHolderView;
@@ -60,7 +60,7 @@
 @property(retain, nonatomic) PXMovieProvider *movieProvider; // @synthesize movieProvider=_movieProvider;
 @property(retain, nonatomic) PXAssetReference *navigatedAssetReference; // @synthesize navigatedAssetReference=_navigatedAssetReference;
 @property(readonly, nonatomic) PXSwipeSelectionManager *swipeSelectionManager; // @synthesize swipeSelectionManager=_swipeSelectionManager;
-@property(nonatomic) long long trackedScrollZoomLevel; // @synthesize trackedScrollZoomLevel=_trackedScrollZoomLevel;
+@property(nonatomic) CDStruct_0c606d9b trackedScrollContext; // @synthesize trackedScrollContext=_trackedScrollContext;
 @property(readonly, nonatomic) PXRelaxedScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer; // @synthesize screenEdgePanGestureRecognizer=_screenEdgePanGestureRecognizer;
 @property(retain, nonatomic) PXGTransition *backNavigationTransition; // @synthesize backNavigationTransition=_backNavigationTransition;
 @property(nonatomic) long long zoomLevelBeforeBackNavigationTransition; // @synthesize zoomLevelBeforeBackNavigationTransition=_zoomLevelBeforeBackNavigationTransition;
@@ -113,6 +113,7 @@
 - (void)assetCollectionActionPerformer:(id)arg1 playMovieForAssetCollection:(id)arg2;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
 - (void)curatedLibraryActionPerformer:(id)arg1 presentShareSheetWithSharingContext:(id)arg2;
+- (void)swipeSelectionManagerDidAutoScroll:(id)arg1;
 - (id)swipeSelectionManager:(id)arg1 indexPathSetFromIndexPath:(struct PXSimpleIndexPath)arg2 toIndexPath:(struct PXSimpleIndexPath)arg3;
 - (id)_hitTestResultAtLocation:(struct CGPoint)arg1 withPadding:(struct UIEdgeInsets)arg2 swipeSelectionManager:(id)arg3;
 - (struct PXSimpleIndexPath)_indexPathForAssetAtLocation:(struct CGPoint)arg1 withPadding:(struct UIEdgeInsets)arg2 forSwipeSelectionManager:(id)arg3;
@@ -125,8 +126,6 @@
 - (void)_scrollLibraryViewToInitialPositionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_stopLibraryViewScrolling;
 - (void)_presentOneUpForAssetReference:(id)arg1 animated:(_Bool)arg2 withInteractiveMode:(long long)arg3;
-- (void)_updateAllPhotosWantsSpaceForHeader;
-- (void)scrollViewControllerDidEndScrolling:(id)arg1;
 - (_Bool)scrollViewControllerShouldScrollToTop:(id)arg1;
 - (void)scrollViewControllerWillEndScrolling:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewControllerDidScroll:(id)arg1;

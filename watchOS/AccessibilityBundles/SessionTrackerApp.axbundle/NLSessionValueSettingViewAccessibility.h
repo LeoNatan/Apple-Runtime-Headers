@@ -6,15 +6,26 @@
 
 #import "__NLSessionValueSettingViewAccessibility_super.h"
 
-@interface NLSessionValueSettingViewAccessibility : __NLSessionValueSettingViewAccessibility_super
+#import "AccessibilityGoalConfigElementDelegate-Protocol.h"
+
+@class NSString;
+
+@interface NLSessionValueSettingViewAccessibility : __NLSessionValueSettingViewAccessibility_super <AccessibilityGoalConfigElementDelegate>
 {
 }
 
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_accessibilityActivateGoalButton:(id)arg1;
 - (id)_accessibilityUserTestingChildren;
 - (id)accessibilityElements;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

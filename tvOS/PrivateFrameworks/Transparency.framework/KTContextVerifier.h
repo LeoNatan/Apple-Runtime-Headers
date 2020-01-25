@@ -20,6 +20,7 @@
 + (_Bool)verifyReceivedWitnessesForLoggableDatas:(id)arg1 error:(id *)arg2;
 + (void)addDeviceIdVRFOutput:(id)arg1 toLoggableDatas:(id)arg2 forDeviceId:(id)arg3;
 + (void)addClientDataVRFOutput:(id)arg1 toLoggableDatas:(id)arg2 forClientData:(id)arg3;
++ (long long)verifyMutation:(id)arg1 record:(id)arg2;
 @property(retain) KTLogClient *logClient; // @synthesize logClient=_logClient;
 @property(retain) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;

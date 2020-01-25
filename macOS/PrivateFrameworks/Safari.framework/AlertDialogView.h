@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityIdentifier;
 - (id)accessibilityRole;
+- (void)updateWithNewConfiguration:(id)arg1;
 - (void)fadeOutWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fadeInWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)performKeyEquivalent:(id)arg1;

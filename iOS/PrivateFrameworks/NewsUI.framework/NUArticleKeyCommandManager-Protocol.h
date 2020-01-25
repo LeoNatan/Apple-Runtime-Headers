@@ -6,10 +6,12 @@
 
 #import <NewsUI/NSObject-Protocol.h>
 
-@class NSArray, UIKeyCommand, UIScrollView;
+@class NSArray, NSString, UIKeyCommand, UIScrollView;
 
 @protocol NUArticleKeyCommandManager <NSObject>
+@property(readonly, nonatomic) _Bool hasBeenTraversed;
 - (void)registerScrollView:(UIScrollView *)arg1;
+- (void)handleKey:(NSString *)arg1 flags:(long long)arg2;
 - (void)handleKeyCommand:(UIKeyCommand *)arg1;
 - (NSArray *)keyCommandsWithSelector:(SEL)arg1;
 @end

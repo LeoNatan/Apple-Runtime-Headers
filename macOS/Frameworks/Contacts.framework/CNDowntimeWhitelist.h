@@ -15,12 +15,12 @@
     id <NSObject> _contactStoreDidChangeNotificationToken;
 }
 
++ (BOOL)isWhitelistedContact:(id)arg1;
 + (id)os_log;
 @property(readonly) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
 @property(readonly) CNContactStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
 - (id)allWhitelistedHandleStrings;
-- (BOOL)isWhitelisted:(id)arg1;
 - (BOOL)anyContactIsWhitelisted:(id)arg1;
 - (id)keys;
 - (id)allWhitelistedContacts;

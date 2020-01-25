@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)initWithDestination:(id)arg1;
 

@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)prepareArrayToFocusInto;
 - (BOOL)needToRebuildChildren;
 - (BOOL)shouldPromoteUIElement:(id)arg1;
+- (void)restoreStateDueToInvalidFocusedChild:(id)arg1;
 - (void)_setChildIndex:(long long)arg1;
 - (long long)_childIndex;
 - (id)childInAXOrderForward:(BOOL)arg1 horizontal:(BOOL)arg2 visibleOnly:(BOOL)arg3 wrapped:(char *)arg4 didHitBoundary:(char *)arg5 startElement:(id)arg6;

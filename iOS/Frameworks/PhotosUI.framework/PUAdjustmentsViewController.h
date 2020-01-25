@@ -83,7 +83,6 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (void)didToggleCell:(id)arg1;
 - (_Bool)canToggleCell:(id)arg1;
-- (_Bool)_canShowWhileLocked;
 - (void)_resetControlsAtIndexPath:(id)arg1;
 - (void)_updateSelectedInfo;
 - (void)_updateCollectionViewLayoutDirection:(long long)arg1;

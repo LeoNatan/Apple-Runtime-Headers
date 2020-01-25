@@ -52,6 +52,7 @@
 @property(readonly, nonatomic, getter=isPreviewRunning) BOOL previewRunning;
 @property(readonly, copy, nonatomic) NSArray *inputDevices;
 @property(nonatomic) int currentVideoOrientation;
+- (void)resetZoomFactorForCurrentInputDevice;
 @property(retain, nonatomic) AVCaptureDevice *currentInputDevice;
 - (id)debugDescription;
 - (id)init;

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: articleModule
     // Error parsing type: , name: replicaModule
+    // Error parsing type: , name: interstitialAdModule
 }
 
 @end

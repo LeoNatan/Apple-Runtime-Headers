@@ -17,18 +17,19 @@ struct BindingEvaluator {
     id _field2;
     id _field3;
     id _field4;
-    _Bool _field5;
-    id _field6;
-    struct LSVersionNumber _field7;
-    _Bool _field8;
-    unsigned int _field9;
+    id _field5;
+    _Bool _field6;
+    id _field7;
+    struct LSVersionNumber _field8;
+    _Bool _field9;
     unsigned int _field10;
     unsigned int _field11;
-    struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> _field12;
-    CDUnknownBlockType _field13;
-    id _field14;
-    CDUnknownBlockType _field15;
-    id _field16;
+    unsigned int _field12;
+    struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> _field13;
+    CDUnknownBlockType _field14;
+    id _field15;
+    CDUnknownBlockType _field16;
+    id _field17;
 };
 
 struct CSMap {
@@ -389,7 +390,7 @@ typedef struct optional<LaunchServices::BindingEvaluator> {
         struct BindingEvaluator _field2;
     } _field1;
     _Bool _field2;
-} optional_5f4daf83;
+} optional_cb063848;
 
 typedef struct vector<unsigned int, std::__1::allocator<unsigned int>> {
     unsigned int *__begin_;

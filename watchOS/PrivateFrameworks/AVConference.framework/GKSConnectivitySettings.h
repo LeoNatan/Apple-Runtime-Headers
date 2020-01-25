@@ -38,6 +38,7 @@
 + (_Bool)supportsEVSCodec;
 + (int)getKeepAliveTimeoutFromCarrierBundle;
 + (int)getNATTypeFromCarrierBundle;
++ (void)clearAllSettingsWithRefreshIntervalInSeconds:(int)arg1;
 + (id)getAllSettings;
 + (struct tagIPPORT *)getIPPortForService:(id)arg1;
 + (struct tagIPPORT *)getCachedIPPort;

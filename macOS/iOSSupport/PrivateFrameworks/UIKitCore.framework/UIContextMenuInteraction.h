@@ -28,6 +28,7 @@
         char overrideSuggestedActions;
         char shouldAllowDragAfterDismiss;
         char interactionEffectForTargetedPreview;
+        char shouldAttemptToPresentConfiguration;
         char willCommit;
         char willPresent;
         char didEnd;
@@ -73,7 +74,7 @@
 - (void)_clickPresentationInteractionEnded:(id)arg1 forPresentation:(id)arg2 reason:(unsigned long long)arg3;
 - (id)_fulfilledConfigurationForConfiguration:(id)arg1;
 - (unsigned long long)_actualLayoutForPreferredLayout:(unsigned long long)arg1 withConfiguration:(id)arg2;
-- (id)_accessoryViewsForPreviewPlatterPresentationController:(id)arg1 layoutAnchor:(CDStruct_6f807b77)arg2;
+- (id)_accessoryViewsForPreviewPlatterPresentationController:(id)arg1;
 - (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;
 - (void)_clickPresentationInteraction:(id)arg1 item:(id)arg2 willAnimateDragCancelWithAnimator:(id)arg3;
 - (id)_clickPresentationInteraction:(id)arg1 previewForCancellingDragItem:(id)arg2;

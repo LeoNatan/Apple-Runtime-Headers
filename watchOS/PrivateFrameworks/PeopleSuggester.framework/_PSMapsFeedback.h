@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)knowledgeEvent;
 - (id)feedbackPayload;
+- (id)getTrialID;
 @property(readonly, nonatomic) unsigned int indexOfEngagedSuggestion;
 - (id)initWithFeedbackAction:(id)arg1 predictionContext:(id)arg2 suggestions:(id)arg3;
 

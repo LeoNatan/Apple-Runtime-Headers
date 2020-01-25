@@ -17,9 +17,11 @@
     long long _type;
     NSURL *_layoutBundleURL;
     NSArray *_supportedLocalizations;
+    long long _priority;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) BOOL shouldBadge; // @synthesize shouldBadge=_shouldBadge;
 @property(retain, nonatomic) NSArray *supportedLocalizations; // @synthesize supportedLocalizations=_supportedLocalizations;
 @property(copy, nonatomic) NSURL *layoutBundleURL; // @synthesize layoutBundleURL=_layoutBundleURL;

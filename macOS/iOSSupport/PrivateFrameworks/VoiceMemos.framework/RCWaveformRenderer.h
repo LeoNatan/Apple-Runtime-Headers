@@ -112,6 +112,7 @@ __attribute__((visibility("hidden")))
 - (double)_duration;
 - (void)_updateOverviewUnitsPerSecond;
 - (void)waveformDataSourceRequiresUpdate:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

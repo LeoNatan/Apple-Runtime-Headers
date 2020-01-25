@@ -72,7 +72,7 @@
 - (id)_createCameraManagers:(id)arg1;
 - (id)dumpState;
 - (void)dealloc;
-- (void)unconfigure;
+- (void)removeCloudData;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (void)_configureForRecording;

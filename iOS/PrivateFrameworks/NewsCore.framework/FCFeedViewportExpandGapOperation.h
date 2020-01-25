@@ -47,7 +47,7 @@
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
-- (id)_groupEmitterWithIdentifier:(id)arg1;
+- (void)_fetchAssetsForInsertedGroup:(id)arg1 cachedOnly:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;

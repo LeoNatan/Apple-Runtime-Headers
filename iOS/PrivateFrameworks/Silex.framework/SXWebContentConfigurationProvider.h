@@ -10,17 +10,19 @@
 #import <Silex/SXWebContentConfigurationProvider-Protocol.h>
 
 @class NSLocale, NSString;
-@protocol SXPresentationAttributesProvider, SXStoreFrontProvider;
+@protocol SXPresentationAttributesProvider, SXStoreFrontProvider, SXWebContentLocationProvider;
 
 @interface SXWebContentConfigurationProvider : NSObject <SXPresentationAttributesObserver, SXWebContentConfigurationProvider>
 {
     id <SXPresentationAttributesProvider> _presentationAttributesProvider;
     id <SXStoreFrontProvider> _storeFrontProvider;
     NSLocale *_locale;
+    id <SXWebContentLocationProvider> _locationProvider;
     CDUnknownBlockType _changeBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
+@property(readonly, nonatomic) id <SXWebContentLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) id <SXStoreFrontProvider> storeFrontProvider; // @synthesize storeFrontProvider=_storeFrontProvider;
 @property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
@@ -29,7 +31,7 @@
 - (void)onChange:(CDUnknownBlockType)arg1;
 - (id)configurationForSize:(struct CGSize)arg1 dataSources:(id)arg2;
 - (void)invokeChangeListener;
-- (id)initWithPresentationAttributesProvider:(id)arg1 storeFrontProvider:(id)arg2 locale:(id)arg3;
+- (id)initWithPresentationAttributesProvider:(id)arg1 storeFrontProvider:(id)arg2 locale:(id)arg3 locationProvider:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

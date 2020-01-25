@@ -6,16 +6,16 @@
 
 #import <Silex/SXComponentLayoutAttributeDescriptor.h>
 
-@class STTextExclusionPath;
+@class SXTextExclusionPath;
 
 @interface SXTextComponentLayoutAttributeDescriptor : SXComponentLayoutAttributeDescriptor
 {
-    STTextExclusionPath *_resultingExclusionPath;
+    SXTextExclusionPath *_resultingExclusionPath;
     struct _NSRange _range;
 }
 
 + (id)descriptorWithFromLayoutAttribute:(int)arg1 toLayoutAttribute:(int)arg2 ignoreMargin:(BOOL)arg3 withRange:(struct _NSRange)arg4;
-@property(retain, nonatomic) STTextExclusionPath *resultingExclusionPath; // @synthesize resultingExclusionPath=_resultingExclusionPath;
+@property(retain, nonatomic) SXTextExclusionPath *resultingExclusionPath; // @synthesize resultingExclusionPath=_resultingExclusionPath;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 - (void).cxx_destruct;
 

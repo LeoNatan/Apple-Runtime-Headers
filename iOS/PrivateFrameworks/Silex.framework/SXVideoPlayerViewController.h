@@ -19,6 +19,7 @@
 @interface SXVideoPlayerViewController : UIViewController <SXVideoPlaybackObserver, AVPlayerViewControllerDelegate_WebKitOnly, AVPlayerViewControllerDelegatePrivate, SXAutomaticFullscreenVideoPlaybackBehaviorManagerDelegate, UIGestureRecognizerDelegate, SXVideoAdViewControllerProviding>
 {
     _Bool _fullscreen;
+    _Bool _playButtonTapped;
     id <SXVideoPlayerViewControllerDelegate> _delegate;
     id <SXVideoPlayerViewControllerDataSource> _dataSource;
     unsigned long long _mode;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) SXVideoAdSkipButton *skipButton; // @synthesize skipButton=_skipButton;
 @property(retain, nonatomic) SVLearnMoreButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
+@property(nonatomic) _Bool playButtonTapped; // @synthesize playButtonTapped=_playButtonTapped;
 @property(retain, nonatomic) id <SXVideoAdProviding> videoAd; // @synthesize videoAd=_videoAd;
 @property(retain, nonatomic) SXPlaybackCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(retain, nonatomic) SXVideoPlaybackQueue *queue; // @synthesize queue=_queue;
@@ -88,7 +90,7 @@
 - (void)exitFullscreenWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)enterFullscreenWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)pause;
-- (void)play;
+- (void)playWithButtonTapped:(_Bool)arg1;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
 - (void)viewDidDisappear:(_Bool)arg1;

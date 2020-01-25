@@ -6,9 +6,11 @@
 
 #import <NewsCore/FCTagProviding-Protocol.h>
 
-@class NSString;
+@class FCSectionSupergroupKnobs, NSString;
 
 @protocol FCSectionProviding <FCTagProviding>
+@property(readonly, nonatomic) FCSectionSupergroupKnobs *supergroupKnobs;
+@property(readonly, nonatomic) NSString *supergroupKnobsJson;
 @property(readonly, copy, nonatomic) NSString *parentID;
 @end
 

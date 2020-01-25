@@ -116,7 +116,7 @@
 - (id)_addShareOperationAfterStartupWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)_addShareOperationWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)_handleLeaveCloudShareErrorUsingCloudZoneRecordPushResult:(id)arg1;
-- (id)_leaveCloudShareRequestingNewInvitationToken:(_Bool)arg1;
+- (id)_leaveCloudShareRequestingNewInvitationToken:(_Bool)arg1 allowCloudPull:(_Bool)arg2;
 - (id)leaveCloudShareRequestingNewInvitationToken:(_Bool)arg1;
 - (id)_createShareModel;
 - (id)createShareModel;

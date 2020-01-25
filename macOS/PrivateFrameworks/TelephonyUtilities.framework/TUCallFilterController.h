@@ -21,9 +21,14 @@
 - (BOOL)isUnknownAddress:(id)arg1 normalizedAddress:(id)arg2 forBundleIdentifier:(id)arg3;
 - (BOOL)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
 - (BOOL)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
-- (BOOL)shouldRestrictJoinConversationRequest:(id)arg1;
+- (BOOL)shouldRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2 performSynchronously:(BOOL)arg3;
+- (BOOL)shouldRestrictJoinConversationRequest:(id)arg1 performSynchronously:(BOOL)arg2;
+- (BOOL)containsRestrictedHandle:(id)arg1 forBundleIdentifier:(id)arg2 performSynchronously:(BOOL)arg3;
+- (BOOL)shouldRestrictConversation:(id)arg1 performSynchronously:(BOOL)arg2;
 - (BOOL)containsRestrictedHandle:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)policyForAddresses:(id)arg1 forBundleIdentifier:(id)arg2;
+- (unsigned long long)callFilterStatusForDialRequest:(id)arg1;
+- (BOOL)shouldRestrictDialRequest:(id)arg1 performSynchronously:(BOOL)arg2;
 - (BOOL)shouldRestrictDialRequest:(id)arg1;
 - (BOOL)isUnknownHandle:(id)arg1;
 @property(readonly, nonatomic) BOOL silenceUnknownCallersEnabled;

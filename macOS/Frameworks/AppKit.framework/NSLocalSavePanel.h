@@ -547,6 +547,7 @@
 - (void)warmUpPowerbox;
 - (void)_setRunningAsASheet:(BOOL)arg1;
 - (BOOL)_fauxToolbarShouldDragWindow;
+- (id)PSGetFileNameTextField;
 - (BOOL)_runningAsASheet;
 - (BOOL)_runningAsAService;
 - (void)_setRunningAsAService:(BOOL)arg1;

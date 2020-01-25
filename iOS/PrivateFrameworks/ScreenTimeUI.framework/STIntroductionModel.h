@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     STDeviceBedtime *_bedtime;
     STAllowance *_allowance;
     NSString *_parentalControlsPasscode;
+    NSString *_recoveryAltDSID;
 }
 
+@property(copy) NSString *recoveryAltDSID; // @synthesize recoveryAltDSID=_recoveryAltDSID;
 @property(retain) NSString *parentalControlsPasscode; // @synthesize parentalControlsPasscode=_parentalControlsPasscode;
 @property(retain) STAllowance *allowance; // @synthesize allowance=_allowance;
 @property(retain) STDeviceBedtime *bedtime; // @synthesize bedtime=_bedtime;

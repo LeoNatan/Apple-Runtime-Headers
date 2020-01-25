@@ -6,18 +6,17 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
-#import <SiriInstrumentation/SISchemaClientTransportEventMetadata-Protocol.h>
-
 @class NSData, NSString;
 
-@interface SISchemaClientTransportEventMetadata : PBCodable <SISchemaClientTransportEventMetadata, NSSecureCoding>
+@interface SISchemaClientTransportEventMetadata : PBCodable
 {
     NSString *_eventTransmittedTimestampRefId;
+    NSString *_arrivedServerPod;
     long long _eventTransmittedRelativeToBootTimeTimestampNs;
     long long _serverArrivedTimestampNs;
 }
 
+@property(copy, nonatomic) NSString *arrivedServerPod; // @synthesize arrivedServerPod=_arrivedServerPod;
 @property(nonatomic) long long serverArrivedTimestampNs; // @synthesize serverArrivedTimestampNs=_serverArrivedTimestampNs;
 @property(nonatomic) long long eventTransmittedRelativeToBootTimeTimestampNs; // @synthesize eventTransmittedRelativeToBootTimeTimestampNs=_eventTransmittedRelativeToBootTimeTimestampNs;
 @property(copy, nonatomic) NSString *eventTransmittedTimestampRefId; // @synthesize eventTransmittedTimestampRefId=_eventTransmittedTimestampRefId;
@@ -26,15 +25,10 @@
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 - (id)dictionaryRepresentation;
-@property(readonly) unsigned int hash;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

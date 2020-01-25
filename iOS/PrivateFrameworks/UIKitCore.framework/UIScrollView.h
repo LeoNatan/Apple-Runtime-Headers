@@ -48,6 +48,9 @@
     double _previousVerticalVelocity;
     CADisplayLink *_scrollHeartbeat;
     CADisplayLink *_trackingHeartbeat;
+    double _telemetryOffsetChangeTime;
+    struct CGPoint _telemetryOffsetChangeDistance;
+    double _telemetryZoomChangeDistance;
     struct CGPoint _pageDecelerationTarget;
     struct CGSize _decelerationFactor;
     struct CGPoint _adjustedDecelerationTarget;
@@ -340,6 +343,7 @@
 @property(readonly, nonatomic, getter=_touchDelayForScrollDetection) double touchDelayForScrollDetection; // @dynamic touchDelayForScrollDetection;
 - (_Bool)_scrollsToMakeFirstResponderVisible;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2 fraction:(float)arg3;
+- (void)animator:(id)arg1 startAnimation:(id)arg2;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(_Bool)arg2;
 - (void)_delegateScrollViewAnimationEnded;
 - (_Bool)_forwardsToParentScroller;

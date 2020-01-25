@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint beginPanCentroid; // @synthesize beginPanCentroid=_beginPanCentroid;
 @property(nonatomic) double beginPanTimestamp; // @synthesize beginPanTimestamp=_beginPanTimestamp;
 - (void).cxx_destruct;
+- (BOOL)_analyticsIsGestureHandled;
 - (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (struct CGPoint)centroidOfTouches:(id)arg1;
 - (void)reset;

@@ -124,6 +124,7 @@
 - (void)_removeRemakerProgressView;
 - (void)_showRemakerProgressView:(id)arg1 forMail:(_Bool)arg2 withCancelationHandler:(CDUnknownBlockType)arg3;
 - (void)_handleUserCancelWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_sendCPAnalyticsShareEventWithActivityType:(id)arg1 didComplete:(_Bool)arg2;
 - (void)_activity:(id)arg1 category:(long long)arg2 didComplete:(_Bool)arg3;
 - (void)_updateTopBorderView;
 @property(readonly, copy, nonatomic) NSOrderedSet *assets;

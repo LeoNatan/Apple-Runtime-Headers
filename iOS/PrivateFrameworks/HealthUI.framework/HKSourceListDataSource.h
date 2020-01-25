@@ -29,6 +29,12 @@
     HKSourceListDataModel *_sources;
 }
 
++ (void)_remoteWatchAppPurposeStringsForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)_performTransformations:(id)arg1 model:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (CDUnknownBlockType)_builtinPurposeStringsFetchTransformer;
++ (CDUnknownBlockType)_builtinIconFetchTransformer;
++ (CDUnknownBlockType)_builtinInstallationStatusTransformer;
++ (void)fetchIconForSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic) _Bool deliverUpdates; // @synthesize deliverUpdates=_deliverUpdates;
 @property(nonatomic) _Bool shouldIncludeSpecialSources; // @synthesize shouldIncludeSpecialSources=_shouldIncludeSpecialSources;
 @property(nonatomic) _Bool shouldFetchPurposeStrings; // @synthesize shouldFetchPurposeStrings=_shouldFetchPurposeStrings;
@@ -39,18 +45,12 @@
 - (void).cxx_destruct;
 - (void)_fakeSourceForInstalledAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_specialAppBundleIdentifiers;
-- (void)_remoteWatchAppPurposeStringsForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_throttledNotificationOfDataSourceUpdate;
 - (void)_notifyObserversForDataSourceUpdate;
 - (void)_didFetchSources:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_performTransformations:(id)arg1 model:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_prependBuiltinTransformers;
-- (CDUnknownBlockType)_builtinPurposeStringsFetchTransformer;
-- (CDUnknownBlockType)_builtinIconFetchTransformer;
-- (CDUnknownBlockType)_builtinInstallationStatusTransformer;
 - (void)addFetchTransformer:(CDUnknownBlockType)arg1;
 - (void)fetchModelForSources:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchIconForSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchSources;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

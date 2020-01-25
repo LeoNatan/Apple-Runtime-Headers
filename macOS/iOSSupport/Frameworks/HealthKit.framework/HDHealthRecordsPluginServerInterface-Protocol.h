@@ -21,7 +21,7 @@
 - (void)remote_badgeForNewHealthRecordsWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)remote_createStaticAccountWithTitle:(NSString *)arg1 subtitle:(NSString *)arg2 description:(NSString *)arg3 onlyIfNeededForSimulatedGatewayID:(NSString *)arg4 completion:(void (^)(HKClinicalAccount *, NSError *))arg5;
 - (void)remote_resetClinicalContentAnalyticsAnchorsWithCompletion:(void (^)(BOOL, NSError *))arg1;
-- (void)remote_triggerHealthCloudUploadWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)remote_triggerHealthCloudUploadWithCompletion:(void (^)(BOOL, NSString *, NSError *))arg1;
 - (void)remote_triggerClinicalContentAnalyticsForReason:(long long)arg1 options:(unsigned long long)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)remote_fetchClinicalOptInDataCollectionFilePathsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)remote_resetClinicalOptInDataCollectionAnchorsWithCompletion:(void (^)(BOOL, NSError *))arg1;

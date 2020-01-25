@@ -16,8 +16,6 @@
     BOOL _showsCloudItems;
     BOOL _showsItemsWithProtectedAssets;
     BOOL _picksSingleCollectionEntity;
-    BOOL _showsCatalogContent;
-    BOOL _showsLibraryContent;
     BOOL _pickingForExternalPlayer;
     unsigned int _watchCompatibilityVersion;
     unsigned long long _mediaTypes;
@@ -25,13 +23,13 @@
     NSArray *_typeIdentifiers;
     long long _selectionMode;
     MPPlaybackArchiveConfiguration *_playbackArchiveConfiguration;
+    long long _supportedContentOptions;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) long long supportedContentOptions; // @synthesize supportedContentOptions=_supportedContentOptions;
 @property(retain, nonatomic) MPPlaybackArchiveConfiguration *playbackArchiveConfiguration; // @synthesize playbackArchiveConfiguration=_playbackArchiveConfiguration;
 @property(nonatomic) BOOL pickingForExternalPlayer; // @synthesize pickingForExternalPlayer=_pickingForExternalPlayer;
-@property(nonatomic) BOOL showsLibraryContent; // @synthesize showsLibraryContent=_showsLibraryContent;
-@property(nonatomic) BOOL showsCatalogContent; // @synthesize showsCatalogContent=_showsCatalogContent;
 @property(nonatomic) long long selectionMode; // @synthesize selectionMode=_selectionMode;
 @property(copy, nonatomic) NSArray *typeIdentifiers; // @synthesize typeIdentifiers=_typeIdentifiers;
 @property(nonatomic) unsigned int watchCompatibilityVersion; // @synthesize watchCompatibilityVersion=_watchCompatibilityVersion;
@@ -44,6 +42,9 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(nonatomic) BOOL supportsUnavailableContent;
+@property(nonatomic) BOOL showsLibraryContent;
+@property(nonatomic) BOOL showsCatalogContent;
 - (id)init;
 
 @end

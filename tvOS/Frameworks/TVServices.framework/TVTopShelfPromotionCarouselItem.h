@@ -14,9 +14,11 @@
 {
     NSString *_promotionImageName;
     NSString *_promotionText;
+    long long _promotionTitleTintColor;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long promotionTitleTintColor; // @synthesize promotionTitleTintColor=_promotionTitleTintColor;
 @property(copy, nonatomic) NSString *promotionText; // @synthesize promotionText=_promotionText;
 @property(copy, nonatomic) NSString *promotionImageName; // @synthesize promotionImageName=_promotionImageName;
 - (void).cxx_destruct;

@@ -38,6 +38,7 @@
 - (void)addCheckConstraintForExpression:(id)arg1;
 - (id)_columnsForColumnNames:(id)arg1;
 - (void)addUniquenessConstraintForColumns:(id)arg1 conflictResolution:(unsigned long long)arg2;
+- (void)removeColumn:(id)arg1;
 - (void)addColumn:(id)arg1;
 - (id)columnForName:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *checkConstraints;

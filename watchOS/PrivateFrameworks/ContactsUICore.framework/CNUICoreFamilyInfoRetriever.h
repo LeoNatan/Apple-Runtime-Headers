@@ -34,7 +34,6 @@
 - (void).cxx_destruct;
 - (id)createFamilyFuture;
 - (id)familyInfo;
-- (void)commonInitWithMainContactStoreFacade:(id)arg1 fetchFamilyCircleRequest:(id)arg2 matchFamilyMembersWithContacts:(_Bool)arg3 schedulerProvider:(id)arg4;
 - (id)initWithMainContactStoreFacade:(id)arg1 fetchFamilyCircleRequest:(id)arg2 matchFamilyMembersWithContacts:(_Bool)arg3 schedulerProvider:(id)arg4;
 - (id)initWithMainContactStoreFacade:(id)arg1 matchFamilyMembersWithContacts:(_Bool)arg2 schedulerProvider:(id)arg3;
 - (id)init;

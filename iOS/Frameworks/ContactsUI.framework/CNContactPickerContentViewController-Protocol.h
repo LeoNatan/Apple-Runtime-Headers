@@ -6,10 +6,11 @@
 
 #import <ContactsUI/CNContactPickerServiceProtocol-Protocol.h>
 
-@class UINavigationController;
+@class UIBarButtonItem, UINavigationController;
 @protocol CNContactPickerContentDelegate;
 
 @protocol CNContactPickerContentViewController <CNContactPickerServiceProtocol>
+@property(readonly, nonatomic) UIBarButtonItem *addContactBarButtonItem;
 @property(readonly, nonatomic) UINavigationController *navigationController;
 @property(nonatomic) __weak id <CNContactPickerContentDelegate> delegate;
 - (void)invalidate;

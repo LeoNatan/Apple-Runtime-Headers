@@ -6,7 +6,7 @@
 
 #import <CloudDocsDaemon/BRCClientZone.h>
 
-@class BRCAppLibrary, BRCPrivateServerZone, BRCProblemReport, BRCServerZoneHealthState, NSMutableArray, NSMutableSet, NSSet;
+@class BRCAppLibrary, BRCPrivateServerZone, BRCProblemReport, BRCServerZoneHealthState, NSMapTable, NSMutableArray, NSMutableSet, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface BRCPrivateClientZone : BRCClientZone
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_faultsLiveBarriers;
     NSMutableSet *_appLibraries;
     BRCAppLibrary *_defaultAppLibrary;
+    NSMapTable *_pcsChainFolderOperations;
 }
 
 @property(readonly, nonatomic) BRCServerZoneHealthState *zoneHealthState; // @synthesize zoneHealthState=_zoneHealthState;
@@ -50,6 +51,8 @@ __attribute__((visibility("hidden")))
 - (void)removeAppLibrary:(id)arg1;
 - (void)addAppLibrary:(id)arg1;
 @property(readonly, nonatomic) NSSet *appLibraryIDs;
+- (id)pcsChainOperationForItemID:(id)arg1;
+- (void)registerPCSChainingOperation:(id)arg1;
 @property(readonly, nonatomic) _Bool hasDefaultAppLibrary;
 @property(readonly, nonatomic) BRCAppLibrary *defaultAppLibrary; // @synthesize defaultAppLibrary=_defaultAppLibrary;
 - (struct BRCDirectoryItem *)fetchZoneRootItemInDB:(id)arg1;
@@ -57,10 +60,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCPrivateServerZone *privateServerZone;
 - (id)asPrivateClientZone;
 @property(readonly, nonatomic) _Bool isPrivateZone;
-- (struct PQLResultSet *)reparentedItemsNeedingChaining;
 - (struct PQLResultSet *)unchainedItemInfoInServerTruthEnumeratorParentedTo:(id)arg1;
 - (_Bool)parentIDHasLiveUnchainedChildren:(id)arg1;
-- (_Bool)isItemIDMarkedChained:(id)arg1;
+- (unsigned int)pcsChainStateForItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) _Bool isSharedZone; // @dynamic isSharedZone;

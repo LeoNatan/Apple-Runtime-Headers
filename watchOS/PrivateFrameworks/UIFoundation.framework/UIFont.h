@@ -61,7 +61,7 @@
 + (id)preferredFontForTextStyle:(id)arg1 compatibleWithTraitCollection:(id)arg2;
 + (id)preferredFontForTextStyle:(id)arg1;
 + (id)_systemFontsOfSize:(float)arg1 traits:(int)arg2;
-+ (id)_fontWithDescriptor:(id)arg1 size:(float)arg2 textStyleForScaling:(id)arg3 pointSizeForScaling:(float)arg4 maximumPointSizeAfterScaling:(float)arg5 forIB:(_Bool)arg6 legibilityWeight:(int)arg7;
++ (id)_fontWithDescriptor:(id)arg1 size:(float)arg2 textStyleForScaling:(id)arg3 pointSizeForScaling:(float)arg4 maximumPointSizeAfterScaling:(float)arg5 forIB:(_Bool)arg6 legibilityWeight:(long)arg7;
 + (id)fontNamesForFamilyName:(id)arg1;
 + (id)familyNames;
 + (id)fontWithMarkupDescription:(id)arg1;

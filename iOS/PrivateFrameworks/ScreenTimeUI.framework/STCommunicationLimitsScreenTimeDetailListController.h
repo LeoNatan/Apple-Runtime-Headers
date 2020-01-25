@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
     STCommunicationLimits *_communicationLimits;
 }
 
++ (void)showCompatibilityAlertIfNeededWithCoordinator:(id)arg1 presentingViewController:(id)arg2;
 @property(retain) STCommunicationLimits *communicationLimits; // @synthesize communicationLimits=_communicationLimits;
 @property _Bool allowIntroductionsEnabled; // @synthesize allowIntroductionsEnabled=_allowIntroductionsEnabled;
 @property(retain) PSSpecifier *allowContactsOnlySpecifier; // @synthesize allowContactsOnlySpecifier=_allowContactsOnlySpecifier;
 @property(retain) PSSpecifier *allowEveryoneSpecifier; // @synthesize allowEveryoneSpecifier=_allowEveryoneSpecifier;
 @property(retain) PSSpecifier *allowedCommunicationGroupSpecifier; // @synthesize allowedCommunicationGroupSpecifier=_allowedCommunicationGroupSpecifier;
 - (void).cxx_destruct;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)_allowIntroductions:(id)arg1;
 - (void)_setAllowIntroductions:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;

@@ -19,6 +19,8 @@
     id <WFAppSearchViewControllerDelegate> _delegate;
     UITableView *_tableView;
     UISearchBar *_searchBar;
+    long long _appSearchType;
+    NSArray *_omittedAppBundleIDs;
     NSArray *_apps;
     NSMutableOrderedSet *_selectedApps;
     NSMutableDictionary *_cachedAppIconForBundleId;
@@ -28,8 +30,10 @@
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) NSMutableDictionary *cachedAppIconForBundleId; // @synthesize cachedAppIconForBundleId=_cachedAppIconForBundleId;
 @property(retain, nonatomic) NSMutableOrderedSet *selectedApps; // @synthesize selectedApps=_selectedApps;
-@property(readonly, nonatomic) NSArray *apps; // @synthesize apps=_apps;
-@property(nonatomic) _Bool allowMultipleSelection; // @synthesize allowMultipleSelection=_allowMultipleSelection;
+@property(copy, nonatomic) NSArray *apps; // @synthesize apps=_apps;
+@property(readonly, nonatomic) _Bool allowMultipleSelection; // @synthesize allowMultipleSelection=_allowMultipleSelection;
+@property(readonly, nonatomic) NSArray *omittedAppBundleIDs; // @synthesize omittedAppBundleIDs=_omittedAppBundleIDs;
+@property(readonly, nonatomic) long long appSearchType; // @synthesize appSearchType=_appSearchType;
 @property(nonatomic) __weak UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WFAppSearchViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -43,7 +47,8 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)applicationIconImageForBundleIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSArray *filteredApps;
+- (id)filteredApps;
+- (void)loadApps;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)adjustInsetsForKeyboard;

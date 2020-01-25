@@ -31,6 +31,7 @@
 - (id)fc_adjustToRecentDate;
 - (id)fc_stringWithYearAndMonthFormat;
 - (id)fc_stringWithISO8601Format;
+- (id)fc_dateByRoundingDownToNearestQuarterHour;
 - (BOOL)fc_isSameDayAs:(id)arg1;
 @property(readonly, nonatomic) BOOL fc_isWeekend;
 - (BOOL)isToday;

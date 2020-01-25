@@ -16,6 +16,7 @@
 + (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
 + (BOOL)propertyIsCountProperty:(id)arg1;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
++ (BOOL)libraryContentsChangeForProperty:(id)arg1;
 + (id)allProperties;
 + (id)predisambiguatedProperties;
 + (id)joinClausesForProperty:(id)arg1;

@@ -21,6 +21,7 @@
 + (id)clipsBeforeDateQuery;
 + (id)incompleteClipsQuery;
 + (id)sentinelParentUUID;
++ (void)load;
 + (id)hmbQueries;
 + (id)hmbExternalRecordType;
 + (id)hmbProperties;

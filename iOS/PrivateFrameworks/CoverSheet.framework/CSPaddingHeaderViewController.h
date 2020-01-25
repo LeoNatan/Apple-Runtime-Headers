@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)_canShowWhileLocked;
 - (void)setPadding:(struct CGSize)arg1;
 - (void)loadView;
 

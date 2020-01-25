@@ -7,17 +7,21 @@
 #import <objc/NSObject.h>
 
 #import <Safari/WKUIDelegatePrivate-Protocol.h>
+#import <Safari/_WKWebAuthenticationPanelDelegate-Protocol.h>
 
 @class BrowserViewController, NSString;
 
 __attribute__((visibility("hidden")))
-@interface BrowserUIDelegate : NSObject <WKUIDelegatePrivate>
+@interface BrowserUIDelegate : NSObject <_WKWebAuthenticationPanelDelegate, WKUIDelegatePrivate>
 {
     BrowserViewController *_browserViewController;
     BOOL _isLockingFirstResponderForImmediateAction;
 }
 
 - (void).cxx_destruct;
+- (void)panel:(id)arg1 dismissWebAuthenticationPanelWithResult:(long long)arg2;
+- (void)panel:(id)arg1 updateWebAuthenticationPanel:(long long)arg2;
+- (void)_webView:(id)arg1 runWebAuthenticationPanel:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (unsigned long long)_webView:(id)arg1 dragDestinationActionMaskForDraggingInfo:(id)arg2;
 - (void)_webView:(id)arg1 getContextMenuFromProposedMenu:(id)arg2 forElement:(id)arg3 userInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_webView:(id)arg1 didResignInputElementStrongPasswordAppearanceWithUserInfo:(id)arg2;

@@ -62,7 +62,7 @@
 - (id)description;
 - (BOOL)updateProperties:(id)arg1;
 - (void)initializeScannerProperties:(id)arg1;
-- (void)cleanupDeviceWithErrorCode:(id)arg1;
+- (void)cleanupDeviceWithErrorCode:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithDictionary:(id)arg1;
 
 @end

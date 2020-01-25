@@ -10,5 +10,7 @@
 {
 }
 
+- (_Bool)_canShowWhileLocked;
+
 @end
 

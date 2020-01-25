@@ -32,6 +32,7 @@
     NSMutableArray *_dataSets;
     NSString *_directionsURL;
     NSString *_dispatcherURL;
+    NSMutableArray *_displayStrings;
     NSString *_etaURL;
     NSMutableArray *_fontChecksums;
     NSMutableArray *_fonts;
@@ -94,6 +95,7 @@
         unsigned int read_dataSets:1;
         unsigned int read_directionsURL:1;
         unsigned int read_dispatcherURL:1;
+        unsigned int read_displayStrings:1;
         unsigned int read_etaURL:1;
         unsigned int read_fontChecksums:1;
         unsigned int read_fonts:1;
@@ -150,6 +152,7 @@
         unsigned int wrote_dataSets:1;
         unsigned int wrote_directionsURL:1;
         unsigned int wrote_dispatcherURL:1;
+        unsigned int wrote_displayStrings:1;
         unsigned int wrote_etaURL:1;
         unsigned int wrote_fontChecksums:1;
         unsigned int wrote_fonts:1;
@@ -192,6 +195,7 @@
 }
 
 + (_Bool)isValid:(id)arg1;
++ (Class)displayStringsType;
 + (Class)muninBucketType;
 + (Class)urlInfoSetType;
 + (Class)muninVersionType;
@@ -227,6 +231,13 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)displayStringsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)displayStringsCount;
+- (void)_addNoFlagsDisplayStrings:(id)arg1;
+- (void)addDisplayStrings:(id)arg1;
+- (void)clearDisplayStrings;
+@property(retain, nonatomic) NSMutableArray *displayStrings;
+- (void)_readDisplayStrings;
 - (id)muninBucketAtIndex:(unsigned long long)arg1;
 - (unsigned long long)muninBucketsCount;
 - (void)_addNoFlagsMuninBucket:(id)arg1;

@@ -27,11 +27,12 @@
 
 + (id)purgeInstalledAssetsWithError:(id *)arg1;
 + (id)installedAssetSizeWithError:(id *)arg1;
++ (id)dictionaryWithContentsProfilePathForLanguage:(id)arg1 errorOut:(id *)arg2;
++ (id)profilePathForLanguage:(id)arg1 errorOut:(id *)arg2;
 + (id)speechProfileDataLastModifiedDataForLanguage:(id)arg1;
 @property(readonly, nonatomic) __weak id <SiriCoreLocalSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)fetchUserDataForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_readProfileAndUserDataWithLanguage:(id)arg1 allowOverride:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)speechServiceDidFinishRecognitionWithStatistics:(id)arg1 error:(id)arg2;
 - (oneway void)speechServiceDidRecognizePackage:(id)arg1;
 - (oneway void)speechServiceDidRecognizeRawEagerRecognitionCandidate:(id)arg1;
@@ -43,6 +44,7 @@
 - (void)addAudioPacket:(id)arg1;
 - (void)fetchAssetsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetDESWithCompletion:(CDUnknownBlockType)arg1;
+- (void)readProfileAndUserDataWithLanguage:(id)arg1 allowOverride:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)runAdaptationRecipeEvaluation:(id)arg1 recordData:(id)arg2 attachments:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)getOfflineDictationStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getOfflineDictationStatusIgnoringCache:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;

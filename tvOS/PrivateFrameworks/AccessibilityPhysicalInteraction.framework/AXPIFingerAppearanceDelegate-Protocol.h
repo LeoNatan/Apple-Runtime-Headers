@@ -15,6 +15,7 @@
 - (double)fingerOuterRadius;
 - (double)strokeOutlineWidth;
 - (double)strokeWidth;
+- (UIColor *)pressedCircularProgressFillColor;
 - (UIColor *)circularProgressFillColor;
 - (UIColor *)strokeOutlineColor;
 - (UIColor *)deselectedStrokeColor;

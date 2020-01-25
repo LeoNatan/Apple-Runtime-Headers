@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (id)deviceColorSyncPathForMode:(id)arg1;
 - (id)deviceColorSyncPath;
 - (void)invalidateMetaData;
+- (void)removeIndexedObject:(id)arg1;
 - (id)findICAObject:(unsigned int)arg1;
 - (void)addNewIndexedObject:(id)arg1;
 - (void)addObjectInfoForIndexes:(id)arg1;

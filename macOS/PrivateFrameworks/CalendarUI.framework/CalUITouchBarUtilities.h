@@ -17,6 +17,8 @@
 + (void)applyTintToButton:(id)arg1 tint:(id)arg2;
 + (id)touchBarAppearance;
 + (id)expandingButtonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 size:(double)arg5;
++ (id)expandingButtonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 minimumSize:(double)arg5;
++ (id)expandingButtonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 size:(double)arg5;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)touchBarButtonFromButton:(id)arg1;

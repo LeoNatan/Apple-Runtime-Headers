@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUCropAspect *currentCropAspect; // @synthesize currentCropAspect=_currentCropAspect;
 @property(nonatomic) struct CGSize currentCropSize; // @synthesize currentCropSize=_currentCropSize;
 - (void).cxx_destruct;
-- (_Bool)_canShowWhileLocked;
 - (void)aspectButtonPressed:(id)arg1;
 - (void)updateAspectConstraints;
 - (void)updateAspectButtons;

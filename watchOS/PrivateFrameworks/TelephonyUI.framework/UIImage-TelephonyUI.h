@@ -21,7 +21,9 @@
 + (id)telephonyUI_iPhoneAudioRouteGlyphImage;
 + (id)voicemailGlyphForSymbolType:(int)arg1;
 + (id)voicemailReportFeedbackGlyphImage;
++ (id)voicemailPauseGlyphDisabledImage;
 + (id)voicemailPauseGlyphImage;
++ (id)voicemailPlayGlyphDisabledImage;
 + (id)voicemailPlayGlyphImage;
 + (id)voicemailUndeleteGlyphImage;
 + (id)voicemailDeleteGlyphImage;

@@ -9,12 +9,20 @@
 #import <TVUIKit/_TVStackedMediaLoaderDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, UIImage, UIImageView, UIMotionEffectGroup, UIViewPropertyAnimator, _TVStackedMediaDocument, _TVStackedMediaLoader;
+@protocol _TVStackedMediaViewDelegate;
 
 @interface _TVStackedMediaView : UIView <_TVStackedMediaLoaderDelegate>
 {
+    struct {
+        unsigned int delegateWasNonNil:1;
+        unsigned int delegateFailedToLoadVideoAtPath:1;
+        unsigned int delegateFailedToLoadPreviewAssetAtPath:1;
+    } _stackedMediaViewFlags;
     _Bool _active;
     _Bool _appearsHighlighted;
     _Bool _failedToLoadPreviewAsset;
+    _Bool _failedToLoadVideoAsset;
+    id <_TVStackedMediaViewDelegate> _delegate;
     UIImage *_placeholderImage;
     UIImage *_fallbackImage;
     UIView *_overlayView;
@@ -35,6 +43,7 @@
     struct CGPoint _focusMovementDirection;
 }
 
+@property(nonatomic) _Bool failedToLoadVideoAsset; // @synthesize failedToLoadVideoAsset=_failedToLoadVideoAsset;
 @property(nonatomic) _Bool failedToLoadPreviewAsset; // @synthesize failedToLoadPreviewAsset=_failedToLoadPreviewAsset;
 @property(nonatomic) double maxGimbalMovement; // @synthesize maxGimbalMovement=_maxGimbalMovement;
 @property(nonatomic) struct CGPoint focusMovementDirection; // @synthesize focusMovementDirection=_focusMovementDirection;
@@ -56,11 +65,13 @@
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIImage *fallbackImage; // @synthesize fallbackImage=_fallbackImage;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
+@property(nonatomic) __weak id <_TVStackedMediaViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)stackedMediaLoaderVideoToPreviewTransitionCompleted:(id)arg1;
 - (void)stackedMediaLoaderReadyToTransitionVideoToPreview:(id)arg1;
 - (void)stackedMediaLoaderPreviewToVideoTransitionCompleted:(id)arg1;
 - (void)stackedMediaLoaderReadyToTransitionPreviewToVideo:(id)arg1;
+- (void)stackedMediaLoader:(id)arg1 failedToLoadVideoForEntry:(id)arg2;
 - (void)stackedMediaLoader:(id)arg1 readyWithPlayerLayer:(id)arg2 forEntry:(id)arg3;
 - (void)_playVideoViews:(_Bool)arg1;
 - (struct CGRect)_viewFrameForEntryAtLayerIndex:(unsigned long long)arg1;

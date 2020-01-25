@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)didSelectRow:(unsigned long long)arg1 representedByCell:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)willSelectRow:(id)arg1;
+- (void)_handleReturnedImage:(id)arg1 forSource:(id)arg2 cell:(id)arg3 tableView:(id)arg4 fetchError:(id)arg5;
 - (id)_sourceCellForRow:(unsigned long long)arg1 tableView:(id)arg2;
 - (id)cellForRow:(unsigned long long)arg1 table:(id)arg2;
 - (id)noneString;

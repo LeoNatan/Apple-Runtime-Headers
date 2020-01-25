@@ -21,7 +21,7 @@
     NSMutableDictionary *_dict;
 }
 
-+ (id)_filteredDictionaryForKeySet:(struct __CFSet *)arg1 plistData:(id)arg2;
++ (id)_filteredDictionaryForKeySet:(id)arg1 plistData:(id)arg2;
 + (id)aceObjectWithPlistData:(id)arg1;
 + (id)dictionaryWithAceObjectDictionary:(id)arg1;
 + (id)dictionaryArrayWithAceObjectArray:(id)arg1;
@@ -34,6 +34,7 @@
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 + (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1;
 + (id)aceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSMutableDictionary *dict; // @synthesize dict=_dict;
@@ -41,6 +42,7 @@
 @property(copy, nonatomic) NSNumber *usefulnessScore; // @synthesize usefulnessScore=_usefulnessScore;
 @property(copy, nonatomic) NSString *refId; // @synthesize refId=_refId;
 @property(copy, nonatomic) NSString *aceId; // @synthesize aceId=_aceId;
+- (void).cxx_destruct;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)deserializationDuration;
 @property(readonly) unsigned long long hash;
@@ -71,7 +73,6 @@
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (id)_initWithPlistData:(id)arg1 aceId:(id)arg2 refId:(id)arg3 usefulnessScore:(id)arg4 mutatingCommand:(id)arg5;
-- (void)dealloc;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

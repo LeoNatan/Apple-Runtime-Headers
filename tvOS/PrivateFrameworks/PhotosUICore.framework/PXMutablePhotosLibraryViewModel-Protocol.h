@@ -17,7 +17,6 @@
 @property(nonatomic) long long zoomLevel;
 @property(copy, nonatomic) NSSet *draggedAssetReferences;
 @property(retain, nonatomic) PXCuratedLibraryAssetCollectionSkimmingInfo *skimmingInfo;
-@property(nonatomic) _Bool allPhotosWantsSpaceForHeader;
 @property(nonatomic) _Bool allPhotosLayoutIsAnimating;
 @property(nonatomic) _Bool allPhotosCaptionsVisible;
 @property(nonatomic) _Bool allPhotosAspectFit;

@@ -19,6 +19,7 @@
 - (id)_accessibilityLabelWithoutAttributes;
 - (id)_accessibilityEquivalenceTag;
 - (id)_accessibilityUserTestingChildren;
+- (id)_accessibilityThreadedDisclosureButton;
 - (void)_axProcessMailLabel:(id)arg1 children:(id)arg2;
 - (unsigned long long)_accessibilityThreadCount;
 - (_Bool)_accessibilityIsThreadedChildCell;

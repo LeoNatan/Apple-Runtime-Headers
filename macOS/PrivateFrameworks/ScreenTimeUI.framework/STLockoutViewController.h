@@ -35,6 +35,7 @@
     BOOL _forSnapshot;
     BOOL _didFinishDismissing;
     STLockoutPolicyController *_policyController;
+    NSString *_applicationName;
     STHourglassView *_hourglassView;
     CDUnknownBlockType _backdropAnimationCompletion;
     NSTextField *_titleLabel;
@@ -52,9 +53,9 @@
 + (id)_applicationNameForWebsiteURL:(id)arg1;
 + (id)_bundleIdentifierForWebsiteURL:(id)arg1;
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
-+ (void)requestLockoutViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
++ (id)lockoutViewControllerWithConversationContext:(id)arg1 bundleIdentifier:(id)arg2 contactStore:(id)arg3 applicationName:(id)arg4;
 + (id)lockoutViewControllerWithWebsiteURL:(id)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
 + (id)lockoutViewControllerWithCategoryIdentifier:(id)arg1;
@@ -68,6 +69,7 @@
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy) CDUnknownBlockType backdropAnimationCompletion; // @synthesize backdropAnimationCompletion=_backdropAnimationCompletion;
 @property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
+@property(readonly) NSString *applicationName; // @synthesize applicationName=_applicationName;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(nonatomic) BOOL mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
 @property(nonatomic) BOOL okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
@@ -130,9 +132,6 @@
 - (void)viewDidAppear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
-- (void)setNextResponder:(id)arg1;
-- (id)nextResponder;
-- (void)setBundleIdentifier:(id)arg1 contactsHandles:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

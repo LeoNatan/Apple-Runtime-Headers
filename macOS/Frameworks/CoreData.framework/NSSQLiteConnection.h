@@ -108,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_tableHasRows:(id)arg1;
 - (long long)_countOfRowsInTable:(id)arg1;
 - (void)insertUpdates:(id)arg1 transactionID:(long long)arg2 updatedAttributes:(id)arg3;
+- (void)insertBatchInserts:(id)arg1 transactionID:(long long)arg2;
 - (void)insertChanges:(id)arg1 type:(long long)arg2 transactionID:(long long)arg3 context:(id)arg4;
 - (unsigned long long)insertManagedObjectBlock:(CDUnknownBlockType)arg1 forEntity:(id)arg2 includeOnConflict:(BOOL)arg3;
 - (unsigned long long)insertDictionaryBlock:(CDUnknownBlockType)arg1 forEntity:(id)arg2 includeOnConflict:(BOOL)arg3;
@@ -169,7 +170,7 @@ __attribute__((visibility("hidden")))
 - (long long)_getCurrentAutoVacuumValue;
 - (void)_performPostSaveTasks:(BOOL)arg1 andForceFullVacuum:(BOOL)arg2;
 - (void **)_buffersForRegisteredFunctions;
-- (void)recreateIndices;
+- (BOOL)recreateIndices;
 - (void)createPrimaryKeyTableForModel:(id)arg1 knownEmpty:(BOOL)arg2;
 - (void)createSchema;
 - (void)didCreateSchema;

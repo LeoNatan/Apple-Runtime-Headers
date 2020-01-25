@@ -6,8 +6,6 @@
 
 #import <WebKit/WKWebView.h>
 
-#import <MessageUI/MFComposeBodyField-Protocol.h>
-#import <MessageUI/MFComposeBodyFieldInternal-Protocol.h>
 #import <MessageUI/MFComposeBodyFieldObserver-Protocol.h>
 #import <MessageUI/WKNavigationDelegate-Protocol.h>
 #import <MessageUI/WKUIDelegatePrivate-Protocol.h>
@@ -16,7 +14,7 @@
 @class NSArray, NSMutableDictionary, NSString, UIBarButtonItemGroup, _WKRemoteObjectInterface;
 @protocol MFComposeBodyFieldController, MFComposeWebViewDelegate, MFMailComposeViewDelegate, MFMailSignatureController, _WKFormInputSession;
 
-@interface MFComposeWebView : WKWebView <MFComposeBodyFieldInternal, MFComposeBodyFieldObserver, WKNavigationDelegate, _WKInputDelegate, WKUIDelegatePrivate, MFComposeBodyField>
+@interface MFComposeWebView : WKWebView <MFComposeBodyFieldObserver, WKNavigationDelegate, _WKInputDelegate, WKUIDelegatePrivate>
 {
     id <MFMailComposeViewDelegate> _mailComposeViewDelegate;
     NSString *_compositionContextID;
@@ -46,27 +44,33 @@
 @property(readonly, nonatomic) id <_WKFormInputSession> inputSession; // @synthesize inputSession=_inputSession;
 @property(nonatomic) __weak id <MFComposeWebViewDelegate> composeWebViewDelegate; // @synthesize composeWebViewDelegate=_composeWebViewDelegate;
 - (void).cxx_destruct;
+- (_Bool)_sourceIsManaged;
+- (void)_removeAttachment:(id)arg1;
+- (void)_addAttachment:(id)arg1;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
-- (_Bool)_sourceIsManaged;
-- (void)compositionDidFailToFinish;
-- (void)compositionWillFinish;
 - (void)_webView:(id)arg1 didChangeFontAttributes:(id)arg2;
 - (void)_webView:(id)arg1 didRemoveAttachment:(id)arg2;
 - (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (void)_webView:(id)arg1 didInvalidateDataForAttachment:(id)arg2;
-- (void)_removeAttachment:(id)arg1;
-- (void)_addAttachment:(id)arg1;
 - (long long)_webView:(id)arg1 decidePolicyForFocusedElement:(id)arg2;
 - (void)_webView:(id)arg1 willStartInputSession:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_didTapFormatAccessoryViewButton:(id)arg1;
+- (void)_addAdditionalItemsToCalloutBar;
+- (void)_menuDidHide:(id)arg1;
 - (void)selectedAttachmentIdentifiersDidChange:(id)arg1;
 - (void)attachmentTapped:(id)arg1;
 - (void)composeBodyFieldSelectionContainsLinkStateDidChange:(_Bool)arg1;
 - (void)composeBodyFieldIsDirtyChanged:(_Bool)arg1;
 - (void)composeBodyFieldDidChange;
 - (void)composeBodyFieldDidThrowException:(id)arg1;
+- (_Bool)_shouldShowMarkupButton;
+- (_Bool)_shouldShowInsertPhotosButton;
+- (_Bool)_getExtensionAndMimeTypeForImageData:(id)arg1 outExtension:(id *)arg2 outMimeType:(id *)arg3;
+- (id)_filenameForVideoAttachmentAtURL:(id)arg1;
+- (id)_makeAttachmentDataWithFileURL:(id)arg1 type:(id)arg2;
+- (id)_addInlineAttachmentWithData:(id)arg1 fileName:(id)arg2 type:(id)arg3 contentID:(id)arg4;
+- (void)_replaceFilenamePlaceholderWithAttachment:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 - (void)_decreaseQuoteLevelKeyCommandInvoked:(id)arg1;
 - (void)_increaseQuoteLevelKeyCommandInvoked:(id)arg1;
 - (void)_pasteAsQuotationKeyCommandInvoked:(id)arg1;
@@ -80,7 +84,9 @@
 @property(retain, nonatomic, setter=_setLeadingInputAssistantItemGroup:) UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
 @property(readonly, nonatomic) NSArray *_mailComposeEditingTrailingInputAssistantGroups;
 @property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingLeadingInputAssistantGroup;
-- (void)releaseFocusAfterDismissing;
+- (void)compositionDidFailToFinish;
+- (void)compositionWillFinish;
+- (void)releaseFocusAfterDismissing:(_Bool)arg1;
 - (void)retainFocusAfterPresenting;
 - (void)removeDropPlaceholders;
 @property(readonly, nonatomic) _Bool allowsAttachmentElements;
@@ -117,11 +123,11 @@
 - (void)insertScannedDocumentWithData:(id)arg1;
 - (void)removeMediaWithAssetIdentifier:(id)arg1;
 - (void)insertPhotoOrVideoWithAssetIdentifier:(id)arg1 infoDictionary:(id)arg2;
-- (id)_addInlineAttachmentWithData:(id)arg1 fileName:(id)arg2 type:(id)arg3;
 - (void)insertDocumentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
-- (void)_replaceFilenamePlaceholderWithAttachment:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 - (void)showOriginalAttachments;
 - (void)setOriginalAttachmentInfo:(id)arg1;
+- (id)mimeTypeForFilename:(id)arg1;
+- (void)prepareDataForDocumentAtURLForInsertion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)insertDocumentWithURL:(id)arg1 isDrawingFile:(_Bool)arg2;
 - (struct _NSRange)selectedRange;
 - (void)setCaretPosition:(unsigned long long)arg1;
@@ -138,9 +144,6 @@
 - (id)_bodyFieldProxy;
 @property(readonly, nonatomic) id <MFMailSignatureController> signatureControllerProxy;
 - (void)markupSelectedAttachment;
-- (_Bool)_shouldShowMarkupButton;
-- (_Bool)_shouldShowInsertPhotosButton;
-- (void)_menuDidHide:(id)arg1;
 - (void)_close;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)keyCommands;

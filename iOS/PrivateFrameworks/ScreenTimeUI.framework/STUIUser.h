@@ -23,12 +23,14 @@
     NSString *_altDSID;
     unsigned long long _type;
     NSString *_passcode;
+    NSString *_recoveryAltDSID;
     NSManagedObjectID *_userObjectID;
 }
 
 + (id)keyPathsForValuesAffectingGivenName;
 + (id)keyPathsForValuesAffectingHasPasscode;
 @property(copy, nonatomic) NSManagedObjectID *userObjectID; // @synthesize userObjectID=_userObjectID;
+@property(copy, nonatomic) NSString *recoveryAltDSID; // @synthesize recoveryAltDSID=_recoveryAltDSID;
 @property(copy, nonatomic) NSString *passcode; // @synthesize passcode=_passcode;
 @property(nonatomic) _Bool hasAllowances; // @synthesize hasAllowances=_hasAllowances;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
@@ -44,6 +46,7 @@
 @property(readonly, copy, nonatomic) NSString *givenName;
 @property(readonly, nonatomic) _Bool isChild;
 @property(readonly, nonatomic) _Bool isParent;
+@property(readonly, nonatomic) _Bool needsRecoveryAppleID;
 @property(readonly, nonatomic) _Bool hasPasscode;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUser:(id)arg1;

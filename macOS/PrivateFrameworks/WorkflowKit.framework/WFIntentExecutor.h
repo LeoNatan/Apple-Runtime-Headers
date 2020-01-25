@@ -38,6 +38,7 @@
 - (id)errorFromConfirmResponse:(id)arg1 intent:(id)arg2;
 - (id)errorFromExtensionError:(id)arg1;
 - (void)cancel;
+- (void)updateIntentWithItemToConfirm:(id)arg1 forSlot:(id)arg2 onIntent:(id)arg3;
 - (void)handleIntent:(id)arg1 withExtensionProxy:(id)arg2;
 - (void)confirmIntent:(id)arg1 withExtensionProxy:(id)arg2;
 - (void)resolveIntent:(id)arg1 withExtensionProxy:(id)arg2;

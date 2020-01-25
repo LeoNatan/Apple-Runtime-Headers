@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)_setup;
 - (void)_updateEscapeKeyItemSize;
 - (void)_updateEscapeKeyItem;
+@property(readonly) BOOL alwaysWantsEscKeyReplacements;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

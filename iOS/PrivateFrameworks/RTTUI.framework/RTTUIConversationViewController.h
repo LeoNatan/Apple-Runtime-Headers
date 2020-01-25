@@ -93,6 +93,7 @@
 - (void)dealloc;
 - (id)inputTextView;
 - (id)init;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

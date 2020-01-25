@@ -70,11 +70,13 @@
     PXCuratedLibrarySectionHeaderLayoutSpec *_effectiveSpec;
     PXTitleSubtitleLabelSpec *_effectiveTitleSubtitleLabelSpec;
     double _buttonsMaxY;
-    double _titleSubtitleMaxY;
+    double _titleSubtitleTopSpacing;
+    double _titleSubtitleLastBaseline;
     struct CGRect _titleSubtitleFrame;
 }
 
-@property(nonatomic) double titleSubtitleMaxY; // @synthesize titleSubtitleMaxY=_titleSubtitleMaxY;
+@property(nonatomic) double titleSubtitleLastBaseline; // @synthesize titleSubtitleLastBaseline=_titleSubtitleLastBaseline;
+@property(nonatomic) double titleSubtitleTopSpacing; // @synthesize titleSubtitleTopSpacing=_titleSubtitleTopSpacing;
 @property(nonatomic) double buttonsMaxY; // @synthesize buttonsMaxY=_buttonsMaxY;
 @property(nonatomic) _Bool usesCompactToggleAspectFitButton; // @synthesize usesCompactToggleAspectFitButton=_usesCompactToggleAspectFitButton;
 @property(nonatomic) _Bool controlStackButtonSelected; // @synthesize controlStackButtonSelected=_controlStackButtonSelected;
@@ -118,7 +120,7 @@
 - (struct CGSize)_sizeOfButton:(unsigned long long)arg1;
 - (id)viewUserDataForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (Class)viewClassForSpriteAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
-- (void)didRenderTitleAndSubtitleSpriteAtIndex:(unsigned int)arg1 layoutVersion:(long long)arg2 withContentBounds:(struct CGRect)arg3;
+- (void)didRenderTitleAndSubtitleSpriteAtIndex:(unsigned int)arg1 layoutVersion:(long long)arg2 withLastBaseline:(double)arg3;
 - (id)imageNameAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)titleSubtitleSpecForSpriteAtIndex:(unsigned int)arg1;
 - (id)subtitleForSpriteAtIndex:(unsigned int)arg1;
@@ -128,6 +130,7 @@
 - (id)_effectiveTitleSubtitleLabelSpec:(id)arg1;
 - (void)_updateEffectiveSpec;
 - (void)_invalidateFilterButton;
+- (void)_updateLastBaseline;
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceOptionsDidChange;
@@ -136,7 +139,6 @@
 - (void)visibleRectDidChange;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
-- (void)updateLastBaseline;
 - (id)_selectionTitleLabelConfigurationWithTitle:(id)arg1;
 @property(readonly, nonatomic) unsigned long long toggleAspectFitButton;
 - (struct UIEdgeInsets)safeAreaInsetsWithCurrentBehavior;

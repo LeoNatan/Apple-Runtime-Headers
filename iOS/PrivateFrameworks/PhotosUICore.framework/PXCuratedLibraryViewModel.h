@@ -76,6 +76,7 @@
     long long _chromeVisibilityAnimationCount;
     PXInfoUpdater *_selectedAssetsTypeCountUpdater;
     NSObject<OS_dispatch_queue> *_countUpdateQueue;
+    long long _viewTimeSignpostID;
     struct CGPoint _lastScrollDirection;
     CDStruct_15189878 _selectedAssetsTypedCount;
     CDStruct_7c4e768e _pinchState;
@@ -83,6 +84,7 @@
 }
 
 + (id)_cplServiceUI;
+@property(nonatomic) long long viewTimeSignpostID; // @synthesize viewTimeSignpostID=_viewTimeSignpostID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *countUpdateQueue; // @synthesize countUpdateQueue=_countUpdateQueue;
 @property(readonly, nonatomic) PXInfoUpdater *selectedAssetsTypeCountUpdater; // @synthesize selectedAssetsTypeCountUpdater=_selectedAssetsTypeCountUpdater;
 @property(nonatomic) long long chromeVisibilityAnimationCount; // @synthesize chromeVisibilityAnimationCount=_chromeVisibilityAnimationCount;
@@ -144,6 +146,9 @@
 - (void)curatedLibraryAssetsDataSourceManager:(id)arg1 willTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (id)visibleAssetCollectionsFromCuratedLibraryAssetsDataSourceManager:(id)arg1;
 - (_Bool)isSelectingAssetsFromCuratedLibraryAssetsDataSourceManager:(id)arg1;
+- (id)_cpAnalyticsClassNameWithZoomLevel:(long long)arg1;
+- (void)endCPAnalyticsViewWithZoomLevel:(long long)arg1;
+- (void)startCPAnalyticsViewWithZoomLevel:(long long)arg1;
 - (void)_updateAllPhotosZoomState;
 - (void)_invalidateAllPhotosZoomState;
 - (void)_updateAllPhotosAlphaAnimator;

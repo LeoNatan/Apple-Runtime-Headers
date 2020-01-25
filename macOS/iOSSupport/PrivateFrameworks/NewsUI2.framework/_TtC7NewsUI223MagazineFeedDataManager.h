@@ -20,6 +20,7 @@
     // Error parsing type: , name: lastRefreshDate
     // Error parsing type: , name: tagService
     // Error parsing type: , name: notificationManager
+    // Error parsing type: , name: bundlePurchasePrewarmer
     // Error parsing type: , name: subscriptionService
 }
 

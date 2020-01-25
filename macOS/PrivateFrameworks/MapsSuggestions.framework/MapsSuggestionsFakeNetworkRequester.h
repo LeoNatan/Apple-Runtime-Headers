@@ -15,6 +15,7 @@
     struct Queue _queue;
     struct NSArray *_fakeMapItems;
     NSMutableDictionary *_fakeMapItemsPerPOICategory;
+    NSMutableDictionary *_fakeMapItemsPerHandleData;
     GEOComposedWaypoint *_fakeWaypoint;
     NSArray *_fakeTraffic;
     NSError *_fakeError;
@@ -58,6 +59,7 @@
 - (void)configureError:(id)arg1;
 - (void)configureTraffic:(id)arg1;
 - (void)configureWaypoint:(id)arg1;
+- (void)configureMapItem:(struct GEOMapItemStorage *)arg1 forHandleData:(struct NSData *)arg2;
 - (void)configureMapItems:(struct NSArray *)arg1 forPOICategory:(id)arg2;
 - (void)configureMapItems:(struct NSArray *)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;

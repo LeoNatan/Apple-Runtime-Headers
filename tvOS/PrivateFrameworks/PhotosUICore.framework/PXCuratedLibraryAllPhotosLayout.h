@@ -68,8 +68,11 @@
     PXGOneColumnLayout *_oneColLayout;
     struct CGPoint _anchorTargetViewportCenter;
     struct CGPoint _normalizedScaleCenterInAnchorSprite;
+    struct UIEdgeInsets _overlayInsets;
+    struct UIEdgeInsets _effectiveOverlayInsets;
 }
 
+@property(nonatomic) struct UIEdgeInsets effectiveOverlayInsets; // @synthesize effectiveOverlayInsets=_effectiveOverlayInsets;
 @property(readonly, nonatomic) PXGOneColumnLayout *oneColLayout; // @synthesize oneColLayout=_oneColLayout;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *didAnimateTowardsAnchorInItemsLayout; // @synthesize didAnimateTowardsAnchorInItemsLayout=_didAnimateTowardsAnchorInItemsLayout;
 @property(readonly, nonatomic) _Bool wasTracking; // @synthesize wasTracking=_wasTracking;
@@ -79,6 +82,7 @@
 @property(readonly, nonatomic) struct CGPoint anchorTargetViewportCenter; // @synthesize anchorTargetViewportCenter=_anchorTargetViewportCenter;
 @property(readonly, nonatomic) PXPointAnimator *anchorViewportScaleCenterAnimator; // @synthesize anchorViewportScaleCenterAnimator=_anchorViewportScaleCenterAnimator;
 @property(readonly, nonatomic) PXGAnchor *anchor; // @synthesize anchor=_anchor;
+@property(nonatomic) struct UIEdgeInsets overlayInsets; // @synthesize overlayInsets=_overlayInsets;
 @property(readonly, nonatomic) PXAssetsDataSource *presentedDataSource; // @synthesize presentedDataSource=_presentedDataSource;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) PXAssetReference *anchorAssetReference; // @synthesize anchorAssetReference=__anchorAssetReference;
@@ -119,6 +123,7 @@
 - (void)_updateVisualShifting;
 - (void)_updateZoom;
 - (void)_updateLayers;
+- (void)_updateEffectiveOverlayInsets;
 - (void)update;
 - (void)invalidateItemsLayout;
 - (id)presentedItemsGeometryForDataSource:(id)arg1;

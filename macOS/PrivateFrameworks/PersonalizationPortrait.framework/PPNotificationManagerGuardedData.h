@@ -24,12 +24,14 @@
     PPEventKitNotificationHandler *_eventKitHandler;
     id <NSObject> _eventKitToken;
     EKEventStore *_ekStore;
+    long long _eventKitChangeTrackingToken;
     id <SGSuggestionsServiceContactsProtocol> _suggestionsService;
     PPNotificationHandler *_suggestionsHandler;
     id _suggestionsToken;
 }
 
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

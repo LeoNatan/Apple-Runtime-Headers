@@ -20,7 +20,6 @@
 
 + (id)sharedCache;
 - (void).cxx_destruct;
-- (void)_updateBaseCacheKey;
 - (id)_statusChangeUserInfoForUserIdentity:(id)arg1 oldStatus:(id)arg2 newStatus:(id)arg3;
 - (void)_postLocalChangeNotificationWithUserInfo:(id)arg1;
 - (void)_persistCachePostingGlobalNotification:(_Bool)arg1;
@@ -29,6 +28,7 @@
 - (void)_handleSubscriptionStatusChangedDistributedNotification:(id)arg1;
 - (void)_handleUserIdentityStoreDidChangeNotification:(id)arg1;
 - (void)_handlePhoneNumberDidChangeNotification:(id)arg1;
+- (void)updateBaseCacheKey;
 - (void)setCachedSubscriptionStatusResponseNeedsReloadForRequestContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setCachedSubscriptionStatusResponseNeedsReloadForAllRequestContextsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setCachedSubscriptionStatusResponse:(id)arg1 forRequestContext:(id)arg2 completion:(CDUnknownBlockType)arg3;

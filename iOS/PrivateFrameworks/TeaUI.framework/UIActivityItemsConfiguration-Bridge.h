@@ -7,6 +7,7 @@
 #import <UIKit/UIActivityItemsConfiguration.h>
 
 @interface UIActivityItemsConfiguration (Bridge)
+- (void)ts_setExcludedActivityTypes:(id)arg1;
 - (id)initTSWithActivityItemSources:(id)arg1;
 @end
 

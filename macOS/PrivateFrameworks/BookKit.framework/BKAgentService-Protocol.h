@@ -29,6 +29,7 @@
 - (void)reconnectToLibrary:(void (^)(id, NSError *))arg1;
 - (void)fixOrphanedFiles:(void (^)(id, NSError *))arg1;
 - (void)rebuildLibrary:(void (^)(id, NSError *))arg1;
+- (void)prepareToOpenAsset:(NSString *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)applyPendingUpdates:(void (^)(id, NSError *))arg1;
 - (void)removeRedactedBook:(NSDictionary *)arg1 withReply:(void (^)(id, NSError *))arg2;
 - (void)fetchRedactedBooks:(void (^)(id, NSError *))arg1;

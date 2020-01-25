@@ -27,6 +27,7 @@
 + (id)storeWithEnvironment:(id)arg1 options:(unsigned long long)arg2;
 + (id)storeWithOptions:(unsigned long long)arg1;
 + (void)initialize;
++ (id)storeWithDelegateInfo:(id)arg1;
 + (id)storeForFamilyMember:(id)arg1;
 + (_Bool)eraseAllDataAtURL:(id)arg1 error:(id *)arg2;
 + (_Bool)eraseAllDataAtLocationWithName:(id)arg1 error:(id *)arg2;

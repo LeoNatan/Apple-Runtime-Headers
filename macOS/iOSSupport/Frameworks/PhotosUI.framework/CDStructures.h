@@ -124,6 +124,11 @@ struct PXSimpleIndexPath {
     long long _field4;
 };
 
+struct TransformMetadataItemPair {
+    id _field1;
+    id _field2;
+};
+
 struct UIEdgeInsets {
     double top;
     double left;

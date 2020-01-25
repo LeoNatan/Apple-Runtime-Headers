@@ -6,9 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
+@class NSString;
 @protocol SXActionSerializer;
 
 @protocol SXActionSerializationManager <NSObject>
-- (void)registerSerializer:(id <SXActionSerializer>)arg1 actionType:(Class)arg2;
+- (void)registerSerializer:(id <SXActionSerializer>)arg1 actionType:(NSString *)arg2;
 @end
 

@@ -11,6 +11,7 @@
 }
 
 + (BOOL)connectionIsEntitledForPhotoKit:(id)arg1;
++ (BOOL)isEntitledForPhotoKitOrPrivatePhotosTCCForToken:(CDStruct_6ad76789)arg1;
 + (BOOL)isEntitledForPhotoKit;
 + (BOOL)containsPhotoKitEntitlement:(id)arg1;
 + (id)connection:(id)arg1 grantedEntitlements:(id)arg2;

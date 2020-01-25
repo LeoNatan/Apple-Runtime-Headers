@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     BOOL _isStacked;
     BOOL _isCentered;
     BOOL _isSpace;
+    BOOL _requiresTrueCenterLayout;
     long long _priorityIndex;
     unsigned long long _itemPosition;
     BOOL _isEditable;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _dragAnchorPoint;
 }
 
+@property BOOL requiresTrueCenterLayout; // @synthesize requiresTrueCenterLayout=_requiresTrueCenterLayout;
 @property struct CGSize backupDragSize; // @synthesize backupDragSize=_backupDragSize;
 @property unsigned long long itemPosition; // @synthesize itemPosition=_itemPosition;
 @property long long priorityIndex; // @synthesize priorityIndex=_priorityIndex;

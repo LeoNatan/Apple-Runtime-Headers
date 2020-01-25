@@ -14,6 +14,7 @@
 __attribute__((visibility("hidden")))
 @interface SPMonitorsWrapper : NSObject <SPPowerMonitorDelegate>
 {
+    BOOL _isRunning;
     id <SPMonitorsWrapperDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     SPNetworkMonitor *_networkMonitor;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SPMacBeaconConfig *macBeaconConfig; // @synthesize macBeaconConfig=_macBeaconConfig;
 @property(retain, nonatomic) SPPowerStateMonitorMac *powerStateMonitor; // @synthesize powerStateMonitor=_powerStateMonitor;
 @property(retain, nonatomic) NSDate *networkOffDuringSleepDate; // @synthesize networkOffDuringSleepDate=_networkOffDuringSleepDate;
+@property BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(retain, nonatomic) NSDate *nextStateChangeDate; // @synthesize nextStateChangeDate=_nextStateChangeDate;
 @property(retain, nonatomic) NSDate *lastStateChangeDate; // @synthesize lastStateChangeDate=_lastStateChangeDate;
 @property(retain, nonatomic) SPNetworkMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
@@ -37,6 +39,8 @@ __attribute__((visibility("hidden")))
 - (void)powerMonitor:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)calculateLowPowerNetworkOffDate;
 - (void)updateConfig:(id)arg1;
+- (void)resume;
+- (void)pause;
 - (void)stop;
 - (void)start;
 - (unsigned long long)powerState;

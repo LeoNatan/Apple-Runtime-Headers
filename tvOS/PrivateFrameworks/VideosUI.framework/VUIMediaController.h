@@ -112,7 +112,7 @@
 - (struct CGRect)_playbackContainerViewFrame:(_Bool)arg1 hasSecondaryVideoView:(_Bool)arg2;
 - (_Bool)_shouldIgnorePlaybackStop;
 @property(readonly, nonatomic, getter=isBackgrounded) _Bool backgrounded;
-- (void)_updatePlayerMuteStateWithReason:(id)arg1;
+- (void)_updatePlayerMuteStateForBackgroundPlaybackWithReason:(id)arg1;
 - (void)_mediaControllerStartedPlayback:(id)arg1;
 - (void)_handlePlaybackErrorNotification:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;

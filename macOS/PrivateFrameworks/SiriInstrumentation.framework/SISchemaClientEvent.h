@@ -6,15 +6,11 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
-#import <SiriInstrumentation/SISchemaClientEvent-Protocol.h>
+@class NSData, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, SISchemaClientEventMetadata, SISchemaClientFlow, SISchemaClientTransportEventMetadata, SISchemaConversationTrace, SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, SISchemaDialogOutput, SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, SISchemaPunchOut, SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, SISchemaTextToSpeechEnd, SISchemaUIStateTransition, SISchemaUUFRPresented;
 
-@class NSData, NSString, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, SISchemaClientEventMetadata, SISchemaClientFlow, SISchemaClientTransportEventMetadata, SISchemaConversationTrace, SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, SISchemaDialogOutput, SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, SISchemaPunchOut, SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, SISchemaTextToSpeechEnd, SISchemaUIStateTransition, SISchemaUUFRPresented;
-
-@interface SISchemaClientEvent : PBCodable <SISchemaClientEvent, NSSecureCoding>
+@interface SISchemaClientEvent : PBCodable
 {
-    SISchemaClientEventMetadata *_eventMetadata;
-    SISchemaClientTransportEventMetadata *_transportMetadata;
+    unsigned long long _whichEvent_Type;
     SISchemaAudioFirstBufferRecorded *_audioFirstBufferRecorded;
     SISchemaAudioStopRecording *_audioStopRecording;
     SISchemaConversationTrace *_clientConversationTrace;
@@ -32,21 +28,22 @@
     SISchemaUIStateTransition *_uiStateTransition;
     SISchemaClientFlow *_clientFlow;
     SISchemaDialogOutput *_dialogOutput;
-    unsigned long long _whichEvent_Type;
+    SISchemaClientEventMetadata *_eventMetadata;
+    SISchemaClientTransportEventMetadata *_transportMetadata;
 }
 
 + (id)getTagForEventTypeClass:(Class)arg1;
 + (Class)getEventTypeClassForTag:(int)arg1;
-@property(readonly, nonatomic) unsigned long long whichEvent_Type; // @synthesize whichEvent_Type=_whichEvent_Type;
 @property(retain, nonatomic) SISchemaClientTransportEventMetadata *transportMetadata; // @synthesize transportMetadata=_transportMetadata;
 @property(retain, nonatomic) SISchemaClientEventMetadata *eventMetadata; // @synthesize eventMetadata=_eventMetadata;
+@property(readonly, nonatomic) unsigned long long whichEvent_Type; // @synthesize whichEvent_Type=_whichEvent_Type;
 - (void).cxx_destruct;
 - (void)setEventType:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 - (id)dictionaryRepresentation;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -67,11 +64,7 @@
 @property(retain, nonatomic) SISchemaConversationTrace *clientConversationTrace; // @synthesize clientConversationTrace=_clientConversationTrace;
 @property(retain, nonatomic) SISchemaAudioStopRecording *audioStopRecording; // @synthesize audioStopRecording=_audioStopRecording;
 @property(retain, nonatomic) SISchemaAudioFirstBufferRecorded *audioFirstBufferRecorded; // @synthesize audioFirstBufferRecorded=_audioFirstBufferRecorded;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
+- (int)getAnyEventType;
 
 @end
 

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <AppleMediaServices/AMSFinanceActionHandling-Protocol.h>
+#import <AppleMediaServices/AMSFinancePerformable-Protocol.h>
 
 @class ACAccount, AMSURLTaskInfo, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
-@interface AMSFinanceActionResponse : NSObject <AMSFinanceActionHandling>
+@interface AMSFinanceActionResponse : NSObject <AMSFinancePerformable>
 {
     ACAccount *_account;
     NSString *_creditString;
@@ -31,8 +31,14 @@ __attribute__((visibility("hidden")))
 - (id)_performOpenURL;
 - (id)_performGotoURL;
 - (id)_performCreditDisplayUpdate;
-- (id)runAction;
+- (id)performWithTaskInfo:(id)arg1;
 - (id)initWithTaskInfo:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

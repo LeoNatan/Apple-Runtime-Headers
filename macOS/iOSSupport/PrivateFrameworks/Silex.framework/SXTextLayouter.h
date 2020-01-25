@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSSet, STTextTangierContainerInfo, STTextTangierDocumentRoot, SXTextSource, TSDLayoutController;
+@class NSArray, NSSet, SXTextSource, SXTextTangierContainerInfo, SXTextTangierDocumentRoot, TSDLayoutController;
 
 @interface SXTextLayouter : NSObject
 {
     SXTextSource *_textSource;
     NSSet *_exclusionPaths;
-    STTextTangierDocumentRoot *_documentRoot;
+    SXTextTangierDocumentRoot *_documentRoot;
     TSDLayoutController *_layoutController;
-    STTextTangierContainerInfo *_textInfo;
+    SXTextTangierContainerInfo *_textInfo;
 }
 
-@property(retain, nonatomic) STTextTangierContainerInfo *textInfo; // @synthesize textInfo=_textInfo;
+@property(retain, nonatomic) SXTextTangierContainerInfo *textInfo; // @synthesize textInfo=_textInfo;
 @property(retain, nonatomic) TSDLayoutController *layoutController; // @synthesize layoutController=_layoutController;
-@property(retain, nonatomic) STTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
+@property(retain, nonatomic) SXTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 @property(retain, nonatomic) NSSet *exclusionPaths; // @synthesize exclusionPaths=_exclusionPaths;
 @property(retain, nonatomic) SXTextSource *textSource; // @synthesize textSource=_textSource;
 - (void).cxx_destruct;

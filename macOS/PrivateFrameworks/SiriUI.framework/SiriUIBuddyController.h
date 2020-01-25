@@ -6,7 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSDictionary, NSString, SiriUIBuddyChooseLanguageController, SiriUIBuddyEnableSiriController, SiriUIBuddyImproveSiriController, SiriUIBuddyVoiceTriggerController, SiriUIBuddyVoiceTriggerIntroController, SiriUIBuddyVoiceTriggerOutroController;
+@class NSDictionary, NSNumber, NSString, SiriUIBuddyChooseLanguageController, SiriUIBuddyEnableSiriController, SiriUIBuddyImproveSiriController, SiriUIBuddyVoiceTriggerController, SiriUIBuddyVoiceTriggerIntroController, SiriUIBuddyVoiceTriggerOutroController;
 @protocol MBSecondPartyHost, SiriUIBuddyDelegate, SiriUIBuddySubviewController;
 
 @interface SiriUIBuddyController : NSViewController
@@ -19,31 +19,35 @@
     SiriUIBuddyVoiceTriggerIntroController *_voiceTriggerIntroController;
     SiriUIBuddyVoiceTriggerOutroController *_voiceTriggerOutroController;
     SiriUIBuddyImproveSiriController *_improveSiriController;
+    NSNumber *_shouldOfferEnableAskSiri;
+    NSNumber *_shouldOfferTraining;
+    NSNumber *_shouldOfferAmnesia;
     BOOL _enableSiri;
     BOOL _skippedVoiceTrigger;
-    BOOL _shouldOfferTraining;
     NSString *_userChosenSiriLanguageCode;
     NSString *_effectiveSiriLanguageCode;
-    id <MBSecondPartyHost> _host;
     id <SiriUIBuddyDelegate> _delegate;
+    id <MBSecondPartyHost> _host;
     NSDictionary *_userInfo;
 }
 
-@property BOOL shouldOfferTraining; // @synthesize shouldOfferTraining=_shouldOfferTraining;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property __weak id <SiriUIBuddyDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) __weak id <MBSecondPartyHost> host; // @synthesize host=_host;
+@property __weak id <SiriUIBuddyDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL skippedVoiceTrigger; // @synthesize skippedVoiceTrigger=_skippedVoiceTrigger;
 @property BOOL enableSiri; // @synthesize enableSiri=_enableSiri;
 - (void).cxx_destruct;
 - (void)didCloseLid:(id)arg1;
 - (void)didOpenLid:(id)arg1;
-@property(readonly) BOOL shouldShowEnableSiriPane;
+- (long long)_mbuaGetDataSharingOptInStatus;
+- (BOOL)_mbuaIsSiriEnabled;
 - (void)moveToNextPanel;
 - (void)setState:(long long)arg1;
-- (void)checkShouldOfferTraining;
 - (void)currentPaneWillExit;
 - (void)setCurrentPanelController:(id)arg1;
+- (BOOL)_shouldOfferAmnesia;
+- (BOOL)_shouldOfferTraining;
+- (BOOL)shouldOfferEnableAskSiri;
 - (id)improveSiriController;
 - (id)voiceTriggerOutroController;
 - (id)voiceTriggerController;

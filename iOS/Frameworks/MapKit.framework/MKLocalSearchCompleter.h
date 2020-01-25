@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocation, GEOClientRankingModel, GEOMapServiceTraits, GEORetainedSearchMetadata, GEOSearchCategory, GEOSortPriorityMapping, MKLocalSearchCompletion, MKPointOfInterestFilter, NSArray, NSMutableArray, NSString, NSTimer;
+@class CLLocation, GEOAutocompleteSessionData, GEOClientRankingModel, GEOMapServiceTraits, GEORetainedSearchMetadata, GEOSearchCategory, GEOSortPriorityMapping, MKLocalSearchCompletion, MKPointOfInterestFilter, NSArray, NSMutableArray, NSString, NSTimer;
 @protocol MKAutocompleteAnalyticsProvider, MKLocalSearchCompleterDelegate, MKLocationManagerOperation;
 
 @interface MKLocalSearchCompleter : NSObject
@@ -37,6 +37,8 @@
     unsigned long long _maxNumberOfConcurrentRequests;
     NSMutableArray *_inFlightTickets;
     NSMutableArray *_pendingTickets;
+    _Bool _statefulQueriesEnabled;
+    GEOAutocompleteSessionData *_autocompleteSessionData;
     _Bool _shouldDisplayNoResults;
     _Bool _shouldEnableRAPForNoResults;
     _Bool _autocompleteTopSectionIsQuerySuggestions;
@@ -79,6 +81,8 @@
 @property(nonatomic) long long entriesType;
 @property(copy, nonatomic) NSString *fragment;
 @property(nonatomic) CDStruct_b7cb895d boundingRegion;
+@property(nonatomic) _Bool statefulQueriesEnabled;
+- (void)clearQueryState;
 @property(readonly, nonatomic) NSArray *results;
 - (void)retry;
 - (void)cancel;

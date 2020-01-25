@@ -14,6 +14,7 @@
     EAGLContext *_eaglContext;
     unsigned int _updateProg;
     unsigned int _inputProg;
+    _Bool _canUseGL;
     NSString *_language;
     NSString *_textContentType;
 }
@@ -22,10 +23,12 @@
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
-- (void)_loadGLContextIfNeeded;
+- (void)handleUIApplicationDidEnterBackgroundNotification:(id)arg1;
+- (void)handleUIApplicationWillEnterForegroundNotification:(id)arg1;
+- (void)_loadGLContextIfNeededCheckBackgroundState:(_Bool)arg1;
 - (void)_loadRecognitionManagerIfNeeded;
 - (void)prewarmIfNeeded;
-- (void)prewarmGL;
+- (void)_schedulePrewarmGLIfNeeded;
 - (void)prewarmRecognizer;
 - (void)prewarm;
 - (id)initWithLanguage:(id)arg1;

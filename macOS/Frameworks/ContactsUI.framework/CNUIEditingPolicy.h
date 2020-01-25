@@ -12,6 +12,7 @@
 
 + (id)guardianPolicy;
 + (id)defaultPolicy;
+- (id)evaluateWithContact:(id)arg1 container:(id)arg2;
 - (BOOL)shouldAuthorizeDeletionOfContact:(id)arg1 fromContainer:(id)arg2;
 - (BOOL)shouldAuthorizeUpdateOfContact:(id)arg1 inContainer:(id)arg2;
 - (BOOL)shouldAuthorizeInsertionOfNewContactToContainer:(id)arg1;

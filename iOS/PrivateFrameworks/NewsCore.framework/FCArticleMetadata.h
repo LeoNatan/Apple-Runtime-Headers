@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool isTreatedAsNew;
+@property(readonly, nonatomic) NSString *shortExcerpt;
 @property(readonly, nonatomic) NSString *articleID;
 @property(readonly, nonatomic) NSString *storyType;
 @property(readonly, nonatomic) NSString *title;

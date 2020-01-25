@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)secondaryGroupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 cellularItemClass:(Class)arg3 wifiItemClass:(Class)arg4;
++ (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 cellularItemClass:(Class)arg3 wifiItemClass:(Class)arg4 cellularTypeClass:(Class)arg5 includeCellularName:(_Bool)arg6;
 + (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 cellularItemClass:(Class)arg3 wifiItemClass:(Class)arg4 includeCellularName:(_Bool)arg5;
 + (id)_groupWithCellularGroup:(id)arg1 wifiGroup:(id)arg2 includeCellularName:(_Bool)arg3;
 @property(readonly, nonatomic) _UIStatusBarDisplayItemPlacementWifiGroup *wifiGroup; // @synthesize wifiGroup=_wifiGroup;

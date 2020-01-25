@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ABCardViewStyleProvider, ABCollectionRowViewFactory;
+@class ABCardViewStyleProvider, ABCollectionRowViewFactory, CNUIEditingRules;
 @protocol CNUIUserActionListDataSource;
 
 @interface ABCollectionViewItemFactory : NSObject
@@ -17,6 +17,7 @@
     ABCardViewStyleProvider *_styleProvider;
     ABCollectionRowViewFactory *_rowViewFactory;
     ABCollectionRowViewFactory *_rowViewEditModeFactory;
+    CNUIEditingRules *_editingRules;
 }
 
 + (id)actionsForItem:(id)arg1;
@@ -27,6 +28,7 @@
 + (id)itemFromPoolWithKey:(id)arg1;
 + (void)addItemToPool:(id)arg1;
 + (void)initialize;
+@property(retain, nonatomic) CNUIEditingRules *editingRules; // @synthesize editingRules=_editingRules;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) BOOL shouldShowActionMenu; // @synthesize shouldShowActionMenu=_shouldShowActionMenu;
 @property(nonatomic) BOOL shouldFormatURLs; // @synthesize shouldFormatURLs=_shouldFormatURLs;

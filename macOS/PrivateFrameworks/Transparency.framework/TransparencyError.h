@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)hasUnknownSPKIHashError:(id *)arg1;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3 description:(id)arg4;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 errorLevel:(unsigned long long)arg3 underlyingError:(id)arg4 description:(id)arg5;

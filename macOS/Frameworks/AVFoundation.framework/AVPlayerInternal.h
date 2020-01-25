@@ -85,6 +85,7 @@ __attribute__((visibility("hidden")))
     unsigned long long preferredVideoDecoderGPURegistryID;
     BOOL disallowsAutoPauseOnRouteRemovalIfNoAudio;
     BOOL hostApplicationInForeground;
+    BOOL preservesAudioSessionSampleRate;
     NSMutableArray *videoLayers;
     NSMutableArray *subtitleLayers;
     NSMutableArray *closedCaptionLayers;

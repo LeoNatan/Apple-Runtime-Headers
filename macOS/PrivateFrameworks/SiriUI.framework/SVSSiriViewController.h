@@ -252,7 +252,7 @@ __attribute__((visibility("hidden")))
 - (void)_openURL:(id)arg1 appBundleID:(id)arg2 allowSiriDismissal:(BOOL)arg3;
 - (void)_openSensitiveURL:(id)arg1 delaySessionEndForTTS:(BOOL)arg2 conversationItemIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_openSensitiveURL:(id)arg1 delaySessionEndForTTS:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_requestDismissalFromHost:(BOOL)arg1;
+- (void)_requestDismissalFromHost:(BOOL)arg1 dismissalOptions:(id)arg2;
 - (void)didReceiveDismissalAction:(BOOL)arg1 delayForTTS:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didChangeWindowHeight:(BOOL)arg1;
 - (double)contentHeight;
@@ -261,7 +261,7 @@ __attribute__((visibility("hidden")))
 - (void)didReceiveReportBugAction;
 - (void)didReceiveHelpAction;
 - (void)setSession:(id)arg1;
-- (void)_requestPresentationDismissal:(BOOL)arg1;
+- (void)_requestPresentationDismissalWithDelayForTTS:(BOOL)arg1 dismissalOptions:(id)arg2;
 - (void)userInteractionDidOccur;
 - (void)siriWillShowPasscodeUnlock;
 - (void)siriWillShowPasscodeUnlockAndCancelRequest:(BOOL)arg1;

@@ -24,6 +24,7 @@
     _Bool _requestThumbnailsOnly;
     _Bool _requestMasterThumbsOnly;
     _Bool _disableLowResThumbnails;
+    _Bool _simulateSomeAssetsInCloud;
     _Bool _loadThumbnailsAsync;
     _Bool _allowBlockingDuringScrolling;
     _Bool _allowBlockingDueToFences;
@@ -95,6 +96,7 @@
 @property(nonatomic) double opportunisticPreheatRequiredIdleTime; // @synthesize opportunisticPreheatRequiredIdleTime=_opportunisticPreheatRequiredIdleTime;
 @property(nonatomic) long long thumbnailCacheSize; // @synthesize thumbnailCacheSize=_thumbnailCacheSize;
 @property(nonatomic) _Bool loadThumbnailsAsync; // @synthesize loadThumbnailsAsync=_loadThumbnailsAsync;
+@property(nonatomic) _Bool simulateSomeAssetsInCloud; // @synthesize simulateSomeAssetsInCloud=_simulateSomeAssetsInCloud;
 @property(nonatomic) _Bool disableLowResThumbnails; // @synthesize disableLowResThumbnails=_disableLowResThumbnails;
 @property(nonatomic) _Bool requestMasterThumbsOnly; // @synthesize requestMasterThumbsOnly=_requestMasterThumbsOnly;
 @property(nonatomic) _Bool requestThumbnailsOnly; // @synthesize requestThumbnailsOnly=_requestThumbnailsOnly;

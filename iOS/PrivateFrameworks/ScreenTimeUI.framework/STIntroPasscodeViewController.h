@@ -13,8 +13,10 @@
 __attribute__((visibility("hidden")))
 @interface STIntroPasscodeViewController : UIViewController <BFFPasscodeInputViewDelegate>
 {
+    _Bool _askForRecoveryAppleID;
     _Bool _numeric;
     STIntroductionModel *_model;
+    NSString *_altDSID;
     CDUnknownBlockType _continueHandler;
     long long _passcodeState;
     NSString *_initialPasscode;
@@ -26,10 +28,13 @@ __attribute__((visibility("hidden")))
 @property(retain) NSString *initialPasscode; // @synthesize initialPasscode=_initialPasscode;
 @property long long passcodeState; // @synthesize passcodeState=_passcodeState;
 @property(readonly, copy) CDUnknownBlockType continueHandler; // @synthesize continueHandler=_continueHandler;
+@property(readonly, copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
+@property(readonly) _Bool askForRecoveryAppleID; // @synthesize askForRecoveryAppleID=_askForRecoveryAppleID;
 @property(readonly) STIntroductionModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
 - (void)passcodeInput:(id)arg1 enteredPasscode:(id)arg2;
 - (void)updatePasscodeType;
+- (void)_transitionToFirstPasscodePaneWithState:(long long)arg1;
 - (void)userEnteredPasscode:(id)arg1;
 - (void)nextButtonTapped;
 - (id)passcodeInputView;
@@ -38,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLoad;
 - (id)_passcodeView;
 - (void)loadView;
-- (id)initWithIntroductionModel:(id)arg1 continueHandler:(CDUnknownBlockType)arg2;
+- (id)initWithIntroductionModel:(id)arg1 askForRecoveryAppleID:(_Bool)arg2 altDSID:(id)arg3 continueHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

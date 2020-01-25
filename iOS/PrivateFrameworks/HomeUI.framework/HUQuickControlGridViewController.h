@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)_subclass_configureQuickControlViewController:(id)arg1;
 - (id)childQuickControlContentViewControllers;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (id)hu_preloadContent;
 - (id)initWithControlItems:(id)arg1 home:(id)arg2 itemUpdater:(id)arg3;

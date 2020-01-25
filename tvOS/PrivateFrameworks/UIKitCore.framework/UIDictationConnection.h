@@ -8,7 +8,7 @@
 
 #import <UIKitCore/AFDictationDelegate-Protocol.h>
 
-@class AFDictationConnection, AFDictationOptions, NSMutableArray, NSString;
+@class AFDictationConnection, AFDictationOptions, NSMutableArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, UIDictationConnectionDelegate, UIDictationConnectionTokenFilterProtocol;
 
 __attribute__((visibility("hidden")))
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSString *_lastUsedPrimaryLanguage;
     NSString *_lastUsedDetectedLanguage;
     NSMutableArray *_lastUsedTopLanguages;
+    NSMutableDictionary *_lastReceivedPartials;
 }
 
 + (id)interpretationFromSpeechTokens:(id)arg1 startIndex:(unsigned long long)arg2 filterBlock:(CDUnknownBlockType)arg3;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)dictationIsSupportedForLanguageCode:(id)arg1 error:(id *)arg2;
 + (_Bool)isDictationAvailable;
 + (id)analytics;
+@property(retain, nonatomic) NSMutableDictionary *lastReceivedPartials; // @synthesize lastReceivedPartials=_lastReceivedPartials;
 @property(nonatomic) unsigned int charAfterInsertionPointOnDictationStart; // @synthesize charAfterInsertionPointOnDictationStart=_charAfterInsertionPointOnDictationStart;
 @property(nonatomic) unsigned int charBeforeInsertionPointOnDictationStart; // @synthesize charBeforeInsertionPointOnDictationStart=_charBeforeInsertionPointOnDictationStart;
 @property(nonatomic) _Bool lowConfidenceAboutLanguageDetection; // @synthesize lowConfidenceAboutLanguageDetection=_lowConfidenceAboutLanguageDetection;

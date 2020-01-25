@@ -14,6 +14,7 @@
 }
 
 + (id)IDSRelevantPropertiesForContact:(id)arg1;
++ (id)descriptorForCopyingStrippedContact:(id)arg1;
 + (id)descriptorForRequiredKeys;
 @property(readonly, nonatomic) CNUIIDSAvailabilityProvider *idsAvailabilityProvider; // @synthesize idsAvailabilityProvider=_idsAvailabilityProvider;
 - (void).cxx_destruct;

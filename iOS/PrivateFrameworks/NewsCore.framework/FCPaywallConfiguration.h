@@ -26,7 +26,10 @@
 + (id)defaultPaywallTopOffsetConfiguration;
 + (id)defaultPaywallDescription;
 + (id)defaultPaywallTitle;
++ (id)defaultSmallPaywallTitle;
 + (id)defaultPDFHardPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultMagazineFeedVideoSoftPaywallLargePaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultMagazineFeedVideoSoftPaywallSmallPaywallWithLandingPageArticleID:(id)arg1;
 + (id)defaultMagazineFeedSoftPaywallLargePaywallWithLandingPageArticleID:(id)arg1;
 + (id)defaultMagazineFeedSoftPaywallMediumPaywallWithLandingPageArticleID:(id)arg1;
 + (id)defaultMagazineFeedSoftPaywallSmallPaywallWithLandingPageArticleID:(id)arg1;

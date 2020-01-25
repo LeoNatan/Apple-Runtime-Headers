@@ -20,8 +20,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *deviceIDs; // @synthesize deviceIDs=_deviceIDs;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (id)deviceIdentifierForContext:(id)arg1 skipInMemoryCache:(_Bool)arg2 createIfNecessary:(_Bool)arg3;
 - (id)deviceIdentifierForContext:(id)arg1;
+- (void)_deleteDeviceIdentifierForContext:(id)arg1;
 - (void)_saveDeviceIdentifier:(id)arg1 forContext:(id)arg2;
+- (struct __CFDictionary *)createQueryForDeviceIdentifierInContext:(id)arg1;
 - (id)_savedDeviceIdentifierForContext:(id)arg1;
 - (id)_lookupKeyForContext:(id)arg1;
 - (id)_serviceForContext:(id)arg1;

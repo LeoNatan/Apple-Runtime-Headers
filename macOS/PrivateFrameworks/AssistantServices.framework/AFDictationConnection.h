@@ -95,6 +95,10 @@
 - (void)_registerInvalidationHandlerForXPCConnection:(id)arg1;
 - (void)_clearConnection;
 - (void)_connectionClearedForInterruption:(BOOL)arg1;
+- (void)_tellSpeechDelegateLanguageDetectorDidFail:(id)arg1;
+- (void)_tellSpeechDelegateMultilingualSpeechRecognized:(id)arg1;
+- (void)_tellSpeechDelegateLanguageDetected:(id)arg1 confidenceScores:(id)arg2 isConfident:(BOOL)arg3;
+- (void)_tellSpeechDelegateSearchResultsReceived:(id)arg1 recognitionText:(id)arg2 stable:(BOOL)arg3 final:(BOOL)arg4;
 - (void)_tellSpeechDelegateAvailabilityChanged;
 - (void)_tellSpeechDelegateAudioFileFinished:(id)arg1 error:(id)arg2;
 - (void)_tellSpeechDelegateSpeechRecognitionDidSucceed;

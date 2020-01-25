@@ -94,8 +94,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didMoveToWindow;
 - (void)didMoveToSuperview;
-- (void)willMoveToWindow:(id)arg1;
-- (void)willMoveToSuperview:(id)arg1;
 - (void)setContentView:(id)arg1;
 @property(readonly, nonatomic) UIView *contentView;
 - (void)_populateArchivedSubviews:(id)arg1;

@@ -14,6 +14,7 @@
     // Error parsing type: , name: initialZoomFactor
 }
 
++ (_Bool)isZoomSupported;
 - (id)init;
 
 @end

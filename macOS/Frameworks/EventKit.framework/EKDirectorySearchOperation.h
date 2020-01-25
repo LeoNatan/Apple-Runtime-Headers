@@ -12,6 +12,7 @@
 {
 }
 
++ (BOOL)isSupported;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) BOOL numberOfMatchesExceededLimit;
 - (id)initWithSource:(id)arg1 query:(id)arg2 resultsBlock:(CDUnknownBlockType)arg3;

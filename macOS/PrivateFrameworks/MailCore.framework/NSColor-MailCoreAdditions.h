@@ -33,6 +33,7 @@
 + (unsigned int)highlightColorValueForColor:(id)arg1;
 + (id)colorForQuoteLevel:(unsigned long long)arg1;
 + (void)setQuotingColorList:(id)arg1;
++ (id)_userDefaultQuotingColorList;
 + (id)quotingColorList;
 + (id)defaultQuotingColors;
 - (id)_semanticCSSColorOverrideForAppearance:(id)arg1;

@@ -6,9 +6,11 @@
 
 #import <AppStoreKit/JSExport-Protocol.h>
 
-@class NSNumber, NSString;
+@class NSArray, NSNumber, NSString, _TtC11AppStoreKit8JSCookie;
 
 @protocol _TtP11AppStoreKitP33_8FC66B30E604F9835E1C3CBA5211B91519JSUserObjectExports_ <JSExport>
+- (_TtC11AppStoreKit8JSCookie *)cookieForUrlWithName:(NSString *)arg1:(NSString *)arg2;
+- (NSArray *)cookiesForUrl:(NSString *)arg1;
 @property(nonatomic, readonly) NSNumber *userAgeIfAvailable;
 @property(nonatomic, readonly) BOOL isUnderThirteen;
 @property(nonatomic, readonly) BOOL isManagedAppleID;

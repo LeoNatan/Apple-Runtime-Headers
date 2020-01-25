@@ -70,6 +70,7 @@
 - (_Bool)_accessibilitySystemAppServerIsReady;
 - (_Bool)_accessibilityIsSystemAppServer;
 - (id)_accessibilityStatusBar;
+- (_Bool)_accessibilityShouldHitTestStatusBarWindow;
 - (id)_lastStatusBarElement;
 - (id)_firstStatusBarElement;
 - (id)_accessibilityStatusBarElements;

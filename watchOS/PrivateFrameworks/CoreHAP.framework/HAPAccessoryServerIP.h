@@ -145,8 +145,6 @@
 - (void)_invokePairVerifyCompletionBlock:(id)arg1;
 - (_Bool)_isSessionEstablished;
 - (_Bool)isSessionEstablised;
-- (_Bool)_mergeExistingService:(id)arg1 withNewService:(id)arg2;
-- (_Bool)_mergeExistingAccessory:(id)arg1 withNewAccessory:(id)arg2;
 - (_Bool)_updateAccessories:(id)arg1;
 - (void)_updateProtocolVersionFromPrimaryAccessory:(id)arg1;
 - (void)__registerForInternalCharacteristicNotifications;
@@ -161,6 +159,10 @@
 - (void)enableEvents:(_Bool)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3 queue:(id)arg4;
 - (void)_handleUpdatesForCharacteristics:(id)arg1 stateNumber:(id)arg2;
 - (void)handleUpdatesForCharacteristics:(id)arg1 stateNumber:(id)arg2;
+- (void)handleHTTPClientUnavailableErrorWithCompletion:(CDUnknownBlockType)arg1 serializationType:(unsigned int)arg2;
+- (void)sendGETRequestToURL:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)sendPOSTRequestToURL:(id)arg1 request:(id)arg2 serializationType:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)sendPUTRequestToURL:(id)arg1 request:(id)arg2 serializationType:(unsigned int)arg3 timeout:(double)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_handleWriteResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 requestTuples:(id)arg5 queue:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_handlePrepareWriteResponseObject:(id)arg1 type:(unsigned int)arg2 prepareIdentifier:(id)arg3 httpStatus:(int)arg4 error:(id)arg5 requestTuples:(id)arg6 timeout:(double)arg7 queue:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)_performExecuteWriteValues:(id)arg1 prepareIdentifier:(id)arg2 timeout:(double)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;

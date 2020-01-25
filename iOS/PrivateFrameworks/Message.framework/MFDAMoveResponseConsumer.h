@@ -16,8 +16,10 @@
     NSMutableDictionary *_destinationRemoteIDsBySourceRemoteIDs;
     NSMutableSet *_failures;
     MFError *_error;
+    long long _statusCode;
 }
 
+@property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
 - (void)resultsForMessageMove:(id)arg1;

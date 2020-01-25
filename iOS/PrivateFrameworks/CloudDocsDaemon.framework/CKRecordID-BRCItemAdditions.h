@@ -13,6 +13,7 @@
 @interface CKRecordID (BRCItemAdditions) <PQLValuable>
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (id)brc_fetchShareIDWithSharedItem:(id)arg1;
+- (_Bool)locateSideCarServerZone:(id *)arg1 withSession:(id)arg2;
 - (BOOL)brc_itemType;
 - (id)brc_itemIDOfTargetWithLibraryRowID:(id)arg1 session:(id)arg2;
 - (id)brc_itemIDWithSession:(id)arg1 error:(id *)arg2;

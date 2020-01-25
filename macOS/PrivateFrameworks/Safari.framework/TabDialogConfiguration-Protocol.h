@@ -8,6 +8,7 @@
 #import <Safari/NSObject-Protocol.h>
 
 @protocol TabDialogConfiguration <NSCopying, NSObject>
+@property(readonly, nonatomic) CDUnknownBlockType presentationBlock;
 @property(readonly, nonatomic) BOOL shouldHideTabContent;
 @property(readonly, nonatomic) long long dialogType;
 @end

@@ -56,6 +56,7 @@
 - (void).cxx_destruct;
 - (id)localizedStorefrontID;
 - (id)jsonEncodableObject;
+@property(readonly, nonatomic) BOOL enableLocationBasedAutofavorites;
 @property(readonly, nonatomic) long long emailSignupRequiredAppLaunchCount;
 @property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
@@ -68,7 +69,7 @@
 @property(readonly, nonatomic) NSString *magazinesConfigRecordID;
 @property(readonly, nonatomic) FCPaidBundleConfiguration *paidBundleConfig; // @synthesize paidBundleConfig=_paidBundleConfig;
 @property(readonly, nonatomic) BOOL enableBadgeInSpotlightTabBar;
-@property(readonly, nonatomic) NSString *description;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *feedNavigationConfigJSON;
 @property(readonly, nonatomic) BOOL shouldShowAlternateHeadlines;
 @property(readonly, nonatomic) BOOL disableThumbnailsForArticleRecirculation;
@@ -88,6 +89,7 @@
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForSingleArticle;
 @property(readonly, nonatomic) long long corryBarMaxArticleCountForArticleList;
 @property(readonly, nonatomic) NSString *translationMapResourceID;
+@property(readonly, nonatomic) NSString *localAreasMappingResourceId;
 @property(readonly, nonatomic) NSString *personalizationFavorabilityResourceId;
 @property(readonly, nonatomic) NSString *personalizationWhitelistResourceId;
 @property(readonly, nonatomic) NSString *personalizationUrlMappingResourceId;
@@ -113,6 +115,7 @@
 @property(readonly, nonatomic) double prerollLoadingTimeout;
 @property(readonly, nonatomic) double interstitialAdLoadDelay;
 @property(readonly, nonatomic) NSString *anfRenderingConfiguration;
+@property(readonly, nonatomic) NSString *webEmbedContentBlockerOverrides;
 @property(readonly, nonatomic) NSString *webEmbedContentBlockers;
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
@@ -153,6 +156,8 @@
 @property(readonly, nonatomic) FCForYouGroupsConfiguration *forYouGroupsConfiguration; // @synthesize forYouGroupsConfiguration=_forYouGroupsConfiguration;
 @property(readonly, nonatomic) NSArray *hiddenFeedIDs;
 @property(readonly, nonatomic) long long articleRapidUpdatesTimeout;
+@property(readonly, nonatomic) NSString *todayFeedKnobs;
+@property(readonly, nonatomic) NSArray *aLaCartePaidSubscriptionGroupWhitelistedChannelIDs;
 @property(readonly, nonatomic) double feedLineHeightMultiplier;
 @property(readonly, nonatomic) NSString *editorialGemsSectionID;
 @property(readonly, nonatomic) NSString *spotlightChannelID;
@@ -197,6 +202,11 @@
 - (id)initWithConfigDictionary:(id)arg1 storefrontID:(id)arg2 languageConfigDictionary:(id)arg3;
 @property(readonly, nonatomic) BOOL isDefaultConfiguration;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

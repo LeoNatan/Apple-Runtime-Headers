@@ -21,7 +21,6 @@
 }
 
 + (void)flushAllInvocationQueues;
-+ (unsigned int)totalInvocationCount;
 + (id)sharedInvocationQueue;
 @property(nonatomic) double threadRecycleTimeout; // @synthesize threadRecycleTimeout=_threadRecycleTimeout;
 @property(nonatomic) int threadPriorityTrigger; // @synthesize threadPriorityTrigger=_threadPriorityTrigger;

@@ -244,10 +244,8 @@
 - (_Bool)containsMessageFromContactOrMe;
 - (void)_updateLastSeenMessageGuid:(id)arg1;
 @property(readonly, nonatomic) NSString *lastSeenMessageGuid;
-- (void)verifyChatShouldBeSpamWithService:(id)arg1;
 - (void)_updateChatItemsAsNotSpamEnumeratingItems:(CDUnknownBlockType)arg1;
 - (void)_updateChatItemsAsNotSpam;
-- (void)updateWasDetectedAsiMessageSpam:(_Bool)arg1;
 - (void)updateWasDetectedAsSMSSpam:(_Bool)arg1;
 - (void)updateShouldForceToSMS:(_Bool)arg1;
 - (_Bool)shouldForceToSMS;

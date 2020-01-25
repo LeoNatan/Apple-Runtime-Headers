@@ -173,7 +173,7 @@
 - (id)generateThumbnailAssetHandleForUrlString:(id)arg1 withAssetManager:(id)arg2;
 - (BOOL)isValid;
 - (id)contentManifestWithContext:(id)arg1;
-- (id)initWithArticlePayload:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3 rapidUpdatesTimeout:(long long)arg4;
+- (id)initWithArticlePayload:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
 
 @end
 

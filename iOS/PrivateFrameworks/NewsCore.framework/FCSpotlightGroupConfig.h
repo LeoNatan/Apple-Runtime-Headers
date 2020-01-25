@@ -6,24 +6,20 @@
 
 #import <NewsCore/FCGroupConfig.h>
 
-@class FCColor, FCColorGradient, NSDate, NSString;
-@protocol FCSpotlightItemStyleProviding;
+@class NSDate, NSString;
+@protocol FCCardStyleProviding;
 
 @interface FCSpotlightGroupConfig : FCGroupConfig
 {
     NSString *_spotlightArticleID;
     NSDate *_publishDate;
-    id <FCSpotlightItemStyleProviding> _spotlightItemStyle;
 }
 
-@property(readonly, copy, nonatomic) id <FCSpotlightItemStyleProviding> spotlightItemStyle; // @synthesize spotlightItemStyle=_spotlightItemStyle;
 @property(readonly, copy, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 @property(readonly, copy, nonatomic) NSString *spotlightArticleID; // @synthesize spotlightArticleID=_spotlightArticleID;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) FCColor *darkStyleCardBackgroundColor;
-@property(readonly, nonatomic) FCColor *cardBackgroundColor;
-@property(readonly, nonatomic) FCColorGradient *darkStyleSauceColorGradient;
-@property(readonly, nonatomic) FCColorGradient *sauceColorGradient;
+@property(readonly, copy, nonatomic) id <FCCardStyleProviding> spotlightItemDarkStyle;
+@property(readonly, copy, nonatomic) id <FCCardStyleProviding> spotlightItemStyle;
 @property(readonly, copy, nonatomic) NSString *spotlightEyebrowTitle;
 @property(readonly, copy, nonatomic) NSString *spotlightCallToActionTitle;
 - (id)initWithDictionary:(id)arg1;

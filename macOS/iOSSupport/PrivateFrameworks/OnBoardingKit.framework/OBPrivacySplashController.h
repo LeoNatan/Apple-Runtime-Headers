@@ -45,6 +45,7 @@
 @property BOOL allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property BOOL suppressPerPageAnalyticsLogging; // @synthesize suppressPerPageAnalyticsLogging=_suppressPerPageAnalyticsLogging;
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 - (void)defaultButtonPressed:(id)arg1;
 - (void)updateFontForUnifiedAboutButton;
 - (void)updateFontForPrivacyGateway;

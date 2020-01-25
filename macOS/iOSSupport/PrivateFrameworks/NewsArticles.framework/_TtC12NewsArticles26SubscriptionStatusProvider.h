@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: headline
     // Error parsing type: , name: purchaseProvider
     // Error parsing type: , name: bundleSubscriptionManager
+    // Error parsing type: , name: bundlePurchasePrewarmer
     // Error parsing type: , name: observers
     // Error parsing type: , name: bundleSubscriptionStatus
     // Error parsing type: , name: channelSubscriptionStatus

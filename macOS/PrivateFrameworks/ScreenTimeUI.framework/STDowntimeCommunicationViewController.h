@@ -10,7 +10,7 @@
 #import <ScreenTimeUI/CNFamilyMemberWhitelistedContactsViewControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STProtectedControlDelegate-Protocol.h>
 
-@class CNFamilyMemberContactsViewController, CNFamilyMemberWhitelistedContactsViewController, NSButton, NSStackView, NSString, STCommunicationContactEditingViewController, STCoreUser;
+@class CNFamilyMemberContactsViewController, CNFamilyMemberWhitelistedContactsViewController, NSButton, NSNumber, NSStackView, NSString, STCommunicationContactEditingViewController, STCoreUser;
 
 @interface STDowntimeCommunicationViewController : NSViewController <CNFamilyMemberContactsViewControllerDelegate, CNFamilyMemberWhitelistedContactsViewControllerDelegate, STProtectedControlDelegate>
 {
@@ -19,11 +19,11 @@
     CNFamilyMemberContactsViewController *_familyMemberContactsViewController;
     CNFamilyMemberWhitelistedContactsViewController *_familyMemberWhitelistedContactsViewController;
     STCommunicationContactEditingViewController *_editListViewController;
-    NSButton *_everyoneRadioButton;
-    NSButton *_contactsOnlyRadioButton;
+    NSButton *_firstRadioButton;
     NSButton *_specificContactsRadioButton;
     NSStackView *_contactManagementStackView;
     NSButton *_managingOnOffButton;
+    NSNumber *_numberOfContacts;
 }
 
 + (id)keyPathsForValuesAffectingAllowContactEditingStateValue;
@@ -37,11 +37,11 @@
 + (id)keyPathsForValuesAffectingOnOffButtonEnabled;
 + (id)keyPathsForValuesAffectingOnOffLabelString;
 + (id)keyPathsForValuesAffectingManageContactsDescriptionString;
+@property(retain, nonatomic) NSNumber *numberOfContacts; // @synthesize numberOfContacts=_numberOfContacts;
 @property(retain) NSButton *managingOnOffButton; // @synthesize managingOnOffButton=_managingOnOffButton;
 @property(retain) NSStackView *contactManagementStackView; // @synthesize contactManagementStackView=_contactManagementStackView;
 @property(retain) NSButton *specificContactsRadioButton; // @synthesize specificContactsRadioButton=_specificContactsRadioButton;
-@property(retain) NSButton *contactsOnlyRadioButton; // @synthesize contactsOnlyRadioButton=_contactsOnlyRadioButton;
-@property(retain) NSButton *everyoneRadioButton; // @synthesize everyoneRadioButton=_everyoneRadioButton;
+@property(retain) NSButton *firstRadioButton; // @synthesize firstRadioButton=_firstRadioButton;
 @property(nonatomic) __weak STCommunicationContactEditingViewController *editListViewController; // @synthesize editListViewController=_editListViewController;
 @property(retain, nonatomic) CNFamilyMemberWhitelistedContactsViewController *familyMemberWhitelistedContactsViewController; // @synthesize familyMemberWhitelistedContactsViewController=_familyMemberWhitelistedContactsViewController;
 @property(retain, nonatomic) CNFamilyMemberContactsViewController *familyMemberContactsViewController; // @synthesize familyMemberContactsViewController=_familyMemberContactsViewController;

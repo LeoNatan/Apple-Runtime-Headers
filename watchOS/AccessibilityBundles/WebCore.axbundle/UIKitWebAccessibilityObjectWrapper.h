@@ -96,6 +96,7 @@
 - (id)accessibilityCustomRotors;
 - (_Bool)_accessibilityIsTopMostWebElement;
 - (id)_accessibilityCustomRotor:(long long)arg1;
+- (_Bool)_accessibilityReplaceTextInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (id)_misspelledWordRotor;
 - (id)_axWebKitSearchKeyForCustomRotorType:(long long)arg1;
 - (id)accessibilityCustomActions;

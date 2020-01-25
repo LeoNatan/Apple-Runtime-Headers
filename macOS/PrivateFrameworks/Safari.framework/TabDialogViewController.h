@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CDStruct_497cfc99 slot; // @synthesize slot=_slot;
 @property(readonly, nonatomic) id <TabDialogConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+- (void)updateCurrentDialogConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 dialogConfiguration:(id)arg3 slot:(CDStruct_497cfc99)arg4;
 - (id)initWithDialogConfiguration:(id)arg1 slot:(CDStruct_497cfc99)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

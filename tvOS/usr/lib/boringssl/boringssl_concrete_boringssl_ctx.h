@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *alpn_protocols;
     NSObject<OS_nw_array> *callbacks;
     char *subject_name;
+    char *experiment_identifier;
     boringssl_concrete_boringssl_identity *identity;
     NSObject<OS_dispatch_queue> *client_queue;
     NSObject<OS_dispatch_queue> *metrics_queue;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType private_key_sign_block;
     CDUnknownBlockType private_key_decrypt_block;
     union sockaddr_in_4_6 remote_address;
+    unsigned char connection_id[16];
     CDUnknownBlockType alert_callback;
     CDUnknownBlockType connected_callback;
     int ssl_state;
@@ -114,6 +116,7 @@ __attribute__((visibility("hidden")))
     unsigned int certificate_compression_enabled:1;
     unsigned int certificate_compression_used:1;
     unsigned int psk_negotiated:1;
+    unsigned int grease_enabled:1;
 }
 
 - (void).cxx_destruct;

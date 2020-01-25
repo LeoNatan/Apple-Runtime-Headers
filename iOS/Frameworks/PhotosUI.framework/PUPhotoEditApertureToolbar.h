@@ -52,7 +52,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateBackgroundAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) struct UIEdgeInsets preferredPreviewViewInsets;
 - (void)updateViewConstraints;
-- (_Bool)_canShowWhileLocked;
 - (void)setUseTranslucentBackground:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)loadView;

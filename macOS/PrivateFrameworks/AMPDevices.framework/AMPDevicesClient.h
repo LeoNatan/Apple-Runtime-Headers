@@ -31,7 +31,7 @@
 - (void)didCompleteIPodVoiceOverKitInstallForDeviceWithIdentifier:(id)arg1 withError:(id)arg2;
 - (void)didStartIPodVoiceOverKitInstallForDeviceWithIdentifier:(id)arg1;
 - (void)updateAvailableWithSoftwareInfo:(id)arg1 forDeviceWithIdentifier:(id)arg2;
-- (void)didRemoveDeviceWithIdentifier:(id)arg1;
+- (void)didRemoveDeviceWithIdentifier:(id)arg1 hasRecoveryDevice:(BOOL)arg2;
 - (void)didHideDeviceWithIdentifier:(id)arg1;
 - (void)didCompleteSoftwareUpdateRestoreForDeviceWithIdentifier:(id)arg1 withError:(id)arg2;
 - (void)didStartSoftwareUpdateRestoreForDeviceWithIdentifier:(id)arg1;

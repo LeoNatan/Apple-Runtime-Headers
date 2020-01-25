@@ -22,6 +22,7 @@
 @property(copy, nonatomic) CDUnknownBlockType presentationPreparationBlock; // @synthesize presentationPreparationBlock=_presentationPreparationBlock;
 @property(retain, nonatomic) UIWindow *rotationDecider; // @synthesize rotationDecider=_rotationDecider;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)_preparePresentationControllerForPresenting:(id)arg1;
 - (void)_restoreInputViewsAnimated:(_Bool)arg1;
 - (void)_preserveInputViewsAnimated:(_Bool)arg1;

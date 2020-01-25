@@ -9,6 +9,6 @@
 @protocol SXViewControllerPresenting;
 
 @protocol SXSubscribeActionHandler <NSObject>
-- (void)handleSubscribeActionOnPresenter:(id <SXViewControllerPresenting>)arg1;
+- (void)handleSubscribeActionOnPresenter:(id <SXViewControllerPresenting>)arg1 completionBlock:(unsigned long long (^)(_Bool))arg2;
 @end
 

@@ -106,6 +106,7 @@
 + (id)entryEventBackwardDefinitionPeekPop;
 + (id)entryEventBackwardDefinitionSiriFalseAlarm;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionThermalSensors;
 + (id)entryEventForwardDefinitionsDosimetry;
 + (id)entryEventForwardDefinitionAppleBacklightBrightness;
 + (id)entryEventForwardDefinitionSOSKVSRateLimitingEvent;

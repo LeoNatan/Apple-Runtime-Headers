@@ -408,6 +408,7 @@
 - (void)_didCompleteWithContact:(id)arg1;
 - (id)_removeUnauthorizedKeysFromContact:(id)arg1;
 - (id)_updateContact:(id)arg1 withMissingKeysFromRequiredKeys:(id)arg2;
+- (void)focusOnLastEditingItemInGroup:(id)arg1;
 - (void)reloadRowsAndRestoreFirstResponderAtIndexPaths:(id)arg1 ofTableView:(id)arg2;
 - (id)indexPathsOfEditingItemsInGroup:(id)arg1 withSectionIndex:(unsigned long long)arg2;
 - (void)_updateItemsInGroup:(id)arg1 forTableView:(id)arg2 deletedIndexPath:(id)arg3;
@@ -530,13 +531,14 @@
 - (void)loadContactViewControllerViews;
 - (void)loadView;
 - (void)performAuthorizedSetEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)authorizeSave;
+- (void)resetAuthorizationState;
 - (void)editAuthorizationController:(id)arg1 authorizationDidFinishWithResult:(long long)arg2;
 - (void)showEditAuthorizationPane:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)editRequiresAuthorization;
 - (BOOL)editingChangeRequiresAuthorization;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldIgnoreGuardianRestrictions;
-- (void)resetAuthorizationState;
 - (void)finishEditing:(id)arg1;
 - (void)toggleEditing:(id)arg1;
 - (void)toggleEditing;
@@ -583,6 +585,7 @@
 - (BOOL)isOutOfProcess;
 - (void)setAllowsEditPhoto:(BOOL)arg1 preservingChanges:(BOOL)arg2;
 @property(nonatomic) BOOL isMailVIP; // @synthesize isMailVIP=_isMailVIP;
+- (BOOL)isHeaderViewPhotoProhibited;
 @property(readonly, nonatomic) CNContactHeaderView *contactHeaderView;
 @property(readonly, nonatomic) CNContactView *contactView;
 - (BOOL)_canShowWhileLocked;

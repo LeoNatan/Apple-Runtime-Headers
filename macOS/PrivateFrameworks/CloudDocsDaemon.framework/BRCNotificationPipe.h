@@ -9,7 +9,7 @@
 #import <CloudDocsDaemon/BRItemNotificationSending-Protocol.h>
 
 @class BRCDataOrDocsScopeGatherer, BRCItemGlobalID, BRCNotificationManager, BRCXPCClient, BRFileObjectID, BRNotificationQueue, NSMutableDictionary, NSMutableSet, NSSet, NSString;
-@protocol BRCNotificationPipeDelegate, BRItemNotificationReceiving, OS_dispatch_queue;
+@protocol BRCNotificationPipeDelegate, BRItemNotificationReceiving, OS_dispatch_group, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending>
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     BRFileObjectID *_watchedAncestorFileObjectID;
     NSString *_watchedAncestorFilenameToItem;
     BRCDataOrDocsScopeGatherer *_gatherer;
+    NSObject<OS_dispatch_group> *_gatherGroup;
     BOOL _hasUpdatesInFlight;
     BOOL _volumeIsCaseSensitive;
     NSMutableDictionary *_pendingProgressUpdatesByID;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
     NSSet *_watchedAppLibraryIDs;
     unsigned long long _watchedAppLibrariesFlags;
     unsigned long long _initialGatherMaxRank;
+    unsigned long long _secondaryGatherMaxRank;
     BRCNotificationManager *_manager;
     NSObject<OS_dispatch_queue> *_queue;
     id <BRCNotificationPipeDelegate> _delegate;
@@ -62,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)_processProgressUpdates:(id)arg1;
 - (void)_flushProgressUpdates;
 - (void)processUpdates:(id)arg1 withRank:(unsigned long long)arg2;
+- (void)_prepareForSecondGatherWithRank:(unsigned long long)arg1;
 - (void)_addIntraContainerUpdatesFromInterContainerUpdate:(id)arg1 toArray:(id)arg2;
 - (int)_isInterestingUpdate:(id)arg1;
 @property(readonly, copy) NSString *description;

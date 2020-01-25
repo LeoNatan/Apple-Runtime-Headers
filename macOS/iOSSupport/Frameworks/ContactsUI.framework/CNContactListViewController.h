@@ -29,9 +29,9 @@
     CNContact *_preferredForNameMeContact;
     BOOL _shouldDisplayMeContactBanner;
     BOOL _shouldAutoHideMeContactBanner;
-    BOOL _allowsSearching;
     BOOL _shouldDisplayInfoContentView;
     BOOL _presentsSearchUI;
+    BOOL _isHandlingSearch;
     BOOL _pendingSearchControllerActivation;
     BOOL _shouldUseLargeTitle;
     BOOL _shouldDisplayGroupsGrid;
@@ -81,6 +81,7 @@
 @property(retain, nonatomic) NSArray *pendingLayoutBlocks; // @synthesize pendingLayoutBlocks=_pendingLayoutBlocks;
 @property(retain, nonatomic) CNAvatarViewController *meBannerAvatarController; // @synthesize meBannerAvatarController=_meBannerAvatarController;
 @property(readonly, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
+@property(nonatomic) BOOL isHandlingSearch; // @synthesize isHandlingSearch=_isHandlingSearch;
 @property(readonly, nonatomic) BOOL presentsSearchUI; // @synthesize presentsSearchUI=_presentsSearchUI;
 @property(readonly, nonatomic) double contentOffsetDueToMeContactBanner; // @synthesize contentOffsetDueToMeContactBanner=_contentOffsetDueToMeContactBanner;
 @property(retain, nonatomic) CNContactListBannerView *meContactBanner; // @synthesize meContactBanner=_meContactBanner;
@@ -91,7 +92,6 @@
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) CNAvatarCardController *cardController; // @synthesize cardController=_cardController;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
-@property(nonatomic) BOOL allowsSearching; // @synthesize allowsSearching=_allowsSearching;
 @property(copy, nonatomic) NSString *meContactBannerFootnoteValue; // @synthesize meContactBannerFootnoteValue=_meContactBannerFootnoteValue;
 @property(copy, nonatomic) NSString *meContactBannerFootnoteLabel; // @synthesize meContactBannerFootnoteLabel=_meContactBannerFootnoteLabel;
 @property(nonatomic) BOOL shouldAutoHideMeContactBanner; // @synthesize shouldAutoHideMeContactBanner=_shouldAutoHideMeContactBanner;
@@ -173,6 +173,7 @@
 - (BOOL)selectContact:(id)arg1 animated:(BOOL)arg2 scrollPosition:(long long)arg3;
 @property(readonly, nonatomic) NSArray *selectedContacts;
 - (void)setupForMultiSelection;
+- (void)disableSearchUI;
 - (void)performWhenViewIsLaidOut:(CDUnknownBlockType)arg1;
 - (void)applyStyle;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -188,7 +189,6 @@
 - (id)contactStore;
 @property(readonly, nonatomic) id <CNContactDataSource> originalDataSource;
 @property(retain, nonatomic) NSObject<CNContactDataSource> *dataSource; // @synthesize dataSource=_dataSource;
-- (BOOL)isHandlingSearch;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1;

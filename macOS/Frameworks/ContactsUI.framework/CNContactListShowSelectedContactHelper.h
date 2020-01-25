@@ -20,7 +20,6 @@
 @property(readonly, nonatomic) CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
 - (void).cxx_destruct;
 - (void)performSelect;
-- (id)contactWithAllKeys;
 - (id)initWithContactCardViewController:(id)arg1 scope:(id)arg2;
 
 // Remaining properties

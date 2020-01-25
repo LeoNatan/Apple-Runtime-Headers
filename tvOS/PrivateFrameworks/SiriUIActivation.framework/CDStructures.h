@@ -25,6 +25,13 @@ struct CGSize {
     double height;
 };
 
+struct InstrumentationDismissalState {
+    _Bool fluidDismissalSet;
+    _Bool punchedOut;
+    _Bool incomingPhoneCallDetected;
+    _Bool outgoingPhoneCallDetected;
+};
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };

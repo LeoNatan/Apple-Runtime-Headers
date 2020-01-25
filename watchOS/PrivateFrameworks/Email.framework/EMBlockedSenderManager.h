@@ -46,7 +46,7 @@
 - (void)_resetBlockedSenderCache;
 - (void)_blockedSenderListDidChange:(id)arg1;
 - (void)_removeObserversIfNeeded;
-- (void)tearDown;
+- (void)test_tearDown;
 - (void)dealloc;
 - (id)init;
 

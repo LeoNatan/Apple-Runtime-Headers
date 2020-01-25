@@ -102,6 +102,7 @@
 + (void)initialize;
 + (id)os_log_activation;
 + (id)os_log_locking;
++ (id)os_log_saving;
 + (id)os_log;
 + (id)emptyDirectoryResultsAddressBook;
 + (id)provisionalAddressBook;
@@ -355,11 +356,11 @@
 - (id)me;
 - (BOOL)nts_hasUnsavedChanges;
 - (BOOL)hasUnsavedChanges;
-- (BOOL)nts_SaveWithFileLock:(BOOL)arg1 triggerSync:(BOOL)arg2;
-- (BOOL)nts_SaveWithFileLock:(BOOL)arg1;
-- (BOOL)saveAndTriggerSync:(BOOL)arg1;
-- (BOOL)save;
+- (BOOL)nts_SaveWithOptions:(unsigned long long)arg1 error:(id *)arg2;
+- (BOOL)saveWithOptions:(unsigned long long)arg1 error:(id *)arg2;
+- (BOOL)save:(id *)arg1;
 - (BOOL)saveAndReturnError:(id *)arg1;
+- (BOOL)save;
 - (id)saveTask;
 - (void)pruneEmptyRelationships;
 - (id)makeCommonNotificationUserInfoDictionary;

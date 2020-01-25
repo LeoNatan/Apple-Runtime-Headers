@@ -12,17 +12,26 @@ __attribute__((visibility("hidden")))
 @interface SCRSafariAddressSearchTextField : SCRTextField
 {
     BOOL __selectionNotificationHandlerModifiedCachedNumberOfCharacters;
+    BOOL __inputInProgressWhilePopupIsDisplayed;
     unsigned long long __numberOfCharactersBeforeSelectionNotificationHandler;
     SCRTextMarkerRange *__previousSelectionRangeBeforeSelectionNotificationHandler;
 }
 
+@property(nonatomic) BOOL _inputInProgressWhilePopupIsDisplayed; // @synthesize _inputInProgressWhilePopupIsDisplayed=__inputInProgressWhilePopupIsDisplayed;
 @property(retain, nonatomic) SCRTextMarkerRange *_previousSelectionRangeBeforeSelectionNotificationHandler; // @synthesize _previousSelectionRangeBeforeSelectionNotificationHandler=__previousSelectionRangeBeforeSelectionNotificationHandler;
 @property(nonatomic) unsigned long long _numberOfCharactersBeforeSelectionNotificationHandler; // @synthesize _numberOfCharactersBeforeSelectionNotificationHandler=__numberOfCharactersBeforeSelectionNotificationHandler;
 @property(nonatomic) BOOL _selectionNotificationHandlerModifiedCachedNumberOfCharacters; // @synthesize _selectionNotificationHandlerModifiedCachedNumberOfCharacters=__selectionNotificationHandlerModifiedCachedNumberOfCharacters;
 - (void).cxx_destruct;
+- (BOOL)shouldSuppressTextAttributesEcho;
+- (void)_elementWasDestroyed:(id)arg1;
+- (void)_handlePopupSelectionChange;
+- (void)_popupSelectionDidChange:(id)arg1;
+- (id)_selectionHandler;
+- (BOOL)keyboardHandler:(id)arg1 request:(id)arg2;
 - (void)_outputFullTextValue;
 - (void)handleContentChangeWithUserInfo:(id)arg1;
 @property(readonly, nonatomic) BOOL _isNoLongerPartiallySelected;
+- (void)_outputSelection;
 - (void)handleTextSelectionChange;
 
 @end

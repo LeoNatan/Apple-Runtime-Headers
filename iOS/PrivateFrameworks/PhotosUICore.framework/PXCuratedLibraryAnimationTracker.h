@@ -13,16 +13,17 @@
     NSMutableSet *_inFlightAnimations;
 }
 
-+ (void)_scrollAnimationOccurredInZoomLevel:(long long)arg1 isBegin:(_Bool)arg2;
-+ (void)scrollAnimationDidEndInZoomLevel:(long long)arg1;
-+ (void)scrollAnimationDidBeginInZoomLevel:(long long)arg1;
++ (void)_scrollAnimationOccurredWithContext:(CDStruct_0c606d9b)arg1 isBegin:(_Bool)arg2;
++ (void)scrollAnimationDidEndWithScrollContext:(CDStruct_0c606d9b)arg1;
++ (void)scrollAnimationDidBeginWithScrollContext:(CDStruct_0c606d9b)arg1;
 + (id)sharedTracker;
 @property(readonly, nonatomic) NSMutableSet *inFlightAnimations; // @synthesize inFlightAnimations=_inFlightAnimations;
 - (void).cxx_destruct;
 - (void)zoomLevelTransitionsDidEndEarly;
-- (void)_zoomLevelTransitionOccurred:(id)arg1 isBegin:(_Bool)arg2;
+- (void)_zoomLevelTransitionOccurred:(id)arg1 isPreparation:(_Bool)arg2 isBegin:(_Bool)arg3;
 - (void)zoomLevelTransitionDidEnd:(id)arg1;
 - (void)zoomLevelTransitionDidBegin:(id)arg1;
+- (void)zoomLevelTransitionPreparationDidBegin:(id)arg1;
 - (id)init;
 
 @end

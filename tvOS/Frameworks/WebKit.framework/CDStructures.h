@@ -2707,9 +2707,10 @@ struct NetworkSessionCreationParameters {
     _Bool _field16;
     _Bool _field17;
     _Bool _field18;
-    struct RegistrableDomain _field19;
-    struct String _field20;
-    struct Handle _field21;
+    _Bool _field19;
+    struct RegistrableDomain _field20;
+    struct String _field21;
+    struct Handle _field22;
 };
 
 struct NetworkSocketChannel;

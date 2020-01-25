@@ -11,7 +11,6 @@
 - (id)MSDeepCopyWithZone:(struct _NSZone *)arg1;
 - (id)MSMutableDeepCopy;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone *)arg1;
-- (BOOL)MSASIsForceUpdate;
 - (BOOL)MSASIsErrorRecovery;
 - (BOOL)MSASIsNotInteresting;
 - (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;

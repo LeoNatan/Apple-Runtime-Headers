@@ -59,6 +59,9 @@
 @property(readonly, nonatomic) OBWelcomeController *welcomeController; // @synthesize welcomeController=_welcomeController;
 @property(nonatomic) __weak id <VCUIShortcutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)eventSource;
+- (_Bool)isUpdatingExistingShortcut;
+- (void)trackAddEvent;
 - (void)keyboardWillChange:(id)arg1;
 - (void)updatePrimaryButton;
 - (void)didTapCancel;

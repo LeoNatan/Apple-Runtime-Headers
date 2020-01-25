@@ -84,6 +84,7 @@
 - (oneway void)serverProxyWillStartLoadingResources:(id)arg1;
 - (oneway void)serverProxyDidStopUpdatingResourceManifest:(id)arg1;
 - (oneway void)serverProxyWillStartUpdatingResourceManifest:(id)arg1;
+- (id)bestLocalizedStringForDisplayStringAtIndex:(unsigned long long)arg1;
 - (void)addNetworkActivityHandler:(CDUnknownBlockType)arg1;
 - (id)pathForResourceWithName:(id)arg1;
 - (void)_buildResourceNamesToPaths;

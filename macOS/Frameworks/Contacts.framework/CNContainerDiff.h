@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)diffContainer:(id)arg1 to:(id)arg2;
 @property(retain) NSArray *updates; // @synthesize updates=_updates;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithUpdates:(id)arg1;
 - (id)abcdContainerDiffRepresentation;
 

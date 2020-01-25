@@ -179,6 +179,7 @@
 - (_Bool)sendButtonEnabled;
 - (void)_initializeInputContextHistory;
 - (void)_addMessageToInputContextHistory:(id)arg1;
+- (void)_contactLimitsChanged:(id)arg1;
 - (void)_participantsDidChange:(id)arg1;
 - (BOOL)_sendButtonColor;
 - (_Bool)_isSURFInShelf;
@@ -276,6 +277,7 @@
 @property(nonatomic) _Bool shouldHideBackgroundView; // @dynamic shouldHideBackgroundView;
 - (void)updateBackgroundBlurVisualEffect;
 - (void)setupKnockoutVisualEffect;
+- (void)deferredSetup;
 - (id)initWithFrame:(struct CGRect)arg1 marginInsets:(struct UIEdgeInsets)arg2 shouldAllowImpact:(_Bool)arg3 shouldShowSendButton:(_Bool)arg4 shouldShowSubject:(_Bool)arg5 shouldShowPluginButtons:(_Bool)arg6 shouldShowCharacterCount:(_Bool)arg7 traitCollection:(id)arg8;
 - (id)initWithFrame:(struct CGRect)arg1 marginInsets:(struct UIEdgeInsets)arg2 shouldShowSendButton:(_Bool)arg3 shouldShowSubject:(_Bool)arg4 shouldShowPluginButtons:(_Bool)arg5 shouldShowCharacterCount:(_Bool)arg6 traitCollection:(id)arg7;
 - (struct CGRect)activeKeyboardHeight;

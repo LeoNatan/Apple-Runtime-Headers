@@ -102,7 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)_loadExtensions:(id)arg1;
 - (void)_connectContextToSessionWithRequestIdentifier:(id)arg1 remoteViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_extensionHasPopover:(id)arg1;
-- (void)_validateAndLoadExtensionIfNecessary:(id)arg1;
+- (void)_validateAndLoadExtensionIfNecessary:(id)arg1 attemptRetryOnFailure:(BOOL)arg2;
 - (void)_replaceLegacyExtensionsWithAppExtension:(id)arg1 andDeveloperIdentifier:(id)arg2;
 - (void)_updateExtensionStateIfWebsiteAccessIncreased:(id)arg1;
 - (id)_cdHashForCodeSigningDictionary:(id)arg1;
@@ -116,6 +116,7 @@ __attribute__((visibility("hidden")))
 - (id)userVisibleWebsiteAccessForExtension:(id)arg1;
 - (id)extensionWithUUID:(id)arg1;
 - (void)_updateAppExtensionsCrashReporterMessage;
+- (void)_retryExtensionValidation:(id)arg1;
 - (void)_unloadExtensionIfNecessary:(id)arg1;
 - (void)_disableAndBlockExtension:(id)arg1;
 - (BOOL)_extensionShouldBeEnabled:(id)arg1 withCodeSigningDictionary:(id)arg2;

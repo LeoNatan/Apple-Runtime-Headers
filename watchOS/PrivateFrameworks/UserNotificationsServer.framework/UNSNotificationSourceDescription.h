@@ -13,6 +13,7 @@
     _Bool _allowCriticalAlerts;
     _Bool _allowPrivateProperties;
     _Bool _allowUnlimitedContentBody;
+    _Bool _allowServiceExtensionFiltering;
     _Bool _hideSettings;
     _Bool _automaticallyShowSettings;
     _Bool _suppressDismissalSync;
@@ -59,7 +60,7 @@
 + (id)applicationSourceDescriptionWithBundleIdentifier:(id)arg1;
 + (id)systemSourceDirectoryURLs;
 + (id)systemSourcePathExtension;
-+ (id)descriptionWithBundleIdentifier:(id)arg1 path:(id)arg2;
++ (id)descriptionWithBundleIdentifier:(id)arg1 path:(id)arg2 allowServiceExtensionFiltering:(_Bool)arg3;
 @property(nonatomic) _Bool allowUnlimitedPendingNotifications; // @synthesize allowUnlimitedPendingNotifications=_allowUnlimitedPendingNotifications;
 @property(nonatomic) _Bool daemonShouldReceiveApplicationEvents; // @synthesize daemonShouldReceiveApplicationEvents=_daemonShouldReceiveApplicationEvents;
 @property(nonatomic) _Bool daemonShouldReceiveNotificationSettingsUpdates; // @synthesize daemonShouldReceiveNotificationSettingsUpdates=_daemonShouldReceiveNotificationSettingsUpdates;
@@ -73,6 +74,7 @@
 @property(nonatomic) _Bool suppressDismissalSync; // @synthesize suppressDismissalSync=_suppressDismissalSync;
 @property(nonatomic) _Bool automaticallyShowSettings; // @synthesize automaticallyShowSettings=_automaticallyShowSettings;
 @property(nonatomic) _Bool hideSettings; // @synthesize hideSettings=_hideSettings;
+@property(nonatomic) _Bool allowServiceExtensionFiltering; // @synthesize allowServiceExtensionFiltering=_allowServiceExtensionFiltering;
 @property(nonatomic) _Bool allowUnlimitedContentBody; // @synthesize allowUnlimitedContentBody=_allowUnlimitedContentBody;
 @property(nonatomic) _Bool allowPrivateProperties; // @synthesize allowPrivateProperties=_allowPrivateProperties;
 @property(nonatomic) _Bool allowCriticalAlerts; // @synthesize allowCriticalAlerts=_allowCriticalAlerts;

@@ -620,8 +620,10 @@
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 @property(nonatomic, getter=_isVectorKitConsoleEnabled, setter=_setVectorKitConsoleEnabled:) BOOL vectorKitConsoleEnabled;
+- (id)mapAttributionWithStringAttributes:(id)arg1 underlineText:(BOOL)arg2;
 - (id)mapAttributionWithStringAttributes:(id)arg1 allowMultiLine:(BOOL)arg2;
 - (id)mapAttributionWithStringAttributes:(id)arg1;
+- (id)urlForMapAttribution;
 - (struct CGRect)attributionFrame;
 - (void)_updateAttribution;
 @property(nonatomic, getter=_compassInsetEdges, setter=_setCompassInsetEdges:) unsigned long long compassInsetEdges;

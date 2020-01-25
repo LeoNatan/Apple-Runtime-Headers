@@ -23,11 +23,13 @@
     _Bool _useLocalhostForAutodiscoveryTesting;
     _Bool _oneAutodiscoverAtATime;
     _Bool _isValidating;
+    _Bool _reminderAccountMissing;
     int _asAccountVersion;
 }
 
 + (void)cleanUpFilesForAccountWithId:(id)arg1;
 @property(nonatomic, setter=setASAccountVersion:) int asAccountVersion; // @synthesize asAccountVersion=_asAccountVersion;
+@property(nonatomic) _Bool reminderAccountMissing; // @synthesize reminderAccountMissing=_reminderAccountMissing;
 - (void).cxx_destruct;
 - (id)protocolVersion;
 - (id)onBehalfOfBundleIdentifier;

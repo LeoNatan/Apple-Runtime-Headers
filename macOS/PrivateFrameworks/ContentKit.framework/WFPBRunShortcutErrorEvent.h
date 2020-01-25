@@ -13,15 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface WFPBRunShortcutErrorEvent : PBCodable <NSCopying>
 {
-    NSString *_actionName;
+    NSString *_actionIdentifier;
     NSString *_errorCode;
     NSString *_errorDomain;
     NSString *_key;
 }
 
+@property(retain, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(retain, nonatomic) NSString *errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
-@property(retain, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasActionIdentifier;
 @property(readonly, nonatomic) BOOL hasErrorCode;
 @property(readonly, nonatomic) BOOL hasErrorDomain;
-@property(readonly, nonatomic) BOOL hasActionName;
 @property(readonly, nonatomic) BOOL hasKey;
 
 @end

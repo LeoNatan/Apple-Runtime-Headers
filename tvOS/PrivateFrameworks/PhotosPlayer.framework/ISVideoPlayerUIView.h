@@ -11,15 +11,19 @@
 @interface ISVideoPlayerUIView : UIView
 {
     ISAVPlayerUIView *_playerView;
+    _Bool _videoLayerReadyForDisplay;
     ISWrappedAVPlayer *_videoPlayer;
     struct CGRect _contentsRect;
 }
 
+@property(readonly, nonatomic) _Bool videoLayerReadyForDisplay; // @synthesize videoLayerReadyForDisplay=_videoLayerReadyForDisplay;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(retain, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 - (void).cxx_destruct;
+- (id)playerLayer;
 - (void)_updateVideoGravity;
 - (void)setContentMode:(long long)arg1;
+@property(copy, nonatomic) CDUnknownBlockType videoLayerReadyForDisplayChangeHandler;
 - (void)_ISVideoPlayerUIView_commonInitialization;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

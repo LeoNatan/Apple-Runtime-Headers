@@ -39,6 +39,8 @@
 @property(copy, nonatomic) CDUnknownBlockType transactionLifetimeBlock; // @synthesize transactionLifetimeBlock=_transactionLifetimeBlock;
 @property(copy, nonatomic) CDUnknownBlockType commitIntervalBlock; // @synthesize commitIntervalBlock=_commitIntervalBlock;
 - (void).cxx_destruct;
+- (id)newConfiguredExtractor;
+- (void)handleDeviceReboot;
 - (BOOL)handleSignpostEvent:(id)arg1;
 - (BOOL)handleSignpostInterval:(id)arg1;
 - (void)handleSignpostIntervalBegin:(id)arg1;

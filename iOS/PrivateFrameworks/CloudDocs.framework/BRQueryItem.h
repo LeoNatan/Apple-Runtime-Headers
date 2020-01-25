@@ -23,6 +23,7 @@
     NSString *_bookmarkData;
     BRFileObjectID *_fileObjectID;
     BRFileObjectID *_parentFileObjectID;
+    BRFileObjectID *_shareRootFileObjectID;
     NSNumber *_size;
     NSNumber *_mtime;
     NSNumber *_btime;
@@ -51,6 +52,10 @@
             unsigned int isTrashed:1;
             unsigned int itemMode:3;
             unsigned int fromReadOnlyDB:1;
+            unsigned int isSharedFolderSubItem:1;
+            unsigned int possiblyContainsSharedToMeItem:1;
+            unsigned int possiblyContainsSharedByMeItem:1;
+            unsigned int editedSinceShared:1;
             unsigned char BRQueryItemKind;
             unsigned char kind;
         } ;
@@ -99,6 +104,7 @@
 - (id)sharedItemRole;
 - (_Bool)isHiddenExt;
 @property(readonly, nonatomic, getter=isTrashed) _Bool trashed;
+@property(readonly, nonatomic) _Bool editedSinceShared;
 @property(readonly, nonatomic) _Bool isBRAlias;
 @property(readonly, nonatomic) _Bool isDocument;
 @property(readonly, nonatomic) _Bool isFinderBookmark;
@@ -140,7 +146,10 @@
 @property(readonly, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents;
 @property(readonly, nonatomic) NSPersonNameComponents *ownerNameComponents;
 - (id)owner;
+@property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) _Bool fp_lastModifiedByCurrentUser;
 @property(readonly, nonatomic, getter=isSharedByCurrentUser) _Bool sharedByCurrentUser;
+- (_Bool)_isSharedFolderSubItem;
+@property(readonly, nonatomic, getter=isTopLevelSharedItem) _Bool topLevelSharedItem;
 @property(readonly, nonatomic, getter=isShared) _Bool shared;
 @property(readonly, copy) NSNumber *hasUnresolvedConflicts;
 @property(readonly, copy, nonatomic) NSError *downloadingError;
@@ -160,6 +169,7 @@
 @property(readonly, nonatomic) NSArray *decorations;
 @property(readonly, nonatomic) NSDictionary *userInfo;
 @property(readonly, copy) NSURL *fileURL;
+- (_Bool)_isInSharedZone;
 @property(readonly, getter=isHidden) _Bool hidden;
 @property(readonly, copy, nonatomic) NSNumber *documentSize;
 @property(readonly, copy, nonatomic) NSString *typeIdentifier;
@@ -183,7 +193,6 @@
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
 @property(readonly, copy) NSString *fp_domainIdentifier;
 @property(readonly) _Bool fp_isContainerPristine;
-@property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) _Bool fp_lastModifiedByCurrentUser;
 @property(readonly, copy) NSString *fp_parentDomainIdentifier;
 @property(readonly, getter=fp_isUbiquitous) _Bool fp_ubiquitous;
 @property(readonly, nonatomic) NSNumber *isDownloadRequested;
@@ -193,7 +202,6 @@
 @property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly, copy) NSString *providerIdentifier;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isTopLevelSharedItem) _Bool topLevelSharedItem;
 
 @end
 

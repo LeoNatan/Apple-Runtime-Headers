@@ -50,6 +50,7 @@
 + (id)routingTypeBeatsStudioImage;
 + (id)routingTypeBeats419Image;
 + (id)routingTypeBeatsSoloImage;
++ (id)routingTypeBeats364Image;
 + (id)routingTypePowerbeatsProImage;
 + (id)routingTypePowerbeatsImage;
 + (id)routingTypeHomePodPairImage;

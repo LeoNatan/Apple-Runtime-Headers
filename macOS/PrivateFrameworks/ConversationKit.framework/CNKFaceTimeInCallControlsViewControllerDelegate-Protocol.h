@@ -7,6 +7,7 @@
 @class CNContact, _TtC15ConversationKit28InCallControlsViewController;
 
 @protocol CNKFaceTimeInCallControlsViewControllerDelegate
+- (void)resetEffectsState;
 - (void)didCreateTableViewForInCallControlsViewController:(_TtC15ConversationKit28InCallControlsViewController *)arg1;
 - (void)inCallControlsViewController:(_TtC15ConversationKit28InCallControlsViewController *)arg1 didTap:(long long)arg2;
 

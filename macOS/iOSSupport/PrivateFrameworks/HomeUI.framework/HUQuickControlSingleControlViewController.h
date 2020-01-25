@@ -74,6 +74,7 @@
 - (id)overrideValueForCharacteristic:(id)arg1;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (void)setPreferredFrameLayoutGuide:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;

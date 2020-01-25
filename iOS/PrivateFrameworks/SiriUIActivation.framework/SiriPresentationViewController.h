@@ -91,6 +91,7 @@
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) id <SiriPresentationControllerDelegate> siriPresentationControllerDelegate; // @synthesize siriPresentationControllerDelegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (void)viewWillLayoutSubviews;

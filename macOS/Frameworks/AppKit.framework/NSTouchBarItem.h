@@ -15,6 +15,7 @@
     NSString *_identifier;
     float _visibilityPriority;
     long long _visibilityCount;
+    BOOL _requiresTrueCenterLayout;
 }
 
 + (id)keyPathsForValuesAffectingView;
@@ -31,6 +32,8 @@
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 preferredSize:(struct CGSize *)arg3;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 preferredSize:(struct CGSize *)arg3 stretchesContent:(BOOL)arg4;
+- (void)_setRequiresTrueCenterLayout:(BOOL)arg1;
+- (BOOL)_requiresTrueCenterLayout;
 - (long long)_type;
 - (unsigned long long)itemPosition;
 - (void)setPriority:(float)arg1;

@@ -10,8 +10,10 @@
 {
 }
 
++ (void)cacheSharingAppUsageDurations:(id)arg1;
++ (id)sharingAppUsageDurations;
 + (id)relativeAppUsageProbabilitiesForCandidateBundleIds:(id)arg1 daysAgo:(int)arg2 knowledgeStore:(id)arg3;
-+ (id)mostUsedAppShareExtensionsWithAppBundleIdsToShareExtensionBundleIdsMapping:(id)arg1 knowledgeStore:(id)arg2;
++ (id)mostUsedAppShareExtensionsWithAppBundleIdsToShareExtensionBundleIdsMapping:(id)arg1;
 + (id)shareExtensionsUsedAndInstalledDaysAgo:(int)arg1 appBundleIdsToShareExtensionBundleIdsMapping:(id)arg2 knowledgeStore:(id)arg3;
 + (id)mostUsedAppBundleIdsUsingPredicate:(id)arg1 knowledgeStore:(id)arg2;
 

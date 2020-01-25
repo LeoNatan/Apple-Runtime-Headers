@@ -40,6 +40,8 @@
 - (id)_createVerifyCredentialOptionsWithCredentialSource:(unsigned int)arg1;
 - (id)_accountStoreForAuthentication;
 - (id)_updateAccountWithAuthKit:(id)arg1 error:(id *)arg2;
+- (id)_attemptPasswordReuseAuthenticationForAccount:(id)arg1;
+- (id)_attemptMultiUserTokenAuthenticationForAccount:(id)arg1;
 - (id)_accountForAuthentication;
 - (id)performAuthentication;
 - (id)initWithRequest:(id)arg1;

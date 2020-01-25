@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class UITraitCollection, UIView, UIVisualEffectView, UIWindow;
+@class UITraitCollection, UIVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface _UIVisualEffectEnvironment : NSObject <NSCopying>
@@ -19,12 +19,8 @@ __attribute__((visibility("hidden")))
     _Bool _reducedTransperancy;
     UIVisualEffectView *_effectView;
     UITraitCollection *_traitCollection;
-    UIWindow *_window;
-    UIView *_superview;
 }
 
-@property(nonatomic) UIView *superview; // @synthesize superview=_superview;
-@property(nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) _Bool reducedTransperancy; // @synthesize reducedTransperancy=_reducedTransperancy;
 @property(nonatomic) _Bool useSimpleVibrancy; // @synthesize useSimpleVibrancy=_useSimpleVibrancy;

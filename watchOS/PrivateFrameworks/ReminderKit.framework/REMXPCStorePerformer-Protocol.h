@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CKShare, CKShareMetadata, NSArray, NSData, NSDictionary, NSString, REMFetchRequest, REMObjectID, REMStoreInvocation, REMStoreSwiftInvocation;
+@class CKShare, CKShareMetadata, NSArray, NSData, NSDictionary, NSString, REMDistributedEvaluationCollectionOptions, REMFetchRequest, REMObjectID, REMStoreInvocation, REMStoreSwiftInvocation;
 
 @protocol REMXPCStorePerformer
 - (void)requestToDeleteLocalDataWithCompletion:(void (^)(NSError *))arg1;
@@ -23,6 +23,7 @@
 - (void)createShareForObjectWithID:(REMObjectID *)arg1 completion:(void (^)(CKShare *, NSError *))arg2;
 - (void)fetchShareForObjectWithID:(REMObjectID *)arg1 completion:(void (^)(CKShare *, NSError *))arg2;
 - (void)saveAccountStorages:(NSArray *)arg1 listStorages:(NSArray *)arg2 reminderStorages:(NSArray *)arg3 changedKeys:(NSDictionary *)arg4 replicaManagers:(NSDictionary *)arg5 author:(NSString *)arg6 mode:(unsigned int)arg7 synchronously:(_Bool)arg8 completion:(void (^)(NSError *))arg9;
+- (void)compressedDistributedEvaluationDataWithOptions:(REMDistributedEvaluationCollectionOptions *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
 - (void)fetchReplicaManagersForAccountID:(REMObjectID *)arg1 bundleID:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchReplicaManagerForAccountID:(REMObjectID *)arg1 completion:(void (^)(REMReplicaManagerSerializedData *, NSError *))arg2;
 - (void)performSwiftInvocation:(REMStoreSwiftInvocation *)arg1 withParametersData:(NSData *)arg2 storages:(NSDictionary *)arg3 completion:(void (^)(REMStoreSwiftInvocationResult *, NSError *))arg4;

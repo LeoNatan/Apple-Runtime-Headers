@@ -23,6 +23,7 @@
 #import <ChatKit/CKReaderViewControllerDelegate-Protocol.h>
 #import <ChatKit/CKSendAnimationBalloonProvider-Protocol.h>
 #import <ChatKit/CKSendAnimationManagerDelegate-Protocol.h>
+#import <ChatKit/CKStickerDetailViewControllerDelegate-Protocol.h>
 #import <ChatKit/CKThrowAnimationManagerDelegate-Protocol.h>
 #import <ChatKit/CKTrimControllerDelegate-Protocol.h>
 #import <ChatKit/CKUnexpectedlyLoggedOutNotificationViewDelegate-Protocol.h>
@@ -45,10 +46,10 @@
 #import <ChatKit/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <ChatKit/_UIClickInteractionDelegate-Protocol.h>
 
-@class CADisplayLink, CKAudioTrimViewController, CKChatInputController, CKComposition, CKEffectPickerViewController, CKFunCameraViewController, CKInvisibleInkEffectController, CKMessageEntryView, CKMessageEntryViewController, CKNavbarCanvasViewController, CKNicknameBannerView, CKNicknameUpdatesViewController, CKOnboardingController, CKQLDetailsPreviewController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKThrowAnimationManager, CKUnexpectedlyLoggedOutNotificationView, CKUnreadBannerView, CKVideoMessageRecordingViewController, CKVideoTrimController, CNContactPickerViewController, IMNickname, IMPluginPayload, IMScheduledUpdater, NSLayoutConstraint, NSNumber, NSObject, NSString, SGFoundInSuggestionPresenter, UIImagePickerController, UIToolbar, UIView, UIWindow;
+@class CADisplayLink, CKAudioTrimViewController, CKChatInputController, CKComposition, CKEffectPickerViewController, CKFunCameraViewController, CKInvisibleInkEffectController, CKMessageEntryView, CKMessageEntryViewController, CKNavbarCanvasViewController, CKNicknameBannerView, CKNicknameUpdatesViewController, CKOnboardingController, CKQLDetailsPreviewController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKThrowAnimationManager, CKUnexpectedlyLoggedOutNotificationView, CKUnreadBannerView, CKVideoMessageRecordingViewController, CKVideoTrimController, CNContactPickerViewController, IMNickname, IMPluginPayload, IMScheduledUpdater, NSLayoutConstraint, NSNumber, NSObject, NSString, SGFoundInSuggestionPresenter, STConversationContext, UIImagePickerController, UIToolbar, UIView, UIWindow;
 @protocol CKChatControllerDelegate, OS_dispatch_group, UIDragSession, UIDropSession;
 
-@interface CKChatController : CKCoreChatController <CKEffectPickerViewControllerDelegate, CKThrowAnimationManagerDelegate, CKSendAnimationManagerDelegate, CKSendAnimationBalloonProvider, UIInteractionProgressObserver, QLPreviewControllerDelegate, CKReaderViewControllerDelegate, PKAddPassesViewControllerDelegate, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, CKVideoMessageRecordingViewControllerDelegate, CKActionMenuGestureRecognizerButtonDelegate, PHPhotoLibraryChangeObserver, CNContactPickerDelegate, CKMessageEntryViewDelegate, CKTrimControllerDelegate, AFContextProvider, UIGestureRecognizerDelegate, CKChatInputControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKBrowserDragControllerTranscriptDelegate, SGSuggestionPresenterDelegate, CKDetailsControllerDelegate, _UIClickInteractionDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, UIPopoverPresentationControllerDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UITextDropDelegate, UITextPasteDelegate, CKExtensionConsumer, CKFunCameraViewControllerDelegate, ILClassificationUIExtensionHostViewControllerDelegate, CKNicknameBannerViewDelegate, CKOnboardingControllerDelegate, CKNicknameUpdatesViewControllerDelegate, CKNavbarCanvasViewControllerDelegate>
+@interface CKChatController : CKCoreChatController <CKStickerDetailViewControllerDelegate, CKEffectPickerViewControllerDelegate, CKThrowAnimationManagerDelegate, CKSendAnimationManagerDelegate, CKSendAnimationBalloonProvider, UIInteractionProgressObserver, QLPreviewControllerDelegate, CKReaderViewControllerDelegate, PKAddPassesViewControllerDelegate, UIViewControllerTransitioningDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, CKVideoMessageRecordingViewControllerDelegate, CKActionMenuGestureRecognizerButtonDelegate, PHPhotoLibraryChangeObserver, CNContactPickerDelegate, CKMessageEntryViewDelegate, CKTrimControllerDelegate, AFContextProvider, UIGestureRecognizerDelegate, CKChatInputControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKBrowserDragControllerTranscriptDelegate, SGSuggestionPresenterDelegate, CKDetailsControllerDelegate, _UIClickInteractionDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, UIPopoverPresentationControllerDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UITextDropDelegate, UITextPasteDelegate, CKExtensionConsumer, CKFunCameraViewControllerDelegate, ILClassificationUIExtensionHostViewControllerDelegate, CKNicknameBannerViewDelegate, CKOnboardingControllerDelegate, CKNicknameUpdatesViewControllerDelegate, CKNavbarCanvasViewControllerDelegate>
 {
     struct CGPoint _startingScrollOffset;
     _Bool _shouldBecomeFirstResponderWhenDismissingModalBrowser;
@@ -117,10 +118,16 @@
     CNContactPickerViewController *_contactPicker;
     IMNickname *_currentNickname;
     CKOnboardingController *_onboardingController;
+    UIView *_lockoutView;
+    STConversationContext *_conversationContext;
+    long long _acknowledgmentToSend;
     struct CGPoint _initialContentOffset;
     struct UIEdgeInsets _initialContentInset;
 }
 
+@property(nonatomic) long long acknowledgmentToSend; // @synthesize acknowledgmentToSend=_acknowledgmentToSend;
+@property(retain, nonatomic) STConversationContext *conversationContext; // @synthesize conversationContext=_conversationContext;
+@property(retain, nonatomic) UIView *lockoutView; // @synthesize lockoutView=_lockoutView;
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(retain, nonatomic) IMNickname *currentNickname; // @synthesize currentNickname=_currentNickname;
 @property(retain, nonatomic) CNContactPickerViewController *contactPicker; // @synthesize contactPicker=_contactPicker;
@@ -220,6 +227,7 @@
 - (id)textPasteConfigurationSupporting:(id)arg1 combineItemAttributedStrings:(id)arg2 forRange:(id)arg3;
 - (void)textPasteConfigurationSupporting:(id)arg1 transformPasteItem:(id)arg2;
 - (id)textDroppableView:(id)arg1 proposalForDrop:(id)arg2;
+- (_Bool)_alwaysShowNicknameBanners;
 - (id)_meContact;
 - (_Bool)showNicknameSharingOnboarding;
 - (_Bool)_shouldShowNicknameOnboardingFlow;
@@ -248,15 +256,19 @@
 - (id)viewControllerForPresentingFromBannerByPresenter:(id)arg1;
 - (void)suggestionPresenterWantsToHideBanner:(id)arg1;
 - (void)suggestionPresenterWantsToShowBanner:(id)arg1;
+- (void)_deleteStickerWithTransferGUID:(id)arg1;
 - (void)fullScreenBalloonViewController:(id)arg1 deleteStickerWithTransferGUID:(id)arg2;
+- (void)_presentAppStoreForAdamID:(id)arg1;
 - (void)fullScreenBalloonViewController:(id)arg1 stickerPackTappedWithAdamID:(id)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 verticallyScrollTranscriptByAmount:(double)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)showStickersAssociatedWithChatItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
 - (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(long long)arg2 forChatItem:(id)arg3;
 - (void)fullScreenBalloonViewController:(id)arg1 willDisappearWithSendAnimation:(_Bool)arg2;
 - (double)_currentScrollDelta;
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(_Bool)arg2;
 - (void)showSMSReportSpamExtensionControllerForMessages:(id)arg1;
+- (void)hideStickersAssociatedWithChatItem:(id)arg1;
 - (void)showFullScreenAcknowledgmentPickerForBalloonAtIndexPath:(id)arg1 showActionMenu:(_Bool)arg2;
 - (_Bool)_shouldShowAcknowledgmentPickerForBalloon;
 - (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
@@ -285,6 +297,7 @@
 - (_Bool)allowContextProvider:(id)arg1;
 - (void)_saveDraftState;
 - (void)updateRaiseGesture;
+- (void)__raiseGestureRecognized:(id)arg1;
 - (void)raiseGestureRecognized:(id)arg1;
 - (void)tapGestureRecognized:(id)arg1;
 - (void)clickInteractionDidClickUp:(id)arg1;
@@ -524,6 +537,7 @@
 - (void)unreadBannerViewTapped:(id)arg1;
 - (void)setUnreadBannerHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)layoutLockoutView;
 - (void)viewDidLayoutSubviews;
 - (void)insertInitialCompositionIfNeeded;
 - (_Bool)_chatShowsUnexpectedlyLoggedOutNotification;
@@ -532,17 +546,39 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)showScreenTimeShieldIfNeeded;
-- (_Bool)shouldPresentBlockingDowntimeViewController;
 - (void)removeLockoutControllerIfNeeded;
+- (_Bool)shouldPresentBlockingDowntimeViewController;
 - (_Bool)isHandwritingLandscape;
 - (void)forciblyUnloadChatInputController;
 - (void)setConversation:(id)arg1;
 - (void)updateScreenTimeShieldIfNeededForChat:(id)arg1;
+- (_Bool)isChatAllowedByScreenTime:(id)arg1;
 - (void)chatAllowedByScreenTimeChanged:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (void)prepareToDismissForSecondInstance;
 - (void)dealloc;
+- (void)_dealloc;
+- (_Bool)_clickyOrbEnabled;
+- (_Bool)_hasPreviewViewControllerForChatItem:(id)arg1;
+- (id)_parentIndexPathForCellAtIndexPath:(id)arg1;
+- (id)_parentChatItemForIndexPath:(id)arg1;
+- (id)_balloonViewForCellAtIndexPath:(id)arg1;
+- (_Bool)_shouldShowVotingViewForChatItem:(id)arg1;
+- (id)_contextMenuActionsForChatItem:(id)arg1;
+- (id)_menuForChatItem:(id)arg1;
+- (void)messageAcknowledgmentPickerViewController:(id)arg1 didPickAcknowledgment:(long long)arg2;
+- (void)stickerDetailViewController:(id)arg1 selectedStickerPackWithAdamID:(id)arg2;
+- (void)stickerDetailViewController:(id)arg1 deletedStickerWithTransferGUID:(id)arg2;
+- (void)_stickerDetailViewControllerCloseButtonPressed:(id)arg1;
+- (void)presentStickerDetailControllerWithStickers:(id)arg1;
+- (void)transcriptCollectionViewController:(id)arg1 willEndContextMenuInteractionWithConfiguration:(id)arg2 animator:(id)arg3;
+- (id)transcriptCollectionViewController:(id)arg1 styleForContextMenuWithConfiguration:(id)arg2;
+- (id)transcriptCollectionViewController:(id)arg1 accessoriesForContextMenuWithConfiguration:(id)arg2 layoutAnchor:(CDStruct_4bcfbbae)arg3;
+- (id)transcriptCollectionViewController:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;
+- (id)transcriptCollectionViewController:(id)arg1 previewForHighlightingContextMenuWithConfiguration:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (id)transcriptCollectionViewController:(id)arg1 contextMenuConfigurationForItemAtIndexPath:(id)arg2 point:(struct CGPoint)arg3;
 - (void)effectPickerViewController:(id)arg1 effectWithIdentifierSelected:(id)arg2;
 - (void)effectPickerViewControllerClose:(id)arg1;
 - (id)throwBalloonsForSendAnimationContext:(id)arg1;
@@ -573,6 +609,8 @@
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint)arg2 inSourceView:(id)arg3;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
+- (id)_previewingViewControllerForLocation:(struct CGPoint)arg1 inSourceView:(id)arg2;
+- (id)_previewingViewControllerForHitView:(id)arg1 indexPath:(id)arg2;
 - (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect *)arg3 realSize:(struct CGSize *)arg4;
 - (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id *)arg3;

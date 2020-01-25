@@ -23,6 +23,7 @@
 + (id)keyPathsForValuesAffectingCommunicationPolicy;
 + (id)keyPathsForValuesAffectingShareWebUsage;
 + (id)keyPathsForValuesAffectingNeedsToSetPasscode;
++ (id)keyPathsForValuesAffectingEffectiveRecoveryAltDSID;
 + (id)keyPathsForValuesAffectingEffectivePasscode;
 + (id)keyPathsForValuesAffectingManaging;
 + (id)keyPathsForValuesAffectingManaged;
@@ -43,6 +44,7 @@
 @property(readonly) NSString *organizationIdentifier;
 @property _Bool shareWebUsage;
 @property(readonly) _Bool needsToSetPasscode;
+@property(copy) NSString *effectiveRecoveryAltDSID;
 @property(copy) NSString *effectivePasscode;
 @property(readonly, getter=isManaging) _Bool managing;
 @property(readonly, getter=isManaged) _Bool managed;

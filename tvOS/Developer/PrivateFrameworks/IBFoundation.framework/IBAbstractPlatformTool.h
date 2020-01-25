@@ -28,7 +28,7 @@
 - (void)messageReceiveChannel:(id)arg1 didDeliverMessage:(SEL)arg2;
 - (void)messageReceiveChannel:(id)arg1 willDeliverMessage:(SEL)arg2;
 - (void)keepPersistentObjectInContext:(id)arg1;
-- (void)loadExtensions:(id)arg1;
+- (id)loadExtensions:(id)arg1;
 - (void)startServingWriteDescriptor:(int)arg1 readDescriptor:(int)arg2;
 - (void)startServingSocket:(int)arg1;
 - (void)startServingReceiveChannel:(id)arg1;

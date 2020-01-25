@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSDictionary, NSProgress, NSString, NSURL;
 
 @protocol PLAssetsdResourceServiceProtocol <PLAssetsdResourceWriteOnlyServiceProtocol>
+- (void)projectExtensionDataForProjectUuid:(NSString *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
 - (void)updateInternalResourcePath:(NSString *)arg1 objectURI:(NSURL *)arg2 sandboxExtension:(NSData *)arg3 reply:(void (^)(BOOL, NSError *))arg4;
 - (NSProgress *)consolidateAssets:(NSArray *)arg1 reply:(void (^)(NSDictionary *))arg2;
 - (void)generateOnDemandResourcesForAsset:(NSURL *)arg1 reply:(void (^)(void))arg2;

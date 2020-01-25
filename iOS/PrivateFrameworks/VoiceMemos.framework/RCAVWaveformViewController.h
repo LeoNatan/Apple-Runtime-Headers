@@ -92,6 +92,7 @@
 @property(readonly, nonatomic) CDStruct_73a5d3ca nextPreviewTimeRange;
 - (void)reloadWaveformDataSource:(id)arg1 initialTime:(double)arg2;
 - (void)reloadWaveformDataSource:(id)arg1 withActiveTimeController:(id)arg2;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

@@ -60,6 +60,9 @@
 - (BOOL)supportsWakeOnLANFor:(id)arg1;
 - (BOOL)supportsEnablePowerButtonSleepFor:(id)arg1;
 - (BOOL)supportsDarkWakeFor:(id)arg1;
+- (void)setProMode:(BOOL)arg1 for:(id)arg2;
+- (BOOL)proModeFor:(id)arg1;
+- (BOOL)supportsProModeFor:(id)arg1;
 - (void)setMinutesUntilSystemSleeps:(unsigned long long)arg1 for:(id)arg2;
 - (void)setMinutesUntilDiskSleeps:(unsigned long long)arg1 for:(id)arg2;
 - (void)setMinutesUntilDisplaySleeps:(unsigned long long)arg1 for:(id)arg2;

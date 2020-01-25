@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 - (id)value;
 - (void)applyToMutableContainer:(id)arg1;
 - (id)property;
+@property(readonly, copy) NSString *description;
 - (id)initWithProperty:(id)arg1 value:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -6,10 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXAction, UIView;
-@protocol SXActionActivityGroup;
+@class UIView;
+@protocol SXAction, SXActionActivityGroup;
 
 @protocol SXActionViewManager <NSObject>
-- (void)presentActivityGroup:(id <SXActionActivityGroup>)arg1 action:(SXAction *)arg2 sourceView:(UIView *)arg3 sourceRect:(struct CGRect)arg4 completion:(void (^)(unsigned long long, id <SXActionActivity>))arg5;
+- (void)presentActivityGroup:(id <SXActionActivityGroup>)arg1 action:(id <SXAction>)arg2 sourceView:(UIView *)arg3 sourceRect:(struct CGRect)arg4 completion:(void (^)(unsigned long long, id <SXActionActivity>))arg5;
 @end
 

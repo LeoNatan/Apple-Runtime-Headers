@@ -20,7 +20,7 @@
     NSString *_selectedDeviceIdentifier;
     NSString *_organizationIdentifier;
     NSNumber *_userDSID;
-    long long _usageHistoryType;
+    long long _usageContext;
     id <STPersistenceControllerProtocol> _persistenceController;
     NSFetchedResultsController *_usageBlocksFetchedResultsController;
     NSDate *_lastUsageDataRefreshTime;
@@ -42,7 +42,7 @@
 @property(retain, nonatomic) NSDate *lastUsageDataRefreshTime; // @synthesize lastUsageDataRefreshTime=_lastUsageDataRefreshTime;
 @property(retain, nonatomic) NSFetchedResultsController *usageBlocksFetchedResultsController; // @synthesize usageBlocksFetchedResultsController=_usageBlocksFetchedResultsController;
 @property(retain, nonatomic) id <STPersistenceControllerProtocol> persistenceController; // @synthesize persistenceController=_persistenceController;
-@property(readonly) long long usageHistoryType; // @synthesize usageHistoryType=_usageHistoryType;
+@property(readonly) long long usageContext; // @synthesize usageContext=_usageContext;
 @property(copy, nonatomic) NSNumber *userDSID; // @synthesize userDSID=_userDSID;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
 @property(copy, nonatomic) NSString *selectedDeviceIdentifier; // @synthesize selectedDeviceIdentifier=_selectedDeviceIdentifier;
@@ -54,7 +54,7 @@
 - (void)_loadLastWeekUsageWithUsageBlocks:(id)arg1 selectedItemDisplayName:(id)arg2 referenceDate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_loadTodayUsageWithUsageBlocks:(id)arg1 selectedItemDisplayName:(id)arg2 referenceDate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)loadViewModelWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)_usageItemsWithUsageBlocks:(id)arg1 lastUpdatedDate:(id *)arg2 firstPickupByWeekdayByWeek:(id)arg3 referenceDate:(id)arg4;
+- (id)_usageItemsWithUsageBlocks:(id)arg1 lastUpdatedDate:(id *)arg2 firstPickupByWeekdayByWeek:(id)arg3 referenceDate:(id)arg4 usageContext:(long long)arg5;
 - (id)_usageBlocksWithUser:(id)arg1 device:(id)arg2 error:(id *)arg3;
 - (void)controllerDidChangeContent:(id)arg1;
 - (void)_refreshUsageDataWithCompletion:(CDUnknownBlockType)arg1;
@@ -64,7 +64,7 @@
 - (void)stopRefreshingUsageData;
 - (void)startRefreshingUsageData;
 - (void)dealloc;
-- (id)initWithPersistenceController:(id)arg1 organizationIdentifier:(id)arg2 userDSID:(id)arg3 devices:(id)arg4 selectedDeviceIdentifier:(id)arg5 selectedUsageReportType:(id)arg6 usageHistoryType:(long long)arg7;
+- (id)initWithPersistenceController:(id)arg1 organizationIdentifier:(id)arg2 userDSID:(id)arg3 devices:(id)arg4 selectedDeviceIdentifier:(id)arg5 selectedUsageReportType:(id)arg6 usageContext:(long long)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,9 +6,9 @@
 
 #import <IBFoundation/NSObject-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSError;
 
 @protocol IBAbstractPlatformTool <NSObject>
-- (void)loadExtensions:(NSArray *)arg1;
+- (NSError *)loadExtensions:(NSArray *)arg1;
 @end
 

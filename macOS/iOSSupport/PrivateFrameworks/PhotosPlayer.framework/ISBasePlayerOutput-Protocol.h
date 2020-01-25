@@ -12,5 +12,9 @@
 - (void)setContent:(ISPlayerOutputContent *)arg1;
 - (void)applyOutputInfo:(ISPlayerState *)arg1 withTransitionOptions:(ISPlayerOutputTransitionOptions *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)applyScale:(double)arg1 withTransitionOptions:(ISPlayerOutputTransitionOptions *)arg2 completion:(void (^)(BOOL))arg3;
+
+@optional
+@property(copy, nonatomic) CDUnknownBlockType videoLayerReadyForDisplayChangeHandler;
+@property(readonly, nonatomic) BOOL isVideoReadyForDisplay;
 @end
 

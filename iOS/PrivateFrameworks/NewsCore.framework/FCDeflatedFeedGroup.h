@@ -10,7 +10,7 @@
 #import <NewsCore/FCFeedGroupOutlining-Protocol.h>
 
 @class FCColor, FCColorGradient, FCFeedEdition, FCSharedStringIndex, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo, NTPBFeedViewportGroup;
-@protocol FCForYouMagazineFeedGroup;
+@protocol FCCardStyleProviding, FCForYouBridgedFeedGroup;
 
 @interface FCDeflatedFeedGroup : NSObject <FCFeedElement, FCFeedGroupOutlining>
 {
@@ -25,20 +25,19 @@
 @property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
 @property(readonly, copy, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) id <FCForYouMagazineFeedGroup> magazineGroup;
+@property(readonly, nonatomic) _Bool usesPlaceholderHeadlines;
+@property(readonly, nonatomic) id <FCForYouBridgedFeedGroup> bridgedGroup;
 @property(readonly, copy, nonatomic) NSArray *issueIDs;
 @property(readonly, copy, nonatomic) NSString *backingTagID;
 @property(readonly, nonatomic) unsigned long long mergeID;
 @property(readonly, nonatomic) unsigned long long options;
 @property(readonly, copy, nonatomic) FCFeedEdition *edition;
 @property(readonly, nonatomic) NSDate *creationDate;
+@property(readonly, copy, nonatomic) id <FCCardStyleProviding> darkCardStyle;
+@property(readonly, copy, nonatomic) id <FCCardStyleProviding> cardStyle;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
 @property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundGradient;
 @property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
-@property(readonly, copy, nonatomic) FCColorGradient *darkStyleSauceGradient;
-@property(readonly, copy, nonatomic) FCColorGradient *sauceGradient;
-@property(readonly, copy, nonatomic) FCColor *darkStyleCardBackgroundColor;
-@property(readonly, copy, nonatomic) FCColor *cardBackgroundColor;
 @property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *titleColor;
 @property(readonly, copy, nonatomic) NSString *ctaText;

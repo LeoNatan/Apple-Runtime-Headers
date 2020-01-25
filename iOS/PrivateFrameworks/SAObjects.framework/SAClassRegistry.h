@@ -6,23 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
-@protocol OS_dispatch_queue;
-
 @interface SAClassRegistry : NSObject
 {
-    NSMutableDictionary *_classesByAceClassNameByGroupIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
++ (Class)classForAceClassName:(id)arg1 inGroupWithIdentifier:(id)arg2;
++ (void)registerClass:(Class)arg1 forAceClassName:(id)arg2 inGroupWithIdentifier:(id)arg3;
++ (void)registerAcronym:(id)arg1 forGroupWithIdentifier:(id)arg2;
++ (void)initialize;
 + (id)sharedClassRegistry;
-@property(readonly, nonatomic, getter=_queue) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(readonly, nonatomic, getter=_classesByAceClassNameByGroupIdentifier) NSMutableDictionary *classesByAceClassNameByGroupIdentifier; // @synthesize classesByAceClassNameByGroupIdentifier=_classesByAceClassNameByGroupIdentifier;
-- (void)_accessMutableStateWithBlock:(CDUnknownBlockType)arg1;
 - (Class)classForAceClassWithName:(id)arg1 inGroupWithIdentifier:(id)arg2;
 - (void)registerClass:(Class)arg1 forAceClassWithName:(id)arg2 inGroupWithIdentifier:(id)arg3;
-- (void)dealloc;
-- (id)init;
 
 @end
 

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-- (_Bool)_connect;
-- (_Bool)_disconnect;
 - (void)_disconnected;
+- (_Bool)_disconnect;
+- (_Bool)_connect;
 - (void)_sendXPCRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)_sendSynchronousXPCRequest:(id)arg1;
 - (_Bool)isItemInList:(id)arg1;

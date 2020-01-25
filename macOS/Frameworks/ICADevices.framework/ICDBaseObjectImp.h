@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _lockObject;
 }
 
+- (unsigned long long)unsignedIntegerValue;
 - (short)uploadFile:(id)arg1;
 - (short)downloadFile:(id)arg1;
 - (short)updateSavedFileAt:(id)arg1 optionsDictionary:(id)arg2;
@@ -74,6 +75,7 @@ __attribute__((visibility("hidden")))
 - (void)lockObject;
 - (void)dealloc;
 - (id)initWithObjectInformation:(void *)arg1;
+- (long long)compareObjectHandle:(id)arg1;
 
 @end
 

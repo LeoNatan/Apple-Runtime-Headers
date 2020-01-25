@@ -6,10 +6,11 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSURL, SXAction, SXAddition;
+@class NSURL, SXAddition;
+@protocol SXAction;
 
 @protocol SXActionProvider <NSObject>
-- (SXAction *)actionForURL:(NSURL *)arg1;
-- (SXAction *)actionForAddition:(SXAddition *)arg1;
+- (id <SXAction>)actionForURL:(NSURL *)arg1;
+- (id <SXAction>)actionForAddition:(SXAddition *)arg1;
 @end
 

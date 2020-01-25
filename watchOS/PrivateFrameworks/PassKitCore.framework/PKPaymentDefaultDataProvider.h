@@ -49,6 +49,7 @@
 - (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deletePaymentTransactionWithIdentifier:(id)arg1 forPassWithUniqueIdentifier:(id)arg2;
 - (void)mapsMerchantsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)installmentPlanTransactionsForPassUniqueIdentifier:(id)arg1 accountIdentifier:(id)arg2 withRedemptionType:(int)arg3 startDate:(id)arg4 endDate:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)installmentPlansWithTransactionReferenceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submitTransactionAnswerForTransaction:(id)arg1 questionType:(unsigned int)arg2 answer:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)transactionsRequiringReviewForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

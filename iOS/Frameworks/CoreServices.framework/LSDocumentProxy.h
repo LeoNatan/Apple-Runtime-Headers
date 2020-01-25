@@ -53,7 +53,7 @@
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)applicationsAvailableForOpeningWithStyle:(unsigned char)arg1 limit:(unsigned long long)arg2 XPCConnection:(id)arg3 error:(id *)arg4;
 - (id)_boundIconInfo;
-- (optional_59acb226)_bindingEvaluatorWithAuditToken:(const CDStruct_4c969caf *)arg1;
+- (optional_084b935d)_bindingEvaluatorWithAuditToken:(const CDStruct_4c969caf *)arg1;
 
 @end
 

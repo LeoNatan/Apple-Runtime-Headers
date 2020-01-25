@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _hostWindowKeynessReactionPending;
     CDUnknownBlockType _remoteViewFirstResponderReactionPending;
     NSMutableArray *_resizeTransactionsInProgress;
-    int _windowFrameAnimationSpawnedByRemoteView;
+    unsigned int _windowFrameAnimationsInProgress;
     unsigned char _windowKeyness;
     long long _windowOrderingMode;
     struct os_unfair_lock_s _retainReleaseLock;

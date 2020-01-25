@@ -16,6 +16,7 @@
     // Error parsing type: , name: previewVideoUrl
     // Error parsing type: , name: cinemagraphUrl
     // Error parsing type: , name: termsAndConditionsText
+    // Error parsing type: , name: promotionHeadingTintStyle
 }
 
 @end

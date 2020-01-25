@@ -11,6 +11,7 @@
 @interface IMSPIChat : NSObject
 {
     BOOL _isGroup;
+    BOOL _isBlackholed;
     NSString *_guid;
     NSString *_chatIdentifier;
     NSString *_serviceName;
@@ -20,6 +21,7 @@
 
 + (void)enumerateAllChatsWithBlock:(CDUnknownBlockType)arg1;
 @property(retain) NSArray *handles; // @synthesize handles=_handles;
+@property(readonly) BOOL isBlackholed; // @synthesize isBlackholed=_isBlackholed;
 @property BOOL isGroup; // @synthesize isGroup=_isGroup;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *serviceName; // @synthesize serviceName=_serviceName;

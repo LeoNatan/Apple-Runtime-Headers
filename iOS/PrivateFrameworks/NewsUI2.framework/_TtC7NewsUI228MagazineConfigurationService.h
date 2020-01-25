@@ -9,7 +9,7 @@
 @interface _TtC7NewsUI228MagazineConfigurationService : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: dataService
-    // Error parsing type: , name: appVersion
+    // Error parsing type: , name: bundleVersion
     // Error parsing type: , name: $__lazy_storage_$_dateFormatter
 }
 

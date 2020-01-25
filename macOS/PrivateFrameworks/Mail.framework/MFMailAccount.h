@@ -167,7 +167,7 @@
 - (void)_synchronizeMailboxListWithFileSystem;
 - (void)_synchronizeMailboxListWithFileSystemBeforeImport:(BOOL)arg1;
 - (BOOL)_readMailboxCache;
-- (void)_mailboxesWereRemovedFromTree:(id)arg1 withFileSystemPaths:(id)arg2;
+- (void)_mailboxesWereRemovedFromTree:(id)arg1 withFileSystemPaths:(id)arg2 names:(id)arg3;
 - (void)_loadMailboxListingIntoCache:(id)arg1 parent:(id)arg2 addedMailboxes:(id)arg3 removedMailboxes:(id)arg4 hasAllMailMailbox:(char *)arg5;
 - (void)_synchronouslyLoadListingForParent:(id)arg1;
 - (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 pathComponent:(id)arg3 attributes:(unsigned long long)arg4 existingMailbox:(id)arg5;

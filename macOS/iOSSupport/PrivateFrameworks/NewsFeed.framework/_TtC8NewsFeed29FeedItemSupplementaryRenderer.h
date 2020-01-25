@@ -10,6 +10,10 @@
 {
     // Error parsing type: , name: colorPaletteProvider
     // Error parsing type: , name: featuredIssueSupplementaryViewRenderer
+    // Error parsing type: , name: formatLayoutViewRenderer
+    // Error parsing type: , name: internalErrorViewRenderer
+    // Error parsing type: , name: formatHeaderRegistrationIdentifiers
+    // Error parsing type: , name: formatFooterRegistrationIdentifiers
 }
 
 @end

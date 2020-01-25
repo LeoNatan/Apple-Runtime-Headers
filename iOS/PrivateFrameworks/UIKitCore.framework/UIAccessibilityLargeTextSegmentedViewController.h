@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *segmentButtons; // @synthesize segmentButtons=_segmentButtons;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)_orientationChanged:(id)arg1;
 - (void)buttonTouchUp:(id)arg1;
 - (void)buttonTouchDown:(id)arg1;

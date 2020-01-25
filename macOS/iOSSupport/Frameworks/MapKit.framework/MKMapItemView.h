@@ -42,6 +42,7 @@
 - (void)_setupSnapshotConstraints;
 - (void)_handleTapOnSnapshot:(id)arg1;
 - (id)_annotationView;
+- (id)_customAnnotation;
 - (id)_deriveSnapshotOptions:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(BOOL)arg2;

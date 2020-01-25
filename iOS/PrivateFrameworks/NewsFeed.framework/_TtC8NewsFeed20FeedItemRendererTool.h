@@ -9,7 +9,8 @@
 @interface _TtC8NewsFeed20FeedItemRendererTool : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: rendererEnvironment
-    // Error parsing type: , name: debugViewLayoutViewFactory
+    // Error parsing type: , name: debugInspectViewLayoutViewFactory
+    // Error parsing type: , name: fontManager
     // Error parsing type: , name: debugEnabled
     // Error parsing type: , name: debugColors
     // Error parsing type: , name: shineImageFactory

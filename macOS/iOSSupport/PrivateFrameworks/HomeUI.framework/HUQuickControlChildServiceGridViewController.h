@@ -19,6 +19,7 @@
 - (void)_subclass_configureQuickControlViewController:(id)arg1;
 - (id)childQuickControlContentViewControllers;
 @property(readonly, nonatomic) HFChildServiceControlItem *controlItem;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (id)hu_preloadContent;
 - (id)initWithChildServiceControlItem:(id)arg1 home:(id)arg2 itemUpdater:(id)arg3;

@@ -6,19 +6,26 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/FCForYouMagazineFeedGroup-Protocol.h>
+#import <NewsUI2/FCForYouBridgedFeedGroup-Protocol.h>
 
-@class NSString;
+@class NSArray, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC7NewsUI223ForYouMagazineFeedGroup : NSObject <FCForYouMagazineFeedGroup>
+@interface _TtC7NewsUI223ForYouMagazineFeedGroup : NSObject <FCForYouBridgedFeedGroup>
 {
     // Error parsing type: , name: group
     // Error parsing type: , name: identifier
+    // Error parsing type: , name: headlines
+    // Error parsing type: , name: assetHandles
 }
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSString *backingTagID;
+@property(nonatomic, readonly) NSArray *webEmbedURLs;
+@property(nonatomic, readonly) NSSet *equivalentTopicIDs;
+@property(nonatomic, readonly) NSArray *assetHandles;
+@property(nonatomic, readonly) NSArray *headlines;
 @property(nonatomic, readonly) NSString *identifier;
 
 @end

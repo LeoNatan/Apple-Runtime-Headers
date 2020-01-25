@@ -27,6 +27,7 @@
         char respondsToShouldAutomaticallyTransitionToMultiSelectModeAtPoint;
         char respondsToAutomaticallyTransitionToMultiSelectMode;
         char respondsToIndexPathSetFromIndexPathToIndexPath;
+        char respondsToDidAutoScroll;
     } _delegateFlags;
     id <PXSwipeSelectionManagerDelegate> _delegate;
     unsigned long long _state;
@@ -65,6 +66,7 @@
 - (BOOL)isInMultiSelectMode;
 - (BOOL)supportsMultiSelectInteraction:(id)arg1;
 - (BOOL)_shouldBeginMultiSelectAtLocation:(struct CGPoint)arg1;
+- (void)autoScroller:(id)arg1 didAutoscrollWithTimestamp:(double)arg2;
 - (void)_updateWithDataSource:(id)arg1 changeHistory:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;

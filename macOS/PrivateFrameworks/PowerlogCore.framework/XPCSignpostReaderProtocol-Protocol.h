@@ -8,6 +8,7 @@
 
 @protocol XPCSignpostReaderProtocol
 - (void)submitSignpostDataWithConfig:(NSDictionary *)arg1 withReply:(void (^)(NSDictionary *))arg2;
+- (void)aggregateSignpostData:(NSDictionary *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 - (void)retrieveAllSignpostData:(NSDictionary *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 @end
 

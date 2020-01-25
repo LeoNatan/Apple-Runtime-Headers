@@ -282,6 +282,7 @@
 @property(copy) NSString *multichannelAudioStrategy;
 @property(copy, nonatomic) NSString *captionRenderingStrategy;
 @property(copy, nonatomic) NSString *captionPipelineStrategy;
+@property(nonatomic, getter=_preservesAudioSessionSampleRate, setter=_setPreservesAudioSessionSampleRate:) _Bool preservesAudioSessionSampleRate;
 @property(retain) AVAudioSession *audioSession;
 @property(nonatomic) unsigned long long preferredVideoDecoderGPURegistryID;
 @property(retain, nonatomic) id <AVLoggingIdentifier> loggingIdentifier;

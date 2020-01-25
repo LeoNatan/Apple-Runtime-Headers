@@ -8,6 +8,10 @@
 
 @interface _TtC7NewsUI231MagazineFeedPaywallViewRenderer : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: imageProvider
+    // Error parsing type: , name: imageCache
+    // Error parsing type: , name: paywallLayoutAttributesFactory
+    // Error parsing type: , name: renderToken
 }
 
 @end

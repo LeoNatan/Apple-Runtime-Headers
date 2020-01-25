@@ -46,6 +46,7 @@
 - (void)handleKeyWebEvent:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)_accessibilityResponderElementForFocus;
 - (unsigned long long)accessibilityTraits;
+- (_Bool)accessibilityParentDiscardsChildrenContainerGroupingBehavior;
 - (long long)accessibilityContainerType;
 - (_Bool)_accessibilityServesAsFirstResponder;
 - (_Bool)isAccessibilityElement;

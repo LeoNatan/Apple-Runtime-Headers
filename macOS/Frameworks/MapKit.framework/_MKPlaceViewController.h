@@ -200,6 +200,7 @@
 - (id)_contactStore;
 - (void)showContentIfLoaded;
 - (BOOL)isLoading;
+- (BOOL)isLayoutDynamic;
 - (void)_setDefaultViewControllers:(id)arg1;
 - (void)_didDismissReportAProblemWindow;
 - (void)_willShowReportAProblemWindow;

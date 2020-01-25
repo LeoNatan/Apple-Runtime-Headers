@@ -18,6 +18,7 @@
     long long _silentLoginUpgradeRetryCount;
 }
 
++ (_Bool)isManagedAppleIDSignedIn;
 + (_Bool)isSettingUpMultiUser;
 + (_Bool)isFirstTimeLogin;
 + (_Bool)isMultiUser;

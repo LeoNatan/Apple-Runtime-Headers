@@ -94,6 +94,7 @@
     NSData *_cropRectHash;
 }
 
++ (void)you_used_a_property_that_you_didnt_request_when_you_fetched_the_contact;
 + (id)previewURLForContact:(id)arg1;
 + (id)unifyContacts:(id)arg1;
 + (CDUnknownBlockType)preferredImageComparator;

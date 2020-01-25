@@ -802,7 +802,6 @@
 @property(readonly, nonatomic) NSString *cloudOwnerLastName;
 @property(readonly, nonatomic) NSString *cloudOwnerFirstName;
 @property(readonly, nonatomic) NSString *cloudOwnerEmail;
-- (id)_missingCloudOwnerDisplayName;
 - (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
 - (id)payloadForChangedKeys:(id)arg1;
 - (id)payloadIDForTombstone:(id)arg1;
@@ -810,6 +809,7 @@
 - (_Bool)isValidForPersistence;
 - (_Bool)setupPlaceholderAssetWithRequiredPropertiesFromSourceAsset:(id)arg1 assetUUID:(id)arg2 placeholderAssetMomentShareUUID:(id)arg3 bakeInAdjustmentsFromSourceAsset:(_Bool)arg4 flattenLivePhoto:(_Bool)arg5 copyTitleDescriptionAndKeywords:(_Bool)arg6 copySnowplowResources:(_Bool)arg7 library:(id)arg8;
 - (unsigned int)masterResourceTypeForAdjustedAssetResourceType:(unsigned int)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(_Bool)arg3;
+- (unsigned int)resourceTypeForUnadjustedFlattenedLivePhotoAssetResourceType:(unsigned int)arg1 sourceAsset:(id)arg2;
 - (id)sortPlaceholderCloudResourcesByOrderOfCloudReReference:(id)arg1;
 - (id)filterSnowplowResourcesFromPlaceholderCloudResources:(id)arg1;
 - (_Bool)placeholder_shouldPerformServerCopy;

@@ -21,7 +21,7 @@
 }
 
 + (id)contactFuture:(id)arg1 contactStore:(id)arg2 scheduler:(id)arg3;
-+ (id)photoObservableWithPhotoFuture:(id)arg1 scheduler:(id)arg2;
++ (id)photoObservableWithPhotoFuture:(id)arg1 likenessFingerprint:(id)arg2 scheduler:(id)arg3;
 + (id)observableFromLikenessProviderBlock:(CDUnknownBlockType)arg1 withScheduler:(id)arg2;
 + (id)basicMonogramObservableFromString:(id)arg1 color:(id)arg2;
 + (id)basicMonogramObservableForContactFuture:(id)arg1 monogramColor:(id)arg2;

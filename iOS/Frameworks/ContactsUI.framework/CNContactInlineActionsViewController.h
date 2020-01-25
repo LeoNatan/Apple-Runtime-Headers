@@ -76,6 +76,7 @@
 - (void)checkinLaunchTasksForUndiscoverableActionsForContact:(id)arg1;
 - (void)displayAllSupportedTypesDisabled;
 - (void)updateDesiredTitleFontSizeIfNeeded;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithActionListDataSource:(id)arg1 environment:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

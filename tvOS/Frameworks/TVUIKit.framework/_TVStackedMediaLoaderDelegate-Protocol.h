@@ -13,6 +13,7 @@
 - (void)stackedMediaLoaderReadyToTransitionVideoToPreview:(_TVStackedMediaLoader *)arg1;
 - (void)stackedMediaLoaderPreviewToVideoTransitionCompleted:(_TVStackedMediaLoader *)arg1;
 - (void)stackedMediaLoaderReadyToTransitionPreviewToVideo:(_TVStackedMediaLoader *)arg1;
+- (void)stackedMediaLoader:(_TVStackedMediaLoader *)arg1 failedToLoadVideoForEntry:(_TVStackedMediaDocumentEntry *)arg2;
 - (void)stackedMediaLoader:(_TVStackedMediaLoader *)arg1 readyWithPlayerLayer:(AVPlayerLayer *)arg2 forEntry:(_TVStackedMediaDocumentEntry *)arg3;
 @end
 

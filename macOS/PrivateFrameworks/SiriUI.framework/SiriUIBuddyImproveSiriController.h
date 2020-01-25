@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 @property __weak SiriUIBuddyController *parentController; // @synthesize parentController=_parentController;
 - (void).cxx_destruct;
 - (void)mbuaSetDataSharingOptInStatus:(long long)arg1;
-- (long long)mbuaGetDataSharingOptInStatus;
 - (void)willExitPane;
 @property(readonly) BOOL shouldShowPane;
 - (void)_syncButtonStates;

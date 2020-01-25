@@ -118,7 +118,7 @@
 - (void)_updateFloatingHeaderTitleOpacity;
 - (void)_updateFloatingHeaderVisibility;
 - (void)sublayoutDidChangeLastBaseline:(id)arg1;
-- (void)_updateSplitLayout;
+- (void)_updateOverlayInsets;
 - (void)_updateLateralMargin;
 - (void)_updateZoomLevel;
 - (void)update;

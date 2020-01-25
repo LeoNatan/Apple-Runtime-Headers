@@ -34,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 - (void).cxx_destruct;
-- (_Bool)_canShowWhileLocked;
 - (void)updateSelectionIndicatorConstraints;
 - (void)createSelectionIndicatorView;
 - (void)viewDidLayoutSubviews;

@@ -7,6 +7,7 @@
 #import <ConversationKit/CNKStagingAreaViewController.h>
 
 @interface CNKStagingAreaViewController (ConversationKit)
+- (void)resetEffectsState;
 - (void)didCreateTableViewForInCallControlsViewController:(id)arg1;
 - (void)inCallControlsViewController:(id)arg1 didTap:(long long)arg2;
 @end

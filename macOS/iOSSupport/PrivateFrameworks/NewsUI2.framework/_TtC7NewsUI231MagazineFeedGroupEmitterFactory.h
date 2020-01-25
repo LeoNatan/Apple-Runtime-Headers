@@ -9,6 +9,7 @@
 @interface _TtC7NewsUI231MagazineFeedGroupEmitterFactory : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: tagService
+    // Error parsing type: , name: headlineService
     // Error parsing type: , name: topicClusteringService
     // Error parsing type: , name: personalizationService
     // Error parsing type: , name: magazineCategoryService
@@ -20,6 +21,11 @@
     // Error parsing type: , name: diversityPenalty
     // Error parsing type: , name: issueModelFactory
     // Error parsing type: , name: issueService
+    // Error parsing type: , name: sectionHeadlinesService
+    // Error parsing type: , name: channelPromotedArticlesService
+    // Error parsing type: , name: newspaperGroupService
+    // Error parsing type: , name: formatService
+    // Error parsing type: , name: feedPersonalizingEngine
 }
 
 @end

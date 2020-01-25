@@ -20,16 +20,19 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) id <FCHeadlineProviding> originalHeadline;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (BOOL)conformsToProtocol:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *shortExcerpt;
 @property(readonly, nonatomic) FCTopStoriesStyleConfiguration *storyStyle;
 @property(readonly, nonatomic) unsigned long long storyType;
 @property(readonly, copy, nonatomic) NSDate *publishDate;
 @property(readonly, copy, nonatomic) NSDate *displayDate;
 @property(readonly, copy, nonatomic) NSString *title;
+@property(readonly, copy) NSString *description;
 - (id)initWithHeadline:(id)arg1 overrideMetadata:(id)arg2 configuration:(id)arg3;
 
 // Remaining properties
@@ -53,7 +56,6 @@
 @property(readonly, nonatomic) FCCoverArt *coverArt;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic, getter=isDeleted) BOOL deleted;
-@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isDisplayingAsNativeAd) BOOL displayAsNativeAd;
 @property(readonly, copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property(readonly, nonatomic, getter=isExplicitContent) BOOL explicitContent;
@@ -106,7 +108,6 @@
 @property(readonly, copy, nonatomic) NSArray *relatedArticleIDs;
 @property(readonly, nonatomic) unsigned long long role;
 @property(readonly, nonatomic) FCFeedPersonalizedItemScoreProfile *scoreProfile;
-@property(readonly, copy, nonatomic) NSString *shortExcerpt;
 @property(readonly, nonatomic) BOOL showBundleSoftPaywall;
 @property(readonly, nonatomic) BOOL showMinimalChrome;
 @property(readonly, nonatomic) BOOL showPublisherLogo;

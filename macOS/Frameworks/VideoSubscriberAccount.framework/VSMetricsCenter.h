@@ -17,7 +17,6 @@
     BOOL _currentIdentityProviderSupportsSTB;
     BOOL _currentIdentityProviderIsFullySupported;
     BOOL _fetchedSetTopBoxProfile;
-    BOOL _hasSetTopBoxProfile;
     NSObject<OS_dispatch_queue> *_eventQueue;
     VSPreferences *_preferences;
     VSRemoteNotifier *_remoteNotifier;
@@ -27,7 +26,6 @@
 }
 
 + (id)sharedMetricsCenter;
-@property(nonatomic) BOOL hasSetTopBoxProfile; // @synthesize hasSetTopBoxProfile=_hasSetTopBoxProfile;
 @property(retain, nonatomic) VSSetTopBoxProfile *stbProfile; // @synthesize stbProfile=_stbProfile;
 @property(nonatomic) BOOL fetchedSetTopBoxProfile; // @synthesize fetchedSetTopBoxProfile=_fetchedSetTopBoxProfile;
 @property(nonatomic) BOOL currentIdentityProviderIsFullySupported; // @synthesize currentIdentityProviderIsFullySupported=_currentIdentityProviderIsFullySupported;
@@ -41,6 +39,7 @@
 - (void).cxx_destruct;
 - (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
 - (void)accountStoreDidChange;
+- (BOOL)hasSetTopBoxProfile;
 - (BOOL)currentProviderIsSetTopBoxProvider;
 - (id)userID;
 - (id)flexibleBaseFields;

@@ -18,6 +18,7 @@
 + (id)groupEmitterIdentifier;
 @property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (_Bool)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;

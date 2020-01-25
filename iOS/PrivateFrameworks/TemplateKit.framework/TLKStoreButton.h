@@ -25,8 +25,7 @@
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;
 @property(copy, nonatomic) NSString *title;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)intrinsicContentSize;
+- (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)init;

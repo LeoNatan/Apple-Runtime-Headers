@@ -14,7 +14,8 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)allocateRanks;
+- (void)sideCarZoneWasReset;
+- (_Bool)allocateRanksWhenCaughtUp:(_Bool)arg1;
 - (_Bool)_propagateFolderDeletesToTheirChildren;
 - (long long)_propagateDeleteToChildrenOfItemID:(id)arg1;
 - (_Bool)validateItemsLoggingToFile:(struct __sFILE *)arg1 db:(id)arg2;

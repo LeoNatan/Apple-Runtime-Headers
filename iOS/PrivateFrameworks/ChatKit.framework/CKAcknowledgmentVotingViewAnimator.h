@@ -22,7 +22,7 @@
 @property(nonatomic) __weak id <CKAcknowledgmentVotingViewAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *animationContainerView; // @synthesize animationContainerView=_animationContainerView;
 - (void).cxx_destruct;
-- (void)startAnimation;
+- (void)startAnimationWithDelay:(double)arg1;
 - (id)initWithCollectionView:(id)arg1 animatorModelItems:(id)arg2 acknowledgmentTypes:(id)arg3;
 
 @end

@@ -12,6 +12,7 @@
 @protocol CPTemplateProviding <NSObject>
 - (void)presentVoiceTemplate:(CPVoiceControlTemplate *)arg1 withProxyDelegate:(id <CPVoiceControlTemplateDelegate>)arg2 animated:(NSNumber *)arg3 reply:(void (^)(id <CPVoiceTemplateProviding>))arg4;
 - (void)pushSearchTemplate:(CPSearchTemplate *)arg1 withProxyDelegate:(id <CPSearchClientTemplateDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPSearchTemplateProviding>))arg5;
+- (void)requestNavigationProviderForMapTemplate:(CPMapTemplate *)arg1 withReply:(void (^)(id <CPNavigationSessionProviding>))arg2;
 - (void)pushMapTemplate:(CPMapTemplate *)arg1 withProxyDelegate:(id <CPMapClientTemplateDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPMapTemplateProviding>))arg5;
 - (void)pushListTemplate:(CPListTemplate *)arg1 withProxyDelegate:(id <CPListClientTemplateDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPListTemplateProviding>))arg5;
 - (void)pushGridTemplate:(CPGridTemplate *)arg1 withProxyDelegate:(id <CPGridTemplateClientDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPGridTemplateProviding>))arg5;

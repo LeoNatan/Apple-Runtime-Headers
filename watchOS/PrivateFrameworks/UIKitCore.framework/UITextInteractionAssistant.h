@@ -37,6 +37,7 @@
     int _textInteractionMode;
     UITextInteraction *_externalInteractions;
     UITouch *_synthesizedTouchForLollipopForwarding;
+    _Bool _detaching;
 }
 
 + (int)_nextGranularityInCycle:(int)arg1;

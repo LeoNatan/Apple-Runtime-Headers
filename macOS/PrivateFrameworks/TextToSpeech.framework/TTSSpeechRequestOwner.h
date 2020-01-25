@@ -33,7 +33,7 @@
 - (void)stopCurrentSpeechRequestAtMark:(long long)arg1 waitUntilStopped:(BOOL)arg2;
 - (void)startSpeechRequest:(id)arg1;
 - (BOOL)isSystemSpeakingOnBehalfOfCurrentConnection;
-- (id)availableVoicesForLanguageCode:(id)arg1;
+- (id)availableVoicesForLanguageCode:(id)arg1 queryingMobileAssets:(BOOL)arg2;
 - (void)_setRequest:(id)arg1;
 - (void)dealloc;
 - (id)init;

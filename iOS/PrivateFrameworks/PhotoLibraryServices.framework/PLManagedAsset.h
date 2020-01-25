@@ -816,6 +816,7 @@
 - (_Bool)isValidForPersistence;
 - (_Bool)setupPlaceholderAssetWithRequiredPropertiesFromSourceAsset:(id)arg1 assetUUID:(id)arg2 placeholderAssetMomentShareUUID:(id)arg3 bakeInAdjustmentsFromSourceAsset:(_Bool)arg4 flattenLivePhoto:(_Bool)arg5 copyTitleDescriptionAndKeywords:(_Bool)arg6 copySnowplowResources:(_Bool)arg7 library:(id)arg8;
 - (unsigned long long)masterResourceTypeForAdjustedAssetResourceType:(unsigned long long)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(_Bool)arg3;
+- (unsigned long long)resourceTypeForUnadjustedFlattenedLivePhotoAssetResourceType:(unsigned long long)arg1 sourceAsset:(id)arg2;
 - (id)sortPlaceholderCloudResourcesByOrderOfCloudReReference:(id)arg1;
 - (id)filterSnowplowResourcesFromPlaceholderCloudResources:(id)arg1;
 - (_Bool)placeholder_shouldPerformServerCopy;

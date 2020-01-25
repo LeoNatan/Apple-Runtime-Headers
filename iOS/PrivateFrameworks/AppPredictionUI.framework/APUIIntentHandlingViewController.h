@@ -62,6 +62,7 @@
 - (void)beginRunningIntent;
 - (void)setPreferredPlatterContentHeight:(double)arg1 notifyDelegate:(_Bool)arg2;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithIntent:(id)arg1;
 
 // Remaining properties

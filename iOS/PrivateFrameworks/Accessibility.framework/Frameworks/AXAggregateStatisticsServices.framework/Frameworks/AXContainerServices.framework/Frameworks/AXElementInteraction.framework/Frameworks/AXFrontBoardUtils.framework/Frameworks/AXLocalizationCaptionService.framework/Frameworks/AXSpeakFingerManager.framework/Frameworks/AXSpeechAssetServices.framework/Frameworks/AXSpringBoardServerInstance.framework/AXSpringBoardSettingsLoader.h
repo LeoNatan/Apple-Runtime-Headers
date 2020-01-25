@@ -29,6 +29,7 @@
 + (void)_registerForHomeButtonBreakageNotification;
 + (void)_performValidations;
 + (void)_initializeDelayedSpringBoardSettings;
++ (void)_checkForDataResetFile;
 + (void)initialize;
 + (void)_findNoteFromLoginSessionWithCompletion:(CDUnknownBlockType)arg1;
 + (void)_registerForNotifications;

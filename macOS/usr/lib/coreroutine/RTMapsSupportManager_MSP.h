@@ -8,10 +8,13 @@
 
 #import <coreroutine/MSPQueryDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, RTTimer, RTTimerManager;
+@class MSPFavoritesContainer, MSPHistoryContainer, MSPPinnedPlacesContainer, NSMutableDictionary, NSString, RTTimer, RTTimerManager;
 
 @interface RTMapsSupportManager_MSP : RTMapsSupportManager <MSPQueryDelegate>
 {
+    MSPFavoritesContainer *_favoritesContainer;
+    MSPHistoryContainer *_historyContainer;
+    MSPPinnedPlacesContainer *_pinnedPlacesContainer;
     RTTimerManager *_timerManager;
     RTTimer *_queryTimer;
     NSMutableDictionary *_queryMap;
@@ -43,6 +46,7 @@
 - (void)_createHistoryPlaceDisplaysQuery:(id)arg1;
 - (void)_createFavoritesQuery:(id)arg1;
 - (void)_createQueries;
+- (void)_createContainers;
 - (void)_setup;
 - (void)setup;
 - (id)initWithMapServiceManager:(id)arg1 timerManager:(id)arg2;

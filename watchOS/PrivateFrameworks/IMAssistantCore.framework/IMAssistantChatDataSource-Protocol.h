@@ -9,6 +9,7 @@
 @class IMChat, IMHandle, NSArray, NSString;
 
 @protocol IMAssistantChatDataSource <NSObject>
+@property(readonly, nonatomic) _Bool blackholedChatsExist;
 @property(readonly, nonatomic) NSArray *allExistingChats;
 - (NSArray *)chatGUIDsForChat:(IMChat *)arg1;
 - (IMChat *)chatForIMHandles:(NSArray *)arg1;

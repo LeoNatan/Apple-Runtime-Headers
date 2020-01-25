@@ -31,7 +31,7 @@
 + (id)_cachedMetadataTableSchema;
 + (id)_messageReferencesTableSchema;
 + (id)recipientsTableSchemaAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
-+ (id)partialMessagesTableSchemaAndAssociationsToResolve:(id *)arg1;
++ (id)partialMessagesTableSchemaAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)bitExpressionForAttachments;
 + (id)bitExpressionForConversationFlag:(unsigned long long)arg1;
@@ -50,6 +50,7 @@
 - (id)requestContentForMessageObjectID:(id)arg1 requestID:(unsigned long long)arg2 options:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
 - (id)validMailboxesForPrediction;
+- (id)cachedDatabaseIDsDictionaryForMessageIDHashes:(id)arg1;
 - (void)_checkCachedMetadataRowLimitWithConnection:(id)arg1;
 - (void)_setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageIDHash:(id)arg3;
 - (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;

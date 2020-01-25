@@ -22,6 +22,7 @@
     _Bool _canHandleVisibleRectRejection;
     _Bool _enableBestCropRect;
     unsigned char _mediaFlags;
+    _Bool _fillSafeAreaTopInset;
     _Bool _hideIncompleteLastRow;
     _Bool _mediaTargetSizeIgnoresSpacing;
     _Bool _loadItemsOutsideAnchorViewport;
@@ -52,6 +53,7 @@
 @property(nonatomic) _Bool mediaTargetSizeIgnoresSpacing; // @synthesize mediaTargetSizeIgnoresSpacing=_mediaTargetSizeIgnoresSpacing;
 @property(nonatomic) _Bool hideIncompleteLastRow; // @synthesize hideIncompleteLastRow=_hideIncompleteLastRow;
 @property(nonatomic) long long visualItemShift; // @synthesize visualItemShift=_visualItemShift;
+@property(nonatomic) _Bool fillSafeAreaTopInset; // @synthesize fillSafeAreaTopInset=_fillSafeAreaTopInset;
 @property(nonatomic) int presentationType; // @synthesize presentationType=_presentationType;
 @property(nonatomic) unsigned char mediaFlags; // @synthesize mediaFlags=_mediaFlags;
 @property(nonatomic) int mediaKind; // @synthesize mediaKind=_mediaKind;
@@ -73,6 +75,7 @@
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;
 - (void)loadedItemsDidChange;
+- (void)safeAreaInsetsDidChange;
 - (void)visibleRectDidChange;
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;

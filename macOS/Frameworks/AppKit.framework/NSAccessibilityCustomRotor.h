@@ -25,6 +25,7 @@
 @property __weak id <NSAccessibilityElementLoading> itemLoadingDelegate; // @dynamic itemLoadingDelegate;
 @property __weak id <NSAccessibilityCustomRotorItemSearchDelegate> itemSearchDelegate; // @dynamic itemSearchDelegate;
 - (void)dealloc;
+- (void)_setupLoadingTokenCache;
 - (id)initWithLabel:(id)arg1 itemSearchDelegate:(id)arg2;
 - (id)initWithRotorType:(long long)arg1 itemSearchDelegate:(id)arg2;
 - (id)init;

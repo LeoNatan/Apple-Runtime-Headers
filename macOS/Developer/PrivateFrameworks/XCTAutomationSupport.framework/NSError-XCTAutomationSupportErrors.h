@@ -10,6 +10,7 @@
 + (id)_xctas_error:(long long)arg1 userInfo:(id)arg2 description:(id)arg3 arguments:(struct __va_list_tag [1])arg4;
 + (id)_xctas_error:(long long)arg1 userInfo:(id)arg2 description:(id)arg3;
 + (id)_xctas_error:(long long)arg1 description:(id)arg2;
+@property(readonly) BOOL xctas_isUnknownElementError;
 @property(readonly) BOOL xctas_isNoMatchingElementError;
 @end
 

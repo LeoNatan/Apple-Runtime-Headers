@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSString, PXAssetsDataSourceManager, PXCMMActionManager, PXCMMPeopleSuggestionsDataSourceManager, PXCMMPeopleSuggestionsMediaProvider, PXCMMSendBackSuggestionSource, PXRecipient, PXUIMediaProvider;
+@class NSArray, NSDate, NSDictionary, NSString, PXAssetsDataSourceManager, PXCMMActionManager, PXCMMPeopleSuggestionsDataSourceManager, PXCMMPeopleSuggestionsMediaProvider, PXCMMSendBackSuggestionSource, PXRecipient, PXUIMediaProvider;
 @protocol PXDisplayAsset, PXUIImageProvider;
 
 @interface PXCMMContext : NSObject
 {
     BOOL _hideActionMenu;
-    BOOL _publishOriginals;
     BOOL _ppt_presentComposeRecipientView;
     BOOL _ppt_scrollComposeRecipientsView;
     PXAssetsDataSourceManager *_dataSourceManager;
@@ -25,6 +24,7 @@
     NSString *_originalTitle;
     NSString *_title;
     NSString *_subtitle;
+    NSDictionary *_assetPreparationOptions;
     PXCMMSendBackSuggestionSource *_sendBackSuggestionSource;
     id <PXDisplayAsset> _posterAsset;
     id <PXUIImageProvider> _posterMediaProvider;
@@ -54,7 +54,7 @@
 @property(retain, nonatomic) id <PXUIImageProvider> posterMediaProvider; // @synthesize posterMediaProvider=_posterMediaProvider;
 @property(retain, nonatomic) id <PXDisplayAsset> posterAsset; // @synthesize posterAsset=_posterAsset;
 @property(retain, nonatomic) PXCMMSendBackSuggestionSource *sendBackSuggestionSource; // @synthesize sendBackSuggestionSource=_sendBackSuggestionSource;
-@property(nonatomic) BOOL publishOriginals; // @synthesize publishOriginals=_publishOriginals;
+@property(copy, nonatomic) NSDictionary *assetPreparationOptions; // @synthesize assetPreparationOptions=_assetPreparationOptions;
 @property(nonatomic) BOOL hideActionMenu; // @synthesize hideActionMenu=_hideActionMenu;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

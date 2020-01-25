@@ -16,6 +16,7 @@
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityAttributedValue;
 - (id)accessibilityLabel;
+- (long long)_axCompareStyle:(long long)arg1 toStyle:(long long)arg2;
 - (unsigned long long)_accessibilityDownloadState;
 - (_Bool)isAccessibilityElement;
 - (id)_accessibilityEnclosingVUICardCollectionViewCell;

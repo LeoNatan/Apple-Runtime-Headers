@@ -52,6 +52,7 @@
 - (void)fixOrphanedFiles:(CDUnknownBlockType)arg1;
 - (void)rebuildLibrary:(CDUnknownBlockType)arg1;
 - (void)moveLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)prepareToOpenAsset:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)applyPendingUpdates:(CDUnknownBlockType)arg1;
 - (void)migrateBook:(id)arg1 withMetadata:(id)arg2 withCopy:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)evictBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;

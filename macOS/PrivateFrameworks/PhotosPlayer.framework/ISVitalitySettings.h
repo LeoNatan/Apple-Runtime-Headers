@@ -28,6 +28,7 @@
 @property(nonatomic) BOOL useLegacyBehavior; // @synthesize useLegacyBehavior=_useLegacyBehavior;
 @property(nonatomic) BOOL shouldPreroll; // @synthesize shouldPreroll=_shouldPreroll;
 - (void).cxx_destruct;
+- (double)maxVitalityDelay;
 - (id)_defaultSettings;
 - (double)maximumDelayBeforePlayback;
 - (double)minimumVisibilityFactor;

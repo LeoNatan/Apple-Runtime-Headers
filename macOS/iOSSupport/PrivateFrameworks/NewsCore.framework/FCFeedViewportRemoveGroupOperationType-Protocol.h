@@ -7,14 +7,12 @@
 #import <NewsCore/NSObject-Protocol.h>
 
 @class FCFeedDescriptor, FCFeedViewport, NSString;
-@protocol FCCoreConfiguration;
 
 @protocol FCFeedViewportRemoveGroupOperationType <NSObject>
 @property(copy, nonatomic) CDUnknownBlockType removeGroupCompletionHandler;
 @property(retain, nonatomic) FCFeedDescriptor *feedDescriptor;
 @property(retain, nonatomic) NSString *groupID;
 @property(retain, nonatomic) FCFeedViewport *viewport;
-@property(copy, nonatomic) id <FCCoreConfiguration> configuration;
 - (void)start;
 @end
 

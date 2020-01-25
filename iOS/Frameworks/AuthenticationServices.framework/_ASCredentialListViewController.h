@@ -6,10 +6,12 @@
 
 #import <AuthenticationServices/_ASExtensionViewController.h>
 
+@class _ASIncomingCallObserver;
 @protocol _ASCredentialListViewControllerDelegate;
 
 @interface _ASCredentialListViewController : _ASExtensionViewController
 {
+    _ASIncomingCallObserver *_callObserver;
     id <_ASCredentialListViewControllerDelegate> _delegate;
 }
 

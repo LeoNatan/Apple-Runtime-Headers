@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <Silex/SXWebContentNavigationHandler-Protocol.h>
+#import <Silex/SWNavigationHandler-Protocol.h>
 
 @class NSString;
 @protocol SXActionManager, SXURLActionFactory;
 
-@interface SXWebContentGenericNavigationHandler : NSObject <SXWebContentNavigationHandler>
+@interface SXWebContentGenericNavigationHandler : NSObject <SWNavigationHandler>
 {
     id <SXActionManager> _actionManager;
     id <SXURLActionFactory> _URLActionFactory;

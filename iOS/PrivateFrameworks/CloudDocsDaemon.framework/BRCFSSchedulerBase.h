@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (long long)updateStamps:(struct throttle_stamps *)arg1 throttle:(id)arg2 now:(long long)arg3;
 - (void)rescheduleSuspendedJobsMatching:(id)arg1 inState:(int)arg2;
 - (struct brc_job_update)insertOrUpdateJobID:(id)arg1 throttle:(id)arg2 withState:(int)arg3 insertedSQLColumn:(id)arg4 insertedSQLValues:(id)arg5 updatedSQLValues:(id)arg6;
-- (void)postponeJobID:(id)arg1 withThrottle:(id)arg2;
+- (unsigned long long)postponeJobID:(id)arg1 withThrottle:(id)arg2;
 - (id)aggregateDescriptionForJobsMatching:(id)arg1 context:(id)arg2;
 - (void)describeInBuffer:(id)arg1 aggregateOfJobsMatching:(id)arg2 context:(id)arg3;
 - (id)descriptionForJobsMatching:(id)arg1 context:(id)arg2;

@@ -83,6 +83,7 @@
 @property(readonly) struct GTTraceContext *traceContext;
 - (void)touch;
 - (void)makeAliasable;
+- (id)newRemoteTextureViewForDevice:(id)arg1;
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 fromRegion:(CDStruct_4c83c94d)arg3 mipmapLevel:(unsigned long long)arg4;
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 bytesPerImage:(unsigned long long)arg3 fromRegion:(CDStruct_4c83c94d)arg4 mipmapLevel:(unsigned long long)arg5 slice:(unsigned long long)arg6;
 - (id)formattedDescription:(unsigned long long)arg1;

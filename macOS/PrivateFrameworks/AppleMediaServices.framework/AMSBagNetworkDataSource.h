@@ -64,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (id)_createRequestWithCookieNames:(id)arg1 storefront:(id)arg2;
 - (id)_baseURLString;
 - (void)_accountStoreDidChange:(id)arg1;
-- (id)valueForURLVariable:(id)arg1;
+- (id)valueForURLVariable:(id)arg1 account:(id)arg2;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (id)bagKeyInfoForKey:(id)arg1;
 @property(readonly, copy) NSString *description;

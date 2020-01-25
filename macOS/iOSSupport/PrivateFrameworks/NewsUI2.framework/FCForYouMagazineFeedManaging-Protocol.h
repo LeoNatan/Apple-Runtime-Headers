@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
-@protocol FCForYouMagazineFeedCursor, FCForYouMagazineFeedGroup;
+#import <NewsUI2/FCForYouBridgedFeedGroupStore-Protocol.h>
 
-@protocol FCForYouMagazineFeedManaging
-- (id <FCForYouMagazineFeedGroup>)knownGroupForIdentifier:(NSString *)arg1;
+@class NSString;
+@protocol FCForYouMagazineFeedCursor;
+
+@protocol FCForYouMagazineFeedManaging <FCForYouBridgedFeedGroupStore>
 - (id <FCForYouMagazineFeedCursor>)knownCursorForIdentifier:(NSString *)arg1;
-- (void)fetchNextGroupFromCursor:(id <FCForYouMagazineFeedCursor>)arg1 completion:(void (^)(id <FCForYouMagazineFeedGroup>, id <FCForYouMagazineFeedCursor>, NSError *))arg2;
+- (void)fetchNextGroupFromCursor:(id <FCForYouMagazineFeedCursor>)arg1 completion:(void (^)(id <FCForYouBridgedFeedGroup>, id <FCForYouMagazineFeedCursor>, NSError *))arg2;
 - (id <FCForYouMagazineFeedCursor>)cursorForTopOfFeed;
 @end
 

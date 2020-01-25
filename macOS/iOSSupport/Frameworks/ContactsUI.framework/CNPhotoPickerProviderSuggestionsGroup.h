@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)maxRecentsAndMonogramsCount;
 - (id)paddedDisplayItems:(id)arg1;
 - (id)providerItems:(id)arg1 withMaxRecentsAndMonogramsCount:(unsigned long long)arg2;
-- (id)removeDuplicateItemsFrom:(id)arg1 withMaxRecentsAndMonogramsCount:(unsigned long long)arg2;
 - (void)prepareDisplayItems:(id)arg1;
 - (id)addSymbolImageName;
 - (id)dedupedSuggestionItemsGroupedByProvider;

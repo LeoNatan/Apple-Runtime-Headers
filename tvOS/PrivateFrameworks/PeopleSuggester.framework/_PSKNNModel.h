@@ -18,8 +18,18 @@
     NSArray *_filterBundleIds;
     _CDInteractionCache *_messageInteractionCache;
     _CDInteractionCache *_shareInteractionCache;
+    unsigned long long __PSKnnTopKShares;
+    unsigned long long __PSKnnMessagesZkwTopNFilter;
+    unsigned long long __PSKnnModelRecencyMarginToPromoteShares;
+    unsigned long long __PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId;
+    unsigned long long __PSKnnModelRecencyMarginToRetainShares;
 }
 
+@property(nonatomic) unsigned long long _PSKnnModelRecencyMarginToRetainShares; // @synthesize _PSKnnModelRecencyMarginToRetainShares=__PSKnnModelRecencyMarginToRetainShares;
+@property(nonatomic) unsigned long long _PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId; // @synthesize _PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId=__PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId;
+@property(nonatomic) unsigned long long _PSKnnModelRecencyMarginToPromoteShares; // @synthesize _PSKnnModelRecencyMarginToPromoteShares=__PSKnnModelRecencyMarginToPromoteShares;
+@property(nonatomic) unsigned long long _PSKnnMessagesZkwTopNFilter; // @synthesize _PSKnnMessagesZkwTopNFilter=__PSKnnMessagesZkwTopNFilter;
+@property(nonatomic) unsigned long long _PSKnnTopKShares; // @synthesize _PSKnnTopKShares=__PSKnnTopKShares;
 @property(retain, nonatomic) _CDInteractionCache *shareInteractionCache; // @synthesize shareInteractionCache=_shareInteractionCache;
 @property(retain, nonatomic) _CDInteractionCache *messageInteractionCache; // @synthesize messageInteractionCache=_messageInteractionCache;
 @property(readonly, nonatomic) NSArray *filterBundleIds; // @synthesize filterBundleIds=_filterBundleIds;
@@ -58,6 +68,7 @@
 - (id)filterSuggestionsFrom:(id)arg1 byFilteringOutSeedRecipients:(id)arg2;
 - (id)rankedMessagesAutocompleteSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 candidates:(id)arg3;
 - (id)rankedAutocompleteSuggestionsWithPredictionContext:(id)arg1 candidates:(id)arg2;
+- (void)updateModelProperities:(id)arg1;
 - (id)initWithK:(unsigned long long)arg1 interactionStore:(id)arg2 filterByBundleIds:(id)arg3 knowledgeStore:(id)arg4 contactResolver:(id)arg5 messageInteractionCache:(id)arg6 shareInteractionCache:(id)arg7;
 
 @end

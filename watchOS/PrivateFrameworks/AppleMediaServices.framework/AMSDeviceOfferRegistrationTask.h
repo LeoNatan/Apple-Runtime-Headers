@@ -8,7 +8,7 @@
 
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
 
-@class ACAccount, NSSet, NSString;
+@class ACAccount, AMSProcessInfo, NSSet, NSString;
 @protocol AMSBagProtocol;
 
 @interface AMSDeviceOfferRegistrationTask : AMSTask <AMSBagConsumer>
@@ -16,6 +16,7 @@
     _Bool _lightweightCheckOnly;
     ACAccount *_account;
     id <AMSBagProtocol> _bag;
+    AMSProcessInfo *_clientInfo;
     NSSet *_offerIdentifiers;
 }
 
@@ -25,6 +26,7 @@
 + (id)bagKeySet;
 @property(nonatomic) _Bool lightweightCheckOnly; // @synthesize lightweightCheckOnly=_lightweightCheckOnly;
 @property(retain, nonatomic) NSSet *offerIdentifiers; // @synthesize offerIdentifiers=_offerIdentifiers;
+@property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;

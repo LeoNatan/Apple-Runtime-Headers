@@ -9,7 +9,7 @@
 #import <CloudDocsDaemon/BRCReachabilityDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCZone-Protocol.h>
 
-@class BRCAccountSession, BRCCreateZoneAndSubscribeOperation, BRCDeadlineSource, BRCItemID, BRCPQLConnection, BRCServerZone, BRCSyncBudgetThrottle, BRCSyncDownOperation, BRCSyncOperationThrottle, BRCSyncUpOperation, BRCThrottleBase, BRCZoneRowID, BRMangledID, CKOperationGroup, NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, brc_task_tracker;
+@class BRCAccountSession, BRCCreateZoneAndSubscribeOperation, BRCDeadlineSource, BRCItemID, BRCPQLConnection, BRCServerZone, BRCSyncBudgetThrottle, BRCSyncDownOperation, BRCSyncOperationThrottle, BRCSyncUpOperation, BRCThrottleBase, BRCZoneRowID, BRMangledID, CKOperationGroup, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSSet, NSString, brc_task_tracker;
 @protocol BRCClientZoneDelegate, NSObject, OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -48,9 +48,13 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_resetTimer;
     NSMutableDictionary *_syncDownBlockToPerformForBookmarkData;
     _Bool _shouldShowiCloudDriveAppInstallationNotification;
+    NSMutableSet *_itemIDsBlockedFromSyncForCZMProcessing;
+    NSMutableDictionary *_itemsBlockedByAssociationForCZMProcessing;
+    NSMutableArray *_blocksWaitingOnCrossZoneMoveProcessing;
     NSMutableDictionary *_onDiskBlockToPerformForItemID;
     NSMutableDictionary *_downloadedBlockToPerformForItemID;
     NSMutableDictionary *_syncDownBlockToPerformForItemID;
+    NSMutableDictionary *_parentsOfCZMFaults;
     NSMutableArray *_nextSyncDownBarriers;
     NSMutableArray *_currentSyncDownBarriers;
     id <NSObject> _hasWorkDidUpdateObserver;
@@ -72,6 +76,8 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) _Bool _t_syncUpBlocked; // @synthesize _t_syncUpBlocked;
 @property(readonly, nonatomic) _Bool _t_syncDownBlocked; // @synthesize _t_syncDownBlocked;
+@property(readonly, nonatomic) NSDictionary *parentsOfCZMFaults; // @synthesize parentsOfCZMFaults=_parentsOfCZMFaults;
+@property(readonly, nonatomic) NSSet *itemIDsBlockedFromSyncForCZMProcessing; // @synthesize itemIDsBlockedFromSyncForCZMProcessing=_itemIDsBlockedFromSyncForCZMProcessing;
 @property(retain, nonatomic) NSDate *lastAttemptedSyncDownDate; // @synthesize lastAttemptedSyncDownDate=_lastAttemptedSyncDownDate;
 @property(readonly, nonatomic) brc_task_tracker *taskTracker; // @synthesize taskTracker=_taskTracker;
 @property(readonly, nonatomic) NSString *osNameRequiredToSync; // @synthesize osNameRequiredToSync=_osNameRequiredToSync;
@@ -88,6 +94,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <BRCClientZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool activated; // @synthesize activated=_activated;
 - (void).cxx_destruct;
+- (void)waitForCrossZoneMoveProcessingWithCompletion:(CDUnknownBlockType)arg1;
+- (void)itemCrossZoneMoved:(id)arg1 toParentID:(id)arg2;
+- (void)itemMovedIntoShareInThisZone:(id)arg1 associatedItemID:(id)arg2;
+- (void)_startDownloadingItemIfNecessary:(id)arg1;
+- (void)_removeItemAndProcess:(id)arg1;
+- (void)_finishedProcessingItemThatMovedToThisZone:(id)arg1;
+- (void)_removeItemFromCZMProcessingIfNotAssociated:(id)arg1;
+- (id)_refreshItemFromDB:(id)arg1;
 - (_Bool)shouldSyncMangledID:(id)arg1;
 - (void)setupOperationForTestsIfNeeded:(id)arg1 recordsToSave:(id)arg2;
 - (void)_t_flushIdleBlocksIfNeeded;
@@ -108,6 +122,8 @@ __attribute__((visibility("hidden")))
 - (void)_appendToString:(id)arg1 descriptionOfFieldNamed:(id)arg2 inResultSet:(id)arg3 pos:(int *)arg4 containsSize:(_Bool)arg5 context:(id)arg6;
 - (long long)throttleHashWithItemID:(id)arg1;
 - (void)networkReachabilityChanged:(_Bool)arg1;
+- (id)syncUpAnalyticsError;
+- (id)syncDownAnalyticsError;
 - (_Bool)removeSyncDownForItemIDBlock:(id)arg1;
 - (_Bool)removeItemIsDownloadedBlock:(id)arg1;
 - (_Bool)removeItemOnDiskBlock:(id)arg1;

@@ -16,6 +16,8 @@
 + (_Bool)wantsSTAREnabled;
 + (_Bool)forceDisableRayTracedAmbientOcclusion;
 + (_Bool)wantsRayTracedAmbientOcclusionEnabled;
++ (id)checkoutFragment;
++ (_Bool)wantsParentToCameraInARAndEnableProbes;
 + (_Bool)wantsOpenInObjectMode;
 + (id)defaultPlanePosition;
 + (_Bool)wantsObjectPlacedWithoutPlane;

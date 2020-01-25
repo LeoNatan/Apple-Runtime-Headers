@@ -56,6 +56,7 @@
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1 issues:(long long *)arg2;
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1;
 + (void)setDeviceOffersCheckEncodingForRequestParameters:(id)arg1;
++ (void)saveDeviceOfferEligibility:(id)arg1;
 + (_Bool)saveDeviceOffersForAccount:(id)arg1 response:(id)arg2 logKey:(id)arg3;
 + (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bag:(id)arg3 logKey:(id)arg4;
 + (void)registerCompanionWithSerialNumber:(id)arg1;

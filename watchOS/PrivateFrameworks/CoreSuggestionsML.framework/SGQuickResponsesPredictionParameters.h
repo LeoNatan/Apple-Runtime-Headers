@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface SGQuickResponsesPredictionParameters : NSObject
 {
     _Bool _isPersonalizationDisabled;
@@ -13,6 +15,8 @@
     _Bool _isPerCategory;
     unsigned int _defaultResponsesToReturn;
     unsigned int _responsesToShowAtTopForDiversity;
+    unsigned int _maxPromptLength;
+    NSString *_promptJoiningString;
     double _weightForCategoryAverage;
     double _weightForCategoryMax;
     double _weightForIndividualModel;
@@ -22,8 +26,12 @@
     double _personalizationExplorationFactor;
     double _personalizationDisplayedPseudocount;
     double _personalizationSelectedPseudocountPerSemanticClass;
+    double _maxPromptWindowSeconds;
 }
 
+@property(readonly, nonatomic) NSString *promptJoiningString; // @synthesize promptJoiningString=_promptJoiningString;
+@property(readonly, nonatomic) double maxPromptWindowSeconds; // @synthesize maxPromptWindowSeconds=_maxPromptWindowSeconds;
+@property(readonly, nonatomic) unsigned int maxPromptLength; // @synthesize maxPromptLength=_maxPromptLength;
 @property(readonly, nonatomic) double personalizationSelectedPseudocountPerSemanticClass; // @synthesize personalizationSelectedPseudocountPerSemanticClass=_personalizationSelectedPseudocountPerSemanticClass;
 @property(readonly, nonatomic) double personalizationDisplayedPseudocount; // @synthesize personalizationDisplayedPseudocount=_personalizationDisplayedPseudocount;
 @property(readonly, nonatomic) double personalizationExplorationFactor; // @synthesize personalizationExplorationFactor=_personalizationExplorationFactor;
@@ -38,6 +46,7 @@
 @property(readonly, nonatomic) _Bool isPerCategory; // @synthesize isPerCategory=_isPerCategory;
 @property(readonly, nonatomic) _Bool isReplyTextRandomized; // @synthesize isReplyTextRandomized=_isReplyTextRandomized;
 @property(readonly, nonatomic) _Bool isPersonalizationDisabled; // @synthesize isPersonalizationDisabled=_isPersonalizationDisabled;
+- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

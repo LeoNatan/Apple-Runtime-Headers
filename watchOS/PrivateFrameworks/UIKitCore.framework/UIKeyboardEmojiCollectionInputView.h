@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (_Bool)_shouldShowRecentlyUsedMedia;
+- (_Bool)memojiSettingEnabled;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shouldDismissModalDisplayView:(id)arg1;
 - (int)didInputSubTree:(id)arg1;

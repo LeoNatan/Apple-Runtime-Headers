@@ -17,7 +17,6 @@
 @property(readonly, nonatomic) GEOClientMetrics *clientMetrics;
 @property(readonly, nonatomic) id <GEORequestCounterTicket> requestCounterTicket;
 @property(readonly, nonatomic) _Bool failedDueToCancel;
-@property(readonly, nonatomic) unsigned int taskIdentifier;
 @property(readonly, nonatomic) unsigned long long incomingPayloadSize;
 @property(readonly, nonatomic) unsigned long long outgoingPayloadSize;
 @property(readonly, nonatomic) _Bool protocolBufferHasPreamble;

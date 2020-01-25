@@ -4,18 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Silex/SXAction.h>
+#import <objc/NSObject.h>
+
+#import <Silex/SXAction-Protocol.h>
 
 @class NSString;
 
-@interface SXPhoneNumberAction : SXAction
+@interface SXPhoneNumberAction : NSObject <SXAction>
 {
     NSString *_phoneNumber;
 }
 
 @property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *type;
 - (id)initWithPhoneNumber:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

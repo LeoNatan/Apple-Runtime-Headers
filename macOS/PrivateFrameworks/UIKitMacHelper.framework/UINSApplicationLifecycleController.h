@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSRunningApplication *_observedRunningApplication;
     NSMutableArray *_windowsHiddenForTermination;
     NSMutableArray *_windowStateForWindowsHiddenForTermination;
+    NSMutableArray *_miniaturizedWindowsToRestoreInDockOnRelaunch;
     _UINSLifecycleWatchdog *_foregroundTransitionWatchdog;
     _UINSLifecycleWatchdog *_backgroundTransitionWatchdog;
     _UINSLifecycleWatchdog *_backgroundTaskWatchdog;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UINSLifecycleWatchdog *backgroundTaskWatchdog; // @synthesize backgroundTaskWatchdog=_backgroundTaskWatchdog;
 @property(retain, nonatomic) _UINSLifecycleWatchdog *backgroundTransitionWatchdog; // @synthesize backgroundTransitionWatchdog=_backgroundTransitionWatchdog;
 @property(retain, nonatomic) _UINSLifecycleWatchdog *foregroundTransitionWatchdog; // @synthesize foregroundTransitionWatchdog=_foregroundTransitionWatchdog;
+@property(retain, nonatomic) NSMutableArray *miniaturizedWindowsToRestoreInDockOnRelaunch; // @synthesize miniaturizedWindowsToRestoreInDockOnRelaunch=_miniaturizedWindowsToRestoreInDockOnRelaunch;
 @property(retain, nonatomic) NSMutableArray *windowStateForWindowsHiddenForTermination; // @synthesize windowStateForWindowsHiddenForTermination=_windowStateForWindowsHiddenForTermination;
 @property(retain, nonatomic) NSMutableArray *windowsHiddenForTermination; // @synthesize windowsHiddenForTermination=_windowsHiddenForTermination;
 @property(nonatomic) BOOL firstWindowCreationEncountered; // @synthesize firstWindowCreationEncountered=_firstWindowCreationEncountered;

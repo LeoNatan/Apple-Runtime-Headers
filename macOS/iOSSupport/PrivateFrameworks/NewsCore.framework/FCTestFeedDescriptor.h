@@ -18,7 +18,8 @@
 @property(nonatomic) BOOL enableSingletonGroups; // @synthesize enableSingletonGroups=_enableSingletonGroups;
 @property(nonatomic) BOOL disableFiltering; // @synthesize disableFiltering=_disableFiltering;
 @property(nonatomic) BOOL disableGroupMerging; // @synthesize disableGroupMerging=_disableGroupMerging;
-- (id)feedGroupEmittersWithConfiguration:(id)arg1;
+- (id)allEmitterClasses;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1 forYouConfig:(id)arg2;
 
 @end
 

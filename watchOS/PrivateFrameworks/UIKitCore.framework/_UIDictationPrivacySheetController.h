@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)dismiss;
 - (void)dealloc;
 - (id)initWithType:(int)arg1;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

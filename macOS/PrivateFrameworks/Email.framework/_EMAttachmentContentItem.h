@@ -49,6 +49,7 @@
 - (void)setAvailableRepresentations:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *availableRepresentations;
 - (void).cxx_destruct;
+- (BOOL)_isSinglePagePDFWithContentURL:(id)arg1;
 - (id)requestRepresentationWithOptions:(id)arg1 delegate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)requestRepresentationWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;

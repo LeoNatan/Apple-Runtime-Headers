@@ -6,9 +6,7 @@
 
 #import <NewsUI2/_TtC7NewsUI233MagazineFeedPaywallViewController.h>
 
-#import <NewsUI2/TUPluggable-Protocol.h>
-
-@interface _TtC7NewsUI233MagazineFeedPaywallViewController (NewsUI21) <TUPluggable>
+@interface _TtC7NewsUI233MagazineFeedPaywallViewController (NewsUI21)
 - (void)relayoutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initializeWithCompletion:(CDUnknownBlockType)arg1;
 @end

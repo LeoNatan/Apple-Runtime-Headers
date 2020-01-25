@@ -73,6 +73,7 @@
 - (void)finishedPPTTestNamed:(id)arg1 isCKLaunchTest:(_Bool)arg2;
 - (void)startPPTTestNamed:(id)arg1;
 - (void)finishedPPTTestNamed:(id)arg1;
+- (void)tearDownRemoteViewIfNeeded;
 - (id)initWithBalloonPlugin:(id)arg1;
 - (id)initWithBalloonPlugin:(id)arg1 dataSource:(id)arg2;
 - (id)initWithBalloonPlugin:(id)arg1 pluginPayloads:(id)arg2;

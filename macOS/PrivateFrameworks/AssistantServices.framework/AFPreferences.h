@@ -209,6 +209,8 @@
 - (BOOL)showServerOnUI;
 - (void)resetSessionLanguage;
 - (void)setDictationSLSLanguagesEnabled:(id)arg1;
+- (void)setForceOfflineRecognitionEnabled:(BOOL)arg1;
+- (BOOL)forceOfflineRecognitionEnabled;
 - (void)getOfflineDictationStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setDictationIsEnabled:(BOOL)arg1;
 - (void)setAssistantIsEnabled:(BOOL)arg1;

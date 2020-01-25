@@ -76,7 +76,7 @@
 - (void)_clearPipelines;
 - (void)_pipelinesLock_resizePipelinesStorageIfNeeded;
 - (id)_createPipelineStateForColorProgram:(id)arg1 shaderFlags:(int)arg2 colorPixelFormat:(unsigned long long)arg3;
-- (_Bool)_handleCompiledRenderPipelineSate:(id)arg1 forColorProgram:(id)arg2 shaderFlags:(int)arg3 colorPixelFormat:(unsigned long long)arg4 pipelineIndex:(long long)arg5;
+- (CDStruct_39b4dbd3)_handleCompiledRenderPipelineState:(id)arg1 forColorProgram:(id)arg2 shaderFlags:(int)arg3 colorPixelFormat:(unsigned long long)arg4 pipelineIndex:(long long)arg5;
 - (CDStruct_39b4dbd3)_pipelineForRenderTexture:(const CDStruct_dcc83465 *)arg1 waitForCompilation:(_Bool)arg2;
 - (void)_checkinRenderState:(id)arg1;
 - (id)_checkoutRenderState;

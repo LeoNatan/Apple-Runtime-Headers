@@ -7,6 +7,7 @@
 @class UIView, UIViewController;
 
 @protocol CNKFaceTimeMultiwayConversationViewControllerDelegate
+- (void)viewControllerDidRequestTemporaryPreventSuspension:(UIViewController *)arg1;
 - (void)viewController:(UIViewController *)arg1 setStatusBarHidden:(_Bool)arg2;
 - (void)viewControllerDidRequestRoutePickerFrom:(UIView *)arg1;
 - (void)viewControllerDidRequestAddParticipants:(UIViewController *)arg1;

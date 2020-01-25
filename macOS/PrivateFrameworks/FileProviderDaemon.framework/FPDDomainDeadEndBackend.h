@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)removeAllFilesWithError:(id *)arg1;
 - (void)currentMaterializedSetSyncAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)enumerateMaterializedSetFromSyncAnchor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)writeCheckReportTo:(id)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2;
 - (void)URLForItemID:(id)arg1 creatingPlaceholderIfMissing:(BOOL)arg2 ignoreAlternateContentsURL:(BOOL)arg3 request:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)updateRootAfterDomainChangeWithError:(id *)arg1;

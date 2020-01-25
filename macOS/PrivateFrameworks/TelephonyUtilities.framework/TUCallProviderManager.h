@@ -29,6 +29,7 @@
 - (void)providersChangedForDataSource:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *providersByIdentifier;
 - (void)launchAppForDialRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)donateUserIntentForProviderWithIdentifier:(id)arg1;
 - (id)providerForFavoritesEntryActionBundleIdentifier:(id)arg1;
 - (id)providerForFavoritesEntry:(id)arg1;
 - (id)providerForRecentCall:(id)arg1;

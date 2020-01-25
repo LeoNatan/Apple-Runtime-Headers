@@ -27,7 +27,7 @@
 @property(nonatomic) unsigned long long savedStoriesCount; // @synthesize savedStoriesCount=_savedStoriesCount;
 - (void).cxx_destruct;
 - (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(_Bool)arg3 personalize:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (id)_sortedEditorialGroupEmittersWithForYouGroupsConfiguration:(id)arg1;
+- (id)_sortedConfigurableGroupEmittersWithForYouGroupsConfiguration:(id)arg1 forYouConfig:(id)arg2;
 - (id)editionFollowingEdition:(id)arg1;
 - (id)editionAtDate:(id)arg1;
 - (long long)feedPersonalizationConfigurationSet;
@@ -35,9 +35,11 @@
 - (long long)feedSortMethod;
 - (id)feedPaginator;
 - (_Bool)shouldFilterFeedGroupEmitter:(id)arg1 withConfiguration:(id)arg2;
+- (_Bool)needsForYouConfig;
 - (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)feedGroupEmittersWithConfiguration:(id)arg1;
-- (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1;
+- (id)allEmitterClasses;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1 forYouConfig:(id)arg2;
+- (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1 forYouConfig:(id)arg2;
 - (id)iAdFeedID;
 - (id)languagesWithSubscriptionController:(id)arg1;
 - (id)name;

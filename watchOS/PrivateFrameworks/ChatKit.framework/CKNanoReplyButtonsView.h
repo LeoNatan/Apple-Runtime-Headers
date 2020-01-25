@@ -45,8 +45,9 @@
 - (void)tappedArouetButton;
 - (void)tappedEmojiButton;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)_updateDictationButtonVisibilityWithoutLayingOutButtons;
 - (void)_updateArouetButtonVisibilityAndLayoutButtons:(_Bool)arg1;
-- (void)_updateDictationButtonVisibility;
+- (void)_updateDictationButtonEnabled;
 - (void)airplaneModeChanged;
 - (void)_updateSurfButtonVisibilityAndLayoutButtons:(_Bool)arg1;
 - (void)updatePrimaryLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2 buttonTintColor:(id)arg3;

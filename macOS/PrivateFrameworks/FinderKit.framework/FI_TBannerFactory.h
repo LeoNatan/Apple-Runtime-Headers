@@ -11,9 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (int)bannerTypeForContainerNode:(const struct TFENode *)arg1 selectedNode:(const struct TFENode *)arg2 isBackupBrowser:(_Bool)arg3 sharedFolderType:(int *)arg4;
++ (int)bannerTypeForContainerNode:(const struct TFENode *)arg1 isBackupBrowser:(_Bool)arg2;
 + (int)bannerTypeForBanner:(id)arg1;
-+ (id)bannerViewControllerForType:(int)arg1 folderSharingType:(int *)arg2;
++ (id)bannerViewControllerForType:(int)arg1;
 
 @end
 

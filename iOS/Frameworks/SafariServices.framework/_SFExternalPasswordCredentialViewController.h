@@ -25,6 +25,7 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (void)_sceneDidEnterBackground:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (id)init;
 - (void)getCredentialForExternalCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)autoFillWithExternalCredential:(id)arg1;

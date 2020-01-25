@@ -70,6 +70,7 @@
 - (BOOL)receiveResultOnFd:(int)arg1 errorIsFatal:(char *)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)shouldSkip:(const char *)arg1 ofType:(int)arg2;
+- (id)selectiveDescription;
 - (id)description;
 - (id)requestPayload;
 - (id)initWithSource:(id)arg1 andDestination:(id)arg2 andRestartPoint:(id)arg3 andExcludedPaths:(id)arg4 andOptions:(id)arg5;

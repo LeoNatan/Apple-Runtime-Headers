@@ -27,6 +27,7 @@
     _Bool _wifiP2P;
     unsigned char _osVersion;
     _Bool _paired;
+    _Bool _testMode;
     NSString *_accountID;
     NSArray *_batteryInfo;
     SFBLEDevice *_bleDevice;
@@ -48,6 +49,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool testMode; // @synthesize testMode=_testMode;
 @property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned char osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) _Bool wifiP2P; // @synthesize wifiP2P=_wifiP2P;

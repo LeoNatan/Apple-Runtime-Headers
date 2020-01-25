@@ -8,11 +8,12 @@
 
 #import <ScreenTimeUI/CNUIFamilyMemberContactsPresentation-Protocol.h>
 
-@class CNUIFamilyMemberWhitelistedContactsController, NSString, PSSpecifier, STCommunicationLimits;
+@class CNUIFamilyMemberWhitelistedContactsController, NSMutableArray, NSString, PSSpecifier, STCommunicationLimits;
 
 __attribute__((visibility("hidden")))
 @interface STCommunicationLimitsDowntimeDetailListController : PSListController <CNUIFamilyMemberContactsPresentation>
 {
+    _Bool _syncingWhitelistedContacts;
     PSSpecifier *_allowedCommunicationGroupSpecifier;
     PSSpecifier *_allowEveryoneSpecifier;
     PSSpecifier *_allowContactsOnlySpecifier;
@@ -20,12 +21,15 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_allowSpecificContactsSpecifier;
     PSSpecifier *_allowedContactsGroupSpecifier;
     PSSpecifier *_addContactsSpecifier;
+    NSMutableArray *_allowedContactsSpecifiers;
     STCommunicationLimits *_communicationLimits;
     CNUIFamilyMemberWhitelistedContactsController *_whitelistedContactsController;
 }
 
+@property _Bool syncingWhitelistedContacts; // @synthesize syncingWhitelistedContacts=_syncingWhitelistedContacts;
 @property(retain) CNUIFamilyMemberWhitelistedContactsController *whitelistedContactsController; // @synthesize whitelistedContactsController=_whitelistedContactsController;
 @property(retain) STCommunicationLimits *communicationLimits; // @synthesize communicationLimits=_communicationLimits;
+@property(retain) NSMutableArray *allowedContactsSpecifiers; // @synthesize allowedContactsSpecifiers=_allowedContactsSpecifiers;
 @property(retain) PSSpecifier *addContactsSpecifier; // @synthesize addContactsSpecifier=_addContactsSpecifier;
 @property(retain) PSSpecifier *allowedContactsGroupSpecifier; // @synthesize allowedContactsGroupSpecifier=_allowedContactsGroupSpecifier;
 @property(retain) PSSpecifier *allowSpecificContactsSpecifier; // @synthesize allowSpecificContactsSpecifier=_allowSpecificContactsSpecifier;
@@ -34,13 +38,20 @@ __attribute__((visibility("hidden")))
 @property(retain) PSSpecifier *allowEveryoneSpecifier; // @synthesize allowEveryoneSpecifier=_allowEveryoneSpecifier;
 @property(retain) PSSpecifier *allowedCommunicationGroupSpecifier; // @synthesize allowedCommunicationGroupSpecifier=_allowedCommunicationGroupSpecifier;
 - (void).cxx_destruct;
+- (void)_didFinishSyncingWhitelistedContacts;
+- (void)_startSyncingWhitelistedContacts;
+- (void)_updateAllowedCommunicationGroupFooterText:(_Bool)arg1;
+- (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)_selectLeastRestrictiveOptionIfNecessary;
 - (void)dismissPresentedViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)familyMemberContactsDidChange;
 - (long long)_downtimeCommunicationLimitForSpecifier:(id)arg1;
+- (id)_allowedContactDetailLabelText:(id)arg1;
 - (id)_allowedContactsSpecifiers;
 - (id)specifiers;
 - (void)_didFinishEditingCommunicationLimit;

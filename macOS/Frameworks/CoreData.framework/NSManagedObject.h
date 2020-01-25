@@ -20,7 +20,7 @@
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
     struct {
-        id _field1;
+        void *_field1;
         id _field2;
         id _field3;
         id _field4;

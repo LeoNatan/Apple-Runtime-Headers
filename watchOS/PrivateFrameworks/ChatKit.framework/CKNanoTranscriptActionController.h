@@ -6,10 +6,12 @@
 
 #import <PepperUICore/PUICActionController.h>
 
-@class CKConversation, CKNanoChatController, CKTranscriptCollectionViewController;
+#import <ChatKit/STLockoutViewControllerDelegate-Protocol.h>
+
+@class CKConversation, CKNanoChatController, CKTranscriptCollectionViewController, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CKNanoTranscriptActionController : PUICActionController
+@interface CKNanoTranscriptActionController : PUICActionController <STLockoutViewControllerDelegate>
 {
     CKNanoChatController *_chatController;
     CKConversation *_conversation;
@@ -20,12 +22,19 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) CKNanoChatController *chatController; // @synthesize chatController=_chatController;
 - (void).cxx_destruct;
+- (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)shareCurrentLocation;
 - (void)showContactInfo:(id)arg1;
 - (void)reply;
 - (id)selectContactItemWithImage:(id)arg1 action:(SEL)arg2;
 - (void)generateActionItems;
 - (id)initInChatController:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

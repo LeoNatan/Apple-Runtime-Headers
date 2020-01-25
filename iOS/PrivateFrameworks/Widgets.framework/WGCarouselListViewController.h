@@ -67,6 +67,7 @@
 - (void)_updateCarouselEffect;
 - (void)_createProperties;
 - (id)_newCatchupPropertyForCell:(id)arg1;
+- (void)scrollViewDidChangeAdjustedContentInset:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)_updateCarouselAndRevealState;
 - (void)scrollViewDidScroll:(id)arg1;

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <Intents/INFileEnumerable-Protocol.h>
+#import <Intents/INEnumerable-Protocol.h>
 #import <Intents/INJSONSerializable-Protocol.h>
 
 @class NSData, NSString, NSURL;
 
-@interface INFile : NSObject <INFileEnumerable, INJSONSerializable>
+@interface INFile : NSObject <INEnumerable, INJSONSerializable>
 {
     NSData *_memoryMappedFileData;
     BOOL _deletesFileOnDeallocationIfNeeded;
@@ -46,8 +46,7 @@
 @property(readonly) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
-- (void)_intents_enumerateFileURLsWithBlock:(CDUnknownBlockType)arg1 mutate:(BOOL)arg2;
-- (void)_intents_enumerateFilesWithBlock:(CDUnknownBlockType)arg1 mutate:(BOOL)arg2;
+- (BOOL)_intents_enumerateObjectsOfClass:(Class)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 
 // Remaining properties

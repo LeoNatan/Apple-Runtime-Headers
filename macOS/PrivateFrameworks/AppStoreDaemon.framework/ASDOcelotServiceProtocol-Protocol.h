@@ -11,6 +11,7 @@
 @protocol ASDOcelotServiceProtocol <NSObject>
 - (void)topAppsForAccount:(ACAccount *)arg1 completionBlock:(void (^)(NSArray *, NSError *))arg2;
 - (void)subscriptionStateWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
+- (void)subscriptionDetailsWithCompletionBlock:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)sbsyncWithDuration:(NSNumber *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
 - (void)sbsyncWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 - (void)sbsyncIfSubscribedWithAccount:(ACAccount *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;

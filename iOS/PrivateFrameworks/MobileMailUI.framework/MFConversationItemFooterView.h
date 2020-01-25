@@ -14,6 +14,7 @@
     _Bool _shouldArchiveByDefault;
     UIVisualEffectView *_backgroundView;
     UIButton *_seeMoreButton;
+    UIButton *_revealActionsButton;
     id <MFMessageFooterViewDelegate> _delegate;
     MFMessageDisplayMetrics *_displayMetrics;
     NSString *_senderName;
@@ -22,12 +23,10 @@
     double _defaultSeeMoreButtonOriginY;
     UIButton *_trashButton;
     EMCachingContactStore *_contactStore;
-    UIButton *_revealActionsButton;
 }
 
 + (id)nameFont;
 + (id)prefixFont;
-@property(retain, nonatomic) UIButton *revealActionsButton; // @synthesize revealActionsButton=_revealActionsButton;
 @property(retain, nonatomic) EMCachingContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) UIButton *trashButton; // @synthesize trashButton=_trashButton;
 @property(nonatomic) double defaultSeeMoreButtonOriginY; // @synthesize defaultSeeMoreButtonOriginY=_defaultSeeMoreButtonOriginY;
@@ -37,6 +36,7 @@
 @property(copy, nonatomic) NSString *senderName; // @synthesize senderName=_senderName;
 @property(retain, nonatomic) MFMessageDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(nonatomic) __weak id <MFMessageFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) UIButton *revealActionsButton; // @synthesize revealActionsButton=_revealActionsButton;
 @property(retain, nonatomic) UIButton *seeMoreButton; // @synthesize seeMoreButton=_seeMoreButton;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;

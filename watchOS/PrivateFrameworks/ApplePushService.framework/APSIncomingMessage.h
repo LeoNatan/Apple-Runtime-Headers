@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) APSIncomingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int pushFlags;
 @property(nonatomic) unsigned int pushType;
 @property(copy, nonatomic) NSData *tracingUUID;
 @property(nonatomic, getter=isTracingEnabled) _Bool tracingEnabled;

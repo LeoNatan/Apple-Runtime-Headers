@@ -9,7 +9,7 @@
 #import <ContactsUI/ABCardCollectionViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNContactCardWidget-Protocol.h>
 
-@class ABCardCollectionView, ABCardCollectionViewController, ABCardViewStyleProvider, AKCardViewDataSource, CNContact, NSString;
+@class ABCardCollectionView, ABCardCollectionViewController, ABCardViewStyleProvider, AKCardViewDataSource, CNContact, CNUIEditingRules, NSString;
 @protocol CNContactDetailsViewControllerDelegate;
 
 @interface CNContactDetailsViewController : NSViewController <ABCardCollectionViewControllerDelegate, CNContactCardWidget>
@@ -20,12 +20,14 @@
     ABCardViewStyleProvider *_styleProvider;
     AKCardViewDataSource *_dataSource;
     unsigned long long _mode;
+    CNUIEditingRules *_editingRules;
     ABCardCollectionView *_cardCollectionView;
     ABCardCollectionViewController *_cardCollectionViewController;
 }
 
 @property(retain, nonatomic) ABCardCollectionViewController *cardCollectionViewController; // @synthesize cardCollectionViewController=_cardCollectionViewController;
 @property(retain, nonatomic) ABCardCollectionView *cardCollectionView; // @synthesize cardCollectionView=_cardCollectionView;
+@property(retain, nonatomic) CNUIEditingRules *editingRules; // @synthesize editingRules=_editingRules;
 @property(nonatomic) BOOL isUnified; // @synthesize isUnified=_isUnified;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;

@@ -14,6 +14,7 @@
 
 // Remaining properties
 @property(readonly, nonatomic) NSArray *allExistingChats;
+@property(readonly, nonatomic) _Bool blackholedChatsExist;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

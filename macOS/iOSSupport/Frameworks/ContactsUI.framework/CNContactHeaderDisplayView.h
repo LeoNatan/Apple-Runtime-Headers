@@ -77,6 +77,7 @@
 @property(nonatomic) unsigned long long avatarStyle;
 - (void)setShouldShowGemini:(BOOL)arg1;
 - (void)createGeminiViewIfNeeded;
+- (double)defaultMaxHeight;
 - (double)maxHeight;
 - (double)minHeight;
 - (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowImageDrops:(BOOL)arg4 monogramOnly:(BOOL)arg5 delegate:(id)arg6;

@@ -18,6 +18,7 @@
 
 + (BOOL)_isImageAttachment:(id)arg1;
 + (BOOL)_isSharingSenderLocation:(id)arg1 senderName:(id)arg2;
++ (id)_getMergedPrompt:(id)arg1 withParams:(id)arg2;
 - (void).cxx_destruct;
 - (void)trainQuickResponsesForMessageEntity:(id)arg1 withConversationHistory:(id)arg2;
 - (void)dpRecordMessageText:(id)arg1 inLanguage:(id)arg2;

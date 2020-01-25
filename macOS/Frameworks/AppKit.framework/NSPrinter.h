@@ -8,10 +8,11 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 #import <AppKit/NSCopying-Protocol.h>
+#import <AppKit/NSSecureCoding-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface NSPrinter : NSObject <NSCopying, NSCoding>
+@interface NSPrinter : NSObject <NSSecureCoding, NSCopying, NSCoding>
 {
     NSString *_printerName;
     void *_printer;
@@ -21,13 +22,15 @@
     void *_ppdPriv;
 }
 
++ (void)_flushCachedCarbonPrintersByName;
++ (id)_printerForPrinter:(struct OpaquePMPrinter *)arg1;
++ (BOOL)supportsSecureCoding;
 + (id)printerWithType:(id)arg1;
 + (id)printerWithName:(id)arg1;
 + (id)printerTypes;
 + (id)printerNames;
-+ (void)_flushCachedCarbonPrintersByName;
-+ (id)_printerForPrinter:(struct OpaquePMPrinter *)arg1;
 + (id)printerWithName:(id)arg1 domain:(id)arg2 includeUnavailable:(BOOL)arg3;
+- (struct OpaquePMPrinter *)_printer;
 - (id)initWithCoder:(id)arg1;
 - (id)_compatibility_initWithUnkeyedCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -50,7 +53,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)_initWithName:(id)arg1 printer:(struct OpaquePMPrinter *)arg2;
-- (struct OpaquePMPrinter *)_printer;
 - (id)note;
 - (id)host;
 - (id)domain;

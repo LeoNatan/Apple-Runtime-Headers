@@ -12,11 +12,13 @@
 
 @protocol FCFeedGroupEmitting <FCFeedGroupInsertionDescriptor, NSObject>
 + (NSString *)groupEmitterIdentifier;
+@property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (FCFeedGroupEmittingOperation *)operationToEmitGroupWithContext:(FCFeedGroupEmittingContext *)arg1 fromCursor:(FCFeedGroupEmittingCursor *)arg2 toCursor:(FCFeedGroupEmittingCursor *)arg3;
 - (BOOL)wantsToEmitGroupInContext:(FCFeedGroupEmittingContext *)arg1 fromCursor:(FCFeedGroupEmittingCursor *)arg2 toCursor:(FCFeedGroupEmittingCursor *)arg3;
 
 @optional
++ (BOOL)canMergeGroupsUnconditionally;
 @property(readonly, nonatomic) BOOL isRequiredByFollowingEmitters;
 @property(readonly, nonatomic) BOOL requiresHeavyweightContent;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
@@ -24,7 +26,6 @@
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
 - (NSString *)backingChannelTagIDWithConfiguration:(id <FCCoreConfiguration>)arg1;
 - (BOOL)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
-- (BOOL)canMergeGroupsUnconditionally;
 - (BOOL)supportsPagination;
 - (BOOL)canDeferEmittingGroupInContext:(FCFeedGroupEmittingContext *)arg1;
 @end

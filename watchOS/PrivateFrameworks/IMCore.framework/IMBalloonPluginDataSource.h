@@ -12,6 +12,7 @@
 {
     _Bool _payloadInShelf;
     _Bool _initialMessageIsFromMe;
+    _Bool _allowedByScreenTime;
     _Bool _isLast;
     _Bool _isShowingLatestMessageAsBreadcrumb;
     _Bool _hasInvalidatedSize;
@@ -56,6 +57,7 @@
 @property(retain, nonatomic) NSMutableSet *temporaryAttachmentURLs; // @synthesize temporaryAttachmentURLs=_temporaryAttachmentURLs;
 @property(retain, nonatomic) NSArray *pendingAttachmentData; // @synthesize pendingAttachmentData=_pendingAttachmentData;
 @property(nonatomic, setter=setLast:) _Bool isLast; // @synthesize isLast=_isLast;
+@property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
 @property(nonatomic) _Bool initialMessageIsFromMe; // @synthesize initialMessageIsFromMe=_initialMessageIsFromMe;
 @property(readonly, nonatomic) NSURL *URLToOpenOnTapAction; // @synthesize URLToOpenOnTapAction=_URLToOpenOnTapAction;
 @property(retain, nonatomic) NSArray *attachmentGUIDs; // @synthesize attachmentGUIDs=_attachmentGUIDs;
@@ -109,6 +111,7 @@
 - (void)setPayload:(id)arg1 attachments:(id)arg2;
 @property(retain, nonatomic) NSData *payload;
 @property(readonly, nonatomic) NSArray *allPayloads;
+- (void)checkForAllowedByScreenTime;
 - (id)initWithPluginPayload:(id)arg1;
 - (id)initWithMessageGUID:(id)arg1 payload:(id)arg2 dataDetectedResult:(id)arg3 url:(id)arg4;
 

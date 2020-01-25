@@ -55,7 +55,7 @@
 - (id)initForTestingWithAccountRepository:(id)arg1;
 - (id)initForTesting;
 - (id)initWithRemoteConnection:(id)arg1 accountRepository:(id)arg2;
-- (id)_init;
+- (id)initInternal;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

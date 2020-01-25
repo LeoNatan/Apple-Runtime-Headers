@@ -14,18 +14,20 @@
 #import <SafariServices/_SFDialogViewControllerPresenting-Protocol.h>
 #import <SafariServices/_SFWebViewDelegate-Protocol.h>
 #import <SafariServices/_WKInputDelegate-Protocol.h>
+#import <SafariServices/_WKWebAuthenticationPanelDelegate-Protocol.h>
 
-@class NSString, WKWebView, WKWebViewConfiguration, _SFAuthenticationContext, _SFDialogController, _SFFormAutoFillController;
-@protocol SFWebViewControllerDelegate;
+@class NSString, WKWebView, WKWebViewConfiguration, _SFAuthenticationContext, _SFDialog, _SFDialogController, _SFFormAutoFillController;
+@protocol SFWebViewControllerDelegate, _SFAuthenticatorDialog;
 
 __attribute__((visibility("hidden")))
-@interface SFWebViewController : UIViewController <SFFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFDialogControllerDelegate, _SFDialogViewControllerPresenting, _SFWebViewDelegate, _WKInputDelegate, _SFDialogPresenting>
+@interface SFWebViewController : UIViewController <SFFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFDialogControllerDelegate, _SFDialogViewControllerPresenting, _SFWebViewDelegate, _WKInputDelegate, _WKWebAuthenticationPanelDelegate, _SFDialogPresenting>
 {
     _SFFormAutoFillController *_autoFillController;
     _Bool _didFirstLayout;
     _Bool _didFinishDocumentLoad;
     _Bool _shouldSuppressDialogsThatBlockWebProcess;
     NSString *_domainWhereUserDeclinedAutomaticStrongPassword;
+    _SFDialog<_SFAuthenticatorDialog> *_authenticatorDialog;
     _Bool _loading;
     _Bool _didFirstVisuallyNonEmptyLayout;
     _Bool _hasFocusedInputFieldOnCurrentPage;
@@ -53,6 +55,9 @@ __attribute__((visibility("hidden")))
 - (void)presentDialog:(id)arg1 sender:(id)arg2;
 - (void)dialogController:(id)arg1 willPresentDialog:(id)arg2;
 - (long long)dialogController:(id)arg1 presentationPolicyForDialog:(id)arg2;
+- (void)panel:(id)arg1 dismissWebAuthenticationPanelWithResult:(long long)arg2;
+- (void)panel:(id)arg1 updateWebAuthenticationPanel:(long long)arg2;
+- (void)_webView:(id)arg1 runWebAuthenticationPanel:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_webView:(id)arg1 mediaCaptureStateDidChange:(unsigned long long)arg2;
 - (void)_webView:(id)arg1 checkUserMediaPermissionForURL:(id)arg2 mainFrameURL:(id)arg3 frameIdentifier:(unsigned long long)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_webView:(id)arg1 requestUserMediaAuthorizationForDevices:(unsigned long long)arg2 url:(id)arg3 mainFrameURL:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;

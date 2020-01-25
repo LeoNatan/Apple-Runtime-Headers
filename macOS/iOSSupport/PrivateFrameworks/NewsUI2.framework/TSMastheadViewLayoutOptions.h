@@ -14,11 +14,12 @@
     // Error parsing type: , name: layoutMargins
     // Error parsing type: , name: traitCollection
     // Error parsing type: , name: statusBarFrame
+    // Error parsing type: , name: displayOptions
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithBounds:(struct CGRect)arg1 layoutMargins:(struct UIEdgeInsets)arg2 traitCollection:(id)arg3 statusBarFrame:(struct CGRect)arg4;
+- (id)initWithBounds:(struct CGRect)arg1 layoutMargins:(struct UIEdgeInsets)arg2 traitCollection:(id)arg3 statusBarFrame:(struct CGRect)arg4 displayOptions:(id)arg5;
 @property(nonatomic, readonly) UITraitCollection *traitCollection; // @synthesize traitCollection;
 @property(nonatomic, readonly) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins;
 

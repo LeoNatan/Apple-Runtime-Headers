@@ -15,13 +15,11 @@
 {
     NSArray *_emailAddresses;
     NSArray *_phoneNumbers;
-    NSArray *_postalAddresses;
     NSArray *_unknown;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSArray *unknown; // @synthesize unknown=_unknown;
-@property(readonly, copy, nonatomic) NSArray *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(readonly, copy, nonatomic) NSArray *phoneNumbers; // @synthesize phoneNumbers=_phoneNumbers;
 @property(readonly, copy, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 - (void).cxx_destruct;
@@ -31,7 +29,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithEmailAddresses:(id)arg1 phoneNumbers:(id)arg2 postalAddresses:(id)arg3 unknown:(id)arg4;
+- (id)initWithEmailAddresses:(id)arg1 phoneNumbers:(id)arg2 unknown:(id)arg3;
 - (id)initWithBuilder:(id)arg1;
 
 @end

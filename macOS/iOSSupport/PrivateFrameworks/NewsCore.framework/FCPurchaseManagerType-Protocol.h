@@ -5,9 +5,10 @@
 //
 
 @class FCPurchase, NFPromise, NSError, NSString;
-@protocol FCPurchaseManagerDelegate;
+@protocol FCPurchaseFlowOverrideProviderType, FCPurchaseManagerDelegate;
 
 @protocol FCPurchaseManagerType
+@property(retain, nonatomic) id <FCPurchaseFlowOverrideProviderType> purchaseFlowOverrideProvider;
 @property(nonatomic) __weak id <FCPurchaseManagerDelegate> delegate;
 - (BOOL)anyOngoingPurchases;
 - (BOOL)isPurchaseOngoingForTagID:(NSString *)arg1;

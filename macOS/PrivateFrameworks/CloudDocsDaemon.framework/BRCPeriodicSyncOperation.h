@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     BRCContainerScheduler *_scheduler;
     CKServerChangeToken *_metadataChangeToken;
     CKServerChangeToken *_zoneHealthChangeToken;
+    CKServerChangeToken *_sideCarChangeToken;
 }
 
+@property(readonly, nonatomic) CKServerChangeToken *sideCarChangeToken; // @synthesize sideCarChangeToken=_sideCarChangeToken;
 @property(readonly, nonatomic) CKServerChangeToken *zoneHealthChangeToken; // @synthesize zoneHealthChangeToken=_zoneHealthChangeToken;
 @property(readonly, nonatomic) CKServerChangeToken *metadataChangeToken; // @synthesize metadataChangeToken=_metadataChangeToken;
 @property(readonly, nonatomic) BRCContainerScheduler *scheduler; // @synthesize scheduler=_scheduler;
@@ -26,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)scheduleSyncDownIfNeededForZoneID:(id)arg1 zoneIfAny:(id)arg2;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)createActivity;
-- (id)initWithContainerScheduler:(id)arg1 metadataChangeToken:(id)arg2 zoneHealthChangeToken:(id)arg3;
+- (id)initWithContainerScheduler:(id)arg1 metadataChangeToken:(id)arg2 zoneHealthChangeToken:(id)arg3 sideCarChangeToken:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

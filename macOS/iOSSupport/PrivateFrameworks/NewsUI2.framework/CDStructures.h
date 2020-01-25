@@ -32,17 +32,7 @@ struct UIEdgeInsets {
     double _field4;
 };
 
-struct _SXConvertibleValue {
-    double _field1;
-    unsigned long long _field2;
-};
-
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    char _field1;
-    char _field2;
-} CDStruct_7ddbbeae;
 
 typedef struct {
     long long _field1;

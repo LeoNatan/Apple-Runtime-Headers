@@ -13,13 +13,16 @@
     unsigned int _modelId;
     unsigned int _replyTextId;
     unsigned int _responseClassId;
+    _Bool _isCustomResponse;
     struct {
         unsigned int modelId:1;
         unsigned int replyTextId:1;
         unsigned int responseClassId:1;
+        unsigned int isCustomResponse:1;
     } _has;
 }
 
+@property(nonatomic) _Bool isCustomResponse; // @synthesize isCustomResponse=_isCustomResponse;
 @property(nonatomic) unsigned int replyTextId; // @synthesize replyTextId=_replyTextId;
 @property(nonatomic) unsigned int responseClassId; // @synthesize responseClassId=_responseClassId;
 @property(nonatomic) unsigned int modelId; // @synthesize modelId=_modelId;
@@ -32,6 +35,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsCustomResponse;
 @property(nonatomic) _Bool hasReplyTextId;
 @property(nonatomic) _Bool hasResponseClassId;
 @property(nonatomic) _Bool hasModelId;

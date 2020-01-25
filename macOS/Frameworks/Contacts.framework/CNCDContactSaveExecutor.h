@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)contactsLinkedToContact:(id)arg1 inSaveContext:(id)arg2;
-+ (id)contactSaveExecutorLog;
 @property(readonly, nonatomic) CNCDSaveContext *saveContext; // @synthesize saveContext=_saveContext;
 - (void).cxx_destruct;
 - (void)enumerateAddedContacts:(CDUnknownBlockType)arg1;

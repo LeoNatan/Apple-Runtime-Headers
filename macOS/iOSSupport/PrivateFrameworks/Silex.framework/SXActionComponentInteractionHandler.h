@@ -10,12 +10,12 @@
 #import <Silex/SXPostActionHandler-Protocol.h>
 #import <Silex/SXPreviewComponentInteractionHandler-Protocol.h>
 
-@class NSString, SXAction;
-@protocol SXActionManager, SXActionSerializer, SXAnalyticsReportingProvider;
+@class NSString;
+@protocol SXAction, SXActionManager, SXActionSerializer, SXAnalyticsReportingProvider;
 
 @interface SXActionComponentInteractionHandler : NSObject <SXPostActionHandler, SXComponentInteractionHandler, SXPreviewComponentInteractionHandler>
 {
-    SXAction *_action;
+    id <SXAction> _action;
     id <SXActionManager> _actionManager;
     id <SXActionSerializer> _actionSerializer;
     id <SXAnalyticsReportingProvider> _analyticsReportingProvider;
@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) id <SXAnalyticsReportingProvider> analyticsReportingProvider; // @synthesize analyticsReportingProvider=_analyticsReportingProvider;
 @property(readonly, nonatomic) id <SXActionSerializer> actionSerializer; // @synthesize actionSerializer=_actionSerializer;
 @property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
-@property(readonly, nonatomic) SXAction *action; // @synthesize action=_action;
+@property(readonly, nonatomic) id <SXAction> action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (void)commitViewController:(id)arg1;
 - (id)previewViewController;

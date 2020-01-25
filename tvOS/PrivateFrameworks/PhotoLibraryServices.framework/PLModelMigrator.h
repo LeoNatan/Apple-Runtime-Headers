@@ -54,6 +54,7 @@
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+- (_Bool)_repairLegacyMigrationDuplicateVersionCloudResources:(id)arg1;
 - (_Bool)_repairTableThumbFragmentation;
 - (_Bool)_repushAllUserSmartAlbum:(id)arg1;
 - (_Bool)_repairOrphanedProjectAlbumsInStore:(id)arg1;

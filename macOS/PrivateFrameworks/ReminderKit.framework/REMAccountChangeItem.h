@@ -61,6 +61,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) BOOL didChooseToMigrate; // @dynamic didChooseToMigrate;
+@property(nonatomic) BOOL didChooseToMigrateLocally; // @dynamic didChooseToMigrateLocally;
 @property(nonatomic) BOOL didFinishMigration; // @dynamic didFinishMigration;
 @property(copy, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(copy, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;

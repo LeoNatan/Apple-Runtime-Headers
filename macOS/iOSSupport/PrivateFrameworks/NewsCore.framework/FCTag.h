@@ -10,12 +10,13 @@
 #import <NewsCore/FCFeedTheming-Protocol.h>
 #import <NewsCore/FCSectionProviding-Protocol.h>
 #import <NewsCore/FCTagProviding-Protocol.h>
+#import <NewsCore/FCTagStocksFields-Protocol.h>
 #import <NewsCore/FCTopicProviding-Protocol.h>
 
-@class FCAssetHandle, FCColor, FCHeadlineTemplate, FCInterestToken, FCSubscriptionButtonConfiguration, FCTagBanner, FCTextInfo, NSArray, NSData, NSDate, NSString, NTPBFeedConfiguration, NTPBPublisherPaidDescriptionStrings, NTPBTagRecord;
-@protocol FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTopicProviding;
+@class FCAssetHandle, FCColor, FCHeadlineTemplate, FCInterestToken, FCPaywallConfiguration, FCSectionSupergroupKnobs, FCTagBanner, FCTextInfo, NSArray, NSData, NSDate, NSString, NTPBFeedConfiguration, NTPBPublisherPaidDescriptionStrings, NTPBTagRecord;
+@protocol FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTagStocksFields, FCTopicProviding;
 
-@interface FCTag : NSObject <FCTagProviding, FCChannelProviding, FCSectionProviding, FCTopicProviding, FCFeedTheming>
+@interface FCTag : NSObject <FCTagStocksFields, FCTagProviding, FCChannelProviding, FCSectionProviding, FCTopicProviding, FCFeedTheming>
 {
     BOOL _isPublic;
     BOOL _isDeprecated;
@@ -79,7 +80,10 @@
     unsigned long long _groupingEligibility;
     NSArray *_publisherSpecifiedArticleIDs;
     NSDate *_publisherSpecifiedArticleIDsModifiedDate;
-    FCSubscriptionButtonConfiguration *_paidBundleSubscriptionButtonConfiguration;
+    FCPaywallConfiguration *_paidBundlePaywallConfiguration;
+    NSString *_supergroupConfigJson;
+    NSString *_supergroupKnobsJson;
+    FCSectionSupergroupKnobs *_supergroupKnobs;
     NSString *_pptFeedIDOverride;
     FCInterestToken *_tagInterestToken;
     NTPBFeedConfiguration *_feedConfiguration;
@@ -114,7 +118,10 @@
 @property(copy, nonatomic) NTPBFeedConfiguration *feedConfiguration; // @synthesize feedConfiguration=_feedConfiguration;
 @property(retain, nonatomic) FCInterestToken *tagInterestToken; // @synthesize tagInterestToken=_tagInterestToken;
 @property(copy, nonatomic) NSString *pptFeedIDOverride; // @synthesize pptFeedIDOverride=_pptFeedIDOverride;
-@property(readonly, copy, nonatomic) FCSubscriptionButtonConfiguration *paidBundleSubscriptionButtonConfiguration; // @synthesize paidBundleSubscriptionButtonConfiguration=_paidBundleSubscriptionButtonConfiguration;
+@property(readonly, nonatomic) FCSectionSupergroupKnobs *supergroupKnobs; // @synthesize supergroupKnobs=_supergroupKnobs;
+@property(readonly, nonatomic) NSString *supergroupKnobsJson; // @synthesize supergroupKnobsJson=_supergroupKnobsJson;
+@property(readonly, nonatomic) NSString *supergroupConfigJson; // @synthesize supergroupConfigJson=_supergroupConfigJson;
+@property(readonly, copy, nonatomic) FCPaywallConfiguration *paidBundlePaywallConfiguration; // @synthesize paidBundlePaywallConfiguration=_paidBundlePaywallConfiguration;
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate; // @synthesize publisherSpecifiedArticleIDsModifiedDate=_publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs; // @synthesize publisherSpecifiedArticleIDs=_publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) BOOL isArticleReadCountReportingEnabled; // @synthesize isArticleReadCountReportingEnabled=_isArticleReadCountReportingEnabled;
@@ -198,6 +205,8 @@
 @property(readonly, nonatomic) BOOL isWhite;
 @property(readonly, nonatomic) FCTagBanner *bannerImageForMask; // @synthesize bannerImageForMask=_bannerImageForMask;
 @property(readonly, nonatomic) long long feedType;
+@property(readonly, copy, nonatomic) NSString *stocksFeedConfigJSON;
+@property(readonly, nonatomic) id <FCTagStocksFields> stocksFields;
 - (BOOL)_isValidScheme:(id)arg1;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
 - (id)prefetchPurchaseOffer;

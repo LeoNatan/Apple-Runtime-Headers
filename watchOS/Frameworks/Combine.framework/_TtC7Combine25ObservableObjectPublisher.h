@@ -8,7 +8,9 @@
 
 @interface _TtC7Combine25ObservableObjectPublisher : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: subject
+    // Error parsing type: , name: lock
+    // Error parsing type: , name: connections
+    // Error parsing type: , name: identifier
 }
 
 @end

@@ -25,6 +25,8 @@
     unsigned int _threaded:1;
     unsigned int _useCellDataOnly:1;
     _Bool _isUserRequested;
+    _Bool _shouldSign;
+    _Bool _shouldEncrypt;
     unsigned long long _conversationFlags;
     EMMessageObjectID *_originalMessageObjectID;
     MFMailMessage *_originalMessage;
@@ -35,6 +37,8 @@
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 + (id)newWithMessage:(id)arg1;
+@property(nonatomic) _Bool shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
+@property(nonatomic) _Bool shouldSign; // @synthesize shouldSign=_shouldSign;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(retain, nonatomic) MFMailMessage *originalMessage; // @synthesize originalMessage=_originalMessage;
 @property(retain, nonatomic) EMMessageObjectID *originalMessageObjectID; // @synthesize originalMessageObjectID=_originalMessageObjectID;
@@ -48,8 +52,6 @@
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (id)deliverSynchronously;
 - (void)deliverAsynchronously;
-- (_Bool)shouldEncryptMessage;
-- (_Bool)shouldSignMessage;
 - (id)headersForDelivery;
 - (id)originalHeaders;
 - (id)deliveryResult;

@@ -62,6 +62,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)listenForUpdates;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithDelegate:(id)arg1;
 
 // Remaining properties

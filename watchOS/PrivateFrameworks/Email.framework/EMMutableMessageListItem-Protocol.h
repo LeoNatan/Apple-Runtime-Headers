@@ -10,6 +10,7 @@
 @protocol EMCollectionItemID;
 
 @protocol EMMutableMessageListItem <EMMessageListItem>
+@property long long _internalID;
 @property(retain) id <EMCollectionItemID> displayMessageItemID;
 @property(copy) NSArray *mailboxes;
 @property(copy) NSArray *mailboxObjectIDs;

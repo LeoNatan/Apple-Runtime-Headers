@@ -11,9 +11,6 @@
 @interface WFHomeAccessoryConditionalSubjectState : WFConditionalSubjectParameterState
 {
     _Bool _negatesValue;
-    HMHome *_home;
-    HMService *_service;
-    HMCharacteristic *_characteristic;
     NSDictionary *_serializedWFHMServiceParameter;
     NSDictionary *_serializedWFHMCharacteristicSubstitutableState;
     WFHMServiceParameterState *_serviceParameterState;
@@ -41,9 +38,9 @@
 - (void)getContentWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-@property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-@property(readonly, nonatomic) HMService *service; // @synthesize service=_service;
-@property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
+@property(readonly, nonatomic) HMCharacteristic *characteristic;
+@property(readonly, nonatomic) HMService *service;
+@property(readonly, nonatomic) HMHome *home;
 - (id)serializedRepresentation;
 - (id)initWithService:(id)arg1 characteristic:(id)arg2 homeIdentifier:(id)arg3 negatesValue:(_Bool)arg4;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;

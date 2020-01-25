@@ -35,6 +35,7 @@
 @property(nonatomic) _Bool enableLocalVoices;
 @property(nonatomic) _Bool disableAssetCleaning;
 @property(nonatomic) _Bool disableCache;
+@property(nonatomic) _Bool logSensitiveText;
 @property(nonatomic) _Bool enableAudioDump;
 - (id)init;
 

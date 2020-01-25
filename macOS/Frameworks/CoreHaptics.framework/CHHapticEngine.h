@@ -52,7 +52,7 @@
 - (id)init;
 - (BOOL)doInit;
 - (void)dealloc;
-- (void)setMetricsTestModeEnabled:(BOOL)arg1;
+- (void)setMetricsTestModeEnabled;
 - (id)getMetricsForPlayer:(id)arg1;
 @property(nonatomic) BOOL highPriority;
 @property(nonatomic) BOOL muteAudioOnRingerOff;

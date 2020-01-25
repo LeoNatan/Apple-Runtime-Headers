@@ -47,7 +47,7 @@
     NSString *_nameImageMaskWidgetLQURL;
     NSData *_nameImageMetadata;
     NSString *_nameImageURL;
-    NSString *_paidBundleSubscriptionButtonConfigurationJson;
+    NSString *_paidBundlePaywallConfigurationJson;
     NSString *_parentID;
     NSString *_primaryAudience;
     NSString *_publisherPaidAuthorizationURL;
@@ -60,7 +60,10 @@
     NTPBDate *_publisherSpecifiedArticleIdsModifiedDate;
     NSMutableArray *_purchaseOfferableConfigurations;
     NSString *_replacementID;
+    NSString *_stocksFeedConfigurationJson;
     NSString *_subtitle;
+    NSString *_supergroupConfigJson;
+    NSString *_supergroupKnobsJson;
     NSString *_templateJson;
     int _type;
     _Bool _hideAccessoryText;
@@ -102,7 +105,10 @@
 + (Class)allowedStorefrontIDsType;
 + (Class)blockedStorefrontIDsType;
 + (Class)iAdCategoriesType;
-@property(retain, nonatomic) NSString *paidBundleSubscriptionButtonConfigurationJson; // @synthesize paidBundleSubscriptionButtonConfigurationJson=_paidBundleSubscriptionButtonConfigurationJson;
+@property(retain, nonatomic) NSString *supergroupKnobsJson; // @synthesize supergroupKnobsJson=_supergroupKnobsJson;
+@property(retain, nonatomic) NSString *supergroupConfigJson; // @synthesize supergroupConfigJson=_supergroupConfigJson;
+@property(retain, nonatomic) NSString *stocksFeedConfigurationJson; // @synthesize stocksFeedConfigurationJson=_stocksFeedConfigurationJson;
+@property(retain, nonatomic) NSString *paidBundlePaywallConfigurationJson; // @synthesize paidBundlePaywallConfigurationJson=_paidBundlePaywallConfigurationJson;
 @property(retain, nonatomic) NSString *magazineGenre; // @synthesize magazineGenre=_magazineGenre;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSString *archiveIssueListID; // @synthesize archiveIssueListID=_archiveIssueListID;
@@ -167,7 +173,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasPaidBundleSubscriptionButtonConfigurationJson;
+@property(readonly, nonatomic) _Bool hasSupergroupKnobsJson;
+@property(readonly, nonatomic) _Bool hasSupergroupConfigJson;
+@property(readonly, nonatomic) _Bool hasStocksFeedConfigurationJson;
+@property(readonly, nonatomic) _Bool hasPaidBundlePaywallConfigurationJson;
 @property(readonly, nonatomic) _Bool hasMagazineGenre;
 @property(readonly, nonatomic) _Bool hasLanguage;
 @property(readonly, nonatomic) _Bool hasArchiveIssueListID;

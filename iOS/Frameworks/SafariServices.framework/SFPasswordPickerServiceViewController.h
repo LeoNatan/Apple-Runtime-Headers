@@ -14,7 +14,7 @@
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 #import <SafariServices/_SFAuthenticationContextDelegate-Protocol.h>
 
-@class NSArray, NSString, NSURL, SFPasswordPickerViewController, _ASPasswordCredentialAuthenticationViewController, _SFAuthenticationContext;
+@class NSArray, NSString, NSURL, SFPasswordPickerViewController, _ASIncomingCallObserver, _ASPasswordCredentialAuthenticationViewController, _SFAuthenticationContext;
 
 __attribute__((visibility("hidden")))
 @interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <SFCredentialProviderExtensionManagerObserver, _ASCredentialListViewControllerDelegate, _ASPasswordCredentialAuthenticationViewControllerDelegate, _SFAuthenticationClient, _SFAuthenticationContextDelegate, UIPresentationControllerDelegatePrivate, SFPasswordPickerServiceViewControllerProtocol>
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSArray *_externallyVerifiedAssociatedDomains;
     double _authenticationGracePeriod;
     CDUnknownBlockType _presentCredentialsHandler;
+    _ASIncomingCallObserver *_callObserver;
 }
 
 + (id)_exportedInterface;

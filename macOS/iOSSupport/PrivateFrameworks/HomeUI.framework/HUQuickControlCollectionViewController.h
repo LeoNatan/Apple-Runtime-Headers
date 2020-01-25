@@ -57,6 +57,7 @@
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)viewLayoutMarginsDidChange;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithItemManager:(id)arg1;

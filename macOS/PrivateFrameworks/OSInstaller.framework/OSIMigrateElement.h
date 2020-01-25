@@ -38,7 +38,6 @@
 - (void)engineStarted;
 - (BOOL)_cleanupPath:(id)arg1 saveAllFiles:(BOOL)arg2 onSystem:(id)arg3 error:(id *)arg4;
 - (void)_doCleanupOnArchiveReturningError:(id *)arg1 onSystem:(id)arg2;
-- (BOOL)_createMacBuddyCookie;
 - (BOOL)_deleteRegistrationCookie;
 - (void)_mergeInstallHistory;
 - (double)estimatedTimeToComplete;

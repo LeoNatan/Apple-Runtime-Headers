@@ -6,10 +6,12 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class WFHomeManager;
+#import <WorkflowUI/WFHomeManagerEventObserver-Protocol.h>
+
+@class NSString, WFHomeManager;
 @protocol WFAutomationTypeChooserViewControllerDelegate;
 
-@interface WFAutomationTypeChooserViewController : UITableViewController
+@interface WFAutomationTypeChooserViewController : UITableViewController <WFHomeManagerEventObserver>
 {
     id <WFAutomationTypeChooserViewControllerDelegate> _delegate;
     WFHomeManager *_homeManager;
@@ -23,10 +25,17 @@
 - (void)choosePersonalAutomation:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)homeManagerDidUpdateHomes:(id)arg1;
 - (_Bool)isModalInPresentation;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithHomeManager:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

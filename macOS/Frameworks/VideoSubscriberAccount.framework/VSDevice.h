@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) unsigned long long deviceType;
 @property(readonly, nonatomic, getter=isRunningACustomerBuild) BOOL runningACustomerBuild;
 @property(readonly, nonatomic, getter=isRunningAnInternalBuild) BOOL runningAnInternalBuild;
+- (void)fetchDeviceManagedSetTopBoxProfileWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSetTopBoxProfileWithCompletion:(CDUnknownBlockType)arg1;
 - (id)accountDeletionConfirmationMessageForIdentityProviderDisplayName:(id)arg1;
 - (id)developerIdentityProviderDeletionConfirmationMessage;

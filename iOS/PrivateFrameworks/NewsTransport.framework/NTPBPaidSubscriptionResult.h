@@ -28,6 +28,7 @@
     int _resultType;
     NSString *_sectionId;
     NSString *_sourceChannelId;
+    int _storekitError;
     NSData *_subscriptionPurchaseSessionId;
     _Bool _arrivedFromAd;
     _Bool _sawSubscriptionSheet;
@@ -37,6 +38,7 @@
         unsigned int paidSubscriptionConversionPointType:1;
         unsigned int parentFeedType:1;
         unsigned int resultType:1;
+        unsigned int storekitError:1;
         unsigned int arrivedFromAd:1;
         unsigned int sawSubscriptionSheet:1;
         unsigned int subscriptionOnlyArticlePreview:1;
@@ -68,6 +70,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsStorekitError:(id)arg1;
+- (id)storekitErrorAsString:(int)arg1;
+@property(nonatomic) _Bool hasStorekitError;
+@property(nonatomic) int storekitError; // @synthesize storekitError=_storekitError;
 @property(readonly, nonatomic) _Bool hasIssueData;
 @property(readonly, nonatomic) _Bool hasParentFeedId;
 @property(readonly, nonatomic) _Bool hasGroupFeedId;

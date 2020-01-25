@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)exportedInterface;
 + (id)passwordServiceViewControllerName;
 - (void)presentExternalPasswordCredentialRemoteViewController;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

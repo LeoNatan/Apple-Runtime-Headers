@@ -17,6 +17,7 @@
 - (NSArray *)setupInContainerView:(UIView *)arg1;
 
 @optional
++ (struct CGSize)intrinsicLockScreenContentSizeForOrientation:(long long)arg1;
 @property(readonly, nonatomic) _Bool canFixupDisplayItemAttributes;
 - (NSSet *)displayItemIdentifiersForPartWithIdentifier:(NSString *)arg1;
 - (NSSet *)regionIdentifiersForPartWithIdentifier:(NSString *)arg1;

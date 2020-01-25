@@ -22,6 +22,7 @@
 - (void)interstitialAdDidUnload:(id)arg1;
 - (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (void)interstitialAdDidLoad:(id)arg1;
+- (void)missedOpportunityToFill;
 - (id)initWithContext:(id)arg1 andCompletionBlock:(CDUnknownBlockType)arg2;
 
 // Remaining properties

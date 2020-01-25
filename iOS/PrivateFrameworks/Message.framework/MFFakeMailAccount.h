@@ -25,7 +25,7 @@
 - (_Bool)shouldFetchAgainWithError:(id)arg1 foregroundRequest:(_Bool)arg2;
 - (id)flagChangesForMailboxPath:(id)arg1 UID:(unsigned int)arg2 connectTime:(double)arg3;
 - (void)invalidate;
-- (id)connectionForStore:(id)arg1 delegate:(id)arg2 options:(int)arg3;
+- (id)connectionForStore:(id)arg1 delegate:(id)arg2 options:(int)arg3 failedToSelectMailbox:(_Bool *)arg4;
 - (void)setCachedConnection:(id)arg1;
 - (int)cachePolicy;
 - (unsigned int)minID;

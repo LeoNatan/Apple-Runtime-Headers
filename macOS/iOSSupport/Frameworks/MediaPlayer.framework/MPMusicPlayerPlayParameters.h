@@ -16,9 +16,11 @@
     NSDictionary *_dictionary;
     MPIdentifierSet *_identifiers;
     NSString *_itemKind;
+    NSString *_itemID;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic, getter=isLibraryContent) BOOL libraryContent; // @synthesize libraryContent=_libraryContent;
 @property(readonly, copy, nonatomic) NSString *itemKind; // @synthesize itemKind=_itemKind;
 @property(readonly, copy, nonatomic) MPIdentifierSet *identifiers; // @synthesize identifiers=_identifiers;

@@ -46,6 +46,7 @@
         unsigned int _deliversUpdatesInTouchesMoved:1;
         unsigned int _isPredictedTouch:1;
         unsigned int _didDispatchAsEnded:1;
+        unsigned int _analyticsUsedByAllowedGesture:1;
     } _touchFlags;
     _UITouchPredictor *_touchPredictor;
     BOOL _eaten;
@@ -93,6 +94,7 @@
 @property(nonatomic, setter=_setPathIndex:) unsigned char _pathIndex; // @synthesize _pathIndex;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_isAnalyticsUsedByAllowedGesture, setter=_setAnalyticsUsedByAllowedGesture:) BOOL _analyticsUsedByAllowedGesture;
 - (void)_clearForReenteringHoverInWindow:(id)arg1;
 - (id)_rehitTest;
 - (void)_willBeDispatchedAsEnded;

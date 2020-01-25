@@ -117,6 +117,7 @@
 - (id)messageAcknowledgmentPollingImageNameForAcknowledgmentType:(int)arg1;
 - (id)messageAcknowledgmentImageNameForType:(int)arg1;
 @property(readonly, nonatomic) NSArray *messageAcknowledgmentPickerBarAcknowledgmentOrder;
+@property(readonly, nonatomic) float messageAcknowledgementVotingViewHeight;
 @property(readonly, nonatomic) UIFont *messageAcknowledgmentVoteCountFont;
 @property(readonly, nonatomic) struct CGSize aggregateAcknowledgmentTranscriptBalloonSize;
 @property(readonly, nonatomic) struct CGSize messageAcknowledgmentPickerBarOffsetFromBalloon;
@@ -529,6 +530,9 @@
 @property(readonly, nonatomic) _Bool showPendingInConversationList;
 @property(readonly, nonatomic) Class conversationListNavigationControllerClass;
 @property(readonly, nonatomic) Class conversationListTableViewClass;
+@property(readonly, nonatomic) UIFont *filterCellTitleFont;
+- (void)setupNavBarAppearanceWithNavigationController:(id)arg1 withBackgroundColor:(id)arg2;
+- (void)setupNavBarAppearanceWithNavigationController:(id)arg1;
 @property(readonly, nonatomic) NSArray *acceptableUTIs;
 @property(readonly, nonatomic) UIImage *chevronImage;
 @property(readonly, nonatomic) UIFont *navbarDefaultLabelFont;

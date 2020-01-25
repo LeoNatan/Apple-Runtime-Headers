@@ -8,13 +8,14 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, NTPBDate, NTPBFeedViewportEdition;
+@class NSMutableArray, NSString, NTPBDate, NTPBFeedRefreshSessionForYouConfig, NTPBFeedViewportEdition;
 
 @interface NTPBFeedViewportGap : PBCodable <NSCopying>
 {
     CDStruct_95bda58d _activeGroupEmitterIDRefs;
     CDStruct_95bda58d _groupEmitterIDRefs;
     NSMutableArray *_cursors;
+    NTPBFeedRefreshSessionForYouConfig *_forYouConfig;
     NSString *_identifier;
     NTPBFeedViewportEdition *_lastCompletedEdition;
     NTPBDate *_modificationDate;
@@ -30,6 +31,7 @@
 
 + (Class)pendingGroupsType;
 + (Class)cursorsType;
+@property(retain, nonatomic) NTPBFeedRefreshSessionForYouConfig *forYouConfig; // @synthesize forYouConfig=_forYouConfig;
 @property(nonatomic) _Bool isOffline; // @synthesize isOffline=_isOffline;
 @property(retain, nonatomic) NSMutableArray *pendingGroups; // @synthesize pendingGroups=_pendingGroups;
 @property(retain, nonatomic) NTPBFeedViewportEdition *lastCompletedEdition; // @synthesize lastCompletedEdition=_lastCompletedEdition;
@@ -46,6 +48,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasForYouConfig;
 @property(nonatomic) _Bool hasIsOffline;
 - (void)setActiveGroupEmitterIDRefs:(int *)arg1 count:(unsigned long long)arg2;
 - (int)activeGroupEmitterIDRefsAtIndex:(unsigned long long)arg1;

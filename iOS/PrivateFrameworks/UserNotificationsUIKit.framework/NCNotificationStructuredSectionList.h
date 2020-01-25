@@ -131,7 +131,7 @@
 - (void)toggleFilteringForSectionIdentifier:(id)arg1 shouldFilter:(_Bool)arg2;
 - (void)regroupNotificationGroups;
 - (void)mergeNotificationGroups:(id)arg1;
-- (id)notificationGroupListsForMigrationPassingTest:(CDUnknownBlockType)arg1;
+- (id)notificationGroupListsForMigrationPassingTest:(CDUnknownBlockType)arg1 filterPersistentRequests:(_Bool)arg2;
 @property(readonly, nonatomic) NSArray *allNotificationRequests;
 @property(readonly, nonatomic) NSArray *allNotificationGroups;
 - (id)initWithTitle:(id)arg1;

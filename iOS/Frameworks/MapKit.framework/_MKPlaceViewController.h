@@ -275,6 +275,7 @@
 - (_Bool)hasWebContent;
 - (_Bool)isWebContentLoading;
 - (_Bool)isLoading;
+- (_Bool)isLayoutDynamic;
 - (void)_setDefaultViewControllers:(id)arg1;
 @property(readonly, nonatomic) MKMuninView *muninView;
 - (id)draggableHeaderView;

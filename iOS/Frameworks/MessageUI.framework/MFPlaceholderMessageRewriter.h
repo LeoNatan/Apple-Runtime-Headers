@@ -38,7 +38,7 @@
 - (void)setCcRecipients:(id)arg1;
 - (id)toRecipients;
 - (void)setToRecipients:(id)arg1;
-- (id)bodyField;
+- (id)composeWebView;
 - (id)accountProxyGenerator;
 - (id)rewrittenMessageContent;
 - (id)initWithOriginalMessageContent:(id)arg1 resolver:(id)arg2;

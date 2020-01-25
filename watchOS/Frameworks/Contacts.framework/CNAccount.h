@@ -19,10 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)requestAccountSyncWithOptions:(unsigned int)arg1;
++ (_Bool)requestAccountSyncWithDefaultOptions;
 + (id)makeIdentifier;
 + (id)makeIdentifierString;
 + (id)identifierProvider;
 + (id)localAccount;
++ (id)os_log;
 + (id)predicateForAccountsWithIdentifiers:(id)arg1;
 + (id)predicateForAccountForContainerWithIdentifier:(id)arg1;
 + (id)predicateForAccountWithExternalIdentifier:(id)arg1;

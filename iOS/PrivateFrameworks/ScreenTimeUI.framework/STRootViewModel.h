@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isCloudSyncEnabled; // @synthesize isCloudSyncEnabled=_isCloudSyncEnabled;
 @property(nonatomic) _Bool canStopScreenTimeWithoutPasscode; // @synthesize canStopScreenTimeWithoutPasscode=_canStopScreenTimeWithoutPasscode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldShowCompatibilityAlerts;
 @property(readonly, nonatomic) _Bool canToggleWebsiteData;
 @property(readonly, nonatomic) _Bool forceParentalControls;
 @property(readonly, nonatomic) _Bool canViewAskForTimeRequests;

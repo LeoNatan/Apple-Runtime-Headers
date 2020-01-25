@@ -17,14 +17,15 @@
     NSString *_providerName;
 }
 
++ (id)attributionUrlFromRegionalAttributions:(id)arg1;
 @property(readonly, nonatomic) NSString *providerName; // @synthesize providerName=_providerName;
 @property(readonly, nonatomic) NSString *providerString; // @synthesize providerString=_providerString;
 @property(readonly, nonatomic) NSImage *providerImage; // @synthesize providerImage=_providerImage;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSAttributedString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
-- (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 globalAttributions:(id)arg3;
-@property(readonly, nonatomic) NSAttributedString *disclosureArrow;
+- (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 underlineText:(BOOL)arg3 applyLinkAttribution:(BOOL)arg4;
+- (id)disclosureArrow;
 - (id)attributedStringWithImage:(id)arg1;
 
 @end

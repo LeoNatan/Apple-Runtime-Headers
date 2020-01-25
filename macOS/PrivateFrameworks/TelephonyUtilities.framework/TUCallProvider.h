@@ -34,9 +34,11 @@
     NSData *_iconTemplateImageData;
     unsigned long long _maximumCallGroups;
     unsigned long long _maximumCallsPerCallGroup;
+    long long _sandboxExtensionHandle;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) long long sandboxExtensionHandle; // @synthesize sandboxExtensionHandle=_sandboxExtensionHandle;
 @property(nonatomic) unsigned int audioSessionID; // @synthesize audioSessionID=_audioSessionID;
 @property(nonatomic) BOOL supportsCurrentPlatform; // @synthesize supportsCurrentPlatform=_supportsCurrentPlatform;
 @property(nonatomic) BOOL supportsRecents; // @synthesize supportsRecents=_supportsRecents;

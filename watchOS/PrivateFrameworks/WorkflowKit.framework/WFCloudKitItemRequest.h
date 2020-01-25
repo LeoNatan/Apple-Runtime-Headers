@@ -31,9 +31,9 @@
 - (id)createTaskCancelledError;
 - (id)deleteItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)updateItems:(id)arg1 setNilValues:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)fetchItemWithID:(id)arg1 itemType:(Class)arg2 properties:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)fetchItemsWithPredicate:(id)arg1 itemType:(Class)arg2 properties:(id)arg3 sortDescriptors:(id)arg4 resultsLimit:(unsigned int)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (id)fetchItemsWithPredicate:(id)arg1 itemType:(Class)arg2 properties:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)fetchItemWithID:(id)arg1 itemType:(Class)arg2 groupName:(id)arg3 properties:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)fetchItemsWithPredicate:(id)arg1 itemType:(Class)arg2 groupName:(id)arg3 properties:(id)arg4 sortDescriptors:(id)arg5 resultsLimit:(unsigned int)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (id)fetchItemsWithPredicate:(id)arg1 itemType:(Class)arg2 groupName:(id)arg3 properties:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)initWithContainer:(id)arg1 database:(id)arg2;
 - (id)fetchConfigurationAssetWithType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)fetchConfigurationAssetWithType:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

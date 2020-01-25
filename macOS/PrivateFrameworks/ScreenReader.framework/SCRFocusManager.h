@@ -25,13 +25,15 @@ __attribute__((visibility("hidden")))
 + (id)_validElementToJumpToFromAXUIElement:(struct __AXUIElement *)arg1 inApplication:(id)arg2;
 + (id)_deepestFocusedChildOfElement:(id)arg1;
 + (id)_validAndVisibleFocusChainFromElement:(id)arg1 updateChildrenAlongTheWay:(BOOL)arg2;
-+ (BOOL)element:(id)arg1 hasSameEquivalenceTagAsElement:(id)arg2;
 + (void)_highlightNewDeepestFocusedElement:(id)arg1 playFeedback:(BOOL)arg2 request:(id)arg3;
 + (void)jumpFocusToElement:(id)arg1 inApplication:(id)arg2 request:(id)arg3;
 + (id)_chopOffSelectionStateFromEquivalenceTag:(id)arg1;
++ (id)_refreshFocusChainFromElement:(id)arg1;
 + (id)_validateElementToMoveTo:(id)arg1 withFallbackBounds:(struct CGRect)arg2;
 + (BOOL)_isElementValidForMoveTo:(id)arg1;
 + (BOOL)_isElementValidForFocusChain:(id)arg1;
++ (BOOL)_isElementVisible:(id)arg1;
++ (BOOL)_shouldIgnoreVisibilityStateForElement:(id)arg1;
 @property(retain, nonatomic) _SCRLayoutChangedNotificationInfo *_aggregatedLayoutChangedNotificationInfo; // @synthesize _aggregatedLayoutChangedNotificationInfo=__aggregatedLayoutChangedNotificationInfo;
 @property(retain, nonatomic) SCRCTargetSelectorTimer *_focusChainValidationTimer; // @synthesize _focusChainValidationTimer=__focusChainValidationTimer;
 @property(retain, nonatomic) SCRCThread *_focusManagerThread; // @synthesize _focusManagerThread=__focusManagerThread;

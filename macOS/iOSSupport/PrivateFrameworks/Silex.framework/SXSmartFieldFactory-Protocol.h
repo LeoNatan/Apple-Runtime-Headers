@@ -6,9 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class STSmartField, SXAddition, TSPObjectContext;
+@class SXAddition, SXSmartField, TSPObjectContext;
 
 @protocol SXSmartFieldFactory <NSObject>
-- (STSmartField *)smartFieldForAddition:(SXAddition *)arg1 withContext:(TSPObjectContext *)arg2;
+- (SXSmartField *)smartFieldForAddition:(SXAddition *)arg1 withContext:(TSPObjectContext *)arg2;
 @end
 

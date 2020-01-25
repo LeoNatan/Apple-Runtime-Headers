@@ -31,6 +31,7 @@
 + (id)carPlayIsConnectedStream;
 + (id)userIsFirstBacklightOnAfterWakeup;
 + (id)calendarEventStream;
++ (id)locationCoordinatesStream;
 + (id)microLocationVisitStream;
 + (id)locationVisitStream;
 + (id)motionStream;
@@ -60,6 +61,7 @@
 + (id)deviceActivityLevelFeedbackStream;
 + (id)standbyTimerStream;
 + (id)deviceActivityLevelStream;
++ (id)focusModeStream;
 + (id)notificationUsageStream;
 + (id)widgetsViewedStream;
 + (id)appViewedInDockStream;

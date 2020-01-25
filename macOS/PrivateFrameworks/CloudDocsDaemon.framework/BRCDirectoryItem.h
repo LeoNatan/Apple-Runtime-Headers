@@ -18,11 +18,14 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) long long mtime; // @synthesize mtime=_mtime;
 - (id)asShareableItem;
+- (BOOL)isShareableItem;
 - (BOOL)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)evictInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)_deleteFromDB:(id)arg1 keepAliases:(BOOL)arg2;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (BOOL)_updateRecursiveProperties;
+- (BOOL)_insertRecursiveProperties;
 - (void)_retryPostponedIfNeededForDiffs:(unsigned long long)arg1;
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;
 - (void)_markLostDirectoryAsAlmostDead;
@@ -31,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)clientZonesChildrenNeedingSyncUpAreIn;
 - (BOOL)hasPendingLostChildren;
 - (BOOL)hasLostChildren;
+- (unsigned long long)childItemCount;
 - (BOOL)hasLiveChildren;
 - (BOOL)hasDeadChildren;
 - (void)transformIntoFSRoot;
@@ -38,6 +42,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)containsPendingDownload;
 - (BOOL)containsFault;
 - (BOOL)containsOverQuotaItems;
+- (BOOL)possiblyContainsSharedToMeItem;
+- (BOOL)possiblyContainsSharedByMeItem;
+- (BOOL)possiblyContainsSharedItem;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
 - (void)updateItemMetadataFromServerItem:(id)arg1 appliedSharingPermission:(BOOL)arg2;
 - (BOOL)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
@@ -50,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)diffAgainstServerItem:(id)arg1;
 - (BOOL)isDirectoryWithPackageName;
 - (BOOL)isDirectory;
+- (id)folderRootStructureRecord;
 
 // Remaining properties
 @property(readonly, nonatomic) BRCAliasItem *asBRAlias; // @dynamic asBRAlias;

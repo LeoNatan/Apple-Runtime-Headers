@@ -26,6 +26,7 @@
 @property(nonatomic, getter=_endTimestamp, setter=_setEndTimestamp:) double endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic, getter=_startTimestamp, setter=_setStartTimestamp:) double startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 - (void).cxx_destruct;
+- (id)valueForKey:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

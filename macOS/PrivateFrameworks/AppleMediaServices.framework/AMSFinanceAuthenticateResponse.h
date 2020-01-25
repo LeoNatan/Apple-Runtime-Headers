@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class AMSAuthenticateRequest, AMSFinanceDialogResponse;
+#import <AppleMediaServices/AMSFinancePerformable-Protocol.h>
+
+@class AMSAuthenticateRequest, AMSFinanceDialogResponse, NSString;
 
 __attribute__((visibility("hidden")))
-@interface AMSFinanceAuthenticateResponse : NSObject
+@interface AMSFinanceAuthenticateResponse : NSObject <AMSFinancePerformable>
 {
     AMSAuthenticateRequest *_authenticateRequest;
     AMSFinanceDialogResponse *_dialogResponse;
@@ -23,6 +25,12 @@ __attribute__((visibility("hidden")))
 - (id)_findActionableButton;
 - (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1 taskInfo:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

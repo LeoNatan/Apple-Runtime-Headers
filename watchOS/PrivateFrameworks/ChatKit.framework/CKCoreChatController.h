@@ -31,6 +31,7 @@
     unsigned int _sendProgressSendCount;
     unsigned int _sendProgressTotalCount;
     CKFullScreenBalloonViewController *_fullScreenBalloonViewController;
+    int _acknowledgmentToSend;
     CDUnknownBlockType _overrideScrollBlock;
     STLockoutViewController *_lockoutViewController;
 }
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(copy, nonatomic) CDUnknownBlockType overrideScrollBlock; // @synthesize overrideScrollBlock=_overrideScrollBlock;
 @property(nonatomic) _Bool disableAnimationsUnderTest; // @synthesize disableAnimationsUnderTest=_disableAnimationsUnderTest;
+@property(nonatomic) int acknowledgmentToSend; // @synthesize acknowledgmentToSend=_acknowledgmentToSend;
 @property(retain, nonatomic) CKFullScreenBalloonViewController *fullScreenBalloonViewController; // @synthesize fullScreenBalloonViewController=_fullScreenBalloonViewController;
 @property(nonatomic) unsigned int sendProgressTotalCount; // @synthesize sendProgressTotalCount=_sendProgressTotalCount;
 @property(nonatomic) unsigned int sendProgressSendCount; // @synthesize sendProgressSendCount=_sendProgressSendCount;
@@ -134,6 +136,7 @@
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)_setConversationDeferredSetup;
 - (void)_removeExistingCollectionViewController;
+- (_Bool)conversationAllowedByScreenTime;
 - (id)_handleIDsForCurrentConversation;
 @property(readonly, nonatomic) float gradientBottomPlaceholderHeight;
 @property(readonly, nonatomic) float balloonMaxWidth;

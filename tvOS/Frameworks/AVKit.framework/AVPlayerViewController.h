@@ -25,6 +25,7 @@
     _Bool _isFullUXEnabled;
     _Bool _deactivated;
     _Bool _shouldPlayAfterAppBecomesActive;
+    _Bool _shouldBecomeNowPlayingAfterAppBecomesActive;
     _Bool _playerHasBeenValid;
     _Bool _shouldEndLimitingRemoteInput;
     _Bool _startingContentProposalPresentation;
@@ -221,6 +222,7 @@
 - (_Bool)resignNowPlayingWithoutUpdating;
 - (void)resignNowPlaying;
 - (_Bool)isActiveNowPlaying;
+- (_Bool)_isPictureInPictureNowPlaying;
 - (_Bool)_isAnotherPlayerViewControllerNowPlaying;
 - (id)_containerView;
 @property(readonly, nonatomic) UILayoutGuide *unobscuredContentGuide;

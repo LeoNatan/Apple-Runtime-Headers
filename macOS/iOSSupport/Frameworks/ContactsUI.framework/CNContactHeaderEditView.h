@@ -35,6 +35,7 @@
 - (void)updateConstraints;
 - (void)updateFontSizes;
 - (void)calculateLabelSizesIfNeeded;
+- (double)defaultMaxHeight;
 - (double)maxHeight;
 - (void)setAllowsEditPhoto:(BOOL)arg1 preservingChanges:(BOOL)arg2;
 - (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(BOOL)arg3 delegate:(id)arg4 showingNavBar:(BOOL)arg5 monogramOnly:(BOOL)arg6;

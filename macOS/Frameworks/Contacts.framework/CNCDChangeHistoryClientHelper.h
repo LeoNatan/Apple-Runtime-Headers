@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSManagedObjectContext *_context;
 }
 
++ (BOOL)contextHasPersistentStores:(id)arg1;
 @property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)save;

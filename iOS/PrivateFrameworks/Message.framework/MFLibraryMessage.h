@@ -21,7 +21,7 @@
     long long _mailboxID;
     long long _originalMailboxID;
     NSString *_messageID;
-    unsigned long long _conversationFlags;
+    // Error parsing type: AQ, name: _conversationFlags
     NSArray *_references;
 }
 

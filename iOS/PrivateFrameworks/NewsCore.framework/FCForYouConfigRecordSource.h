@@ -10,6 +10,7 @@
 {
 }
 
+- (void)_updateForYouConfigRecord:(id)arg1;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
 - (id)recordIDPrefix;
 - (unsigned long long)highThresholdDataSizeLimit;

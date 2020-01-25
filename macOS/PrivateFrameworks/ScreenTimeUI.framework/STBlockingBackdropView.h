@@ -12,8 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)_nextResponderForEvent:(id)arg1;
-- (void)setNextResponder:(id)arg1;
-- (id)nextResponder;
 
 @end
 

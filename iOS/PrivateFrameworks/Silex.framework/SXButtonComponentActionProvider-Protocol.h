@@ -6,9 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXAction;
+@protocol SXAction;
 
 @protocol SXButtonComponentActionProvider <NSObject>
-- (SXAction *)buttonAction;
+- (id <SXAction>)action;
 @end
 

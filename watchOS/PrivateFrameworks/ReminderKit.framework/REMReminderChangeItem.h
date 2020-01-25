@@ -47,7 +47,7 @@
 - (void)addAlarm:(id)arg1;
 - (id)addAlarmWithTrigger:(id)arg1;
 - (id)nextRecurrentDueDateComponentsAfter:(id)arg1;
-- (double)nextRecurrentAdvanceAmountAfter:(id)arg1;
+- (double)nextRecurrentAdvanceAmountForDateComponents:(id)arg1 afterDate:(id)arg2;
 - (void)removeAllRecurrenceRules;
 - (void)removeRecurrenceRule:(id)arg1;
 - (void)insertRecurrenceRule:(id)arg1 afterRecurrenceRule:(id)arg2;

@@ -63,9 +63,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITargetedPreview *collapsedPreview; // @synthesize collapsedPreview=_collapsedPreview;
 - (void).cxx_destruct;
 - (void)updateContentSize;
+- (id)_overrideTraitCollectionForView:(id)arg1 combinedWithTraits:(id)arg2;
 - (void)_installPreview:(id)arg1 inClippingView:(id)arg2 transformView:(id)arg3;
 - (void)_updateCollapsedChrome;
 - (void)_updatePathShadow;
+- (_Bool)_previewPrefersApplyingMask:(id)arg1;
 - (_Bool)_previewIsLikelyOpaque:(id)arg1;
 @property(readonly, nonatomic) _Bool bothViewsAreLikelyOpaque;
 - (void)didTearOffForDrag;

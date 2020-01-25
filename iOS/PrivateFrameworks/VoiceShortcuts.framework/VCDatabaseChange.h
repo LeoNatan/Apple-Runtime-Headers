@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) NSString *objectIdentifier;
 - (void).cxx_destruct;
 - (id)recordWithError:(id *)arg1;
+@property(readonly, nonatomic) unsigned long long estimatedSize;
 @property(readonly, copy, nonatomic) WFDatabaseObjectDescriptor *descriptor;
 - (_Bool)writeTo:(id)arg1 error:(id *)arg2;
 - (_Bool)readFrom:(id)arg1 error:(id *)arg2;

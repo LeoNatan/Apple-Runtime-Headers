@@ -38,6 +38,7 @@
 - (void)_configureWidgetViewController;
 - (void)setEditingIcons:(_Bool)arg1;
 @property(readonly, nonatomic) SBHDateHeaderViewController *dateViewController; // @synthesize dateViewController=_dateViewController;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

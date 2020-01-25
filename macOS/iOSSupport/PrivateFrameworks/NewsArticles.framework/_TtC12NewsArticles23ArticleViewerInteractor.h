@@ -13,10 +13,13 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: coordinator
     // Error parsing type: , name: dataManager
     // Error parsing type: , name: blueprintProvider
-    // Error parsing type: , name: pageBlueprintProvider
+    // Error parsing type: , name: pageBlueprintManager
     // Error parsing type: , name: pageBlueprintFactory
     // Error parsing type: , name: sharingIntentFactory
     // Error parsing type: , name: followingManager
+    // Error parsing type: , name: interstitialAdManager
+    // Error parsing type: , name: insertAdvertisementBlueprintModifier
+    // Error parsing type: , name: pageTracker
 }
 
 - (void).cxx_destruct;

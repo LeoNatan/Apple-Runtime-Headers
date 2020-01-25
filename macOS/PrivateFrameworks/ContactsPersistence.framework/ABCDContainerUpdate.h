@@ -20,11 +20,11 @@
 @property(retain) id value; // @synthesize value=_value;
 @property(retain) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)initWithPropertyKey:(id)arg1 value:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -41,7 +41,7 @@
 - (id)nashvilleVoiceIdentifier:(id)arg1 footprint:(int)arg2 voiceType:(long)arg3 gender:(int)arg4;
 - (id)audioFileSettingsForVoice:(id)arg1;
 - (id)enclosedStringWithPhonemes:(id)arg1;
-- (id)_ttsCopyVoiceNames:(id)arg1 type:(long)arg2;
+- (id)_ttsCopyVoiceNames:(id)arg1 type:(long)arg2 queryingMobileAssets:(_Bool)arg3;
 - (oneway void)getVoicesForLanguage:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)getSpeechIsActiveForRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)stopSpeechRequest:(id)arg1 atMark:(int)arg2;

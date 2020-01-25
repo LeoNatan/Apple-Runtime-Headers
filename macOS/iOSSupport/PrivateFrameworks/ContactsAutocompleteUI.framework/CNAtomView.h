@@ -40,6 +40,7 @@
 + (id)_defaultLabelAttributesWithFont:(id)arg1 wrappingEnabled:(BOOL)arg2;
 + (id)_defaultLabelAttributesWithWrappingEnabled:(BOOL)arg1;
 + (id)_SMSTintColor;
++ (id)_downtimeBlockedTintColor;
 + (id)_failureTintColor;
 + (id)_defaultTintColor;
 + (id)primaryAtomFont;

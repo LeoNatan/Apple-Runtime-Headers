@@ -466,6 +466,7 @@
 - (void)_alignLeft:(id)arg1;
 - (void)_alignJustified:(id)arg1;
 - (void)_alignCenter:(id)arg1;
+- (void)_triggerSystemPreviewActionOnElement:(unsigned long long)arg1 document:(unsigned long long)arg2 page:(unsigned long long)arg3;
 - (void)_denyNextUserMediaRequest;
 - (void)_processDidResumeForTesting;
 - (void)_processWillSuspendImminentlyForTesting;

@@ -87,6 +87,7 @@
 @property(readonly, nonatomic) unsigned long long flashViewLayerRenderID;
 @property(readonly, nonatomic) unsigned int flashViewLayerContextID;
 - (void)invalidate;
+- (_Bool)_canShowWhileLocked;
 - (struct UIEdgeInsets)_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(_Bool *)arg2;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;

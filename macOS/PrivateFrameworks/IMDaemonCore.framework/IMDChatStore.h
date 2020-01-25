@@ -26,6 +26,7 @@
 - (id)_chatRegistry;
 - (void)setChatIsFiltered:(BOOL)arg1 withChatGuid:(id)arg2;
 - (void)deleteChat:(id)arg1;
+- (void)remapMessageError:(unsigned int)arg1 toError:(unsigned int)arg2 forChat:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeMessageWithGUID:(id)arg1 fromChat:(id)arg2;
 - (void)addMessageWithGUID:(id)arg1 toChat:(id)arg2 deferSpotlightIndexing:(BOOL)arg3;
 - (void)addMessageWithGUID:(id)arg1 toChat:(id)arg2;

@@ -6,10 +6,12 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSButton, NSStackView;
+#import <ContactsUI/CNContactListControllerDelegate-Protocol.h>
+
+@class NSButton, NSStackView, NSString;
 @protocol CNFamilyMemberEditControlsViewControllerDelegate;
 
-@interface CNFamilyMemberEditControlsViewController : NSViewController
+@interface CNFamilyMemberEditControlsViewController : NSViewController <CNContactListControllerDelegate>
 {
     NSViewController *_containedViewController;
     NSStackView *_stackView;
@@ -26,18 +28,27 @@
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) NSViewController *containedViewController; // @synthesize containedViewController=_containedViewController;
 - (void).cxx_destruct;
+- (void)dismissRequested:(BOOL)arg1;
+- (void)selectionChanged:(BOOL)arg1;
 - (void)cancelPressed:(id)arg1;
 - (void)editControlButtonPressedInToggleMode:(id)arg1;
 - (void)editControlButtonPressed:(id)arg1;
 - (void)setupConstraints;
 - (void)setupViewHierarchy;
 - (void)viewDidLoad;
+- (void)viewWillAppear;
 - (void)loadView;
 - (void)setupButtons;
 - (void)setupStackView;
 - (void)setupUI;
 - (struct CGSize)preferredMinimumSize;
 - (id)initWithContainedViewController:(id)arg1 delegate:(id)arg2 style:(long long)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

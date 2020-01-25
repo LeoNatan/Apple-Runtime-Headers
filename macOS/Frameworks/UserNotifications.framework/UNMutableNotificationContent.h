@@ -17,6 +17,7 @@
 @property(copy) NSString *targetContentIdentifier; // @dynamic targetContentIdentifier;
 @property unsigned long long summaryArgumentCount; // @dynamic summaryArgumentCount;
 @property(copy) NSString *summaryArgument; // @dynamic summaryArgument;
+@property unsigned long long realertCount; // @dynamic realertCount;
 @property(copy) NSSet *topicIdentifiers; // @dynamic topicIdentifiers;
 @property(copy) NSString *title; // @dynamic title;
 @property(copy) NSString *threadIdentifier; // @dynamic threadIdentifier;

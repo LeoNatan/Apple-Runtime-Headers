@@ -22,6 +22,7 @@
 - (void)_reloadLayerHostView;
 - (void)setHostingContextID:(unsigned int)arg1 pid:(int)arg2;
 - (void)invalidate;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)initWithScreen:(id)arg1;

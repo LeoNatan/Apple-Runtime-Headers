@@ -7,6 +7,8 @@
 #import <CloudKit/CKOperationGroup.h>
 
 @interface CKOperationGroup (BRAdditions)
++ (id)br_aggressiveChaining;
++ (id)br_osUpgradeMigration;
 + (id)br_fetchNonLocalVersions;
 + (id)br_purge;
 + (id)br_fetchIdentityXPC;

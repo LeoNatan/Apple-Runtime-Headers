@@ -48,6 +48,7 @@
 - (void)invalidate;
 - (void)blockUntilInitialStateReceived;
 - (void)launchAppForDialRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)donateUserIntentForProviderWithIdentifier:(id)arg1;
 - (_Bool)openURL:(id)arg1 isSensitive:(_Bool)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) _Bool currentProcessCanAccessInitialState;
 @property(nonatomic) __weak id <TUCallProviderManagerDataSourceDelegate> delegate; // @synthesize delegate=_delegate;

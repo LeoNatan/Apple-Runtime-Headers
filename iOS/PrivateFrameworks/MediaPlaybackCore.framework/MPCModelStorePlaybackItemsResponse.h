@@ -29,6 +29,7 @@
 @property(nonatomic, getter=isFinalResponse) _Bool finalResponse; // @synthesize finalResponse=_finalResponse;
 @property(readonly, nonatomic) MPStoreLibraryPersonalizationResponse *_personalizationResponse; // @synthesize _personalizationResponse;
 - (void).cxx_destruct;
+- (void)_activeUserDidChangeNotification:(id)arg1;
 - (void)_personalizationResponseDidInvalidateNotification:(id)arg1;
 - (void)_allowsExplicitContentDidChangeNotification:(id)arg1;
 - (id)equivalencySourceStoreAdamIDForLocalStoreAdamID:(long long)arg1;

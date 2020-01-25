@@ -30,6 +30,7 @@
 - (void)dismissCard;
 - (void)presentCard;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

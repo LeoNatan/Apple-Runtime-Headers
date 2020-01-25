@@ -24,7 +24,6 @@
 }
 
 + (id)shortDescription;
-@property(nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property __weak id <HMFTimerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -39,6 +38,7 @@
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue;
 - (void)setFireDate:(id)arg1;
 @property(readonly, copy) NSDate *fireDate; // @synthesize fireDate=_fireDate;
+@property(readonly, getter=isRunning) BOOL running;
 @property(readonly, nonatomic) unsigned long long leeway;
 - (id)attributeDescriptions;
 - (void)dealloc;

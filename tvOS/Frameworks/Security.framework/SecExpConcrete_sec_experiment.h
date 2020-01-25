@@ -8,16 +8,25 @@
 
 #import <Security/OS_sec_experiment-Protocol.h>
 
-@class NSString;
+@class NSString, SecExperiment;
 
 __attribute__((visibility("hidden")))
 @interface SecExpConcrete_sec_experiment : NSObject <OS_sec_experiment>
 {
-    const char *identifier;
-    _Bool sampling_disabled;
+    SecExperiment *innerExperiment;
+    unsigned long long numRuns;
+    unsigned long long successRuns;
 }
 
-- (id)initWithBundle:(const char *)arg1;
+- (void).cxx_destruct;
+- (id)copyExperimentConfiguration;
+- (_Bool)isSamplingDisabled;
+- (_Bool)isSamplingDisabledWithDefault:(_Bool)arg1;
+- (_Bool)experimentIsAllowedForProcess;
+- (const char *)identifier;
+- (const char *)name;
+- (id)initWithInnerExperiment:(id)arg1;
+- (id)initWithName:(const char *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

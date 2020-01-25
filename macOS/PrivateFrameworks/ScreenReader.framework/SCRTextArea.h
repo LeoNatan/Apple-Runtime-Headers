@@ -57,6 +57,8 @@ __attribute__((visibility("hidden")))
 - (void)addReachedEndOfTextDescriptionToOutputRequest:(id)arg1;
 - (void)addReachedBeginningOfTextDescriptionToOutputRequest:(id)arg1;
 - (void)addReachedBoundarySoundToOutputRequest:(id)arg1;
+- (void)addItemNameToRequest:(id)arg1;
+- (BOOL)supportsCaretBrowsing;
 - (void)addTextBoundaryToOutputRequest:(id)arg1 uiElement:(id)arg2 edge:(long long)arg3;
 - (BOOL)isSelectedTextRangeSettable;
 - (BOOL)isTextElement;

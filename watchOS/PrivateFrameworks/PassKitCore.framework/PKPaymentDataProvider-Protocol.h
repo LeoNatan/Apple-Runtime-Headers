@@ -50,6 +50,7 @@
 - (void)submitTransactionAnswerForTransaction:(NSString *)arg1 questionType:(unsigned int)arg2 answer:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)transactionsRequiringReviewForAccountWithIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)cashbackByPeriodFromPassUniqueIdentifier:(NSString *)arg1 withStartDate:(NSDate *)arg2 endDate:(NSDate *)arg3 calendar:(NSCalendar *)arg4 calendarUnit:(unsigned int)arg5 type:(int)arg6 completion:(void (^)(NSArray *))arg7;
+- (void)installmentPlanTransactionsForPassUniqueIdentifier:(NSString *)arg1 accountIdentifier:(NSString *)arg2 withRedemptionType:(int)arg3 startDate:(NSDate *)arg4 endDate:(NSDate *)arg5 completion:(void (^)(NSSet *))arg6;
 - (void)installmentTransactionsForInstallmentPlanIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)transactionWithReferenceIdentifier:(NSString *)arg1 completion:(void (^)(PKPaymentTransaction *))arg2;
 - (void)transactionWithServiceIdentifier:(NSString *)arg1 completion:(void (^)(PKPaymentTransaction *))arg2;

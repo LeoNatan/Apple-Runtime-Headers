@@ -29,6 +29,8 @@
 @property(readonly, nonatomic) NSString *title;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)dictionaryForArchiving;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithRepresentedObjects:(id)arg1 searchText:(id)arg2;
 
 @end

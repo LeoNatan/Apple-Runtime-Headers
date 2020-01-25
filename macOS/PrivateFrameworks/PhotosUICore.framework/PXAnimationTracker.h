@@ -6,21 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet;
-
 @interface PXAnimationTracker : NSObject
 {
-    NSMutableSet *_inFlightAnimations;
 }
 
-+ (void)_transitionAnimationDidEnd:(long long)arg1 transitionObject:(id)arg2 isBegin:(BOOL)arg3;
-+ (void)transitionAnimationDidEnd:(long long)arg1 transitionObject:(id)arg2;
-+ (void)transitionAnimationDidBegin:(long long)arg1 transitionObject:(id)arg2;
++ (void)_transitionAnimationOccurred:(long long)arg1 fromOrigin:(long long)arg2 transitionObject:(id)arg3 isBegin:(BOOL)arg4;
++ (void)transitionAnimationDidEnd:(long long)arg1 fromOrigin:(long long)arg2 transitionObject:(id)arg3;
++ (void)transitionAnimationDidBegin:(long long)arg1 fromOrigin:(long long)arg2 transitionObject:(id)arg3;
++ (void)_transitionPreparationOccurred:(long long)arg1 fromOrigin:(long long)arg2 transitionObject:(id)arg3 isBegin:(BOOL)arg4;
++ (void)transitionPreparationDidBegin:(long long)arg1 fromOrigin:(long long)arg2 transitionObject:(id)arg3;
 + (void)_scrollAnimationOccurred:(long long)arg1 isBegin:(BOOL)arg2;
 + (void)scrollAnimationDidEnd:(long long)arg1;
 + (void)scrollAnimationDidBegin:(long long)arg1;
-@property(readonly, nonatomic) NSMutableSet *inFlightAnimations; // @synthesize inFlightAnimations=_inFlightAnimations;
-- (void).cxx_destruct;
 
 @end
 

@@ -8,13 +8,14 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOPDAutocompleteSessionData, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteResult : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
     PBUnknownFields *_unknownFields;
+    GEOPDAutocompleteSessionData *_autocompleteSessionData;
     NSMutableArray *_clientRankingFeatureMetadatas;
     NSMutableArray *_sections;
     NSMutableArray *_sortPriorityMappings;
@@ -35,10 +36,12 @@ __attribute__((visibility("hidden")))
         unsigned int has_shouldDifferentiateClientAndServerResults:1;
         unsigned int has_shouldDisplayNoResults:1;
         unsigned int read_unknownFields:1;
+        unsigned int read_autocompleteSessionData:1;
         unsigned int read_clientRankingFeatureMetadatas:1;
         unsigned int read_sections:1;
         unsigned int read_sortPriorityMappings:1;
         unsigned int wrote_unknownFields:1;
+        unsigned int wrote_autocompleteSessionData:1;
         unsigned int wrote_clientRankingFeatureMetadatas:1;
         unsigned int wrote_sections:1;
         unsigned int wrote_sortPriorityMappings:1;
@@ -69,6 +72,9 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDAutocompleteSessionData *autocompleteSessionData;
+@property(readonly, nonatomic) _Bool hasAutocompleteSessionData;
+- (void)_readAutocompleteSessionData;
 @property(nonatomic) _Bool hasShouldDifferentiateClientAndServerResults;
 @property(nonatomic) _Bool shouldDifferentiateClientAndServerResults;
 - (id)clientRankingFeatureMetadataAtIndex:(unsigned int)arg1;

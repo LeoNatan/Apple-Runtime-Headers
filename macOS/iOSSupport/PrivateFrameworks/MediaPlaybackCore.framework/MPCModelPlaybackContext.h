@@ -13,6 +13,7 @@
 
 @interface MPCModelPlaybackContext : MPPlaybackContext <MPCPlaybackContextUserIdentityConsuming, MPCPlaybackContextPrivateListeningOverridable>
 {
+    BOOL _skipEncodingMediaLibraryUniqueID;
     ICUserIdentity *_userIdentity;
     MPCPlaybackRequestEnvironment *_playbackRequestEnvironment;
     MPModelRequest *_request;
@@ -27,6 +28,7 @@
 + (BOOL)supportsSecureCoding;
 + (Class)queueFeederClass;
 + (id)requiredPropertiesForStaticMediaClips;
+@property(nonatomic) BOOL skipEncodingMediaLibraryUniqueID; // @synthesize skipEncodingMediaLibraryUniqueID=_skipEncodingMediaLibraryUniqueID;
 @property(readonly, copy, nonatomic) NSString *encodedMediaLibraryUniqueID; // @synthesize encodedMediaLibraryUniqueID=_encodedMediaLibraryUniqueID;
 @property(copy, nonatomic) MPModelGenericObject *fallbackSectionRepresentation; // @synthesize fallbackSectionRepresentation=_fallbackSectionRepresentation;
 @property(copy, nonatomic) NSDictionary *assetStoreFronts; // @synthesize assetStoreFronts=_assetStoreFronts;

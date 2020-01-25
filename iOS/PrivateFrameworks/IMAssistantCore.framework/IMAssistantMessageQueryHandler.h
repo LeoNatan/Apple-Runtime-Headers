@@ -11,6 +11,7 @@
 }
 
 - (void)messagesMatchingMessageIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)messageIsFromBlackholedChat:(id)arg1;
 - (void)searchMessagesWithContents:(id)arg1 messageIdentifiers:(id)arg2 notificationIdentifiers:(id)arg3 chatNames:(id)arg4 conversationIdentifiers:(id)arg5 recipients:(id)arg6 senders:(id)arg7 dateTimeRange:(id)arg8 attributes:(unsigned long long)arg9 completion:(CDUnknownBlockType)arg10;
 - (id)chatsForChatNames:(id)arg1;
 - (id)chatsWithConversationIdentifiers:(id)arg1;

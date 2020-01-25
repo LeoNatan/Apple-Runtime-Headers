@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <NewsUI/FCNetworkReachabilityObserving-Protocol.h>
-#import <NewsUI/SXReachabilityProvider-Protocol.h>
+#import <NewsUI/SWReachabilityProvider-Protocol.h>
 
 @class FCNetworkReachability, NSHashTable, NSString;
 
-@interface NUReachabilityProvider : NSObject <FCNetworkReachabilityObserving, SXReachabilityProvider>
+@interface NUReachabilityProvider : NSObject <FCNetworkReachabilityObserving, SWReachabilityProvider>
 {
     FCNetworkReachability *_networkReachability;
     NSHashTable *_observers;

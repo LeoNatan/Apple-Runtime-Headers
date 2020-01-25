@@ -4,11 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Silex/SXAction.h>
+#import <objc/NSObject.h>
 
-@interface SXSubscribeAction : SXAction
+#import <Silex/SXSubscribeAction-Protocol.h>
+
+@class NSString;
+@protocol SXAction;
+
+@interface SXSubscribeAction : NSObject <SXSubscribeAction>
 {
+    id <SXAction> postPurchaseAction;
 }
+
+@property(readonly, nonatomic) id <SXAction> postPurchaseAction; // @synthesize postPurchaseAction;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *type;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -17,6 +17,8 @@
 @property(nonatomic) BOOL ackReceived; // @synthesize ackReceived=_ackReceived;
 @property(retain, nonatomic) APSOutgoingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
 - (void).cxx_destruct;
+- (void)setPushFlags:(unsigned int)arg1;
+- (unsigned int)pushFlags;
 @property(nonatomic) unsigned long long ackTimestamp;
 @property(nonatomic) BOOL sendRetried;
 - (id)sentTimestamp;

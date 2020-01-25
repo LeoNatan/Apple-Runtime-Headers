@@ -22,6 +22,7 @@
 - (id)_rgbaTextureWithCommandBuffer:(id)arg1;
 - (id)_alphaOnlyTextureWithCommandBuffer:(id)arg1;
 - (void)loadTextureWithCommandBuffer:(id)arg1;
+@property(readonly, nonatomic) NSString *cacheKey;
 @property(readonly, nonatomic) id <MTLTexture> texture;
 - (id)initWithCachedImageKey:(id)arg1 isAlphaOnly:(_Bool)arg2 imageGenerationBlock:(CDUnknownBlockType)arg3;
 

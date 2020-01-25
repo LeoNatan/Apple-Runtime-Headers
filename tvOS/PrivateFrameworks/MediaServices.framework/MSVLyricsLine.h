@@ -10,6 +10,7 @@
 
 @interface MSVLyricsLine : MSVLyricsTextElement
 {
+    _Bool _instrumentalBreak;
     long long _lineIndex;
     long long _originalLineIndex;
     MSVLyricsSection *_parentSection;
@@ -24,6 +25,7 @@
 @property(nonatomic) __weak MSVLyricsSection *parentSection; // @synthesize parentSection=_parentSection;
 @property(nonatomic) long long originalLineIndex; // @synthesize originalLineIndex=_originalLineIndex;
 @property(nonatomic) long long lineIndex; // @synthesize lineIndex=_lineIndex;
+@property(nonatomic, getter=isInstrumentalBreak) _Bool instrumentalBreak; // @synthesize instrumentalBreak=_instrumentalBreak;
 - (void).cxx_destruct;
 - (_Bool)containsTimeOffset:(double)arg1 withErrorMargin:(double)arg2;
 - (id)description;

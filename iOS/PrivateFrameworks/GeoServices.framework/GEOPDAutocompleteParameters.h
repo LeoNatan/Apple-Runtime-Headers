@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAutocompleteFilter, GEOPDAutocompleteParametersAddressOnly, GEOPDAutocompleteParametersAllEntries, GEOPDAutocompleteParametersAllEntriesWithBrowse, GEOPDAutocompleteParametersBrandProfileSearch, GEOPDAutocompleteParametersFullEntriesOnly, GEOPDAutocompleteParametersLocalitiesAndLandmarks, GEOPDAutocompleteParametersOfflineRegionSearch, GEOPDAutocompleteParametersPoiAddressOnly, GEOPDAutocompleteParametersSiriSearch, GEOPDAutocompleteParametersVenueSearch, PBDataReader, PBUnknownFields;
+@class GEOPDAutocompleteFilter, GEOPDAutocompleteParametersAddressOnly, GEOPDAutocompleteParametersAllEntries, GEOPDAutocompleteParametersAllEntriesWithBrowse, GEOPDAutocompleteParametersBrandProfileSearch, GEOPDAutocompleteParametersFullEntriesOnly, GEOPDAutocompleteParametersLocalitiesAndLandmarks, GEOPDAutocompleteParametersOfflineRegionSearch, GEOPDAutocompleteParametersPoiAddressOnly, GEOPDAutocompleteParametersSiriSearch, GEOPDAutocompleteParametersVenueSearch, GEOPDAutocompleteSessionData, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying>
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     GEOPDAutocompleteParametersAllEntriesWithBrowse *_allEntriesWithBrowse;
     GEOPDAutocompleteParametersAllEntries *_allEntries;
     GEOPDAutocompleteFilter *_autocompleteFilter;
+    GEOPDAutocompleteSessionData *_autocompleteSessionData;
     GEOPDAutocompleteParametersBrandProfileSearch *_brandProfileSearch;
     GEOPDAutocompleteParametersFullEntriesOnly *_fullEntries;
     GEOPDAutocompleteParametersLocalitiesAndLandmarks *_localitiesAndLandmarks;
@@ -31,14 +32,17 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _readerLock;
     int _requestType;
     _Bool _shouldPopulateMapsIdentifier;
+    _Bool _supportAutocompleteSessionData;
     struct {
         unsigned int has_requestType:1;
         unsigned int has_shouldPopulateMapsIdentifier:1;
+        unsigned int has_supportAutocompleteSessionData:1;
         unsigned int read_unknownFields:1;
         unsigned int read_addressOnly:1;
         unsigned int read_allEntriesWithBrowse:1;
         unsigned int read_allEntries:1;
         unsigned int read_autocompleteFilter:1;
+        unsigned int read_autocompleteSessionData:1;
         unsigned int read_brandProfileSearch:1;
         unsigned int read_fullEntries:1;
         unsigned int read_localitiesAndLandmarks:1;
@@ -51,6 +55,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_allEntriesWithBrowse:1;
         unsigned int wrote_allEntries:1;
         unsigned int wrote_autocompleteFilter:1;
+        unsigned int wrote_autocompleteSessionData:1;
         unsigned int wrote_brandProfileSearch:1;
         unsigned int wrote_fullEntries:1;
         unsigned int wrote_localitiesAndLandmarks:1;
@@ -60,6 +65,7 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_venueSearch:1;
         unsigned int wrote_requestType:1;
         unsigned int wrote_shouldPopulateMapsIdentifier:1;
+        unsigned int wrote_supportAutocompleteSessionData:1;
     } _flags;
 }
 
@@ -78,6 +84,11 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDAutocompleteSessionData *autocompleteSessionData;
+@property(readonly, nonatomic) _Bool hasAutocompleteSessionData;
+- (void)_readAutocompleteSessionData;
+@property(nonatomic) _Bool hasSupportAutocompleteSessionData;
+@property(nonatomic) _Bool supportAutocompleteSessionData;
 @property(nonatomic) _Bool hasShouldPopulateMapsIdentifier;
 @property(nonatomic) _Bool shouldPopulateMapsIdentifier;
 @property(retain, nonatomic) GEOPDAutocompleteFilter *autocompleteFilter;

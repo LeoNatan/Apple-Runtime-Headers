@@ -70,8 +70,9 @@
 - (id)_filterTransformationWithFilterOptions:(long long)arg1 groupTypes:(id)arg2 includeArticlesFromGroupTypes:(_Bool)arg3;
 @property(readonly, nonatomic) FCForYouCatchUpOperation *forYouCatchUpOperation; // @synthesize forYouCatchUpOperation=_forYouCatchUpOperation;
 - (_Bool)isNewEdition;
-- (id)articleIDsContainedByGroupType:(long long)arg1;
+- (id)articleIDsContainedByGroupsWithSourceIdentifier:(id)arg1;
 - (id)groupOfGroupType:(long long)arg1;
+- (id)precedingAndPendingTopicIDsInSession;
 - (id)allArticleIDs;
 - (id)allGroupIDs;
 - (id)filterTransformationWithFilterOptions:(long long)arg1 considerOutputFrom:(id)arg2;
@@ -79,20 +80,20 @@
 - (id)filterTransformationWithFilterOptions:(long long)arg1 ignoringCurrentPageOutputFrom:(id)arg2;
 - (id)filterTransformationWithFilterOptions:(long long)arg1 additionalArticleIDs:(id)arg2;
 - (id)filterTransformationWithFilterOptions:(long long)arg1;
-- (id)creationDateOfGroupWithType:(long long)arg1;
+- (id)creationDateOfGroupWithSourceIdentifier:(id)arg1;
 - (id)creationDateOfFollowingGroupWithType:(long long)arg1;
 - (id)precedingNewFavoriteTagIDs;
 - (_Bool)pageHasPrecedingGroupWithSourceIdentifier:(id)arg1;
 - (_Bool)pageWillHaveGroupWithSourceIdentifier:(id)arg1;
 - (_Bool)pageIsWaitingForFirstGroupFromSourceIdentifier:(id)arg1;
 - (_Bool)pageHasExhaustedGroupsWithTypes:(id)arg1;
-- (_Bool)pageWillContainExpandedNewGroupWithType:(long long)arg1;
+- (_Bool)pageWillContainExpandedNewGroupWithSourceIdentifier:(id)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithTypes:(id)arg1;
 - (id)followingAdjacentHeadlinesFromGroupType:(long long)arg1;
 - (id)precedingAdjacentHeadlinesFromGroupType:(long long)arg1;
 @property(readonly, nonatomic) long long precedingGroupType;
 - (unsigned long long)countOfGroupsFromPageWithType:(long long)arg1;
-- (id)groupFromPageWithType:(long long)arg1;
+- (id)groupFromPageWithSourceIdentifier:(id)arg1;
 - (id)copyWithRefreshSession:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(_Bool)arg13 forYouCatchUpOperation:(id)arg14;
 

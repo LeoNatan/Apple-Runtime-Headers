@@ -6,13 +6,14 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSArray, SXAction, UIContextMenuConfiguration, UIView, UIViewController;
+@class NSArray, UIContextMenuConfiguration, UIView, UIViewController;
+@protocol SXAction;
 
 @protocol SXActionManager <NSObject>
 - (void)commitPreviewViewController:(UIViewController *)arg1;
-- (UIViewController *)previewViewControllerForAction:(SXAction *)arg1;
-- (UIContextMenuConfiguration *)contextMenuConfigurationForAction:(SXAction *)arg1;
-- (void)performAction:(SXAction *)arg1 postActionHandlers:(NSArray *)arg2 sourceView:(UIView *)arg3 sourceRect:(struct CGRect)arg4 mode:(unsigned long long)arg5;
-- (void)performAction:(SXAction *)arg1 postActionHandlers:(NSArray *)arg2;
+- (UIViewController *)previewViewControllerForAction:(id <SXAction>)arg1;
+- (UIContextMenuConfiguration *)contextMenuConfigurationForAction:(id <SXAction>)arg1;
+- (void)performAction:(id <SXAction>)arg1 postActionHandlers:(NSArray *)arg2 sourceView:(UIView *)arg3 sourceRect:(struct CGRect)arg4 mode:(unsigned long long)arg5;
+- (void)performAction:(id <SXAction>)arg1 postActionHandlers:(NSArray *)arg2;
 @end
 

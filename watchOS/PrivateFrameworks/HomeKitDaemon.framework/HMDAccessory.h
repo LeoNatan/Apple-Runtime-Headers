@@ -194,6 +194,7 @@
 - (void)updateRoom:(id)arg1;
 @property(retain, nonatomic) HMDRoom *room; // @synthesize room=_room;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)removeCloudData;
 - (void)unconfigure;
 - (void)configureWithHome:(id)arg1 msgDispatcher:(id)arg2 configurationTracker:(id)arg3;
 - (void)registerForMessagesWithNewUUID:(id)arg1;

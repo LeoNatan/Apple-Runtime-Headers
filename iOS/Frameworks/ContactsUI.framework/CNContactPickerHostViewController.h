@@ -9,7 +9,7 @@
 #import <ContactsUI/CNContactPickerContentViewController-Protocol.h>
 #import <ContactsUI/CNContactPickerHostProtocol-Protocol.h>
 
-@class NSExtension, NSString, UINavigationController;
+@class NSExtension, NSString, UIBarButtonItem, UINavigationController;
 @protocol CNContactPickerContentDelegate, NSCopying;
 
 __attribute__((visibility("hidden")))
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidate;
 - (void)invalidateSelectionAnimated:(_Bool)arg1;
 - (void)setupWithOptions:(id)arg1 readyBlock:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) UIBarButtonItem *addContactBarButtonItem;
 @property(readonly, nonatomic) UINavigationController *navigationController;
 
 // Remaining properties

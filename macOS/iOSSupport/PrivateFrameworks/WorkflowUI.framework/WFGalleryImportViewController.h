@@ -52,6 +52,8 @@
 @property(readonly, nonatomic) WFGalleryWorkflow *galleryWorkflow; // @synthesize galleryWorkflow=_galleryWorkflow;
 @property(nonatomic) __weak id <WFGalleryImportViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)eventSourceForShortcut;
+- (void)trackAddEvent;
 - (BOOL)presentationControllerShouldDismiss:(id)arg1;
 - (void)shortcutViewControllerDidCancel:(id)arg1;
 - (void)shortcutViewController:(id)arg1 didFinishWithName:(id)arg2;

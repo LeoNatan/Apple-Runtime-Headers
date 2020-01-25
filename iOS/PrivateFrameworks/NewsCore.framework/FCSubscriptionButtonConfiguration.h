@@ -8,7 +8,7 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class NSString, NSURL;
+@class FCColor, NSString, NSURL;
 
 @interface FCSubscriptionButtonConfiguration : NSObject <NSCopying>
 {
@@ -20,6 +20,8 @@
     unsigned long long _postPurchaseActionType;
     NSURL *_postPurchaseURL;
     NSString *_landingPageArticleID;
+    FCColor *_buttonColor;
+    FCColor *_buttonTextColor;
 }
 
 + (id)defaultNonTrialText;
@@ -31,6 +33,8 @@
 + (id)defaultOsloSheetTargetSubscriptionButton;
 + (id)defaultLandingPageTargetSubscriptionButtonWithLandingPageArticleID:(id)arg1;
 @property(nonatomic, getter=shouldDismissLandingPagePostPurchase) _Bool dismissLandingPagePostPurchase; // @synthesize dismissLandingPagePostPurchase=_dismissLandingPagePostPurchase;
+@property(retain, nonatomic) FCColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;
+@property(retain, nonatomic) FCColor *buttonColor; // @synthesize buttonColor=_buttonColor;
 @property(copy, nonatomic) NSString *landingPageArticleID; // @synthesize landingPageArticleID=_landingPageArticleID;
 @property(copy, nonatomic) NSURL *postPurchaseURL; // @synthesize postPurchaseURL=_postPurchaseURL;
 @property(nonatomic) unsigned long long postPurchaseActionType; // @synthesize postPurchaseActionType=_postPurchaseActionType;
@@ -42,7 +46,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithSubscriptionButtonType:(unsigned long long)arg1 trialText:(id)arg2 nonTrialText:(id)arg3 targetType:(unsigned long long)arg4 postPurchaseActionType:(unsigned long long)arg5 postPurchaseURL:(id)arg6 landingPageArticleID:(id)arg7 dismissLandingPagePostPurchase:(_Bool)arg8;
+- (id)initWithSubscriptionButtonType:(unsigned long long)arg1 trialText:(id)arg2 nonTrialText:(id)arg3 buttonColor:(id)arg4 buttonTextColor:(id)arg5 targetType:(unsigned long long)arg6 postPurchaseActionType:(unsigned long long)arg7 postPurchaseURL:(id)arg8 landingPageArticleID:(id)arg9 dismissLandingPagePostPurchase:(_Bool)arg10;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

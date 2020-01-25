@@ -565,7 +565,7 @@ __attribute__((visibility("hidden")))
 - (void)_didScroll;
 - (void)_cancelTouchEventGestureRecognizer;
 - (void)_cancelLongPressGestureRecognizer;
-- (void)_handleSmartMagnificationInformationForPotentialTap:(unsigned long long)arg1 renderRect:(const struct FloatRect *)arg2 fitEntireRect:(_Bool)arg3 viewportMinimumScale:(double)arg4 viewportMaximumScale:(double)arg5;
+- (void)_handleSmartMagnificationInformationForPotentialTap:(unsigned long long)arg1 renderRect:(const struct FloatRect *)arg2 fitEntireRect:(_Bool)arg3 viewportMinimumScale:(double)arg4 viewportMaximumScale:(double)arg5 nodeIsRootLevel:(_Bool)arg6;
 - (void)_disableDoubleTapGesturesDuringTapIfNecessary:(unsigned long long)arg1;
 - (_Bool)_mayDisableDoubleTapGesturesDuringSingleTap;
 - (void)_didGetTapHighlightForRequest:(unsigned long long)arg1 color:(const struct Color *)arg2 quads:(const Vector_c1077595 *)arg3 topLeftRadius:(const struct IntSize *)arg4 topRightRadius:(const struct IntSize *)arg5 bottomLeftRadius:(const struct IntSize *)arg6 bottomRightRadius:(const struct IntSize *)arg7 nodeHasBuiltInClickHandling:(_Bool)arg8;

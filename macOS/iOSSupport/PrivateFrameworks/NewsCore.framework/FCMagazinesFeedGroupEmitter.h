@@ -19,6 +19,7 @@
 + (id)groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) BOOL requiresHeavyweightContent;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (BOOL)wantsToInsertGroupInContext:(id)arg1;

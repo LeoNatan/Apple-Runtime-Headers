@@ -33,6 +33,9 @@
     unsigned int _runningTransitionAnimations:1;
     unsigned int _treeNeedsUpdate:1;
     unsigned int _isInCustomizationPalette:1;
+    unsigned int _requiresTrueCenterLayout:1;
+    unsigned int _overlayRequiresTrueCenterLayout:1;
+    BOOL _requiresReducedMetricsCompression;
     CAMediaTimingFunction *_animationTimingFunction;
     double _animationDuration;
     NSTouchBarItemContainerView *_changingContainerView;
@@ -42,6 +45,7 @@
     struct CGRect _contentRect;
 }
 
+@property BOOL requiresReducedMetricsCompression; // @synthesize requiresReducedMetricsCompression=_requiresReducedMetricsCompression;
 @property double defaultItemPadding; // @synthesize defaultItemPadding=_defaultItemPadding;
 - (id)fadeFromAlpha:(double)arg1 toAlpha:(double)arg2 afterDelay:(double)arg3 withDuration:(double)arg4;
 - (id)adjustFromFrame:(struct CGRect)arg1 toFrame:(struct CGRect)arg2 afterDelay:(double)arg3 withDuration:(double)arg4;
@@ -69,8 +73,7 @@
 - (void)_appStateWillChange;
 @property BOOL isInCustomizationPalette;
 - (void)withAnimationsSuppressed:(CDUnknownBlockType)arg1;
-- (BOOL)isMissingEscKeyReplacement;
-- (void)setMissingEscKeyReplacement:(BOOL)arg1;
+@property(getter=isMissingEscKeyReplacement) BOOL missingEscKeyReplacement; // @synthesize missingEscKeyReplacement=_isMissingEscKeyReplacement;
 @property BOOL allowsTransitionAnimations;
 @property(retain) NSArray *touchBars;
 @property(copy) NSTouchBarItemTree *itemTree;

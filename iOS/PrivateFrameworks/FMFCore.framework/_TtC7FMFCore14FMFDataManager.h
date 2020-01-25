@@ -11,6 +11,7 @@
     // Error parsing type: , name: delegate
     // Error parsing type: , name: dataManagerUpdateQueue
     // Error parsing type: , name: dataManagerDelegateQueue
+    // Error parsing type: , name: cacheBlobQueue
     // Error parsing type: , name: pendingDataManager
     // Error parsing type: , name: following
     // Error parsing type: , name: followers
@@ -28,7 +29,7 @@
     // Error parsing type: , name: locationAlertsOnFriendsByFriends
     // Error parsing type: , name: internalLocationAlerts
     // Error parsing type: , name: permanentDataCache
-    // Error parsing type: , name: cacheBlob
+    // Error parsing type: , name: _cacheBlob
     // Error parsing type: , name: initializedFromCache
     // Error parsing type: , name: contactsController
     // Error parsing type: , name: contactMatchingCache

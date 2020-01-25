@@ -18,8 +18,18 @@
     NSArray *_filterBundleIds;
     _CDInteractionCache *_messageInteractionCache;
     _CDInteractionCache *_shareInteractionCache;
+    unsigned int __PSKnnTopKShares;
+    unsigned int __PSKnnMessagesZkwTopNFilter;
+    unsigned int __PSKnnModelRecencyMarginToPromoteShares;
+    unsigned int __PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId;
+    unsigned int __PSKnnModelRecencyMarginToRetainShares;
 }
 
+@property(nonatomic) unsigned int _PSKnnModelRecencyMarginToRetainShares; // @synthesize _PSKnnModelRecencyMarginToRetainShares=__PSKnnModelRecencyMarginToRetainShares;
+@property(nonatomic) unsigned int _PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId; // @synthesize _PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId=__PSKnnModelRecencyMarginToPromoteSharesMatchingBundleId;
+@property(nonatomic) unsigned int _PSKnnModelRecencyMarginToPromoteShares; // @synthesize _PSKnnModelRecencyMarginToPromoteShares=__PSKnnModelRecencyMarginToPromoteShares;
+@property(nonatomic) unsigned int _PSKnnMessagesZkwTopNFilter; // @synthesize _PSKnnMessagesZkwTopNFilter=__PSKnnMessagesZkwTopNFilter;
+@property(nonatomic) unsigned int _PSKnnTopKShares; // @synthesize _PSKnnTopKShares=__PSKnnTopKShares;
 @property(retain, nonatomic) _CDInteractionCache *shareInteractionCache; // @synthesize shareInteractionCache=_shareInteractionCache;
 @property(retain, nonatomic) _CDInteractionCache *messageInteractionCache; // @synthesize messageInteractionCache=_messageInteractionCache;
 @property(readonly, nonatomic) NSArray *filterBundleIds; // @synthesize filterBundleIds=_filterBundleIds;
@@ -58,6 +68,7 @@
 - (id)filterSuggestionsFrom:(id)arg1 byFilteringOutSeedRecipients:(id)arg2;
 - (id)rankedMessagesAutocompleteSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 candidates:(id)arg3;
 - (id)rankedAutocompleteSuggestionsWithPredictionContext:(id)arg1 candidates:(id)arg2;
+- (void)updateModelProperities:(id)arg1;
 - (id)initWithK:(unsigned int)arg1 interactionStore:(id)arg2 filterByBundleIds:(id)arg3 knowledgeStore:(id)arg4 contactResolver:(id)arg5 messageInteractionCache:(id)arg6 shareInteractionCache:(id)arg7;
 
 @end

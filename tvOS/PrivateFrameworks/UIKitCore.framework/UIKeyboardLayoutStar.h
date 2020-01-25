@@ -321,6 +321,7 @@ __attribute__((visibility("hidden")))
 - (void)setHideKeysUnderIndicator:(_Bool)arg1;
 - (_Bool)shouldShowIndicator;
 - (void)showPopupVariantsForKey:(id)arg1;
+- (id)_variantsOfCurrencyKey:(id)arg1 language:(id)arg2;
 - (id)_variantsByAppendingDualStringKey:(id)arg1 toVariants:(id)arg2;
 - (id)_appendingSecondaryStringToVariantsTop:(id)arg1 secondaryString:(id)arg2 withDirection:(id)arg3;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;

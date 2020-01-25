@@ -112,6 +112,8 @@
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
 - (void)_forwardAudioChunk:(id)arg1 remoteVAD:(id)arg2 atTime:(unsigned long long)arg3 toStream:(id)arg4;
 - (void)_processAudioBuffer:(id)arg1 remoteVAD:(id)arg2 atTime:(unsigned long long)arg3;
+- (void)_fetchHistoricalAudioAndForwardToStream:(id)arg1 remoteVAD:(id)arg2;
+- (void)_processAudioBufferForWatch:(id)arg1 remoteVAD:(id)arg2 atTime:(unsigned long long)arg3;
 - (void)audioRecorderWillBeDestroyed:(id)arg1;
 - (void)audioRecorderStreamHandleIdInvalidated:(unsigned long long)arg1;
 - (void)audioRecorderDidStopRecord:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 reason:(long long)arg3;

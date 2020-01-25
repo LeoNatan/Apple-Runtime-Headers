@@ -40,6 +40,7 @@
 - (void)_setupProgressIndicator;
 - (void)_dismissButtonTapped:(id)arg1;
 - (void)viewDidLoad;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 
 // Remaining properties

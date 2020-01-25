@@ -8,15 +8,15 @@
 
 #import <ScreenTimeUI/STProtectedControlDelegate-Protocol.h>
 
-@class NSButton, NSString, STCoreUser;
+@class NSButton, NSColor, NSString, STCoreUser;
 
 @interface STScreenTimeCommunicationViewController : NSViewController <STProtectedControlDelegate>
 {
-    BOOL _allowIntroductionInGroups;
     NSButton *_everyoneRadioButton;
     NSButton *_contactsOnlyRadioButton;
 }
 
++ (id)keyPathsForValuesAffectingIntroductionDescriptionTextColor;
 + (id)keyPathsForValuesAffectingIntroductionDescriptionString;
 + (id)keyPathsForValuesAffectingAllowIntroductionInGroups;
 + (id)keyPathsForValuesAffectingIntroductionEnabled;
@@ -27,12 +27,16 @@
 - (void)actionCancelledForControl:(id)arg1;
 - (void)_validateRadioButtonState;
 - (void)chooseRadioButton:(id)arg1;
+@property(readonly, nonatomic) NSColor *introductionDescriptionTextColor;
 @property(readonly, nonatomic) NSString *introductionDescriptionString;
-@property(nonatomic) BOOL allowIntroductionInGroups; // @synthesize allowIntroductionInGroups=_allowIntroductionInGroups;
+@property(nonatomic) BOOL allowIntroductionInGroups;
 @property(readonly, nonatomic) BOOL introductionEnabled;
 @property(readonly, nonatomic) NSString *descriptionString;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(retain) STCoreUser *representedObject;
+- (void)dealloc;
 - (void)viewWillAppear;
+- (void)viewDidLoad;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

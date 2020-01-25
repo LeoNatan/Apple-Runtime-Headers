@@ -67,6 +67,8 @@ __attribute__((visibility("hidden")))
 - (void)processResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)messageFromICDD:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)messageFromDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (BOOL)checkTCCAccess:(CDStruct_6ad76789)arg1 clientPID:(int)arg2;
+- (BOOL)checkPlatformBinary:(CDStruct_6ad76789)arg1 clientPID:(int)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)addSelectorToInterface:(id)arg1 selectorString:(id)arg2 origin:(BOOL)arg3;
 - (void)disconnectDeviceWithDescription:(id)arg1;

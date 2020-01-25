@@ -360,7 +360,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSecureMessagingRequired;
 - (_Bool)isSIPEnabled;
 - (void)dealloc;
-- (_Bool)handshakeComplete:(struct SSLContext *)arg1 withError:(struct __CFError **)arg2;
 - (void)updateLastReceivedPacket:(_Bool)arg1 packetType:(int)arg2;
 - (void)updateLastReceivedAudioTime;
 - (void)updateLastReceivedPacketWithTimestamp:(double)arg1 packetType:(int)arg2;

@@ -23,6 +23,7 @@
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (void)_processSwipeUpMessageEvent:(int)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

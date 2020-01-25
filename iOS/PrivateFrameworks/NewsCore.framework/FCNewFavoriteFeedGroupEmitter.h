@@ -15,6 +15,7 @@
 }
 
 + (id)groupEmitterIdentifier;
+@property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (_Bool)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;

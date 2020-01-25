@@ -9,15 +9,15 @@
 #import <Silex/SXImageViewFactory-Protocol.h>
 
 @class NSString;
-@protocol SXReachabilityProvider, SXResourceDataSourceProvider;
+@protocol SWReachabilityProvider, SXResourceDataSourceProvider;
 
 @interface SXImageViewFactory : NSObject <SXImageViewFactory>
 {
     id <SXResourceDataSourceProvider> _resourceDataSourceProvider;
-    id <SXReachabilityProvider> _reachabilityProvider;
+    id <SWReachabilityProvider> _reachabilityProvider;
 }
 
-@property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
+@property(readonly, nonatomic) id <SWReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 @property(readonly, nonatomic) id <SXResourceDataSourceProvider> resourceDataSourceProvider; // @synthesize resourceDataSourceProvider=_resourceDataSourceProvider;
 - (void).cxx_destruct;
 - (id)repeatableImageViewForResource:(id)arg1;

@@ -107,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)addReachedBeginningOfTextDescriptionToOutputRequest:(id)arg1;
 - (void)addReachedBoundarySoundToOutputRequest:(id)arg1;
 - (void)addTextBoundaryToOutputRequest:(id)arg1 uiElement:(id)arg2 edge:(long long)arg3;
+- (BOOL)supportsCaretBrowsing;
 - (BOOL)isSelectedTextRangeSettable;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (BOOL)endElementTrackingWithGestureEvent:(id)arg1 request:(id)arg2;
@@ -487,6 +488,7 @@ __attribute__((visibility("hidden")))
 - (void)handleSameSizeContentChangeWithUserInfo:(id)arg1;
 - (void)handleContentChangeWithUserInfo:(id)arg1;
 - (void)_textDidChange:(id)arg1;
+- (void)_updateFocusedChildFromSelectionChange;
 - (void)_updateViewFinder;
 - (BOOL)_encounteredPlaceholderTextForRange:(id)arg1;
 - (BOOL)_optimizeSpeakSelectionForOutputRange:(id)arg1;
@@ -504,6 +506,7 @@ __attribute__((visibility("hidden")))
 - (void)_registerForSelectionChangedNotification;
 - (BOOL)registeredForTextSelectionChangedNotifications;
 - (void)_registerTextChangeNotification:(BOOL)arg1;
+- (BOOL)_shouldRegisterNotificationsFromApplication;
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;

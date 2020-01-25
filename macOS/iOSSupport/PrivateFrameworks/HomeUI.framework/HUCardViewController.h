@@ -91,6 +91,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)setUpConstraints;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithQuickControlViewController:(id)arg1 settingsViewController:(id)arg2 sourceItem:(id)arg3 controlItems:(id)arg4 home:(id)arg5;

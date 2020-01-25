@@ -46,7 +46,8 @@
 -     // Error parsing type: @24@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _chatDictionaryForMessageRecord:
 -     // Error parsing type: @24@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _messageDictionaryForMessageRecord:
 -     // Error parsing type: @28@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16c24, name: _generateNotificationRequestForDeliveryError:isCarouselUITriggered:
--     // Error parsing type: @48@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16c24c28c32c36^c40, name: _generateNotificationRequestForMessageRecord:isUrgentMessage:downTimeEnabled:isCarouselUITriggered:isMostActive:shouldAdvanceLastAlertedMessageDate:
+-     // Error parsing type: @44@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16c24c28c32^c36, name: _generateNotificationRequestForMessageRecord:isUrgentMessage:isCarouselUITriggered:isMostActive:shouldAdvanceLastAlertedMessageDate:
+- (unsigned long long)screenTimeNotificationOptionsForChatDictionary:(id)arg1;
 - (BOOL)_shouldPostNotificationRequest:(id)arg1;
 - (BOOL)_haveMigrated;
 - (BOOL)_shouldOverrideChatSilencingBecauseImMentioned:(id)arg1;
@@ -65,7 +66,6 @@
 - (id)_nicknameInfoForAddress:(id)arg1;
 - (void)_setUpSuggestionService;
 - (id)_displayNameForHandle:(struct _IMDHandleRecordStruct *)arg1 andContact:(id)arg2;
-- (BOOL)_handleIsWhitelisted:(struct _IMDHandleRecordStruct *)arg1;
 - (void)_setMessagesSpokenWhitelistLevelInPreferences:(unsigned long long)arg1;
 - (unsigned long long)_getMessagesSpokenWhitelistLevel:(char *)arg1;
 - (BOOL)_messageIsFromFavorite:(id)arg1;
@@ -101,11 +101,11 @@
 - (void)postUrgentNotificationForMessages:(id)arg1;
 - (void)repostNotificationsFromFirstUnlock;
 - (void)retractNotificationsForReadMessages:(id)arg1;
-- (void)postNotifications:(BOOL)arg1;
-- (void)_postNotifications:(id)arg1;
-- (void)__postNotifications:(BOOL)arg1 isMostActiveDevice:(BOOL)arg2;
+- (void)postNotifications;
+- (void)_postNotifications;
+- (void)__postNotificationsIsMostActiveDevice:(BOOL)arg1;
 - (void)_registerUserNotificationsForFailedDeliveryMessageRecords:(id)arg1 isCarouselUITriggered:(BOOL)arg2;
-- (void)_registerUserNotificationsForMessageRecords:(id)arg1 newerThanDate:(long long)arg2 areUrgentMessages:(BOOL)arg3 downTimeEnabled:(BOOL)arg4 isCarouselUITriggered:(BOOL)arg5 isMostActiveDevice:(BOOL)arg6;
+- (void)_registerUserNotificationsForMessageRecords:(id)arg1 newerThanDate:(long long)arg2 areUrgentMessages:(BOOL)arg3 isCarouselUITriggered:(BOOL)arg4 isMostActiveDevice:(BOOL)arg5;
 - (id)_messages:(id)arg1 newerThanDate:(long long)arg2;
 - (id)_messagesSortedByDate:(id)arg1;
 - (BOOL)_overrideDNDForMessagesAddressingMe;

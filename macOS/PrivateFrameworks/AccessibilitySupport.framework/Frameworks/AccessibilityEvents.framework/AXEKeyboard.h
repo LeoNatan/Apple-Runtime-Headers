@@ -26,6 +26,7 @@
 - (void)pressKey:(unsigned long long)arg1;
 - (BOOL)isKeyDown:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSSet *downKeys;
+@property(readonly, nonatomic) BOOL _supportsBuiltinEscKey;
 @property(readonly, nonatomic) BOOL isCapsLockDown;
 @property(readonly, nonatomic) BOOL isFnDown;
 @property(readonly, nonatomic) BOOL isShiftDown;

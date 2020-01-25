@@ -10,35 +10,42 @@
 #import <HealthUI/NSURLSessionDelegate-Protocol.h>
 #import <HealthUI/NSURLSessionTaskDelegate-Protocol.h>
 
-@class NSCache, NSMapTable, NSMutableDictionary, NSString, NSURLSession, UIImage;
+@class NSCache, NSMapTable, NSMutableDictionary, NSString, NSURLSession;
+@protocol OS_dispatch_queue;
 
 @interface HKAppImageManager : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 {
     NSURLSession *_session;
     NSMapTable *_containers;
     NSMutableDictionary *_urlConnections;
+    NSObject<OS_dispatch_queue> *_managerQueue;
     NSCache *_iconCache;
     NSMutableDictionary *_outstandingRequests;
 }
 
++ (id)defaultAppIconTableUI;
++ (id)defaultAppIcon;
 + (id)sharedImageManager;
 @property(retain) NSMutableDictionary *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(retain) NSCache *iconCache; // @synthesize iconCache=_iconCache;
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
-- (void)cancelLoadAppImageAtURL:(id)arg1;
-- (void)loadAppImageAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_enqueueRequestForAppIconForIdentifier:(id)arg1;
 - (void)_dispatchResponsesForAppIconForIdentifier:(id)arg1 appImage:(id)arg2;
-- (_Bool)_fetchIconFromLaunchServicesWithIdentifier:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
-- (void)loadAppIconForIdentifier:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
-- (id)loadResearchStudyIconForSource:(id)arg1;
+- (id)_queue_fetchIconFromLaunchServicesWithIdentifier:(id)arg1;
+- (void)_queue_loadAppIconForSource:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
+- (void)_queue_cacheAppIcon:(id)arg1 forIdentifier:(id)arg2;
+- (id)_queue_researchStudyIconForSource:(id)arg1;
+- (id)researchStudyIconForSource:(id)arg1;
+- (id)iconForDevice:(id)arg1;
+- (void)loadAppImageAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_queue_synchronousLoadIconForSource:(id)arg1;
+- (void)loadIconForSource:(id)arg1 syncHandler:(CDUnknownBlockType)arg2 asyncHandler:(CDUnknownBlockType)arg3;
+- (id)iconForSource:(id)arg1;
+- (void)loadIconForSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cacheAppIcon:(id)arg1 forIdentifier:(id)arg2;
-- (id)cachedIconForIdentifier:(id)arg1;
 - (void)clearImageCache;
-@property(readonly) UIImage *defaultAppIconTableUI;
-- (id)defaultAppIcon;
 - (id)init;
 
 // Remaining properties

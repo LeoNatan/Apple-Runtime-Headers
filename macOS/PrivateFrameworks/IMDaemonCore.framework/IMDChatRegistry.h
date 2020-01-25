@@ -181,6 +181,10 @@
 - (id)existingChatWithIdentifier:(id)arg1 account:(id)arg2;
 - (id)existingChatsWithGroupID:(id)arg1;
 - (id)existingChatWithGUID:(id)arg1;
+- (id)existingSMSChatForID:(id)arg1 withChatStyle:(unsigned char)arg2;
+- (id)existingSMSChatForID:(id)arg1;
+- (id)existingiMessageChatForID:(id)arg1 withChatStyle:(unsigned char)arg2;
+- (id)existingiMessageChatForID:(id)arg1;
 - (id)chatForRoom:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4;
 - (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 groupID:(id)arg5 displayName:(id)arg6 guid:(id)arg7 lastAddressedHandle:(id)arg8 lastAddressedSIMID:(id)arg9 isBlackholed:(BOOL)arg10;
 - (id)chatForHandle:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4 lastAddressedHandle:(id)arg5 lastAddressedSIMID:(id)arg6 isBlackholed:(BOOL)arg7;

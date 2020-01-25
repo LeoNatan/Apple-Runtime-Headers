@@ -29,6 +29,7 @@ struct BRCDirectoryItem {
     unsigned long long _field16;
     unsigned long long _field17;
     unsigned long long _field18;
+    id _field19;
 };
 
 struct CC_SHA1state_st {

@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol FCChannelProviding <FCTagProviding>
+@property(readonly, nonatomic) NSString *supergroupConfigJson;
+@property(readonly, nonatomic) NSString *supergroupKnobsJson;
 @property(readonly, copy, nonatomic) NSString *backIssuesListID;
 @property(readonly, copy, nonatomic) NSArray *currentIssueIDs;
 @property(readonly, nonatomic) _Bool isWhitelisted;

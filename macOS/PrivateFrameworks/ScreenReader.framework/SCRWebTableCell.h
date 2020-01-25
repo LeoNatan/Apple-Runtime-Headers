@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactUpShiftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownShiftWithEvent:(id)arg1 request:(id)arg2;
 - (id)onlyChild;
-- (void)restoreStateDueToInvalidFocusedChild;
+- (void)restoreStateDueToInvalidFocusedChild:(id)arg1;
 - (void)recordStateDueToInvalidFocusedChild;
 - (void)_setChildIndex:(long long)arg1;
 - (long long)_childIndex;

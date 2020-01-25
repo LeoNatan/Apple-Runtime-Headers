@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)_writeACLVersionForOptions:(id)arg1;
 + (id)_legacyAttestationForOptions:(id)arg1 error:(id *)arg2;
 + (BOOL)_generateLegacyKeypairForOptions:(id)arg1 error:(id *)arg2;
 +     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}32@0:8@16^@24, name: _copyLegacyPublicKeyForOptions:error:

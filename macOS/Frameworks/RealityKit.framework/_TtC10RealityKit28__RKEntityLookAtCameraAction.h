@@ -9,10 +9,17 @@
 @interface _TtC10RealityKit28__RKEntityLookAtCameraAction : _TtC10RealityKit16__RKEntityAction
 {
     // Error parsing type: , name: duration
-    // Error parsing type: , name: direction
-    // Error parsing type: , name: upVector
+    // Error parsing type: , name: animationDuration
+    // Error parsing type: , name: face
+    // Error parsing type: , name: rotation
+    // Error parsing type: , name: axis
+    // Error parsing type: , name: loops
     // Error parsing type: , name: updateSubscription
     // Error parsing type: , name: deadline
+    // Error parsing type: , name: animationDeadline
+    // Error parsing type: , name: currentAnimation
+    // Error parsing type: , name: didInit
+    // Error parsing type: , name: faceRotation
 }
 
 - (id)copyWithZone:(void *)arg1;

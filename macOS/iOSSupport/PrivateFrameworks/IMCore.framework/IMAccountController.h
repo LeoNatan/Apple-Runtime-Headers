@@ -99,6 +99,7 @@
 - (id)_bestOperationalAccountForSendingForService:(id)arg1;
 - (id)__iCloudSystemAccountForService:(id)arg1;
 - (id)_bestAccountForAddresses:(id)arg1;
+- (long long)activeAccountsAreEligibleForSpamFilter;
 
 @end
 

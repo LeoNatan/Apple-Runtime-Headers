@@ -9,6 +9,7 @@
 @class SCREvent, SCROutputRequest, SCRUIElement;
 
 @protocol SCRText <NSObject>
+- (BOOL)supportsCaretBrowsing;
 - (BOOL)moveToNextParagraphWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
 - (BOOL)moveToPreviousParagraphWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
 - (BOOL)moveToNextLineWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;

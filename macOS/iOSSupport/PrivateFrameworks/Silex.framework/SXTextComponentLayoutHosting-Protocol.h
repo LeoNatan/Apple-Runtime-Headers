@@ -6,9 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class STTextTangierDocumentRoot;
+@class SXTextTangierDocumentRoot;
 
 @protocol SXTextComponentLayoutHosting <NSObject>
-- (STTextTangierDocumentRoot *)documentRoot;
+- (SXTextTangierDocumentRoot *)documentRoot;
 @end
 

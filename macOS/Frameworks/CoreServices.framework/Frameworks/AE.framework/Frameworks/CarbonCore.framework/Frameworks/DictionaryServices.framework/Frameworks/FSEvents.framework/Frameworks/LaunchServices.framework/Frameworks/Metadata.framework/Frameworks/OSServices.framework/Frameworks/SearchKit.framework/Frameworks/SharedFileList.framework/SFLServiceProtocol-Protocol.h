@@ -9,6 +9,7 @@
 @class NSArray, NSDictionary, NSString, NSUUID, _SFLItem;
 
 @protocol SFLServiceProtocol <NSObject>
+- (void)openItemWithIdentifier:(NSUUID *)arg1 listIdentifier:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)resolveItemWithIdentifier:(NSUUID *)arg1 listIdentifier:(NSString *)arg2 options:(unsigned long long)arg3 reply:(void (^)(NSURL *, NSString *, BOOL, NSError *))arg4;
 - (void)updateProperties:(NSDictionary *)arg1 listIdentifier:(NSString *)arg2 reply:(void (^)(_SFLList *, NSError *))arg3;
 - (void)removeItemsWithIdentifiers:(NSArray *)arg1 listIdentifier:(NSString *)arg2 reply:(void (^)(_SFLList *, NSError *))arg3;

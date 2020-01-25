@@ -80,6 +80,16 @@ struct AudioServerPlugInHostInterface {
     CDUnknownFunctionPointerType _field5;
 };
 
+struct AudioServerPlugInIOCycleInfo {
+    unsigned long long mIOCycleCounter;
+    unsigned int mNominalIOBufferFrameSize;
+    struct AudioTimeStamp mCurrentTime;
+    struct AudioTimeStamp mInputTime;
+    struct AudioTimeStamp mOutputTime;
+    double mMasterHostTicksPerFrame;
+    double mDeviceHostTicksPerFrame;
+};
+
 struct AudioStreamBasicDescription {
     double _field1;
     unsigned int _field2;
@@ -95,6 +105,16 @@ struct AudioStreamBasicDescription {
 struct AudioStreamRangedDescription {
     struct AudioStreamBasicDescription _field1;
     struct AudioValueRange _field2;
+};
+
+struct AudioTimeStamp {
+    double mSampleTime;
+    unsigned long long mHostTime;
+    double mRateScalar;
+    unsigned long long mWordClockTime;
+    struct SMPTETime mSMPTETime;
+    unsigned int mFlags;
+    unsigned int mReserved;
 };
 
 struct AudioUnitParameterInfo {
@@ -157,6 +177,18 @@ struct OutputPort;
 struct ParameterTap;
 
 struct PropertyTap;
+
+struct SMPTETime {
+    short mSubframes;
+    short mSubframeDivisor;
+    unsigned int mCounter;
+    unsigned int mType;
+    unsigned int mFlags;
+    short mHours;
+    short mMinutes;
+    short mSeconds;
+    short mFrames;
+};
 
 struct Set<DSPGraph::Analyzer *> {
     struct Member *_field1;

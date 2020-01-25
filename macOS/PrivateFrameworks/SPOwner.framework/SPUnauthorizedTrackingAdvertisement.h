@@ -23,7 +23,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSData *_address; // @synthesize _address=__address;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
+@property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSDate *scanDate; // @synthesize scanDate=_scanDate;
 @property(nonatomic) long long rssi; // @synthesize rssi=_rssi;
 @property(copy, nonatomic) NSData *reserved; // @synthesize reserved=_reserved;

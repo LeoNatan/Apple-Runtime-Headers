@@ -39,7 +39,6 @@
 - (void)setPresentationFrame:(struct CGRect)arg1;
 - (void)setAbsoluteFrame:(struct CGRect)arg1;
 - (void)didMoveToWindow;
-- (void)renderContents;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
 - (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 tangierController:(id)arg5;
 

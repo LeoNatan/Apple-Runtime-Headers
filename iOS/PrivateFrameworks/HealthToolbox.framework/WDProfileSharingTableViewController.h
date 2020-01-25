@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)_handleReturnedImage:(id)arg1 forSource:(id)arg2 cell:(id)arg3 tableView:(id)arg4 fetchError:(id)arg5;
 - (void)_fetchAuthorizationRecordsBySourceForCharacteristic:(id)arg1;
 - (void)_gatherDataAndRefreshUI;
 - (void)traitCollectionDidChange:(id)arg1;

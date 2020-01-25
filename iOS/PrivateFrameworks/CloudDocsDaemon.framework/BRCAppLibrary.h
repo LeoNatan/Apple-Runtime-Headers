@@ -42,8 +42,10 @@ __attribute__((visibility("hidden")))
     NSNumber *_generationID;
     BRContainer *_containerMetadata;
     NSString *_containerMetadataEtag;
+    NSNumber *_rootQuotaUsage;
 }
 
+@property(retain, nonatomic) NSNumber *rootQuotaUsage; // @synthesize rootQuotaUsage=_rootQuotaUsage;
 @property(nonatomic) _Bool containerMetadataNeedsSyncUp; // @synthesize containerMetadataNeedsSyncUp=_containerMetadataNeedsSyncUp;
 @property(retain, nonatomic) NSString *containerMetadataEtag; // @synthesize containerMetadataEtag=_containerMetadataEtag;
 @property(readonly, nonatomic) BRContainer *containerMetadata; // @synthesize containerMetadata=_containerMetadata;
@@ -136,8 +138,8 @@ __attribute__((visibility("hidden")))
 - (void)cancelWriteCoordinatorForItem:(id)arg1;
 - (struct PQLResultSet *)enumerateUserVisibleChildrenDirectoriesOfItemGlobalID:(id)arg1 db:(id)arg2;
 - (struct PQLResultSet *)enumerateUserVisibleChildrenOfItemGlobalID:(id)arg1 sortOrder:(unsigned char)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 db:(id)arg5;
-- (struct PQLResultSet *)itemsEnumeratorChildOf:(id)arg1 rankMin:(unsigned long long)arg2 rankMax:(unsigned long long)arg3 count:(unsigned long long)arg4 db:(id)arg5;
-- (struct PQLResultSet *)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 shouldIncludeFolders:(_Bool)arg4 shouldIncludeOnlyFolders:(_Bool)arg5 shouldIncludeDocumentsScope:(_Bool)arg6 shouldIncludeDataScope:(_Bool)arg7 shouldIncludeExternalScope:(_Bool)arg8 shouldIncludeTrashScope:(_Bool)arg9 count:(unsigned long long)arg10 db:(id)arg11;
+- (struct PQLResultSet *)itemsEnumeratorChildOf:(id)arg1 withDeadItems:(_Bool)arg2 rankMin:(unsigned long long)arg3 rankMax:(unsigned long long)arg4 count:(unsigned long long)arg5 db:(id)arg6;
+- (struct PQLResultSet *)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 withDeadItems:(_Bool)arg4 shouldIncludeFolders:(_Bool)arg5 shouldIncludeOnlyFolders:(_Bool)arg6 shouldIncludeDocumentsScope:(_Bool)arg7 shouldIncludeDataScope:(_Bool)arg8 shouldIncludeExternalScope:(_Bool)arg9 shouldIncludeTrashScope:(_Bool)arg10 count:(unsigned long long)arg11 db:(id)arg12;
 - (id)descriptionWithContext:(id)arg1;
 - (id)_unwrappedDescriptionWithContext:(id)arg1;
 @property(readonly, copy) NSString *description;

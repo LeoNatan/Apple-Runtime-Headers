@@ -7,13 +7,20 @@
 #import <objc/NSObject.h>
 
 @class _SFCredentialStore;
+@protocol OS_dispatch_queue;
 
 @interface _SFKeychainManager : NSObject
 {
-    id _keychainManagerInternal;
+    _SFCredentialStore *_credentialStore;
+    NSObject<OS_dispatch_queue> *_keychainManagerQueue;
+    NSObject<OS_dispatch_queue> *_keychainReplyQueue;
 }
 
++ (id)defaultOverCommitManager;
 + (id)defaultManager;
+@property(retain) NSObject<OS_dispatch_queue> *keychainReplyQueue; // @synthesize keychainReplyQueue=_keychainReplyQueue;
+@property(retain) NSObject<OS_dispatch_queue> *keychainManagerQueue; // @synthesize keychainManagerQueue=_keychainManagerQueue;
+@property(retain) _SFCredentialStore *credentialStore; // @synthesize credentialStore=_credentialStore;
 - (void).cxx_destruct;
 - (void)removeItemWithIdentifier:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)identitiesFilteredBy:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
@@ -29,8 +36,8 @@
 - (struct __CFDictionary *)_commonKeyAttributesForIdentityIdentifier:(id)arg1 accessPolicy:(id)arg2 key:(id)arg3;
 - (void)setKey:(id)arg1 forIdentifier:(id)arg2 accessPolicy:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
 - (id)_symmetricKeyAttributesForIdentifier:(id)arg1 accessPolicy:(id)arg2 key:(id)arg3;
-@property(readonly) _SFCredentialStore *credentialStore;
-- (id)_init;
+- (id)initOverCommitManager;
+- (id)initManager;
 
 @end
 

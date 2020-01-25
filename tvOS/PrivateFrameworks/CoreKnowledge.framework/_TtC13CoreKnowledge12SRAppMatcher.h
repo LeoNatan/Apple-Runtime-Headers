@@ -11,6 +11,7 @@
     // Error parsing type: , name: db
     // Error parsing type: , name: domain
     // Error parsing type: , name: allowedBundleIDs
+    // Error parsing type: , name: entitySet
     // Error parsing type: , name: memorableEntities
 }
 

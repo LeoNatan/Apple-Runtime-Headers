@@ -10,16 +10,15 @@
 #import <MessageUI/CNComposeDragSourceDelegate-Protocol.h>
 #import <MessageUI/CNComposeDropTargetDelegate-Protocol.h>
 #import <MessageUI/CNComposeHeaderViewDelegate-Protocol.h>
-#import <MessageUI/MFComposeBodyFieldDelegate-Protocol.h>
+#import <MessageUI/MFComposeWebViewDelegate-Protocol.h>
 #import <MessageUI/MFMailComposeContactsSearchControllerDelegate-Protocol.h>
 #import <MessageUI/UIPopoverControllerDelegate-Protocol.h>
 #import <MessageUI/UIScrollViewDelegate-Protocol.h>
-#import <MessageUI/UITextContentViewDelegate-Protocol.h>
 
-@class CNAutocompleteResultsTableViewController, MFComposeDisplayMetrics, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeSubjectView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientTextView, MFMailComposeToField, NSInvocation, NSMutableArray, NSString, UIPickerView, UIResponder, UIScrollView, UIView, UIViewController;
-@protocol MFComposeBodyField, MFMailComposeRecipientTextViewDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate;
+@class CNAutocompleteResultsTableViewController, MFComposeDisplayMetrics, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeSubjectView, MFComposeWebView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientTextView, MFMailComposeToField, MFMessageContentLoadingView, NSInvocation, NSMutableArray, NSString, UIPickerView, UIResponder, UIScrollView, UIView, UIViewController;
+@protocol MFMailComposeRecipientTextViewDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate;
 
-@interface MFMailComposeView : UITransitionView <CNComposeHeaderViewDelegate, CNAutocompleteResultsTableViewControllerDelegate, UIPopoverControllerDelegate, CNComposeDragSourceDelegate, CNComposeDropTargetDelegate, UITextContentViewDelegate, UIScrollViewDelegate, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate>
+@interface MFMailComposeView : UITransitionView <CNComposeHeaderViewDelegate, CNAutocompleteResultsTableViewControllerDelegate, CNComposeDragSourceDelegate, CNComposeDropTargetDelegate, MFComposeWebViewDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate, MFMailComposeContactsSearchControllerDelegate>
 {
     UIScrollView *_bodyScroller;
     UIView *_headerView;
@@ -37,6 +36,8 @@
     UIPickerView *_fromAddressPickerView;
     MFFromAddressViewController *_fromAddressViewController;
     UIView *_fromAddressPickerBackgroundView;
+    MFComposeWebView *_webView;
+    MFMessageContentLoadingView *_loadingView;
     _Bool _isDragging;
     NSMutableArray *_pendingDropRecipients;
     UIResponder *_firstResponderBeforeSheet;
@@ -87,14 +88,15 @@
 @property(nonatomic) __weak id <MFMailComposeRecipientTextViewDelegate> composeRecipientDelegate; // @synthesize composeRecipientDelegate=_composeRecipientViewDelegate;
 @property(nonatomic) __weak id <MFMailComposeViewDelegate> composeViewDelegate; // @synthesize composeViewDelegate=_mailComposeViewDelegate;
 - (void).cxx_destruct;
+- (void)composeWebViewTextChanged:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)_displayMetricsDidChange;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutMarginsDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGPoint)_headerViewOriginWithScrollViewOffsetCalculation;
-- (void)textContentView:(id)arg1 didChangeSize:(struct CGSize)arg2;
-- (_Bool)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize)arg2;
-- (_Bool)textContentView:(id)arg1 shouldScrollForPendingContentSize:(struct CGSize)arg2;
 - (void)willDisappear;
 - (void)didAppear;
 - (void)parentDidClose;
@@ -150,20 +152,15 @@
 - (void)fromAddressPickerPopoverWasDismissed;
 - (void)_setBodyShouldScrollToFirstResponder:(_Bool)arg1;
 - (void)_adjustScrollerForBottomView;
+- (void)_adjustScrollerContentSize;
 - (void)_normalizeBodyFieldFrame;
-- (void)setNeedsLayout;
 - (void)_layoutLoadingView;
 - (void)layoutSubviews;
-- (void)composeBodyFieldDidFirstVisuallyNonEmptyLayout:(id)arg1;
-- (void)composeBodyFieldDidDraw:(id)arg1;
-- (void)composeBodyFieldFrameChanged:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)_finishUpRotationToInterfaceOrientation:(long long)arg1;
 - (id)_focusedRecipientView;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
-- (void)_adjustScrollerContentSize;
-- (id)_bodyField;
 - (void)_dropItems:(id)arg1 recipientTextView:(id)arg2;
 - (void)dropTarget:(id)arg1 didDropDragItems:(id)arg2 atPoint:(struct CGPoint)arg3;
 - (void)dropTargetDragExited:(id)arg1;
@@ -212,9 +209,7 @@
 - (void)_updateTextViewOriginWithHeaderFrame:(struct CGRect)arg1;
 - (void)_setHeaderFrame:(struct CGRect)arg1;
 - (struct CGRect)_headerFrame;
-- (id)_textView;
-@property(readonly, nonatomic) UIView *bodyTextView;
-@property(readonly, nonatomic) UIView<MFComposeBodyField> *bodyField;
+@property(readonly, nonatomic) MFComposeWebView *composeWebView;
 - (void)_setupBodyFieldWithHeaderFrame:(struct CGRect)arg1 enclosingFrame:(struct CGRect)arg2 changingView:(id)arg3 frameToPin:(struct CGRect)arg4 wasSearching:(_Bool)arg5;
 - (void)_revealSelectionIfNeededWithChangingView:(id)arg1;
 - (void)_updateTextViewHeightWithHeaderFrame:(struct CGRect)arg1;
@@ -229,9 +224,9 @@
 - (id)_searchResultsTable;
 @property(readonly, nonatomic) CNAutocompleteResultsTableViewController *searchViewController; // @synthesize searchViewController=_searchViewController;
 - (_Bool)_presentsSearchResultsTableAsPopover;
+- (void)_setUpContentView;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 options:(unsigned long long)arg2;
-- (void)_setUpContentView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

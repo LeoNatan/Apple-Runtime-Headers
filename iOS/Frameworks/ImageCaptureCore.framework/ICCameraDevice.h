@@ -24,6 +24,7 @@
     _Bool _tetheredCaptureEnabled;
     _Bool _contentReceived;
     _Bool _basicMediaModel;
+    _Bool _ready;
     _Bool _accessRestrictedAppleDevice;
     _Bool _allowsSyncingClock;
     _Bool _isEnumeratingContent;
@@ -33,6 +34,8 @@
     double _timeOffset;
     unsigned long long _batteryLevel;
     CDUnknownBlockType _ptpEventHandler;
+    unsigned long long _estimatedCountOfMediafiles;
+    long long _preflightCountOfObjects;
     double _downloadCancelTimestamp;
     NSMutableIndexSet *_enumeratedObjectIndexes;
     NSMutableArray *_originalMediaFiles;
@@ -78,6 +81,7 @@
 @property(retain, nonatomic) NSXPCListenerEndpoint *devEndpoint; // @synthesize devEndpoint=_devEndpoint;
 @property(retain, nonatomic) NSXPCConnection *devConnection; // @synthesize devConnection=_devConnection;
 @property(nonatomic, getter=isAccessRestrictedAppleDevice) _Bool accessRestrictedAppleDevice; // @synthesize accessRestrictedAppleDevice=_accessRestrictedAppleDevice;
+@property(nonatomic) _Bool ready; // @synthesize ready=_ready;
 @property(copy, nonatomic) NSString *devProductType; // @synthesize devProductType=_devProductType;
 @property(nonatomic) _Bool basicMediaModel; // @synthesize basicMediaModel=_basicMediaModel;
 @property(nonatomic) unsigned long long estMediaObjectCount; // @synthesize estMediaObjectCount=_estMediaObjectCount;
@@ -95,6 +99,8 @@
 @property(retain, nonatomic) NSMutableArray *originalMediaFiles; // @synthesize originalMediaFiles=_originalMediaFiles;
 @property(retain, nonatomic) NSMutableIndexSet *enumeratedObjectIndexes; // @synthesize enumeratedObjectIndexes=_enumeratedObjectIndexes;
 @property(nonatomic) double downloadCancelTimestamp; // @synthesize downloadCancelTimestamp=_downloadCancelTimestamp;
+@property long long preflightCountOfObjects; // @synthesize preflightCountOfObjects=_preflightCountOfObjects;
+@property unsigned long long estimatedCountOfMediafiles; // @synthesize estimatedCountOfMediafiles=_estimatedCountOfMediafiles;
 @property(nonatomic) _Bool contentReceived; // @synthesize contentReceived=_contentReceived;
 @property(copy, nonatomic) CDUnknownBlockType ptpEventHandler; // @synthesize ptpEventHandler=_ptpEventHandler;
 @property(readonly, nonatomic) _Bool tetheredCaptureEnabled; // @synthesize tetheredCaptureEnabled=_tetheredCaptureEnabled;
@@ -164,8 +170,11 @@
 - (void)addNumberOfDownloadableItems:(long long)arg1;
 - (unsigned long long)estimatedNumberOfDownloadableItems;
 - (void)addEstimatedNumberOfDownloadableItems:(long long)arg1;
+- (void)updateContentCatalogPercentCompleted;
+- (void)updateMediaFilesCount:(id)arg1;
 @property(readonly, nonatomic) unsigned long long contentCatalogPercentCompleted;
 - (void)setContentCatalogPercentCompleted:(unsigned long long)arg1;
+- (unsigned long long)countOfObjects;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceCommandQueue; // @dynamic deviceCommandQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceNotificationQueue; // @dynamic deviceNotificationQueue;
 - (void)dealloc;

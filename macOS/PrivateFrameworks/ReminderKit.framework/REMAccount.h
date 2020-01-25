@@ -59,6 +59,7 @@
 @property(readonly, nonatomic) NSString *daSyncToken; // @dynamic daSyncToken;
 @property(readonly, nonatomic) BOOL daWasMigrated; // @dynamic daWasMigrated;
 @property(readonly, nonatomic) BOOL didChooseToMigrate; // @dynamic didChooseToMigrate;
+@property(readonly, nonatomic) BOOL didChooseToMigrateLocally; // @dynamic didChooseToMigrateLocally;
 @property(readonly, nonatomic) BOOL didFinishMigration; // @dynamic didFinishMigration;
 @property(retain, nonatomic) NSString *displayName; // @dynamic displayName;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;

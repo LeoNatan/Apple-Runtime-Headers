@@ -44,6 +44,7 @@
     long long _conversationID;
     long long _dataTransferByteCount;
     long long _storageByteCount;
+    long long __internalID;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -58,11 +59,13 @@
 + (id)predicateForExcludingMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForExcludingMessageWithObjectID:(id)arg1;
 + (id)predicateForMessagesWithObjectIDs:(id)arg1;
++ (id)predicateForMessageWithInternalID:(long long)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
 @property(copy, nonatomic) NSUUID *documentID; // @synthesize documentID=_documentID;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
+@property long long _internalID; // @synthesize _internalID=__internalID;
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
 - (void)setExchangeEventUID:(int)arg1;
 @property(readonly, nonatomic) int exchangeEventUID;

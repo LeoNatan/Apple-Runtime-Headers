@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
+- (id)cookieForUrlWithName:(id)arg1:(id)arg2;
+- (id)cookiesForUrl:(id)arg1;
 @property(nonatomic, readonly) NSNumber *userAgeIfAvailable;
 @property(nonatomic, readonly) BOOL isUnderThirteen;
 @property(nonatomic, readonly) BOOL isManagedAppleID;

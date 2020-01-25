@@ -6,9 +6,9 @@
 
 #import <NewsUI2/_TtC7NewsUI231SpecialEventsNavigationObserver.h>
 
-#import <NewsUI2/SXWebContentNavigationObserver-Protocol.h>
+#import <NewsUI2/SWNavigationObserver-Protocol.h>
 
-@interface _TtC7NewsUI231SpecialEventsNavigationObserver (NewsUI2) <SXWebContentNavigationObserver>
+@interface _TtC7NewsUI231SpecialEventsNavigationObserver (NewsUI2) <SWNavigationObserver>
 - (void)handledNavigationWithURL:(id)arg1;
 @end
 

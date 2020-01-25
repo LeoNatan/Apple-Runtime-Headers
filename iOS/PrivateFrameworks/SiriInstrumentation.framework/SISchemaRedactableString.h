@@ -6,16 +6,13 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
-#import <SiriInstrumentation/SISchemaRedactableString-Protocol.h>
-
 @class NSData, NSString;
 
-@interface SISchemaRedactableString : PBCodable <SISchemaRedactableString, NSSecureCoding>
+@interface SISchemaRedactableString : PBCodable
 {
     int _redactionState;
-    NSString *_value;
     unsigned long long _which_String;
+    NSString *_value;
 }
 
 @property(readonly, nonatomic) unsigned long long which_String; // @synthesize which_String=_which_String;
@@ -24,17 +21,12 @@
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 - (id)dictionaryRepresentation;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) int redactionState; // @synthesize redactionState=_redactionState;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

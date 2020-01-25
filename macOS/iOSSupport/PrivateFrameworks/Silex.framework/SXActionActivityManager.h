@@ -20,7 +20,7 @@
 - (id)activityProviderForAction:(id)arg1;
 - (id)previewActivityForAction:(id)arg1;
 - (id)activityGroupForAction:(id)arg1;
-- (void)registerActionActivityProvider:(id)arg1 actionType:(Class)arg2;
+- (void)registerActionActivityProvider:(id)arg1 actionType:(id)arg2;
 - (id)init;
 
 // Remaining properties

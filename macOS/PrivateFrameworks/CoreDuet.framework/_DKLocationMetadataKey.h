@@ -11,6 +11,7 @@
 }
 
 + (id)identifier;
++ (id)altitude;
 + (id)longitude;
 + (id)latitude;
 

@@ -31,8 +31,9 @@
     int _deviceID;
 }
 
-+ (unsigned short)computeItemModeFromStatInfo:(id)arg1 sharingOptions:(unsigned long long)arg2 isDirectory:(_Bool)arg3;
++ (unsigned short)computeItemModeFromStatInfo:(id)arg1 isPackage:(_Bool)arg2;
 + (void)migrateStageToVersion2_0WithSession:(id)arg1;
++ (_Bool)applySharingReadonlyACLsToFD:(int)arg1 statInfo:(id)arg2 version:(id)arg3 clientZone:(id)arg4 sharingOptions:(unsigned long long)arg5;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) int deviceID; // @synthesize deviceID=_deviceID;
 - (void).cxx_destruct;
@@ -66,7 +67,7 @@
 - (id)makePendingFetchRecordDirWithStartingChangeToken:(id)arg1 recordZoneID:(id)arg2;
 - (id)_anchorNameForChangeToken:(id)arg1 recordZoneID:(id)arg2;
 - (void)associateSyncUpStageID:(id)arg1 withOperation:(id)arg2;
-- (void)applyMetadataOnFileDescriptor:(int)arg1 liveFileDescriptor:(int)arg2 clientZone:(id)arg3 statInfo:(id)arg4 version:(id)arg5 sharingOptions:(unsigned long long)arg6;
+- (void)applyMetadataOnFileDescriptor:(int)arg1 liveFileDescriptor:(int)arg2 itemID:(id)arg3 clientZone:(id)arg4 statInfo:(id)arg5 version:(id)arg6 sharingOptions:(unsigned long long)arg7;
 - (_Bool)moveFromStage:(unsigned long long)arg1 toPath:(id)arg2 fileName:(id)arg3 error:(id *)arg4;
 - (_Bool)makeItemLive:(id)arg1 fromStage:(unsigned long long)arg2 bySwappingWith:(id)arg3 fileName:(id)arg4 error:(id *)arg5;
 - (_Bool)_flockToMakeLiveAtPath:(id)arg1 error:(id *)arg2;

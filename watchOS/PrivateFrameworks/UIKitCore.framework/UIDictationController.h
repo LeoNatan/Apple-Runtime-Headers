@@ -264,6 +264,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_allowsMicsInSearchFieldForLanguageIdentifiers:(id)arg1;
 - (_Bool)dictationSearchFieldUIEnabled;
 - (_Bool)currentViewModeSupportsDictationMics;
+- (_Bool)dataSharingDecided;
 - (_Bool)dictationEnabled;
 - (id)connectionForStatisticsLogging;
 - (void)releaseConnectionAfterStatisticsLogging;

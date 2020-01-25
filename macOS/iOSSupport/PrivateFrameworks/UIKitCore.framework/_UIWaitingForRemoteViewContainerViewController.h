@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) UIActivityIndicatorView *loadingSpinner; // @synthesize loadingSpinner=_loadingSpinner;
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 - (void)stopSpinner;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

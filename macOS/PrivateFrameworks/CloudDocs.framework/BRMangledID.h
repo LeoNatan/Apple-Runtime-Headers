@@ -26,6 +26,7 @@
 + (BOOL)validateMangledIDString:(id)arg1;
 + (BOOL)validateOwnerName:(id)arg1;
 + (BOOL)validateContainerID:(id)arg1;
++ (id)sideCarMangledID;
 + (id)documentsMangledID;
 + (id)desktopMangledID;
 + (BOOL)supportsSecureCoding;

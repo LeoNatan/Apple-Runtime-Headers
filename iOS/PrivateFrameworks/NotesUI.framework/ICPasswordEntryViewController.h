@@ -41,6 +41,7 @@
 @property(nonatomic) unsigned long long intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) ICNote *note; // @synthesize note=_note;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)updateforAccessibilityDarkerSystemColors;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)unlockPasswordButtonPressed:(id)arg1;

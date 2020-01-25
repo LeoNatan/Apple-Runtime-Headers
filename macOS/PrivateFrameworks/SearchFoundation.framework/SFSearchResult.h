@@ -86,6 +86,7 @@
     NSString *_resultBundleId;
     SFImage *_icon;
     NSDictionary *_localFeatures;
+    NSDictionary *_serverFeatures;
     NSString *_intendedQuery;
     NSString *_correctedQuery;
     NSString *_completedQuery;
@@ -123,6 +124,7 @@
 @property(copy, nonatomic) NSString *completedQuery; // @synthesize completedQuery=_completedQuery;
 @property(copy, nonatomic) NSString *correctedQuery; // @synthesize correctedQuery=_correctedQuery;
 @property(copy, nonatomic) NSString *intendedQuery; // @synthesize intendedQuery=_intendedQuery;
+@property(copy, nonatomic) NSDictionary *serverFeatures; // @synthesize serverFeatures=_serverFeatures;
 @property(copy, nonatomic) NSDictionary *localFeatures; // @synthesize localFeatures=_localFeatures;
 @property(nonatomic) BOOL isFuzzyMatch; // @synthesize isFuzzyMatch=_isFuzzyMatch;
 @property(nonatomic) BOOL isStaticCorrection; // @synthesize isStaticCorrection=_isStaticCorrection;

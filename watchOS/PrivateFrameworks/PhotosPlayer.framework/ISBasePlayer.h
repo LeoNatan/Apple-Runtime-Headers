@@ -106,6 +106,9 @@
 - (void)_videoDidPlayToEnd;
 - (void)willRemoveOutput:(id)arg1;
 - (void)didAddOutput:(id)arg1;
+- (_Bool)behaviorIsVideoReadyForDisplay:(id)arg1;
+@property(readonly, nonatomic) _Bool videoLayersReadyForDisplay;
+- (void)_outputVideoReadyForDisplayDidChange:(id)arg1;
 - (void)removeOutput:(id)arg1;
 - (void)addOutput:(id)arg1;
 - (void)activeBehaviorDidChange;

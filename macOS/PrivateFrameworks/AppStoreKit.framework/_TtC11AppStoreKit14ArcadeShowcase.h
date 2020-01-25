@@ -13,6 +13,7 @@
     // Error parsing type: , name: subscribedAction
     // Error parsing type: , name: subscribedDescription
     // Error parsing type: , name: iconArtworks
+    // Error parsing type: , name: impressionMetrics
 }
 
 @end

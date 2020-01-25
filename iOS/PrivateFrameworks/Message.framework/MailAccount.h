@@ -25,6 +25,7 @@
         unsigned int disableCacheWrite:1;
         unsigned int _UNUSED_:13;
     } _flags;
+    struct os_unfair_lock_s _flagsLock;
     MFMailboxUid *_inboxMailboxUid;
     MFMailboxUid *_draftsMailboxUid;
     MFMailboxUid *_sentMessagesMailboxUid;
@@ -189,6 +190,7 @@
 @property(readonly, copy) NSString *description;
 - (_Bool)_deleteMailbox:(id)arg1;
 - (_Bool)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
+- (void)_incrementCacheDirtyCount;
 - (void)_writeMailboxCacheWithPrejudice:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_writeMailboxCacheWithPrejudice:(_Bool)arg1;
 - (void)_loadEntriesFromFileSystemPath:(id)arg1 parent:(id)arg2;
@@ -327,6 +329,7 @@
 - (void)_deleteHook;
 - (_Bool)canAuthenticateWithCurrentCredentials;
 @property(readonly, copy, nonatomic) NSString *smtpIdentifier;
+- (id)copyReceivingEmailAddresses;
 - (id)emailAddressesAndAliases;
 - (id)emailAddressesAndAliasesList;
 - (void)setLastEmailAliasesSyncDate:(id)arg1;
@@ -367,11 +370,13 @@
 - (void)_setAccountProperties:(id)arg1;
 - (void)persistentAccountDidChange:(id)arg1 previousAccount:(id)arg2;
 - (void)_invalidateCachedMailboxen;
+- (void)dealloc;
 - (id)uniqueIdForPersistentConnection;
 - (void)resetMailboxTimer;
 - (_Bool)isUsernameEquivalentTo:(id)arg1;
 - (_Bool)isEquivalentTo:(id)arg1 hostname:(id)arg2 username:(id)arg3;
 - (void)accountDidLoad;
+@property _Bool cacheHasBeenRead;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

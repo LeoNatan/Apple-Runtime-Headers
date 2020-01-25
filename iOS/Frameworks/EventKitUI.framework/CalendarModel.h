@@ -141,7 +141,7 @@
 - (_Bool)isCalendarVisibleWithID:(id)arg1;
 - (void)ensureCalendarVisibleWithId:(id)arg1;
 @property(readonly, nonatomic) long long readWriteCalendarCount;
-@property(readonly, nonatomic) long long visibleCalendarCount;
+- (void)_loadVisibleCalendarsIfNeeded;
 @property(nonatomic) _Bool allowEventLocationPrediction;
 @property(readonly, nonatomic) _Bool containsDelegateSources;
 - (void)setSourceForSelectedIdentity:(id)arg1;
@@ -150,9 +150,12 @@
 - (void)updateSourceForSelectedIdentity:(id)arg1 selectedCalendars:(id)arg2;
 - (_Bool)_eventBelongsToCurrentIdentity:(id)arg1;
 - (void)setSelectedCalendarsAndRequestPreferenceSave:(id)arg1;
+- (void)postSelectedCalendarsChanged;
+- (_Bool)_setSelectedCalendars:(id)arg1;
 @property(retain, nonatomic) NSSet *selectedCalendars; // @synthesize selectedCalendars=_selectedCalendars;
 - (id)calendarsForCurrentIdentityFromCalendars:(id)arg1;
 - (id)_calendarsForCurrentIdentityFromCalendars:(id)arg1 lock:(_Bool)arg2;
+@property(copy, nonatomic) NSSet *unselectedCalendars;
 - (void)dealloc;
 - (void)_performCommonInitialization;
 - (id)initWithDataPath:(id)arg1;

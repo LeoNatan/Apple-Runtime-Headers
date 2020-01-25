@@ -123,6 +123,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)_isScrubbing;
 - (_Bool)_isScrubbingSelectionTimeRange;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 @property(nonatomic) _Bool isCompactView;

@@ -93,6 +93,7 @@
 @property(nonatomic) __weak id <AFUISiriViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)emitUIStateTransitionForSiriDismissal:(int)arg1 withDismissalReason:(int)arg2;
 - (_Bool)_canShowWhileLocked;
 - (void)_setRecordingStartedOnRoute:(_Bool)arg1;
 - (_Bool)_recordingStartedOnRoute;
@@ -214,7 +215,7 @@
 - (void)_setStatusViewHidden:(_Bool)arg1;
 - (void)siriRemoteViewController:(id)arg1 didUpdateAudioCategoriesDisablingVolumeHUD:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 presentedIntentWithBundleId:(id)arg2;
-- (void)siriRemoteViewController:(id)arg1 requestsDismissal:(CDUnknownBlockType)arg2;
+- (void)siriRemoteViewController:(id)arg1 requestsDismissalWithReason:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)siriRemoteViewController:(id)arg1 requestsPresentation:(CDUnknownBlockType)arg2;
 - (void)siriRemoteViewControllerDidEndTapToEdit:(id)arg1;
 - (void)siriRemoteViewControllerWillBeginTapToEdit:(id)arg1;
@@ -259,7 +260,7 @@
 - (void)siriRemoteViewController:(id)arg1 startRequestWithOptions:(id)arg2;
 - (void)startGuidedAccessForRemoteViewController:(id)arg1;
 - (void)extendCurrentTTSRequested;
-- (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(_Bool)arg2 userInfo:(id)arg3;
+- (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(_Bool)arg2 userInfo:(id)arg3 withDismissalReason:(unsigned long long)arg4;
 - (long long)siriRemoteViewControllerRequestsActivationSource:(id)arg1;
 - (void)siriRemoteViewController:(id)arg1 invalidatedForReason:(unsigned long long)arg2 explanation:(id)arg3;
 - (void)siriRemoteViewControllerDidFinishDismissing:(id)arg1;
@@ -309,6 +310,7 @@
 - (void)enterUITrackingMode;
 @property(readonly, nonatomic) _Bool isProcessingAcousticIdRequest;
 - (void)setShowsStatusBar:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (long long)viewMode;
 - (id)underlyingConnection;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 configuration:(id)arg2 requestSource:(long long)arg3;

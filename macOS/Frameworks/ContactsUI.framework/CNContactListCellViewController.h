@@ -24,6 +24,7 @@
     NSString *_contactIdentifier;
     NSString *_linkIdentifier;
     BOOL _expanded;
+    BOOL _canExpandCell;
     CNContactListCellView *_cellView;
     id <CNContactListCellViewControllerDelegate> _delegate;
     NSArray *_displayedKeys;
@@ -31,6 +32,7 @@
 
 + (id)keysToFetch;
 @property(copy) NSArray *displayedKeys; // @synthesize displayedKeys=_displayedKeys;
+@property(nonatomic) BOOL canExpandCell; // @synthesize canExpandCell=_canExpandCell;
 @property(nonatomic, getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
 @property __weak id <CNContactListCellViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak CNContactListCellView *cellView; // @synthesize cellView=_cellView;

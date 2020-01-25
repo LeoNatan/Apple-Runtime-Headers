@@ -17,6 +17,7 @@
     // Error parsing type: , name: referrer
     // Error parsing type: , name: storeDataProvider
     // Error parsing type: , name: impressionsCatalogue
+    // Error parsing type: , name: advertRotationData
 }
 
 @end

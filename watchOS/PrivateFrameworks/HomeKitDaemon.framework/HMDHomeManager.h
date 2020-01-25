@@ -324,7 +324,6 @@
 - (void)_updateAccountAvailabilityChanged:(CDUnknownBlockType)arg1;
 - (void)updateAccountAvailabilityChanged;
 - (void)_handleIdmsAccountUsernameModified:(id)arg1;
-- (void)_handleLogControl:(id)arg1;
 - (void)_handleRemoteSessionTornDown:(id)arg1;
 - (void)_electCompanionForRemoteAccess:(id)arg1;
 - (void)_electRemoteAccessDeviceForHome:(id)arg1 retryCount:(unsigned int)arg2;

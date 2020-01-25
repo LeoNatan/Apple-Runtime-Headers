@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)transitDeparturesDataSource:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
 - (void)transitDeparturesDataSource:(id)arg1 showIncidents:(id)arg2;
 - (void)transitDeparturesDataSourceDidReload:(id)arg1;
+- (void)transitDeparturesDataSourceDidToggleHiddenSystem:(id)arg1;
 - (id)separatorColorForTransitDeparturesDataSource:(id)arg1;
 - (struct UIEdgeInsets)separatorInsetsForTransitDeparturesDataSource:(id)arg1;
 - (id)traitsForTransitDeparturesDataSource:(id)arg1;

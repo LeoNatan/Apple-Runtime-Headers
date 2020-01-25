@@ -22,6 +22,7 @@
 @property(nonatomic) long long desiredArticlesCount; // @synthesize desiredArticlesCount=_desiredArticlesCount;
 @property(nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
 - (id)backingChannelTagIDWithConfiguration:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (BOOL)_canShowWhileLocked;
 
 @end
 

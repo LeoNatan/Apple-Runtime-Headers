@@ -6,10 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXAction;
-@protocol SXComponentInteractionHandler;
+@protocol SXAction, SXComponentInteractionHandler;
 
 @protocol SXActionComponentInteractionHandlerFactory <NSObject>
-- (id <SXComponentInteractionHandler>)interactionHandlerForAction:(SXAction *)arg1;
+- (id <SXComponentInteractionHandler>)interactionHandlerForAction:(id <SXAction>)arg1;
 @end
 

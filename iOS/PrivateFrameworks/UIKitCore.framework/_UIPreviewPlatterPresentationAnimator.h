@@ -8,15 +8,12 @@
 
 #import <UIKitCore/_UIClickPresentationTransition-Protocol.h>
 
-@class NSArray, NSString, UITargetedPreview, UIViewFloatAnimatableProperty, UIViewPropertyAnimator, _UIContextMenuAnimator, _UIPortalView, _UIPreviewPlatterPresentationController;
+@class NSArray, NSString, UITargetedPreview, UIViewFloatAnimatableProperty, UIViewPropertyAnimator, _UIContextMenuAnimator, _UIContextMenuLayoutArbiterOutput, _UIPortalView, _UIPreviewPlatterPresentationController;
 @protocol _UIPreviewPlatterPresentationAnimatorDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterPresentationAnimator : NSObject <_UIClickPresentationTransition>
 {
-    struct CGRect _expandedPlatterFrame;
-    struct CGRect _expandedActionsFrame;
-    CDStruct_6f807b77 _layoutAnchor;
     _Bool _isDismissTransition;
     _Bool _reparentsInDestinationContainer;
     UITargetedPreview *_sourcePreview;
@@ -32,9 +29,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _reparentingAnimationBlock;
     CDUnknownBlockType _backgroundAnimationBlock;
     CDUnknownBlockType _accessoryAnimationBlock;
+    _UIContextMenuLayoutArbiterOutput *_expandedLayout;
     struct UIEdgeInsets _preferredBackgroundInsets;
 }
 
+@property(retain, nonatomic) _UIContextMenuLayoutArbiterOutput *expandedLayout; // @synthesize expandedLayout=_expandedLayout;
 @property(copy, nonatomic) CDUnknownBlockType accessoryAnimationBlock; // @synthesize accessoryAnimationBlock=_accessoryAnimationBlock;
 @property(copy, nonatomic) CDUnknownBlockType backgroundAnimationBlock; // @synthesize backgroundAnimationBlock=_backgroundAnimationBlock;
 @property(copy, nonatomic) CDUnknownBlockType reparentingAnimationBlock; // @synthesize reparentingAnimationBlock=_reparentingAnimationBlock;

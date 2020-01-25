@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)didTearDownRecentsViewForKeyboardMediaController:(id)arg1;
 - (_Bool)_shouldShowRecentlyUsedMedia;
+- (_Bool)memojiSettingEnabled;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shouldDismissModalDisplayView:(id)arg1;
 - (long long)didInputSubTree:(id)arg1;

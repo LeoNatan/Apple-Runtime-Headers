@@ -12,8 +12,12 @@
 
 @interface NTPBInAppWebEmbedExposure : PBCodable <NSCopying>
 {
+    int _articleDisplayRankInGroup;
     NSString *_articleId;
+    int _displayRank;
+    int _feedType;
     NSData *_feedViewExposureId;
+    int _groupType;
     int _moduleEventType;
     NSData *_moduleExposureId;
     int _moduleItemCount;
@@ -22,6 +26,10 @@
     NSString *_webEmbedId;
     int _webEmbedLocation;
     struct {
+        unsigned int articleDisplayRankInGroup:1;
+        unsigned int displayRank:1;
+        unsigned int feedType:1;
+        unsigned int groupType:1;
         unsigned int moduleEventType:1;
         unsigned int moduleItemCount:1;
         unsigned int moduleItemPosition:1;
@@ -30,6 +38,8 @@
     } _has;
 }
 
+@property(nonatomic) int articleDisplayRankInGroup; // @synthesize articleDisplayRankInGroup=_articleDisplayRankInGroup;
+@property(nonatomic) int displayRank; // @synthesize displayRank=_displayRank;
 @property(retain, nonatomic) NSString *webEmbedId; // @synthesize webEmbedId=_webEmbedId;
 @property(nonatomic) int moduleItemPosition; // @synthesize moduleItemPosition=_moduleItemPosition;
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
@@ -45,6 +55,16 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasArticleDisplayRankInGroup;
+@property(nonatomic) _Bool hasDisplayRank;
+- (int)StringAsFeedType:(id)arg1;
+- (id)feedTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasFeedType;
+@property(nonatomic) int feedType; // @synthesize feedType=_feedType;
+- (int)StringAsGroupType:(id)arg1;
+- (id)groupTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasGroupType;
+@property(nonatomic) int groupType; // @synthesize groupType=_groupType;
 @property(readonly, nonatomic) _Bool hasWebEmbedId;
 @property(nonatomic) _Bool hasModuleItemPosition;
 @property(readonly, nonatomic) _Bool hasArticleId;

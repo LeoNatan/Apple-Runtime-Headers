@@ -9,11 +9,12 @@
 #import <Message/EDMessageChangeHookResponder-Protocol.h>
 #import <Message/EDProtectedDataReconciliationHookResponder-Protocol.h>
 #import <Message/EFContentProtectionObserver-Protocol.h>
+#import <Message/EFSignpostable-Protocol.h>
 
 @class EDMessageQueryParser, EDPersistence, EDPersistenceHookRegistry, EDSearchableIndexScheduler, MFFileCompressionQueue, MFLibrarySearchableIndex, MFMessageChangeManager_iOS, MFPersistenceDatabase_iOS, MFWeakObjectCache, NSCache, NSMutableDictionary, NSMutableSet, NSObject, NSString, _MFMailMessageLibraryStatistics;
 @protocol EFSQLExpressable, EFScheduler, OS_dispatch_queue;
 
-@interface MFMailMessageLibrary : MFMessageLibrary <EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EFContentProtectionObserver>
+@interface MFMailMessageLibrary : MFMessageLibrary <EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EFSignpostable, EFContentProtectionObserver>
 {
     MFWeakObjectCache *_libraryMessageCache;
     NSMutableDictionary *_mailboxCache;
@@ -53,6 +54,7 @@
 + (id)defaultInstance;
 + (_Bool)canUsePersistence;
 + (id)propertyMapper;
++ (id)signpostLog;
 + (id)log;
 @property(retain, nonatomic) NSMutableDictionary *currentAddedMessagesMap; // @synthesize currentAddedMessagesMap=_currentAddedMessagesMap;
 @property(retain, nonatomic) id <EFScheduler> fileRemovalAfterCompactionScheduler; // @synthesize fileRemovalAfterCompactionScheduler=_fileRemovalAfterCompactionScheduler;
@@ -204,7 +206,7 @@
 - (id)mailboxUidForMessage:(id)arg1;
 - (id)mailboxURLForMessage:(id)arg1;
 - (long long)mailboxIDForURLString:(id)arg1;
-- (long long)mailboxIDForURLString:(id)arg1 createIfNecesary:(_Bool)arg2;
+- (long long)mailboxIDForURLString:(id)arg1 createIfNecessary:(_Bool)arg2;
 - (id)mailboxURLsForIDs:(id)arg1;
 - (id)urlForMailboxID:(long long)arg1;
 - (void)reloadMailboxCacheIfNecessaryWithConnection:(id)arg1;
@@ -329,6 +331,7 @@
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)initWithPath:(id)arg1 inMemoryIdentifier:(id)arg2 userAgent:(id)arg3;
+@property(readonly) unsigned long long signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

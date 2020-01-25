@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateContentsForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1;
+- (id)_summaryAttributedTextForBlockedConversationWithIcon:(_Bool)arg1;
 - (void)_setUpDrawingContentView;
 - (void)prepareForReuse;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

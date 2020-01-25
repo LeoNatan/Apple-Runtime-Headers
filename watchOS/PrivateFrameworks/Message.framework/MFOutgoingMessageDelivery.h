@@ -23,6 +23,8 @@
     NSDictionary *_compositionSpecification;
     MFMailDelivery *_currentDeliveryObject;
     _Bool _isUserRequested;
+    _Bool _shouldSign;
+    _Bool _shouldEncrypt;
     id <MFDeliveryDelegate> _delegate;
     MFAttachmentCompositionContext *_attachmentContext;
     MFMailMessage *_originalMessage;
@@ -34,6 +36,8 @@
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 + (id)newWithMessage:(id)arg1;
+@property(nonatomic) _Bool shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
+@property(nonatomic) _Bool shouldSign; // @synthesize shouldSign=_shouldSign;
 @property(nonatomic) int action; // @synthesize action=_action;
 @property(nonatomic) _Bool isUserRequested; // @synthesize isUserRequested=_isUserRequested;
 @property(nonatomic) long long originalConversationId; // @synthesize originalConversationId=_originalConversationId;

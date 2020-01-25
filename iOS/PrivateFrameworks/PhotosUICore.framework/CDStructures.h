@@ -608,6 +608,11 @@ typedef struct {
     double _field4;
 } CDStruct_68723fc0;
 
+typedef struct {
+    long long zoomLevel;
+    long long scrollRegime;
+} CDStruct_0c606d9b;
+
 typedef struct CDStruct_183601bc;
 
 typedef struct {

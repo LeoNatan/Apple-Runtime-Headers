@@ -9,6 +9,7 @@
 @interface _TtC11AppStoreKit25ArcadeSubscriptionManager : NSObject
 {
     // Error parsing type: , name: paymentQueue
+    // Error parsing type: , name: activeStoreAccountProvider
     // Error parsing type: , name: observers
     // Error parsing type: , name: stateLock
     // Error parsing type: , name: arcadeSubscriptionFamilyId

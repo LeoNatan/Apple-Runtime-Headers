@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id *)arg3;
 - (id)presentingViewController;
 - (void)previewControllerDidDismiss:(id)arg1;
-- (id)initWithSystemPreviewController:(struct SystemPreviewController *)arg1 fromRect:(struct IntRect)arg2;
+- (id)initWithSystemPreviewController:(struct SystemPreviewController *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

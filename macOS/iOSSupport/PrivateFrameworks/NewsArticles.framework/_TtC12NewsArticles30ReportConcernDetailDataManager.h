@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles30ReportConcernDetailDataManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: service
+    // Error parsing type: , name: historyService
     // Error parsing type: , name: headline
     // Error parsing type: , name: concern
 }

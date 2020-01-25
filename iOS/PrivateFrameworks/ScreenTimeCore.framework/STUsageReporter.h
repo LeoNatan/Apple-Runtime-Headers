@@ -8,21 +8,27 @@
 
 #import <ScreenTimeCore/NSFetchedResultsControllerDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSDateInterval, NSFetchedResultsController, NSManagedObjectID, NSString;
+@class NSArray, NSDate, NSDateInterval, NSFetchedResultsController, NSNumber, NSSet, NSString;
 
 @interface STUsageReporter : NSObject <NSFetchedResultsControllerDelegate>
 {
     _Bool _includeTotalUsageDetailItem;
     NSDateInterval *_dateInterval;
-    NSManagedObjectID *_userManagedObjectID;
+    NSNumber *_userDSID;
     NSFetchedResultsController *_fetchedResultsController;
+    NSFetchedResultsController *_installedAppsController;
+    NSSet *_installedBundleIdentifiers;
 }
 
++ (id)keyPathsForValuesAffectingNotifications;
+@property(copy) NSSet *installedBundleIdentifiers; // @synthesize installedBundleIdentifiers=_installedBundleIdentifiers;
+@property(retain, nonatomic) NSFetchedResultsController *installedAppsController; // @synthesize installedAppsController=_installedAppsController;
 @property(readonly) NSFetchedResultsController *fetchedResultsController; // @synthesize fetchedResultsController=_fetchedResultsController;
-@property(readonly, copy) NSManagedObjectID *userManagedObjectID; // @synthesize userManagedObjectID=_userManagedObjectID;
+@property(readonly, copy) NSNumber *userDSID; // @synthesize userDSID=_userDSID;
 @property(readonly, copy) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property _Bool includeTotalUsageDetailItem; // @synthesize includeTotalUsageDetailItem=_includeTotalUsageDetailItem;
 - (void).cxx_destruct;
+- (void)_updateInstalledBundleIdentifiers;
 - (void)controllerDidChangeContent:(id)arg1;
 - (void)_enumerateUsageBlocksWithUnitGranularity:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (id)notificationRatiosForApplication:(id)arg1 perCalendarUnit:(unsigned long long)arg2;

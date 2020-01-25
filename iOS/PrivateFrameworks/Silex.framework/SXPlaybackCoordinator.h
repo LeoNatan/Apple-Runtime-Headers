@@ -70,7 +70,7 @@
 - (void)playbackResumed;
 - (void)playbackPaused;
 - (void)playbackStarted;
-- (void)playbackInitiated;
+- (void)playbackInitiatedWithButtonTapped:(_Bool)arg1;
 - (void)setupPlayerWithURL:(id)arg1;
 - (void)loadVideoIfNeeded;
 - (void)load;
@@ -85,7 +85,7 @@
 - (void)removePlaybackObserver:(id)arg1;
 - (void)addPlaybackObserver:(id)arg1;
 - (void)pause;
-- (void)play;
+- (void)playWithButtonTapped:(_Bool)arg1;
 - (id)initWithVideo:(id)arg1 playerFactory:(id)arg2;
 
 // Remaining properties

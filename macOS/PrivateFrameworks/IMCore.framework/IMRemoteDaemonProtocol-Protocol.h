@@ -151,6 +151,7 @@
 - (void)autoLoginAccount:(NSString *)arg1;
 - (void)archiveChat:(NSString *)arg1;
 - (void)debugUpdateGroupParticipantversion:(unsigned long long)arg1 chatIdentifier:(NSString *)arg2;
+- (void)unblackholeAndLoadChatWithHandleIDs:(NSArray *)arg1;
 - (void)loadChatWithChatIdentifier:(NSString *)arg1;
 - (void)removeChat:(NSString *)arg1;
 - (void)silenceChat:(NSString *)arg1 untilDate:(NSDate *)arg2;

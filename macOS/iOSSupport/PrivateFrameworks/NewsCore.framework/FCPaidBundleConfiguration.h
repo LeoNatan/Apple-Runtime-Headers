@@ -48,6 +48,7 @@
 @property(readonly, nonatomic) unsigned long long appLaunchUpsellPaidVisibility;
 @property(readonly, nonatomic) long long minFollowedMagazinesToHideSuggestionsRegular;
 @property(readonly, nonatomic) long long minFollowedMagazinesToHideSuggestionsCompact;
+@property(readonly, nonatomic) long long minimumArticlesBeforeArticleSoftPaywall;
 @property(readonly, nonatomic) long long minimumPagesInPDFIssueBeforeRead;
 @property(readonly, nonatomic) long long minimumArticlesInANFIssueBeforeRead;
 @property(readonly, nonatomic) long long minimumReadIssuesInMyMagazines;
@@ -96,6 +97,7 @@
 @property(readonly, nonatomic, getter=isPaidBundleVisible) BOOL paidBundleVisible;
 @property(readonly, nonatomic, getter=areMagazinesEnabled) BOOL magazinesEnabled;
 @property(readonly, nonatomic) long long deferredHardPaywallMinimumBodyTextLength;
+@property(readonly, nonatomic) unsigned long long magazineFeedPaywallType;
 @property(readonly, nonatomic) unsigned long long articleHardPaywallType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

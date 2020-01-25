@@ -28,7 +28,6 @@
     float _sumOfSourceDateInHours;
     float _sumOfSquaredSourceDateInHours;
     float _sumOfSquaredInterArrivalHours;
-    NSDate *_previousSourceDate;
     float _decayedSum;
     float _decayRate;
 }
@@ -36,7 +35,6 @@
 + (float)_decay:(float)arg1 decayRate:(float)arg2 timeElapsedSeconds:(double)arg3;
 @property(readonly, nonatomic) float decayRate; // @synthesize decayRate=_decayRate;
 @property(readonly, nonatomic) float decayedSum; // @synthesize decayedSum=_decayedSum;
-@property(readonly, nonatomic) NSDate *previousSourceDate; // @synthesize previousSourceDate=_previousSourceDate;
 @property(readonly, nonatomic) float sumOfSquaredInterArrivalHours; // @synthesize sumOfSquaredInterArrivalHours=_sumOfSquaredInterArrivalHours;
 @property(readonly, nonatomic) float sumOfSquaredSourceDateInHours; // @synthesize sumOfSquaredSourceDateInHours=_sumOfSquaredSourceDateInHours;
 @property(readonly, nonatomic) float sumOfSourceDateInHours; // @synthesize sumOfSourceDateInHours=_sumOfSourceDateInHours;
@@ -56,10 +54,15 @@
 @property(readonly, nonatomic) float maxScore; // @synthesize maxScore=_maxScore;
 @property(readonly, nonatomic) PPU16CountedSet *algorithmCountedSet; // @synthesize algorithmCountedSet=_algorithmCountedSet;
 - (void).cxx_destruct;
+- (unsigned int)_processTopicRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 ignoreMultiplier:(_Bool)arg4;
 - (id)initWithTopicRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4 ignoreMultiplier:(_Bool)arg5;
 - (id)initWithTopicRecords:(id)arg1 scoringDate:(id)arg2 decayRate:(float)arg3 sorted:(_Bool)arg4;
+- (unsigned int)_processNamedEntityRecords:(id)arg1 scoringDate:(id)arg2 multiplier:(float)arg3 perRecordDecayRate:(float)arg4;
 - (id)initWithNamedEntityRecords:(id)arg1 scoringDate:(id)arg2 multiplier:(float)arg3 perRecordDecayRate:(float)arg4 decayRate:(float)arg5;
 - (id)initWithNamedEntityRecords:(id)arg1 scoringDate:(id)arg2 multiplier:(float)arg3 decayRate:(float)arg4 sorted:(_Bool)arg5;
+- (unsigned int)_processRecord:(id)arg1 algorithm:(unsigned int)arg2 previousSourceDate:(id)arg3 scoringDate:(id)arg4 perRecordDecayRate:(float)arg5 score:(float)arg6 decayedSumAddend:(float)arg7;
+- (id)_sortRecordsByDescendingSourceDate:(id)arg1;
+- (void)_resetPropertiesWithAlgorithmMaxValue:(unsigned int)arg1;
 
 @end
 

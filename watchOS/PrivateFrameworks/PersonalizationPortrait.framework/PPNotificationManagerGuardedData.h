@@ -24,9 +24,11 @@
     PPEventKitNotificationHandler *_eventKitHandler;
     id <NSObject> _eventKitToken;
     EKEventStore *_ekStore;
+    int _eventKitChangeTrackingToken;
 }
 
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

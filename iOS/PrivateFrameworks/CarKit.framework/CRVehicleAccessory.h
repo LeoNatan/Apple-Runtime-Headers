@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class EAAccessory, NSArray, NSData, NSNumber, NSString;
+@class EAAccessory, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @interface CRVehicleAccessory : NSObject
 {
@@ -22,8 +22,12 @@
     NSString *_PPID;
     NSNumber *_connectionID;
     EAAccessory *_accessory;
+    NSDictionary *_vehicleInfoDataCache;
+    NSDictionary *_vehicleAccessoryInfoKeysCache;
 }
 
+@property(copy, nonatomic) NSDictionary *vehicleAccessoryInfoKeysCache; // @synthesize vehicleAccessoryInfoKeysCache=_vehicleAccessoryInfoKeysCache;
+@property(copy, nonatomic) NSDictionary *vehicleInfoDataCache; // @synthesize vehicleInfoDataCache=_vehicleInfoDataCache;
 @property(nonatomic) __weak EAAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSNumber *connectionID; // @synthesize connectionID=_connectionID;
 @property(retain, nonatomic) NSString *PPID; // @synthesize PPID=_PPID;

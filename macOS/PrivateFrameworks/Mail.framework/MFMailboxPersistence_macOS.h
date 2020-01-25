@@ -15,7 +15,7 @@
 
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
-- (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1;
+- (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)initWithMailboxProvider:(id)arg1 database:(id)arg2;
 
 @end

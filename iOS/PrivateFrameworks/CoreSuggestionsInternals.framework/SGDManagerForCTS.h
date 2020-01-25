@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class SGServiceContext, SGSqlEntityStore;
+@class NSCache, NSDate, NSFileManager, NSMutableDictionary, NSString, PETEventTracker2, SGCustomResponsesParameters, SGServiceContext, SGSqlEntityStore;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source, SGXPCActivityManagerProtocol;
 
 @interface SGDManagerForCTS : NSObject
@@ -20,10 +20,22 @@
     struct SGDSuggestManagerCTSCriteriaState _ctsCriteriaState;
     struct _opaque_pthread_mutex_t _geocodeLock;
     double _lastFrontfillFinishTime;
+    PETEventTracker2 *_pet2tracker;
     id <SGXPCActivityManagerProtocol> _xpcActivityManager;
     NSObject<OS_dispatch_source> *_adjustActivitySource;
+    NSFileManager *_fManager;
+    NSString *_customResponsesCKPTFullPath;
+    NSString *_preferredLanguage;
+    int _customResponsesStep;
+    NSDate *_customResponsesLatestProcessedDate;
+    NSString *_customResponsesModelFilePath;
+    NSString *_customResponsesModelConfigPath;
+    SGCustomResponsesParameters *_customResponsesParameters;
+    NSCache *_perLanguageEmbedderCache;
+    NSMutableDictionary *_embedderExistsForLanguage;
 }
 
++ (void)clearCustomResponsesCheckpointForTesting;
 + (void)_logCallInteractions:(id)arg1;
 + (id)defaultInstance;
 + (id)sharedSingletonInstance;
@@ -32,6 +44,11 @@
 - (void)resumeFrontfillForTesting;
 - (void)suspendFrontfillForTesting;
 - (void)resetLastFrontfillFinishTimeForTesting;
+- (id)getCustomResponsesLatestProcessedDateForTesting;
+- (void)setCustomResponsesLatestProcessedDateForTesting:(id)arg1;
+- (int)getCustomResponsesStepForTesting;
+- (void)setCustomResponsesStepForTesting:(int)arg1;
+- (void)setPet2TrackerForTesting:(id)arg1;
 - (void)waitForXpcActivityQueue;
 - (void)dealloc;
 - (void)_doFrontfillHarvestOnFrontfillQueue;

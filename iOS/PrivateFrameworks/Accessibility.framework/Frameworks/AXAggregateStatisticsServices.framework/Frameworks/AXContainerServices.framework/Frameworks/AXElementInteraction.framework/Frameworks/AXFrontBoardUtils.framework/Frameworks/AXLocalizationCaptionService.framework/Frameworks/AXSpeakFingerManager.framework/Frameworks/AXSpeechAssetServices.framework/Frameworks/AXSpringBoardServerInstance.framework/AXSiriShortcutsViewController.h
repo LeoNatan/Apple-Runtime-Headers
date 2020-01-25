@@ -26,6 +26,7 @@
 - (void)_automaticallyPerformShortcutIfPossible;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithShortcutIdentifier:(id)arg1 bundleID:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;

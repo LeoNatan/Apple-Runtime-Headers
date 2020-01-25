@@ -6,13 +6,14 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <ContactsUI/CNContactListControllerDelegate-Protocol.h>
 #import <ContactsUI/CNFamilyMemberEditControlsViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNUICoreFamilyMemberContactsObserver-Protocol.h>
 
 @class CNContactPickerInProccessViewController, CNContactStore, FAFamilyMember, NSButton, NSSegmentedControl, NSString;
 @protocol CNFamilyMemberContactsViewControllerDelegate, CNSchedulerProvider, CNUICoreFamilyMemberContactsDataSource;
 
-@interface CNFamilyMemberContactsViewController : NSViewController <CNFamilyMemberEditControlsViewControllerDelegate, CNUICoreFamilyMemberContactsObserver>
+@interface CNFamilyMemberContactsViewController : NSViewController <CNFamilyMemberEditControlsViewControllerDelegate, CNUICoreFamilyMemberContactsObserver, CNContactListControllerDelegate>
 {
     FAFamilyMember *_familyMember;
     CNContactStore *_localContactStore;
@@ -37,11 +38,15 @@
 @property(readonly, nonatomic) CNContactStore *localContactStore; // @synthesize localContactStore=_localContactStore;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void).cxx_destruct;
+- (void)dismissRequested:(BOOL)arg1;
+- (void)selectionChanged:(BOOL)arg1;
 - (void)didPressCancelFamilyMemberEditControlsViewController:(id)arg1;
 - (void)updateFamilyMemberContactsByRemovingContacts:(id)arg1;
 - (void)updateFamilyMemberContactsByAddingContacts:(id)arg1;
 - (void)didPressDoneFamilyMemberEditControlsViewController:(id)arg1;
 - (void)editButtonPressed:(id)arg1;
+- (void)endEdition;
+- (void)startEdition;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)doneButtonPressed:(id)arg1;
 - (void)addNewContact:(id)arg1;
@@ -57,6 +62,7 @@
 - (void)setupFamilyScopedContactPicker;
 - (void)setupButtons;
 - (void)setupUI;
+- (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)loadView;
 - (struct CGSize)preferredMinimumSize;

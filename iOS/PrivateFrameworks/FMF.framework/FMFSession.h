@@ -90,6 +90,7 @@
 - (void)_daemonDidLaunch;
 - (id)internalConnection;
 - (void)includeDeviceInAutomations:(CDUnknownBlockType)arg1;
+- (void)showMeDeviceAlert;
 - (void)showShareMyLocationRestrictedAlert;
 - (void)showShareMyLocationiCloudSettingsOffAlert;
 - (void)getDataForPerformanceRequest:(CDUnknownBlockType)arg1;

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <CarKit/NSSecureCoding-Protocol.h>
+
 @class NSString, NSValue;
 
-@interface CRCarPlayCapabilities : NSObject
+@interface CRCarPlayCapabilities : NSObject <NSSecureCoding>
 {
     _Bool _persisted;
     unsigned long long _disabledFeature;
@@ -19,10 +21,14 @@
     NSString *_version;
 }
 
++ (id)carPlayCapabilitiesCache;
++ (void)setCarPlayCapabilitiesCache:(id)arg1;
++ (void)invalidateCarPlayCapabilitiesCache;
 + (void)waitForCarCapabilitiesValues;
 + (void)_resetCapabilitiesGlobalDomain;
 + (id)newCapabilitiesFromGlobalDomain;
 + (id)fetchCarCapabilities;
++ (_Bool)supportsSecureCoding;
 + (id)capabilitiesVersion;
 + (void)setCapabilitiesVersion:(id)arg1;
 + (void)setCapabilitiesIdentifier:(id)arg1;
@@ -41,6 +47,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCapabilities:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)informativeText;
 - (id)description;
 - (id)init;

@@ -10,13 +10,15 @@
 
 @interface BKInstallAssetMetadataIOTask : BKAssetMetadataIOTask
 {
+    BOOL _moveOriginalBook;
     NSURL *_temporaryDirectory;
     BKAssetMetadata *_assetToUpdate;
     NSString *_interimFilenameOverride;
-    BKAssetMetadataIOTask *_subtask;
+    BKAssetMetadataIOTask *_copyingSubtask;
 }
 
-@property(retain, nonatomic) BKAssetMetadataIOTask *subtask; // @synthesize subtask=_subtask;
+@property(retain, nonatomic) BKAssetMetadataIOTask *copyingSubtask; // @synthesize copyingSubtask=_copyingSubtask;
+@property(nonatomic) BOOL moveOriginalBook; // @synthesize moveOriginalBook=_moveOriginalBook;
 @property(copy, nonatomic) NSString *interimFilenameOverride; // @synthesize interimFilenameOverride=_interimFilenameOverride;
 @property(retain, nonatomic) BKAssetMetadata *assetToUpdate; // @synthesize assetToUpdate=_assetToUpdate;
 @property(retain, nonatomic) NSURL *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
@@ -24,7 +26,7 @@
 - (id)_subtaskTargetDirectoryWithInstalltDirectory:(id)arg1 error:(id *)arg2;
 - (void)cancel;
 - (id)executeWithTargetDirectory:(id)arg1 error:(id *)arg2;
-- (id)initWithSourceMetadata:(id)arg1 manager:(id)arg2 subtask:(id)arg3;
+- (id)initWithSourceMetadata:(id)arg1 manager:(id)arg2 copyingSubtask:(id)arg3;
 
 @end
 

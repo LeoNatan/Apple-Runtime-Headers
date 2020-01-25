@@ -158,6 +158,8 @@
 + (id)MoveToPreviousParagraph;
 + (id)MoveToNextSentence;
 + (id)MoveToPreviousSentence;
++ (id)MoveToNextWord;
++ (id)MoveToPreviousWord;
 + (id)MoveToNextCharacter;
 + (id)MoveToPreviousCharacter;
 + (id)MoveToBottomOfCurrentDocument;

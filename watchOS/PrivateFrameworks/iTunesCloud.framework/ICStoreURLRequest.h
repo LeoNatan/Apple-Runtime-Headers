@@ -20,6 +20,7 @@
 }
 
 + (id)currentConnectionTypeHeader;
++ (unsigned int)_defaultMaxRetryCountForReason:(id)arg1;
 @property(copy, nonatomic) ICJSSignConfiguration *JSSignConfiguration; // @synthesize JSSignConfiguration=_JSSignConfiguration;
 @property(copy, nonatomic) NSDictionary *additionalHTTPCookies; // @synthesize additionalHTTPCookies=_additionalHTTPCookies;
 @property(copy, nonatomic) NSString *machineDataSyncState; // @synthesize machineDataSyncState=_machineDataSyncState;

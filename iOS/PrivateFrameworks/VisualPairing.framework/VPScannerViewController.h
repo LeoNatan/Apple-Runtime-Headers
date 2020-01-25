@@ -39,6 +39,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

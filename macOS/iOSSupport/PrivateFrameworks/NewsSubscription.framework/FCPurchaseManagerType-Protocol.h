@@ -5,7 +5,7 @@
 //
 
 @class FCPurchase, NSError, NSString;
-@protocol FCPurchaseManagerDelegate;
+@protocol FCPurchaseFlowOverrideProviderType, FCPurchaseManagerDelegate;
 
 @protocol FCPurchaseManagerType
 - (BOOL)anyOngoingPurchases;
@@ -16,6 +16,7 @@
 - (void)startPurchaseWithTagID:(NSString *)arg1 purchase:(FCPurchase *)arg2 webAccessOptIn:(BOOL)arg3 error:(id *)arg4;
 - (void)startBundlePurchaseWithPurchase:(FCPurchase *)arg1 error:(id *)arg2;
 - (id)fetchPurchaseMetadataForPurchaseID:(NSString *)arg1 restorePurcase:(BOOL)arg2;
+@property(nonatomic, retain) id <FCPurchaseFlowOverrideProviderType> purchaseFlowOverrideProvider;
 @property(nonatomic) __weak id <FCPurchaseManagerDelegate> delegate;
 @end
 

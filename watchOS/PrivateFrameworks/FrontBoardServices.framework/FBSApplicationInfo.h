@@ -28,6 +28,7 @@
     NSArray *_customMachServices;
     _Bool _hasViewServicesEntitlement;
     NSString *_appIDEntitlement;
+    NSString *_shortVersionString;
     unsigned int _type;
     NSArray *_requiredCapabilities;
     NSArray *_tags;
@@ -78,6 +79,7 @@
 @property(readonly, nonatomic) float minimumBrightnessLevel; // @synthesize minimumBrightnessLevel=_minimumBrightnessLevel;
 @property(readonly, nonatomic) _Bool requiresPersistentWiFi; // @synthesize requiresPersistentWiFi=_requiresPersistentWiFi;
 @property(nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
+@property(readonly, copy, nonatomic) NSString *shortVersionString; // @synthesize shortVersionString=_shortVersionString;
 @property(readonly, nonatomic, getter=isBeta) _Bool beta; // @synthesize beta=_beta;
 @property(readonly, nonatomic, getter=isBlocked) _Bool blocked; // @synthesize blocked=_blocked;
 @property(readonly, nonatomic, getter=isRestricted) _Bool restricted; // @synthesize restricted=_restricted;

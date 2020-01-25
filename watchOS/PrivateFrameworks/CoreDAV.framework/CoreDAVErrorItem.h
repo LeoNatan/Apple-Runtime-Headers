@@ -20,6 +20,7 @@
     CoreDAVItemWithNoChildren *_maxImageSize;
     CoreDAVItemWithNoChildren *_invalidImageType;
     CoreDAVItemWithNoChildren *_imageError;
+    CoreDAVItemWithNoChildren *_guardianRestricted;
     CoreDAVItemWithNoChildren *_maxAttendees;
     CoreDAVItemWithNoChildren *_quotaExceeded;
     CoreDAVItemWithNoChildren *_maxResources;
@@ -30,6 +31,7 @@
 
 + (id)copyParseRules;
 @property(retain, nonatomic) CoreDAVLeafItem *status; // @synthesize status=_status;
+@property(retain, nonatomic) CoreDAVItemWithNoChildren *guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *validSplit; // @synthesize validSplit=_validSplit;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *validTimezone; // @synthesize validTimezone=_validTimezone;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *maxResources; // @synthesize maxResources=_maxResources;

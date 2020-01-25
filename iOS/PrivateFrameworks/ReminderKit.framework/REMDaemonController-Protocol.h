@@ -17,6 +17,7 @@
 - (id <REMXPCSyncInterfacePerformer>)syncSyncInterfacePerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
 - (void)asyncStorePerformerWithReason:(NSString *)arg1 loadHandler:(void (^)(id <REMXPCStorePerformer>))arg2 errorHandler:(void (^)(NSError *))arg3;
 - (id <REMXPCStorePerformer>)syncStorePerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
+- (id <REMXPCDebugPerformer>)syncDebugPerformerWithErrorHandler:(void (^)(NSError *))arg1;
 - (id <REMXPCDebugPerformer>)syncDebugPerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
 - (id <REMXPCChangeTrackingPerformer>)syncChangeTrackingPerformerWithReason:(NSString *)arg1 errorHandler:(void (^)(NSError *))arg2;
 @end

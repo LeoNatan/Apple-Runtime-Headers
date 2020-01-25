@@ -16,6 +16,7 @@
 #import <ChatKit/IMCloudKitEventHandler-Protocol.h>
 #import <ChatKit/INKContentControllerObserver-Protocol.h>
 #import <ChatKit/UIActionSheetDelegate-Protocol.h>
+#import <ChatKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <ChatKit/UISearchBarDelegate-Protocol.h>
 #import <ChatKit/UISearchControllerDelegate-Protocol.h>
 #import <ChatKit/UITableViewDataSource-Protocol.h>
@@ -25,9 +26,9 @@
 #import <ChatKit/UITableViewDropDelegate-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationListFilterCell, CKConversationSearchResultsController, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKOnboardingController, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, INKContentController, INKContentView, NSArray, NSIndexPath, NSMapTable, NSString, UIBarButtonItem, UIButton, UISearchController, UIView, _UIContextMenuInteraction;
+@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationListFilterCell, CKConversationSearchResultsController, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKOnboardingController, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, INKContentController, INKContentView, NSArray, NSIndexPath, NSMapTable, NSString, UIBarButtonItem, UIButton, UISearchController, UIView, _UIContextMenuInteraction;
 
-@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CNContactViewControllerDelegate, CKConversationResultsControllerDelegate, CKContainerSearchControllerDelegate, CKConversationListCellDelegate, UITableViewDropDelegate, UITableViewDragDelegate, _UIContextMenuInteractionDelegate, INKContentControllerObserver, CNMeCardSharingSettingsViewControllerDelegate, CKOnboardingControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
+@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CNContactViewControllerDelegate, CKConversationResultsControllerDelegate, CKContainerSearchControllerDelegate, CKConversationListCellDelegate, UITableViewDropDelegate, UITableViewDragDelegate, _UIContextMenuInteractionDelegate, INKContentControllerObserver, CNMeCardSharingSettingsViewControllerDelegate, CKOnboardingControllerDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
 {
     NSIndexPath *_previouslySelectedIndexPath;
     unsigned int _isVisible:1;
@@ -38,10 +39,10 @@
     _Bool _draggingConversation;
     _Bool _compositionWasSent;
     _Bool _shouldUseFastPreviewText;
-    _Bool _hasJunkiMessageChats;
-    CKConversationList *_conversationList;
     CKMessagesController *_messagesController;
     CKCloudKitSyncProgressViewController *_syncProgressViewController;
+    unsigned long long _filterMode;
+    UIBarButtonItem *_customBackButton;
     NSMapTable *_conversationListCellToChatInfo;
     NSMapTable *_chatToConversationListCellInfo;
     CKNavigationBarTitleView *_navigationBarTitleView;
@@ -49,11 +50,6 @@
     CKScheduledUpdater *_updater;
     UIView *_noMessagesDialogView;
     NSArray *_frozenConversations;
-    unsigned long long _filteredConversationCount;
-    long long _filterMode;
-    NSArray *_filteredWhitelistedConversations;
-    NSArray *_filteredJunkConversations;
-    NSArray *_nonPlaceholderConversations;
     CKConversation *_conversationChangingPinState;
     double _conversationCellHeight;
     UISearchController *_searchController;
@@ -79,7 +75,6 @@
 @property(retain, nonatomic) INKContentView *infoKitContentView; // @synthesize infoKitContentView=_infoKitContentView;
 @property(retain, nonatomic) INKContentController *infoKitContentController; // @synthesize infoKitContentController=_infoKitContentController;
 @property(retain, nonatomic) CKConversationListFilterCell *cachedFilterControlCell; // @synthesize cachedFilterControlCell=_cachedFilterControlCell;
-@property(nonatomic) _Bool hasJunkiMessageChats; // @synthesize hasJunkiMessageChats=_hasJunkiMessageChats;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) _Bool shouldUseFastPreviewText; // @synthesize shouldUseFastPreviewText=_shouldUseFastPreviewText;
 @property(copy, nonatomic) CDUnknownBlockType searchCompletion; // @synthesize searchCompletion=_searchCompletion;
@@ -97,12 +92,7 @@
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(nonatomic) double conversationCellHeight; // @synthesize conversationCellHeight=_conversationCellHeight;
 @property(retain, nonatomic) CKConversation *conversationChangingPinState; // @synthesize conversationChangingPinState=_conversationChangingPinState;
-@property(retain, nonatomic) NSArray *nonPlaceholderConversations; // @synthesize nonPlaceholderConversations=_nonPlaceholderConversations;
-@property(retain, nonatomic) NSArray *filteredJunkConversations; // @synthesize filteredJunkConversations=_filteredJunkConversations;
-@property(retain, nonatomic) NSArray *filteredWhitelistedConversations; // @synthesize filteredWhitelistedConversations=_filteredWhitelistedConversations;
-@property(nonatomic) long long filterMode; // @synthesize filterMode=_filterMode;
 @property(nonatomic, getter=isDraggingConversation) _Bool draggingConversation; // @synthesize draggingConversation=_draggingConversation;
-@property(nonatomic) unsigned long long filteredConversationCount; // @synthesize filteredConversationCount=_filteredConversationCount;
 @property(copy, nonatomic) NSArray *frozenConversations; // @synthesize frozenConversations=_frozenConversations;
 @property(retain, nonatomic) UIView *noMessagesDialogView; // @synthesize noMessagesDialogView=_noMessagesDialogView;
 @property(retain, nonatomic) CKScheduledUpdater *updater; // @synthesize updater=_updater;
@@ -111,11 +101,18 @@
 @property(retain, nonatomic) CKNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) NSMapTable *chatToConversationListCellInfo; // @synthesize chatToConversationListCellInfo=_chatToConversationListCellInfo;
 @property(retain, nonatomic) NSMapTable *conversationListCellToChatInfo; // @synthesize conversationListCellToChatInfo=_conversationListCellToChatInfo;
+@property(retain, nonatomic) UIBarButtonItem *customBackButton; // @synthesize customBackButton=_customBackButton;
+@property(nonatomic) unsigned long long filterMode; // @synthesize filterMode=_filterMode;
 @property(retain, nonatomic) CKCloudKitSyncProgressViewController *syncProgressViewController; // @synthesize syncProgressViewController=_syncProgressViewController;
 @property(retain, nonatomic) NSIndexPath *previouslySelectedIndexPath; // @synthesize previouslySelectedIndexPath=_previouslySelectedIndexPath;
 @property(nonatomic) __weak CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
-@property(nonatomic) __weak CKConversationList *conversationList; // @synthesize conversationList=_conversationList;
 - (void).cxx_destruct;
+- (_Bool)_shouldShowInboxView;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)backButtonPressed;
+- (void)updateBackButton;
+- (id)_getTitleForCurrentFilterMode;
+- (void)setTitleForCurrentFilterMode;
 - (void)contentController:(id)arg1 didFinishWithContent:(id)arg2 animated:(_Bool)arg3;
 - (void)contentController:(id)arg1 contentDidBecomeAvailable:(id)arg2 animated:(_Bool)arg3;
 - (void)_chatAllowedByScreenTimeChanged:(id)arg1;
@@ -227,18 +224,15 @@
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (void)loadView;
-- (_Bool)_messageIsFromFilteredSenderServiceIsSMS:(_Bool)arg1 lastMessageIsSMS:(_Bool)arg2 isContact:(_Bool)arg3 isFiltered:(_Bool)arg4 isSpam:(_Bool)arg5 unknownFilteringEnabled:(_Bool)arg6 smsSpamFilteringEnabled:(_Bool)arg7;
+- (void)_handleAccountRegistrationChange:(id)arg1;
+- (_Bool)_messageFilteringEnabled;
 - (_Bool)_messageSpamFilteringEnabled;
 - (_Bool)_messageUnknownFilteringEnabled;
-- (_Bool)_getHasJunkiMessageUserDefault;
-- (_Bool)_messageFilteringEnabled;
 - (id)_mergeUnsentComposition:(id)arg1 withDroppedComposition:(id)arg2;
 - (void)_showConversationWithComposition:(id)arg1 atIndexPath:(id)arg2;
 - (void)performSearch:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_updateNonPlaceholderConverationLists;
-- (void)_updateFilteredConversationLists;
+- (void)_updateConversationListsAndSortIfEnabled;
 - (void)_updateConversationFilteredFlagsAndReportSpam;
-- (_Bool)shouldCleanupFilter;
 - (void)updateNoMessagesDialog;
 - (void)updateMarginWidth;
 - (void)_updateConversationListNeedsResort:(_Bool)arg1;
@@ -270,10 +264,12 @@
 - (id)_contactStore;
 - (id)nicknameController;
 - (void)showMeCardViewControllerWithNickname:(id)arg1;
+- (id)_avatarProviderFromNickname:(id)arg1;
 - (void)showMeCardViewController;
 - (void)doneButtonTapped:(id)arg1;
 - (void)updateTitleViews:(_Bool)arg1;
 - (void)updateNavigationItems;
+- (void)_refreshConversationList;
 - (_Bool)_shouldKeepSelection;
 - (void)_groupsChanged:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
@@ -299,6 +295,7 @@
 - (void)invalidateCellLayout;
 - (void)dealloc;
 - (id)init;
+- (id)conversationList;
 - (id)activeConversations;
 - (void)updateFilterControl:(id)arg1;
 - (Class)conversationListCellClass;

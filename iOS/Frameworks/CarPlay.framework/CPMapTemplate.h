@@ -13,7 +13,7 @@
 #import <CarPlay/CPNavigationAlertUpdating-Protocol.h>
 
 @class CPBarButton, CPNavigationAlert, NAFuture, NSArray, NSMutableDictionary, NSString, UIColor;
-@protocol CPBannerProviding, CPMapTemplateDelegate;
+@protocol CPBannerProviding, CPMapTemplateDelegate, CPNavigationSessionProviding;
 
 @interface CPMapTemplate : CPTemplate <CPMapButtonDelegate, CPMapClientTemplateDelegate, CPBannerDelegate, CPNavigationAlertUpdating, CPBarButtonProviding>
 {
@@ -25,13 +25,17 @@
     id <CPMapTemplateDelegate> _mapDelegate;
     CPNavigationAlert *_currentNavigationAlert;
     NSMutableDictionary *_postedBannerObjects;
+    NAFuture *_navigationSessionProviderFuture;
     id <CPBannerProviding> _bannerProvider;
+    id <CPNavigationSessionProviding> _navigationSessionProvider;
     NSArray *_tripPreviews;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSArray *tripPreviews; // @synthesize tripPreviews=_tripPreviews;
+@property(retain, nonatomic) id <CPNavigationSessionProviding> navigationSessionProvider; // @synthesize navigationSessionProvider=_navigationSessionProvider;
 @property(retain, nonatomic) id <CPBannerProviding> bannerProvider; // @synthesize bannerProvider=_bannerProvider;
+@property(retain, nonatomic) NAFuture *navigationSessionProviderFuture; // @synthesize navigationSessionProviderFuture=_navigationSessionProviderFuture;
 @property(retain, nonatomic) NSMutableDictionary *postedBannerObjects; // @synthesize postedBannerObjects=_postedBannerObjects;
 @property(readonly, nonatomic) CPNavigationAlert *currentNavigationAlert; // @synthesize currentNavigationAlert=_currentNavigationAlert;
 @property(nonatomic) __weak id <CPMapTemplateDelegate> mapDelegate; // @synthesize mapDelegate=_mapDelegate;

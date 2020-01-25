@@ -14,6 +14,7 @@
 {
 }
 
+- (id)_suppressionContextsForChatIdentifier:(id)arg1 personCentricID:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)_starkManagerSharedInstance;
 - (id)messagesSceneDelegate;

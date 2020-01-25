@@ -57,6 +57,7 @@
 - (_Bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)initWithStyle:(long long)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

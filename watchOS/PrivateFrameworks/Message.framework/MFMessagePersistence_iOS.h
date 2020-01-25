@@ -6,15 +6,17 @@
 
 #import <EmailDaemon/EDMessagePersistence.h>
 
+#import <Message/EDMessageChangeHookResponder-Protocol.h>
 #import <Message/EFLoggable-Protocol.h>
 
-@class EDMailDropMetadataGeneratorFactory, MFMailMessageLibrary, MFMailMessageLibraryQueryTransformer, MFMessageTransformer, NSMutableDictionary, NSObject, NSString;
+@class EDMailDropMetadataGeneratorFactory, EFLazyCache, MFMailMessageLibrary, MFMailMessageLibraryQueryTransformer, MFMessageTransformer, NSMutableDictionary, NSObject, NSString;
 @protocol EFScheduler, MFMessageSummaryLoaderProvider, OS_dispatch_queue;
 
-@interface MFMessagePersistence_iOS : EDMessagePersistence <EFLoggable>
+@interface MFMessagePersistence_iOS : EDMessagePersistence <EFLoggable, EDMessageChangeHookResponder>
 {
     struct os_unfair_lock_s _summaryLock;
     NSMutableDictionary *_summaryLoaders;
+    EFLazyCache *_obsoleteMessageIDHeaderHashToDatabaseIDMap;
     EDMailDropMetadataGeneratorFactory *_maildropContentItemGeneratorFactory;
     id <MFMessageSummaryLoaderProvider> _summaryLoaderProvider;
     MFMailMessageLibrary *_library;
@@ -35,6 +37,8 @@
 @property(retain, nonatomic) id <MFMessageSummaryLoaderProvider> summaryLoaderProvider; // @synthesize summaryLoaderProvider=_summaryLoaderProvider;
 @property(retain, nonatomic) EDMailDropMetadataGeneratorFactory *maildropContentItemGeneratorFactory; // @synthesize maildropContentItemGeneratorFactory=_maildropContentItemGeneratorFactory;
 - (void).cxx_destruct;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 oldConversationID:(long long)arg2 message:(id)arg3 generationWindow:(id)arg4;
+- (id)cachedDatabaseIDsDictionaryForMessageIDHashes:(id)arg1;
 - (id)enabledAccountMailboxesExpression;
 - (id)libraryMessageForMessageObjectID:(id)arg1;
 - (id)_requestSummaryForLibraryMessage:(id)arg1;
@@ -50,7 +54,7 @@
 - (unsigned int)_countOfMessagesMatchingCriteria:(id)arg1 includingDuplicates:(_Bool)arg2;
 - (int)countOfMessagesMatchingQuery:(id)arg1;
 - (int)countOfMessagesWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
-- (id)initWithMailboxPersistence:(id)arg1 database:(id)arg2 library:(id)arg3;
+- (id)initWithMailboxPersistence:(id)arg1 database:(id)arg2 hookRegistry:(id)arg3 library:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

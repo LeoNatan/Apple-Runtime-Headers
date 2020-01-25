@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IMSPIHandle, LPLinkMetadata, NSArray, NSAttributedString, NSDate, NSString, NSURL, PKCurrencyAmount;
+@class IMSPIChat, IMSPIHandle, LPLinkMetadata, NSArray, NSAttributedString, NSDate, NSString, NSURL, PKCurrencyAmount;
 
 @interface IMSPIMessage : NSObject
 {
@@ -75,6 +75,7 @@
 @property long long messageID; // @synthesize messageID=_messageID;
 @property(retain) NSString *guid; // @synthesize guid=_guid;
 - (void).cxx_destruct;
+@property(readonly) IMSPIChat *spiChat;
 @property(readonly) NSDate *lastReadDate;
 @property(readonly) NSURL *url;
 - (id)description;

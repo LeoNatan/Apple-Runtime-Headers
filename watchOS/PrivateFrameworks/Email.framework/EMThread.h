@@ -93,6 +93,7 @@
 @property(readonly) EMMessage *displayMessage;
 @property(readonly) EMObjectID *displayMessageObjectID;
 - (void)setMailboxes:(id)arg1;
+@property long long _internalID;
 @property(readonly, copy) NSArray *mailboxes;
 - (void)setMailboxObjectIDs:(id)arg1;
 @property(readonly, copy) NSArray *mailboxObjectIDs;

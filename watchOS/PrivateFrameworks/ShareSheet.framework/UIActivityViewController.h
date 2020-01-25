@@ -302,7 +302,7 @@
 - (void)selectedAppWithIdentifier:(id)arg1;
 - (void)selectedPersonWithIdentifier:(id)arg1;
 - (void)showScreenTimeRestrictedAlert;
-- (id)fallbackURLForLinkPresentation;
+- (id)fallbackURLsForLinkPresentation;
 - (id)requestMetadataValues;
 - (void)configureContentViewIfNeeded;
 - (void)configureActivityViewControllerWithActivityItems:(id)arg1 applicationActivities:(id)arg2;

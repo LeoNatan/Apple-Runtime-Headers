@@ -9,6 +9,7 @@
 @interface _TtC7NewsUI234MagazineFeedBlueprintLayoutBuilder : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: feedLayoutSolver
+    // Error parsing type: , name: assetManager
     // Error parsing type: , name: baseStyler
     // Error parsing type: , name: groupTitleViewLayoutAttributesFactory
     // Error parsing type: , name: sectionFooterViewLayoutAttributesFactory

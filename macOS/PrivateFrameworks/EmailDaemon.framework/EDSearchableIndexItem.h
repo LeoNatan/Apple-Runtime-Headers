@@ -15,6 +15,8 @@
 @interface EDSearchableIndexItem : NSObject <EFLoggable, EDIndexableItem>
 {
     CSSearchableItem *_searchableItem;
+    BOOL _isEncrypted;
+    BOOL _includeEncryptedBody;
     BOOL _fetchBody;
     BOOL _hasCompleteData;
     NSString *_identifier;
@@ -35,6 +37,8 @@
 + (id)csIdentifierForMailbox:(id)arg1;
 @property(nonatomic) BOOL hasCompleteData; // @synthesize hasCompleteData=_hasCompleteData;
 @property(readonly, nonatomic) BOOL fetchBody; // @synthesize fetchBody=_fetchBody;
+@property(nonatomic) BOOL includeEncryptedBody; // @synthesize includeEncryptedBody=_includeEncryptedBody;
+@property(nonatomic) BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(retain, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(readonly, nonatomic) id <EDIndexableMessage> message; // @synthesize message=_message;
 @property(readonly, nonatomic) unsigned long long itemInstantiationTime; // @synthesize itemInstantiationTime=_itemInstantiationTime;

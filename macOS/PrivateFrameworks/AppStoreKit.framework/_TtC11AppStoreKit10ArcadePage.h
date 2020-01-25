@@ -15,6 +15,8 @@
     // Error parsing type: , name: subscriptionOfferDisplayProperties
     // Error parsing type: , name: subscriptionOfferTitle
     // Error parsing type: , name: subscriptionOfferSubtitle
+    // Error parsing type: , name: autoUpsellAction
+    // Error parsing type: , name: shouldForceAutoUpsell
 }
 
 @end

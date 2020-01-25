@@ -109,6 +109,7 @@
 - (_Bool)_accessibilityPerformUserTestingAction:(id)arg1;
 - (id)_accessibilityUserTestingActions;
 - (id)_accessibilityUserTestingVisibleAncestor;
+- (_Bool)_accessibilityShouldHitTestStatusBarWindow;
 - (_Bool)_accessibilityHitTestsStatusBar;
 - (long long)_accessibilityVerticalSizeClass;
 - (long long)_accessibilityHorizontalSizeClass;
@@ -715,10 +716,13 @@
 - (id)accessibilityHeaderElements;
 - (_Bool)_accessibilityCanPerformAction:(int)arg1;
 - (_Bool)__accessibilitySupportsSecondaryActivateAction;
+- (_Bool)_accessibilitySupportsSecondaryActivateAction;
 - (id)_accessibilityHeadingLevel;
 - (_Bool)__accessibilitySupportsActivateAction;
 - (void)_accessibilitySetShouldPreventOpaqueScrolling:(_Bool)arg1;
 - (_Bool)_accessibilityShouldPreventOpaqueScrolling;
+- (_Bool)accessibilityParentDiscardsChildrenContainerGroupingBehavior;
+- (_Bool)accessibilityChildrenContainerGroupingBehaviorHasOverridingParentDelegate;
 - (id)_accessibilitySwipeIslandIdentifier;
 - (id)_accessibilitySwipeIsland;
 - (void)_accessibilityUpdateContainerElementReferencesIfNeededForNewElements:(id)arg1;

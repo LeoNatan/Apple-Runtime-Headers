@@ -120,6 +120,8 @@ __attribute__((visibility("hidden")))
 - (void)__hostDidChangeStatusBarOrientationToInterfaceOrientation:(long long)arg1;
 - (void)__hostDidBecomeActive;
 - (void)__hostWillResignActive;
+- (void)__hostSceneDidEnterBackground;
+- (void)__hostSceneWillEnterForeground;
 - (void)__hostWillEnterForeground;
 - (void)__hostDidEnterBackground;
 - (void)__setSheetConfiguration:(id)arg1;
@@ -153,6 +155,7 @@ __attribute__((visibility("hidden")))
 - (void)_popoverDidDismiss:(id)arg1;
 - (void)_popoverWillPresent:(id)arg1;
 - (void)_viewServiceIsDisplayingPopoverController:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)__prepareForDisconnectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_windowDidBecomeKey:(id)arg1;
 - (void)_firstResponderDidChange:(id)arg1;

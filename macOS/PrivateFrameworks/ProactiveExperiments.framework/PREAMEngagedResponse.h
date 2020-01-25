@@ -28,6 +28,7 @@
     NSString *_treatmentModelName;
     BOOL _hasQuestionMark;
     BOOL _isApricotDevice;
+    BOOL _isCustomResponse;
     struct {
         unsigned int ageGroup:1;
         unsigned int generationStatus:1;
@@ -39,9 +40,11 @@
         unsigned int responseClassId:1;
         unsigned int hasQuestionMark:1;
         unsigned int isApricotDevice:1;
+        unsigned int isCustomResponse:1;
     } _has;
 }
 
+@property(nonatomic) BOOL isCustomResponse; // @synthesize isCustomResponse=_isCustomResponse;
 @property(nonatomic) BOOL hasQuestionMark; // @synthesize hasQuestionMark=_hasQuestionMark;
 @property(nonatomic) BOOL isApricotDevice; // @synthesize isApricotDevice=_isApricotDevice;
 @property(retain, nonatomic) NSString *lang; // @synthesize lang=_lang;
@@ -65,6 +68,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsCustomResponse;
 @property(nonatomic) BOOL hasHasQuestionMark;
 - (int)StringAsAgeGroup:(id)arg1;
 - (id)ageGroupAsString:(int)arg1;

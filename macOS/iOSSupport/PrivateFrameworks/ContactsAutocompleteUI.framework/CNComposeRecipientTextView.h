@@ -35,12 +35,14 @@
     NSMutableArray *_recipientsBeingRemoved;
     NSUndoManager *_undoManager;
     struct CGRect _addButtonFrame;
-    BOOL _editable;
+    BOOL _usingActiveAppearance;
     BOOL _separatorHidden;
     BOOL _expanded;
     BOOL _didIgnoreFirstResponderResign;
     BOOL _showsAddButtonWhenExpanded;
     BOOL _expandRecipientsInNamedGroups;
+    BOOL _editable;
+    BOOL _enabled;
     int _hideLastAtomComma;
     UIFont *_baseFont;
     long long _maxRecipients;
@@ -52,8 +54,10 @@
 }
 
 + (id)defaultFont;
+@property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) UIView *atomContainerView; // @synthesize atomContainerView=_atomContainerView;
 @property(retain, nonatomic) _CNAtomTextAttachment *placeholderAttachment; // @synthesize placeholderAttachment=_placeholderAttachment;
+@property(nonatomic) BOOL editable; // @synthesize editable=_editable;
 @property(nonatomic) int hideLastAtomComma; // @synthesize hideLastAtomComma=_hideLastAtomComma;
 @property(nonatomic) double trailingButtonMidlineInsetFromLayoutMargin; // @synthesize trailingButtonMidlineInsetFromLayoutMargin=_trailingButtonMidlineInsetFromLayoutMargin;
 @property(retain, nonatomic) UIColor *typingTextColor; // @synthesize typingTextColor=_typingTextColor;
@@ -64,7 +68,7 @@
 @property(readonly, nonatomic) BOOL didIgnoreFirstResponderResign; // @synthesize didIgnoreFirstResponderResign=_didIgnoreFirstResponderResign;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(nonatomic, getter=isSeparatorHidden) BOOL separatorHidden; // @synthesize separatorHidden=_separatorHidden;
-@property(nonatomic) BOOL editable; // @synthesize editable=_editable;
+@property(nonatomic) BOOL usingActiveAppearance; // @synthesize usingActiveAppearance=_usingActiveAppearance;
 @property(nonatomic) BOOL indicatesUnsafeRecipientsWhenCollapsed; // @synthesize indicatesUnsafeRecipientsWhenCollapsed=_indicatesUnsafeRecipientsWhenCollapsed;
 - (void).cxx_destruct;
 - (void)composeRecipientAtomSelectNext:(id)arg1;
@@ -144,9 +148,12 @@
 @property(readonly, nonatomic) UITextView *textView;
 @property(readonly, nonatomic) NSString *text;
 - (id)_userEnteredTextWithRange:(struct _NSRange *)arg1;
+- (BOOL)_hasRecipientsWithPresentationOptions:(unsigned long long)arg1;
+- (BOOL)_hasDowntimeBlockedRecipients;
 - (BOOL)_hasUnsafeRecipients;
 - (void)_updateAddButtonVisibility;
 - (void)setEditable:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setUsingActiveAppearance:(BOOL)arg1 animated:(BOOL)arg2;
 @property(readonly, copy, nonatomic) NSArray *uncommentedAddresses;
 @property(copy, nonatomic) NSArray *addresses;
 - (void)_addButtonTapped:(id)arg1;

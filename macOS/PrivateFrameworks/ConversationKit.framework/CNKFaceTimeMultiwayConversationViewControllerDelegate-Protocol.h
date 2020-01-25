@@ -7,6 +7,7 @@
 @class NSView, _TtC15ConversationKit22PlatformViewController;
 
 @protocol CNKFaceTimeMultiwayConversationViewControllerDelegate
+- (void)viewControllerDidRequestTemporaryPreventSuspension:(_TtC15ConversationKit22PlatformViewController *)arg1;
 - (void)viewController:(_TtC15ConversationKit22PlatformViewController *)arg1 setStatusBarHidden:(BOOL)arg2;
 - (void)viewControllerDidRequestRoutePickerFrom:(NSView *)arg1;
 - (void)viewControllerDidRequestAddParticipants:(_TtC15ConversationKit22PlatformViewController *)arg1;

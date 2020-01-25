@@ -46,6 +46,7 @@
 }
 
 + (double)_asyncPresentationTimeout;
++ (id)_UINSActivitiesFromUIActivities:(id)arg1 activityItems:(id)arg2 activityViewController:(id)arg3;
 + (id)_macActivityItemsForiOSActivityItems:(id)arg1 activityViewController:(id)arg2;
 @property(nonatomic) BOOL configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) BOOL configureForPhotosEdit; // @synthesize configureForPhotosEdit=_configureForPhotosEdit;
@@ -97,7 +98,6 @@
 - (id)initWithUserDefaults:(id)arg1 userDefaultsIdentifier:(id)arg2 applicationActivities:(id)arg3;
 - (id)initWithAssetIdentifiers:(id)arg1 activityItems:(id)arg2 applicationActivities:(id)arg3;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
-- (id)_proxyActivitiesForActivities:(id)arg1 activityItems:(id)arg2;
 
 @end
 

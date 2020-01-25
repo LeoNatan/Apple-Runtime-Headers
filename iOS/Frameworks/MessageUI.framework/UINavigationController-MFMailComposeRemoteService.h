@@ -9,6 +9,6 @@
 @interface UINavigationController (MFMailComposeRemoteService)
 - (id)mf_keyPathsMapForUICustomization;
 - (id)mf_classesForUICustomization;
-- (id)mf_findViewControllerOfClass:(Class)arg1 startAtTopOfStack:(_Bool)arg2;
+- (id)mf_viewControllerOfClass:(Class)arg1 startFromTopOfStack:(_Bool)arg2;
 @end
 

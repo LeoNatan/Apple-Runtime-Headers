@@ -10,6 +10,8 @@
 {
 }
 
++ (id)defaultDirectoryPathForDataCollection;
++ (id)defaultSessionPathForDataCollection;
 + (id)interactionCopyDirectory;
 + (id)interactionTestDirectory;
 + (id)DKKnowledgeTestDirectoryString;

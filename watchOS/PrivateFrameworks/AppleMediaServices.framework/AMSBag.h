@@ -25,6 +25,7 @@
 @property(retain, nonatomic) id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)dictionaryForKey:(id)arg1;
+- (id)URLForKey:(id)arg1 account:(id)arg2;
 - (id)URLForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)integerForKey:(id)arg1;

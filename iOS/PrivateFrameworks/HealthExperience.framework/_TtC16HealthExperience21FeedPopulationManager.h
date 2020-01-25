@@ -13,6 +13,7 @@
     // Error parsing type: , name: requestCoalesceQueue
     // Error parsing type: , name: queue
     // Error parsing type: , name: relevanceEngineCoordinator
+    // Error parsing type: , name: debounceInterval
     // Error parsing type: , name: $__lazy_storage_$_liveFeedsPopulationDebouncer
     // Error parsing type: , name: $__lazy_storage_$_highlightsFeedPopulationDebouncer
     // Error parsing type: , name: trainingAnalyticsCache

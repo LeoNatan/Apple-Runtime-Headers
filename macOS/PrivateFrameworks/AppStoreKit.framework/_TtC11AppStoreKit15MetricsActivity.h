@@ -16,6 +16,7 @@
     // Error parsing type: , name: pageReferrerUrl
     // Error parsing type: , name: preloaded
     // Error parsing type: , name: currentPageFields
+    // Error parsing type: , name: currentSearchAdRotationDataProvider
 }
 
 @end

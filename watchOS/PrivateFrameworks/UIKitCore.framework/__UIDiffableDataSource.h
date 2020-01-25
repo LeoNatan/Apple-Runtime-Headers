@@ -127,6 +127,7 @@
 @property(readonly, nonatomic) NSArray *sectionIdentifiers;
 @property(readonly, nonatomic) int numberOfSections;
 @property(readonly, nonatomic) int numberOfItems;
+- (_Bool)_isDiffableDataSource;
 @property(readonly, copy) NSString *description;
 - (id)initWithTableView:(id)arg1 reuseIdentifierProvider:(CDUnknownBlockType)arg2 cellConfigurationHandler:(CDUnknownBlockType)arg3;
 - (id)initWithTableView:(id)arg1 cellProvider:(CDUnknownBlockType)arg2;

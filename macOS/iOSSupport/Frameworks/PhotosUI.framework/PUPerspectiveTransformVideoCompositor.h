@@ -17,6 +17,7 @@
     NSOperationQueue *_queue;
 }
 
++     // Error parsing type: d80@0:8{?=[3]}16{CGSize=dd}64, name: greatestNormalizedInsetForPerspectiveTransform:dimensions:
 - (void).cxx_destruct;
 - (void)cancelAllPendingVideoCompositionRequests;
 - (void)startVideoCompositionRequest:(id)arg1;

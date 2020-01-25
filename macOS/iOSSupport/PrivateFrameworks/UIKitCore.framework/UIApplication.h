@@ -955,7 +955,7 @@
 - (BOOL)_isUIKeyCommandEvent:(id)arg1 unmodified:(id)arg2 shiftModified:(id)arg3 commandModified:(id)arg4 modifierFlags:(long long)arg5 isDown:(BOOL)arg6 timestampMachAbs:(unsigned long long)arg7;
 - (BOOL)_sendKeyEvent:(id)arg1 unmodified:(id)arg2 shiftModified:(id)arg3 commandModified:(id)arg4 modifierFlags:(long long)arg5 isDown:(BOOL)arg6 timestampMachAbs:(unsigned long long)arg7;
 - (id)_physicalKeyEvent:(id)arg1 unmodified:(id)arg2 shiftModified:(id)arg3 commandModified:(id)arg4 modifierFlags:(long long)arg5 isDown:(BOOL)arg6 timestampMachAbs:(unsigned long long)arg7;
-- (void)_sendFlagsChangedEvent:(long long)arg1 timestampMachAbs:(unsigned long long)arg2;
+- (void)_sendFlagsChangedEvent:(long long)arg1 flags:(long long)arg2 timestampMachAbs:(unsigned long long)arg3;
 - (void)_synthesizeNavKeystrokesWithInput:(id)arg1 modifierFlags:(long long)arg2;
 - (long long)hidUsageFromUIKeyInput:(id)arg1;
 - (void)setShortcutItems:(id)arg1;

@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)resultsChanged:(id)arg1 kind:(unsigned long long)arg2;
+- (void)updateNodes:(id)arg1;
+- (void)updateNodesFromResults;
 - (void)stopObserving;
 - (void)startObserving:(id)arg1;
 

@@ -25,6 +25,8 @@
 @property(readonly, copy, nonatomic) NSNumber *campaignID; // @synthesize campaignID=_campaignID;
 @property(readonly, copy, nonatomic) NSString *adNetworkID; // @synthesize adNetworkID=_adNetworkID;
 - (void).cxx_destruct;
+- (void)recordStoreKitAdTap:(CDUnknownBlockType)arg1;
+- (id)dictionaryRepresentation;
 - (id)initWithDict:(id)arg1;
 
 @end

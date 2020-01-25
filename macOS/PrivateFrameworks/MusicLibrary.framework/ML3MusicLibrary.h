@@ -113,7 +113,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) ML3LibraryNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 - (void).cxx_destruct;
-- (void)_updateDatabaseConnectionsProfilingLevel;
+- (void)_onQueue_updateDatabaseConnectionsProfilingLevel;
 - (void)_postClientNotificationWithDistributedName:(id)arg1 localName:(id)arg2;
 - (void)_tearDownNotificationManager;
 - (void)_setupNotificationManager;

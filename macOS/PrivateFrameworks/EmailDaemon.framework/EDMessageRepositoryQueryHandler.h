@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <EmailDaemon/EDMessageRepositoryQueryHandler-Protocol.h>
 #import <EmailDaemon/EFCancelable-Protocol.h>
 
 @class EDMessagePersistence, EDPersistenceHookRegistry, EFQuery, EMObjectID, NSMapTable, NSSet, NSString;
 @protocol EMMessageListItemQueryResultsObserver;
 
-@interface EDMessageRepositoryQueryHandler : NSObject <EFCancelable>
+@interface EDMessageRepositoryQueryHandler : NSObject <EFCancelable, EDMessageRepositoryQueryHandler>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _didStart
     struct os_unfair_lock_s _summaryLock;
@@ -40,6 +41,7 @@
 - (void)cancel;
 - (void)start;
 - (void)tearDown;
+- (void)test_tearDown;
 - (void)dealloc;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;
 

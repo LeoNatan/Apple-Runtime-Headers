@@ -11,7 +11,6 @@
     BOOL _isFiltered;
     BOOL _useFallbackForRTP;
     BOOL _useFallbackForHDS;
-    BOOL _useFallbackForAirPlay2;
 }
 
 + (id)fallbackConfigurationForRuleset:(id)arg1;

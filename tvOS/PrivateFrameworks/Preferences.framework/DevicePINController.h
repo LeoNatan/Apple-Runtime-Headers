@@ -35,9 +35,13 @@
     _Bool _shouldDismissWhenDone;
     _Bool _allowOptionsButton;
     NSString *_doneButtonTitle;
+    NSString *_passcodeOptionsTitle;
+    CDUnknownBlockType _passcodeOptionsHandler;
 }
 
 + (_Bool)settingEnabled;
+@property(copy, nonatomic) CDUnknownBlockType passcodeOptionsHandler; // @synthesize passcodeOptionsHandler=_passcodeOptionsHandler;
+@property(copy, nonatomic) NSString *passcodeOptionsTitle; // @synthesize passcodeOptionsTitle=_passcodeOptionsTitle;
 @property(nonatomic) _Bool allowOptionsButton; // @synthesize allowOptionsButton=_allowOptionsButton;
 @property(copy, nonatomic) NSString *doneButtonTitle; // @synthesize doneButtonTitle=_doneButtonTitle;
 @property(nonatomic) _Bool shouldDismissWhenDone; // @synthesize shouldDismissWhenDone=_shouldDismissWhenDone;

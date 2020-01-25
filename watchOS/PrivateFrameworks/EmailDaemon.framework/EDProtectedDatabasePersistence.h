@@ -49,8 +49,8 @@
 - (id)_databaseIDsToDeleteForTable:(id)arg1;
 - (void)scheduleRecurringActivity;
 - (unsigned int)_deleteRowIDs:(id)arg1 fromJournal:(id)arg2 withConnection:(id)arg3;
-- (unsigned int)_mergeTable:(id)arg1 connection:(id)arg2;
-- (unsigned int)_mergeSchema:(id)arg1 connection:(id)arg2;
+- (unsigned int)_mergeTable:(id)arg1 connection:(id)arg2 journaledRows:(unsigned int *)arg3 newRows:(unsigned int *)arg4;
+- (unsigned int)_mergeSchema:(id)arg1 connection:(id)arg2 journaledRows:(unsigned int *)arg3 newRows:(unsigned int *)arg4;
 - (unsigned int)_runReconciliationWithSchema:(id)arg1 connection:(id)arg2;
 - (unsigned int)_reconcileJournalsWithSchema:(id)arg1 connection:(id)arg2;
 - (void)reconcileJournalsWithSchema:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

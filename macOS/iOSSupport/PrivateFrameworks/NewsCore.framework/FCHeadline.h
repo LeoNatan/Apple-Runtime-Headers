@@ -224,6 +224,7 @@
 @property(readonly, nonatomic) BOOL isTopStory;
 - (void)applyHeadlineMetadata:(id)arg1 configuration:(id)arg2;
 - (void)assignStoryType:(unsigned long long)arg1 withConfiguration:(id)arg2;
+- (void)overrideShortExcerpt:(id)arg1;
 - (void)overrideDisplayDate:(id)arg1;
 - (void)overrideTitle:(id)arg1;
 @property(readonly, copy) NSString *description;

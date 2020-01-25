@@ -17,6 +17,9 @@
 }
 
 + (id)imageForSuggestionCardSectionType:(int)arg1;
++ (_Bool)isEqualHasSubclassOverrideForImage:(id)arg1;
++ (_Bool)isEqualHasSubclassOverrideForImage1:(id)arg1 image2:(id)arg2;
++ (_Bool)image:(id)arg1 isEqualToImage:(id)arg2;
 + (id)imageWithSFImage:(id)arg1 variantForAppIcon:(unsigned long long)arg2;
 + (id)imageWithSFImage:(id)arg1;
 @property(nonatomic) _Bool needsTinting; // @synthesize needsTinting=_needsTinting;

@@ -25,11 +25,18 @@
     long long _graphAudioValidationMode;
     long long _ioReferenceCount;
     NSObject<OS_dispatch_source> *mHUPSource;
+    struct AudioServerPlugInIOCycleInfo _lastIoCycleInfo;
+    unsigned int _lastIoBufferFrameSizeSamples;
+    void *_bufferOfZeroes;
+    unsigned int _bufferOfZeroesSizeSamples;
+    unsigned int _bufferOfZeroesSizeBytes;
     BOOL _isRunning;
     BOOL _keepGraphInitialized;
+    BOOL _processGraphOutputTailOnStop;
     ASDStreamDSPConfiguration *_currentDSPConfiguration;
 }
 
+@property(nonatomic) BOOL processGraphOutputTailOnStop; // @synthesize processGraphOutputTailOnStop=_processGraphOutputTailOnStop;
 @property(nonatomic) BOOL keepGraphInitialized; // @synthesize keepGraphInitialized=_keepGraphInitialized;
 @property(retain, nonatomic) ASDStreamDSPConfiguration *currentDSPConfiguration; // @synthesize currentDSPConfiguration=_currentDSPConfiguration;
 @property(readonly, nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;

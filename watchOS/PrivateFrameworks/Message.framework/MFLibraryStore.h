@@ -13,7 +13,6 @@
     MFMailMessageLibrary *_library;
     NSDate *_earliestReceivedDate;
     MFMessageCriterion *_criterion;
-    unsigned int _serverMessageCount;
     unsigned int _fetchWindow;
 }
 

@@ -102,6 +102,7 @@
 - (_Bool)_accessibilityPerformUserTestingAction:(id)arg1;
 - (id)_accessibilityUserTestingActions;
 - (id)_accessibilityUserTestingVisibleAncestor;
+- (_Bool)_accessibilityShouldHitTestStatusBarWindow;
 - (_Bool)_accessibilityHitTestsStatusBar;
 - (int)_accessibilityVerticalSizeClass;
 - (int)_accessibilityHorizontalSizeClass;
@@ -703,6 +704,7 @@
 - (id)accessibilityHeaderElements;
 - (_Bool)_accessibilityCanPerformAction:(int)arg1;
 - (_Bool)__accessibilitySupportsSecondaryActivateAction;
+- (_Bool)_accessibilitySupportsSecondaryActivateAction;
 - (id)_accessibilityHeadingLevel;
 - (_Bool)__accessibilitySupportsActivateAction;
 - (void)_accessibilitySetShouldPreventOpaqueScrolling:(_Bool)arg1;

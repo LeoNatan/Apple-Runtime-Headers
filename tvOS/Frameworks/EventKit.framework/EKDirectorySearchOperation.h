@@ -20,6 +20,7 @@
     NSError *_error;
 }
 
++ (_Bool)isSupported;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool numberOfMatchesExceededLimit; // @synthesize numberOfMatchesExceededLimit=_numberOfMatchesExceededLimit;
 - (void).cxx_destruct;

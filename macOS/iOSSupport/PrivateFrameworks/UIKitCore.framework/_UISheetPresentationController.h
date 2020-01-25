@@ -92,6 +92,7 @@
 @property(copy, nonatomic, setter=_setPassthroughViews:) NSArray *_passthroughViews;
 - (BOOL)_inheritsPresentingViewControllerThemeLevel;
 - (BOOL)_shouldOccludeDuringPresentation;
+- (BOOL)_shouldPreserveFirstResponder;
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;
 - (id)presentedView;
 - (void)dimmingViewWasTapped:(id)arg1;

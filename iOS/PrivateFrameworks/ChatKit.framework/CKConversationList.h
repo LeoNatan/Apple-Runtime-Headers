@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKConversation, NSMutableArray;
+@class CKConversation, NSMutableArray, NSMutableDictionary;
 
 @interface CKConversationList : NSObject
 {
@@ -14,18 +14,42 @@
     _Bool _loadingConversations;
     _Bool _loadedConversations;
     _Bool _remergingConversations;
+    _Bool _holdingWasKnownSenderUpdates;
     CKConversation *_pendingConversation;
+    NSMutableDictionary *_conversationsDictionary;
+    unsigned long long _filteredConversationCount;
 }
 
++ (id)conversationListAlertSuppressionContextForFilterMode:(unsigned long long)arg1;
++ (id)stringForFilterMode:(unsigned long long)arg1;
++ (id)numberForFilterMode:(unsigned long long)arg1;
 + (void)_handleRegistryDidLoadNotification:(id)arg1;
 + (void)initialize;
 + (id)sharedConversationList;
+@property(nonatomic) _Bool holdingWasKnownSenderUpdates; // @synthesize holdingWasKnownSenderUpdates=_holdingWasKnownSenderUpdates;
+@property(nonatomic) unsigned long long filteredConversationCount; // @synthesize filteredConversationCount=_filteredConversationCount;
+@property(retain, nonatomic) NSMutableDictionary *conversationsDictionary; // @synthesize conversationsDictionary=_conversationsDictionary;
 @property(nonatomic) _Bool remergingConversations; // @synthesize remergingConversations=_remergingConversations;
 @property(readonly, nonatomic) _Bool loadedConversations; // @synthesize loadedConversations=_loadedConversations;
 @property(readonly, nonatomic) _Bool loadingConversations; // @synthesize loadingConversations=_loadingConversations;
 @property(retain, nonatomic) CKConversation *pendingConversation; // @synthesize pendingConversation=_pendingConversation;
 - (void).cxx_destruct;
+- (_Bool)_shouldShowInboxView;
+- (_Bool)_messageSpamFilteringEnabled;
+- (_Bool)_messageUnknownFilteringEnabled;
 - (_Bool)_messageFilteringEnabled;
+- (void)releaseWasKnownSenderHold;
+- (void)beginWasKnownSenderHold;
+- (_Bool)isHoldingWasKnownSenderUpdates;
+- (void)updateConversationsWasKnownSender;
+- (void)removeConversation:(id)arg1;
+- (void)_setConversations:(id)arg1 forFilterMode:(unsigned long long)arg2;
+- (id)conversationsForFilterMode:(unsigned long long)arg1;
+- (_Bool)_messageIsFromFilteredSenderServiceIsSMS:(_Bool)arg1 lastMessageIsSMS:(_Bool)arg2 isContact:(_Bool)arg3 isFiltered:(_Bool)arg4 isSpam:(_Bool)arg5 unknownFilteringEnabled:(_Bool)arg6 smsSpamFilteringEnabled:(_Bool)arg7;
+- (unsigned long long)filterModeForConversation:(id)arg1;
+- (void)updateConversationListsAndSortIfEnabled;
+- (_Bool)_shouldCleanupFilter;
+- (void)updateConversationFilteredFlagsAndReportSpam;
 - (void)_handleMemoryWarning:(id)arg1;
 - (id)_testingTrackedConversations;
 - (id)pendingConversationCreatingIfNecessary;
@@ -44,7 +68,7 @@
 - (id)unreadLastMessages;
 - (_Bool)_isUnreadChat:(id)arg1 ignoringMessages:(id)arg2;
 - (long long)unreadFilteredConversationCountIgnoringMessages:(id)arg1;
-- (long long)unreadCount;
+- (long long)unreadCountForFilterMode:(unsigned long long)arg1;
 - (void)unpendConversation;
 - (void)beginTrackingConversation:(id)arg1 forChat:(id)arg2;
 - (_Bool)_shouldBailBeginTrackingForCurrentProcess;

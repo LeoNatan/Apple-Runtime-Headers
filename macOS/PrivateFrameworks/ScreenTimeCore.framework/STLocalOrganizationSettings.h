@@ -6,7 +6,7 @@
 
 #import <ScreenTimeCore/STCoreOrganizationSettings.h>
 
-@class STLocalOrganization;
+@class NSString, STLocalOrganization;
 
 __attribute__((visibility("hidden")))
 @interface STLocalOrganizationSettings : STCoreOrganizationSettings
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(retain, nonatomic) STLocalOrganization *organization; // @dynamic organization;
+@property(copy, nonatomic) NSString *recoveryAltDSID; // @dynamic recoveryAltDSID;
 
 @end
 

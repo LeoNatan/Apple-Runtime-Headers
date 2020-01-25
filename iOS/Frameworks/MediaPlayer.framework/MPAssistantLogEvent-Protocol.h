@@ -6,10 +6,11 @@
 
 #import <MediaPlayer/NSObject-Protocol.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @protocol MPAssistantLogEvent <NSObject>
 @property(readonly, nonatomic) NSMutableDictionary *eventPayload;
 @property(readonly, nonatomic) long long eventCode;
+@property(readonly, nonatomic) NSString *eventName;
 @end
 

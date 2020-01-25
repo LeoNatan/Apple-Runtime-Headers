@@ -40,6 +40,7 @@
 - (id)_imageForPID:(unsigned int)arg1 colorCode:(unsigned int)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

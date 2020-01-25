@@ -59,14 +59,16 @@
 @property(readonly, nonatomic) BOOL isSharedZoneRoot;
 @property(readonly, nonatomic) BOOL isDocumentsFolder;
 @property(readonly, nonatomic) BOOL isNonDesktopRoot;
-- (id)directoryReferenceInZoneID:(id)arg1 action:(unsigned long long)arg2;
-- (id)_directoryRecordName;
-- (id)structureRecordIDForItemType:(BOOL)arg1 appLibrary:(id)arg2 zone:(id)arg3 aliasTargetZone:(id)arg4;
+- (id)directoryReferenceInZone:(id)arg1 action:(unsigned long long)arg2;
+- (id)_directoryRecordNameWithSession:(id)arg1;
+- (id)sideCarRecordIDWithZone:(id)arg1;
+- (id)sideCarRecordNameWithZone:(id)arg1;
+- (id)structureRecordIDForItemType:(BOOL)arg1 zone:(id)arg2;
 - (id)pcsChainDocumentStructureReferenceInZoneID:(id)arg1;
-- (id)pcsChainParentReferenceInZoneID:(id)arg1;
-- (id)validatingDirectoryReferenceInZoneID:(id)arg1;
+- (id)pcsChainParentReferenceInZone:(id)arg1;
+- (id)validatingDirectoryReferenceInZone:(id)arg1;
 - (id)documentStructureRecordIDInZoneID:(id)arg1;
-- (id)directoryStructureRecordIDInZoneID:(id)arg1;
+- (id)directoryStructureRecordIDInZone:(id)arg1;
 - (id)contentsRecordIDInZoneID:(id)arg1;
 
 // Remaining properties

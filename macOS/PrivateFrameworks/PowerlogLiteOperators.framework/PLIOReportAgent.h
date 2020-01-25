@@ -139,6 +139,7 @@
 + (id)entryEventBackwardDefinitionSoCStatsDeviceStates;
 + (id)entryEventBackwardDefinitionSoCStatsVoltageDomainPerformanceStates;
 + (id)entryEventBackwardDefinitionSoCStatsH6PMGRCounters;
++ (id)entryEventBackwardDefinitionIOMFBFrameRatePhase;
 + (id)entryEventBackwardDefinitionIOMFBScanout;
 + (id)entryEventBackwardDefinitionIOMFBSwap;
 + (id)entryEventBackwardDefinitionIOMFBNativeRate;

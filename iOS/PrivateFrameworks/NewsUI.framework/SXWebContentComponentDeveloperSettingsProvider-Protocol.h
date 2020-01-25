@@ -6,9 +6,9 @@
 
 #import <NewsUI/NSObject-Protocol.h>
 
-@class SXWebContentDeveloperSettings;
+@class SWDeveloperSettings;
 
 @protocol SXWebContentComponentDeveloperSettingsProvider <NSObject>
-- (SXWebContentDeveloperSettings *)developerSettings;
+- (SWDeveloperSettings *)developerSettings;
 @end
 

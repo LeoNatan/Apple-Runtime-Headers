@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (void)setPIN:(id)arg1;
 - (_Bool)validatePIN:(id)arg1;
 - (id)pinInstructionsPrompt;
+- (void)viewWillAppear:(_Bool)arg1;
 
 // Remaining properties
 @property(nonatomic) __weak id <STRestrictionsPINControllerDelegate> pinDelegate; // @dynamic pinDelegate;

@@ -82,6 +82,7 @@
 - (void)_setExplicitSize:(struct CGSize)arg1 contentInsets:(struct UIEdgeInsets)arg2;
 - (struct CGRect)_referenceBoundsForOrientation:(long long)arg1;
 - (struct CGRect)_referenceBounds;
+- (void)_updateTraitCollection;
 - (void)_computeMetricsForWindows:(id)arg1 animated:(BOOL)arg2;
 - (void)_computeMetrics:(BOOL)arg1;
 - (void)_prepareForSuspend;

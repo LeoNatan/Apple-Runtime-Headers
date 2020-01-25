@@ -8,7 +8,7 @@
 
 #import <MobileMailUI/EFLoggable-Protocol.h>
 
-@class EMMailDropMetadata, NSArray, NSMutableDictionary, NSProgress, NSString, WKWebView;
+@class EMMailDropMetadata, NSArray, NSMutableDictionary, NSMutableSet, NSProgress, NSString, WKWebView;
 @protocol ContentRepresentationHandlingDelegate, EFScheduler;
 
 @interface MessageContentItemsHelper : NSObject <EFLoggable>
@@ -16,6 +16,7 @@
     NSMutableDictionary *_elementIDToContentID;
     NSMutableDictionary *_elementIDToWKAttachmentID;
     NSMutableDictionary *_contentIDToDownloadFutures;
+    NSMutableSet *_inlinedImageContentIDs;
     _Bool _didComputeMailDropProperties;
     long long _totalUnstartedMailDropDownloadSize;
     id <EFScheduler> _attachmentsScheduler;
@@ -47,7 +48,9 @@
 - (long long)displayStateForContentItem:(id)arg1;
 - (void)_injectAttachmentViewForElementWithSourceAttributeValue:(id)arg1 forContentItem:(id)arg2;
 - (void)updateDragItemProvider:(id)arg1 forElementID:(id)arg2;
-- (id)futureForContentItem:(id)arg1;
+- (id)_futureForContentItem:(id)arg1 networkUsage:(long long)arg2 progress:(id *)arg3;
+- (id)_futureForContentItem:(id)arg1;
+- (id)futureForContentItem:(id)arg1 download:(_Bool)arg2;
 - (void)showMenuForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)displayViewerForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)attachmentWasTappedWithElementID:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;

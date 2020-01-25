@@ -7,7 +7,7 @@
 @class NSDictionary;
 
 @protocol CRCarPlayAppService
-- (void)requestCarCapabilitiesStatus:(NSDictionary *)arg1 withReply:(void (^)(_Bool))arg2;
+- (void)requestCarCapabilitiesStatus:(NSDictionary *)arg1 withReply:(void (^)(CRCarPlayCapabilities *))arg2;
 - (void)requestCarCapabilitiesUpdate;
 - (void)requestBlacklistUpdate;
 @end

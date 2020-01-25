@@ -80,7 +80,7 @@
 - (void)askUserToUnlock;
 - (void)serviceDidFinishRequest;
 - (void)serviceStartRequestWithOptions:(id)arg1;
-- (void)serviceRequestsDismissal:(BOOL)arg1;
+- (void)serviceRequestsDismissalWithDelayForTTS:(BOOL)arg1 dismissalOptions:(id)arg2;
 - (void)handleLongPressEndFromSource:(long long)arg1 atTime:(double)arg2;
 - (void)handleLongPressBeginFromSource:(long long)arg1;
 - (void)handleClickFromSource:(long long)arg1;
@@ -176,6 +176,7 @@
 - (void)_presentRemoteViewController;
 - (void)presentRemoteViewControllerIfNecessary;
 - (void)_setVoiceTriggerEnabled:(BOOL)arg1;
+- (void)autoDismissController:(id)arg1 dismissViewControllerWithDismissalOptions:(id)arg2;
 - (void)autoDismissController:(id)arg1 willAutoDismiss:(BOOL)arg2;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;

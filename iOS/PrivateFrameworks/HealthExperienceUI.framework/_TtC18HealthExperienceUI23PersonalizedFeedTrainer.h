@@ -13,6 +13,7 @@
     // Error parsing type: , name: tapEvents
     // Error parsing type: , name: sessionWasBackgrounded
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: dwellPolicy
 }
 
 - (void)appDidBecomeActive;

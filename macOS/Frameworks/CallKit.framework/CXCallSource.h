@@ -50,6 +50,7 @@
 - (oneway void)reportNewIncomingCallWithUUID:(id)arg1 update:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (oneway void)registerWithConfiguration:(id)arg1;
 - (void)beginWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic, getter=isPermittedToUseBluetoothAccessories) BOOL permittedToUseBluetoothAccessories;
 @property(readonly, nonatomic, getter=isPermittedToUsePrivateAPI) BOOL permittedToUsePrivateAPI;
 @property(readonly, nonatomic, getter=isPermittedToUsePublicAPI) BOOL permittedToUsePublicAPI;
 @property(readonly, nonatomic) int processIdentifier;

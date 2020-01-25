@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
+#import <WebKit/ARQuickLookWebKitItemDelegate-Protocol.h>
 #import <WebKit/QLPreviewControllerDataSource-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface _WKPreviewControllerDataSource : NSObject <QLPreviewControllerDataSource>
+@interface _WKPreviewControllerDataSource : NSObject <QLPreviewControllerDataSource, ARQuickLookWebKitItemDelegate>
 {
     struct RetainPtr<NSItemProvider> _itemProvider;
     struct RetainPtr<ARQuickLookWebKitItem> _item;
     struct URL _originatingPageURL;
     struct URL _downloadedURL;
+    struct SystemPreviewController *_previewController;
     CDUnknownBlockType _completionHandler;
     NSString *_mimeType;
 }
@@ -25,13 +27,20 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)previewItem:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)failWithError:(id)arg1;
 - (void)finish:(struct URL)arg1;
 - (void)setProgress:(float)arg1;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)dealloc;
-- (id)initWithMIMEType:(id)arg1 originatingPageURL:(struct URL)arg2;
+- (id)initWithSystemPreviewController:(struct SystemPreviewController *)arg1 MIMEType:(id)arg2 originatingPageURL:(struct URL)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

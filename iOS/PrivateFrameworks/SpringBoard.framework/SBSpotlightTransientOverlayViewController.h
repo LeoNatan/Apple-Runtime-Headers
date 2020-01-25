@@ -29,6 +29,7 @@
 - (_Bool)isContentOpaque;
 - (CDUnknownBlockType)sceneDeactivationPredicate;
 - (_Bool)handleHomeButtonPress;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;

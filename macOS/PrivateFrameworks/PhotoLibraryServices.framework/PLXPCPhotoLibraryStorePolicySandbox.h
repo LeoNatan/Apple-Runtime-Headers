@@ -14,7 +14,8 @@
 {
 }
 
-- (BOOL)shouldUseXPCStoreForDatabasePath:(id)arg1;
+- (BOOL)shouldUseXPCStoreForDatabasePath:(id)arg1 auditToken:(CDStruct_4c969caf)arg2;
+- (BOOL)hasSandboxAccessForPath:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -14,6 +14,7 @@
     _Bool _shouldIgnoreGlobalModalUIDisplayPolicy;
 }
 
++ (id)authenticatorDialogForRelyingPartyID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (id)allowDownloadDialogWithDownload:(id)arg1 initiatingURL:(id)arg2 allowViewAction:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)increaseApplicationCacheQuotaDialogForOrigin:(id)arg1 newQuota:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)increaseDatabaseQuotaDialogForOrigin:(id)arg1 newQuota:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;

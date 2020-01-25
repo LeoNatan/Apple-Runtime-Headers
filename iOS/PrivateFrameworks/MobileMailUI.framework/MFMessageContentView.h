@@ -170,11 +170,13 @@
 - (double)_adjustWebViewInsetsToAccomodateHeaderAndFooter;
 - (void)footerViewDidChangeHeight:(id)arg1;
 - (void)headerViewDidChangeHeight:(id)arg1;
+- (id)downloadFutureForContentItem:(id)arg1;
 - (id)_contentItemForElement:(id)arg1;
+- (void)webView:(id)arg1 contextMenuForElement:(id)arg2 willCommitWithAnimator:(id)arg3;
 - (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_contextMenuConfigurationForAttachment:(id)arg1;
 - (_Bool)_allAttachmentsArePhotosOrVideos;
-- (_Bool)_mayShareToUnmanaged;
+@property(readonly, nonatomic) _Bool mayShareToUnmanaged;
 - (void)_updateFileWrapperForAttachment:(id)arg1 contentID:(id)arg2;
 - (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
@@ -207,6 +209,7 @@
 - (void)_revealActionsButtonTapped;
 - (void)_seeMoreButtonTapped;
 - (void)_expandQuoteWithCollapsedBlockquoteOffset:(double)arg1 expandedOffset:(double)arg2;
+- (struct CGRect)_adjustedRectForAttachmentRect:(struct CGRect)arg1;
 - (void)_handleAttachmentTapMessage:(id)arg1;
 - (void)_alertMailDropDownloadIsTooLargeForCell:(_Bool)arg1;
 - (void)_displayDismissibleAttachmentErrorWithTitle:(id)arg1 message:(id)arg2;

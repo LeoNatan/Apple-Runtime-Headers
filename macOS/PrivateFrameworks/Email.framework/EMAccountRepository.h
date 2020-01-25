@@ -40,7 +40,7 @@
 - (void)_fetchAccountsAndObserveChanges;
 - (void)dealloc;
 - (id)initWithRemoteConnection:(id)arg1;
-- (id)_init;
+- (id)initInternal;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

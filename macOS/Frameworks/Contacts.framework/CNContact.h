@@ -94,12 +94,14 @@
     NSData *_imageHash;
 }
 
++ (void)you_used_a_property_that_you_didnt_request_when_you_fetched_the_contact;
 + (id)previewURLForContact:(id)arg1;
 + (id)unifyContacts:(id)arg1;
 + (CDUnknownBlockType)preferredImageComparator;
 + (CDUnknownBlockType)comparatorForNameSortOrder:(long long)arg1;
 + (id)descriptorWithKeyDescriptors:(id)arg1 description:(id)arg2;
 + (id)descriptorForKeyDescriptors:(id)arg1 description:(id)arg2;
++ (id)descriptorForAllImageDataKeys;
 + (id)descriptorForAllComparatorKeys;
 + (BOOL)supportsSecureCoding;
 + (id)storeInfoFromCoder:(id)arg1 storeIdentifier:(id)arg2 key:(id)arg3;

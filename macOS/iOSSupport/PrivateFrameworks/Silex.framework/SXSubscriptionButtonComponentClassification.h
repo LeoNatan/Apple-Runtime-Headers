@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Silex/SXComponentClassification.h>
+#import <Silex/SXButtonComponentClassification.h>
 
-@interface SXSubscriptionButtonComponentClassification : SXComponentClassification
+@interface SXSubscriptionButtonComponentClassification : SXButtonComponentClassification
 {
 }
 
 + (id)roleString;
 + (int)role;
-+ (id)typeString;
 - (id)accessibilityContextualLabel;
 - (Class)componentModelClass;
 

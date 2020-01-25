@@ -14,6 +14,7 @@
 @property(readonly, nonatomic, getter=isDownloadable) _Bool downloadable;
 @property(readonly, nonatomic, getter=isFileDataReady) _Bool fileDataReady;
 @property(readonly, nonatomic, getter=isFileURLFinalized) _Bool fileURLFinalized;
+@property(readonly, nonatomic) _Bool isDirectory;
 @property(readonly, nonatomic) _Bool hideAttachment;
 @property(readonly, nonatomic) _Bool isSticker;
 @property(readonly, nonatomic) unsigned long long totalBytes;

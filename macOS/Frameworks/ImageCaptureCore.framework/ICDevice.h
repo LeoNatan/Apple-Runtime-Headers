@@ -130,7 +130,7 @@
 - (void)removeCapabilities;
 - (void)requestSendMessage:(unsigned int)arg1 outData:(id)arg2 maxReturnedDataSize:(unsigned int)arg3 sendMessageDelegate:(id)arg4 didSendMessageSelector:(SEL)arg5 contextInfo:(void *)arg6;
 - (void)disconnect;
-- (void)cleanupDeviceWithErrorCode:(id)arg1;
+- (void)cleanupDeviceWithErrorCode:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)handleCommandCompletion:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 @property(copy, nonatomic) NSString *autolaunchApplicationPath; // @synthesize autolaunchApplicationPath=_autolaunchApplicationPath;

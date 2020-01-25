@@ -6,9 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@protocol SXComponentInteractionHandler, SXWebContentInteraction;
+@protocol SWInteraction, SXComponentInteractionHandler;
 
 @protocol SXWebContentComponentInteractionHandlerFactory <NSObject>
-- (id <SXComponentInteractionHandler>)componentInteractionHandlerForInteraction:(id <SXWebContentInteraction>)arg1;
+- (id <SXComponentInteractionHandler>)componentInteractionHandlerForInteraction:(id <SWInteraction>)arg1;
 @end
 

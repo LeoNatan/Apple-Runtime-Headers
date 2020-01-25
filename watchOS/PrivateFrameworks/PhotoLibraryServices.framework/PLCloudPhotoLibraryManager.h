@@ -227,6 +227,7 @@
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)enableiCPLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)sizeOfResourcesToUploadByCPL:(id *)arg1;
+- (void)invalidate;
 - (id)initWithLibraryServicesManager:(id)arg1;
 - (id)_debugNameForMode:(unsigned int)arg1;
 

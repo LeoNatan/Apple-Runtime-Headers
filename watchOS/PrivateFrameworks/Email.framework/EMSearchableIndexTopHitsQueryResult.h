@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (int)rankingIndexForConversationID:(id)arg1;
 - (void)userDidInteractWithConversationID:(id)arg1;
-- (id)conversationIDForLibraryIndex:(long long)arg1;
 - (int)rankingIndexForMessageLibraryID:(id)arg1;
 - (void)userDidInteractWithLibraryIdentifier:(id)arg1;
 - (id)initWithTopHitSearchQuery:(id)arg1 foundItems:(id)arg2;

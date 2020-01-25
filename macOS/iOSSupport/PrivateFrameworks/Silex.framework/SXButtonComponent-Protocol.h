@@ -7,6 +7,9 @@
 #import <Silex/SXComponent-Protocol.h>
 #import <Silex/SXConditionalButtonComponentProperties-Protocol.h>
 
+@class NSString;
+
 @protocol SXButtonComponent <SXComponent, SXConditionalButtonComponentProperties>
+@property(readonly, nonatomic) NSString *text;
 @end
 

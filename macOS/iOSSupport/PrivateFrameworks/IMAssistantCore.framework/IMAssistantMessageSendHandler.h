@@ -27,6 +27,7 @@
 - (id)resolveRecipientsByFindingExistingRelevantChatsForRecipients:(id)arg1 withMatchingHandlesByRecipient:(id)arg2 fromChats:(id)arg3;
 - (id)contactsWithDuplicateNamesAmongContacts:(id)arg1;
 - (id)resolvedRecipientsFromChat:(id)arg1;
+- (BOOL)recipientHandleResolutionResultsAllowedByScreentime:(id)arg1;
 - (void)resolveRecipients:(id)arg1 forIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recipientDisambiguationResultsFromMultipleRelevantChats:(id)arg1;
 - (id)resolveMessageContentWithString:(id)arg1;

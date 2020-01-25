@@ -23,6 +23,7 @@
 @property(nonatomic) __weak id <SiriUITemplateViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <SiriUITemplateModel> templateModel; // @synthesize templateModel=_templateModel;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)prepareForDismissal;
 @property(readonly, nonatomic) id <SiriUITemplateModelPrivate> templateModelPrivate;
 - (void)loadView;

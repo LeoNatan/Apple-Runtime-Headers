@@ -34,22 +34,24 @@
     NSData *_serverSignature;
     NSData *_serverPublicKey;
     NSString *_maskedAppleID;
+    NSString *_userMessage;
     NSData *_baaLeaftCert;
     NSData *_baaIntermediateCert;
     NSData *_collaborativeKeyC3;
     NSData *_confirmSignature;
-    int _keyGenerationStatus;
+    NSData *_keyGenerationStatus;
     CLLocation *_pairingLocation;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) CLLocation *pairingLocation; // @synthesize pairingLocation=_pairingLocation;
-@property(nonatomic) int keyGenerationStatus; // @synthesize keyGenerationStatus=_keyGenerationStatus;
+@property(copy, nonatomic) NSData *keyGenerationStatus; // @synthesize keyGenerationStatus=_keyGenerationStatus;
 @property(nonatomic) _Bool ackSuccess; // @synthesize ackSuccess=_ackSuccess;
 @property(copy, nonatomic) NSData *confirmSignature; // @synthesize confirmSignature=_confirmSignature;
 @property(copy, nonatomic) NSData *collaborativeKeyC3; // @synthesize collaborativeKeyC3=_collaborativeKeyC3;
 @property(copy, nonatomic) NSData *baaIntermediateCert; // @synthesize baaIntermediateCert=_baaIntermediateCert;
 @property(copy, nonatomic) NSData *baaLeaftCert; // @synthesize baaLeaftCert=_baaLeaftCert;
+@property(copy, nonatomic) NSString *userMessage; // @synthesize userMessage=_userMessage;
 @property(copy, nonatomic) NSString *maskedAppleID; // @synthesize maskedAppleID=_maskedAppleID;
 @property(copy, nonatomic) NSData *serverPublicKey; // @synthesize serverPublicKey=_serverPublicKey;
 @property(copy, nonatomic) NSData *serverSignature; // @synthesize serverSignature=_serverSignature;
@@ -79,9 +81,8 @@
 - (void)updatePairingLocation:(id)arg1;
 - (void)updateName:(id)arg1 roleId:(int)arg2;
 - (void)updateBeaconId:(id)arg1;
-- (void)updateWithStatus:(int)arg1 collaborativeKeyC3:(id)arg2 signatureS4:(id)arg3;
 - (void)updateWithPayloadSignature:(id)arg1 attestation:(id)arg2 collaborativeKey:(id)arg3 systemVersion:(id)arg4 vendorId:(int)arg5 productId:(int)arg6 ecid:(id)arg7 chipId:(id)arg8 serialNumber:(id)arg9;
-- (void)updateWithSeed:(id)arg1 collaborativeKeyC2:(id)arg2 serverSignature:(id)arg3 serverPublicKey:(id)arg4 maskedAppleID:(id)arg5 baaIntermediateCert:(id)arg6 baaLeafCert:(id)arg7;
+- (void)updateWithSeed:(id)arg1 collaborativeKeyC2:(id)arg2 serverSignature:(id)arg3 serverPublicKey:(id)arg4 maskedAppleID:(id)arg5 userMessage:(id)arg6 baaIntermediateCert:(id)arg7 baaLeafCert:(id)arg8;
 - (id)initWithIdentifier:(id)arg1 nonce:(id)arg2;
 
 @end

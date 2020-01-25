@@ -20,6 +20,8 @@
     unsigned int _defaultPriority;
 }
 
++ (id)downtimeCategoryIdentifiers;
++ (id)systemCategoryIdentifiers;
 + (id)unblockableCategoryIdentifiers;
 + (id)unblockableBundleIdentifiers;
 + (_Bool)supportsSecureCoding;
@@ -31,6 +33,7 @@
 - (void).cxx_destruct;
 - (int)priorityForIdentifier:(id)arg1;
 - (int)policyForIdentifier:(id)arg1;
+@property(readonly, nonatomic) _Bool downtimeEnforced;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

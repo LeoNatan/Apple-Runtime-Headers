@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) double contentScaleFactor;
 @property(readonly, nonatomic) long long userInterfaceStyle;
 @property(readonly, nonatomic, getter=isChannelSubscriber) _Bool channelSubscriber;
+@property(readonly, nonatomic, getter=isBundleTrialEligible) _Bool bundleTrialEligible;
 @property(readonly, nonatomic, getter=isBundleSubscriber) _Bool bundleSubscriber;
 @property(readonly, nonatomic) unsigned long long viewingLocation;
 @property(readonly, nonatomic) _Bool testing;

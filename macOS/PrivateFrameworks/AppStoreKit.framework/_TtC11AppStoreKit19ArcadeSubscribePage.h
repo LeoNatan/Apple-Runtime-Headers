@@ -13,7 +13,7 @@
     // Error parsing type: , name: offerButtonAction
     // Error parsing type: , name: offerDisplayProperties
     // Error parsing type: , name: dismissButtonTitle
-    // Error parsing type: , name: postSubscribeAction
+    // Error parsing type: , name: openAppAction
     // Error parsing type: , name: askToBuyMessage
     // Error parsing type: , name: askToBuyId
     // Error parsing type: , name: pageMetrics

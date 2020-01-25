@@ -9,6 +9,7 @@
 @interface UIViewController (CNPeopleCardTransition)
 - (id)_cardViewControllerTransitioning;
 - (void)set_cardViewControllerTransitioning:(id)arg1;
+- (id)cnui_appropriatePresentationController;
 - (void)cnui_addChildViewController:(id)arg1;
 @property(readonly, nonatomic) _Bool ab_isInSheet;
 @property(readonly, nonatomic) _Bool ab_isDirectlyInPopover;

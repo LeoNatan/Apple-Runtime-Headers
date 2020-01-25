@@ -9,7 +9,7 @@
 #import <ScreenTimeUI/CNContactViewControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
 
-@class NSObject, NSString, SBSLockScreenService, STBlockingBackdropView, STHourglassView, STLockoutPolicyController, UIAlertController, UIButton, UILabel;
+@class NSObject, NSString, SBSLockScreenService, STHourglassView, STLockoutPolicyController, UIAlertController, UIButton, UILabel, UIResponder, UIVisualEffectView;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
 @interface STLockoutViewController : UIViewController <CNContactViewControllerDelegate, STLockoutPolicyControllerDelegate>
@@ -30,7 +30,9 @@
     _Bool _mainButtonAlwaysHidden;
     _Bool _forSnapshot;
     _Bool _didFinishDismissing;
+    UIResponder *_customNextResponder;
     STLockoutPolicyController *_policyController;
+    NSString *_applicationName;
     STHourglassView *_hourglassView;
     UILabel *_titleLabel;
     UILabel *_messageLabel;
@@ -49,6 +51,7 @@
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
++ (id)lockoutViewControllerWithConversationContext:(id)arg1 bundleIdentifier:(id)arg2 contactStore:(id)arg3 applicationName:(id)arg4;
 + (id)lockoutViewControllerWithWebsiteURL:(id)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
 + (id)lockoutViewControllerWithCategoryIdentifier:(id)arg1;
@@ -61,7 +64,9 @@
 @property __weak UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
+@property(readonly) NSString *applicationName; // @synthesize applicationName=_applicationName;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
+@property(nonatomic) __weak UIResponder *customNextResponder; // @synthesize customNextResponder=_customNextResponder;
 @property(nonatomic) _Bool mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
 @property(nonatomic) _Bool okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
 - (void).cxx_destruct;
@@ -122,13 +127,14 @@
 @property(copy, nonatomic) NSString *bundleIdentifier;
 - (void)_setupCommon;
 - (void)dealloc;
-@property(readonly, nonatomic) STBlockingBackdropView *viewIfLoaded;
-@property(retain, nonatomic) STBlockingBackdropView *view;
+@property(readonly, nonatomic) UIVisualEffectView *viewIfLoaded;
+@property(retain, nonatomic) UIVisualEffectView *view;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)nextResponder;
+- (_Bool)_canShowWhileLocked;
+@property(nonatomic) __weak UIResponder *nextResponder;
 - (id)initWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
 - (id)initWithWebsiteURL:(id)arg1;

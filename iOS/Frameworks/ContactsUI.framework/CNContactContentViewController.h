@@ -551,13 +551,14 @@
 - (void)loadContactViewControllerViews;
 - (void)loadView;
 - (void)performAuthorizedSetEditing:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)authorizeSave;
+- (void)resetAuthorizationState;
 - (void)editAuthorizationController:(id)arg1 authorizationDidFinishWithResult:(long long)arg2;
 - (void)showEditAuthorizationPane:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)editRequiresAuthorization;
 - (_Bool)editingChangeRequiresAuthorization;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)shouldIgnoreGuardianRestrictions;
-- (void)resetAuthorizationState;
 - (void)finishEditing:(id)arg1;
 - (void)toggleEditing:(id)arg1;
 - (void)toggleEditing;
@@ -603,6 +604,7 @@
 - (_Bool)isOutOfProcess;
 - (void)setAllowsEditPhoto:(_Bool)arg1 preservingChanges:(_Bool)arg2;
 @property(nonatomic) _Bool isMailVIP; // @synthesize isMailVIP=_isMailVIP;
+- (_Bool)isHeaderViewPhotoProhibited;
 @property(readonly, nonatomic) CNContactHeaderView *contactHeaderView;
 @property(readonly, nonatomic) CNContactView *contactView;
 - (_Bool)_canShowWhileLocked;

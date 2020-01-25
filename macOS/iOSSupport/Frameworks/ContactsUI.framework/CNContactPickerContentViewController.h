@@ -9,7 +9,7 @@
 #import <ContactsUI/CNContactNavigationControllerDelegate-Protocol.h>
 #import <ContactsUI/CNContactPickerContentViewController-Protocol.h>
 
-@class CNContactNavigationController, CNContactStoreDataSource, CNManagedConfiguration, FAFamilyMember, NSArray, NSMutableArray, NSPredicate, NSString, UINavigationController;
+@class CNContactNavigationController, CNContactStoreDataSource, CNManagedConfiguration, FAFamilyMember, NSArray, NSMutableArray, NSPredicate, NSString, UIBarButtonItem, UINavigationController;
 @protocol CNContactPickerContentDelegate;
 
 __attribute__((visibility("hidden")))
@@ -89,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)contactNavigationControllerShouldAddNewContact:(id)arg1;
 - (void)invalidate;
 - (void)invalidateSelectionAnimated:(BOOL)arg1;
+@property(readonly, nonatomic) UIBarButtonItem *addContactBarButtonItem;
 @property(readonly, nonatomic) UINavigationController *navigationController;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_updatePromptWithViewSize:(struct CGSize)arg1 transitionCoordinator:(id)arg2;

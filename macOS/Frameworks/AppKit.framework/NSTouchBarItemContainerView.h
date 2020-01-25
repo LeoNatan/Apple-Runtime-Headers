@@ -40,6 +40,7 @@
 @property(retain) NSObject<NSTouchBarItemLayoutDelegate> *layoutDelegate;
 @property(retain) NSGroupTouchBarItem *compressionItemContainingItem;
 - (struct CGSize)sizeThatFitsProposedLayoutSize:(struct CGSize)arg1;
+@property BOOL forcesReducedMetricsCompression;
 @property long long priorityIndex;
 @property(readonly) struct CGSize contentClippingSize;
 - (void)_updateMeasuredSizes;

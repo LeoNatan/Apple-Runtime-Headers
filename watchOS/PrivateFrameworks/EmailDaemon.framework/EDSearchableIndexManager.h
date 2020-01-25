@@ -35,6 +35,7 @@
 - (void)setNeedsReindex;
 - (void)removeAllItemsFromIndexAndWait:(_Bool)arg1 skipInvalidation:(_Bool)arg2;
 - (void)_removeAllItemsFromIndexAndWait:(_Bool)arg1 options:(unsigned int)arg2;
+- (void)enableIndexingAndBeginScheduling:(_Bool)arg1 budgetConfiguration:(id)arg2;
 - (void)enableIndexingAndBeginScheduling:(_Bool)arg1;
 @property(readonly, nonatomic) EDSearchableIndexScheduler *scheduler;
 @property(readonly, nonatomic) EDSearchableIndexPersistence *persistence;

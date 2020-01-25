@@ -13,8 +13,13 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)mergeNotificationGroups:(id)arg1;
+- (id)notificationGroupListsForMigrationPassingTest:(CDUnknownBlockType)arg1 filterPersistentRequests:(_Bool)arg2;
+- (void)_toggleHiddenNotificationsOnAuthenticationChange:(_Bool)arg1;
 - (id)axStringForRequest:(id)arg1 label:(id)arg2;
 - (void)insertNotificationRequest:(id)arg1;
+- (void)_axSetIgnoreNotification:(_Bool)arg1;
+- (_Bool)_axIgnoreNotification;
 
 @end
 

@@ -7,11 +7,11 @@
 #import <NewsUI2/NFCopying-Protocol.h>
 #import <NewsUI2/NSObject-Protocol.h>
 
-@class FCAssetHandle, FCColor, FCPurchaseOfferableConfiguration, FCSubscriptionButtonConfiguration, NSArray, NSData, NSDate, NSString, NSURL, NTPBPublisherPaidDescriptionStrings;
-@protocol FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTagProviding, FCTopicProviding;
+@class FCAssetHandle, FCColor, FCPaywallConfiguration, FCPurchaseOfferableConfiguration, NSArray, NSData, NSDate, NSString, NSURL, NTPBPublisherPaidDescriptionStrings;
+@protocol FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTagProviding, FCTagStocksFields, FCTopicProviding;
 
 @protocol FCTagProviding <NSObject, NFCopying>
-@property(nonatomic, readonly) FCSubscriptionButtonConfiguration *paidBundleSubscriptionButtonConfiguration;
+@property(nonatomic, readonly) FCPaywallConfiguration *paidBundlePaywallConfiguration;
 - (void)ppt_overrideFeedID:(NSString *)arg1;
 - (NSURL *)authorizationURL;
 - (NSString *)feedIDForBin:(long long)arg1;
@@ -22,6 +22,7 @@
 - (BOOL)isPurchaseSetup;
 - (BOOL)isEqualToTag:(id <FCTagProviding>)arg1;
 - (BOOL)isNoLongerAvailable;
+@property(nonatomic, readonly) id <FCTagStocksFields> stocksFields;
 @property(nonatomic, readonly) NSDate *publisherSpecifiedArticleIDsModifiedDate;
 @property(nonatomic, readonly) NSArray *publisherSpecifiedArticleIDs;
 @property(nonatomic, readonly) NSString *articleRecirculationConfigJSON;

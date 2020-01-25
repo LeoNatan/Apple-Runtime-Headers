@@ -21,6 +21,7 @@
 @property(copy, nonatomic) CDUnknownBlockType dissmissWithoutActionBlock; // @synthesize dissmissWithoutActionBlock=_dissmissWithoutActionBlock;
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)dismissWhenPossible;
 - (void)dealloc;
 

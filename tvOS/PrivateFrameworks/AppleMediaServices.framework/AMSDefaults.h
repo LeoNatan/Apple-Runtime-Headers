@@ -11,6 +11,10 @@
 }
 
 + (_Bool)useNewCookieStorage;
++ (void)setPrimaryBiometricACLVersion:(id)arg1;
++ (void)setExtendedBiometricACLVersion:(id)arg1;
++ (id)primaryBiometricACLVersion;
++ (id)extendedBiometricACLVersion;
 + (id)_valueForKey:(id)arg1 domain:(struct __CFString *)arg2;
 + (id)_valueForKey:(id)arg1;
 + (void)_setValue:(id)arg1 forKey:(id)arg2 domain:(struct __CFString *)arg3;
@@ -34,7 +38,6 @@
 + (void)setReversePushEnabled:(long long)arg1;
 + (void)setQAMode:(_Bool)arg1;
 + (void)setPushEnvironment:(long long)arg1;
-+ (void)setPrimaryBiometricACLVersion:(id)arg1;
 + (void)setPerfomedDeviceOfferSetup:(_Bool)arg1;
 + (void)setMultiUserSilentPreferredFailureTimes:(id)arg1;
 + (void)setMigratedToNewCookieStorage:(_Bool)arg1;
@@ -47,7 +50,6 @@
 + (void)setIncludeFullRequestInHARLogging:(_Bool)arg1;
 + (void)setIgnoreServerTrustEvaluation:(_Bool)arg1;
 + (void)setForceLoadUrlMetrics:(long long)arg1;
-+ (void)setExtendedBiometricACLVersion:(id)arg1;
 + (void)setEnablePurchaseQueue:(_Bool)arg1;
 + (void)setEnableCameraRedeem:(_Bool)arg1;
 + (void)setDisablePrivacyAcknowledgement:(_Bool)arg1;
@@ -76,7 +78,6 @@
 + (long long)reversePushEnabled;
 + (_Bool)QAMode;
 + (long long)pushEnvironment;
-+ (id)primaryBiometricACLVersion;
 + (_Bool)perfomedDeviceOfferSetup;
 + (id)multiUserSilentPreferredFailureTimes;
 + (id)multiUserContainerID;
@@ -90,7 +91,6 @@
 + (_Bool)includeFullRequestInHARLogging;
 + (_Bool)ignoreServerTrustEvaluation;
 + (long long)forceLoadUrlMetrics;
-+ (id)extendedBiometricACLVersion;
 + (_Bool)enablePurchaseQueue;
 + (_Bool)enableCameraRedeem;
 + (_Bool)disablePrivacyAcknowledgement;

@@ -17,6 +17,9 @@
 + (id)_storePrivacyIdentifiers;
 + (id)_multiplexPrivacyIdentifier:(id)arg1 contentVersion:(unsigned int)arg2;
 + (unsigned int)_contentVersionForPrivacyIdentifier:(id)arg1;
++ (id)_accountStoreForPrivacyIdentifier:(id)arg1;
++ (_Bool)hasPreviouslyAcknowledgedPrivacyIdentifier:(id)arg1 account:(id)arg2;
++ (_Bool)hasPreviouslyAcknowledgedPrivacyIdentifier:(id)arg1;
 + (_Bool)acknowledgementNeededForPrivacyIdentifier:(id)arg1 account:(id)arg2;
 + (_Bool)acknowledgementNeededForPrivacyIdentifier:(id)arg1;
 @property(copy, nonatomic) NSSet *privacyIdentifiers; // @synthesize privacyIdentifiers=_privacyIdentifiers;

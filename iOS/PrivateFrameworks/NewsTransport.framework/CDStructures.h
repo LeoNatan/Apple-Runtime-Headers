@@ -58,6 +58,7 @@ typedef struct {
     unsigned int groupLocation:1;
     unsigned int groupPresentationReason:1;
     unsigned int groupType:1;
+    unsigned int heroArticleType:1;
     unsigned int loadFailureReason:1;
     unsigned int maxActiveTimeSpent:1;
     unsigned int maxVerticalScrollPositionEnding:1;
@@ -103,7 +104,7 @@ typedef struct {
     unsigned int isVideoInFeed:1;
     unsigned int subscriptionOnlyArticle:1;
     unsigned int viewFromNotificationDirectOpen:1;
-} CDStruct_803929fe;
+} CDStruct_c335251c;
 
 // Ambiguous groups
 typedef struct {

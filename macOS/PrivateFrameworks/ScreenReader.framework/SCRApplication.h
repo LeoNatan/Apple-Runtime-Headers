@@ -211,6 +211,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasWindowChildren;
 - (id)_mainWindow;
 - (BOOL)applicationNeedsWindows;
+@property(readonly, nonatomic) BOOL isSwiftPlaygroundApplication;
 - (BOOL)isSecureApplication;
 - (BOOL)isHidden;
 - (BOOL)isFrontMost;

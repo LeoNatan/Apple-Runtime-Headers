@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_apsQueue;
     NSMutableSet *_cloudKitBundleIdentifiers;
     NSMutableSet *_contentAvailableBundleIdentifiers;
+    NSMutableSet *_quietServiceExtensionBundleIdentifiers;
     NSMutableSet *_foregroundBundleIdentifiers;
     NSMutableSet *_installedBundleIdentifiers;
     NSMutableSet *_restrictedBundleIdentifiers;
@@ -73,9 +74,11 @@
 - (void)notificationSourcesDidUninstall:(id)arg1;
 - (void)notificationSourcesDidInstall:(id)arg1;
 - (void)_scheduleContentAvailablePushActivityForMessage:(id)arg1 bundleIdentifier:(id)arg2;
+- (void)_queue_deliverNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3 enforcePushType:(_Bool)arg4 extensionStart:(id)arg5 extensionEnd:(id)arg6;
 - (void)_queue_deliverNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3 enforcePushType:(_Bool)arg4;
 - (void)_extensionQueue_modifyNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3 extension:(id)arg4 enforcePushType:(_Bool)arg5;
 - (void)_queue_tryToModifyNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3 enforcePushType:(_Bool)arg4;
+- (_Bool)_queue_allowServiceExtensionFilteringForMessage:(id)arg1;
 - (_Bool)_queue_messageIsValidForDelivery:(id)arg1;
 - (_Bool)_queue_enforcePushTypeForMessage:(id)arg1;
 - (_Bool)_queue_canDeliverMessageToBundle:(id)arg1;

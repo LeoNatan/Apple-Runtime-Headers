@@ -8,7 +8,7 @@
 
 #import <IMCore/TUCallProviderManagerDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSSet, NSString, TUCallProviderManager;
+@class IMCommLimitsPolicyCache, NSSet, NSString, TUCallProviderManager;
 @protocol OS_dispatch_queue;
 
 @interface IMWhitelistController : NSObject <TUCallProviderManagerDelegate>
@@ -16,34 +16,27 @@
     TUCallProviderManager *_callProviderManager;
     NSObject<OS_dispatch_queue> *_screenTimeDispatchQueue;
     NSSet *_emergencyNumbersSet;
-    NSMutableDictionary *_participantIDsHashToConversationContext;
-    NSMutableDictionary *_conversationContextToParticipantIDsHash;
-    NSMutableDictionary *_participantIDsHashToChat;
+    IMCommLimitsPolicyCache *_policyCache;
 }
 
-+ (id)STConversation;
 + (id)sharedInstance;
++ (id)STConversation;
 + (BOOL)isContactLimitsFeatureEnabled;
-@property(retain, nonatomic) NSMutableDictionary *participantIDsHashToChat; // @synthesize participantIDsHashToChat=_participantIDsHashToChat;
-@property(retain, nonatomic) NSMutableDictionary *conversationContextToParticipantIDsHash; // @synthesize conversationContextToParticipantIDsHash=_conversationContextToParticipantIDsHash;
-@property(retain, nonatomic) NSMutableDictionary *participantIDsHashToConversationContext; // @synthesize participantIDsHashToConversationContext=_participantIDsHashToConversationContext;
+@property(retain, nonatomic) IMCommLimitsPolicyCache *policyCache; // @synthesize policyCache=_policyCache;
 @property(retain, nonatomic) NSSet *emergencyNumbersSet; // @synthesize emergencyNumbersSet=_emergencyNumbersSet;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *screenTimeDispatchQueue; // @synthesize screenTimeDispatchQueue=_screenTimeDispatchQueue;
 @property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 - (void).cxx_destruct;
-- (id)conversationContextForChat:(id)arg1;
 - (void)providersChangedForProviderManager:(id)arg1;
+- (id)conversationContextForChat:(id)arg1;
 - (void)registerForScreenTimeNotifications;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)refetchScreenTimePolicyForChat:(id)arg1;
-- (void)_participantStateForChatChanged:(id)arg1;
-- (void)_participantsForChatChanged:(id)arg1;
-- (BOOL)isFetchingScreenTimeContextForParticipantIDsHash:(id)arg1;
+- (void)_participantsForChatDidChange:(id)arg1;
 - (void)_addObserversToChat:(id)arg1;
 - (BOOL)allowedToShowConversationForChat:(id)arg1 sync:(BOOL)arg2;
 - (BOOL)allowedToShowConversationWithHandleIDs:(id)arg1 sync:(BOOL)arg2 context:(id *)arg3;
 - (void)initializeContext:(id)arg1 participantIDsHash:(id)arg2;
 - (void)reloadEmergencyNumbersSet;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)init;
 
 // Remaining properties

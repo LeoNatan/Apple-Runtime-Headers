@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSProgress, NSSecurityScopedURLWrapper;
+@class FPSandboxingURLWrapper, NSArray, NSProgress, NSSecurityScopedURLWrapper;
 
 @protocol FPArchiveServiceProtocolInternal
-- (NSProgress *)unarchiveItemWithURLWrapper:(NSSecurityScopedURLWrapper *)arg1 passphrases:(NSArray *)arg2 destinationFolderURLWrapper:(NSSecurityScopedURLWrapper *)arg3 exportsStreamingReceiver:(_Bool)arg4 completionHandler:(void (^)(NSSecurityScopedURLWrapper *, NSError *))arg5;
+- (NSProgress *)unarchiveItemWithURLWrapper:(FPSandboxingURLWrapper *)arg1 passphrases:(NSArray *)arg2 destinationFolderURLWrapper:(NSSecurityScopedURLWrapper *)arg3 exportsStreamingReceiver:(_Bool)arg4 completionHandler:(void (^)(NSSecurityScopedURLWrapper *, NSError *))arg5;
 - (NSProgress *)archiveItemsWithURLWrappers:(NSArray *)arg1 compressionFormat:(unsigned long long)arg2 destinationFolderURLWrapper:(NSSecurityScopedURLWrapper *)arg3 completionHandler:(void (^)(NSSecurityScopedURLWrapper *, NSString *, NSError *))arg4;
 - (void)itemDescriptorsForItemWithURLWrapper:(NSSecurityScopedURLWrapper *)arg1 passphrases:(NSArray *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
 @end

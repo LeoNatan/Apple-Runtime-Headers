@@ -25,6 +25,8 @@
 @property(retain, nonatomic) NSDate *timestampAsDate;
 @property(nonatomic) unsigned long long changedFields;
 @property(nonatomic) double timestamp;
+- (id)initWithEventStore:(id)arg1 opaqueKey:(id)arg2 uniqueKey:(id)arg3 extractionGroupIdentifier:(id)arg4;
+- (id)initWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2 extractionGroupIdentifier:(id)arg3;
 - (id)initWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
 

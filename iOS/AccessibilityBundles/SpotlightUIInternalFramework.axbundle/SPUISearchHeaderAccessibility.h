@@ -13,7 +13,6 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)searchForQuery:(id)arg1 forSuggestions:(_Bool)arg2;
 - (_Bool)accessibilityScroll:(long long)arg1;
 - (id)init;
 - (void)_accessibilityLoadAccessibilityInformation;

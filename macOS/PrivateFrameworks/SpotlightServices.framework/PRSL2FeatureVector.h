@@ -23,6 +23,7 @@
     NSString *_bundleID;
     NSString *_device_type;
     NSDictionary *_searchThroughCEPData;
+    NSDictionary *_roundTripFeatures;
     // Error parsing type: T, name: _indexScore
     struct _opaque_pthread_mutex_t _featureDataLock;
 }
@@ -32,6 +33,7 @@
 + (struct __CFSet *)getL2FeatureSet;
 + (void)initialize;
 @property(nonatomic) struct _opaque_pthread_mutex_t featureDataLock; // @synthesize featureDataLock=_featureDataLock;
+@property(retain, nonatomic) NSDictionary *roundTripFeatures; // @synthesize roundTripFeatures=_roundTripFeatures;
 // Error parsing type for property indexScore:
 // Property attributes: TT,N,V_indexScore
 
@@ -52,7 +54,7 @@
 - (id)_dictionaryRepresentationWithoutDefaultValues:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (void)setScores:(float *)arg1 forFeatures:(unsigned short *)arg2 count:(unsigned long long)arg3;
-- (float *)getAllScores:(float [1246])arg1;
+- (float *)getAllScores:(float [1485])arg1;
 - (float)scoreForFeature:(unsigned short)arg1;
 @property(readonly, nonatomic) BOOL receiverIsVip;
 @property(readonly, nonatomic) BOOL senderIsVip;

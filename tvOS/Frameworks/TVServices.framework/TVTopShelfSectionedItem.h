@@ -8,15 +8,27 @@
 
 #import <TVServices/NSSecureCoding-Protocol.h>
 
+@class NSString, NSURL;
+
 @interface TVTopShelfSectionedItem : TVTopShelfItem <NSSecureCoding>
 {
+    _Bool __alwaysShowTitle;
     long long _imageShape;
     double _playbackProgress;
+    NSString *__playbackTitle;
+    NSString *__playbackSubtitle;
+    NSURL *__topRightImageURL;
 }
 
 + (_Bool)supportsSecureCoding;
++ (struct CGSize)_topRightImageSize;
+@property(copy, nonatomic, setter=_setTopRightImageURL:) NSURL *_topRightImageURL; // @synthesize _topRightImageURL=__topRightImageURL;
+@property(copy, nonatomic, setter=_setPlaybackSubtitle:) NSString *_playbackSubtitle; // @synthesize _playbackSubtitle=__playbackSubtitle;
+@property(copy, nonatomic, setter=_setPlaybackTitle:) NSString *_playbackTitle; // @synthesize _playbackTitle=__playbackTitle;
+@property(nonatomic, setter=_setAlwaysShowTitle:) _Bool _alwaysShowTitle; // @synthesize _alwaysShowTitle=__alwaysShowTitle;
 @property(nonatomic) double playbackProgress; // @synthesize playbackProgress=_playbackProgress;
 @property(nonatomic) long long imageShape; // @synthesize imageShape=_imageShape;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

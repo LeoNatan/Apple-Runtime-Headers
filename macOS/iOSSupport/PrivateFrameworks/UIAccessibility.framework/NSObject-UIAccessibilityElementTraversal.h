@@ -109,6 +109,7 @@
 - (BOOL)_accessibilityPerformUserTestingAction:(id)arg1;
 - (id)_accessibilityUserTestingActions;
 - (id)_accessibilityUserTestingVisibleAncestor;
+- (BOOL)_accessibilityShouldHitTestStatusBarWindow;
 - (BOOL)_accessibilityHitTestsStatusBar;
 - (long long)_accessibilityVerticalSizeClass;
 - (long long)_accessibilityHorizontalSizeClass;
@@ -713,10 +714,13 @@
 - (id)accessibilityHeaderElements;
 - (BOOL)_accessibilityCanPerformAction:(int)arg1;
 - (BOOL)__accessibilitySupportsSecondaryActivateAction;
+- (BOOL)_accessibilitySupportsSecondaryActivateAction;
 - (id)_accessibilityHeadingLevel;
 - (BOOL)__accessibilitySupportsActivateAction;
 - (void)_accessibilitySetShouldPreventOpaqueScrolling:(BOOL)arg1;
 - (BOOL)_accessibilityShouldPreventOpaqueScrolling;
+- (BOOL)accessibilityParentDiscardsChildrenContainerGroupingBehavior;
+- (BOOL)accessibilityChildrenContainerGroupingBehaviorHasOverridingParentDelegate;
 - (id)_accessibilitySwipeIslandIdentifier;
 - (id)_accessibilitySwipeIsland;
 - (void)_accessibilityUpdateContainerElementReferencesIfNeededForNewElements:(id)arg1;
@@ -888,6 +892,7 @@
 - (id)_accessibilityNativeFocusElement;
 - (id)_accessibilityRetrieveHeaderElements;
 - (void)_accessibilityShowEditingHUD;
+- (int)_accessibilityHostPid;
 - (int)_accessibilityRemotePid;
 - (BOOL)_accessibilityHandlesRemoteFocusMovement;
 - (void)_accessibilitySetFocusOnElement:(BOOL)arg1;

@@ -11,8 +11,8 @@
 @interface _TtC5TeaUI28PatternSectionDecorationView : UICollectionReusableView <TUGutterViewBoundsObserver>
 {
     // Error parsing type: , name: patternView
-    // Error parsing type: , name: gradientView
-    // Error parsing type: , name: currentAsset
+    // Error parsing type: , name: model
+    // Error parsing type: , name: token
 }
 
 - (void).cxx_destruct;

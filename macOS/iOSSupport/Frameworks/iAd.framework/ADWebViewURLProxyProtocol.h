@@ -20,6 +20,11 @@
     ADNSURLSessionDemultiplexer *_sessionDemux;
 }
 
++ (id)buildTrimmedUrlStringFromUrl:(id)arg1 byRemovingBytes:(unsigned long long)arg2;
++ (id)buildTrimmedUrlStringFromUrl:(id)arg1 toReduceEncodedSizeBy:(unsigned long long)arg2;
++ (unsigned long long)decodedSizeForEncodedLength:(unsigned long long)arg1;
++ (unsigned long long)basicProxyAuthHeaderSizeForUser:(id)arg1 withPassword:(id)arg2;
++ (void)createLongProxyAuthHeaderRecordForRequest:(id)arg1 proxyAuthHeaderSize:(unsigned long long)arg2;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 + (void)unregister;

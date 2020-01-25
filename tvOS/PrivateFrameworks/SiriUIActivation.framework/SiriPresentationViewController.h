@@ -18,6 +18,7 @@
 
 @interface SiriPresentationViewController : UIViewController <SASStateChangeListener, AFUISiriLanguageDelegate, AFUISiriViewControllerDelegate, AFUISiriViewControllerDataSource, AFUISiriSetupViewControllerDelegate, SiriPresentation>
 {
+    struct InstrumentationDismissalState _instrumentationDismissalState;
     long long _identifier;
     _Bool _delaySessionEndForTTS;
     NSDate *_lastGuideCheck;
@@ -29,6 +30,7 @@
     CDUnknownBlockType _buttonTrigger;
     _Bool _receivedIncomingPhoneCall;
     NSObject<OS_dispatch_queue> *_watchdogQueue;
+    NSTimer *_dismissalRequestNotTriggeredThresholdTimer;
     _Bool _springBoardIdleTimerDisabled;
     _Bool _waitingForTelephonyToStart;
     _Bool _startGuidedAccessOnDismissal;
@@ -91,6 +93,7 @@
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) id <SiriPresentationControllerDelegate> siriPresentationControllerDelegate; // @synthesize siriPresentationControllerDelegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (void)viewWillLayoutSubviews;
@@ -133,7 +136,7 @@
 - (void)userRelevantEventDidOccurInSiriViewController:(id)arg1;
 - (void)siriViewController:(id)arg1 presentedIntentWithBundleId:(id)arg2;
 - (void)siriViewController:(id)arg1 didChangePresentationPeekMode:(unsigned long long)arg2;
-- (void)siriViewController:(id)arg1 requestsDismissal:(CDUnknownBlockType)arg2;
+- (void)siriViewController:(id)arg1 requestsDismissalWithReason:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)siriViewController:(id)arg1 requestsPresentation:(CDUnknownBlockType)arg2;
 - (void)siriViewController:(id)arg1 didCompleteRequestWithError:(id)arg2;
 - (_Bool)siriViewControllerShouldSupportTextInput:(id)arg1;
@@ -149,10 +152,13 @@
 - (void)siriViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 launchOptions:(long long)arg4 replyHandler:(CDUnknownBlockType)arg5;
 - (id)siriViewController:(id)arg1 willStartRequestWithOptions:(id)arg2;
 - (void)startGuidedAccessForSiriViewController:(id)arg1;
-- (void)dismissSiriViewController:(id)arg1 delayForTTS:(_Bool)arg2;
+- (void)dismissSiriViewController:(id)arg1 delayForTTS:(_Bool)arg2 withDismissalReason:(unsigned long long)arg3;
 - (void)siriViewController:(id)arg1 didEncounterUnexpectedError:(id)arg2;
 - (void)siriViewControllerSessionDidResetContext:(id)arg1;
 - (void)siriViewControllerDidFinishDismissing:(id)arg1;
+- (void)_resetStateForInstrumentation;
+- (void)_emitInstrumentationDismissalStateForViewMode:(long long)arg1 withDismissalReason:(unsigned long long)arg2;
+- (unsigned long long)_impliedDismissalReasonFromState;
 - (void)_dismissDueToUnexpectedError:(id)arg1;
 - (void)_enableSpringBoardIdleTimer;
 - (_Bool)_isDeviceButton:(long long)arg1;
@@ -176,6 +182,7 @@
 - (void)_cancelPendingActivationWithReason:(unsigned long long)arg1;
 - (oneway void)cancelPendingActivationEventWithReason:(id)arg1;
 - (void)_carSiriButtonHoldToTalkIntervalFiredWithButtonIdentifier:(long long)arg1;
+- (void)_requestDismissalWithOptions:(id)arg1;
 - (void)_requestDismissal;
 - (oneway void)updateCurrentLockState:(id)arg1;
 - (oneway void)updateActiveInterfaceOrientation:(id)arg1 willAnimationWithDuration:(id)arg2;

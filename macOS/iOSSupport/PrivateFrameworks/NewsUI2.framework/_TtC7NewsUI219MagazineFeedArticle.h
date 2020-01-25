@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: title
     // Error parsing type: , name: displayDate
     // Error parsing type: , name: storyType
+    // Error parsing type: , name: shortExcerpt
 }
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) NSString *shortExcerpt;
 @property(nonatomic, readonly) NSString *storyType;
 @property(nonatomic, readonly) NSDate *displayDate;
 @property(nonatomic, readonly) NSString *title;

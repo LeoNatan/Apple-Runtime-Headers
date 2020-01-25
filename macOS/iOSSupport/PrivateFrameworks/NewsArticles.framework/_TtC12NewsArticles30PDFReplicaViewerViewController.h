@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: featureAvailability
     // Error parsing type: , name: sharingActivityItemFactory
     // Error parsing type: , name: subscriptionController
+    // Error parsing type: , name: backButton
     // Error parsing type: , name: nextButton
     // Error parsing type: , name: barVisibilityAnimator
     // Error parsing type: , name: pageSheetPresentationObserver

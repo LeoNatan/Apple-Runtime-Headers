@@ -30,7 +30,9 @@
 @property(nonatomic) __weak id <AFUISiriRemoteSceneViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriRemoteSceneViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
+- (void)emitUIStateTransitionForSiriDismissal:(int)arg1 withDismissalReason:(int)arg2;
 - (void)setWaitingForTelephonyToStart:(_Bool)arg1;
 - (void)setRunningPPT:(_Bool)arg1 withTestName:(id)arg2 testOptions:(id)arg3;
 - (void)applicationDidBecomeActive;
@@ -61,7 +63,7 @@
 - (void)updateToPresentationWithIdentifier:(id)arg1 presentationProperties:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)extendCurrentTTSRequested;
 - (void)servicePresentedIntentWithBundleId:(id)arg1;
-- (void)serviceViewControllerRequestsDismissal:(CDUnknownBlockType)arg1;
+- (void)serviceViewControllerRequestsDismissalWithDismissalReason:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)serviceViewControllerRequestsPresentation:(CDUnknownBlockType)arg1;
 - (void)serviceDidDetectAudioRoutePickerTap;
 - (void)serviceDidPresentConversationFromBreadcrumb;
@@ -107,7 +109,7 @@
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
 - (void)serviceBulletinWithIdentifier:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)serviceStartGuidedAccess;
-- (void)serviceRequestsDismissalWithDelayForTTS:(_Bool)arg1 userInfo:(id)arg2;
+- (void)serviceRequestsDismissalWithDelayForTTS:(_Bool)arg1 userInfo:(id)arg2 withDismissalReason:(unsigned long long)arg3;
 - (void)serviceRequestsActivationSourceWithReplyHandler:(CDUnknownBlockType)arg1;
 - (id)speechSynthesisDelegate;
 - (id)sessionDelegate;

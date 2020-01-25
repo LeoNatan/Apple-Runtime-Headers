@@ -6,9 +6,10 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class NSArray;
+@class GEOAutocompleteSessionData, NSArray;
 
 @protocol GEOCompletion <NSObject>
+@property(readonly, nonatomic) GEOAutocompleteSessionData *sessionData;
 @property(readonly, nonatomic) NSArray *groups;
 @end
 

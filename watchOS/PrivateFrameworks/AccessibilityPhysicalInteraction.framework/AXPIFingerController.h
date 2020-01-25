@@ -36,6 +36,7 @@
 - (void)beginUpdates;
 - (_Bool)_isInUpdateBlock;
 - (unsigned int)_fingerIdentifierForIndex:(unsigned int)arg1;
+- (void)didUpdateShapeForFingerModel:(id)arg1;
 - (void)didUpdateSelectedStateForFingerModel:(id)arg1;
 - (void)didUpdatePressStateForFingerModel:(id)arg1;
 - (void)didUpdateLocationForFingerModel:(id)arg1;

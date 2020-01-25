@@ -30,6 +30,7 @@
 - (void)performOnBatchesOfEntity:(id)arg1 predicate:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (id)copyStatistics:(id *)arg1;
 - (BOOL)clearStateForApplication:(id)arg1 error:(id *)arg2;
+- (BOOL)persistAndRefaultObjects:(id)arg1 error:(id *)arg2;
 - (BOOL)persistAndRefaultObject:(id)arg1 error:(id *)arg2;
 - (BOOL)persistWithError:(id *)arg1;
 - (void)refaultObject:(id)arg1;
@@ -54,13 +55,13 @@
 - (id)createSignedTreeHeadFailure;
 - (id)createTreeHead;
 - (id)createSignedMutationTimestampsFailure;
-- (id)fetchPendingSMTsForUri:(id)arg1 uri:(id)arg2 accountId:(id)arg3 error:(id *)arg4;
-- (id)fetchSMTsWithUnverifiedSignature:(id)arg1 error:(id *)arg2;
+- (void)performForPendingSMTs:(id)arg1 uri:(id)arg2 accountId:(id)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;
+- (void)performForSMTsWithUnverifiedSignature:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)createSignedMutationTimestamp:(id)arg1 mutationMs:(unsigned long long)arg2 receiptTime:(double)arg3;
 - (id)createRequestFailure;
 - (id)fetchCompletedRequests:(id)arg1 olderThan:(id)arg2 error:(id *)arg3;
-- (id)fetchRequestsWithPendingResponses:(id)arg1 error:(id *)arg2;
-- (id)fetchRequestsWithPendingSMTs:(id)arg1 error:(id *)arg2;
+- (void)performForRequestsWithPendingResponses:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (void)performForRequestsWithPendingSMTs:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)fetchRequestWithUri:(id)arg1 application:(id)arg2 accountID:(id)arg3 loggableDatas:(id)arg4 youngerThan:(id)arg5 error:(id *)arg6;
 - (id)fetchRequestsForURI:(id)arg1 error:(id *)arg2;
 - (id)fetchRequestForUUID:(id)arg1 error:(id *)arg2;

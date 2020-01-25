@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets _peripheryInsets;
 - (struct CGRect)_referenceBoundsForOrientation:(long long)arg1;
 - (struct CGRect)_referenceBounds;
+- (void)_updateTraitCollection;
 - (void)_computeMetricsForWindows:(id)arg1 animated:(_Bool)arg2;
 - (void)_computeMetrics:(_Bool)arg1;
 - (void)_prepareForSuspend;

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)isShareableItem;
 - (id)st;
 - (id)parentItemID;
 - (id)parentItemOnFS;

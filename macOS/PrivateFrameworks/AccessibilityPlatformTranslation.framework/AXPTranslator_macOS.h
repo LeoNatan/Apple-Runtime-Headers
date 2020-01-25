@@ -27,6 +27,7 @@
 - (CDUnknownBlockType)attributedStringConversionBlock;
 - (void)processPlatformNotification:(unsigned long long)arg1 data:(id)arg2 associatedObject:(id)arg3;
 - (void)enableAccessibility;
+- (id)remotePlatformElementFromTranslation:(id)arg1 forPid:(int)arg2;
 - (id)platformElementFromTranslation:(id)arg1;
 
 @end

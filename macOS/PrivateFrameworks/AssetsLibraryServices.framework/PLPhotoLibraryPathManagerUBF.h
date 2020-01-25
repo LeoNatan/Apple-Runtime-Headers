@@ -48,7 +48,7 @@
 - (id)privateCacheDirectoryWithSubType:(unsigned char)arg1;
 - (id)privateDirectoryWithSubType:(unsigned char)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
 - (id)extendedPathsWithError:(id *)arg1;
-- (id)corePathsWithError:(id *)arg1;
+- (id)corePathsWithError:(id *)arg1 directDatabaseAccess:(BOOL)arg2;
 - (BOOL)createPathsForNewLibrariesWithError:(id *)arg1;
 - (id)pathsForExternalWriters;
 - (id)pathsForPermissionCheck;

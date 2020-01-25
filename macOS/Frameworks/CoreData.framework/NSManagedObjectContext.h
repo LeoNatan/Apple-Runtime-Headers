@@ -132,6 +132,7 @@
 - (id)_executeAsynchronousFetchRequest:(id)arg1;
 - (id)executeFetchRequest:(id)arg1 error:(id *)arg2;
 - (unsigned long long)countForFetchRequest:(id)arg1 error:(id *)arg2;
+- (unsigned long long)_countForFetchRequest_:(id)arg1 error:(id *)arg2;
 - (id)executeRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)_checkObjectForExistenceAndCacheRow:(id)arg1;
 - (id)existingObjectWithID:(id)arg1 error:(id *)arg2;
@@ -252,6 +253,7 @@
 @property(copy, setter=_setPersistentStoresScope:) NSArray *_persistentStoresScope;
 - (void)_setPersistentStoreCoordinator:(id)arg1;
 - (void)_forceMoveInsertToUpdatedList:(id)arg1;
+- (unsigned long long)_countForFetchRequest:(id)arg1 error:(id *)arg2;
 - (void)_addObjectIDsUpdatedByTriggers:(id)arg1;
 - (void)_addObjectIDsUpdatedByDATriggers:(id)arg1;
 - (void)_addObjectIDsInsertUpdatedByDATriggers:(id)arg1;

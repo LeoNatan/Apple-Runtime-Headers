@@ -33,8 +33,6 @@
 - (BOOL)areSessionsAllowed;
 - (BOOL)isInRestrictedMode;
 - (void)configureReaderModeRFForTransitPartner:(BOOL)arg1 transitPartner:(unsigned int)arg2 callback:(CDUnknownBlockType)arg3;
-- (id)startSecureElementAndHCESession:(CDUnknownBlockType)arg1;
-- (id)startHCESession:(CDUnknownBlockType)arg1;
 - (id)startNdefTagSessionWithBluetoothLESecureOOBData:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)startNdefTagSession:(CDUnknownBlockType)arg1;
 - (id)startPeerPaymentSession:(CDUnknownBlockType)arg1;

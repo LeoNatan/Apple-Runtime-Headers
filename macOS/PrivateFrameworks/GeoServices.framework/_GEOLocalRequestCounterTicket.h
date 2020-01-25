@@ -14,20 +14,28 @@
 __attribute__((visibility("hidden")))
 @interface _GEOLocalRequestCounterTicket : NSObject <GEORequestCounterTicket>
 {
-    unsigned char _type;
+    long long _subTaskXmitBytes;
+    long long _subTaskRecvBytes;
     NSString *_appId;
     NSString *_requestId;
     GEORequestCounterPersistence *_persistence;
     NSObject<OS_nw_activity> *_nwActivity;
+    _GEOLocalRequestCounterTicket *_parentTask;
+    BOOL _logNetworkActivityOnly;
     BOOL _complete;
+    unsigned char _type;
+    unsigned char _subtasks;
 }
 
 + (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2 persistence:(id)arg3;
 + (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2;
++ (id)_requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2 withParent:(id)arg3 logNetworkActivityOnly:(BOOL)arg4;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)requestCompletedWithResult:(unsigned char)arg1 xmitBytes:(long long)arg2 recvBytes:(long long)arg3;
+- (void)_subTask:(id)arg1 completedWithResult:(unsigned char)arg2 xmitBytes:(long long)arg3 recvBytes:(long long)arg4;
 - (void)startingRequestWithTask:(id)arg1;
+- (id)createSubtask:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

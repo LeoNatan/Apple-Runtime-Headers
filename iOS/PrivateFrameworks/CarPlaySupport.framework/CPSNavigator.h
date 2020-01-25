@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CarPlaySupport/CARNavigationOwnershipManagerDelegate-Protocol.h>
-#import <CarPlaySupport/CPNavigationSessionProviding-Protocol.h>
+#import <CarPlaySupport/CPNavigationSessionManaging-Protocol.h>
 
 @class CARNavigationOwnershipManager, CPTrip, NSHashTable, NSString;
 @protocol CARNavigationOwnershipManagerDelegate;
 
-@interface CPSNavigator : NSObject <CARNavigationOwnershipManagerDelegate, CPNavigationSessionProviding>
+@interface CPSNavigator : NSObject <CARNavigationOwnershipManagerDelegate, CPNavigationSessionManaging>
 {
     _Bool _completed;
     CPTrip *_trip;

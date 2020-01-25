@@ -8,19 +8,20 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, NTPBColor, NTPBColorGradient, NTPBDate, NTPBDiscoverMoreVideosInfo;
+@class NSMutableArray, NSString, NTPBCardStyle, NTPBColor, NTPBColorGradient, NTPBDate, NTPBDiscoverMoreVideosInfo;
 
 @interface NTPBFeedViewportGroup : PBCodable <NSCopying>
 {
+    CDStruct_95bda58d _assetURLStringRefs;
     unsigned long long _mergeID;
     unsigned long long _options;
     NTPBColorGradient *_backgroundGradient;
-    NTPBColor *_cardBackgroundColor;
+    NSString *_bridgedGroupIdentifier;
+    NTPBCardStyle *_cardStyle;
     NTPBDate *_creationDate;
     int _ctaTextRef;
+    NTPBCardStyle *_darkCardStyle;
     NTPBColorGradient *_darkStyleBackgroundGradient;
-    NTPBColor *_darkStyleCardBackgroundColor;
-    NTPBColorGradient *_darkStyleSauceGradient;
     NTPBColor *_darkStyleTitleColor;
     NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
     NTPBDate *_editionFeedEndDate;
@@ -31,8 +32,6 @@
     NSString *_identifier;
     NSMutableArray *_issueIDs;
     int _l2TagIDRef;
-    NSString *_magazineGroupIdentifier;
-    NTPBColorGradient *_sauceGradient;
     int _sourceIdentifierRef;
     int _subtitleRef;
     NTPBColor *_titleColor;
@@ -40,6 +39,7 @@
     int _type;
     NSMutableArray *_videoPlaylistHeadlines;
     BOOL _isFirstFromEdition;
+    BOOL _usesPlaceholderHeadlines;
     struct {
         unsigned int mergeID:1;
         unsigned int options:1;
@@ -51,21 +51,21 @@
         unsigned int titleRef:1;
         unsigned int type:1;
         unsigned int isFirstFromEdition:1;
+        unsigned int usesPlaceholderHeadlines:1;
     } _has;
 }
 
 + (Class)issueIDsType;
 + (Class)videoPlaylistHeadlinesType;
 + (Class)headlinesType;
-@property(retain, nonatomic) NTPBColorGradient *darkStyleSauceGradient; // @synthesize darkStyleSauceGradient=_darkStyleSauceGradient;
-@property(retain, nonatomic) NTPBColor *darkStyleCardBackgroundColor; // @synthesize darkStyleCardBackgroundColor=_darkStyleCardBackgroundColor;
+@property(nonatomic) BOOL usesPlaceholderHeadlines; // @synthesize usesPlaceholderHeadlines=_usesPlaceholderHeadlines;
+@property(retain, nonatomic) NTPBCardStyle *darkCardStyle; // @synthesize darkCardStyle=_darkCardStyle;
+@property(retain, nonatomic) NTPBCardStyle *cardStyle; // @synthesize cardStyle=_cardStyle;
 @property(retain, nonatomic) NTPBColorGradient *darkStyleBackgroundGradient; // @synthesize darkStyleBackgroundGradient=_darkStyleBackgroundGradient;
 @property(retain, nonatomic) NTPBColor *darkStyleTitleColor; // @synthesize darkStyleTitleColor=_darkStyleTitleColor;
-@property(retain, nonatomic) NTPBColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
-@property(retain, nonatomic) NTPBColorGradient *sauceGradient; // @synthesize sauceGradient=_sauceGradient;
 @property(nonatomic) int ctaTextRef; // @synthesize ctaTextRef=_ctaTextRef;
 @property(nonatomic) int eyebrowTextRef; // @synthesize eyebrowTextRef=_eyebrowTextRef;
-@property(retain, nonatomic) NSString *magazineGroupIdentifier; // @synthesize magazineGroupIdentifier=_magazineGroupIdentifier;
+@property(retain, nonatomic) NSString *bridgedGroupIdentifier; // @synthesize bridgedGroupIdentifier=_bridgedGroupIdentifier;
 @property(retain, nonatomic) NSMutableArray *issueIDs; // @synthesize issueIDs=_issueIDs;
 @property(retain, nonatomic) NSMutableArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
 @property(retain, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
@@ -92,15 +92,20 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) BOOL hasDarkStyleSauceGradient;
-@property(readonly, nonatomic) BOOL hasDarkStyleCardBackgroundColor;
+@property(nonatomic) BOOL hasUsesPlaceholderHeadlines;
+- (void)setAssetURLStringRefs:(int *)arg1 count:(unsigned long long)arg2;
+- (int)assetURLStringRefAtIndex:(unsigned long long)arg1;
+- (void)addAssetURLStringRef:(int)arg1;
+- (void)clearAssetURLStringRefs;
+@property(readonly, nonatomic) int *assetURLStringRefs;
+@property(readonly, nonatomic) unsigned long long assetURLStringRefsCount;
+@property(readonly, nonatomic) BOOL hasDarkCardStyle;
+@property(readonly, nonatomic) BOOL hasCardStyle;
 @property(readonly, nonatomic) BOOL hasDarkStyleBackgroundGradient;
 @property(readonly, nonatomic) BOOL hasDarkStyleTitleColor;
-@property(readonly, nonatomic) BOOL hasCardBackgroundColor;
-@property(readonly, nonatomic) BOOL hasSauceGradient;
 @property(nonatomic) BOOL hasCtaTextRef;
 @property(nonatomic) BOOL hasEyebrowTextRef;
-@property(readonly, nonatomic) BOOL hasMagazineGroupIdentifier;
+@property(readonly, nonatomic) BOOL hasBridgedGroupIdentifier;
 - (id)issueIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)issueIDsCount;
 - (void)addIssueIDs:(id)arg1;

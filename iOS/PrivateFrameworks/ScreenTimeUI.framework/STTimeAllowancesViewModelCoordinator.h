@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSManagedObjectID *_userObjectID;
 }
 
++ (_Bool)saveAllowance:(id)arg1 forUser:(id)arg2 error:(id *)arg3;
 @property(copy, nonatomic) NSManagedObjectID *userObjectID; // @synthesize userObjectID=_userObjectID;
 @property(readonly, nonatomic) STGroupFetchedResultsController *groupFetchResultsController; // @synthesize groupFetchResultsController=_groupFetchResultsController;
 @property(readonly, nonatomic) STAskForTimeClient *askForTimeClient; // @synthesize askForTimeClient=_askForTimeClient;

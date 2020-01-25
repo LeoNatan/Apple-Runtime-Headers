@@ -16,7 +16,7 @@
 
 @interface HMDResidentDevice : HMFObject <HMDDeviceControllerDelegate, HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding>
 {
-    HMFUnfairLock *__lock;
+    HMFUnfairLock *_lock;
     HMDDevice *_device;
     HMDDeviceController *_deviceController;
     BOOL _enabled;
@@ -39,7 +39,7 @@
 @property(nonatomic, getter=isLowBattery) BOOL lowBattery; // @synthesize lowBattery=_lowBattery;
 @property(nonatomic) long long batteryState; // @synthesize batteryState=_batteryState;
 @property(nonatomic, getter=isReachable) BOOL reachable; // @synthesize reachable=_reachable;
-@property(nonatomic, getter=isConfirmed) BOOL confirmed; // @synthesize confirmed=_confirmed;
+@property(readonly, nonatomic, getter=isConfirmed) BOOL confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

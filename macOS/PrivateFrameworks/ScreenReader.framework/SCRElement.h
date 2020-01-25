@@ -99,6 +99,7 @@
 - (BOOL)isCheckbox;
 - (BOOL)isRadioButton;
 - (BOOL)isTextField;
+@property(readonly, copy, nonatomic) NSString *equivalenceTag;
 - (BOOL)isDescendantOfKindOfClass:(Class)arg1;
 - (BOOL)elementRepresentsElement:(id)arg1;
 - (id)elementsForRepresents;
@@ -256,7 +257,7 @@
 - (void)moveInsertionToElement:(id)arg1 affinity:(long long)arg2;
 - (unsigned long long)indexOfElement:(id)arg1;
 - (unsigned long long)numberOfChildren:(BOOL)arg1;
-- (void)restoreStateDueToInvalidFocusedChild;
+- (void)restoreStateDueToInvalidFocusedChild:(id)arg1;
 - (void)recordStateDueToInvalidFocusedChild;
 - (void)setFocusedChildAtIndex:(unsigned long long)arg1;
 - (void)setFocusedChildWithIdentifier:(id)arg1;
@@ -940,6 +941,7 @@
 - (BOOL)inTransientUIState;
 - (BOOL)openActionsGuideWithRequest:(id)arg1;
 - (id)fullItemDescriptionForJump;
+@property(readonly, nonatomic) NSArray *customActions;
 - (void)performAction:(id)arg1 request:(id)arg2;
 - (BOOL)performAlternateActionWithRequest:(id)arg1;
 - (BOOL)performAction:(struct __CFString *)arg1;
@@ -1051,6 +1053,7 @@
 - (void)_makeElementHash:(BOOL)arg1;
 - (id)elementHashContainer;
 - (BOOL)containsElementHashMarkersForAllChildren;
+- (BOOL)shouldRebuildChildrenIfHitBoundary;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (BOOL)handleTrackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (id)gestureContainerOverviewDescription;
@@ -1090,7 +1093,6 @@
 - (id)firstContainedElement;
 - (id)focusedOpaqueElementDescendant;
 - (id)opaqueElementProviderAncestor;
-@property(readonly, copy, nonatomic) NSString *equivalenceTag;
 @property(nonatomic, getter=isAssistiveTechnologyFocused) BOOL assistiveTechnologyFocused;
 @property(readonly, nonatomic) BOOL isiOSVisible;
 @property(readonly, nonatomic) BOOL isiOSElement;

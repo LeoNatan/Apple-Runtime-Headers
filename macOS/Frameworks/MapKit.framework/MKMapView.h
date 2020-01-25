@@ -541,6 +541,7 @@
 - (void)valueChangedForGEOConfigKey:(CDStruct_35640fce)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
+- (id)urlForMapAttribution;
 - (struct CGRect)attributionFrame;
 - (void)_updateAttribution;
 @property(nonatomic) int attributionCorner;

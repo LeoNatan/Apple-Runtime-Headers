@@ -27,7 +27,7 @@
 + (void)initialize;
 @property(readonly, nonatomic) NSArray *defaultStyleIdentifiers; // @synthesize defaultStyleIdentifiers=_defaultStyleIdentifiers;
 - (void).cxx_destruct;
-- (void)setupStyleIdentifiersForRole:(id)arg1;
+- (void)setupStyleIdentifiers;
 - (_Bool)isCollapsible;
 - (_Bool)hasAffiliationWithClassification:(id)arg1 forDirection:(long long)arg2;
 - (Class)componentModelClass;

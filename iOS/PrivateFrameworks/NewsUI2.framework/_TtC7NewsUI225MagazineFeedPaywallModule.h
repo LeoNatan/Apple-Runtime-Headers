@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker
+    // Error parsing type: , name: configurationManager
 }
 
 @end

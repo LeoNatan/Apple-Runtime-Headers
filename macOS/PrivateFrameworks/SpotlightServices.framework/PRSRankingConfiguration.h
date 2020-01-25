@@ -14,6 +14,7 @@
     BOOL _disableResultTruncation;
     BOOL _useBagOverride;
     BOOL _cook_sqf_topdown;
+    float _numAppsDeduped;
     NSMutableDictionary *_categoryEngagements;
     NSArray *_rankingQueries;
     NSMutableDictionary *_queryDependentCategoryProbabilities;
@@ -28,6 +29,7 @@
 
 @property BOOL cook_sqf_topdown; // @synthesize cook_sqf_topdown=_cook_sqf_topdown;
 @property BOOL useBagOverride; // @synthesize useBagOverride=_useBagOverride;
+@property float numAppsDeduped; // @synthesize numAppsDeduped=_numAppsDeduped;
 @property BOOL disableResultTruncation; // @synthesize disableResultTruncation=_disableResultTruncation;
 @property(retain) PRSRankingServerKnobs *serverKnobs; // @synthesize serverKnobs=_serverKnobs;
 @property(retain) NSDictionary *serverFeatures; // @synthesize serverFeatures=_serverFeatures;

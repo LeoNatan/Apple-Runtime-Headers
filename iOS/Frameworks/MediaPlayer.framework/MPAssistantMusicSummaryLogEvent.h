@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)eventPayload;
 - (long long)eventCode;
+- (id)eventName;
 
 @end
 

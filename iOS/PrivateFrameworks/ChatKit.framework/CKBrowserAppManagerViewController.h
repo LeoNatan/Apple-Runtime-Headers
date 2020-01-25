@@ -37,7 +37,9 @@
 - (_Bool)shouldShowChatChrome;
 - (long long)browserPresentationStyle;
 - (void)dismiss;
+- (void)delegate_BrowserAppManagerDidSelectPlugin:(id)arg1;
 - (void)browserAppManagerDidSelectPlugin:(id)arg1;
+- (_Bool)appAllowedByScreenTimeWithBundleIdentifier:(id)arg1;
 - (void)appManagerViewControllerDidFinish:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;

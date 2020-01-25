@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     _Bool _scrollToNotes;
     _Bool _canHideDoneAndCancelButtons;
     _Bool _timeImplicitlySet;
+    _Bool _isTextEditing;
     id <EKCalendarItemEditorDelegate> _editorDelegate;
     EKEventStore *_store;
     EKCalendarItem *_calendarItem;
@@ -54,6 +55,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultTitleForCalendarItem;
 @property(retain, nonatomic) EKChangeSet *originalChangeSet; // @synthesize originalChangeSet=_originalChangeSet;
 @property(retain, nonatomic) _UIAccessDeniedView *accessDeniedView; // @synthesize accessDeniedView=_accessDeniedView;
+@property(nonatomic) _Bool isTextEditing; // @synthesize isTextEditing=_isTextEditing;
 @property(nonatomic) _Bool timeImplicitlySet; // @synthesize timeImplicitlySet=_timeImplicitlySet;
 @property(readonly) EKCalendarItemEditItem *currentEditItem; // @synthesize currentEditItem=_currentEditItem;
 @property(nonatomic) _Bool canHideDoneAndCancelButtons; // @synthesize canHideDoneAndCancelButtons=_canHideDoneAndCancelButtons;

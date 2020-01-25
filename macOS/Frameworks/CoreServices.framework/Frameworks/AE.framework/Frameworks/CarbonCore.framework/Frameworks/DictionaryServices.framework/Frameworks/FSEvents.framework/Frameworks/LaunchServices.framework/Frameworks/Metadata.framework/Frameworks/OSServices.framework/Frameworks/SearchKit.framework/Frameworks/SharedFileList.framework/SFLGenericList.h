@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (BOOL)insertItem:(id)arg1 atIndex:(unsigned long long)arg2 error:(id *)arg3;
 - (void)removeObserver:(id)arg1;
+- (BOOL)openItem:(id)arg1 error:(id *)arg2;
 - (void)addObserver:(id)arg1;
 - (BOOL)containsItem:(id)arg1;
 - (BOOL)updateItem:(id)arg1 error:(id *)arg2;

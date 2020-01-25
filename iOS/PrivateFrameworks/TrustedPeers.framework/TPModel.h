@@ -79,6 +79,7 @@
 - (unsigned long long)statusOfPeerWithID:(id)arg1;
 - (_Bool)validatePeerWithPreApproval:(id)arg1 sponsor:(id)arg2;
 - (_Bool)hasPotentiallyTrustedPeerPreapprovingKey:(id)arg1;
+- (id)peerCountsByMachineID;
 - (id)viablePeerCountsByModelID;
 - (id)allMachineIDs;
 - (id)actualPeerWithID:(id)arg1 error:(id *)arg2;

@@ -9,19 +9,26 @@
 #import <NewsCore/FCFeedGroupEmitting-Protocol.h>
 
 @class NSSet, NSString;
+@protocol FCFeedGroupInsertionDescriptor;
 
 @interface FCPaidSubscriptionGroupEmitter : NSObject <FCFeedGroupEmitting>
 {
+    id <FCFeedGroupInsertionDescriptor> _insertionDescriptor;
 }
 
 + (id)groupEmitterIdentifier;
+@property(copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
+- (void).cxx_destruct;
 - (_Bool)insertEveryRefreshSession;
+@property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) _Bool emitsSingleRefreshSessionGroups;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
 - (_Bool)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (_Bool)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
+- (id)initWithInsertionDescriptor:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

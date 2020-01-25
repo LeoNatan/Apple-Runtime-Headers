@@ -9,7 +9,7 @@
 #import <CloudDocsDaemon/NSCopying-Protocol.h>
 #import <CloudDocsDaemon/NSSecureCoding-Protocol.h>
 
-@class BRCItemID, BRFieldCKInfo, BRMangledID, NSData, NSString;
+@class BRCItemID, BRCUserRowID, BRFieldCKInfo, BRMangledID, NSData, NSString;
 
 @interface BRCStatInfo : NSObject <NSCopying, NSSecureCoding>
 {
@@ -29,9 +29,11 @@
     NSData *_finderTags;
     NSString *_trashPutBackPath;
     BRCItemID *_trashPutBackParentID;
+    BRCUserRowID *_creatorRowID;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) BRCUserRowID *creatorRowID; // @synthesize creatorRowID=_creatorRowID;
 @property(retain, nonatomic) BRCItemID *trashPutBackParentID; // @synthesize trashPutBackParentID=_trashPutBackParentID;
 @property(retain, nonatomic) NSString *trashPutBackPath; // @synthesize trashPutBackPath=_trashPutBackPath;
 @property(readonly, nonatomic) NSString *aliasTarget; // @synthesize aliasTarget=_aliasTarget;

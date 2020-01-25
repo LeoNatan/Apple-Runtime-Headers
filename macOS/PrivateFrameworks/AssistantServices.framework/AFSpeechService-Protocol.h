@@ -12,6 +12,7 @@
 - (oneway void)writeDESRecord;
 - (oneway void)purgeInstalledAssetsWithCompletion:(void (^)(NSNumber *, NSError *))arg1;
 - (oneway void)getInstalledAssetSizeWithCompletion:(void (^)(NSNumber *, NSError *))arg1;
+- (oneway void)readProfileAndUserDataWithLanguage:(NSString *)arg1 allowOverride:(BOOL)arg2 completion:(void (^)(NSData *, NSString *))arg3;
 - (oneway void)runAdaptationRecipeEvaluation:(NSDictionary *)arg1 recordData:(NSData *)arg2 attachments:(NSArray *)arg3 completion:(void (^)(NSDictionary *, NSData *, NSError *))arg4;
 - (oneway void)fetchUserDataForLanguage:(NSString *)arg1 completion:(void (^)(NSData *))arg2;
 - (oneway void)fetchAssetsForLanguage:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;

@@ -80,6 +80,7 @@
 - (_Bool)requiresPasscodeInputForUIUnlockFromSource:(int)arg1 withOptions:(id)arg2;
 - (_Bool)canBeDeactivatedForUIUnlockFromSource:(int)arg1;
 - (_Bool)willUIUnlockFromSource:(int)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

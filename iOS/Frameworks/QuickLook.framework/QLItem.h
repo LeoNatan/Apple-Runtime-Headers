@@ -29,6 +29,7 @@
     _Bool _shouldUseExtensionPreview;
     _Bool _hasDeterminedShouldUseExtensionThumbnail;
     _Bool _shouldUseExtensionThumbnail;
+    _Bool _hasDeterminedPredictedPreferredContentSizeForOrbPlatter;
     _Bool _needsAccessToExternalResources;
     NSNumber *_previewItemProviderProgress;
     FPItem *_fpItem;
@@ -58,6 +59,7 @@
     unsigned long long _editedFileBehavior;
     FPSandboxingURLWrapper *_sandboxingURLWrapper;
     NSDictionary *_clientPreviewOptions;
+    struct CGSize _preferredContentSizeForOrbPlatter;
 }
 
 + (id)encodedClasses;
@@ -73,6 +75,8 @@
 @property _Bool needsAccessToExternalResources; // @synthesize needsAccessToExternalResources=_needsAccessToExternalResources;
 @property(copy, nonatomic) NSDictionary *clientPreviewOptions; // @synthesize clientPreviewOptions=_clientPreviewOptions;
 @property(retain, nonatomic) FPSandboxingURLWrapper *sandboxingURLWrapper; // @synthesize sandboxingURLWrapper=_sandboxingURLWrapper;
+@property(nonatomic) struct CGSize preferredContentSizeForOrbPlatter; // @synthesize preferredContentSizeForOrbPlatter=_preferredContentSizeForOrbPlatter;
+@property(nonatomic) _Bool hasDeterminedPredictedPreferredContentSizeForOrbPlatter; // @synthesize hasDeterminedPredictedPreferredContentSizeForOrbPlatter=_hasDeterminedPredictedPreferredContentSizeForOrbPlatter;
 @property(nonatomic) _Bool shouldUseExtensionThumbnail; // @synthesize shouldUseExtensionThumbnail=_shouldUseExtensionThumbnail;
 @property(nonatomic) _Bool hasDeterminedShouldUseExtensionThumbnail; // @synthesize hasDeterminedShouldUseExtensionThumbnail=_hasDeterminedShouldUseExtensionThumbnail;
 @property(nonatomic) _Bool shouldUseExtensionPreview; // @synthesize shouldUseExtensionPreview=_shouldUseExtensionPreview;
@@ -144,7 +148,10 @@
 - (void)provideURLWrapper:(CDUnknownBlockType)arg1;
 - (_Bool)canBePrintedWithCustomPrinter;
 - (_Bool)shouldUseRemoteViewController;
+- (struct CGSize)imageRawSizeOfContents:(id)arg1 withPreviewItemType:(unsigned long long)arg2 imageIsAnimated:(_Bool *)arg3;
 - (struct CGSize)previewSizeForItemViewControllerSize:(struct CGSize)arg1;
+- (struct CGSize)preferredContentSizeForOrbPlatterWithURL:(id)arg1;
+- (struct CGSize)predictedPreferredContentSizeForOrbPlatter;
 - (unsigned long long)maximumNumberOfCachedPreviews;
 - (long long)defaultWhitePointAdaptivityStyle;
 - (double)maxLoadingTime;

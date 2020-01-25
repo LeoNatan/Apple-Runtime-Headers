@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (double)currentMaxWidth;
 - (void)viewDidLoad;
 - (id)initWithTextItemContainer:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 @end
 

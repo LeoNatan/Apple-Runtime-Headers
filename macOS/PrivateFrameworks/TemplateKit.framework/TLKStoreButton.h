@@ -31,8 +31,7 @@
 - (void)viewDidChangeEffectiveAppearance;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct CGSize)intrinsicContentSize;
+- (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)layout;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)init;

@@ -45,7 +45,9 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL isVideoReadyForDisplay;
 @property(readonly) Class superclass;
+@property(copy, nonatomic) CDUnknownBlockType videoLayerReadyForDisplayChangeHandler;
 
 @end
 

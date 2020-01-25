@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)acceptsFirstResponder;
 - (void)setFocusOnColumn:(long long)arg1;
 - (id)browserTableViewAtIndex:(long long)arg1;
+- (long long)indexForBrowserTableView:(id)arg1;
 - (BOOL)wantsUpdateLayer;
 @property __weak NSObject<TColumnViewDelegate> *delegate;
 - (id)controller;

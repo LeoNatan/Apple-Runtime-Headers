@@ -17,6 +17,7 @@
 @property(nonatomic) unsigned long long initialPaperStyleType; // @synthesize initialPaperStyleType=_initialPaperStyleType;
 @property(nonatomic) __weak id <ICPaperStyleSheetCollectionViewControllerDelegate> paperStyleDelegate; // @synthesize paperStyleDelegate=_paperStyleDelegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)accessibilityPerformEscape;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)cancelAction:(id)arg1;

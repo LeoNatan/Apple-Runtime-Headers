@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) BRCDeadlineScheduler *downloadsDeadlineScheduler; // @synthesize downloadsDeadlineScheduler=_downloadsDeadlineScheduler;
 - (void).cxx_destruct;
+- (void)_reportDownloadErrorForDocument:(id)arg1 error:(id)arg2;
 - (void)transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned long long)arg2 sizeHint:(unsigned long long)arg3 priority:(long long)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned long long)arg2 sizeHint:(unsigned long long)arg3 priority:(long long)arg4;
 - (void)_sendLosersBatch:(id)arg1 sizeHint:(long long)arg2 maxRecordsCount:(unsigned long long)arg3;
@@ -62,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (id)_appLibraryForDownload:(id)arg1 kind:(int)arg2 operationID:(id)arg3;
 - (void)_createDownloadingJobForItem:(id)arg1 state:(int)arg2 kind:(int)arg3 etag:(id)arg4 userInitiated:(BOOL)arg5;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
-- (void)_bumpThrottleForDownload:(id)arg1 throttle:(id)arg2;
+- (unsigned long long)_bumpThrottleForDownload:(id)arg1 throttle:(id)arg2;
 - (void)_willDownload:(id)arg1 operationID:(id)arg2;
 - (void)deleteDownloadingJobForItem:(id)arg1;
 - (void)cancel;

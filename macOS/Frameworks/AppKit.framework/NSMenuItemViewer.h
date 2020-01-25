@@ -37,6 +37,7 @@
 - (void)_setClipRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawMenuItemBackgroundWithHighlight:(BOOL)arg1 inRect:(struct CGRect)arg2 withClipRect:(struct CGRect)arg3;
+- (BOOL)clipsToBounds;
 - (BOOL)wantsDefaultClipping;
 - (id)initWithFrame:(struct CGRect)arg1 forMenuItem:(id)arg2;
 - (void)dealloc;

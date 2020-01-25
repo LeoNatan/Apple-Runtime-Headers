@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <Silex/STTextTangierInteractiveCanvasControllerDelegate-Protocol.h>
+#import <Silex/SXTextTangierInteractiveCanvasControllerDelegate-Protocol.h>
 #import <Silex/TSWPEditingControllerDelegate-Protocol.h>
 
-@class NSString, STTextTangierCanvasViewController, STTextTangierInteractiveCanvasController, TSDCanvasView, TSKDocumentRoot;
+@class NSString, SXTextTangierCanvasViewController, SXTextTangierInteractiveCanvasController, TSDCanvasView, TSKDocumentRoot;
 @protocol SXAutoSizedCanvasControllerDelegate, SXComponentActionHandler, SXTangierDragItemProvider;
 
-@interface SXAutoSizedCanvasController : NSObject <TSWPEditingControllerDelegate, STTextTangierInteractiveCanvasControllerDelegate>
+@interface SXAutoSizedCanvasController : NSObject <TSWPEditingControllerDelegate, SXTextTangierInteractiveCanvasControllerDelegate>
 {
     TSKDocumentRoot *_documentRoot;
     struct CGRect _frame;
     id <SXAutoSizedCanvasControllerDelegate> _delegate;
-    STTextTangierInteractiveCanvasController *_icc;
-    STTextTangierCanvasViewController *_cvc;
+    SXTextTangierInteractiveCanvasController *_icc;
+    SXTextTangierCanvasViewController *_cvc;
     double _lineHeight;
     id <SXComponentActionHandler> _actionHandler;
     id <SXTangierDragItemProvider> _dragItemProvider;
@@ -27,8 +27,8 @@
 @property(readonly, nonatomic) id <SXTangierDragItemProvider> dragItemProvider; // @synthesize dragItemProvider=_dragItemProvider;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(readonly, nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
-@property(readonly, nonatomic) STTextTangierCanvasViewController *cvc; // @synthesize cvc=_cvc;
-@property(readonly, nonatomic) STTextTangierInteractiveCanvasController *icc; // @synthesize icc=_icc;
+@property(readonly, nonatomic) SXTextTangierCanvasViewController *cvc; // @synthesize cvc=_cvc;
+@property(readonly, nonatomic) SXTextTangierInteractiveCanvasController *icc; // @synthesize icc=_icc;
 @property(nonatomic) __weak id <SXAutoSizedCanvasControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)interactiveCanvasController:(id)arg1 dragItemForSmartField:(id)arg2 interaction:(id)arg3 session:(id)arg4;

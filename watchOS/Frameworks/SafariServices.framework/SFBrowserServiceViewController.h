@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _touchEventsShouldStopRedirectNotifications;
     _Bool _isExpectingClientRedirect;
     _Bool _hasBegunFirstNavigation;
+    _Bool _hasConnectedToHostApplication;
     SFBrowserPersonaAnalyticsHelper *_cachedAnalyticsHelper;
     NSTimer *_redirectNotificationTimer;
     _Bool _hostApplicationIsForeground;

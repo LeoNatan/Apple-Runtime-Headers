@@ -10,6 +10,7 @@
 
 @interface MFSearchableIndexManager_macOS : EDSearchableIndexManager
 {
+    struct os_unfair_lock_s _indexLock;
     EDSearchableIndex *_index;
     EDSearchableIndexPersistence *_persistence;
     EDSearchableIndexScheduler *_scheduler;

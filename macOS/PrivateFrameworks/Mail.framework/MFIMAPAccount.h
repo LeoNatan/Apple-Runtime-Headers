@@ -87,7 +87,7 @@
 - (void)insertInMailboxes:(id)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)renameMailbox:(id)arg1 newDisplayName:(id)arg2 parent:(id)arg3;
 - (void)_recursivelyModifySubscriptions:(BOOL)arg1 forMailbox:(id)arg2 children:(id)arg3 withSyncHandler:(id)arg4;
-- (void)_mailboxesWereRemovedFromTree:(id)arg1 withFileSystemPaths:(id)arg2;
+- (void)_mailboxesWereRemovedFromTree:(id)arg1 withFileSystemPaths:(id)arg2 names:(id)arg3;
 - (void)_waitForMailboxListingLoadToComplete;
 - (void)_loadMailboxListingIntoCache:(id)arg1 parent:(id)arg2 addedMailboxes:(id)arg3 removedMailboxes:(id)arg4 updatingSourceMailbox:(BOOL)arg5;
 - (void)_loadMailboxListingIntoCache:(id)arg1 parent:(id)arg2 addedMailboxes:(id)arg3 removedMailboxes:(id)arg4;

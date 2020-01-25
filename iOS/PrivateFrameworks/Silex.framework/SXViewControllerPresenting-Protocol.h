@@ -10,6 +10,7 @@
 
 @protocol SXViewControllerPresenting <NSObject>
 @property(readonly, nonatomic) UIViewController *controller;
+- (void)popOrDismissViewControllerAnimated:(_Bool)arg1;
 - (void)presentViewController:(UIViewController *)arg1 animated:(_Bool)arg2 sourceView:(UIView *)arg3 sourceRect:(struct CGRect)arg4;
 - (void)presentViewController:(UIViewController *)arg1 animated:(_Bool)arg2;
 @end

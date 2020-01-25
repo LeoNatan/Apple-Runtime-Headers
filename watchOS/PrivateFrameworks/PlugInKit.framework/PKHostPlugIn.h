@@ -56,7 +56,7 @@
 @property(retain) NSDictionary *discoveryExtensions; // @synthesize discoveryExtensions=_discoveryExtensions;
 @property(retain) NSString *serviceExtension; // @synthesize serviceExtension=_serviceExtension;
 @property(retain) NSUUID *multipleInstanceUUID; // @synthesize multipleInstanceUUID=_multipleInstanceUUID;
-@property(retain) id <PKPlugIn> supersededBy; // @synthesize supersededBy=_supersededBy;
+@property __weak id <PKPlugIn> supersededBy; // @synthesize supersededBy=_supersededBy;
 @property(retain) NSUUID *supersedingUUID; // @synthesize supersedingUUID=_supersedingUUID;
 @property(retain) id <PKCorePlugInProtocol> syncService; // @synthesize syncService=_syncService;
 @property(retain) id <PKCorePlugInProtocol> service; // @synthesize service=_service;

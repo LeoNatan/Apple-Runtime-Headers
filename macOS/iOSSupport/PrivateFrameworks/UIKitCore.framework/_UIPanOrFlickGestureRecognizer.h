@@ -41,6 +41,7 @@
 @property(nonatomic) unsigned long long allowedFlickDirections; // @synthesize allowedFlickDirections=_allowedFlickDirections;
 @property(nonatomic) BOOL longPressOnly; // @synthesize longPressOnly=_longPressOnly;
 - (void).cxx_destruct;
+- (BOOL)_analyticsIsGestureHandled;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

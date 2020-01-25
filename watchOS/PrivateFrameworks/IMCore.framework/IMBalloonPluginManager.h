@@ -40,6 +40,7 @@
 @property(retain, nonatomic) NSMutableDictionary *pluginsMap; // @synthesize pluginsMap=_pluginsMap;
 @property(readonly, retain, nonatomic) Class richLinksDataSourceClass; // @synthesize richLinksDataSourceClass=_richLinksDataSourceClass;
 - (void).cxx_destruct;
+- (id)systemBundleIdentifierForPluginIdentifier:(id)arg1;
 - (id)balloonPluginForBundleID:(id)arg1;
 - (id)allPlugins;
 - (void)insertDataSource:(id)arg1 forGUID:(id)arg2;

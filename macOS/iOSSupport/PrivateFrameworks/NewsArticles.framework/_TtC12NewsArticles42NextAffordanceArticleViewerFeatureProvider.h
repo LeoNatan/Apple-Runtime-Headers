@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles42NextAffordanceArticleViewerFeatureProvider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: nextAffordanceVisibilityProvider
+    // Error parsing type: , name: styler
 }
 
 @end

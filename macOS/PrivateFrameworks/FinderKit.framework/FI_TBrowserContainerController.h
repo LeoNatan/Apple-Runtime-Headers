@@ -101,7 +101,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)nodeIsExcluded:(const struct TFENode *)arg1;
 - (_Bool)nodeIsDimmed:(const struct TFENode *)arg1;
 - (void)iCloudIsOverQuotaDidChange;
-- (_Bool)targetIsInsideSharedFolder;
 - (void)publishedFolderListDidChange;
 - (void)nodeObserver:(struct TNodeObserver *)arg1 aliasTargetChanged:(const struct TFENode *)arg2;
 - (void)nodeObserver:(struct TNodeObserver *)arg1 nodeGoingAway:(const struct TFENode *)arg2;

@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (id)_value:(id)arg1 withDefault:(id)arg2;
 - (void)_accountStoreDidChange;
+- (void)enqueueIdentityProviderAppsQueryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enqueueSetTopBoxProfileProviderQueryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enqueueInfoQueryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;

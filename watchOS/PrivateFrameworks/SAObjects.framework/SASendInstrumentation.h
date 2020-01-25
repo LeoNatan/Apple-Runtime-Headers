@@ -17,6 +17,7 @@
 + (id)sendInstrumentationWithDictionary:(id)arg1 context:(id)arg2;
 + (id)sendInstrumentation;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *payloadVersion;
 @property(copy, nonatomic) NSArray *instrumentationBatch;
 @property(copy, nonatomic) NSString *eventTransmittedTimestampRefId;
 @property(copy, nonatomic) NSNumber *eventTransmittedRelativeToBootTimeTimestampNs;

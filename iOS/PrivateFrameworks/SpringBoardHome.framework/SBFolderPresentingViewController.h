@@ -30,6 +30,7 @@
 - (void)dismissPresentedFolderControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentFolderController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) SBFolderController *presentedFolderController;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 @property(readonly, nonatomic) SBFolderContainerView *view;
 

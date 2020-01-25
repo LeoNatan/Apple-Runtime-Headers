@@ -42,6 +42,8 @@
 - (id)playbackArchiveConfiguration;
 - (void)setPickingForExternalPlayer:(BOOL)arg1;
 - (BOOL)pickingForExternalPlayer;
+- (void)setSupportsUnavailableContent:(BOOL)arg1;
+- (BOOL)supportsUnavailableContent;
 - (void)setShowsLibraryContent:(BOOL)arg1;
 - (BOOL)showsLibraryContent;
 - (void)setShowsCatalogContent:(BOOL)arg1;
@@ -65,6 +67,7 @@
 - (long long)preferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
 - (long long)modalPresentationStyle;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

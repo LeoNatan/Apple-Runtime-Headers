@@ -19,6 +19,7 @@
     _Bool _shouldUseConstrainedMaxHeight;
     _Bool _alwaysShowsMonogram;
     _Bool _visibleToScrollViews;
+    _Bool _showMonogramsOnly;
     _Bool _shouldShowBelowNavigationTitle;
     NSDictionary *_nameTextAttributes;
     id <CNPresenterDelegate> _presenterDelegate;
@@ -40,6 +41,7 @@
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;
 @property(nonatomic) _Bool shouldShowBelowNavigationTitle; // @synthesize shouldShowBelowNavigationTitle=_shouldShowBelowNavigationTitle;
+@property(nonatomic) _Bool showMonogramsOnly; // @synthesize showMonogramsOnly=_showMonogramsOnly;
 @property(nonatomic) _Bool visibleToScrollViews; // @synthesize visibleToScrollViews=_visibleToScrollViews;
 @property(nonatomic) _Bool alwaysShowsMonogram; // @synthesize alwaysShowsMonogram=_alwaysShowsMonogram;
 @property(readonly, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;

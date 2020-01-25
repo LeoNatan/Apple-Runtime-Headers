@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 - (id)initWithContentViewController:(id)arg1;
 

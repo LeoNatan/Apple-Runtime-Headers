@@ -55,7 +55,7 @@
 - (void)markForceNeedsSyncUp;
 - (void)markForceUpload;
 - (void)handleUnknownItemError;
-- (_Bool)markLatestRequestAcknowledgedInZone:(id)arg1;
+- (_Bool)markLatestSyncRequestAcknowledgedInZone:(id)arg1;
 - (void)markLatestSyncRequestRejectedInZone:(id)arg1;
 - (void)markNeedsReading;
 - (void)markDead;
@@ -69,7 +69,7 @@
 - (_Bool)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (_Bool)updateFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (id)_filenameOverrideForPath:(id)arg1;
-- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 markLost:(_Bool)arg4;
+- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 sharingOptions:(unsigned long long)arg3 path:(id)arg4 markLost:(_Bool)arg5;
 - (void)markItemForgottenByServer;
 - (void)updateVersionMetadataFromServerItem:(id)arg1 preventVersionDiffs:(_Bool)arg2;
 - (void)updateContentsCKInfoAndDeviceIDFromServerItem:(id)arg1;
@@ -109,6 +109,7 @@
 @property(readonly, nonatomic) _Bool isEvictable;
 @property(readonly, nonatomic) _Bool hasLocalContent;
 - (id)asShareableItem;
+- (_Bool)isShareableItem;
 @property(readonly, nonatomic) BRCDocumentItem *asDocument;
 - (_Bool)isFault;
 - (_Bool)isDocument;

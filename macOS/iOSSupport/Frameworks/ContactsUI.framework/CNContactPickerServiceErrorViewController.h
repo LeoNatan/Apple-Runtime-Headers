@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNContactPickerContentViewController-Protocol.h>
 
-@class NSString, UINavigationController;
+@class NSString, UIBarButtonItem, UINavigationController;
 @protocol CNContactPickerContentDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
 {
     id <CNContactPickerContentDelegate> delegate;
     UINavigationController *navigationController;
+    UIBarButtonItem *addContactBarButtonItem;
 }
 
+@property(readonly, nonatomic) UIBarButtonItem *addContactBarButtonItem; // @synthesize addContactBarButtonItem;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController;
 @property(nonatomic) __weak id <CNContactPickerContentDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;

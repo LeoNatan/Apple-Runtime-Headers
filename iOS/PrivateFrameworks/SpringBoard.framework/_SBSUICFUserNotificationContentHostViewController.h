@@ -19,6 +19,7 @@
 + (id)exportedInterface;
 @property(nonatomic) __weak SBUserNotificationAlert *userNotification; // @synthesize userNotification=_userNotification;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)configureWithCompletion:(CDUnknownBlockType)arg1;
 

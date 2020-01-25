@@ -47,8 +47,6 @@
     _Bool _allPhotosAspectFit;
     _Bool _allPhotosCaptionsVisible;
     _Bool _allPhotosLayoutIsAnimating;
-    _Bool _allPhotosWantsSpaceForHeader;
-    _Bool _allPhotosShowsSpaceForHeader;
     _Bool _isPerformingInitialChanges;
     PXCuratedLibraryLayoutSpecManager *_specManager;
     PXCuratedLibraryStyleGuide *_styleGuide;
@@ -78,6 +76,7 @@
     long long _chromeVisibilityAnimationCount;
     PXInfoUpdater *_selectedAssetsTypeCountUpdater;
     NSObject<OS_dispatch_queue> *_countUpdateQueue;
+    long long _viewTimeSignpostID;
     struct CGPoint _lastScrollDirection;
     CDStruct_15189878 _selectedAssetsTypedCount;
     CDStruct_7c4e768e _pinchState;
@@ -85,6 +84,7 @@
 }
 
 + (id)_cplServiceUI;
+@property(nonatomic) long long viewTimeSignpostID; // @synthesize viewTimeSignpostID=_viewTimeSignpostID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *countUpdateQueue; // @synthesize countUpdateQueue=_countUpdateQueue;
 @property(readonly, nonatomic) PXInfoUpdater *selectedAssetsTypeCountUpdater; // @synthesize selectedAssetsTypeCountUpdater=_selectedAssetsTypeCountUpdater;
 @property(nonatomic) long long chromeVisibilityAnimationCount; // @synthesize chromeVisibilityAnimationCount=_chromeVisibilityAnimationCount;
@@ -103,8 +103,6 @@
 @property(readonly, nonatomic) PXCuratedLibraryAssetCollectionSkimmingInfo *skimmingInfo; // @synthesize skimmingInfo=_skimmingInfo;
 @property(nonatomic) struct CGPoint lastScrollDirection; // @synthesize lastScrollDirection=_lastScrollDirection;
 @property(nonatomic) long long scrollRegime; // @synthesize scrollRegime=_scrollRegime;
-@property(nonatomic) _Bool allPhotosShowsSpaceForHeader; // @synthesize allPhotosShowsSpaceForHeader=_allPhotosShowsSpaceForHeader;
-@property(readonly, nonatomic) _Bool allPhotosWantsSpaceForHeader; // @synthesize allPhotosWantsSpaceForHeader=_allPhotosWantsSpaceForHeader;
 @property(readonly, nonatomic) _Bool allPhotosLayoutIsAnimating; // @synthesize allPhotosLayoutIsAnimating=_allPhotosLayoutIsAnimating;
 @property(readonly, nonatomic) _Bool allPhotosCaptionsVisible; // @synthesize allPhotosCaptionsVisible=_allPhotosCaptionsVisible;
 @property(readonly, nonatomic) _Bool allPhotosAspectFit; // @synthesize allPhotosAspectFit=_allPhotosAspectFit;
@@ -148,14 +146,15 @@
 - (void)curatedLibraryAssetsDataSourceManager:(id)arg1 willTransitionFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (id)visibleAssetCollectionsFromCuratedLibraryAssetsDataSourceManager:(id)arg1;
 - (_Bool)isSelectingAssetsFromCuratedLibraryAssetsDataSourceManager:(id)arg1;
+- (id)_cpAnalyticsClassNameWithZoomLevel:(long long)arg1;
+- (void)endCPAnalyticsViewWithZoomLevel:(long long)arg1;
+- (void)startCPAnalyticsViewWithZoomLevel:(long long)arg1;
 - (void)_updateAllPhotosZoomState;
 - (void)_invalidateAllPhotosZoomState;
 - (void)_updateAllPhotosAlphaAnimator;
 - (void)_invalidateAllPhotosAlphaAnimator;
 - (void)_updatePinchVelocity;
 - (void)_invalidatePinchVelocity;
-- (void)_updateAllPhotosShowsSpaceForHeader;
-- (void)_invalidateAllPhotosShowsSpaceForHeader;
 - (void)_updateAllPhotosAllowedColumns;
 - (void)_invalidateAllPhotosAllowedColumns;
 - (void)_updateScrollingProperties;
@@ -186,7 +185,6 @@
 - (void)didPerformChanges;
 - (void)setCplServiceUI:(id)arg1;
 @property(readonly, nonatomic) PXCPLServiceUI *cplServiceUI;
-- (void)setAllPhotosWantsSpaceForHeader:(_Bool)arg1;
 - (void)setAllPhotosLayoutIsAnimating:(_Bool)arg1;
 - (void)setAllPhotosCaptionsVisible:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool allPhotosPresentingAspectFit;

@@ -45,6 +45,7 @@
 @property(nonatomic) BOOL fullGuidance; // @synthesize fullGuidance=_fullGuidance;
 @property(nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
 - (void).cxx_destruct;
+- (id)_findRouteWithUUID:(id)arg1;
 @property(readonly, nonatomic) NSString *fullDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,17 +6,35 @@
 
 #import <objc/NSObject.h>
 
+@class NSCache, NSDate, NSFileManager, NSMutableDictionary, NSString, PETEventTracker2, SGCustomResponsesParameters;
 @protocol OS_dispatch_source, SGXPCActivityManagerProtocol;
 
 @interface SGDManagerForCTS : NSObject
 {
+    PETEventTracker2 *_pet2tracker;
     id <SGXPCActivityManagerProtocol> _xpcActivityManager;
     NSObject<OS_dispatch_source> *_adjustActivitySource;
+    NSFileManager *_fManager;
+    NSString *_customResponsesCKPTFullPath;
+    NSString *_preferredLanguage;
+    int _customResponsesStep;
+    NSDate *_customResponsesLatestProcessedDate;
+    NSString *_customResponsesModelFilePath;
+    NSString *_customResponsesModelConfigPath;
+    SGCustomResponsesParameters *_customResponsesParameters;
+    NSCache *_perLanguageEmbedderCache;
+    NSMutableDictionary *_embedderExistsForLanguage;
 }
 
++ (void)clearCustomResponsesCheckpointForTesting;
 + (id)defaultInstance;
 + (id)sharedSingletonInstance;
 - (void).cxx_destruct;
+- (id)getCustomResponsesLatestProcessedDateForTesting;
+- (void)setCustomResponsesLatestProcessedDateForTesting:(id)arg1;
+- (int)getCustomResponsesStepForTesting;
+- (void)setCustomResponsesStepForTesting:(int)arg1;
+- (void)setPet2TrackerForTesting:(id)arg1;
 - (void)waitForXpcActivityQueue;
 - (void)dealloc;
 - (void)_performMobileAssetMetadataDownloadActivity:(id)arg1;

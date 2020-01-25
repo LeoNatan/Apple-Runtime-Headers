@@ -40,6 +40,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(nonatomic, getter=_previewMode, setter=_setPreviewMode:) long long previewMode;
 @property(nonatomic) _Bool _springboardPlatterStyle;
+@property(nonatomic, getter=_prefersUnmaskedPlatterStyle, setter=_setPrefersUnmaskedPlatterStyle:) _Bool _prefersUnmaskedPlatterStyle;
 - (id)retargetedPreviewWithTarget:(id)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 - (_Bool)containsPoint:(struct CGPoint)arg1 fromView:(id)arg2;

@@ -26,7 +26,6 @@
     NSMutableDictionary *_bundleIDToWeightUsingGPSCache;
     NSMutableDictionary *_bundleIDToWeightUsingWiFiCache;
     NSMutableDictionary *_bundleIDToWeightUsingLocationCache;
-    NSMutableDictionary *_activeClients;
     NSDate *_lastResyncActiveClientsDate;
     double _gps_segment_power;
     NSDate *_gps_segment_lastWrittenDate;
@@ -55,7 +54,6 @@
 @property(retain) NSDate *gps_segment_lastWrittenDate; // @synthesize gps_segment_lastWrittenDate=_gps_segment_lastWrittenDate;
 @property double gps_segment_power; // @synthesize gps_segment_power=_gps_segment_power;
 @property(retain) NSDate *lastResyncActiveClientsDate; // @synthesize lastResyncActiveClientsDate=_lastResyncActiveClientsDate;
-@property(retain) NSMutableDictionary *activeClients; // @synthesize activeClients=_activeClients;
 @property(retain) NSMutableDictionary *bundleIDToWeightUsingLocationCache; // @synthesize bundleIDToWeightUsingLocationCache=_bundleIDToWeightUsingLocationCache;
 @property(retain) NSMutableDictionary *bundleIDToWeightUsingWiFiCache; // @synthesize bundleIDToWeightUsingWiFiCache=_bundleIDToWeightUsingWiFiCache;
 @property(retain) NSMutableDictionary *bundleIDToWeightUsingGPSCache; // @synthesize bundleIDToWeightUsingGPSCache=_bundleIDToWeightUsingGPSCache;
@@ -74,6 +72,7 @@
 @property(retain) PLCFNotificationOperatorComposition *appStatusChangedNotification; // @synthesize appStatusChangedNotification=_appStatusChangedNotification;
 - (void).cxx_destruct;
 - (void)UpdateGnssPowerMetric:(id)arg1;
+- (void)updateLocationQualificationEvents;
 - (void)updateLocationDistributionEvents;
 - (void)logEventNoneClientStatusDebugWithClients:(id)arg1;
 - (void)logEventNoneClientStatus;

@@ -6,11 +6,12 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSString, SXAction;
+@class NSString;
+@protocol SXAction;
 
 @protocol SXActionActivity <NSObject>
 @property(readonly, nonatomic) unsigned long long type;
 @property(readonly, nonatomic) NSString *label;
-- (void)invokeWithAction:(SXAction *)arg1 invocationMethod:(unsigned long long)arg2;
+- (void)invokeWithAction:(id <SXAction>)arg1 invocationMethod:(unsigned long long)arg2;
 @end
 

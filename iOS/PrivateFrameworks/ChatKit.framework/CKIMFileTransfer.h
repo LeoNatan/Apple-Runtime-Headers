@@ -20,6 +20,7 @@
     _Bool _fileURLFinalized;
     _Bool _restoring;
     _Bool _hideAttachment;
+    _Bool _isDirectory;
     NSString *_guid;
     NSURL *_fileURL;
     NSString *_filename;
@@ -36,6 +37,7 @@
 
 @property(copy, nonatomic) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
 @property(copy, nonatomic) NSURL *linkFileURL; // @synthesize linkFileURL=_linkFileURL;
+@property(readonly, nonatomic) _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
 @property(nonatomic) long long transferState; // @synthesize transferState=_transferState;
 @property(readonly, copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
 - (void).cxx_destruct;

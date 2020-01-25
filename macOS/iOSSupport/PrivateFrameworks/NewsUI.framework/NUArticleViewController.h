@@ -12,7 +12,7 @@
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 #import <NewsUI/SXScrollViewControllerDelegate-Protocol.h>
 
-@class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, SXScrollViewController, UIResponder, UIScrollView;
+@class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, NUArticleContext, SXScrollViewController, SXVideoPlayerViewControllerManager, UIResponder, UIScrollView;
 @protocol NUANFDebugSettingsProvider, NUArticleDataProvider, NUArticleKeyCommandManager, NUDocumentSectionBlueprintProvider, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
 
 @interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUANFDebugSettingsObserver, NULoadable, NUBarCompressible>
@@ -27,6 +27,7 @@
     NFMultiDelegate *_multiScrollViewDelegate;
     UIScrollView *_scrollView;
     NSString *_anchorFragment;
+    NUArticleContext *_articleContext;
     SXScrollViewController *_scrollViewController;
     id <NUArticleDataProvider> _articleDataProvider;
     id <NUEndOfArticleDataProvider> _endOfArticleDataProvider;
@@ -37,9 +38,11 @@
     id <NUDocumentSectionBlueprintProvider> _documentSectionBlueprintProvider;
     id <NUANFDebugSettingsProvider> _debugSettingsProvider;
     unsigned long long _presentationMode;
+    SXVideoPlayerViewControllerManager *_videoPlayerViewControllerManager;
 }
 
 + (id)_parentOrPresentingViewControllerFor:(id)arg1;
+@property(readonly, nonatomic) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager; // @synthesize videoPlayerViewControllerManager=_videoPlayerViewControllerManager;
 @property(nonatomic) BOOL isShowingDeferredHardPayall; // @synthesize isShowingDeferredHardPayall=_isShowingDeferredHardPayall;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(nonatomic) BOOL articleIsPresentingFullscreen; // @synthesize articleIsPresentingFullscreen=_articleIsPresentingFullscreen;
@@ -52,6 +55,7 @@
 @property(readonly, nonatomic) id <NUEndOfArticleDataProvider> endOfArticleDataProvider; // @synthesize endOfArticleDataProvider=_endOfArticleDataProvider;
 @property(readonly, nonatomic) id <NUArticleDataProvider> articleDataProvider; // @synthesize articleDataProvider=_articleDataProvider;
 @property(readonly, nonatomic) SXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
+@property(retain, nonatomic) NUArticleContext *articleContext; // @synthesize articleContext=_articleContext;
 @property(copy, nonatomic) NSString *anchorFragment; // @synthesize anchorFragment=_anchorFragment;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) NFMultiDelegate *multiScrollViewDelegate; // @synthesize multiScrollViewDelegate=_multiScrollViewDelegate;
@@ -80,6 +84,7 @@
 - (double)navigationBarHeightForScrollViewController:(id)arg1;
 - (void)scrollViewControllerDismissFullscreen:(id)arg1;
 - (void)scrollViewControllerRequestsFullscreen:(id)arg1;
+- (void)scrollViewController:(id)arg1 didApplyDocumentStyle:(id)arg2;
 - (void)scrollViewControllerDidLayoutContent:(id)arg1;
 - (BOOL)prefersStatusBarHidden;
 - (long long)preferredStatusBarStyle;
@@ -94,7 +99,7 @@
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 appStateMonitor:(id)arg4 keyCommandManager:(id)arg5 loadingListeners:(id)arg6 headerBlueprintProvider:(id)arg7 debugSettingsProvider:(id)arg8;
+- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 appStateMonitor:(id)arg4 keyCommandManager:(id)arg5 loadingListeners:(id)arg6 headerBlueprintProvider:(id)arg7 debugSettingsProvider:(id)arg8 videoPlayerViewControllerManager:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

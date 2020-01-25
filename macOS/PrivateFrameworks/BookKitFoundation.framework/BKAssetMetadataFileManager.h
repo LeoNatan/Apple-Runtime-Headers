@@ -27,7 +27,8 @@
 - (id)_renameExistingPDFMetadata:(id)arg1 toDisplayName:(id)arg2 error:(id *)arg3;
 - (void)_backupMetadataIfNeeded:(id)arg1;
 - (BOOL)_writeExtendedAttributes:(id)arg1 url:(id)arg2 error:(id *)arg3;
-- (unsigned long long)_fixPermissionsAndCalculateAllocatedSizeAtURL:(id)arg1 error:(id *)arg2;
+- (unsigned long long)fixPermissionsAndCalculateAllocatedSizeAtURL:(id)arg1 error:(id *)arg2;
+- (BOOL)checkValidFilePermissionsForAsset:(id)arg1 error:(id *)arg2;
 - (BOOL)setExtendedAttributesForAsset:(id)arg1 error:(id *)arg2;
 - (BOOL)updateExtendedAttributesForAsset:(id)arg1 error:(id *)arg2;
 - (id)extendedAttributesForAsset:(id)arg1 error:(id *)arg2;

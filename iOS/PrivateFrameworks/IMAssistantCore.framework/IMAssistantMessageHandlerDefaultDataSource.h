@@ -20,6 +20,9 @@
 @property(nonatomic) _Bool didRegisterForContactStoreChangeNotifications; // @synthesize didRegisterForContactStoreChangeNotifications=_didRegisterForContactStoreChangeNotifications;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+- (_Bool)screentimeAllowedToShowConversationWithHandleIDs:(id)arg1;
+- (_Bool)screentimeAllowedToShowChat:(id)arg1;
+@property(readonly, nonatomic) _Bool isInternationalSpamFilteringEnabled;
 - (void)registerForContactStoreChangeNotificationsIfNecessary;
 - (void)contactStoreDidChange:(id)arg1;
 @property(readonly, nonatomic) NSCache *contactIdentifierToUnifiedContactIdentifierCache;

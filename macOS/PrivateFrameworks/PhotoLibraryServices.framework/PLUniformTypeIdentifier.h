@@ -16,6 +16,7 @@
     NSNumber *_conformsToJPEG;
 }
 
++ (BOOL)isPlayableVideoTypeIdentifierString:(id)arg1;
 + (id)utisConformingToRAWInContext:(id)arg1;
 + (id)plistUniformTypeIdentifierInContext:(id)arg1;
 + (id)videoComplementUniformTypeIdentifierInContext:(id)arg1;

@@ -67,7 +67,7 @@
 - (id)localZone:(id)arg1 didProcessModelUpdate:(id)arg2;
 - (id)localZone:(id)arg1 didProcessModelCreation:(id)arg2;
 - (void)localZone:(id)arg1 processingDidComplete:(id)arg2 mirrorOutputFuture:(id)arg3 actions:(id)arg4;
-@property(readonly, getter=isCurrentDevicePrimaryResident) _Bool currentDevicePrimaryResident;
+@property(readonly, getter=isCurrentDeviceConfirmedPrimaryResident) _Bool currentDeviceConfirmedPrimaryResident;
 - (id)messageDestination;
 - (void)timerDidFire:(id)arg1;
 - (void)_startSafeModeTimer;

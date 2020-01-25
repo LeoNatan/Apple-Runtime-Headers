@@ -6,20 +6,20 @@
 
 #import <PhotosUICore/PXVideoContentProvider.h>
 
-@class AVPlayerItem, NSError, NSString;
+@class NSString, PXVideoContentProviderLoadingResult;
 
 @interface PXSimpleVideoContentProvider : PXVideoContentProvider
 {
-    AVPlayerItem *_playerItem;
+    PXVideoContentProviderLoadingResult *_loadingResult;
     NSString *_contentIdentifier;
-    NSError *_error;
     double _loadingProgress;
 }
 
+- (void)setLoadingProgress:(double)arg1;
 - (double)loadingProgress;
-- (id)error;
 - (id)contentIdentifier;
-- (id)playerItem;
+- (void)setLoadingResult:(id)arg1;
+- (id)loadingResult;
 - (void).cxx_destruct;
 - (id)description;
 - (void)beginLoadingWithPriority:(long long)arg1;

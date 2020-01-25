@@ -20,7 +20,8 @@
 - (void)setShareWebUsageEnabled:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)setScreenTimeSyncingEnabled:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)setScreenTimeEnabled:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)enableScreenTimeWithPIN:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)enableScreenTimeWithPIN:(NSString *)arg1 recoveryAltDSID:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)setPIN:(NSString *)arg1 recoveryAltDSID:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)setPIN:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (_Bool)validatePIN:(NSString *)arg1;
 - (id)coordinatorForChild:(STUIUser *)arg1 deviceIdentifier:(NSString *)arg2 usageReportType:(NSNumber *)arg3;

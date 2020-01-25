@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <TextToSpeech/NSSecureCoding-Protocol.h>
+
 @class TTSSpeechVoice;
 
-@interface TTSSpeechChannel : NSObject
+@interface TTSSpeechChannel : NSObject <NSSecureCoding>
 {
     TTSSpeechVoice *_voice;
 }

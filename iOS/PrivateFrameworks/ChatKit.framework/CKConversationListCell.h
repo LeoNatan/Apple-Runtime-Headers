@@ -45,6 +45,7 @@
 - (void)updateWithSearchResult:(id)arg1;
 - (id)_makeSummaryAttributedStringWithText:(id)arg1;
 - (id)summaryAttributedTextForBlockedConversationWithIcon:(_Bool)arg1;
+- (unsigned long long)unreadMessageCount;
 - (void)updateSummaryTextForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1;

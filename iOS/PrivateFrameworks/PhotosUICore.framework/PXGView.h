@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) PXGLayout *accessibilityRootLayout; // @synthesize accessibilityRootLayout;
 - (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
 - (id)accessibilityHitTestResultAtPoint:(struct CGPoint)arg1;
+- (void)notifySelectedCellsChanged;
 - (void)axScrollToAsset:(id)arg1;
 - (id)assetClosestToAsset:(id)arg1 inDirection:(unsigned long long)arg2;
 - (void)selectAssets:(id)arg1;

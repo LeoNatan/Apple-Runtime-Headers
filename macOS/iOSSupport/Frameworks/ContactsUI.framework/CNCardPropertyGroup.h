@@ -59,6 +59,7 @@
 - (id)displayItems;
 - (void)saveChanges;
 - (void)reloadDataPreservingChanges:(BOOL)arg1;
+- (id)lastEditingItem;
 - (void)removeEditingItem:(id)arg1;
 - (BOOL)addEditingItem;
 - (id)nextAvailableLabel;

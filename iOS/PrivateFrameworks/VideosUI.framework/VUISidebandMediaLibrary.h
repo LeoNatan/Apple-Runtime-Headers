@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)_removeDownloadsForNonSignedInUsers;
 - (id)_downloadedVideosForNonSignedInUsers;
 - (void)_pruneVideosAtAppLaunchWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_deleteOrphanedDownloads;
 - (void)_deleteVideoManagedObjects:(id)arg1;
 - (id)_mainContextManagedObjectsForObjects:(id)arg1;
 - (void)_mainQueueManagedObjectContextDidSave:(id)arg1;

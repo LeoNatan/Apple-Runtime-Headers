@@ -27,9 +27,8 @@
     struct z_stream_s *_inflater;
     char *_zbuffer;
     unsigned int _readBytesNotLogged;
-    unsigned int _isFetching:1;
-    unsigned int _allowFallbacks:1;
-    unsigned int _compressionEnabled:1;
+    // Error parsing type: AB, name: _isFetching
+    _Bool _compressionEnabled;
     NSString *_accountLogString;
 }
 
@@ -76,12 +75,11 @@
 @property(readonly, nonatomic) NSArray *authenticationMechanisms;
 @property(readonly, nonatomic) NSArray *capabilities;
 - (_Bool)authenticateUsingAccount:(id)arg1;
-- (void)setAllowsFallbacks:(_Bool)arg1;
 - (_Bool)connectUsingFallbacksForAccount:(id)arg1;
 - (_Bool)connectUsingAccount:(id)arg1;
 - (_Bool)connectUsingSettings:(id)arg1;
 - (void)_setupSocketWithSettings:(id)arg1;
-@property(nonatomic) _Bool isFetching;
+@property _Bool isFetching;
 @property(readonly, nonatomic) _Bool isCellularConnection;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

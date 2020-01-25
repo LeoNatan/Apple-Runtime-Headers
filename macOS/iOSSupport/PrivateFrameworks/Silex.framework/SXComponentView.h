@@ -6,16 +6,16 @@
 
 #import <UIKit/UIView.h>
 
-#import <Silex/STTextCanvasRenderSource-Protocol.h>
 #import <Silex/SXAXAssistiveTechStatusChangeListener-Protocol.h>
 #import <Silex/SXComponentInteractable-Protocol.h>
+#import <Silex/SXTextCanvasRenderSource-Protocol.h>
 #import <Silex/SXTransitionableComponentView-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSString, SXColumnLayout, SXFillView, SXUnitConverter, SXViewport;
 @protocol SXComponent, SXComponentHosting, SXComponentLayout, SXComponentStyle, SXComponentStyleRenderer, SXComponentStyleRendererFactory, SXDOMObjectProviding, SXPresentationDelegate;
 
-@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionableComponentView, SXComponentInteractable>
+@interface SXComponentView : UIView <UIGestureRecognizerDelegate, SXTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionableComponentView, SXComponentInteractable>
 {
     BOOL _hasRenderedContents;
     BOOL _requiresThoroughFrameCalculations;

@@ -18,7 +18,7 @@
 + (id)adapterWithPerson:(id)arg1;
 @property(readonly) NSArray *unknownProperties;
 @property(readonly) NSString *uid;
-@property(readonly) NSString *downtimeWhitelist;
+@property(readonly) int downtimeWhitelistAuthorization;
 @property(readonly) NSString *phonemeData;
 @property(readonly) NSString *cardDAVUID;
 @property(readonly) NSArray *namesOfParentGroups;

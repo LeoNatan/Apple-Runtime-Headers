@@ -10,7 +10,7 @@
 #import <UIKitCore/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <UIKitCore/_UIClickPresentationAssisting-Protocol.h>
 
-@class NSString, UITargetedPreview, UIView, UIViewController, _UIClickPresentation;
+@class NSString, NSValue, UITargetedPreview, UIView, UIViewController, _UIClickPresentation;
 
 __attribute__((visibility("hidden")))
 @interface _UIRapidClickPresentationAssistant : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, _UIClickPresentationAssisting>
@@ -22,8 +22,10 @@ __attribute__((visibility("hidden")))
     UITargetedPreview *_sourcePreview;
     UIViewController *_stashedParentViewController;
     UIView *_stashedSuperView;
+    NSValue *_preservedInputViewId;
 }
 
+@property(retain, nonatomic) NSValue *preservedInputViewId; // @synthesize preservedInputViewId=_preservedInputViewId;
 @property(retain, nonatomic) UIView *stashedSuperView; // @synthesize stashedSuperView=_stashedSuperView;
 @property(retain, nonatomic) UIViewController *stashedParentViewController; // @synthesize stashedParentViewController=_stashedParentViewController;
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;

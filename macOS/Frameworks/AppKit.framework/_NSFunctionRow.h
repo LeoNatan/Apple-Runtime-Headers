@@ -40,6 +40,11 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)status;
 - (void)setActive:(BOOL)arg1;
 - (BOOL)isActive;
+- (double)escapeKeyPaddingForCloseButton:(BOOL)arg1;
+- (double)closeButtonPadding;
+- (BOOL)requiresCompactLayout;
+- (BOOL)wantsEscKeyOverrides;
+- (const struct __DFRTouchBar *)DFRTouchBar;
 - (const struct __DFRElement *)DFRElement;
 - (void)dealloc;
 - (id)initWithDFRElementAttributes:(id)arg1;

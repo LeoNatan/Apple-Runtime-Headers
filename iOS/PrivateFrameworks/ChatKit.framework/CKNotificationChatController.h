@@ -10,19 +10,23 @@
 #import <ChatKit/CKMessageEntryViewInputDelegate-Protocol.h>
 #import <ChatKit/UITextInputPayloadDelegate-Protocol.h>
 
-@class CKFullScreenBalloonViewControllerNotification, CKMessageEntryView, CKMessageEntryViewController, CKRaiseGesture, CKScheduledUpdater, NSExtensionContext, NSString;
+@class CKFullScreenBalloonViewControllerNotification, CKMessageEntryView, CKMessageEntryViewController, CKRaiseGesture, CKScheduledUpdater, NSExtensionContext, NSString, STLockoutViewController;
 @protocol CKNotificationChatControllerDelegate;
 
 @interface CKNotificationChatController : CKCoreChatController <UITextInputPayloadDelegate, CKMessageEntryViewDelegate, CKMessageEntryViewInputDelegate>
 {
     _Bool _shouldAllowReplyFromLockScreen;
+    _Bool _allowedByScreenTime;
     NSExtensionContext *_urlOpenContext;
     CKFullScreenBalloonViewControllerNotification *_notificationFullScreenBalloonController;
     CKMessageEntryViewController *_entryViewController;
     CKScheduledUpdater *_typingUpdater;
     CKRaiseGesture *_raiseGesture;
+    STLockoutViewController *_lockoutViewController;
 }
 
+@property(retain, nonatomic) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
+@property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
 @property(nonatomic) _Bool shouldAllowReplyFromLockScreen; // @synthesize shouldAllowReplyFromLockScreen=_shouldAllowReplyFromLockScreen;
 @property(retain, nonatomic) CKRaiseGesture *raiseGesture; // @synthesize raiseGesture=_raiseGesture;
 @property(retain, nonatomic) CKScheduledUpdater *typingUpdater; // @synthesize typingUpdater=_typingUpdater;
@@ -32,6 +36,7 @@
 - (void).cxx_destruct;
 - (void)updateRaiseGesture;
 - (void)_dismissFullScreenBubbleViewControllerWithSendAnimation:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)__raiseGestureRecognized:(id)arg1;
 - (void)raiseGestureRecognized:(id)arg1;
 - (void)updateTyping;
 - (_Bool)getContainerWidth:(double *)arg1 offset:(double *)arg2;
@@ -41,6 +46,7 @@
 - (void)messageEntryViewBrowserButtonHit:(id)arg1;
 - (void)messageEntryViewPhotoButtonHit:(id)arg1;
 - (long long)messageEntryViewHighLightInputButton:(id)arg1;
+- (Class)lockoutViewControllerClass;
 - (void)sendCurrentLocationMessage:(id)arg1;
 - (struct CGSize)messageEntryViewMaxShelfPluginViewSize:(id)arg1;
 - (double)messageEntryViewMaxHeight:(id)arg1;
@@ -58,6 +64,7 @@
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
 - (id)progressBar;
 - (void)_messageReceivedInCurrentTranscript:(id)arg1;
+- (void)_allowedByScreenTimeChanged:(id)arg1;
 - (_Bool)_deviceIsPasscodeLocked;
 - (void)_setupShouldShowReplyFromLockScreen;
 - (void)_updateTitleAnimated:(_Bool)arg1;

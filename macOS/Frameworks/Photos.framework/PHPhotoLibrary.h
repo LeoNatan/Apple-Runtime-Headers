@@ -30,7 +30,6 @@
     unsigned short _type;
     NSError *_unavailabilityReason;
     NSObject<OS_dispatch_queue> *_queue;
-    NSString *_libraryID;
     PLPhotoLibrary *_transactionPhotoLibrary;
     NSObject<OS_dispatch_queue> *_transactionQueue;
     PHPerformChangesRequest *_request;
@@ -103,7 +102,6 @@
 @property(retain, nonatomic) PHPerformChangesRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *transactionQueue; // @synthesize transactionQueue=_transactionQueue;
 @property(readonly) PLPhotoLibrary *transactionPhotoLibrary; // @synthesize transactionPhotoLibrary=_transactionPhotoLibrary;
-@property(retain, nonatomic) NSString *libraryID; // @synthesize libraryID=_libraryID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSError *unavailabilityReason; // @synthesize unavailabilityReason=_unavailabilityReason;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
@@ -184,6 +182,7 @@
 @property(readonly) PLPhotoLibrary *photoLibrary;
 - (id)pl_photoLibraryForCMM;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
+- (id)libraryID;
 - (void)dealloc;
 - (void)_invalidateEverythingWithReason:(id)arg1;
 - (id)initWithPhotoLibraryBundle:(id)arg1 type:(unsigned short)arg2;
@@ -247,6 +246,7 @@
 - (void)requestSearchIndexUpdates:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)unloadGraph;
 - (void)loadGraph;
+- (void)runPFLWithAttachments:(id)arg1 recipeUserInfo:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (id)requestTextFeaturesForMomentLocalIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)simulateMemoriesNotificationWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)generateMemoriesRelatedDiagnosticsLogsWithReply:(CDUnknownBlockType)arg1;

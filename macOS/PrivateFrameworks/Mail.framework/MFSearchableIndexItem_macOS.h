@@ -6,14 +6,19 @@
 
 #import <EmailDaemon/EDSearchableIndexItem.h>
 
-@interface MFSearchableIndexItem_macOS : EDSearchableIndexItem
+#import <Mail/EFLoggable-Protocol.h>
+
+@class NSString;
+
+@interface MFSearchableIndexItem_macOS : EDSearchableIndexItem <EFLoggable>
 {
     BOOL _requiresPreprocessing;
     BOOL _loadSecondaryMetadata;
 }
 
-+ (id)searchableItemWithMessage:(id)arg1 htmlString:(id)arg2;
++ (id)searchableItemWithMessage:(id)arg1 htmlString:(id)arg2 isEncrypted:(BOOL)arg3 includeEncryptedBody:(BOOL)arg4;
 + (void)mailboxIdentifiersForMessage:(id)arg1 result:(CDUnknownBlockType)arg2;
++ (id)log;
 @property(nonatomic) BOOL loadSecondaryMetadata; // @synthesize loadSecondaryMetadata=_loadSecondaryMetadata;
 @property(nonatomic) BOOL requiresPreprocessing; // @synthesize requiresPreprocessing=_requiresPreprocessing;
 - (id)fetchIndexableAttachments;
@@ -22,9 +27,16 @@
 - (void)addFlagsAttributesToAttributeSet:(id)arg1;
 - (void)addUpdatableAttributesToAttributeSet:(id)arg1;
 - (void)setNeedsAllAttributesIndexingType;
+- (BOOL)_shouldIncludeBodyDataFromMessageBody:(id)arg1;
 - (id)searchableItem;
 - (id)initWithIdentifier:(id)arg1 message:(id)arg2 bodyData:(id)arg3 fetchBody:(BOOL)arg4 loadSecondaryMetadata:(BOOL)arg5;
 - (id)initWithIdentifier:(id)arg1 message:(id)arg2 bodyData:(id)arg3 fetchBody:(BOOL)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

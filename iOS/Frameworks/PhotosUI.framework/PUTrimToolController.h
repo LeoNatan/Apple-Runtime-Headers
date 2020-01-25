@@ -161,7 +161,6 @@ __attribute__((visibility("hidden")))
 - (void)_createRendererIfNeeded;
 @property(retain, nonatomic) UIImage *placeholderImage;
 - (void)livePhotoRenderDidChange:(_Bool)arg1;
-- (_Bool)_canShowWhileLocked;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)trimScrubber:(id)arg1 debugEndOffset:(struct CGRect)arg2;

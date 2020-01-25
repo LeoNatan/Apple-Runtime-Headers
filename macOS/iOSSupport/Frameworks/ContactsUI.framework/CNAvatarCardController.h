@@ -86,6 +86,7 @@
 - (void)showContact;
 @property(copy, nonatomic) NSString *message;
 @property(copy, nonatomic) NSString *name;
+- (void)cleanupAfterDisplay;
 - (void)prepareForDisplay;
 - (BOOL)hasActions;
 - (id)refetchContactsMatching:(id)arg1 storeProvider:(CDUnknownBlockType)arg2;

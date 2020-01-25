@@ -18,7 +18,7 @@
     NSString *_senderAddressComment;
     unsigned int _dateSentInterval;
     unsigned int _dateReceivedInterval;
-    unsigned long long _generationNumber;
+    // Error parsing type: AQ, name: _generationNumber
     NSArray *_to;
     NSArray *_cc;
     NSArray *_bcc;

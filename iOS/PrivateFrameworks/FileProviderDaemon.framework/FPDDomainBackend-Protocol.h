@@ -22,7 +22,6 @@
 - (_Bool)removeAllFilesWithError:(id *)arg1;
 - (void)currentMaterializedSetSyncAnchorWithCompletionHandler:(void (^)(NSData *))arg1;
 - (void)enumerateMaterializedSetFromSyncAnchor:(NSData *)arg1 completionHandler:(void (^)(NSArray *, NSArray *, _Bool, NSData *, NSError *))arg2;
-- (void)writeCheckReportTo:(FPCTLTermDumper *)arg1 limitNumberOfItems:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)dumpStateTo:(FPCTLTermDumper *)arg1 limitNumberOfItems:(_Bool)arg2;
 - (void)URLForItemID:(FPItemID *)arg1 creatingPlaceholderIfMissing:(_Bool)arg2 ignoreAlternateContentsURL:(_Bool)arg3 request:(FPDRequest *)arg4 completionHandler:(void (^)(NSError *, FPSandboxingURLWrapper *, FPSandboxingURLWrapper *))arg5;
 - (_Bool)updateRootAfterDomainChangeWithError:(id *)arg1;

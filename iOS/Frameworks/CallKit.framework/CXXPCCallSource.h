@@ -26,6 +26,7 @@
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (id)vendorProtocolDelegate;
+- (_Bool)isPermittedToUseBluetoothAccessories;
 - (_Bool)isPermittedToUsePrivateAPI;
 - (_Bool)isPermittedToUsePublicAPI;
 - (int)processIdentifier;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSDate, NSNumber, NSString;
 
 @protocol PREResponsesProtocol
 - (void)registerResponse:(NSString *)arg1 position:(NSNumber *)arg2 isCanned:(BOOL)arg3 isUsingQuickResponses:(BOOL)arg4 locale:(NSString *)arg5 modelConfigPath:(NSString *)arg6;
-- (void)preResponseItemsForMessage:(NSString *)arg1 maximumResponses:(unsigned long long)arg2 conversationHistory:(NSArray *)arg3 language:(NSString *)arg4 modelFilePath:(NSString *)arg5 modelConfigPath:(NSString *)arg6 registerDisplayed:(BOOL)arg7 completion:(void (^)(NSArray *, NSError *))arg8;
+- (void)preResponseItemsForMessage:(NSString *)arg1 maximumResponses:(unsigned long long)arg2 conversationHistory:(NSArray *)arg3 forContext:(NSString *)arg4 time:(NSDate *)arg5 language:(NSString *)arg6 modelFilePath:(NSString *)arg7 modelConfigPath:(NSString *)arg8 registerDisplayed:(BOOL)arg9 completion:(void (^)(NSArray *, NSError *))arg10;
 @end
 

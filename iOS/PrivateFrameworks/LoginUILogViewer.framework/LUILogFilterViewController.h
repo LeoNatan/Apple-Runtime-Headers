@@ -26,6 +26,7 @@
 @property(retain, nonatomic) LUILogFilterView *filterView; // @synthesize filterView=_filterView;
 @property(nonatomic) __weak id <LUILogFilterViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;

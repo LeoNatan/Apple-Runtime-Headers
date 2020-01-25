@@ -10,6 +10,9 @@
 {
 }
 
++ (id)securityScopeForFileURL:(id)arg1;
++ (id)makeAttachmentPlaceholder:(id)arg1 fileSize:(long long)arg2 mimeType:(id)arg3 contentID:(id)arg4;
++ (_Bool)shouldCreatePlaceholderAttachmentForAttachmentWithSize:(long long)arg1;
 + (id)mimeTypeForFileName:(id)arg1;
 + (id)writeData:(id)arg1 toTemporaryFileURLWithFileName:(id)arg2;
 + (id)temporaryFileURLWithExtension:(id)arg1;

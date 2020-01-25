@@ -21,6 +21,7 @@
 @property(retain, nonatomic) id <FCHeadlineClusterOrdering> headlineClusterOrderer; // @synthesize headlineClusterOrderer=_headlineClusterOrderer;
 @property(retain, nonatomic) id <FCHeadlineClustering> headlineClusterer; // @synthesize headlineClusterer=_headlineClusterer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 - (_Bool)canMergeHeadlinesFromGroup:(id)arg1 intoGroup:(id)arg2;
 - (_Bool)supportsPagination;

@@ -20,19 +20,19 @@
 #import <ChatKit/CNAvatarViewDelegate-Protocol.h>
 #import <ChatKit/UIAlertViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewDataSource-Protocol.h>
-#import <ChatKit/UICollectionViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <ChatKit/UICollectionViewDelegate_Private-Protocol.h>
 
-@class CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, UITapGestureRecognizer, UIView;
+@class CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSDictionary, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, UITapGestureRecognizer, UIView;
 @protocol CKFullscreenEffectView, CKGradientReferenceView, CKTranscriptCollectionViewControllerDelegate, OS_dispatch_group, UIDragInteractionDelegate;
 
-@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CNAvatarViewDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegate_Private, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKBalloonViewDelegate, CKSendAnimationManagerDelegate>
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CNAvatarViewDelegate, UIAlertViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKBalloonViewDelegate, UICollectionViewDelegate_Private, CKSendAnimationManagerDelegate>
 {
     NSIndexPath *_itemIndexPathToHighlight;
     _Bool _initialLoad;
     _Bool _shouldLoadDefaultConversationViewingMessageCountOnAppear;
     _Bool _transitionedFromComposing;
+    _Bool _transitioningFromComposing;
     _Bool _transcriptUpdateAnimated;
     _Bool _allowsPluginPlayback;
     _Bool _isPerformingRegenerateOrReloadOnlyUpdate;
@@ -61,6 +61,7 @@
     NSArray *_notifications;
     CKTranscriptCollectionView *_collectionView;
     CKAudioController *_audioController;
+    NSDictionary *_pluginSnapshots;
     CKPluginPlaybackManager *_pluginPlaybackManager;
     CDUnknownBlockType _alertHandler;
     NSString *_speakerTransferGUID;
@@ -92,6 +93,7 @@
 @property(copy, nonatomic) CDUnknownBlockType alertHandler; // @synthesize alertHandler=_alertHandler;
 @property(nonatomic) _Bool isPerformingRegenerateOrReloadOnlyUpdate; // @synthesize isPerformingRegenerateOrReloadOnlyUpdate=_isPerformingRegenerateOrReloadOnlyUpdate;
 @property(retain, nonatomic) CKPluginPlaybackManager *pluginPlaybackManager; // @synthesize pluginPlaybackManager=_pluginPlaybackManager;
+@property(retain, nonatomic) NSDictionary *pluginSnapshots; // @synthesize pluginSnapshots=_pluginSnapshots;
 @property(retain, nonatomic) CKAudioController *audioController; // @synthesize audioController=_audioController;
 @property(retain, nonatomic) CKTranscriptCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) NSArray *notifications; // @synthesize notifications=_notifications;
@@ -101,6 +103,7 @@
 @property(nonatomic) double pluginPlaybackDelay; // @synthesize pluginPlaybackDelay=_pluginPlaybackDelay;
 @property(nonatomic) _Bool allowsPluginPlayback; // @synthesize allowsPluginPlayback=_allowsPluginPlayback;
 @property(nonatomic, getter=isTranscriptUpdateAnimated) _Bool transcriptUpdateAnimated; // @synthesize transcriptUpdateAnimated=_transcriptUpdateAnimated;
+@property(nonatomic) _Bool transitioningFromComposing; // @synthesize transitioningFromComposing=_transitioningFromComposing;
 @property(nonatomic) _Bool transitionedFromComposing; // @synthesize transitionedFromComposing=_transitionedFromComposing;
 @property(retain, nonatomic) CKFullScreenEffectManager *fullscreenEffectManager; // @synthesize fullscreenEffectManager=_fullscreenEffectManager;
 @property(retain, nonatomic) CKImpactEffectManager *impactEffectManager; // @synthesize impactEffectManager=_impactEffectManager;
@@ -265,6 +268,7 @@
 - (_Bool)isVisiblePlugin:(id)arg1;
 - (void)stopFullscreenEffect;
 - (void)startFullscreenEffectIfNeededForChatItem:(id)arg1;
+- (void)__raiseGestureRecognized:(id)arg1;
 - (void)raiseGestureRecognized:(id)arg1;
 - (_Bool)canRaiseToTalk;
 - (_Bool)canRaiseToListen;
@@ -311,6 +315,13 @@
 - (void)_setupLoggingTapGestureRecognizer;
 - (_Bool)_shouldShowInternalUILogging;
 - (_Bool)_shouldShowUILogging;
+- (void)collectionView:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (void)collectionView:(id)arg1 willEndContextMenuInteractionWithConfiguration:(id)arg2 animator:(id)arg3;
+- (id)_collectionView:(id)arg1 styleForContextMenuWithConfiguration:(id)arg2;
+- (id)collectionView:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;
+- (id)_collectionView:(id)arg1 accessoriesForContextMenuWithConfiguration:(id)arg2 layoutAnchor:(CDStruct_4bcfbbae)arg3;
+- (id)collectionView:(id)arg1 previewForHighlightingContextMenuWithConfiguration:(id)arg2;
+- (id)collectionView:(id)arg1 contextMenuConfigurationForItemAtIndexPath:(id)arg2 point:(struct CGPoint)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

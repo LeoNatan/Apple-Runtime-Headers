@@ -106,6 +106,7 @@
 @property(copy, nonatomic) NSString *_DKLocationApplicationActivityMetadataKey__stateOrProvince; // @dynamic _DKLocationApplicationActivityMetadataKey__stateOrProvince;
 @property(copy, nonatomic) NSString *_DKLocationApplicationActivityMetadataKey__subThoroughfare; // @dynamic _DKLocationApplicationActivityMetadataKey__subThoroughfare;
 @property(copy, nonatomic) NSString *_DKLocationApplicationActivityMetadataKey__thoroughfare; // @dynamic _DKLocationApplicationActivityMetadataKey__thoroughfare;
+@property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__altitude; // @dynamic _DKLocationMetadataKey__altitude;
 @property(copy, nonatomic) NSString *_DKLocationMetadataKey__identifier; // @dynamic _DKLocationMetadataKey__identifier;
 @property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__latitude; // @dynamic _DKLocationMetadataKey__latitude;
 @property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__longitude; // @dynamic _DKLocationMetadataKey__longitude;

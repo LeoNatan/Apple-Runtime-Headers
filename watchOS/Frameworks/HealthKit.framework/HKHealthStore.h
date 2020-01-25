@@ -173,14 +173,14 @@
 - (void)_throwIfClinicalTypesRequestedToShare:(id)arg1;
 - (void)_throwIfAuthorizationDisallowedForSharing:(_Bool)arg1 types:(id)arg2;
 - (void)handleAuthorizationForExtensionWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_validateHealthDataPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
+- (void)_validateHealthDataPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2 isResearchStudy:(_Bool)arg3;
 - (void)_validateClinicalHealthRecordsPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
 - (id)_researchStudyUsageDescription;
 - (id)_clientClinicalReadAuthorizationUsageDescription;
 - (id)_clientReadAuthorizationUsageDescription;
 - (id)_clientWriteAuthorizationUsageDescription;
 - (void)_validatePurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
-- (void)_validateAuthorizationInfoPlist;
+- (void)_validateAuthorizationRequiredTypes;
 - (void)requestAuthorizationToShareTypes:(id)arg1 readTypes:(id)arg2 shouldPrompt:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_validateAuthorizationRequestWithShareTypes:(id)arg1 readTypes:(id)arg2;
 - (void)requestAuthorizationToShareTypes:(id)arg1 readTypes:(id)arg2 completion:(CDUnknownBlockType)arg3;

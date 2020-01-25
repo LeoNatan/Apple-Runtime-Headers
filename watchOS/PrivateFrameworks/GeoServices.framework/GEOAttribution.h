@@ -28,8 +28,10 @@
     unsigned int _readerMarkLength;
     struct os_unfair_lock_s _readerLock;
     unsigned int _dataSet;
+    unsigned int _linkDisplayStringIndex;
     struct {
         unsigned int has_dataSet:1;
+        unsigned int has_linkDisplayStringIndex:1;
         unsigned int read_unknownFields:1;
         unsigned int read_regions:1;
         unsigned int read_badgeChecksum:1;
@@ -49,6 +51,7 @@
         unsigned int wrote_resources:1;
         unsigned int wrote_url:1;
         unsigned int wrote_dataSet:1;
+        unsigned int wrote_linkDisplayStringIndex:1;
     } _flags;
 }
 
@@ -67,6 +70,8 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasLinkDisplayStringIndex;
+@property(nonatomic) unsigned int linkDisplayStringIndex;
 @property(nonatomic) _Bool hasDataSet;
 @property(nonatomic) unsigned int dataSet;
 - (void)setRegions:(struct GEOTileSetRegion *)arg1 count:(unsigned int)arg2;

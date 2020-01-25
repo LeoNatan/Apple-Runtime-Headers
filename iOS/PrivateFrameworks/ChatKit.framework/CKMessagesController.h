@@ -18,7 +18,7 @@
 #import <ChatKit/UINavigationControllerDelegate-Protocol.h>
 #import <ChatKit/UISplitViewControllerDelegate-Protocol.h>
 
-@class CKAlertUtilities, CKConversation, CKConversationListController, CKCoreChatController, CKNavigationController, CKOnboardingController, CKViewController, NSMutableArray, NSSet, NSString, UIViewController;
+@class CKAlertUtilities, CKConversation, CKConversationListController, CKCoreChatController, CKInboxViewController, CKNavigationController, CKOnboardingController, CKViewController, NSMutableArray, NSSet, NSString, UIViewController;
 @protocol CKBrowserViewControllerProtocol, CKMessagesControllerDelegate;
 
 @interface CKMessagesController : UISplitViewController <UISplitViewControllerDelegate, UIActionSheetDelegate, CKCoreChatControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, CKChatControllerDelegate, CKComposeChatControllerDelegate, CKBrowserViewControllerStoreSendDelegate, CKOnboardingControllerDelegate, CKAlertUtilitiesProtocol, CKAlertSuppressionContextsProviding>
@@ -29,35 +29,37 @@
     unsigned int _attachmentPreviewQosClass;
     _Bool _isInitialLoad;
     id <CKMessagesControllerDelegate> _messagesControllerDelegate;
-    CKConversationListController *_conversationListController;
     CKCoreChatController *_chatController;
     CKCoreChatController *_composeChatController;
-    CKNavigationController *_conversationListNavigationController;
-    CKNavigationController *_chatNavigationController;
     CKNavigationController *_composeChatNavigationController;
     CDUnknownBlockType _deferredHandleURLBlock;
+    CKConversationListController *_conversationListController;
     CKOnboardingController *_onboardingController;
+    CKNavigationController *_conversationListNavigationController;
+    CKNavigationController *_chatNavigationController;
     CKViewController *_blankViewController;
     UIViewController *_statusBarStyleViewController;
     UIViewController<CKBrowserViewControllerProtocol> *_prewarmedCameraBrowser;
     CKAlertUtilities *_alertUtilities;
+    CKInboxViewController *_inboxViewController;
 }
 
+@property(retain, nonatomic) CKInboxViewController *inboxViewController; // @synthesize inboxViewController=_inboxViewController;
 @property(retain, nonatomic) CKAlertUtilities *alertUtilities; // @synthesize alertUtilities=_alertUtilities;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *prewarmedCameraBrowser; // @synthesize prewarmedCameraBrowser=_prewarmedCameraBrowser;
 @property(retain, nonatomic) UIViewController *statusBarStyleViewController; // @synthesize statusBarStyleViewController=_statusBarStyleViewController;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(copy, nonatomic) CDUnknownBlockType alertViewHandler; // @synthesize alertViewHandler=_alertViewHandler;
 @property(retain, nonatomic) CKViewController *blankViewController; // @synthesize blankViewController=_blankViewController;
+@property(retain, nonatomic) CKNavigationController *chatNavigationController; // @synthesize chatNavigationController=_chatNavigationController;
+@property(retain, nonatomic) CKNavigationController *conversationListNavigationController; // @synthesize conversationListNavigationController=_conversationListNavigationController;
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
+@property(retain, nonatomic) CKConversationListController *conversationListController; // @synthesize conversationListController=_conversationListController;
 @property(copy, nonatomic) CDUnknownBlockType deferredHandleURLBlock; // @synthesize deferredHandleURLBlock=_deferredHandleURLBlock;
 @property(retain, nonatomic) CKConversation *currentConversation; // @synthesize currentConversation=_currentConversation;
 @property(retain, nonatomic) CKNavigationController *composeChatNavigationController; // @synthesize composeChatNavigationController=_composeChatNavigationController;
-@property(retain, nonatomic) CKNavigationController *chatNavigationController; // @synthesize chatNavigationController=_chatNavigationController;
-@property(retain, nonatomic) CKNavigationController *conversationListNavigationController; // @synthesize conversationListNavigationController=_conversationListNavigationController;
 @property(retain, nonatomic) CKCoreChatController *composeChatController; // @synthesize composeChatController=_composeChatController;
 @property(retain, nonatomic) CKCoreChatController *chatController; // @synthesize chatController=_chatController;
-@property(retain, nonatomic) CKConversationListController *conversationListController; // @synthesize conversationListController=_conversationListController;
 @property(nonatomic) __weak id <CKMessagesControllerDelegate> messagesControllerDelegate; // @synthesize messagesControllerDelegate=_messagesControllerDelegate;
 - (void).cxx_destruct;
 - (void)teardownCamera;
@@ -92,6 +94,7 @@
 - (_Bool)showUnreadConversationsWithLastConversation:(id)arg1 ignoringMessages:(id)arg2;
 - (_Bool)hasUnreadFilteredConversationsIgnoringMessages:(id)arg1;
 - (_Bool)isShowingChatController;
+- (_Bool)isShowingInboxViewController;
 @property(readonly, nonatomic) _Bool isShowingConversationListController;
 - (_Bool)isShowingDirtyComposeModalView;
 - (_Bool)currentCompositionHasContent;
@@ -118,6 +121,7 @@
 - (id)_sharedBalloonPluginManager;
 - (void)executeDeferredHandleURLBlock;
 - (void)executeDeferredTasks;
+- (void)_conversationFilteringStateChangedNotification:(id)arg1;
 - (void)_appStateChange:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_chatRegistryDidLoad:(id)arg1;
@@ -137,6 +141,8 @@
 - (void)keyCommandNextConversation:(id)arg1;
 - (void)keyCommandDeleteConversation:(id)arg1;
 - (void)keyCommandCompose:(id)arg1;
+- (void)updateConversationListNavigationControllerViewStack;
+- (void)showInboxViewController:(_Bool)arg1;
 - (void)setCurrentConversation:(id)arg1 keepAllCurrentlyLoadedMessages:(_Bool)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)_splitViewControllerShouldRestoreResponderAfterTraitCollectionTransition:(id)arg1;

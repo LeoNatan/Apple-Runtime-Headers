@@ -364,9 +364,7 @@
 - (void)_addTrigger:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addTrigger:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *triggers;
-- (void)_enableRemoteAccess:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)enableRemoteAccess:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_queryRemoteAccessWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)queryRemoteAccessWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateAutomaticSoftwareUpdateEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(getter=isAutomaticSoftwareUpdateEnabled) _Bool automaticSoftwareUpdateEnabled; // @dynamic automaticSoftwareUpdateEnabled;

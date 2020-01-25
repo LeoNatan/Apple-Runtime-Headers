@@ -33,9 +33,10 @@
 - (void).cxx_destruct;
 - (void)requestSponsoredSearchURL:(CDUnknownBlockType)arg1;
 - (void)updateToroDownloadData:(id)arg1 forType:(long long)arg2;
+- (void)updateClickData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateClickDataWith:(id)arg1;
 - (void)updateFrequencyCapData:(id)arg1;
-- (void)updateSponsoredFrequencyCapData:(id)arg1;
+- (void)updateDESRecord:(id)arg1 forEvent:(long long)arg2;
 - (void)requestUserTargetingIdentifier:(CDUnknownBlockType)arg1;
 - (id)sponsoredSearchRequestForLanguageLocale:(id)arg1;
 - (void)requestSponsoredSearchDataRoutingInfoAndRequestIDForLocality:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

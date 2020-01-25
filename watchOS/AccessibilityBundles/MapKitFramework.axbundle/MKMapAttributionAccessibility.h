@@ -13,7 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 globalAttributions:(id)arg3 scale:(double)arg4 allowMultiLine:(_Bool)arg5;
+- (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 underlineText:(_Bool)arg3 applyLinkAttribution:(_Bool)arg4 scale:(double)arg5;
 
 @end
 

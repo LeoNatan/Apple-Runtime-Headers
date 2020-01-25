@@ -59,7 +59,8 @@
 + (void)setSpeechJobStartedUnitTestBlock:(CDUnknownBlockType)arg1;
 + (void)setSpeechJobFinishedUnitTestBlock:(CDUnknownBlockType)arg1;
 + (id)availableLanguageCodes;
-+ (id)availableVoicesForLanguageCode:(id)arg1;
++ (id)availableVoicesForLanguageCode:(id)arg1 queryingMobileAssets:(BOOL)arg2;
++ (void)setTestingAvailableVoicesForLanguageCode:(id)arg1;
 + (id)voiceAccessQueue;
 + (id)allAvailableVoices;
 + (id)refreshAllAvailableVoices:(BOOL)arg1;

@@ -28,10 +28,12 @@
 + (id)readerOutputForAsset:(id)arg1 outputSettings:(id)arg2 videoComposition:(id)arg3 error:(out id *)arg4;
 + (id)deepMutableCopyVideoComposition:(id)arg1;
 + (BOOL)updateVideoMetadataAtURL:(id)arg1 withItems:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 error:(out id *)arg4;
-+ (BOOL)readFromReader:(id)arg1 andWriteToWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 createCustomMetadata:(BOOL)arg4 geometryTransform:(id)arg5 progress:(id)arg6 error:(out id *)arg7;
++ (BOOL)readFromReader:(id)arg1 andWriteToWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 createCustomMetadata:(BOOL)arg4 geometryTransform:(id)arg5 inputSize:(struct CGSize)arg6 outputSize:(struct CGSize)arg7 progress:(id)arg8 error:(out id *)arg9;
 + (CDStruct_1b6d18a9)readStillImageTimeFromVideoAsset:(id)arg1;
++ (id)metadataTrackWithStillImageDimensionsInLivePhotoAsset:(id)arg1;
 + (id)metadataTrackWithStillImageTransformInLivePhotoAsset:(id)arg1;
 + (id)metadataTrackWithStillImageDisplayTimeMarkerInLivePhotoAsset:(id)arg1;
++ (BOOL)isMetadataTrackWithStillImageDimensionsInLivePhoto:(id)arg1;
 + (BOOL)isMetadataTrackWithStillImageTransformInLivePhoto:(id)arg1;
 + (BOOL)isMetadataTrackStillImageDisplayTimeMarkerInLivePhoto:(id)arg1;
 + (BOOL)_metadataTrack:(id)arg1 containsIdentifier:(id)arg2;

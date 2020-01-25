@@ -6,10 +6,8 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-#import <NewsArticles/NUArticleHardPaywallPresentationReporting-Protocol.h>
-
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles4) <NUArticleHardPaywallPresentationReporting>
-- (BOOL)isPreviewing;
-- (BOOL)isShowingHardPaywall;
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles4)
+- (void)footerResignsAsFirstResponder:(id)arg1;
+- (void)footerNeedsLayout:(id)arg1;
 @end
 

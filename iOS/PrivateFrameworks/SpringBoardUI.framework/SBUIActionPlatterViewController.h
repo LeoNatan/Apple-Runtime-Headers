@@ -37,6 +37,7 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_handleLongPressGestureRecognizer:(id)arg1;
 - (void)_updateKeylineViews;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;

@@ -40,7 +40,7 @@
 - (void)_initializeSpeech:(CDStruct_347baace *)arg1;
 - (void)_initializeSpeechEngine:(CDStruct_347baace *)arg1;
 - (_Bool)_footprintOrVoiceNameHasChanged:(CDStruct_347baace *)arg1;
-- (id)_ttSSpeechServerCopyVoiceNamesForLanguage:(id)arg1 voiceType:(long)arg2;
+- (id)_ttSSpeechServerCopyVoiceNamesForLanguage:(id)arg1 voiceType:(long)arg2 queryingMobileAssets:(_Bool)arg3;
 - (void)_newVoiceInstalled;
 - (void)processMarker:(int)arg1 withByteOffset:(unsigned long)arg2 markerPosition:(unsigned long)arg3 markerLength:(unsigned long)arg4 context:(CDStruct_347baace *)arg5 currentTime:(unsigned long long)arg6;
 - (unsigned char)_shouldContinueSpeechGivenMark:(CDStruct_347baace *)arg1 markType:(int)arg2 blockIfPaused:(unsigned char)arg3;

@@ -6,9 +6,10 @@
 
 #import <NewsArticles/_TtC12NewsArticles21ArticleViewController.h>
 
-#import <NewsArticles/UIScrollViewDelegate-Protocol.h>
+#import <NewsArticles/NUArticleHardPaywallPresentationReporting-Protocol.h>
 
-@interface _TtC12NewsArticles21ArticleViewController (NewsArticles5) <UIScrollViewDelegate>
-- (void)scrollViewDidScroll:(id)arg1;
+@interface _TtC12NewsArticles21ArticleViewController (NewsArticles5) <NUArticleHardPaywallPresentationReporting>
+- (_Bool)isPreviewing;
+- (_Bool)isShowingHardPaywall;
 @end
 

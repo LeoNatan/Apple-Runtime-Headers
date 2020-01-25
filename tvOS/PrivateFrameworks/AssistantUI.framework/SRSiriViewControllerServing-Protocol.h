@@ -15,9 +15,11 @@
 @protocol SRSiriViewControllerServing <NSObject, AFUISiriSessionDelegate, AFUISpeechSynthesisDelegate, SiriUIPresentationRemoteControlling>
 - (void)setWaitingForTelephonyToStart:(_Bool)arg1;
 - (void)setRunningPPT:(_Bool)arg1 withTestName:(NSString *)arg2 testOptions:(NSDictionary *)arg3;
+- (void)hostApplicationRequestsEmitUIStateTransitionForSiriDismissal:(int)arg1 withDismissalReason:(int)arg2;
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationWillEnterForeground;
 - (void)hostApplicationWillResignActive;
+- (void)didReceiveDismissalAction:(_Bool)arg1 delayForTTS:(_Bool)arg2 withDismissalReason:(unsigned long long)arg3 completion:(void (^)(void))arg4;
 - (void)didReceiveDismissalAction:(_Bool)arg1 delayForTTS:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (void)didReceiveShortTapAction;
 - (void)didReceiveBugButtonLongPress;

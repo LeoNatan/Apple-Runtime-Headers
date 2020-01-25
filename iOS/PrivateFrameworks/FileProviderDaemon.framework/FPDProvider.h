@@ -37,7 +37,6 @@
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) FPDProviderDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (void).cxx_destruct;
-- (void)writeCheckReportTo:(id)arg1 limitNumberOfItems:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(_Bool)arg2;
 - (void)dumpValue:(id)arg1 forKey:(id)arg2 to:(id)arg3;
 - (void)setEjectable:(_Bool)arg1 forDomainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

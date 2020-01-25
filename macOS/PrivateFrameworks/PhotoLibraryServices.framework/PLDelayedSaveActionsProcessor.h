@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_processDelayedAssetsForDuetDelete:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAssetsForAnalysis:(id)arg1 photoLibrary:(id)arg2 transaction:(id)arg3;
 - (void)_processDelayedAssetsForFileSystemPersistency:(id)arg1 library:(id)arg2 transaction:(id)arg3;
 - (void)_processDelayedAlbumCountsAndDateRangeUpdates:(id)arg1 library:(id)arg2 transaction:(id)arg3;

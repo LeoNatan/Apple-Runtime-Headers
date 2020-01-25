@@ -15,6 +15,7 @@
 
 @property(readonly) NSArray *updates; // @synthesize updates=_updates;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithUpdates:(id)arg1;
 
 @end

@@ -7,9 +7,11 @@
 #import <GeoServices/NSObject-Protocol.h>
 
 @class NSURLSessionTask;
+@protocol GEORequestCounterTicket;
 
 @protocol GEORequestCounterTicket <NSObject>
 - (void)requestCompletedWithResult:(unsigned char)arg1 xmitBytes:(long long)arg2 recvBytes:(long long)arg3;
 - (void)startingRequestWithTask:(NSURLSessionTask *)arg1;
+- (id <GEORequestCounterTicket>)createSubtask:(_Bool)arg1;
 @end
 

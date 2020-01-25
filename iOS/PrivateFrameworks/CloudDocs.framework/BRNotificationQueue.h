@@ -16,6 +16,7 @@
     NSMutableArray *_callbacks;
     NSMutableDictionary *_index;
     unsigned long long _dequeued;
+    unsigned long long _dequeuedNotificationCount;
 }
 
 - (void).cxx_destruct;

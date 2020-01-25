@@ -71,6 +71,7 @@
 - (id)_toggleAllCell;
 - (id)_researchStudyExplanationCell;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)_localizedSourceExplanationWithDescription:(id)arg1;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

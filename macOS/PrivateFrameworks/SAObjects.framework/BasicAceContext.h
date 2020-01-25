@@ -8,19 +8,16 @@
 
 #import <SAObjects/AceContext-Protocol.h>
 
-@class NSMutableDictionary, NSString;
+@class NSString;
 
 @interface BasicAceContext : NSObject <AceContext>
 {
-    NSMutableDictionary *_groupMap;
 }
 
 + (id)sharedBasicAceContext;
 - (id)aceObjectWithDictionary:(id)arg1;
 - (Class)classWithClassName:(id)arg1 group:(id)arg2;
 - (void)registerGroupAcronym:(id)arg1 forGroupWithIdentifier:(id)arg2;
-- (void)dealloc;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

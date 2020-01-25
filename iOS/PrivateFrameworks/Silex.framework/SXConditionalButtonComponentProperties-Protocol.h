@@ -7,8 +7,10 @@
 #import <Silex/SXConditionalComponentProperties-Protocol.h>
 
 @class NSString;
+@protocol SXAction;
 
 @protocol SXConditionalButtonComponentProperties <SXConditionalComponentProperties>
+@property(readonly, nonatomic) id <SXAction> action;
 @property(readonly, nonatomic) NSString *textStyle;
 @end
 

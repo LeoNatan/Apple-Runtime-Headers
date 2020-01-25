@@ -230,6 +230,7 @@
 - (BOOL)_preserveResponderAcrossWindows;
 - (BOOL)_shouldRestoreFirstResponder;
 - (BOOL)_shouldKeepCurrentFirstResponder;
+- (BOOL)_shouldPreserveFirstResponder;
 - (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (BOOL)_shouldDisablePresentersAppearanceCallbacks;
 - (id)_activePresentationController;

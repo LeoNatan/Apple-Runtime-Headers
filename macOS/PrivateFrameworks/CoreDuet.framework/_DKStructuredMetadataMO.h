@@ -106,6 +106,7 @@
 @property(copy, nonatomic) NSString *_DKLocationApplicationActivityMetadataKey__stateOrProvince; // @dynamic _DKLocationApplicationActivityMetadataKey__stateOrProvince;
 @property(copy, nonatomic) NSString *_DKLocationApplicationActivityMetadataKey__subThoroughfare; // @dynamic _DKLocationApplicationActivityMetadataKey__subThoroughfare;
 @property(copy, nonatomic) NSString *_DKLocationApplicationActivityMetadataKey__thoroughfare; // @dynamic _DKLocationApplicationActivityMetadataKey__thoroughfare;
+@property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__altitude; // @dynamic _DKLocationMetadataKey__altitude;
 @property(copy, nonatomic) NSString *_DKLocationMetadataKey__identifier; // @dynamic _DKLocationMetadataKey__identifier;
 @property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__latitude; // @dynamic _DKLocationMetadataKey__latitude;
 @property(copy, nonatomic) NSNumber *_DKLocationMetadataKey__longitude; // @dynamic _DKLocationMetadataKey__longitude;
@@ -148,6 +149,8 @@
 @property(copy, nonatomic) NSString *_DKNowPlayingMetadataKey__title; // @dynamic _DKNowPlayingMetadataKey__title;
 @property(copy, nonatomic) NSDate *_DKPeriodMetadataKey__periodEnd; // @dynamic _DKPeriodMetadataKey__periodEnd;
 @property(copy, nonatomic) NSDate *_DKPeriodMetadataKey__periodStart; // @dynamic _DKPeriodMetadataKey__periodStart;
+@property(copy, nonatomic) NSString *_DKPhotosMetadataKey__identifier; // @dynamic _DKPhotosMetadataKey__identifier;
+@property(copy, nonatomic) NSString *_DKPhotosMetadataKey__subset; // @dynamic _DKPhotosMetadataKey__subset;
 @property(copy, nonatomic) NSString *_DKRelevantShortcutMetadataKey__keyImageProxyIdentifier; // @dynamic _DKRelevantShortcutMetadataKey__keyImageProxyIdentifier;
 @property(retain, nonatomic) NSData *_DKRelevantShortcutMetadataKey__serializedRelevantShortcut; // @dynamic _DKRelevantShortcutMetadataKey__serializedRelevantShortcut;
 @property(copy, nonatomic) NSString *_DKSafariHistoryMetadataKey__title; // @dynamic _DKSafariHistoryMetadataKey__title;

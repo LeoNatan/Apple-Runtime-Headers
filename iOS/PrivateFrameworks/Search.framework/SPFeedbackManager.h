@@ -17,6 +17,8 @@
     NSObject<OS_dispatch_queue> *_feedbackQueue;
 }
 
++ (void)bumpPriorityOnQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
++ (void)flushFeedbackWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *feedbackQueue; // @synthesize feedbackQueue=_feedbackQueue;
 @property(retain, nonatomic) NSObject<SFFeedbackListener> *feedbackListener; // @synthesize feedbackListener=_feedbackListener;

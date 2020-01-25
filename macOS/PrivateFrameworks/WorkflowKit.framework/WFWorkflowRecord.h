@@ -35,6 +35,7 @@
     NSString *_lastMigratedClientVersion;
     long long _lastSyncedHash;
     NSString *_lastSavedOnDeviceName;
+    unsigned long long _estimatedSize;
     NSSet *_accessResourcePerWorkflowStates;
     long long _remoteQuarantineStatus;
     NSNumber *_location;
@@ -47,6 +48,7 @@
 @property(readonly, nonatomic) NSNumber *location; // @synthesize location=_location;
 @property(nonatomic) long long remoteQuarantineStatus; // @synthesize remoteQuarantineStatus=_remoteQuarantineStatus;
 @property(copy, nonatomic) NSSet *accessResourcePerWorkflowStates; // @synthesize accessResourcePerWorkflowStates=_accessResourcePerWorkflowStates;
+@property(readonly, nonatomic) unsigned long long estimatedSize; // @synthesize estimatedSize=_estimatedSize;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
 @property(nonatomic) long long lastSyncedHash; // @synthesize lastSyncedHash=_lastSyncedHash;
 @property(copy, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;

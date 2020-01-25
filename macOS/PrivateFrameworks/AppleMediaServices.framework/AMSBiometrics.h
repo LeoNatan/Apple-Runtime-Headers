@@ -17,11 +17,13 @@
 + (id)signChallenge:(id)arg1 withAccount:(id)arg2 clientInfo:(id)arg3 options:(id)arg4;
 + (id)setState:(long long)arg1 forAccount:(id)arg2;
 + (id)minimumACLVersionForAction:(long long)arg1;
++ (BOOL)isActionSupported:(long long)arg1 withConstraints:(id)arg2;
 + (BOOL)isActionSupported:(long long)arg1 withAccessControl:(struct __SecAccessControl *)arg2;
 + (id)headersWithAccount:(id)arg1 options:(id)arg2 signatureResult:(id)arg3;
 + (id)handleResponse:(id)arg1 session:(id)arg2 taskInfo:(id)arg3 shouldFallbackToPassword:(char *)arg4;
 + (BOOL)deleteKeysWithError:(id *)arg1;
 + (id)disableForAccount:(id)arg1;
++ (id)ACLVersionForConstraints:(id)arg1;
 + (id)ACLVersionForAccessControl:(struct __SecAccessControl *)arg1;
 + (void)setDeviceState:(long long)arg1;
 + (long long)type;

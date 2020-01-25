@@ -14,12 +14,12 @@
     NSString *_key;
     int _source;
     NSString *_runSource;
-    NSString *_actionName;
+    NSString *_actionIdentifier;
 }
 
 + (Class)codableEventClass;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
-@property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
+@property(copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(copy, nonatomic) NSString *runSource; // @synthesize runSource=_runSource;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;

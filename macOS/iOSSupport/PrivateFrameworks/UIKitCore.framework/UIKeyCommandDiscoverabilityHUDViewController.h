@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 - (void)animateOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)_updateVisualStyle;

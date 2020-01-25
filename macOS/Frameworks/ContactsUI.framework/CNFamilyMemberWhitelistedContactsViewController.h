@@ -62,6 +62,7 @@
 - (void)addNewContact:(id)arg1;
 - (void)addContactFromLocalContacts:(id)arg1;
 - (void)addContactFromMyFamilyMemberContacts:(id)arg1;
+- (BOOL)isManagingFamilyMembersWhitelist;
 - (id)addToWhitelistOptionsMenu;
 - (void)showAddToWhitelistDropdown;
 - (void)segmentedControlChanged:(id)arg1;

@@ -33,11 +33,13 @@
     double _timeAtDismissal;
     SPUITestingHelper *_testingHelper;
     unsigned long long _queryId;
+    unsigned long long _feedbackBackgroundTaskIdentifier;
 }
 
 + (_Bool)isFeedbackSelector:(SEL)arg1;
 + (void)_updateHeaderView:(id)arg1 fromText:(id)arg2 fromToken:(id)arg3;
 + (_Bool)shouldShowAsTypedSuggestion;
+@property unsigned long long feedbackBackgroundTaskIdentifier; // @synthesize feedbackBackgroundTaskIdentifier=_feedbackBackgroundTaskIdentifier;
 @property unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(retain) SPUITestingHelper *testingHelper; // @synthesize testingHelper=_testingHelper;
 @property double timeAtDismissal; // @synthesize timeAtDismissal=_timeAtDismissal;
@@ -83,6 +85,8 @@
 - (id)viewControllerForPresenting;
 - (void)didScrollPastBottomOfContent;
 - (void)didTapInEmptyRegion;
+- (void)endBackgroundTaskIfNeeded;
+- (void)spotlightDidBackground;
 - (void)searchViewDidDismissWithReason:(unsigned long long)arg1;
 - (void)clearSearchResults;
 - (void)returnKeyPressed;
@@ -96,8 +100,7 @@
 - (void)searchViewDidUpdatePresentationProgress:(double)arg1;
 - (void)searchViewWillPresentFromSource:(unsigned long long)arg1;
 - (void)performSearchWithSuggestion:(id)arg1;
-- (void)performTestSearchWithQuery:(id)arg1 event:(unsigned long long)arg2 sourcePreference:(long long)arg3;
-- (void)performSearchWithQuery:(id)arg1 forSuggestions:(_Bool)arg2;
+- (void)performTestSearchWithQuery:(id)arg1 event:(unsigned long long)arg2 sourcePreference:(unsigned long long)arg3;
 - (void)shortLookViewController:(id)arg1 didDismissLongLookWithReason:(long long)arg2 actionCompleted:(_Bool)arg3 shouldClearAction:(_Bool)arg4;
 - (void)sendActionFeedbackFromShortLookViewController:(id)arg1 isPunchout:(_Bool)arg2;
 - (void)shortLookViewController:(id)arg1 willDismissLongLookWithReason:(long long)arg2 actionCompleted:(_Bool)arg3 shouldClearAction:(_Bool)arg4;

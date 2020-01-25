@@ -127,6 +127,7 @@
 @property(readonly, nonatomic) UIDropInteraction *textDropInteraction;
 @property(readonly, nonatomic) UIDragInteraction *textDragInteraction;
 - (BOOL)_allowHighlightForTextInteractableItem:(id)arg1;
+- (BOOL)_interactionPossibleWithAttachment:(id)arg1;
 - (id)_textInteractableItemAtPoint:(struct CGPoint)arg1;
 - (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;

@@ -8,7 +8,6 @@
 
 @interface TSKeyCommand : NSObject
 {
-    // Error parsing type: , name: invalidator
     // Error parsing type: , name: key
     // Error parsing type: , name: title
     // Error parsing type: , name: flags

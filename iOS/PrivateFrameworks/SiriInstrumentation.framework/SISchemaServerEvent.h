@@ -6,33 +6,27 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
-#import <SiriInstrumentation/SISchemaServerEvent-Protocol.h>
+@class NSData, SISchemaConversationTrace, SISchemaDeviceFixedContext, SISchemaServerEventMetadata, SISchemaSpeechResultSelected, SISchemaTurnInteraction, SISchemaUserSpeechDuration;
 
-@class NSData, NSString, SISchemaConversationTrace, SISchemaDeviceFixedContext, SISchemaServerEventMetadata, SISchemaSpeechResultSelected, SISchemaTurnInteraction, SISchemaUserSpeechDuration;
-
-@interface SISchemaServerEvent : PBCodable <SISchemaServerEvent, NSSecureCoding>
+@interface SISchemaServerEvent : PBCodable
 {
-    SISchemaServerEventMetadata *_eventMetadata;
+    unsigned long long _whichEvent_Type;
     SISchemaUserSpeechDuration *_userSpeechDuration;
     SISchemaConversationTrace *_serverConversationTrace;
     SISchemaTurnInteraction *_turnInteraction;
     SISchemaSpeechResultSelected *_speechResultSelected;
     SISchemaDeviceFixedContext *_serverDeviceFixedContext;
-    unsigned long long _whichEvent_Type;
+    SISchemaServerEventMetadata *_eventMetadata;
 }
 
-+ (id)getTagForEventTypeClass:(Class)arg1;
-+ (Class)getEventTypeClassForTag:(int)arg1;
-@property(readonly, nonatomic) unsigned long long whichEvent_Type; // @synthesize whichEvent_Type=_whichEvent_Type;
 @property(retain, nonatomic) SISchemaServerEventMetadata *eventMetadata; // @synthesize eventMetadata=_eventMetadata;
+@property(readonly, nonatomic) unsigned long long whichEvent_Type; // @synthesize whichEvent_Type=_whichEvent_Type;
 - (void).cxx_destruct;
-- (void)setEventType:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 - (id)dictionaryRepresentation;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
@@ -41,11 +35,6 @@
 @property(retain, nonatomic) SISchemaTurnInteraction *turnInteraction; // @synthesize turnInteraction=_turnInteraction;
 @property(retain, nonatomic) SISchemaConversationTrace *serverConversationTrace; // @synthesize serverConversationTrace=_serverConversationTrace;
 @property(retain, nonatomic) SISchemaUserSpeechDuration *userSpeechDuration; // @synthesize userSpeechDuration=_userSpeechDuration;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

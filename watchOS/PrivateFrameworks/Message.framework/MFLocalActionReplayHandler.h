@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <Message/EFLoggable-Protocol.h>
+#import <Message/EFPubliclyDescribable-Protocol.h>
 
 @class EDLocalActionPersistence, EDMessageChangeManager, MFMailMessageLibrary, MailAccount, NSMutableArray, NSString;
 @protocol EFScheduler;
 
-@interface MFLocalActionReplayHandler : NSObject <EFLoggable>
+@interface MFLocalActionReplayHandler : NSObject <EFLoggable, EFPubliclyDescribable>
 {
     _Bool _replayingActions;
     _Bool _needToCheckForNewActions;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) MFMailMessageLibrary *library; // @synthesize library=_library;
 @property _Bool replayingActions; // @synthesize replayingActions=_replayingActions;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 - (void)_checkForNewActions;
 - (void)_replayAllActions;
 - (void)addNewAction:(id)arg1;

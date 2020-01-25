@@ -15,8 +15,10 @@
     UIStackView *_columnStack;
     UIStackView *_containerStack;
     UIStackView *_marginStack;
+    long long _context;
 }
 
+@property(nonatomic) long long context; // @synthesize context=_context;
 @property(retain, nonatomic) UIStackView *marginStack; // @synthesize marginStack=_marginStack;
 @property(retain, nonatomic) UIStackView *containerStack; // @synthesize containerStack=_containerStack;
 @property(retain, nonatomic) UIStackView *columnStack; // @synthesize columnStack=_columnStack;
@@ -27,7 +29,7 @@
 - (void)lowerPriorityConstraint:(id)arg1;
 - (void)_configureStacks;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
+- (id)initWithContext:(long long)arg1;
 
 @end
 

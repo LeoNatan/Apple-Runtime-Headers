@@ -54,7 +54,6 @@
 - (id)description;
 - (void)_relinquishPowerAssertion;
 - (_Bool)dateIsCurrentMinute:(id)arg1;
-- (void)adjustCurrentAnimationEndDateToNowTimerDate;
 - (void)dealloc;
 - (id)init;
 - (id)initWithFirstAnimationStartDate:(id)arg1 firstAnimationEndDate:(id)arg2 lastFrameFromPreviousUpdate:(id)arg3 delegate:(id)arg4;

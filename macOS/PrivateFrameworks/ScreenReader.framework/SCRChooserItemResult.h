@@ -8,14 +8,14 @@
 
 #import <ScreenReader/NSCopying-Protocol.h>
 
-@class NSData, NSString, NSValue, SCRElement, SCRUIElement;
+@class NSString, NSValue, SCRElement, SCRUIElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRChooserItemResult : NSObject <NSCopying>
 {
     SCRUIElement *_uiElement;
     SCRElement *_element;
-    NSData *_loader;
+    NSString *_loader;
     NSString *_rotorIdentifier;
     NSValue *_textRange;
     NSString *_descriptionOverride;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *descriptionOverride; // @synthesize descriptionOverride=_descriptionOverride;
 @property(readonly, nonatomic) NSValue *textRange; // @synthesize textRange=_textRange;
 @property(copy, nonatomic) NSString *rotorIdentifier; // @synthesize rotorIdentifier=_rotorIdentifier;
-@property(retain, nonatomic) NSData *loader; // @synthesize loader=_loader;
+@property(copy, nonatomic) NSString *loader; // @synthesize loader=_loader;
 @property(retain, nonatomic) SCRElement *element; // @synthesize element=_element;
 @property(readonly, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
 - (void).cxx_destruct;

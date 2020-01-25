@@ -6,24 +6,31 @@
 
 #import <objc/NSObject.h>
 
+#import <MapsSuggestions/MSPContainerObserver-Protocol.h>
 #import <MapsSuggestions/MSPQueryDelegate-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsShortcutStorage-Protocol.h>
 
-@class MSPPinnedPlacesQuery, NSString;
-@protocol OS_dispatch_queue;
+@class MSPPinnedPlacesQuery, NSArray, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface MapsSuggestionsMSPShortcutStorage : NSObject <MSPQueryDelegate, MapsSuggestionsShortcutStorage>
+@interface MapsSuggestionsMSPShortcutStorage : NSObject <MSPQueryDelegate, MSPContainerObserver, MapsSuggestionsShortcutStorage>
 {
     CDUnknownBlockType _changeHandler;
     BOOL _hasAttemptedLoadingContents;
     MSPPinnedPlacesQuery *_query;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    NSObject<OS_dispatch_semaphore> *_containerLoadWait;
+    NSArray *_cachedPlaces;
 }
 
+@property(retain, nonatomic) NSArray *cachedPlaces; // @synthesize cachedPlaces=_cachedPlaces;
+@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *containerLoadWait; // @synthesize containerLoadWait=_containerLoadWait;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) BOOL hasAttemptedLoadingContents; // @synthesize hasAttemptedLoadingContents=_hasAttemptedLoadingContents;
 @property(retain, nonatomic) MSPPinnedPlacesQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+- (void)containerDidLoadFromPersister:(id)arg1;
+- (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(long long)arg4 context:(id)arg5;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (BOOL)moveShortcutToFront:(id)arg1 handler:(CDUnknownBlockType)arg2;

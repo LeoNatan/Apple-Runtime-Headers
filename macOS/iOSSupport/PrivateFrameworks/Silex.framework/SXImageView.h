@@ -6,19 +6,20 @@
 
 #import <UIKit/UIImageView.h>
 
-#import <Silex/STAXCustomRotorItemProvider-Protocol.h>
+#import <Silex/SWReachabilityObserver-Protocol.h>
+#import <Silex/SXAXCustomRotorItemProvider-Protocol.h>
 #import <Silex/SXAnimatedImageDelegate-Protocol.h>
 #import <Silex/SXDraggable-Protocol.h>
-#import <Silex/SXReachabilityObserver-Protocol.h>
 
 @class NSMapTable, NSString, NSTimer, SXAnimatedImage, SXImageResource, UIActivityIndicatorView, UIImage, UILongPressGestureRecognizer, UIView;
-@protocol NSItemProviderWriting, SXImageViewDelegate, SXReachabilityProvider, SXResourceDataSource;
+@protocol NSItemProviderWriting, SWReachabilityProvider, SXImageViewDelegate, SXResourceDataSource;
 
-@interface SXImageView : UIImageView <STAXCustomRotorItemProvider, SXAnimatedImageDelegate, SXReachabilityObserver, SXDraggable>
+@interface SXImageView : UIImageView <SXAXCustomRotorItemProvider, SXAnimatedImageDelegate, SWReachabilityObserver, SXDraggable>
 {
     BOOL _shouldShowLoadingIndicator;
     BOOL _scrubbingEnabled;
     BOOL _isScrubbing;
+    BOOL _isDecorative;
     BOOL _autoPlayEnabled;
     BOOL _shouldResume;
     BOOL _shouldResumeAfterLoad;
@@ -29,7 +30,7 @@
     unsigned long long _frameIndex;
     CDUnknownBlockType _frameChangeBlock;
     id <SXResourceDataSource> _resourceDataSource;
-    id <SXReachabilityProvider> _reachabilityProvider;
+    id <SWReachabilityProvider> _reachabilityProvider;
     CDUnknownBlockType _preferredQualityImageRequestCancelHandler;
     CDUnknownBlockType _highQualityImageRequestCancelHandler;
     UIImage *_preferredQualityImage;
@@ -64,12 +65,13 @@
 @property(nonatomic) struct CGSize preferredQualityLoadingImageSize; // @synthesize preferredQualityLoadingImageSize=_preferredQualityLoadingImageSize;
 @property(copy, nonatomic) CDUnknownBlockType highQualityImageRequestCancelHandler; // @synthesize highQualityImageRequestCancelHandler=_highQualityImageRequestCancelHandler;
 @property(copy, nonatomic) CDUnknownBlockType preferredQualityImageRequestCancelHandler; // @synthesize preferredQualityImageRequestCancelHandler=_preferredQualityImageRequestCancelHandler;
-@property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
+@property(readonly, nonatomic) id <SWReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 @property(readonly, nonatomic) __weak id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 @property(nonatomic) BOOL autoPlayEnabled; // @synthesize autoPlayEnabled=_autoPlayEnabled;
 @property(copy, nonatomic) CDUnknownBlockType frameChangeBlock; // @synthesize frameChangeBlock=_frameChangeBlock;
 @property(nonatomic) unsigned long long frameIndex; // @synthesize frameIndex=_frameIndex;
 @property(readonly, nonatomic) SXAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
+@property(nonatomic) BOOL isDecorative; // @synthesize isDecorative=_isDecorative;
 @property(nonatomic) BOOL isScrubbing; // @synthesize isScrubbing=_isScrubbing;
 @property(nonatomic) __weak id <SXImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize preferredImageSize; // @synthesize preferredImageSize=_preferredImageSize;

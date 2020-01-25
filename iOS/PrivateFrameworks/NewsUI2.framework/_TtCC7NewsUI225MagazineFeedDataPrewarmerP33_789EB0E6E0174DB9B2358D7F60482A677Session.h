@@ -13,6 +13,7 @@
     // Error parsing type: , name: $__lazy_storage_$_name
     // Error parsing type: , name: identifier
     // Error parsing type: , name: feedRules
+    // Error parsing type: , name: feedManager
     // Error parsing type: , name: feedServiceConfigFetcher
     // Error parsing type: , name: feedService
     // Error parsing type: , name: feedConfigurationService

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MFMailbox, NSArray;
+@class MFMailbox, NSArray, NSString;
 @protocol EDMessageChangeHookResponder, MFAddProgressMonitor;
 
 @interface MFLibraryMessageWriter : NSObject
@@ -19,6 +19,7 @@
     BOOL _copyFiles;
     BOOL _isInitialImport;
     BOOL _isMailboxRebuild;
+    NSString *_dataDirectory;
     NSArray *_messagesToWrite;
     MFMailbox *_destinationMailbox;
     id <MFAddProgressMonitor> _progressDelegate;
@@ -41,6 +42,7 @@
 @property(nonatomic) BOOL fetchBodies; // @synthesize fetchBodies=_fetchBodies;
 @property(readonly, nonatomic) MFMailbox *destinationMailbox; // @synthesize destinationMailbox=_destinationMailbox;
 @property(readonly, copy, nonatomic) NSArray *messagesToWrite; // @synthesize messagesToWrite=_messagesToWrite;
+@property(copy, nonatomic) NSString *dataDirectory; // @synthesize dataDirectory=_dataDirectory;
 - (void).cxx_destruct;
 - (void)_copyMessageAuxiliaryTables:(id)arg1 originalLibraryID:(long long)arg2 newLibraryID:(long long)arg3;
 - (void)_cleanupTablesReferencingMessageID:(long long)arg1 preparedStatements:(id)arg2;

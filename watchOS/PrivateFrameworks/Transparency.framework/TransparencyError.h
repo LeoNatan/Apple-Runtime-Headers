@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)hasUnknownSPKIHashError:(id *)arg1;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 underlyingError:(id)arg3 description:(id)arg4;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 errorLevel:(unsigned int)arg3 underlyingError:(id)arg4 description:(id)arg5;

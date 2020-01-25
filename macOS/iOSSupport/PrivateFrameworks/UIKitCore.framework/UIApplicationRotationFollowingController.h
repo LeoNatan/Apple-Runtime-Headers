@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) BOOL sizesWindowToScene; // @synthesize sizesWindowToScene=_sizesWindowToScene;
+- (BOOL)_canShowWhileLocked;
 - (id)__autorotationSanityCheckObjectFromSource:(id)arg1 selector:(SEL)arg2;
 - (void)window:(id)arg1 setupWithInterfaceOrientation:(long long)arg2;
 - (long long)_preferredInterfaceOrientationGivenCurrentOrientation:(long long)arg1;

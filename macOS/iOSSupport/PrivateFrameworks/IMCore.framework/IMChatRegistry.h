@@ -91,6 +91,7 @@
 - (id)_chatsWithMessage:(id)arg1;
 - (id)_allGUIDsForChat:(id)arg1;
 - (void)handleIMChatParticipantsDidChange:(id)arg1;
+- (id)unblackholeAndLoadChatWithIMHandles:(id)arg1;
 - (id)loadChatFromDaemonWithChatIdentifier:(id)arg1;
 - (id)_sortedParticipantIDHashForParticipants:(id)arg1;
 - (void)_addChat:(id)arg1 participantSet:(id)arg2;
@@ -227,7 +228,9 @@
 - (void)_removeChatIdFromChatIdToLastMessageItemMap:(id)arg1;
 - (void)lastMessageForAllChats:(id)arg1;
 - (void)blackholedChatsExist:(BOOL)arg1;
+- (void)previouslyBlackholedChatLoadedWithHandleIDs:(id)arg1 chat:(id)arg2;
 - (void)chatLoadedWithChatIdentifier:(id)arg1 chats:(id)arg2;
+- (void)_previouslyBlackholedChatLoadedWithHandleIDs:(id)arg1 chat:(id)arg2;
 - (void)_chatLoadedWithChatIdentifier:(id)arg1 chats:(id)arg2;
 - (void)setupComplete;
 - (void)_daemonReallyDied:(id)arg1;

@@ -22,7 +22,6 @@
 @property(readonly, nonatomic) __weak NSString *commenterEmail;
 - (_Bool)canBeDeletedByUser;
 - (id)commenterDisplayName;
-- (id)_missingCommenterDisplayName;
 - (_Bool)isInterestingForAlbumsSorting;
 - (_Bool)shouldNotifyAsNotificationWithMediaStreamInfo:(id)arg1 asCaptionOnly:(_Bool *)arg2;
 - (_Bool)_isInterestingToUser;

@@ -24,7 +24,7 @@
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
 + (BOOL)canMakePayments;
-@property(nonatomic) id <PKPaymentAuthorizationControllerPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
+@property(nonatomic) __weak id <PKPaymentAuthorizationControllerPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(retain, nonatomic) PKPaymentAuthorizationCoordinator *paymentCoordinator; // @synthesize paymentCoordinator=_paymentCoordinator;
 @property(nonatomic) __weak id <PKPaymentAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

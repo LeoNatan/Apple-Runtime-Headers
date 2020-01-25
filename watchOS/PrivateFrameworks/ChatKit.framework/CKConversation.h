@@ -23,6 +23,8 @@
     _Bool _needsReload;
     _Bool _hasLoadedAllMessages;
     _Bool _isReportedAsSpam;
+    _Bool _wasKnownSender;
+    _Bool _holdWasKnownSenderUpdates;
     NSArray *_pendingHandles;
     int _wasDetectedAsSMSSpam;
     int _wasDetectedAsiMessageSpam;
@@ -57,6 +59,8 @@
 + (_Bool)_sms_canSendMessageWithMediaObjectTypes:(int *)arg1 phoneNumber:(id)arg2 simID:(id)arg3 errorCode:(int *)arg4;
 + (int)_sms_maxAttachmentCountForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (_Bool)_sms_mediaObjectPassesRestriction:(id)arg1;
+@property(nonatomic) _Bool holdWasKnownSenderUpdates; // @synthesize holdWasKnownSenderUpdates=_holdWasKnownSenderUpdates;
+@property(nonatomic) _Bool wasKnownSender; // @synthesize wasKnownSender=_wasKnownSender;
 @property(retain, nonatomic) NSDate *dateLastViewed; // @synthesize dateLastViewed=_dateLastViewed;
 @property(retain, nonatomic) NSNumber *businessConversation; // @synthesize businessConversation=_businessConversation;
 @property(nonatomic) _Bool isReportedAsSpam; // @synthesize isReportedAsSpam=_isReportedAsSpam;
@@ -73,6 +77,9 @@
 @property(retain, nonatomic) IMChat *chat; // @synthesize chat=_chat;
 @property(copy, nonatomic) NSArray *pendingHandles; // @synthesize pendingHandles=_pendingHandles;
 - (void).cxx_destruct;
+- (_Bool)isBlockedByCommunicationLimits;
+- (void)updateWasKnownSender;
+- (_Bool)isKnownSender;
 - (id)copyForPendingConversation;
 - (id)displayNameForMediaObjects:(id)arg1 subject:(id)arg2;
 - (id)_headerTitleForPendingMediaObjects:(id)arg1 subject:(id)arg2 onService:(id)arg3;
@@ -86,7 +93,9 @@
 - (id)fastPreviewTextIgnoringPluginContent;
 @property(nonatomic) NSString *displayName;
 @property(readonly, nonatomic) _Bool hasDisplayName;
+- (id)nameWithRawAddresses:(_Bool)arg1;
 @property(readonly, nonatomic) NSString *name; // @dynamic name;
+@property(readonly, nonatomic) NSString *rawAddressedName;
 - (void)fetchSuggestedNameIfNecessary;
 @property(readonly, nonatomic) _Bool shouldShowCharacterCount;
 @property(readonly, copy, nonatomic) NSString *senderIdentifier;
@@ -198,7 +207,6 @@
 - (id)initWithChat:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)summaryTextForBlockedConversation;
 - (_Bool)shouldBeBlockedDueToDowntime;
 - (_Bool)supportsSurf;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectTransitIncidents:(id)arg2;

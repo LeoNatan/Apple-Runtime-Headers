@@ -6,22 +6,22 @@
 
 #import <Silex/SXComponentView.h>
 
-#import <Silex/SXReachabilityObserver-Protocol.h>
+#import <Silex/SWReachabilityObserver-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NFPendingPromise, NFStateMachine, NSString, SXComponentExposureMonitor, SXWebContentComponentExposureEvent, SXWebContentComponentInteractionManager, SXWebContentContainerViewController, UIActivityIndicatorView, UILabel, UITapGestureRecognizer;
-@protocol SXAnalyticsReporting, SXLayoutInvalidator, SXReachabilityProvider, SXResourceDataSource, SXWebContentConfigurationProvider, SXWebContentDataSourceProviding, SXWebContentLoadingPolicyProvider, SXWebContentNavigationManager;
+@class NFPendingPromise, NFStateMachine, NSString, SWContainerViewController, SXComponentExposureMonitor, SXWebContentComponentExposureEvent, SXWebContentComponentInteractionManager, UIActivityIndicatorView, UILabel, UITapGestureRecognizer;
+@protocol SWLoadingPolicyProvider, SWNavigationManager, SWReachabilityProvider, SXAnalyticsReporting, SXLayoutInvalidator, SXResourceDataSource, SXWebContentConfigurationProvider, SXWebContentDataSourceProviding;
 
-@interface SXWebContentComponentView : SXComponentView <SXViewportChangeListener, SXReachabilityObserver>
+@interface SXWebContentComponentView : SXComponentView <SXViewportChangeListener, SWReachabilityObserver>
 {
     id <SXAnalyticsReporting> _analyticsReporting;
-    SXWebContentContainerViewController *_containerViewController;
+    SWContainerViewController *_containerViewController;
     id <SXWebContentConfigurationProvider> _configurationProvider;
-    id <SXWebContentNavigationManager> _navigationManager;
+    id <SWNavigationManager> _navigationManager;
     SXWebContentComponentInteractionManager *_interactionManager;
-    id <SXReachabilityProvider> _reachabilityProvider;
+    id <SWReachabilityProvider> _reachabilityProvider;
     id <SXResourceDataSource> _resourceDataSource;
-    id <SXWebContentLoadingPolicyProvider> _loadingPolicyProvider;
+    id <SWLoadingPolicyProvider> _loadingPolicyProvider;
     id <SXLayoutInvalidator> _layoutInvalidator;
     NFStateMachine *_stateMachine;
     UIActivityIndicatorView *_loadingIndicator;
@@ -42,13 +42,13 @@
 @property(readonly, nonatomic) UIActivityIndicatorView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) id <SXLayoutInvalidator> layoutInvalidator; // @synthesize layoutInvalidator=_layoutInvalidator;
-@property(readonly, nonatomic) id <SXWebContentLoadingPolicyProvider> loadingPolicyProvider; // @synthesize loadingPolicyProvider=_loadingPolicyProvider;
+@property(readonly, nonatomic) id <SWLoadingPolicyProvider> loadingPolicyProvider; // @synthesize loadingPolicyProvider=_loadingPolicyProvider;
 @property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
-@property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
+@property(readonly, nonatomic) id <SWReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 @property(readonly, nonatomic) SXWebContentComponentInteractionManager *interactionManager; // @synthesize interactionManager=_interactionManager;
-@property(readonly, nonatomic) id <SXWebContentNavigationManager> navigationManager; // @synthesize navigationManager=_navigationManager;
+@property(readonly, nonatomic) id <SWNavigationManager> navigationManager; // @synthesize navigationManager=_navigationManager;
 @property(readonly, nonatomic) id <SXWebContentConfigurationProvider> configurationProvider; // @synthesize configurationProvider=_configurationProvider;
-@property(readonly, nonatomic) SXWebContentContainerViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
+@property(readonly, nonatomic) SWContainerViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 - (void).cxx_destruct;
 - (BOOL)useLightForegroundColor;

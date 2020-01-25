@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)registerResponse:(id)arg1 position:(id)arg2 isCanned:(BOOL)arg3 isUsingQuickResponses:(BOOL)arg4 locale:(id)arg5 modelConfigPath:(id)arg6;
 - (id)preResponseItemArrayFromQuickResponses:(id)arg1;
-- (void)preResponseItemsForMessage:(id)arg1 maximumResponses:(unsigned long long)arg2 conversationHistory:(id)arg3 language:(id)arg4 modelFilePath:(id)arg5 modelConfigPath:(id)arg6 registerDisplayed:(BOOL)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)preResponseItemsForMessage:(id)arg1 maximumResponses:(unsigned long long)arg2 conversationHistory:(id)arg3 forContext:(id)arg4 time:(id)arg5 language:(id)arg6 modelFilePath:(id)arg7 modelConfigPath:(id)arg8 registerDisplayed:(BOOL)arg9 completion:(CDUnknownBlockType)arg10;
 - (void)setRemoteObjectProxy:(id)arg1;
 
 @end

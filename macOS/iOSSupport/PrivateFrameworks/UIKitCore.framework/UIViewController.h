@@ -172,6 +172,7 @@
     struct CGRect __embeddedViewFrame;
 }
 
++ (id)_whitelistOfSubclassableViewControllersMarkedSafe;
 + (BOOL)_allViewControllersInArray:(id)arg1 allowAutorotationToInterfaceOrientation:(long long)arg2 predicate:(CDUnknownBlockType)arg3;
 + (void)attemptRotationToDeviceOrientation;
 + (BOOL)_doesOverrideLegacyShouldAutorotateMethod;

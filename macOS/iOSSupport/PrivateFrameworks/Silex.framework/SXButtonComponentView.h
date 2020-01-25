@@ -30,6 +30,9 @@
 - (void)setAbsoluteFrame:(struct CGRect)arg1;
 - (void)didMoveToSuperview;
 - (void)presentComponentWithChanges:(CDStruct_74be42e1)arg1;
+- (id)accessibilityHint;
+- (id)accessibilityValue;
+- (id)accessibilityLabel;
 - (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4;
 
 // Remaining properties

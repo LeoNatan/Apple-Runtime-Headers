@@ -18,7 +18,7 @@
 - (void)didCompleteIPodVoiceOverKitInstallForDeviceWithIdentifier:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)didStartIPodVoiceOverKitInstallForDeviceWithIdentifier:(NSString *)arg1;
 - (void)updateAvailableWithSoftwareInfo:(AMPDeviceSoftwareInfo *)arg1 forDeviceWithIdentifier:(NSString *)arg2;
-- (void)didRemoveDeviceWithIdentifier:(NSString *)arg1;
+- (void)didRemoveDeviceWithIdentifier:(NSString *)arg1 hasRecoveryDevice:(BOOL)arg2;
 - (void)didHideDeviceWithIdentifier:(NSString *)arg1;
 - (void)didCompleteSoftwareUpdateRestoreForDeviceWithIdentifier:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)didStartSoftwareUpdateRestoreForDeviceWithIdentifier:(NSString *)arg1;

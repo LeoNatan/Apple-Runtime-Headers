@@ -327,6 +327,9 @@
     double _bundlePaidMultiplierForFreeUsers;
     double _bundlePaidMultiplierForTrialUsers;
     double _bundlePaidMultiplierForPaidUsers;
+    double _bundleFreeMultiplierForFreeUsers;
+    double _bundleFreeMultiplierForTrialUsers;
+    double _bundleFreeMultiplierForPaidUsers;
     double _featuredMultiplierForFreeUsers;
     double _featuredMultiplierForTrialUsers;
     double _featuredMultiplierForPaidUsers;
@@ -375,6 +378,9 @@
     double _topicFeedBundlePaidMultiplierForFreeUsers;
     double _topicFeedBundlePaidMultiplierForTrialUsers;
     double _topicFeedBundlePaidMultiplierForPaidUsers;
+    double _topicFeedBundleFreeMultiplierForFreeUsers;
+    double _topicFeedBundleFreeMultiplierForTrialUsers;
+    double _topicFeedBundleFreeMultiplierForPaidUsers;
     double _topicFeedFeaturedMultiplierForFreeUsers;
     double _topicFeedFeaturedMultiplierForTrialUsers;
     double _topicFeedFeaturedMultiplierForPaidUsers;
@@ -424,6 +430,9 @@
     double _magazineFeedBundlePaidMultiplierForFreeUsers;
     double _magazineFeedBundlePaidMultiplierForTrialUsers;
     double _magazineFeedBundlePaidMultiplierForPaidUsers;
+    double _magazineFeedBundleFreeMultiplierForFreeUsers;
+    double _magazineFeedBundleFreeMultiplierForTrialUsers;
+    double _magazineFeedBundleFreeMultiplierForPaidUsers;
     double _magazineFeedFeaturedMultiplierForFreeUsers;
     double _magazineFeedFeaturedMultiplierForTrialUsers;
     double _magazineFeedFeaturedMultiplierForPaidUsers;
@@ -474,6 +483,9 @@
     double _articleRecirculationPrimaryFeedBundlePaidMultiplierForFreeUsers;
     double _articleRecirculationPrimaryFeedBundlePaidMultiplierForTrialUsers;
     double _articleRecirculationPrimaryFeedBundlePaidMultiplierForPaidUsers;
+    double _articleRecirculationPrimaryFeedBundleFreeMultiplierForFreeUsers;
+    double _articleRecirculationPrimaryFeedBundleFreeMultiplierForTrialUsers;
+    double _articleRecirculationPrimaryFeedBundleFreeMultiplierForPaidUsers;
     double _articleRecirculationPrimaryFeedFeaturedMultiplierForFreeUsers;
     double _articleRecirculationPrimaryFeedFeaturedMultiplierForTrialUsers;
     double _articleRecirculationPrimaryFeedFeaturedMultiplierForPaidUsers;
@@ -523,6 +535,9 @@
     double _articleRecirculationSecondaryFeedBundlePaidMultiplierForFreeUsers;
     double _articleRecirculationSecondaryFeedBundlePaidMultiplierForTrialUsers;
     double _articleRecirculationSecondaryFeedBundlePaidMultiplierForPaidUsers;
+    double _articleRecirculationSecondaryFeedBundleFreeMultiplierForFreeUsers;
+    double _articleRecirculationSecondaryFeedBundleFreeMultiplierForTrialUsers;
+    double _articleRecirculationSecondaryFeedBundleFreeMultiplierForPaidUsers;
     double _articleRecirculationSecondaryFeedFeaturedMultiplierForFreeUsers;
     double _articleRecirculationSecondaryFeedFeaturedMultiplierForTrialUsers;
     double _articleRecirculationSecondaryFeedFeaturedMultiplierForPaidUsers;
@@ -572,6 +587,9 @@
     double _bestOfBundleBundlePaidMultiplierForFreeUsers;
     double _bestOfBundleBundlePaidMultiplierForTrialUsers;
     double _bestOfBundleBundlePaidMultiplierForPaidUsers;
+    double _bestOfBundleBundleFreeMultiplierForFreeUsers;
+    double _bestOfBundleBundleFreeMultiplierForTrialUsers;
+    double _bestOfBundleBundleFreeMultiplierForPaidUsers;
     double _bestOfBundleFeaturedMultiplierForFreeUsers;
     double _bestOfBundleFeaturedMultiplierForTrialUsers;
     double _bestOfBundleFeaturedMultiplierForPaidUsers;
@@ -621,6 +639,9 @@
     double _forYouGroupBundlePaidMultiplierForFreeUsers;
     double _forYouGroupBundlePaidMultiplierForTrialUsers;
     double _forYouGroupBundlePaidMultiplierForPaidUsers;
+    double _forYouGroupBundleFreeMultiplierForFreeUsers;
+    double _forYouGroupBundleFreeMultiplierForTrialUsers;
+    double _forYouGroupBundleFreeMultiplierForPaidUsers;
     double _forYouGroupFeaturedMultiplierForFreeUsers;
     double _forYouGroupFeaturedMultiplierForTrialUsers;
     double _forYouGroupFeaturedMultiplierForPaidUsers;
@@ -636,6 +657,9 @@
 @property(readonly, nonatomic) double forYouGroupFeaturedMultiplierForPaidUsers; // @synthesize forYouGroupFeaturedMultiplierForPaidUsers=_forYouGroupFeaturedMultiplierForPaidUsers;
 @property(readonly, nonatomic) double forYouGroupFeaturedMultiplierForTrialUsers; // @synthesize forYouGroupFeaturedMultiplierForTrialUsers=_forYouGroupFeaturedMultiplierForTrialUsers;
 @property(readonly, nonatomic) double forYouGroupFeaturedMultiplierForFreeUsers; // @synthesize forYouGroupFeaturedMultiplierForFreeUsers=_forYouGroupFeaturedMultiplierForFreeUsers;
+@property(readonly, nonatomic) double forYouGroupBundleFreeMultiplierForPaidUsers; // @synthesize forYouGroupBundleFreeMultiplierForPaidUsers=_forYouGroupBundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double forYouGroupBundleFreeMultiplierForTrialUsers; // @synthesize forYouGroupBundleFreeMultiplierForTrialUsers=_forYouGroupBundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double forYouGroupBundleFreeMultiplierForFreeUsers; // @synthesize forYouGroupBundleFreeMultiplierForFreeUsers=_forYouGroupBundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double forYouGroupBundlePaidMultiplierForPaidUsers; // @synthesize forYouGroupBundlePaidMultiplierForPaidUsers=_forYouGroupBundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double forYouGroupBundlePaidMultiplierForTrialUsers; // @synthesize forYouGroupBundlePaidMultiplierForTrialUsers=_forYouGroupBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double forYouGroupBundlePaidMultiplierForFreeUsers; // @synthesize forYouGroupBundlePaidMultiplierForFreeUsers=_forYouGroupBundlePaidMultiplierForFreeUsers;
@@ -685,6 +709,9 @@
 @property(readonly, nonatomic) double bestOfBundleFeaturedMultiplierForPaidUsers; // @synthesize bestOfBundleFeaturedMultiplierForPaidUsers=_bestOfBundleFeaturedMultiplierForPaidUsers;
 @property(readonly, nonatomic) double bestOfBundleFeaturedMultiplierForTrialUsers; // @synthesize bestOfBundleFeaturedMultiplierForTrialUsers=_bestOfBundleFeaturedMultiplierForTrialUsers;
 @property(readonly, nonatomic) double bestOfBundleFeaturedMultiplierForFreeUsers; // @synthesize bestOfBundleFeaturedMultiplierForFreeUsers=_bestOfBundleFeaturedMultiplierForFreeUsers;
+@property(readonly, nonatomic) double bestOfBundleBundleFreeMultiplierForPaidUsers; // @synthesize bestOfBundleBundleFreeMultiplierForPaidUsers=_bestOfBundleBundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double bestOfBundleBundleFreeMultiplierForTrialUsers; // @synthesize bestOfBundleBundleFreeMultiplierForTrialUsers=_bestOfBundleBundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double bestOfBundleBundleFreeMultiplierForFreeUsers; // @synthesize bestOfBundleBundleFreeMultiplierForFreeUsers=_bestOfBundleBundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double bestOfBundleBundlePaidMultiplierForPaidUsers; // @synthesize bestOfBundleBundlePaidMultiplierForPaidUsers=_bestOfBundleBundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double bestOfBundleBundlePaidMultiplierForTrialUsers; // @synthesize bestOfBundleBundlePaidMultiplierForTrialUsers=_bestOfBundleBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double bestOfBundleBundlePaidMultiplierForFreeUsers; // @synthesize bestOfBundleBundlePaidMultiplierForFreeUsers=_bestOfBundleBundlePaidMultiplierForFreeUsers;
@@ -734,6 +761,9 @@
 @property(readonly, nonatomic) double articleRecirculationSecondaryFeedFeaturedMultiplierForPaidUsers; // @synthesize articleRecirculationSecondaryFeedFeaturedMultiplierForPaidUsers=_articleRecirculationSecondaryFeedFeaturedMultiplierForPaidUsers;
 @property(readonly, nonatomic) double articleRecirculationSecondaryFeedFeaturedMultiplierForTrialUsers; // @synthesize articleRecirculationSecondaryFeedFeaturedMultiplierForTrialUsers=_articleRecirculationSecondaryFeedFeaturedMultiplierForTrialUsers;
 @property(readonly, nonatomic) double articleRecirculationSecondaryFeedFeaturedMultiplierForFreeUsers; // @synthesize articleRecirculationSecondaryFeedFeaturedMultiplierForFreeUsers=_articleRecirculationSecondaryFeedFeaturedMultiplierForFreeUsers;
+@property(readonly, nonatomic) double articleRecirculationSecondaryFeedBundleFreeMultiplierForPaidUsers; // @synthesize articleRecirculationSecondaryFeedBundleFreeMultiplierForPaidUsers=_articleRecirculationSecondaryFeedBundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double articleRecirculationSecondaryFeedBundleFreeMultiplierForTrialUsers; // @synthesize articleRecirculationSecondaryFeedBundleFreeMultiplierForTrialUsers=_articleRecirculationSecondaryFeedBundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double articleRecirculationSecondaryFeedBundleFreeMultiplierForFreeUsers; // @synthesize articleRecirculationSecondaryFeedBundleFreeMultiplierForFreeUsers=_articleRecirculationSecondaryFeedBundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double articleRecirculationSecondaryFeedBundlePaidMultiplierForPaidUsers; // @synthesize articleRecirculationSecondaryFeedBundlePaidMultiplierForPaidUsers=_articleRecirculationSecondaryFeedBundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double articleRecirculationSecondaryFeedBundlePaidMultiplierForTrialUsers; // @synthesize articleRecirculationSecondaryFeedBundlePaidMultiplierForTrialUsers=_articleRecirculationSecondaryFeedBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double articleRecirculationSecondaryFeedBundlePaidMultiplierForFreeUsers; // @synthesize articleRecirculationSecondaryFeedBundlePaidMultiplierForFreeUsers=_articleRecirculationSecondaryFeedBundlePaidMultiplierForFreeUsers;
@@ -783,6 +813,9 @@
 @property(readonly, nonatomic) double articleRecirculationPrimaryFeedFeaturedMultiplierForPaidUsers; // @synthesize articleRecirculationPrimaryFeedFeaturedMultiplierForPaidUsers=_articleRecirculationPrimaryFeedFeaturedMultiplierForPaidUsers;
 @property(readonly, nonatomic) double articleRecirculationPrimaryFeedFeaturedMultiplierForTrialUsers; // @synthesize articleRecirculationPrimaryFeedFeaturedMultiplierForTrialUsers=_articleRecirculationPrimaryFeedFeaturedMultiplierForTrialUsers;
 @property(readonly, nonatomic) double articleRecirculationPrimaryFeedFeaturedMultiplierForFreeUsers; // @synthesize articleRecirculationPrimaryFeedFeaturedMultiplierForFreeUsers=_articleRecirculationPrimaryFeedFeaturedMultiplierForFreeUsers;
+@property(readonly, nonatomic) double articleRecirculationPrimaryFeedBundleFreeMultiplierForPaidUsers; // @synthesize articleRecirculationPrimaryFeedBundleFreeMultiplierForPaidUsers=_articleRecirculationPrimaryFeedBundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double articleRecirculationPrimaryFeedBundleFreeMultiplierForTrialUsers; // @synthesize articleRecirculationPrimaryFeedBundleFreeMultiplierForTrialUsers=_articleRecirculationPrimaryFeedBundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double articleRecirculationPrimaryFeedBundleFreeMultiplierForFreeUsers; // @synthesize articleRecirculationPrimaryFeedBundleFreeMultiplierForFreeUsers=_articleRecirculationPrimaryFeedBundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double articleRecirculationPrimaryFeedBundlePaidMultiplierForPaidUsers; // @synthesize articleRecirculationPrimaryFeedBundlePaidMultiplierForPaidUsers=_articleRecirculationPrimaryFeedBundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double articleRecirculationPrimaryFeedBundlePaidMultiplierForTrialUsers; // @synthesize articleRecirculationPrimaryFeedBundlePaidMultiplierForTrialUsers=_articleRecirculationPrimaryFeedBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double articleRecirculationPrimaryFeedBundlePaidMultiplierForFreeUsers; // @synthesize articleRecirculationPrimaryFeedBundlePaidMultiplierForFreeUsers=_articleRecirculationPrimaryFeedBundlePaidMultiplierForFreeUsers;
@@ -833,6 +866,9 @@
 @property(readonly, nonatomic) double magazineFeedFeaturedMultiplierForPaidUsers; // @synthesize magazineFeedFeaturedMultiplierForPaidUsers=_magazineFeedFeaturedMultiplierForPaidUsers;
 @property(readonly, nonatomic) double magazineFeedFeaturedMultiplierForTrialUsers; // @synthesize magazineFeedFeaturedMultiplierForTrialUsers=_magazineFeedFeaturedMultiplierForTrialUsers;
 @property(readonly, nonatomic) double magazineFeedFeaturedMultiplierForFreeUsers; // @synthesize magazineFeedFeaturedMultiplierForFreeUsers=_magazineFeedFeaturedMultiplierForFreeUsers;
+@property(readonly, nonatomic) double magazineFeedBundleFreeMultiplierForPaidUsers; // @synthesize magazineFeedBundleFreeMultiplierForPaidUsers=_magazineFeedBundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double magazineFeedBundleFreeMultiplierForTrialUsers; // @synthesize magazineFeedBundleFreeMultiplierForTrialUsers=_magazineFeedBundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double magazineFeedBundleFreeMultiplierForFreeUsers; // @synthesize magazineFeedBundleFreeMultiplierForFreeUsers=_magazineFeedBundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double magazineFeedBundlePaidMultiplierForPaidUsers; // @synthesize magazineFeedBundlePaidMultiplierForPaidUsers=_magazineFeedBundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double magazineFeedBundlePaidMultiplierForTrialUsers; // @synthesize magazineFeedBundlePaidMultiplierForTrialUsers=_magazineFeedBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double magazineFeedBundlePaidMultiplierForFreeUsers; // @synthesize magazineFeedBundlePaidMultiplierForFreeUsers=_magazineFeedBundlePaidMultiplierForFreeUsers;
@@ -882,6 +918,9 @@
 @property(readonly, nonatomic) double topicFeedFeaturedMultiplierForPaidUsers; // @synthesize topicFeedFeaturedMultiplierForPaidUsers=_topicFeedFeaturedMultiplierForPaidUsers;
 @property(readonly, nonatomic) double topicFeedFeaturedMultiplierForTrialUsers; // @synthesize topicFeedFeaturedMultiplierForTrialUsers=_topicFeedFeaturedMultiplierForTrialUsers;
 @property(readonly, nonatomic) double topicFeedFeaturedMultiplierForFreeUsers; // @synthesize topicFeedFeaturedMultiplierForFreeUsers=_topicFeedFeaturedMultiplierForFreeUsers;
+@property(readonly, nonatomic) double topicFeedBundleFreeMultiplierForPaidUsers; // @synthesize topicFeedBundleFreeMultiplierForPaidUsers=_topicFeedBundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double topicFeedBundleFreeMultiplierForTrialUsers; // @synthesize topicFeedBundleFreeMultiplierForTrialUsers=_topicFeedBundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double topicFeedBundleFreeMultiplierForFreeUsers; // @synthesize topicFeedBundleFreeMultiplierForFreeUsers=_topicFeedBundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double topicFeedBundlePaidMultiplierForPaidUsers; // @synthesize topicFeedBundlePaidMultiplierForPaidUsers=_topicFeedBundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double topicFeedBundlePaidMultiplierForTrialUsers; // @synthesize topicFeedBundlePaidMultiplierForTrialUsers=_topicFeedBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double topicFeedBundlePaidMultiplierForFreeUsers; // @synthesize topicFeedBundlePaidMultiplierForFreeUsers=_topicFeedBundlePaidMultiplierForFreeUsers;
@@ -930,6 +969,9 @@
 @property(readonly, nonatomic) double featuredMultiplierForPaidUsers; // @synthesize featuredMultiplierForPaidUsers=_featuredMultiplierForPaidUsers;
 @property(readonly, nonatomic) double featuredMultiplierForTrialUsers; // @synthesize featuredMultiplierForTrialUsers=_featuredMultiplierForTrialUsers;
 @property(readonly, nonatomic) double featuredMultiplierForFreeUsers; // @synthesize featuredMultiplierForFreeUsers=_featuredMultiplierForFreeUsers;
+@property(readonly, nonatomic) double bundleFreeMultiplierForPaidUsers; // @synthesize bundleFreeMultiplierForPaidUsers=_bundleFreeMultiplierForPaidUsers;
+@property(readonly, nonatomic) double bundleFreeMultiplierForTrialUsers; // @synthesize bundleFreeMultiplierForTrialUsers=_bundleFreeMultiplierForTrialUsers;
+@property(readonly, nonatomic) double bundleFreeMultiplierForFreeUsers; // @synthesize bundleFreeMultiplierForFreeUsers=_bundleFreeMultiplierForFreeUsers;
 @property(readonly, nonatomic) double bundlePaidMultiplierForPaidUsers; // @synthesize bundlePaidMultiplierForPaidUsers=_bundlePaidMultiplierForPaidUsers;
 @property(readonly, nonatomic) double bundlePaidMultiplierForTrialUsers; // @synthesize bundlePaidMultiplierForTrialUsers=_bundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double bundlePaidMultiplierForFreeUsers; // @synthesize bundlePaidMultiplierForFreeUsers=_bundlePaidMultiplierForFreeUsers;

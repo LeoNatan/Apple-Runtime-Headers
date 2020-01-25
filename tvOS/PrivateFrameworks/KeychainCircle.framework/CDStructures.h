@@ -20,7 +20,7 @@ struct __va_list_tag {
 struct ccdh_gp {
     unsigned long long _field1;
     unsigned long long _field2;
-    CDUnknownFunctionPointerType _field3;
+    struct cczp_funcs *_field3;
     unsigned long long _field4[0];
 };
 
@@ -65,6 +65,8 @@ struct ccsrp_ctx {
     unsigned char _field5[7];
     unsigned long long _field6[1];
 };
+
+struct cczp_funcs;
 
 #pragma mark Typedef'd Structures
 

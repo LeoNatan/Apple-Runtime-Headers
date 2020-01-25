@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
     struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _layoutConstraints;
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationCenterObservers;
-    int _folderSharingBannerType;
 }
 
 - (id).cxx_construct;
@@ -32,8 +31,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isPathBarVisible;
 - (id)pathBarView;
 @property(readonly, retain, nonatomic) FI_TPathBarController *pathBarController;
-- (void)configureBannerView:(const struct TFENode *)arg1 selectedNodes:(const struct TFENode *)arg2 isInColumnView:(_Bool)arg3 isBackupBrowser:(_Bool)arg4;
-- (_Bool)targetIsInsideSharedFolder;
+- (void)configureBannerView:(const struct TFENode *)arg1 isInColumnView:(_Bool)arg2 isBackupBrowser:(_Bool)arg3;
 - (id)newBannerViewWrapperWithBanner:(id)arg1;
 @property(readonly, nonatomic) _Bool bannerViewIsVisible; // @dynamic bannerViewIsVisible;
 - (id)bannerView;

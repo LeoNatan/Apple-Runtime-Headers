@@ -15,6 +15,7 @@
 {
     _Bool _pressed;
     double _force;
+    unsigned long long _shape;
     AXPIFingerLayer *_cursorLayer;
     id <AXPIFingerAppearanceDelegate> _appearanceDelegate;
     CAShapeLayer *_progressLayer;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;
 @property(nonatomic) __weak id <AXPIFingerAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
 @property(retain, nonatomic) AXPIFingerLayer *cursorLayer; // @synthesize cursorLayer=_cursorLayer;
+@property(nonatomic) unsigned long long shape; // @synthesize shape=_shape;
 @property(nonatomic) double force; // @synthesize force=_force;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 - (void).cxx_destruct;
@@ -32,8 +34,7 @@
 - (_Bool)isUserInteractionEnabled;
 - (double)_iconScaleForForce:(double)arg1;
 - (void)animateToTapWithDuration:(double)arg1;
-- (struct CGPath *)_drawFullCircleWithCenter:(struct CGPoint)arg1 radius:(double)arg2 clockwise:(_Bool)arg3;
-- (id)_createProgressLayerWithDuration:(double)arg1 center:(struct CGPoint)arg2 radius:(double)arg3;
+- (id)_createProgressLayerWithDuration:(double)arg1 inRect:(struct CGRect)arg2;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)cancelExisingCircularProgressAnimation;
 - (void)animateCircularProgressWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;

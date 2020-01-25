@@ -8,21 +8,21 @@
 
 #import <iTunesCloud/NSProgressReporting-Protocol.h>
 
-@class ICRequestContext, ICURLResponseHandler, NSData, NSDictionary, NSError, NSMutableArray, NSMutableData, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTask;
+@class ICRequestContext, ICURLResponseHandler, NSData, NSDictionary, NSError, NSMutableArray, NSMutableData, NSMutableDictionary, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTask;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface ICURLRequest : NSObject <NSProgressReporting>
 {
     NSMutableArray *_observers;
-    NSObject<OS_dispatch_queue> *_accessQueue;
+    NSMutableDictionary *_maxRetryCounts;
+    NSMutableDictionary *_retryCounts;
+    struct os_unfair_lock_s _lock;
     NSObject<OS_dispatch_queue> *_observerQueue;
     _Bool _prioritize;
     _Bool _cancelOnHTTPErrors;
     _Bool _extendedCertificateValidationRequired;
     NSProgress *_progress;
-    unsigned int _maxRetryCount;
     ICRequestContext *_requestContext;
-    unsigned int _retryCount;
     unsigned int _redirectCount;
     int _requestState;
     NSData *_resumeData;
@@ -38,6 +38,7 @@
     NSError *_error;
     NSDictionary *_avDownloadOptions;
     int _handlingType;
+    NSString *_retryReason;
     CDUnknownBlockType _completionHandler;
     double _retryDelay;
     double _startTime;
@@ -45,10 +46,12 @@
     double _lastProgressUpdateTime;
 }
 
++ (unsigned int)_defaultMaxRetryCountForReason:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double lastProgressUpdateTime; // @synthesize lastProgressUpdateTime=_lastProgressUpdateTime;
 @property(nonatomic) double lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(retain, nonatomic) NSString *retryReason; // @synthesize retryReason=_retryReason;
 @property(nonatomic) int handlingType; // @synthesize handlingType=_handlingType;
 @property(retain, nonatomic) NSDictionary *avDownloadOptions; // @synthesize avDownloadOptions=_avDownloadOptions;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -66,13 +69,18 @@
 @property(nonatomic) int requestState; // @synthesize requestState=_requestState;
 @property(nonatomic) double retryDelay; // @synthesize retryDelay=_retryDelay;
 @property(nonatomic) unsigned int redirectCount; // @synthesize redirectCount=_redirectCount;
-@property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(readonly, copy, nonatomic) ICRequestContext *requestContext; // @synthesize requestContext=_requestContext;
-@property(nonatomic) unsigned int maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
 @property(nonatomic) _Bool cancelOnHTTPErrors; // @synthesize cancelOnHTTPErrors=_cancelOnHTTPErrors;
 @property(nonatomic) _Bool prioritize; // @synthesize prioritize=_prioritize;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+- (void)_ensureValidRetryReason:(id)arg1;
+- (void)_incrementRetryCountForReason:(id)arg1;
+- (unsigned int)_retryCountForReason:(id)arg1;
+- (void)_setMaxRetryCount:(unsigned int)arg1 forReason:(id)arg2;
+- (unsigned int)_maxRetryCountForReason:(id)arg1;
+@property(readonly, nonatomic) unsigned int retryCount;
+@property(nonatomic) unsigned int maxRetryCount;
 - (void)updateState:(int)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

@@ -14,11 +14,12 @@
 #import <EmailDaemon/EDProtectedDataReconciliationHookResponder-Protocol.h>
 #import <EmailDaemon/EDThreadScopeManagerDataSource-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EFSignpostable-Protocol.h>
 
 @class EDMessagePersistence, EDPersistenceDatabase, EDPersistenceHookRegistry, EDThreadScopeManager, EFDebouncer, EMBlockedSenderManager, NSMutableArray, NSMutableSet, NSString;
 @protocol EFScheduler, EMVIPManager;
 
-@interface EDThreadPersistence : NSObject <EDDatabaseChangeHookResponder, EDAccountChangeHookResponder, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EDThreadScopeManagerDataSource, EDPersistenceDatabaseSchemaProvider, EFLoggable>
+@interface EDThreadPersistence : NSObject <EDDatabaseChangeHookResponder, EDAccountChangeHookResponder, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EDThreadScopeManagerDataSource, EFSignpostable, EDPersistenceDatabaseSchemaProvider, EFLoggable>
 {
     NSMutableSet *_threadObjectIDsToRecompute;
     struct os_unfair_lock_s _threadRecomputationLock;
@@ -41,6 +42,7 @@
 + (id)threadsTableSchema;
 + (id)threadScopesTableSchema;
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
++ (id)signpostLog;
 + (id)log;
 @property(retain, nonatomic) EFDebouncer *threadRecomputationDebouncer; // @synthesize threadRecomputationDebouncer=_threadRecomputationDebouncer;
 @property(retain, nonatomic) id <EFScheduler> threadRecomputationScheduler; // @synthesize threadRecomputationScheduler=_threadRecomputationScheduler;
@@ -163,6 +165,7 @@
 - (unsigned int)persistenceStateForThreadScope:(id)arg1;
 - (void)_enumerateThreadScopesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)initWithMessagePersistence:(id)arg1 database:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 blockedSenderManager:(id)arg5;
+@property(readonly) unsigned long long signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

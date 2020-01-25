@@ -9,7 +9,6 @@
 @class NSArray, NSSet, NSString;
 
 @protocol EMFetchControllerInterface <NSObject>
-@property(readonly) BOOL networkIsOffline;
 - (NSString *)diagnosticInformation;
 - (void)setCurrentSuppressionContexts:(NSSet *)arg1 suppressedContexts:(NSSet *)arg2;
 - (void)resetPushStateWithCompletion:(void (^)(BOOL, BOOL, int, NSError *))arg1;
@@ -18,6 +17,5 @@
 - (void)performFetchOfType:(int)arg1 mailboxObjectIds:(NSArray *)arg2;
 - (void)performFetchOfType:(int)arg1 accountIds:(NSArray *)arg2;
 - (void)performFetchOfType:(int)arg1;
-- (void)getNetworkIsOfflineWithReply:(void (^)(BOOL))arg1;
 @end
 

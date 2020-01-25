@@ -29,6 +29,7 @@
 - (struct CGSize)_suggestedTodayViewSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)widgetGroupViewController:(id)arg1 sizeForInterfaceOrientation:(long long)arg2;
 - (void)widgetGroupViewControllerDidChangeHeaderVisibility:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 @property(readonly, nonatomic, getter=isHeaderVisible) _Bool headerVisible;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) struct CGRect contentRect;

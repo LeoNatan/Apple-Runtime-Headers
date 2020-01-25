@@ -24,6 +24,7 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)addSuggestionsChangeBlock:(CDUnknownBlockType)arg1 forLifetimeOfObject:(id)arg2;
+- (void)_registerForEventKitChangeTrackingWithGuardedData:(id)arg1;
 - (void)addEventKitChangeBlock:(CDUnknownBlockType)arg1 forLifetimeOfObject:(id)arg2;
 - (void)addPortraitInvalidationBlock:(CDUnknownBlockType)arg1 forLifetimeOfObject:(id)arg2;
 - (void)addPortraitChangeBlock:(CDUnknownBlockType)arg1 forLifetimeOfObject:(id)arg2;

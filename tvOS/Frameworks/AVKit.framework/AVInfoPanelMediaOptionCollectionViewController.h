@@ -14,18 +14,21 @@
 __attribute__((visibility("hidden")))
 @interface AVInfoPanelMediaOptionCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 {
+    _Bool _orderMatchedToUIDirection;
     NSArray *_mediaOptions;
     long long _selectedMediaOptionIndex;
     NSIndexSet *_selectedMediaOptionIndexes;
     id <AVInfoPanelMediaOptionSelectionDelegate> _selectionDelegate;
 }
 
+@property(nonatomic, getter=isOrderMatchedToUIDirection) _Bool orderMatchedToUIDirection; // @synthesize orderMatchedToUIDirection=_orderMatchedToUIDirection;
 @property(nonatomic) __weak id <AVInfoPanelMediaOptionSelectionDelegate> selectionDelegate; // @synthesize selectionDelegate=_selectionDelegate;
 @property(copy, nonatomic) NSIndexSet *selectedMediaOptionIndexes; // @synthesize selectedMediaOptionIndexes=_selectedMediaOptionIndexes;
 @property(nonatomic) long long selectedMediaOptionIndex; // @synthesize selectedMediaOptionIndex=_selectedMediaOptionIndex;
 @property(retain, nonatomic) NSArray *mediaOptions; // @synthesize mediaOptions=_mediaOptions;
 - (void).cxx_destruct;
-- (void)_didSelectItemAtIndex:(long long)arg1;
+- (void)_didSelectItemAtIndexPath:(id)arg1;
+- (id)mediaOptionAtIndexPath:(id)arg1;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

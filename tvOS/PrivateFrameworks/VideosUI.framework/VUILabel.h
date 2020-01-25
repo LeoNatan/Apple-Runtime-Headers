@@ -33,6 +33,7 @@
 - (double)bottomMarginWithBaselineMargin:(double)arg1;
 - (double)topMarginWithBaselineMargin:(double)arg1 maximumContentSizeCategory:(id)arg2;
 - (double)topMarginWithBaselineMargin:(double)arg1;
+- (unsigned long long)numberOfLinesRequiredForTextWidth:(double)arg1;
 - (_Bool)requiresMoreThanOneLineForTextWidth:(double)arg1;
 - (double)topMarginToLabel:(id)arg1 withBaselineMargin:(double)arg2;
 - (double)baselineHeight;

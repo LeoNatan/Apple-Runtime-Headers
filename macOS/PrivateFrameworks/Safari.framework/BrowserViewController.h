@@ -410,6 +410,8 @@ __attribute__((visibility("hidden")))
 - (void)_processOpenSearchURL:(id)arg1;
 - (void)processOpenSearchURLAfterBackgroundLoadHasBeenCommittedIfNecessary;
 - (void)didCollectOpenSearchURL:(id)arg1;
+- (void)updateWebAuthenticationPanelForRelyingParty:(id)arg1 withUpdate:(long long)arg2;
+- (void)showWebAuthenticationDialogForRelyingParty:(id)arg1 withPresentationBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) TabDialogViewController *tabDialogViewController;
 @property(readonly, nonatomic) BOOL isUnresponsiveDueToJavaScriptDialogRunningInProcess;
 - (void)showJavaScriptPromptWithPrompt:(id)arg1 defaultText:(id)arg2 origin:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -838,6 +840,7 @@ __attribute__((visibility("hidden")))
 - (void)printFrameHandle:(id)arg1 waitUntilDone:(BOOL)arg2 isUserInitiated:(BOOL)arg3;
 - (void)printFrame:(const struct Frame *)arg1 waitUntilDone:(BOOL)arg2 isUserInitiated:(BOOL)arg3;
 @property(readonly, nonatomic) NSString *titleOfPrintMenuItem;
+- (BOOL)canPrint;
 - (BOOL)_isCurrentPageSearchable;
 - (void)focusContentSearchField;
 - (BOOL)canFocusContentSearchField;

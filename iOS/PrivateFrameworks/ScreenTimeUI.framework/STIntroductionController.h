@@ -13,9 +13,11 @@ __attribute__((visibility("hidden")))
 {
     _Bool _allowParentalControls;
     _Bool _forceParentalControls;
+    _Bool _askForRecoveryAppleID;
     _Bool _skipWelcome;
     _Bool _isModalPresentation;
     NSString *_childName;
+    NSString *_altDSID;
     CDUnknownBlockType _completionBlock;
     STIntroductionModel *_introductionModel;
     UINavigationController *_navigationController;
@@ -26,7 +28,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) STIntroductionModel *introductionModel; // @synthesize introductionModel=_introductionModel;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property _Bool skipWelcome; // @synthesize skipWelcome=_skipWelcome;
+@property(copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy) NSString *childName; // @synthesize childName=_childName;
+@property _Bool askForRecoveryAppleID; // @synthesize askForRecoveryAppleID=_askForRecoveryAppleID;
 @property _Bool forceParentalControls; // @synthesize forceParentalControls=_forceParentalControls;
 @property _Bool allowParentalControls; // @synthesize allowParentalControls=_allowParentalControls;
 - (void).cxx_destruct;

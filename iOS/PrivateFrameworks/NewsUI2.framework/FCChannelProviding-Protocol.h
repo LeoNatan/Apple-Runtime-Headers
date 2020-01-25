@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol FCChannelProviding <FCTagProviding>
+@property(nonatomic, readonly) NSString *supergroupConfigJson;
+@property(nonatomic, readonly) NSString *supergroupKnobsJson;
 - (NSString *)paidFeedIDForSection:(NSString *)arg1 bin:(long long)arg2;
 - (NSString *)freeFeedIDForSection:(NSString *)arg1 bin:(long long)arg2;
 @property(nonatomic, readonly) NSString *backIssuesListID;

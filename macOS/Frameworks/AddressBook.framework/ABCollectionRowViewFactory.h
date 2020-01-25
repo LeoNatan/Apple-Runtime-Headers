@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class ABCardViewStyleProvider;
+@class ABCardViewStyleProvider, CNUIEditingRules;
 
 @interface ABCollectionRowViewFactory : NSObject
 {
     BOOL _shouldFormatURLs;
     BOOL _shouldBuildActionGlyphs;
     ABCardViewStyleProvider *_styleProvider;
+    CNUIEditingRules *_editingRules;
 }
 
 + (id)infoButtonNamedImageWrapper;
+@property(retain, nonatomic) CNUIEditingRules *editingRules; // @synthesize editingRules=_editingRules;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) BOOL shouldBuildActionGlyphs; // @synthesize shouldBuildActionGlyphs=_shouldBuildActionGlyphs;
 @property(nonatomic) BOOL shouldFormatURLs; // @synthesize shouldFormatURLs=_shouldFormatURLs;

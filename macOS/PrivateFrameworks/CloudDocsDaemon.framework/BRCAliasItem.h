@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)fillStructureRecord:(id)arg1 inZone:(id)arg2 itemID:(id)arg3 ckInfo:(id)arg4 parentID:(id)arg5 targetItemID:(id)arg6 targetZone:(id)arg7 diffs:(unsigned long long)arg8 isFolderShare:(BOOL)arg9 beingDeadInServerTruth:(BOOL)arg10 pcsChained:(BOOL)arg11;
++ (void)fillStructureRecord:(id)arg1 inZone:(id)arg2 itemID:(id)arg3 ckInfo:(id)arg4 parentID:(id)arg5 targetItemID:(id)arg6 targetZone:(id)arg7 diffs:(unsigned long long)arg8 isFolderShare:(BOOL)arg9 beingDeadInServerTruth:(BOOL)arg10 shouldPCSChainStatus:(unsigned char)arg11;
 + (id)targetReferenceWithItemID:(id)arg1 targetZone:(id)arg2 isFolderShare:(BOOL)arg3;
 - (BOOL)_deleteFromDB:(id)arg1 keepAliases:(BOOL)arg2;
 - (BOOL)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCAppLibrary *targetAppLibrary;
 @property(readonly, nonatomic) BRCAliasItem *asBRAlias;
 - (BOOL)isBRAlias;
-- (id)structureRecordBeingDeadInServerTruth:(BOOL)arg1 stageID:(id)arg2 pcsChained:(BOOL)arg3;
+- (id)structureRecordBeingDeadInServerTruth:(BOOL)arg1 stageID:(id)arg2 shouldPCSChainStatus:(unsigned char)arg3;
 
 // Remaining properties
 @property(readonly, nonatomic) BRCDirectoryItem *asDirectory; // @dynamic asDirectory;

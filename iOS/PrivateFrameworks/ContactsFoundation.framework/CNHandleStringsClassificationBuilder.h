@@ -12,17 +12,14 @@
 {
     NSMutableArray *_emailAddresses;
     NSMutableArray *_phoneNumbers;
-    NSMutableArray *_postalAddresses;
     NSMutableArray *_unknown;
 }
 
 @property(retain, nonatomic) NSMutableArray *unknown; // @synthesize unknown=_unknown;
-@property(retain, nonatomic) NSMutableArray *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(retain, nonatomic) NSMutableArray *phoneNumbers; // @synthesize phoneNumbers=_phoneNumbers;
 @property(retain, nonatomic) NSMutableArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 - (void).cxx_destruct;
 - (void)addUnknown:(id)arg1;
-- (void)addPostalAddress:(id)arg1;
 - (void)addPhoneNumber:(id)arg1;
 - (void)addEmailAddress:(id)arg1;
 - (id)build;

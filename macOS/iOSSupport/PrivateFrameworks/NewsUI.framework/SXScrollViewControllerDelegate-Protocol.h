@@ -6,7 +6,8 @@
 
 #import <NewsUI/NSObject-Protocol.h>
 
-@class SXAction, SXScrollViewController;
+@class SXScrollViewController;
+@protocol SXAction, SXDocumentStyle;
 
 @protocol SXScrollViewControllerDelegate <NSObject>
 
@@ -21,7 +22,8 @@
 - (double)toolBarHeightForScrollViewController:(SXScrollViewController *)arg1;
 - (double)navigationBarHeightForScrollViewController:(SXScrollViewController *)arg1;
 - (void)scrollViewControllerRequestsFullscreen:(SXScrollViewController *)arg1;
-- (void)scrollViewController:(SXScrollViewController *)arg1 triggerAction:(SXAction *)arg2;
+- (void)scrollViewController:(SXScrollViewController *)arg1 triggerAction:(id <SXAction>)arg2;
+- (void)scrollViewController:(SXScrollViewController *)arg1 didApplyDocumentStyle:(id <SXDocumentStyle>)arg2;
 - (void)scrollViewControllerDidLayoutContent:(SXScrollViewController *)arg1;
 - (void)scrollViewControllerWillLayoutContent:(SXScrollViewController *)arg1;
 @end

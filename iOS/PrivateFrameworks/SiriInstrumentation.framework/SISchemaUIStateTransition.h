@@ -6,18 +6,17 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
-#import <SiriInstrumentation/SISchemaUIStateTransition-Protocol.h>
+@class NSData;
 
-@class NSData, NSString;
-
-@interface SISchemaUIStateTransition : PBCodable <SISchemaUIStateTransition, NSSecureCoding>
+@interface SISchemaUIStateTransition : PBCodable
 {
     int _currentState;
     int _previousState;
     int _siriPresentationType;
+    int _dismissalReason;
 }
 
+@property(nonatomic) int dismissalReason; // @synthesize dismissalReason=_dismissalReason;
 @property(nonatomic) int siriPresentationType; // @synthesize siriPresentationType=_siriPresentationType;
 @property(nonatomic) int previousState; // @synthesize previousState=_previousState;
 @property(nonatomic) int currentState; // @synthesize currentState=_currentState;
@@ -25,15 +24,10 @@
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 - (id)dictionaryRepresentation;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

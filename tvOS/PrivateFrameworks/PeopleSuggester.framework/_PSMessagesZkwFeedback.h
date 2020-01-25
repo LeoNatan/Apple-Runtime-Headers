@@ -24,6 +24,7 @@
 - (long long)feedbackActionTypeForSuggestionIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfEngagedSuggestionForChatGuidEngaged;
 - (id)feedbackPayload;
+- (id)getTrialID;
 - (id)initWithChatGuidEngagaged:(id)arg1 suggestions:(id)arg2;
 
 @end

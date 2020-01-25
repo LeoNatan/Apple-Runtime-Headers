@@ -23,7 +23,8 @@ __attribute__((visibility("hidden")))
 - (double)buttonSpacing;
 - (double)buttonHeight;
 - (double)disclaimerBottomMargin;
-- (struct UIEdgeInsets)safeAreaInsets;
+- (struct UIEdgeInsets)safeAreaInsetsPad;
+- (struct UIEdgeInsets)safeAreaInsetsPhone;
 - (id)init;
 
 @end

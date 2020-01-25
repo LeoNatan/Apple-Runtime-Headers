@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore, DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, DMFWebsitePolicyMonitor, NSArray, NSSet, NSString, NSURL, STAskForTimeResource, STConversation, STConversationContext, STManagementState;
+@class CNContactStore, CNContainer, DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, DMFWebsitePolicyMonitor, NSArray, NSSet, NSString, NSURL, STAskForTimeResource, STConversation, STConversationContext, STManagementState;
 @protocol STLockoutPolicyControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 {
     unsigned long long _reuseIdentifier;
     long long _style;
-    unsigned long long _state;
     unsigned long long _stateBeforePending;
     STManagementState *_managementState;
     STAskForTimeResource *_askForTimeResource;
@@ -26,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_categoryIdentifier;
     NSString *_bundleIdentifier;
     CNContactStore *_contactStore;
+    unsigned long long _state;
     STConversation *_conversation;
     STConversationContext *_conversationContext;
     NSArray *_contactsHandles;
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSArray *contactsHandles; // @synthesize contactsHandles=_contactsHandles;
 @property(retain) STConversationContext *conversationContext; // @synthesize conversationContext=_conversationContext;
 @property(retain) STConversation *conversation; // @synthesize conversation=_conversation;
+@property(readonly) unsigned long long state; // @synthesize state=_state;
 @property(readonly) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(copy, nonatomic) NSURL *websiteURL; // @synthesize websiteURL=_websiteURL;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -67,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_setupWebsitePolicyMonitorForURL:(id)arg1;
 - (void)_setupCategoryPolicyMonitorForIdentifier:(id)arg1;
+@property(readonly) CNContainer *iCloudContainer;
 @property(readonly, copy) NSSet *blockedContactsHandles;
 - (void)dealloc;
 - (BOOL)handleAction:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

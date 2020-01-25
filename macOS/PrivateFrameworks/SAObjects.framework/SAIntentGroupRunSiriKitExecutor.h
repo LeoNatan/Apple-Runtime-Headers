@@ -6,7 +6,7 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
-@class NSArray, NSString, SAIntentGroupProtobufMessage, SAIntentGroupSiriKitAppSelectionState, SAIntentGroupSiriKitListPosition, SAIntentGroupSiriKitMetrics;
+@class NSArray, NSString, SAIntentGroupProtobufMessage, SAIntentGroupSiriKitAppSelectionState, SAIntentGroupSiriKitListPosition, SAIntentGroupSiriKitMetrics, SAIntentGroupSiriKitRemoteExecution;
 
 @interface SAIntentGroupRunSiriKitExecutor : SABaseClientBoundCommand
 {
@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSString *userInitiatedAction;
 @property(retain, nonatomic) SAIntentGroupSiriKitMetrics *siriKitMetrics;
 @property(nonatomic) BOOL requiresConditionalMultiUserGrounding;
+@property(retain, nonatomic) SAIntentGroupSiriKitRemoteExecution *remoteExecution;
 @property(retain, nonatomic) SAIntentGroupSiriKitListPosition *readingListPosition;
 @property(copy, nonatomic) NSString *parentGoalID;
 @property(copy, nonatomic) NSArray *parameterPrompts;

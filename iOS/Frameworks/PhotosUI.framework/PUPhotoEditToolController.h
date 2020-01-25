@@ -121,7 +121,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *localizedResetToolActionTitle;
 @property(readonly, nonatomic) _Bool canResetToDefaultValue;
 - (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 overcaptureEditSource:(id)arg4 valuesCalculator:(id)arg5;
-- (_Bool)_canShowWhileLocked;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

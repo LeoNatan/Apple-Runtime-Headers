@@ -19,7 +19,7 @@
 @property(readonly, nonatomic) QLItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (id)provideDataForItem:(id)arg1;
-- (id)initWithData:(id)arg1 contentType:(id)arg2;
+- (id)initWithData:(id)arg1 contentType:(id)arg2 previewTitle:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,6 +23,7 @@
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)_getPreferredContentSizeWithReplyBlock:(CDUnknownBlockType)arg1;
 - (id)description;
 

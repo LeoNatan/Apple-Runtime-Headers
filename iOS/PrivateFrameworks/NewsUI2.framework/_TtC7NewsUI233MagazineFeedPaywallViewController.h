@@ -11,12 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI233MagazineFeedPaywallViewController : UIViewController
 {
+    // Error parsing type: , name: configurationManager
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: config
-    // Error parsing type: , name: layoutOptionsProvider
-    // Error parsing type: , name: layoutAttributesFactory
-    // Error parsing type: , name: renderer
+    // Error parsing type: , name: blueprintLayoutOptionsProvider
+    // Error parsing type: , name: paywallLayoutAttributesFactory
+    // Error parsing type: , name: paywallRenderer
     // Error parsing type: , name: paywallView
     // Error parsing type: , name: imageCache
     // Error parsing type: , name: assetManager
@@ -25,7 +26,9 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory
     // Error parsing type: , name: $__lazy_storage_$_spinnerViewController
     // Error parsing type: , name: purchasePresenter
-    // Error parsing type: , name: renderToken
+    // Error parsing type: , name: lastRenderedVerticalContentOffset
+    // Error parsing type: , name: imageResult
+    // Error parsing type: , name: videoFilePath
 }
 
 - (void).cxx_destruct;

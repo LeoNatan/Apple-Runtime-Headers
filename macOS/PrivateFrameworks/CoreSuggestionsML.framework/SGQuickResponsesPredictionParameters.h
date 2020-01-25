@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface SGQuickResponsesPredictionParameters : NSObject
 {
     BOOL _isPersonalizationDisabled;
@@ -22,8 +24,14 @@
     double _personalizationExplorationFactor;
     double _personalizationDisplayedPseudocount;
     double _personalizationSelectedPseudocountPerSemanticClass;
+    unsigned long long _maxPromptLength;
+    double _maxPromptWindowSeconds;
+    NSString *_promptJoiningString;
 }
 
+@property(readonly, nonatomic) NSString *promptJoiningString; // @synthesize promptJoiningString=_promptJoiningString;
+@property(readonly, nonatomic) double maxPromptWindowSeconds; // @synthesize maxPromptWindowSeconds=_maxPromptWindowSeconds;
+@property(readonly, nonatomic) unsigned long long maxPromptLength; // @synthesize maxPromptLength=_maxPromptLength;
 @property(readonly, nonatomic) double personalizationSelectedPseudocountPerSemanticClass; // @synthesize personalizationSelectedPseudocountPerSemanticClass=_personalizationSelectedPseudocountPerSemanticClass;
 @property(readonly, nonatomic) double personalizationDisplayedPseudocount; // @synthesize personalizationDisplayedPseudocount=_personalizationDisplayedPseudocount;
 @property(readonly, nonatomic) double personalizationExplorationFactor; // @synthesize personalizationExplorationFactor=_personalizationExplorationFactor;
@@ -38,6 +46,7 @@
 @property(readonly, nonatomic) BOOL isPerCategory; // @synthesize isPerCategory=_isPerCategory;
 @property(readonly, nonatomic) BOOL isReplyTextRandomized; // @synthesize isReplyTextRandomized=_isReplyTextRandomized;
 @property(readonly, nonatomic) BOOL isPersonalizationDisabled; // @synthesize isPersonalizationDisabled=_isPersonalizationDisabled;
+- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

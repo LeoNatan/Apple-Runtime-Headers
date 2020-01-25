@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class PVSceneTaxonomy;
+@class PVSceneTaxonomy, VCPSceneProcessingImageManager;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface VCPPreAnalyzer : NSObject
 {
+    VCPSceneProcessingImageManager *_imageManager;
     PVSceneTaxonomy *_sceneTaxonomy;
     NSObject<OS_dispatch_group> *_processingGroup;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    struct CF<__CVPixelBufferPool *> _pool32BGRA;
     struct CF<__CVPixelBufferPool *> _pool8Y;
     struct CF<OpaqueVTPixelTransferSession *> _transferSession;
 }
@@ -34,7 +34,6 @@
 - (void)_configureRequest:(id)arg1 withRevision:(unsigned long long)arg2;
 - (int)_loadImageURL:(id)arg1 isPano:(BOOL)arg2 withRequestHandler:(id *)arg3 andLumaPixelBuffer:(struct __CVBuffer **)arg4;
 - (int)_convertFromBuffer:(struct __CVBuffer *)arg1 toLumaPixelBuffer:(struct __CVBuffer **)arg2;
-- (int)_loadAndScaleThumbnailWithImageURL:(id)arg1 toScaled32BGRABuffer:(struct __CVBuffer **)arg2;
 - (int)_createPixelBufferPool:(struct __CVPixelBufferPool **)arg1 withPixelFormat:(unsigned int)arg2;
 - (void)dealloc;
 - (id)init;

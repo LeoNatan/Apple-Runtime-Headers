@@ -64,6 +64,7 @@
     struct sqlite3_stmt *selectRecords;
     struct sqlite3_stmt *insertIndexSentinel;
     struct sqlite3_stmt *deleteIndexSentinels;
+    struct sqlite3_stmt *deleteIndexSentinelsStore;
     struct sqlite3_stmt *selectIndexSentinel;
     NSDictionary *_queryTables;
     NSMapTable *_queryContextsByClass;
@@ -82,6 +83,7 @@
 @property(retain) NSDictionary *queryTables; // @synthesize queryTables=_queryTables;
 - (void).cxx_destruct;
 - (id)flush:(_Bool)arg1;
+- (_Bool)_deleteIndexSentinelsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
 - (_Bool)_deleteIndexSentinelsWithModelType:(id)arg1 error:(id *)arg2;
 - (id)_selectIndexSentinelForZoneRow:(unsigned int)arg1 modelType:(id)arg2 error:(id *)arg3;
 - (_Bool)_insertIndexSentinelWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 error:(id *)arg3;

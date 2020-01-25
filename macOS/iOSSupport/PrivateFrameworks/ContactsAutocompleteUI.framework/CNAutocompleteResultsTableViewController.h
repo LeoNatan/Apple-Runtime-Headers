@@ -21,6 +21,7 @@
     BOOL _deferTableViewUpdates;
     BOOL _inDisambiguationMode;
     BOOL _hasPerformedRecipientExpansion;
+    BOOL _isDeviceLocked;
     id <CNAutocompleteResultsTableViewControllerDelegate> _delegate;
     NSArray *_recipients;
     double _trailingButtonMidlineInsetFromLayoutMargin;
@@ -28,6 +29,7 @@
 }
 
 + (void)dispatchMainIfNecessary:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL isDeviceLocked; // @synthesize isDeviceLocked=_isDeviceLocked;
 @property(nonatomic) BOOL hasPerformedRecipientExpansion; // @synthesize hasPerformedRecipientExpansion=_hasPerformedRecipientExpansion;
 @property(nonatomic) BOOL inDisambiguationMode; // @synthesize inDisambiguationMode=_inDisambiguationMode;
 @property(retain, nonatomic) NSMutableSet *expandedIdentifiers; // @synthesize expandedIdentifiers=_expandedIdentifiers;
@@ -71,6 +73,7 @@
 - (id)_flattenedIndexPaths;
 - (void)updateRecipients:(id)arg1 disambiguatingRecipient:(id)arg2;
 - (id)unificationIdentifierForRecipient:(id)arg1;
+- (BOOL)_deviceIsLockedWithPassword;
 - (void)_updateTableViewModelAnimated:(BOOL)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithStyle:(long long)arg1;

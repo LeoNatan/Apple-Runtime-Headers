@@ -10,6 +10,7 @@
 @protocol OS_dispatch_queue;
 
 @protocol ISBehaviorDelegate <NSObject>
+- (_Bool)behaviorIsVideoReadyForDisplay:(ISBehavior *)arg1;
 - (void)behavior:(ISBehavior *)arg1 removeTimeObserver:(id)arg2;
 - (id)behavior:(ISBehavior *)arg1 addBoundaryTimeObserverForTimes:(NSArray *)arg2 queue:(NSObject<OS_dispatch_queue> *)arg3 usingBlock:(void (^)(void))arg4;
 - (void)behavior:(ISBehavior *)arg1 playVideoToTime:(CDStruct_1b6d18a9)arg2 initialRate:(float)arg3 overDuration:(double)arg4 progressHandler:(void (^)(double, struct))arg5;

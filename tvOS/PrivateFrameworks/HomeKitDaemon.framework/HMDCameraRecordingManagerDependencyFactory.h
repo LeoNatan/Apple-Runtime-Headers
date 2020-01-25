@@ -10,7 +10,7 @@
 {
 }
 
-- (id)createRecordingSessionRetryContextWithWorkQueue:(id)arg1;
+- (id)createRecordingSessionRetryContextWithWorkQueue:(id)arg1 homePresenceByPairingIdentity:(id)arg2;
 - (id)createTimerWithTimeInterval:(double)arg1;
 - (id)createBulkSendSessionInitiatorWithWorkQueue:(id)arg1 accessory:(id)arg2;
 - (id)createSessionNotificationTrigger:(id)arg1 workQueue:(id)arg2;

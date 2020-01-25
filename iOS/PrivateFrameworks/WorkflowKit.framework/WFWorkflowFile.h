@@ -45,6 +45,7 @@
 @property(copy, nonatomic) NSArray *workflowTypes;
 @property(retain, nonatomic) WFWorkflowIcon *icon;
 - (id)recordRepresentationWithError:(id *)arg1;
+@property(readonly, nonatomic) unsigned long long estimatedSize;
 - (id)descriptor;
 - (id)initWithDescriptor:(id)arg1 performMigration:(_Bool)arg2 error:(id *)arg3;
 - (id)initWithDictionary:(id)arg1 name:(id)arg2 performMigration:(_Bool)arg3;

@@ -27,6 +27,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)networkRequester;
 - (id)routineRequester;
 - (void)_treatLOIs:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)fetchLocationsSinceDate:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -38,7 +39,8 @@
 - (unsigned long long)countWorkLOIs;
 - (unsigned long long)countHomeLOIs;
 - (void)updateFixedLOIs;
-- (BOOL)fetchSuggestedShortcutsForType:(long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (BOOL)readMeCardWithMinVisits:(unsigned long long)arg1 maxAge:(double)arg2 handler:(CDUnknownBlockType)arg3;
+- (BOOL)fetchSuggestedShortcutsForType:(long long)arg1 minVisits:(unsigned long long)arg2 maxAge:(double)arg3 handler:(CDUnknownBlockType)arg4;
 - (BOOL)_addMapItemToShortcut:(id)arg1 fromLOI:(id)arg2 group:(id)arg3;
 - (BOOL)fetchEntriesForLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_resolveMapItemsAndAddEntries:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;

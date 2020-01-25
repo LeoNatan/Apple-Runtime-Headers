@@ -6,15 +6,15 @@
 
 #import <UIKit/UIView.h>
 
-#import <Silex/STStandaloneTextLayoutDelegate-Protocol.h>
 #import <Silex/SXAutoSizedCanvasControllerDelegate-Protocol.h>
+#import <Silex/SXStandaloneTextLayoutDelegate-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 #import <Silex/UIScrollViewDelegate-Protocol.h>
 
-@class NSString, STStandaloneTextInfo, STStandaloneTextLayout, STTextTangierDocumentRoot, STTextTangierStorage, SXAutoSizedCanvasController, SXFullscreenCaption, SXTextSource, UIScrollView, UISwipeGestureRecognizer, UITapGestureRecognizer, UIVisualEffectView;
+@class NSString, SXAutoSizedCanvasController, SXFullscreenCaption, SXStandaloneTextInfo, SXStandaloneTextLayout, SXTextSource, SXTextTangierDocumentRoot, SXTextTangierStorage, UIScrollView, UISwipeGestureRecognizer, UITapGestureRecognizer, UIVisualEffectView;
 @protocol SXComponentActionHandler, SXFullscreenCaptionViewDelegate, SXTextSourceFactory;
 
-@interface SXFullscreenCaptionView : UIView <SXAutoSizedCanvasControllerDelegate, STStandaloneTextLayoutDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate>
+@interface SXFullscreenCaptionView : UIView <SXAutoSizedCanvasControllerDelegate, SXStandaloneTextLayoutDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate>
 {
     int _expansionMode;
     id <SXFullscreenCaptionViewDelegate> _delegate;
@@ -24,14 +24,14 @@
     id <SXComponentActionHandler> _actionHandler;
     id <SXTextSourceFactory> _textSourceFactory;
     SXAutoSizedCanvasController *_autoSizeCanvasController;
-    STTextTangierDocumentRoot *_documentRoot;
-    STStandaloneTextInfo *_captionInfo;
-    STStandaloneTextLayout *_captionLayout;
+    SXTextTangierDocumentRoot *_documentRoot;
+    SXStandaloneTextInfo *_captionInfo;
+    SXStandaloneTextLayout *_captionLayout;
     UIVisualEffectView *_backgroundView;
     UIScrollView *_scrollView;
     UISwipeGestureRecognizer *_swipeGestureRecognizer;
     SXTextSource *_textSource;
-    STTextTangierStorage *_textStorage;
+    SXTextTangierStorage *_textStorage;
     struct CGSize _fullSize;
     struct CGRect _temporaryLayoutRect;
     struct UIEdgeInsets _fullInsets;
@@ -39,7 +39,7 @@
 
 + (void)_applyStyle:(id)arg1 toStorage:(id)arg2;
 + (id)_overridePropertiesWithComponentStyle:(id)arg1 storage:(id)arg2;
-@property(retain, nonatomic) STTextTangierStorage *textStorage; // @synthesize textStorage=_textStorage;
+@property(retain, nonatomic) SXTextTangierStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(retain, nonatomic) SXTextSource *textSource; // @synthesize textSource=_textSource;
 @property(retain, nonatomic) UISwipeGestureRecognizer *swipeGestureRecognizer; // @synthesize swipeGestureRecognizer=_swipeGestureRecognizer;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -47,9 +47,9 @@
 @property(nonatomic) struct UIEdgeInsets fullInsets; // @synthesize fullInsets=_fullInsets;
 @property(nonatomic) struct CGSize fullSize; // @synthesize fullSize=_fullSize;
 @property(nonatomic) struct CGRect temporaryLayoutRect; // @synthesize temporaryLayoutRect=_temporaryLayoutRect;
-@property(retain, nonatomic) STStandaloneTextLayout *captionLayout; // @synthesize captionLayout=_captionLayout;
-@property(retain, nonatomic) STStandaloneTextInfo *captionInfo; // @synthesize captionInfo=_captionInfo;
-@property(retain, nonatomic) STTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
+@property(retain, nonatomic) SXStandaloneTextLayout *captionLayout; // @synthesize captionLayout=_captionLayout;
+@property(retain, nonatomic) SXStandaloneTextInfo *captionInfo; // @synthesize captionInfo=_captionInfo;
+@property(retain, nonatomic) SXTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 @property(retain, nonatomic) SXAutoSizedCanvasController *autoSizeCanvasController; // @synthesize autoSizeCanvasController=_autoSizeCanvasController;
 @property(readonly, nonatomic) id <SXTextSourceFactory> textSourceFactory; // @synthesize textSourceFactory=_textSourceFactory;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;

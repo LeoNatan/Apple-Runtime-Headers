@@ -258,6 +258,7 @@
 - (void).cxx_destruct;
 - (id)_orthogonalScrollerController;
 - (id)_updateTranslator;
+- (_Bool)_isConnectedToDiffableDataSource;
 - (void)_performDiffableUpdate:(CDUnknownBlockType)arg1;
 - (void)_managedSubviewAdded:(id)arg1;
 - (id)_prefetchDataSourceActual;
@@ -637,8 +638,8 @@
 @property(readonly, nonatomic, getter=_collectionViewData) UICollectionViewData *collectionViewData;
 - (id)_indexPathsForSelectedItems;
 @property(readonly, nonatomic) NSArray *indexPathsForSelectedItems;
-- (void)_decrementSuspendLayoutCount;
-- (void)_incrementSuspendLayoutCount;
+- (void)_decrementUpdateAnimationCount;
+- (void)_incrementUpdateAnimationCount;
 - (int)_dataSourceNumberOfItemsInSection:(int)arg1;
 - (int)_dataSourceNumberOfSections;
 - (int)_numberOfItemsInSection:(int)arg1;

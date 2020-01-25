@@ -25,6 +25,7 @@
 + (int)tokenUpdateState;
 + (_Bool)tokenUpdateShouldStartWithLogKey:(id)arg1;
 + (void)tokenUpdateDidFinishWithLogKey:(id)arg1;
++ (_Bool)isActionSupported:(int)arg1 withBiometricAuthenticationContext:(id)arg2;
 + (id)diskBasedPaymentSheet;
 + (id)countryCode;
 + (id)applePayClassicNetworks;

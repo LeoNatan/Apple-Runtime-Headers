@@ -6,15 +6,20 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_dispatch_queue;
+
 __attribute__((visibility("hidden")))
 @interface ICDeviceAccessManager : NSObject
 {
     struct sqlite3 *_externalMediaAccessDB;
+    NSObject<OS_dispatch_queue> *_deviceAccessQueue;
 }
 
 + (id)sharedAccessManager;
+@property NSObject<OS_dispatch_queue> *deviceAccessQueue; // @synthesize deviceAccessQueue=_deviceAccessQueue;
 - (void)displayAlertForApplication:(id)arg1 notificationDict:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)validateBundleIdentifier:(id)arg1 withNotification:(id)arg2;
+- (BOOL)internalApplicationWithBundleIdentifierHasAccess:(id)arg1;
 - (BOOL)applicationWithBundleIdentifierHasAccess:(id)arg1;
 - (void)addApplicationWithBundleIdentifier:(id)arg1 whitelist:(BOOL)arg2;
 - (void)revokeApplicationWithBundleIdentifier:(id)arg1;

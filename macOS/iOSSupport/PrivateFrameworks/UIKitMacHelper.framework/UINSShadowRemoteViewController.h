@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _lastViewFrameInUIWindow;
 }
 
++ (void)maybeReestablishFirstResponderStateForUIWindow:(id)arg1 uiFirstResponder:(id)arg2;
 - (void).cxx_destruct;
 - (BOOL)shouldLayerBackRemoteView:(id)arg1;
 - (void)updateTrackedViewPosition:(id)arg1;

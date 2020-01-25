@@ -7,12 +7,13 @@
 #import <UIKit/UIViewController.h>
 
 #import <ContactsUI/CNContactPickerContentDelegate-Protocol.h>
+#import <ContactsUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <ContactsUI/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class CNContact, FAFamilyMember, NSArray, NSPredicate, NSString, UINavigationController, _UIRemoteViewController;
+@class CNContact, FAFamilyMember, NSArray, NSPredicate, NSString, UIBarButtonItem, UINavigationController, _UIRemoteViewController;
 @protocol CNContactPickerContentViewController, CNContactPickerDelegate;
 
-@interface CNContactPickerViewController : UIViewController <CNContactPickerContentDelegate, _UIRemoteViewControllerContaining>
+@interface CNContactPickerViewController : UIViewController <CNContactPickerContentDelegate, _UIRemoteViewControllerContaining, UIAdaptivePresentationControllerDelegate>
 {
     _Bool _ignoreViewWillBePresented;
     _Bool _hidesSearchableSources;
@@ -70,9 +71,12 @@
 - (void)pickerDidSelectContacts:(id)arg1 properties:(id)arg2;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;
 - (void)pickerDidSelectAddNewContact;
+- (void)presentationControllerDidDismiss:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)popToDefaultViewController:(_Bool)arg1;
+@property(readonly, nonatomic) UIBarButtonItem *addContactBarButtonItem;
 @property(readonly, nonatomic) UINavigationController *navigationController;
+- (void)notifyDelegateForCancellation;
 - (void)closePickerIfNeeded;
 - (void)_prepareViewController;
 - (_Bool)_shouldBeOutOfProcess;

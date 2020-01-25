@@ -67,6 +67,7 @@
 - (unsigned long long)hash;
 @property(readonly, nonatomic) _Bool supportsWirelessDisplay;
 @property(readonly, nonatomic, getter=isLowLatencyRoute) _Bool lowLatencyRoute;
+@property(readonly, nonatomic, getter=isB364Route) _Bool b364Route;
 @property(readonly, nonatomic, getter=isB419Route) _Bool b419Route;
 @property(readonly, nonatomic, getter=isB444Route) _Bool b444Route;
 @property(readonly, nonatomic, getter=isW2Route) _Bool w2Route;

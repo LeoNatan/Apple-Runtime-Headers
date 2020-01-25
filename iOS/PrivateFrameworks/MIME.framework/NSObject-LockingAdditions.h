@@ -17,6 +17,7 @@
 - (void)mf_lockWithPriority;
 - (_Bool)mf_tryLock;
 - (void)mf_lock;
+- (void)_mf_ntsCheckToAllowLock:(id)arg1;
 - (void)_mf_checkToAllowLock:(id)arg1;
 - (void)_mf_checkToAllowExclusiveLocksWithLock:(id)arg1;
 - (void)_mf_checkToAllowStrictProgressionWithLock:(id)arg1;

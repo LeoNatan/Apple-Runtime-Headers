@@ -40,6 +40,7 @@
 - (void)updateViewConstraints;
 - (id)value;
 - (void)updateValue;
+- (_Bool)_canShowWhileLocked;
 - (id)initWithContentModule:(unsigned long long)arg1 andDelegate:(id)arg2;
 
 // Remaining properties

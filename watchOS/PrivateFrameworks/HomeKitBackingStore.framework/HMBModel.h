@@ -34,6 +34,10 @@
 + (id)hmbReadOnlyBefore;
 + (id)hmbExternalRecordType;
 + (id)hmbSchemaHashRoot;
++ (void)load;
++ (void)hmbResetModelsWithQueries;
++ (id)hmbModelClassesWithQueries;
++ (id)hmbMutableModelClassesWithQueries;
 + (id)hmbQueries;
 + (id)hmbPropertyNames;
 + (id)hmbProperties;
@@ -81,7 +85,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (id)prepareForStorageLocation:(unsigned int)arg1 using:(id)arg2 updatedModelIDs:(id)arg3 error:(id *)arg4;
-- (id)hmbPrepareFor:(unsigned int)arg1;
+- (id)hmbPrepareForStorageLocation:(unsigned int)arg1;
 - (id)validateType:(id)arg1 path:(id)arg2;
 - (_Bool)_validateType:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSSet *hmbDependentUUIDs;

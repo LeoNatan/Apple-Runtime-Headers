@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_UIAlertControllerTextFieldViewControllerContaining> container; // @synthesize container=_container;
 @property(readonly) NSArray *textFields; // @synthesize textFields;
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 - (BOOL)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
 - (BOOL)resignFirstResponder;
 - (void)updateTextFieldStyle;

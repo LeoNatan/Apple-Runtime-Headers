@@ -177,11 +177,11 @@
     unsigned int _descendantCount:20;
     unsigned int _zOrder:20;
     unsigned int _enumeratingSubviewsCount:6;
-    unsigned int _needsGeometryInWindowDidChangeNotificationCount:8;
     unsigned int _hasCachedEffectiveContentStyle:1;
     unsigned int _horizontalContentSizeConstraintActive:1;
     unsigned int _verticalContentSizeConstraintActive:1;
     unsigned int _needsUpdateVibrancy:1;
+    unsigned long long _needsGeometryInWindowDidChangeNotificationCount;
     NSMutableSet *_geometryInWindowSensitiveSubviews;
     struct CGRect _cachedVisibleRect;
     _NSBindingAdaptor *_bindingAdaptor;

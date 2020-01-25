@@ -133,7 +133,7 @@
 - (BOOL)importMessagesFromEnabledAccounts;
 - (void)setLibraryIsImporting:(BOOL)arg1;
 - (BOOL)libraryIsImporting;
-- (BOOL)_importMessageBatch:(id)arg1 fromMailbox:(id)arg2 store:(id)arg3 seenRemoteIDs:(id)arg4;
+- (BOOL)_importMessageBatch:(id)arg1 fromMailbox:(id)arg2 store:(id)arg3 dataDirectory:(id)arg4 seenRemoteIDs:(id)arg5;
 - (BOOL)_importMailbox:(id)arg1;
 - (BOOL)rebuildMailbox:(id)arg1;
 - (id)_mailboxPredictionQueryWithWhereClause:(id)arg1 limitedToRecents:(BOOL)arg2;

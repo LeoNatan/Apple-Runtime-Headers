@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)_cleanupForDismissal;
 - (void)viewWillAppear:(BOOL)arg1;

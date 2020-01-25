@@ -23,6 +23,7 @@
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;

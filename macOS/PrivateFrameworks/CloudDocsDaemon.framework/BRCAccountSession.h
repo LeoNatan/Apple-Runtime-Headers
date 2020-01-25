@@ -92,8 +92,11 @@
 + (BOOL)_validateDatabase:(id)arg1 baseURL:(id)arg2 session:(id)arg3 serverTruth:(BOOL)arg4 initialVersion:(unsigned int)arg5 lastCurrentVersion:(unsigned int)arg6 error:(id *)arg7;
 + (BOOL)_openConnection:(id)arg1 serverTruth:(BOOL)arg2 databaseName:(id)arg3 baseURL:(id)arg4 initialVersion:(unsigned int *)arg5 lastCurrentVersion:(unsigned int *)arg6 error:(id *)arg7;
 + (BOOL)openAndValidateDatabase:(id)arg1 serverTruth:(BOOL)arg2 session:(id)arg3 baseURL:(id)arg4 skipBackupDetection:(BOOL)arg5 error:(id *)arg6;
++ (id)_classesForClientState;
 + (BOOL)_checkIntegrity:(id)arg1 serverTruth:(BOOL)arg2 session:(id)arg3 skipBackupDetection:(BOOL)arg4 error:(id *)arg5;
 + (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject *)arg2;
++ (id)nameComponentsForName:(id)arg1 db:(id)arg2;
++ (id)nameComponentsForKey:(id)arg1 db:(id)arg2;
 + (id)userIdentityForName:(id)arg1 db:(id)arg2;
 + (id)userIdentityForKey:(id)arg1 db:(id)arg2;
 + (BOOL)_registerStaticDBFunctions:(id)arg1 error:(id *)arg2;
@@ -186,6 +189,8 @@
 - (void)enumerateSupportedFolderTypes:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL isSynchronizingDocuments;
 @property(readonly, nonatomic) BOOL isSynchronizingDesktop;
+- (id)currentUserRecordName;
+- (void)fetchUserRecordIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)getOrReserveLibraryRowIDForLibrary:(id)arg1;
 - (void)destroyiCloudDesktopAppLibrary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)destroyiCloudDesktopAppLibrary:(id)arg1;
@@ -222,6 +227,7 @@
 - (id)serverZoneByRowID:(id)arg1;
 - (id)serverZoneByName:(id)arg1 ownerName:(id)arg2;
 - (id)serverZoneByMangledID:(id)arg1;
+- (id)sharedServerZoneRowIDsByOwnerNamePrefix:(id)arg1;
 - (id)_unloadClientZones;
 - (void)_loadClientZonesFromDisk;
 - (void)destroyLocalDataWithPristineContainerIDs:(id)arg1;
@@ -234,6 +240,8 @@
 - (id)fetchAccountWaitOperationWithAccountReady:(char *)arg1;
 @property(readonly, nonatomic) BRCAccountWaitOperation *accountWaitOperation;
 - (void)resume;
+- (void)_registerBackgroundXPCActivities;
+- (void)_pcsChainAllItemsWithActivity:(id)arg1;
 - (BOOL)_createAppLibraryRootIfNeededAtPath:(id)arg1 error:(id *)arg2;
 - (BOOL)_createAppLibraryRootsIfNeededWithError:(id *)arg1;
 - (BOOL)openWithError:(id *)arg1;
@@ -278,6 +286,7 @@
 - (id)createDeviceKeyForNameInServerDB:(id)arg1;
 - (id)deviceKeyForName:(id)arg1 db:(id)arg2;
 - (id)pendingDownloadItemWithDocumentID:(unsigned int)arg1;
+- (struct PQLResultSet *)itemsWithSideCarInFlightDiffsEnumerator;
 - (struct PQLResultSet *)itemsNeedingIndexingEnumeratorFromNotifRank:(unsigned long long)arg1 batchSize:(unsigned long long)arg2;
 - (struct PQLResultSet *)bouncedItemsEnumerator;
 - (struct PQLResultSet *)foldersNeedingTransmogrifyEnumerator;
@@ -353,11 +362,13 @@
 - (id)syncContextForMangledID:(id)arg1 metadata:(BOOL)arg2 createIfNeeded:(BOOL)arg3;
 - (id)syncContextForMangledID:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)syncContextForMangledID:(id)arg1;
+- (id)sideCarSyncContext;
 - (id)zoneHealthSyncContext;
 - (id)sharedSyncContext;
 - (id)defaultSyncContext;
 - (id)_syncContextForContextIdentifier:(id)arg1 sourceAppIdentifier:(id)arg2 isShared:(BOOL)arg3 createIfNeeded:(BOOL)arg4;
-- (void)enumerateItemsWithShareIDUnderParent:(id)arg1 db:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)enumerateSideFaultsUnderParent:(id)arg1 db:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)enumerateItemsWithShareIDUnderParent:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)globalID:(id)arg1 isStrictChildOfGlobalID:(id)arg2;
 - (id)itemByItemGlobalID:(id)arg1;
 - (id)itemByItemGlobalID:(id)arg1 db:(id)arg2;

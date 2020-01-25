@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)dismiss;
 - (void)dealloc;
 - (id)initWithType:(long long)arg1;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

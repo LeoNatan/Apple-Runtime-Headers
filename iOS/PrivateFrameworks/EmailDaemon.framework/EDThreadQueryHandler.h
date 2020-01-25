@@ -64,6 +64,7 @@
 - (id)threadForObjectID:(id)arg1 isPersisted:(_Bool *)arg2 error:(id *)arg3;
 - (void)requestSummaryForMessageObjectID:(id)arg1;
 - (void)tearDown;
+- (void)test_tearDown;
 - (void)cancel;
 - (void)start;
 - (void)_createUnderlyingHandlerIfNeededAndStart;

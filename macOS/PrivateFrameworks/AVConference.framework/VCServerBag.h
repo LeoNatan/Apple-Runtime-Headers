@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)verifyRequiredKeys:(id)arg1 withError:(id *)arg2;
 + (void)retrieveBag;
 + (void)checkKeysAgainstHardcodedPrefs:(id)arg1;
++ (void)clearBagWithRefreshIntervalInSeconds:(int)arg1;
 + (void)pullStoreBagKeys;
 + (id)sharedInstance;
 - (void)waitForBagLoad;

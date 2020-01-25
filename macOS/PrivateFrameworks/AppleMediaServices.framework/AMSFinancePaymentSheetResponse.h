@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class AMSFinanceAuthenticateResponse, AMSPaymentSheetRequest;
+#import <AppleMediaServices/AMSFinancePerformable-Protocol.h>
+
+@class AMSFinanceAuthenticateResponse, AMSPaymentSheetRequest, NSString;
 
 __attribute__((visibility("hidden")))
-@interface AMSFinancePaymentSheetResponse : NSObject
+@interface AMSFinancePaymentSheetResponse : NSObject <AMSFinancePerformable>
 {
     AMSPaymentSheetRequest *_paymentSheetRequest;
     AMSFinanceAuthenticateResponse *_authenticateResponse;
@@ -28,6 +30,12 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1 confirmationOnly:(BOOL)arg2 taskInfo:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

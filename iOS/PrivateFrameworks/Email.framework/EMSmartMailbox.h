@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) long long smartMailboxType; // @synthesize smartMailboxType=_smartMailboxType;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 - (void).cxx_destruct;
+- (_Bool)_shouldArchiveByDefault;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)makePredicate;

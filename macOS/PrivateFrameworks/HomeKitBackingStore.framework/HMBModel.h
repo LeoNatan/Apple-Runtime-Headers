@@ -34,6 +34,10 @@
 + (id)hmbReadOnlyBefore;
 + (id)hmbExternalRecordType;
 + (id)hmbSchemaHashRoot;
++ (void)load;
++ (void)hmbResetModelsWithQueries;
++ (id)hmbModelClassesWithQueries;
++ (id)hmbMutableModelClassesWithQueries;
 + (id)hmbQueries;
 + (id)hmbPropertyNames;
 + (id)hmbProperties;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 - (void).cxx_destruct;
+- (BOOL)_canShowWhileLocked;
 - (struct CGSize)preferredContentSize;
 - (void)viewDidLoad;
 - (id)initWithTargetedPreview:(id)arg1;

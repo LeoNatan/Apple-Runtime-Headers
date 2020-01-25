@@ -16,6 +16,7 @@
     BOOL _isCancelled;
     BOOL _isCJK;
     BOOL _hasPolicyPhraseMatch;
+    BOOL _hasParsecPolicyPhraseMatch;
     BOOL _exact;
     float _lastIsSpaceFeature;
     NSString *_keyboardLanguage;
@@ -30,12 +31,14 @@
 }
 
 + (id)phoneFavoritesCopy;
++ (id)importantAttributesForParsecBundle:(id)arg1;
 + (id)importantAttributesForBundle:(id)arg1;
 + (void)setDockApps:(id)arg1;
 + (BOOL)isCJK;
 + (void)clearState;
 + (id)sortedUniqueBundleFeatureValuesFromBundleFeatures:(id)arg1;
 @property(nonatomic) BOOL exact; // @synthesize exact=_exact;
+@property(nonatomic) BOOL hasParsecPolicyPhraseMatch; // @synthesize hasParsecPolicyPhraseMatch=_hasParsecPolicyPhraseMatch;
 @property(nonatomic) BOOL hasPolicyPhraseMatch; // @synthesize hasPolicyPhraseMatch=_hasPolicyPhraseMatch;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property BOOL isCJK; // @synthesize isCJK=_isCJK;
@@ -52,6 +55,7 @@
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 - (void).cxx_destruct;
+- (void)prepareParsecResults:(id)arg1 inBundle:(id)arg2;
 - (void)prepareItems:(id)arg1 inRealSectionBundle:(id)arg2;
 - (void)prepareItems:(id)arg1 inBundle:(id)arg2;
 - (void)setRenderEngagementFeaturesForItem:(id)arg1 counts:(id)arg2 isRender:(BOOL)arg3 bundleDict:(id)arg4;

@@ -16,10 +16,6 @@
 - (id)objectForKey:(id)arg1;
 @property(readonly, nonatomic) struct CGSize thumbnailSize;
 - (double)cacheAgeWithValue:(id)arg1 withType:(int)arg2;
-- (id)thumbnailURLWithValue:(id)arg1 withType:(int)arg2;
-- (id)providerURLWithValue:(id)arg1 withType:(int)arg2;
-- (id)authorURLWithValue:(id)arg1 withType:(int)arg2;
-- (id)URLFromValue:(id)arg1 type:(int)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) NSString *authorName; // @dynamic authorName;
